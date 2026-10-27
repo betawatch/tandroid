@@ -14,7 +14,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class r20 extends LinearLayout {
     public final fi.d a;
@@ -27,16 +27,16 @@ public final class r20 extends LinearLayout {
         TLRPC.TL_emojiList a2 = i9.a(i10);
         setOrientation(1);
         y9 y9Var = new y9(context);
-        y9Var.setImageDrawable(new xj0(R.raw.utyan_gallery, AndroidUtilities.dp(110.0f), AndroidUtilities.dp(110.0f)));
+        y9Var.setImageDrawable(new yj0(R.raw.utyan_gallery, AndroidUtilities.dp(110.0f), AndroidUtilities.dp(110.0f)));
         if (!AndroidUtilities.isTablet()) {
-            addView(y9Var, gb1.u(110, 110, 49));
+            addView(y9Var, kb1.u(110, 110, 49));
         }
         TextView g7 = org.telegram.messenger.t.g(context, 1, 20.0f);
         org.telegram.ui.ActionBar.f7.V(g7, org.telegram.ui.ActionBar.y6.G6, null);
         g7.setGravity(1);
         g7.setText(LocaleController.getString(R.string.GalleryAccessAllowAccess));
         g7.setTypeface(AndroidUtilities.bold());
-        addView(g7, gb1.x(-2, -2, 49, 0, 15, 0, 7));
+        addView(g7, kb1.x(-2, -2, 49, 0, 15, 0, 7));
         TextView textView = new TextView(context);
         textView.setTextSize(1, 14.0f);
         org.telegram.ui.ActionBar.f7.V(textView, org.telegram.ui.ActionBar.y6.c7, null);
@@ -44,12 +44,12 @@ public final class r20 extends LinearLayout {
         textView.setText(LocaleController.getString(UserConfig.getInstance(i10).isPremium() ? R.string.GalleryAccessAllowAccessTextPremium : R.string.GalleryAccessAllowAccessTextNonPremium));
         textView.setMaxWidth(AndroidUtilities.dp(260.0f));
         textView.setLineSpacing(AndroidUtilities.dp(2.0f), 1.0f);
-        addView(textView, gb1.x(-2, -2, 49, 0, 0, 0, 14));
+        addView(textView, kb1.x(-2, -2, 49, 0, 0, 0, 14));
         fi.d dVar = new fi.d(context, null, true);
         this.a = dVar;
         dVar.f();
         dVar.i(LocaleController.getString(R.string.GalleryAccessAllowAccessButton), false, true);
-        addView(dVar, gb1.u(-2, 44, 49));
+        addView(dVar, kb1.u(-2, 44, 49));
         fi.d dVar2 = new fi.d(context, null, false);
         this.b = dVar2;
         dVar2.f();
@@ -57,7 +57,7 @@ public final class r20 extends LinearLayout {
         spannableStringBuilder.setSpan(new zq(R.drawable.outline_attach_camera_24, 0), 0, 1, 33);
         spannableStringBuilder.append((CharSequence) "  ").append((CharSequence) LocaleController.getString(R.string.GalleryAccessAllowAccessOpenCamera));
         dVar2.i(spannableStringBuilder, false, true);
-        addView(dVar2, gb1.x(-2, 44, 49, 0, 8, 0, 0));
+        addView(dVar2, kb1.x(-2, 44, 49, 0, 8, 0, 0));
         fi.d dVar3 = new fi.d(context, null, false);
         this.c = dVar3;
         dVar3.f();
@@ -74,7 +74,7 @@ public final class r20 extends LinearLayout {
         }
         spannableStringBuilder2.append((CharSequence) LocaleController.getString(R.string.UseEmoji));
         dVar3.i(spannableStringBuilder2, false, true);
-        addView(dVar3, gb1.x(-2, 44, 49, 0, 1, 0, 0));
+        addView(dVar3, kb1.x(-2, 44, 49, 0, 1, 0, 0));
     }
 
     @Override // android.widget.LinearLayout, android.view.View

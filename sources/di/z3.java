@@ -1,6 +1,6 @@
 package di;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class z3 implements Runnable {
     public final /* synthetic */ int a;
@@ -23,7 +23,7 @@ public final /* synthetic */ class z3 implements Runnable {
                 if (j4Var != null) {
                     y9 y9Var = ((p9) j4Var).d;
                     y9Var.Z0 = false;
-                    y9Var.P();
+                    y9Var.Q();
                 }
                 q4Var.d1(false);
                 q4Var.W2 = true;

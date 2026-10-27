@@ -1,151 +1,49 @@
 package org.telegram.ui;
 
-import android.R;
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.RectF;
-import android.graphics.drawable.Drawable;
-import android.text.Layout;
-import android.view.MotionEvent;
-import android.widget.TextView;
-import java.util.HashSet;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLog;
+import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public class dd0 extends TextView implements org.telegram.ui.ActionBar.p6 {
-    public final org.telegram.ui.Cells.y a;
-    public final org.telegram.ui.Components.da0 b;
-    public int c;
-    public final /* synthetic */ gg0 d;
+public final /* synthetic */ class dd0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ te0 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public dd0(gg0 gg0Var, Context context) {
-        super(context);
-        this.d = gg0Var;
-        int i10 = org.telegram.ui.ActionBar.y6.I6;
-        org.telegram.ui.Cells.y g02 = org.telegram.ui.ActionBar.y6.g0(org.telegram.ui.ActionBar.y6.o1(0.1f, org.telegram.ui.ActionBar.y6.x0(null, i10, false)), 7, -1);
-        this.a = g02;
-        org.telegram.ui.Components.da0 da0Var = new org.telegram.ui.Components.da0();
-        this.b = da0Var;
-        org.telegram.ui.ActionBar.e7 e7Var = org.telegram.ui.ActionBar.f7.a;
-        this.c = org.telegram.ui.ActionBar.y6.o1(0.1f, org.telegram.ui.ActionBar.y6.x0(null, i10, false));
-        g02.setCallback(this);
-        da0Var.D = true;
-        da0Var.u = 0.8f;
+    public /* synthetic */ dd0(te0 te0Var, int i10) {
+        this.a = i10;
+        this.b = te0Var;
     }
 
-    public boolean a() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.ActionBar.p6
-    public final void addColorKeys(HashSet hashSet) {
-        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.y6.I6));
-        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.y6.Ld));
-    }
-
-    public boolean b() {
-        return true;
-    }
-
-    public final void c() {
-        CharSequence text;
-        Layout layout = getLayout();
-        if (layout == null || (text = layout.getText()) == null) {
-            return;
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                this.b.L.m();
+                break;
+            case 1:
+                te0 te0Var = this.b;
+                te0Var.M = null;
+                te0Var.N = null;
+                te0Var.o(true);
+                te0Var.e.h(null, null, te0Var.f, null);
+                kd kdVar = te0Var.n;
+                org.telegram.ui.Components.yj0 yj0Var = te0Var.I;
+                kdVar.setAnimation(yj0Var);
+                yj0Var.M(0);
+                te0Var.K = true;
+                break;
+            case 2:
+                this.b.K = true;
+                break;
+            default:
+                EditTextBoldCursor editTextBoldCursor = this.b.c;
+                if (editTextBoldCursor != null) {
+                    editTextBoldCursor.requestFocus();
+                    editTextBoldCursor.setSelection(editTextBoldCursor.length());
+                    AndroidUtilities.showKeyboard(editTextBoldCursor);
+                    break;
+                }
+                break;
         }
-        org.telegram.ui.Components.s90 s90Var = new org.telegram.ui.Components.s90(0);
-        float dp = AndroidUtilities.dp(3.0f);
-        float dp2 = AndroidUtilities.dp(6.0f);
-        s90Var.q = dp;
-        s90Var.r = dp2;
-        int length = text.length();
-        s90Var.d(layout, 0, 0.0f);
-        layout.getSelectionPath(0, length, s90Var);
-        RectF rectF = AndroidUtilities.rectTmp;
-        rectF.set(s90Var.s, s90Var.u, s90Var.t, s90Var.v);
-        this.a.setBounds((int) rectF.left, (int) rectF.top, (int) rectF.right, (int) rectF.bottom);
-        org.telegram.ui.Components.da0 da0Var = this.b;
-        da0Var.y = s90Var;
-        da0Var.k(4.0f);
-        int themedColor = this.d.getThemedColor(org.telegram.ui.ActionBar.y6.Ld);
-        da0Var.g(org.telegram.ui.ActionBar.y6.o1(0.85f, themedColor), org.telegram.ui.ActionBar.y6.o1(2.0f, themedColor), org.telegram.ui.ActionBar.y6.o1(3.5f, themedColor), org.telegram.ui.ActionBar.y6.o1(6.0f, themedColor));
-        da0Var.l();
-    }
-
-    @Override // android.widget.TextView, android.view.View
-    public final void onDraw(Canvas canvas) {
-        float paddingTop;
-        canvas.save();
-        if ((getGravity() & 16) == 0 || getLayout() == null) {
-            paddingTop = getPaddingTop();
-        } else {
-            paddingTop = ((((getHeight() - getPaddingTop()) - getPaddingBottom()) - getLayout().getHeight()) / 2.0f) + getPaddingTop();
-        }
-        canvas.translate(getPaddingLeft(), paddingTop);
-        this.a.draw(canvas);
-        canvas.restore();
-        super.onDraw(canvas);
-        boolean a2 = a();
-        org.telegram.ui.Components.da0 da0Var = this.b;
-        if (a2 || da0Var.d()) {
-            canvas.save();
-            canvas.translate(getPaddingLeft(), paddingTop);
-            da0Var.draw(canvas);
-            canvas.restore();
-            invalidate();
-        }
-    }
-
-    @Override // android.widget.TextView, android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        super.onLayout(z10, i10, i11, i12, i13);
-        c();
-    }
-
-    @Override // android.widget.TextView, android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        boolean b10 = b();
-        org.telegram.ui.Cells.y yVar = this.a;
-        if (b10 && motionEvent.getAction() == 0) {
-            yVar.setHotspot(motionEvent.getX(), motionEvent.getY());
-            yVar.setState(new int[]{R.attr.state_enabled, R.attr.state_pressed});
-        } else if (motionEvent.getAction() == 1 || motionEvent.getAction() == 1) {
-            yVar.setState(new int[0]);
-        }
-        return super.onTouchEvent(motionEvent);
-    }
-
-    @Override // android.widget.TextView
-    public final void setText(CharSequence charSequence, TextView.BufferType bufferType) {
-        super.setText(charSequence, bufferType);
-        c();
-    }
-
-    @Override // org.telegram.ui.ActionBar.p6
-    public final void updateColors() {
-        try {
-            int o12 = org.telegram.ui.ActionBar.y6.o1(0.1f, org.telegram.ui.ActionBar.y6.x0(null, org.telegram.ui.ActionBar.y6.I6, false));
-            org.telegram.ui.Cells.y yVar = this.a;
-            if (yVar != null && o12 != this.c) {
-                org.telegram.ui.ActionBar.y6.E1(yVar, o12, true);
-            }
-            this.c = o12;
-            org.telegram.ui.Components.da0 da0Var = this.b;
-            if (da0Var != null) {
-                int themedColor = this.d.getThemedColor(org.telegram.ui.ActionBar.y6.Ld);
-                da0Var.g(org.telegram.ui.ActionBar.y6.o1(0.85f, themedColor), org.telegram.ui.ActionBar.y6.o1(2.0f, themedColor), org.telegram.ui.ActionBar.y6.o1(3.5f, themedColor), org.telegram.ui.ActionBar.y6.o1(6.0f, themedColor));
-            }
-            invalidate();
-        } catch (Exception e) {
-            FileLog.e(e);
-        }
-    }
-
-    @Override // android.widget.TextView, android.view.View
-    public final boolean verifyDrawable(Drawable drawable) {
-        return drawable == this.a || super.verifyDrawable(drawable);
     }
 }

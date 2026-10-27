@@ -9,7 +9,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class l9 implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -66,7 +66,7 @@ public final /* synthetic */ class l9 implements Runnable {
                 }
                 break;
             default:
-                ((MessagesStorage) this.f).lambda$updateUnreadReactionsCountInternal$264(this.b, this.c, (String) this.h, this.d, this.e, (String) this.n, (String) this.r, (String) this.s);
+                ((MessagesStorage) this.f).lambda$updateUnreadReactionsCountInternal$265(this.b, this.c, (String) this.h, this.d, this.e, (String) this.n, (String) this.r, (String) this.s);
                 break;
         }
     }

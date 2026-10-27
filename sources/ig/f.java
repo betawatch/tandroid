@@ -1,8 +1,8 @@
 package ig;
 
-import org.telegram.ui.ay;
+import org.telegram.ui.dy;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class f implements Runnable {
     public final /* synthetic */ int a;
@@ -17,8 +17,8 @@ public final /* synthetic */ class f implements Runnable {
     public final void run() {
         switch (this.a) {
             case 0:
-                for (ay ayVar : this.b.R.e0) {
-                    ((s4.c0) ayVar.a.getLayoutManager()).u = false;
+                for (dy dyVar : this.b.R.e0) {
+                    ((s4.c0) dyVar.a.getLayoutManager()).u = false;
                 }
                 break;
             default:

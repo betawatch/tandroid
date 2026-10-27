@@ -12,10 +12,10 @@ import org.telegram.ui.ActionBar.b7;
 import org.telegram.ui.ActionBar.f7;
 import org.telegram.ui.ActionBar.u6;
 import org.telegram.ui.ActionBar.y6;
-import org.telegram.ui.Components.gb1;
+import org.telegram.ui.Components.kb1;
 import org.telegram.ui.Components.zq;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class l3 extends TextView {
     public final zq a;
@@ -33,7 +33,7 @@ public final class l3 extends TextView {
         setPadding(AndroidUtilities.dp(11.0f), 0, AndroidUtilities.dp(11.0f), 0);
         setGravity(17);
         setTypeface(AndroidUtilities.bold());
-        gb1.b(this);
+        kb1.b(this);
         zq zqVar = new zq(R.drawable.arrows_select, 0);
         this.a = zqVar;
         zqVar.spaceScaleX = 0.8f;

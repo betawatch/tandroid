@@ -13,11 +13,11 @@ import org.telegram.messenger.Utilities;
 import org.telegram.ui.Cells.xa;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
+import org.telegram.ui.a31;
 import org.telegram.ui.bd;
-import org.telegram.ui.u90;
-import org.telegram.ui.y21;
+import org.telegram.ui.w90;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class e implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -138,7 +138,7 @@ public final /* synthetic */ class e implements Utilities.Callback {
                         break;
                     }
                 } else {
-                    AndroidUtilities.runOnUIThread(new u90(5));
+                    AndroidUtilities.runOnUIThread(new w90(5));
                     break;
                 }
                 break;
@@ -148,7 +148,7 @@ public final /* synthetic */ class e implements Utilities.Callback {
             case 20:
                 HashSet hashSet = (HashSet) obj;
                 String str = LocaleController.getInstance().getCurrentLocaleInfo().pluralLangCode;
-                hashSet.addAll(y21.Z());
+                hashSet.addAll(a31.Z());
                 SharedPreferences.Editor edit = MessagesController.getGlobalMainSettings().edit();
                 if (hashSet.size() == 1 && TextUtils.equals((CharSequence) hashSet.iterator().next(), str)) {
                     edit.remove("translate_button_restricted_languages");
@@ -156,7 +156,7 @@ public final /* synthetic */ class e implements Utilities.Callback {
                     edit.putStringSet("translate_button_restricted_languages", hashSet);
                 }
                 edit.putInt("translate_button_restricted_languages_version", 2).apply();
-                y21.s = false;
+                a31.s = false;
                 for (int i13 = 0; i13 < 4; i13++) {
                     try {
                         MessagesController.getInstance(i13).getTranslateController().checkRestrictedLanguagesUpdate();

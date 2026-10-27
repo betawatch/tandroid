@@ -29,11 +29,11 @@ import org.telegram.ui.Components.b10;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 import org.xmlpull.v1.XmlPullParserFactory;
-import w7.m5;
+import w7.n5;
 import z3.l;
 import z3.m;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
 public final class d implements m {
     public static final Pattern b = Pattern.compile("^([0-9][0-9]+):([0-9][0-9]):([0-9][0-9])(?:(\\.[0-9]+)|:([0-9][0-9])(?:\\.([0-9]+))?)?$");
@@ -1223,7 +1223,7 @@ public final class d implements m {
 
     @Override // z3.m
     public final void G(byte[] bArr, int i10, int i11, l lVar, j jVar) {
-        m5.b(j(i10, i11, bArr), lVar, jVar);
+        n5.b(j(i10, i11, bArr), lVar, jVar);
     }
 
     @Override // z3.m

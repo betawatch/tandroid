@@ -14,7 +14,7 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class bp {
     public final org.telegram.ui.ActionBar.g1 a;
@@ -33,7 +33,7 @@ public final class bp {
     public final TextView n;
     public int o;
 
-    public bp(Context context, int i10, sh0 sh0Var, boolean z10, final ap apVar, org.telegram.ui.ActionBar.u6 u6Var) {
+    public bp(Context context, int i10, th0 th0Var, boolean z10, final ap apVar, org.telegram.ui.ActionBar.u6 u6Var) {
         ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout;
         int i11;
         Integer num;
@@ -43,13 +43,13 @@ public final class bp {
         zoVar.U = new Path();
         this.f = zoVar;
         zoVar.setFitItems(true);
-        if (sh0Var != null) {
+        if (th0Var != null) {
             i11 = 1;
             num = 1;
             actionBarPopupWindow$ActionBarPopupWindowLayout = zoVar;
             org.telegram.ui.ActionBar.g1 c10 = org.telegram.ui.ActionBar.w0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.msg_arrow_back, LocaleController.getString(R.string.Back), false, u6Var);
             this.a = c10;
-            c10.setOnClickListener(new o8(sh0Var, 1));
+            c10.setOnClickListener(new o8(th0Var, 1));
         } else {
             actionBarPopupWindow$ActionBarPopupWindowLayout = zoVar;
             i11 = 1;
@@ -70,17 +70,17 @@ public final class bp {
                 switch (i12) {
                     case 0:
                         this.b.a();
-                        apVar.r();
+                        apVar.s();
                         break;
                     case 1:
                         bp bpVar = this.b;
                         bpVar.a();
-                        apVar.u(bpVar.l);
+                        apVar.w(bpVar.l);
                         break;
                     case 2:
                         bp bpVar2 = this.b;
                         bpVar2.a();
-                        apVar.u(bpVar2.k);
+                        apVar.w(bpVar2.k);
                         break;
                     case 3:
                         this.b.a();
@@ -88,7 +88,7 @@ public final class bp {
                         break;
                     case 4:
                         this.b.a();
-                        AndroidUtilities.runOnUIThread(new pg(apVar, 28));
+                        AndroidUtilities.runOnUIThread(new pg(apVar, 29));
                         break;
                     default:
                         apVar.m();
@@ -112,17 +112,17 @@ public final class bp {
                 switch (i13) {
                     case 0:
                         this.b.a();
-                        apVar.r();
+                        apVar.s();
                         break;
                     case 1:
                         bp bpVar = this.b;
                         bpVar.a();
-                        apVar.u(bpVar.l);
+                        apVar.w(bpVar.l);
                         break;
                     case 2:
                         bp bpVar2 = this.b;
                         bpVar2.a();
-                        apVar.u(bpVar2.k);
+                        apVar.w(bpVar2.k);
                         break;
                     case 3:
                         this.b.a();
@@ -130,7 +130,7 @@ public final class bp {
                         break;
                     case 4:
                         this.b.a();
-                        AndroidUtilities.runOnUIThread(new pg(apVar, 28));
+                        AndroidUtilities.runOnUIThread(new pg(apVar, 29));
                         break;
                     default:
                         apVar.m();
@@ -154,17 +154,17 @@ public final class bp {
                 switch (i14) {
                     case 0:
                         this.b.a();
-                        apVar.r();
+                        apVar.s();
                         break;
                     case 1:
                         bp bpVar = this.b;
                         bpVar.a();
-                        apVar.u(bpVar.l);
+                        apVar.w(bpVar.l);
                         break;
                     case 2:
                         bp bpVar2 = this.b;
                         bpVar2.a();
-                        apVar.u(bpVar2.k);
+                        apVar.w(bpVar2.k);
                         break;
                     case 3:
                         this.b.a();
@@ -172,7 +172,7 @@ public final class bp {
                         break;
                     case 4:
                         this.b.a();
-                        AndroidUtilities.runOnUIThread(new pg(apVar, 28));
+                        AndroidUtilities.runOnUIThread(new pg(apVar, 29));
                         break;
                     default:
                         apVar.m();
@@ -196,17 +196,17 @@ public final class bp {
                 switch (i15) {
                     case 0:
                         this.b.a();
-                        apVar.r();
+                        apVar.s();
                         break;
                     case 1:
                         bp bpVar = this.b;
                         bpVar.a();
-                        apVar.u(bpVar.l);
+                        apVar.w(bpVar.l);
                         break;
                     case 2:
                         bp bpVar2 = this.b;
                         bpVar2.a();
-                        apVar.u(bpVar2.k);
+                        apVar.w(bpVar2.k);
                         break;
                     case 3:
                         this.b.a();
@@ -214,7 +214,7 @@ public final class bp {
                         break;
                     case 4:
                         this.b.a();
-                        AndroidUtilities.runOnUIThread(new pg(apVar, 28));
+                        AndroidUtilities.runOnUIThread(new pg(apVar, 29));
                         break;
                     default:
                         apVar.m();
@@ -238,17 +238,17 @@ public final class bp {
                 switch (i16) {
                     case 0:
                         this.b.a();
-                        apVar.r();
+                        apVar.s();
                         break;
                     case 1:
                         bp bpVar = this.b;
                         bpVar.a();
-                        apVar.u(bpVar.l);
+                        apVar.w(bpVar.l);
                         break;
                     case 2:
                         bp bpVar2 = this.b;
                         bpVar2.a();
-                        apVar.u(bpVar2.k);
+                        apVar.w(bpVar2.k);
                         break;
                     case 3:
                         this.b.a();
@@ -256,7 +256,7 @@ public final class bp {
                         break;
                     case 4:
                         this.b.a();
-                        AndroidUtilities.runOnUIThread(new pg(apVar, 28));
+                        AndroidUtilities.runOnUIThread(new pg(apVar, 29));
                         break;
                     default:
                         apVar.m();
@@ -268,7 +268,7 @@ public final class bp {
         FrameLayout frameLayout = new FrameLayout(context);
         this.m = frameLayout;
         org.telegram.ui.ActionBar.f7.i(org.telegram.ui.ActionBar.y6.H8, frameLayout, u6Var);
-        actionBarPopupWindow$ActionBarPopupWindowLayout.a(frameLayout, gb1.r(-1, 8));
+        actionBarPopupWindow$ActionBarPopupWindowLayout.a(frameLayout, kb1.r(-1, 8));
         TextView textView = new TextView(context);
         this.n = textView;
         textView.setPadding(AndroidUtilities.dp(13.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(13.0f), AndroidUtilities.dp(8.0f));
@@ -276,7 +276,7 @@ public final class bp {
         org.telegram.ui.ActionBar.f7.V(textView, org.telegram.ui.ActionBar.y6.E8, u6Var);
         frameLayout.setTag(R.id.fit_width_tag, num2);
         textView.setTag(R.id.fit_width_tag, num2);
-        actionBarPopupWindow$ActionBarPopupWindowLayout.a(textView, gb1.r(-2, -2));
+        actionBarPopupWindow$ActionBarPopupWindowLayout.a(textView, kb1.r(-2, -2));
         int i17 = org.telegram.ui.ActionBar.y6.I5;
         org.telegram.ui.Cells.y Z = org.telegram.ui.ActionBar.y6.Z(org.telegram.ui.ActionBar.y6.w0(i17, u6Var), 0, 6);
         org.telegram.ui.ActionBar.b7 N = org.telegram.ui.ActionBar.f7.N(i17);
@@ -295,17 +295,17 @@ public final class bp {
                 switch (i18) {
                     case 0:
                         this.b.a();
-                        apVar.r();
+                        apVar.s();
                         break;
                     case 1:
                         bp bpVar = this.b;
                         bpVar.a();
-                        apVar.u(bpVar.l);
+                        apVar.w(bpVar.l);
                         break;
                     case 2:
                         bp bpVar2 = this.b;
                         bpVar2.a();
-                        apVar.u(bpVar2.k);
+                        apVar.w(bpVar2.k);
                         break;
                     case 3:
                         this.b.a();
@@ -313,7 +313,7 @@ public final class bp {
                         break;
                     case 4:
                         this.b.a();
-                        AndroidUtilities.runOnUIThread(new pg(apVar, 28));
+                        AndroidUtilities.runOnUIThread(new pg(apVar, 29));
                         break;
                     default:
                         apVar.m();
@@ -450,7 +450,7 @@ public final class bp {
         if (i12 != 0) {
             this.l = i12;
             g1Var3.setVisibility(0);
-            g1Var3.getImageView().setImageDrawable(e31.a(i12));
+            g1Var3.getImageView().setImageDrawable(f31.a(i12));
             g1Var3.setText(b(i12));
         } else {
             g1Var3.setVisibility(8);
@@ -459,7 +459,7 @@ public final class bp {
         if (i11 != 0) {
             this.k = i11;
             g1Var4.setVisibility(0);
-            g1Var4.getImageView().setImageDrawable(e31.a(i11));
+            g1Var4.getImageView().setImageDrawable(f31.a(i11));
             g1Var4.setText(b(i11));
         } else {
             g1Var4.setVisibility(8);

@@ -3,10 +3,10 @@ package fi;
 import android.animation.ValueAnimator;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.ui.bd;
-import org.telegram.ui.rp0;
-import org.telegram.ui.tc1;
+import org.telegram.ui.tp0;
+import org.telegram.ui.vc1;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class bb implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -43,19 +43,19 @@ public final class bb implements ValueAnimator.AnimatorUpdateListener {
                 }
                 break;
             case 2:
-                rp0 rp0Var = (rp0) this.c;
-                rp0Var.Y = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                rp0Var.X.invalidate();
-                if (!this.b && rp0Var.Y > 0.5f) {
+                tp0 tp0Var = (tp0) this.c;
+                tp0Var.Y = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                tp0Var.X.invalidate();
+                if (!this.b && tp0Var.Y > 0.5f) {
                     this.b = true;
                     break;
                 }
                 break;
             default:
-                tc1 tc1Var = (tc1) this.c;
-                tc1Var.j2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                tc1Var.i2.invalidate();
-                if (!this.b && tc1Var.j2 > 0.5f) {
+                vc1 vc1Var = (vc1) this.c;
+                vc1Var.j2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                vc1Var.i2.invalidate();
+                if (!this.b && vc1Var.j2 > 0.5f) {
                     this.b = true;
                     break;
                 }

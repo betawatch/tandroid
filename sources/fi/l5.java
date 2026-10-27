@@ -14,13 +14,13 @@ import android.widget.TextView;
 import java.util.List;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.d41;
 import org.telegram.ui.Components.ds;
-import org.telegram.ui.Components.eq0;
-import org.telegram.ui.Components.md0;
-import org.telegram.ui.Components.q11;
+import org.telegram.ui.Components.e41;
+import org.telegram.ui.Components.fq0;
+import org.telegram.ui.Components.nd0;
+import org.telegram.ui.Components.r11;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class l5 extends LinearLayout {
     public final /* synthetic */ int a;
@@ -50,19 +50,19 @@ public final class l5 extends LinearLayout {
         switch (this.a) {
             case 4:
                 super.dispatchDraw(canvas);
-                ((q11) this.b).e(canvas, ((md0) this.c).getX() - AndroidUtilities.dp(50.0f), getHeight() / 2.0f);
+                ((r11) this.b).e(canvas, ((nd0) this.c).getX() - AndroidUtilities.dp(50.0f), getHeight() / 2.0f);
                 break;
             case 5:
                 canvas.save();
                 org.telegram.ui.Components.h6 h6Var = (org.telegram.ui.Components.h6) this.b;
-                d41 d41Var = (d41) this.c;
-                float e = h6Var.e(d41Var.x);
+                e41 e41Var = (e41) this.c;
+                float e = h6Var.e(e41Var.x);
                 if (e > 0.0f) {
-                    if (d41Var.c == null) {
-                        d41Var.c = new eq0(this);
+                    if (e41Var.c == null) {
+                        e41Var.c = new fq0(this);
                     }
                     canvas.translate(getWidth() / 2.0f, getHeight() / 2.0f);
-                    d41Var.c.a(canvas, e);
+                    e41Var.c.a(canvas, e);
                     canvas.translate((-getWidth()) / 2.0f, (-getHeight()) / 2.0f);
                 }
                 super.dispatchDraw(canvas);
@@ -187,15 +187,15 @@ public final class l5 extends LinearLayout {
             case 9:
                 Paint paint3 = (Paint) this.b;
                 super.onDraw(canvas);
-                sg.n0 n0Var = (sg.n0) this.c;
-                TextView textView3 = (TextView) getChildAt(n0Var.V0);
-                int i11 = n0Var.W0;
+                sg.m0 m0Var = (sg.m0) this.c;
+                TextView textView3 = (TextView) getChildAt(m0Var.V0);
+                int i11 = m0Var.W0;
                 TextView textView4 = i11 != -1 ? (TextView) getChildAt(i11) : null;
                 paint3.setColor(textView3.getCurrentTextColor());
                 float y10 = ((textView3.getY() + textView3.getHeight()) - textView3.getPaddingBottom()) + AndroidUtilities.dp(3.0f);
                 Layout layout3 = textView3.getLayout();
                 Layout layout4 = textView4 != null ? textView4.getLayout() : null;
-                float interpolation2 = layout4 == null ? 0.0f : ds.f.getInterpolation(n0Var.X0);
+                float interpolation2 = layout4 == null ? 0.0f : ds.f.getInterpolation(m0Var.X0);
                 float lerp2 = AndroidUtilities.lerp(layout3.getPrimaryHorizontal(layout3.getLineStart(0)) + textView3.getX(), textView4 != null ? layout4.getPrimaryHorizontal(layout3.getLineStart(0)) + textView4.getX() : 0.0f, interpolation2);
                 canvas.drawLine(lerp2, y10, AndroidUtilities.lerp(layout3.getPrimaryHorizontal(layout3.getLineEnd(0)) - layout3.getPrimaryHorizontal(layout3.getLineStart(0)), layout4 != null ? layout4.getPrimaryHorizontal(layout4.getLineEnd(0)) - layout4.getPrimaryHorizontal(layout4.getLineStart(0)) : 0.0f, interpolation2) + lerp2, y10, paint3);
                 break;
@@ -275,18 +275,18 @@ public final class l5 extends LinearLayout {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public l5(d41 d41Var, Context context) {
+    public l5(e41 e41Var, Context context) {
         super(context);
         this.a = 5;
-        this.c = d41Var;
+        this.c = e41Var;
         this.b = new org.telegram.ui.Components.h6(this, 360L, ds.h);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public l5(sg.n0 n0Var, Context context) {
+    public l5(sg.m0 m0Var, Context context) {
         super(context);
         this.a = 9;
-        this.c = n0Var;
+        this.c = m0Var;
         Paint paint = new Paint(1);
         this.b = paint;
         paint.setStrokeWidth(AndroidUtilities.dp(2.0f));

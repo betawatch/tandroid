@@ -4,13 +4,13 @@ import android.os.Bundle;
 import android.view.View;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.c90;
+import org.telegram.ui.Components.d90;
 import org.telegram.ui.Components.wc;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.cy;
+import org.telegram.ui.ey;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class a2 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -36,23 +36,23 @@ public final /* synthetic */ class a2 implements View.OnClickListener {
                 } else {
                     bundle.putLong("chat_id", -j10);
                 }
-                q4Var.y0.H(new ProfileActivity(bundle, null));
+                q4Var.y0.I(new ProfileActivity(bundle, null));
                 break;
             case 1:
-                c90.q((c90) this.c, this.b);
+                d90.q((d90) this.c, this.b);
                 break;
             case 2:
-                cy cyVar = (cy) this.c;
-                MessagesController messagesController = cyVar.getMessagesController();
+                ey eyVar = (ey) this.c;
+                MessagesController messagesController = eyVar.getMessagesController();
                 long j11 = this.b;
                 boolean isDialogMuted = messagesController.isDialogMuted(j11, 0L);
                 if (isDialogMuted) {
-                    cyVar.getNotificationsController().setDialogNotificationsSettings(j11, 0L, 4);
+                    eyVar.getNotificationsController().setDialogNotificationsSettings(j11, 0L, 4);
                 } else {
-                    cyVar.getNotificationsController().setDialogNotificationsSettings(j11, 0L, 3);
+                    eyVar.getNotificationsController().setDialogNotificationsSettings(j11, 0L, 3);
                 }
-                wc.A(cyVar, !isDialogMuted, null).j();
-                cyVar.finishPreviewFragment();
+                wc.A(eyVar, !isDialogMuted, null).j();
+                eyVar.finishPreviewFragment();
                 break;
             case 3:
                 Utilities.Callback callback = ((sh.p) this.c).f;

@@ -55,13 +55,13 @@ import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.Cells.s4;
 import org.telegram.ui.Components.RLottieNative;
 import org.telegram.ui.Components.c6;
-import org.telegram.ui.Components.fl0;
+import org.telegram.ui.Components.gl0;
 import org.telegram.ui.Components.wc;
-import org.telegram.ui.aq0;
+import org.telegram.ui.cq0;
 import v0.i;
 import v0.o;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class f implements Runnable {
     public final /* synthetic */ int a;
@@ -74,12 +74,12 @@ public final /* synthetic */ class f implements Runnable {
         this.c = obj2;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:204:0x0453, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:204:0x0451, code lost:
     
-        if (r10 == null) goto L189;
+        if (r4 == null) goto L189;
      */
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:114:0x02c0  */
+    /* JADX WARN: Removed duplicated region for block: B:114:0x02bf  */
     @Override // java.lang.Runnable
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -88,14 +88,13 @@ public final /* synthetic */ class f implements Runnable {
         RLottieNative rLottieNative;
         FileOutputStream fileOutputStream;
         ai.g gVar;
-        int i10 = 9;
-        int i11 = 10;
+        int i10 = 10;
         Bitmap bitmap = null;
         r8 = false;
         r8 = false;
         r8 = false;
         boolean z10 = false;
-        final int i12 = 1;
+        final int i11 = 1;
         switch (this.a) {
             case 0:
                 CredentialProviderPlayServicesImpl.runFallbackClearCredFlow$lambda$27$lambda$26$lambda$25$lambda$24((i) this.b, (Exception) this.c);
@@ -129,7 +128,7 @@ public final /* synthetic */ class f implements Runnable {
                 String str3 = n0.a;
                 j2.e eVar = ((d0) m0Var3).a.s;
                 j2.a p10 = eVar.p();
-                eVar.q(p10, 1030, new ig.g(p10, exc, 2));
+                eVar.q(p10, 1030, new ig.g(p10, exc, 3));
                 return;
             case 6:
                 s sVar4 = (s) this.b;
@@ -138,7 +137,7 @@ public final /* synthetic */ class f implements Runnable {
                 String str5 = n0.a;
                 j2.e eVar2 = ((d0) m0Var4).a.s;
                 j2.a p11 = eVar2.p();
-                eVar2.q(p11, 1019, new ig.g(p11, str4, 9));
+                eVar2.q(p11, 1019, new ig.g(p11, str4, 10));
                 return;
             case 7:
                 y yVar = (y) this.b;
@@ -152,15 +151,15 @@ public final /* synthetic */ class f implements Runnable {
             case 8:
                 z zVar = (z) this.b;
                 File file = (File) this.c;
-                int i13 = zVar.c;
+                int i12 = zVar.c;
                 try {
                     rLottieNative = RLottieNative.a(file.getAbsolutePath(), null, null, null, 0, null);
                     if (rLottieNative != null) {
                         try {
                             Bitmap.Config config = Bitmap.Config.ARGB_8888;
-                            Bitmap createBitmap = Bitmap.createBitmap(i13, i13, config);
+                            Bitmap createBitmap = Bitmap.createBitmap(i12, i12, config);
                             rLottieNative.c(0, createBitmap, true);
-                            Bitmap createBitmap2 = Bitmap.createBitmap(i13, i13, config);
+                            Bitmap createBitmap2 = Bitmap.createBitmap(i12, i12, config);
                             Paint paint = new Paint(2);
                             paint.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
                             new Canvas(createBitmap2).drawBitmap(createBitmap, 0.0f, 0.0f, paint);
@@ -184,7 +183,7 @@ public final /* synthetic */ class f implements Runnable {
                     th = th3;
                     rLottieNative = null;
                 }
-                AndroidUtilities.runOnUIThread(new f(i10, zVar, bitmap));
+                AndroidUtilities.runOnUIThread(new f(9, zVar, bitmap));
                 return;
             case 9:
                 z zVar2 = (z) this.b;
@@ -228,7 +227,7 @@ public final /* synthetic */ class f implements Runnable {
                     o0Var2.m0 = pointFArr;
                     o0Var2.invalidate();
                 }
-                AndroidUtilities.runOnUIThread(new f(i11, o0Var2, bVar2), r8 != 0 ? 450L : 0L);
+                AndroidUtilities.runOnUIThread(new f(i10, o0Var2, bVar2), r8 != 0 ? 450L : 0L);
                 return;
             case 12:
                 z0.V((z0) this.b, (AnimatorSet) this.c);
@@ -258,7 +257,7 @@ public final /* synthetic */ class f implements Runnable {
                 o0 o0Var3 = (o0) this.c;
                 if (o0.d(z0Var2.getParentActivity())) {
                     o0Var3.e();
-                    ai.d0 d0Var = new ai.d0(i12);
+                    ai.d0 d0Var = new ai.d0(i11);
                     Utilities.Callback callback = new Utilities.Callback() { // from class: ai.s0
                         @Override // org.telegram.messenger.Utilities.Callback
                         public final void run(Object obj) {
@@ -282,12 +281,12 @@ public final /* synthetic */ class f implements Runnable {
                             }
                         }
                     };
-                    aq0 aq0Var = new aq0(10, false, false, null);
-                    aq0Var.G = 1;
-                    aq0Var.H = false;
-                    aq0Var.x = false;
-                    aq0Var.V = new k0(d0Var, z0Var2, callback);
-                    z0Var2.presentFragment(aq0Var);
+                    cq0 cq0Var = new cq0(10, false, false, null);
+                    cq0Var.G = 1;
+                    cq0Var.H = false;
+                    cq0Var.x = false;
+                    cq0Var.V = new k0(d0Var, z0Var2, callback);
+                    z0Var2.presentFragment(cq0Var);
                     return;
                 }
                 return;
@@ -301,7 +300,7 @@ public final /* synthetic */ class f implements Runnable {
                 MediaController.saveFile(file3.getAbsolutePath(), parentActivity, 0, file3.getName(), "image/png", new Utilities.Callback() { // from class: ai.s0
                     @Override // org.telegram.messenger.Utilities.Callback
                     public final void run(Object obj) {
-                        switch (i12) {
+                        switch (i11) {
                             case 0:
                                 String str6 = (String) obj;
                                 z0 z0Var32 = z0Var3;
@@ -341,28 +340,28 @@ public final /* synthetic */ class f implements Runnable {
                     hVar.o = 1.0f;
                     return;
                 }
-                int i14 = (Build.VERSION.SDK_INT >= 29 ? 1 : 0) ^ 1;
+                int i13 = (Build.VERSION.SDK_INT >= 29 ? 1 : 0) ^ 1;
                 if (hVar.o < 1.0f && (gVar = hVar.n) != null) {
                     gVar3 = gVar;
                 }
                 hVar.n = gVar3;
                 hVar.m = gVar2;
                 hVar.o = 0.0f;
-                hVar.q = i14;
+                hVar.q = i13;
                 hVar.p = System.currentTimeMillis();
                 boolean[] zArr = hVar.s;
                 if (zArr != null) {
                     int length = zArr.length;
-                    int i15 = hVar.n.e;
-                    if (length >= i15 * i15) {
+                    int i14 = hVar.n.e;
+                    if (length >= i14 * i14) {
                         Arrays.fill(zArr, false);
-                        hVar.G = i14 == 1;
+                        hVar.G = i13 == 1;
                         return;
                     }
                 }
-                int i16 = hVar.n.e;
-                hVar.s = new boolean[i16 * i16];
-                hVar.G = i14 == 1;
+                int i15 = hVar.n.e;
+                hVar.s = new boolean[i15 * i15];
+                hVar.G = i13 == 1;
                 return;
             case 17:
                 ((Utilities.Callback) this.b).run((ai.g) this.c);
@@ -388,10 +387,10 @@ public final /* synthetic */ class f implements Runnable {
                         int spanEnd = spannableStringBuilder.getSpanEnd(c6Var2);
                         int spanStart = spannableStringBuilder.getSpanStart(c6Var2);
                         uVar.h.getText().delete(spanStart, spanEnd);
-                        int i17 = spanEnd - spanStart;
+                        int i16 = spanEnd - spanStart;
                         q qVar = uVar.h;
                         if (spanEnd <= editTextSelectionEnd) {
-                            editTextSelectionEnd -= i17;
+                            editTextSelectionEnd -= i16;
                         }
                         qVar.setSelection(editTextSelectionEnd);
                         return;
@@ -422,10 +421,10 @@ public final /* synthetic */ class f implements Runnable {
                         int spanEnd2 = spannableStringBuilder2.getSpanEnd(c6Var4);
                         int spanStart2 = spannableStringBuilder2.getSpanStart(c6Var4);
                         uVar3.h.getText().delete(spanStart2, spanEnd2);
-                        int i18 = spanEnd2 - spanStart2;
+                        int i17 = spanEnd2 - spanStart2;
                         q qVar2 = uVar3.h;
                         if (spanEnd2 <= editTextSelectionEnd2) {
-                            editTextSelectionEnd2 -= i18;
+                            editTextSelectionEnd2 -= i17;
                         }
                         qVar2.setSelection(editTextSelectionEnd2);
                         return;
@@ -434,11 +433,11 @@ public final /* synthetic */ class f implements Runnable {
                 return;
             case 24:
                 i0 i0Var = (i0) this.b;
-                fl0 fl0Var = (fl0) this.c;
+                gl0 gl0Var = (gl0) this.c;
                 i0Var.l = true;
                 i0Var.a.invalidate();
-                fl0Var.c1 = false;
-                fl0Var.invalidate();
+                gl0Var.c1 = false;
+                gl0Var.invalidate();
                 i0Var.c(true);
                 return;
             case 25:
@@ -465,12 +464,12 @@ public final /* synthetic */ class f implements Runnable {
             case 27:
                 bi.j0 j0Var2 = (bi.j0) this.b;
                 TLObject tLObject = (TLObject) this.c;
-                int i19 = j0Var2.a;
+                int i18 = j0Var2.a;
                 ArrayList arrayList = j0Var2.e;
                 j0Var2.i = 0;
                 if (tLObject instanceof TL_payments.connectedStarRefBots) {
                     TL_payments.connectedStarRefBots connectedstarrefbots = (TL_payments.connectedStarRefBots) tLObject;
-                    MessagesController.getInstance(i19).putUsers(connectedstarrefbots.users, false);
+                    MessagesController.getInstance(i18).putUsers(connectedstarrefbots.users, false);
                     if (j0Var2.c <= 0) {
                         arrayList.clear();
                     }
@@ -482,16 +481,16 @@ public final /* synthetic */ class f implements Runnable {
                     j0Var2.d = true;
                 }
                 j0Var2.g = false;
-                NotificationCenter.getInstance(i19).lambda$postNotificationNameOnUIThread$1(NotificationCenter.channelConnectedBotsUpdate, Long.valueOf(j0Var2.b));
+                NotificationCenter.getInstance(i18).lambda$postNotificationNameOnUIThread$1(NotificationCenter.channelConnectedBotsUpdate, Long.valueOf(j0Var2.b));
                 return;
             case 28:
                 bi.k0 k0Var = (bi.k0) this.b;
                 TLObject tLObject2 = (TLObject) this.c;
-                int i20 = k0Var.a;
+                int i19 = k0Var.a;
                 ArrayList arrayList2 = k0Var.e;
                 if (tLObject2 instanceof TL_payments.suggestedStarRefBots) {
                     TL_payments.suggestedStarRefBots suggestedstarrefbots = (TL_payments.suggestedStarRefBots) tLObject2;
-                    MessagesController.getInstance(i20).putUsers(suggestedstarrefbots.users, false);
+                    MessagesController.getInstance(i19).putUsers(suggestedstarrefbots.users, false);
                     if (k0Var.c <= 0) {
                         arrayList2.clear();
                     }
@@ -504,7 +503,7 @@ public final /* synthetic */ class f implements Runnable {
                     k0Var.d = true;
                 }
                 k0Var.h = false;
-                NotificationCenter.getInstance(i20).lambda$postNotificationNameOnUIThread$1(NotificationCenter.channelSuggestedBotsUpdate, Long.valueOf(k0Var.b));
+                NotificationCenter.getInstance(i19).lambda$postNotificationNameOnUIThread$1(NotificationCenter.channelSuggestedBotsUpdate, Long.valueOf(k0Var.b));
                 return;
             default:
                 h7.e1((h7) this.b, (TL_stars.TL_payments_uniqueStarGift) this.c);

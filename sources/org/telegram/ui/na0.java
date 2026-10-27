@@ -1,19 +1,20 @@
 package org.telegram.ui;
 
-import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
+import j$.util.function.Consumer$-CC;
+import java.util.function.Consumer;
+import java.util.regex.Pattern;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public final class na0 implements View.OnLayoutChangeListener {
-    public boolean a;
+public final class na0 implements Consumer {
+    @Override // java.util.function.Consumer
+    /* renamed from: accept */
+    public final void x(Object obj) {
+        ((Boolean) obj).getClass();
+        Pattern pattern = LaunchActivity.D1;
+    }
 
-    @Override // android.view.View.OnLayoutChangeListener
-    public final void onLayoutChange(View view, int i10, int i11, int i12, int i13, int i14, int i15, int i16, int i17) {
-        boolean z10 = i13 - i11 > i12 - i10;
-        if (z10 != this.a) {
-            AndroidUtilities.runOnUIThread(new u90(this, 1));
-            this.a = z10;
-        }
+    public /* synthetic */ Consumer andThen(Consumer consumer) {
+        return Consumer$-CC.$default$andThen(this, consumer);
     }
 }

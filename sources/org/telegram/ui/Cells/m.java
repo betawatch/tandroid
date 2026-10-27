@@ -16,9 +16,9 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.gb1;
+import org.telegram.ui.Components.kb1;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class m extends FrameLayout implements GiftAuctionController.OnActiveAuctionsUpdateListeners, org.telegram.ui.ActionBar.p6 {
     public final int a;
@@ -38,16 +38,16 @@ public final class m extends FrameLayout implements GiftAuctionController.OnActi
         s6Var.setTextSize(AndroidUtilities.dp(14.0f));
         s6Var.setTypeface(AndroidUtilities.bold());
         s6Var.setTranslationY(-AndroidUtilities.dp(1.0f));
-        f7.addView(s6Var, gb1.r(-1, 18));
+        f7.addView(s6Var, kb1.r(-1, 18));
         org.telegram.ui.Components.s6 s6Var2 = new org.telegram.ui.Components.s6(activity, false, false, false);
         this.c = s6Var2;
         s6Var2.setTextSize(AndroidUtilities.dp(13.0f));
-        f7.addView(s6Var2, gb1.o(2.0f, 0.0f, 2.0f, 0.0f, -1, 17));
+        f7.addView(s6Var2, kb1.o(2.0f, 0.0f, 2.0f, 0.0f, -1, 17));
         l lVar = new l(activity, i10);
         this.d = lVar;
         lVar.b(299L);
-        addView(f7, gb1.h(-1, -2.0f, 16, 14.0f, 0.0f, 90.0f, 0.0f));
-        addView(lVar, gb1.h(-2, -2.0f, 21, 0.0f, 0.0f, 11.0f, 0.0f));
+        addView(f7, kb1.h(-1, -2.0f, 16, 14.0f, 0.0f, 90.0f, 0.0f));
+        addView(lVar, kb1.h(-2, -2.0f, 21, 0.0f, 0.0f, 11.0f, 0.0f));
         Drawable M0 = org.telegram.ui.ActionBar.y6.M0(false);
         org.telegram.ui.ActionBar.b7 N = org.telegram.ui.ActionBar.f7.N(org.telegram.ui.ActionBar.y6.i6);
         setBackground(M0);

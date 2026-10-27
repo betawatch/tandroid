@@ -6,11 +6,11 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.ak;
+import org.telegram.messenger.bk;
 import org.telegram.ui.ActionBar.u6;
-import org.telegram.ui.Components.k80;
+import org.telegram.ui.Components.l80;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class i4 extends org.telegram.ui.ActionBar.j {
     public final /* synthetic */ org.telegram.ui.ActionBar.w0 a;
@@ -40,13 +40,13 @@ public final class i4 extends org.telegram.ui.ActionBar.j {
             }
             return;
         }
-        k80 k80Var = l4Var.d0;
-        if (k80Var != null) {
-            k80Var.u();
+        l80 l80Var = l4Var.d0;
+        if (l80Var != null) {
+            l80Var.u();
         }
         org.telegram.ui.ActionBar.h3 h3Var = l4Var.container;
         u6Var = ((org.telegram.ui.ActionBar.k3) l4Var).resourcesProvider;
-        k80 F = k80.F(h3Var, u6Var, this.a);
+        l80 F = l80.F(h3Var, u6Var, this.a);
         l4Var.d0 = F;
         i11 = ((org.telegram.ui.ActionBar.k3) l4Var).currentAccount;
         long clientUserId = UserConfig.getInstance(i11).getClientUserId();
@@ -82,16 +82,16 @@ public final class i4 extends org.telegram.ui.ActionBar.j {
             g1Var = null;
             g1Var2 = null;
         }
-        ak akVar = new ak(this, g1Var3, h, h10, h11, h12, canUserDoAction, g1Var, g1Var2, 4);
-        akVar.run();
-        g1Var3.setOnClickListener(new org.telegram.ui.web.c(16, this, akVar));
-        r2.j(h, t9Var, akVar, 1);
-        r2.j(h10, t9Var, akVar, 2);
-        r2.j(h11, t9Var, akVar, 4);
-        r2.j(h12, t9Var, akVar, 8);
+        bk bkVar = new bk(this, g1Var3, h, h10, h11, h12, canUserDoAction, g1Var, g1Var2, 4);
+        bkVar.run();
+        g1Var3.setOnClickListener(new org.telegram.ui.web.c(16, this, bkVar));
+        r2.j(h, t9Var, bkVar, 1);
+        r2.j(h10, t9Var, bkVar, 2);
+        r2.j(h11, t9Var, bkVar, 4);
+        r2.j(h12, t9Var, bkVar, 8);
         if (canUserDoAction) {
-            r2.j(g1Var, t9Var, akVar, 256);
-            r2.j(g1Var2, t9Var, akVar, 512);
+            r2.j(g1Var, t9Var, bkVar, 256);
+            r2.j(g1Var2, t9Var, bkVar, 512);
         }
         F.Y = true;
         F.J = false;

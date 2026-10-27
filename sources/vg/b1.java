@@ -5,9 +5,9 @@ import java.util.List;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.tl.TL_account;
-import org.telegram.ui.Components.cy0;
+import org.telegram.ui.Components.dy0;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class b1 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -44,9 +44,9 @@ public final /* synthetic */ class b1 implements Utilities.Callback {
             default:
                 n1 n1Var2 = this.b;
                 n1Var2.o0 = (String) obj;
-                cy0 cy0Var = n1Var2.w0;
-                AndroidUtilities.cancelRunOnUIThread(cy0Var);
-                AndroidUtilities.runOnUIThread(cy0Var, 350L);
+                dy0 dy0Var = n1Var2.w0;
+                AndroidUtilities.cancelRunOnUIThread(dy0Var);
+                AndroidUtilities.runOnUIThread(dy0Var, 350L);
                 break;
         }
     }

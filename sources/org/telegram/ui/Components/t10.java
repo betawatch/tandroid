@@ -5,9 +5,9 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocationController;
 import org.telegram.messenger.MediaController;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class t10 implements org.telegram.ui.ActionBar.r0, oe.k, org.telegram.ui.ActionBar.b2, dw0 {
+public final /* synthetic */ class t10 implements org.telegram.ui.ActionBar.r0, oe.k, org.telegram.ui.ActionBar.b2, ew0 {
     public final /* synthetic */ FragmentContextView a;
 
     public /* synthetic */ t10(FragmentContextView fragmentContextView) {
@@ -35,7 +35,7 @@ public final /* synthetic */ class t10 implements org.telegram.ui.ActionBar.r0, 
         }
     }
 
-    @Override // org.telegram.ui.Components.dw0
+    @Override // org.telegram.ui.Components.ew0
     public void d(LocationController.SharingLocationInfo sharingLocationInfo) {
         float[] fArr = FragmentContextView.W0;
         this.a.k(sharingLocationInfo);
@@ -64,7 +64,7 @@ public final /* synthetic */ class t10 implements org.telegram.ui.ActionBar.r0, 
     public void h(org.telegram.ui.ActionBar.e2 e2Var, int i10) {
         FragmentContextView fragmentContextView = this.a;
         org.telegram.ui.ActionBar.r2 r2Var = fragmentContextView.h;
-        if (!(r2Var instanceof org.telegram.ui.cy)) {
+        if (!(r2Var instanceof org.telegram.ui.ey)) {
             LocationController.getInstance(r2Var.getCurrentAccount()).removeSharingLocation(fragmentContextView.n.a());
             return;
         }

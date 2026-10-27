@@ -4,12 +4,12 @@ import a1.g;
 import bi.y2;
 import java.io.File;
 import java.nio.ByteBuffer;
-import org.telegram.ui.bc0;
-import org.telegram.ui.io;
+import org.telegram.ui.dc0;
+import org.telegram.ui.ko;
 import ui.i;
 import ui.o;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class b implements Runnable {
     public final /* synthetic */ int a = 1;
@@ -103,9 +103,9 @@ public final /* synthetic */ class b implements Runnable {
                 if (exc3 == null) {
                     o oVar = (o) eVar.c;
                     oVar.a((i) eVar.b, length);
-                    oVar.i.post(new io(eVar, eVar.a, j10, 3));
+                    oVar.i.post(new ko(eVar, eVar.a, j10, 3));
                 } else {
-                    ((o) eVar.c).i.post(new bc0(eVar, eVar.a, exc3, 3));
+                    ((o) eVar.c).i.post(new dc0(eVar, eVar.a, exc3, 3));
                 }
                 dVar.j.quitSafely();
                 dVar.l.clear();

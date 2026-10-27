@@ -10,14 +10,14 @@ import android.widget.FrameLayout;
 import android.widget.TextView;
 import java.util.ArrayList;
 import org.telegram.ui.ActionBar.r2;
-import org.telegram.ui.Components.aw0;
+import org.telegram.ui.Components.bw0;
 import org.telegram.ui.Components.kt;
 import org.telegram.ui.Components.mt;
-import org.telegram.ui.Components.tu0;
+import org.telegram.ui.Components.uu0;
 import org.telegram.ui.Components.voip.q2;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class k0 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -96,10 +96,10 @@ public final class k0 extends AnimatorListenerAdapter {
                 mtVar.A();
                 break;
             case 3:
-                ((aw0) this.e).K1 = false;
+                ((bw0) this.e).K1 = false;
                 View view3 = (View) this.c;
                 if (view3.getParent() != null) {
-                    ((tu0) this.b).removeView(view3);
+                    ((uu0) this.b).removeView(view3);
                     ((Bitmap) this.d).recycle();
                     break;
                 }

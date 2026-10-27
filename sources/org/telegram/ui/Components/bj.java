@@ -3,9 +3,9 @@ package org.telegram.ui.Components;
 import android.content.Context;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public final class bj extends r71 {
+public final class bj extends s71 {
     public final /* synthetic */ fj n3;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -14,22 +14,22 @@ public final class bj extends r71 {
         this.n3 = fjVar;
     }
 
-    @Override // org.telegram.ui.Components.mm0
+    @Override // org.telegram.ui.Components.nm0
     public final boolean E0(float f7) {
         ti tiVar = this.n3.b;
         return f7 >= ((float) ((AndroidUtilities.dp(30.0f) + tiVar.e2[0]) + (!tiVar.g0 ? AndroidUtilities.statusBarHeight : 0)));
     }
 
-    @Override // org.telegram.ui.Components.r71
+    @Override // org.telegram.ui.Components.s71
     public final void I1() {
         fj fjVar = this.n3;
-        fjVar.b.e2(fjVar, 0);
+        fjVar.b.f2(fjVar, 0);
     }
 
-    @Override // org.telegram.ui.Components.mm0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.nm0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
     public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
         super.onLayout(z10, i10, i11, i12, i13);
         fj fjVar = this.n3;
-        fjVar.b.e2(fjVar, 0);
+        fjVar.b.f2(fjVar, 0);
     }
 }

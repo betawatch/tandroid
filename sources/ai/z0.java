@@ -49,14 +49,14 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.ActionBar.r2;
 import org.telegram.ui.ActionBar.y6;
+import org.telegram.ui.Components.aa0;
 import org.telegram.ui.Components.b10;
-import org.telegram.ui.Components.gb1;
-import org.telegram.ui.Components.z90;
+import org.telegram.ui.Components.kb1;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.el0;
+import org.telegram.ui.gl0;
 import org.telegram.ui.y9;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public class z0 extends r2 {
     public boolean E;
@@ -167,15 +167,15 @@ public class z0 extends r2 {
                 viewGroup.removeView(p1Var.w0);
                 ec ecVar2 = new ec(p1Var.getContext(), MediaDataController.MAX_LINKS_COUNT, 2);
                 p1Var.w0 = ecVar2;
-                viewGroup.addView(ecVar2, indexOfChild, gb1.g(-1.0f, -1));
+                viewGroup.addView(ecVar2, indexOfChild, kb1.g(-1.0f, -1));
             }
-            z90 z90Var = p1Var.x0;
-            if (z90Var != null) {
+            aa0 aa0Var = p1Var.x0;
+            if (aa0Var != null) {
                 String string = LocaleController.getString(R.string.Gift2BrowseCollectiblesInfo);
                 zh.u0 u0Var = p1Var.l0;
                 u0Var.setText(string);
                 u0Var.setBreakStrategy(2);
-                z90Var.setVisibility(8);
+                aa0Var.setVisibility(8);
             }
             p1Var.Y.O(false);
         }
@@ -263,7 +263,7 @@ public class z0 extends r2 {
         o0Var.setButtonLabel(LocaleController.getString(R.string.QrScanQr));
         o0 o0Var2 = this.F;
         o0Var2.setOnGallery(new a1.f(14, this, o0Var2));
-        this.f.addView(this.F, gb1.g(-1.0f, -1));
+        this.f.addView(this.F, kb1.g(-1.0f, -1));
     }
 
     public final void c0(float f7, float f10, boolean z10) {
@@ -293,7 +293,7 @@ public class z0 extends r2 {
             this.d.setOnPicksChanged(new t0(this, 1));
             this.x.setOutlineProvider(this.h.getOutlineProvider());
             this.x.setClipToOutline(true);
-            this.f.addView(this.h, gb1.i(-1, -1, 48));
+            this.f.addView(this.h, kb1.i(-1, -1, 48));
             Z();
             this.f.post(new t0(this, 2));
         }
@@ -303,7 +303,7 @@ public class z0 extends r2 {
         int i11 = layoutParams.leftMargin;
         int i12 = layoutParams.rightMargin;
         if (this.x.getParent() == null) {
-            this.f.addView(this.x, gb1.i(-1, -1, 48));
+            this.f.addView(this.x, kb1.i(-1, -1, 48));
         }
         FrameLayout.LayoutParams layoutParams2 = (FrameLayout.LayoutParams) this.x.getLayoutParams();
         if (layoutParams2.height != i10 || layoutParams2.leftMargin != i11 || layoutParams2.rightMargin != i12) {
@@ -435,11 +435,11 @@ public class z0 extends r2 {
             }
         }
         Activity parentActivity = getParentActivity();
-        el0 el0Var = parentActivity instanceof LaunchActivity ? ((LaunchActivity) parentActivity).u1 : null;
-        if (el0Var != null && this.c == null) {
-            org.telegram.ui.f fVar2 = new org.telegram.ui.f(el0Var, 29);
-            el0Var.b.add(fVar2);
-            el0Var.a();
+        gl0 gl0Var = parentActivity instanceof LaunchActivity ? ((LaunchActivity) parentActivity).u1 : null;
+        if (gl0Var != null && this.c == null) {
+            org.telegram.ui.f fVar2 = new org.telegram.ui.f(gl0Var, 29);
+            gl0Var.b.add(fVar2);
+            gl0Var.a();
             this.c = fVar2;
         }
         int i11 = this.currentAccount;
@@ -540,7 +540,7 @@ public class z0 extends r2 {
         this.f = new FrameLayout(context);
         t1 t1Var = new t1(context, this.currentAccount, d1Var2.a, d1Var2.b, d1Var2.c, new rb.c(this, 1));
         this.d = t1Var;
-        this.f.addView(t1Var, gb1.g(-1.0f, -1));
+        this.f.addView(t1Var, kb1.g(-1.0f, -1));
         this.d.setImmediateOnOpen(this.y);
         this.d.setRevealOpening(true);
         if (this.G) {
@@ -606,7 +606,7 @@ public class z0 extends r2 {
             t1Var3.setGiftsOwner(j13);
         }
         if (d1Var2.e) {
-            NotificationCenter.getInstance(i14).addObserver(f1Var2, NotificationCenter.privacyRulesUpdated);
+            NotificationCenter.getInstance(i14).addWeakObserver(f1Var2, NotificationCenter.privacyRulesUpdated);
             if (z11) {
                 TLRPC.TL_exportedContactToken cachedContactToken2 = MessagesController.getInstance(i14).getCachedContactToken();
                 f1Var2.r = cachedContactToken2;
@@ -840,9 +840,9 @@ public class z0 extends r2 {
         h0();
         org.telegram.ui.f fVar = this.c;
         if (fVar != null) {
-            el0 el0Var = (el0) fVar.b;
-            if (el0Var.b.remove(fVar)) {
-                el0Var.a();
+            gl0 gl0Var = (gl0) fVar.b;
+            if (gl0Var.b.remove(fVar)) {
+                gl0Var.a();
             }
             this.c = null;
         }

@@ -3,7 +3,7 @@ package org.telegram.messenger;
 import java.util.ArrayList;
 import org.telegram.ui.Components.ChatActivityEnterView;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class sf implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -27,13 +27,13 @@ public final /* synthetic */ class sf implements Runnable {
     public final void run() {
         switch (this.a) {
             case 0:
-                ((MessagesStorage) this.f).lambda$markMessagesAsDeleted$232(this.e, (ArrayList) this.h, this.b, this.c, this.d);
+                ((MessagesStorage) this.f).lambda$markMessagesAsDeleted$233(this.e, (ArrayList) this.h, this.b, this.c, this.d);
                 break;
             default:
                 ChatActivityEnterView chatActivityEnterView = (ChatActivityEnterView) this.f;
                 CharSequence charSequence = (CharSequence) this.h;
                 chatActivityEnterView.f0 = null;
-                chatActivityEnterView.n0(true);
+                chatActivityEnterView.m0(true);
                 org.telegram.ui.Components.pf pfVar = chatActivityEnterView.E0;
                 if (pfVar != null) {
                     pfVar.setText("");

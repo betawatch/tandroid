@@ -41,10 +41,10 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.Components.RadioButton;
-import org.telegram.ui.Components.gb1;
-import org.telegram.ui.Components.uc0;
+import org.telegram.ui.Components.kb1;
+import org.telegram.ui.Components.vc0;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 class ThemesHorizontalListCell$InnerThemeView extends FrameLayout {
     public static final /* synthetic */ int b0 = 0;
@@ -101,7 +101,7 @@ class ThemesHorizontalListCell$InnerThemeView extends FrameLayout {
         RadioButton radioButton = new RadioButton(context);
         this.a = radioButton;
         radioButton.setSize(AndroidUtilities.dp(20.0f));
-        addView(radioButton, gb1.h(22, 22.0f, 51, 27.0f, 75.0f, 0.0f, 0.0f));
+        addView(radioButton, kb1.h(22, 22.0f, 51, 27.0f, 75.0f, 0.0f, 0.0f));
     }
 
     public final void a() {
@@ -127,9 +127,9 @@ class ThemesHorizontalListCell$InnerThemeView extends FrameLayout {
         if (i11 != 0 && x6Var2.N != 0) {
             int o11 = this.b.o();
             org.telegram.ui.ActionBar.x6 x6Var3 = this.b;
-            uc0 uc0Var = new uc0(true, o11, x6Var3.M, x6Var3.N, x6Var3.O);
-            uc0Var.v(AndroidUtilities.dp(6.0f));
-            this.O = uc0Var;
+            vc0 vc0Var = new vc0(true, o11, x6Var3.M, x6Var3.N, x6Var3.O);
+            vc0Var.v(AndroidUtilities.dp(6.0f));
+            this.O = vc0Var;
             dArr = AndroidUtilities.rgbToHsv(Color.red(this.b.o()), Color.green(this.b.o()), Color.blue(this.b.o()));
         } else if (i11 != 0) {
             GradientDrawable gradientDrawable = new GradientDrawable(GradientDrawable.Orientation.BL_TR, new int[]{this.b.o(), this.b.M});
@@ -159,7 +159,7 @@ class ThemesHorizontalListCell$InnerThemeView extends FrameLayout {
             this.R = true;
         }
         if (this.b.o() == 0 && this.b.T && this.O == null) {
-            uc0 R = org.telegram.ui.ActionBar.y6.R(100, 200);
+            vc0 R = org.telegram.ui.ActionBar.y6.R(100, 200);
             this.O = R;
             R.v(AndroidUtilities.dp(6.0f));
         }

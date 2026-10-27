@@ -1,33 +1,45 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.widget.FrameLayout;
+import java.util.ArrayList;
+import org.telegram.messenger.DialogObject;
+import org.telegram.messenger.MessagesStorage;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public final class yu extends FrameLayout {
-    public org.telegram.ui.ActionBar.r2 a;
-    public FrameLayout b;
-    public org.telegram.ui.ActionBar.k c;
-    public org.telegram.ui.Components.mm0 d;
-    public bi.r1 e;
-    public int f;
-    public final /* synthetic */ zu h;
+public final /* synthetic */ class yu implements xx, ts {
+    public final /* synthetic */ bv a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public yu(zu zuVar, Context context) {
-        super(context);
-        this.h = zuVar;
+    public /* synthetic */ yu(bv bvVar) {
+        this.a = bvVar;
     }
 
-    @Override // android.view.View
-    public final void setTranslationX(float f7) {
-        yu yuVar;
-        super.setTranslationX(f7);
-        zu zuVar = this.h;
-        yu[] yuVarArr = zuVar.f;
-        if (zuVar.n && (yuVar = yuVarArr[0]) == this) {
-            zuVar.e.i(Math.abs(yuVar.getTranslationX()) / yuVarArr[0].getMeasuredWidth(), yuVarArr[1].f);
+    @Override // org.telegram.ui.xx
+    public /* synthetic */ boolean C() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.xx
+    public /* synthetic */ boolean K(ey eyVar) {
+        return false;
+    }
+
+    @Override // org.telegram.ui.ts
+    public void b(TLRPC.User user) {
+        this.a.m0(user);
+    }
+
+    @Override // org.telegram.ui.xx
+    public boolean v(ey eyVar, ArrayList arrayList, CharSequence charSequence, boolean z10, boolean z11, int i10, int i11, cf1 cf1Var) {
+        if (arrayList.isEmpty()) {
+            return true;
         }
+        long j10 = ((MessagesStorage.TopicKey) arrayList.get(0)).dialogId;
+        if (!DialogObject.isUserDialog(j10)) {
+            return true;
+        }
+        bv bvVar = this.a;
+        bvVar.m0(bvVar.getMessagesController().getUser(Long.valueOf(j10)));
+        return true;
     }
 }

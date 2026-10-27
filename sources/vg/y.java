@@ -5,9 +5,9 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.r2;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.un;
+import org.telegram.ui.wn;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class y implements Utilities.Callback {
     public final /* synthetic */ a0 a;
@@ -29,14 +29,14 @@ public final /* synthetic */ class y implements Utilities.Callback {
         a0 a0Var = this.a;
         a0Var.dismiss();
         if (this.b == null) {
-            AndroidUtilities.runOnUIThread(new sg.u(24, a0Var, this.e), 220L);
+            AndroidUtilities.runOnUIThread(new s9.g(25, a0Var, this.e), 220L);
             return;
         }
         r2 U = LaunchActivity.U();
         if (U != null) {
-            un ba2 = un.ba(this.c);
-            ba2.whenFullyVisible(new ag.o0(ba2, this.d, 7));
-            U.presentFragment(ba2);
+            wn ea2 = wn.ea(this.c);
+            ea2.whenFullyVisible(new ag.o0(ea2, this.d, 7));
+            U.presentFragment(ea2);
         }
     }
 }

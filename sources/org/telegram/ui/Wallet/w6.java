@@ -7,10 +7,10 @@ import org.json.JSONObject;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.Components.k80;
+import org.telegram.ui.Components.l80;
 import org.telegram.ui.Wallet.WalletEngine2;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class w6 implements Runnable {
     public final /* synthetic */ int a;
@@ -61,7 +61,7 @@ public final /* synthetic */ class w6 implements Runnable {
                     k0Var.k();
                     k0Var.i();
                     k0Var.g();
-                    l0Var.Q();
+                    l0Var.S();
                     break;
                 }
                 break;
@@ -87,13 +87,13 @@ public final /* synthetic */ class w6 implements Runnable {
                 TL_wallet.walletTransaction wallettransaction2 = (TL_wallet.walletTransaction) this.e;
                 k0 k0Var2 = (k0) this.c;
                 i0Var.close();
-                l0.F("disable backup: fail!");
+                l0.H("disable backup: fail!");
                 wallettransaction2.pending = false;
                 wallettransaction2.failed = true;
                 k0Var2.k();
                 k0Var2.i();
                 k0Var2.g();
-                l0Var3.Q();
+                l0Var3.S();
                 break;
             case 6:
                 e2 e2Var = (e2) this.b;
@@ -101,12 +101,12 @@ public final /* synthetic */ class w6 implements Runnable {
                 k kVar = (k) this.e;
                 TL_wallet.tonConnectSession tonconnectsession = (TL_wallet.tonConnectSession) this.c;
                 l0 l0Var4 = e2Var.b;
-                String s10 = l0Var4.s();
-                byte[] x9 = l0Var4.x();
-                byte[] bArr = x9 == null ? null : (byte[]) x9.clone();
+                String t10 = l0Var4.t();
+                byte[] y3 = l0Var4.y();
+                byte[] bArr = y3 == null ? null : (byte[]) y3.clone();
                 s sVar = new s(6, z1Var, kVar);
-                if (s10 != null && bArr != null) {
-                    l0Var4.y(new h1(e2Var, sVar, tonconnectsession, s10, bArr, z1Var, 3), true, false);
+                if (t10 != null && bArr != null) {
+                    l0Var4.z(new h1(e2Var, sVar, tonconnectsession, t10, bArr, z1Var, 3), true, false);
                     break;
                 } else {
                     sVar.run("Wallet is not ready");
@@ -142,7 +142,7 @@ public final /* synthetic */ class w6 implements Runnable {
                 AndroidUtilities.runOnUIThread(new bi.c3(e2Var2, a2Var, i0Var2, sVar3, jSONObject, h, 23));
                 break;
             case 10:
-                m5.g0((m5) this.b, (LinearLayout) this.d, (l0) this.e, (k80) this.c);
+                m5.g0((m5) this.b, (LinearLayout) this.d, (l0) this.e, (l80) this.c);
                 break;
             case 11:
                 l0 l0Var5 = (l0) this.b;

@@ -4,7 +4,7 @@ import java.util.AbstractSet;
 import java.util.Iterator;
 import java.util.Map;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
 public final class g extends AbstractSet {
     public final /* synthetic */ int a;
@@ -42,7 +42,7 @@ public final class g extends AbstractSet {
                     if (e != -1) {
                         Object[] objArr = iVar.d;
                         objArr.getClass();
-                        if (w7.g5.a(objArr[e], entry.getValue())) {
+                        if (w7.h5.a(objArr[e], entry.getValue())) {
                             return true;
                         }
                     }
@@ -90,7 +90,7 @@ public final class g extends AbstractSet {
                         objArr.getClass();
                         Object[] objArr2 = iVar.d;
                         objArr2.getClass();
-                        int a10 = w7.j0.a(key, value, d, obj2, iArr, objArr, objArr2);
+                        int a10 = w7.d5.a(key, value, d, obj2, iArr, objArr, objArr2);
                         if (a10 != -1) {
                             iVar.b(a10, d);
                             iVar.f--;

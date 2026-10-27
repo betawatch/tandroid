@@ -1,5 +1,6 @@
 package org.telegram.ui.Components;
 
+import android.app.Activity;
 import android.app.Dialog;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
@@ -17,7 +18,7 @@ import org.telegram.messenger.MessagesStorage;
 import org.telegram.messenger.R;
 import org.telegram.ui.Components.ChatActivityEnterView;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class pg implements Runnable {
     public final /* synthetic */ int a;
@@ -161,20 +162,24 @@ public final /* synthetic */ class pg implements Runnable {
                 }
                 break;
             case 19:
-                ((Dialog) obj).dismiss();
+                int i12 = ChatActivityEnterView.r5;
+                AndroidUtilities.unlockOrientation((Activity) obj);
                 break;
             case 20:
-                ChatActivityEnterView chatActivityEnterView2 = ((rf) obj).f;
-                int i12 = ChatActivityEnterView.r5;
-                chatActivityEnterView2.n1();
+                ((Dialog) obj).dismiss();
                 break;
             case 21:
-                ((ah) obj).s = null;
+                ChatActivityEnterView chatActivityEnterView2 = ((rf) obj).f;
+                int i13 = ChatActivityEnterView.r5;
+                chatActivityEnterView2.m1();
                 break;
             case 22:
-                ((gi) obj).q0.D1.l();
+                ((ah) obj).s = null;
                 break;
             case 23:
+                ((gi) obj).q0.D1.l();
+                break;
+            case 24:
                 nk nkVar = (nk) ((androidx.mediarouter.app.g) obj).b;
                 try {
                     File file = nkVar.O;
@@ -189,19 +194,19 @@ public final /* synthetic */ class pg implements Runnable {
                     FileLog.e(e);
                     return;
                 }
-            case 24:
+            case 25:
                 ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout2 = ((jm) obj).b;
                 boolean z10 = ChatAttachAlertPhotoLayout.q1;
-                chatAttachAlertPhotoLayout2.p0(-1, true);
+                chatAttachAlertPhotoLayout2.q0(-1, true);
                 break;
-            case 25:
+            case 26:
                 ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout3 = ((gm) obj).c;
                 if (chatAttachAlertPhotoLayout3.P != null && !chatAttachAlertPhotoLayout3.b.isDismissed()) {
                     chatAttachAlertPhotoLayout3.P.setSystemUiVisibility(1028);
                     break;
                 }
                 break;
-            case 26:
+            case 27:
                 cn cnVar = (cn) obj;
                 ti tiVar = cnVar.b;
                 if (cnVar.Q && (chatAttachAlertPhotoLayout = tiVar.j0) != null) {
@@ -212,16 +217,13 @@ public final /* synthetic */ class pg implements Runnable {
                     break;
                 }
                 break;
-            case 27:
+            case 28:
                 go goVar = (go) obj;
                 goVar.l1 = -1;
                 goVar.k1 = null;
                 break;
-            case 28:
-                ((ap) obj).n();
-                break;
             default:
-                ((cp) obj).setVisibility(8);
+                ((ap) obj).n();
                 break;
         }
     }

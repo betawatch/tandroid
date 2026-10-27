@@ -1,6 +1,6 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class b7 implements org.telegram.ui.ActionBar.g7 {
     public final /* synthetic */ int a;
@@ -35,12 +35,12 @@ public final /* synthetic */ class b7 implements org.telegram.ui.ActionBar.g7 {
                 w0Var.H(org.telegram.ui.ActionBar.y6.w0(org.telegram.ui.ActionBar.y6.G8, yqVar.d0));
                 break;
             case 3:
-                ((nh0) this.b).U();
+                ((oh0) this.b).U();
                 break;
             case 4:
-                ap0 ap0Var = ((ep0) this.b).z0;
-                if (ap0Var != null) {
-                    ap0Var.setTextColor(org.telegram.ui.ActionBar.y6.x0(null, org.telegram.ui.ActionBar.y6.y8, false));
+                bp0 bp0Var = ((fp0) this.b).z0;
+                if (bp0Var != null) {
+                    bp0Var.setTextColor(org.telegram.ui.ActionBar.y6.x0(null, org.telegram.ui.ActionBar.y6.y8, false));
                     break;
                 }
                 break;
@@ -48,10 +48,10 @@ public final /* synthetic */ class b7 implements org.telegram.ui.ActionBar.g7 {
                 ((Runnable) this.b).run();
                 break;
             case 6:
-                ((cz0) this.b).B0(false);
+                ((dz0) this.b).B0(false);
                 break;
             default:
-                ((p61) this.b).d();
+                ((q61) this.b).d();
                 break;
         }
     }

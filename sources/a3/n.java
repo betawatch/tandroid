@@ -30,10 +30,10 @@ import java.util.List;
 import java.util.PriorityQueue;
 import org.telegram.messenger.MediaController;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.zg1;
+import org.telegram.ui.bh1;
 import u2.d1;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
 public final class n extends r2.r {
     public static final int[] S1 = {1920, 1600, 1440, 1280, 960, 854, 640, 540, 480};
@@ -1829,7 +1829,7 @@ public final class n extends r2.r {
         List F0 = F0(context, iVar, xVar, z10, z11);
         HashMap hashMap = r2.w.a;
         ArrayList arrayList = new ArrayList(F0);
-        Collections.sort(arrayList, new p5(new zg1(9, context, xVar), 4));
+        Collections.sort(arrayList, new p5(new bh1(9, context, xVar), 4));
         return arrayList;
     }
 
@@ -3031,7 +3031,7 @@ public final class n extends r2.r {
             if (!F02.isEmpty()) {
                 HashMap hashMap = r2.w.a;
                 ArrayList arrayList = new ArrayList(F02);
-                Collections.sort(arrayList, new p5(new zg1(9, context, xVar), i13));
+                Collections.sort(arrayList, new p5(new bh1(9, context, xVar), i13));
                 r2.o oVar3 = (r2.o) arrayList.get(0);
                 if (oVar3.e(context, xVar) && oVar3.f(xVar)) {
                     i10 = 32;

@@ -10,7 +10,7 @@ import org.telegram.messenger.MediaController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class kb extends tb {
     public final jh.m m0;
@@ -23,10 +23,10 @@ public final class kb extends tb {
         this.m0 = new jh.m();
     }
 
-    @Override // org.telegram.ui.Components.vw0
+    @Override // org.telegram.ui.Components.ww0
     public final void T(Drawable drawable) {
-        if (drawable instanceof org.telegram.ui.Components.uc0) {
-            ((org.telegram.ui.Components.uc0) drawable).p();
+        if (drawable instanceof org.telegram.ui.Components.vc0) {
+            ((org.telegram.ui.Components.vc0) drawable).p();
         }
         jh.m mVar = this.m0;
         hh.a c10 = mVar.c(drawable);
@@ -53,7 +53,7 @@ public final class kb extends tb {
         return true;
     }
 
-    @Override // org.telegram.ui.Components.vw0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.ww0, android.view.ViewGroup, android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
         MessageObject playingMessageObject = MediaController.getInstance().getPlayingMessageObject();
@@ -71,7 +71,7 @@ public final class kb extends tb {
     /* JADX WARN: Removed duplicated region for block: B:23:0x0092  */
     /* JADX WARN: Removed duplicated region for block: B:31:0x00b1  */
     /* JADX WARN: Removed duplicated region for block: B:49:0x0083  */
-    @Override // org.telegram.ui.Components.vw0, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.ww0, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */

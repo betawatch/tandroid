@@ -2,15 +2,15 @@ package org.telegram.ui.Components;
 
 import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class t50 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ boolean[] a;
     public final /* synthetic */ p50 b;
-    public final /* synthetic */ o60 c;
+    public final /* synthetic */ p60 c;
 
-    public t50(o60 o60Var, boolean[] zArr, p50 p50Var) {
-        this.c = o60Var;
+    public t50(p60 p60Var, boolean[] zArr, p50 p50Var) {
+        this.c = p60Var;
         this.a = zArr;
         this.b = p50Var;
     }
@@ -29,8 +29,8 @@ public final class t50 implements ValueAnimator.AnimatorUpdateListener {
             floatValue -= 1.0f;
         }
         float f7 = floatValue * 180.0f;
-        o60 o60Var = this.c;
-        o60Var.h.setRotationY(f7);
-        o60Var.r0.setRotationY(f7);
+        p60 p60Var = this.c;
+        p60Var.f.setRotationY(f7);
+        p60Var.q0.setRotationY(f7);
     }
 }

@@ -35,15 +35,15 @@ import org.telegram.ui.Components.kw;
 import org.telegram.ui.Components.m40;
 import org.telegram.ui.Components.n10;
 import org.telegram.ui.Components.qc;
-import org.telegram.ui.Components.tz0;
-import org.telegram.ui.Components.us0;
-import org.telegram.ui.Components.wp;
+import org.telegram.ui.Components.uz0;
+import org.telegram.ui.Components.vs0;
 import org.telegram.ui.Components.xp;
 import org.telegram.ui.Components.yp;
-import org.telegram.ui.jm;
-import org.telegram.ui.mo;
+import org.telegram.ui.Components.zp;
+import org.telegram.ui.lm;
+import org.telegram.ui.oo;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class n implements Runnable {
     public final /* synthetic */ int a;
@@ -109,12 +109,12 @@ public final /* synthetic */ class n implements Runnable {
                 break;
             case 4:
                 ei.r rVar = (ei.r) obj;
-                us0 us0Var = rVar.W;
+                vs0 vs0Var = rVar.W;
                 if (!z10) {
-                    us0Var.b(rVar.a.E);
+                    vs0Var.b(rVar.a.E);
                     break;
                 } else {
-                    new ei.u(us0Var.a, LocaleController.getString(R.string.ProfileBotPreviewLanguageChoose), new ai.i(us0Var, 14)).show();
+                    new ei.u(vs0Var.a, LocaleController.getString(R.string.ProfileBotPreviewLanguageChoose), new ai.i(vs0Var, 14)).show();
                     break;
                 }
             case 5:
@@ -220,42 +220,42 @@ public final /* synthetic */ class n implements Runnable {
                 qf.d.r((Context) obj, LocaleController.getString(z10 ? R.string.BotMonetizationInfoTONLink : R.string.MonetizationInfoTONLink));
                 break;
             case 24:
-                tz0 tz0Var = ((jm) obj).c.p1;
-                if (tz0Var != null && z10) {
-                    tz0Var.setVisibility(8);
+                uz0 uz0Var = ((lm) obj).c.p1;
+                if (uz0Var != null && z10) {
+                    uz0Var.setVisibility(8);
                     break;
                 }
                 break;
             case 25:
-                mo moVar = (mo) obj;
-                moVar.w0.autotranslation = z10;
-                moVar.getMessagesController().putChat(moVar.w0, false);
+                oo ooVar = (oo) obj;
+                ooVar.w0.autotranslation = z10;
+                ooVar.getMessagesController().putChat(ooVar.w0, false);
                 break;
             case 26:
-                yp ypVar = (yp) obj;
-                wp wpVar = ypVar.h;
-                if (wpVar != null && wpVar.d != null && !ypVar.isDismissed()) {
-                    ypVar.G(z10, true);
-                    if (ypVar.L != null) {
-                        ypVar.O = true;
-                        TLRPC.WallPaper wallPaper = ypVar.A() ? null : ypVar.n.g;
-                        h4 h4Var = ypVar.L.a;
+                zp zpVar = (zp) obj;
+                xp xpVar = zpVar.h;
+                if (xpVar != null && xpVar.d != null && !zpVar.isDismissed()) {
+                    zpVar.G(z10, true);
+                    if (zpVar.L != null) {
+                        zpVar.O = true;
+                        TLRPC.WallPaper wallPaper = zpVar.A() ? null : zpVar.n.g;
+                        h4 h4Var = zpVar.L.a;
                         if (h4Var.a) {
-                            ypVar.n.q(null, wallPaper, false, Boolean.valueOf(z10), false);
+                            zpVar.n.q(null, wallPaper, false, Boolean.valueOf(z10), false);
                         } else {
-                            ypVar.n.q(h4Var, wallPaper, false, Boolean.valueOf(z10), false);
+                            zpVar.n.q(h4Var, wallPaper, false, Boolean.valueOf(z10), false);
                         }
                     }
-                    if (AndroidUtilities.isTablet() && (t10 = yp.t(z10)) != null && t10 != y6.I) {
-                        ypVar.i0 = z10 != ypVar.s;
-                        ypVar.J(t10);
+                    if (AndroidUtilities.isTablet() && (t10 = zp.t(z10)) != null && t10 != y6.I) {
+                        zpVar.i0 = z10 != zpVar.s;
+                        zpVar.J(t10);
                     }
-                    if (wpVar.d != null) {
-                        while (r3 < wpVar.d.size()) {
-                            ((xp) wpVar.d.get(r3)).c = z10 ? 1 : 0;
+                    if (xpVar.d != null) {
+                        while (r3 < xpVar.d.size()) {
+                            ((yp) xpVar.d.get(r3)).c = z10 ? 1 : 0;
                             r3++;
                         }
-                        wpVar.l();
+                        xpVar.l();
                         break;
                     }
                 }

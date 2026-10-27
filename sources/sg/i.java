@@ -11,9 +11,9 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.ds;
 import org.telegram.ui.Components.h6;
-import org.telegram.ui.Components.hl0;
+import org.telegram.ui.Components.il0;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public abstract class i extends FrameLayout {
     public final Paint a;
@@ -55,7 +55,7 @@ public abstract class i extends FrameLayout {
 
     public final void b() {
         j jVar = this.h;
-        hl0 selectionBounds = jVar.getSelectionBounds();
+        il0 selectionBounds = jVar.getSelectionBounds();
         FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) getLayoutParams();
         layoutParams.leftMargin = (int) selectionBounds.a;
         layoutParams.topMargin = (int) selectionBounds.b;
@@ -185,7 +185,7 @@ public abstract class i extends FrameLayout {
                 if (getParent() instanceof d) {
                     ((d) getParent()).invalidate();
                 }
-                if (a11 == 3 && (jVar instanceof c2)) {
+                if (a11 == 3 && (jVar instanceof b2)) {
                     AndroidUtilities.runOnUIThread(eVar, ViewConfiguration.getLongPressTimeout());
                 }
                 z10 = true;

@@ -1,53 +1,89 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
-/* loaded from: classes3.dex */
-public final class ct0 extends g.o {
-    public final /* synthetic */ at0 c;
-    public final /* synthetic */ aw0 d;
+import android.view.View;
+import android.view.accessibility.AccessibilityNodeInfo;
+import java.util.ArrayList;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.FileLoader;
+import org.telegram.messenger.MessageObject;
+import org.telegram.tgnet.TLRPC;
 
-    public ct0(aw0 aw0Var, at0 at0Var) {
-        this.d = aw0Var;
-        this.c = at0Var;
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* loaded from: classes3.dex */
+public final class ct0 extends vz {
+    public final rw0 X;
+    public final /* synthetic */ bt0 Y;
+    public final /* synthetic */ bw0 Z;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ct0(bw0 bw0Var, bt0 bt0Var) {
+        super(100, false);
+        this.Z = bw0Var;
+        this.Y = bt0Var;
+        this.X = new rw0();
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:12:0x003c, code lost:
-    
-        if (r3.h.getAdapter().j(r9) == 2) goto L22;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:4:0x0020, code lost:
-    
-        if (r5.j(r9) == 2) goto L22;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:5:0x0023, code lost:
-    
-        r1 = 1;
-     */
-    @Override // g.o
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final int i(int i10) {
-        aw0 aw0Var = this.d;
-        int[] iArr = aw0Var.o1;
-        ou0 ou0Var = aw0Var.Q;
-        at0 at0Var = this.c;
-        int i11 = iArr[aw0.w0(at0Var.E) ? 1 : 0];
-        s4.h0 adapter = at0Var.h.getAdapter();
-        eu0 eu0Var = aw0Var.J;
-        if (adapter != eu0Var) {
-            if (aw0.w(aw0Var, at0Var.h.getAdapter()) == -1) {
-                if (at0Var.h.getAdapter() != ou0Var) {
-                    i11 = at0Var.w.J;
-                } else if (at0Var.h.getAdapter() == ou0Var && aw0Var.v1[5].a.isEmpty()) {
-                    i11 = at0Var.w.J;
-                } else {
-                    bt0 bt0Var = at0Var.w;
-                    bt0Var.C1();
-                    i11 = bt0Var.R.get(i10);
+    @Override // s4.p0
+    public final int A() {
+        if (this.Y.h.getAdapter() != this.Z.Q) {
+            return 0;
+        }
+        return B();
+    }
+
+    @Override // org.telegram.ui.Components.vz
+    public final rw0 E1(int i10) {
+        int i11;
+        int i12;
+        s4.h0 adapter = this.Y.h.getAdapter();
+        bw0 bw0Var = this.Z;
+        qv0[] qv0VarArr = bw0Var.v1;
+        TLRPC.Document document = (adapter != bw0Var.Q || qv0VarArr[5].a.isEmpty()) ? null : ((MessageObject) qv0VarArr[5].a.get(i10)).getDocument();
+        rw0 rw0Var = this.X;
+        rw0Var.b = 100.0f;
+        rw0Var.a = 100.0f;
+        if (document != null) {
+            TLRPC.PhotoSize closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(document.thumbs, 90);
+            if (closestPhotoSizeWithSize != null && (i11 = closestPhotoSizeWithSize.w) != 0 && (i12 = closestPhotoSizeWithSize.h) != 0) {
+                rw0Var.a = i11;
+                rw0Var.b = i12;
+            }
+            ArrayList<TLRPC.DocumentAttribute> arrayList = document.attributes;
+            for (int i13 = 0; i13 < arrayList.size(); i13++) {
+                TLRPC.DocumentAttribute documentAttribute = arrayList.get(i13);
+                if ((documentAttribute instanceof TLRPC.TL_documentAttributeImageSize) || (documentAttribute instanceof TLRPC.TL_documentAttributeVideo)) {
+                    rw0Var.a = documentAttribute.w;
+                    rw0Var.b = documentAttribute.h;
+                    break;
                 }
             }
         }
-        return Math.min(i11, at0Var.w.J);
+        return rw0Var;
+    }
+
+    @Override // s4.t, s4.p0
+    public final void U(rf.e eVar, s4.b1 b1Var, View view, s0.d dVar) {
+        super.U(eVar, b1Var, view, dVar);
+        AccessibilityNodeInfo accessibilityNodeInfo = dVar.a;
+        AccessibilityNodeInfo.CollectionItemInfo collectionItemInfo = accessibilityNodeInfo.getCollectionItemInfo();
+        ke.c cVar = collectionItemInfo != null ? new ke.c(collectionItemInfo) : null;
+        if (cVar != null) {
+            Object obj = cVar.a;
+            if (((AccessibilityNodeInfo.CollectionItemInfo) obj).isHeading()) {
+                accessibilityNodeInfo.setCollectionItemInfo(AccessibilityNodeInfo.CollectionItemInfo.obtain(((AccessibilityNodeInfo.CollectionItemInfo) obj).getRowIndex(), ((AccessibilityNodeInfo.CollectionItemInfo) obj).getRowSpan(), ((AccessibilityNodeInfo.CollectionItemInfo) obj).getColumnIndex(), ((AccessibilityNodeInfo.CollectionItemInfo) obj).getColumnSpan(), false));
+            }
+        }
+    }
+
+    @Override // s4.c0
+    public final void z0(s4.b1 b1Var, int[] iArr) {
+        super.z0(b1Var, iArr);
+        bt0 bt0Var = this.Y;
+        int i10 = bt0Var.E;
+        if (i10 == 0 || bw0.w0(i10)) {
+            iArr[1] = Math.max(iArr[1], org.telegram.ui.Cells.x7.a(1) * 2);
+        } else if (bt0Var.E == 1) {
+            iArr[1] = Math.max(iArr[1], AndroidUtilities.dp(56.0f) * 2);
+        }
     }
 }

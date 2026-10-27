@@ -1,15 +1,20 @@
 package org.telegram.ui;
 
-import android.app.Activity;
+import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public final class tk extends org.telegram.ui.Components.x51 {
-    public final /* synthetic */ un y;
+public final class tk extends qy {
+    public final /* synthetic */ wn N;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public tk(un unVar, Activity activity, un unVar2, org.telegram.ui.ActionBar.u6 u6Var) {
-        super(activity, u6Var, unVar2);
-        this.y = unVar;
+    public tk(wn wnVar, wn wnVar2, FrameLayout frameLayout, rj rjVar, int i10, long j10, long j11) {
+        super(wnVar2, frameLayout, rjVar, i10, j10, j11);
+        this.N = wnVar;
+    }
+
+    @Override // org.telegram.ui.qy
+    public final void h() {
+        this.N.Lc();
     }
 }

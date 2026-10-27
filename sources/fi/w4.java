@@ -2,17 +2,17 @@ package fi;
 
 import android.view.MotionEvent;
 import android.view.View;
-import org.telegram.ui.Components.ww0;
+import org.telegram.ui.Components.xw0;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class w4 implements View.OnTouchListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ ww0 b;
+    public final /* synthetic */ xw0 b;
 
-    public /* synthetic */ w4(ww0 ww0Var, int i10) {
+    public /* synthetic */ w4(xw0 xw0Var, int i10) {
         this.a = i10;
-        this.b = ww0Var;
+        this.b = xw0Var;
     }
 
     @Override // android.view.View.OnTouchListener
@@ -32,12 +32,12 @@ public final /* synthetic */ class w4 implements View.OnTouchListener {
                 }
                 break;
             default:
-                sg.n0 n0Var = (sg.n0) this.b;
-                n0Var.getClass();
-                if (motionEvent.getActionMasked() == 0 && (o1Var2 = n0Var.G1) != null && o1Var2.isShowing()) {
-                    view.getHitRect(n0Var.I1);
-                    if (!n0Var.I1.contains((int) motionEvent.getX(), (int) motionEvent.getY())) {
-                        n0Var.G1.d(true);
+                sg.m0 m0Var = (sg.m0) this.b;
+                m0Var.getClass();
+                if (motionEvent.getActionMasked() == 0 && (o1Var2 = m0Var.G1) != null && o1Var2.isShowing()) {
+                    view.getHitRect(m0Var.I1);
+                    if (!m0Var.I1.contains((int) motionEvent.getX(), (int) motionEvent.getY())) {
+                        m0Var.G1.d(true);
                         break;
                     }
                 }

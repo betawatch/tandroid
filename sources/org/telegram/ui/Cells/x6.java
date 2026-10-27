@@ -21,10 +21,10 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.ar;
 import org.telegram.ui.Components.ds;
-import org.telegram.ui.Components.gb1;
-import org.telegram.ui.Components.nr0;
+import org.telegram.ui.Components.kb1;
+import org.telegram.ui.Components.or0;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class x6 extends FrameLayout implements org.telegram.ui.ActionBar.p6 {
     public final org.telegram.ui.Components.h6 E;
@@ -83,21 +83,21 @@ public final class x6 extends FrameLayout implements org.telegram.ui.ActionBar.p
         ImageView imageView = new ImageView(context);
         this.h = imageView;
         boolean z12 = LocaleController.isRTL;
-        addView(imageView, gb1.h(46, 46.0f, (z12 ? 5 : 3) | 16, z12 ? 0.0f : 13.0f, 0.0f, z12 ? 13.0f : 0.0f, 0.0f));
+        addView(imageView, kb1.h(46, 46.0f, (z12 ? 5 : 3) | 16, z12 ? 0.0f : 13.0f, 0.0f, z12 ? 13.0f : 0.0f, 0.0f));
         org.telegram.ui.ActionBar.b6 b6Var = new org.telegram.ui.ActionBar.b6(context);
         this.f = b6Var;
         b6Var.setTextSize(16);
         b6Var.setGravity(LocaleController.isRTL ? 5 : 3);
         b6Var.setTypeface(AndroidUtilities.bold());
         boolean z13 = LocaleController.isRTL;
-        addView(b6Var, gb1.h(-1, 20.0f, (z13 ? 5 : 3) | 48, z13 ? 16.0f : 73.0f, 9.33f, z13 ? 73.0f : 16.0f, 0.0f));
+        addView(b6Var, kb1.h(-1, 20.0f, (z13 ? 5 : 3) | 48, z13 ? 16.0f : 73.0f, 9.33f, z13 ? 73.0f : 16.0f, 0.0f));
         org.telegram.ui.ActionBar.b6 b6Var2 = new org.telegram.ui.ActionBar.b6(context);
         this.e = b6Var2;
         b6Var2.setTextSize(14);
         org.telegram.ui.ActionBar.f7.Y(b6Var2, org.telegram.ui.ActionBar.y6.A6, u6Var);
         b6Var2.setGravity(LocaleController.isRTL ? 5 : 3);
         boolean z14 = LocaleController.isRTL;
-        addView(b6Var2, gb1.h(-1, 20.0f, (z14 ? 5 : 3) | 48, z14 ? 16.0f : 73.0f, 33.0f, z14 ? 73.0f : 16.0f, 0.0f));
+        addView(b6Var2, kb1.h(-1, 20.0f, (z14 ? 5 : 3) | 48, z14 ? 16.0f : 73.0f, 33.0f, z14 ? 73.0f : 16.0f, 0.0f));
         b6Var.setTag(Integer.valueOf(z10 ? z11 ? org.telegram.ui.ActionBar.y6.q7 : org.telegram.ui.ActionBar.y6.ri : org.telegram.ui.ActionBar.y6.oi));
         org.telegram.ui.ActionBar.f7.Y(b6Var, z10 ? z11 ? org.telegram.ui.ActionBar.y6.q7 : org.telegram.ui.ActionBar.y6.ri : org.telegram.ui.ActionBar.y6.oi, u6Var);
         if (!z10) {
@@ -126,9 +126,9 @@ public final class x6 extends FrameLayout implements org.telegram.ui.ActionBar.p
                     imageView.setBackgroundDrawable(arVar);
                 } else {
                     this.r = new RectF();
-                    nr0 nr0Var = new nr0(getContext(), z11 ? 5 : 4);
-                    org.telegram.ui.ActionBar.f7.y(this, nr0Var, org.telegram.ui.ActionBar.y6.qi, u6Var, PorterDuff.Mode.MULTIPLY);
-                    ar arVar2 = new ar(i02, nr0Var);
+                    or0 or0Var = new or0(getContext(), z11 ? 5 : 4);
+                    org.telegram.ui.ActionBar.f7.y(this, or0Var, org.telegram.ui.ActionBar.y6.qi, u6Var, PorterDuff.Mode.MULTIPLY);
+                    ar arVar2 = new ar(i02, or0Var);
                     int dp5 = AndroidUtilities.dp(46.0f);
                     int dp6 = AndroidUtilities.dp(46.0f);
                     arVar2.h = dp5;

@@ -16,16 +16,16 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Cells.ab;
 import org.telegram.ui.Components.ka;
-import org.telegram.ui.Components.mm0;
-import org.telegram.ui.Components.sl0;
+import org.telegram.ui.Components.nm0;
+import org.telegram.ui.Components.tl0;
 import org.telegram.ui.Components.yz;
-import org.telegram.ui.a01;
+import org.telegram.ui.c01;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class q7 implements u9 {
-    public final mm0 a;
-    public final a01 b;
+    public final nm0 a;
+    public final c01 b;
     public final int[] c;
     public final boolean d;
     public p7 e;
@@ -35,23 +35,23 @@ public final class q7 implements u9 {
     public boolean r;
     public int s;
 
-    public q7(mm0 mm0Var, boolean z10) {
+    public q7(nm0 nm0Var, boolean z10) {
         this.c = new int[2];
-        this.a = mm0Var;
+        this.a = nm0Var;
         this.d = z10;
         this.b = null;
     }
 
-    public static q7 a(mm0 mm0Var) {
-        return new q7(mm0Var, false);
+    public static q7 a(nm0 nm0Var) {
+        return new q7(nm0Var, false);
     }
 
     @Override // di.u9
     public final void G0(long j10, int i10, s3 s3Var) {
         ArrayList arrayList;
-        mm0 mm0Var = this.a;
-        if (mm0Var != null && (mm0Var.getParent() instanceof r)) {
-            r rVar = (r) mm0Var.getParent();
+        nm0 nm0Var = this.a;
+        if (nm0Var != null && (nm0Var.getParent() instanceof r)) {
+            r rVar = (r) nm0Var.getParent();
             if (rVar.k(j10)) {
                 rVar.b0.add(s3Var);
                 return;
@@ -61,7 +61,7 @@ public final class q7 implements u9 {
             }
         }
         int i11 = 0;
-        if (mm0Var == null || !(mm0Var.getParent() instanceof t5)) {
+        if (nm0Var == null || !(nm0Var.getParent() instanceof t5)) {
             if (this.d) {
                 h7 storiesController = MessagesController.getInstance(UserConfig.selectedAccount).getStoriesController();
                 ArrayList arrayList2 = storiesController.h;
@@ -72,7 +72,7 @@ public final class q7 implements u9 {
             s3Var.run();
             return;
         }
-        t5 t5Var = (t5) mm0Var.getParent();
+        t5 t5Var = (t5) nm0Var.getParent();
         yz yzVar = t5Var.x;
         o5 o5Var = t5Var.w;
         if (o5Var != null && (arrayList = o5Var.c) != null && yzVar != null) {
@@ -100,7 +100,7 @@ public final class q7 implements u9 {
                 int N0 = yzVar.N0();
                 if (i11 < L0 || i11 > N0) {
                     yzVar.h1(i11, AndroidUtilities.dp(60.0f));
-                    mm0Var.post(s3Var);
+                    nm0Var.post(s3Var);
                     return;
                 }
             }
@@ -144,9 +144,9 @@ public final class q7 implements u9 {
         v9Var.b = null;
         v9Var.c = null;
         v9Var.e = null;
-        mm0 mm0Var = this.a;
-        r rVar = (mm0Var == null || !(mm0Var.getParent() instanceof r)) ? null : (r) mm0Var.getParent();
-        ViewGroup viewGroup = (rVar == null || rVar.g()) ? mm0Var : rVar.r;
+        nm0 nm0Var = this.a;
+        r rVar = (nm0Var == null || !(nm0Var.getParent() instanceof r)) ? null : (r) nm0Var.getParent();
+        ViewGroup viewGroup = (rVar == null || rVar.g()) ? nm0Var : rVar.r;
         ViewGroup viewGroup2 = this.b;
         if (viewGroup2 != null) {
             viewGroup = viewGroup2;
@@ -221,11 +221,11 @@ public final class q7 implements u9 {
                         c(v9Var);
                         return true;
                     }
-                } else if ((childAt instanceof org.telegram.ui.Cells.w7) && mm0Var != null) {
+                } else if ((childAt instanceof org.telegram.ui.Cells.w7) && nm0Var != null) {
                     org.telegram.ui.Cells.w7 w7Var = (org.telegram.ui.Cells.w7) childAt;
                     MessageObject messageObject = w7Var.getMessageObject();
                     if ((w7Var.getStyle() == 1 && i11 == 0) || (messageObject != null && messageObject.isStory() && messageObject.getId() == i11 && messageObject.storyItem.dialogId == j10)) {
-                        sl0 fastScroll = mm0Var.getFastScroll();
+                        tl0 fastScroll = nm0Var.getFastScroll();
                         int[] iArr = new int[2];
                         if (fastScroll != null) {
                             fastScroll.getLocationInWindow(iArr);
@@ -331,9 +331,9 @@ public final class q7 implements u9 {
         return false;
     }
 
-    public q7(a01 a01Var) {
+    public q7(c01 c01Var) {
         this.c = new int[2];
-        this.b = a01Var;
+        this.b = c01Var;
         this.a = null;
     }
 }

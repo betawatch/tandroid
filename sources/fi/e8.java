@@ -12,10 +12,10 @@ import android.widget.ImageView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.ea0;
-import org.telegram.ui.Components.gb1;
+import org.telegram.ui.Components.fa0;
+import org.telegram.ui.Components.kb1;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class e8 extends FrameLayout {
     public final Paint a;
@@ -39,11 +39,11 @@ public final class e8 extends FrameLayout {
         imageView.setScaleType(scaleType);
         imageView.setImageResource(R.drawable.filled_link);
         imageView.setColorFilter(new PorterDuffColorFilter(-15033089, PorterDuff.Mode.SRC_IN));
-        addView(imageView, gb1.h(48, 48.0f, 19, 9.0f, 0.0f, 0.0f, 0.0f));
+        addView(imageView, kb1.h(48, 48.0f, 19, 9.0f, 0.0f, 0.0f, 0.0f));
         ImageView imageView2 = new ImageView(context);
         this.c = imageView2;
         imageView2.setBackground(new c8(AndroidUtilities.dp(20.0f), AndroidUtilities.dp(2.4f), -15033089));
-        addView(imageView2, gb1.h(48, 48.0f, 19, 9.0f, 0.0f, 0.0f, 0.0f));
+        addView(imageView2, kb1.h(48, 48.0f, 19, 9.0f, 0.0f, 0.0f, 0.0f));
         org.telegram.ui.Components.s6 s6Var = new org.telegram.ui.Components.s6(context, false, false, false);
         this.d = s6Var;
         s6Var.setTextColor(-15033089);
@@ -51,35 +51,35 @@ public final class e8 extends FrameLayout {
         s6Var.setTypeface(AndroidUtilities.bold());
         s6Var.setEllipsizeByGradient(true);
         s6Var.getDrawable().M = AndroidUtilities.displaySize.x;
-        addView(s6Var, gb1.h(-1, 24.0f, 55, 57.0f, 2.33f, 48.0f, 0.0f));
+        addView(s6Var, kb1.h(-1, 24.0f, 55, 57.0f, 2.33f, 48.0f, 0.0f));
         org.telegram.ui.Components.s6 s6Var2 = new org.telegram.ui.Components.s6(context, false, false, false);
         this.e = s6Var2;
         s6Var2.setTextColor(-8355712);
         s6Var2.setTextSize(AndroidUtilities.dp(14.21f));
         s6Var2.setEllipsizeByGradient(true);
         s6Var2.getDrawable().M = AndroidUtilities.displaySize.x;
-        addView(s6Var2, gb1.h(-1, 24.0f, 55, 57.0f, 20.66f, 48.0f, 0.0f));
+        addView(s6Var2, kb1.h(-1, 24.0f, 55, 57.0f, 20.66f, 48.0f, 0.0f));
         int textColor = s6Var.getTextColor();
         SpannableString spannableString = new SpannableString("x");
         this.h = spannableString;
-        ea0 ea0Var = new ea0(AndroidUtilities.dp(200.0f), s6Var);
-        ea0Var.e = 0.8f;
-        ea0Var.a(org.telegram.ui.ActionBar.y6.o1(0.4f, textColor), org.telegram.ui.ActionBar.y6.o1(0.08f, textColor));
-        spannableString.setSpan(ea0Var, 0, spannableString.length(), 33);
+        fa0 fa0Var = new fa0(AndroidUtilities.dp(200.0f), s6Var);
+        fa0Var.e = 0.8f;
+        fa0Var.a(org.telegram.ui.ActionBar.y6.o1(0.4f, textColor), org.telegram.ui.ActionBar.y6.o1(0.08f, textColor));
+        spannableString.setSpan(fa0Var, 0, spannableString.length(), 33);
         int textColor2 = s6Var2.getTextColor();
         SpannableString spannableString2 = new SpannableString("x");
         this.n = spannableString2;
-        ea0 ea0Var2 = new ea0(AndroidUtilities.dp(140.0f), s6Var2);
-        ea0Var2.e = 0.8f;
-        ea0Var2.a(org.telegram.ui.ActionBar.y6.o1(0.4f, textColor2), org.telegram.ui.ActionBar.y6.o1(0.08f, textColor2));
-        spannableString2.setSpan(ea0Var2, 0, spannableString2.length(), 33);
+        fa0 fa0Var2 = new fa0(AndroidUtilities.dp(140.0f), s6Var2);
+        fa0Var2.e = 0.8f;
+        fa0Var2.a(org.telegram.ui.ActionBar.y6.o1(0.4f, textColor2), org.telegram.ui.ActionBar.y6.o1(0.08f, textColor2));
+        spannableString2.setSpan(fa0Var2, 0, spannableString2.length(), 33);
         ImageView imageView3 = new ImageView(context);
         this.f = imageView3;
         imageView3.setColorFilter(new PorterDuffColorFilter(1694498815, PorterDuff.Mode.MULTIPLY));
         imageView3.setImageResource(R.drawable.input_clear);
         imageView3.setScaleType(scaleType);
         imageView3.setBackground(org.telegram.ui.ActionBar.y6.g0(436207615, 1, AndroidUtilities.dp(18.0f)));
-        addView(imageView3, gb1.h(48, 48.0f, 21, 0.0f, 0.0f, 4.0f, 0.0f));
+        addView(imageView3, kb1.h(48, 48.0f, 21, 0.0f, 0.0f, 4.0f, 0.0f));
     }
 
     @Override // android.view.View

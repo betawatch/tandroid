@@ -12,7 +12,7 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class pu implements ty {
     public final /* synthetic */ ru a;
@@ -57,9 +57,9 @@ public final class pu implements ty {
         if (ruVar.b()) {
             ruVar.x = i10 != 0;
             ruVar.y();
-            vw0 vw0Var = ruVar.f;
-            if (vw0Var != null) {
-                vw0Var.R();
+            ww0 ww0Var = ruVar.f;
+            if (ww0Var != null) {
+                ww0Var.R();
             }
         }
     }
@@ -168,7 +168,7 @@ public final class pu implements ty {
     }
 
     @Override // org.telegram.ui.Components.ty
-    public final /* synthetic */ void o(p61 p61Var) {
+    public final /* synthetic */ void o(q61 q61Var) {
     }
 
     @Override // org.telegram.ui.Components.ty

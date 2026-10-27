@@ -18,16 +18,16 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public final class ov extends lm0 {
+public final class ov extends mm0 {
     public final /* synthetic */ aw c;
 
     public ov(aw awVar) {
         this.c = awVar;
     }
 
-    @Override // org.telegram.ui.Components.lm0
+    @Override // org.telegram.ui.Components.mm0
     public final boolean D(s4.e1 e1Var) {
         return e1Var.f == 1;
     }
@@ -266,10 +266,10 @@ public final class ov extends lm0 {
             TextView textView4 = vvVar.c;
             aw awVar2 = vvVar.x;
             tg.p0 p0Var = vvVar.e;
-            z90 z90Var = vvVar.a;
+            aa0 aa0Var = vvVar.a;
             vvVar.r = tL_messages_stickerSet2;
             if (tL_messages_stickerSet2 == null || tL_messages_stickerSet2.set == null) {
-                z90Var.setText((CharSequence) null);
+                aa0Var.setText((CharSequence) null);
             } else {
                 try {
                     if (aw.V == null) {
@@ -284,7 +284,7 @@ public final class ov extends lm0 {
                         if (charSequence == null) {
                             SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(tL_messages_stickerSet2.set.title);
                             try {
-                                z90Var.setMovementMethod(new yv(0));
+                                aa0Var.setMovementMethod(new yv(0));
                                 r82 = spannableStringBuilder;
                             } catch (Exception e) {
                                 e = e;
@@ -292,7 +292,7 @@ public final class ov extends lm0 {
                                 FileLog.e(e);
                                 if (charSequence == null) {
                                 }
-                                z90Var.setText(charSequence);
+                                aa0Var.setText(charSequence);
                                 textView = vvVar.b;
                                 if (textView != null) {
                                 }
@@ -330,7 +330,7 @@ public final class ov extends lm0 {
                 if (charSequence == null) {
                     charSequence = tL_messages_stickerSet2.set.title;
                 }
-                z90Var.setText(charSequence);
+                aa0Var.setText(charSequence);
             }
             textView = vvVar.b;
             if (textView != null) {
@@ -406,6 +406,6 @@ public final class ov extends lm0 {
             }
             view = view2;
         }
-        return new vl0(view);
+        return new wl0(view);
     }
 }

@@ -7,9 +7,9 @@ import android.view.MotionEvent;
 import android.view.View;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public final class va extends ed0 {
+public final class va extends fd0 {
     public final /* synthetic */ boolean r0;
     public final /* synthetic */ boolean s0;
     public final /* synthetic */ bb t0;
@@ -22,7 +22,7 @@ public final class va extends ed0 {
         this.s0 = z11;
     }
 
-    @Override // org.telegram.ui.Components.vw0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.ww0, android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         bb bbVar = this.t0;
         bbVar.I(canvas, this);
@@ -52,7 +52,7 @@ public final class va extends ed0 {
         return super.drawChild(canvas, view, j10);
     }
 
-    @Override // org.telegram.ui.Components.ed0, android.widget.FrameLayout, android.view.View
+    @Override // org.telegram.ui.Components.fd0, android.widget.FrameLayout, android.view.View
     public final void onMeasure(int i10, int i11) {
         int size = View.MeasureSpec.getSize(i11);
         bb bbVar = this.t0;

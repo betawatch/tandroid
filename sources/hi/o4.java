@@ -25,10 +25,10 @@ import org.telegram.ui.Components.lb;
 import org.telegram.ui.Components.li;
 import org.telegram.ui.Components.ti;
 import org.telegram.ui.Components.wc;
-import org.telegram.ui.un;
-import org.telegram.ui.v21;
+import org.telegram.ui.wn;
+import org.telegram.ui.x21;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class o4 extends li implements NotificationCenter.NotificationCenterDelegate {
     public long E;
@@ -159,7 +159,7 @@ public final class o4 extends li implements NotificationCenter.NotificationCente
     public final void O() {
         ti tiVar = this.b;
         org.telegram.ui.ActionBar.r2 r2Var = tiVar.f0;
-        if ((r2Var instanceof un) && ((un) r2Var).j1.Q() > AndroidUtilities.dp(20.0f)) {
+        if ((r2Var instanceof wn) && ((wn) r2Var).j1.Q() > AndroidUtilities.dp(20.0f)) {
             AndroidUtilities.hideKeyboard(tiVar.f0.getFragmentView());
             AndroidUtilities.runOnUIThread(new f4(this, 1), 250L);
         } else {
@@ -361,7 +361,7 @@ public final class o4 extends li implements NotificationCenter.NotificationCente
         if (i10 == i11) {
             Bundle bundle = new Bundle();
             bundle.putLong("user_id", this.v);
-            tiVar.f0.presentFragment(new un(bundle));
+            tiVar.f0.presentFragment(new wn(bundle));
             tiVar.dismiss();
             return;
         }
@@ -387,7 +387,7 @@ public final class o4 extends li implements NotificationCenter.NotificationCente
                 i12++;
                 TLRPC.TL_attachMenuBot tL_attachMenuBot2 = tL_attachMenuBot;
                 if (tL_attachMenuBot2.bot_id == this.v) {
-                    tiVar.B1(tL_attachMenuBot2, MessagesController.getInstance(this.F).getUser(Long.valueOf(this.v)));
+                    tiVar.C1(tL_attachMenuBot2, MessagesController.getInstance(this.F).getUser(Long.valueOf(this.v)));
                     return;
                 }
             }
@@ -411,8 +411,8 @@ public final class o4 extends li implements NotificationCenter.NotificationCente
                 Context context = getContext();
                 wc wcVar = new wc(lb.a(getContext()), this.a);
                 long j10 = this.v;
-                int i14 = v21.w;
-                v21.N(i13, context, j10, false, false, new ArrayList(), wcVar, null, new byte[0], null, null);
+                int i14 = x21.w;
+                x21.N(i13, context, j10, false, false, new ArrayList(), wcVar, null, new byte[0], null, null);
             }
         }
     }

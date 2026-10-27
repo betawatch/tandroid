@@ -1,61 +1,70 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class nh implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ti b;
-    public final /* synthetic */ boolean c;
+import android.view.KeyEvent;
+import android.widget.LinearLayout;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.Utilities;
 
-    public /* synthetic */ nh(ti tiVar, boolean z10, int i10) {
-        this.a = i10;
-        this.b = tiVar;
-        this.c = z10;
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class nh implements o1.g {
+    public final /* synthetic */ int a = 1;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ float c;
+    public final /* synthetic */ float d;
+    public final /* synthetic */ KeyEvent.Callback e;
+
+    public /* synthetic */ nh(ti tiVar, float f7, float f10, boolean z10) {
+        this.e = tiVar;
+        this.c = f7;
+        this.d = f10;
+        this.b = z10;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // o1.g
+    public final void a(o1.h hVar, float f7, float f10) {
         switch (this.a) {
             case 0:
-                boolean z10 = this.c;
-                ti tiVar = this.b;
-                if (!z10) {
-                    tiVar.f1.setVisibility(8);
-                    break;
-                } else {
-                    tiVar.getClass();
-                    break;
+                ti tiVar = (ti) this.e;
+                LinearLayout linearLayout = tiVar.o1;
+                LinearLayout linearLayout2 = tiVar.q1;
+                float f11 = f7 / 500.0f;
+                ei eiVar = tiVar.e0;
+                li liVar = tiVar.B0;
+                Float valueOf = Float.valueOf(f11);
+                eiVar.getClass();
+                eiVar.a(liVar, valueOf);
+                tiVar.a1.setAlpha(AndroidUtilities.lerp(this.c, this.d, f11));
+                tiVar.f2(tiVar.B0, 0);
+                tiVar.f2(tiVar.C0, 0);
+                if (!(tiVar.C0 instanceof cn) || this.b) {
+                    f11 = 1.0f - f11;
                 }
-            case 1:
-                boolean z11 = this.c;
-                ti tiVar2 = this.b;
-                if (!z11) {
-                    tiVar2.w.setVisibility(8);
-                    break;
-                } else {
-                    tiVar2.getClass();
-                    break;
-                }
-            case 2:
-                boolean z12 = this.c;
-                ti tiVar3 = this.b;
-                if (!z12) {
-                    tiVar3.y.setVisibility(8);
-                    break;
-                } else {
-                    tiVar3.getClass();
-                    break;
-                }
+                float clamp = Utilities.clamp(f11, 1.0f, 0.0f);
+                linearLayout2.setAlpha(clamp);
+                float f12 = 1.0f - clamp;
+                linearLayout.setAlpha(f12);
+                linearLayout.setTranslationX(clamp * (-AndroidUtilities.dp(16.0f)));
+                linearLayout2.setTranslationX(f12 * AndroidUtilities.dp(16.0f));
+                break;
             default:
-                boolean z13 = this.c;
-                ti tiVar4 = this.b;
-                if (!z13) {
-                    tiVar4.getClass();
-                    break;
-                } else {
-                    tiVar4.A1.setVisibility(4);
-                    break;
+                dq0 dq0Var = (dq0) this.e;
+                boolean z10 = this.b;
+                if (z10) {
+                    if (f7 > this.c / 2.0f || !dq0Var.s) {
+                    }
+                } else if (f7 < this.d / 2.0f || !dq0Var.r) {
                 }
+                dq0Var.s = !z10;
+                dq0Var.r = z10;
+                break;
         }
+    }
+
+    public /* synthetic */ nh(dq0 dq0Var, boolean z10, float f7, float f10) {
+        this.e = dq0Var;
+        this.b = z10;
+        this.c = f7;
+        this.d = f10;
     }
 }

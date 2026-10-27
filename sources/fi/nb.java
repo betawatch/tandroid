@@ -6,7 +6,7 @@ import android.view.ViewGroup;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public abstract class nb {
     public float b;
@@ -69,9 +69,9 @@ public abstract class nb {
         lbVar.c.set(q3Var.getX() + currentPeerView.getX() + y9Var.X + x9 + y9Var.v.getLeft(), q3Var.getY() + currentPeerView.getY() + y9Var.W + y3 + y9Var.v.getTop(), (((x9 + y9Var.X) + y9Var.v.getRight()) - (y9Var.v.getWidth() - currentPeerView.getRight())) - (currentPeerView.getWidth() - q3Var.getRight()), (((y3 + y9Var.W) + y9Var.v.getBottom()) - (y9Var.v.getHeight() - currentPeerView.getBottom())) - (currentPeerView.getHeight() - q3Var.getBottom()));
         lbVar.a = 1;
         lbVar.b = AndroidUtilities.dp(8.0f);
-        di.q4 t10 = y9Var.t();
-        if (t10 != null) {
-            lbVar.f = t10.R0;
+        di.q4 u10 = y9Var.u();
+        if (u10 != null) {
+            lbVar.f = u10.R0;
         }
         return lbVar;
     }

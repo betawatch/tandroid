@@ -14,11 +14,11 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.Components.qw0;
+import org.telegram.ui.Components.rw0;
 import org.telegram.ui.Components.wc;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class ga implements Utilities.Callback2 {
     public final /* synthetic */ int a;
@@ -33,7 +33,7 @@ public final /* synthetic */ class ga implements Utilities.Callback2 {
 
     @Override // org.telegram.messenger.Utilities.Callback2
     public final void run(Object obj, Object obj2) {
-        qw0 qw0Var;
+        rw0 rw0Var;
         TLRPC.PhotoSize closestPhotoSizeWithSize;
         int i10 = this.a;
         int i11 = 0;
@@ -116,16 +116,16 @@ public final /* synthetic */ class ga implements Utilities.Callback2 {
                             float f7 = (!(tLObject instanceof TLRPC.Photo) || (closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(((TLRPC.Photo) tLObject).sizes, MediaDataController.MAX_STYLE_RUNS_COUNT)) == null) ? 1.0f : closestPhotoSizeWithSize.w / closestPhotoSizeWithSize.h;
                             if (f7 > 1.0f) {
                                 float floor = (float) Math.floor(Math.max(taVar2.G1, y5Var.getMeasuredWidth()) * 0.5d);
-                                qw0Var = new qw0(floor, floor / f7);
+                                rw0Var = new rw0(floor, floor / f7);
                             } else {
                                 float floor2 = (float) Math.floor(Math.max(taVar2.H1, y5Var.getMeasuredHeight()) * 0.5d);
-                                qw0Var = new qw0(f7 * floor2, floor2);
+                                rw0Var = new rw0(f7 * floor2, floor2);
                             }
-                            sg.z1 z1Var = new sg.z1(taVar2.getContext(), taVar2.c0(), qw0Var, tLObject);
-                            z1Var.setDelegate(taVar2);
-                            y5Var.addView(z1Var);
+                            sg.y1 y1Var = new sg.y1(taVar2.getContext(), taVar2.c0(), rw0Var, tLObject);
+                            y1Var.setDelegate(taVar2);
+                            y5Var.addView(y1Var);
                             taVar2.d0();
-                            taVar2.b0(z1Var);
+                            taVar2.b0(y1Var);
                         }
                         sbVar.e(false);
                     }
@@ -186,7 +186,7 @@ public final /* synthetic */ class ga implements Utilities.Callback2 {
                         while (true) {
                             if (i15 >= arrayList.size()) {
                                 arrayList.add(nftitem2);
-                            } else if (org.telegram.ui.Wallet.l0.a(((TL_wallet.nftItem) arrayList.get(i15)).address, nftitem2.address)) {
+                            } else if (org.telegram.ui.Wallet.l0.b(((TL_wallet.nftItem) arrayList.get(i15)).address, nftitem2.address)) {
                                 arrayList.set(i15, nftitem2);
                             } else {
                                 i15++;

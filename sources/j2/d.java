@@ -7,7 +7,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.ui.ActionBar.b2;
 import org.telegram.ui.ActionBar.e2;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class d implements o, b2, ih.b {
     public final /* synthetic */ int a;
@@ -120,10 +120,6 @@ public final /* synthetic */ class d implements o, b2, ih.b {
         }
     }
 
-    public /* synthetic */ d(a aVar, float f7) {
-        this.a = 24;
-    }
-
     public /* synthetic */ d(a aVar, int i10) {
         this.a = i10;
     }
@@ -132,12 +128,16 @@ public final /* synthetic */ class d implements o, b2, ih.b {
         this.a = i11;
     }
 
+    public /* synthetic */ d(a aVar, int i10, long j10, long j11) {
+        this.a = 13;
+    }
+
     public /* synthetic */ d(a aVar, long j10) {
         this.a = 15;
     }
 
     public /* synthetic */ d(a aVar, p0 p0Var, int i10) {
-        this.a = 23;
+        this.a = 24;
     }
 
     public /* synthetic */ d(a aVar, Object obj, int i10) {

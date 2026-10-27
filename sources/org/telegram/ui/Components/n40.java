@@ -6,7 +6,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class n40 implements Utilities.Callback5, Utilities.Callback5Return {
     public final /* synthetic */ o40 a;
@@ -20,7 +20,7 @@ public final /* synthetic */ class n40 implements Utilities.Callback5, Utilities
         ((Integer) obj3).getClass();
         ((Float) obj4).getClass();
         ((Float) obj5).getClass();
-        int i10 = ((t61) obj).d;
+        int i10 = ((u61) obj).d;
         o40 o40Var = this.a;
         if (i10 == 0) {
             HashtagSearchController.getInstance(o40Var.a).clearHistory();
@@ -38,7 +38,7 @@ public final /* synthetic */ class n40 implements Utilities.Callback5, Utilities
         ((Integer) obj3).getClass();
         ((Float) obj4).getClass();
         ((Float) obj5).getClass();
-        int i10 = ((t61) obj).d;
+        int i10 = ((u61) obj).d;
         boolean z10 = false;
         if (i10 != 0) {
             o40 o40Var = this.a;

@@ -18,16 +18,16 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.Switch;
-import org.telegram.ui.Components.gb1;
-import org.telegram.ui.Components.zp;
+import org.telegram.ui.Components.aq;
+import org.telegram.ui.Components.kb1;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class x extends FrameLayout {
     public final org.telegram.ui.ActionBar.b6 a;
     public final org.telegram.ui.Components.y9 b;
     public final Switch c;
-    public final zp d;
+    public final aq d;
     public final View e;
     public TLRPC.TL_availableReaction f;
     public final boolean h;
@@ -44,30 +44,30 @@ public final class x extends FrameLayout {
         b6Var.setTypeface(AndroidUtilities.bold());
         b6Var.setMaxLines(1);
         b6Var.setMaxLines(1);
-        b6Var.setGravity(16 | gb1.E());
-        addView(b6Var, gb1.m(-2.0f, -2.0f, 8388627, 81.0f, 0.0f, 61.0f, 0.0f));
+        b6Var.setGravity(16 | kb1.E());
+        addView(b6Var, kb1.m(-2.0f, -2.0f, 8388627, 81.0f, 0.0f, 61.0f, 0.0f));
         org.telegram.ui.Components.y9 y9Var = new org.telegram.ui.Components.y9(context);
         this.b = y9Var;
         y9Var.setAspectFit(true);
         y9Var.setLayerNum(1);
-        addView(y9Var, gb1.m(32.0f, 32.0f, 8388627, 23.0f, 0.0f, 0.0f, 0.0f));
+        addView(y9Var, kb1.m(32.0f, 32.0f, 8388627, 23.0f, 0.0f, 0.0f, 0.0f));
         if (z10) {
-            zp zpVar = new zp(context, 26, null);
-            this.d = zpVar;
-            zpVar.setDrawUnchecked(false);
-            zpVar.b(-1, -1, org.telegram.ui.ActionBar.y6.h7);
-            zpVar.setDrawBackgroundAsArc(-1);
-            addView(zpVar, gb1.m(26.0f, 26.0f, 8388629, 0.0f, 0.0f, 22.0f, 0.0f));
+            aq aqVar = new aq(context, 26, null);
+            this.d = aqVar;
+            aqVar.setDrawUnchecked(false);
+            aqVar.b(-1, -1, org.telegram.ui.ActionBar.y6.h7);
+            aqVar.setDrawBackgroundAsArc(-1);
+            addView(aqVar, kb1.m(26.0f, 26.0f, 8388629, 0.0f, 0.0f, 22.0f, 0.0f));
         } else {
             Switch r14 = new Switch(context, null);
             this.c = r14;
             r14.d(org.telegram.ui.ActionBar.y6.M6, org.telegram.ui.ActionBar.y6.N6, org.telegram.ui.ActionBar.y6.Q6, org.telegram.ui.ActionBar.y6.R6);
-            addView(r14, gb1.m(37.0f, 20.0f, 8388629, 0.0f, 0.0f, 22.0f, 0.0f));
+            addView(r14, kb1.m(37.0f, 20.0f, 8388629, 0.0f, 0.0f, 22.0f, 0.0f));
         }
         View view = new View(context);
         this.e = view;
         view.setBackground(org.telegram.ui.ActionBar.y6.M0(false));
-        addView(view, gb1.g(-1.0f, -1));
+        addView(view, kb1.g(-1.0f, -1));
         setWillNotDraw(false);
     }
 
@@ -92,9 +92,9 @@ public final class x extends FrameLayout {
         if (r02 != null) {
             r02.c(z10, z11);
         }
-        zp zpVar = this.d;
-        if (zpVar != null) {
-            zpVar.a(z10, z11);
+        aq aqVar = this.d;
+        if (aqVar != null) {
+            aqVar.a(z10, z11);
         }
     }
 
@@ -116,22 +116,22 @@ public final class x extends FrameLayout {
         accessibilityNodeInfo.setEnabled(true);
         accessibilityNodeInfo.setClickable(true);
         boolean z10 = false;
-        zp zpVar = this.d;
+        aq aqVar = this.d;
         Switch r32 = this.c;
         if (r32 != null) {
             accessibilityNodeInfo.setCheckable(true);
             if (r32 != null) {
                 z10 = r32.h;
-            } else if (zpVar != null) {
-                z10 = zpVar.a.q;
+            } else if (aqVar != null) {
+                z10 = aqVar.a.q;
             }
             accessibilityNodeInfo.setChecked(z10);
             accessibilityNodeInfo.setClassName("android.widget.Switch");
         } else {
             if (r32 != null) {
                 z10 = r32.h;
-            } else if (zpVar != null) {
-                z10 = zpVar.a.q;
+            } else if (aqVar != null) {
+                z10 = aqVar.a.q;
             }
             if (z10) {
                 accessibilityNodeInfo.setSelected(true);
@@ -150,9 +150,9 @@ public final class x extends FrameLayout {
         if (r12 != null) {
             r12.c(z10, false);
         }
-        zp zpVar = this.d;
-        if (zpVar != null) {
-            zpVar.a(z10, false);
+        aq aqVar = this.d;
+        if (aqVar != null) {
+            aqVar.a(z10, false);
         }
     }
 }

@@ -4,7 +4,7 @@ import android.view.SurfaceView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.video.VideoPlayerHolderBase;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class x9 extends VideoPlayerHolderBase {
     public boolean a;
@@ -57,12 +57,12 @@ public final class x9 extends VideoPlayerHolderBase {
                     public final void run() {
                         switch (i11) {
                             case 0:
-                                q4 t10 = this.b.b.t();
-                                if (t10 != null) {
-                                    o4 o4Var = t10.D1;
+                                q4 u10 = this.b.b.u();
+                                if (u10 != null) {
+                                    o4 o4Var = u10.D1;
                                     if (o4Var.a != null) {
                                         StringBuilder sb2 = new StringBuilder("StoryViewer displayed story buffering dialogId=");
-                                        sb2.append(t10.getCurrentPeer());
+                                        sb2.append(u10.getCurrentPeer());
                                         sb2.append(" storyId=");
                                         org.telegram.messenger.t.o(o4Var.a.id, sb2);
                                         break;
@@ -70,12 +70,12 @@ public final class x9 extends VideoPlayerHolderBase {
                                 }
                                 break;
                             default:
-                                q4 t11 = this.b.b.t();
-                                if (t11 != null) {
-                                    o4 o4Var2 = t11.D1;
+                                q4 u11 = this.b.b.u();
+                                if (u11 != null) {
+                                    o4 o4Var2 = u11.D1;
                                     if (o4Var2.a != null) {
                                         StringBuilder sb3 = new StringBuilder("StoryViewer displayed story playing dialogId=");
-                                        sb3.append(t11.getCurrentPeer());
+                                        sb3.append(u11.getCurrentPeer());
                                         sb3.append(" storyId=");
                                         org.telegram.messenger.t.o(o4Var2.a.id, sb3);
                                         break;
@@ -100,12 +100,12 @@ public final class x9 extends VideoPlayerHolderBase {
                     public final void run() {
                         switch (i12) {
                             case 0:
-                                q4 t10 = this.b.b.t();
-                                if (t10 != null) {
-                                    o4 o4Var = t10.D1;
+                                q4 u10 = this.b.b.u();
+                                if (u10 != null) {
+                                    o4 o4Var = u10.D1;
                                     if (o4Var.a != null) {
                                         StringBuilder sb2 = new StringBuilder("StoryViewer displayed story buffering dialogId=");
-                                        sb2.append(t10.getCurrentPeer());
+                                        sb2.append(u10.getCurrentPeer());
                                         sb2.append(" storyId=");
                                         org.telegram.messenger.t.o(o4Var.a.id, sb2);
                                         break;
@@ -113,12 +113,12 @@ public final class x9 extends VideoPlayerHolderBase {
                                 }
                                 break;
                             default:
-                                q4 t11 = this.b.b.t();
-                                if (t11 != null) {
-                                    o4 o4Var2 = t11.D1;
+                                q4 u11 = this.b.b.u();
+                                if (u11 != null) {
+                                    o4 o4Var2 = u11.D1;
                                     if (o4Var2.a != null) {
                                         StringBuilder sb3 = new StringBuilder("StoryViewer displayed story playing dialogId=");
-                                        sb3.append(t11.getCurrentPeer());
+                                        sb3.append(u11.getCurrentPeer());
                                         sb3.append(" storyId=");
                                         org.telegram.messenger.t.o(o4Var2.a.id, sb3);
                                         break;

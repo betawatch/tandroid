@@ -7,11 +7,11 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import java.util.HashSet;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.vh;
+import org.telegram.messenger.wh;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.gb1;
+import org.telegram.ui.Components.kb1;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class ba extends FrameLayout implements org.telegram.ui.ActionBar.p6 {
     public final org.telegram.ui.ActionBar.u6 a;
@@ -25,17 +25,17 @@ public final class ba extends FrameLayout implements org.telegram.ui.ActionBar.p
         org.telegram.ui.Components.y9 y9Var = new org.telegram.ui.Components.y9(context);
         this.b = y9Var;
         y9Var.setRoundRadius(AndroidUtilities.dp(10.0f));
-        addView(y9Var, gb1.h(28, 28.0f, 19, 18.0f, 0.0f, 0.0f, 0.0f));
+        addView(y9Var, kb1.h(28, 28.0f, 19, 18.0f, 0.0f, 0.0f, 0.0f));
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setOrientation(1);
-        addView(linearLayout, gb1.h(-1, -2.0f, 23, 62.0f, 0.0f, 20.0f, 0.0f));
+        addView(linearLayout, kb1.h(-1, -2.0f, 23, 62.0f, 0.0f, 20.0f, 0.0f));
         TextView textView = new TextView(context);
         this.c = textView;
         textView.setTextSize(1, 16.0f);
-        TextView e = vh.e(linearLayout, textView, gb1.o(0.0f, 0.0f, 0.0f, 2.0f, -1, -2), context);
+        TextView e = wh.e(linearLayout, textView, kb1.o(0.0f, 0.0f, 0.0f, 2.0f, -1, -2), context);
         this.d = e;
         e.setTextSize(1, 14.0f);
-        linearLayout.addView(e, gb1.o(0.0f, 0.0f, 0.0f, 0.0f, -1, -2));
+        linearLayout.addView(e, kb1.o(0.0f, 0.0f, 0.0f, 0.0f, -1, -2));
         updateColors();
     }
 

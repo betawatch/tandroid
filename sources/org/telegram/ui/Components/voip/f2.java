@@ -4,11 +4,11 @@ import android.app.Activity;
 import android.content.Context;
 import org.telegram.messenger.AccountInstance;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.v80;
+import org.telegram.ui.Components.w80;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
-public final class f2 extends v80 {
+public final class f2 extends w80 {
     public final /* synthetic */ TLRPC.User c;
     public final /* synthetic */ TLRPC.Chat d;
     public final /* synthetic */ String e;
@@ -37,7 +37,7 @@ public final class f2 extends v80 {
         this.x = z13;
     }
 
-    @Override // org.telegram.ui.Components.v80
+    @Override // org.telegram.ui.Components.w80
     public final void m() {
         g2.b(this.c, this.d, this.e, this.f, false, this.h, this.n, this.r, this.s, this.v, this.w, false, true, this.x);
     }

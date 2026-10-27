@@ -14,7 +14,7 @@ import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class zh implements org.telegram.ui.web.g0 {
     public ValueAnimator a;
@@ -81,7 +81,7 @@ public final class zh implements org.telegram.ui.web.g0 {
         org.telegram.ui.ActionBar.r2 r2Var = tiVar.f0;
         boolean z10 = tLObject instanceof TLRPC.TL_payments_paymentFormStars;
         hi.o4 o4Var = this.b;
-        org.telegram.ui.po0 po0Var = null;
+        org.telegram.ui.ro0 ro0Var = null;
         if (z10) {
             org.telegram.ui.ActionBar.e2 e2Var = new org.telegram.ui.ActionBar.e2(tiVar.getContext(), 3, null);
             e2Var.r(150L);
@@ -92,21 +92,21 @@ public final class zh implements org.telegram.ui.web.g0 {
         if (tLObject instanceof TLRPC.PaymentForm) {
             TLRPC.PaymentForm paymentForm = (TLRPC.PaymentForm) tLObject;
             MessagesController.getInstance(i10).putUsers(paymentForm.users, false);
-            po0Var = new org.telegram.ui.po0(paymentForm, null, str, r2Var);
+            ro0Var = new org.telegram.ui.ro0(paymentForm, null, str, r2Var);
         } else if (tLObject instanceof TLRPC.PaymentReceipt) {
-            po0Var = new org.telegram.ui.po0((TLRPC.PaymentReceipt) tLObject);
+            ro0Var = new org.telegram.ui.ro0((TLRPC.PaymentReceipt) tLObject);
         }
-        if (po0Var != null) {
+        if (ro0Var != null) {
             o4Var.J();
             AndroidUtilities.hideKeyboard(o4Var);
             Activity parentActivity = r2Var.getParentActivity();
             int i11 = ti.N2;
-            sd0 sd0Var = new sd0(parentActivity);
-            sd0Var.show();
-            po0Var.Z0 = new androidx.car.app.utils.a(sd0Var, o4Var, str, 25);
+            td0 td0Var = new td0(parentActivity);
+            td0Var.show();
+            ro0Var.Z0 = new androidx.car.app.utils.a(td0Var, o4Var, str, 25);
             u6Var = ((org.telegram.ui.ActionBar.k3) tiVar).resourcesProvider;
-            po0Var.Y0 = u6Var;
-            sd0Var.c(po0Var);
+            ro0Var.Y0 = u6Var;
+            td0Var.c(ro0Var);
         }
     }
 
@@ -225,8 +225,8 @@ public final class zh implements org.telegram.ui.web.g0 {
         ti tiVar = this.e;
         if (isEmpty) {
             org.telegram.ui.ActionBar.r2 r2Var = tiVar.f0;
-            if (r2Var instanceof org.telegram.ui.un) {
-                ((org.telegram.ui.un) r2Var).Y.setFieldText("@" + UserObject.getPublicUsername(user) + " " + str);
+            if (r2Var instanceof org.telegram.ui.wn) {
+                ((org.telegram.ui.wn) r2Var).Y.setFieldText("@" + UserObject.getPublicUsername(user) + " " + str);
             }
             tiVar.dismiss(true);
             return;
@@ -240,13 +240,13 @@ public final class zh implements org.telegram.ui.web.g0 {
         bundle.putBoolean("allowUsers", arrayList.contains("users"));
         bundle.putBoolean("allowChannels", arrayList.contains("channels"));
         bundle.putBoolean("allowBots", arrayList.contains("bots"));
-        org.telegram.ui.cy cyVar = new org.telegram.ui.cy(bundle);
+        org.telegram.ui.ey eyVar = new org.telegram.ui.ey(bundle);
         Context context = tiVar.getContext();
         int i10 = ti.N2;
-        sd0 sd0Var = new sd0(context);
-        cyVar.C2 = new a1.d(this, user, str, sd0Var, 9);
-        sd0Var.show();
-        sd0Var.c(cyVar);
+        td0 td0Var = new td0(context);
+        eyVar.C2 = new a1.d(this, user, str, td0Var, 9);
+        td0Var.show();
+        td0Var.c(eyVar);
     }
 
     @Override // org.telegram.ui.web.g0

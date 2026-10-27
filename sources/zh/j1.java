@@ -18,13 +18,13 @@ import org.telegram.ui.ActionBar.y6;
 import org.telegram.ui.Components.cr;
 import org.telegram.ui.Components.ds;
 import org.telegram.ui.Components.h6;
-import org.telegram.ui.Components.q11;
+import org.telegram.ui.Components.r11;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public class j1 extends cr {
-    public q11 c;
-    public q11 d;
+    public r11 c;
+    public r11 d;
     public final h6 e;
     public final Path f;
     public final Path h;
@@ -83,15 +83,15 @@ public class j1 extends cr {
         path.close();
     }
 
-    public final void c(Canvas canvas, q11 q11Var, float f7) {
+    public final void c(Canvas canvas, r11 r11Var, float f7) {
         canvas.save();
         canvas.translate(f7, f7);
         float width = (getBounds().width() / 2.0f) + AndroidUtilities.dp(this.w ? -7.0f : 6.0f);
         float height = (getBounds().height() / 2.0f) - AndroidUtilities.dp(this.w ? 5.0f : 6.0f);
         canvas.rotate(this.w ? -45.0f : 45.0f, width, height);
-        float min = Math.min(1.0f, AndroidUtilities.dp(40.0f) / q11Var.c);
+        float min = Math.min(1.0f, AndroidUtilities.dp(40.0f) / r11Var.c);
         canvas.scale(min, min, width, height);
-        q11Var.c(width - (q11Var.l() / 2.0f), height + AndroidUtilities.dp(1.0f), 1.0f, this.x, canvas);
+        r11Var.c(width - (r11Var.l() / 2.0f), height + AndroidUtilities.dp(1.0f), 1.0f, this.x, canvas);
         canvas.restore();
     }
 
@@ -159,20 +159,20 @@ public class j1 extends cr {
     public final void f(int i10, CharSequence charSequence, boolean z10) {
         this.d = null;
         this.e.d(1.0f, true);
-        this.c = new q11(charSequence, i10, z10 ? AndroidUtilities.bold() : null);
+        this.c = new r11(charSequence, i10, z10 ? AndroidUtilities.bold() : null);
         invalidateSelf();
     }
 
     public final void g(int i10, String str) {
-        q11 q11Var = this.c;
-        if (q11Var == null) {
+        r11 r11Var = this.c;
+        if (r11Var == null) {
             f(i10, str, true);
         } else {
-            if (TextUtils.equals(q11Var.k(), str)) {
+            if (TextUtils.equals(r11Var.k(), str)) {
                 return;
             }
             this.d = this.c;
-            this.c = new q11(str, i10, AndroidUtilities.bold());
+            this.c = new r11(str, i10, AndroidUtilities.bold());
             this.e.d(0.0f, true);
             invalidateSelf();
         }

@@ -8,11 +8,11 @@ import android.view.ViewParent;
 import android.widget.FrameLayout;
 import android.widget.ScrollView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.vh;
+import org.telegram.messenger.wh;
 import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.Components.k80;
+import org.telegram.ui.Components.l80;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class y5 extends w0 {
     public boolean A0;
@@ -134,7 +134,7 @@ public final class y5 extends w0 {
                 popupLayout.setTranslationY(0.0f);
                 popupLayout.setAlpha(1.0f);
                 f7.e0(popupLayout, false);
-                k80.U(popupLayout, y6.o1(0.06f, y6.w0(y6.E8, menuOverlay.a.a)));
+                l80.U(popupLayout, y6.o1(0.06f, y6.w0(y6.E8, menuOverlay.a.a)));
                 popupLayout.f();
                 if (popupLayout.getSwipeBack() != null) {
                     popupLayout.getSwipeBack().b(false);
@@ -152,7 +152,7 @@ public final class y5 extends w0 {
                     if (bVar != null) {
                         dVar = bVar.c(menuOverlay, null, false);
                         dVar.v(r5Var.M);
-                        vh.s(dVar, AndroidUtilities.dp(23.0f), 6.0f);
+                        wh.s(dVar, AndroidUtilities.dp(23.0f), 6.0f);
                     }
                     menuOverlay.d = dVar;
                     menuOverlay.e = r5Var;

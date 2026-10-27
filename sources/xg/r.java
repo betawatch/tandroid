@@ -18,33 +18,33 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.messenger.vh;
+import org.telegram.messenger.wh;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.f7;
 import org.telegram.ui.ActionBar.u6;
 import org.telegram.ui.ActionBar.y6;
+import org.telegram.ui.Components.aa0;
 import org.telegram.ui.Components.ds;
-import org.telegram.ui.Components.gb1;
-import org.telegram.ui.Components.w90;
-import org.telegram.ui.Components.z90;
+import org.telegram.ui.Components.kb1;
+import org.telegram.ui.Components.x90;
 import tg.w1;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class r extends FrameLayout {
     public final qd a;
     public final o b;
     public final TextView c;
-    public final z90 d;
+    public final aa0 d;
     public final u6 e;
-    public final w90 f;
+    public final x90 f;
     public final Paint[] h;
     public ValueAnimator n;
 
     public r(Context context, u6 u6Var) {
         super(context);
         this.e = u6Var;
-        LinearLayout d = vh.d(context, 1);
+        LinearLayout d = wh.d(context, 1);
         qd qdVar = new qd(context, 1, 0, 4);
         this.a = qdVar;
         Bitmap createBitmap = Bitmap.createBitmap(50, 50, Bitmap.Config.ARGB_8888);
@@ -56,7 +56,7 @@ public final class r extends FrameLayout {
         gVar.z = i10;
         gVar.A = y6.Lj;
         gVar.b();
-        d.addView(qdVar, gb1.u(160, 160, 1));
+        d.addView(qdVar, kb1.u(160, 160, 1));
         o oVar = new o(this, context);
         this.b = oVar;
         this.h = new Paint[20];
@@ -71,24 +71,24 @@ public final class r extends FrameLayout {
         qdVar.setStarParticlesView(oVar);
         TextView textView = new TextView(context);
         this.c = textView;
-        vh.j(22.0f, 1, textView);
+        wh.j(22.0f, 1, textView);
         int i11 = y6.G6;
         f7.V(textView, i11, u6Var);
         textView.setGravity(1);
-        d.addView(textView, gb1.x(-2, -2, 1, 24, -8, 24, 0));
-        w90 w90Var = new w90(this);
-        this.f = w90Var;
-        z90 z90Var = new z90(context, w90Var, u6Var);
-        this.d = z90Var;
-        z90Var.setTextSize(1, 15.0f);
-        z90Var.setGravity(17);
-        f7.V(z90Var, i11, u6Var);
-        z90Var.setMovementMethod(LinkMovementMethod.getInstance());
-        f7.H(z90Var, y6.J6, u6Var);
-        z90Var.setImportantForAccessibility(2);
-        d.addView(z90Var, gb1.h(-1, -2.0f, 17, 24.0f, 8.0f, 24.0f, 18.0f));
+        d.addView(textView, kb1.x(-2, -2, 1, 24, -8, 24, 0));
+        x90 x90Var = new x90(this);
+        this.f = x90Var;
+        aa0 aa0Var = new aa0(context, x90Var, u6Var);
+        this.d = aa0Var;
+        aa0Var.setTextSize(1, 15.0f);
+        aa0Var.setGravity(17);
+        f7.V(aa0Var, i11, u6Var);
+        aa0Var.setMovementMethod(LinkMovementMethod.getInstance());
+        f7.H(aa0Var, y6.J6, u6Var);
+        aa0Var.setImportantForAccessibility(2);
+        d.addView(aa0Var, kb1.h(-1, -2.0f, 17, 24.0f, 8.0f, 24.0f, 18.0f));
         setClipChildren(false);
-        addView(oVar, gb1.i(-1, 234, 48));
+        addView(oVar, kb1.i(-1, 234, 48));
         addView(d);
         setWillNotDraw(false);
     }
@@ -115,12 +115,12 @@ public final class r extends FrameLayout {
     @Override // android.view.View
     public final void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-        w90 w90Var = this.f;
-        if (w90Var != null) {
+        x90 x90Var = this.f;
+        if (x90Var != null) {
             canvas.save();
-            z90 z90Var = this.d;
-            canvas.translate(z90Var.getLeft(), z90Var.getTop());
-            if (w90Var.f(canvas)) {
+            aa0 aa0Var = this.d;
+            canvas.translate(aa0Var.getLeft(), aa0Var.getTop());
+            if (x90Var.f(canvas)) {
                 invalidate();
             }
             canvas.restore();
@@ -146,9 +146,9 @@ public final class r extends FrameLayout {
         f7.i(i10, this, u6Var);
         this.c.setText(LocaleController.formatString("BoostingBoostsViaGifts", R.string.BoostingBoostsViaGifts, new Object[0]));
         String formatString = LocaleController.formatString(ChatObject.isChannelAndNotMegaGroup(chat) ? R.string.BoostingGetMoreBoost2 : R.string.BoostingGetMoreBoostGroup, new Object[0]);
-        z90 z90Var = this.d;
-        z90Var.setText(formatString);
-        f7.V(z90Var, y6.r5, u6Var);
+        aa0 aa0Var = this.d;
+        aa0Var.setText(formatString);
+        f7.V(aa0Var, y6.r5, u6Var);
     }
 
     public void setPaused(boolean z10) {

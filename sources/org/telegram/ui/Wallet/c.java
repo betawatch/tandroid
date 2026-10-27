@@ -20,9 +20,9 @@ import org.telegram.messenger.WebFile;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.Components.gb1;
+import org.telegram.ui.Components.kb1;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class c extends FrameLayout implements org.telegram.ui.ActionBar.p6 {
     public final org.telegram.ui.ActionBar.u6 a;
@@ -42,11 +42,11 @@ public final class c extends FrameLayout implements org.telegram.ui.ActionBar.p6
         org.telegram.ui.Components.y9 y9Var = new org.telegram.ui.Components.y9(context);
         this.b = y9Var;
         y9Var.setRoundRadius(AndroidUtilities.dp(8.0f));
-        addView(y9Var, gb1.h(46, 46.0f, 19, 15.0f, 0.0f, 0.0f, 0.0f));
+        addView(y9Var, kb1.h(46, 46.0f, 19, 15.0f, 0.0f, 0.0f, 0.0f));
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setOrientation(1);
         linearLayout.setGravity(16);
-        addView(linearLayout, gb1.h(-1, -1.0f, 119, 71.0f, 0.0f, 20.0f, 0.0f));
+        addView(linearLayout, kb1.h(-1, -1.0f, 119, 71.0f, 0.0f, 20.0f, 0.0f));
         TextView textView = new TextView(context);
         this.c = textView;
         textView.setSingleLine(true);
@@ -56,7 +56,7 @@ public final class c extends FrameLayout implements org.telegram.ui.ActionBar.p6
         textView.setGravity(16);
         textView.setTextSize(1, 16.0f);
         textView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
-        linearLayout.addView(textView, gb1.r(-1, 20));
+        linearLayout.addView(textView, kb1.r(-1, 20));
         TextView textView2 = new TextView(context);
         this.d = textView2;
         textView2.setSingleLine(true);
@@ -64,7 +64,7 @@ public final class c extends FrameLayout implements org.telegram.ui.ActionBar.p6
         textView2.setIncludeFontPadding(false);
         textView2.setGravity(16);
         textView2.setTextSize(1, 14.0f);
-        linearLayout.addView(textView2, gb1.o(0.0f, 2.0f, 0.0f, 0.0f, -1, 18));
+        linearLayout.addView(textView2, kb1.o(0.0f, 2.0f, 0.0f, 0.0f, -1, 18));
         updateColors();
     }
 
@@ -100,7 +100,7 @@ public final class c extends FrameLayout implements org.telegram.ui.ActionBar.p6
             return;
         }
         this.f = z10;
-        FrameLayout.LayoutParams h = z10 ? gb1.h(-1, -1.0f, 119, 3.33f, 4.0f, 3.33f, 4.0f) : gb1.h(46, 46.0f, 19, 15.0f, 0.0f, 0.0f, 0.0f);
+        FrameLayout.LayoutParams h = z10 ? kb1.h(-1, -1.0f, 119, 3.33f, 4.0f, 3.33f, 4.0f) : kb1.h(46, 46.0f, 19, 15.0f, 0.0f, 0.0f, 0.0f);
         org.telegram.ui.Components.y9 y9Var = this.b;
         y9Var.setLayoutParams(h);
         y9Var.setRoundRadius(AndroidUtilities.dp(z10 ? 11.0f : 8.0f));

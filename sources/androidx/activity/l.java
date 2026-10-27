@@ -31,7 +31,7 @@ import java.util.concurrent.CopyOnWriteArraySet;
 import java.util.concurrent.atomic.AtomicInteger;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
 public abstract class l extends e0.e implements u0, androidx.lifecycle.i, t4.e {
     public final CopyOnWriteArrayList E;
@@ -411,8 +411,8 @@ public abstract class l extends e0.e implements u0, androidx.lifecycle.i, t4.e {
     @Override // android.app.Activity
     public final void reportFullyDrawn() {
         try {
-            if (w7.a0.b()) {
-                w7.a0.a("reportFullyDrawn() for ComponentActivity");
+            if (w7.b0.b()) {
+                w7.b0.a("reportFullyDrawn() for ComponentActivity");
             }
             super.reportFullyDrawn();
             n nVar = this.s;

@@ -8,10 +8,10 @@ import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.util.HashMap;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
 public final class na implements ka {
-    public final s9.n a;
+    public final s9.o a;
     public final ja b;
 
     public na(Context context, ja jaVar) {
@@ -20,9 +20,9 @@ public final class na implements ka {
         m5.t.b(context);
         m5.r c10 = m5.t.a().c(aVar);
         if (k5.a.d.contains(new j5.c("json"))) {
-            new s9.n(new og(c10, 4));
+            new s9.o(new og(c10, 4));
         }
-        this.a = new s9.n(new og(c10, 5));
+        this.a = new s9.o(new og(c10, 5));
     }
 
     @Override // x7.ka
@@ -42,7 +42,7 @@ public final class na implements ka {
         try {
             qa.b();
             l7 l7Var = new l7(dVar2);
-            s4.d dVar3 = new s4.d(11);
+            s4.d dVar3 = new s4.d(12);
             qaVar.a(dVar3);
             HashMap hashMap = new HashMap((HashMap) dVar3.b);
             HashMap hashMap2 = new HashMap((HashMap) dVar3.c);

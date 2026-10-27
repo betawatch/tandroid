@@ -12,7 +12,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public class p6 extends FrameLayout implements org.telegram.ui.ActionBar.p6 {
     public final k0 a;
@@ -26,7 +26,7 @@ public class p6 extends FrameLayout implements org.telegram.ui.ActionBar.p6 {
         int i10 = org.telegram.ui.ActionBar.y6.Oh;
         k0Var.setBackground(org.telegram.ui.ActionBar.o6.f(new float[]{24.0f}, i10));
         k0Var.setImportantForAccessibility(1);
-        org.telegram.ui.Components.gb1.c(k0Var, 0.02f, 1.2f);
+        org.telegram.ui.Components.kb1.c(k0Var, 0.02f, 1.2f);
         if (LocaleController.isRTL) {
             TextView textView = new TextView(context);
             textView.setText(LocaleController.getString(R.string.ClearCache));
@@ -34,7 +34,7 @@ public class p6 extends FrameLayout implements org.telegram.ui.ActionBar.p6 {
             textView.setTextSize(1, 14.0f);
             textView.setTypeface(AndroidUtilities.bold());
             org.telegram.ui.ActionBar.f7.V(textView, org.telegram.ui.ActionBar.y6.Sh, null);
-            k0Var.addView(textView, org.telegram.ui.Components.gb1.i(-2, -1, 17));
+            k0Var.addView(textView, org.telegram.ui.Components.kb1.i(-2, -1, 17));
         }
         org.telegram.ui.Components.r6 r6Var = new org.telegram.ui.Components.r6(true, true, true);
         this.b = r6Var;
@@ -56,7 +56,7 @@ public class p6 extends FrameLayout implements org.telegram.ui.ActionBar.p6 {
         r6Var2.u(org.telegram.ui.ActionBar.y6.v(org.telegram.ui.ActionBar.y6.x0(null, i10, false), org.telegram.ui.ActionBar.y6.o1(0.7f, org.telegram.ui.ActionBar.y6.x0(null, i11, false))));
         r6Var2.t("", true, true);
         k0Var.setContentDescription(TextUtils.concat(r6Var.i, "\t", r6Var2.i));
-        addView(k0Var, org.telegram.ui.Components.gb1.h(-1, 48.0f, 119, 16.0f, 16.0f, 16.0f, 16.0f));
+        addView(k0Var, org.telegram.ui.Components.kb1.h(-1, 48.0f, 119, 16.0f, 16.0f, 16.0f, 16.0f));
     }
 
     public final void a(long j10, boolean z10) {

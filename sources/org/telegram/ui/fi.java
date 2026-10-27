@@ -1,88 +1,71 @@
 package org.telegram.ui;
 
-import android.graphics.Rect;
-import android.view.MotionEvent;
 import android.view.View;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.VideoEditedInfo;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public final class fi implements View.OnTouchListener {
-    public final /* synthetic */ int a;
-    public final int[] b;
-    public final /* synthetic */ Rect c;
-    public final /* synthetic */ Object d;
+public final class fi extends iu0 {
+    public final /* synthetic */ wn a;
 
-    public fi(v50 v50Var, Rect rect) {
-        this.a = 1;
-        this.d = v50Var;
-        this.c = rect;
-        this.b = new int[2];
+    public fi(wn wnVar) {
+        this.a = wnVar;
     }
 
-    @Override // android.view.View.OnTouchListener
-    public final boolean onTouch(View view, MotionEvent motionEvent) {
-        v40 v40Var;
-        switch (this.a) {
-            case 0:
-                un unVar = (un) this.d;
-                if (motionEvent.getActionMasked() != 0) {
-                    if (motionEvent.getActionMasked() == 4) {
-                        unVar.H7(true);
-                        break;
-                    }
-                } else {
-                    org.telegram.ui.ActionBar.o1 o1Var = unVar.c9;
-                    if (o1Var != null && o1Var.isShowing()) {
-                        View contentView = unVar.c9.getContentView();
-                        int[] iArr = this.b;
-                        contentView.getLocationInWindow(iArr);
-                        int i10 = iArr[0];
-                        int i11 = iArr[1];
-                        int measuredWidth = contentView.getMeasuredWidth() + i10;
-                        int measuredHeight = contentView.getMeasuredHeight() + iArr[1];
-                        Rect rect = this.c;
-                        rect.set(i10, i11, measuredWidth, measuredHeight);
-                        if (!rect.contains((int) motionEvent.getX(), (int) motionEvent.getY())) {
-                            unVar.H7(true);
-                            break;
+    /* JADX WARN: Removed duplicated region for block: B:17:0x0076 A[LOOP:0: B:10:0x002a->B:17:0x0076, LOOP_END] */
+    /* JADX WARN: Removed duplicated region for block: B:18:0x004b A[SYNTHETIC] */
+    @Override // org.telegram.ui.iu0, org.telegram.ui.qu0
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final su0 E(MessageObject messageObject, TLRPC.FileLocation fileLocation, int i10, boolean z10, boolean z11) {
+        bk bkVar;
+        ImageReceiver imageReceiver;
+        if (i10 >= 0) {
+            wn wnVar = this.a;
+            if (i10 < wnVar.Ya.size() && (bkVar = wnVar.U1) != null && bkVar.getListView() != null) {
+                int childCount = wnVar.U1.getListView().getChildCount();
+                Object obj = wnVar.Ya.get(i10);
+                for (int i11 = 0; i11 < childCount; i11++) {
+                    View childAt = wnVar.U1.getListView().getChildAt(i11);
+                    if (childAt instanceof org.telegram.ui.Cells.d2) {
+                        org.telegram.ui.Cells.d2 d2Var = (org.telegram.ui.Cells.d2) childAt;
+                        if (d2Var.getResult() == obj) {
+                            imageReceiver = d2Var.getPhotoImage();
+                            if (imageReceiver == null) {
+                                int[] iArr = new int[2];
+                                childAt.getLocationInWindow(iArr);
+                                su0 su0Var = new su0();
+                                su0Var.b = iArr[0];
+                                su0Var.c = iArr[1];
+                                su0Var.d = wnVar.U1.getListView();
+                                su0Var.a = imageReceiver;
+                                su0Var.e = imageReceiver.getBitmapSafe();
+                                su0Var.h = imageReceiver.getRoundRadius(true);
+                                return su0Var;
+                            }
                         }
                     }
-                }
-                break;
-            default:
-                v50 v50Var = (v50) this.d;
-                if (motionEvent.getActionMasked() != 0) {
-                    if (motionEvent.getActionMasked() == 4 && (v40Var = v50Var.f3) != null && v40Var.isShowing()) {
-                        v50Var.f3.dismiss();
-                        break;
-                    }
-                } else {
-                    v40 v40Var2 = v50Var.f3;
-                    if (v40Var2 != null && v40Var2.isShowing()) {
-                        View contentView2 = v50Var.f3.getContentView();
-                        int[] iArr2 = this.b;
-                        contentView2.getLocationInWindow(iArr2);
-                        int i12 = iArr2[0];
-                        int i13 = iArr2[1];
-                        int measuredWidth2 = contentView2.getMeasuredWidth() + i12;
-                        int measuredHeight2 = contentView2.getMeasuredHeight() + iArr2[1];
-                        Rect rect2 = this.c;
-                        rect2.set(i12, i13, measuredWidth2, measuredHeight2);
-                        if (!rect2.contains((int) motionEvent.getX(), (int) motionEvent.getY())) {
-                            v50Var.f3.dismiss();
-                            break;
-                        }
+                    imageReceiver = null;
+                    if (imageReceiver == null) {
                     }
                 }
-                break;
+            }
         }
-        return false;
+        return null;
     }
 
-    public fi(un unVar, Rect rect) {
-        this.a = 0;
-        this.d = unVar;
-        this.c = rect;
-        this.b = new int[2];
+    @Override // org.telegram.ui.iu0, org.telegram.ui.qu0
+    public final void o(int i10, VideoEditedInfo videoEditedInfo, boolean z10, int i11, int i12, boolean z11) {
+        if (i10 >= 0) {
+            wn wnVar = this.a;
+            if (i10 >= wnVar.Ya.size()) {
+                return;
+            }
+            wnVar.qb((TLRPC.BotInlineResult) wnVar.Ya.get(i10), z10, i11, 0L);
+        }
     }
 }

@@ -15,7 +15,7 @@ import e2.x;
 import java.util.Arrays;
 import org.telegram.messenger.MediaDataController;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class f implements r, w2.d {
     public final Object a;
@@ -52,7 +52,7 @@ public final /* synthetic */ class f implements r, w2.d {
                 int i24 = fVar.X;
                 x xVar3 = fVar.p;
                 if (i24 != 4 || !"V_VP9".equals(eVar.c)) {
-                    pVar.q(i11);
+                    pVar.r(i11);
                     return;
                 } else {
                     xVar3.K(i11);
@@ -65,7 +65,7 @@ public final /* synthetic */ class f implements r, w2.d {
                 u3.e eVar2 = fVar.y;
                 int i25 = eVar2.h;
                 if (i25 != 1685485123 && i25 != 1685480259) {
-                    pVar.q(i11);
+                    pVar.r(i11);
                     return;
                 }
                 byte[] bArr = new byte[i11];
@@ -119,7 +119,7 @@ public final /* synthetic */ class f implements r, w2.d {
         }
         u3.e eVar3 = (u3.e) sparseArray.get(fVar.U);
         if (eVar3 == null) {
-            pVar.q(i11 - fVar.V);
+            pVar.r(i11 - fVar.V);
             fVar.O = 0;
             return;
         }

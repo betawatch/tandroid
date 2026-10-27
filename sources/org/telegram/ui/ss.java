@@ -1,38 +1,54 @@
 package org.telegram.ui;
 
-import android.graphics.Bitmap;
+import android.text.Editable;
+import android.text.TextWatcher;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.Utilities;
+import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ss implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ft b;
+public final class ss implements TextWatcher {
+    public final /* synthetic */ EditTextBoldCursor a;
 
-    public /* synthetic */ ss(ft ftVar, int i10) {
-        this.a = i10;
-        this.b = ftVar;
+    public ss(EditTextBoldCursor editTextBoldCursor) {
+        this.a = editTextBoldCursor;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                this.b.c0 = null;
-                break;
-            case 1:
-                ft ftVar = this.b;
-                ftVar.A.setImageBitmap((Bitmap) null);
-                org.telegram.ui.Components.yd0 yd0Var = ftVar.C;
-                if (yd0Var != null) {
-                    yd0Var.a();
-                    ftVar.z.removeView(ftVar.C);
-                    ftVar.C = null;
-                    break;
-                }
-                break;
-            default:
-                this.b.Q.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f).setDuration(420L).setInterpolator(org.telegram.ui.Components.ds.h).start();
-                break;
+    @Override // android.text.TextWatcher
+    public final void afterTextChanged(Editable editable) {
+        try {
+            String obj = editable.toString();
+            if (obj.isEmpty()) {
+                return;
+            }
+            int intValue = Utilities.parseInt((CharSequence) obj).intValue();
+            EditTextBoldCursor editTextBoldCursor = this.a;
+            if (intValue < 0) {
+                editTextBoldCursor.setText("0");
+                editTextBoldCursor.setSelection(editTextBoldCursor.length());
+                return;
+            }
+            if (intValue > 300) {
+                editTextBoldCursor.setText("300");
+                editTextBoldCursor.setSelection(editTextBoldCursor.length());
+                return;
+            }
+            if (obj.equals("" + intValue)) {
+                return;
+            }
+            editTextBoldCursor.setText("" + intValue);
+            editTextBoldCursor.setSelection(editTextBoldCursor.length());
+        } catch (Exception e) {
+            FileLog.e(e);
         }
+    }
+
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+    }
+
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
     }
 }

@@ -5,9 +5,9 @@ import android.graphics.PointF;
 import androidx.recyclerview.widget.RecyclerView;
 import bi.cc;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.mm0;
+import org.telegram.ui.Components.nm0;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class x4 extends s4.n0 {
     public final PointF a = new PointF();
@@ -26,10 +26,10 @@ public final class x4 extends s4.n0 {
         y4 y4Var = this.b;
         t4 t4Var = y4Var.t0;
         s4 s4Var = y4Var.h0;
-        mm0 mm0Var = y4Var.d;
+        nm0 nm0Var = y4Var.d;
         PointF pointF = this.a;
         float f10 = 0.0f;
-        if (jh.k.b(s4Var, mm0Var, pointF)) {
+        if (jh.k.b(s4Var, nm0Var, pointF)) {
             float f11 = pointF.x;
             height = Math.min(height, pointF.y);
             f10 = Math.max(0.0f, pointF.y + s4Var.getMeasuredHeight());
@@ -38,7 +38,7 @@ public final class x4 extends s4.n0 {
         } else {
             f7 = 0.0f;
         }
-        if (jh.k.b(t4Var, mm0Var, pointF)) {
+        if (jh.k.b(t4Var, nm0Var, pointF)) {
             height = Math.min(height, pointF.y);
             f10 = Math.max(f10, pointF.y + t4Var.getMeasuredHeight() + AndroidUtilities.dp(12.0f));
         }

@@ -6,10 +6,10 @@ import android.view.View;
 import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.gb1;
-import org.telegram.ui.vq0;
+import org.telegram.ui.Components.kb1;
+import org.telegram.ui.xq0;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class q5 extends FrameLayout {
     public final /* synthetic */ int a = 0;
@@ -21,9 +21,9 @@ public final class q5 extends FrameLayout {
     public final /* synthetic */ Object h;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public q5(vq0 vq0Var, Context context) {
+    public q5(xq0 xq0Var, Context context) {
         super(context);
-        this.h = vq0Var;
+        this.h = xq0Var;
     }
 
     public b6 a() {
@@ -31,7 +31,7 @@ public final class q5 extends FrameLayout {
         b6Var.setGravity(17);
         b6Var.setTextSize(14);
         b6Var.setTextColor(((r5) this.h).c0);
-        addView(b6Var, gb1.i(-2, -2, 51));
+        addView(b6Var, kb1.i(-2, -2, 51));
         return b6Var;
     }
 
@@ -51,7 +51,7 @@ public final class q5 extends FrameLayout {
         b6Var.setPadding(0, AndroidUtilities.dp(8.0f), 0, AndroidUtilities.dp(8.0f));
         b6Var.setRightDrawableTopPadding(-AndroidUtilities.dp(1.0f));
         b6VarArr[i10] = b6Var;
-        addView(b6Var, 0, gb1.i(-2, -2, 51));
+        addView(b6Var, 0, kb1.i(-2, -2, 51));
     }
 
     public void c(CharSequence charSequence) {
@@ -182,10 +182,10 @@ public final class q5 extends FrameLayout {
         switch (this.a) {
             case 1:
                 super.setTranslationX(f7);
-                vq0 vq0Var = (vq0) this.h;
-                q5[] q5VarArr = vq0Var.n;
-                if (vq0Var.s && (q5Var = q5VarArr[0]) == this) {
-                    vq0Var.h.i(Math.abs(q5Var.getTranslationX()) / q5VarArr[0].getMeasuredWidth(), q5VarArr[1].b);
+                xq0 xq0Var = (xq0) this.h;
+                q5[] q5VarArr = xq0Var.n;
+                if (xq0Var.s && (q5Var = q5VarArr[0]) == this) {
+                    xq0Var.h.i(Math.abs(q5Var.getTranslationX()) / q5VarArr[0].getMeasuredWidth(), q5VarArr[1].b);
                     break;
                 }
                 break;

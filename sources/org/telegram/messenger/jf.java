@@ -1,44 +1,30 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+import org.telegram.tgnet.TLRPC;
+
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class jf implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ MessagesStorage b;
-    public final /* synthetic */ int c;
+    public final /* synthetic */ TLRPC.Message c;
+    public final /* synthetic */ long d;
 
-    public /* synthetic */ jf(MessagesStorage messagesStorage, int i10, int i11) {
-        this.a = i11;
+    public /* synthetic */ jf(int i10, long j10, MessagesStorage messagesStorage, TLRPC.Message message) {
+        this.a = i10;
         this.b = messagesStorage;
-        this.c = i10;
+        this.c = message;
+        this.d = j10;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$readAllDialogs$68(this.c);
-                break;
-            case 1:
-                this.b.lambda$checkIfFolderEmptyInternal$248(this.c);
-                break;
-            case 2:
-                this.b.lambda$clearDownloadQueue$187(this.c);
-                break;
-            case 3:
-                this.b.lambda$putMessagesInternal$199(this.c);
-                break;
-            case 4:
-                this.b.lambda$getDownloadQueue$189(this.c);
-                break;
-            case 5:
-                this.b.lambda$getUnsentMessages$155(this.c);
-                break;
-            case 6:
-                this.b.lambda$checkIfFolderEmpty$249(this.c);
+                this.b.lambda$markMessageAsSendErrorWithParams$214(this.c, this.d);
                 break;
             default:
-                this.b.lambda$clearWidgetDialogs$170(this.c);
+                this.b.lambda$updateMessageCustomParams$114(this.c, this.d);
                 break;
         }
     }

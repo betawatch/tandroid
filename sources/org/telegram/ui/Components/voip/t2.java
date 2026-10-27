@@ -23,14 +23,14 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.vh;
+import org.telegram.messenger.wh;
 import org.telegram.ui.Components.ds;
-import org.telegram.ui.Components.gb1;
-import org.telegram.ui.Components.h31;
-import org.telegram.ui.Components.uc0;
+import org.telegram.ui.Components.i31;
+import org.telegram.ui.Components.kb1;
+import org.telegram.ui.Components.vc0;
 import org.webrtc.RendererCommon;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public class t2 extends FrameLayout {
     public boolean E;
@@ -132,7 +132,7 @@ public class t2 extends FrameLayout {
         if (this.c) {
             float scaleX = ((View) getParent()).getScaleX();
             this.v.setAlpha(1.0f - f7);
-            float w10 = !z10 ? vh.w(0.4f, scaleX, f7, 1.0f / scaleX) : 1.0f - (0.4f * f7);
+            float w10 = !z10 ? wh.w(0.4f, scaleX, f7, 1.0f / scaleX) : 1.0f - (0.4f * f7);
             ImageView imageView = this.s;
             imageView.setScaleX(w10);
             imageView.setScaleY(w10);
@@ -204,7 +204,7 @@ public class t2 extends FrameLayout {
         if (this.n == null) {
             View view = new View(getContext());
             this.n = view;
-            addView(view, gb1.k());
+            addView(view, kb1.k());
         }
         return this.n;
     }
@@ -353,7 +353,7 @@ public class t2 extends FrameLayout {
             this.b0.setDuration(350L);
         }
         this.b0.setInterpolator(ds.f);
-        this.b0.addListener(new h31(this, 16));
+        this.b0.addListener(new i31(this, 16));
         this.b0.start();
         ArrayList arrayList = this.G;
         if (!arrayList.isEmpty()) {
@@ -464,28 +464,28 @@ public class t2 extends FrameLayout {
             View view = new View(context);
             this.h = view;
             view.setBackgroundColor(-14999773);
-            addView(view, gb1.g(-1.0f, -1));
+            addView(view, kb1.g(-1.0f, -1));
             if (z13) {
                 TextureView textureView = new TextureView(context);
                 this.e = textureView;
-                addView(textureView, gb1.i(-1, -2, 17));
+                addView(textureView, kb1.i(-1, -2, 17));
             }
             s2Var.setScalingType(RendererCommon.ScalingType.SCALE_ASPECT_FIT);
-            addView(s2Var, gb1.i(-1, -2, 17));
+            addView(s2Var, kb1.i(-1, -2, 17));
         } else if (z10) {
             if (z13) {
                 TextureView textureView2 = new TextureView(context);
                 this.e = textureView2;
-                addView(textureView2, gb1.i(-1, -2, 17));
+                addView(textureView2, kb1.i(-1, -2, 17));
             }
             addView(s2Var);
         } else {
             if (z13) {
                 TextureView textureView3 = new TextureView(context);
                 this.e = textureView3;
-                addView(textureView3, gb1.i(-1, -2, 17));
+                addView(textureView3, kb1.i(-1, -2, 17));
             }
-            addView(s2Var, gb1.i(-1, -2, 17));
+            addView(s2Var, kb1.i(-1, -2, 17));
         }
         addView(imageView);
         TextureView textureView4 = this.e;
@@ -494,14 +494,14 @@ public class t2 extends FrameLayout {
         }
         FrameLayout frameLayout = new FrameLayout(getContext());
         this.r = frameLayout;
-        frameLayout.setBackground(new uc0(true, -14602694, -13935795, -14395293, -14203560));
-        addView(frameLayout, gb1.g(-1.0f, -1));
+        frameLayout.setBackground(new vc0(true, -14602694, -13935795, -14395293, -14203560));
+        addView(frameLayout, kb1.g(-1.0f, -1));
         frameLayout.setVisibility(8);
         ImageView imageView2 = new ImageView(getContext());
         this.s = imageView2;
         imageView2.setScaleType(ImageView.ScaleType.CENTER);
         imageView2.setImageResource(R.drawable.screencast_big);
-        frameLayout.addView(imageView2, gb1.h(82, 82.0f, 17, 0.0f, 0.0f, 0.0f, 60.0f));
+        frameLayout.addView(imageView2, kb1.h(82, 82.0f, 17, 0.0f, 0.0f, 0.0f, 60.0f));
         TextView textView = new TextView(getContext());
         this.v = textView;
         textView.setText(LocaleController.getString(R.string.VoipVideoScreenSharing));
@@ -510,7 +510,7 @@ public class t2 extends FrameLayout {
         textView.setTextColor(-1);
         textView.setTextSize(1, 15.0f);
         textView.setTypeface(AndroidUtilities.bold());
-        frameLayout.addView(textView, gb1.h(-1, -2.0f, 17, 21.0f, 28.0f, 21.0f, 0.0f));
+        frameLayout.addView(textView, kb1.h(-1, -2.0f, 17, 21.0f, 28.0f, 21.0f, 0.0f));
         if (z12) {
             setOutlineProvider(new eh.b(this, 5));
             setClipToOutline(true);

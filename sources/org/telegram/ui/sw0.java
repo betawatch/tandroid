@@ -1,83 +1,55 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.RectF;
-import android.view.MotionEvent;
+import android.animation.ValueAnimator;
 import android.view.View;
-import java.util.ArrayList;
+import android.view.ViewGroup;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLObject;
+import org.telegram.ui.Components.ChatActivityEnterView;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public final class sw0 extends org.telegram.ui.Components.mm0 {
-    public final Paint f3;
-    public final Path g3;
-    public final /* synthetic */ vw0 h3;
+public final /* synthetic */ class sw0 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
+    public final /* synthetic */ View c;
+    public final /* synthetic */ Object d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public sw0(vw0 vw0Var, Context context) {
-        super(context, null);
-        this.h3 = vw0Var;
-        Paint paint = new Paint(1);
-        this.f3 = paint;
-        paint.setColor(org.telegram.ui.ActionBar.y6.x0(null, org.telegram.ui.ActionBar.y6.h5, false));
-        this.g3 = new Path();
+    public /* synthetic */ sw0(Object obj, ViewGroup viewGroup, Object obj2, int i10) {
+        this.a = i10;
+        this.b = obj;
+        this.c = viewGroup;
+        this.d = obj2;
     }
 
-    @Override // org.telegram.ui.Components.mm0, android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        Path path = this.g3;
-        path.rewind();
-        RectF rectF = AndroidUtilities.rectTmp;
-        rectF.set(0.0f, 0.0f, getWidth(), getHeight());
-        path.addRoundRect(rectF, AndroidUtilities.dp(16.0f), AndroidUtilities.dp(16.0f), Path.Direction.CW);
-        int x02 = org.telegram.ui.ActionBar.y6.x0(null, org.telegram.ui.ActionBar.y6.h5, false);
-        Paint paint = this.f3;
-        paint.setColor(x02);
-        canvas.drawPath(path, paint);
-        canvas.save();
-        canvas.clipPath(path);
-        super.dispatchDraw(canvas);
-        canvas.restore();
-    }
-
-    @Override // org.telegram.ui.Components.mm0, android.view.ViewGroup, android.view.View
-    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        if (this.h3.n.q0 >= 1.0f) {
-            return false;
-        }
-        return super.dispatchTouchEvent(motionEvent);
-    }
-
-    @Override // org.telegram.ui.Components.mm0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
-    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        if (this.h3.n.q0 >= 1.0f) {
-            return false;
-        }
-        return super.onInterceptTouchEvent(motionEvent);
-    }
-
-    @Override // org.telegram.ui.Components.mm0, androidx.recyclerview.widget.RecyclerView, android.view.View
-    public final void onSizeChanged(int i10, int i11, int i12, int i13) {
-        super.onSizeChanged(i10, i11, i12, i13);
-        PremiumPreviewFragment premiumPreviewFragment = this.h3.n;
-        int i14 = 0;
-        int i15 = 0;
-        while (true) {
-            ArrayList arrayList = premiumPreviewFragment.d;
-            if (i14 >= arrayList.size()) {
-                premiumPreviewFragment.O = i15;
-                return;
-            }
-            premiumPreviewFragment.M.a((xw0) arrayList.get(i14), false);
-            premiumPreviewFragment.M.measure(View.MeasureSpec.makeMeasureSpec(i10, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(i11, TLObject.FLAG_31));
-            ((xw0) arrayList.get(i14)).h = i15;
-            i15 += premiumPreviewFragment.M.getMeasuredHeight();
-            i14++;
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        switch (this.a) {
+            case 0:
+                xw0 xw0Var = (xw0) this.b;
+                ValueAnimator valueAnimator2 = (ValueAnimator) this.d;
+                PremiumPreviewFragment premiumPreviewFragment = xw0Var.n;
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                View view = this.c;
+                view.setAlpha(floatValue);
+                view.setScaleX(floatValue);
+                view.setScaleY(floatValue);
+                float animatedFraction = valueAnimator2.getAnimatedFraction();
+                for (int i10 = 0; i10 < premiumPreviewFragment.U.getChildCount(); i10++) {
+                    View childAt = premiumPreviewFragment.U.getChildAt(i10);
+                    if (childAt != xw0Var.e) {
+                        childAt.setTranslationY((view.getMeasuredHeight() * animatedFraction) + (childAt == xw0Var.c ? 0.0f - (AndroidUtilities.dp(15.0f) * animatedFraction) : 0.0f + (AndroidUtilities.dp(8.0f) * animatedFraction)));
+                    }
+                }
+                break;
+            default:
+                ia1 ia1Var = (ia1) this.b;
+                ChatActivityEnterView chatActivityEnterView = (ChatActivityEnterView) this.c;
+                org.telegram.ui.Components.si siVar = (org.telegram.ui.Components.si) this.d;
+                ia1Var.getClass();
+                ia1Var.a = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                chatActivityEnterView.getEditField().setAlpha(ia1Var.a);
+                siVar.invalidate();
+                break;
         }
     }
 }

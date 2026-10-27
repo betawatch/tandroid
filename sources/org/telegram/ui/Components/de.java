@@ -3,7 +3,7 @@ package org.telegram.ui.Components;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class de implements Utilities.Callback4 {
     public final /* synthetic */ int a;
@@ -30,9 +30,9 @@ public final /* synthetic */ class de implements Utilities.Callback4 {
                 Boolean bool = (Boolean) obj4;
                 int i11 = ChatActivityEnterView.r5;
                 ChatActivityEnterView chatActivityEnterView = this.b;
-                chatActivityEnterView.O0((TL_iv.RichMessage) obj);
+                chatActivityEnterView.N0((TL_iv.RichMessage) obj);
                 if (!chatActivityEnterView.c() || num.intValue() != 0) {
-                    chatActivityEnterView.R0(num.intValue(), bool.booleanValue(), num2.intValue(), true, 0L);
+                    chatActivityEnterView.Q0(num.intValue(), bool.booleanValue(), num2.intValue(), true, 0L);
                     break;
                 } else {
                     g5.L(chatActivityEnterView.O2, j10, new qe(chatActivityEnterView, 0), u6Var);
@@ -46,14 +46,14 @@ public final /* synthetic */ class de implements Utilities.Callback4 {
                 chatActivityEnterView2.E0.setText((CharSequence) obj);
                 if (chatActivityEnterView2.Z1 == null) {
                     if (!chatActivityEnterView2.c() || num3.intValue() != 0) {
-                        chatActivityEnterView2.R0(num3.intValue(), bool2.booleanValue(), num4.intValue(), true, 0L);
+                        chatActivityEnterView2.Q0(num3.intValue(), bool2.booleanValue(), num4.intValue(), true, 0L);
                         break;
                     } else {
                         g5.L(chatActivityEnterView2.O2, j10, new re(chatActivityEnterView2), u6Var);
                         break;
                     }
                 } else {
-                    chatActivityEnterView2.a0();
+                    chatActivityEnterView2.Z();
                     break;
                 }
                 break;

@@ -11,19 +11,19 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class r2 extends View implements org.telegram.ui.Cells.r9, e3 {
-    public final h70 a;
+    public final j70 a;
     public final h4 b;
     public a3 c;
     public int d;
     public int e;
     public TL_iv.pageBlockSubtitle f;
 
-    public r2(Context context, h70 h70Var, h4 h4Var) {
+    public r2(Context context, j70 j70Var, h4 h4Var) {
         super(context);
-        this.a = h70Var;
+        this.a = j70Var;
         this.b = h4Var;
     }
 
@@ -117,23 +117,23 @@ public final class r2 extends View implements org.telegram.ui.Cells.r9, e3 {
     public final void onMeasure(int i10, int i11) {
         int i12;
         int size = View.MeasureSpec.getSize(i10);
-        h70 h70Var = this.a;
-        h70Var.getClass();
+        j70 j70Var = this.a;
+        j70Var.getClass();
         this.d = AndroidUtilities.dp(18);
-        h70Var.getClass();
+        j70Var.getClass();
         this.e = AndroidUtilities.dp(8);
         TL_iv.pageBlockSubtitle pageblocksubtitle = this.f;
         if (pageblocksubtitle != null) {
             TL_iv.RichText richText = pageblocksubtitle.text;
-            h70 h70Var2 = this.a;
-            h70Var2.getClass();
+            j70 j70Var2 = this.a;
+            j70Var2.getClass();
             int dp = size - AndroidUtilities.dp(36);
             TL_iv.pageBlockSubtitle pageblocksubtitle2 = this.f;
             h4 h4Var = this.b;
-            a3 p10 = j4.p(h70Var2, this, null, richText, dp, 0, pageblocksubtitle2, (h4Var == null || !h4Var.G) ? Layout.Alignment.ALIGN_NORMAL : org.telegram.ui.Components.px0.a(), 0, this.b);
+            a3 p10 = j4.p(j70Var2, this, null, richText, dp, 0, pageblocksubtitle2, (h4Var == null || !h4Var.G) ? Layout.Alignment.ALIGN_NORMAL : org.telegram.ui.Components.qx0.a(), 0, this.b);
             this.c = p10;
             if (p10 != null) {
-                h70Var.getClass();
+                j70Var.getClass();
                 i12 = this.c.d.getHeight() + AndroidUtilities.dp(16);
                 a3 a3Var = this.c;
                 a3Var.s = this.d;

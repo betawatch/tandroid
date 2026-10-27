@@ -22,7 +22,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_chatlists;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class n10 extends bb {
     public boolean A0;
@@ -146,11 +146,11 @@ public final class n10 extends bb {
     }
 
     @Override // org.telegram.ui.Components.bb
-    public final void G(vw0 vw0Var) {
-        mm0 mm0Var = this.d;
-        mm0Var.setOverScrollMode(2);
-        mm0Var.setPadding(AndroidUtilities.dp(6.0f), 0, AndroidUtilities.dp(6.0f), AndroidUtilities.dp(this.l0 != null ? 68.0f : 0.0f));
-        mm0Var.setOnItemClickListener(new j(this, 8));
+    public final void G(ww0 ww0Var) {
+        nm0 nm0Var = this.d;
+        nm0Var.setOverScrollMode(2);
+        nm0Var.setPadding(AndroidUtilities.dp(6.0f), 0, AndroidUtilities.dp(6.0f), AndroidUtilities.dp(this.l0 != null ? 68.0f : 0.0f));
+        nm0Var.setOnItemClickListener(new j(this, 8));
     }
 
     public final void R(boolean z10) {
@@ -184,11 +184,11 @@ public final class n10 extends bb {
         k10Var.a(LocaleController.getString(z10 ? R.string.SelectAll : R.string.DeselectAll), new bi.u7(this, k10Var, z10, 20));
         R(true);
         while (true) {
-            mm0 mm0Var = this.d;
-            if (i10 >= mm0Var.getChildCount()) {
+            nm0 nm0Var = this.d;
+            if (i10 >= nm0Var.getChildCount()) {
                 return;
             }
-            View childAt = mm0Var.getChildAt(i10);
+            View childAt = nm0Var.getChildAt(i10);
             if (childAt instanceof org.telegram.ui.Cells.k4) {
                 Object tag = childAt.getTag();
                 if (tag instanceof Long) {
@@ -287,7 +287,7 @@ public final class n10 extends bb {
         j10Var.f = view;
         int i17 = org.telegram.ui.ActionBar.y6.Oh;
         view.setBackground(org.telegram.ui.ActionBar.o6.d(new float[]{8.0f}, 0, org.telegram.ui.ActionBar.o6.b(org.telegram.ui.ActionBar.y6.x0(null, i17, false))));
-        j10Var.addView(view, gb1.g(-1.0f, -1));
+        j10Var.addView(view, kb1.g(-1.0f, -1));
         ShapeDrawable c02 = org.telegram.ui.ActionBar.y6.c0(AndroidUtilities.dp(8.0f), org.telegram.ui.ActionBar.y6.x0(null, i17, false));
         j10Var.h = c02;
         j10Var.setBackground(c02);
@@ -316,15 +316,15 @@ public final class n10 extends bb {
         j10Var.setWillNotDraw(false);
         this.l0 = j10Var;
         j10Var.setOnClickListener(new f0(this, 15));
-        this.containerView.addView(this.l0, gb1.h(-1, 48.0f, 87, 16.0f, 10.0f, 16.0f, 10.0f));
+        this.containerView.addView(this.l0, kb1.h(-1, 48.0f, 87, 16.0f, 10.0f, 16.0f, 10.0f));
         View view2 = new View(getContext());
         this.m0 = view2;
         org.telegram.ui.ActionBar.f7.i(org.telegram.ui.ActionBar.y6.a7, view2, null);
-        this.containerView.addView(this.m0, gb1.h(-1, 1.0f / AndroidUtilities.density, 87, 6.0f, 0.0f, 6.0f, 68.0f));
+        this.containerView.addView(this.m0, kb1.h(-1, 1.0f / AndroidUtilities.density, 87, 6.0f, 0.0f, 6.0f, 68.0f));
         this.d.setPadding(AndroidUtilities.dp(6.0f), 0, AndroidUtilities.dp(6.0f), AndroidUtilities.dp(this.l0 != null ? 68.0f : 0.0f));
         FrameLayout frameLayout = new FrameLayout(getContext());
         this.k0 = frameLayout;
-        this.containerView.addView(frameLayout, gb1.h(-1, 100.0f, 87, 6.0f, 0.0f, 6.0f, 68.0f));
+        this.containerView.addView(frameLayout, kb1.h(-1, 100.0f, 87, 6.0f, 0.0f, 6.0f, 68.0f));
         fixNavigationBar(org.telegram.ui.ActionBar.y6.x0(null, org.telegram.ui.ActionBar.y6.h5, false));
         V(false);
         this.e.setTitle(y());
@@ -430,7 +430,7 @@ public final class n10 extends bb {
     }
 
     @Override // org.telegram.ui.Components.bb
-    public final lm0 v(mm0 mm0Var) {
+    public final mm0 v(nm0 nm0Var) {
         return new g10(this);
     }
 

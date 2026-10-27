@@ -9,9 +9,9 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.rh0;
+import org.telegram.ui.th0;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class d0 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -50,7 +50,7 @@ public final /* synthetic */ class d0 implements RequestDelegate {
                 ((MessagesController) this.d).lambda$checkPromoInfoInternal$166(this.b, (TLRPC.TL_help_promoData) this.e, this.c, tLObject, tL_error);
                 break;
             default:
-                AndroidUtilities.runOnUIThread(new a9((rh0) this.d, tL_error, tLObject, this.c, this.b, (TLRPC.Chat) this.e));
+                AndroidUtilities.runOnUIThread(new a9((th0) this.d, tL_error, tLObject, this.c, this.b, (TLRPC.Chat) this.e));
                 break;
         }
     }
@@ -63,9 +63,9 @@ public final /* synthetic */ class d0 implements RequestDelegate {
         this.c = j10;
     }
 
-    public /* synthetic */ d0(rh0 rh0Var, long j10, int i10, TLRPC.Chat chat) {
+    public /* synthetic */ d0(th0 th0Var, long j10, int i10, TLRPC.Chat chat) {
         this.a = 6;
-        this.d = rh0Var;
+        this.d = th0Var;
         this.c = j10;
         this.b = i10;
         this.e = chat;

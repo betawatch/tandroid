@@ -1,86 +1,29 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+import android.content.Context;
+
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public final class bt0 extends org.telegram.ui.Components.s81 {
-    public final /* synthetic */ PhotoViewer m0;
+public final class bt0 extends org.telegram.ui.Components.a91 {
+    public final /* synthetic */ PhotoViewer h0;
 
-    public bt0(PhotoViewer photoViewer) {
-        this.m0 = photoViewer;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public bt0(PhotoViewer photoViewer, Context context, hr0 hr0Var) {
+        super(context, hr0Var);
+        this.h0 = photoViewer;
     }
 
-    @Override // org.telegram.ui.Components.s81
-    public final void B() {
-        super.B();
-        PhotoViewer photoViewer = this.m0;
-        if (photoViewer.u4 == 0) {
-            PhotoViewer.Z(photoViewer, false);
-        }
-        if (photoViewer.O8) {
-            return;
-        }
-        c5.d.D(n());
-        c5.d.x(false);
+    @Override // android.view.View
+    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        super.onLayout(z10, i10, i11, i12, i13);
+        PhotoViewer.Y(this.h0);
     }
 
-    @Override // org.telegram.ui.Components.s81
-    public final void C() {
-        super.C();
-        PhotoViewer photoViewer = this.m0;
-        PhotoViewer.Z(photoViewer, true);
-        if (photoViewer.O8) {
-            return;
+    @Override // android.view.View
+    public final void setVisibility(int i10) {
+        super.setVisibility(i10);
+        if (i10 == 0) {
+            PhotoViewer.Y(this.h0);
         }
-        c5.d.D(n());
-        c5.d.x(true);
-    }
-
-    @Override // org.telegram.ui.Components.s81
-    public final void K(long j10) {
-        L(j10, false);
-        PhotoViewer photoViewer = this.m0;
-        if (photoViewer.r1) {
-            PhotoViewer.a0(photoViewer, j10);
-        }
-        if (photoViewer.O8) {
-            return;
-        }
-        c5.d.D(j10);
-    }
-
-    @Override // org.telegram.ui.Components.s81
-    public final void Q(float f7) {
-        super.Q(f7);
-        if (this.m0.O8) {
-            return;
-        }
-        c5.d.z(f7);
-    }
-
-    @Override // org.telegram.ui.Components.s81, b2.e1
-    public final void onRenderedFirstFrame() {
-        b2.a1 h;
-        super.onRenderedFirstFrame();
-        PhotoViewer photoViewer = this.m0;
-        boolean z10 = true;
-        photoViewer.R = true;
-        if (photoViewer.D2) {
-            photoViewer.e0.invalidate();
-        }
-        photoViewer.B3();
-        if (!c5.d.u() && !photoViewer.r) {
-            z10 = false;
-        }
-        O(z10);
-        if (photoViewer.O8) {
-            return;
-        }
-        c5.d.D(n());
-        i2.j0 j0Var = this.d;
-        float f7 = 1.0f;
-        if (j0Var != null && (h = j0Var.h()) != null) {
-            f7 = h.a;
-        }
-        c5.d.z(f7);
     }
 }

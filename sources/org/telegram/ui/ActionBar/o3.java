@@ -12,10 +12,10 @@ import android.view.WindowManager;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.R;
-import org.telegram.ui.Components.gb1;
+import org.telegram.ui.Components.kb1;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class o3 extends Dialog {
     public final y3 a;
@@ -36,7 +36,7 @@ public final class o3 extends Dialog {
         n3 n3Var = new n3(windowView);
         this.b = n3Var;
         setContentView(n3Var, new ViewGroup.LayoutParams(-1, -1));
-        n3Var.addView(m3Var, gb1.i(-1, -2, 80));
+        n3Var.addView(m3Var, kb1.i(-1, -2, 80));
         n3Var.setClipToPadding(false);
     }
 
@@ -56,7 +56,7 @@ public final class o3 extends Dialog {
                 n3 n3Var = o3Var.b;
                 View view = (View) n3Var.a;
                 AndroidUtilities.removeFromParent(view);
-                n3Var.addView(view, gb1.i(-1, -1, 119));
+                n3Var.addView(view, kb1.i(-1, -1, 119));
             }
         }
     }

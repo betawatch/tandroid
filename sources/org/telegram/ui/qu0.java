@@ -1,29 +1,122 @@
 package org.telegram.ui;
 
-import android.view.View;
+import java.util.ArrayList;
+import java.util.HashMap;
 import org.telegram.messenger.ImageReceiver;
-import org.telegram.ui.Components.ClippingImageView;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.VideoEditedInfo;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public final class qu0 {
-    public ImageReceiver a;
-    public int b;
-    public int c;
-    public View d;
-    public ImageReceiver.BitmapHolder e;
-    public long f;
-    public long g;
-    public int[] h;
-    public int i;
-    public int j;
-    public boolean l;
-    public ClippingImageView m;
-    public int n;
-    public boolean p;
-    public int q;
-    public boolean r;
-    public boolean s;
-    public float k = 1.0f;
-    public boolean o = true;
+public interface qu0 {
+    boolean A();
+
+    void B(int i10);
+
+    CharSequence C(int i10);
+
+    void D();
+
+    su0 E(MessageObject messageObject, TLRPC.FileLocation fileLocation, int i10, boolean z10, boolean z11);
+
+    void F(boolean z10);
+
+    void G();
+
+    int H();
+
+    boolean I();
+
+    void J();
+
+    boolean K();
+
+    boolean L();
+
+    void M(VideoEditedInfo videoEditedInfo);
+
+    boolean N();
+
+    boolean O();
+
+    boolean P();
+
+    boolean Q();
+
+    int R(Object obj);
+
+    int S(int i10);
+
+    boolean T();
+
+    boolean U();
+
+    MessageObject V();
+
+    void W();
+
+    void X(int i10);
+
+    void Y(int i10);
+
+    boolean Z();
+
+    long a();
+
+    void a0(int i10);
+
+    boolean b();
+
+    String b0();
+
+    ArrayList c();
+
+    CharSequence c0(int i10);
+
+    void d();
+
+    void e(CharSequence charSequence);
+
+    void f(String str, String str2, boolean z10);
+
+    boolean g();
+
+    boolean h();
+
+    void i();
+
+    ImageReceiver.BitmapHolder j(int i10);
+
+    int k(int i10, VideoEditedInfo videoEditedInfo);
+
+    boolean l();
+
+    void m();
+
+    void n();
+
+    void o(int i10, VideoEditedInfo videoEditedInfo, boolean z10, int i11, int i12, boolean z11);
+
+    boolean p();
+
+    boolean q();
+
+    boolean r();
+
+    void s();
+
+    boolean t();
+
+    boolean u();
+
+    HashMap v();
+
+    boolean w();
+
+    boolean x(int i10);
+
+    int y();
+
+    boolean z();
 }

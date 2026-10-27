@@ -1,77 +1,29 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.text.SpannableStringBuilder;
-import android.text.TextUtils;
-import android.text.style.ForegroundColorSpan;
 import android.view.View;
 import android.view.ViewGroup;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.ThemeEditorView;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public final class u21 extends lm0 {
-    public final Context c;
-    public int d;
-    public ArrayList e = new ArrayList();
-    public ArrayList f = new ArrayList();
-    public org.telegram.ui.g4 h;
-    public String n;
-    public final /* synthetic */ ThemeEditorView.EditorAlert r;
+public final class u21 extends mm0 {
+    public Context c;
+    public ArrayList d;
 
-    public u21(ThemeEditorView.EditorAlert editorAlert, Context context) {
-        this.r = editorAlert;
-        this.c = context;
-    }
-
-    public static CharSequence E(String str, String str2) {
-        if (TextUtils.isEmpty(str)) {
-            return "";
-        }
-        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
-        String trim = str.trim();
-        String lowerCase = trim.toLowerCase();
-        int i10 = 0;
-        while (true) {
-            int indexOf = lowerCase.indexOf(str2, i10);
-            if (indexOf == -1) {
-                break;
-            }
-            int length = str2.length() + indexOf;
-            if (i10 != 0 && i10 != indexOf + 1) {
-                spannableStringBuilder.append((CharSequence) trim.substring(i10, indexOf));
-            } else if (i10 == 0 && indexOf != 0) {
-                spannableStringBuilder.append((CharSequence) trim.substring(0, indexOf));
-            }
-            String substring = trim.substring(indexOf, Math.min(trim.length(), length));
-            if (substring.startsWith(" ")) {
-                spannableStringBuilder.append((CharSequence) " ");
-            }
-            String trim2 = substring.trim();
-            int length2 = spannableStringBuilder.length();
-            spannableStringBuilder.append((CharSequence) trim2);
-            spannableStringBuilder.setSpan(new ForegroundColorSpan(-11697229), length2, trim2.length() + length2, 33);
-            i10 = length;
-        }
-        if (i10 != -1 && i10 < trim.length()) {
-            spannableStringBuilder.append((CharSequence) trim.substring(i10));
-        }
-        return spannableStringBuilder;
-    }
-
-    @Override // org.telegram.ui.Components.lm0
+    @Override // org.telegram.ui.Components.mm0
     public final boolean D(s4.e1 e1Var) {
         return true;
     }
 
     @Override // s4.h0
     public final int h() {
-        if (this.e.isEmpty()) {
+        ArrayList arrayList = this.d;
+        if (arrayList.isEmpty()) {
             return 0;
         }
-        return this.e.size() + 1;
+        return arrayList.size() + 1;
     }
 
     @Override // s4.h0
@@ -82,11 +34,10 @@ public final class u21 extends lm0 {
     @Override // s4.h0
     public final void v(s4.e1 e1Var, int i10) {
         if (e1Var.f == 0) {
-            int i11 = i10 - 1;
-            org.telegram.ui.ActionBar.h7 h7Var = (org.telegram.ui.ActionBar.h7) ((ArrayList) this.e.get(i11)).get(0);
+            org.telegram.ui.ActionBar.h7 h7Var = (org.telegram.ui.ActionBar.h7) ((ArrayList) this.d.get(i10 - 1)).get(0);
             int c10 = h7Var.e == org.telegram.ui.ActionBar.y6.Nd ? 0 : h7Var.c();
             org.telegram.ui.Cells.d9 d9Var = (org.telegram.ui.Cells.d9) e1Var.a;
-            d9Var.a.setText((CharSequence) this.f.get(i11));
+            d9Var.a.setText(org.telegram.ui.ActionBar.m5.c(h7Var.e));
             d9Var.b = c10;
             d9Var.setWillNotDraw(c10 == 0);
             d9Var.invalidate();
@@ -104,6 +55,6 @@ public final class u21 extends lm0 {
             d9Var = new org.telegram.ui.Cells.d9(context);
             d9Var.setLayoutParams(new s4.q0(-1, -2));
         }
-        return new vl0(d9Var);
+        return new wl0(d9Var);
     }
 }

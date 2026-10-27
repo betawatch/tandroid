@@ -13,7 +13,7 @@ import org.telegram.messenger.SharedConfig;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class dx extends xx {
     public static final /* synthetic */ int H0 = 0;
@@ -29,7 +29,7 @@ public final class dx extends xx {
         this.F0 = z10;
     }
 
-    @Override // org.telegram.ui.Components.pn0
+    @Override // org.telegram.ui.Components.qn0
     public final void j() {
         ex exVar = this.G0.C0;
         if (exVar != null) {
@@ -38,7 +38,7 @@ public final class dx extends xx {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    @Override // org.telegram.ui.Components.pn0
+    @Override // org.telegram.ui.Components.qn0
     public final void o(int i10, int i11) {
         sz szVar = this.G0;
         m.g3 g3Var = szVar.f2;
@@ -56,7 +56,7 @@ public final class dx extends xx {
             arrayList2.clear();
             szVar.F2.addAll(arrayList);
         }
-        szVar.D();
+        szVar.F();
         AndroidUtilities.cancelRunOnUIThread(g3Var);
         AndroidUtilities.runOnUIThread(g3Var, 1500L);
         MediaDataController.getInstance(i15).calcNewHash(0);
@@ -67,12 +67,12 @@ public final class dx extends xx {
         }
         ConnectionsManager.getInstance(i15).sendRequest(tL_messages_reorderStickerSets, new di.d6(13));
         NotificationCenter.getInstance(i15).lambda$postNotificationNameOnUIThread$1(NotificationCenter.stickersDidLoad, 0, Boolean.TRUE);
-        szVar.X(true);
+        szVar.Y(true);
         if (SharedConfig.updateStickersOrderOnSend) {
             SharedConfig.toggleUpdateStickersOrderOnSend();
             org.telegram.ui.ActionBar.r2 r2Var = this.E0;
             if (r2Var != null) {
-                wc.b0(r2Var).K(R.raw.filter_reorder, LocaleController.getString(R.string.DynamicPackOrderOff), LocaleController.getString(R.string.DynamicPackOrderOffInfo), LocaleController.getString("Settings"), new td(i16, r2Var)).j();
+                wc.b0(r2Var).K(R.raw.filter_reorder, LocaleController.getString(R.string.DynamicPackOrderOff), LocaleController.getString(R.string.DynamicPackOrderOffInfo), LocaleController.getString("Settings"), new ud(i16, r2Var)).j();
                 return;
             }
             FrameLayout frameLayout = szVar.r;
@@ -82,10 +82,10 @@ public final class dx extends xx {
         }
     }
 
-    @Override // org.telegram.ui.Components.pn0
+    @Override // org.telegram.ui.Components.qn0
     public final void p() {
         sz szVar = this.G0;
-        szVar.Y();
+        szVar.Z();
         ex exVar = szVar.C0;
         if (exVar != null) {
             exVar.invalidate();

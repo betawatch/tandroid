@@ -24,13 +24,13 @@ import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.ds;
-import org.telegram.ui.Components.k80;
-import org.telegram.ui.Components.md0;
-import org.telegram.ui.Components.qk0;
+import org.telegram.ui.Components.l80;
+import org.telegram.ui.Components.nd0;
+import org.telegram.ui.Components.rk0;
 import org.telegram.ui.Components.zr;
-import org.telegram.ui.yx;
+import org.telegram.ui.fx;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class mb implements View.OnClickListener {
     public final /* synthetic */ int a = 1;
@@ -99,7 +99,7 @@ public final /* synthetic */ class mb implements View.OnClickListener {
                     arrayList.addAll(arrayList3);
                 }
                 arrayList.add(0, UserConfig.getInstance(i12).getCurrentUser());
-                k80 F = k80.F(k3Var.getContainerView(), u6Var, linearLayout);
+                l80 F = l80.F(k3Var.getContainerView(), u6Var, linearLayout);
                 int size = arrayList.size();
                 int i14 = 0;
                 while (i14 < size) {
@@ -128,31 +128,31 @@ public final /* synthetic */ class mb implements View.OnClickListener {
                 LinearLayout linearLayout2 = (LinearLayout) obj4;
                 AtomicBoolean atomicBoolean = (AtomicBoolean) obj3;
                 HorizontalScrollView horizontalScrollView = (HorizontalScrollView) obj2;
-                qk0 qk0Var = (qk0) obj;
+                rk0 rk0Var = (rk0) obj;
                 int currentItem = mVar.getCurrentItem();
                 if (i12 != currentItem) {
-                    qk0 qk0Var2 = (qk0) linearLayout2.getChildAt(currentItem);
+                    rk0 rk0Var2 = (rk0) linearLayout2.getChildAt(currentItem);
                     atomicBoolean.set(true);
                     mVar.x(i12, true);
                     float scrollX = horizontalScrollView.getScrollX();
-                    float x9 = qk0Var.getX() - ((horizontalScrollView.getWidth() - qk0Var.getWidth()) / 2.0f);
+                    float x9 = rk0Var.getX() - ((horizontalScrollView.getWidth() - rk0Var.getWidth()) / 2.0f);
                     ValueAnimator duration = ValueAnimator.ofFloat(0.0f, 1.0f).setDuration(150L);
                     duration.setInterpolator(ds.f);
-                    duration.addUpdateListener(new org.telegram.ui.Cells.b(horizontalScrollView, scrollX, x9, qk0Var2, qk0Var));
+                    duration.addUpdateListener(new org.telegram.ui.Cells.b(horizontalScrollView, scrollX, x9, rk0Var2, rk0Var));
                     duration.start();
                     break;
                 }
                 break;
             case 3:
-                md0 md0Var = (md0) obj3;
+                nd0 nd0Var = (nd0) obj3;
                 org.telegram.ui.ActionBar.e3 e3Var = (org.telegram.ui.ActionBar.e3) obj2;
                 Utilities.Callback callback = (Utilities.Callback) obj;
                 TL_account.TL_birthday tL_birthday = new TL_account.TL_birthday();
-                tL_birthday.day = ((md0) obj5).getValue();
-                tL_birthday.month = ((md0) obj4).getValue() + 1;
-                if (md0Var.getValue() != i12) {
+                tL_birthday.day = ((nd0) obj5).getValue();
+                tL_birthday.month = ((nd0) obj4).getValue() + 1;
+                if (nd0Var.getValue() != i12) {
                     tL_birthday.flags |= 1;
-                    tL_birthday.year = md0Var.getValue();
+                    tL_birthday.year = nd0Var.getValue();
                 }
                 runnable = e3Var.a.dismissRunnable;
                 runnable.run();
@@ -173,9 +173,9 @@ public final /* synthetic */ class mb implements View.OnClickListener {
                 org.telegram.ui.ActionBar.u6 u6Var2 = (org.telegram.ui.ActionBar.u6) obj4;
                 TL_wallet.walletTransaction[] wallettransactionArr = (TL_wallet.walletTransaction[]) obj2;
                 Context context = (Context) obj;
-                k80 F2 = k80.F(((org.telegram.ui.Wallet.j2[]) obj5)[0].getContainer(), u6Var2, (ImageView) obj3);
+                l80 F2 = l80.F(((org.telegram.ui.Wallet.j2[]) obj5)[0].getContainer(), u6Var2, (ImageView) obj3);
                 if (!TextUtils.isEmpty(wallettransactionArr[0].tx_hash)) {
-                    F2.c(R.drawable.msg_search, LocaleController.getString(R.string.WalletViewInExplorer), new yx(context, i12, wallettransactionArr, 16), false);
+                    F2.c(R.drawable.msg_search, LocaleController.getString(R.string.WalletViewInExplorer), new fx(context, i12, wallettransactionArr, 17), false);
                 }
                 F2.c(R.drawable.wallet_help, LocaleController.getString(R.string.WalletWhatIsGram), new b(context, i11, u6Var2), false);
                 F2.a0(0.0f, -AndroidUtilities.dp(48.0f));
@@ -184,13 +184,13 @@ public final /* synthetic */ class mb implements View.OnClickListener {
         }
     }
 
-    public /* synthetic */ mb(a5.m mVar, int i10, LinearLayout linearLayout, AtomicBoolean atomicBoolean, HorizontalScrollView horizontalScrollView, qk0 qk0Var) {
+    public /* synthetic */ mb(a5.m mVar, int i10, LinearLayout linearLayout, AtomicBoolean atomicBoolean, HorizontalScrollView horizontalScrollView, rk0 rk0Var) {
         this.c = mVar;
         this.b = i10;
         this.d = linearLayout;
         this.e = atomicBoolean;
         this.f = horizontalScrollView;
-        this.h = qk0Var;
+        this.h = rk0Var;
     }
 
     public /* synthetic */ mb(fi.d dVar, TL_stars.StarsSubscription starsSubscription, int i10, org.telegram.ui.ActionBar.k3[] k3VarArr, TLObject tLObject, String str) {
@@ -211,10 +211,10 @@ public final /* synthetic */ class mb implements View.OnClickListener {
         this.b = i10;
     }
 
-    public /* synthetic */ mb(md0 md0Var, md0 md0Var2, md0 md0Var3, int i10, org.telegram.ui.ActionBar.e3 e3Var, Utilities.Callback callback) {
-        this.c = md0Var;
-        this.d = md0Var2;
-        this.e = md0Var3;
+    public /* synthetic */ mb(nd0 nd0Var, nd0 nd0Var2, nd0 nd0Var3, int i10, org.telegram.ui.ActionBar.e3 e3Var, Utilities.Callback callback) {
+        this.c = nd0Var;
+        this.d = nd0Var2;
+        this.e = nd0Var3;
         this.b = i10;
         this.f = e3Var;
         this.h = callback;

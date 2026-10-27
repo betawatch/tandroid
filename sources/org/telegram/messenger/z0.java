@@ -8,7 +8,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class z0 implements Runnable {
     public final /* synthetic */ int a;
@@ -59,19 +59,19 @@ public final /* synthetic */ class z0 implements Runnable {
                 ((MessagesStorage) this.c).lambda$updateMessagePollResults$104(this.b, (TLRPC.Poll) this.d, (TLRPC.PollResults) this.e);
                 break;
             case 10:
-                ((MessagesStorage) this.c).lambda$onReactionsUpdate$109((TLRPC.TL_messageReactions) this.d, (TLRPC.TL_messageReactions) this.e, this.b);
+                ((MessagesStorage) this.c).lambda$onReactionsUpdate$110((TLRPC.TL_messageReactions) this.d, (TLRPC.TL_messageReactions) this.e, this.b);
                 break;
             case 11:
-                ((MessagesStorage) this.c).lambda$getUserSync$261((TLRPC.User[]) this.d, this.b, (CountDownLatch) this.e);
+                ((MessagesStorage) this.c).lambda$getUserSync$262((TLRPC.User[]) this.d, this.b, (CountDownLatch) this.e);
                 break;
             case 12:
-                ((MessagesStorage) this.c).lambda$containsLocalDialog$182(this.b, (Boolean[]) this.d, (CountDownLatch) this.e);
+                ((MessagesStorage) this.c).lambda$containsLocalDialog$183(this.b, (Boolean[]) this.d, (CountDownLatch) this.e);
                 break;
             case 13:
-                ((MessagesStorage) this.c).lambda$getChannelPtsSync$260(this.b, (Integer[]) this.d, (CountDownLatch) this.e);
+                ((MessagesStorage) this.c).lambda$getChannelPtsSync$261(this.b, (Integer[]) this.d, (CountDownLatch) this.e);
                 break;
             case 14:
-                ((MessagesStorage) this.c).lambda$getChatSync$262((TLRPC.Chat[]) this.d, this.b, (CountDownLatch) this.e);
+                ((MessagesStorage) this.c).lambda$getChatSync$263((TLRPC.Chat[]) this.d, this.b, (CountDownLatch) this.e);
                 break;
             case 15:
                 ((MessagesStorage) this.c).lambda$deleteUserChatHistory$88((ArrayList) this.d, this.b, (ArrayList) this.e);
@@ -80,7 +80,7 @@ public final /* synthetic */ class z0 implements Runnable {
                 ((MessagesStorage) this.c).lambda$loadPendingTasks$14((TLRPC.TL_dialog) this.d, (TLRPC.InputPeer) this.e, this.b);
                 break;
             case 17:
-                ((MessagesStorage) this.c).lambda$getEncryptedChat$180(this.b, (ArrayList) this.d, (CountDownLatch) this.e);
+                ((MessagesStorage) this.c).lambda$getEncryptedChat$181(this.b, (ArrayList) this.d, (CountDownLatch) this.e);
                 break;
             case 18:
                 ((SavedMessagesController) this.c).lambda$updateDialogsLastMessage$9((MessagesStorage) this.d, (ArrayList) this.e, this.b);

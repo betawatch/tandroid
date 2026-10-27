@@ -11,7 +11,7 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class n7 extends j7 {
     public final ArrayList f;
@@ -24,7 +24,7 @@ public final class n7 extends j7 {
         this.f = new ArrayList();
     }
 
-    @Override // org.telegram.ui.Components.lm0
+    @Override // org.telegram.ui.Components.mm0
     public final boolean D(s4.e1 e1Var) {
         return true;
     }
@@ -85,15 +85,15 @@ public final class n7 extends j7 {
         b7Var.setWillNotDraw(!z11);
         b7Var.requestLayout();
         boolean contains = x7Var.h.l.contains(Long.valueOf(w6Var.a));
-        org.telegram.ui.Components.zp zpVar = b7Var.n;
-        if (zpVar != null || contains) {
-            if (zpVar == null) {
-                org.telegram.ui.Components.zp zpVar2 = new org.telegram.ui.Components.zp(b7Var.getContext(), 21, b7Var.b);
-                b7Var.n = zpVar2;
-                zpVar2.b(-1, org.telegram.ui.ActionBar.y6.d6, org.telegram.ui.ActionBar.y6.k7);
+        org.telegram.ui.Components.aq aqVar = b7Var.n;
+        if (aqVar != null || contains) {
+            if (aqVar == null) {
+                org.telegram.ui.Components.aq aqVar2 = new org.telegram.ui.Components.aq(b7Var.getContext(), 21, b7Var.b);
+                b7Var.n = aqVar2;
+                aqVar2.b(-1, org.telegram.ui.ActionBar.y6.d6, org.telegram.ui.ActionBar.y6.k7);
                 b7Var.n.setDrawUnchecked(false);
                 b7Var.n.setDrawBackgroundAsArc(3);
-                b7Var.addView(b7Var.n, org.telegram.ui.Components.gb1.h(24, 24.0f, (LocaleController.isRTL ? 5 : 3) | 48, 38.0f, 25.0f, 38.0f, 0.0f));
+                b7Var.addView(b7Var.n, org.telegram.ui.Components.kb1.h(24, 24.0f, (LocaleController.isRTL ? 5 : 3) | 48, 38.0f, 25.0f, 38.0f, 0.0f));
             }
             b7Var.n.a(contains, z10);
         }
@@ -101,6 +101,6 @@ public final class n7 extends j7 {
 
     @Override // s4.h0
     public final s4.e1 x(ViewGroup viewGroup, int i10) {
-        return new org.telegram.ui.Components.vl0(i10 == 1 ? new b7(this.h.getContext(), null) : null);
+        return new org.telegram.ui.Components.wl0(i10 == 1 ? new b7(this.h.getContext(), null) : null);
     }
 }

@@ -1,31 +1,30 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.RectF;
+import android.app.Activity;
+import android.text.TextUtils;
 import android.widget.TextView;
-import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public final class g30 extends TextView {
-    public final RectF a;
-    public final /* synthetic */ v50 b;
+public final class g30 extends org.telegram.ui.Components.g8 {
+    public final /* synthetic */ x50 E;
+    public final /* synthetic */ Activity y;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public g30(v50 v50Var, Context context) {
-        super(context);
-        this.b = v50Var;
-        this.a = new RectF();
+    public g30(x50 x50Var, LaunchActivity launchActivity, Activity activity) {
+        super(launchActivity);
+        this.E = x50Var;
+        this.y = activity;
     }
 
-    @Override // android.widget.TextView, android.view.View
-    public final void onDraw(Canvas canvas) {
-        float width = getWidth();
-        float height = getHeight();
-        RectF rectF = this.a;
-        rectF.set(0.0f, 0.0f, width, height);
-        canvas.drawRoundRect(rectF, AndroidUtilities.dp(12.0f), AndroidUtilities.dp(12.0f), this.b.g1);
-        super.onDraw(canvas);
+    @Override // org.telegram.ui.Components.g8
+    public final TextView a() {
+        TextView textView = new TextView(this.y);
+        org.telegram.messenger.t.r(textView, org.telegram.ui.ActionBar.y6.hg, null, 1, 20.0f);
+        textView.setGravity(51);
+        textView.setSingleLine(true);
+        textView.setEllipsize(TextUtils.TruncateAt.END);
+        textView.setOnClickListener(new org.telegram.ui.Components.l51(20, this, textView));
+        return textView;
     }
 }

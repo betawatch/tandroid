@@ -16,13 +16,13 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.fl0;
+import org.telegram.ui.Components.gl0;
 import org.telegram.ui.Components.sz;
-import org.telegram.ui.Components.vw0;
+import org.telegram.ui.Components.ww0;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
-public final class rb extends vw0 {
+public final class rb extends ww0 {
     public final jg.i l0;
     public final ScaleGestureDetector m0;
     public boolean n0;
@@ -99,7 +99,7 @@ public final class rb extends vw0 {
     /* JADX WARN: Type inference failed for: r11v3, types: [boolean] */
     /* JADX WARN: Type inference failed for: r11v5 */
     /* JADX WARN: Type inference failed for: r11v7 */
-    @Override // org.telegram.ui.Components.vw0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.ww0, android.view.ViewGroup, android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -110,7 +110,7 @@ public final class rb extends vw0 {
         ta taVar;
         float f7;
         float f10;
-        sg.c2 c2Var;
+        sg.b2 b2Var;
         sb sbVar = this.t0;
         RectF rectF = sbVar.H;
         Path path = sbVar.e0;
@@ -144,8 +144,8 @@ public final class rb extends vw0 {
                     float[] fArr = taVar.Y1;
                     if (taVar.S1) {
                         taVar.S1 = r11;
-                        if (taVar.O1 != null && (c2Var = taVar.P1) != null) {
-                            fArr[r11] = c2Var.getMeasuredWidth() / 2.0f;
+                        if (taVar.O1 != null && (b2Var = taVar.P1) != null) {
+                            fArr[r11] = b2Var.getMeasuredWidth() / 2.0f;
                             fArr[1] = taVar.P1.getMeasuredHeight() / 2.0f;
                             taVar.P1.getMatrix().mapPoints(fArr);
                             f7 = 1.0f;
@@ -294,7 +294,7 @@ public final class rb extends vw0 {
         return super.dispatchTouchEvent(motionEvent);
     }
 
-    @Override // org.telegram.ui.Components.vw0
+    @Override // org.telegram.ui.Components.ww0
     public int getBottomPadding() {
         int height = getHeight();
         sb sbVar = this.t0;
@@ -311,7 +311,7 @@ public final class rb extends vw0 {
         return (height - sbVar.b0) - sbVar.r.getBottom();
     }
 
-    @Override // org.telegram.ui.Components.vw0, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.ww0, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
     public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
         int i14;
         sz emojiView;
@@ -364,10 +364,10 @@ public final class rb extends vw0 {
             if (szVar != null) {
                 szVar.layout(sbVar.Y, (measuredHeight - sbVar.b0) - szVar.getMeasuredHeight(), measuredWidth - sbVar.a0, measuredHeight - sbVar.b0);
             }
-            fl0 fl0Var = sbVar.v1.O1;
-            if (fl0Var != null) {
+            gl0 gl0Var = sbVar.v1.O1;
+            if (gl0Var != null) {
                 int i21 = sbVar.Y;
-                fl0Var.layout(i21, sbVar.Z, fl0Var.getMeasuredWidth() + i21, sbVar.v1.O1.getMeasuredHeight() + sbVar.Z);
+                gl0Var.layout(i21, sbVar.Z, gl0Var.getMeasuredWidth() + i21, sbVar.v1.O1.getMeasuredHeight() + sbVar.Z);
                 bh.p pVar = sbVar.v1.O1.getReactionsWindow() != null ? sbVar.v1.O1.getReactionsWindow().c : null;
                 if (pVar != null) {
                     int i22 = sbVar.Y;
@@ -447,9 +447,9 @@ public final class rb extends vw0 {
             if (szVar != null) {
                 szVar.measure(View.MeasureSpec.makeMeasureSpec(i12, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(sbVar.v1.e2.getLayoutParams().height, TLObject.FLAG_30));
             }
-            fl0 fl0Var = sbVar.v1.O1;
-            if (fl0Var != null) {
-                measureChild(fl0Var, i10, i11);
+            gl0 gl0Var = sbVar.v1.O1;
+            if (gl0Var != null) {
+                measureChild(gl0Var, i10, i11);
                 if (sbVar.v1.O1.getReactionsWindow() != null) {
                     measureChild(sbVar.v1.O1.getReactionsWindow().c, i10, i11);
                 }

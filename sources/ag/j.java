@@ -3,11 +3,11 @@ package ag;
 import android.content.Context;
 import java.util.concurrent.atomic.AtomicInteger;
 import org.telegram.messenger.MediaController;
-import org.telegram.ui.Components.s81;
+import org.telegram.ui.Components.t81;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.aa;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
 public final class j implements e6.h, z6.c {
     public int a;
@@ -46,9 +46,9 @@ public final class j implements e6.h, z6.c {
         int i10 = this.a;
         long j10 = -1;
         if (i10 == 0) {
-            s81 s81Var = PhotoViewer.u1().F2;
-            if (s81Var != null) {
-                j10 = s81Var.n();
+            t81 t81Var = PhotoViewer.v1().F2;
+            if (t81Var != null) {
+                j10 = t81Var.n();
             }
         } else if (i10 == 1) {
             j10 = MediaController.getInstance().getCurrentPosition();

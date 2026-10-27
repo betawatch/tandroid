@@ -16,9 +16,9 @@ import org.telegram.ui.ActionBar.u6;
 import org.telegram.ui.ActionBar.y6;
 import org.telegram.ui.Cells.i8;
 import org.telegram.ui.Components.ds;
-import org.telegram.ui.Components.gb1;
+import org.telegram.ui.Components.kb1;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class c extends FrameLayout implements oe.d, p6 {
     public ShapeDrawable a;
@@ -33,14 +33,14 @@ public final class c extends FrameLayout implements oe.d, p6 {
         this.b = u6Var;
         i8 i8Var = new i8(context, u6Var, false);
         this.c = i8Var;
-        addView(i8Var, gb1.h(45, 45.0f, 49, 0.0f, 8.0f, 0.0f, 0.0f));
+        addView(i8Var, kb1.h(45, 45.0f, 49, 0.0f, 8.0f, 0.0f, 0.0f));
         TextView textView = new TextView(context);
         this.d = textView;
         textView.setTextSize(1, 10.0f);
         textView.setGravity(17);
         textView.setEllipsize(TextUtils.TruncateAt.END);
         textView.setSingleLine();
-        addView(textView, gb1.h(-1, -2.0f, 80, 6.0f, 0.0f, 6.0f, 5.0f));
+        addView(textView, kb1.h(-1, -2.0f, 80, 6.0f, 0.0f, 6.0f, 5.0f));
         updateColors();
     }
 

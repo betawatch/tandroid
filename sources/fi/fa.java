@@ -6,9 +6,9 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.Crop.CropAreaView;
 import org.telegram.ui.Components.kw;
 import org.telegram.ui.PhotoViewer;
-import org.telegram.ui.ih1;
+import org.telegram.ui.kh1;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class fa implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -55,14 +55,14 @@ public final /* synthetic */ class fa implements ValueAnimator.AnimatorUpdateLis
                 kwVar.b.invalidate();
                 break;
             case 3:
-                ih1 ih1Var = (ih1) obj;
-                ih1Var.y = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                kh1 kh1Var = (kh1) obj;
+                kh1Var.y = ((Float) valueAnimator.getAnimatedValue()).floatValue();
                 float dp = f10 + AndroidUtilities.dp(28.0f);
                 float dp2 = f7 + AndroidUtilities.dp(52.0f);
-                float f11 = ih1Var.y;
-                ih1Var.G = dp - (dp * f11);
-                ih1Var.H = dp2 - (f11 * dp2);
-                ih1Var.invalidate();
+                float f11 = kh1Var.y;
+                kh1Var.G = dp - (dp * f11);
+                kh1Var.H = dp2 - (f11 * dp2);
+                kh1Var.invalidate();
                 break;
             case 4:
                 PhotoViewer photoViewer = (PhotoViewer) obj;

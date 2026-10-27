@@ -19,20 +19,20 @@ import org.telegram.ui.ActionBar.u6;
 import org.telegram.ui.ActionBar.y6;
 import org.telegram.ui.Cells.f7;
 import org.telegram.ui.Cells.q4;
-import org.telegram.ui.Components.lm0;
-import org.telegram.ui.Components.z90;
-import org.telegram.ui.wg1;
+import org.telegram.ui.Components.aa0;
+import org.telegram.ui.Components.mm0;
+import org.telegram.ui.yg1;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
-public final class m0 extends lm0 {
+public final class m0 extends mm0 {
     public final /* synthetic */ s0 c;
 
     public m0(s0 s0Var) {
         this.c = s0Var;
     }
 
-    @Override // org.telegram.ui.Components.lm0
+    @Override // org.telegram.ui.Components.mm0
     public final boolean D(s4.e1 e1Var) {
         return e1Var.f == 3;
     }
@@ -80,14 +80,14 @@ public final class m0 extends lm0 {
             r0 r0Var = (r0) view;
             s0Var.b0 = r0Var;
             TLRPC.Chat chat = s0Var.Z;
-            z90 z90Var = r0Var.e;
+            aa0 aa0Var = r0Var.e;
             try {
                 SpannableStringBuilder replaceTags = AndroidUtilities.replaceTags(LocaleController.formatPluralString("BoostingReassignBoostTextPluralWithLink", (int) MessagesController.getInstance(UserConfig.selectedAccount).boostsPerSentGift, chat == null ? "" : chat.title, "%3$s"));
                 SpannableStringBuilder replaceSingleTag = AndroidUtilities.replaceSingleTag(LocaleController.getString("BoostingReassignBoostTextLink", R.string.BoostingReassignBoostTextLink), y6.gc, 2, new ti.g(s0Var, 11));
                 int indexOf = TextUtils.indexOf(replaceTags, "%3$s");
                 replaceTags.replace(indexOf, indexOf + 4, (CharSequence) replaceSingleTag);
-                z90Var.setText(replaceTags, TextView.BufferType.EDITABLE);
-                z90Var.post(new wg1(r0Var, indexOf, 12));
+                aa0Var.setText(replaceTags, TextView.BufferType.EDITABLE);
+                aa0Var.post(new yg1(r0Var, indexOf, 12));
             } catch (Exception e) {
                 FileLog.e(e);
             }

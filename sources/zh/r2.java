@@ -38,31 +38,31 @@ import org.telegram.ui.ActionBar.f7;
 import org.telegram.ui.ActionBar.u6;
 import org.telegram.ui.ActionBar.y6;
 import org.telegram.ui.Cells.db;
-import org.telegram.ui.Components.bs0;
+import org.telegram.ui.Components.aq;
+import org.telegram.ui.Components.cs0;
 import org.telegram.ui.Components.ds;
-import org.telegram.ui.Components.f80;
-import org.telegram.ui.Components.gb1;
-import org.telegram.ui.Components.k80;
-import org.telegram.ui.Components.mm0;
+import org.telegram.ui.Components.g80;
+import org.telegram.ui.Components.kb1;
+import org.telegram.ui.Components.l80;
+import org.telegram.ui.Components.nm0;
 import org.telegram.ui.Components.qc;
-import org.telegram.ui.Components.t91;
+import org.telegram.ui.Components.u91;
 import org.telegram.ui.Components.ub;
-import org.telegram.ui.Components.vs0;
-import org.telegram.ui.Components.zp;
+import org.telegram.ui.Components.ws0;
 import org.telegram.ui.Components.zq;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.zg1;
+import org.telegram.ui.bh1;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public abstract class r2 extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     public static final HashMap V = new HashMap();
     public final TextView E;
-    public final zp F;
+    public final aq F;
     public final FrameLayout G;
     public int H;
-    public k80 I;
+    public l80 I;
     public SpannableStringBuilder J;
     public int K;
     public int L;
@@ -82,7 +82,7 @@ public abstract class r2 extends FrameLayout implements NotificationCenter.Notif
     public final q9 e;
     public final u6 f;
     public final v1 h;
-    public final t91 n;
+    public final u91 n;
     public final FrameLayout r;
     public final SpannableStringBuilder s;
     public final SpannableStringBuilder v;
@@ -101,10 +101,10 @@ public abstract class r2 extends FrameLayout implements NotificationCenter.Notif
         int i11;
         String str;
         this.H = -1;
-        vs0 vs0Var = (vs0) this;
+        ws0 ws0Var = (ws0) this;
         int i12 = 1;
-        this.Q = new r1(vs0Var, i12);
-        this.R = new oe.b(0, new u1(vs0Var), ds.h, 380L, true);
+        this.Q = new r1(ws0Var, i12);
+        this.R = new oe.b(0, new u1(ws0Var), ds.h, 380L, true);
         this.T = AndroidUtilities.displaySize.y;
         this.a = r2Var;
         this.b = i10;
@@ -136,20 +136,20 @@ public abstract class r2 extends FrameLayout implements NotificationCenter.Notif
         }
         G.b();
         this.f = u6Var;
-        v1 v1Var = new v1(vs0Var, context, r2Var);
+        v1 v1Var = new v1(ws0Var, context, r2Var);
         this.h = v1Var;
         v1Var.setAllowDisallowInterceptTouch(true);
-        v1Var.setAdapter(new w1(vs0Var, i10, u6Var));
-        addView(v1Var, gb1.i(-1, -1, 119));
-        t91 n10 = v1Var.n(10, true);
+        v1Var.setAdapter(new w1(ws0Var, i10, u6Var));
+        addView(v1Var, kb1.i(-1, -1, 119));
+        u91 n10 = v1Var.n(10, true);
         this.n = n10;
         n10.g(y6.Gh, y6.G6, y6.Eh, y6.Hh, y6.s8);
         n10.setPadding(AndroidUtilities.dp(8.0f), 0, AndroidUtilities.dp(8.0f), 0);
         n10.setClipToPadding(false);
         n10.r = 12;
-        n10.setPreTabClick(new u1(vs0Var));
-        n10.setOnTabLongClick(new e6(vs0Var, i10, r2Var, context, u6Var));
-        addView(n10, gb1.i(-1, 42, 48));
+        n10.setPreTabClick(new u1(ws0Var));
+        n10.setOnTabLongClick(new e6(ws0Var, i10, r2Var, context, u6Var));
+        addView(n10, kb1.i(-1, 42, 48));
         hh.c cVar = new hh.c();
         int i13 = y6.d6;
         cVar.a(y6.w0(i13, u6Var));
@@ -160,13 +160,13 @@ public abstract class r2 extends FrameLayout implements NotificationCenter.Notif
         c10.w(AndroidUtilities.dp(8.0f));
         c10.x(AndroidUtilities.dp(22.0f));
         i4Var.setBackground(c10);
-        gb1.c(i4Var, 0.02f, 1.2f);
+        kb1.c(i4Var, 0.02f, 1.2f);
         FrameLayout frameLayout = new FrameLayout(context);
         this.r = frameLayout;
-        FrameLayout.LayoutParams i14 = gb1.i(-1, 60, 87);
+        FrameLayout.LayoutParams i14 = kb1.i(-1, 60, 87);
         i14.bottomMargin += AndroidUtilities.navigationBarHeight;
         addView(frameLayout, i14);
-        frameLayout.addView(i4Var, gb1.i(-2, 60, 1));
+        frameLayout.addView(i4Var, kb1.i(-2, 60, 1));
         FrameLayout frameLayout2 = new FrameLayout(context);
         this.G = frameLayout2;
         LinearLayout linearLayout = new LinearLayout(context);
@@ -179,25 +179,25 @@ public abstract class r2 extends FrameLayout implements NotificationCenter.Notif
         b7 N = f7.N(i15);
         linearLayout.setBackground(Z);
         f7.k(linearLayout, Z, null, N, u6Var);
-        zp zpVar = new zp(context, 24, u6Var);
-        this.F = zpVar;
-        zpVar.b(y6.h7, y6.j7, y6.k7);
-        zpVar.setDrawUnchecked(true);
-        zpVar.a(false, false);
-        zpVar.setDrawBackgroundAsArc(10);
-        linearLayout.addView(zpVar, gb1.x(26, 26, 16, 0, 0, 0, 0));
+        aq aqVar = new aq(context, 24, u6Var);
+        this.F = aqVar;
+        aqVar.b(y6.h7, y6.j7, y6.k7);
+        aqVar.setDrawUnchecked(true);
+        aqVar.a(false, false);
+        aqVar.setDrawBackgroundAsArc(10);
+        linearLayout.addView(aqVar, kb1.x(26, 26, 16, 0, 0, 0, 0));
         TextView textView = new TextView(context);
         this.E = textView;
         f7.V(textView, y6.j5, u6Var);
         textView.setTextSize(1, 14.0f);
         textView.setText(LocaleController.getString(R.string.Gift2ChannelNotify));
-        linearLayout.addView(textView, gb1.x(-2, -2, 16, 9, 0, 0, 0));
-        i4Var.addView(linearLayout, gb1.h(-2, 38.0f, 17, 0.0f, 6.0f, 0.0f, 6.0f));
-        gb1.c(linearLayout, 0.025f, 1.5f);
-        linearLayout.setOnClickListener(new pa(vs0Var, r2Var, i10, 24));
+        linearLayout.addView(textView, kb1.x(-2, -2, 16, 9, 0, 0, 0));
+        i4Var.addView(linearLayout, kb1.h(-2, 38.0f, 17, 0.0f, 6.0f, 0.0f, 6.0f));
+        kb1.c(linearLayout, 0.025f, 1.5f);
+        linearLayout.setOnClickListener(new pa(ws0Var, r2Var, i10, 24));
         Boolean bool = G.h;
         if (bool != null) {
-            zpVar.a(bool.booleanValue(), false);
+            aqVar.a(bool.booleanValue(), false);
         }
         TLRPC.User user = MessagesController.getInstance(i10).getUser(Long.valueOf(this.c));
         boolean z10 = this.c < 0 || !(user == null || UserObject.isUserSelf(user) || UserObject.isBot(user));
@@ -220,12 +220,12 @@ public abstract class r2 extends FrameLayout implements NotificationCenter.Notif
                 dVar.setRoundRadius(AndroidUtilities.dp(19.0f));
                 dVar.i(spannableStringBuilder, false, true);
                 dVar.setStateListAnimator(null);
-                i4Var.addView(dVar, gb1.i(-2, -1, 17));
-                i4Var.setOnClickListener(new bs0(vs0Var, z10, i10, i12));
+                i4Var.addView(dVar, kb1.i(-2, -1, 17));
+                i4Var.setOnClickListener(new cs0(ws0Var, z10, i10, i12));
                 dVar.setVisibility(!d() ? 8 : 0);
                 linearLayout.setVisibility(d() ? 0 : 8);
                 this.x = 60;
-                addView(frameLayout2, gb1.i(-1, 200, 87));
+                addView(frameLayout2, kb1.i(-1, 200, 87));
                 m();
                 o();
             }
@@ -248,12 +248,12 @@ public abstract class r2 extends FrameLayout implements NotificationCenter.Notif
         dVar2.setRoundRadius(AndroidUtilities.dp(19.0f));
         dVar2.i(spannableStringBuilder3, false, true);
         dVar2.setStateListAnimator(null);
-        i4Var.addView(dVar2, gb1.i(-2, -1, 17));
-        i4Var.setOnClickListener(new bs0(vs0Var, z10, i10, i12));
+        i4Var.addView(dVar2, kb1.i(-2, -1, 17));
+        i4Var.setOnClickListener(new cs0(ws0Var, z10, i10, i12));
         dVar2.setVisibility(!d() ? 8 : 0);
         linearLayout.setVisibility(d() ? 0 : 8);
         this.x = 60;
-        addView(frameLayout2, gb1.i(-1, 200, 87));
+        addView(frameLayout2, kb1.i(-1, 200, 87));
         m();
         o();
     }
@@ -381,7 +381,7 @@ public abstract class r2 extends FrameLayout implements NotificationCenter.Notif
         return currentPage != null ? currentPage.e : this.d;
     }
 
-    public mm0 getCurrentListView() {
+    public nm0 getCurrentListView() {
         m2 currentPage = getCurrentPage();
         if (currentPage != null) {
             return currentPage.f;
@@ -457,15 +457,15 @@ public abstract class r2 extends FrameLayout implements NotificationCenter.Notif
     }
 
     public float getTabsVisibility() {
-        t91 t91Var = this.n;
-        if (t91Var != null) {
-            return t91Var.getAlpha();
+        u91 u91Var = this.n;
+        if (u91Var != null) {
+            return u91Var.getAlpha();
         }
         return 0.0f;
     }
 
     public final void h(String str, Utilities.Callback callback) {
-        f80 f80Var;
+        g80 g80Var;
         Context context = getContext();
         Activity findActivity = AndroidUtilities.findActivity(context);
         View currentFocus = findActivity != null ? findActivity.getCurrentFocus() : null;
@@ -496,16 +496,16 @@ public abstract class r2 extends FrameLayout implements NotificationCenter.Notif
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setOrientation(1);
         y1Var.setText(str);
-        linearLayout.addView(y1Var, gb1.o(24.0f, 0.0f, 24.0f, 10.0f, -1, -2));
+        linearLayout.addView(y1Var, kb1.o(24.0f, 0.0f, 24.0f, 10.0f, -1, -2));
         alertDialog$Builder.c();
         alertDialog$Builder.o(linearLayout);
         alertDialog$Builder.a.a = AndroidUtilities.dp(292.0f);
-        alertDialog$Builder.k(LocaleController.getString(str != null ? R.string.Edit : R.string.Create), new zg1(28, y1Var, callback));
+        alertDialog$Builder.k(LocaleController.getString(str != null ? R.string.Edit : R.string.Create), new bh1(28, y1Var, callback));
         alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), new vg.d(18));
         e2VarArr[0] = alertDialog$Builder.a;
-        k80 k80Var = this.I;
-        if (k80Var != null && (f80Var = k80Var.m) != null) {
-            f80Var.setSoftInputMode(48);
+        l80 l80Var = this.I;
+        if (l80Var != null && (g80Var = l80Var.m) != null) {
+            g80Var.setSoftInputMode(48);
         }
         AndroidUtilities.requestAdjustNothing(findActivity, this.a.getClassGuid());
         e2VarArr[0].setOnDismissListener(new hi.y0(this, y1Var, findActivity, 6));
@@ -580,7 +580,7 @@ public abstract class r2 extends FrameLayout implements NotificationCenter.Notif
         dVar.updateColors();
         int i10 = y6.Oh;
         u6 u6Var = this.f;
-        int b12 = ((vs0) this).W.b1(y6.w0(i10, u6Var));
+        int b12 = ((ws0) this).W.b1(y6.w0(i10, u6Var));
         if (!(dVar.getBackground() instanceof ShapeDrawable)) {
             dVar.setBackground(y6.c0(AndroidUtilities.dp(19.0f), b12));
         } else if (((ShapeDrawable) dVar.getBackground()).getPaint().getColor() != b12) {
@@ -638,9 +638,9 @@ public abstract class r2 extends FrameLayout implements NotificationCenter.Notif
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
         int i10 = this.b;
-        NotificationCenter.getInstance(i10).addObserver(this, NotificationCenter.starUserGiftsLoaded);
-        NotificationCenter.getInstance(i10).addObserver(this, NotificationCenter.starUserGiftCollectionsLoaded);
-        NotificationCenter.getInstance(i10).addObserver(this, NotificationCenter.updateInterfaces);
+        NotificationCenter.getInstance(i10).addWeakObserver(this, NotificationCenter.starUserGiftsLoaded);
+        NotificationCenter.getInstance(i10).addWeakObserver(this, NotificationCenter.starUserGiftCollectionsLoaded);
+        NotificationCenter.getInstance(i10).addWeakObserver(this, NotificationCenter.updateInterfaces);
         m2 currentPage = getCurrentPage();
         if (currentPage != null) {
             currentPage.f(false);
@@ -683,16 +683,16 @@ public abstract class r2 extends FrameLayout implements NotificationCenter.Notif
 
     public final void p() {
         float f7;
-        t91 t91Var = this.n;
-        if (t91Var == null) {
+        u91 u91Var = this.n;
+        if (u91Var == null) {
             return;
         }
         float min = Math.min(this.K, getTabsHeight() - AndroidUtilities.dp(42.0f));
         float clamp01 = Utilities.clamp01(AndroidUtilities.ilerp(min - this.K, -AndroidUtilities.dp(42.0f), 0.0f));
         float lerp = AndroidUtilities.lerp(0.9f, 1.0f, clamp01);
-        t91Var.setTranslationY(min);
-        t91Var.setScaleX(lerp);
-        t91Var.setScaleY(lerp);
+        u91Var.setTranslationY(min);
+        u91Var.setScaleX(lerp);
+        u91Var.setScaleY(lerp);
         v1 v1Var = this.h;
         if (v1Var.getViewPages() != null) {
             f7 = 0.0f;
@@ -704,7 +704,7 @@ public abstract class r2 extends FrameLayout implements NotificationCenter.Notif
         } else {
             f7 = 0.0f;
         }
-        t91Var.setAlpha(ee.a(f7, 0.0f, 1.0f) * clamp01);
+        u91Var.setAlpha(ee.a(f7, 0.0f, 1.0f) * clamp01);
     }
 
     public abstract void q(boolean z10);

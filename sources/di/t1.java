@@ -10,9 +10,9 @@ import android.widget.ImageView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
 import org.telegram.ui.Components.ds;
-import org.telegram.ui.Components.gb1;
+import org.telegram.ui.Components.kb1;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class t1 extends FrameLayout {
     public final FrameLayout a;
@@ -27,7 +27,7 @@ public final class t1 extends FrameLayout {
 
     public t1(Context context, fh.b bVar) {
         super(context);
-        gb1.b(this);
+        kb1.b(this);
         FrameLayout frameLayout = new FrameLayout(context);
         this.a = frameLayout;
         ch.i iVar = new ch.i();
@@ -36,24 +36,24 @@ public final class t1 extends FrameLayout {
         iVar.invalidateSelf();
         iVar.f = AndroidUtilities.dp(1.0f);
         frameLayout.setBackground(iVar);
-        addView(frameLayout, gb1.i(40, 40, 17));
+        addView(frameLayout, kb1.i(40, 40, 17));
         View view = new View(context);
         this.b = view;
         view.setBackground(org.telegram.ui.ActionBar.y6.K(AndroidUtilities.dp(40.0f), -13522392));
-        frameLayout.addView(view, gb1.i(38, 38, 17));
+        frameLayout.addView(view, kb1.i(38, 38, 17));
         view.setAlpha(0.0f);
         view.setScaleX(0.0f);
         view.setScaleY(0.0f);
         s1 s1Var = new s1(context);
         this.d = s1Var;
-        addView(s1Var, gb1.i(42, 42, 17));
+        addView(s1Var, kb1.i(42, 42, 17));
         ImageView imageView = new ImageView(context);
         this.c = imageView;
         imageView.setScaleType(ImageView.ScaleType.CENTER);
         imageView.setScaleX(0.75f);
         imageView.setScaleY(0.75f);
         imageView.setColorFilter(new PorterDuffColorFilter(-2960428, PorterDuff.Mode.SRC_IN));
-        frameLayout.addView(imageView, gb1.i(40, 40, 17));
+        frameLayout.addView(imageView, kb1.i(40, 40, 17));
         b(false, false);
     }
 

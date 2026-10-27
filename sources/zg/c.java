@@ -12,16 +12,16 @@ import java.util.HashSet;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.vh;
+import org.telegram.messenger.wh;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.f7;
 import org.telegram.ui.ActionBar.j2;
 import org.telegram.ui.ActionBar.p6;
 import org.telegram.ui.ActionBar.u6;
 import org.telegram.ui.ActionBar.y6;
-import org.telegram.ui.Components.gb1;
+import org.telegram.ui.Components.kb1;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public class c extends FrameLayout implements p6 {
     public int a;
@@ -38,12 +38,12 @@ public class c extends FrameLayout implements p6 {
         this.b = u6Var;
         TextView textView = new TextView(context);
         this.d = textView;
-        vh.j(20.0f, 1, textView);
+        wh.j(20.0f, 1, textView);
         textView.setGravity(LocaleController.isRTL ? 5 : 3);
         int i10 = y6.j5;
         f7.V(textView, i10, u6Var);
         boolean z10 = LocaleController.isRTL;
-        addView(textView, gb1.h(-1, -2.0f, 23, z10 ? 16.0f : 53.0f, 0.0f, z10 ? 53.0f : 16.0f, 0.0f));
+        addView(textView, kb1.h(-1, -2.0f, 23, z10 ? 16.0f : 53.0f, 0.0f, z10 ? 53.0f : 16.0f, 0.0f));
         ImageView imageView = new ImageView(context);
         this.c = imageView;
         j2 j2Var = new j2(false);
@@ -54,7 +54,7 @@ public class c extends FrameLayout implements p6 {
         j2Var.a(w02);
         j2Var.b(y6.w0(i10, u6Var));
         j2Var.k = 220.0f;
-        addView(imageView, gb1.h(24, 24.0f, (LocaleController.isRTL ? 5 : 3) | 16, 16.0f, 0.0f, 16.0f, 0.0f));
+        addView(imageView, kb1.h(24, 24.0f, (LocaleController.isRTL ? 5 : 3) | 16, 16.0f, 0.0f, 16.0f, 0.0f));
         imageView.setOnClickListener(new d0(this, 26));
     }
 
@@ -83,7 +83,7 @@ public class c extends FrameLayout implements p6 {
     public void setCloseImageVisible(boolean z10) {
         this.c.setVisibility(z10 ? 0 : 8);
         boolean z11 = LocaleController.isRTL;
-        this.d.setLayoutParams(gb1.h(-1, -2.0f, 23, (z11 || !z10) ? 22.0f : 53.0f, 0.0f, (z11 && z10) ? 53.0f : 22.0f, 0.0f));
+        this.d.setLayoutParams(kb1.h(-1, -2.0f, 23, (z11 || !z10) ? 22.0f : 53.0f, 0.0f, (z11 && z10) ? 53.0f : 22.0f, 0.0f));
     }
 
     public void setOnCloseClickListener(Runnable runnable) {

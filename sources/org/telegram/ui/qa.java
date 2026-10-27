@@ -22,7 +22,7 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public abstract class qa extends FrameLayout implements org.telegram.ui.ActionBar.p6 {
     public float E;
@@ -57,7 +57,7 @@ public abstract class qa extends FrameLayout implements org.telegram.ui.ActionBa
         b6Var.setTextSize(16);
         org.telegram.ui.ActionBar.f7.Y(b6Var, org.telegram.ui.ActionBar.y6.G6, u6Var);
         b6Var.setEllipsizeByGradient(true);
-        addView(b6Var, org.telegram.ui.Components.gb1.h(-1, -2.0f, 48, 70.0f, 9.0f, 0.0f, 50.0f));
+        addView(b6Var, org.telegram.ui.Components.kb1.h(-1, -2.0f, 48, 70.0f, 9.0f, 0.0f, 50.0f));
         ImageView imageView = new ImageView(getContext());
         this.d = imageView;
         org.telegram.ui.Components.gq gqVar = new org.telegram.ui.Components.gq(AndroidUtilities.dp(7.0f), AndroidUtilities.dp(1.35f), org.telegram.ui.ActionBar.y6.w0(org.telegram.ui.ActionBar.y6.n6, u6Var));
@@ -67,13 +67,13 @@ public abstract class qa extends FrameLayout implements org.telegram.ui.ActionBa
         imageView.setAlpha(0.0f);
         imageView.setVisibility(0);
         gqVar.setBounds(0, 0, AndroidUtilities.dp(14.0f), AndroidUtilities.dp(14.0f));
-        addView(imageView, org.telegram.ui.Components.gb1.h(14, 14.0f, 48, 70.0f, 35.0f, 0.0f, 0.0f));
+        addView(imageView, org.telegram.ui.Components.kb1.h(14, 14.0f, 48, 70.0f, 35.0f, 0.0f, 0.0f));
         org.telegram.ui.Components.s6 s6Var = new org.telegram.ui.Components.s6(getContext(), false, true, true);
         this.f = s6Var;
         s6Var.setTextColor(org.telegram.ui.ActionBar.y6.w0(org.telegram.ui.ActionBar.y6.z6, u6Var));
         s6Var.b(0.4f, 120L, org.telegram.ui.Components.ds.g);
         s6Var.setTextSize(AndroidUtilities.dp(13.0f));
-        addView(s6Var, org.telegram.ui.Components.gb1.h(-1, -2.0f, 48, 70.0f, 23.0f, 0.0f, 0.0f));
+        addView(s6Var, org.telegram.ui.Components.kb1.h(-1, -2.0f, 48, 70.0f, 23.0f, 0.0f, 0.0f));
         Drawable[] drawableArr = {context.getDrawable(R.drawable.msg_link_1).mutate(), context.getDrawable(R.drawable.msg_link_2).mutate()};
         this.h = drawableArr;
         Drawable drawable = drawableArr[0];

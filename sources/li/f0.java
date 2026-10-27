@@ -23,9 +23,9 @@ import org.telegram.ui.ActionBar.f7;
 import org.telegram.ui.ActionBar.p6;
 import org.telegram.ui.ActionBar.u6;
 import org.telegram.ui.ActionBar.y6;
-import org.telegram.ui.Components.gb1;
+import org.telegram.ui.Components.kb1;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class f0 extends z implements p6 {
     public d0 E;
@@ -54,7 +54,7 @@ public final class f0 extends z implements p6 {
         this.v = linearLayout;
         linearLayout.setOrientation(0);
         horizontalScrollView.addView(linearLayout, new FrameLayout.LayoutParams(-2, -1));
-        addView(horizontalScrollView, gb1.i(-1, -1, 23));
+        addView(horizontalScrollView, kb1.i(-1, -1, 23));
         x1 x1Var = new x1(context, R.drawable.msg_add, u6Var);
         x1Var.e = 19;
         x1Var.updateColors();
@@ -97,7 +97,7 @@ public final class f0 extends z implements p6 {
                 }
             }
         });
-        addView(x1Var, gb1.i(38, 38, 21));
+        addView(x1Var, kb1.i(38, 38, 21));
         TextView textView = new TextView(context);
         this.x = textView;
         textView.setText(LocaleController.getString(R.string.RichEditorAddButton));
@@ -142,7 +142,7 @@ public final class f0 extends z implements p6 {
                 }
             }
         });
-        addView(textView, gb1.i(-2, 38, 17));
+        addView(textView, kb1.i(-2, 38, 17));
         int i13 = y6.Oh;
         int w02 = y6.w0(i13, u6Var);
         int v = y6.v(y6.w0(y6.d6, u6Var), y6.o1(0.1f, w02));
@@ -201,7 +201,7 @@ public final class f0 extends z implements p6 {
                 while (i10 < size) {
                     c0 c0Var = new c0(this, getContext(), pageblockbuttonrow.buttons.get(i10), i10);
                     arrayList2.add(c0Var);
-                    linearLayout.addView(c0Var, gb1.x(-2, -1, 16, i10 == 0 ? 0 : 7, 0, 0, 0));
+                    linearLayout.addView(c0Var, kb1.x(-2, -1, 16, i10 == 0 ? 0 : 7, 0, 0, 0));
                     i10++;
                 }
                 boolean z10 = size >= 8;

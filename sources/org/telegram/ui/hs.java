@@ -1,92 +1,60 @@
 package org.telegram.ui;
 
-import android.app.Activity;
-import android.content.Context;
-import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.MessagesStorage;
+import org.telegram.messenger.NotificationCenter;
 import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public final class hs extends org.telegram.ui.Cells.v8 {
-    public final /* synthetic */ int W = 2;
-    public final /* synthetic */ Object a0;
+public final class hs extends org.telegram.ui.ActionBar.j {
+    public final /* synthetic */ ls a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public hs(js jsVar, Context context, org.telegram.ui.ActionBar.u6 u6Var) {
-        super(context, u6Var);
-        this.a0 = jsVar;
+    public hs(ls lsVar) {
+        this.a = lsVar;
     }
 
-    @Override // org.telegram.ui.Cells.v8
-    public int e(int i10) {
-        switch (this.W) {
-            case 2:
-                ProfileActivity profileActivity = ((j01) this.a0).e;
-                int i11 = ProfileActivity.R6;
-                profileActivity.getClass();
-                break;
+    @Override // org.telegram.ui.ActionBar.j
+    public final void b(int i10) {
+        int i11;
+        int i12;
+        ls lsVar = this.a;
+        if (i10 == -1) {
+            lsVar.finishFragment();
+            return;
         }
-        return i10;
-    }
-
-    @Override // org.telegram.ui.Cells.v8, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        switch (this.W) {
-            case 0:
-                super.onLayout(z10, i10, i11, i12, i13);
-                int dp = AndroidUtilities.dp(21.0f);
-                int measuredHeight = getMeasuredHeight();
-                js jsVar = (js) this.a0;
-                int measuredHeight2 = (measuredHeight - jsVar.U.getMeasuredHeight()) / 2;
-                org.telegram.ui.Components.y9 y9Var = jsVar.U;
-                y9Var.layout(dp, measuredHeight2, y9Var.getMeasuredWidth() + dp, jsVar.U.getMeasuredHeight() + measuredHeight2);
-                break;
-            case 1:
-                super.onLayout(z10, i10, i11, i12, i13);
-                int dp2 = AndroidUtilities.dp(21.0f);
-                int measuredHeight3 = getMeasuredHeight();
-                kx0 kx0Var = (kx0) this.a0;
-                int measuredHeight4 = (measuredHeight3 - kx0Var.d.u0.getMeasuredHeight()) / 2;
-                org.telegram.ui.Components.y9 y9Var2 = kx0Var.d.u0;
-                y9Var2.layout(dp2, measuredHeight4, y9Var2.getMeasuredWidth() + dp2, kx0Var.d.u0.getMeasuredHeight() + measuredHeight4);
-                break;
-            default:
-                super.onLayout(z10, i10, i11, i12, i13);
-                break;
+        if (i10 != 1 || lsVar.b.getText().length() == 0) {
+            return;
         }
-    }
-
-    @Override // org.telegram.ui.Cells.v8, android.widget.FrameLayout, android.view.View
-    public void onMeasure(int i10, int i11) {
-        switch (this.W) {
-            case 0:
-                super.onMeasure(i10, i11);
-                js jsVar = (js) this.a0;
-                jsVar.U.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(30.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(30.0f), TLObject.FLAG_30));
-                jsVar.U.setRoundRadius(AndroidUtilities.dp(30.0f));
-                break;
-            case 1:
-                super.onMeasure(i10, i11);
-                kx0 kx0Var = (kx0) this.a0;
-                kx0Var.d.u0.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(30.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(30.0f), TLObject.FLAG_30));
-                kx0Var.d.u0.setRoundRadius(AndroidUtilities.dp(30.0f));
-                break;
-            default:
-                super.onMeasure(i10, i11);
-                break;
+        TLRPC.User user = lsVar.getMessagesController().getUser(Long.valueOf(lsVar.H));
+        TLRPC.UserFull userFull = lsVar.getMessagesController().getUserFull(lsVar.H);
+        user.first_name = lsVar.b.getText().toString();
+        user.last_name = lsVar.c.getText().toString();
+        user.contact = true;
+        TLRPC.TL_textWithEntities textWithEntities = lsVar.d.getTextWithEntities();
+        lsVar.getMessagesController().putUser(user, false);
+        lsVar.getContactsController().addContact(user, textWithEntities, lsVar.K && lsVar.X);
+        i11 = ((org.telegram.ui.ActionBar.r2) lsVar).currentAccount;
+        MessagesController.getNotificationsSettings(i11).edit().putInt("dialog_bar_vis3" + lsVar.H, 3).commit();
+        lsVar.getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.updateInterfaces, Integer.valueOf(MessagesController.UPDATE_MASK_NAME));
+        lsVar.getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.peerSettingsDidLoad, Long.valueOf(lsVar.H));
+        if (userFull != null) {
+            if (textWithEntities == null || textWithEntities.text.length() <= 0) {
+                userFull.flags2 &= -4194305;
+                userFull.note = null;
+            } else {
+                userFull.flags2 |= TLObject.FLAG_22;
+                userFull.note = textWithEntities;
+            }
+            i12 = ((org.telegram.ui.ActionBar.r2) lsVar).currentAccount;
+            MessagesStorage.getInstance(i12).updateUserInfo(userFull, true);
+            lsVar.getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.userInfoDidLoad, Long.valueOf(userFull.id), userFull);
         }
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public hs(kx0 kx0Var, Activity activity) {
-        super(activity);
-        this.a0 = kx0Var;
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public hs(j01 j01Var, Context context, org.telegram.ui.ActionBar.u6 u6Var) {
-        super(18, context, u6Var, false, false);
-        this.a0 = j01Var;
+        lsVar.finishFragment();
+        ks ksVar = lsVar.O;
+        if (ksVar != null) {
+            ksVar.a();
+        }
     }
 }

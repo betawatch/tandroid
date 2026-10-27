@@ -28,9 +28,9 @@ import java.util.Locale;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.CopyOnWriteArraySet;
 import org.telegram.ui.Components.b10;
-import org.telegram.ui.Components.k81;
+import org.telegram.ui.Components.l81;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
 public final class j0 extends b2.h implements q {
     public final c3.m0 A;
@@ -95,7 +95,7 @@ public final class j0 extends b2.h implements q {
     public final u2.f0 r;
     public long r0;
     public final j2.e s;
-    public k81 s0;
+    public l81 s0;
     public final Looper t;
     public final ArrayList t0;
     public final y2.c u;
@@ -169,8 +169,8 @@ public final class j0 extends b2.h implements q {
             x2.t tVar = (x2.t) oVar.e.get();
             hVar.i = tVar;
             hVar.r = (u2.f0) oVar.d.get();
-            y2.f b11 = y2.f.b(oVar.g.b);
-            hVar.u = b11;
+            y2.f c10 = y2.f.c(oVar.g.b);
+            hVar.u = c10;
             hVar.q = oVar.l;
             hVar.N = oVar.m;
             hVar.l0 = oVar.o;
@@ -223,7 +223,7 @@ public final class j0 extends b2.h implements q {
             hVar.p0 = k1.k(uVar);
             hVar.s.r(hVar, looper);
             j2.j jVar = new j2.j(oVar.A);
-            s0 s0Var = new s0(hVar.e, hVar.g, hVar.h, tVar, uVar, (u0) oVar.f.get(), b11, hVar.H, hVar.I, hVar.s, hVar.N, oVar.r, oVar.s, looper, g0Var, xVar, jVar, hVar.x, oVar.B);
+            s0 s0Var = new s0(hVar.e, hVar.g, hVar.h, tVar, uVar, (u0) oVar.f.get(), c10, hVar.H, hVar.I, hVar.s, hVar.N, oVar.r, oVar.s, looper, g0Var, xVar, jVar, hVar.x, oVar.B);
             i0Var = s0Var.n;
             hVar.l = s0Var;
             looper2 = s0Var.s;
@@ -239,9 +239,9 @@ public final class j0 extends b2.h implements q {
             hVar.p0(hVar.s);
             Handler handler = new Handler(looper);
             j2.e eVar = hVar.s;
-            b11.getClass();
+            c10.getClass();
             eVar.getClass();
-            s4.o0 o0Var = b11.c;
+            s4.o0 o0Var = c10.c;
             o0Var.getClass();
             CopyOnWriteArrayList copyOnWriteArrayList = (CopyOnWriteArrayList) o0Var.a;
             Iterator it = copyOnWriteArrayList.iterator();
@@ -316,9 +316,9 @@ public final class j0 extends b2.h implements q {
                 i0Var.b(38, hVar.M).b();
                 b2.f fVar = hVar.a0;
                 i0Var.getClass();
-                e2.h0 c10 = e2.i0.c();
-                c10.a = i0Var.a.obtainMessage(31, 0, 0, fVar);
-                c10.b();
+                e2.h0 c11 = e2.i0.c();
+                c11.a = i0Var.a.obtainMessage(31, 0, 0, fVar);
+                c11.b();
                 hVar.t1(1, 3, hVar.a0);
                 hVar.t1(2, 4, Integer.valueOf(hVar.Y));
                 hVar.t1(2, 5, 0);
@@ -348,9 +348,9 @@ public final class j0 extends b2.h implements q {
             i0Var.b(38, hVar.M).b();
             b2.f fVar2 = hVar.a0;
             i0Var.getClass();
-            e2.h0 c102 = e2.i0.c();
-            c102.a = i0Var.a.obtainMessage(31, 0, 0, fVar2);
-            c102.b();
+            e2.h0 c112 = e2.i0.c();
+            c112.a = i0Var.a.obtainMessage(31, 0, 0, fVar2);
+            c112.b();
             hVar.t1(1, 3, hVar.a0);
             hVar.t1(2, 4, Integer.valueOf(hVar.Y));
             hVar.t1(2, 5, 0);
@@ -2110,9 +2110,9 @@ public final class j0 extends b2.h implements q {
             return;
         }
         this.Z = new e2.y(i10, i11);
-        k81 k81Var = this.s0;
-        if (k81Var != null) {
-            k81Var.execute(new v(this, i10, i11, 0));
+        l81 l81Var = this.s0;
+        if (l81Var != null) {
+            l81Var.execute(new v(this, i10, i11, 0));
             return;
         }
         this.m.e(24, new fh.c(i10, i11, 1));

@@ -8,9 +8,9 @@ import org.telegram.messenger.Emoji;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.ActionBar.u6;
-import org.telegram.ui.Components.gb1;
+import org.telegram.ui.Components.kb1;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class s5 extends FrameLayout {
     public final g1 a;
@@ -23,7 +23,7 @@ public final class s5 extends FrameLayout {
         g1Var.setTextSize(1, Math.max(8, SharedConfig.fontSize - 2));
         g1Var.setAllowNewlines(true);
         setCompact(false);
-        addView(g1Var, gb1.i(-1, -2, 51));
+        addView(g1Var, kb1.i(-1, -2, 51));
     }
 
     public final void a() {

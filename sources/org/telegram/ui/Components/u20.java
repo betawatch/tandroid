@@ -11,7 +11,7 @@ import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class u20 {
     public static final int x;
@@ -80,9 +80,9 @@ public final class u20 {
         boolean z11;
         boolean z12;
         boolean z13;
-        org.telegram.ui.vt0 vt0Var;
+        org.telegram.ui.xt0 xt0Var;
         MessageObject messageObject;
-        org.telegram.ui.vt0 vt0Var2;
+        org.telegram.ui.xt0 xt0Var2;
         s20 s20Var;
         boolean z14;
         boolean onScroll;
@@ -128,7 +128,7 @@ public final class u20 {
                     } else if (this.l) {
                         boolean onSingleTapUp = t20Var2.onSingleTapUp(motionEvent);
                         if (this.j && (s20Var = this.h) != null) {
-                            ((PhotoViewer) s20Var).c2(motionEvent);
+                            ((PhotoViewer) s20Var).d2(motionEvent);
                         }
                         z17 = onSingleTapUp;
                     } else {
@@ -286,7 +286,7 @@ public final class u20 {
                 boolean[] zArr = photoViewer.w1;
                 if (!zArr[0] && !zArr[1]) {
                     float x9 = motionEvent.getX();
-                    if ((x9 < Math.min(135, photoViewer.e0.getMeasuredWidth() / 8) || x9 > photoViewer.e0.getMeasuredWidth() - r4) && (messageObject = photoViewer.T4) != null && ((!messageObject.isVideo() && ((vt0Var2 = photoViewer.f0) == null || !vt0Var2.x)) || SystemClock.elapsedRealtime() - photoViewer.u1 < 500 || !photoViewer.r0(motionEvent))) {
+                    if ((x9 < Math.min(135, photoViewer.e0.getMeasuredWidth() / 8) || x9 > photoViewer.e0.getMeasuredWidth() - r4) && (messageObject = photoViewer.T4) != null && ((!messageObject.isVideo() && ((xt0Var2 = photoViewer.f0) == null || !xt0Var2.x)) || SystemClock.elapsedRealtime() - photoViewer.u1 < 500 || !photoViewer.r0(motionEvent))) {
                         this.j = true;
                     }
                 }
@@ -309,18 +309,18 @@ public final class u20 {
                         s20 s20Var3 = this.h;
                         MotionEvent motionEvent7 = this.n;
                         PhotoViewer photoViewer2 = (PhotoViewer) s20Var3;
-                        if ((photoViewer2.F2 != null || ((vt0Var = photoViewer2.f0) != null && vt0Var.x)) && photoViewer2.l3) {
-                            long p12 = photoViewer2.p1();
+                        if ((photoViewer2.F2 != null || ((xt0Var = photoViewer2.f0) != null && xt0Var.x)) && photoViewer2.l3) {
+                            long q12 = photoViewer2.q1();
                             j10 = 0;
-                            long B1 = photoViewer2.B1();
+                            long C1 = photoViewer2.C1();
                             float x11 = motionEvent7.getX();
-                            int l1 = photoViewer2.l1(photoViewer2.u4) / 3;
-                            float f16 = l1 * 2;
+                            int m12 = photoViewer2.m1(photoViewer2.u4) / 3;
+                            float f16 = m12 * 2;
                             if (photoViewer2.r0(motionEvent7)) {
-                                long j12 = x11 >= f16 ? p12 + 10000 : x11 < ((float) l1) ? p12 - 10000 : p12;
-                                if (p12 != j12) {
-                                    if (j12 > B1) {
-                                        j11 = B1;
+                                long j12 = x11 >= f16 ? q12 + 10000 : x11 < ((float) m12) ? q12 - 10000 : q12;
+                                if (q12 != j12) {
+                                    if (j12 > C1) {
+                                        j11 = C1;
                                     } else {
                                         if (j12 < 0) {
                                             z11 = j12 >= -9000;
@@ -329,15 +329,15 @@ public final class u20 {
                                                 t20Var = t20Var2;
                                             } else {
                                                 photoViewer2.z1.e(true);
-                                                photoViewer2.z1.d(x11 < ((float) l1));
-                                                j81 j81Var = photoViewer2.z1;
+                                                photoViewer2.z1.d(x11 < ((float) m12));
+                                                k81 k81Var = photoViewer2.z1;
                                                 t20Var = t20Var2;
-                                                long j13 = j81Var.o + 10000;
-                                                j81Var.o = j13;
-                                                j81Var.p = LocaleController.formatPluralString("Seconds", (int) (j13 / 1000), new Object[0]);
-                                                photoViewer2.v2(j11);
+                                                long j13 = k81Var.o + 10000;
+                                                k81Var.o = j13;
+                                                k81Var.p = LocaleController.formatPluralString("Seconds", (int) (j13 / 1000), new Object[0]);
+                                                photoViewer2.w2(j11);
                                                 photoViewer2.e0.invalidate();
-                                                photoViewer2.q3.h(j11 / B1, true);
+                                                photoViewer2.q3.h(j11 / C1, true);
                                                 photoViewer2.r3.invalidate();
                                             }
                                             cVar = cVar2;
@@ -397,16 +397,16 @@ public final class u20 {
                             j10 = 0;
                         }
                         if (photoViewer2.I6 && ((photoViewer2.a6 != 1.0f || (photoViewer2.Y5 == 0.0f && photoViewer2.X5 == 0.0f)) && photoViewer2.n6 == j10 && photoViewer2.n4 == 0)) {
-                            org.telegram.ui.mu0 mu0Var = photoViewer2.W0[0];
-                            if (mu0Var == null || !mu0Var.p || mu0Var.h == -1) {
+                            org.telegram.ui.ou0 ou0Var = photoViewer2.W0[0];
+                            if (ou0Var == null || !ou0Var.p || ou0Var.h == -1) {
                                 cVar = cVar2;
                             } else {
                                 cVar = cVar2;
                             }
                             if (photoViewer2.a6 == 1.0f) {
-                                float w10 = org.telegram.messenger.vh.w(3.0f, photoViewer2.a6, (motionEvent7.getX() - (photoViewer2.l1(photoViewer2.u4) / 2)) - photoViewer2.X5, motionEvent7.getX() - (photoViewer2.l1(photoViewer2.u4) / 2));
-                                float w11 = org.telegram.messenger.vh.w(3.0f, photoViewer2.a6, (motionEvent7.getY() - (photoViewer2.j1() / 2)) - photoViewer2.Y5, motionEvent7.getY() - (photoViewer2.j1() / 2));
-                                photoViewer2.y3(3.0f);
+                                float w10 = org.telegram.messenger.wh.w(3.0f, photoViewer2.a6, (motionEvent7.getX() - (photoViewer2.m1(photoViewer2.u4) / 2)) - photoViewer2.X5, motionEvent7.getX() - (photoViewer2.m1(photoViewer2.u4) / 2));
+                                float w11 = org.telegram.messenger.wh.w(3.0f, photoViewer2.a6, (motionEvent7.getY() - (photoViewer2.k1() / 2)) - photoViewer2.Y5, motionEvent7.getY() - (photoViewer2.k1() / 2));
+                                photoViewer2.z3(3.0f);
                                 float f17 = photoViewer2.E6;
                                 if (w10 >= f17) {
                                     f17 = photoViewer2.F6;
@@ -424,7 +424,7 @@ public final class u20 {
                                 photoViewer2.k0(1.0f, 0.0f, 0.0f, true);
                             }
                             photoViewer2.O6 = z13;
-                            photoViewer2.F1();
+                            photoViewer2.G1();
                             z12 = true;
                             this.h.getClass();
                             z10 = z12;

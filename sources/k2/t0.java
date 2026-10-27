@@ -1,35 +1,36 @@
 package k2;
 
 import android.os.SystemClock;
+import java.io.Serializable;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
 public final class t0 {
-    public Exception a;
+    public long a = -9223372036854775807L;
     public long b = -9223372036854775807L;
-    public long c = -9223372036854775807L;
+    public Serializable c;
 
-    public final void a(Exception exc) {
+    public void a(Exception exc) {
         long elapsedRealtime = SystemClock.elapsedRealtime();
-        if (this.a == null) {
-            this.a = exc;
+        if (((Exception) this.c) == null) {
+            this.c = exc;
         }
-        if (this.b == -9223372036854775807L && u0.c0.get() <= 0) {
-            this.b = 200 + elapsedRealtime;
+        if (this.a == -9223372036854775807L && u0.c0.get() <= 0) {
+            this.a = 200 + elapsedRealtime;
         }
-        long j10 = this.b;
+        long j10 = this.a;
         if (j10 == -9223372036854775807L || elapsedRealtime < j10) {
-            this.c = elapsedRealtime + 50;
+            this.b = elapsedRealtime + 50;
             return;
         }
-        Exception exc2 = this.a;
+        Exception exc2 = (Exception) this.c;
         if (exc2 != exc) {
             exc2.addSuppressed(exc);
         }
-        Exception exc3 = this.a;
-        this.a = null;
+        Exception exc3 = (Exception) this.c;
+        this.c = null;
+        this.a = -9223372036854775807L;
         this.b = -9223372036854775807L;
-        this.c = -9223372036854775807L;
         throw exc3;
     }
 }

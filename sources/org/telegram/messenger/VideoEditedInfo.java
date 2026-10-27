@@ -23,9 +23,9 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.RLottieNative;
-import org.telegram.ui.Components.bg0;
+import org.telegram.ui.Components.cg0;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
 public class VideoEditedInfo {
     public int account;
@@ -84,7 +84,7 @@ public class VideoEditedInfo {
     public boolean shouldLimitFps = true;
     public ArrayList<MediaCodecVideoConvertor.MixedSoundInfo> mixedSoundInfos = new ArrayList<>();
 
-    /* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+    /* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
     public static class EmojiEntity extends TLRPC.TL_messageEntityCustomEmoji {
         public String documentAbsolutePath;
         public MediaEntity entity;
@@ -173,12 +173,12 @@ public class VideoEditedInfo {
                 serializedData.writeFloat(this.filterState.blurAngle);
                 int i11 = 0;
                 while (i11 < 4) {
-                    bg0 bg0Var = i11 == 0 ? this.filterState.curvesToolValue.a : i11 == 1 ? this.filterState.curvesToolValue.b : i11 == 2 ? this.filterState.curvesToolValue.c : this.filterState.curvesToolValue.d;
-                    serializedData.writeFloat(bg0Var.a);
-                    serializedData.writeFloat(bg0Var.b);
-                    serializedData.writeFloat(bg0Var.c);
-                    serializedData.writeFloat(bg0Var.d);
-                    serializedData.writeFloat(bg0Var.e);
+                    cg0 cg0Var = i11 == 0 ? this.filterState.curvesToolValue.a : i11 == 1 ? this.filterState.curvesToolValue.b : i11 == 2 ? this.filterState.curvesToolValue.c : this.filterState.curvesToolValue.d;
+                    serializedData.writeFloat(cg0Var.a);
+                    serializedData.writeFloat(cg0Var.b);
+                    serializedData.writeFloat(cg0Var.c);
+                    serializedData.writeFloat(cg0Var.d);
+                    serializedData.writeFloat(cg0Var.e);
                     i11++;
                 }
             } else {
@@ -354,12 +354,12 @@ public class VideoEditedInfo {
                             this.filterState.blurAngle = serializedData.readFloat(false);
                             int i11 = 0;
                             while (i11 < 4) {
-                                bg0 bg0Var = i11 == 0 ? this.filterState.curvesToolValue.a : i11 == 1 ? this.filterState.curvesToolValue.b : i11 == 2 ? this.filterState.curvesToolValue.c : this.filterState.curvesToolValue.d;
-                                bg0Var.a = serializedData.readFloat(false);
-                                bg0Var.b = serializedData.readFloat(false);
-                                bg0Var.c = serializedData.readFloat(false);
-                                bg0Var.d = serializedData.readFloat(false);
-                                bg0Var.e = serializedData.readFloat(false);
+                                cg0 cg0Var = i11 == 0 ? this.filterState.curvesToolValue.a : i11 == 1 ? this.filterState.curvesToolValue.b : i11 == 2 ? this.filterState.curvesToolValue.c : this.filterState.curvesToolValue.d;
+                                cg0Var.a = serializedData.readFloat(false);
+                                cg0Var.b = serializedData.readFloat(false);
+                                cg0Var.c = serializedData.readFloat(false);
+                                cg0Var.d = serializedData.readFloat(false);
+                                cg0Var.e = serializedData.readFloat(false);
                                 i11++;
                             }
                         }
@@ -436,7 +436,7 @@ public class VideoEditedInfo {
         }
     }
 
-    /* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+    /* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
     public static class Part extends TLObject {
         public org.telegram.ui.Components.g6 animatedFileDrawable;
         public float currentFrame;
@@ -561,7 +561,7 @@ public class VideoEditedInfo {
         }
     }
 
-    /* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+    /* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
     public static class MediaEntity {
         public static final byte TYPE_LINK = 7;
         public static final byte TYPE_LOCATION = 3;
@@ -591,7 +591,7 @@ public class VideoEditedInfo {
         public int fontSize;
         public float framesPerDraw;
         public float height;
-        public sg.o0 linkSettings;
+        public sg.n0 linkSettings;
         public boolean looped;
         public RLottieNative lottieNative;
         public Matrix matrix;
@@ -825,7 +825,7 @@ public class VideoEditedInfo {
             String readString = abstractSerializedData.readString(z11);
             this.textTypefaceKey = readString;
             rg.j0 j0Var2 = rg.j0.e;
-            sg.o0 o0Var = null;
+            sg.n0 n0Var = null;
             if (readString != null && !TextUtils.isEmpty(readString)) {
                 List c10 = rg.j0.c();
                 for (int i11 = 0; i11 < c10.size(); i11++) {
@@ -871,11 +871,11 @@ public class VideoEditedInfo {
                 this.mediaArea = TL_stories.MediaArea.TLdeserialize(abstractSerializedData, abstractSerializedData.readInt32(z11), z11);
                 int readInt323 = abstractSerializedData.readInt32(z11);
                 if (-625858389 != readInt323) {
-                    int i12 = sg.o0.j;
+                    int i12 = sg.n0.j;
                 } else {
-                    o0Var = new sg.o0();
+                    n0Var = new sg.n0();
                 }
-                this.linkSettings = (sg.o0) TLObject.TLdeserialize(sg.o0.class, o0Var, abstractSerializedData, readInt323, z11);
+                this.linkSettings = (sg.n0) TLObject.TLdeserialize(sg.n0.class, n0Var, abstractSerializedData, readInt323, z11);
                 return;
             }
             if (b10 == 4) {

@@ -16,11 +16,10 @@ import di.j2;
 import fi.e4;
 import fi.fa;
 import java.util.ArrayList;
-import org.telegram.ui.fc1;
-import sg.u;
+import org.telegram.ui.hc1;
 import tg.x1;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public abstract class f extends GLSurfaceView implements Choreographer.FrameCallback {
     public static final /* synthetic */ int K = 0;
@@ -122,7 +121,7 @@ public abstract class f extends GLSurfaceView implements Choreographer.FrameCall
         ofFloat.setDuration(600L);
         this.d.setInterpolator(new OvershootInterpolator());
         this.d.addUpdateListener(new fa(this, f7, f10, 7));
-        this.d.addListener(new fc1(this, 21));
+        this.d.addListener(new hc1(this, 21));
         this.d.start();
         x1 x1Var = this.c;
         if (x1Var != null) {
@@ -289,6 +288,6 @@ public abstract class f extends GLSurfaceView implements Choreographer.FrameCall
             this.H.add(new j2(4, runnable));
             arrayList = new ArrayList(this.H);
         }
-        super.surfaceRedrawNeededAsync(surfaceHolder, new u(14, this, arrayList));
+        super.surfaceRedrawNeededAsync(surfaceHolder, new s9.g(15, this, arrayList));
     }
 }

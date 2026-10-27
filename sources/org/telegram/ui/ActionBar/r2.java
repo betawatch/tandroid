@@ -47,16 +47,16 @@ import org.telegram.messenger.SendMessagesHelper;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.ui.Components.gb1;
-import org.telegram.ui.Components.gp0;
-import org.telegram.ui.Components.mm0;
+import org.telegram.ui.Components.hp0;
+import org.telegram.ui.Components.kb1;
+import org.telegram.ui.Components.nm0;
 import org.telegram.ui.Components.ob;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.e31;
-import org.telegram.ui.hl0;
-import org.telegram.ui.py;
+import org.telegram.ui.g31;
+import org.telegram.ui.jl0;
+import org.telegram.ui.ry;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public abstract class r2 {
     protected k actionBar;
@@ -99,7 +99,7 @@ public abstract class r2 {
     }
 
     public static boolean hasFullyVisibleSheets(r2 r2Var) {
-        py w10;
+        ry w10;
         if (r2Var == null) {
             return false;
         }
@@ -110,7 +110,7 @@ public abstract class r2 {
     }
 
     public static boolean hasSheets(r2 r2Var) {
-        py w10;
+        ry w10;
         if (r2Var == null) {
             return false;
         }
@@ -345,7 +345,7 @@ public abstract class r2 {
         } else if (!this.inPreviewMode || (q2Var = this.previewDelegate) == null) {
             finishFragment(true);
         } else {
-            ((e31) ((hl0) q2Var).b).a();
+            ((g31) ((jl0) q2Var).b).a();
         }
     }
 
@@ -518,7 +518,7 @@ public abstract class r2 {
         return null;
     }
 
-    public mm0 getListViewForSimpleGlass() {
+    public nm0 getListViewForSimpleGlass() {
         return null;
     }
 
@@ -604,7 +604,7 @@ public abstract class r2 {
         return this.resourceProvider;
     }
 
-    public gp0 getScrollViewForSimpleGlass() {
+    public hp0 getScrollViewForSimpleGlass() {
         return null;
     }
 
@@ -1004,7 +1004,7 @@ public abstract class r2 {
             if (l7Var != null) {
                 l7Var.b();
             }
-            getLastStoryViewer().P();
+            getLastStoryViewer().Q();
         }
     }
 
@@ -1026,8 +1026,8 @@ public abstract class r2 {
         if (getLastStoryViewer() != null) {
             y9 lastStoryViewer = getLastStoryViewer();
             lastStoryViewer.s1 = false;
-            if (!org.telegram.ui.j4.x().V && lastStoryViewer.t() != null) {
-                lastStoryViewer.t().d1(false);
+            if (!org.telegram.ui.j4.x().V && lastStoryViewer.u() != null) {
+                lastStoryViewer.u().d1(false);
             }
             l7 l7Var = lastStoryViewer.u1;
             if (l7Var != null) {
@@ -1036,7 +1036,7 @@ public abstract class r2 {
             if (di.o1.Z.S) {
                 di.o1.j();
             }
-            getLastStoryViewer().P();
+            getLastStoryViewer().Q();
         }
     }
 
@@ -1057,11 +1057,11 @@ public abstract class r2 {
 
     public View performCreateView(Context context) {
         View createView = createView(context);
-        mm0 listViewForSimpleGlass = getListViewForSimpleGlass();
-        gp0 scrollViewForSimpleGlass = getScrollViewForSimpleGlass();
-        mm0 mm0Var = listViewForSimpleGlass != null ? listViewForSimpleGlass : scrollViewForSimpleGlass;
-        this.listViewForSimpleGlass = mm0Var;
-        if (mm0Var != null && (createView instanceof FrameLayout)) {
+        nm0 listViewForSimpleGlass = getListViewForSimpleGlass();
+        hp0 scrollViewForSimpleGlass = getScrollViewForSimpleGlass();
+        nm0 nm0Var = listViewForSimpleGlass != null ? listViewForSimpleGlass : scrollViewForSimpleGlass;
+        this.listViewForSimpleGlass = nm0Var;
+        if (nm0Var != null && (createView instanceof FrameLayout)) {
             oi.a baseSimpleGlass = getBaseSimpleGlass();
             View view = this.simpleActionBar;
             if (view == null) {
@@ -1098,7 +1098,7 @@ public abstract class r2 {
                 View view2 = new View(context);
                 this.navigationBarFadeView = view2;
                 view2.setBackground(baseSimpleGlass.b(view2));
-                FrameLayout.LayoutParams i10 = gb1.i(-1, 0, 80);
+                FrameLayout.LayoutParams i10 = kb1.i(-1, 0, 80);
                 i10.height = this.mSystemInsets.d;
                 ((FrameLayout) createView).addView(this.navigationBarFadeView, i10);
             }

@@ -25,8 +25,8 @@ import android.widget.Scroller;
 import bi.u6;
 import c3.h0;
 import di.e8;
-import di.o9;
 import di.q4;
+import di.x;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.WeakHashMap;
@@ -36,7 +36,7 @@ import org.telegram.tgnet.TLObject;
 import r0.a0;
 import r0.i0;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
 public class m extends ViewGroup {
     public static final b t0;
@@ -829,7 +829,7 @@ public class m extends ViewGroup {
                 View childAt2 = getChildAt(i17);
                 if (!((g) childAt2.getLayoutParams()).a) {
                     float left2 = (childAt2.getLeft() - scrollX2) / getClientWidth();
-                    o9 o9Var = (o9) this.m0.b;
+                    x xVar = (x) this.m0.b;
                     e8 e8Var = (e8) childAt2;
                     if (Math.abs(left2) >= 1.0f) {
                         e8Var.a(false);
@@ -837,7 +837,7 @@ public class m extends ViewGroup {
                     } else {
                         if (!e8Var.d) {
                             e8Var.a(true);
-                            if (o9Var.x0 != null) {
+                            if (xVar.x0 != null) {
                                 q4 q4Var = e8Var.a;
                                 long j10 = e8Var.b;
                                 ArrayList arrayList2 = e8Var.c;

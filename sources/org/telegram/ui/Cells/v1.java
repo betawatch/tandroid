@@ -8,12 +8,12 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.lh0;
-import org.telegram.ui.Components.nh0;
-import org.telegram.ui.Components.y71;
-import org.telegram.ui.rb0;
+import org.telegram.ui.Components.mh0;
+import org.telegram.ui.Components.oh0;
+import org.telegram.ui.Components.z71;
+import org.telegram.ui.ub0;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class v1 extends org.telegram.ui.Components.s6 {
     public final /* synthetic */ int s;
@@ -30,10 +30,10 @@ public final class v1 extends org.telegram.ui.Components.s6 {
         switch (this.s) {
             case 1:
                 super.invalidate();
-                lh0 lh0Var = (lh0) this.v;
-                nh0 nh0Var = lh0Var.d;
-                if (lh0Var == nh0Var.b.getPinnedHeader()) {
-                    nh0Var.b.invalidate();
+                mh0 mh0Var = (mh0) this.v;
+                oh0 oh0Var = mh0Var.d;
+                if (mh0Var == oh0Var.b.getPinnedHeader()) {
+                    oh0Var.b.invalidate();
                     break;
                 }
                 break;
@@ -60,7 +60,7 @@ public final class v1 extends org.telegram.ui.Components.s6 {
                 canvas.translate(AndroidUtilities.dp(15.0f), 0.0f);
                 super.onDraw(canvas);
                 canvas.translate(((getMeasuredWidth() - d()) / 2.0f) - AndroidUtilities.dp(30.0f), AndroidUtilities.dp(11.0f));
-                ((y71) this.v).b.draw(canvas);
+                ((z71) this.v).b.draw(canvas);
                 canvas.restore();
                 break;
             case 3:
@@ -79,12 +79,12 @@ public final class v1 extends org.telegram.ui.Components.s6 {
     public void onMeasure(int i10, int i11) {
         switch (this.s) {
             case 4:
-                rb0 rb0Var = (rb0) this.v;
+                ub0 ub0Var = (ub0) this.v;
                 int size = View.MeasureSpec.getSize(i10);
                 if (size <= 0) {
                     size = AndroidUtilities.displaySize.x - AndroidUtilities.dp(20.0f);
                 }
-                super.onMeasure(View.MeasureSpec.makeMeasureSpec((int) ((size - rb0Var.d.getPaint().measureText(rb0Var.d.getText().toString())) - rb0Var.f.getPaint().measureText(rb0Var.f.getText().toString())), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(24.0f), TLObject.FLAG_30));
+                super.onMeasure(View.MeasureSpec.makeMeasureSpec((int) ((size - ub0Var.d.getPaint().measureText(ub0Var.d.getText().toString())) - ub0Var.f.getPaint().measureText(ub0Var.f.getText().toString())), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(24.0f), TLObject.FLAG_30));
                 break;
             default:
                 super.onMeasure(i10, i11);
@@ -97,7 +97,7 @@ public final class v1 extends org.telegram.ui.Components.s6 {
         ViewGroup viewGroup;
         switch (this.s) {
             case 1:
-                viewGroup = ((org.telegram.ui.ActionBar.k3) ((lh0) this.v).d).containerView;
+                viewGroup = ((org.telegram.ui.ActionBar.k3) ((mh0) this.v).d).containerView;
                 return viewGroup.post(runnable);
             default:
                 return super.post(runnable);
@@ -109,7 +109,7 @@ public final class v1 extends org.telegram.ui.Components.s6 {
         ViewGroup viewGroup;
         switch (this.s) {
             case 1:
-                viewGroup = ((org.telegram.ui.ActionBar.k3) ((lh0) this.v).d).containerView;
+                viewGroup = ((org.telegram.ui.ActionBar.k3) ((mh0) this.v).d).containerView;
                 return viewGroup.postDelayed(runnable, j10);
             default:
                 return super.postDelayed(runnable, j10);
@@ -124,16 +124,16 @@ public final class v1 extends org.telegram.ui.Components.s6 {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public v1(y71 y71Var, Context context) {
+    public v1(z71 z71Var, Context context) {
         super(context, true, true, true);
         this.s = 2;
-        this.v = y71Var;
+        this.v = z71Var;
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public v1(rb0 rb0Var, Context context) {
+    public v1(ub0 ub0Var, Context context) {
         super(context, false, true, true);
         this.s = 4;
-        this.v = rb0Var;
+        this.v = ub0Var;
     }
 }

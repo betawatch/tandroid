@@ -11,11 +11,11 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.iy;
 import org.telegram.ui.Components.ou;
 import org.telegram.ui.Components.pu;
-import org.telegram.ui.Components.sd0;
+import org.telegram.ui.Components.td0;
 import org.telegram.ui.Components.vv;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class v4 extends org.telegram.ui.ActionBar.r2 {
     public final /* synthetic */ int a;
@@ -240,7 +240,7 @@ public final class v4 extends org.telegram.ui.ActionBar.r2 {
         switch (this.a) {
             case 8:
                 if (z10 && z11) {
-                    ((sd0) this.b).dismiss();
+                    ((td0) this.b).dismiss();
                     break;
                 }
                 break;
@@ -258,7 +258,7 @@ public final class v4 extends org.telegram.ui.ActionBar.r2 {
                 if (y9Var == null) {
                     return true;
                 }
-                y9Var.H(r2Var);
+                y9Var.I(r2Var);
                 return true;
             case 4:
                 org.telegram.ui.ActionBar.r2 R = LaunchActivity.R();

@@ -14,9 +14,9 @@ import org.telegram.ui.ActionBar.f7;
 import org.telegram.ui.ActionBar.k3;
 import org.telegram.ui.ActionBar.u6;
 import org.telegram.ui.ActionBar.y6;
-import org.telegram.ui.Components.gb1;
+import org.telegram.ui.Components.kb1;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class f0 extends FrameLayout {
     public final ImageView a;
@@ -37,14 +37,14 @@ public final class f0 extends FrameLayout {
         this.a = imageView;
         imageView.setScaleType(ImageView.ScaleType.FIT_CENTER);
         f7.t(imageView, y6.Lj, u6Var, PorterDuff.Mode.SRC_IN);
-        addView(imageView, gb1.h(24, 24.0f, (LocaleController.isRTL ? 5 : 3) | 16, 24.0f, 0.0f, 24.0f, 0.0f));
+        addView(imageView, kb1.h(24, 24.0f, (LocaleController.isRTL ? 5 : 3) | 16, 24.0f, 0.0f, 24.0f, 0.0f));
         b6 b6Var = new b6(context);
         this.b = b6Var;
         b6Var.setWidthWrapContent(true);
         f7.Y(b6Var, y6.j5, u6Var);
         b6Var.setTextSize(14);
         boolean z10 = LocaleController.isRTL;
-        addView(b6Var, gb1.h(-2, -2.0f, (z10 ? 5 : 3) | 16, z10 ? 30.0f : 60.0f, 0.0f, z10 ? 60.0f : 30.0f, 0.0f));
+        addView(b6Var, kb1.h(-2, -2.0f, (z10 ? 5 : 3) | 16, z10 ? 30.0f : 60.0f, 0.0f, z10 ? 60.0f : 30.0f, 0.0f));
         b6 b6Var2 = new b6(context);
         this.d = b6Var2;
         b6Var2.setTextColor(-1);
@@ -54,8 +54,8 @@ public final class f0 extends FrameLayout {
         j5 j5Var = new j5(this, context, u6Var);
         this.c = j5Var;
         j5Var.setWillNotDraw(false);
-        j5Var.addView(b6Var2, gb1.i(-2, -2, 17));
-        addView(j5Var, gb1.g(-1.0f, -1));
+        j5Var.addView(b6Var2, kb1.i(-2, -2, 17));
+        addView(j5Var, kb1.g(-1.0f, -1));
     }
 
     @Override // android.widget.FrameLayout, android.view.View

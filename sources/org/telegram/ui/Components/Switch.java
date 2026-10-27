@@ -20,7 +20,7 @@ import android.view.accessibility.AccessibilityNodeInfo;
 import java.util.HashSet;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public class Switch extends View implements org.telegram.ui.ActionBar.p6 {
     public int E;
@@ -85,7 +85,7 @@ public class Switch extends View implements org.telegram.ui.ActionBar.p6 {
                 ObjectAnimator ofFloat = ObjectAnimator.ofFloat(this, "progress", z10 ? 1.0f : 0.0f);
                 this.d = ofFloat;
                 ofFloat.setDuration(200L);
-                this.d.addListener(new a01(this, 0));
+                this.d.addListener(new b01(this, 0));
                 this.d.start();
             } else {
                 ObjectAnimator objectAnimator = this.d;
@@ -102,7 +102,7 @@ public class Switch extends View implements org.telegram.ui.ActionBar.p6 {
                 ObjectAnimator ofFloat2 = ObjectAnimator.ofFloat(this, "iconProgress", i10 == 0 ? 1.0f : 0.0f);
                 this.e = ofFloat2;
                 ofFloat2.setDuration(200L);
-                this.e.addListener(new a01(this, 1));
+                this.e.addListener(new b01(this, 1));
                 this.e.start();
                 return;
             }
@@ -527,6 +527,6 @@ public class Switch extends View implements org.telegram.ui.ActionBar.p6 {
     public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 
-    public void setOnCheckedChangeListener(b01 b01Var) {
+    public void setOnCheckedChangeListener(c01 c01Var) {
     }
 }

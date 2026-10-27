@@ -1,61 +1,55 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.NotificationCenter;
+import android.view.View;
+import java.util.List;
+import org.telegram.messenger.MediaDataController;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public final class x51 extends AnimatorListenerAdapter {
-    public final /* synthetic */ boolean a;
-    public final /* synthetic */ Runnable b;
-    public final /* synthetic */ boolean[] c;
-    public final /* synthetic */ boolean d;
-    public final /* synthetic */ Runnable e;
-    public final /* synthetic */ y51 f;
+public final /* synthetic */ class x51 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ b61 b;
+    public final /* synthetic */ Integer c;
 
-    public x51(y51 y51Var, boolean z10, Runnable runnable, boolean[] zArr, boolean z11, Runnable runnable2) {
-        this.f = y51Var;
-        this.a = z10;
-        this.b = runnable;
-        this.c = zArr;
-        this.d = z11;
-        this.e = runnable2;
+    public /* synthetic */ x51(b61 b61Var, Integer num, int i10) {
+        this.a = i10;
+        this.b = b61Var;
+        this.c = num;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        Runnable runnable;
-        y51 y51Var = this.f;
-        k0 k0Var = y51Var.s;
-        boolean z10 = this.a;
-        float f7 = z10 ? 1.0f : 0.0f;
-        y51Var.I = f7;
-        AndroidUtilities.lerp(y51Var.c, y51Var.d, f7, y51Var.e);
-        k0Var.invalidate();
-        if (!z10) {
-            y51Var.v.setAlpha(y51Var.I);
-        }
-        if (y51Var.I < 0.5f && !z10 && (runnable = this.b) != null) {
-            boolean[] zArr = this.c;
-            if (!zArr[0]) {
-                zArr[0] = true;
-                runnable.run();
-            }
-        }
-        if (!z10) {
-            if (this.d) {
-                y51Var.a.b = false;
-                y51Var.P.h0.invalidate();
-            }
-            NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.startAllHeavyOperations, 4);
-        }
-        y51Var.K = null;
-        k0Var.invalidate();
-        Runnable runnable2 = this.e;
-        if (runnable2 != null) {
-            runnable2.run();
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i10 = this.a;
+        b61 b61Var = this.b;
+        switch (i10) {
+            case 0:
+                b61.a(b61Var, this.c);
+                break;
+            default:
+                b61Var.getClass();
+                Integer num = this.c;
+                if (num != null) {
+                    try {
+                        b61Var.P.performHapticFeedback(0, 1);
+                    } catch (Exception unused) {
+                    }
+                    u41 u41Var = (u41) b61Var;
+                    v41 v41Var = u41Var.S;
+                    f61 f61Var = v41Var.e;
+                    List list = f61.a2;
+                    f61Var.l();
+                    TLRPC.TL_emojiStatus tL_emojiStatus = new TLRPC.TL_emojiStatus();
+                    View view = u41Var.Q;
+                    long j10 = ((o51) view).e.documentId;
+                    tL_emojiStatus.document_id = j10;
+                    v41Var.e.p(view, Long.valueOf(j10), ((o51) u41Var.Q).e.document, u41Var.R, num);
+                    if (u41Var.R == null) {
+                        MediaDataController.getInstance(v41Var.e.V).pushRecentEmojiStatus(tL_emojiStatus);
+                        break;
+                    }
+                }
+                break;
         }
     }
 }

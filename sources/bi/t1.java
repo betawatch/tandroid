@@ -18,15 +18,15 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.vh;
-import org.telegram.ui.Components.d41;
+import org.telegram.messenger.wh;
 import org.telegram.ui.Components.ds;
-import org.telegram.ui.Components.gb1;
-import org.telegram.ui.Components.p90;
-import org.telegram.ui.Components.r90;
-import org.telegram.ui.r60;
+import org.telegram.ui.Components.e41;
+import org.telegram.ui.Components.kb1;
+import org.telegram.ui.Components.q90;
+import org.telegram.ui.Components.s90;
+import org.telegram.ui.t60;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class t1 extends FrameLayout implements oe.d {
     public final /* synthetic */ int a;
@@ -95,16 +95,16 @@ public final class t1 extends FrameLayout implements oe.d {
                 super.dispatchDraw(canvas);
                 break;
             case 10:
-                d41 d41Var = (d41) this.d;
-                float i12 = d41Var.f.i();
+                e41 e41Var = (e41) this.d;
+                float i12 = e41Var.f.i();
                 int i13 = (i12 > 0.0f ? 1 : (i12 == 0.0f ? 0 : -1));
                 boolean z10 = i13 > 0;
-                float lerp = AndroidUtilities.lerp(0.5f, 1.0f, i12) * d41Var.L;
+                float lerp = AndroidUtilities.lerp(0.5f, 1.0f, i12) * e41Var.L;
                 float dp = AndroidUtilities.dp(10.0f);
                 float dp2 = AndroidUtilities.dp(8.33f);
                 float width2 = (getWidth() / 2.0f) + AndroidUtilities.dp(12.0f);
                 float dp3 = AndroidUtilities.dp(12.0f);
-                float max = Math.max(dp2 + dp2, d41Var.f.c() + AndroidUtilities.dp(10.0f));
+                float max = Math.max(dp2 + dp2, e41Var.f.c() + AndroidUtilities.dp(10.0f));
                 if (z10) {
                     i10 = i13;
                     f10 = dp3;
@@ -132,10 +132,10 @@ public final class t1 extends FrameLayout implements oe.d {
                     float f13 = max / 2.0f;
                     rectF4.set(f7 - f13, f10 - dp2, f7 + f13, f10 + dp2);
                     org.telegram.ui.Components.l6 l6Var = (org.telegram.ui.Components.l6) this.c;
-                    l6Var.setColor(org.telegram.ui.ActionBar.y6.o1(i12, l6Var.b.a(org.telegram.ui.ActionBar.y6.w0(d41Var.F, l6Var.a), false)));
+                    l6Var.setColor(org.telegram.ui.ActionBar.y6.o1(i12, l6Var.b.a(org.telegram.ui.ActionBar.y6.w0(e41Var.F, l6Var.a), false)));
                     canvas.drawRoundRect(rectF4, dp2, dp2, l6Var);
-                    d41Var.f.p(rectF4);
-                    org.telegram.ui.Components.r6 r6Var = d41Var.f;
+                    e41Var.f.p(rectF4);
+                    org.telegram.ui.Components.r6 r6Var = e41Var.f;
                     r6Var.B = (int) (i12 * 255.0f);
                     r6Var.draw(canvas);
                     canvas.restore();
@@ -144,14 +144,14 @@ public final class t1 extends FrameLayout implements oe.d {
                 break;
             case 11:
                 Paint paint3 = (Paint) this.c;
-                r60 r60Var = (r60) this.d;
-                paint3.setColor(r60Var.getThemedColor(org.telegram.ui.ActionBar.y6.d6));
+                t60 t60Var = (t60) this.d;
+                paint3.setColor(t60Var.getThemedColor(org.telegram.ui.ActionBar.y6.d6));
                 canvas.save();
                 canvas.translate(0.0f, -getTop());
                 RectF rectF5 = (RectF) this.b;
                 rectF5.set(0.0f, 0.0f, getWidth(), getHeight());
                 rectF5.offset(0.0f, getTop());
-                r60.b0(r60Var, canvas, rectF5, paint3);
+                t60.b0(t60Var, canvas, rectF5, paint3);
                 canvas.restore();
                 super.dispatchDraw(canvas);
                 break;
@@ -222,13 +222,13 @@ public final class t1 extends FrameLayout implements oe.d {
                 }
                 return drawChild;
             case 13:
-                sg.t2 t2Var = ((sg.v2) this.d).f;
-                if (view != t2Var) {
+                sg.s2 s2Var = ((sg.u2) this.d).f;
+                if (view != s2Var) {
                     return super.drawChild(canvas, view, j10);
                 }
                 canvas.save();
                 canvas.translate(((org.telegram.ui.Components.h6) this.b).d(view.getX(), false), ((org.telegram.ui.Components.h6) this.c).d(view.getY(), false));
-                t2Var.a(canvas);
+                s2Var.a(canvas);
                 canvas.restore();
                 return true;
             default:
@@ -283,9 +283,9 @@ public final class t1 extends FrameLayout implements oe.d {
                 RectF rectF = (RectF) this.c;
                 rectF.set(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight());
                 path.addRoundRect(rectF, AndroidUtilities.dp(10.0f), AndroidUtilities.dp(10.0f), Path.Direction.CW);
-                sg.t2 t2Var = ((sg.v2) this.d).f;
-                if (t2Var != null) {
-                    t2Var.setMaxWidth(getMeasuredWidth() - AndroidUtilities.dp(32.0f));
+                sg.s2 s2Var = ((sg.u2) this.d).f;
+                if (s2Var != null) {
+                    s2Var.setMaxWidth(getMeasuredWidth() - AndroidUtilities.dp(32.0f));
                     break;
                 }
                 break;
@@ -299,7 +299,7 @@ public final class t1 extends FrameLayout implements oe.d {
     public boolean verifyDrawable(Drawable drawable) {
         switch (this.a) {
             case 10:
-                return ((d41) this.d).f == drawable || super.verifyDrawable(drawable);
+                return ((e41) this.d).f == drawable || super.verifyDrawable(drawable);
             default:
                 return super.verifyDrawable(drawable);
         }
@@ -312,25 +312,25 @@ public final class t1 extends FrameLayout implements oe.d {
         org.telegram.ui.Components.y9 y9Var = new org.telegram.ui.Components.y9(context);
         this.c = y9Var;
         y9Var.setRoundRadius(AndroidUtilities.dp(23.0f));
-        addView(y9Var, gb1.h(46, 46.0f, 19, 21.0f, 6.0f, 0.0f, 6.0f));
+        addView(y9Var, kb1.h(46, 46.0f, 19, 21.0f, 6.0f, 0.0f, 6.0f));
         if (z10) {
-            addView(new ji.a(context, u6Var), gb1.f(22.66f, 22.66f, 83, 48.66f, 0.0f, 0.0f, 3.6599998f));
+            addView(new ji.a(context, u6Var), kb1.f(22.66f, 22.66f, 83, 48.66f, 0.0f, 0.0f, 3.6599998f));
         }
         TextView textView = new TextView(context);
         this.b = textView;
-        vh.j(16.0f, 1, textView);
+        wh.j(16.0f, 1, textView);
         org.telegram.ui.ActionBar.f7.V(textView, org.telegram.ui.ActionBar.y6.j5, u6Var);
         textView.setSingleLine(true);
         TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
         textView.setEllipsize(truncateAt);
-        addView(textView, gb1.h(-1, -2.0f, 51, 80.0f, 7.0f, 0.0f, 0.0f));
+        addView(textView, kb1.h(-1, -2.0f, 51, 80.0f, 7.0f, 0.0f, 0.0f));
         TextView textView2 = new TextView(context);
         this.d = textView2;
         textView2.setTextSize(1, 14.0f);
         org.telegram.ui.ActionBar.f7.V(textView2, org.telegram.ui.ActionBar.y6.z6, u6Var);
         textView2.setSingleLine(true);
         textView2.setEllipsize(truncateAt);
-        addView(textView2, gb1.h(-1, -2.0f, 51, 80.0f, 30.33f, 0.0f, 0.0f));
+        addView(textView2, kb1.h(-1, -2.0f, 51, 80.0f, 30.33f, 0.0f, 0.0f));
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -352,19 +352,19 @@ public final class t1 extends FrameLayout implements oe.d {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public t1(sg.v2 v2Var, Context context, int i10) {
+    public t1(sg.u2 u2Var, Context context, int i10) {
         super(context);
         this.a = i10;
         switch (i10) {
             case 13:
-                this.d = v2Var;
+                this.d = u2Var;
                 super(context);
                 ds dsVar = ds.h;
                 this.b = new org.telegram.ui.Components.h6(this, 0L, 350L, dsVar);
                 this.c = new org.telegram.ui.Components.h6(this, 0L, 350L, dsVar);
                 break;
             default:
-                this.d = v2Var;
+                this.d = u2Var;
                 this.b = new Path();
                 this.c = new RectF();
                 break;
@@ -389,7 +389,7 @@ public final class t1 extends FrameLayout implements oe.d {
         ImageView imageView = new ImageView(context);
         this.d = imageView;
         org.telegram.ui.ActionBar.f7.t(imageView, org.telegram.ui.ActionBar.y6.Oh, null, PorterDuff.Mode.MULTIPLY);
-        addView(imageView, gb1.h(28, 28.0f, 0, 25.0f, 12.0f, 16.0f, 0.0f));
+        addView(imageView, kb1.h(28, 28.0f, 0, 25.0f, 12.0f, 16.0f, 0.0f));
         TextView textView = new TextView(context);
         this.b = textView;
         textView.setTypeface(AndroidUtilities.bold());
@@ -397,14 +397,14 @@ public final class t1 extends FrameLayout implements oe.d {
         u6Var = ((org.telegram.ui.ActionBar.k3) f6Var).resourcesProvider;
         org.telegram.ui.ActionBar.f7.V(textView, i10, u6Var);
         textView.setTextSize(1, 14.0f);
-        addView(textView, gb1.h(-1, -2.0f, 0, 68.0f, 8.0f, 16.0f, 0.0f));
+        addView(textView, kb1.h(-1, -2.0f, 0, 68.0f, 8.0f, 16.0f, 0.0f));
         TextView textView2 = new TextView(context);
         this.c = textView2;
         int i11 = org.telegram.ui.ActionBar.y6.y6;
         u6Var2 = ((org.telegram.ui.ActionBar.k3) f6Var).resourcesProvider;
         org.telegram.ui.ActionBar.f7.V(textView2, i11, u6Var2);
         textView2.setTextSize(1, 14.0f);
-        addView(textView2, gb1.h(-1, -2.0f, 0, 68.0f, 28.0f, 16.0f, 8.0f));
+        addView(textView2, kb1.h(-1, -2.0f, 0, 68.0f, 28.0f, 16.0f, 8.0f));
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -433,43 +433,43 @@ public final class t1 extends FrameLayout implements oe.d {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public t1(r90 r90Var, Context context) {
+    public t1(s90 s90Var, Context context) {
         super(context);
         this.a = 9;
-        this.d = r90Var;
-        p90 p90Var = new p90(this, context);
-        this.c = p90Var;
-        LinearLayout d = vh.d(context, 0);
-        addView(d, gb1.i(-2, -1, 1));
+        this.d = s90Var;
+        q90 q90Var = new q90(this, context);
+        this.c = q90Var;
+        LinearLayout d = wh.d(context, 0);
+        addView(d, kb1.i(-2, -1, 1));
         TextView textView = new TextView(context);
         this.b = textView;
         textView.setTextSize(1, 14.0f);
         textView.setTypeface(AndroidUtilities.bold());
-        d.addView(p90Var, gb1.r(-2, -1));
-        d.addView(textView, gb1.u(-2, -2, 16));
+        d.addView(q90Var, kb1.r(-2, -1));
+        d.addView(textView, kb1.u(-2, -2, 16));
         setPadding(0, AndroidUtilities.dp(8.0f), 0, AndroidUtilities.dp(8.0f));
-        p90Var.a(false);
+        q90Var.a(false);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public t1(r60 r60Var, Context context) {
+    public t1(t60 t60Var, Context context) {
         super(context);
         this.a = 11;
-        this.d = r60Var;
+        this.d = t60Var;
         this.b = new RectF();
         this.c = new Paint(1);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public t1(d41 d41Var, Context context, org.telegram.ui.ActionBar.u6 u6Var) {
+    public t1(e41 e41Var, Context context, org.telegram.ui.ActionBar.u6 u6Var) {
         super(context);
         this.a = 10;
-        this.d = d41Var;
+        this.d = e41Var;
         Paint paint = new Paint(1);
         this.b = paint;
         this.c = new org.telegram.ui.Components.l6(this, u6Var);
         paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.CLEAR));
-        d41Var.f.setCallback(this);
+        e41Var.f.setCallback(this);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */

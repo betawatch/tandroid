@@ -1,29 +1,43 @@
 package org.telegram.ui;
 
-import java.util.TimerTask;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLog;
+import android.widget.EditText;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public final class s70 extends TimerTask {
-    public final /* synthetic */ String a;
-    public final /* synthetic */ t70 b;
+public final class s70 extends org.telegram.ui.ActionBar.s0 {
+    public final /* synthetic */ y70 a;
 
-    public s70(t70 t70Var, String str) {
-        this.b = t70Var;
-        this.a = str;
+    public s70(y70 y70Var) {
+        this.a = y70Var;
     }
 
-    @Override // java.util.TimerTask, java.lang.Runnable
-    public final void run() {
-        t70 t70Var = this.b;
-        try {
-            t70Var.f.cancel();
-            t70Var.f = null;
-        } catch (Exception e) {
-            FileLog.e(e);
+    @Override // org.telegram.ui.ActionBar.s0
+    public final void h() {
+        y70.Z(this.a);
+    }
+
+    @Override // org.telegram.ui.ActionBar.s0
+    public final void l(EditText editText) {
+        int length = editText.length();
+        y70 y70Var = this.a;
+        if (length == 0) {
+            y70.Z(y70Var);
+            return;
         }
-        AndroidUtilities.runOnUIThread(new r70(this, this.a, 0));
+        y70Var.x = true;
+        v70 v70Var = y70Var.s;
+        if (!v70Var.h) {
+            v70Var.h = true;
+            v70Var.l();
+        }
+        y70Var.s.E(editText.getText().toString());
+        y70Var.h.setFastScrollVisible(false);
+        y70Var.h.setVerticalScrollBarEnabled(true);
+        y70Var.r.e(true, true);
+        y70Var.r.setStickerType(1);
+        y70Var.r.d.setText(LocaleController.getString(R.string.NoResult));
+        y70Var.r.e.setText(LocaleController.getString(R.string.SearchEmptyViewFilteredSubtitle2));
     }
 }

@@ -1,190 +1,80 @@
 package org.telegram.ui;
 
-import android.util.SparseIntArray;
-import android.view.View;
+import android.content.Context;
+import androidx.recyclerview.widget.RecyclerView;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.tl.TL_stats;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public final class j91 extends s4.p {
-    public int b;
-    public final b91 c;
-    public final s4.c0 d;
-    public final SparseIntArray e = new SparseIntArray();
-    public int f = -1;
-    public int g = -1;
-    public int h = -1;
-    public int i = -1;
-    public int j = -1;
-    public int k = -1;
-    public int l = -1;
-    public int m = -1;
-    public int n = -1;
-    public int o = -1;
-    public int p = -1;
-    public int q = -1;
-    public int r = -1;
-    public int s = -1;
-    public int t = -1;
-    public int u = -1;
-    public int v = -1;
-    public int w = -1;
-    public int x = -1;
-    public int y = -1;
+public abstract class j91 extends i91 {
+    public final int v;
+    public final /* synthetic */ y91 w;
 
-    public j91(b91 b91Var, s4.c0 c0Var) {
-        this.c = b91Var;
-        this.d = c0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public j91(y91 y91Var, Context context, int i10, int i11, kg.g gVar) {
+        super(context, i11, gVar, null);
+        this.w = y91Var;
+        this.v = i10;
     }
 
-    @Override // s4.p
-    public final boolean a(int i10, int i11) {
-        return this.e.get(i10) == this.c.j(i11);
-    }
-
-    @Override // s4.p
-    public final boolean b(int i10, int i11) {
-        SparseIntArray sparseIntArray = this.e;
-        int i12 = sparseIntArray.get(i10);
-        b91 b91Var = this.c;
-        if (i12 == 13 && b91Var.j(i11) == 13) {
-            return true;
-        }
-        if (sparseIntArray.get(i10) == 10 && b91Var.j(i11) == 10) {
-            return true;
-        }
-        int i13 = this.x;
-        if (i10 >= i13 && i10 <= this.y) {
-            return i10 - i13 == i11 - b91Var.I;
-        }
-        if (i10 == this.f && i11 == b91Var.e) {
-            return true;
-        }
-        if (i10 == this.g && i11 == b91Var.h) {
-            return true;
-        }
-        if (i10 == this.h && i11 == b91Var.r) {
-            return true;
-        }
-        if (i10 == this.i && i11 == b91Var.s) {
-            return true;
-        }
-        if (i10 == this.j && i11 == b91Var.v) {
-            return true;
-        }
-        if (i10 == this.k && i11 == b91Var.w) {
-            return true;
-        }
-        if (i10 == this.l && i11 == b91Var.x) {
-            return true;
-        }
-        if (i10 == this.m && i11 == b91Var.n) {
-            return true;
-        }
-        if (i10 == this.n && i11 == b91Var.y) {
-            return true;
-        }
-        if (i10 == this.r && i11 == b91Var.K) {
-            return true;
-        }
-        if (i10 == this.s && i11 == b91Var.L) {
-            return true;
-        }
-        if (i10 == this.t && i11 == b91Var.M) {
-            return true;
-        }
-        if (i10 == this.u && i11 == b91Var.N) {
-            return true;
-        }
-        if (i10 == this.v && i11 == b91Var.O) {
-            return true;
-        }
-        if (i10 == this.w && i11 == b91Var.P) {
-            return true;
-        }
-        if (i10 == this.o && i11 == b91Var.E) {
-            return true;
-        }
-        if (i10 == this.p && i11 == b91Var.F) {
-            return true;
-        }
-        return i10 == this.q && i11 == b91Var.G;
-    }
-
-    @Override // s4.p
-    public final int d() {
-        return this.c.c0;
-    }
-
-    @Override // s4.p
-    public final int e() {
-        return this.b;
-    }
-
-    public final void f() {
+    @Override // org.telegram.ui.i91
+    public final void b(k91 k91Var) {
         int i10;
-        long j10;
-        View m10;
-        SparseIntArray sparseIntArray = this.e;
-        sparseIntArray.clear();
-        b91 b91Var = this.c;
-        this.b = b91Var.c0;
-        int i11 = 0;
-        for (int i12 = 0; i12 < this.b; i12++) {
-            sparseIntArray.put(i12, b91Var.j(i12));
+        y91 y91Var = this.w;
+        i10 = ((org.telegram.ui.ActionBar.r2) y91Var).classGuid;
+        k91Var.a(this.v, i10, y91Var.a.stats_dc, new rh(2, y91Var, this.r));
+    }
+
+    @Override // org.telegram.ui.i91
+    public final void c() {
+        int i10;
+        if (this.r.c > 0) {
+            return;
         }
-        this.f = b91Var.e;
-        this.g = b91Var.h;
-        this.h = b91Var.r;
-        this.i = b91Var.s;
-        this.j = b91Var.v;
-        this.k = b91Var.w;
-        this.l = b91Var.x;
-        this.m = b91Var.n;
-        this.n = b91Var.y;
-        this.x = b91Var.I;
-        this.y = b91Var.J;
-        this.o = b91Var.E;
-        this.p = b91Var.F;
-        this.q = b91Var.G;
-        this.r = b91Var.K;
-        this.s = b91Var.L;
-        this.t = b91Var.M;
-        this.u = b91Var.N;
-        this.v = b91Var.O;
-        this.w = b91Var.P;
-        b91Var.E();
-        s4.c0 c0Var = this.d;
-        int L0 = c0Var.L0();
-        int N0 = c0Var.N0();
-        while (true) {
-            if (L0 > N0) {
-                i10 = 0;
-                j10 = -1;
-                break;
-            } else {
-                if (b91Var.i(L0) != -1 && (m10 = c0Var.m(L0)) != null) {
-                    j10 = b91Var.i(L0);
-                    i10 = m10.getTop();
-                    break;
-                }
-                L0++;
+        performClick();
+        kg.h hVar = this.b;
+        if (hVar.t0.G) {
+            long selectedDate = hVar.getSelectedDate();
+            if (this.s == 4) {
+                k91 k91Var = this.r;
+                k91Var.e = new lg.e(k91Var.d, selectedDate);
+                g(false);
+                return;
             }
+            if (this.r.g == null) {
+                return;
+            }
+            y91 y91Var = this.w;
+            y91.Y(y91Var);
+            String str = this.r.g + "_" + selectedDate;
+            lg.b bVar = (lg.b) y91Var.U.get(str);
+            if (bVar != null) {
+                this.r.e = bVar;
+                g(false);
+                return;
+            }
+            TL_stats.TL_loadAsyncGraph tL_loadAsyncGraph = new TL_stats.TL_loadAsyncGraph();
+            tL_loadAsyncGraph.token = this.r.g;
+            if (selectedDate != 0) {
+                tL_loadAsyncGraph.x = selectedDate;
+                tL_loadAsyncGraph.flags |= 1;
+            }
+            x91 x91Var = new x91();
+            y91Var.Y = x91Var;
+            y91Var.S.getClass();
+            x91Var.a = RecyclerView.R(this);
+            hVar.t0.d(true, false);
+            int i11 = this.v;
+            int sendRequest = ConnectionsManager.getInstance(i11).sendRequest(tL_loadAsyncGraph, new cs0(this, str, x91Var, 10), null, null, 0, y91Var.a.stats_dc, 1, true);
+            ConnectionsManager connectionsManager = ConnectionsManager.getInstance(i11);
+            i10 = ((org.telegram.ui.ActionBar.r2) y91Var).classGuid;
+            connectionsManager.bindRequestToGuid(sendRequest, i10);
         }
-        s4.p.c(this, true).c(b91Var);
-        if (j10 != -1) {
-            while (true) {
-                if (i11 >= b91Var.c0) {
-                    i11 = -1;
-                    break;
-                } else if (b91Var.i(i11) == j10) {
-                    break;
-                } else {
-                    i11++;
-                }
-            }
-            if (i11 > 0) {
-                c0Var.h1(i11, i10);
-            }
-        }
+    }
+
+    @Override // org.telegram.ui.i91
+    public final void f() {
+        y91.Y(this.w);
     }
 }

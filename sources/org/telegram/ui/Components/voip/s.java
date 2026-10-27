@@ -18,13 +18,13 @@ import org.telegram.ui.ActionBar.u6;
 import org.telegram.ui.ActionBar.y6;
 import org.telegram.ui.Components.fa;
 import org.telegram.ui.Components.j9;
-import org.telegram.ui.u50;
-import org.telegram.ui.v50;
+import org.telegram.ui.w50;
+import org.telegram.ui.x50;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class s extends View implements p6 {
-    public u50 E;
+    public w50 E;
     public int F;
     public float G;
     public final /* synthetic */ t H;
@@ -40,8 +40,8 @@ public final class s extends View implements p6 {
     public float s;
     public float v;
     public float w;
-    public final u50[] x;
-    public u50 y;
+    public final w50[] x;
+    public w50 y;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public s(t tVar, Context context) {
@@ -54,7 +54,7 @@ public final class s extends View implements p6 {
         this.f = paint;
         Paint paint2 = new Paint(1);
         this.h = paint2;
-        this.x = new u50[3];
+        this.x = new w50[3];
         this.F = -1;
         this.G = 1.0f;
         fa faVar = new fa(9);
@@ -74,30 +74,30 @@ public final class s extends View implements p6 {
 
     public static void a(s sVar, boolean z10) {
         TLRPC.GroupCallParticipant groupCallParticipant;
-        u50[] u50VarArr = sVar.x;
+        w50[] w50VarArr = sVar.x;
         o0 o0Var = sVar.H.n0;
         int i10 = (o0Var.k || !((groupCallParticipant = o0Var.h) == null || !groupCallParticipant.muted || groupCallParticipant.can_self_unmute)) ? 2 : o0Var.e ? 1 : 0;
         if (i10 == sVar.F) {
             return;
         }
         sVar.F = i10;
-        if (u50VarArr[i10] == null) {
-            u50VarArr[i10] = new u50(i10);
+        if (w50VarArr[i10] == null) {
+            w50VarArr[i10] = new w50(i10);
             int i11 = sVar.F;
             if (i11 == 2) {
-                u50VarArr[i11].g = new LinearGradient(0.0f, 400.0f, 400.0f, 0.0f, new int[]{y6.x0(null, y6.ih, false), y6.x0(null, y6.kh, false), y6.x0(null, y6.jh, false)}, (float[]) null, Shader.TileMode.CLAMP);
+                w50VarArr[i11].g = new LinearGradient(0.0f, 400.0f, 400.0f, 0.0f, new int[]{y6.x0(null, y6.ih, false), y6.x0(null, y6.kh, false), y6.x0(null, y6.jh, false)}, (float[]) null, Shader.TileMode.CLAMP);
             } else if (i11 == 1) {
-                u50VarArr[i11].g = new RadialGradient(200.0f, 200.0f, 200.0f, new int[]{y6.x0(null, y6.Fg, false), y6.x0(null, y6.Hg, false)}, (float[]) null, Shader.TileMode.CLAMP);
+                w50VarArr[i11].g = new RadialGradient(200.0f, 200.0f, 200.0f, new int[]{y6.x0(null, y6.Fg, false), y6.x0(null, y6.Hg, false)}, (float[]) null, Shader.TileMode.CLAMP);
             } else {
-                u50VarArr[i11].g = new RadialGradient(200.0f, 200.0f, 200.0f, new int[]{y6.x0(null, y6.Jg, false), y6.x0(null, y6.Ig, false)}, (float[]) null, Shader.TileMode.CLAMP);
+                w50VarArr[i11].g = new RadialGradient(200.0f, 200.0f, 200.0f, new int[]{y6.x0(null, y6.Jg, false), y6.x0(null, y6.Ig, false)}, (float[]) null, Shader.TileMode.CLAMP);
             }
         }
-        u50 u50Var = u50VarArr[sVar.F];
-        u50 u50Var2 = sVar.y;
-        if (u50Var != u50Var2) {
-            sVar.E = u50Var2;
-            sVar.y = u50Var;
-            if (u50Var2 == null || !z10) {
+        w50 w50Var = w50VarArr[sVar.F];
+        w50 w50Var2 = sVar.y;
+        if (w50Var != w50Var2) {
+            sVar.E = w50Var2;
+            sVar.y = w50Var;
+            if (w50Var2 == null || !z10) {
                 sVar.G = 1.0f;
                 sVar.E = null;
             } else {
@@ -123,9 +123,9 @@ public final class s extends View implements p6 {
 
     @Override // android.view.View
     public final void onDraw(Canvas canvas) {
-        u50 u50Var;
+        w50 w50Var;
         float f7;
-        u50 u50Var2;
+        w50 w50Var2;
         super.onDraw(canvas);
         RectF rectF = AndroidUtilities.rectTmp;
         o oVar = this.H.a;
@@ -167,9 +167,9 @@ public final class s extends View implements p6 {
         float f18 = (this.n * 0.8f) + 1.0f;
         canvas.save();
         canvas.scale(f18, f18, this.v, this.w);
-        u50 u50Var3 = this.y;
-        if (u50Var3 != null) {
-            u50Var3.b((int) (this.w - AndroidUtilities.dp(100.0f)), (int) (this.v - AndroidUtilities.dp(100.0f)), AndroidUtilities.dp(200.0f), 16L, this.n);
+        w50 w50Var3 = this.y;
+        if (w50Var3 != null) {
+            w50Var3.b((int) (this.w - AndroidUtilities.dp(100.0f)), (int) (this.v - AndroidUtilities.dp(100.0f)), AndroidUtilities.dp(200.0f), 16L, this.n);
         }
         float f19 = this.n;
         fa faVar = this.e;
@@ -179,13 +179,13 @@ public final class s extends View implements p6 {
         faVar2.e(f20, 1.0f);
         for (int i10 = 0; i10 < 2; i10++) {
             Paint paint = this.f;
-            if (i10 != 0 || (u50Var2 = this.E) == null) {
-                if (i10 == 1 && (u50Var = this.y) != null) {
-                    paint.setShader(u50Var.g);
+            if (i10 != 0 || (w50Var2 = this.E) == null) {
+                if (i10 == 1 && (w50Var = this.y) != null) {
+                    paint.setShader(w50Var.g);
                     f7 = this.G;
                 }
             } else {
-                paint.setShader(u50Var2.g);
+                paint.setShader(w50Var2.g);
                 f7 = 1.0f - this.G;
             }
             paint.setAlpha((int) (f7 * 76.0f));
@@ -206,7 +206,7 @@ public final class s extends View implements p6 {
         super.onMeasure(i10, i11);
         float dp = AndroidUtilities.dp(157.0f);
         this.v = getMeasuredWidth() >> 1;
-        this.w = (getMeasuredHeight() >> 1) + (v50.F3 ? 0.0f : (-getMeasuredHeight()) * 0.12f);
+        this.w = (getMeasuredHeight() >> 1) + (x50.F3 ? 0.0f : (-getMeasuredHeight()) * 0.12f);
         float f7 = dp / 2.0f;
         ImageReceiver imageReceiver = this.a;
         imageReceiver.setRoundRadius((int) f7);

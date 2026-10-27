@@ -20,10 +20,10 @@ import m.r3;
 import m5.i;
 import org.json.JSONObject;
 import org.telegram.ui.Components.b10;
-import org.telegram.ui.zg1;
+import org.telegram.ui.bh1;
 import t5.g;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
 public final class b0 {
     public Object a;
@@ -209,7 +209,7 @@ public final class b0 {
                         default:
                             g gVar3 = (g) ((t5.d) this.b.f);
                             gVar3.getClass();
-                            return (Iterable) gVar3.c(new zg1(14, gVar3, iVar2));
+                            return (Iterable) gVar3.c(new bh1(14, gVar3, iVar2));
                     }
                 }
             })).booleanValue()) {
@@ -256,7 +256,7 @@ public final class b0 {
                         default:
                             g gVar3 = (g) ((t5.d) this.b.f);
                             gVar3.getClass();
-                            return (Iterable) gVar3.c(new zg1(14, gVar3, iVar2));
+                            return (Iterable) gVar3.c(new bh1(14, gVar3, iVar2));
                     }
                 }
             });
@@ -452,13 +452,13 @@ public final class b0 {
             i12 = aVar2.a;
             if (i12 != i11) {
                 gVar.f(new ag.j0(this, iterable, iVar, j10, 6));
-                ((s4.d) this.b).s(iVar, i10 + 1, true);
+                ((s4.d) this.b).t(iVar, i10 + 1, true);
                 return;
             }
             b0Var = this;
             iVar2 = iVar;
             j11 = j10;
-            gVar.f(new zg1(10, b0Var, iterable));
+            gVar.f(new bh1(10, b0Var, iterable));
             if (i12 == 1) {
                 j11 = Math.max(j11, aVar2.b);
                 if (bArr != null) {
@@ -475,7 +475,7 @@ public final class b0 {
                         hashMap2.put(str8, 1);
                     }
                 }
-                gVar.f(new zg1(11, b0Var, hashMap2));
+                gVar.f(new bh1(11, b0Var, hashMap2));
             }
             bArr2 = bArr;
         }

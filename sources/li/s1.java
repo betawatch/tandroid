@@ -7,11 +7,11 @@ import java.util.ArrayList;
 import org.telegram.messenger.Emoji;
 import org.telegram.messenger.MessageObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.p61;
+import org.telegram.ui.Components.q61;
 import org.telegram.ui.Components.ty;
 import org.telegram.ui.StickersActivity;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class s1 implements ty {
     public final /* synthetic */ b2 a;
@@ -149,7 +149,7 @@ public final class s1 implements ty {
     }
 
     @Override // org.telegram.ui.Components.ty
-    public final /* synthetic */ void o(p61 p61Var) {
+    public final /* synthetic */ void o(q61 q61Var) {
     }
 
     @Override // org.telegram.ui.Components.ty

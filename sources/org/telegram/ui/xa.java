@@ -3,7 +3,7 @@ package org.telegram.ui;
 import android.graphics.Canvas;
 import android.graphics.RectF;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class xa implements dh.a {
     public final /* synthetic */ int a;
@@ -30,8 +30,8 @@ public final /* synthetic */ class xa implements dh.a {
                 break;
             default:
                 PremiumPreviewFragment premiumPreviewFragment = (PremiumPreviewFragment) this.b;
-                org.telegram.ui.Components.mm0 mm0Var = premiumPreviewFragment.a;
-                ih.d.a(mm0Var, canvas, rectF, mm0Var, premiumPreviewFragment.d0);
+                org.telegram.ui.Components.nm0 nm0Var = premiumPreviewFragment.a;
+                ih.d.a(nm0Var, canvas, rectF, nm0Var, premiumPreviewFragment.d0);
                 break;
         }
     }

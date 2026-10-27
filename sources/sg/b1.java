@@ -1,84 +1,55 @@
 package sg;
 
-import android.content.Context;
 import android.view.View;
-import android.view.ViewGroup;
-import fi.n6;
 import fi.q5;
 import java.util.ArrayList;
 import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.UserConfig;
-import org.telegram.ui.Components.la;
-import org.telegram.ui.Components.lm0;
-import org.telegram.ui.Components.vl0;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public final class b1 extends lm0 {
-    public final /* synthetic */ Context c;
-    public final /* synthetic */ la d;
-    public final /* synthetic */ n6 e;
-    public final /* synthetic */ boolean f;
-    public final /* synthetic */ q5 h;
+public final class b1 extends s4.u {
+    public final /* synthetic */ q5 S;
 
-    public b1(q5 q5Var, Context context, la laVar, n6 n6Var, boolean z10) {
-        this.h = q5Var;
-        this.c = context;
-        this.d = laVar;
-        this.e = n6Var;
-        this.f = z10;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public b1(q5 q5Var) {
+        super(true);
+        this.S = q5Var;
     }
 
-    @Override // org.telegram.ui.Components.lm0
-    public final boolean D(s4.e1 e1Var) {
-        return true;
-    }
-
-    @Override // s4.h0
-    public final int h() {
-        return this.h.s0.size();
-    }
-
-    @Override // s4.h0
-    public final int j(int i10) {
-        return ((MessageObject) this.h.s0.get((r0.size() - 1) - i10)).contentType;
-    }
-
-    @Override // s4.h0
-    public final void v(s4.e1 e1Var, int i10) {
-        boolean z10;
+    @Override // s4.u
+    public final boolean C1(int i10) {
         MessageObject.GroupedMessagePosition position;
-        q5 q5Var = this.h;
+        byte b10;
+        q5 q5Var = this.S;
         ArrayList arrayList = q5Var.s0;
-        MessageObject messageObject = (MessageObject) arrayList.get((arrayList.size() - 1) - i10);
-        View view = e1Var.a;
-        if (!(view instanceof org.telegram.ui.Cells.s1)) {
-            if (view instanceof org.telegram.ui.Cells.v0) {
-                ((org.telegram.ui.Cells.v0) view).setMessageObject(messageObject);
-                return;
-            }
-            return;
-        }
-        org.telegram.ui.Cells.s1 s1Var = (org.telegram.ui.Cells.s1) view;
+        int size = (arrayList.size() - 1) - i10;
         MessageObject.GroupedMessages groupedMessages = q5Var.t0;
-        if (groupedMessages == null || (position = groupedMessages.getPosition(messageObject)) == null) {
-            z10 = false;
-        } else {
-            z10 = position.minY != 0;
+        if (groupedMessages != null && size >= 0 && size < arrayList.size() && (position = groupedMessages.getPosition((MessageObject) arrayList.get(size))) != null && position.minX != position.maxX && (b10 = position.minY) == position.maxY && b10 != 0) {
+            int size2 = groupedMessages.posArray.size();
+            for (int i11 = 0; i11 < size2; i11++) {
+                MessageObject.GroupedMessagePosition groupedMessagePosition = groupedMessages.posArray.get(i11);
+                if (groupedMessagePosition != position) {
+                    byte b11 = groupedMessagePosition.minY;
+                    byte b12 = position.minY;
+                    if (b11 <= b12 && groupedMessagePosition.maxY >= b12) {
+                        return true;
+                    }
+                }
+            }
         }
-        MessageObject.GroupedMessages groupedMessages2 = q5Var.t0;
-        s1Var.Z3(messageObject, groupedMessages2, groupedMessages2 != null, z10, false, false);
+        return false;
     }
 
-    @Override // s4.h0
-    public final s4.e1 x(ViewGroup viewGroup, int i10) {
-        f1 f1Var = this.h.D0;
-        Context context = this.c;
-        if (i10 == 1) {
-            return new vl0(new z0(this, context, f1Var));
+    @Override // s4.u
+    public final boolean D1(View view) {
+        if (view instanceof org.telegram.ui.Cells.s1) {
+            return !((org.telegram.ui.Cells.s1) view).getMessageObject().isOutOwner();
         }
-        a1 a1Var = new a1(this, context, UserConfig.selectedAccount, f1Var);
-        a1Var.N7 = true;
-        return new vl0(a1Var);
+        return false;
+    }
+
+    @Override // s4.t, s4.c0, s4.p0
+    public final boolean y0() {
+        return false;
     }
 }

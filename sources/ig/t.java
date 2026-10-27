@@ -11,9 +11,9 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLMethod;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.lx;
+import org.telegram.ui.ox;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class t implements Runnable {
     public final /* synthetic */ int a;
@@ -96,9 +96,9 @@ public final /* synthetic */ class t implements Runnable {
                             }
                         }
                         yVar.f(i0Var.s, i0Var.v0);
-                        lx lxVar = i0Var.U;
-                        if (lxVar != null) {
-                            lxVar.d(i0Var.D0 > 0, true);
+                        ox oxVar = i0Var.U;
+                        if (oxVar != null) {
+                            oxVar.d(i0Var.D0 > 0, true);
                             i0Var.U.c();
                         }
                         i0Var.l();
@@ -162,10 +162,10 @@ public final /* synthetic */ class t implements Runnable {
                             }
                         }
                         yVar2.f(i0Var2.s, i0Var2.v0);
-                        lx lxVar2 = i0Var2.U;
-                        if (lxVar2 != null) {
+                        ox oxVar2 = i0Var2.U;
+                        if (oxVar2 != null) {
                             i11 = 1;
-                            lxVar2.d(i0Var2.D0 > 0, true);
+                            oxVar2.d(i0Var2.D0 > 0, true);
                             i0Var2.U.c();
                         } else {
                             i11 = 1;

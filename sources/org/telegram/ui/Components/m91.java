@@ -1,33 +1,34 @@
 package org.telegram.ui.Components;
 
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 import android.view.View;
-import java.util.ArrayList;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public abstract class m91 {
-    public abstract void b(View view, int i10, int i11);
+public final class m91 extends AnimatorListenerAdapter {
+    public boolean a;
+    public final /* synthetic */ View b;
+    public final /* synthetic */ float c;
+    public final /* synthetic */ v91 d;
 
-    public boolean c(int i10) {
-        return false;
+    public m91(v91 v91Var, View view, float f7) {
+        this.d = v91Var;
+        this.b = view;
+        this.c = f7;
     }
 
-    public abstract View d(int i10);
-
-    public abstract int e();
-
-    public CharSequence g(int i10) {
-        return "";
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationCancel(Animator animator) {
+        super.onAnimationCancel(animator);
+        this.a = true;
     }
 
-    public int h(int i10) {
-        return 0;
-    }
-
-    public void a(ArrayList arrayList) {
-    }
-
-    public int f(int i10) {
-        return i10;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        if (this.a) {
+            return;
+        }
+        this.d.F(this.b, this.c);
     }
 }

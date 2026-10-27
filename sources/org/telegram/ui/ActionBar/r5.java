@@ -28,9 +28,9 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.ds;
-import org.telegram.ui.Components.gb1;
+import org.telegram.ui.Components.kb1;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public class r5 extends FrameLayout implements oe.d, NotificationCenter.NotificationCenterDelegate, p6 {
     public CharSequence E;
@@ -95,13 +95,13 @@ public class r5 extends FrameLayout implements oe.d, NotificationCenter.Notifica
         s();
         q5 q5Var = new q5(this, context);
         this.c = q5Var;
-        addView(q5Var, gb1.i(-1, -2, 51));
+        addView(q5Var, kb1.i(-1, -2, 51));
         o5 o5Var = new o5(this, context);
         this.b = o5Var;
         o5Var.setVisibility(8);
         o5Var.setContentDescription(LocaleController.getString(R.string.AccDescrGoBack));
         o5Var.setOnClickListener(new n5(this, 0));
-        addView(o5Var, gb1.i(46, 46, 51));
+        addView(o5Var, kb1.i(46, 46, 51));
     }
 
     public static /* synthetic */ void a(r5 r5Var, int i10, KeyEvent keyEvent) {
@@ -515,7 +515,7 @@ public class r5 extends FrameLayout implements oe.d, NotificationCenter.Notifica
             x5 x5Var = new x5(getContext(), this, true);
             this.e = x5Var;
             View view = this.b;
-            addView(x5Var, indexOfChild(view), gb1.i(-2, -2, 53));
+            addView(x5Var, indexOfChild(view), kb1.i(-2, -2, 53));
             org.telegram.ui.Components.s6 s6Var = new org.telegram.ui.Components.s6(getContext(), true, true, true);
             this.f = s6Var;
             s6Var.setTextSize(AndroidUtilities.dp(18.0f));
@@ -524,7 +524,7 @@ public class r5 extends FrameLayout implements oe.d, NotificationCenter.Notifica
             this.f.setGravity(19);
             this.f.setEllipsizeByGradient(true);
             this.f.b(0.6f, 320L, ds.h);
-            addView(this.f, indexOfChild(view), gb1.i(-1, -2, 51));
+            addView(this.f, indexOfChild(view), kb1.i(-1, -2, 51));
             c();
         }
         return this.e;
@@ -534,7 +534,7 @@ public class r5 extends FrameLayout implements oe.d, NotificationCenter.Notifica
         if (this.n == null) {
             u5 u5Var = new u5(getContext(), this, str);
             this.n = u5Var;
-            addView(u5Var, indexOfChild(this.b), gb1.i(-2, 46, 53));
+            addView(u5Var, indexOfChild(this.b), kb1.i(-2, 46, 53));
             c();
         }
         return this.n;
@@ -544,7 +544,7 @@ public class r5 extends FrameLayout implements oe.d, NotificationCenter.Notifica
         if (this.d == null) {
             x5 x5Var = new x5(getContext(), this, false);
             this.d = x5Var;
-            addView(x5Var, indexOfChild(this.b), gb1.i(-2, -2, 53));
+            addView(x5Var, indexOfChild(this.b), kb1.i(-2, -2, 53));
             c();
         }
         return this.d;
@@ -558,10 +558,10 @@ public class r5 extends FrameLayout implements oe.d, NotificationCenter.Notifica
         FrameLayout frameLayout = new FrameLayout(context);
         this.r = frameLayout;
         frameLayout.setVisibility(4);
-        addView(this.r, indexOfChild(this.b), gb1.i(-1, 46, 51));
+        addView(this.r, indexOfChild(this.b), kb1.i(-1, 46, 51));
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setOrientation(0);
-        this.r.addView(linearLayout, gb1.h(-1, -1.0f, 51, 18.0f, 0.0f, 42.0f, 0.0f));
+        this.r.addView(linearLayout, kb1.h(-1, -1.0f, 51, 18.0f, 0.0f, 42.0f, 0.0f));
         TextView textView = new TextView(context);
         this.w = textView;
         textView.setTextSize(1, 17.0f);
@@ -570,7 +570,7 @@ public class r5 extends FrameLayout implements oe.d, NotificationCenter.Notifica
         this.w.setGravity(19);
         this.w.setPadding(0, 0, AndroidUtilities.dp(4.0f), 0);
         this.w.setVisibility(8);
-        linearLayout.addView(this.w, gb1.r(-2, -1));
+        linearLayout.addView(this.w, kb1.r(-2, -1));
         fi.c2 c2Var = new fi.c2(this, context, 3);
         this.s = c2Var;
         c2Var.setTextSize(1, 17.0f);
@@ -591,14 +591,14 @@ public class r5 extends FrameLayout implements oe.d, NotificationCenter.Notifica
         int i10 = 1;
         this.s.setOnEditorActionListener(new a0(i10, this));
         this.s.addTextChangedListener(new j0(i10, this));
-        linearLayout.addView(this.s, gb1.p(1.0f, 0, -1));
+        linearLayout.addView(this.s, kb1.p(1.0f, 0, -1));
         ImageView imageView = new ImageView(context);
         this.v = imageView;
         imageView.setScaleType(ImageView.ScaleType.CENTER);
         this.v.setImageResource(R.drawable.ic_close_white);
         this.v.setContentDescription(LocaleController.getString(R.string.ClearButton));
         this.v.setOnClickListener(new n5(this, 1));
-        this.r.addView(this.v, gb1.h(42, 42.0f, 21, 0.0f, 0.0f, 2.0f, 0.0f));
+        this.r.addView(this.v, kb1.h(42, 42.0f, 21, 0.0f, 0.0f, 2.0f, 0.0f));
         y();
         d();
         E(2, this.S.e, 0.0f, null);
@@ -655,7 +655,7 @@ public class r5 extends FrameLayout implements oe.d, NotificationCenter.Notifica
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
         this.a0 = true;
-        NotificationCenter.getGlobalInstance().addObserver(this, NotificationCenter.didSetNewTheme);
+        NotificationCenter.getGlobalInstance().addWeakObserver(this, NotificationCenter.didSetNewTheme);
     }
 
     @Override // android.view.ViewGroup, android.view.View

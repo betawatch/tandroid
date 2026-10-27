@@ -23,11 +23,11 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.ds;
-import org.telegram.ui.Components.j80;
+import org.telegram.ui.Components.k80;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
-public class p8 extends NestedScrollView implements j80 {
+public class p8 extends NestedScrollView implements k80 {
     public final org.telegram.ui.Cells.ca W;
     public final o1.j a0;
     public final o8 b0;
@@ -205,7 +205,7 @@ public class p8 extends NestedScrollView implements j80 {
         }
     }
 
-    @Override // org.telegram.ui.Components.j80
+    @Override // org.telegram.ui.Components.k80
     public final void a(RectF rectF) {
         n8 n8Var;
         o8 o8Var = this.b0;
@@ -224,7 +224,7 @@ public class p8 extends NestedScrollView implements j80 {
         rectF.offset(frameLayout.getX() + x9, frameLayout.getY() + (o8Var.getY() - getScrollY()));
     }
 
-    @Override // org.telegram.ui.Components.j80
+    @Override // org.telegram.ui.Components.k80
     public final void b(Canvas canvas, float f7) {
         n8 n8Var;
         o8 o8Var = this.b0;

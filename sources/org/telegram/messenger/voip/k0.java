@@ -5,9 +5,9 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.v50;
+import org.telegram.ui.x50;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class k0 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -29,8 +29,8 @@ public final /* synthetic */ class k0 implements RequestDelegate {
                 ((VoIPService) this.d).lambda$startGroupCall$29(this.b, this.c, tLObject, tL_error);
                 break;
             default:
-                v50 v50Var = (v50) this.d;
-                AndroidUtilities.runOnUIThread(new j0(this.b, 6, v50Var, tLObject, this.c));
+                x50 x50Var = (x50) this.d;
+                AndroidUtilities.runOnUIThread(new j0(this.b, 6, x50Var, tLObject, this.c));
                 break;
         }
     }

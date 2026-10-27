@@ -9,18 +9,18 @@ import org.telegram.messenger.ContactsController;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.ui.Components.gb1;
-import org.telegram.ui.Components.wi0;
-import org.telegram.ui.Components.zp;
+import org.telegram.ui.Components.aq;
+import org.telegram.ui.Components.kb1;
+import org.telegram.ui.Components.xi0;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class t4 extends FrameLayout implements org.telegram.ui.ActionBar.p6 {
     public final org.telegram.ui.Components.y9 a;
     public final org.telegram.ui.ActionBar.b6 b;
     public final org.telegram.ui.ActionBar.b6 c;
     public final org.telegram.ui.Components.j9 d;
-    public final zp e;
+    public final aq e;
     public ContactsController.Contact f;
     public CharSequence h;
     public int n;
@@ -31,50 +31,50 @@ public final class t4 extends FrameLayout implements org.telegram.ui.ActionBar.p
         org.telegram.ui.Components.y9 y9Var = new org.telegram.ui.Components.y9(context);
         this.a = y9Var;
         y9Var.setRoundRadius(AndroidUtilities.dp(23.0f));
-        addView(y9Var, gb1.h(46, 46.0f, (LocaleController.isRTL ? 5 : 3) | 48, 13.0f, 6.0f, 13.0f, 6.0f));
+        addView(y9Var, kb1.h(46, 46.0f, (LocaleController.isRTL ? 5 : 3) | 48, 13.0f, 6.0f, 13.0f, 6.0f));
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setOrientation(0);
         boolean z11 = LocaleController.isRTL;
-        addView(linearLayout, gb1.h(-1, -1.0f, 119, z11 ? 0 : 72, 0.0f, z11 ? 72 : 0, 0.0f));
+        addView(linearLayout, kb1.h(-1, -1.0f, 119, z11 ? 0 : 72, 0.0f, z11 ? 72 : 0, 0.0f));
         FrameLayout frameLayout = new FrameLayout(context);
-        linearLayout.addView(frameLayout, gb1.p(1.0f, 0, 58));
+        linearLayout.addView(frameLayout, kb1.p(1.0f, 0, 58));
         org.telegram.ui.ActionBar.b6 b6Var = new org.telegram.ui.ActionBar.b6(context);
         this.b = b6Var;
         org.telegram.ui.ActionBar.f7.Y(b6Var, org.telegram.ui.ActionBar.y6.G6, null);
         b6Var.setTypeface(AndroidUtilities.bold());
         b6Var.setTextSize(15);
         b6Var.setGravity((LocaleController.isRTL ? 5 : 3) | 48);
-        frameLayout.addView(b6Var, gb1.h(-1, 20.0f, (LocaleController.isRTL ? 5 : 3) | 48, 0.0f, 9.0f, 0.0f, 0.0f));
+        frameLayout.addView(b6Var, kb1.h(-1, 20.0f, (LocaleController.isRTL ? 5 : 3) | 48, 0.0f, 9.0f, 0.0f, 0.0f));
         org.telegram.ui.ActionBar.b6 b6Var2 = new org.telegram.ui.ActionBar.b6(context);
         this.c = b6Var2;
         b6Var2.setTextSize(13);
         b6Var2.setGravity((LocaleController.isRTL ? 5 : 3) | 48);
-        frameLayout.addView(b6Var2, gb1.h(-1, 20.0f, (LocaleController.isRTL ? 5 : 3) | 48, 0.0f, 33.0f, 0.0f, 0.0f));
+        frameLayout.addView(b6Var2, kb1.h(-1, 20.0f, (LocaleController.isRTL ? 5 : 3) | 48, 0.0f, 33.0f, 0.0f, 0.0f));
         if (z10) {
-            zp zpVar = new zp(context, 21, null);
-            this.e = zpVar;
-            zpVar.b(-1, org.telegram.ui.ActionBar.y6.d6, org.telegram.ui.ActionBar.y6.k7);
-            zpVar.setDrawUnchecked(false);
-            zpVar.setDrawBackgroundAsArc(3);
+            aq aqVar = new aq(context, 21, null);
+            this.e = aqVar;
+            aqVar.b(-1, org.telegram.ui.ActionBar.y6.d6, org.telegram.ui.ActionBar.y6.k7);
+            aqVar.setDrawUnchecked(false);
+            aqVar.setDrawBackgroundAsArc(3);
             boolean z12 = LocaleController.isRTL;
-            addView(zpVar, gb1.h(24, 24.0f, (z12 ? 5 : 3) | 48, z12 ? 0.0f : 40.0f, 32.0f, z12 ? 39.0f : 0.0f, 0.0f));
+            addView(aqVar, kb1.h(24, 24.0f, (z12 ? 5 : 3) | 48, z12 ? 0.0f : 40.0f, 32.0f, z12 ? 39.0f : 0.0f, 0.0f));
             return;
         }
         this.e = null;
-        wi0 wi0Var = new wi0(context);
-        wi0Var.setText(LocaleController.getString(R.string.Invite));
-        wi0Var.setTextSize(1, 14.0f);
-        org.telegram.ui.ActionBar.f7.V(wi0Var, org.telegram.ui.ActionBar.y6.Sh, null);
-        wi0Var.setProgressColor(org.telegram.ui.ActionBar.y6.x0(null, org.telegram.ui.ActionBar.y6.Nh, false));
+        xi0 xi0Var = new xi0(context);
+        xi0Var.setText(LocaleController.getString(R.string.Invite));
+        xi0Var.setTextSize(1, 14.0f);
+        org.telegram.ui.ActionBar.f7.V(xi0Var, org.telegram.ui.ActionBar.y6.Sh, null);
+        xi0Var.setProgressColor(org.telegram.ui.ActionBar.y6.x0(null, org.telegram.ui.ActionBar.y6.Nh, false));
         int i10 = org.telegram.ui.ActionBar.y6.hl;
         y e = org.telegram.ui.ActionBar.o6.e(new float[]{16.0f}, org.telegram.ui.ActionBar.y6.x0(null, i10, false));
         org.telegram.ui.ActionBar.b7 N = org.telegram.ui.ActionBar.f7.N(i10);
         org.telegram.ui.ActionBar.b7 f7 = org.telegram.ui.ActionBar.f7.f(i10);
-        wi0Var.setBackground(e);
-        org.telegram.ui.ActionBar.f7.k(wi0Var, e, N, f7, null);
-        wi0Var.setPadding(AndroidUtilities.dp(14.0f), 0, AndroidUtilities.dp(14.0f), 0);
-        linearLayout.addView(wi0Var, gb1.t(-2, 28, 0.0f, 16, 18, 0, 18, 0));
-        wi0Var.setOnClickListener(new a(this, 6));
+        xi0Var.setBackground(e);
+        org.telegram.ui.ActionBar.f7.k(xi0Var, e, N, f7, null);
+        xi0Var.setPadding(AndroidUtilities.dp(14.0f), 0, AndroidUtilities.dp(14.0f), 0);
+        linearLayout.addView(xi0Var, kb1.t(-2, 28, 0.0f, 16, 18, 0, 18, 0));
+        xi0Var.setOnClickListener(new a(this, 6));
     }
 
     public final void a(ContactsController.Contact contact, CharSequence charSequence) {

@@ -8,7 +8,7 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class x2 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -38,7 +38,7 @@ public final /* synthetic */ class x2 implements RequestDelegate {
                 ((MediaDataController) this.d).lambda$loadPinnedMessageInternal$164(this.b, this.c, (TLRPC.TL_channels_getMessages) this.e, tLObject, tL_error);
                 break;
             case 3:
-                ((MessagesController) this.d).lambda$requestContactToken$481((Utilities.Callback) this.e, this.b, this.c, tLObject, tL_error);
+                ((MessagesController) this.d).lambda$requestContactToken$482((Utilities.Callback) this.e, this.b, this.c, tLObject, tL_error);
                 break;
             default:
                 ((TopicsController) this.d).lambda$getTopicRepliesCount$30((TLRPC.TL_forumTopic) this.e, this.b, this.c, tLObject, tL_error);

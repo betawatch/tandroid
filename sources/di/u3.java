@@ -20,22 +20,22 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.SendMessagesHelper;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.vh;
+import org.telegram.messenger.wh;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.a71;
-import org.telegram.ui.Components.k80;
+import org.telegram.ui.Components.b71;
+import org.telegram.ui.Components.l80;
 import org.telegram.ui.Components.m40;
 import org.telegram.ui.Components.qc;
-import org.telegram.ui.Components.ta0;
-import org.telegram.ui.Components.w61;
+import org.telegram.ui.Components.ua0;
 import org.telegram.ui.Components.wc;
 import org.telegram.ui.Components.x61;
-import org.telegram.ui.Components.y11;
-import org.telegram.ui.Components.z61;
-import org.telegram.ui.un;
+import org.telegram.ui.Components.y61;
+import org.telegram.ui.Components.z11;
+import org.telegram.ui.wn;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class u3 extends p8 {
     public final /* synthetic */ y9 x0;
@@ -77,45 +77,45 @@ public final class u3 extends p8 {
 
     @Override // di.p8
     public final void G(CharacterStyle characterStyle, View view) {
-        boolean z10 = characterStyle instanceof a71;
+        boolean z10 = characterStyle instanceof b71;
         y9 y9Var = this.x0;
         q4 q4Var = this.z0;
         if (z10) {
-            TLRPC.User user = MessagesController.getInstance(q4Var.r2).getUser(Utilities.parseLong(((a71) characterStyle).getURL()));
+            TLRPC.User user = MessagesController.getInstance(q4Var.r2).getUser(Utilities.parseLong(((b71) characterStyle).getURL()));
             if (user != null) {
                 MessagesController.getInstance(q4Var.r2).openChatOrProfileWith(user, null, y9Var.f, 0, false);
                 return;
             }
             return;
         }
-        if (!(characterStyle instanceof x61)) {
+        if (!(characterStyle instanceof y61)) {
             if (characterStyle instanceof URLSpan) {
-                M(2, ((URLSpan) characterStyle).getURL(), characterStyle, characterStyle instanceof z61);
+                M(2, ((URLSpan) characterStyle).getURL(), characterStyle, characterStyle instanceof a71);
                 return;
             }
-            if (!(characterStyle instanceof w61)) {
+            if (!(characterStyle instanceof x61)) {
                 if (characterStyle instanceof ClickableSpan) {
                     ((ClickableSpan) characterStyle).onClick(view);
                     return;
                 }
                 return;
             } else {
-                w61 w61Var = (w61) characterStyle;
-                AndroidUtilities.addToClipboard(w61Var.a.subSequence(w61Var.b, w61Var.c).toString());
-                vh.m(R.string.TextCopied, new wc(q4Var.R0, this.y0));
+                x61 x61Var = (x61) characterStyle;
+                AndroidUtilities.addToClipboard(x61Var.a.subSequence(x61Var.b, x61Var.c).toString());
+                wh.m(R.string.TextCopied, new wc(q4Var.R0, this.y0));
                 return;
             }
         }
-        String url = ((x61) characterStyle).getURL();
+        String url = ((y61) characterStyle).getURL();
         if (url != null && (url.startsWith("#") || url.startsWith("$"))) {
             if (url.contains("@")) {
-                y9Var.H(new m40(url, null));
+                y9Var.I(new m40(url, null));
                 return;
             }
             Bundle bundle = new Bundle();
             bundle.putInt(TeXSymbolParser.TYPE_ATTR, 3);
             bundle.putString("hashtag", url);
-            y9Var.H(new ta0(bundle, null));
+            y9Var.I(new ua0(bundle, null));
             return;
         }
         String b10 = qf.d.b(url);
@@ -192,7 +192,7 @@ public final class u3 extends p8 {
         y9 y9Var = this.x0;
         final org.telegram.ui.ActionBar.u6 u6Var = this.y0;
         if (document != null) {
-            k80 F = k80.F(y9Var.v, u6Var, q4Var.z0);
+            l80 F = l80.F(y9Var.v, u6Var, q4Var.z0);
             F.i = 3;
             F.a0(-AndroidUtilities.dp(8.0f), 0.0f);
             final int i10 = 0;
@@ -282,11 +282,11 @@ public final class u3 extends p8 {
                 bundle.putLong("chat_id", -k8Var.b.longValue());
             }
             bundle.putInt("message_id", k8Var.d.intValue());
-            y9Var.H(new un(bundle));
+            y9Var.I(new wn(bundle));
             return;
         }
         if (k8Var.b != null && k8Var.c != null) {
-            MessagesController.getInstance(q4Var.r2).getStoriesController().d0(k8Var.b.longValue(), k8Var.c.intValue(), new y2(this, k8Var, y9Var, u6Var, 1));
+            MessagesController.getInstance(q4Var.r2).getStoriesController().g0(k8Var.b.longValue(), k8Var.c.intValue(), new y2(this, k8Var, y9Var, u6Var, 1));
             return;
         }
         qc R = new wc(q4Var.R0, u6Var).R(R.raw.error, 36, LocaleController.getString(R.string.StoryHidAccount));
@@ -295,11 +295,11 @@ public final class u3 extends p8 {
     }
 
     public final void M(int i10, String str, CharacterStyle characterStyle, boolean z10) {
-        y11 y11Var;
+        z11 z11Var;
         if (z10 || AndroidUtilities.shouldShowUrlInAlert(str)) {
             y9 y9Var = this.x0;
             if (i10 == 0 || i10 == 2) {
-                org.telegram.ui.Components.g5.q0(y9Var.f, str, true, true, true, (!(characterStyle instanceof z61) || (y11Var = ((z61) characterStyle).a) == null || (y11Var.a & 1024) == 0) ? false : true, null, null, this.y0);
+                org.telegram.ui.Components.g5.q0(y9Var.f, str, true, true, true, (!(characterStyle instanceof a71) || (z11Var = ((a71) characterStyle).a) == null || (z11Var.a & 1024) == 0) ? false : true, null, null, this.y0);
                 return;
             } else {
                 if (i10 == 1) {

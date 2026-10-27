@@ -13,7 +13,7 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.FileStreamLoadOperation;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class p9 implements j4 {
     public final /* synthetic */ z6 a;
@@ -156,13 +156,13 @@ public final class p9 implements j4 {
                         y9Var.G0.a = true;
                         j11 = j12;
                         FileLog.d("StoryViewer requestPlayer: currentPlayerScope.player start " + uri);
-                        ((x9) y9Var.G0.c).start(false, y9Var.w(), uri, j11, y9.D1, y9.B1);
+                        ((x9) y9Var.G0.c).start(false, y9Var.x(), uri, j11, y9.D1, y9.B1);
                         y9Var.G0.b();
                     }
                 }
                 j11 = j10;
                 FileLog.d("StoryViewer requestPlayer: currentPlayerScope.player start " + uri);
-                ((x9) y9Var.G0.c).start(false, y9Var.w(), uri, j11, y9.D1, y9.B1);
+                ((x9) y9Var.G0.c).start(false, y9Var.x(), uri, j11, y9.D1, y9.B1);
                 y9Var.G0.b();
             } else {
                 FileLog.d("StoryViewer requestPlayer: url is null (1)");
@@ -181,7 +181,7 @@ public final class p9 implements j4 {
         }
         i(false, uri != null);
         y9Var.t1 = 0L;
-        y9Var.P();
+        y9Var.Q();
     }
 
     public final void d(float f7) {
@@ -205,19 +205,19 @@ public final class p9 implements j4 {
             if (p4Var != null && (x9Var = (x9) p4Var.c) != null) {
                 x9Var.setSeeking(false);
             }
-            q4 t10 = y9Var.t();
-            if (t10 != null) {
-                t10.invalidate();
+            q4 u10 = y9Var.u();
+            if (u10 != null) {
+                u10.invalidate();
             }
         }
         y9Var.f1 = z10;
-        y9Var.P();
+        y9Var.Q();
     }
 
     public final void g(boolean z10) {
         y9 y9Var = this.d;
         y9Var.X0 = z10;
-        y9Var.P();
+        y9Var.Q();
     }
 
     public final void h(Dialog dialog) {

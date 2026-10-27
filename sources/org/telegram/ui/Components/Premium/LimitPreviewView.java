@@ -35,13 +35,13 @@ import org.telegram.ui.ActionBar.u6;
 import org.telegram.ui.ActionBar.y6;
 import org.telegram.ui.Components.Premium.LimitPreviewView;
 import org.telegram.ui.Components.ds;
-import org.telegram.ui.Components.gb1;
-import org.telegram.ui.Components.gh0;
+import org.telegram.ui.Components.hh0;
+import org.telegram.ui.Components.kb1;
 import org.telegram.ui.Components.s6;
 import org.telegram.ui.Components.tu;
 import org.telegram.ui.Components.tz;
 import org.telegram.ui.Components.zq;
-import org.telegram.ui.q40;
+import org.telegram.ui.s40;
 import tg.a1;
 import tg.p;
 import tg.q;
@@ -49,7 +49,7 @@ import tg.r;
 import tg.s;
 import tg.t;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public class LimitPreviewView extends LinearLayout implements p6 {
     public static final /* synthetic */ int o0 = 0;
@@ -83,8 +83,8 @@ public class LimitPreviewView extends LinearLayout implements p6 {
     public final s e;
     public t e0;
     public boolean f;
-    public final gh0 f0;
-    public final gh0 g0;
+    public final hh0 f0;
+    public final hh0 g0;
     public float h;
     public boolean h0;
     public ValueAnimator i0;
@@ -807,7 +807,7 @@ public class LimitPreviewView extends LinearLayout implements p6 {
                 }
             }
         });
-        this.i0.addListener(new q40(16, this, z19));
+        this.i0.addListener(new s40(16, this, z19));
         this.i0.setInterpolator(new OvershootInterpolator());
         if (this.W) {
             ValueAnimator ofFloat3 = ValueAnimator.ofFloat(0.0f, 1.0f);
@@ -989,10 +989,10 @@ public class LimitPreviewView extends LinearLayout implements p6 {
             this.e = sVar;
             i(i11, false);
             sVar.setPadding(AndroidUtilities.dp(19.0f), AndroidUtilities.dp(6.0f), AndroidUtilities.dp(19.0f), AndroidUtilities.dp(14.0f));
-            addView(sVar, gb1.s(-2, -2, 0.0f, 3));
+            addView(sVar, kb1.s(-2, -2, 0.0f, 3));
         }
-        gh0 gh0Var = new gh0(this, context, true);
-        this.f0 = gh0Var;
+        hh0 hh0Var = new hh0(this, context, true);
+        this.f0 = hh0Var;
         s6 s6Var = new s6(context, false, false, false);
         this.N = s6Var;
         s6Var.setTextSize(AndroidUtilities.dp(14.0f));
@@ -1007,14 +1007,14 @@ public class LimitPreviewView extends LinearLayout implements p6 {
         textView.setGravity(16);
         f7.V(textView, y6.G6, u6Var);
         if (LocaleController.isRTL) {
-            gh0Var.addView(s6Var, gb1.h(-1, 30.0f, 5, 12.0f, 0.0f, 12.0f, 0.0f));
-            gh0Var.addView(textView, gb1.h(-2, 30.0f, 3, 12.0f, 0.0f, 12.0f, 0.0f));
+            hh0Var.addView(s6Var, kb1.h(-1, 30.0f, 5, 12.0f, 0.0f, 12.0f, 0.0f));
+            hh0Var.addView(textView, kb1.h(-2, 30.0f, 3, 12.0f, 0.0f, 12.0f, 0.0f));
         } else {
-            gh0Var.addView(s6Var, gb1.h(-1, 30.0f, 3, 12.0f, 0.0f, 12.0f, 0.0f));
-            gh0Var.addView(textView, gb1.h(-2, 30.0f, 5, 12.0f, 0.0f, 12.0f, 0.0f));
+            hh0Var.addView(s6Var, kb1.h(-1, 30.0f, 3, 12.0f, 0.0f, 12.0f, 0.0f));
+            hh0Var.addView(textView, kb1.h(-2, 30.0f, 5, 12.0f, 0.0f, 12.0f, 0.0f));
         }
-        gh0 gh0Var2 = new gh0(this, context, false);
-        this.g0 = gh0Var2;
+        hh0 hh0Var2 = new hh0(this, context, false);
+        this.g0 = hh0Var2;
         TextView textView2 = new TextView(context);
         this.O = textView2;
         textView2.setTypeface(AndroidUtilities.bold());
@@ -1029,17 +1029,17 @@ public class LimitPreviewView extends LinearLayout implements p6 {
         s6Var2.setGravity(21);
         setPremiumCountColor(true);
         if (LocaleController.isRTL) {
-            gh0Var2.addView(textView2, gb1.h(-1, 30.0f, 5, 12.0f, 0.0f, 12.0f, 0.0f));
-            gh0Var2.addView(s6Var2, gb1.h(-2, 30.0f, 3, 12.0f, 0.0f, 12.0f, 0.0f));
+            hh0Var2.addView(textView2, kb1.h(-1, 30.0f, 5, 12.0f, 0.0f, 12.0f, 0.0f));
+            hh0Var2.addView(s6Var2, kb1.h(-2, 30.0f, 3, 12.0f, 0.0f, 12.0f, 0.0f));
         } else {
-            gh0Var2.addView(textView2, gb1.h(-1, 30.0f, 3, 12.0f, 0.0f, 12.0f, 0.0f));
-            gh0Var2.addView(s6Var2, gb1.h(-2, 30.0f, 5, 12.0f, 0.0f, 12.0f, 0.0f));
+            hh0Var2.addView(textView2, kb1.h(-1, 30.0f, 3, 12.0f, 0.0f, 12.0f, 0.0f));
+            hh0Var2.addView(s6Var2, kb1.h(-2, 30.0f, 5, 12.0f, 0.0f, 12.0f, 0.0f));
         }
         j5 j5Var = new j5(this, context, u6Var);
         this.I = j5Var;
-        j5Var.addView(gh0Var, gb1.g(30.0f, -1));
-        j5Var.addView(gh0Var2, gb1.g(30.0f, -1));
-        addView(j5Var, gb1.t(-1, 30, 0.0f, 0, 14, i10 != 0 ? 12 : 0, 14, 0));
+        j5Var.addView(hh0Var, kb1.g(30.0f, -1));
+        j5Var.addView(hh0Var2, kb1.g(30.0f, -1));
+        addView(j5Var, kb1.t(-1, 30, 0.0f, 0, 14, i10 != 0 ? 12 : 0, 14, 0));
     }
 
     @Override // org.telegram.ui.ActionBar.p6

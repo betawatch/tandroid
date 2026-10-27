@@ -15,9 +15,9 @@ import android.view.View;
 import java.util.Arrays;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public abstract class u4 extends View implements org.telegram.ui.Components.ii0 {
+public abstract class u4 extends View implements org.telegram.ui.Components.ji0 {
     public final boolean[] E;
     public final float[] F;
     public float G;
@@ -29,7 +29,7 @@ public abstract class u4 extends View implements org.telegram.ui.Components.ii0 
     public int M;
     public float N;
     public int O;
-    public org.telegram.ui.Components.ni0 P;
+    public org.telegram.ui.Components.oi0 P;
     public final TextPaint Q;
     public float R;
     public int S;
@@ -111,24 +111,24 @@ public abstract class u4 extends View implements org.telegram.ui.Components.ii0 
         return this.T;
     }
 
-    @Override // org.telegram.ui.Components.ii0
+    @Override // org.telegram.ui.Components.ji0
     public final void a() {
         Arrays.fill(this.E, false);
         postInvalidateOnAnimation();
     }
 
-    @Override // org.telegram.ui.Components.ii0
+    @Override // org.telegram.ui.Components.ji0
     public final void b(boolean z10) {
         this.E[!z10 ? 1 : 0] = true;
         postInvalidateOnAnimation();
     }
 
-    @Override // org.telegram.ui.Components.ii0
+    @Override // org.telegram.ui.Components.ji0
     public final void d() {
         invalidate();
     }
 
-    public org.telegram.ui.Components.ni0 getProfileGalleryView() {
+    public org.telegram.ui.Components.oi0 getProfileGalleryView() {
         return this.P;
     }
 
@@ -217,7 +217,7 @@ public abstract class u4 extends View implements org.telegram.ui.Components.ii0 
                 paint6.setAlpha((int) (this.G * 85.0f));
                 paint5.setAlpha((int) (this.G * 255.0f));
             }
-            int B = org.telegram.messenger.vh.B((realCount - 1) * 2, getMeasuredWidth() - AndroidUtilities.dp(10.0f), realCount);
+            int B = org.telegram.messenger.wh.B((realCount - 1) * 2, getMeasuredWidth() - AndroidUtilities.dp(10.0f), realCount);
             int dp = AndroidUtilities.dp(8.0f);
             int i15 = 0;
             z10 = false;
@@ -455,8 +455,8 @@ public abstract class u4 extends View implements org.telegram.ui.Components.ii0 
         gradientDrawableArr[1].setBounds(i10 - i14, 0, i10, i11);
     }
 
-    public void setProfileGalleryView(org.telegram.ui.Components.ni0 ni0Var) {
-        this.P = ni0Var;
+    public void setProfileGalleryView(org.telegram.ui.Components.oi0 oi0Var) {
+        this.P = oi0Var;
     }
 
     public void c() {

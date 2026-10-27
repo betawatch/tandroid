@@ -4,7 +4,7 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class r40 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -22,9 +22,9 @@ public final class r40 extends AnimatorListenerAdapter {
                 t40 t40Var = this.b;
                 t40Var.f = null;
                 if (!t40Var.H) {
-                    bq bqVar = new bq(this, 23);
-                    t40Var.h = bqVar;
-                    AndroidUtilities.runOnUIThread(bqVar, t40Var.n == 0 ? 10000L : 2000L);
+                    cp cpVar = new cp(this, 24);
+                    t40Var.h = cpVar;
+                    AndroidUtilities.runOnUIThread(cpVar, t40Var.n == 0 ? 10000L : 2000L);
                     break;
                 }
                 break;
@@ -32,9 +32,9 @@ public final class r40 extends AnimatorListenerAdapter {
                 t40 t40Var2 = this.b;
                 t40Var2.f = null;
                 if (!t40Var2.H) {
-                    bq bqVar2 = new bq(this, 24);
-                    t40Var2.h = bqVar2;
-                    AndroidUtilities.runOnUIThread(bqVar2, t40Var2.E);
+                    cp cpVar2 = new cp(this, 25);
+                    t40Var2.h = cpVar2;
+                    AndroidUtilities.runOnUIThread(cpVar2, t40Var2.E);
                     break;
                 }
                 break;

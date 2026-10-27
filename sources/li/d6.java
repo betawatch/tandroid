@@ -32,7 +32,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
-import org.telegram.messenger.vh;
+import org.telegram.messenger.wh;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.ActionBar.b7;
@@ -45,12 +45,12 @@ import org.telegram.ui.Cells.r9;
 import org.telegram.ui.Cells.s9;
 import org.telegram.ui.Components.CheckBoxBase;
 import org.telegram.ui.Components.b10;
-import org.telegram.ui.Components.gb1;
 import org.telegram.ui.Components.hu;
-import org.telegram.ui.Components.jj0;
-import org.telegram.ui.Components.wm0;
+import org.telegram.ui.Components.kb1;
+import org.telegram.ui.Components.kj0;
+import org.telegram.ui.Components.xm0;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class d6 extends FrameLayout implements p6, r9 {
     public static final /* synthetic */ int a0 = 0;
@@ -59,9 +59,9 @@ public final class d6 extends FrameLayout implements p6, r9 {
     public i2 G;
     public String H;
     public int I;
-    public wm0 J;
+    public xm0 J;
     public Drawable K;
-    public jj0 L;
+    public kj0 L;
     public final RectF M;
     public boolean N;
     public int O;
@@ -111,12 +111,12 @@ public final class d6 extends FrameLayout implements p6, r9 {
         nVar.setSingleLine(true);
         nVar.setIncludeFontPadding(false);
         nVar.setTextSize(1, 16.0f);
-        linearLayout.addView(nVar, gb1.r(18, -2));
+        linearLayout.addView(nVar, kb1.r(18, -2));
         cc ccVar = new cc(context, u6Var);
         this.e = ccVar;
         ccVar.setVisibility(8);
         ccVar.setOnClickListener(new u5(this, 0));
-        linearLayout.addView(ccVar, gb1.r(18, -2));
+        linearLayout.addView(ccVar, kb1.r(18, -2));
         g1 g1Var = new g1(context, u6Var);
         this.f = g1Var;
         g1Var.setPadding(AndroidUtilities.dp(2.0f), 0, AndroidUtilities.dp(2.0f), 0);
@@ -159,8 +159,8 @@ public final class d6 extends FrameLayout implements p6, r9 {
             }
         });
         g1Var.setOnFocusChangeListener(new bh.j0(this, 5));
-        linearLayout.addView(g1Var, gb1.p(1.0f, 0, -2));
-        addView(linearLayout, gb1.i(-1, -2, 51));
+        linearLayout.addView(g1Var, kb1.p(1.0f, 0, -2));
+        addView(linearLayout, kb1.i(-1, -2, 51));
         g1 g1Var2 = new g1(context, u6Var);
         this.h = g1Var2;
         g1Var2.setPadding(AndroidUtilities.dp(2.0f), AndroidUtilities.dp(2.0f), AndroidUtilities.dp(2.0f), AndroidUtilities.dp(1.0f));
@@ -205,7 +205,7 @@ public final class d6 extends FrameLayout implements p6, r9 {
             }
         });
         g1Var2.setVisibility(8);
-        addView(g1Var2, gb1.i(-1, -2, 51));
+        addView(g1Var2, kb1.i(-1, -2, 51));
         H();
     }
 
@@ -724,9 +724,9 @@ public final class d6 extends FrameLayout implements p6, r9 {
                 drawable.setColorFilter(new PorterDuffColorFilter(w02, PorterDuff.Mode.SRC_IN));
             }
         }
-        wm0 wm0Var = this.J;
-        if (wm0Var != null) {
-            zd.a(wm0Var, u6Var);
+        xm0 xm0Var = this.J;
+        if (xm0Var != null) {
+            zd.a(xm0Var, u6Var);
         }
     }
 
@@ -752,16 +752,16 @@ public final class d6 extends FrameLayout implements p6, r9 {
             int i10 = y6.i6;
             f7.R(linearLayout4, y6.Z(y6.w0(i10, this.a), AndroidUtilities.dp(3.0f), AndroidUtilities.dp(3.0f)), null, f7.N(i10), this.a);
             this.s.setPadding(AndroidUtilities.dp(6.0f), AndroidUtilities.dp(2.0f), AndroidUtilities.dp(2.0f), AndroidUtilities.dp(2.0f));
-            addView(this.s, gb1.h(-2, -2.0f, 53, 0.0f, -15.0f, -5.0f, 0.0f));
+            addView(this.s, kb1.h(-2, -2.0f, 53, 0.0f, -15.0f, -5.0f, 0.0f));
             TextView textView = new TextView(getContext());
             this.v = textView;
             textView.setTextSize(1, 12.0f);
             this.v.setGravity(17);
-            this.s.addView(this.v, gb1.x(-2, -2, 16, 0, 0, 0, 0));
+            this.s.addView(this.v, kb1.x(-2, -2, 16, 0, 0, 0, 0));
             ImageView imageView = new ImageView(getContext());
             this.w = imageView;
             imageView.setImageResource(R.drawable.arrows_select);
-            this.s.addView(this.w, gb1.v(16, 16, 16, 0.0f, 0.66f, 0.0f, 0.0f));
+            this.s.addView(this.w, kb1.v(16, 16, 16, 0.0f, 0.66f, 0.0f, 0.0f));
             ni.q qVar = ni.k.a;
             synchronized (qVar.a) {
                 try {
@@ -916,9 +916,9 @@ public final class d6 extends FrameLayout implements p6, r9 {
                 canvas2 = canvas;
                 if (aVar != null && (aVar.b instanceof TL_iv.pageBlockPullquote)) {
                     if (this.J == null) {
-                        wm0 wm0Var = new wm0(this);
-                        this.J = wm0Var;
-                        wm0Var.a(null, null, null, this.a, 1);
+                        xm0 xm0Var = new xm0(this);
+                        this.J = xm0Var;
+                        xm0Var.a(null, null, null, this.a, 1);
                         zd.a(this.J, u6Var);
                     }
                     if (this.K == null) {
@@ -980,9 +980,9 @@ public final class d6 extends FrameLayout implements p6, r9 {
                 }
             } else {
                 if (this.J == null) {
-                    wm0 wm0Var2 = new wm0(this);
-                    this.J = wm0Var2;
-                    wm0Var2.a(null, null, null, this.a, 1);
+                    xm0 xm0Var2 = new xm0(this);
+                    this.J = xm0Var2;
+                    xm0Var2.a(null, null, null, this.a, 1);
                     zd.a(this.J, u6Var);
                 }
                 RectF rectF2 = AndroidUtilities.rectTmp;
@@ -1056,7 +1056,7 @@ public final class d6 extends FrameLayout implements p6, r9 {
         super.dispatchDraw(canvas);
         if (n()) {
             if (this.L == null) {
-                this.L = new jj0(this);
+                this.L = new kj0(this);
             }
             TL_iv.pageBlockBlockquote pageblockblockquote = (TL_iv.pageBlockBlockquote) this.x.b;
             int w02 = y6.w0(y6.Oh, u6Var);
@@ -1338,7 +1338,7 @@ public final class d6 extends FrameLayout implements p6, r9 {
             g1 g1Var = this.h;
             if (g1Var.getVisibility() == 0 && (layout = g1Var.getLayout()) != null && layout.getLineCount() > 0) {
                 if (this.L == null) {
-                    this.L = new jj0(this);
+                    this.L = new kj0(this);
                 }
                 int lineCount = layout.getLineCount() - 1;
                 int measuredHeight = this.b.getMeasuredHeight() + getPaddingTop();
@@ -1348,7 +1348,7 @@ public final class d6 extends FrameLayout implements p6, r9 {
                 int dp = AndroidUtilities.dp(3.333f);
                 float C = org.telegram.messenger.t.C(16.0f, i10, dp);
                 this.L.getClass();
-                float b10 = C - vh.b(3.333f, 2, AndroidUtilities.dp(23.66f) + r6.c);
+                float b10 = C - wh.b(3.333f, 2, AndroidUtilities.dp(23.66f) + r6.c);
                 this.L.getClass();
                 int i12 = i11 - dp;
                 float dp2 = i12 - AndroidUtilities.dp(17.66f);
@@ -1490,9 +1490,9 @@ public final class d6 extends FrameLayout implements p6, r9 {
         if (super.verifyDrawable(drawable)) {
             return true;
         }
-        jj0 jj0Var = this.L;
-        if (jj0Var != null) {
-            return drawable == jj0Var.b || drawable == jj0Var.e;
+        kj0 kj0Var = this.L;
+        if (kj0Var != null) {
+            return drawable == kj0Var.b || drawable == kj0Var.e;
         }
         return false;
     }

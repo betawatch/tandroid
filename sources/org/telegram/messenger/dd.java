@@ -1,30 +1,28 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+import org.telegram.tgnet.tl.TL_account;
+
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class dd implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ org.telegram.ui.ActionBar.r2 b;
+    public final /* synthetic */ MessagesController b;
+    public final /* synthetic */ TL_account.TL_webBrowserSettings c;
 
-    public /* synthetic */ dd(int i10, org.telegram.ui.ActionBar.r2 r2Var) {
+    public /* synthetic */ dd(MessagesController messagesController, TL_account.TL_webBrowserSettings tL_webBrowserSettings, int i10) {
         this.a = i10;
-        this.b = r2Var;
+        this.b = messagesController;
+        this.c = tL_webBrowserSettings;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                MessagesController.lambda$checkSensitive$452(this.b);
-                break;
-            case 1:
-                org.telegram.ui.Components.g5.s0(7, this.b, null);
-                break;
-            case 2:
-                org.telegram.ui.Components.g5.s0(8, this.b, null);
+                this.b.lambda$loadWebBrowserConfig$514(this.c);
                 break;
             default:
-                TranslateController.lambda$pushToSummarize$18(this.b);
+                this.b.lambda$loadWebBrowserConfig$516(this.c);
                 break;
         }
     }

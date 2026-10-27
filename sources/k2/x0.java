@@ -21,9 +21,9 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import jg.f1;
-import org.telegram.ui.zg1;
+import org.telegram.ui.bh1;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
 public final class x0 extends r2.r implements i2.x0 {
     public final Context Z0;
@@ -141,7 +141,7 @@ public final class x0 extends r2.r implements i2.x0 {
         }
         HashMap hashMap = r2.w.a;
         ArrayList arrayList = new ArrayList(g7);
-        Collections.sort(arrayList, new p5(new zg1(9, this.Z0, xVar), 4));
+        Collections.sort(arrayList, new p5(new bh1(9, this.Z0, xVar), 4));
         return arrayList;
     }
 

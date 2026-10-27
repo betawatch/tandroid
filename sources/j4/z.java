@@ -7,7 +7,7 @@ import f9.s1;
 import java.util.List;
 import org.telegram.messenger.MediaDataController;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
 public final class z implements c3.o {
     public boolean e;
@@ -28,7 +28,7 @@ public final class z implements c3.o {
         c3.l lVar = (c3.l) pVar;
         lVar.h(bArr, 0, 14, false);
         if (442 == (((bArr[0] & 255) << 24) | ((bArr[1] & 255) << 16) | ((bArr[2] & 255) << 8) | (bArr[3] & 255)) && (bArr[4] & 196) == 68 && (bArr[6] & 4) == 4 && (bArr[8] & 4) == 4 && (bArr[9] & 1) == 1 && (bArr[12] & 3) == 3) {
-            lVar.s(bArr[13] & 7, false);
+            lVar.u(bArr[13] & 7, false);
             lVar.h(bArr, 0, 3, false);
             if (1 == (((bArr[0] & 255) << 16) | ((bArr[1] & 255) << 8) | (bArr[2] & 255))) {
                 return true;
@@ -205,17 +205,17 @@ public final class z implements c3.o {
         if (m10 == 442) {
             pVar.b(0, 10, xVar3.a);
             xVar3.N(9);
-            pVar.q((xVar3.A() & 7) + 14);
+            pVar.r((xVar3.A() & 7) + 14);
             return 0;
         }
         if (m10 == 443) {
             pVar.b(0, 2, xVar3.a);
             xVar3.N(0);
-            pVar.q(xVar3.H() + 6);
+            pVar.r(xVar3.H() + 6);
             return 0;
         }
         if (((m10 & (-256)) >> 8) != 1) {
-            pVar.q(1);
+            pVar.r(1);
             return 0;
         }
         int i18 = m10 & 255;
@@ -253,7 +253,7 @@ public final class z implements c3.o {
         xVar3.N(0);
         int H = xVar3.H() + 6;
         if (yVar == null) {
-            pVar.q(H);
+            pVar.r(H);
             return 0;
         }
         xVar3.K(H);

@@ -7,15 +7,15 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class r30 extends FrameLayout {
-    public final /* synthetic */ org.telegram.ui.u40 a;
+    public final /* synthetic */ org.telegram.ui.w40 a;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public r30(org.telegram.ui.u40 u40Var, Context context) {
+    public r30(org.telegram.ui.w40 w40Var, Context context) {
         super(context);
-        this.a = u40Var;
+        this.a = w40Var;
     }
 
     @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
@@ -27,8 +27,8 @@ public final class r30 extends FrameLayout {
     @Override // android.widget.FrameLayout, android.view.View
     public final void onMeasure(int i10, int i11) {
         boolean z10 = View.MeasureSpec.getSize(i10) > View.MeasureSpec.getSize(i11);
-        org.telegram.ui.u40 u40Var = this.a;
-        ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) u40Var.c.getLayoutParams();
+        org.telegram.ui.w40 w40Var = this.a;
+        ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) w40Var.c.getLayoutParams();
         if (z10) {
             int dp = AndroidUtilities.dp(80.0f);
             marginLayoutParams.leftMargin = dp;
@@ -38,9 +38,9 @@ public final class r30 extends FrameLayout {
             marginLayoutParams.leftMargin = dp2;
             marginLayoutParams.rightMargin = dp2;
         }
-        int B = org.telegram.messenger.vh.B(200.0f, View.MeasureSpec.getSize(i10), 2);
-        u40Var.b.setPadding(B, 0, B, 0);
+        int B = org.telegram.messenger.wh.B(200.0f, View.MeasureSpec.getSize(i10), 2);
+        w40Var.b.setPadding(B, 0, B, 0);
         super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(370.0f), TLObject.FLAG_30));
-        measureChildWithMargins(u40Var.d, View.MeasureSpec.makeMeasureSpec(0, 0), 0, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(64.0f), TLObject.FLAG_30), 0);
+        measureChildWithMargins(w40Var.d, View.MeasureSpec.makeMeasureSpec(0, 0), 0, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(64.0f), TLObject.FLAG_30), 0);
     }
 }

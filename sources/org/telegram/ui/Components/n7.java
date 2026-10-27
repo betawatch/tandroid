@@ -2,7 +2,7 @@ package org.telegram.ui.Components;
 
 import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class n7 implements o1.g {
     public final /* synthetic */ int a;
@@ -36,7 +36,7 @@ public final /* synthetic */ class n7 implements o1.g {
                 ti tiVar = (ti) ((bi.x4) this.b).d;
                 li liVar = tiVar.C0;
                 if (liVar == tiVar.m0 || liVar == tiVar.n0 || (tiVar.F && tiVar.w1 != null)) {
-                    tiVar.h2(1);
+                    tiVar.i2(1);
                 }
                 tiVar.C0.l(tiVar.o2);
                 qVar = ((org.telegram.ui.ActionBar.k3) tiVar).glassEngine;
@@ -50,7 +50,7 @@ public final /* synthetic */ class n7 implements o1.g {
                 alVar.k0();
                 break;
             default:
-                ((uc0) this.b).y();
+                ((vc0) this.b).y();
                 break;
         }
     }

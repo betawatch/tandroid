@@ -10,7 +10,7 @@ import java.util.Set;
 import java.util.concurrent.TimeUnit;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
 public class AppGlobalConfig {
     public final ConfigLongSet agentBotIds;
@@ -56,7 +56,7 @@ public class AppGlobalConfig {
     public final ConfigInt richMessageMaxMedia;
     public final ConfigInt richMessageMaxTableCols;
     public final ConfigString richMessagePosting;
-    public final ConfigBoolean roundVideoRecorder2Allowed;
+    public final ConfigBoolean roundVideoRecorderV2Disabled;
     public final ConfigBoolean settingsDisplayPasskeys;
     public final ConfigInt stargiftsCollectionGiftsLimit;
     public final ConfigInt stargiftsCollectionsLimit;
@@ -88,11 +88,11 @@ public class AppGlobalConfig {
     public final ConfigLong tonSuggestedPostAmountMin = ofLong("ton_suggested_post_amount_min", 10000000);
     public final ConfigLong tonSuggestedPostAmountMax = ofLong("ton_suggested_post_amount_max", 10000000000000L);
 
-    /* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+    /* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
     public static class ConfigBoolean {
         private final Internal handler;
 
-        /* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+        /* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
         public static class Internal implements ConfigInternal {
             private final boolean defaultValue;
             private final String name;
@@ -129,11 +129,11 @@ public class AppGlobalConfig {
         }
     }
 
-    /* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+    /* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
     public static class ConfigDouble {
         private final Internal handler;
 
-        /* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+        /* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
         public static class Internal implements ConfigInternal {
             private final double defaultValue;
             private final String name;
@@ -173,11 +173,11 @@ public class AppGlobalConfig {
         }
     }
 
-    /* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+    /* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
     public static class ConfigInt {
         private final Internal handler;
 
-        /* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+        /* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
         public static class Internal implements ConfigInternal {
             private final int defaultValue;
             private final String name;
@@ -218,18 +218,18 @@ public class AppGlobalConfig {
         }
     }
 
-    /* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+    /* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
     public interface ConfigInternal {
         boolean apply(SharedPreferences.Editor editor, TLRPC.JSONValue jSONValue);
 
         void load(SharedPreferences sharedPreferences);
     }
 
-    /* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+    /* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
     public static class ConfigLong {
         private final Internal handler;
 
-        /* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+        /* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
         public static class Internal implements ConfigInternal {
             private final long defaultValue;
             private final String name;
@@ -270,11 +270,11 @@ public class AppGlobalConfig {
         }
     }
 
-    /* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+    /* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
     public static class ConfigLongSet {
         private final Internal handler;
 
-        /* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+        /* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
         public static class Internal implements ConfigInternal {
             private final String name;
             private Set<Long> value;
@@ -345,11 +345,11 @@ public class AppGlobalConfig {
         }
     }
 
-    /* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+    /* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
     public static class ConfigString {
         private final Internal handler;
 
-        /* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+        /* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
         public static class Internal implements ConfigInternal {
             private final String defaultValue;
             private final String name;
@@ -394,11 +394,11 @@ public class AppGlobalConfig {
         }
     }
 
-    /* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+    /* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
     public static class ConfigStringSet {
         private final Internal handler;
 
-        /* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+        /* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
         public static class Internal implements ConfigInternal {
             private final Set<String> defaultValue;
             private final String name;
@@ -446,7 +446,7 @@ public class AppGlobalConfig {
         }
     }
 
-    /* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+    /* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
     public static class ConfigTime {
         private final ConfigLong.Internal handler;
         private final TimeUnit timeUnit;
@@ -487,7 +487,6 @@ public class AppGlobalConfig {
         this.settingsDisplayPasskeys = ofBoolean("settings_display_passkeys", BuildVars.DEBUG_VERSION);
         this.disableBlurInLightTheme = ofBoolean("android_disable_blur_in_light_theme", false);
         this.disableBlurInDarkTheme = ofBoolean("android_disable_blur_in_dark_theme", false);
-        this.audioRecorderV2Disabled = ofBoolean("android_audio_recorder_v2_disabled", false);
         this.noForwardsRequestExpirePeriod = ofTime("no_forwards_request_expire_period", 86400L, timeUnit);
         this.pollClosePeriodMax = ofTime("poll_close_period_max", 2592000L, timeUnit);
         this.musicSearchUsername = ofString("music_search_username", null);
@@ -520,7 +519,8 @@ public class AppGlobalConfig {
         this.messageLengthLimitPremium = ofInt("message_length_limit_premium", 8192);
         this.quickReplyMessagesLimit = ofInt("quick_reply_messages_limit", 20);
         this.ephemeralWelcomeMessagesMax = ofInt("ephemeral_welcome_messages_max", 5);
-        this.roundVideoRecorder2Allowed = ofBoolean("round_video_recorder_2_allowed", true);
+        this.audioRecorderV2Disabled = ofBoolean("android_audio_recorder_v2_disabled", false);
+        this.roundVideoRecorderV2Disabled = ofBoolean("android_round_video_recorder_v2_disabled", false);
         this.starsSpendTopUpInvoiceDisabled = ofBoolean("stars_spend_topup_invoice_disabled", false);
         this.botAllowedSuffixes = ofStringSet("bot_allowed_suffixes", Collections.singleton("bot"));
         this.walletAvailable = ofBoolean("wallet_available", BuildVars.DEBUG_VERSION);

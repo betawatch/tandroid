@@ -13,9 +13,9 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.oy;
+import org.telegram.ui.qy;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class f9 extends a9 {
     public final bh.x0 I;
@@ -26,7 +26,7 @@ public final class f9 extends a9 {
     public final org.telegram.ui.Components.r6 N;
     public boolean O;
 
-    public f9(Context context, c9 c9Var, TL_stories.TL_mediaAreaSuggestedReaction tL_mediaAreaSuggestedReaction, oy oyVar) {
+    public f9(Context context, c9 c9Var, TL_stories.TL_mediaAreaSuggestedReaction tL_mediaAreaSuggestedReaction, qy qyVar) {
         super(context, c9Var, tL_mediaAreaSuggestedReaction);
         TLRPC.TL_availableReaction tL_availableReaction;
         ArrayList arrayList;
@@ -44,13 +44,13 @@ public final class f9 extends a9 {
         }
         e9Var.c(getScaleX());
         n0Var.e(d);
-        oyVar.getClass();
+        qyVar.getClass();
         String str = d.f;
-        str = str == null ? MessageObject.findAnimatedEmojiEmoticon(org.telegram.ui.Components.t5.f(oyVar.b, d.g)) : str;
-        if (str != null && (arrayList = (ArrayList) oyVar.e.get(str)) != null && !arrayList.isEmpty()) {
+        str = str == null ? MessageObject.findAnimatedEmojiEmoticon(org.telegram.ui.Components.t5.f(qyVar.b, d.g)) : str;
+        if (str != null && (arrayList = (ArrayList) qyVar.e.get(str)) != null && !arrayList.isEmpty()) {
             int min = Math.min(1, arrayList.size());
             for (int i10 = 0; i10 < min; i10++) {
-                oyVar.l((TLRPC.Document) arrayList.get(i10));
+                qyVar.l((TLRPC.Document) arrayList.get(i10));
             }
         }
         if (this.I.f != null && (tL_availableReaction = MediaDataController.getInstance(UserConfig.selectedAccount).getReactionsMap().get(this.I.f)) != null) {

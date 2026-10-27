@@ -69,13 +69,13 @@ import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.e2;
 import org.telegram.ui.Components.ds;
-import org.telegram.ui.Components.k80;
+import org.telegram.ui.Components.l80;
 import org.telegram.ui.Components.ti;
 import org.telegram.ui.Components.zr;
-import sg.x2;
-import sg.y1;
+import sg.w2;
+import sg.x1;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class n1 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -197,7 +197,7 @@ public final /* synthetic */ class n1 implements Utilities.Callback {
                 y9 y9Var = q4Var.y0;
                 if (y9Var != null) {
                     y9Var.k1 = false;
-                    y9Var.P();
+                    y9Var.Q();
                     break;
                 }
                 break;
@@ -228,7 +228,7 @@ public final /* synthetic */ class n1 implements Utilities.Callback {
                 taVar.R();
                 if (max > 0) {
                     sg.j jVar = taVar.y0;
-                    if ((jVar instanceof x2) && ((x2) jVar).getEditText().isFocused()) {
+                    if ((jVar instanceof w2) && ((w2) jVar).getEditText().isFocused()) {
                         z10 = true;
                         animatorSet = taVar.C1;
                         if (animatorSet != null) {
@@ -236,15 +236,15 @@ public final /* synthetic */ class n1 implements Utilities.Callback {
                         }
                         taVar.C1 = new AnimatorSet();
                         arrayList = new ArrayList();
-                        y1 y1Var = taVar.S0;
+                        x1 x1Var = taVar.S0;
                         Property property = View.TRANSLATION_Y;
-                        arrayList.add(ObjectAnimator.ofFloat(y1Var, (Property<y1, Float>) property, max <= 0 ? Math.min(0.0f, ((-max) / 2.0f) - AndroidUtilities.dp(8.0f)) : 0.0f));
+                        arrayList.add(ObjectAnimator.ofFloat(x1Var, (Property<x1, Float>) property, max <= 0 ? Math.min(0.0f, ((-max) / 2.0f) - AndroidUtilities.dp(8.0f)) : 0.0f));
                         arrayList.add(ObjectAnimator.ofFloat(taVar.I0, (Property<a6, Float>) property, max <= 0 ? Math.min(0, AndroidUtilities.dp(40.0f) + (-max)) : 0));
                         l5 l5Var = taVar.L0;
                         Property property2 = View.ALPHA;
                         arrayList.add(ObjectAnimator.ofFloat(l5Var, (Property<l5, Float>) property2, !z10 ? 0.0f : 1.0f));
-                        arrayList.add(ObjectAnimator.ofFloat(taVar.q0, (Property<sg.l1, Float>) property2, (z10 || taVar.q1) ? 1.0f : 0.0f));
-                        arrayList.add(ObjectAnimator.ofFloat(taVar.p0, (Property<sg.h1, Float>) property2, (z10 || taVar.q1) ? 1.0f : 0.0f));
+                        arrayList.add(ObjectAnimator.ofFloat(taVar.q0, (Property<sg.k1, Float>) property2, (z10 || taVar.q1) ? 1.0f : 0.0f));
+                        arrayList.add(ObjectAnimator.ofFloat(taVar.p0, (Property<sg.g1, Float>) property2, (z10 || taVar.q1) ? 1.0f : 0.0f));
                         taVar.Q0();
                         taVar.C1.playTogether(arrayList);
                         if (z10) {
@@ -276,15 +276,15 @@ public final /* synthetic */ class n1 implements Utilities.Callback {
                 }
                 taVar.C1 = new AnimatorSet();
                 arrayList = new ArrayList();
-                y1 y1Var2 = taVar.S0;
+                x1 x1Var2 = taVar.S0;
                 Property property3 = View.TRANSLATION_Y;
-                arrayList.add(ObjectAnimator.ofFloat(y1Var2, (Property<y1, Float>) property3, max <= 0 ? Math.min(0.0f, ((-max) / 2.0f) - AndroidUtilities.dp(8.0f)) : 0.0f));
+                arrayList.add(ObjectAnimator.ofFloat(x1Var2, (Property<x1, Float>) property3, max <= 0 ? Math.min(0.0f, ((-max) / 2.0f) - AndroidUtilities.dp(8.0f)) : 0.0f));
                 arrayList.add(ObjectAnimator.ofFloat(taVar.I0, (Property<a6, Float>) property3, max <= 0 ? Math.min(0, AndroidUtilities.dp(40.0f) + (-max)) : 0));
                 l5 l5Var2 = taVar.L0;
                 Property property22 = View.ALPHA;
                 arrayList.add(ObjectAnimator.ofFloat(l5Var2, (Property<l5, Float>) property22, !z10 ? 0.0f : 1.0f));
-                arrayList.add(ObjectAnimator.ofFloat(taVar.q0, (Property<sg.l1, Float>) property22, (z10 || taVar.q1) ? 1.0f : 0.0f));
-                arrayList.add(ObjectAnimator.ofFloat(taVar.p0, (Property<sg.h1, Float>) property22, (z10 || taVar.q1) ? 1.0f : 0.0f));
+                arrayList.add(ObjectAnimator.ofFloat(taVar.q0, (Property<sg.k1, Float>) property22, (z10 || taVar.q1) ? 1.0f : 0.0f));
+                arrayList.add(ObjectAnimator.ofFloat(taVar.p0, (Property<sg.g1, Float>) property22, (z10 || taVar.q1) ? 1.0f : 0.0f));
                 taVar.Q0();
                 taVar.C1.playTogether(arrayList);
                 if (z10) {
@@ -311,22 +311,22 @@ public final /* synthetic */ class n1 implements Utilities.Callback {
                 break;
             case 11:
                 e6 e6Var2 = (e6) obj3;
-                sg.r0 r0Var = (sg.r0) obj2;
-                sg.o0 o0Var = (sg.o0) obj;
-                if (r0Var != null) {
+                sg.q0 q0Var = (sg.q0) obj2;
+                sg.n0 n0Var = (sg.n0) obj;
+                if (q0Var != null) {
                     int i18 = e6Var2.u1;
-                    r0Var.u0 = o0Var;
-                    r0Var.q0.b(i18, o0Var, false);
-                    r0Var.m();
-                    e6Var2.b0(r0Var);
+                    q0Var.u0 = n0Var;
+                    q0Var.q0.b(i18, n0Var, false);
+                    q0Var.m();
+                    e6Var2.b0(q0Var);
                     break;
                 } else {
-                    e6Var2.b0(e6Var2.f0(o0Var));
+                    e6Var2.b0(e6Var2.f0(n0Var));
                     break;
                 }
             case 12:
                 g9 g9Var = (g9) obj3;
-                ((k80) obj2).u();
+                ((l80) obj2).u();
                 g9Var.g(true);
                 n9 n9Var = g9Var.W;
                 q9 q9Var = n9Var.X;
@@ -515,10 +515,10 @@ public final /* synthetic */ class n1 implements Utilities.Callback {
                 b2 b2Var = (b2) obj2;
                 c2 f10 = c2.f(UserConfig.selectedAccount);
                 ti tiVar = ((jg.i0) obj3).b;
-                long s12 = tiVar.s1();
+                long t12 = tiVar.t1();
                 int i21 = f10.a;
                 TLRPC.TL_messages_sendQuickReplyMessages tL_messages_sendQuickReplyMessages = new TLRPC.TL_messages_sendQuickReplyMessages();
-                TLRPC.InputPeer inputPeer = MessagesController.getInstance(i21).getInputPeer(s12);
+                TLRPC.InputPeer inputPeer = MessagesController.getInstance(i21).getInputPeer(t12);
                 tL_messages_sendQuickReplyMessages.peer = inputPeer;
                 if (inputPeer != null) {
                     tL_messages_sendQuickReplyMessages.shortcut_id = b2Var.a;

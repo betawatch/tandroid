@@ -6,9 +6,9 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.animation.PathInterpolator;
 import fi.z6;
-import org.telegram.ui.fc1;
+import org.telegram.ui.hc1;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class e extends GestureDetector.SimpleOnGestureListener {
     public final /* synthetic */ int a;
@@ -66,7 +66,7 @@ public final class e extends GestureDetector.SimpleOnGestureListener {
                 ofFloat.setDuration(220L);
                 fVar.d.setInterpolator(new PathInterpolator(0.23f, 1.0f, 0.32f, 1.0f));
                 fVar.d.addUpdateListener(new z6(this, f7, x9, f10, y3, 2));
-                fVar.d.addListener(new fc1(this, 20));
+                fVar.d.addListener(new hc1(this, 20));
                 fVar.d.start();
                 return true;
             default:

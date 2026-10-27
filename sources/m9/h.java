@@ -18,10 +18,10 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicReference;
 import m4.w1;
 import o6.l;
-import s9.n;
+import s9.o;
 import t9.k;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
 public final class h {
     public static final Object k = new Object();
@@ -29,10 +29,10 @@ public final class h {
     public final Context a;
     public final String b;
     public final j c;
-    public final s9.g d;
+    public final s9.h d;
     public final AtomicBoolean e;
     public final AtomicBoolean f;
-    public final n g;
+    public final o g;
     public final ra.b h;
     public final CopyOnWriteArrayList i;
     public final CopyOnWriteArrayList j;
@@ -68,11 +68,11 @@ public final class h {
         if ((Build.VERSION.SDK_INT >= 24 ? w.g(context) : true) && FirebaseInitProvider.b.get()) {
             arrayList2.add(s9.a.c(aVar, a.class, new Class[0]));
         }
-        s9.g gVar = new s9.g(kVar, arrayList, arrayList2, dVar);
-        this.d = gVar;
+        s9.h hVar = new s9.h(kVar, arrayList, arrayList2, dVar);
+        this.d = hVar;
         Trace.endSection();
-        this.g = new n(new d(0, this, context));
-        this.h = gVar.d(pa.c.class);
+        this.g = new o(new d(0, this, context));
+        this.h = hVar.d(pa.c.class);
         e eVar = new e(this);
         a();
         if (atomicBoolean.get()) {

@@ -1,9 +1,9 @@
 package rg;
 
 import android.os.Looper;
-import org.telegram.ui.Components.cy0;
+import org.telegram.ui.Components.dy0;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class z0 implements Runnable {
     public final /* synthetic */ int a;
@@ -19,14 +19,14 @@ public final /* synthetic */ class z0 implements Runnable {
         switch (this.a) {
             case 0:
                 a1 a1Var = this.b;
-                cy0 cy0Var = a1Var.w;
+                dy0 dy0Var = a1Var.w;
                 z0 z0Var = a1Var.s;
                 if (z0Var != null) {
                     a1Var.cancelRunnable(z0Var);
                     a1Var.s = null;
                 }
-                a1Var.cancelRunnable(cy0Var);
-                a1Var.postRunnable(cy0Var);
+                a1Var.cancelRunnable(dy0Var);
+                a1Var.postRunnable(dy0Var);
                 break;
             case 1:
                 a1 a1Var2 = this.b;

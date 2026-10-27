@@ -9,10 +9,10 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.Components.m71;
+import org.telegram.ui.Components.n71;
 import org.telegram.ui.Components.wc;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class o implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -105,7 +105,7 @@ public final /* synthetic */ class o implements Utilities.Callback {
             case 6:
                 h8 h8Var = (h8) this.c;
                 l0 l0Var2 = (l0) this.b;
-                l0Var2.j0(new e2.p0((Object) l0Var2, (Object) new n(h8Var, (Utilities.Callback) obj, (ArrayList) this.d, l0Var2), true, false, 3));
+                l0Var2.m0(new e2.p0((Object) l0Var2, (Object) new n(h8Var, (Utilities.Callback) obj, (ArrayList) this.d, l0Var2), true, false, 3));
                 break;
             case 7:
                 r9 r9Var = (r9) this.c;
@@ -113,9 +113,9 @@ public final /* synthetic */ class o implements Utilities.Callback {
                 TLRPC.User user = (TLRPC.User) this.d;
                 String str5 = (String) obj;
                 if (!r9Var.r) {
-                    if (!TextUtils.isEmpty(str5) && l0.a(r9Var.f, l0Var3.s())) {
+                    if (!TextUtils.isEmpty(str5) && l0.b(r9Var.f, l0Var3.t())) {
                         b0 b0Var = new b0(l0Var3, str5, r9Var.e, null, new p(r9Var, l0Var3, user, str5));
-                        l0Var3.j0(b0Var);
+                        l0Var3.m0(b0Var);
                         r9Var.n = new m(b0Var, 1);
                         break;
                     } else {
@@ -145,9 +145,9 @@ public final /* synthetic */ class o implements Utilities.Callback {
         }
     }
 
-    public /* synthetic */ o(m71 m71Var, l0 l0Var, Object obj, int i10) {
+    public /* synthetic */ o(n71 n71Var, l0 l0Var, Object obj, int i10) {
         this.a = i10;
-        this.c = m71Var;
+        this.c = n71Var;
         this.b = l0Var;
         this.d = obj;
     }

@@ -47,12 +47,12 @@ import org.telegram.ui.ActionBar.k3;
 import org.telegram.ui.ActionBar.r2;
 import org.telegram.ui.ActionBar.u6;
 import org.telegram.ui.Components.ChatActivityEnterView;
-import org.telegram.ui.Components.aw0;
-import org.telegram.ui.Components.b90;
 import org.telegram.ui.Components.bg;
 import org.telegram.ui.Components.bn;
-import org.telegram.ui.Components.by0;
+import org.telegram.ui.Components.bw0;
+import org.telegram.ui.Components.c90;
 import org.telegram.ui.Components.cn;
+import org.telegram.ui.Components.cy0;
 import org.telegram.ui.Components.dh;
 import org.telegram.ui.Components.g5;
 import org.telegram.ui.Components.ti;
@@ -60,16 +60,16 @@ import org.telegram.ui.Components.wc;
 import org.telegram.ui.Components.wm;
 import org.telegram.ui.Components.zm;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.cy;
-import org.telegram.ui.fn;
-import org.telegram.ui.kr;
-import org.telegram.ui.nq;
-import org.telegram.ui.qt;
+import org.telegram.ui.ey;
+import org.telegram.ui.hn;
+import org.telegram.ui.mr;
+import org.telegram.ui.pq;
 import org.telegram.ui.r90;
-import org.telegram.ui.un;
-import org.telegram.ui.v50;
+import org.telegram.ui.st;
+import org.telegram.ui.wn;
+import org.telegram.ui.x50;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class i0 implements Runnable {
     public final /* synthetic */ int a;
@@ -138,7 +138,7 @@ public final /* synthetic */ class i0 implements Runnable {
                 }
                 r2 U = LaunchActivity.U();
                 if (U != null) {
-                    U.presentFragment(un.aa(boost.giveaway_msg_id, j10));
+                    U.presentFragment(wn.da(boost.giveaway_msg_id, j10));
                     break;
                 }
                 break;
@@ -147,15 +147,15 @@ public final /* synthetic */ class i0 implements Runnable {
                 di.q qVar = (di.q) obj;
                 di.h7 h7Var3 = rVar.s;
                 ArrayList arrayList = rVar.x;
-                cy cyVar = rVar.e0;
-                if (cyVar != null && cyVar.getParentActivity() != null) {
+                ey eyVar = rVar.e0;
+                if (eyVar != null && eyVar.getParentActivity() != null) {
                     int i14 = qVar.b;
                     ArrayList arrayList2 = new ArrayList();
                     int i15 = 0;
                     while (true) {
                         if (i15 < arrayList.size()) {
                             long j11 = ((di.o) arrayList.get(i15)).c;
-                            if (j11 == UserConfig.getInstance(rVar.f).clientUserId || !h7Var3.J(j11)) {
+                            if (j11 == UserConfig.getInstance(rVar.f).clientUserId || !h7Var3.L(j11)) {
                                 i15++;
                             } else {
                                 z10 = false;
@@ -165,9 +165,9 @@ public final /* synthetic */ class i0 implements Runnable {
                         }
                     }
                     if (!qVar.F || (z10 && arrayList.size() != 1)) {
-                        if (qVar.F || !h7Var3.J(qVar.E)) {
+                        if (qVar.F || !h7Var3.L(qVar.E)) {
                             for (int i16 = 0; i16 < arrayList.size(); i16++) {
-                                if (h7Var3.I(((di.o) arrayList.get(i16)).c)) {
+                                if (h7Var3.K(((di.o) arrayList.get(i16)).c)) {
                                     arrayList2.add(Long.valueOf(((di.o) arrayList.get(i16)).c));
                                 } else if (i16 <= i14) {
                                     i14--;
@@ -178,7 +178,7 @@ public final /* synthetic */ class i0 implements Runnable {
                         } else {
                             for (int i17 = 0; i17 < arrayList.size(); i17++) {
                                 long j12 = ((di.o) arrayList.get(i17)).c;
-                                if (!qVar.F && h7Var3.J(j12)) {
+                                if (!qVar.F && h7Var3.L(j12)) {
                                     arrayList2.add(Long.valueOf(j12));
                                 }
                                 if (j12 == qVar.E) {
@@ -195,8 +195,8 @@ public final /* synthetic */ class i0 implements Runnable {
                         z11 = false;
                         z12 = true;
                     }
-                    y9 orCreateStoryViewer = cyVar.getOrCreateStoryViewer();
-                    orCreateStoryViewer.s(new r3(rVar, j10, 2));
+                    y9 orCreateStoryViewer = eyVar.getOrCreateStoryViewer();
+                    orCreateStoryViewer.t(new r3(rVar, j10, 2));
                     Context context = rVar.getContext();
                     q7 a2 = q7.a(rVar.h);
                     a2.e = new di.f(0, rVar, z12);
@@ -204,7 +204,7 @@ public final /* synthetic */ class i0 implements Runnable {
                     a2.h = z11;
                     a2.n = z12;
                     a2.r = true;
-                    orCreateStoryViewer.G(context, null, arrayList2, i10, null, null, a2, false);
+                    orCreateStoryViewer.H(context, null, arrayList2, i10, null, null, a2, false);
                     break;
                 }
                 break;
@@ -219,7 +219,7 @@ public final /* synthetic */ class i0 implements Runnable {
                     TLRPC.User user = MessagesController.getInstance(i18).getUser(Long.valueOf(j10));
                     TL_stories.PeerStories peerStories = tL_stories_peerStories.stories;
                     h7Var4.i.k(peerStories, DialogObject.getPeerDialogId(peerStories.peer));
-                    if (user != null && (h7Var4.M(user) || user.self)) {
+                    if (user != null && (h7Var4.O(user) || user.self)) {
                         h7Var4.g(peerStories);
                         u7 u7Var = h7Var4.k;
                         u7Var.b.getStorageQueue().postRunnable(new s7(u7Var, peerStories, 0));
@@ -320,7 +320,7 @@ public final /* synthetic */ class i0 implements Runnable {
                 z7 z7Var = (z7) obj2;
                 z7Var.getClass();
                 ((View) obj).invalidate();
-                MessagesController.getInstance(z7Var.a).getStoriesController().e0(j10, false);
+                MessagesController.getInstance(z7Var.a).getStoriesController().h0(j10, false);
                 break;
             case 10:
                 g9 g9Var = (g9) obj2;
@@ -344,21 +344,21 @@ public final /* synthetic */ class i0 implements Runnable {
                 ((VideoCapturerDevice) obj2).lambda$init$2(j10, (Point) obj);
                 break;
             case 16:
-                un unVar = (un) obj2;
-                unVar.getMessagesController().lambda$checkDeletingTask$83(this.b, unVar.f6, ((MessageObject) obj).getId());
+                wn wnVar = (wn) obj2;
+                wnVar.getMessagesController().lambda$checkDeletingTask$83(this.b, wnVar.j6, ((MessageObject) obj).getId());
                 break;
             case 17:
-                un unVar2 = ((fn) obj2).a;
-                i11 = ((r2) unVar2).currentAccount;
-                g5.s0(SendMessagesHelper.getInstance(i11).sendMessage((ArrayList) obj, this.b, false, false, true, 0, 0, null, -1, 0L, unVar2.X8(), unVar2.s5), unVar2, null);
+                wn wnVar2 = ((hn) obj2).a;
+                i11 = ((r2) wnVar2).currentAccount;
+                g5.s0(SendMessagesHelper.getInstance(i11).sendMessage((ArrayList) obj, this.b, false, false, true, 0, 0, null, -1, 0L, wnVar2.a9(), wnVar2.w5), wnVar2, null);
                 break;
             case 18:
-                kr krVar = (kr) obj2;
+                mr mrVar = (mr) obj2;
                 TLRPC.User user2 = (TLRPC.User) obj;
-                krVar.getMessagesController().deleteParticipantFromChat(krVar.M, user2);
-                krVar.w0(j10);
-                if (krVar.n != null && user2 != null && wc.a(krVar)) {
-                    wc.D(krVar, user2, krVar.n.title).j();
+                mrVar.getMessagesController().deleteParticipantFromChat(mrVar.M, user2);
+                mrVar.w0(j10);
+                if (mrVar.n != null && user2 != null && wc.a(mrVar)) {
+                    wc.D(mrVar, user2, mrVar.n.title).j();
                     break;
                 }
                 break;
@@ -369,7 +369,7 @@ public final /* synthetic */ class i0 implements Runnable {
                     runnable2.run();
                 }
                 if (r2Var != null) {
-                    r2Var.presentFragment(un.ba(j10));
+                    r2Var.presentFragment(wn.ea(j10));
                     break;
                 }
                 break;
@@ -417,28 +417,28 @@ public final /* synthetic */ class i0 implements Runnable {
                 }
                 break;
             case 23:
-                b90.kd((b90) obj2, j10, (TLRPC.Chat) obj);
+                c90.od((c90) obj2, j10, (TLRPC.Chat) obj);
                 break;
             case 24:
-                ((aw0) obj2).x1.presentFragment(un.aa(((MessageObject) obj).getId(), j10));
+                ((bw0) obj2).x1.presentFragment(wn.da(((MessageObject) obj).getId(), j10));
                 break;
             case 25:
-                by0.D1((by0) obj2, (TLRPC.TL_messages_emojiGroups) obj, j10);
+                cy0.D1((cy0) obj2, (TLRPC.TL_messages_emojiGroups) obj, j10);
                 break;
             case 26:
-                cy cyVar2 = (cy) obj2;
+                ey eyVar2 = (ey) obj2;
                 h0 h0Var = (h0) obj;
-                if (cyVar2.G.bot_admin_rights != null) {
-                    cyVar2.getMessagesController().setUserAdminRole(-j10, cyVar2.getMessagesController().getUser(Long.valueOf(cyVar2.H)), cyVar2.G.bot_admin_rights, null, false, cyVar2, true, true, null, h0Var, new qt(h0Var, 4));
+                if (eyVar2.G.bot_admin_rights != null) {
+                    eyVar2.getMessagesController().setUserAdminRole(-j10, eyVar2.getMessagesController().getUser(Long.valueOf(eyVar2.H)), eyVar2.G.bot_admin_rights, null, false, eyVar2, true, true, null, h0Var, new st(h0Var, 4));
                     break;
                 } else {
                     h0Var.run();
                     break;
                 }
             case 27:
-                v50 v50Var = (v50) obj2;
+                x50 x50Var = (x50) obj2;
                 TLRPC.Updates updates = (TLRPC.Updates) obj;
-                v50Var.getClass();
+                x50Var.getClass();
                 TLRPC.Update update = updates.update;
                 if (update instanceof TL_update.TL_updateNewMessage) {
                     TLRPC.Message message = ((TL_update.TL_updateNewMessage) update).message;
@@ -466,10 +466,10 @@ public final /* synthetic */ class i0 implements Runnable {
                         }
                     }
                 }
-                ChatObject.Call call = v50Var.a1;
+                ChatObject.Call call = x50Var.a1;
                 if (call != null && i13 != 0) {
                     call.invitedUsersMessageIds.put(Long.valueOf(j10), ChatObject.Call.InvitedUser.make(i13));
-                    v50Var.O0(true);
+                    x50Var.O0(true);
                     break;
                 }
                 break;
@@ -478,11 +478,11 @@ public final /* synthetic */ class i0 implements Runnable {
                 Long l4 = (Long) obj;
                 r2 U2 = LaunchActivity.U();
                 if (U2 != null) {
-                    un ba2 = un.ba(l4.longValue());
-                    U2.presentFragment(ba2);
+                    wn ea2 = wn.ea(l4.longValue());
+                    U2.presentFragment(ea2);
                     TLRPC.Chat chat = MessagesController.getInstance(launchActivity.O).getChat(Long.valueOf(-l4.longValue()));
                     if (chat != null) {
-                        AndroidUtilities.runOnUIThread(new ia(ba2, this.b, chat, 1), 250L);
+                        AndroidUtilities.runOnUIThread(new ia(ea2, this.b, chat, 1), 250L);
                         break;
                     }
                 }
@@ -490,7 +490,7 @@ public final /* synthetic */ class i0 implements Runnable {
             default:
                 LaunchActivity launchActivity2 = (LaunchActivity) obj2;
                 Pattern pattern = LaunchActivity.D1;
-                AndroidUtilities.runOnUIThread(new nq(launchActivity2, MessagesStorage.getInstance(launchActivity2.O).getUser(j10), (r90) obj, 19));
+                AndroidUtilities.runOnUIThread(new pq(launchActivity2, MessagesStorage.getInstance(launchActivity2.O).getUser(j10), (r90) obj, 19));
                 break;
         }
     }

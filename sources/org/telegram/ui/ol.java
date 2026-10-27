@@ -1,50 +1,19 @@
 package org.telegram.ui;
 
-import java.util.ArrayList;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.VideoEditedInfo;
+import org.telegram.messenger.MessageObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public final class ol extends gu0 {
-    public final /* synthetic */ ArrayList a;
-    public final /* synthetic */ boolean[] b;
-    public final /* synthetic */ un c;
+public final class ol extends iu0 {
+    public final /* synthetic */ wn a;
 
-    public ol(un unVar, ArrayList arrayList, boolean[] zArr) {
-        this.c = unVar;
-        this.a = arrayList;
-        this.b = zArr;
+    public ol(wn wnVar) {
+        this.a = wnVar;
     }
 
-    @Override // org.telegram.ui.gu0, org.telegram.ui.ou0
-    public final boolean T() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.gu0, org.telegram.ui.ou0
-    public final ImageReceiver.BitmapHolder j(int i10) {
-        return null;
-    }
-
-    @Override // org.telegram.ui.gu0, org.telegram.ui.ou0
-    public final void o(int i10, VideoEditedInfo videoEditedInfo, boolean z10, int i11, int i12, boolean z11) {
-        ArrayList arrayList = this.a;
-        for (int size = arrayList.size() - 1; size >= 0; size--) {
-            if (!this.b[size]) {
-                arrayList.remove(size);
-            }
-        }
-        this.c.pb(arrayList, i11, z10, z11);
-    }
-
-    @Override // org.telegram.ui.gu0, org.telegram.ui.ou0
-    public final boolean x(int i10) {
-        return this.b[i10];
-    }
-
-    @Override // org.telegram.ui.gu0, org.telegram.ui.ou0
-    public final int k(int i10, VideoEditedInfo videoEditedInfo) {
-        return i10;
+    @Override // org.telegram.ui.iu0, org.telegram.ui.qu0
+    public final su0 E(MessageObject messageObject, TLRPC.FileLocation fileLocation, int i10, boolean z10, boolean z11) {
+        return wn.H1(this.a, messageObject, fileLocation, i10, z10, false);
     }
 }

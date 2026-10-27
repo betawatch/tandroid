@@ -1,6 +1,6 @@
 package c3;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
 public interface p extends b2.p {
     void b(int i10, int i11, byte[] bArr);
@@ -23,11 +23,11 @@ public interface p extends b2.p {
 
     void p();
 
-    void q(int i10);
+    void r(int i10);
 
     void readFully(byte[] bArr, int i10, int i11);
 
-    boolean s(int i10, boolean z10);
-
     int skip(int i10);
+
+    boolean u(int i10, boolean z10);
 }

@@ -6,7 +6,7 @@ import c3.p;
 import e2.x;
 import java.io.EOFException;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
 public final class f {
     public int a;
@@ -91,7 +91,7 @@ public final class f {
                 pVar.p();
                 return true;
             }
-            pVar.q(1);
+            pVar.r(1);
         }
         do {
             if (j10 != -1 && pVar.getPosition() >= j10) {

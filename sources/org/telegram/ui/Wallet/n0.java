@@ -3,15 +3,15 @@ package org.telegram.ui.Wallet;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.zg1;
+import org.telegram.ui.bh1;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class n0 {
     public static final long[] j = {500, 1000, 3000, 5000, 10000};
     public final int a;
     public final String b;
-    public final zg1 c;
+    public final bh1 c;
     public boolean d;
     public int e;
     public int f;
@@ -21,7 +21,7 @@ public final class n0 {
 
     /* JADX WARN: Type inference failed for: r0v1, types: [org.telegram.ui.Wallet.m0] */
     /* JADX WARN: Type inference failed for: r0v2, types: [org.telegram.ui.Wallet.m0] */
-    public n0(int i10, String str, zg1 zg1Var) {
+    public n0(int i10, String str, bh1 bh1Var) {
         final int i11 = 0;
         this.h = new Runnable(this) { // from class: org.telegram.ui.Wallet.m0
             public final /* synthetic */ n0 b;
@@ -100,7 +100,7 @@ public final class n0 {
         };
         this.a = i10;
         this.b = str;
-        this.c = zg1Var;
+        this.c = bh1Var;
     }
 
     public final void a() {

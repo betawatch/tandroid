@@ -1,131 +1,169 @@
 package org.telegram.messenger;
 
-import java.util.ArrayList;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.MessagesStorage;
-import org.telegram.messenger.SendMessagesHelper;
-import org.telegram.messenger.TelegramMediaSession;
-import org.telegram.messenger.Utilities;
-import org.telegram.messenger.support.LongSparseIntArray;
-import org.telegram.tgnet.TLObject;
+import android.text.TextUtils;
+import java.util.concurrent.atomic.AtomicInteger;
+import java.util.regex.Pattern;
+import org.telegram.messenger.Timer;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_update;
+import org.telegram.ui.ActionBar.ActionBarLayout;
+import org.telegram.ui.Components.as0;
+import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.ey;
+import org.telegram.ui.iq;
+import org.telegram.ui.ja0;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class p8 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ Object c;
-    public final /* synthetic */ Object d;
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ long d;
+    public final /* synthetic */ Object e;
+    public final /* synthetic */ Object f;
+    public final /* synthetic */ Object h;
+    public final /* synthetic */ Object n;
+    public final /* synthetic */ Object r;
+    public final /* synthetic */ Object s;
+    public final /* synthetic */ Object v;
+    public final /* synthetic */ Object w;
 
-    public /* synthetic */ p8(Object obj, Object obj2, Object obj3, int i10) {
-        this.a = i10;
-        this.b = obj;
-        this.d = obj2;
-        this.c = obj3;
+    public /* synthetic */ p8(MediaDataController mediaDataController, Timer.Task task, a0.h hVar, AtomicInteger atomicInteger, Runnable runnable, int i10, Timer timer, a0.h hVar2, a0.h hVar3, boolean z10, long j10) {
+        this.e = mediaDataController;
+        this.f = task;
+        this.h = hVar;
+        this.s = atomicInteger;
+        this.v = runnable;
+        this.c = i10;
+        this.w = timer;
+        this.n = hVar2;
+        this.r = hVar3;
+        this.b = z10;
+        this.d = j10;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        switch (this.a) {
+        TLRPC.TL_chatAdminRights tL_chatAdminRights;
+        int i10 = this.a;
+        Object obj = this.w;
+        Object obj2 = this.v;
+        Object obj3 = this.s;
+        Object obj4 = this.r;
+        Object obj5 = this.n;
+        Object obj6 = this.h;
+        Object obj7 = this.f;
+        Object obj8 = this.e;
+        switch (i10) {
             case 0:
-                ((MediaDataController) this.b).lambda$putEmojiKeywords$216((TLRPC.TL_emojiKeywordsDifference) this.d, (String) this.c);
-                break;
-            case 1:
-                ((MediaDataController) this.b).lambda$verifyAnimatedStickerMessage$68((TLRPC.Message) this.d, (String) this.c);
-                break;
-            case 2:
-                ((MediaDataController) this.b).lambda$preloadPremiumPreviewStickers$206((TLRPC.TL_error) this.d, (TLObject) this.c);
-                break;
-            case 3:
-                ((MediaDataController) this.b).lambda$clearBotKeyboard$194((ArrayList) this.d, (MessagesStorage.TopicKey) this.c);
-                break;
-            case 4:
-                ((MediaDataController) this.b).lambda$findStickerSetByNameInCache$30((String) this.c, (Utilities.Callback) this.d);
-                break;
-            case 5:
-                ((MediaDataController) this.b).lambda$processLoadedMedia$135((ArrayList) this.d, (h9) this.c);
-                break;
-            case 6:
-                ((MediaDataController) this.b).lambda$findStickerSetByNameInCache$29((TLRPC.TL_messages_stickerSet) this.d, (Utilities.Callback) this.c);
-                break;
-            case 7:
-                ((MessagesController) this.b).lambda$requestIsUserContactBlocked$499((TLObject) this.d, (ArrayList) this.c);
-                break;
-            case 8:
-                ((MessagesController) this.b).lambda$addUsersToChat$295((TLRPC.Chat) this.d, (TLRPC.TL_messages_invitedUsers) this.c);
-                break;
-            case 9:
-                ((MessagesController) this.b).lambda$processMessageIDUpdate$377((long[]) this.d, (TL_update.TL_updateMessageID) this.c);
-                break;
-            case 10:
-                ((MessagesController) this.b).lambda$getChannelDifference$343((ArrayList) this.d, (TLRPC.updates_ChannelDifference) this.c);
-                break;
-            case 11:
-                ((MessagesController) this.b).lambda$setUserAdminRole$103((TLRPC.TL_channels_editAdmin) this.d, (ob) this.c);
-                break;
-            case 12:
-                ((MessagesController) this.b).lambda$setUserAdminRole$108((TLRPC.TL_messages_editChatAdmin) this.d, (pb) this.c);
-                break;
-            case 13:
-                ((MessagesController) this.b).lambda$getDifference$354((ArrayList) this.d, (TLRPC.updates_Difference) this.c);
-                break;
-            case 14:
-                MessagesController.lambda$openByUserName$463((org.telegram.ui.ActionBar.e2[]) this.b, (boolean[]) this.d, (org.telegram.ui.ActionBar.r2) this.c);
-                break;
-            case 15:
-                ((MessagesController) this.b).lambda$updateChatAbout$288((TLRPC.ChatFull) this.d, (String) this.c);
-                break;
-            case 16:
-                ((MessagesController) this.b).lambda$addUserToChat$308((TLRPC.Updates) this.d, (Runnable) this.c);
-                break;
-            case 17:
-                ((MessagesController) this.b).lambda$processDialogsUpdateRead$222((LongSparseIntArray) this.d, (LongSparseIntArray) this.c);
-                break;
-            case 18:
-                ((MessagesController) this.b).lambda$didReceivedNotification$49((org.telegram.ui.ActionBar.x6) this.d, (org.telegram.ui.ActionBar.w6) this.c);
-                break;
-            case 19:
-                ((MessagesController.SavedMusicList) this.b).lambda$load$0((TLObject) this.d, (ArrayList) this.c);
-                break;
-            case 20:
-                ((MessagesStorage) this.b).lambda$applyPhoneBookUpdates$151((String) this.c, (String) this.d);
-                break;
-            case 21:
-                ((MessagesStorage) this.b).lambda$replaceMessageIfExists$235((MessageObject) this.d, (ArrayList) this.c);
-                break;
-            case 22:
-                ((MessagesStorage) this.b).lambda$getNewTask$114((a0.h) this.d, (a0.h) this.c);
-                break;
-            case 23:
-                ((MessagesStorage) this.b).lambda$saveBotCache$129((TLObject) this.d, (String) this.c);
-                break;
-            case 24:
-                ((SavedMessagesController) this.b).lambda$saveCache$11((MessagesStorage) this.d, (ArrayList) this.c);
-                break;
-            case 25:
-                ((SecretChatHelper) this.b).lambda$processUpdateEncryption$2((TLRPC.EncryptedChat) this.d, (TLRPC.EncryptedChat) this.c);
-                break;
-            case 26:
-                ((SendMessagesHelper) this.b).lambda$sendVote$34((String) this.c, (Runnable) this.d);
-                break;
-            case 27:
-                ((SendMessagesHelper) this.b).lambda$performSendDelayedMessage$52((TLObject) this.d, (SendMessagesHelper.DelayedMessage) this.c);
-                break;
-            case 28:
-                ((SendMessagesHelper) this.b).lambda$sendMessage$17((TLRPC.TL_error) this.d, (TLRPC.TL_messages_forwardMessages) this.c);
+                ((MediaDataController) obj8).lambda$loadReplyMessagesForMessages$177((Timer.Task) obj7, (a0.h) obj6, (AtomicInteger) obj3, (Runnable) obj2, this.c, (Timer) obj, (a0.h) obj5, (a0.h) obj4, this.b, this.d);
                 break;
             default:
-                ((TelegramMediaSession) this.b).lambda$loadBrowseChildren$3((TelegramMediaSession.BrowseChildrenCallback) this.d, (String) this.c);
-                break;
+                LaunchActivity launchActivity = (LaunchActivity) obj8;
+                String str = (String) obj7;
+                TLRPC.TL_chatAdminRights tL_chatAdminRights2 = (TLRPC.TL_chatAdminRights) obj6;
+                String str2 = (String) obj5;
+                TLRPC.Chat chat = (TLRPC.Chat) obj4;
+                ey eyVar = (ey) obj3;
+                TLRPC.User user = (TLRPC.User) obj2;
+                String str3 = (String) obj;
+                Pattern pattern = LaunchActivity.D1;
+                if (str != null) {
+                    String[] split = str.split("\\+| ");
+                    tL_chatAdminRights = new TLRPC.TL_chatAdminRights();
+                    for (String str4 : split) {
+                        str4.getClass();
+                        switch (str4) {
+                            case "ban_users":
+                            case "restrict_members":
+                                tL_chatAdminRights.ban_users = true;
+                                break;
+                            case "anonymous":
+                                tL_chatAdminRights.anonymous = true;
+                                break;
+                            case "change_info":
+                                tL_chatAdminRights.change_info = true;
+                                break;
+                            case "delete_messages":
+                                tL_chatAdminRights.delete_messages = true;
+                                break;
+                            case "edit_messages":
+                                tL_chatAdminRights.edit_messages = true;
+                                break;
+                            case "manage_call":
+                            case "manage_video_chats":
+                                tL_chatAdminRights.manage_call = true;
+                                break;
+                            case "manage_chat":
+                            case "other":
+                                tL_chatAdminRights.other = true;
+                                break;
+                            case "manage_topics":
+                            case "manage_topic":
+                                tL_chatAdminRights.manage_topics = true;
+                                break;
+                            case "promote_members":
+                            case "add_admins":
+                                tL_chatAdminRights.add_admins = true;
+                                break;
+                            case "invite_users":
+                                tL_chatAdminRights.invite_users = true;
+                                break;
+                            case "post_messages":
+                                tL_chatAdminRights.post_messages = true;
+                                break;
+                            case "pin_messages":
+                                tL_chatAdminRights.pin_messages = true;
+                                break;
+                        }
+                    }
+                } else {
+                    tL_chatAdminRights = null;
+                }
+                if (tL_chatAdminRights == null && tL_chatAdminRights2 == null) {
+                    tL_chatAdminRights2 = null;
+                } else if (tL_chatAdminRights != null) {
+                    if (tL_chatAdminRights2 == null) {
+                        tL_chatAdminRights2 = tL_chatAdminRights;
+                    } else {
+                        tL_chatAdminRights2.change_info = tL_chatAdminRights.change_info || tL_chatAdminRights2.change_info;
+                        tL_chatAdminRights2.post_messages = tL_chatAdminRights.post_messages || tL_chatAdminRights2.post_messages;
+                        tL_chatAdminRights2.edit_messages = tL_chatAdminRights.edit_messages || tL_chatAdminRights2.edit_messages;
+                        tL_chatAdminRights2.add_admins = tL_chatAdminRights.add_admins || tL_chatAdminRights2.add_admins;
+                        tL_chatAdminRights2.delete_messages = tL_chatAdminRights.delete_messages || tL_chatAdminRights2.delete_messages;
+                        tL_chatAdminRights2.ban_users = tL_chatAdminRights.ban_users || tL_chatAdminRights2.ban_users;
+                        tL_chatAdminRights2.invite_users = tL_chatAdminRights.invite_users || tL_chatAdminRights2.invite_users;
+                        tL_chatAdminRights2.pin_messages = tL_chatAdminRights.pin_messages || tL_chatAdminRights2.pin_messages;
+                        tL_chatAdminRights2.manage_call = tL_chatAdminRights.manage_call || tL_chatAdminRights2.manage_call;
+                        tL_chatAdminRights2.anonymous = tL_chatAdminRights.anonymous || tL_chatAdminRights2.anonymous;
+                        tL_chatAdminRights2.other = tL_chatAdminRights.other || tL_chatAdminRights2.other;
+                    }
+                }
+                boolean z10 = this.b;
+                int i11 = this.c;
+                if (!z10 || tL_chatAdminRights != null || TextUtils.isEmpty(str2)) {
+                    iq iqVar = new iq(user.id, -this.d, tL_chatAdminRights2, null, null, str3, 2, true, !z10, str2);
+                    iqVar.X0 = new ja0(eyVar, i11);
+                    ((ActionBarLayout) launchActivity.O()).S(iqVar, false);
+                    break;
+                } else {
+                    MessagesController.getInstance(launchActivity.O).addUserToChat(chat.id, user, 0, str2, eyVar, true, new as0(launchActivity, i11, chat, eyVar, 8), null);
+                    break;
+                }
         }
     }
 
-    public /* synthetic */ p8(BaseController baseController, String str, Object obj, int i10) {
-        this.a = i10;
-        this.b = baseController;
-        this.c = str;
-        this.d = obj;
+    public /* synthetic */ p8(LaunchActivity launchActivity, String str, TLRPC.TL_chatAdminRights tL_chatAdminRights, boolean z10, String str2, int i10, TLRPC.Chat chat, ey eyVar, TLRPC.User user, long j10, String str3) {
+        this.e = launchActivity;
+        this.f = str;
+        this.h = tL_chatAdminRights;
+        this.b = z10;
+        this.n = str2;
+        this.c = i10;
+        this.r = chat;
+        this.s = eyVar;
+        this.v = user;
+        this.d = j10;
+        this.w = str3;
     }
 }

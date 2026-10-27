@@ -1,105 +1,17 @@
 package org.telegram.ui;
 
 import android.content.Context;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.NotificationCenter;
+import android.graphics.Bitmap;
+import org.telegram.messenger.MediaController;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public final class ot0 extends bu0 {
-    public final /* synthetic */ int p0;
-    public final /* synthetic */ NotificationCenter.NotificationCenterDelegate q0;
+public final class ot0 extends sg.w0 {
+    public final /* synthetic */ PhotoViewer K;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ ot0(NotificationCenter.NotificationCenterDelegate notificationCenterDelegate, Context context, eu0 eu0Var, FrameLayout frameLayout, int i10) {
-        super(context, eu0Var, frameLayout);
-        this.p0 = i10;
-        this.q0 = notificationCenterDelegate;
-    }
-
-    @Override // org.telegram.ui.bu0
-    public boolean D() {
-        switch (this.p0) {
-            case 0:
-                return !((PhotoViewer) this.q0).s;
-            default:
-                return super.D();
-        }
-    }
-
-    @Override // org.telegram.ui.bu0
-    public void E() {
-        switch (this.p0) {
-            case 1:
-                SecretMediaViewer secretMediaViewer = (SecretMediaViewer) this.q0;
-                if (secretMediaViewer.J && getScrollY() <= 0) {
-                    AndroidUtilities.runOnUIThread(secretMediaViewer.r1, 3000L);
-                    break;
-                }
-                break;
-        }
-    }
-
-    @Override // org.telegram.ui.bu0
-    public void F() {
-        switch (this.p0) {
-            case 1:
-                AndroidUtilities.cancelRunOnUIThread(((SecretMediaViewer) this.q0).r1);
-                break;
-        }
-    }
-
-    @Override // org.telegram.ui.bu0
-    public void G() {
-        switch (this.p0) {
-            case 1:
-                SecretMediaViewer secretMediaViewer = (SecretMediaViewer) this.q0;
-                if (secretMediaViewer.K0 == null) {
-                    secretMediaViewer.k(((float) getScrollY()) < ((float) getMeasuredHeight()) / 3.0f && secretMediaViewer.k0, true);
-                    break;
-                }
-                break;
-        }
-    }
-
-    @Override // android.view.View
-    public void invalidate() {
-        switch (this.p0) {
-            case 0:
-                super.invalidate();
-                PhotoViewer photoViewer = (PhotoViewer) this.q0;
-                mu0[] mu0VarArr = photoViewer.W0;
-                ImageView[] imageViewArr = photoViewer.y3;
-                if (photoViewer.J) {
-                    int scrollY = getScrollY();
-                    float translationY = photoViewer.Q1.getTranslationY();
-                    boolean z10 = scrollY == 0 && translationY == 0.0f;
-                    boolean z11 = scrollY == 0 && translationY == 0.0f;
-                    if (!z10) {
-                        int b10 = mu0VarArr[0].b() + mu0VarArr[0].j;
-                        int top = (((photoViewer.Z1.getTop() + ((int) translationY)) - scrollY) + (org.telegram.ui.ActionBar.k.getCurrentActionBarHeight() + (D() ? AndroidUtilities.statusBarHeight : 0))) - AndroidUtilities.dp(12.0f);
-                        boolean z12 = top > AndroidUtilities.dp(32.0f) + ((int) imageViewArr[0].getY());
-                        z10 = top > b10;
-                        z11 = z12;
-                    }
-                    if (photoViewer.z3) {
-                        if (imageViewArr[0].getTag() != null && ((Integer) imageViewArr[0].getTag()).intValue() == 3 && z11) {
-                            imageViewArr[0].setTag(2);
-                            imageViewArr[0].animate().alpha(1.0f).setDuration(150L).setListener(new i50(this, 13)).start();
-                        } else if (imageViewArr[0].getTag() == null && !z11) {
-                            imageViewArr[0].setTag(3);
-                            imageViewArr[0].animate().alpha(0.0f).setListener(null).setDuration(150L).start();
-                        }
-                    }
-                    mu0VarArr[0].e(2, z10 ? 1.0f : 0.0f, true);
-                    break;
-                }
-                break;
-            default:
-                super.invalidate();
-                break;
-        }
+    public ot0(PhotoViewer photoViewer, Context context, int i10, Bitmap bitmap, Bitmap bitmap2, int i11, MediaController.CropState cropState) {
+        super(context, i10, bitmap, bitmap2, i11, cropState);
+        this.K = photoViewer;
     }
 }

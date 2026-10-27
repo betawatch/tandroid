@@ -40,9 +40,9 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public final class go extends li implements org.telegram.ui.ActionBar.p6, uw0, NotificationCenter.NotificationCenterDelegate {
+public final class go extends li implements org.telegram.ui.ActionBar.p6, vw0, NotificationCenter.NotificationCenterDelegate {
     public static final /* synthetic */ int r1 = 0;
     public int A0;
     public int B0;
@@ -126,7 +126,7 @@ public final class go extends li implements org.telegram.ui.ActionBar.p6, uw0, N
     public int q1;
     public final eo r;
     public int r0;
-    public final org.telegram.ui.za1 s;
+    public final org.telegram.ui.bb1 s;
     public int s0;
     public int t0;
     public int u0;
@@ -188,49 +188,49 @@ public final class go extends li implements org.telegram.ui.ActionBar.p6, uw0, N
         this.b.u1.setDelegate(this);
         eo eoVar = new eo(this, context);
         this.r = eoVar;
-        org.telegram.ui.za1 za1Var = new org.telegram.ui.za1(context, 5, null);
-        this.s = za1Var;
-        setBlur3Capture(za1Var);
-        this.d = za1Var;
+        org.telegram.ui.bb1 bb1Var = new org.telegram.ui.bb1(context, 5, null);
+        this.s = bb1Var;
+        setBlur3Capture(bb1Var);
+        this.d = bb1Var;
         this.h = true;
         this.f = true;
         sn snVar = new sn(this);
         this.v = snVar;
-        za1Var.setItemAnimator(snVar);
+        bb1Var.setItemAnimator(snVar);
         arrayList.clear();
         snVar.m = false;
         snVar.C = false;
         snVar.o(ds.h);
         snVar.n(350L);
-        za1Var.setClipToPadding(false);
-        za1Var.setVerticalScrollBarEnabled(false);
-        za1Var.setSections(true);
-        jg.e0 e0Var = new jg.e0(this, AndroidUtilities.dp(65.0f) + AndroidUtilities.statusBarHeight, za1Var, 4);
+        bb1Var.setClipToPadding(false);
+        bb1Var.setVerticalScrollBarEnabled(false);
+        bb1Var.setSections(true);
+        jg.e0 e0Var = new jg.e0(this, AndroidUtilities.dp(65.0f) + AndroidUtilities.statusBarHeight, bb1Var, 4);
         this.w = e0Var;
-        za1Var.setLayoutManager(e0Var);
+        bb1Var.setLayoutManager(e0Var);
         e0Var.O = true;
-        new s4.z(new ei.f(this, i11)).h(za1Var);
-        addView(za1Var, gb1.i(-1, -1, 51));
-        za1Var.setPreserveFocusAfterLayout(true);
-        za1Var.setAdapter(eoVar);
-        za1Var.setOnItemClickListener(new hn(this, u6Var, tiVar, context));
-        za1Var.setOnScrollListener(new ml(this, i10));
+        new s4.z(new ei.f(this, i11)).h(bb1Var);
+        addView(bb1Var, kb1.i(-1, -1, 51));
+        bb1Var.setPreserveFocusAfterLayout(true);
+        bb1Var.setAdapter(eoVar);
+        bb1Var.setOnItemClickListener(new hn(this, u6Var, tiVar, context));
+        bb1Var.setOnScrollListener(new ml(this, i10));
         t40 t40Var = new t40(context, 4);
         this.y = t40Var;
         t40Var.setAlpha(0.0f);
         t40Var.setVisibility(4);
-        addView(t40Var, gb1.h(-2, -2.0f, 51, 19.0f, 0.0f, 19.0f, 0.0f));
+        addView(t40Var, kb1.h(-2, -2.0f, 51, 19.0f, 0.0f, 19.0f, 0.0f));
         this.S0 = MessagesController.getInstance(this.b.M1).config.pollCaptionLengthMax.get();
         this.Q = new sh.r(this.b.M1);
-        NotificationCenter.getInstance(this.b.M1).addObserver(this, NotificationCenter.didReceivedWebpagesInUpdates);
+        NotificationCenter.getInstance(this.b.M1).addWeakObserver(this, NotificationCenter.didReceivedWebpagesInUpdates);
         if (isPremium) {
-            NotificationCenter.getGlobalInstance().addObserver(this, NotificationCenter.emojiLoaded);
+            NotificationCenter.getGlobalInstance().addWeakObserver(this, NotificationCenter.emojiLoaded);
             un unVar = new un(context, this.b.M1, null, u6Var);
             this.x = unVar;
             unVar.y = true;
             unVar.E = true;
             unVar.setHorizontalPadding(AndroidUtilities.dp(24.0f));
-            addView(unVar, gb1.i(-2, 160, 51));
+            addView(unVar, kb1.i(-2, 160, 51));
         }
         this.F = new fi.z3(this.b.u1, false, null);
         W();
@@ -349,9 +349,9 @@ public final class go extends li implements org.telegram.ui.ActionBar.p6, uw0, N
             ah emojiButton = h6Var.getEmojiButton();
             yg ygVar = yg.e;
             emojiButton.j(ygVar, false);
-            org.telegram.ui.za1 za1Var = goVar.s;
-            View F = za1Var.F(h6Var);
-            s4.e1 T = F == null ? null : za1Var.T(F);
+            org.telegram.ui.bb1 bb1Var = goVar.s;
+            View F = bb1Var.F(h6Var);
+            s4.e1 T = F == null ? null : bb1Var.T(F);
             un unVar = goVar.x;
             if (unVar != null) {
                 unVar.f();
@@ -401,22 +401,22 @@ public final class go extends li implements org.telegram.ui.ActionBar.p6, uw0, N
         if (b10 instanceof th.d) {
             ArrayList arrayList = new ArrayList(1);
             arrayList.add(((th.d) b10).b);
-            PhotoViewer.u1().M2(parentActivity, null, null);
-            PhotoViewer.u1().i2(arrayList, 0, 14, false, new kn(goVar, i10), null);
+            PhotoViewer.v1().N2(parentActivity, null, null);
+            PhotoViewer.v1().j2(arrayList, 0, 14, false, new kn(goVar, i10), null);
             return;
         }
         if (b10 instanceof th.h) {
             th.h hVar = (th.h) b10;
-            org.telegram.ui.ft.o().u(parentActivity);
-            org.telegram.ui.ft.o().t(new mn(goVar, i10));
-            org.telegram.ui.ft o10 = org.telegram.ui.ft.o();
+            org.telegram.ui.ht.o().u(parentActivity);
+            org.telegram.ui.ht.o().t(new mn(goVar, i10));
+            org.telegram.ui.ht o10 = org.telegram.ui.ht.o();
             TLRPC.Document document = hVar.b;
             o10.r(document, null, "", null, null, MessageObject.isAnimatedEmoji(document) ? 2 : 0, false, hVar.c, goVar.a, 200);
             return;
         }
         if (b10 instanceof th.c) {
             th.c cVar = (th.c) b10;
-            goVar.j0(i10, new org.telegram.ui.of(1, cVar.d, AndroidUtilities.formatFileSize(cVar.e, true, true) + " " + cVar.f), AndroidUtilities.dp(240.0f), AndroidUtilities.dp(60.0f));
+            goVar.j0(i10, new org.telegram.ui.nf(1, cVar.d, AndroidUtilities.formatFileSize(cVar.e, true, true) + " " + cVar.f), AndroidUtilities.dp(240.0f), AndroidUtilities.dp(60.0f));
             return;
         }
         if (b10 instanceof th.g) {
@@ -456,13 +456,13 @@ public final class go extends li implements org.telegram.ui.ActionBar.p6, uw0, N
         nn nnVar = new nn(r2Var.getContext(), r2Var, r2Var.getResourceProvider(), pgVar);
         nnVar.c2 = new pn(callback, r2Var, nnVar);
         nnVar.d2 = new qn(callback, nnVar);
-        nnVar.j0.f0();
-        nnVar.Q1(1, true);
-        nnVar.m1(i10);
+        nnVar.j0.g0();
+        nnVar.R1(1, true);
+        nnVar.n1(i10);
         nnVar.z2 = new fn(callback);
         nnVar.X = new rn(callback, r2Var, nnVar);
         nnVar.Y = new p1(17, callback, nnVar);
-        nnVar.v1();
+        nnVar.w1();
         nnVar.setFocusable(true);
         nnVar.show();
         return nnVar;
@@ -535,11 +535,11 @@ public final class go extends li implements org.telegram.ui.ActionBar.p6, uw0, N
         int i13 = dp + AndroidUtilities.statusBarHeight;
         this.i0 = true;
         int i14 = this.R0;
-        org.telegram.ui.za1 za1Var = this.s;
-        if (i14 != i13 || za1Var.getPaddingBottom() != this.e) {
+        org.telegram.ui.bb1 bb1Var = this.s;
+        if (i14 != i13 || bb1Var.getPaddingBottom() != this.e) {
             this.R0 = i13;
-            za1Var.t1(0, 0, 0, this.e);
-            za1Var.setItemAnimator(null);
+            bb1Var.t1(0, 0, 0, this.e);
+            bb1Var.setItemAnimator(null);
             this.r.m(0);
         }
         this.i0 = false;
@@ -559,11 +559,11 @@ public final class go extends li implements org.telegram.ui.ActionBar.p6, uw0, N
         } else {
             tiVar.a1.setTitle(LocaleController.getString(R.string.NewPoll));
         }
-        tiVar.d2();
+        tiVar.e2();
         this.w.h1(0, 0);
     }
 
-    @Override // org.telegram.ui.Components.uw0
+    @Override // org.telegram.ui.Components.vw0
     public final void I(int i10, boolean z10) {
         boolean z11;
         if (this.I) {
@@ -659,7 +659,7 @@ public final class go extends li implements org.telegram.ui.ActionBar.p6, uw0, N
 
     public final void T(float f7) {
         ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
-        ofFloat.addUpdateListener(new org.telegram.ui.dg(this, f7, 2));
+        ofFloat.addUpdateListener(new org.telegram.ui.eg(this, f7, 2));
         ofFloat.addListener(new jn(this, 0));
         ofFloat.setDuration(250L);
         ofFloat.setInterpolator(org.telegram.ui.ActionBar.q1.w);
@@ -759,7 +759,7 @@ public final class go extends li implements org.telegram.ui.ActionBar.p6, uw0, N
         ti tiVar = this.b;
         tiVar.setAllowNestedScroll(z14);
         this.X0 = z12;
-        tiVar.d2();
+        tiVar.e2();
     }
 
     public final void X(org.telegram.ui.Cells.v8 v8Var, boolean z10) {
@@ -817,8 +817,8 @@ public final class go extends li implements org.telegram.ui.ActionBar.p6, uw0, N
             return;
         }
         view.setTag(1);
-        org.telegram.ui.za1 za1Var = this.s;
-        s4.e1 G = za1Var.G(h6Var);
+        org.telegram.ui.bb1 bb1Var = this.s;
+        s4.e1 G = bb1Var.G(h6Var);
         if (G == null || (b10 = G.b()) == -1) {
             return;
         }
@@ -842,7 +842,7 @@ public final class go extends li implements org.telegram.ui.ActionBar.p6, uw0, N
             return;
         }
         fVar.h(i10);
-        za1Var.setItemAnimator(this.v);
+        bb1Var.setItemAnimator(this.v);
         eo eoVar = this.r;
         eoVar.u(b10);
         int i11 = i10 + 1;
@@ -857,7 +857,7 @@ public final class go extends li implements org.telegram.ui.ActionBar.p6, uw0, N
         if (i12 == charSequenceArr.length - 1) {
             eoVar.o((this.t0 + charSequenceArr.length) - 1);
         }
-        s4.e1 K = za1Var.K(b10 - 1);
+        s4.e1 K = bb1Var.K(b10 - 1);
         EditTextBoldCursor textView2 = h6Var.getTextView();
         if (K != null) {
             View view2 = K.a;
@@ -914,7 +914,7 @@ public final class go extends li implements org.telegram.ui.ActionBar.p6, uw0, N
                 sz szVar = this.E;
                 szVar.P.C0();
                 szVar.I.scrollTo(0, 0);
-                szVar.F(1);
+                szVar.G(1);
                 szVar.Q.h1(0, 0);
                 this.E.t(false);
                 if (z10) {
@@ -997,7 +997,7 @@ public final class go extends li implements org.telegram.ui.ActionBar.p6, uw0, N
         this.l1 = i10;
         org.telegram.ui.ActionBar.r2 r2Var = this.b.f0;
         this.m1.b(i10);
-        this.k1 = g0(r2Var, (i10 == -2 || i10 == -3) ? 74 : 41026, new dn(this, i10, 0), new pg(this, 27));
+        this.k1 = g0(r2Var, (i10 == -2 || i10 == -3) ? 74 : 41026, new dn(this, i10, 0), new pg(this, 28));
     }
 
     public final void f0() {
@@ -1026,15 +1026,15 @@ public final class go extends li implements org.telegram.ui.ActionBar.p6, uw0, N
     @Override // org.telegram.ui.Components.li
     public int getCurrentItemTop() {
         View childAt;
-        org.telegram.ui.za1 za1Var = this.s;
-        if (za1Var.getChildCount() <= 1 || (childAt = za1Var.getChildAt(1)) == null) {
+        org.telegram.ui.bb1 bb1Var = this.s;
+        if (bb1Var.getChildCount() <= 1 || (childAt = bb1Var.getChildAt(1)) == null) {
             return ConnectionsManager.DEFAULT_DATACENTER_ID;
         }
-        View F = za1Var.F(childAt);
-        vl0 vl0Var = (vl0) (F == null ? null : za1Var.T(F));
+        View F = bb1Var.F(childAt);
+        wl0 wl0Var = (wl0) (F == null ? null : bb1Var.T(F));
         int y3 = (((int) childAt.getY()) - AndroidUtilities.statusBarHeight) - AndroidUtilities.dp(20.0f);
-        int i10 = (y3 <= 0 || vl0Var == null || vl0Var.b() != 1) ? 0 : y3;
-        if (y3 < 0 || vl0Var == null || vl0Var.b() != 1) {
+        int i10 = (y3 <= 0 || wl0Var == null || wl0Var.b() != 1) ? 0 : y3;
+        if (y3 < 0 || wl0Var == null || wl0Var.b() != 1) {
             y3 = i10;
         }
         return AndroidUtilities.dp(25.0f) + y3;
@@ -1058,23 +1058,23 @@ public final class go extends li implements org.telegram.ui.ActionBar.p6, uw0, N
     public ArrayList<org.telegram.ui.ActionBar.h7> getThemeDescriptions() {
         ArrayList<org.telegram.ui.ActionBar.h7> arrayList = new ArrayList<>();
         int i10 = org.telegram.ui.ActionBar.y6.A5;
-        org.telegram.ui.za1 za1Var = this.s;
-        arrayList.add(new org.telegram.ui.ActionBar.h7(za1Var, 32768, (Class[]) null, (Paint) null, (Drawable[]) null, (org.telegram.ui.ActionBar.g7) null, i10));
-        arrayList.add(new org.telegram.ui.ActionBar.h7(za1Var, 16, new Class[]{vn.class}, (Paint) null, (Drawable[]) null, (org.telegram.ui.ActionBar.g7) null, org.telegram.ui.ActionBar.y6.a7));
+        org.telegram.ui.bb1 bb1Var = this.s;
+        arrayList.add(new org.telegram.ui.ActionBar.h7(bb1Var, 32768, (Class[]) null, (Paint) null, (Drawable[]) null, (org.telegram.ui.ActionBar.g7) null, i10));
+        arrayList.add(new org.telegram.ui.ActionBar.h7(bb1Var, 16, new Class[]{vn.class}, (Paint) null, (Drawable[]) null, (org.telegram.ui.ActionBar.g7) null, org.telegram.ui.ActionBar.y6.a7));
         int i11 = org.telegram.ui.ActionBar.y6.p7;
-        arrayList.add(new org.telegram.ui.ActionBar.h7(za1Var, 262144, new Class[]{org.telegram.ui.Cells.q4.class}, new String[]{"textView2"}, (Drawable[]) null, (org.telegram.ui.ActionBar.g7) null, i11));
+        arrayList.add(new org.telegram.ui.ActionBar.h7(bb1Var, 262144, new Class[]{org.telegram.ui.Cells.q4.class}, new String[]{"textView2"}, (Drawable[]) null, (org.telegram.ui.ActionBar.g7) null, i11));
         int i12 = org.telegram.ui.ActionBar.y6.m6;
-        arrayList.add(new org.telegram.ui.ActionBar.h7(za1Var, TLObject.FLAG_23, new Class[]{org.telegram.ui.Cells.h6.class}, new String[]{"deleteImageView"}, (Drawable[]) null, (org.telegram.ui.ActionBar.g7) null, i12));
-        arrayList.add(new org.telegram.ui.ActionBar.h7(za1Var, TLObject.FLAG_23, new Class[]{org.telegram.ui.Cells.h6.class}, new String[]{"moveImageView"}, (Drawable[]) null, (org.telegram.ui.ActionBar.g7) null, i12));
-        arrayList.add(new org.telegram.ui.ActionBar.h7(za1Var, 262144, new Class[]{org.telegram.ui.Cells.h6.class}, new String[]{"textView2"}, (Drawable[]) null, (org.telegram.ui.ActionBar.g7) null, i11));
-        arrayList.add(new org.telegram.ui.ActionBar.h7(za1Var, 0, new Class[]{org.telegram.ui.Cells.h6.class}, new String[]{"checkBox"}, (Drawable[]) null, (org.telegram.ui.ActionBar.g7) null, i12));
+        arrayList.add(new org.telegram.ui.ActionBar.h7(bb1Var, TLObject.FLAG_23, new Class[]{org.telegram.ui.Cells.h6.class}, new String[]{"deleteImageView"}, (Drawable[]) null, (org.telegram.ui.ActionBar.g7) null, i12));
+        arrayList.add(new org.telegram.ui.ActionBar.h7(bb1Var, TLObject.FLAG_23, new Class[]{org.telegram.ui.Cells.h6.class}, new String[]{"moveImageView"}, (Drawable[]) null, (org.telegram.ui.ActionBar.g7) null, i12));
+        arrayList.add(new org.telegram.ui.ActionBar.h7(bb1Var, 262144, new Class[]{org.telegram.ui.Cells.h6.class}, new String[]{"textView2"}, (Drawable[]) null, (org.telegram.ui.ActionBar.g7) null, i11));
+        arrayList.add(new org.telegram.ui.ActionBar.h7(bb1Var, 0, new Class[]{org.telegram.ui.Cells.h6.class}, new String[]{"checkBox"}, (Drawable[]) null, (org.telegram.ui.ActionBar.g7) null, i12));
         int i13 = org.telegram.ui.ActionBar.y6.k7;
-        arrayList.add(new org.telegram.ui.ActionBar.h7(za1Var, 0, new Class[]{org.telegram.ui.Cells.h6.class}, new String[]{"checkBox"}, (Drawable[]) null, (org.telegram.ui.ActionBar.g7) null, i13));
-        arrayList.add(new org.telegram.ui.ActionBar.h7(za1Var, 0, new Class[]{org.telegram.ui.Cells.a9.class}, new String[]{"checkBox"}, (Drawable[]) null, (org.telegram.ui.ActionBar.g7) null, org.telegram.ui.ActionBar.y6.M6));
+        arrayList.add(new org.telegram.ui.ActionBar.h7(bb1Var, 0, new Class[]{org.telegram.ui.Cells.h6.class}, new String[]{"checkBox"}, (Drawable[]) null, (org.telegram.ui.ActionBar.g7) null, i13));
+        arrayList.add(new org.telegram.ui.ActionBar.h7(bb1Var, 0, new Class[]{org.telegram.ui.Cells.a9.class}, new String[]{"checkBox"}, (Drawable[]) null, (org.telegram.ui.ActionBar.g7) null, org.telegram.ui.ActionBar.y6.M6));
         int i14 = org.telegram.ui.ActionBar.y6.N6;
-        arrayList.add(new org.telegram.ui.ActionBar.h7(za1Var, 0, new Class[]{org.telegram.ui.Cells.a9.class}, new String[]{"checkBox"}, (Drawable[]) null, (org.telegram.ui.ActionBar.g7) null, i14));
-        arrayList.add(new org.telegram.ui.ActionBar.h7(za1Var, 32, new Class[]{org.telegram.ui.Cells.v8.class}, new String[]{"imageView"}, (Drawable[]) null, (org.telegram.ui.ActionBar.g7) null, i14));
-        arrayList.add(new org.telegram.ui.ActionBar.h7(za1Var, 0, new Class[]{org.telegram.ui.Cells.v8.class}, new String[]{"imageView"}, (Drawable[]) null, (org.telegram.ui.ActionBar.g7) null, i13));
+        arrayList.add(new org.telegram.ui.ActionBar.h7(bb1Var, 0, new Class[]{org.telegram.ui.Cells.a9.class}, new String[]{"checkBox"}, (Drawable[]) null, (org.telegram.ui.ActionBar.g7) null, i14));
+        arrayList.add(new org.telegram.ui.ActionBar.h7(bb1Var, 32, new Class[]{org.telegram.ui.Cells.v8.class}, new String[]{"imageView"}, (Drawable[]) null, (org.telegram.ui.ActionBar.g7) null, i14));
+        arrayList.add(new org.telegram.ui.ActionBar.h7(bb1Var, 0, new Class[]{org.telegram.ui.Cells.v8.class}, new String[]{"imageView"}, (Drawable[]) null, (org.telegram.ui.ActionBar.g7) null, i13));
         return arrayList;
     }
 
@@ -1249,34 +1249,34 @@ public final class go extends li implements org.telegram.ui.ActionBar.p6, uw0, N
     }
 
     public final void j0(int i10, Utilities.CallbackReturn callbackReturn, int i11, int i12) {
-        k80 F = k80.F(this, null, new View(getContext()));
+        l80 F = l80.F(this, null, new View(getContext()));
         F.s = 0;
         F.t = false;
         F.c(R.drawable.msg_replace, LocaleController.getString(R.string.ReplaceAttachedPollMedia), new en(this, i10, 1), false);
         F.c(R.drawable.msg_delete, LocaleController.getString(R.string.Delete), new en(this, i10, 2), true);
-        hn0 hn0Var = new hn0(getContext(), this.a);
-        F.p = new org.telegram.ui.re(hn0Var, 1);
+        in0 in0Var = new in0(getContext(), this.a);
+        F.p = new org.telegram.ui.re(in0Var, 1);
         F.S = AndroidUtilities.dp(185.0f);
         F.Y();
-        hn0Var.e(F);
-        Drawable drawable = (Drawable) callbackReturn.run(hn0Var.s);
-        eh.d c10 = hn0Var.n.c(null, null, false);
-        c10.v(gh.c.k(hn0Var.b));
+        in0Var.e(F);
+        Drawable drawable = (Drawable) callbackReturn.run(in0Var.s);
+        eh.d c10 = in0Var.n.c(null, null, false);
+        c10.v(gh.c.k(in0Var.b));
         c10.w(AndroidUtilities.dp(8.0f));
         c10.x.e = true;
         c10.x(AndroidUtilities.dp(16.0f));
-        hn0Var.F = c10;
-        hn0Var.E = drawable;
+        in0Var.F = c10;
+        in0Var.E = drawable;
         Point point = AndroidUtilities.displaySize;
         int i13 = (point.x - i11) / 2;
         int i14 = (point.y - i12) / 2;
         int i15 = i11 + i13;
         int i16 = i12 + i14;
         c10.setBounds(i13 - AndroidUtilities.dp(8.0f), i14 - AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f) + i15, AndroidUtilities.dp(8.0f) + i16);
-        hn0Var.E.setBounds(i13, i14, i15, i16);
-        ((FrameLayout.LayoutParams) hn0Var.x.getLayoutParams()).gravity = 1;
-        hn0Var.L = true;
-        hn0Var.show();
+        in0Var.E.setBounds(i13, i14, i15, i16);
+        ((FrameLayout.LayoutParams) in0Var.x.getLayoutParams()).gravity = 1;
+        in0Var.L = true;
+        in0Var.show();
     }
 
     public final void k0() {
@@ -1297,10 +1297,10 @@ public final class go extends li implements org.telegram.ui.ActionBar.p6, uw0, N
             if (drawable2 != null) {
                 drawable2.setColorFilter(new PorterDuffColorFilter(w03, PorterDuff.Mode.MULTIPLY));
             }
-            org.telegram.ui.za1 za1Var = this.s;
-            if (za1Var != null) {
-                for (int i10 = 0; i10 < za1Var.getChildCount(); i10++) {
-                    View childAt = za1Var.getChildAt(i10);
+            org.telegram.ui.bb1 bb1Var = this.s;
+            if (bb1Var != null) {
+                for (int i10 = 0; i10 < bb1Var.getChildCount(); i10++) {
+                    View childAt = bb1Var.getChildAt(i10);
                     if (childAt instanceof org.telegram.ui.Cells.v8) {
                         childAt.invalidate();
                     }
@@ -1374,7 +1374,7 @@ public final class go extends li implements org.telegram.ui.ActionBar.p6, uw0, N
                 this.y0 = i17;
             }
         } else {
-            TLRPC.Chat chat = ((org.telegram.ui.un) this.b.f0).e;
+            TLRPC.Chat chat = ((org.telegram.ui.wn) this.b.f0).e;
             boolean z11 = ChatObject.isChannel(chat) && !chat.megagroup;
             if (z11) {
                 this.a0 = true;
@@ -1464,7 +1464,7 @@ public final class go extends li implements org.telegram.ui.ActionBar.p6, uw0, N
 
     @Override // org.telegram.ui.Components.li
     public final void s() {
-        this.b.d2();
+        this.b.e2();
     }
 
     public void setDelegate(fo foVar) {
@@ -1479,7 +1479,7 @@ public final class go extends li implements org.telegram.ui.ActionBar.p6, uw0, N
 
     @Override // org.telegram.ui.Components.li
     public final void u(float f7) {
-        this.b.d2();
+        this.b.e2();
     }
 
     @Override // org.telegram.ui.ActionBar.p6
@@ -1553,11 +1553,11 @@ public final class go extends li implements org.telegram.ui.ActionBar.p6, uw0, N
                     tL_messageMediaToDo.todo.list.add(todoItem);
                 }
             }
-            g5.Z(i14, tiVar.o1() + 1, tiVar.s1(), new bi.v3(this, (org.telegram.ui.un) tiVar.f0, tL_messageMediaToDo, 7));
+            g5.Z(i14, tiVar.p1() + 1, tiVar.t1(), new bi.v3(this, (org.telegram.ui.wn) tiVar.f0, tL_messageMediaToDo, 7));
             return;
         }
         boolean z12 = this.c0;
-        org.telegram.ui.za1 za1Var = this.s;
+        org.telegram.ui.bb1 bb1Var = this.s;
         boolean[] zArr = this.L;
         if (z12 && !this.X0) {
             int i18 = 0;
@@ -1569,7 +1569,7 @@ public final class go extends li implements org.telegram.ui.ActionBar.p6, uw0, N
             }
             if (i18 <= 0) {
                 for (int i19 = this.t0; i19 < this.t0 + this.M; i19++) {
-                    s4.e1 K = za1Var.K(i19);
+                    s4.e1 K = bb1Var.K(i19);
                     if (K != null) {
                         View view = K.a;
                         if (view instanceof org.telegram.ui.Cells.h6) {
@@ -1705,13 +1705,13 @@ public final class go extends li implements org.telegram.ui.ActionBar.p6, uw0, N
                         tL_messageMediaPoll.results.flags |= 16;
                     }
                 }
-                g5.Z(i21, tiVar.o1() + 1, tiVar.s1(), new di.y2(this, (org.telegram.ui.un) tiVar.f0, tL_messageMediaPoll, arrayList2, 8));
+                g5.Z(i21, tiVar.p1() + 1, tiVar.t1(), new di.y2(this, (org.telegram.ui.wn) tiVar.f0, tL_messageMediaPoll, arrayList2, 8));
                 return;
             }
             if (TextUtils.isEmpty(b0(charSequenceArr[i20])) && fVar.b(i20) != null) {
                 this.V0 = true;
                 this.W0 = i20;
-                za1Var.y0(this.t0 + i20);
+                bb1Var.y0(this.t0 + i20);
                 return;
             }
             i20++;

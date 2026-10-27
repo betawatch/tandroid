@@ -9,7 +9,7 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class fy extends FrameLayout implements org.telegram.ui.ActionBar.p6 {
     public int a;
@@ -33,11 +33,11 @@ public final class fy extends FrameLayout implements org.telegram.ui.ActionBar.p
         FrameLayout frameLayout = new FrameLayout(getContext());
         this.c = frameLayout;
         frameLayout.setBackground(org.telegram.ui.ActionBar.o6.e(new float[]{8.0f}, szVar.A(org.telegram.ui.ActionBar.y6.Oh)));
-        frameLayout.addView(s6Var, gb1.i(-1, -2, 17));
-        addView(frameLayout, gb1.g(-1.0f, -1));
+        frameLayout.addView(s6Var, kb1.i(-1, -2, 17));
+        addView(frameLayout, kb1.g(-1.0f, -1));
         tg.p0 p0Var = new tg.p0(getContext(), u6Var, false);
         p0Var.setIcon(R.raw.unlock_icon);
-        addView(p0Var, gb1.g(-1.0f, -1));
+        addView(p0Var, kb1.g(-1.0f, -1));
     }
 
     @Override // android.widget.FrameLayout, android.view.View

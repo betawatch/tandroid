@@ -17,10 +17,10 @@ import java.util.concurrent.Executor;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.nk;
 import org.telegram.ui.Components.pg;
-import org.telegram.ui.nq;
+import org.telegram.ui.pq;
 import p4.s0;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
 public final class g extends BroadcastReceiver {
     public final /* synthetic */ int a;
@@ -88,7 +88,7 @@ public final class g extends BroadcastReceiver {
                 }
                 return;
             case 8:
-                pg pgVar = new pg(this, 23);
+                pg pgVar = new pg(this, 24);
                 if ("android.intent.action.MEDIA_UNMOUNTED".equals(intent.getAction())) {
                     ((nk) this.b).r.postDelayed(pgVar, 1000L);
                     return;
@@ -97,7 +97,7 @@ public final class g extends BroadcastReceiver {
                     return;
                 }
             case 9:
-                AndroidUtilities.runOnUIThread(new nq(this, intent.getStringExtra("mode") != null ? intent.getStringExtra("mode") : "toggle", intent.getStringExtra("style") != null ? intent.getStringExtra("style") : "reveal", 20));
+                AndroidUtilities.runOnUIThread(new pq(this, intent.getStringExtra("mode") != null ? intent.getStringExtra("mode") : "toggle", intent.getStringExtra("style") != null ? intent.getStringExtra("style") : "reveal", 20));
                 return;
             case 10:
                 ((s0) this.b).c();

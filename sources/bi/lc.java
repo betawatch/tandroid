@@ -3,10 +3,10 @@ package bi;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.c90;
-import org.telegram.ui.Components.t61;
+import org.telegram.ui.Components.d90;
+import org.telegram.ui.Components.u61;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class lc implements Utilities.Callback2 {
     public final /* synthetic */ int a;
@@ -25,10 +25,10 @@ public final /* synthetic */ class lc implements Utilities.Callback2 {
     public final void run(Object obj, Object obj2) {
         switch (this.a) {
             case 0:
-                nc.Q((nc) this.c, (t61) this.d, this.b, (Boolean) obj, (String) obj2);
+                nc.Q((nc) this.c, (u61) this.d, this.b, (Boolean) obj, (String) obj2);
                 break;
             case 1:
-                c90.m((c90) this.c, this.b, (TLRPC.TL_messages_importChatInvite) this.d, (TLRPC.ChatInviteJoinResult) obj, (TLRPC.TL_error) obj2);
+                d90.m((d90) this.c, this.b, (TLRPC.TL_messages_importChatInvite) this.d, (TLRPC.ChatInviteJoinResult) obj, (TLRPC.TL_error) obj2);
                 break;
             default:
                 zh.g4.V((zh.g4) this.c, (TL_stars.TL_starGiftUnique) this.d, this.b, (d6) obj, (qf.c) obj2);
@@ -36,9 +36,9 @@ public final /* synthetic */ class lc implements Utilities.Callback2 {
         }
     }
 
-    public /* synthetic */ lc(c90 c90Var, long j10, TLRPC.TL_messages_importChatInvite tL_messages_importChatInvite) {
+    public /* synthetic */ lc(d90 d90Var, long j10, TLRPC.TL_messages_importChatInvite tL_messages_importChatInvite) {
         this.a = 1;
-        this.c = c90Var;
+        this.c = d90Var;
         this.b = j10;
         this.d = tL_messages_importChatInvite;
     }

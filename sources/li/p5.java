@@ -27,9 +27,9 @@ import org.telegram.ui.ActionBar.y6;
 import org.telegram.ui.Cells.da;
 import org.telegram.ui.Cells.r9;
 import org.telegram.ui.Cells.s9;
-import org.telegram.ui.Components.gb1;
+import org.telegram.ui.Components.kb1;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class p5 extends z implements p6, r9 {
     public b3 E;
@@ -74,7 +74,7 @@ public final class p5 extends z implements p6, r9 {
         z3Var.setClipChildren(false);
         z3Var.setClipToPadding(false);
         z3Var.setPadding(AndroidUtilities.dp(14.0f), 0, AndroidUtilities.dp(14.0f), 0);
-        addView(z3Var, gb1.h(-1, -2.0f, 51, 0.0f, 6.0f, 0.0f, 0.0f));
+        addView(z3Var, kb1.h(-1, -2.0f, 51, 0.0f, 6.0f, 0.0f, 0.0f));
         r5 r5Var = new r5(context, u6Var);
         this.v = r5Var;
         o5 o5Var = new o5(this, context);

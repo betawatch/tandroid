@@ -8,10 +8,10 @@ import org.telegram.messenger.BotWebViewVibrationEffect;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.gb1;
+import org.telegram.ui.Components.kb1;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class h implements TextWatcher {
     public int a;
@@ -88,7 +88,7 @@ public final class h implements TextWatcher {
                 c10.v(gh.c.i(mVar.a));
                 iVar2.setBackgroundDrawable(c10);
             }
-            mVar.b.addView(mVar.M, gb1.i(-1, -1, 83));
+            mVar.b.addView(mVar.M, kb1.i(-1, -1, 83));
             mVar.w();
         }
         if (mVar.M.getAdapter() != null) {

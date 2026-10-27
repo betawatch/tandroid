@@ -14,9 +14,9 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_payments;
 import org.telegram.ui.ActionBar.u6;
-import org.telegram.ui.Components.k80;
+import org.telegram.ui.Components.l80;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class t3 implements View.OnClickListener {
     public final /* synthetic */ int a = 1;
@@ -76,7 +76,7 @@ public final /* synthetic */ class t3 implements View.OnClickListener {
                 org.telegram.ui.ActionBar.k3 k3Var = this.c;
                 ViewGroup containerView = k3Var.getContainerView();
                 u6 u6Var = this.d;
-                k80 F = k80.F(containerView, u6Var, linearLayout);
+                l80 F = l80.F(containerView, u6Var, linearLayout);
                 int size = arrayList.size();
                 int i12 = 0;
                 while (i12 < size) {

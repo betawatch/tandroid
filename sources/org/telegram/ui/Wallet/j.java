@@ -21,14 +21,14 @@ import org.telegram.tgnet.Vector;
 import org.telegram.tgnet.tl.TL_toncenter;
 import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.Components.gb1;
+import org.telegram.ui.Components.kb1;
 import org.telegram.ui.Components.oy;
 import org.telegram.ui.Components.wc;
 import org.telegram.ui.Wallet.WalletEngine2;
-import org.telegram.ui.o01;
-import org.telegram.ui.xd0;
+import org.telegram.ui.q01;
+import org.telegram.ui.zd0;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class j implements Utilities.Callback2 {
     public final /* synthetic */ int a;
@@ -81,7 +81,7 @@ public final /* synthetic */ class j implements Utilities.Callback2 {
                     callback2.run(walletuseraddress, tL_error != null ? tL_error.text : null);
                     break;
                 } else {
-                    l0Var.Z(str4, new o(l0Var, callback2, str4, i12));
+                    l0Var.b0(str4, new o(l0Var, callback2, str4, i12));
                     break;
                 }
                 break;
@@ -133,7 +133,7 @@ public final /* synthetic */ class j implements Utilities.Callback2 {
                 i0 i0Var = (i0) obj;
                 String str8 = (String) obj2;
                 if (i0Var == null) {
-                    l0.i("decrypting transaction comment, failed to get secret phrase");
+                    l0.j("decrypting transaction comment, failed to get secret phrase");
                     pVar.run(null, str8 != null ? str8 : "NULL_ERROR");
                     break;
                 } else {
@@ -141,7 +141,7 @@ public final /* synthetic */ class j implements Utilities.Callback2 {
                         pVar.run(WalletEngine2.decryptComment(i0Var, str6, str7), null);
                         break;
                     } catch (Exception e) {
-                        l0.j("failed to decrypt comment", e);
+                        l0.k("failed to decrypt comment", e);
                         pVar.run(null, e.getMessage() != null ? e.getMessage() : "NULL_ERROR");
                         return;
                     }
@@ -181,30 +181,30 @@ public final /* synthetic */ class j implements Utilities.Callback2 {
                 String str10 = (String) obj2;
                 int i14 = l0Var5.a;
                 if (i0Var3 == null) {
-                    l0.i("disable backup: no current phrase ".concat(str10 == null ? "NULL_ERROR" : str10));
+                    l0.j("disable backup: no current phrase ".concat(str10 == null ? "NULL_ERROR" : str10));
                     d8Var.run(str10 != null ? str10 : "NULL_ERROR");
                     break;
                 } else {
-                    l0.F("disable backup: ready!");
+                    l0.H("disable backup: ready!");
                     if (l0Var5.b == null) {
-                        l0.i("disable backup: no engine");
+                        l0.j("disable backup: no engine");
                         d8Var.run("NULL_ENGINE");
                         break;
                     } else {
-                        String s10 = l0Var5.s();
-                        byte[] x9 = l0Var5.x();
-                        if (TextUtils.isEmpty(s10)) {
-                            l0.i("disable backup: empty address");
+                        String t10 = l0Var5.t();
+                        byte[] y3 = l0Var5.y();
+                        if (TextUtils.isEmpty(t10)) {
+                            l0.j("disable backup: empty address");
                             d8Var.run("NULL_ADDRESS");
                             break;
-                        } else if (x9 == null || x9.length <= 0) {
-                            l0.i("disable backup: no public key");
+                        } else if (y3 == null || y3.length <= 0) {
+                            l0.j("disable backup: no public key");
                             d8Var.run("NULL_PUBLIC_KEY");
                             break;
                         } else {
                             try {
                                 i0 b10 = g0Var.b.b();
-                                k0 A = l0Var5.A();
+                                k0 B = l0Var5.B();
                                 TL_wallet.walletTransaction wallettransaction2 = new TL_wallet.walletTransaction();
                                 wallettransaction2.key_change = true;
                                 wallettransaction2.incoming = false;
@@ -214,20 +214,20 @@ public final /* synthetic */ class j implements Utilities.Callback2 {
                                 wallettransaction2.date = ConnectionsManager.getInstance(i14).getCurrentTime();
                                 wallettransaction2.amount = 0L;
                                 TL_wallet.walletTransactionPeerAddress wallettransactionpeeraddress = new TL_wallet.walletTransactionPeerAddress();
-                                wallettransactionpeeraddress.address = s10;
+                                wallettransactionpeeraddress.address = t10;
                                 wallettransaction2.peer = wallettransactionpeeraddress;
-                                w6 w6Var = new w6(l0Var5, b10, wallettransaction2, A, 5);
+                                w6 w6Var = new w6(l0Var5, b10, wallettransaction2, B, 5);
                                 TL_wallet.sendTransfer sendtransfer = g0Var.a;
                                 wallettransaction2.gasless = sendtransfer.data_gasless != null;
                                 wallettransaction2.random_id = sendtransfer.random_id;
                                 wallettransaction2.gaslessMessageBodyHash = sendtransfer.gaslessMessageBodyHash;
                                 wallettransaction2.normalMessageBodyHash = sendtransfer.normalMessageBodyHash;
                                 l0Var5.p.add(0, wallettransaction2);
-                                A.k();
-                                A.i();
-                                l0Var5.Q();
+                                B.k();
+                                B.i();
+                                l0Var5.S();
                                 d8Var.run(null);
-                                l0.F("disable backup: prepared sendTransfer, sending");
+                                l0.H("disable backup: prepared sendTransfer, sending");
                                 ConnectionsManager.getInstance(i14).sendRequestTyped(g0Var.a, new org.telegram.messenger.a(), new bi.t3(l0Var5, w6Var, g0Var, b10, wallettransaction2, 4));
                                 break;
                             } catch (IllegalStateException unused) {
@@ -238,7 +238,7 @@ public final /* synthetic */ class j implements Utilities.Callback2 {
                     }
                 }
             case 6:
-                AndroidUtilities.runOnUIThread(new o01(obj3, obj, obj5, obj4, (String) obj2, 3));
+                AndroidUtilities.runOnUIThread(new q01(obj3, obj, obj5, obj4, (String) obj2, 3));
                 break;
             case 7:
                 l0 l0Var6 = (l0) obj3;
@@ -311,7 +311,7 @@ public final /* synthetic */ class j implements Utilities.Callback2 {
                             onrampproviderinfo = onrampproviderinfo2;
                             if (onrampproviderinfo == null) {
                                 TL_toncenter.createOnrampSession createonrampsession = new TL_toncenter.createOnrampSession();
-                                createonrampsession.address = l0Var7.s();
+                                createonrampsession.address = l0Var7.t();
                                 createonrampsession.crypto_currency = "gram";
                                 createonrampsession.base_currency = l0Var7.h.g();
                                 createonrampsession.provider = onrampproviderinfo.id;
@@ -363,12 +363,12 @@ public final /* synthetic */ class j implements Utilities.Callback2 {
                         textView.setBackground(c02);
                         org.telegram.ui.ActionBar.f7.k(textView, c02, N2, null, resourceProvider2);
                         textView.setPadding(AndroidUtilities.dp(16.0f), AndroidUtilities.dp(12.0f), AndroidUtilities.dp(16.0f), AndroidUtilities.dp(12.0f));
-                        textView.setText(l4.longValue() > 0 ? LocaleController.formatSpannable(R.string.WalletUpdateSecretPhraseInfoWithFee, l0.m(l4.longValue(), false), l0Var8.l(l4.longValue(), true)) : LocaleController.getString(R.string.WalletUpdateSecretPhraseInfo));
+                        textView.setText(l4.longValue() > 0 ? LocaleController.formatSpannable(R.string.WalletUpdateSecretPhraseInfoWithFee, l0.n(l4.longValue(), false), l0Var8.m(l4.longValue(), true)) : LocaleController.getString(R.string.WalletUpdateSecretPhraseInfo));
                         textView.setVisibility(8);
-                        y1Var.setOnClickListener(new xd0(28, y1Var, textView));
+                        y1Var.setOnClickListener(new zd0(28, y1Var, textView));
                         LinearLayout f7 = org.telegram.messenger.t.f(parentActivity, 1);
-                        f7.addView(y1Var, gb1.x(-1, -2, 83, 8, 0, 8, 0));
-                        f7.addView(textView, gb1.o(16.0f, 8.0f, 16.0f, 16.0f, -1, -2));
+                        f7.addView(y1Var, kb1.x(-1, -2, 83, 8, 0, 8, 0));
+                        f7.addView(textView, kb1.o(16.0f, 8.0f, 16.0f, 16.0f, -1, -2));
                         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(parentActivity, 0, h8Var.getResourceProvider());
                         String string = LocaleController.getString(R.string.WalletDisableBackupTitle);
                         org.telegram.ui.ActionBar.e2 e2Var3 = alertDialog$Builder.a;
@@ -390,22 +390,22 @@ public final /* synthetic */ class j implements Utilities.Callback2 {
                                     h8 h8Var2 = h8.this;
                                     l0 l0Var9 = l0Var8;
                                     if (!b11) {
-                                        l0Var9.y(new z7(h8Var2, h, l0Var9, 0), false, true);
+                                        l0Var9.z(new z7(h8Var2, h, l0Var9, 0), false, true);
                                         return;
                                     }
-                                    long u10 = l0Var9.u();
+                                    long v = l0Var9.v();
                                     Long l10 = l4;
-                                    if (u10 >= l10.longValue()) {
+                                    if (v >= l10.longValue()) {
                                         z7 z7Var = new z7(h8Var2, h, l0Var9, 1);
-                                        l0.F("prepare disable backup");
-                                        l0Var9.y(new bi.m5(25, l0Var9, z7Var), true, false);
+                                        l0.H("prepare disable backup");
+                                        l0Var9.z(new bi.m5(25, l0Var9, z7Var), true, false);
                                         return;
                                     }
                                     AlertDialog$Builder alertDialog$Builder2 = new AlertDialog$Builder(h8Var2.getParentActivity(), 0, h8Var2.getResourceProvider());
                                     String string2 = LocaleController.getString(R.string.WalletNotEnoughGram);
                                     org.telegram.ui.ActionBar.e2 e2Var5 = alertDialog$Builder2.a;
                                     e2Var5.R = string2;
-                                    e2Var5.T = LocaleController.formatSpannable(R.string.WalletUpdateSecretPhraseInsufficientFunds, l0.m(l10.longValue(), false), l0Var9.l(l10.longValue(), true));
+                                    e2Var5.T = LocaleController.formatSpannable(R.string.WalletUpdateSecretPhraseInsufficientFunds, l0.n(l10.longValue(), false), l0Var9.m(l10.longValue(), true));
                                     alertDialog$Builder2.h(LocaleController.getString(R.string.WalletNotNow), new vg.d(0));
                                     alertDialog$Builder2.k(LocaleController.getString(R.string.WalletTopUp), new n2(h8Var2, 6));
                                     alertDialog$Builder2.p();

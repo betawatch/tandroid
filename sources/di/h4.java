@@ -30,18 +30,18 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
-import org.telegram.ui.Components.f51;
-import org.telegram.ui.Components.gb1;
+import org.telegram.ui.Components.g51;
 import org.telegram.ui.Components.js;
-import org.telegram.ui.Components.k80;
+import org.telegram.ui.Components.kb1;
+import org.telegram.ui.Components.l80;
 import org.telegram.ui.Components.qc;
-import org.telegram.ui.Components.sh0;
+import org.telegram.ui.Components.th0;
 import org.telegram.ui.Components.wc;
 import org.telegram.ui.NotificationsCustomSettingsActivity;
-import org.telegram.ui.nr;
-import org.telegram.ui.sr;
+import org.telegram.ui.pr;
+import org.telegram.ui.ur;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class h4 extends js {
     public boolean c;
@@ -173,13 +173,13 @@ public final class h4 extends js {
                 z10 = true;
             } else {
                 HashSet hashSet = storyItem.albums != null ? new HashSet(storyItem.albums) : new HashSet();
-                k80 k80Var = new k80(actionBarPopupWindow$ActionBarPopupWindowLayout2, u6Var);
-                k80Var.c(R.drawable.ic_ab_back, LocaleController.getString(R.string.Back), new bi.u6(actionBarPopupWindow$ActionBarPopupWindowLayout2, 19), false);
-                k80Var.k();
+                l80 l80Var = new l80(actionBarPopupWindow$ActionBarPopupWindowLayout2, u6Var);
+                l80Var.c(R.drawable.ic_ab_back, LocaleController.getString(R.string.Back), new bi.u6(actionBarPopupWindow$ActionBarPopupWindowLayout2, 19), false);
+                l80Var.k();
                 v6 B = q4Var.getStoriesController().B(q4Var.q1, true);
                 v6 B2 = q4Var.H1.B(q4Var.q1, false);
-                k80.f(k80Var, B, hashSet, B2 != null && B2.a(), new a3.l0(h4Var, u6Var, storyItem, 22), new y2(h4Var, hashSet, storyItem, u6Var, 2));
-                int b10 = actionBarPopupWindow$ActionBarPopupWindowLayout2.b(k80Var.B);
+                l80.f(l80Var, B, hashSet, B2 != null && B2.a(), new a3.l0(h4Var, u6Var, storyItem, 22), new y2(h4Var, hashSet, storyItem, u6Var, 2));
+                int b10 = actionBarPopupWindow$ActionBarPopupWindowLayout2.b(l80Var.B);
                 org.telegram.ui.ActionBar.g1 g1Var = new org.telegram.ui.ActionBar.g1(0, q4Var.getContext(), h4Var.d, false, false);
                 q4Var.t3 = g1Var;
                 g1Var.j(LocaleController.getString(R.string.StoriesAlbumAddToAlbum), R.drawable.menu_album_add, null);
@@ -191,7 +191,7 @@ public final class h4 extends js {
                 actionBarPopupWindow$ActionBarPopupWindowLayout2.c = true;
                 org.telegram.ui.ActionBar.l1 l1Var = new org.telegram.ui.ActionBar.l1(q4Var.getContext(), org.telegram.ui.ActionBar.y6.H8, u6Var);
                 l1Var.setTag(R.id.fit_width_tag, num3);
-                actionBarPopupWindow$ActionBarPopupWindowLayout2.a(l1Var, gb1.r(-1, 8));
+                actionBarPopupWindow$ActionBarPopupWindowLayout2.a(l1Var, kb1.r(-1, 8));
             }
             if (q4Var.r1) {
                 z11 = z10;
@@ -209,7 +209,7 @@ public final class h4 extends js {
             if (q4Var.r1 || h4Var.f) {
                 org.telegram.ui.ActionBar.l1 l1Var2 = new org.telegram.ui.ActionBar.l1(q4Var.getContext(), org.telegram.ui.ActionBar.y6.H8, u6Var);
                 l1Var2.setTag(R.id.fit_width_tag, num3);
-                actionBarPopupWindow$ActionBarPopupWindowLayout3.a(l1Var2, gb1.r(-1, 8));
+                actionBarPopupWindow$ActionBarPopupWindowLayout3.a(l1Var2, kb1.r(-1, 8));
             }
             if (q4Var.R2 || o4Var.f || !((q4Var.G0() || MessagesController.getInstance(q4Var.r2).storiesEnabled()) && h4Var.h)) {
                 y9Var = y9Var6;
@@ -218,7 +218,7 @@ public final class h4 extends js {
                 q4Var.h1 = c11;
                 y9Var = y9Var6;
                 c11.setOnClickListener(new e0(h4Var, h4Var.d, h4Var.i, y9Var6, h4Var.j, 2));
-                if (q4Var.H1.K(q4Var.q1) && o4Var.e && !SharedConfig.allowPreparingHevcPlayers()) {
+                if (q4Var.H1.M(q4Var.q1) && o4Var.e && !SharedConfig.allowPreparingHevcPlayers()) {
                     q4Var.h1.setAlpha(0.5f);
                 }
             }
@@ -282,14 +282,14 @@ public final class h4 extends js {
                                 if (h4Var2 != null) {
                                     h4Var2.a();
                                 }
-                                y9Var3.N();
+                                y9Var3.O();
                                 break;
                             default:
                                 h4 h4Var3 = this.b.l.i1;
                                 if (h4Var3 != null) {
                                     h4Var3.a();
                                 }
-                                y9Var3.N();
+                                y9Var3.O();
                                 break;
                         }
                     }
@@ -530,14 +530,14 @@ public final class h4 extends js {
                                 if (h4Var2 != null) {
                                     h4Var2.a();
                                 }
-                                y9Var5.N();
+                                y9Var5.O();
                                 break;
                             default:
                                 h4 h4Var3 = this.b.l.i1;
                                 if (h4Var3 != null) {
                                     h4Var3.a();
                                 }
-                                y9Var5.N();
+                                y9Var5.O();
                                 break;
                         }
                     }
@@ -587,7 +587,7 @@ public final class h4 extends js {
                             }
                             storyItem3 = o4Var.a;
                             if (storyItem3 != null) {
-                                if (storyItem3.translated && TextUtils.equals(storyItem3.translatedLng, f51.L())) {
+                                if (storyItem3.translated && TextUtils.equals(storyItem3.translatedLng, g51.L())) {
                                     org.telegram.ui.ActionBar.w0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.msg_translate, LocaleController.getString(R.string.HideTranslation), false, h4Var.d).setOnClickListener(new v3(h4Var, 4));
                                 } else if (MessagesController.getInstance(q4Var.r2).getTranslateController().canTranslateStory(o4Var.a)) {
                                     actionBarPopupWindow$ActionBarPopupWindowLayout8 = actionBarPopupWindow$ActionBarPopupWindowLayout;
@@ -748,7 +748,7 @@ public final class h4 extends js {
         if (z21 || z22) {
             org.telegram.ui.ActionBar.l1 l1Var3 = new org.telegram.ui.ActionBar.l1(context, org.telegram.ui.ActionBar.y6.H8, u6Var);
             l1Var3.setTag(R.id.fit_width_tag, num);
-            actionBarPopupWindow$ActionBarPopupWindowLayout6.a(l1Var3, gb1.r(-1, 8));
+            actionBarPopupWindow$ActionBarPopupWindowLayout6.a(l1Var3, kb1.r(-1, 8));
             TLRPC.MessageMedia messageMedia3 = o4Var.a.media;
             TLObject tLObject = messageMedia3.document;
             if (tLObject == null) {
@@ -757,7 +757,7 @@ public final class h4 extends js {
             t8 t8Var = new t8(h4Var.i, q4Var.r2, tLObject, o4Var.a, z21, arrayList, h4Var.d);
             t8Var.setOnClickListener(new bi.q(13, h4Var, t8Var));
             t8Var.setTag(R.id.fit_width_tag, num);
-            actionBarPopupWindow$ActionBarPopupWindowLayout6.a(t8Var, gb1.r(-1, -2));
+            actionBarPopupWindow$ActionBarPopupWindowLayout6.a(t8Var, kb1.r(-1, -2));
         }
     }
 
@@ -781,16 +781,16 @@ public final class h4 extends js {
             return;
         }
         Context context = q4Var.getContext();
-        sh0 swipeBack = actionBarPopupWindow$ActionBarPopupWindowLayout.getSwipeBack();
+        th0 swipeBack = actionBarPopupWindow$ActionBarPopupWindowLayout.getSwipeBack();
         final rf.b bVar = new rf.b(this, actionBarPopupWindow$ActionBarPopupWindowLayout, false, 16);
-        sr srVar = new sr();
+        ur urVar = new ur();
         org.telegram.ui.ActionBar.g1[] g1VarArr = new org.telegram.ui.ActionBar.g1[5];
-        srVar.c = g1VarArr;
+        urVar.c = g1VarArr;
         ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout2 = new ActionBarPopupWindow$ActionBarPopupWindowLayout(0, 0, context, null);
-        srVar.a = actionBarPopupWindow$ActionBarPopupWindowLayout2;
+        urVar.a = actionBarPopupWindow$ActionBarPopupWindowLayout2;
         actionBarPopupWindow$ActionBarPopupWindowLayout2.setFitItems(true);
         org.telegram.ui.ActionBar.g1 c10 = org.telegram.ui.ActionBar.w0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout2, R.drawable.msg_arrow_back, LocaleController.getString(R.string.Back), false, null);
-        c10.setOnClickListener(new nr(swipeBack, 1));
+        c10.setOnClickListener(new pr(swipeBack, 1));
         c10.d(-328966, -328966);
         c10.setSelectorColor(268435455);
         View i4Var = new i4(context, 11);
@@ -805,13 +805,13 @@ public final class h4 extends js {
         layoutParams.height = AndroidUtilities.dp(8.0f);
         i4Var.setLayoutParams(layoutParams);
         org.telegram.ui.ActionBar.c1 c1Var = new org.telegram.ui.ActionBar.c1(context, null);
-        srVar.b = c1Var;
+        urVar.b = c1Var;
         c1Var.setMinimumWidth(AndroidUtilities.dp(196.0f));
         c1Var.setDrawShadow(false);
         c1Var.setBackgroundColor(-14540254);
         c1Var.setTextColor(-1);
         c1Var.setOnValueChange(new org.telegram.ui.e5(bVar, 6));
-        actionBarPopupWindow$ActionBarPopupWindowLayout2.a(c1Var, gb1.r(-1, 44));
+        actionBarPopupWindow$ActionBarPopupWindowLayout2.a(c1Var, kb1.r(-1, 44));
         View i4Var2 = new i4(context, 12);
         i4Var2.setMinimumWidth(AndroidUtilities.dp(196.0f));
         i4Var2.setBackgroundColor(-15198184);
@@ -826,7 +826,7 @@ public final class h4 extends js {
         org.telegram.ui.ActionBar.g1 c11 = org.telegram.ui.ActionBar.w0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout2, R.drawable.msg_speed_0_2, LocaleController.getString(R.string.SpeedVerySlow), false, null);
         c11.d(-328966, -328966);
         final int i10 = 0;
-        c11.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.rr
+        c11.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.tr
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 switch (i10) {
@@ -853,7 +853,7 @@ public final class h4 extends js {
         org.telegram.ui.ActionBar.g1 c12 = org.telegram.ui.ActionBar.w0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout2, R.drawable.msg_speed_slow, LocaleController.getString(R.string.SpeedSlow), false, null);
         c12.d(-328966, -328966);
         final int i11 = 1;
-        c12.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.rr
+        c12.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.tr
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 switch (i11) {
@@ -880,7 +880,7 @@ public final class h4 extends js {
         org.telegram.ui.ActionBar.g1 c13 = org.telegram.ui.ActionBar.w0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout2, R.drawable.msg_speed_normal, LocaleController.getString(R.string.SpeedNormal), false, null);
         c13.d(-328966, -328966);
         final int i12 = 2;
-        c13.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.rr
+        c13.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.tr
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 switch (i12) {
@@ -907,7 +907,7 @@ public final class h4 extends js {
         org.telegram.ui.ActionBar.g1 c14 = org.telegram.ui.ActionBar.w0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout2, R.drawable.msg_speed_fast, LocaleController.getString(R.string.SpeedFast), false, null);
         c14.d(-328966, -328966);
         final int i13 = 3;
-        c14.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.rr
+        c14.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.tr
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 switch (i13) {
@@ -934,7 +934,7 @@ public final class h4 extends js {
         org.telegram.ui.ActionBar.g1 c15 = org.telegram.ui.ActionBar.w0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout2, R.drawable.msg_speed_superfast, LocaleController.getString(R.string.SpeedVeryFast), false, null);
         c15.d(-328966, -328966);
         final int i14 = 4;
-        c15.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.rr
+        c15.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.tr
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 switch (i14) {
@@ -958,8 +958,8 @@ public final class h4 extends js {
         });
         c15.setSelectorColor(268435455);
         g1VarArr[4] = c15;
-        q4Var.r3 = srVar;
-        srVar.a(y9.B1, true);
+        q4Var.r3 = urVar;
+        urVar.a(y9.B1, true);
         org.telegram.ui.ActionBar.g1 g1Var = new org.telegram.ui.ActionBar.g1(0, q4Var.getContext(), this.d, false, false);
         q4Var.s3 = g1Var;
         g1Var.j(LocaleController.getString(R.string.Speed), R.drawable.msg_speed, null);
@@ -982,7 +982,7 @@ public final class h4 extends js {
         if (z10) {
             org.telegram.ui.ActionBar.l1 l1Var = new org.telegram.ui.ActionBar.l1(q4Var.getContext(), org.telegram.ui.ActionBar.y6.H8, this.d);
             l1Var.setTag(R.id.fit_width_tag, 1);
-            actionBarPopupWindow$ActionBarPopupWindowLayout.a(l1Var, gb1.r(-1, 8));
+            actionBarPopupWindow$ActionBarPopupWindowLayout.a(l1Var, kb1.r(-1, 8));
         }
     }
 

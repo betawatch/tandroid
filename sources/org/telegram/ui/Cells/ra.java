@@ -15,13 +15,13 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.mm0;
-import org.telegram.ui.Components.zl0;
-import org.telegram.ui.xc1;
+import org.telegram.ui.Components.am0;
+import org.telegram.ui.Components.nm0;
+import org.telegram.ui.ad1;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public abstract class ra extends mm0 implements NotificationCenter.NotificationCenterDelegate {
+public abstract class ra extends nm0 implements NotificationCenter.NotificationCenterDelegate {
     public static final byte[] q3 = new byte[1024];
     public boolean f3;
     public final ig.a0 g3;
@@ -59,8 +59,8 @@ public abstract class ra extends mm0 implements NotificationCenter.NotificationC
         qa qaVar = new qa(this, context);
         this.k3 = qaVar;
         setAdapter(qaVar);
-        setOnItemClickListener(new zl0() { // from class: org.telegram.ui.Cells.ma
-            @Override // org.telegram.ui.Components.zl0
+        setOnItemClickListener(new am0() { // from class: org.telegram.ui.Cells.ma
+            @Override // org.telegram.ui.Components.am0
             public final void c(int i11, View view) {
                 ra raVar = ra.this;
                 raVar.getClass();
@@ -117,7 +117,7 @@ public abstract class ra extends mm0 implements NotificationCenter.NotificationC
             if (tL_theme.document == null) {
                 org.telegram.ui.ActionBar.r2 r2Var = this.p3;
                 if (r2Var != null) {
-                    r2Var.presentFragment(new xc1(x6Var, null, true));
+                    r2Var.presentFragment(new ad1(x6Var, null, true));
                     return;
                 }
                 return;
@@ -182,16 +182,16 @@ public abstract class ra extends mm0 implements NotificationCenter.NotificationC
         }
     }
 
-    @Override // org.telegram.ui.Components.mm0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.nm0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
         for (int i10 = 0; i10 < 4; i10++) {
-            NotificationCenter.getInstance(i10).addObserver(this, NotificationCenter.fileLoaded);
-            NotificationCenter.getInstance(i10).addObserver(this, NotificationCenter.fileLoadFailed);
+            NotificationCenter.getInstance(i10).addWeakObserver(this, NotificationCenter.fileLoaded);
+            NotificationCenter.getInstance(i10).addWeakObserver(this, NotificationCenter.fileLoadFailed);
         }
     }
 
-    @Override // org.telegram.ui.Components.mm0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.nm0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         for (int i10 = 0; i10 < 4; i10++) {
@@ -208,7 +208,7 @@ public abstract class ra extends mm0 implements NotificationCenter.NotificationC
         }
     }
 
-    @Override // org.telegram.ui.Components.mm0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
+    @Override // org.telegram.ui.Components.nm0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
     public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
         if (getParent() != null && getParent().getParent() != null) {
             getParent().getParent().requestDisallowInterceptTouchEvent(canScrollHorizontally(-1));

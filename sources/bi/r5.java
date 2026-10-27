@@ -7,9 +7,9 @@ import android.view.View;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.ds;
-import org.telegram.ui.Components.gb1;
+import org.telegram.ui.Components.kb1;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class r5 {
     public final s5 a;
@@ -118,7 +118,7 @@ public final class r5 {
                 rectF.bottom = rectF.top + view.getHeight();
                 AndroidUtilities.removeFromParent(view);
                 int childCount = s5Var.getChildCount();
-                s5Var.addView(view, gb1.i(64, 64, 17));
+                s5Var.addView(view, kb1.i(64, 64, 17));
                 s5Var.v.add(Integer.valueOf(i12));
                 s5Var.w.put(Integer.valueOf(childCount), Integer.valueOf(i12));
                 s5Var.x.put(Integer.valueOf(childCount), rectF);

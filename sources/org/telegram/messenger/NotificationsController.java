@@ -71,7 +71,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PopupNotificationActivity;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
 public class NotificationsController extends BaseController implements NotificationCenter.NotificationCenterDelegate {
     public static final String EXTRA_VOICE_REPLY = "extra_voice_reply";
@@ -148,7 +148,7 @@ public class NotificationsController extends BaseController implements Notificat
     private static final DispatchQueue2 notificationsQueue = new DispatchQueue2("notificationsQueue");
     public static long globalSecretChatId = DialogObject.makeEncryptedDialogId(1);
 
-    /* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+    /* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
     public class 1NotificationHolder {
         TLRPC.Chat chat;
         long dialogId;
@@ -203,7 +203,7 @@ public class NotificationsController extends BaseController implements Notificat
         }
     }
 
-    /* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+    /* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
     public static class DialogKey {
         final long dialogId;
         final boolean story;
@@ -216,7 +216,7 @@ public class NotificationsController extends BaseController implements Notificat
         }
     }
 
-    /* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+    /* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
     public static class StoryNotification {
         public long date;
         final HashMap<Integer, Pair<Long, Long>> dateByIds;
@@ -292,7 +292,7 @@ public class NotificationsController extends BaseController implements Notificat
         this.lastBadgeCount = -1;
         this.mediaSpoilerEffect = new xh.g();
         this.spoilerChars = new char[]{10252, 10338, 10385, 10280, 10277, 10286, 10321};
-        this.checkStoryPushesRunnable = new zg(this, 8);
+        this.checkStoryPushesRunnable = new ah(this, 8);
         this.notificationId = this.currentAccount + 1;
         StringBuilder sb2 = new StringBuilder("messages");
         int i11 = this.currentAccount;
@@ -322,9 +322,9 @@ public class NotificationsController extends BaseController implements Notificat
         } catch (Exception e11) {
             FileLog.e(e11);
         }
-        this.notificationDelayRunnable = new zg(this, 9);
+        this.notificationDelayRunnable = new ah(this, 9);
         this.dialogsNotificationsFacade = new NotificationsSettingsFacade(this.currentAccount);
-        AndroidUtilities.runOnUIThread(new zg(this, 10));
+        AndroidUtilities.runOnUIThread(new ah(this, 10));
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:31:0x004d, code lost:
@@ -648,7 +648,7 @@ public class NotificationsController extends BaseController implements Notificat
         TLRPC.TL_messageActionGramTransfer tL_messageActionGramTransfer = (TLRPC.TL_messageActionGramTransfer) messageObject.messageOwner.action;
         boolean isService = UserObject.isService(messageObject.getDialogId());
         boolean z10 = (tL_messageActionGramTransfer.comment_encrypted || TextUtils.isEmpty(tL_messageActionGramTransfer.comment)) ? false : true;
-        return LocaleController.formatString(isService ? z10 ? R.string.NotificationGramTransferUnknownComment : R.string.NotificationGramTransferUnknown : z10 ? R.string.NotificationGramTransferComment : R.string.NotificationGramTransfer, str, org.telegram.ui.Wallet.l0.r(tL_messageActionGramTransfer.amount, false), tL_messageActionGramTransfer.comment);
+        return LocaleController.formatString(isService ? z10 ? R.string.NotificationGramTransferUnknownComment : R.string.NotificationGramTransferUnknown : z10 ? R.string.NotificationGramTransferComment : R.string.NotificationGramTransfer, str, org.telegram.ui.Wallet.l0.s(tL_messageActionGramTransfer.amount, false), tL_messageActionGramTransfer.comment);
     }
 
     private TLRPC.NotificationSound getInputSound(SharedPreferences sharedPreferences, String str, String str2, String str3) {
@@ -1571,7 +1571,7 @@ public class NotificationsController extends BaseController implements Notificat
                 List<NotificationChannel> notificationChannels = systemNotificationManager.getNotificationChannels();
                 int size = notificationChannels.size();
                 for (int i10 = 0; i10 < size; i10++) {
-                    String id2 = yg.a(notificationChannels.get(i10)).getId();
+                    String id2 = zg.a(notificationChannels.get(i10)).getId();
                     if (id2.startsWith(str)) {
                         try {
                             systemNotificationManager.deleteNotificationChannel(id2);
@@ -1651,7 +1651,7 @@ public class NotificationsController extends BaseController implements Notificat
         if (arrayList.isEmpty() || AndroidUtilities.needShowPasscode() || SharedConfig.isWaitingForPasscodeEnter) {
             return;
         }
-        AndroidUtilities.runOnUIThread(new ch(this, arrayList, 0));
+        AndroidUtilities.runOnUIThread(new dh(this, arrayList, 0));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -1681,7 +1681,7 @@ public class NotificationsController extends BaseController implements Notificat
 
     /* JADX INFO: Access modifiers changed from: private */
     public static /* synthetic */ void lambda$loadRoundAvatar$48(ImageDecoder imageDecoder, ImageDecoder.ImageInfo imageInfo, ImageDecoder.Source source) {
-        imageDecoder.setPostProcessor(new dh());
+        imageDecoder.setPostProcessor(new eh());
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -1705,7 +1705,7 @@ public class NotificationsController extends BaseController implements Notificat
                 }
             }
         }
-        AndroidUtilities.runOnUIThread(new vg(1, consumer, hashSet));
+        AndroidUtilities.runOnUIThread(new wg(1, consumer, hashSet));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -1751,7 +1751,7 @@ public class NotificationsController extends BaseController implements Notificat
             if (this.soundPool == null) {
                 SoundPool soundPool = new SoundPool(3, 1, 0);
                 this.soundPool = soundPool;
-                soundPool.setOnLoadCompleteListener(new ah(0));
+                soundPool.setOnLoadCompleteListener(new bh(0));
             }
             if (this.soundIn == 0 && !this.soundInLoaded) {
                 this.soundInLoaded = true;
@@ -1791,7 +1791,7 @@ public class NotificationsController extends BaseController implements Notificat
             if (this.soundPool == null) {
                 SoundPool soundPool = new SoundPool(3, 1, 0);
                 this.soundPool = soundPool;
-                soundPool.setOnLoadCompleteListener(new ah(1));
+                soundPool.setOnLoadCompleteListener(new bh(1));
             }
             if (this.soundOut == 0 && !this.soundOutLoaded) {
                 this.soundOutLoaded = true;
@@ -2016,7 +2016,7 @@ public class NotificationsController extends BaseController implements Notificat
             i12++;
         }
         if (!arrayList.isEmpty()) {
-            AndroidUtilities.runOnUIThread(new ch(this, arrayList, 2));
+            AndroidUtilities.runOnUIThread(new dh(this, arrayList, 2));
         }
         if (i11 != this.total_unread_count) {
             if (this.notifyCheck) {
@@ -2025,7 +2025,7 @@ public class NotificationsController extends BaseController implements Notificat
                 this.delayedPushMessages.clear();
                 showOrUpdateNotification(this.notifyCheck);
             }
-            AndroidUtilities.runOnUIThread(new fh(this, this.pushDialogs.m(), 2));
+            AndroidUtilities.runOnUIThread(new gh(this, this.pushDialogs.m(), 2));
         }
         this.notifyCheck = false;
         if (this.showBadgeNumber) {
@@ -2378,9 +2378,9 @@ public class NotificationsController extends BaseController implements Notificat
                     notificationsController.storyPushMessagesDict.k(storyNotification, j22);
                 }
             }
-            Collections.sort(notificationsController.storyPushMessages, Comparator$-CC.comparingLong(new le(2)));
+            Collections.sort(notificationsController.storyPushMessages, Comparator$-CC.comparingLong(new ne(2)));
         }
-        AndroidUtilities.runOnUIThread(new fh(notificationsController, notificationsController.pushDialogs.m(), 7));
+        AndroidUtilities.runOnUIThread(new gh(notificationsController, notificationsController.pushDialogs.m(), 7));
         notificationsController.showOrUpdateNotification(SystemClock.elapsedRealtime() / 1000 < 60);
         if (notificationsController.showBadgeNumber) {
             notificationsController.setBadge(notificationsController.getTotalAllUnreadCount());
@@ -2523,7 +2523,7 @@ public class NotificationsController extends BaseController implements Notificat
                         z21 = z19;
                         z24 = z21;
                     }
-                    Collections.sort(notificationsController.storyPushMessages, Comparator$-CC.comparingLong(new le(1)));
+                    Collections.sort(notificationsController.storyPushMessages, Comparator$-CC.comparingLong(new ne(1)));
                     sharedPreferences = notificationsSettings;
                     z15 = z20;
                     i11 = i13;
@@ -2544,7 +2544,7 @@ public class NotificationsController extends BaseController implements Notificat
                             i11 = i13;
                             long currentTime = ConnectionsManager.getInstance(notificationsController.currentAccount).getCurrentTime();
                             if (currentTime <= j19) {
-                                AndroidUtilities.runOnUIThread(new fh(notificationsController, i15, 3), (j19 - currentTime) * 1000);
+                                AndroidUtilities.runOnUIThread(new gh(notificationsController, i15, 3), (j19 - currentTime) * 1000);
                             }
                             sharedPreferences = notificationsSettings;
                             i13 = i11 + 1;
@@ -2766,7 +2766,7 @@ public class NotificationsController extends BaseController implements Notificat
             notificationsController.notifyCheck = z11;
         }
         if (!arrayList2.isEmpty() && !AndroidUtilities.needShowPasscode() && !SharedConfig.isWaitingForPasscodeEnter) {
-            AndroidUtilities.runOnUIThread(new x4(notificationsController, arrayList2, i16, 20));
+            AndroidUtilities.runOnUIThread(new y4(notificationsController, arrayList2, i16, 20));
         }
         if (z10 || z23) {
             if (z29) {
@@ -2827,7 +2827,7 @@ public class NotificationsController extends BaseController implements Notificat
                         FileLog.d("NotificationsController processNewMessages: added branch: " + notificationsController.notifyCheck);
                     }
                     notificationsController.showOrUpdateNotification(notificationsController.notifyCheck);
-                    AndroidUtilities.runOnUIThread(new fh(notificationsController, notificationsController.pushDialogs.m(), 4));
+                    AndroidUtilities.runOnUIThread(new gh(notificationsController, notificationsController.pushDialogs.m(), 4));
                 }
                 notificationsController.notifyCheck = false;
                 if (notificationsController.showBadgeNumber) {
@@ -2968,7 +2968,7 @@ public class NotificationsController extends BaseController implements Notificat
         if (arrayList.isEmpty()) {
             return;
         }
-        AndroidUtilities.runOnUIThread(new ch(this, arrayList, 1));
+        AndroidUtilities.runOnUIThread(new dh(this, arrayList, 1));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -3122,7 +3122,7 @@ public class NotificationsController extends BaseController implements Notificat
             i11 = 0;
         }
         if (arrayList.isEmpty()) {
-            AndroidUtilities.runOnUIThread(new ch(this, arrayList, 4));
+            AndroidUtilities.runOnUIThread(new dh(this, arrayList, 4));
         }
         if (i10 != this.total_unread_count) {
             if (this.notifyCheck) {
@@ -3131,7 +3131,7 @@ public class NotificationsController extends BaseController implements Notificat
                 this.delayedPushMessages.clear();
                 showOrUpdateNotification(this.notifyCheck);
             }
-            AndroidUtilities.runOnUIThread(new fh(this, this.pushDialogs.m(), 6));
+            AndroidUtilities.runOnUIThread(new gh(this, this.pushDialogs.m(), 6));
         }
         this.notifyCheck = false;
         if (this.showBadgeNumber) {
@@ -3237,7 +3237,7 @@ public class NotificationsController extends BaseController implements Notificat
             i13 = 0;
         }
         if (!arrayList.isEmpty()) {
-            AndroidUtilities.runOnUIThread(new ch(this, arrayList, 3));
+            AndroidUtilities.runOnUIThread(new dh(this, arrayList, 3));
         }
         if (i12 != this.total_unread_count) {
             if (this.notifyCheck) {
@@ -3246,7 +3246,7 @@ public class NotificationsController extends BaseController implements Notificat
                 this.delayedPushMessages.clear();
                 showOrUpdateNotification(this.notifyCheck);
             }
-            AndroidUtilities.runOnUIThread(new fh(this, this.pushDialogs.m(), 5));
+            AndroidUtilities.runOnUIThread(new gh(this, this.pushDialogs.m(), 5));
         }
         this.notifyCheck = false;
         if (this.showBadgeNumber) {
@@ -3594,7 +3594,7 @@ public class NotificationsController extends BaseController implements Notificat
         }
         if (file != null && Build.VERSION.SDK_INT >= 28) {
             try {
-                k0Var.b = IconCompat.c(ImageDecoder.decodeBitmap(ImageDecoder.createSource(file), new bh()));
+                k0Var.b = IconCompat.c(ImageDecoder.decodeBitmap(ImageDecoder.createSource(file), new ch()));
             } catch (Throwable unused) {
             }
         }
@@ -3675,7 +3675,7 @@ public class NotificationsController extends BaseController implements Notificat
             if (getNotifyOverride(getAccountInstance().getNotificationsSettings(), this.openedDialogId, this.openedTopicId) == 2) {
                 return;
             }
-            notificationsQueue.postRunnable(new zg(this, 0));
+            notificationsQueue.postRunnable(new ah(this, 0));
         } catch (Exception e11) {
             e = e11;
             FileLog.e(e);
@@ -5126,9 +5126,9 @@ public class NotificationsController extends BaseController implements Notificat
                                                                                 arrayList29.remove(0);
                                                                             }
                                                                             ApplicationLoader.applicationContext.grantUriPermission("com.android.systemui", d, 1);
-                                                                            vg vgVar = new vg(2, d, file8);
+                                                                            wg wgVar = new wg(2, d, file8);
                                                                             hVar8 = hVar132222;
-                                                                            AndroidUtilities.runOnUIThread(vgVar, 20000L);
+                                                                            AndroidUtilities.runOnUIThread(wgVar, 20000L);
                                                                             if (!TextUtils.isEmpty(messageObject7.caption)) {
                                                                                 e0.w wVar4 = new e0.w(messageObject7.caption, messageObject7.messageOwner.date * 1000, a2);
                                                                                 ArrayList arrayList30 = xVar2.e;
@@ -8282,12 +8282,12 @@ public class NotificationsController extends BaseController implements Notificat
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:102:0x054d A[LOOP:1: B:100:0x054a->B:102:0x054d, LOOP_END] */
-    /* JADX WARN: Removed duplicated region for block: B:106:0x055a  */
-    /* JADX WARN: Removed duplicated region for block: B:121:0x058f  */
-    /* JADX WARN: Removed duplicated region for block: B:234:0x0340  */
-    /* JADX WARN: Removed duplicated region for block: B:237:0x0347  */
-    /* JADX WARN: Removed duplicated region for block: B:65:0x059c  */
+    /* JADX WARN: Removed duplicated region for block: B:102:0x054f A[LOOP:1: B:100:0x054c->B:102:0x054f, LOOP_END] */
+    /* JADX WARN: Removed duplicated region for block: B:106:0x055c  */
+    /* JADX WARN: Removed duplicated region for block: B:121:0x0591  */
+    /* JADX WARN: Removed duplicated region for block: B:234:0x0341  */
+    /* JADX WARN: Removed duplicated region for block: B:237:0x0348  */
+    /* JADX WARN: Removed duplicated region for block: B:65:0x059e  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -8837,7 +8837,7 @@ public class NotificationsController extends BaseController implements Notificat
         this.popupMessages.clear();
         this.popupReplyMessages.clear();
         this.channelGroupsCreated = false;
-        notificationsQueue.postRunnable(new zg(this, 1));
+        notificationsQueue.postRunnable(new ah(this, 1));
     }
 
     public void clearDialogNotificationsSettings(long j10, long j11) {
@@ -8857,7 +8857,7 @@ public class NotificationsController extends BaseController implements Notificat
         if (Build.VERSION.SDK_INT < 26) {
             return;
         }
-        notificationsQueue.postRunnable(new zg(this, 6));
+        notificationsQueue.postRunnable(new ah(this, 6));
     }
 
     public void deleteNotificationChannel(long j10, long j11) {
@@ -8953,7 +8953,7 @@ public class NotificationsController extends BaseController implements Notificat
     @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
     public void didReceivedNotification(int i10, int i11, Object... objArr) {
         if (i10 == NotificationCenter.fileLoaded) {
-            notificationsQueue.postRunnable(new vg(3, this, (String) objArr[0]));
+            notificationsQueue.postRunnable(new wg(3, this, (String) objArr[0]));
         }
     }
 
@@ -8969,7 +8969,7 @@ public class NotificationsController extends BaseController implements Notificat
                 int size = notificationChannels.size();
                 SharedPreferences.Editor editor = null;
                 for (int i10 = 0; i10 < size; i10++) {
-                    NotificationChannel a2 = yg.a(notificationChannels.get(i10));
+                    NotificationChannel a2 = zg.a(notificationChannels.get(i10));
                     String id2 = a2.getId();
                     if (id2.startsWith(str)) {
                         int importance = a2.getImportance();
@@ -9082,7 +9082,7 @@ public class NotificationsController extends BaseController implements Notificat
     }
 
     public void forceShowPopupForReply() {
-        notificationsQueue.postRunnable(new zg(this, 12));
+        notificationsQueue.postRunnable(new ah(this, 12));
     }
 
     public NotificationsSettingsFacade getNotificationsSettingsFacade() {
@@ -11071,7 +11071,7 @@ public class NotificationsController extends BaseController implements Notificat
     }
 
     public void hideNotifications() {
-        notificationsQueue.postRunnable(new zg(this, 2));
+        notificationsQueue.postRunnable(new ah(this, 2));
     }
 
     public boolean isGlobalNotificationsEnabled(long j10, boolean z10, boolean z11) {
@@ -11079,7 +11079,7 @@ public class NotificationsController extends BaseController implements Notificat
     }
 
     public void loadTopicsNotificationsExceptions(long j10, Consumer<HashSet<Integer>> consumer) {
-        getMessagesStorage().getStorageQueue().postRunnable(new i4(this, j10, consumer, 26));
+        getMessagesStorage().getStorageQueue().postRunnable(new j4(this, j10, consumer, 27));
     }
 
     public void muteDialog(long j10, long j11, boolean z10) {
@@ -11152,15 +11152,15 @@ public class NotificationsController extends BaseController implements Notificat
         } catch (Exception e) {
             FileLog.e(e);
         }
-        notificationsQueue.postRunnable(new zg(this, 7));
+        notificationsQueue.postRunnable(new ah(this, 7));
     }
 
     public void processDeleteStory(long j10, int i10) {
-        notificationsQueue.postRunnable(new eh(this, j10, i10, 0));
+        notificationsQueue.postRunnable(new fh(this, j10, i10, 0));
     }
 
     public void processDialogsUpdateRead(LongSparseIntArray longSparseIntArray) {
-        notificationsQueue.postRunnable(new gh(this, longSparseIntArray, new ArrayList(), 0));
+        notificationsQueue.postRunnable(new hh(this, longSparseIntArray, new ArrayList(), 0));
     }
 
     public void processEditedMessages(a0.h hVar) {
@@ -11186,22 +11186,22 @@ public class NotificationsController extends BaseController implements Notificat
             }
         }
         new ArrayList(0);
-        notificationsQueue.postRunnable(new vg(4, this, hVar));
+        notificationsQueue.postRunnable(new wg(4, this, hVar));
     }
 
     public void processIgnoreStories() {
-        notificationsQueue.postRunnable(new zg(this, 4));
+        notificationsQueue.postRunnable(new ah(this, 4));
     }
 
     public void processIgnoreStoryReactions() {
-        notificationsQueue.postRunnable(new zg(this, 13));
+        notificationsQueue.postRunnable(new ah(this, 13));
     }
 
     public void processLoadedUnreadMessages(a0.h hVar, ArrayList<TLRPC.Message> arrayList, ArrayList<MessageObject> arrayList2, ArrayList<TLRPC.User> arrayList3, ArrayList<TLRPC.Chat> arrayList4, ArrayList<TLRPC.EncryptedChat> arrayList5, Collection<StoryNotification> collection) {
         getMessagesController().putUsers(arrayList3, true);
         getMessagesController().putChats(arrayList4, true);
         getMessagesController().putEncryptedChats(arrayList5, true);
-        notificationsQueue.postRunnable(new i5(this, arrayList, hVar, arrayList2, collection));
+        notificationsQueue.postRunnable(new j5(this, arrayList, hVar, arrayList2, collection));
     }
 
     public void processNewMessages(ArrayList<MessageObject> arrayList, boolean z10, boolean z11, CountDownLatch countDownLatch) {
@@ -11269,7 +11269,7 @@ public class NotificationsController extends BaseController implements Notificat
     }
 
     public void processReadMessages(LongSparseIntArray longSparseIntArray, long j10, int i10, int i11, boolean z10) {
-        notificationsQueue.postRunnable(new q8(this, longSparseIntArray, new ArrayList(0), j10, i11, i10, z10));
+        notificationsQueue.postRunnable(new r8(this, longSparseIntArray, new ArrayList(0), j10, i11, i10, z10));
     }
 
     public void processReadStories() {
@@ -11279,15 +11279,15 @@ public class NotificationsController extends BaseController implements Notificat
         if (j10 != getUserConfig().getClientUserId()) {
             return;
         }
-        notificationsQueue.postRunnable(new fh(this, i10, 0));
+        notificationsQueue.postRunnable(new gh(this, i10, 0));
     }
 
     public void removeDeletedHisoryFromNotifications(LongSparseIntArray longSparseIntArray) {
-        notificationsQueue.postRunnable(new gh(this, longSparseIntArray, new ArrayList(0), 1));
+        notificationsQueue.postRunnable(new hh(this, longSparseIntArray, new ArrayList(0), 1));
     }
 
     public void removeDeletedMessagesFromNotifications(a0.h hVar, boolean z10) {
-        notificationsQueue.postRunnable(new ck(this, hVar, z10, new ArrayList(0), 14));
+        notificationsQueue.postRunnable(new dk(this, hVar, z10, new ArrayList(0), 14));
     }
 
     public void removeNotificationsForDialog(long j10) {
@@ -11298,7 +11298,7 @@ public class NotificationsController extends BaseController implements Notificat
     }
 
     public void repeatNotificationMaybe() {
-        notificationsQueue.postRunnable(new zg(this, 3));
+        notificationsQueue.postRunnable(new ah(this, 3));
     }
 
     public void setDialogNotificationsSettings(long j10, long j11, int i10) {
@@ -11357,7 +11357,7 @@ public class NotificationsController extends BaseController implements Notificat
     }
 
     public void setLastOnlineFromOtherDevice(int i10) {
-        notificationsQueue.postRunnable(new fh(this, i10, 1));
+        notificationsQueue.postRunnable(new gh(this, i10, 1));
     }
 
     public void setOpenedDialogId(long j10, long j11) {
@@ -11369,15 +11369,15 @@ public class NotificationsController extends BaseController implements Notificat
     }
 
     public void showNotifications() {
-        notificationsQueue.postRunnable(new zg(this, 11));
+        notificationsQueue.postRunnable(new ah(this, 11));
     }
 
     public void showTonConnectNotification(String str, long j10) {
-        notificationsQueue.postRunnable(new i4(this, str, j10, 25));
+        notificationsQueue.postRunnable(new j4(this, str, j10, 26));
     }
 
     public void updateBadge() {
-        notificationsQueue.postRunnable(new zg(this, 5));
+        notificationsQueue.postRunnable(new ah(this, 5));
     }
 
     public void updateServerNotificationsSettings(long j10, long j11) {
@@ -11413,14 +11413,14 @@ public class NotificationsController extends BaseController implements Notificat
         if (Build.VERSION.SDK_INT < 26) {
             return;
         }
-        notificationsQueue.postRunnable(new d5(this, j10, j11, i10, 2));
+        notificationsQueue.postRunnable(new e5(this, j10, j11, i10, 2));
     }
 
     public void deleteNotificationChannelGlobal(int i10, int i11) {
         if (Build.VERSION.SDK_INT < 26) {
             return;
         }
-        notificationsQueue.postRunnable(new z6(this, i10, i11, 2));
+        notificationsQueue.postRunnable(new a7(this, i10, i11, 2));
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:13:0x0016, code lost:
@@ -11460,7 +11460,7 @@ public class NotificationsController extends BaseController implements Notificat
     }
 
     public void processReadStories(long j10, int i10) {
-        notificationsQueue.postRunnable(new eh(this, j10, i10, 1));
+        notificationsQueue.postRunnable(new fh(this, j10, i10, 1));
     }
 
     public void updateServerNotificationsSettings(long j10, long j11, boolean z10) {
@@ -11527,7 +11527,7 @@ public class NotificationsController extends BaseController implements Notificat
             tL_inputNotifyPeer.peer = getMessagesController().getInputPeer(j10);
             updatenotifysettings.peer = tL_inputNotifyPeer;
         }
-        getConnectionsManager().sendRequest(updatenotifysettings, new td(6));
+        getConnectionsManager().sendRequest(updatenotifysettings, new vd(6));
     }
 
     public boolean isGlobalNotificationsEnabled(int i10) {
@@ -11595,7 +11595,7 @@ public class NotificationsController extends BaseController implements Notificat
                 tL_inputPeerNotifySettings7.flags |= 256;
                 tL_inputPeerNotifySettings7.stories_sound = getInputSound(notificationsSettings, "StoriesSound", "StoriesSoundDocId", "StoriesSoundPath");
             }
-            getConnectionsManager().sendRequest(updatenotifysettings, new td(5));
+            getConnectionsManager().sendRequest(updatenotifysettings, new vd(5));
             return;
         }
         TL_account.setReactionsNotifySettings setreactionsnotifysettings = new TL_account.setReactionsNotifySettings();
@@ -11618,6 +11618,6 @@ public class NotificationsController extends BaseController implements Notificat
         }
         setreactionsnotifysettings.settings.show_previews = notificationsSettings.getBoolean("EnableReactionsPreview", true);
         setreactionsnotifysettings.settings.sound = getInputSound(notificationsSettings, "ReactionSound", "ReactionSoundDocId", "ReactionSoundPath");
-        getConnectionsManager().sendRequest(setreactionsnotifysettings, new td(4));
+        getConnectionsManager().sendRequest(setreactionsnotifysettings, new vd(4));
     }
 }

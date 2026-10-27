@@ -19,9 +19,9 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.Components.ds;
-import org.telegram.ui.Components.q11;
+import org.telegram.ui.Components.r11;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class p3 {
     public final Path A;
@@ -45,8 +45,8 @@ public final class p3 {
     public final Bitmap r;
     public final Drawable s;
     public int t;
-    public final q11 u;
-    public q11 v;
+    public final r11 u;
+    public r11 v;
     public float w;
     public final float[] x;
     public final Path y;
@@ -79,7 +79,7 @@ public final class p3 {
         this.r = r3Var.F;
         String b10 = r3Var.b();
         textPaint = s3.getTextPaint();
-        this.u = new q11(Emoji.replaceEmoji(b10, textPaint.getFontMetricsInt(), false), 17.0f, AndroidUtilities.bold());
+        this.u = new r11(Emoji.replaceEmoji(b10, textPaint.getFontMetricsInt(), false), 17.0f, AndroidUtilities.bold());
         int i10 = r3Var.q;
         this.n = i10;
         this.p = AndroidUtilities.computePerceivedBrightness(i10) < 0.721f;
@@ -204,19 +204,19 @@ public final class p3 {
                 i10 = intrinsicHeight - AndroidUtilities.dp(2.0f);
             }
         }
-        q11 q11Var = this.v;
-        if (q11Var != null) {
-            q11Var.p = (int) ((rectF.width() - AndroidUtilities.dp(100.0f)) - r3);
+        r11 r11Var = this.v;
+        if (r11Var != null) {
+            r11Var.p = (int) ((rectF.width() - AndroidUtilities.dp(100.0f)) - r3);
             f12 = 1.0f;
-            q11Var.c(rectF.left + AndroidUtilities.dp(60.0f) + i10, rectF.centerY(), org.telegram.messenger.t.A(1.0f, this.w, f10, f11), f17, canvas2);
+            r11Var.c(rectF.left + AndroidUtilities.dp(60.0f) + i10, rectF.centerY(), org.telegram.messenger.t.A(1.0f, this.w, f10, f11), f17, canvas2);
         } else {
             f12 = 1.0f;
         }
         float width = rectF.width() - AndroidUtilities.dp(100.0f);
         float f23 = i10;
-        q11 q11Var2 = this.u;
-        q11Var2.p = (int) (width - f23);
-        q11Var2.c(f23 + rectF.left + AndroidUtilities.dp(60.0f), rectF.centerY(), (this.v == null ? f12 : this.w) * f10 * f11, f17, canvas);
+        r11 r11Var2 = this.u;
+        r11Var2.p = (int) (width - f23);
+        r11Var2.c(f23 + rectF.left + AndroidUtilities.dp(60.0f), rectF.centerY(), (this.v == null ? f12 : this.w) * f10 * f11, f17, canvas);
     }
 
     public final float b() {

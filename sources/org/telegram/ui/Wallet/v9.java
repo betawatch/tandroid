@@ -10,25 +10,25 @@ import android.view.animation.LinearInterpolator;
 import android.view.animation.PathInterpolator;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.Components.gb1;
-import org.telegram.ui.Components.j71;
-import org.telegram.ui.Components.l71;
-import org.telegram.ui.Components.r71;
-import org.telegram.ui.Components.t61;
+import org.telegram.ui.Components.k71;
+import org.telegram.ui.Components.kb1;
+import org.telegram.ui.Components.m71;
+import org.telegram.ui.Components.s71;
 import org.telegram.ui.Components.ti;
+import org.telegram.ui.Components.u61;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class v9 {
     public final ti a;
     public final ViewGroup b;
     public final View c;
-    public final l6 d;
+    public final m6 d;
     public final m5 e;
     public final TL_wallet.walletTransaction f;
     public final Runnable g;
     public final t9 h;
-    public final l6 i;
+    public final m6 i;
     public final k9 j = new k9();
     public final PathInterpolator k = new PathInterpolator(0.3f, 0.0f, 0.8f, 0.15f);
     public final float l;
@@ -43,7 +43,7 @@ public final class v9 {
     public final s9 u;
 
     /* JADX WARN: Type inference failed for: r1v3, types: [org.telegram.ui.Wallet.s9] */
-    public v9(ViewGroup viewGroup, View view, l6 l6Var, m5 m5Var, TL_wallet.walletTransaction wallettransaction, Runnable runnable, ti tiVar) {
+    public v9(ViewGroup viewGroup, View view, m6 m6Var, m5 m5Var, TL_wallet.walletTransaction wallettransaction, Runnable runnable, ti tiVar) {
         AnimatorSet animatorSet = new AnimatorSet();
         this.m = animatorSet;
         this.o = new RectF();
@@ -63,10 +63,10 @@ public final class v9 {
                 switch (i10) {
                     case 0:
                         v9 v9Var = this.b;
-                        l6 l6Var2 = v9Var.d;
+                        m6 m6Var2 = v9Var.d;
                         ViewGroup viewGroup2 = v9Var.b;
                         AnimatorSet animatorSet2 = v9Var.m;
-                        l6 l6Var3 = v9Var.i;
+                        m6 m6Var3 = v9Var.i;
                         RectF rectF = v9Var.o;
                         RectF rectF2 = v9Var.n;
                         if (!v9Var.s && !v9Var.r) {
@@ -74,13 +74,13 @@ public final class v9 {
                             v9Var.c(rectF2.centerX(), rectF2.centerY(), rectF2.width());
                             m5 m5Var2 = v9Var.e;
                             TL_wallet.walletTransaction wallettransaction3 = v9Var.f;
-                            r71 r71Var = m5Var2.r0[0];
+                            s71 s71Var = m5Var2.r0[0];
                             f3 f3Var2 = null;
-                            if (r71Var != null) {
+                            if (s71Var != null) {
                                 int i11 = 0;
                                 while (true) {
-                                    if (i11 < r71Var.getChildCount()) {
-                                        View childAt = r71Var.getChildAt(i11);
+                                    if (i11 < s71Var.getChildCount()) {
+                                        View childAt = s71Var.getChildAt(i11);
                                         if ((childAt instanceof f3) && (wallettransaction2 = (f3Var = (f3) childAt).R) != null && d3.a(wallettransaction2, wallettransaction3)) {
                                             f3Var2 = f3Var;
                                         } else {
@@ -98,14 +98,14 @@ public final class v9 {
                                     v9Var.p = f3Var2;
                                     f3Var2.f(true);
                                 }
-                                l6 pendingDiamond = v9Var.p.getPendingDiamond();
+                                m6 pendingDiamond = v9Var.p.getPendingDiamond();
                                 if (v9Var.q && pendingDiamond != null && pendingDiamond.getWidth() > 0 && !v9Var.p.isLayoutRequested()) {
                                     rectF.set(v9Var.d(pendingDiamond));
                                     if (rectF.centerY() > 0.0f && rectF.centerY() < viewGroup2.getHeight()) {
                                         v9Var.r = true;
-                                        l6Var3.f(l6Var2);
-                                        l6Var3.setAlpha(1.0f);
-                                        l6Var2.setAlpha(0.0f);
+                                        m6Var3.f(m6Var2);
+                                        m6Var3.setAlpha(1.0f);
+                                        m6Var2.setAlpha(0.0f);
                                         v9Var.j.b(rectF2.centerX(), rectF2.centerY());
                                         animatorSet2.start();
                                         break;
@@ -117,7 +117,7 @@ public final class v9 {
                                 break;
                             } else {
                                 v9Var.r = true;
-                                l6Var3.setAlpha(0.0f);
+                                m6Var3.setAlpha(0.0f);
                                 animatorSet2.setDuration(180L);
                                 animatorSet2.start();
                                 break;
@@ -133,12 +133,12 @@ public final class v9 {
         this.a = tiVar;
         this.b = viewGroup;
         this.c = view;
-        this.d = l6Var;
-        this.l = l6Var.getAlpha();
+        this.d = m6Var;
+        this.l = m6Var.getAlpha();
         this.e = m5Var;
         this.f = wallettransaction;
         this.g = runnable;
-        RectF a2 = a(viewGroup, l6Var);
+        RectF a2 = a(viewGroup, m6Var);
         this.n = a2;
         t9 t9Var = new t9(this, viewGroup.getContext());
         this.h = t9Var;
@@ -146,15 +146,15 @@ public final class v9 {
         t9Var.setClipToPadding(false);
         final int i11 = 1;
         t9Var.setClickable(true);
-        l6 l6Var2 = new l6(60, viewGroup.getContext(), true);
-        this.i = l6Var2;
-        l6Var2.setContinuousRotation(540.0f);
-        l6Var2.f(l6Var);
-        l6Var2.setAlpha(0.0f);
-        t9Var.addView(l6Var2, gb1.i(60, 60, 51));
+        m6 m6Var2 = new m6(60, viewGroup.getContext(), true);
+        this.i = m6Var2;
+        m6Var2.setContinuousRotation(540.0f);
+        m6Var2.f(m6Var);
+        m6Var2.setAlpha(0.0f);
+        t9Var.addView(m6Var2, kb1.i(60, 60, 51));
         viewGroup.addView(t9Var, new ViewGroup.LayoutParams(-1, -1));
         c(a2.centerX(), a2.centerY(), a2.width());
-        l6Var2.l(new Runnable(this) { // from class: org.telegram.ui.Wallet.s9
+        m6Var2.l(new Runnable(this) { // from class: org.telegram.ui.Wallet.s9
             public final /* synthetic */ v9 b;
 
             {
@@ -168,10 +168,10 @@ public final class v9 {
                 switch (i11) {
                     case 0:
                         v9 v9Var = this.b;
-                        l6 l6Var22 = v9Var.d;
+                        m6 m6Var22 = v9Var.d;
                         ViewGroup viewGroup2 = v9Var.b;
                         AnimatorSet animatorSet2 = v9Var.m;
-                        l6 l6Var3 = v9Var.i;
+                        m6 m6Var3 = v9Var.i;
                         RectF rectF = v9Var.o;
                         RectF rectF2 = v9Var.n;
                         if (!v9Var.s && !v9Var.r) {
@@ -179,13 +179,13 @@ public final class v9 {
                             v9Var.c(rectF2.centerX(), rectF2.centerY(), rectF2.width());
                             m5 m5Var2 = v9Var.e;
                             TL_wallet.walletTransaction wallettransaction3 = v9Var.f;
-                            r71 r71Var = m5Var2.r0[0];
+                            s71 s71Var = m5Var2.r0[0];
                             f3 f3Var2 = null;
-                            if (r71Var != null) {
+                            if (s71Var != null) {
                                 int i112 = 0;
                                 while (true) {
-                                    if (i112 < r71Var.getChildCount()) {
-                                        View childAt = r71Var.getChildAt(i112);
+                                    if (i112 < s71Var.getChildCount()) {
+                                        View childAt = s71Var.getChildAt(i112);
                                         if ((childAt instanceof f3) && (wallettransaction2 = (f3Var = (f3) childAt).R) != null && d3.a(wallettransaction2, wallettransaction3)) {
                                             f3Var2 = f3Var;
                                         } else {
@@ -203,14 +203,14 @@ public final class v9 {
                                     v9Var.p = f3Var2;
                                     f3Var2.f(true);
                                 }
-                                l6 pendingDiamond = v9Var.p.getPendingDiamond();
+                                m6 pendingDiamond = v9Var.p.getPendingDiamond();
                                 if (v9Var.q && pendingDiamond != null && pendingDiamond.getWidth() > 0 && !v9Var.p.isLayoutRequested()) {
                                     rectF.set(v9Var.d(pendingDiamond));
                                     if (rectF.centerY() > 0.0f && rectF.centerY() < viewGroup2.getHeight()) {
                                         v9Var.r = true;
-                                        l6Var3.f(l6Var22);
-                                        l6Var3.setAlpha(1.0f);
-                                        l6Var22.setAlpha(0.0f);
+                                        m6Var3.f(m6Var22);
+                                        m6Var3.setAlpha(1.0f);
+                                        m6Var22.setAlpha(0.0f);
                                         v9Var.j.b(rectF2.centerX(), rectF2.centerY());
                                         animatorSet2.start();
                                         break;
@@ -222,7 +222,7 @@ public final class v9 {
                                 break;
                             } else {
                                 v9Var.r = true;
-                                l6Var3.setAlpha(0.0f);
+                                m6Var3.setAlpha(0.0f);
                                 animatorSet2.setDuration(180L);
                                 animatorSet2.start();
                                 break;
@@ -240,27 +240,27 @@ public final class v9 {
         ofFloat.setInterpolator(new LinearInterpolator());
         ofFloat.addUpdateListener(new a3(this, 10));
         animatorSet.playTogether(ofFloat);
-        animatorSet.addListener(new u9(this, tiVar, l6Var));
+        animatorSet.addListener(new u9(this, tiVar, m6Var));
         m5Var.K0();
         m5Var.T0(false);
-        l71 l71Var = m5Var.a;
-        if (l71Var != null) {
-            l71Var.C0();
+        m71 m71Var = m5Var.a;
+        if (m71Var != null) {
+            m71Var.C0();
             m5Var.a.f3.h1(0, 0);
-            r71 r71Var = m5Var.r0[0];
-            if (r71Var != null) {
-                j71 j71Var = r71Var.g3;
-                r71Var.C0();
-                j71Var.O(false);
-                for (int i12 = 0; i12 < j71Var.y.size(); i12++) {
-                    t61 G = j71Var.G(i12);
+            s71 s71Var = m5Var.r0[0];
+            if (s71Var != null) {
+                k71 k71Var = s71Var.g3;
+                s71Var.C0();
+                k71Var.O(false);
+                for (int i12 = 0; i12 < k71Var.y.size(); i12++) {
+                    u61 G = k71Var.G(i12);
                     if (G != null) {
                         Object obj = G.G;
                         if (obj instanceof TL_wallet.walletTransaction) {
                             TL_wallet.walletTransaction wallettransaction2 = (TL_wallet.walletTransaction) obj;
                             int i13 = d3.a;
-                            if ((wallettransaction2 instanceof c3 ? ((c3) wallettransaction2).a : wallettransaction2) == wallettransaction || l0.f0((TL_wallet.walletTransaction) obj, wallettransaction)) {
-                                r71Var.f3.h1(i12, 0);
+                            if ((wallettransaction2 instanceof c3 ? ((c3) wallettransaction2).a : wallettransaction2) == wallettransaction || l0.i0((TL_wallet.walletTransaction) obj, wallettransaction)) {
+                                s71Var.f3.h1(i12, 0);
                                 break;
                             }
                         } else {
@@ -318,13 +318,13 @@ public final class v9 {
         s9 s9Var = this.u;
         t9 t9Var = this.h;
         t9Var.removeCallbacks(s9Var);
-        l6 l6Var = this.i;
-        l6Var.l(null);
+        m6 m6Var = this.i;
+        m6Var.l(null);
         f3 f3Var = this.p;
         if (f3Var != null && (wallettransaction = f3Var.R) != null && d3.a(wallettransaction, this.f)) {
-            l6 pendingDiamond = this.p.getPendingDiamond();
+            m6 pendingDiamond = this.p.getPendingDiamond();
             if (pendingDiamond != null) {
-                pendingDiamond.f(l6Var);
+                pendingDiamond.f(m6Var);
             }
             this.p.f(false);
             RectF rectF = this.o;
@@ -344,15 +344,15 @@ public final class v9 {
                 f3Var2.H.h();
             }
         }
-        l6Var.setPaused(true);
-        t9Var.removeView(l6Var);
+        m6Var.setPaused(true);
+        t9Var.removeView(m6Var);
         t9Var.setClickable(false);
         this.d.setAlpha(this.l);
         ti tiVar = this.a;
         if (tiVar == null) {
             this.c.setTranslationY(0.0f);
         } else {
-            tiVar.P1(1.0f);
+            tiVar.Q1(1.0f);
         }
         ViewGroup viewGroup = this.b;
         if (tiVar != null && this.j.d()) {
@@ -371,29 +371,29 @@ public final class v9 {
             }
         }
         this.g.run();
-        AndroidUtilities.runOnUIThread(new q6(6, this, viewGroup), 650L);
+        AndroidUtilities.runOnUIThread(new a6(7, this, viewGroup), 650L);
     }
 
     public final void c(float f7, float f10, float f11) {
         float dp = AndroidUtilities.dp(60.0f);
         t9 t9Var = this.h;
         float f12 = dp / 2.0f;
-        l6 l6Var = this.i;
-        l6Var.setTranslationX((f7 - t9Var.getLeft()) - f12);
-        l6Var.setTranslationY((f10 - t9Var.getTop()) - f12);
+        m6 m6Var = this.i;
+        m6Var.setTranslationX((f7 - t9Var.getLeft()) - f12);
+        m6Var.setTranslationY((f10 - t9Var.getTop()) - f12);
         float f13 = f11 / dp;
-        l6Var.setScaleX(f13);
-        l6Var.setScaleY(f13);
+        m6Var.setScaleX(f13);
+        m6Var.setScaleY(f13);
     }
 
-    public final RectF d(l6 l6Var) {
+    public final RectF d(m6 m6Var) {
         ti tiVar = this.a;
         ViewGroup viewGroup = this.b;
         if (tiVar == null) {
-            return a(viewGroup, l6Var);
+            return a(viewGroup, m6Var);
         }
-        ViewGroup viewGroup2 = (ViewGroup) l6Var.getRootView();
-        RectF a2 = a(viewGroup2, l6Var);
+        ViewGroup viewGroup2 = (ViewGroup) m6Var.getRootView();
+        RectF a2 = a(viewGroup2, m6Var);
         int[] iArr = new int[2];
         viewGroup2.getLocationOnScreen(iArr);
         a2.offset(iArr[0], iArr[1]);
@@ -405,12 +405,12 @@ public final class v9 {
     public final void e() {
         RectF rectF = this.n;
         ViewGroup viewGroup = this.b;
-        l6 l6Var = this.d;
+        m6 m6Var = this.d;
         ti tiVar = this.a;
         if (tiVar == null) {
-            f(l6Var, this.c, viewGroup, rectF);
-        } else if (l6Var.isAttachedToWindow() && l6Var.getRootView() == viewGroup.getRootView()) {
-            rectF.set(a(viewGroup, l6Var));
+            f(m6Var, this.c, viewGroup, rectF);
+        } else if (m6Var.isAttachedToWindow() && m6Var.getRootView() == viewGroup.getRootView()) {
+            rectF.set(a(viewGroup, m6Var));
             rectF.offset(0.0f, tiVar.o2 - tiVar.y0);
         }
     }

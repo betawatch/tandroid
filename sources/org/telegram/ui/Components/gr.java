@@ -13,7 +13,7 @@ import android.view.View;
 import android.view.animation.OvershootInterpolator;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class gr {
     public float A;
@@ -272,7 +272,7 @@ public final class gr {
             ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
             this.k = ofFloat;
             ofFloat.addUpdateListener(new n6(this, 16));
-            this.k.addListener(new org.telegram.ui.qp(this, 22));
+            this.k.addListener(new org.telegram.ui.sp(this, 22));
             if (this.h <= 0) {
                 this.c = 0;
                 this.k.setDuration(220L);

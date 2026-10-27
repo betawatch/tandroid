@@ -8,16 +8,16 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.UserObject;
 import org.telegram.messenger.support.LongSparseIntArray;
-import org.telegram.messenger.vh;
+import org.telegram.messenger.wh;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Cells.s9;
 import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
 import org.telegram.ui.Components.ti;
 import org.telegram.ui.Components.tj;
 import org.telegram.ui.PhotoViewer;
-import org.telegram.ui.un;
+import org.telegram.ui.wn;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class g0 implements Runnable {
     public final /* synthetic */ int a = 1;
@@ -145,10 +145,10 @@ public final /* synthetic */ class g0 implements Runnable {
                         while (i17 < i15) {
                             int i18 = i17;
                             String str4 = strArr2[i18];
-                            if ((str == null || !(str.startsWith(str4) || vh.u(" ", str4, str))) && (str2 == null || !(str2.startsWith(str4) || vh.u(" ", str4, str2)))) {
+                            if ((str == null || !(str.startsWith(str4) || wh.u(" ", str4, str))) && (str2 == null || !(str2.startsWith(str4) || wh.u(" ", str4, str2)))) {
                                 str3 = str;
                                 TLRPC.User user2 = contact.user;
-                                r22 = (user2 == null || (publicUsername = UserObject.getPublicUsername(user2)) == null || !publicUsername.startsWith(str4)) ? (lowerCase2.startsWith(str4) || vh.u(" ", str4, lowerCase2) || (translitString2 != null && (translitString2.startsWith(str4) || vh.u(" ", str4, translitString2)))) ? 3 : z10 : 2;
+                                r22 = (user2 == null || (publicUsername = UserObject.getPublicUsername(user2)) == null || !publicUsername.startsWith(str4)) ? (lowerCase2.startsWith(str4) || wh.u(" ", str4, lowerCase2) || (translitString2 != null && (translitString2.startsWith(str4) || wh.u(" ", str4, translitString2)))) ? 3 : z10 : 2;
                             } else {
                                 str3 = str;
                                 r22 = 1;
@@ -200,7 +200,7 @@ public final /* synthetic */ class g0 implements Runnable {
                             int i20 = 0;
                             while (i20 < i15) {
                                 String str6 = strArr3[i20];
-                                if (lowerCase3.startsWith(str6) || vh.u(" ", str6, lowerCase3) || (translitString3 != null && (translitString3.startsWith(str6) || vh.u(" ", str6, translitString3)))) {
+                                if (lowerCase3.startsWith(str6) || wh.u(" ", str6, lowerCase3) || (translitString3 != null && (translitString3.startsWith(str6) || wh.u(" ", str6, translitString3)))) {
                                     i10 = i19;
                                     z11 = true;
                                 } else {
@@ -239,39 +239,39 @@ public final /* synthetic */ class g0 implements Runnable {
                 ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = (ChatAttachAlertPhotoLayout) obj4;
                 org.telegram.ui.ActionBar.r2 r2Var = (org.telegram.ui.ActionBar.r2) obj3;
                 ArrayList arrayList6 = (ArrayList) obj2;
-                un unVar = (un) obj;
+                wn wnVar = (wn) obj;
                 boolean z12 = ChatAttachAlertPhotoLayout.q1;
                 ti tiVar = chatAttachAlertPhotoLayout.b;
                 if (!tiVar.F || tiVar.G) {
                     i11 = i14;
                 } else {
-                    PhotoViewer.u1().M2(null, r2Var, null);
-                    PhotoViewer u12 = PhotoViewer.u1();
-                    u12.h = 0;
-                    u12.n = false;
+                    PhotoViewer.v1().N2(null, r2Var, null);
+                    PhotoViewer v12 = PhotoViewer.v1();
+                    v12.h = 0;
+                    v12.n = false;
                     i11 = 3;
                 }
                 if (tiVar.H) {
                     i11 = 13;
                 }
-                PhotoViewer.u1().i2(arrayList6, this.c, i11, false, chatAttachAlertPhotoLayout.h1, tiVar.H ? null : unVar);
-                PhotoViewer.u1().z2(tiVar.Q);
+                PhotoViewer.v1().j2(arrayList6, this.c, i11, false, chatAttachAlertPhotoLayout.h1, tiVar.H ? null : wnVar);
+                PhotoViewer.v1().A2(tiVar.Q);
                 if (tiVar.F && !tiVar.G) {
-                    PhotoViewer.u1().O = false;
+                    PhotoViewer.v1().O = false;
                 } else if (tiVar.T0 != 0) {
-                    PhotoViewer.u1().O = true;
-                    PhotoViewer.u1().P = tiVar.U0 != null;
+                    PhotoViewer.v1().O = true;
+                    PhotoViewer.v1().P = tiVar.U0 != null;
                 }
                 if (tiVar.G) {
-                    PhotoViewer.u1().Y0(null, null, false, tiVar.J);
+                    PhotoViewer.v1().Z0(null, null, false, tiVar.J);
                 }
-                if (ChatAttachAlertPhotoLayout.T()) {
-                    PhotoViewer u13 = PhotoViewer.u1();
-                    Editable text = tiVar.r1().getText();
-                    u13.p7 = true;
-                    u13.q7 = text;
-                    u13.C2(null, text, false, false);
-                    u13.v3(null);
+                if (ChatAttachAlertPhotoLayout.U()) {
+                    PhotoViewer v13 = PhotoViewer.v1();
+                    Editable text = tiVar.s1().getText();
+                    v13.p7 = true;
+                    v13.q7 = text;
+                    v13.D2(null, text, false, false);
+                    v13.w3(null);
                     break;
                 }
                 break;
@@ -287,13 +287,13 @@ public final /* synthetic */ class g0 implements Runnable {
         this.c = i11;
     }
 
-    public /* synthetic */ g0(ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout, int i10, org.telegram.ui.ActionBar.r2 r2Var, ArrayList arrayList, int i11, un unVar) {
+    public /* synthetic */ g0(ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout, int i10, org.telegram.ui.ActionBar.r2 r2Var, ArrayList arrayList, int i11, wn wnVar) {
         this.d = chatAttachAlertPhotoLayout;
         this.b = i10;
         this.e = r2Var;
         this.f = arrayList;
         this.c = i11;
-        this.h = unVar;
+        this.h = wnVar;
     }
 
     public /* synthetic */ g0(yf.c cVar, g1 g1Var, int i10, s9 s9Var, i0 i0Var, int i11) {

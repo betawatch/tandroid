@@ -42,15 +42,15 @@ import org.scilab.forge.jlatexmath.TeXSymbolParser;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.nk;
+import org.telegram.messenger.ok;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.ui.Components.ds;
-import org.telegram.ui.Components.mm0;
+import org.telegram.ui.Components.nm0;
 import org.telegram.ui.Components.qy;
-import org.telegram.ui.zg1;
+import org.telegram.ui.bh1;
 import org.xmlpull.v1.XmlPullParserException;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
 public class ng implements c3.i, k9.t {
     public final /* synthetic */ int a;
@@ -389,7 +389,7 @@ public class ng implements c3.i, k9.t {
                 try {
                     w7.g9.b();
                     w7.n6 n6Var = new w7.n6(eVar);
-                    s4.d dVar4 = new s4.d(6);
+                    s4.d dVar4 = new s4.d(7);
                     g9Var.a(dVar4);
                     HashMap hashMap3 = new HashMap((HashMap) dVar4.b);
                     HashMap hashMap4 = new HashMap((HashMap) dVar4.c);
@@ -418,7 +418,7 @@ public class ng implements c3.i, k9.t {
                 try {
                     y7.fa.b();
                     y7.n7 n7Var = new y7.n7(m0Var);
-                    s4.d dVar5 = new s4.d(14);
+                    s4.d dVar5 = new s4.d(15);
                     faVar.a(dVar5);
                     HashMap hashMap5 = new HashMap((HashMap) dVar5.b);
                     HashMap hashMap6 = new HashMap((HashMap) dVar5.c);
@@ -596,12 +596,12 @@ public class ng implements c3.i, k9.t {
         Iterator it = ((CopyOnWriteArrayList) this.d).iterator();
         while (it.hasNext()) {
             u2.j0 j0Var = (u2.j0) it.next();
-            e2.n0.W(j0Var.a, new sg.u(12, jVar, j0Var.b));
+            e2.n0.W(j0Var.a, new s9.g(13, jVar, j0Var.b));
         }
     }
 
     public void l(int i10, b2.x xVar, int i11, Object obj, long j10) {
-        k(new zg1(17, this, new u2.c0(1, i10, xVar, i11, obj, e2.n0.h0(j10), -9223372036854775807L)));
+        k(new bh1(17, this, new u2.c0(1, i10, xVar, i11, obj, e2.n0.h0(j10), -9223372036854775807L)));
     }
 
     public long m(c3.p pVar) {
@@ -681,7 +681,7 @@ public class ng implements c3.i, k9.t {
     }
 
     public void r(u2.u uVar, int i10, int i11, b2.x xVar, int i12, Object obj, long j10, long j11, IOException iOException, boolean z10) {
-        k(new nk(this, uVar, new u2.c0(i10, i11, xVar, i12, obj, e2.n0.h0(j10), e2.n0.h0(j11)), iOException, z10));
+        k(new ok(this, uVar, new u2.c0(i10, i11, xVar, i12, obj, e2.n0.h0(j10), e2.n0.h0(j11)), iOException, z10));
     }
 
     public void s(u2.u uVar, int i10, IOException iOException, boolean z10) {
@@ -842,9 +842,9 @@ public class ng implements c3.i, k9.t {
     public void i(Throwable th2) {
     }
 
-    public ng(mm0 mm0Var) {
+    public ng(nm0 nm0Var) {
         this.a = 18;
-        this.d = mm0Var;
+        this.d = nm0Var;
     }
 
     public ng(ByteBuffer byteBuffer, int i10, RectF rectF) {

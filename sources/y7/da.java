@@ -4,10 +4,10 @@ import a8.ng;
 import a8.og;
 import android.content.Context;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
 public final class da implements ba {
-    public final s9.n a;
+    public final s9.o a;
     public final z9 b;
 
     public da(Context context, z9 z9Var) {
@@ -16,9 +16,9 @@ public final class da implements ba {
         m5.t.b(context);
         m5.r c10 = m5.t.a().c(aVar);
         if (k5.a.d.contains(new j5.c("json"))) {
-            new s9.n(new og(c10, 6));
+            new s9.o(new og(c10, 6));
         }
-        this.a = new s9.n(new og(c10, 7));
+        this.a = new s9.o(new og(c10, 7));
     }
 
     @Override // y7.ba

@@ -33,25 +33,25 @@ import org.telegram.ui.ActionBar.y6;
 import org.telegram.ui.Cells.f7;
 import org.telegram.ui.Cells.k4;
 import org.telegram.ui.Cells.q4;
+import org.telegram.ui.Components.aa0;
 import org.telegram.ui.Components.c10;
-import org.telegram.ui.Components.ga0;
-import org.telegram.ui.Components.gb1;
-import org.telegram.ui.Components.lm0;
-import org.telegram.ui.Components.q61;
+import org.telegram.ui.Components.ha0;
+import org.telegram.ui.Components.kb1;
+import org.telegram.ui.Components.mm0;
+import org.telegram.ui.Components.r61;
 import org.telegram.ui.Components.vn;
-import org.telegram.ui.Components.z90;
 import org.telegram.ui.Components.zq;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
-public final class c0 extends lm0 {
+public final class c0 extends mm0 {
     public final /* synthetic */ j0 c;
 
     public c0(j0 j0Var) {
         this.c = j0Var;
     }
 
-    @Override // org.telegram.ui.Components.lm0
+    @Override // org.telegram.ui.Components.mm0
     public final boolean D(s4.e1 e1Var) {
         j0 j0Var = this.c;
         int i10 = j0Var.h0;
@@ -211,7 +211,7 @@ public final class c0 extends lm0 {
                 if (indexOf >= 0) {
                     spannableStringBuilder = new SpannableStringBuilder(string);
                     SpannableString spannableString = new SpannableString(a1.g.n(f0Var.e.e, "", new StringBuilder()));
-                    spannableString.setSpan(new q61(AndroidUtilities.bold()), 0, spannableString.length(), 33);
+                    spannableString.setSpan(new r61(AndroidUtilities.bold()), 0, spannableString.length(), 33);
                     spannableStringBuilder.replace(indexOf, indexOf + 2, (CharSequence) spannableString);
                 }
                 b6Var.l(spannableStringBuilder, false);
@@ -224,7 +224,7 @@ public final class c0 extends lm0 {
                     if (indexOf2 >= 0) {
                         spannableStringBuilder2 = new SpannableStringBuilder(str);
                         SpannableString spannableString2 = new SpannableString(f0Var.e.c);
-                        spannableString2.setSpan(new q61(AndroidUtilities.bold()), 0, spannableString2.length(), 33);
+                        spannableString2.setSpan(new r61(AndroidUtilities.bold()), 0, spannableString2.length(), 33);
                         spannableStringBuilder2.replace(indexOf2, indexOf2 + 2, (CharSequence) spannableString2);
                     }
                     b6Var.l(spannableStringBuilder2, false);
@@ -315,7 +315,7 @@ public final class c0 extends lm0 {
                 textView.setTextSize(1, 16.0f);
                 textView.setEllipsize(TextUtils.TruncateAt.MIDDLE);
                 textView.setSingleLine(true);
-                frameLayout.addView(textView, gb1.h(-1, -2.0f, 0, 11.0f, 0.0f, 11.0f, 0.0f));
+                frameLayout.addView(textView, kb1.h(-1, -2.0f, 0, 11.0f, 0.0f, 11.0f, 0.0f));
                 int dp2 = AndroidUtilities.dp(8.0f);
                 int i21 = y6.e7;
                 u6Var4 = ((k3) j0Var).resourcesProvider;
@@ -381,7 +381,7 @@ public final class c0 extends lm0 {
                     u6Var10 = ((k3) j0Var).resourcesProvider;
                     imageView.setBackground(j03);
                     org.telegram.ui.ActionBar.f7.k(imageView, j03, null, h10, u6Var10);
-                    frameLayout.addView(imageView, gb1.h(40, 40.0f, 21, 15.0f, 0.0f, 15.0f, 0.0f));
+                    frameLayout.addView(imageView, kb1.h(40, 40.0f, 21, 15.0f, 0.0f, 15.0f, 0.0f));
                     final int i25 = 3;
                     imageView.setOnClickListener(new View.OnClickListener(this) { // from class: tg.a0
                         public final /* synthetic */ c0 b;
@@ -429,8 +429,8 @@ public final class c0 extends lm0 {
                 i16 = ((k3) j0Var).backgroundPaddingLeft;
                 linearLayout.setPadding(dp4, 0, AndroidUtilities.dp(6.0f) + i16, 0);
                 linearLayout.setOrientation(1);
-                ga0 ga0Var = new ga0(context);
-                z90 z90Var = new z90(context, null);
+                ha0 ha0Var = new ha0(context);
+                aa0 aa0Var = new aa0(context, null);
                 SpannableStringBuilder replaceTags = AndroidUtilities.replaceTags(LocaleController.getString(j0Var.B1() ? R.string.BoostingStoriesByGiftingGroup2 : R.string.BoostingStoriesByGiftingChannel2));
                 SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(LocaleController.getString(R.string.BoostingStoriesByGiftingLink));
                 spannableStringBuilder.setSpan(new hb(this, i17), 0, spannableStringBuilder.length(), 33);
@@ -444,22 +444,22 @@ public final class c0 extends lm0 {
                 zqVar.setWidth(AndroidUtilities.dp(11.0f));
                 zqVar.setTranslateX(-AndroidUtilities.dp(5.0f));
                 spannableString.setSpan(zqVar, 0, spannableString.length(), 33);
-                z90Var.setText(TextUtils.concat(replaceTags, " ", AndroidUtilities.replaceCharSequence(">", spannableStringBuilder, spannableString)));
-                z90Var.setTextSize(1, 14.0f);
-                z90Var.setLineSpacing(AndroidUtilities.dp(3.0f), 1.0f);
+                aa0Var.setText(TextUtils.concat(replaceTags, " ", AndroidUtilities.replaceCharSequence(">", spannableStringBuilder, spannableString)));
+                aa0Var.setTextSize(1, 14.0f);
+                aa0Var.setLineSpacing(AndroidUtilities.dp(3.0f), 1.0f);
                 u6Var11 = ((k3) j0Var).resourcesProvider;
                 if (u6Var11 instanceof di.b) {
                     int i27 = y6.y6;
                     u6Var14 = ((k3) j0Var).resourcesProvider;
-                    org.telegram.ui.ActionBar.f7.V(z90Var, i27, u6Var14);
+                    org.telegram.ui.ActionBar.f7.V(aa0Var, i27, u6Var14);
                 } else {
                     int i28 = y6.G6;
                     u6Var12 = ((k3) j0Var).resourcesProvider;
-                    org.telegram.ui.ActionBar.f7.V(z90Var, i28, u6Var12);
+                    org.telegram.ui.ActionBar.f7.V(aa0Var, i28, u6Var12);
                 }
                 final int i29 = 1;
-                z90Var.setGravity(1);
-                z90Var.setOnClickListener(new View.OnClickListener(this) { // from class: tg.a0
+                aa0Var.setGravity(1);
+                aa0Var.setOnClickListener(new View.OnClickListener(this) { // from class: tg.a0
                     public final /* synthetic */ c0 b;
 
                     {
@@ -493,7 +493,7 @@ public final class c0 extends lm0 {
                         }
                     }
                 });
-                ga0Var.setOnClickListener(new ig.d0(z90Var, 21));
+                ha0Var.setOnClickListener(new ig.d0(aa0Var, 21));
                 if (j0Var.C1()) {
                     u6Var13 = ((k3) j0Var).resourcesProvider;
                     fi.d dVar = new fi.d(context, u6Var13, true);
@@ -533,14 +533,14 @@ public final class c0 extends lm0 {
                         }
                     });
                     LinearLayout linearLayout2 = new LinearLayout(context);
-                    linearLayout2.addView(j0Var.G0, gb1.t(-1, 44, 1.0f, 0, 0, 0, 4, 0));
-                    linearLayout2.addView(dVar, gb1.t(-1, 44, 1.0f, 0, 4, 0, 0, 0));
-                    linearLayout.addView(linearLayout2, gb1.o(12.0f, 12.0f, 12.0f, 8.0f, -1, 44));
+                    linearLayout2.addView(j0Var.G0, kb1.t(-1, 44, 1.0f, 0, 0, 0, 4, 0));
+                    linearLayout2.addView(dVar, kb1.t(-1, 44, 1.0f, 0, 4, 0, 0, 0));
+                    linearLayout.addView(linearLayout2, kb1.o(12.0f, 12.0f, 12.0f, 8.0f, -1, 44));
                 } else {
-                    linearLayout.addView(j0Var.F0, gb1.o(12.0f, 12.0f, 12.0f, 8.0f, -1, 48));
+                    linearLayout.addView(j0Var.F0, kb1.o(12.0f, 12.0f, 12.0f, 8.0f, -1, 48));
                 }
-                linearLayout.addView(ga0Var, gb1.o(0.0f, -5.0f, 0.0f, 0.0f, -1, 48));
-                linearLayout.addView(z90Var, gb1.o(12.0f, -6.0f, 12.0f, 17.0f, -1, -2));
+                linearLayout.addView(ha0Var, kb1.o(0.0f, -5.0f, 0.0f, 0.0f, -1, 48));
+                linearLayout.addView(aa0Var, kb1.o(12.0f, -6.0f, 12.0f, 17.0f, -1, -2));
                 view = linearLayout;
                 break;
             case 9:

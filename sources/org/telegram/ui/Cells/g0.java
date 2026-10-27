@@ -33,14 +33,14 @@ import org.telegram.messenger.SharedConfig;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_bots;
-import org.telegram.ui.Components.aa0;
-import org.telegram.ui.Components.q61;
+import org.telegram.ui.Components.ba0;
 import org.telegram.ui.Components.qq;
-import org.telegram.ui.Components.s90;
-import org.telegram.ui.Components.w90;
-import org.telegram.ui.Components.x61;
+import org.telegram.ui.Components.r61;
+import org.telegram.ui.Components.t90;
+import org.telegram.ui.Components.x90;
+import org.telegram.ui.Components.y61;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public abstract class g0 extends View {
     public final ImageReceiver E;
@@ -58,8 +58,8 @@ public abstract class g0 extends View {
     public int f;
     public int h;
     public int n;
-    public aa0 r;
-    public final w90 s;
+    public ba0 r;
+    public final x90 s;
     public e0 v;
     public final int w;
     public final org.telegram.ui.ActionBar.u6 x;
@@ -67,7 +67,7 @@ public abstract class g0 extends View {
 
     public g0(Context context, int i10, org.telegram.ui.ActionBar.u6 u6Var) {
         super(context);
-        this.s = new w90(this);
+        this.s = new x90(this);
         this.H = AndroidUtilities.dp(4.0f);
         this.w = i10;
         this.x = u6Var;
@@ -211,7 +211,7 @@ public abstract class g0 extends View {
                             z11 = false;
                             MessageObject.addLinks(false, spannableStringBuilder);
                             if (z10) {
-                                spannableStringBuilder.setSpan(new q61(AndroidUtilities.bold()), 0, string.length(), 33);
+                                spannableStringBuilder.setSpan(new r61(AndroidUtilities.bold()), 0, string.length(), 33);
                             }
                         }
                         Emoji.replaceEmoji(spannableStringBuilder, org.telegram.ui.ActionBar.y6.o2.getFontMetricsInt(), z11);
@@ -417,11 +417,11 @@ public abstract class g0 extends View {
                             ClickableSpan[] clickableSpanArr = (ClickableSpan[]) spannable.getSpans(offsetForHorizontal, offsetForHorizontal, ClickableSpan.class);
                             if (clickableSpanArr.length != 0) {
                                 a();
-                                this.r = new aa0(clickableSpanArr[0], this.x, f7, i10, 0);
+                                this.r = new ba0(clickableSpanArr[0], this.x, f7, i10, 0);
                                 try {
                                     try {
                                         int spanStart = spannable.getSpanStart(clickableSpanArr[0]);
-                                        s90 b10 = this.r.b();
+                                        t90 b10 = this.r.b();
                                         b10.d(this.a, spanStart, 0.0f);
                                         this.a.getSelectionPath(spanStart, spannable.getSpanEnd(clickableSpanArr[0]), b10);
                                     } catch (Exception e) {
@@ -451,12 +451,12 @@ public abstract class g0 extends View {
                         z11 = false;
                     }
                 } else {
-                    aa0 aa0Var = this.r;
-                    if (aa0Var != null) {
+                    ba0 ba0Var = this.r;
+                    if (ba0Var != null) {
                         try {
-                            ClickableSpan clickableSpan = (ClickableSpan) aa0Var.i;
-                            if (clickableSpan instanceof x61) {
-                                String url = ((x61) clickableSpan).getURL();
+                            ClickableSpan clickableSpan = (ClickableSpan) ba0Var.i;
+                            if (clickableSpan instanceof y61) {
+                                String url = ((y61) clickableSpan).getURL();
                                 if (!url.startsWith("@")) {
                                     if (!url.startsWith("#")) {
                                         if (!url.startsWith("/")) {

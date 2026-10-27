@@ -56,18 +56,18 @@ import org.telegram.ui.Cells.a9;
 import org.telegram.ui.Cells.n5;
 import org.telegram.ui.Cells.v8;
 import org.telegram.ui.Components.Switch;
-import org.telegram.ui.Components.c71;
+import org.telegram.ui.Components.d71;
 import org.telegram.ui.Components.hu;
-import org.telegram.ui.Components.k80;
-import org.telegram.ui.Components.t61;
-import org.telegram.ui.af1;
-import org.telegram.ui.cy;
-import org.telegram.ui.ux;
+import org.telegram.ui.Components.l80;
+import org.telegram.ui.Components.u61;
+import org.telegram.ui.cf1;
+import org.telegram.ui.ey;
+import org.telegram.ui.xx;
 import org.webrtc.GlGenericDrawer;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class e1 implements Utilities.Callback5, org.telegram.ui.ActionBar.b2, hu, li.n0, ux, q5, c0.j, m4.e0, m4.h1, e2.j, m4.f1, e9.k, oe.d, oi.m, Vector.TLDeserializer, GlGenericDrawer.TextureCallback {
+public final /* synthetic */ class e1 implements Utilities.Callback5, org.telegram.ui.ActionBar.b2, hu, li.n0, xx, q5, c0.j, m4.e0, m4.h1, e2.j, m4.f1, e9.k, oe.d, oi.m, Vector.TLDeserializer, GlGenericDrawer.TextureCallback {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
@@ -76,7 +76,7 @@ public final /* synthetic */ class e1 implements Utilities.Callback5, org.telegr
         this.b = obj;
     }
 
-    @Override // org.telegram.ui.ux
+    @Override // org.telegram.ui.xx
     public /* synthetic */ boolean C() {
         return false;
     }
@@ -86,14 +86,14 @@ public final /* synthetic */ class e1 implements Utilities.Callback5, org.telegr
         ((Switch) this.b).invalidate();
     }
 
-    @Override // org.telegram.ui.ux
-    public /* synthetic */ boolean K(cy cyVar) {
+    @Override // org.telegram.ui.xx
+    public /* synthetic */ boolean K(ey eyVar) {
         return false;
     }
 
     @Override // li.n0
-    public k80 a(li.g1 g1Var) {
-        return k80.H((li.b2) ((s0) this.b).b, g1Var);
+    public l80 a(li.g1 g1Var) {
+        return l80.H((li.b2) ((s0) this.b).b, g1Var);
     }
 
     @Override // e2.j
@@ -459,12 +459,12 @@ public final /* synthetic */ class e1 implements Utilities.Callback5, org.telegr
         switch (this.a) {
             case 0:
                 h1 h1Var = (h1) this.b;
-                t61 t61Var = (t61) obj;
+                u61 u61Var = (u61) obj;
                 View view = (View) obj2;
                 ((Integer) obj3).getClass();
                 float floatValue = ((Float) obj4).floatValue();
                 ((Float) obj5).getClass();
-                int i11 = t61Var.d;
+                int i11 = u61Var.d;
                 if (i11 == -1) {
                     boolean z10 = !h1Var.d;
                     h1Var.d = z10;
@@ -478,9 +478,9 @@ public final /* synthetic */ class e1 implements Utilities.Callback5, org.telegr
                     f2Var.c = new ai.n1(26, h1Var, view);
                     h1Var.presentFragment(f2Var);
                     break;
-                } else if (t61Var.a == 5 && i11 >= 0 && i11 < h1Var.f.length) {
+                } else if (u61Var.a == 5 && i11 >= 0 && i11 < h1Var.f.length) {
                     if (!LocaleController.isRTL ? floatValue < view.getMeasuredWidth() - AndroidUtilities.dp(76.0f) : floatValue > AndroidUtilities.dp(76.0f)) {
-                        int i12 = (t61Var.d + 6) % 7;
+                        int i12 = (u61Var.d + 6) % 7;
                         int i13 = 0;
                         for (int i14 = 0; i14 < h1Var.f[i12].size(); i14++) {
                             if (((g1) h1Var.f[i12].get(i14)).b > i13) {
@@ -488,7 +488,7 @@ public final /* synthetic */ class e1 implements Utilities.Callback5, org.telegr
                             }
                         }
                         int max = Math.max(0, i13 - 1439);
-                        int i15 = (t61Var.d + 1) % 7;
+                        int i15 = (u61Var.d + 1) % 7;
                         int i16 = 1440;
                         for (int i17 = 0; i17 < h1Var.f[i15].size(); i17++) {
                             if (((g1) h1Var.f[i15].get(i17)).a < i16) {
@@ -496,8 +496,8 @@ public final /* synthetic */ class e1 implements Utilities.Callback5, org.telegr
                             }
                         }
                         int i18 = i16 + 1439;
-                        CharSequence charSequence = t61Var.l;
-                        ArrayList arrayList = h1Var.f[t61Var.d];
+                        CharSequence charSequence = u61Var.l;
+                        ArrayList arrayList = h1Var.f[u61Var.d];
                         int i19 = 0;
                         for (int i20 = 0; i20 < 7; i20++) {
                             ArrayList arrayList2 = h1Var.f[i20];
@@ -507,19 +507,19 @@ public final /* synthetic */ class e1 implements Utilities.Callback5, org.telegr
                         }
                         j1 j1Var = new j1(charSequence, arrayList, max, i18, 28 - i19);
                         j1Var.f = new ua(h1Var, 27);
-                        j1Var.h = new u2(23, h1Var, t61Var);
+                        j1Var.h = new u2(23, h1Var, u61Var);
                         h1Var.presentFragment(j1Var);
                         break;
                     } else {
-                        if (h1Var.f[t61Var.d].isEmpty()) {
+                        if (h1Var.f[u61Var.d].isEmpty()) {
                             ((n5) view).setChecked(true);
-                            h1Var.f[t61Var.d].add(new g1(0, 1439));
-                            h1Var.Y(t61Var.d);
+                            h1Var.f[u61Var.d].add(new g1(0, 1439));
+                            h1Var.Y(u61Var.d);
                         } else {
-                            h1Var.f[t61Var.d].clear();
+                            h1Var.f[u61Var.d].clear();
                             ((n5) view).setChecked(false);
                         }
-                        ((n5) view).setValue(h1.b0(h1Var.f[t61Var.d]));
+                        ((n5) view).setValue(h1.b0(h1Var.f[u61Var.d]));
                         h1Var.Z(true);
                         break;
                     }
@@ -527,7 +527,7 @@ public final /* synthetic */ class e1 implements Utilities.Callback5, org.telegr
                 break;
             case 1:
                 final j1 j1Var2 = (j1) this.b;
-                t61 t61Var2 = (t61) obj;
+                u61 u61Var2 = (u61) obj;
                 final View view2 = (View) obj2;
                 ((Integer) obj3).getClass();
                 ((Float) obj4).getClass();
@@ -535,7 +535,7 @@ public final /* synthetic */ class e1 implements Utilities.Callback5, org.telegr
                 int i21 = j1Var2.c;
                 int i22 = j1Var2.d;
                 ArrayList arrayList3 = j1Var2.b;
-                int i23 = t61Var2.d;
+                int i23 = u61Var2.d;
                 if (i23 == -1) {
                     j1Var2.r = !j1Var2.r;
                     arrayList3.clear();
@@ -544,7 +544,7 @@ public final /* synthetic */ class e1 implements Utilities.Callback5, org.telegr
                     }
                     a9 a9Var = (a9) view2;
                     boolean z11 = j1Var2.r;
-                    t61Var2.e = z11;
+                    u61Var2.e = z11;
                     a9Var.setChecked(z11);
                     boolean z12 = j1Var2.r;
                     a9Var.b(y6.x0(null, z12 ? y6.f6 : y6.e6, false), z12);
@@ -572,13 +572,13 @@ public final /* synthetic */ class e1 implements Utilities.Callback5, org.telegr
                     }
                     j1Var2.n.g3.O(true);
                     break;
-                } else if (t61Var2.a == 3 && (i10 = i23 / 3) >= 0 && i10 < arrayList3.size()) {
+                } else if (u61Var2.a == 3 && (i10 = i23 / 3) >= 0 && i10 < arrayList3.size()) {
                     int i25 = i10 - 1;
                     g1 g1Var = i25 >= 0 ? (g1) arrayList3.get(i25) : null;
                     final g1 g1Var2 = (g1) arrayList3.get(i10);
                     int i26 = i10 + 1;
                     g1 g1Var3 = i26 < arrayList3.size() ? (g1) arrayList3.get(i26) : null;
-                    int i27 = t61Var2.d % 3;
+                    int i27 = u61Var2.d % 3;
                     if (i27 == 0) {
                         Activity parentActivity = j1Var2.getParentActivity();
                         String string = LocaleController.getString(R.string.BusinessHoursDayOpenHourPicker);
@@ -712,19 +712,19 @@ public final /* synthetic */ class e1 implements Utilities.Callback5, org.telegr
                 ((Integer) obj3).getClass();
                 ((Float) obj4).getClass();
                 ((Float) obj5).getClass();
-                f2.V((f2) this.b, (t61) obj, (View) obj2);
+                f2.V((f2) this.b, (u61) obj, (View) obj2);
                 break;
         }
     }
 
-    @Override // org.telegram.ui.ux
-    public boolean v(cy cyVar, ArrayList arrayList, CharSequence charSequence, boolean z10, boolean z11, int i10, int i11, af1 af1Var) {
+    @Override // org.telegram.ui.xx
+    public boolean v(ey eyVar, ArrayList arrayList, CharSequence charSequence, boolean z10, boolean z11, int i10, int i11, cf1 cf1Var) {
         i4 i4Var = (i4) this.b;
         if (arrayList.isEmpty() || ((MessagesStorage.TopicKey) arrayList.get(0)).dialogId <= 0) {
             return false;
         }
         i4Var.run(((MessagesStorage.TopicKey) arrayList.get(0)).dialogId);
-        cyVar.finishFragment();
+        eyVar.finishFragment();
         return true;
     }
 
@@ -739,6 +739,6 @@ public final /* synthetic */ class e1 implements Utilities.Callback5, org.telegr
             return;
         }
         Utilities.stackBlurBitmap(bitmap, Math.max(7, Math.max(bitmap.getWidth(), bitmap.getHeight()) / 180));
-        AndroidUtilities.runOnUIThread(new c71(14, tVar, bitmap));
+        AndroidUtilities.runOnUIThread(new d71(15, tVar, bitmap));
     }
 }

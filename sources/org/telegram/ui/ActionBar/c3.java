@@ -13,9 +13,9 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.gb1;
+import org.telegram.ui.Components.kb1;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class c3 extends FrameLayout {
     public final org.telegram.ui.Components.b6 a;
@@ -37,12 +37,12 @@ public final class c3 extends FrameLayout {
         ImageView.ScaleType scaleType = ImageView.ScaleType.CENTER;
         imageView.setScaleType(scaleType);
         f7.t(imageView, y6.J5, u6Var, PorterDuff.Mode.MULTIPLY);
-        addView(imageView, gb1.i(56, 48, (LocaleController.isRTL ? 5 : 3) | 16));
+        addView(imageView, kb1.i(56, 48, (LocaleController.isRTL ? 5 : 3) | 16));
         ImageView imageView2 = new ImageView(context);
         this.c = imageView2;
         imageView2.setScaleType(scaleType);
         f7.t(imageView2, y6.h7, u6Var, PorterDuff.Mode.SRC_IN);
-        addView(imageView2, gb1.i(56, 48, (LocaleController.isRTL ? 3 : 5) | 16));
+        addView(imageView2, kb1.i(56, 48, (LocaleController.isRTL ? 3 : 5) | 16));
         org.telegram.ui.Components.b6 b6Var = new org.telegram.ui.Components.b6(context);
         this.a = b6Var;
         b6Var.setLines(1);
@@ -52,7 +52,7 @@ public final class c3 extends FrameLayout {
         if (i10 == 0 || i10 == 4) {
             f7.V(b6Var, y6.j5, u6Var);
             b6Var.setTextSize(1, 16.0f);
-            addView(b6Var, gb1.i(-2, -2, (LocaleController.isRTL ? 5 : 3) | 16));
+            addView(b6Var, kb1.i(-2, -2, (LocaleController.isRTL ? 5 : 3) | 16));
             return;
         }
         if (i10 == 1) {
@@ -60,7 +60,7 @@ public final class c3 extends FrameLayout {
             f7.V(b6Var, y6.j5, u6Var);
             b6Var.setTextSize(1, 14.0f);
             b6Var.setTypeface(AndroidUtilities.bold());
-            addView(b6Var, gb1.g(-1.0f, -1));
+            addView(b6Var, kb1.g(-1.0f, -1));
             return;
         }
         if (i10 == 2) {
@@ -69,7 +69,7 @@ public final class c3 extends FrameLayout {
             b6Var.setTextSize(1, 14.0f);
             b6Var.setTypeface(AndroidUtilities.bold());
             b6Var.setBackground(o6.e(new float[]{6.0f}, y6.w0(y6.Oh, u6Var)));
-            addView(b6Var, gb1.h(-1, -1.0f, 0, 16.0f, 16.0f, 16.0f, 16.0f));
+            addView(b6Var, kb1.h(-1, -1.0f, 0, 16.0f, 16.0f, 16.0f, 16.0f));
         }
     }
 

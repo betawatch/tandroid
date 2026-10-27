@@ -15,22 +15,22 @@ import org.telegram.ui.ActionBar.r2;
 import org.telegram.ui.ActionBar.y6;
 import org.telegram.ui.Cells.k5;
 import org.telegram.ui.Components.j9;
-import org.telegram.ui.Components.lm0;
-import org.telegram.ui.Components.vl0;
-import org.telegram.ui.nq0;
+import org.telegram.ui.Components.mm0;
+import org.telegram.ui.Components.wl0;
+import org.telegram.ui.pq0;
 import s4.e1;
 import tg.k1;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
-public final class f extends lm0 {
+public final class f extends mm0 {
     public final /* synthetic */ k c;
 
     public f(k kVar) {
         this.c = kVar;
     }
 
-    @Override // org.telegram.ui.Components.lm0
+    @Override // org.telegram.ui.Components.mm0
     public final boolean D(e1 e1Var) {
         return e1Var.f == 0;
     }
@@ -142,18 +142,18 @@ public final class f extends lm0 {
             view = new k5(viewGroup.getContext(), kVar, z10);
         } else {
             r2 r2Var = kVar.g;
-            nq0 nq0Var = new nq0(r2Var.getParentActivity(), 1, r2Var.getResourceProvider());
+            pq0 pq0Var = new pq0(r2Var.getParentActivity(), 1, r2Var.getResourceProvider());
             if (kVar.B) {
-                f7.i(y6.d6, nq0Var, r2Var.getResourceProvider());
+                f7.i(y6.d6, pq0Var, r2Var.getResourceProvider());
             }
-            nq0Var.e(y6.d6, y6.a7, -1);
-            nq0Var.setViewType(15);
-            nq0Var.setMemberRequestButton(z10);
-            nq0Var.setIsSingleCell(true);
-            nq0Var.setItemsCount(1);
-            nq0Var.setTag(-33024);
-            view = nq0Var;
+            pq0Var.e(y6.d6, y6.a7, -1);
+            pq0Var.setViewType(15);
+            pq0Var.setMemberRequestButton(z10);
+            pq0Var.setIsSingleCell(true);
+            pq0Var.setItemsCount(1);
+            pq0Var.setTag(-33024);
+            view = pq0Var;
         }
-        return new vl0(view);
+        return new wl0(view);
     }
 }

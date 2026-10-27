@@ -8,9 +8,9 @@ import org.telegram.ui.Components.g9;
 import org.telegram.ui.Components.li;
 import org.telegram.ui.Components.ti;
 import org.telegram.ui.Components.z8;
-import org.telegram.ui.gg0;
+import org.telegram.ui.ig0;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class g extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -48,11 +48,11 @@ public final class g extends AnimatorListenerAdapter {
                 }
                 break;
             case 4:
-                gg0 gg0Var = (gg0) this.d;
-                AnimatorSet[] animatorSetArr = gg0Var.K;
+                ig0 ig0Var = (ig0) this.d;
+                AnimatorSet[] animatorSetArr = ig0Var.K;
                 boolean z10 = this.b;
                 if (animatorSetArr[!z10 ? 1 : 0] != null && animatorSetArr[!z10 ? 1 : 0].equals(animator)) {
-                    gg0Var.K[!z10 ? 1 : 0] = null;
+                    ig0Var.K[!z10 ? 1 : 0] = null;
                     break;
                 }
                 break;
@@ -112,7 +112,7 @@ public final class g extends AnimatorListenerAdapter {
                         tiVar.A1.setVisibility(4);
                     }
                     if (this.c) {
-                        tiVar.i2();
+                        tiVar.j2();
                         tiVar.R0.setVisibility(z11 ? 0 : 8);
                     }
                     tiVar.P0 = null;
@@ -120,14 +120,14 @@ public final class g extends AnimatorListenerAdapter {
                 }
                 break;
             default:
-                gg0 gg0Var = (gg0) this.d;
-                AnimatorSet[] animatorSetArr = gg0Var.K;
+                ig0 ig0Var = (ig0) this.d;
+                AnimatorSet[] animatorSetArr = ig0Var.K;
                 boolean z12 = this.b;
-                if (animatorSetArr[!z12 ? 1 : 0] != null && animatorSetArr[!z12 ? 1 : 0].equals(animator) && !this.c && z12 && gg0Var.M.getAlpha() != 1.0f) {
-                    gg0Var.M.setAlpha(1.0f);
-                    gg0Var.M.setScaleX(1.0f);
-                    gg0Var.M.setScaleY(1.0f);
-                    gg0Var.M.setVisibility(0);
+                if (animatorSetArr[!z12 ? 1 : 0] != null && animatorSetArr[!z12 ? 1 : 0].equals(animator) && !this.c && z12 && ig0Var.M.getAlpha() != 1.0f) {
+                    ig0Var.M.setAlpha(1.0f);
+                    ig0Var.M.setScaleX(1.0f);
+                    ig0Var.M.setScaleY(1.0f);
+                    ig0Var.M.setVisibility(0);
                     break;
                 }
                 break;

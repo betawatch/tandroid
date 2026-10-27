@@ -26,7 +26,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.ChatActivityEnterView;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class sg extends FrameLayout implements org.telegram.ui.ActionBar.p6 {
     public final Drawable E;
@@ -96,7 +96,7 @@ public final class sg extends FrameLayout implements org.telegram.ui.ActionBar.p
         Drawable drawable = getResources().getDrawable(R.drawable.lock_round_shadow);
         chatActivityEnterView.V3 = drawable;
         org.telegram.ui.ActionBar.f7.y(this, drawable, org.telegram.ui.ActionBar.y6.be, chatActivityEnterView.W3, PorterDuff.Mode.MULTIPLY);
-        this.c = org.telegram.ui.ActionBar.y6.c0(AndroidUtilities.dp(5.0f), chatActivityEnterView.f0(org.telegram.ui.ActionBar.y6.qf));
+        this.c = org.telegram.ui.ActionBar.y6.c0(AndroidUtilities.dp(5.0f), chatActivityEnterView.e0(org.telegram.ui.ActionBar.y6.qf));
         textPaint.setTextSize(AndroidUtilities.dp(14.0f));
         this.d = context.getDrawable(R.drawable.tooltip_arrow);
         this.e = LocaleController.getString("SlideUpToLock", R.string.SlideUpToLock);
@@ -137,13 +137,13 @@ public final class sg extends FrameLayout implements org.telegram.ui.ActionBar.p
             fi.v3 v3Var3 = this.b;
             int i10 = R.raw.fire_on;
             v3Var3.getClass();
-            xj0 xj0Var = new xj0(i10, AndroidUtilities.dp(34.0f), AndroidUtilities.dp(34.0f));
-            xj0Var.start();
-            v3Var3.j(xj0Var);
+            yj0 yj0Var = new yj0(i10, AndroidUtilities.dp(34.0f), AndroidUtilities.dp(34.0f));
+            yj0Var.start();
+            v3Var3.j(yj0Var);
         } else {
             MessagesController.getGlobalMainSettings().edit().putInt("voiceoncehint", MessagesController.getGlobalMainSettings().getInt("voiceoncehint", 0) + 1).apply();
         }
-        addView(this.b, gb1.h(-1, -1.0f, 119, 0.0f, 0.0f, 54.0f, 58.0f));
+        addView(this.b, kb1.h(-1, -1.0f, 119, 0.0f, 0.0f, 54.0f, 58.0f));
         fi.v3 v3Var4 = this.b;
         v3Var4.l0 = new qg(this, v3Var4, 0);
         v3Var4.u();
@@ -892,22 +892,22 @@ public final class sg extends FrameLayout implements org.telegram.ui.ActionBar.p
                     if (v3Var != null && v3Var.V) {
                         a();
                     }
-                    gl0 gl0Var = chatActivityEnterView.h1;
-                    if (gl0Var != null) {
-                        gl0Var.setPlaying(false);
+                    hl0 hl0Var = chatActivityEnterView.h1;
+                    if (hl0Var != null) {
+                        hl0Var.setPlaying(false);
                     }
                     if (!MediaController.getInstance().isRecordingPaused() || (chatActivityEnterView.h1.getAudioLeft() <= 0.01f && chatActivityEnterView.h1.getAudioRight() >= 0.99f)) {
                         pgVar.run();
                     } else {
-                        org.telegram.ui.ip ipVar = new org.telegram.ui.ip(13, this, pgVar);
+                        org.telegram.ui.kp kpVar = new org.telegram.ui.kp(13, this, pgVar);
                         if (MessagesController.getGlobalMainSettings().getBoolean("trimvoicehint", true)) {
                             AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(getContext(), 0, chatActivityEnterView.W3);
                             alertDialog$Builder.a.R = LocaleController.getString(R.string.RecordingTrimTitle);
                             alertDialog$Builder.a.T = LocaleController.getString(R.string.RecordingTrimText);
-                            alertDialog$Builder.k(LocaleController.getString(R.string.OK), new s(ipVar, 19));
+                            alertDialog$Builder.k(LocaleController.getString(R.string.OK), new s(kpVar, 19));
                             ic.a.r(R.string.Cancel, alertDialog$Builder, null);
                         } else {
-                            ipVar.run();
+                            kpVar.run();
                         }
                     }
                 }
@@ -921,8 +921,8 @@ public final class sg extends FrameLayout implements org.telegram.ui.ActionBar.p
                 this.y.d(1, z10, true);
                 MediaDataController mediaDataController = MediaDataController.getInstance(chatActivityEnterView.Q);
                 long j10 = chatActivityEnterView.Q2;
-                org.telegram.ui.un unVar = chatActivityEnterView.P2;
-                mediaDataController.toggleDraftVoiceOnce(j10, (unVar == null || !unVar.t4) ? 0L : unVar.b(), chatActivityEnterView.O);
+                org.telegram.ui.wn wnVar = chatActivityEnterView.P2;
+                mediaDataController.toggleDraftVoiceOnce(j10, (wnVar == null || !wnVar.t4) ? 0L : wnVar.b(), chatActivityEnterView.O);
                 if (chatActivityEnterView.O) {
                     b();
                 } else {
@@ -986,32 +986,32 @@ public final class sg extends FrameLayout implements org.telegram.ui.ActionBar.p
         }
         int i10 = this.Q ? org.telegram.ui.ActionBar.y6.Wk : org.telegram.ui.ActionBar.y6.Zd;
         ChatActivityEnterView chatActivityEnterView = this.b0;
-        lVar.e(chatActivityEnterView.f0(i10), chatActivityEnterView.f0(org.telegram.ui.ActionBar.y6.cf), -1);
-        textPaint.setColor(chatActivityEnterView.f0(org.telegram.ui.ActionBar.y6.pf));
+        lVar.e(chatActivityEnterView.e0(i10), chatActivityEnterView.e0(org.telegram.ui.ActionBar.y6.cf), -1);
+        textPaint.setColor(chatActivityEnterView.e0(org.telegram.ui.ActionBar.y6.pf));
         ShapeDrawable shapeDrawable = this.c;
         if (shapeDrawable != null) {
-            org.telegram.ui.ActionBar.y6.z1(chatActivityEnterView.f0(org.telegram.ui.ActionBar.y6.qf), shapeDrawable);
+            org.telegram.ui.ActionBar.y6.z1(chatActivityEnterView.e0(org.telegram.ui.ActionBar.y6.qf), shapeDrawable);
         } else {
-            this.c = org.telegram.ui.ActionBar.y6.c0(AndroidUtilities.dp(5.0f), chatActivityEnterView.f0(org.telegram.ui.ActionBar.y6.qf));
+            this.c = org.telegram.ui.ActionBar.y6.c0(AndroidUtilities.dp(5.0f), chatActivityEnterView.e0(org.telegram.ui.ActionBar.y6.qf));
         }
-        int f02 = chatActivityEnterView.f0(org.telegram.ui.ActionBar.y6.qf);
+        int e02 = chatActivityEnterView.e0(org.telegram.ui.ActionBar.y6.qf);
         Drawable drawable3 = this.d;
-        if (drawable3 != null && f02 != this.T) {
-            this.T = f02;
-            drawable3.setColorFilter(new PorterDuffColorFilter(f02, PorterDuff.Mode.SRC_IN));
+        if (drawable3 != null && e02 != this.T) {
+            this.T = e02;
+            drawable3.setColorFilter(new PorterDuffColorFilter(e02, PorterDuff.Mode.SRC_IN));
         }
-        this.r.setColor(chatActivityEnterView.f0(org.telegram.ui.ActionBar.y6.ae));
-        this.s.setColor(chatActivityEnterView.f0(this.Q ? org.telegram.ui.ActionBar.y6.Wk : org.telegram.ui.ActionBar.y6.Zd));
-        this.v.setColor(chatActivityEnterView.f0(this.Q ? org.telegram.ui.ActionBar.y6.Wk : org.telegram.ui.ActionBar.y6.Zd));
-        int f03 = chatActivityEnterView.f0(this.Q ? org.telegram.ui.ActionBar.y6.Wk : org.telegram.ui.ActionBar.y6.Zd);
-        if (this.V && f03 == this.U) {
+        this.r.setColor(chatActivityEnterView.e0(org.telegram.ui.ActionBar.y6.ae));
+        this.s.setColor(chatActivityEnterView.e0(this.Q ? org.telegram.ui.ActionBar.y6.Wk : org.telegram.ui.ActionBar.y6.Zd));
+        this.v.setColor(chatActivityEnterView.e0(this.Q ? org.telegram.ui.ActionBar.y6.Wk : org.telegram.ui.ActionBar.y6.Zd));
+        int e03 = chatActivityEnterView.e0(this.Q ? org.telegram.ui.ActionBar.y6.Wk : org.telegram.ui.ActionBar.y6.Zd);
+        if (this.V && e03 == this.U) {
             return;
         }
         this.V = true;
-        this.U = f03;
+        this.U = e03;
         PorterDuff.Mode mode = PorterDuff.Mode.SRC_IN;
-        drawable.setColorFilter(new PorterDuffColorFilter(f03, mode));
-        drawable2.setColorFilter(new PorterDuffColorFilter(f03, mode));
+        drawable.setColorFilter(new PorterDuffColorFilter(e03, mode));
+        drawable2.setColorFilter(new PorterDuffColorFilter(e03, mode));
     }
 
     @Override // android.view.View

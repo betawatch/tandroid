@@ -23,13 +23,13 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
+import org.telegram.ui.Components.aq;
 import org.telegram.ui.Components.ds;
-import org.telegram.ui.Components.gb1;
 import org.telegram.ui.Components.gr;
 import org.telegram.ui.Components.hr;
-import org.telegram.ui.Components.zp;
+import org.telegram.ui.Components.kb1;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class r4 extends FrameLayout implements org.telegram.ui.ActionBar.p6 {
     public boolean E;
@@ -48,7 +48,7 @@ public final class r4 extends FrameLayout implements org.telegram.ui.ActionBar.p
     public float n;
     public boolean r;
     public final hr s;
-    public final zp v;
+    public final aq v;
     public final boolean w;
     public boolean x;
     public final org.telegram.ui.Components.h6 y;
@@ -66,7 +66,7 @@ public final class r4 extends FrameLayout implements org.telegram.ui.ActionBar.p
         org.telegram.ui.Components.y9 y9Var = new org.telegram.ui.Components.y9(context);
         this.a = y9Var;
         y9Var.setRoundRadius(AndroidUtilities.dp(27.0f));
-        addView(y9Var, gb1.h(54, 54.0f, 49, 0.0f, 7.0f, 0.0f, 0.0f));
+        addView(y9Var, kb1.h(54, 54.0f, 49, 0.0f, 7.0f, 0.0f, 0.0f));
         md mdVar = new md(context, 6);
         this.b = mdVar;
         NotificationCenter.listenEmojiLoading(mdVar);
@@ -76,10 +76,10 @@ public final class r4 extends FrameLayout implements org.telegram.ui.ActionBar.p
         mdVar.setGravity(49);
         mdVar.setLines(1);
         mdVar.setEllipsize(TextUtils.TruncateAt.END);
-        addView(mdVar, gb1.h(-1, -2.0f, 51, 6.0f, 64.0f, 6.0f, 0.0f));
+        addView(mdVar, kb1.h(-1, -2.0f, 51, 6.0f, 64.0f, 6.0f, 0.0f));
         hr hrVar = new hr(context, u6Var);
         this.s = hrVar;
-        addView(hrVar, gb1.h(-1, 28.0f, 48, 0.0f, 4.0f, 0.0f, 0.0f));
+        addView(hrVar, kb1.h(-1, 28.0f, 48, 0.0f, 4.0f, 0.0f, 0.0f));
         int i10 = org.telegram.ui.ActionBar.y6.W8;
         int i11 = org.telegram.ui.ActionBar.y6.U8;
         gr grVar = hrVar.a;
@@ -87,14 +87,14 @@ public final class r4 extends FrameLayout implements org.telegram.ui.ActionBar.p
         grVar.w = i11;
         hrVar.setGravity(5);
         if (z10) {
-            zp zpVar = new zp(context, 21, u6Var);
-            this.v = zpVar;
-            zpVar.b(org.telegram.ui.ActionBar.y6.B5, org.telegram.ui.ActionBar.y6.h5, org.telegram.ui.ActionBar.y6.C5);
-            zpVar.setDrawUnchecked(false);
-            zpVar.setDrawBackgroundAsArc(4);
-            zpVar.setProgressDelegate(new na(this, 4));
-            addView(zpVar, gb1.h(24, 24.0f, 49, 19.0f, 42.0f, 0.0f, 0.0f));
-            zpVar.a(false, false);
+            aq aqVar = new aq(context, 21, u6Var);
+            this.v = aqVar;
+            aqVar.b(org.telegram.ui.ActionBar.y6.B5, org.telegram.ui.ActionBar.y6.h5, org.telegram.ui.ActionBar.y6.C5);
+            aqVar.setDrawUnchecked(false);
+            aqVar.setDrawBackgroundAsArc(4);
+            aqVar.setProgressDelegate(new na(this, 4));
+            addView(aqVar, kb1.h(24, 24.0f, 49, 19.0f, 42.0f, 0.0f, 0.0f));
+            aqVar.a(false, false);
             setWillNotDraw(false);
         }
     }

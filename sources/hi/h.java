@@ -12,15 +12,15 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
-import org.telegram.messenger.vh;
+import org.telegram.messenger.wh;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.b7;
 import org.telegram.ui.ActionBar.f7;
 import org.telegram.ui.ActionBar.u6;
 import org.telegram.ui.ActionBar.y6;
-import org.telegram.ui.Components.gb1;
+import org.telegram.ui.Components.kb1;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class h extends FrameLayout {
     public final u6 a;
@@ -40,28 +40,28 @@ public final class h extends FrameLayout {
         imageView.setColorFilter(new PorterDuffColorFilter(-1, mode));
         ImageView.ScaleType scaleType = ImageView.ScaleType.CENTER;
         imageView.setScaleType(scaleType);
-        FrameLayout.LayoutParams h = gb1.h(28, 28.0f, 51, 17.0f, 14.33f, 0.0f, 0.0f);
+        FrameLayout.LayoutParams h = kb1.h(28, 28.0f, 51, 17.0f, 14.33f, 0.0f, 0.0f);
         this.c = h;
         addView(imageView, h);
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setOrientation(1);
-        FrameLayout.LayoutParams h10 = gb1.h(-1, -2.0f, 55, 62.0f, 10.0f, 40.0f, 8.66f);
+        FrameLayout.LayoutParams h10 = kb1.h(-1, -2.0f, 55, 62.0f, 10.0f, 40.0f, 8.66f);
         this.d = h10;
         addView(linearLayout, h10);
         TextView textView = new TextView(context);
         this.e = textView;
-        vh.j(15.0f, 1, textView);
+        wh.j(15.0f, 1, textView);
         f7.V(textView, y6.G6, u6Var);
-        TextView e = vh.e(linearLayout, textView, gb1.x(-1, -2, 55, 0, 0, 0, 0), context);
+        TextView e = wh.e(linearLayout, textView, kb1.x(-1, -2, 55, 0, 0, 0, 0), context);
         this.f = e;
         e.setTextSize(1, 14.0f);
         f7.V(e, y6.z6, u6Var);
-        linearLayout.addView(e, gb1.x(-1, -2, 55, 0, 3, 0, 0));
+        linearLayout.addView(e, kb1.x(-1, -2, 55, 0, 3, 0, 0));
         ImageView imageView2 = new ImageView(context);
         f7.t(imageView2, y6.M6, u6Var, mode);
         imageView2.setImageResource(R.drawable.msg_arrowright);
         imageView2.setScaleType(scaleType);
-        addView(imageView2, gb1.h(24, 24.0f, 21, 0.0f, 0.0f, 10.0f, 0.0f));
+        addView(imageView2, kb1.h(24, 24.0f, 21, 0.0f, 0.0f, 10.0f, 0.0f));
         TextView textView2 = new TextView(context);
         this.h = textView2;
         textView2.setTextColor(-1);
@@ -76,7 +76,7 @@ public final class h extends FrameLayout {
         textView2.setPadding(AndroidUtilities.dp(5.0f), 0, AndroidUtilities.dp(4.0f), 0);
         textView2.setGravity(17);
         textView2.setVisibility(8);
-        addView(textView2, gb1.h(-2, 18.0f, 21, 0.0f, 0.0f, 35.33f, 0.0f));
+        addView(textView2, kb1.h(-2, 18.0f, 21, 0.0f, 0.0f, 35.33f, 0.0f));
     }
 
     public final void a(int i10, int i11, CharSequence charSequence, CharSequence charSequence2) {

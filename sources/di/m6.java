@@ -5,7 +5,7 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class m6 implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -45,7 +45,7 @@ public final /* synthetic */ class m6 implements Runnable {
                             for (int i11 = 0; i11 < peerStories.stories.size(); i11++) {
                                 if (peerStories.stories.get(i11).id == tL_stories_stories.stories.get(i10).id) {
                                     peerStories.stories.set(i11, tL_stories_stories.stories.get(i10));
-                                    h7Var.W(j10, tL_stories_stories.stories.get(i10));
+                                    h7Var.Z(j10, tL_stories_stories.stories.get(i10));
                                 }
                             }
                         }

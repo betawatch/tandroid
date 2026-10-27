@@ -5,7 +5,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public abstract class nb extends ub {
     private mb button;
@@ -58,7 +58,7 @@ public abstract class nb extends ub {
         this.button = mbVar;
         if (mbVar != null) {
             addCallback(mbVar);
-            addView(mbVar, 0, gb1.l(-2.0f, -2.0f, 8388629));
+            addView(mbVar, 0, kb1.l(-2.0f, -2.0f, 8388629));
         }
     }
 
@@ -66,7 +66,7 @@ public abstract class nb extends ub {
         jc jcVar = new jc(getContext(), this.resourcesProvider);
         this.timerView = jcVar;
         jcVar.b = 5000L;
-        addView(jcVar, gb1.m(20.0f, 20.0f, 8388627, 21.0f, 0.0f, 21.0f, 0.0f));
+        addView(jcVar, kb1.m(20.0f, 20.0f, 8388627, 21.0f, 0.0f, 21.0f, 0.0f));
     }
 
     public void setWrapWidth() {

@@ -9,7 +9,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class d2 implements View.OnClickListener {
     public final /* synthetic */ int a = 0;
@@ -49,7 +49,7 @@ public final /* synthetic */ class d2 implements View.OnClickListener {
                     new wc(frameLayout, u6Var).R(R.raw.star_premium_2, 36, AndroidUtilities.premiumText(LocaleController.getString(R.string.MessageScheduledRepeatPremium), new ag.c(29))).j();
                     break;
                 } else {
-                    k80 F = k80.F(k3Var.container, u6Var, frameLayout2);
+                    l80 F = l80.F(k3Var.container, u6Var, frameLayout2);
                     int i10 = 0;
                     while (true) {
                         int[] iArr2 = this.b;
@@ -65,26 +65,26 @@ public final /* synthetic */ class d2 implements View.OnClickListener {
                 }
             default:
                 boolean[] zArr = (boolean[]) this.c;
-                md0 md0Var = (md0) this.d;
-                md0 md0Var2 = (md0) this.e;
-                md0 md0Var3 = (md0) this.f;
-                md0 md0Var4 = (md0) this.h;
+                nd0 nd0Var = (nd0) this.d;
+                nd0 nd0Var2 = (nd0) this.e;
+                nd0 nd0Var3 = (nd0) this.f;
+                nd0 nd0Var4 = (nd0) this.h;
                 bi.r0 r0Var = (bi.r0) this.n;
                 org.telegram.ui.ActionBar.e3 e3Var = (org.telegram.ui.ActionBar.e3) this.r;
                 zArr[0] = false;
-                ju.j((ju) r0Var.c, r0Var.a, r0Var.b, (int) (g5.c(null, md0Var, md0Var2, md0Var3, md0Var4) / 1000), this.b[0]);
+                ju.j((ju) r0Var.c, r0Var.a, r0Var.b, (int) (g5.c(null, nd0Var, nd0Var2, nd0Var3, nd0Var4) / 1000), this.b[0]);
                 runnable = e3Var.a.dismissRunnable;
                 runnable.run();
                 break;
         }
     }
 
-    public /* synthetic */ d2(boolean[] zArr, md0 md0Var, md0 md0Var2, md0 md0Var3, md0 md0Var4, bi.r0 r0Var, int[] iArr, org.telegram.ui.ActionBar.e3 e3Var) {
+    public /* synthetic */ d2(boolean[] zArr, nd0 nd0Var, nd0 nd0Var2, nd0 nd0Var3, nd0 nd0Var4, bi.r0 r0Var, int[] iArr, org.telegram.ui.ActionBar.e3 e3Var) {
         this.c = zArr;
-        this.d = md0Var;
-        this.e = md0Var2;
-        this.f = md0Var3;
-        this.h = md0Var4;
+        this.d = nd0Var;
+        this.e = nd0Var2;
+        this.f = nd0Var3;
+        this.h = nd0Var4;
         this.n = r0Var;
         this.b = iArr;
         this.r = e3Var;

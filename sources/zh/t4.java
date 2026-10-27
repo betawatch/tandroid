@@ -8,9 +8,9 @@ import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.u6;
-import org.telegram.ui.Components.vw0;
+import org.telegram.ui.Components.ww0;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class t4 extends org.telegram.ui.Cells.d3 {
     public final /* synthetic */ int E;
@@ -18,8 +18,8 @@ public final class t4 extends org.telegram.ui.Cells.d3 {
     public final /* synthetic */ eh.f y;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public t4(y4 y4Var, Context context, vw0 vw0Var, String str, int i10, u6 u6Var, eh.f fVar, int i11) {
-        super(context, vw0Var, str, true, i10, u6Var);
+    public t4(y4 y4Var, Context context, ww0 ww0Var, String str, int i10, u6 u6Var, eh.f fVar, int i11) {
+        super(context, ww0Var, str, true, i10, u6Var);
         this.F = y4Var;
         this.y = fVar;
         this.E = i11;

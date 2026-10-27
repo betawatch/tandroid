@@ -21,10 +21,10 @@ import org.telegram.ui.ActionBar.u6;
 import org.telegram.ui.ActionBar.y6;
 import org.telegram.ui.Cells.y;
 import org.telegram.ui.Components.ds;
-import org.telegram.ui.Components.gb1;
 import org.telegram.ui.Components.gq;
+import org.telegram.ui.Components.kb1;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class a extends FrameLayout implements d, p6 {
     public final oe.b a;
@@ -144,7 +144,7 @@ public final class a extends FrameLayout implements d, p6 {
             ImageView imageView = new ImageView(getContext());
             this.c = imageView;
             imageView.setScaleType(ImageView.ScaleType.CENTER);
-            addView(this.c, gb1.i(i11, i11, 17));
+            addView(this.c, kb1.i(i11, i11, 17));
             a();
         }
         this.c.setImageResource(i10);

@@ -1,43 +1,53 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.widget.TextView;
+import android.text.TextUtils;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public final class qb0 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ float b;
-    public final /* synthetic */ rb0 c;
+public final class qb0 extends qg.a {
+    public final CharSequence c;
+    public final int d;
+    public final int e;
+    public final int f;
 
-    public /* synthetic */ qb0(rb0 rb0Var, float f7, int i10) {
-        this.a = i10;
-        this.c = rb0Var;
-        this.b = f7;
+    public qb0(int i10, int i11, CharSequence charSequence, int i12, int i13) {
+        super(i10, false);
+        this.c = charSequence;
+        this.d = i11;
+        this.e = i12;
+        this.f = i13;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                rb0 rb0Var = this.c;
-                TextView textView = rb0Var.f;
-                int x02 = org.telegram.ui.ActionBar.y6.x0(null, org.telegram.ui.ActionBar.y6.y6, false);
-                int x03 = org.telegram.ui.ActionBar.y6.x0(null, org.telegram.ui.ActionBar.y6.n6, false);
-                float f7 = this.b;
-                rb0Var.s = f7;
-                textView.setTextColor(i0.a.f(f7, x02, x03));
-                break;
-            default:
-                rb0 rb0Var2 = this.c;
-                TextView textView2 = rb0Var2.d;
-                int x04 = org.telegram.ui.ActionBar.y6.x0(null, org.telegram.ui.ActionBar.y6.y6, false);
-                int x05 = org.telegram.ui.ActionBar.y6.x0(null, org.telegram.ui.ActionBar.y6.n6, false);
-                float f10 = this.b;
-                rb0Var2.w = f10;
-                textView2.setTextColor(i0.a.f(f10, x04, x05));
-                break;
+    public static qb0 b(int i10, String str) {
+        return new qb0(4, 0, str, i10, 0);
+    }
+
+    public static qb0 c(int i10, int i11, String str) {
+        return new qb0(3, i10, str, i11, 0);
+    }
+
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
         }
+        if (!(obj instanceof qb0)) {
+            return false;
+        }
+        qb0 qb0Var = (qb0) obj;
+        int i10 = qb0Var.a;
+        int i11 = this.a;
+        if (i10 != i11) {
+            return false;
+        }
+        if (i11 == 3 && qb0Var.d != this.d) {
+            return false;
+        }
+        if (i11 == 5 && qb0Var.f != this.f) {
+            return false;
+        }
+        if ((i11 == 3 || i11 == 4) && qb0Var.e != this.e) {
+            return false;
+        }
+        return !(i11 == 0 || i11 == 2 || i11 == 3 || i11 == 4 || i11 == 5) || TextUtils.equals(qb0Var.c, this.c);
     }
 }

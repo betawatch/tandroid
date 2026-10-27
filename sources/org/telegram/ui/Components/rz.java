@@ -10,7 +10,7 @@ import android.widget.HorizontalScrollView;
 import androidx.recyclerview.widget.RecyclerView;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public class rz extends s4.u0 {
     public final int a;
@@ -75,7 +75,7 @@ public class rz extends s4.u0 {
                 float dpf2 = AndroidUtilities.dpf2(i11 == 1 ? 36.0f : 48.0f);
                 float f7 = iArr[i11] / (-dpf2);
                 if (f7 <= 0.0f || f7 >= 1.0f) {
-                    mm0 x9 = szVar.x(i11);
+                    nm0 x9 = szVar.x(i11);
                     int dp = AndroidUtilities.dp(i11 == 1 ? 38.0f : 48.0f);
                     s4.e1 K = x9.K(0);
                     if (K != null) {
@@ -139,11 +139,11 @@ public class rz extends s4.u0 {
         int dp = szVar.h.getCurrentItem() == 0 ? AndroidUtilities.dp(38.0f) : AndroidUtilities.dp(48.0f);
         float f10 = szVar.H;
         if (f10 >= dp) {
-            szVar.M(false);
+            szVar.N(false);
             return;
         }
         if (f10 <= (-dp)) {
-            szVar.M(true);
+            szVar.N(true);
         } else {
             if ((frameLayout.getTag() != null || szVar.H >= 0.0f) && (frameLayout.getTag() == null || szVar.H <= 0.0f)) {
                 return;

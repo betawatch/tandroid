@@ -9,9 +9,9 @@ import org.telegram.messenger.R;
 import org.telegram.ui.ActionBar.f7;
 import org.telegram.ui.ActionBar.u6;
 import org.telegram.ui.ActionBar.y6;
-import org.telegram.ui.Components.gb1;
+import org.telegram.ui.Components.kb1;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class o extends LinearLayout {
     public final TextView a;
@@ -30,12 +30,12 @@ public final class o extends LinearLayout {
         textView.setTextSize(1, 14.0f);
         textView.setGravity(17);
         textView.setTextAlignment(4);
-        addView(textView, gb1.o(0.0f, 0.0f, 0.0f, 19.0f, -1, -2));
+        addView(textView, kb1.o(0.0f, 0.0f, 0.0f, 19.0f, -1, -2));
         bi.v vVar = new bi.v(1, context, u6Var, true);
         this.b = vVar;
         vVar.setMinWidth(AndroidUtilities.dp(200.0f));
         vVar.i(LocaleController.getString(R.string.ProfileBotAddPreview), false, true);
-        addView(vVar, gb1.u(-2, 44, 17));
+        addView(vVar, kb1.u(-2, 44, 17));
         n nVar = new n(context, u6Var);
         this.c = nVar;
         f7.V(nVar, i10, u6Var);
@@ -44,10 +44,10 @@ public final class o extends LinearLayout {
         nVar.setTextAlignment(4);
         nVar.setGravity(17);
         nVar.setTypeface(AndroidUtilities.bold());
-        addView(nVar, gb1.x(165, -2, 17, 0, 17, 0, 12));
+        addView(nVar, kb1.x(165, -2, 17, 0, 17, 0, 12));
         fi.d dVar = new fi.d(context, u6Var, false);
         this.d = dVar;
         dVar.setMinWidth(AndroidUtilities.dp(200.0f));
-        addView(dVar, gb1.u(-2, 44, 17));
+        addView(dVar, kb1.u(-2, 44, 17));
     }
 }

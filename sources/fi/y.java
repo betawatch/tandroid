@@ -6,9 +6,9 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.Components.ds;
-import org.telegram.ui.Components.gb1;
+import org.telegram.ui.Components.kb1;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class y extends FrameLayout {
     public final v a;
@@ -28,7 +28,7 @@ public final class y extends FrameLayout {
         vVar.setVisibility(8);
         vVar.setWillNotDraw(false);
         vVar.setOnItemClickListener(new ai.k(this, 7));
-        addView(vVar, gb1.g(56.0f, -1));
+        addView(vVar, kb1.g(56.0f, -1));
     }
 
     public final void a(boolean z10, boolean z11) {

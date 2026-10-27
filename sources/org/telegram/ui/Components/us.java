@@ -9,7 +9,7 @@ import java.util.HashSet;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class us extends View implements org.telegram.ui.ActionBar.p6 {
     public final oe.b a;
@@ -17,7 +17,7 @@ public final class us extends View implements org.telegram.ui.ActionBar.p6 {
     public final RectF c;
     public final RectF d;
     public final RectF e;
-    public final bq f;
+    public final cp f;
 
     public us(Context context) {
         super(context);
@@ -26,7 +26,7 @@ public final class us extends View implements org.telegram.ui.ActionBar.p6 {
         this.c = new RectF();
         this.d = new RectF();
         this.e = new RectF();
-        this.f = new bq(this, 6);
+        this.f = new cp(this, 7);
         updateColors();
     }
 

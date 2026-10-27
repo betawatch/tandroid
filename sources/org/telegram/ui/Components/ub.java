@@ -21,7 +21,7 @@ import java.util.List;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public abstract class ub extends FrameLayout implements org.telegram.ui.ActionBar.p6 {
     public static final o1.i IN_OUT_OFFSET_Y = new qb(0);
@@ -58,7 +58,7 @@ public abstract class ub extends FrameLayout implements org.telegram.ui.ActionBa
         b();
         setPadding(AndroidUtilities.dp(16.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(16.0f), AndroidUtilities.dp(8.0f));
         setWillNotDraw(false);
-        gb1.c(this, 0.02f, 1.5f);
+        kb1.c(this, 0.02f, 1.5f);
     }
 
     public static boolean a() {
@@ -123,7 +123,7 @@ public abstract class ub extends FrameLayout implements org.telegram.ui.ActionBa
 
     public final void b() {
         if (this.pillStyle) {
-            setLayoutParams(gb1.i(-2, -2, (this.top ? 48 : 80) | 1));
+            setLayoutParams(kb1.i(-2, -2, (this.top ? 48 : 80) | 1));
             return;
         }
         boolean a2 = a();
@@ -133,7 +133,7 @@ public abstract class ub extends FrameLayout implements org.telegram.ui.ActionBa
         } else if (this.top) {
             r1 = 48;
         }
-        setLayoutParams(gb1.i(i10, -2, r1));
+        setLayoutParams(kb1.i(i10, -2, r1));
     }
 
     public tb createTransition() {
@@ -154,7 +154,7 @@ public abstract class ub extends FrameLayout implements org.telegram.ui.ActionBa
         if (bVar.c == null) {
             bVar.b(getMeasuredWidth(), getMeasuredHeight(), 6.0f, AndroidUtilities.dp(10.0f));
         }
-        this.blurVisibilityDrawable.i = a8.ee.b((int) org.telegram.messenger.vh.y(this.inOutOffset, getMeasuredHeight(), 1.0f, 255.0f), 0, 255);
+        this.blurVisibilityDrawable.i = a8.ee.b((int) org.telegram.messenger.wh.y(this.inOutOffset, getMeasuredHeight(), 1.0f, 255.0f), 0, 255);
         this.blurVisibilityDrawable.setBounds(0, 0, getMeasuredWidth(), getMeasuredHeight());
         this.blurVisibilityDrawable.draw(canvas);
     }

@@ -18,18 +18,18 @@ import org.telegram.ui.ActionBar.u6;
 import org.telegram.ui.ActionBar.y6;
 import org.telegram.ui.Components.bb;
 import org.telegram.ui.Components.ds;
-import org.telegram.ui.Components.gb1;
-import org.telegram.ui.Components.j71;
-import org.telegram.ui.Components.lm0;
+import org.telegram.ui.Components.k71;
+import org.telegram.ui.Components.kb1;
 import org.telegram.ui.Components.mm0;
+import org.telegram.ui.Components.nm0;
 import org.telegram.ui.Components.xa;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.Wallet.l6;
-import org.telegram.ui.hk;
-import org.telegram.ui.un;
+import org.telegram.ui.Wallet.m6;
+import org.telegram.ui.jk;
+import org.telegram.ui.wn;
 import s4.l;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class g extends bb implements NotificationCenter.NotificationCenterDelegate {
     public final bg.a X;
@@ -37,17 +37,17 @@ public final class g extends bb implements NotificationCenter.NotificationCenter
     public final FrameLayout Z;
     public Runnable a0;
     public int b0;
-    public j71 c0;
+    public k71 c0;
 
     public g(Context context, u6 u6Var, bg.a aVar, boolean z10, Runnable runnable) {
         super(context, null, false, false, u6Var);
         this.v = 0.2f;
         this.a0 = runnable;
         fixNavigationBar();
-        mm0 mm0Var = this.d;
+        nm0 nm0Var = this.d;
         int i10 = this.backgroundPaddingLeft;
         final int i11 = 0;
-        mm0Var.setPadding(i10, 0, i10, 0);
+        nm0Var.setPadding(i10, 0, i10, 0);
         this.d.setOnItemClickListener(new k(this, 12));
         l lVar = new l();
         lVar.m = false;
@@ -68,7 +68,7 @@ public final class g extends bb implements NotificationCenter.NotificationCenter
         FrameLayout frameLayout = new FrameLayout(context);
         this.Z = frameLayout;
         fi.d dVar = new fi.d(getContext(), getResourcesProvider(), true);
-        frameLayout.addView(dVar, gb1.x(-1, 48, 17, 20, 10, 20, 20));
+        frameLayout.addView(dVar, kb1.x(-1, 48, 17, 20, 10, 20, 20));
         if (z10 || h.z0()) {
             dVar.i(LocaleController.getString(R.string.TopUpViaFragment), false, true);
             dVar.setOnClickListener(new View.OnClickListener(this) { // from class: gi.f
@@ -112,9 +112,9 @@ public final class g extends bb implements NotificationCenter.NotificationCenter
                 }
             });
         }
-        j71 j71Var = this.c0;
-        if (j71Var != null) {
-            j71Var.O(false);
+        k71 k71Var = this.c0;
+        if (k71Var != null) {
+            k71Var.O(false);
         }
     }
 
@@ -122,9 +122,9 @@ public final class g extends bb implements NotificationCenter.NotificationCenter
     public final void didReceivedNotification(int i10, int i11, Object... objArr) {
         Runnable runnable;
         if (i10 == NotificationCenter.starOptionsLoaded || i10 == NotificationCenter.starBalanceUpdated) {
-            j71 j71Var = this.c0;
-            if (j71Var != null) {
-                j71Var.O(true);
+            k71 k71Var = this.c0;
+            if (k71Var != null) {
+                k71Var.O(true);
             }
             bg.a s10 = ca.y(this.currentAccount, true).s();
             TextView textView = (TextView) this.Y.c;
@@ -149,7 +149,7 @@ public final class g extends bb implements NotificationCenter.NotificationCenter
         super.dismiss();
         mc mcVar = this.Y;
         if (mcVar != null) {
-            ((l6) mcVar.b).setPaused(true);
+            ((m6) mcVar.b).setPaused(true);
         }
     }
 
@@ -176,7 +176,7 @@ public final class g extends bb implements NotificationCenter.NotificationCenter
 
     @Override // org.telegram.ui.ActionBar.k3, android.app.Dialog
     public final void show() {
-        hk hkVar;
+        jk jkVar;
         if (ca.y(this.currentAccount, true).s().b >= this.X.b) {
             Runnable runnable = this.a0;
             if (runnable != null) {
@@ -187,22 +187,22 @@ public final class g extends bb implements NotificationCenter.NotificationCenter
             return;
         }
         r2 R = LaunchActivity.R();
-        if (R instanceof un) {
-            un unVar = (un) R;
-            if (unVar.F9() && (hkVar = unVar.Y) != null) {
-                hkVar.M();
+        if (R instanceof wn) {
+            wn wnVar = (wn) R;
+            if (wnVar.I9() && (jkVar = wnVar.Y) != null) {
+                jkVar.L();
             }
         }
         super.show();
-        NotificationCenter.getInstance(this.currentAccount).addObserver(this, NotificationCenter.starOptionsLoaded);
-        NotificationCenter.getInstance(this.currentAccount).addObserver(this, NotificationCenter.starBalanceUpdated);
+        NotificationCenter.getInstance(this.currentAccount).addWeakObserver(this, NotificationCenter.starOptionsLoaded);
+        NotificationCenter.getInstance(this.currentAccount).addWeakObserver(this, NotificationCenter.starBalanceUpdated);
     }
 
     @Override // org.telegram.ui.Components.bb
-    public final lm0 v(mm0 mm0Var) {
-        j71 j71Var = new j71(this.d, getContext(), this.currentAccount, 0, true, new ai.e(this, 25), this.resourcesProvider);
-        this.c0 = j71Var;
-        return j71Var;
+    public final mm0 v(nm0 nm0Var) {
+        k71 k71Var = new k71(this.d, getContext(), this.currentAccount, 0, true, new ai.e(this, 25), this.resourcesProvider);
+        this.c0 = k71Var;
+        return k71Var;
     }
 
     @Override // org.telegram.ui.Components.bb

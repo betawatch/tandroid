@@ -3,18 +3,18 @@ package di;
 import android.content.Context;
 import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.qw;
+import org.telegram.ui.sw;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class k extends org.telegram.ui.ActionBar.m {
     public final /* synthetic */ int d = 1;
     public final /* synthetic */ FrameLayout e;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public k(qw qwVar, Context context, c2.b bVar) {
+    public k(sw swVar, Context context, c2.b bVar) {
         super(context, null, bVar);
-        this.e = qwVar;
+        this.e = swVar;
     }
 
     @Override // org.telegram.ui.ActionBar.m, oe.k
@@ -22,7 +22,7 @@ public final class k extends org.telegram.ui.ActionBar.m {
         switch (this.d) {
             case 0:
                 super.b(lVar);
-                ((qw) this.e).invalidate();
+                ((sw) this.e).invalidate();
                 break;
             default:
                 super.b(lVar);

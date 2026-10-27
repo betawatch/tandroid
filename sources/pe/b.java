@@ -3,13 +3,13 @@ package pe;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewConfiguration;
-import org.telegram.ui.Wallet.q6;
+import org.telegram.ui.Wallet.a6;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
 public final class b {
     public final a a;
-    public q6 b;
+    public a6 b;
     public int c;
     public float d;
     public float e;
@@ -37,9 +37,9 @@ public final class b {
                         throw new AssertionError();
                     }
                     this.c |= 2;
-                    q6 q6Var = new q6(21, this, view);
-                    this.b = q6Var;
-                    view.postDelayed(q6Var, aVar.getLongPressDuration());
+                    a6 a6Var = new a6(22, this, view);
+                    this.b = a6Var;
+                    view.postDelayed(a6Var, aVar.getLongPressDuration());
                     return true;
                 }
             }
@@ -82,11 +82,11 @@ public final class b {
         int i10 = this.c;
         if ((i10 & 2) != 0) {
             this.c = i10 & (-3);
-            q6 q6Var = this.b;
-            if (q6Var == null) {
+            a6 a6Var = this.b;
+            if (a6Var == null) {
                 throw new AssertionError();
             }
-            view.removeCallbacks(q6Var);
+            view.removeCallbacks(a6Var);
             this.b = null;
         }
         int i11 = this.c;

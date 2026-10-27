@@ -10,19 +10,19 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.ui.Components.UndoView;
 import org.telegram.ui.Components.a10;
-import org.telegram.ui.Components.c71;
-import org.telegram.ui.Components.fl0;
-import org.telegram.ui.Components.gb1;
-import org.telegram.ui.Components.k80;
+import org.telegram.ui.Components.d71;
+import org.telegram.ui.Components.gl0;
+import org.telegram.ui.Components.kb1;
+import org.telegram.ui.Components.l80;
 import org.telegram.ui.Components.lb;
 import org.telegram.ui.Components.wc;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.f91;
-import org.telegram.ui.g91;
+import org.telegram.ui.h91;
+import org.telegram.ui.i91;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class l2 implements View.OnLongClickListener {
     public final /* synthetic */ int a;
@@ -54,17 +54,17 @@ public final /* synthetic */ class l2 implements View.OnLongClickListener {
                 if (v3Var != null) {
                     v3Var.e(true);
                 }
-                fl0 fl0Var = q4Var.g3;
-                if (fl0Var == null) {
-                    fl0 fl0Var2 = new fl0(2, q4Var.r2, q4Var.getContext(), LaunchActivity.R(), new s2(4, q4Var.q0));
-                    q4Var.g3 = fl0Var2;
-                    fl0Var2.setPadding(0, 0, 0, AndroidUtilities.dp(22.0f));
-                    q4Var.addView(q4Var.g3, q4Var.getChildCount() - 1, gb1.h(-2, 74.0f, 53, 0.0f, 0.0f, 12.0f, 64.0f));
+                gl0 gl0Var = q4Var.g3;
+                if (gl0Var == null) {
+                    gl0 gl0Var2 = new gl0(2, q4Var.r2, q4Var.getContext(), LaunchActivity.R(), new s2(4, q4Var.q0));
+                    q4Var.g3 = gl0Var2;
+                    gl0Var2.setPadding(0, 0, 0, AndroidUtilities.dp(22.0f));
+                    q4Var.addView(q4Var.g3, q4Var.getChildCount() - 1, kb1.h(-2, 74.0f, 53, 0.0f, 0.0f, 12.0f, 64.0f));
                     q4Var.g3.setVisibility(8);
                     q4Var.g3.setDelegate(new p3(q4Var));
                     q4Var.g3.p(null, null, true);
                 } else {
-                    q4Var.bringChildToFront(fl0Var);
+                    q4Var.bringChildToFront(gl0Var);
                     q4Var.g3.n();
                 }
                 q4Var.g3.setFragment(LaunchActivity.R());
@@ -92,10 +92,10 @@ public final /* synthetic */ class l2 implements View.OnLongClickListener {
                 MessagesController.getGlobalNotificationsSettings().edit().putInt("speedhint", -15).apply();
                 break;
             case 3:
-                k80 k80Var = (k80) obj2;
-                ((c71) obj).run();
-                if (k80Var.J) {
-                    k80Var.u();
+                l80 l80Var = (l80) obj2;
+                ((d71) obj).run();
+                if (l80Var.J) {
+                    l80Var.u();
                     break;
                 }
                 break;
@@ -127,27 +127,27 @@ public final /* synthetic */ class l2 implements View.OnLongClickListener {
                 }
                 break;
             default:
-                f91 f91Var = (f91) obj2;
+                h91 h91Var = (h91) obj2;
                 mg.f fVar = (mg.f) obj;
-                g91 g91Var = f91Var.d;
-                a10 a10Var = f91Var.a;
+                i91 i91Var = h91Var.d;
+                a10 a10Var = h91Var.a;
                 if (a10Var.c) {
-                    g91Var.f();
-                    ArrayList arrayList = g91Var.n;
-                    kg.h hVar = g91Var.c;
+                    i91Var.f();
+                    ArrayList arrayList = i91Var.n;
+                    kg.h hVar = i91Var.c;
                     int size = arrayList.size();
                     for (int i12 = 0; i12 < size; i12++) {
-                        ((f91) arrayList.get(i12)).a.setChecked(false);
-                        ((f91) arrayList.get(i12)).b.n = false;
-                        if (g91Var.r.c > 0 && i12 < hVar.d.size()) {
+                        ((h91) arrayList.get(i12)).a.setChecked(false);
+                        ((h91) arrayList.get(i12)).b.n = false;
+                        if (i91Var.r.c > 0 && i12 < hVar.d.size()) {
                             ((mg.f) hVar.d.get(i12)).n = false;
                         }
                     }
                     a10Var.setChecked(true);
                     fVar.n = true;
-                    g91Var.b.z();
-                    if (g91Var.r.c > 0) {
-                        ((mg.f) hVar.d.get(f91Var.c)).n = true;
+                    i91Var.b.z();
+                    if (i91Var.r.c > 0) {
+                        ((mg.f) hVar.d.get(h91Var.c)).n = true;
                         hVar.z();
                     }
                     break;

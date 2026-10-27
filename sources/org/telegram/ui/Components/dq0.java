@@ -1,123 +1,185 @@
 package org.telegram.ui.Components;
 
+import android.animation.ValueAnimator;
 import android.graphics.Canvas;
-import android.graphics.ColorFilter;
 import android.graphics.Paint;
+import android.graphics.drawable.Drawable;
+import android.view.View;
+import java.util.HashSet;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.UserObject;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public final class dq0 extends rx0 {
-    public boolean a = false;
-    public long b = 0;
-    public boolean c = false;
-    public float d;
-    public final Paint e;
+public final class dq0 extends View implements org.telegram.ui.ActionBar.p6 {
+    public static final qw0 w;
+    public ImageReceiver a;
+    public j9 b;
+    public org.telegram.ui.Cells.y c;
+    public Paint d;
+    public Paint e;
+    public o1.j f;
+    public ValueAnimator h;
+    public float n;
+    public boolean r;
+    public boolean s;
+    public int v;
 
-    public dq0(boolean z10) {
-        if (z10) {
-            Paint paint = new Paint(1);
-            this.e = paint;
-            paint.setStyle(Paint.Style.STROKE);
-            paint.setStrokeCap(Paint.Cap.ROUND);
-            paint.setStrokeWidth(AndroidUtilities.dp(2.0f));
-        }
+    static {
+        qw0 qw0Var = new qw0(new rd0(16), new rd0(17));
+        qw0Var.c = 100.0f;
+        w = qw0Var;
     }
 
-    @Override // org.telegram.ui.Components.rx0
-    public final void b(int i10) {
-        Paint paint = this.e;
-        if (paint != null) {
-            paint.setColor(i10);
-        }
-    }
-
-    @Override // org.telegram.ui.Components.rx0
-    public final void c(boolean z10) {
-        this.a = z10;
-    }
-
-    @Override // org.telegram.ui.Components.rx0
-    public final void d() {
-        this.b = System.currentTimeMillis();
-        this.c = true;
-        invalidateSelf();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        Paint paint = this.e;
-        if (paint == null) {
-            paint = org.telegram.ui.ActionBar.y6.d2;
-        }
-        Paint paint2 = paint;
-        int i10 = 0;
-        while (i10 < 3) {
-            if (i10 == 0) {
-                paint2.setAlpha((int) (this.d * 255.0f));
-            } else if (i10 == 2) {
-                paint2.setAlpha((int) ((1.0f - this.d) * 255.0f));
-            } else {
-                paint2.setAlpha(255);
-            }
-            float dp = (AndroidUtilities.dp(5.0f) * i10) + (AndroidUtilities.dp(5.0f) * this.d);
-            float f7 = 8.0f;
-            Canvas canvas2 = canvas;
-            canvas2.drawLine(dp, AndroidUtilities.dp(this.a ? 3.0f : 4.0f), dp + AndroidUtilities.dp(4.0f), AndroidUtilities.dp(this.a ? 7.0f : 8.0f), paint2);
-            float dp2 = AndroidUtilities.dp(this.a ? 11.0f : 12.0f);
-            float dp3 = dp + AndroidUtilities.dp(4.0f);
-            if (this.a) {
-                f7 = 7.0f;
-            }
-            canvas2.drawLine(dp, dp2, dp3, AndroidUtilities.dp(f7), paint2);
-            i10++;
-            canvas = canvas2;
-        }
-        if (!this.c) {
+    public final void a(boolean z10, boolean z11, float f7) {
+        if (!z10) {
+            this.n = f7;
+            invalidate();
             return;
         }
-        long currentTimeMillis = System.currentTimeMillis();
-        long j10 = currentTimeMillis - this.b;
-        this.b = currentTimeMillis;
-        if (j10 > 50) {
-            j10 = 50;
+        o1.j jVar = this.f;
+        if (jVar != null) {
+            jVar.c();
         }
-        this.d = (j10 / 500.0f) + this.d;
-        while (true) {
-            float f10 = this.d;
-            if (f10 <= 1.0f) {
-                a();
-                return;
+        ValueAnimator valueAnimator = this.h;
+        if (valueAnimator != null) {
+            valueAnimator.cancel();
+        }
+        this.s = false;
+        this.r = false;
+        if (!z11) {
+            ValueAnimator duration = ValueAnimator.ofFloat(this.n, f7).setDuration(200L);
+            this.h = duration;
+            duration.setInterpolator(ds.f);
+            this.h.addUpdateListener(new f80(this, 17));
+            this.h.addListener(new i10(this, 19));
+            this.h.start();
+            return;
+        }
+        float f10 = this.n * 100.0f;
+        o1.j jVar2 = new o1.j(this, w);
+        jVar2.b = f10;
+        jVar2.c = true;
+        this.f = jVar2;
+        boolean z12 = f7 < this.n;
+        float f11 = f7 * 100.0f;
+        this.s = z12;
+        this.r = !z12;
+        o1.k kVar = new o1.k(f11);
+        kVar.i = f11;
+        kVar.b(450.0f);
+        kVar.a(1.0f);
+        jVar2.u = kVar;
+        this.f.b(new nh(this, z12, f10, f11));
+        this.f.a(new hb(this, 4));
+        this.f.h();
+    }
+
+    @Override // android.view.View
+    public final void drawableStateChanged() {
+        super.drawableStateChanged();
+        this.c.setState(getDrawableState());
+    }
+
+    public float getProgress() {
+        return this.n;
+    }
+
+    @Override // android.view.View
+    public final void jumpDrawablesToCurrentState() {
+        super.jumpDrawablesToCurrentState();
+        this.c.jumpToCurrentState();
+    }
+
+    @Override // android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        this.a.onAttachedToWindow();
+    }
+
+    @Override // android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        this.a.onDetachedFromWindow();
+    }
+
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        Paint paint = this.d;
+        Paint paint2 = this.e;
+        canvas.save();
+        float f7 = 1.0f;
+        if (this.r) {
+            f7 = 1.0f - this.n;
+        } else if (this.s) {
+            f7 = this.n;
+        }
+        canvas.scale(f7, f7, getWidth() / 2.0f, getHeight() / 2.0f);
+        super.onDraw(canvas);
+        this.a.draw(canvas);
+        int i10 = (int) (this.n * 255.0f);
+        paint.setAlpha(i10);
+        canvas.drawCircle(getWidth() / 2.0f, getHeight() / 2.0f, Math.min(getWidth(), getHeight()) / 2.0f, paint);
+        canvas.save();
+        paint2.setAlpha(i10);
+        float strokeWidth = paint2.getStrokeWidth() + AndroidUtilities.dp(10.0f);
+        canvas.drawLine(strokeWidth, strokeWidth, getWidth() - strokeWidth, getHeight() - strokeWidth, paint2);
+        canvas.drawLine(strokeWidth, getHeight() - strokeWidth, getWidth() - strokeWidth, strokeWidth, paint2);
+        canvas.restore();
+        this.c.setBounds(0, 0, getWidth(), getHeight());
+        this.c.draw(canvas);
+        canvas.restore();
+    }
+
+    @Override // android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(getLayoutParams().width, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(getLayoutParams().height, TLObject.FLAG_30));
+        this.a.setImageCoords(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight());
+    }
+
+    public void setAvatar(TLObject tLObject) {
+        j9 j9Var = this.b;
+        setContentDescription(LocaleController.formatString("AccDescrSendAsPeer", R.string.AccDescrSendAsPeer, tLObject instanceof TLRPC.User ? UserObject.getFirstName((TLRPC.User) tLObject) : tLObject instanceof TLRPC.Chat ? ((TLRPC.Chat) tLObject).title : tLObject instanceof TLRPC.ChatInvite ? ((TLRPC.ChatInvite) tLObject).title : ""));
+        j9Var.p(tLObject);
+        this.a.setForUserOrChat(tLObject, j9Var);
+    }
+
+    public void setProgress(float f7) {
+        a(true, f7 != 0.0f, f7);
+    }
+
+    @Override // org.telegram.ui.ActionBar.p6
+    public final void updateColors() {
+        this.d.setColor(org.telegram.ui.ActionBar.y6.x0(null, org.telegram.ui.ActionBar.y6.cf, false));
+        this.e.setColor(org.telegram.ui.ActionBar.y6.x0(null, org.telegram.ui.ActionBar.y6.bf, false));
+        if (this.c != null) {
+            int o12 = org.telegram.ui.ActionBar.y6.o1(0.2f, org.telegram.ui.ActionBar.y6.x0(null, org.telegram.ui.ActionBar.y6.d6, false));
+            if (o12 != this.v) {
+                this.v = o12;
+                org.telegram.ui.ActionBar.y6.E1(this.c, o12, true);
             }
-            this.d = f10 - 1.0f;
+            invalidate();
+            return;
         }
+        this.v = org.telegram.ui.ActionBar.y6.o1(0.2f, org.telegram.ui.ActionBar.y6.x0(null, org.telegram.ui.ActionBar.y6.d6, false));
+        int dp = AndroidUtilities.dp(18.0f);
+        int i10 = this.v;
+        org.telegram.ui.Cells.y j02 = org.telegram.ui.ActionBar.y6.j0(dp, dp, dp, dp, 0, i10, i10);
+        this.c = j02;
+        j02.setCallback(this);
     }
 
-    @Override // org.telegram.ui.Components.rx0
-    public final void e() {
-        this.c = false;
+    @Override // android.view.View
+    public final boolean verifyDrawable(Drawable drawable) {
+        return super.verifyDrawable(drawable) || this.c == drawable;
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicHeight() {
-        return AndroidUtilities.dp(14.0f);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicWidth() {
-        return AndroidUtilities.dp(18.0f);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return 0;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i10) {
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
+    @Override // org.telegram.ui.ActionBar.p6
+    public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 }

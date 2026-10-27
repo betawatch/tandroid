@@ -21,7 +21,7 @@ import x7.ma;
 import x7.oa;
 import x7.z6;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
 public final class a {
     public volatile Bitmap a;
@@ -92,7 +92,7 @@ public final class a {
         r3Var.a = Long.valueOf(Long.MAX_VALUE & elapsedRealtime2);
         r3Var.h = Integer.valueOf(i10 & ConnectionsManager.DEFAULT_DATACENTER_ID);
         f7 f7Var = new f7(r3Var);
-        d dVar = new d(12, false);
+        d dVar = new d(13, false);
         dVar.d = f7Var;
         m.a.execute(new q1(a2, new c(dVar), task.isSuccessful() ? (String) task.getResult() : i.c.a(a2.g)));
         return aVar;

@@ -65,16 +65,16 @@ import org.telegram.ui.ActionBar.b2;
 import org.telegram.ui.ActionBar.e2;
 import org.telegram.ui.Cells.w7;
 import org.telegram.ui.Components.b10;
-import org.telegram.ui.Components.bm0;
-import org.telegram.ui.Components.jw0;
-import org.telegram.ui.Components.ol0;
-import org.telegram.ui.Components.t61;
-import org.telegram.ui.Components.us0;
+import org.telegram.ui.Components.cm0;
+import org.telegram.ui.Components.kw0;
+import org.telegram.ui.Components.pl0;
+import org.telegram.ui.Components.u61;
+import org.telegram.ui.Components.vs0;
 import rg.s1;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class c implements OnSuccessListener, Utilities.Callback2Return, bm0, g1, b2, ol0, Utilities.Callback5, s1, CameraController.VideoTakeCallback, jw0, g, o, w {
+public final /* synthetic */ class c implements OnSuccessListener, Utilities.Callback2Return, cm0, g1, b2, pl0, Utilities.Callback5, s1, CameraController.VideoTakeCallback, kw0, g, o, w {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
@@ -97,14 +97,14 @@ public final /* synthetic */ class c implements OnSuccessListener, Utilities.Cal
         textView.setClickable(a2);
     }
 
-    @Override // org.telegram.ui.Components.jw0
+    @Override // org.telegram.ui.Components.kw0
     public /* synthetic */ float b(RecyclerView recyclerView) {
         return b10.c(recyclerView);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:22:0x005b  */
     /* JADX WARN: Removed duplicated region for block: B:26:0x005f  */
-    @Override // org.telegram.ui.Components.bm0
+    @Override // org.telegram.ui.Components.cm0
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -112,14 +112,14 @@ public final /* synthetic */ class c implements OnSuccessListener, Utilities.Cal
         MediaController.PhotoEntry photoEntry;
         switch (this.a) {
             case 2:
-                us0 us0Var = ((r) this.b).W;
-                if (!us0Var.G.E1 && (view instanceof w7)) {
+                vs0 vs0Var = ((r) this.b).W;
+                if (!vs0Var.G.E1 && (view instanceof w7)) {
                     MessageObject messageObject = ((w7) view).getMessageObject();
-                    if (!us0Var.c(messageObject)) {
-                        us0Var.e(messageObject);
+                    if (!vs0Var.c(messageObject)) {
+                        vs0Var.e(messageObject);
                         break;
                     } else {
-                        us0Var.g(messageObject);
+                        vs0Var.g(messageObject);
                         break;
                     }
                 }
@@ -173,7 +173,7 @@ public final /* synthetic */ class c implements OnSuccessListener, Utilities.Cal
         return true;
     }
 
-    @Override // org.telegram.ui.Components.ol0
+    @Override // org.telegram.ui.Components.pl0
     public void d() {
         ((n1) this.b).invalidate();
     }
@@ -250,7 +250,7 @@ public final /* synthetic */ class c implements OnSuccessListener, Utilities.Cal
         }
     }
 
-    @Override // org.telegram.ui.Components.jw0
+    @Override // org.telegram.ui.Components.kw0
     public RecyclerView i(View view) {
         ((cd) this.b).getClass();
         return ((ad) view).a;
@@ -295,7 +295,7 @@ public final /* synthetic */ class c implements OnSuccessListener, Utilities.Cal
         return f9.o.x((List) ((Collection) obj2), new s(17, ((l1) this.b).f, obj));
     }
 
-    @Override // org.telegram.ui.Components.jw0
+    @Override // org.telegram.ui.Components.kw0
     public /* synthetic */ void n(RecyclerView recyclerView) {
         b10.b(recyclerView);
     }
@@ -410,12 +410,12 @@ public final /* synthetic */ class c implements OnSuccessListener, Utilities.Cal
         switch (this.a) {
             case 8:
                 ia iaVar = (ia) this.b;
-                t61 t61Var = (t61) obj;
+                u61 u61Var = (u61) obj;
                 ((Integer) obj3).getClass();
                 ((Float) obj4).getClass();
                 ((Float) obj5).getClass();
-                int i11 = t61Var.d;
-                fi.w7 w7Var = (fi.w7) t61Var.G;
+                int i11 = u61Var.d;
+                fi.w7 w7Var = (fi.w7) u61Var.G;
                 iaVar.c(false, true);
                 sb sbVar = iaVar.O;
                 if (w7Var != sbVar.K1 && !sbVar.X1) {
@@ -442,9 +442,9 @@ public final /* synthetic */ class c implements OnSuccessListener, Utilities.Cal
                 break;
             case 16:
                 q qVar = (q) this.b;
-                t61 t61Var2 = (t61) obj;
-                if (!qVar.q0 && t61Var2.d == 1) {
-                    Object obj6 = t61Var2.G;
+                u61 u61Var2 = (u61) obj;
+                if (!qVar.q0 && u61Var2.d == 1) {
+                    Object obj6 = u61Var2.G;
                     if (obj6 instanceof TL_agent.agentProvider) {
                         TL_agent.agentProvider agentprovider = (TL_agent.agentProvider) obj6;
                         qVar.p0 = agentprovider;
@@ -463,7 +463,7 @@ public final /* synthetic */ class c implements OnSuccessListener, Utilities.Cal
                 ((Integer) obj3).getClass();
                 ((Float) obj4).getClass();
                 ((Float) obj5).getClass();
-                ((b5) this.b).W((t61) obj);
+                ((b5) this.b).W((u61) obj);
                 break;
         }
     }
@@ -480,9 +480,9 @@ public final /* synthetic */ class c implements OnSuccessListener, Utilities.Cal
 
     @Override // org.telegram.messenger.Utilities.Callback2Return
     public Object run(Object obj, Object obj2) {
-        us0 us0Var = (us0) this.b;
+        vs0 vs0Var = (vs0) this.b;
         if (((Integer) obj).intValue() == -1) {
-            new ei.u(us0Var.a, LocaleController.getString(R.string.ProfileBotPreviewLanguageChoose), new i(us0Var, 14)).show();
+            new ei.u(vs0Var.a, LocaleController.getString(R.string.ProfileBotPreviewLanguageChoose), new i(vs0Var, 14)).show();
             return Boolean.TRUE;
         }
         return Boolean.FALSE;

@@ -1,36 +1,34 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.LinearGradient;
-import android.graphics.Paint;
-import android.graphics.Shader;
-import android.view.View;
+import org.telegram.tgnet.tl.TL_feed;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public final class tj0 extends View {
-    public final Paint a;
-    public int b;
-    public int c;
-    public final /* synthetic */ xj0 d;
+public final /* synthetic */ class tj0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ zj0 b;
+    public final /* synthetic */ xj0 c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public tj0(xj0 xj0Var, Context context) {
-        super(context);
-        this.d = xj0Var;
-        this.a = new Paint();
+    public /* synthetic */ tj0(zj0 zj0Var, xj0 xj0Var, int i10) {
+        this.a = i10;
+        this.b = zj0Var;
+        this.c = xj0Var;
     }
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        int themedColor = this.d.getThemedColor(org.telegram.ui.ActionBar.y6.d6);
-        Paint paint = this.a;
-        if (paint.getShader() == null || this.b != themedColor || this.c != getHeight()) {
-            this.b = themedColor;
-            this.c = getHeight();
-            paint.setShader(new LinearGradient(0.0f, 0.0f, 0.0f, getHeight(), themedColor, themedColor & 16777215, Shader.TileMode.CLAMP));
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                this.b.m0(this.c);
+                break;
+            default:
+                xj0 xj0Var = this.c;
+                xj0Var.q = null;
+                TL_feed.TL_feed_readFeed tL_feed_readFeed = new TL_feed.TL_feed_readFeed();
+                tL_feed_readFeed.max_position = xj0Var.p;
+                zj0 zj0Var = this.b;
+                zj0Var.getConnectionsManager().sendRequest(tL_feed_readFeed, new rj0(zj0Var, 1));
+                break;
         }
-        canvas.drawRect(0.0f, 0.0f, getWidth(), getHeight(), paint);
     }
 }

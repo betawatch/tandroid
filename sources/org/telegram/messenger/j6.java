@@ -1,51 +1,35 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.ui.Components.l80;
+
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class j6 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ MediaController b;
+    public final /* synthetic */ float b;
+    public final /* synthetic */ NotificationCenter.NotificationCenterDelegate c;
+    public final /* synthetic */ Object d;
 
-    public /* synthetic */ j6(MediaController mediaController, int i10) {
+    public /* synthetic */ j6(NotificationCenter.NotificationCenterDelegate notificationCenterDelegate, Object obj, float f7, int i10) {
         this.a = i10;
-        this.b = mediaController;
+        this.c = notificationCenterDelegate;
+        this.d = obj;
+        this.b = f7;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$playMessage$20();
-                break;
-            case 1:
-                this.b.lambda$setTextureView$15();
-                break;
-            case 2:
-                this.b.lambda$stopRaiseToEarSensors$9();
-                break;
-            case 3:
-                this.b.lambda$toggleRecordingPause$31();
-                break;
-            case 4:
-                this.b.lambda$toggleRecordingPause$32();
-                break;
-            case 5:
-                this.b.lambda$new$2();
-                break;
-            case 6:
-                this.b.lambda$new$3();
-                break;
-            case 7:
-                this.b.lambda$new$4();
-                break;
-            case 8:
-                this.b.lambda$setCurrentVideoVisible$14();
-                break;
-            case 9:
-                this.b.lambda$toggleRecordingPause$33();
+                ((MediaController) this.c).lambda$setPlaybackSpeed$16((MessageObject) this.d, this.b);
                 break;
             default:
-                this.b.lambda$startRaiseToEarSensors$8();
+                org.telegram.ui.j4 j4Var = (org.telegram.ui.j4) this.c;
+                l80 l80Var = (l80) this.d;
+                j4Var.h0.M.c(0.0f, true);
+                l80Var.p = new org.telegram.ui.b0(j4Var, this.b, 0);
+                l80Var.Z();
                 break;
         }
     }

@@ -20,10 +20,10 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.ds;
 import org.telegram.ui.Components.qc;
-import org.telegram.ui.cv0;
-import org.telegram.ui.oy;
+import org.telegram.ui.ev0;
+import org.telegram.ui.qy;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class q3 extends w {
     public final org.telegram.ui.Components.h6 d;
@@ -111,10 +111,10 @@ public final class q3 extends w {
                     if (y3 == null) {
                         y3 = h7Var.z(j10);
                     }
-                    if (h7Var.V(y3, storyItem3, false)) {
+                    if (h7Var.Y(y3, storyItem3, false)) {
                         y9Var.c1 = true;
                     }
-                } else if (q4Var2.H1.V(peerStories2, o4Var.a, true)) {
+                } else if (q4Var2.H1.Y(peerStories2, o4Var.a, true)) {
                     y9Var.c1 = true;
                 }
             } else if (q4Var2.z1 && (storyItem = o4Var.a) != null && (z6Var = y9Var.O0) != null && z6Var.r(storyItem.id)) {
@@ -174,7 +174,7 @@ public final class q3 extends w {
             }
             k6.m mVar = q4Var.f1;
             f12 = 4.0f;
-            float f20 = (1.0f - q4Var.S3) * f7 * f19;
+            float f20 = (1.0f - q4Var.T3) * f7 * f19;
             int i14 = q4Var.A1;
             f11 = 1.0f;
             int g7 = y9Var2.O0.g();
@@ -203,7 +203,7 @@ public final class q3 extends w {
             canvas.restore();
         }
         canvas.save();
-        canvas.translate(0.0f, AndroidUtilities.dp(f14) - (AndroidUtilities.dp(f14) * q4Var.S3));
+        canvas.translate(0.0f, AndroidUtilities.dp(f14) - (AndroidUtilities.dp(f14) * q4Var.T3));
         boolean z11 = o4Var.e && (x9Var = (x9) p4Var.c) != null && x9Var.isBuffering();
         boolean z12 = q4Var.A2;
         boolean z13 = z12 && o4Var != null && o4Var.e && y9Var2.k0;
@@ -212,7 +212,7 @@ public final class q3 extends w {
         int measuredWidth = getMeasuredWidth();
         int i16 = q4Var.B1;
         int i17 = q4Var.C1;
-        float f21 = (f11 - q4Var.S3) * f19;
+        float f21 = (f11 - q4Var.T3) * f19;
         TextPaint textPaint = x8Var2.c;
         if (i17 > 0) {
             boolean z14 = z11 && !z13;
@@ -384,7 +384,7 @@ public final class q3 extends w {
         float f12;
         float f13;
         boolean z10;
-        oy oyVar;
+        qy qyVar;
         v4 v4Var;
         boolean z11;
         float f14;
@@ -416,17 +416,17 @@ public final class q3 extends w {
                 invalidate();
             }
             canvas2.save();
-            cv0 cv0Var = q4Var.M2;
-            if (cv0Var.n) {
+            ev0 ev0Var = q4Var.M2;
+            if (ev0Var.n) {
                 canvas2.save();
-                float f15 = cv0Var.O;
-                float f16 = cv0Var.A;
+                float f15 = ev0Var.O;
+                float f16 = ev0Var.A;
                 float f17 = ((f15 * f16) + 1.0f) - f16;
-                canvas2.scale(f17, f17, cv0Var.o + cv0Var.s, cv0Var.p + cv0Var.t);
-                float f18 = cv0Var.o;
-                float f19 = cv0Var.J;
-                float f20 = cv0Var.A;
-                canvas2.translate((f19 * f20) + f18, (cv0Var.K * f20) + cv0Var.p);
+                canvas2.scale(f17, f17, ev0Var.o + ev0Var.s, ev0Var.p + ev0Var.t);
+                float f18 = ev0Var.o;
+                float f19 = ev0Var.J;
+                float f20 = ev0Var.A;
+                canvas2.translate((f19 * f20) + f18, (ev0Var.K * f20) + ev0Var.p);
             }
             org.telegram.ui.m4 m4Var = (org.telegram.ui.m4) p4Var.e;
             if (m4Var == null || (!p4Var.a && ((h1) p4Var.b) == null)) {
@@ -672,16 +672,16 @@ public final class q3 extends w {
                     q4Var.Y2 = (u3Var.getVisibility() != 0 || u3Var.getProgressToBlackout() <= 0.0f) ? r15 : z10;
                     y9 y9Var2 = ((p9) q4Var.F1).d;
                     y9Var2.L0 = z17;
-                    y9Var2.P();
+                    y9Var2.Q();
                     ((p9) q4Var.F1).d.m1 = q4Var.Y2;
                 }
                 if (f11 <= 0.0f) {
                     super.dispatchDraw(canvas);
                     b(canvas);
                 }
-                oyVar = q4Var.Z0;
-                if (oyVar == null) {
-                    oyVar.e(canvas2);
+                qyVar = q4Var.Z0;
+                if (qyVar == null) {
+                    qyVar.e(canvas2);
                     return;
                 }
                 return;
@@ -709,8 +709,8 @@ public final class q3 extends w {
         }
         if (f11 <= 0.0f) {
         }
-        oyVar = q4Var.Z0;
-        if (oyVar == null) {
+        qyVar = q4Var.Z0;
+        if (qyVar == null) {
         }
     }
 
@@ -760,7 +760,7 @@ public final class q3 extends w {
         if (j4Var != null) {
             y9 y9Var = ((p9) j4Var).d;
             y9Var.Y0 = false;
-            y9Var.P();
+            y9Var.Q();
         }
     }
 

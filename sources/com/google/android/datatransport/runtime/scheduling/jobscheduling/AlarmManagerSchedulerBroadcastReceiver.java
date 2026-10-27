@@ -9,11 +9,11 @@ import java.util.concurrent.Executor;
 import k6.c;
 import m5.i;
 import m5.t;
-import org.telegram.ui.Components.zr0;
-import org.telegram.ui.u90;
+import org.telegram.ui.Components.as0;
+import org.telegram.ui.w90;
 import w5.a;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
 public class AlarmManagerSchedulerBroadcastReceiver extends BroadcastReceiver {
     public static final /* synthetic */ int a = 0;
@@ -32,6 +32,6 @@ public class AlarmManagerSchedulerBroadcastReceiver extends BroadcastReceiver {
             a2.b = Base64.decode(queryParameter2, 0);
         }
         b0 b0Var = t.a().d;
-        ((Executor) b0Var.g).execute(new zr0(b0Var, a2.j(), i10, new u90(20), 22));
+        ((Executor) b0Var.g).execute(new as0(b0Var, a2.j(), i10, new w90(21), 22));
     }
 }

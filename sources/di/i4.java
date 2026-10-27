@@ -12,14 +12,14 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.vh;
+import org.telegram.messenger.wh;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.gb1;
-import org.telegram.ui.Components.z90;
-import org.telegram.ui.a31;
-import org.telegram.ui.m31;
+import org.telegram.ui.Components.aa0;
+import org.telegram.ui.Components.kb1;
+import org.telegram.ui.c31;
+import org.telegram.ui.o31;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class i4 extends FrameLayout {
     public final /* synthetic */ int a;
@@ -169,7 +169,7 @@ public final class i4 extends FrameLayout {
                 super.onMeasure(i10, i11);
                 break;
             case 17:
-                super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), vh.D(48.0f, 1, TLObject.FLAG_30));
+                super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), wh.D(48.0f, 1, TLObject.FLAG_30));
                 break;
             case 19:
                 super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), i11);
@@ -225,7 +225,7 @@ public final class i4 extends FrameLayout {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public i4(m31 m31Var, Context context, int i10, String str, CharSequence charSequence) {
+    public i4(o31 o31Var, Context context, int i10, String str, CharSequence charSequence) {
         super(context);
         org.telegram.ui.ActionBar.u6 u6Var;
         org.telegram.ui.ActionBar.u6 u6Var2;
@@ -236,32 +236,32 @@ public final class i4 extends FrameLayout {
         ImageView imageView = new ImageView(getContext());
         Drawable mutate = getContext().getResources().getDrawable(i10).mutate();
         int i11 = org.telegram.ui.ActionBar.y6.G6;
-        u6Var = ((org.telegram.ui.ActionBar.k3) m31Var).resourcesProvider;
+        u6Var = ((org.telegram.ui.ActionBar.k3) o31Var).resourcesProvider;
         org.telegram.ui.ActionBar.f7.y(this, mutate, i11, u6Var, PorterDuff.Mode.MULTIPLY);
         imageView.setImageDrawable(mutate);
-        addView(imageView, gb1.h(24, 24.0f, z10 ? 5 : 3, z10 ? 0.0f : 27.0f, 6.0f, z10 ? 27.0f : 0.0f, 0.0f));
+        addView(imageView, kb1.h(24, 24.0f, z10 ? 5 : 3, z10 ? 0.0f : 27.0f, 6.0f, z10 ? 27.0f : 0.0f, 0.0f));
         TextView textView = new TextView(getContext());
         textView.setText(str);
-        u6Var2 = ((org.telegram.ui.ActionBar.k3) m31Var).resourcesProvider;
+        u6Var2 = ((org.telegram.ui.ActionBar.k3) o31Var).resourcesProvider;
         org.telegram.ui.ActionBar.f7.V(textView, i11, u6Var2);
         ic.a.o(14.0f, 1, textView);
-        addView(textView, gb1.h(-2, -2.0f, z10 ? 5 : 3, z10 ? 27.0f : 68.0f, 0.0f, z10 ? 68.0f : 27.0f, 0.0f));
-        z90 z90Var = new z90(getContext(), null);
-        z90Var.setText(charSequence);
-        z90Var.setTextSize(1, 14.0f);
+        addView(textView, kb1.h(-2, -2.0f, z10 ? 5 : 3, z10 ? 27.0f : 68.0f, 0.0f, z10 ? 68.0f : 27.0f, 0.0f));
+        aa0 aa0Var = new aa0(getContext(), null);
+        aa0Var.setText(charSequence);
+        aa0Var.setTextSize(1, 14.0f);
         int i12 = org.telegram.ui.ActionBar.y6.Pi;
-        u6Var3 = ((org.telegram.ui.ActionBar.k3) m31Var).resourcesProvider;
-        org.telegram.ui.ActionBar.f7.V(z90Var, i12, u6Var3);
+        u6Var3 = ((org.telegram.ui.ActionBar.k3) o31Var).resourcesProvider;
+        org.telegram.ui.ActionBar.f7.V(aa0Var, i12, u6Var3);
         int i13 = org.telegram.ui.ActionBar.y6.gc;
-        u6Var4 = ((org.telegram.ui.ActionBar.k3) m31Var).resourcesProvider;
-        org.telegram.ui.ActionBar.f7.H(z90Var, i13, u6Var4);
-        z90Var.setLineSpacing(AndroidUtilities.dp(2.0f), 1.0f);
-        z90Var.setPadding(AndroidUtilities.dp(4.0f), 0, AndroidUtilities.dp(4.0f), 0);
-        addView(z90Var, gb1.h(-2, -2.0f, z10 ? 5 : 3, (z10 ? 27 : 68) - 4, 18.0f, (z10 ? 68 : 27) - 4, 0.0f));
+        u6Var4 = ((org.telegram.ui.ActionBar.k3) o31Var).resourcesProvider;
+        org.telegram.ui.ActionBar.f7.H(aa0Var, i13, u6Var4);
+        aa0Var.setLineSpacing(AndroidUtilities.dp(2.0f), 1.0f);
+        aa0Var.setPadding(AndroidUtilities.dp(4.0f), 0, AndroidUtilities.dp(4.0f), 0);
+        addView(aa0Var, kb1.h(-2, -2.0f, z10 ? 5 : 3, (z10 ? 27 : 68) - 4, 18.0f, (z10 ? 68 : 27) - 4, 0.0f));
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public i4(a31 a31Var, Context context, int i10, String str, CharSequence charSequence) {
+    public i4(c31 c31Var, Context context, int i10, String str, CharSequence charSequence) {
         super(context);
         org.telegram.ui.ActionBar.u6 u6Var;
         org.telegram.ui.ActionBar.u6 u6Var2;
@@ -272,27 +272,27 @@ public final class i4 extends FrameLayout {
         ImageView imageView = new ImageView(getContext());
         Drawable mutate = getContext().getResources().getDrawable(i10).mutate();
         int i11 = org.telegram.ui.ActionBar.y6.G6;
-        u6Var = ((org.telegram.ui.ActionBar.k3) a31Var).resourcesProvider;
+        u6Var = ((org.telegram.ui.ActionBar.k3) c31Var).resourcesProvider;
         org.telegram.ui.ActionBar.f7.y(this, mutate, i11, u6Var, PorterDuff.Mode.MULTIPLY);
         imageView.setImageDrawable(mutate);
-        addView(imageView, gb1.h(24, 24.0f, z10 ? 5 : 3, z10 ? 0.0f : 27.0f, 6.0f, z10 ? 27.0f : 0.0f, 0.0f));
+        addView(imageView, kb1.h(24, 24.0f, z10 ? 5 : 3, z10 ? 0.0f : 27.0f, 6.0f, z10 ? 27.0f : 0.0f, 0.0f));
         TextView textView = new TextView(getContext());
         textView.setText(str);
-        u6Var2 = ((org.telegram.ui.ActionBar.k3) a31Var).resourcesProvider;
+        u6Var2 = ((org.telegram.ui.ActionBar.k3) c31Var).resourcesProvider;
         org.telegram.ui.ActionBar.f7.V(textView, i11, u6Var2);
         ic.a.o(14.0f, 1, textView);
-        addView(textView, gb1.h(-2, -2.0f, z10 ? 5 : 3, z10 ? 27.0f : 68.0f, 0.0f, z10 ? 68.0f : 27.0f, 0.0f));
-        z90 z90Var = new z90(getContext(), null);
-        z90Var.setText(charSequence);
-        z90Var.setTextSize(1, 14.0f);
+        addView(textView, kb1.h(-2, -2.0f, z10 ? 5 : 3, z10 ? 27.0f : 68.0f, 0.0f, z10 ? 68.0f : 27.0f, 0.0f));
+        aa0 aa0Var = new aa0(getContext(), null);
+        aa0Var.setText(charSequence);
+        aa0Var.setTextSize(1, 14.0f);
         int i12 = org.telegram.ui.ActionBar.y6.Pi;
-        u6Var3 = ((org.telegram.ui.ActionBar.k3) a31Var).resourcesProvider;
-        org.telegram.ui.ActionBar.f7.V(z90Var, i12, u6Var3);
+        u6Var3 = ((org.telegram.ui.ActionBar.k3) c31Var).resourcesProvider;
+        org.telegram.ui.ActionBar.f7.V(aa0Var, i12, u6Var3);
         int i13 = org.telegram.ui.ActionBar.y6.gc;
-        u6Var4 = ((org.telegram.ui.ActionBar.k3) a31Var).resourcesProvider;
-        org.telegram.ui.ActionBar.f7.H(z90Var, i13, u6Var4);
-        z90Var.setLineSpacing(AndroidUtilities.dp(2.0f), 1.0f);
-        addView(z90Var, gb1.h(-2, -2.0f, z10 ? 5 : 3, z10 ? 27.0f : 68.0f, 18.0f, z10 ? 68.0f : 27.0f, 0.0f));
+        u6Var4 = ((org.telegram.ui.ActionBar.k3) c31Var).resourcesProvider;
+        org.telegram.ui.ActionBar.f7.H(aa0Var, i13, u6Var4);
+        aa0Var.setLineSpacing(AndroidUtilities.dp(2.0f), 1.0f);
+        addView(aa0Var, kb1.h(-2, -2.0f, z10 ? 5 : 3, z10 ? 27.0f : 68.0f, 18.0f, z10 ? 68.0f : 27.0f, 0.0f));
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -306,14 +306,14 @@ public final class i4 extends FrameLayout {
         int i11 = org.telegram.ui.ActionBar.y6.j5;
         org.telegram.ui.ActionBar.f7.t(imageView, i11, null, PorterDuff.Mode.MULTIPLY);
         boolean z10 = LocaleController.isRTL;
-        addView(imageView, gb1.h(24, 24.0f, (z10 ? 5 : 3) | 16, z10 ? 0.0f : 22.0f, 0.0f, z10 ? 22.0f : 0.0f, 0.0f));
+        addView(imageView, kb1.h(24, 24.0f, (z10 ? 5 : 3) | 16, z10 ? 0.0f : 22.0f, 0.0f, z10 ? 22.0f : 0.0f, 0.0f));
         TextView textView = new TextView(context);
         org.telegram.ui.ActionBar.f7.V(textView, i11, null);
         textView.setTextSize(1, 14.0f);
         textView.setGravity(LocaleController.isRTL ? 5 : 3);
         textView.setText(str);
         boolean z11 = LocaleController.isRTL;
-        addView(textView, gb1.h(-1, -2.0f, 23, z11 ? 0.0f : 61.0f, 0.0f, z11 ? 61.0f : 0.0f, 0.0f));
+        addView(textView, kb1.h(-1, -2.0f, 23, z11 ? 0.0f : 61.0f, 0.0f, z11 ? 61.0f : 0.0f, 0.0f));
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -325,24 +325,24 @@ public final class i4 extends FrameLayout {
         int i11 = org.telegram.ui.ActionBar.y6.G6;
         org.telegram.ui.ActionBar.f7.t(imageView, i11, u6Var, PorterDuff.Mode.SRC_IN);
         imageView.setImageResource(i10);
-        addView(imageView, gb1.h(24, 24.0f, 51, 0.0f, 5.0f, 18.0f, 0.0f));
+        addView(imageView, kb1.h(24, 24.0f, 51, 0.0f, 5.0f, 18.0f, 0.0f));
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setOrientation(1);
-        addView(linearLayout, gb1.h(-1, -2.0f, 55, 42.0f, 0.0f, 0.0f, 0.0f));
-        z90 z90Var = new z90(context, null);
-        z90Var.setTypeface(AndroidUtilities.bold());
-        z90Var.setTextSize(1, 14.0f);
-        org.telegram.ui.ActionBar.f7.V(z90Var, i11, u6Var);
+        addView(linearLayout, kb1.h(-1, -2.0f, 55, 42.0f, 0.0f, 0.0f, 0.0f));
+        aa0 aa0Var = new aa0(context, null);
+        aa0Var.setTypeface(AndroidUtilities.bold());
+        aa0Var.setTextSize(1, 14.0f);
+        org.telegram.ui.ActionBar.f7.V(aa0Var, i11, u6Var);
         int i12 = org.telegram.ui.ActionBar.y6.gc;
-        org.telegram.ui.ActionBar.f7.H(z90Var, i12, u6Var);
-        z90Var.setText(str);
-        linearLayout.addView(z90Var, gb1.x(-1, -2, 55, 0, 0, 0, 2));
-        z90 z90Var2 = new z90(context, null);
-        z90Var2.setTextSize(1, 14.0f);
-        org.telegram.ui.ActionBar.f7.V(z90Var2, org.telegram.ui.ActionBar.y6.y6, u6Var);
-        org.telegram.ui.ActionBar.f7.H(z90Var2, i12, u6Var);
-        z90Var2.setText(charSequence);
-        linearLayout.addView(z90Var2, gb1.x(-1, -2, 55, 0, 0, 0, 0));
+        org.telegram.ui.ActionBar.f7.H(aa0Var, i12, u6Var);
+        aa0Var.setText(str);
+        linearLayout.addView(aa0Var, kb1.x(-1, -2, 55, 0, 0, 0, 2));
+        aa0 aa0Var2 = new aa0(context, null);
+        aa0Var2.setTextSize(1, 14.0f);
+        org.telegram.ui.ActionBar.f7.V(aa0Var2, org.telegram.ui.ActionBar.y6.y6, u6Var);
+        org.telegram.ui.ActionBar.f7.H(aa0Var2, i12, u6Var);
+        aa0Var2.setText(charSequence);
+        linearLayout.addView(aa0Var2, kb1.x(-1, -2, 55, 0, 0, 0, 0));
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */

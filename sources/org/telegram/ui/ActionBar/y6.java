@@ -90,29 +90,29 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.Components.ThemeEditorView;
 import org.telegram.ui.Components.ar;
 import org.telegram.ui.Components.b10;
-import org.telegram.ui.Components.bd0;
-import org.telegram.ui.Components.bn0;
-import org.telegram.ui.Components.dq0;
-import org.telegram.ui.Components.eh0;
-import org.telegram.ui.Components.en0;
+import org.telegram.ui.Components.cd0;
+import org.telegram.ui.Components.cn0;
 import org.telegram.ui.Components.eq;
+import org.telegram.ui.Components.eq0;
+import org.telegram.ui.Components.fh0;
+import org.telegram.ui.Components.fn0;
 import org.telegram.ui.Components.h20;
 import org.telegram.ui.Components.i20;
 import org.telegram.ui.Components.n8;
-import org.telegram.ui.Components.r61;
-import org.telegram.ui.Components.rx0;
+import org.telegram.ui.Components.s61;
 import org.telegram.ui.Components.s9;
-import org.telegram.ui.Components.s90;
-import org.telegram.ui.Components.se0;
-import org.telegram.ui.Components.uc0;
+import org.telegram.ui.Components.sx0;
+import org.telegram.ui.Components.t90;
+import org.telegram.ui.Components.te0;
+import org.telegram.ui.Components.vc0;
 import org.telegram.ui.Components.wc;
 import org.telegram.ui.Components.x9;
-import org.telegram.ui.Components.xj0;
+import org.telegram.ui.Components.yj0;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.ic1;
-import org.telegram.ui.un;
+import org.telegram.ui.kc1;
+import org.telegram.ui.wn;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public abstract class y6 {
     public static int A;
@@ -208,7 +208,7 @@ public abstract class y6 {
     public static TextPaint E0;
     public static int E1;
     public static TextPaint E2;
-    public static bd0 E3;
+    public static cd0 E3;
     public static Drawable E4;
     public static final int E5;
     public static final int E6;
@@ -274,7 +274,7 @@ public abstract class y6 {
     public static float[] Gl;
     public static final HashMap H;
     public static TextPaint[] H0;
-    public static xj0 H1;
+    public static yj0 H1;
     public static TextPaint H2;
     public static Drawable H3;
     public static final int H5;
@@ -296,7 +296,7 @@ public abstract class y6 {
     public static final f6 Hl;
     public static x6 I;
     public static TextPaint I0;
-    public static xj0 I1;
+    public static yj0 I1;
     public static TextPaint I2;
     public static Drawable I3;
     public static final int I5;
@@ -318,7 +318,7 @@ public abstract class y6 {
     public static final int[] Il;
     public static x6 J;
     public static TextPaint J0;
-    public static xj0 J1;
+    public static yj0 J1;
     public static TextPaint J2;
     public static Drawable J3;
     public static final int J5;
@@ -340,7 +340,7 @@ public abstract class y6 {
     public static WeakReference Jl;
     public static x6 K;
     public static TextPaint K0;
-    public static xj0 K1;
+    public static yj0 K1;
     public static TextPaint K2;
     public static Drawable K3;
     public static final int K5;
@@ -362,7 +362,7 @@ public abstract class y6 {
     public static Bitmap Kl;
     public static final x6 L;
     public static TextPaint L0;
-    public static xj0 L1;
+    public static yj0 L1;
     public static TextPaint L2;
     public static Drawable L3;
     public static final int L5;
@@ -384,7 +384,7 @@ public abstract class y6 {
     public static int Ll;
     public static x6 M;
     public static TextPaint M0;
-    public static xj0 M1;
+    public static yj0 M1;
     public static TextPaint M2;
     public static Drawable M3;
     public static final int M5;
@@ -406,7 +406,7 @@ public abstract class y6 {
     public static final Paint Ml;
     public static boolean N;
     public static TextPaint N0;
-    public static xj0 N1;
+    public static yj0 N1;
     public static TextPaint N2;
     public static Drawable N3;
     public static final int N5;
@@ -428,7 +428,7 @@ public abstract class y6 {
     public static final Paint Nl;
     public static boolean O;
     public static TextPaint O0;
-    public static xj0 O1;
+    public static yj0 O1;
     public static TextPaint O2;
     public static Drawable O3;
     public static Drawable O4;
@@ -626,7 +626,7 @@ public abstract class y6 {
     public static final int Wj;
     public static final int Wk;
     public static int X;
-    public static bd0 X0;
+    public static cd0 X0;
     public static Paint X1;
     public static TextPaint X2;
     public static Drawable X3;
@@ -827,7 +827,7 @@ public abstract class y6 {
     public static final int fl;
     public static boolean g;
     public static int g0;
-    public static en0 g1;
+    public static fn0 g1;
     public static Paint g2;
     public static TextPaint g3;
     public static Drawable g4;
@@ -849,7 +849,7 @@ public abstract class y6 {
     public static final int gk;
     public static final int gl;
     public static String h0;
-    public static en0 h1;
+    public static fn0 h1;
     public static Paint h2;
     public static Drawable h3;
     public static Drawable h4;
@@ -1144,7 +1144,7 @@ public abstract class y6 {
     public static SparseIntArray tl;
     public static int u;
     public static Paint u0;
-    public static xj0 u1;
+    public static yj0 u1;
     public static TextPaint u2;
     public static Drawable u4;
     public static final int u5;
@@ -1166,7 +1166,7 @@ public abstract class y6 {
     public static SparseIntArray ul;
     public static int v;
     public static Paint v0;
-    public static xj0 v1;
+    public static yj0 v1;
     public static TextPaint v2;
     public static PorterDuffColorFilter v3;
     public static Drawable v4;
@@ -1189,7 +1189,7 @@ public abstract class y6 {
     public static SparseIntArray vl;
     public static String w;
     public static Paint w0;
-    public static xj0 w1;
+    public static yj0 w1;
     public static TextPaint w2;
     public static PorterDuffColorFilter w3;
     public static Drawable w4;
@@ -1212,9 +1212,9 @@ public abstract class y6 {
     public static boolean wl;
     public static double x;
     public static Paint x0;
-    public static xj0 x1;
+    public static yj0 x1;
     public static TextPaint x2;
-    public static se0 x3;
+    public static te0 x3;
     public static Drawable x4;
     public static final int x5;
     public static final int x6;
@@ -1235,7 +1235,7 @@ public abstract class y6 {
     public static final ThreadLocal xl;
     public static double y;
     public static Paint y0;
-    public static xj0 y1;
+    public static yj0 y1;
     public static TextPaint[] y2;
     public static Drawable y3;
     public static Drawable y4;
@@ -1257,7 +1257,7 @@ public abstract class y6 {
     public static final int yk;
     public static final ThreadLocal yl;
     public static Paint z0;
-    public static xj0 z1;
+    public static yj0 z1;
     public static TextPaint z2;
     public static Drawable z3;
     public static Drawable z4;
@@ -1288,7 +1288,7 @@ public abstract class y6 {
     public static final int[] D = new int[4];
     public static final long[] E = new long[4];
     public static final Drawable[] r0 = new Drawable[25];
-    public static final rx0[] u3 = new rx0[6];
+    public static final sx0[] u3 = new sx0[6];
     public static final Drawable[] G4 = new Drawable[2];
     public static final Drawable[] H4 = new Drawable[2];
     public static final Drawable[] I4 = new Drawable[2];
@@ -5322,7 +5322,7 @@ public abstract class y6 {
                         meVar.a = Drawable.createFromPath(file.getAbsolutePath());
                         z15 = true;
                     } else {
-                        uc0 uc0Var = new uc0(false, i14, i17, i16, i15);
+                        vc0 vc0Var = new vc0(false, i14, i17, i16, i15);
                         BitmapFactory.Options options = new BitmapFactory.Options();
                         Bitmap.Config config = Bitmap.Config.ALPHA_8;
                         options.inPreferredConfig = config;
@@ -5334,9 +5334,9 @@ public abstract class y6 {
                         }
                         z15 = decodeFile != null;
                         try {
-                            uc0Var.s(decodeFile, i11);
-                            uc0Var.t(uc0Var.f());
-                            meVar.a = uc0Var;
+                            vc0Var.s(decodeFile, i11);
+                            vc0Var.t(vc0Var.f());
+                            meVar.a = vc0Var;
                         } catch (Throwable th2) {
                             th = th2;
                             FileLog.e(th);
@@ -5374,7 +5374,7 @@ public abstract class y6 {
                             meVar.a = x9Var;
                         }
                     } else {
-                        uc0 uc0Var2 = new uc0(false, i14, i17, i16, i15);
+                        vc0 vc0Var2 = new vc0(false, i14, i17, i16, i15);
                         if (file != null) {
                             Point point = AndroidUtilities.displaySize;
                             int min = Math.min(point.x, point.y);
@@ -5396,9 +5396,9 @@ public abstract class y6 {
                         } else {
                             bitmap = null;
                         }
-                        uc0Var2.s(bitmap, i11);
-                        uc0Var2.u(i12);
-                        meVar.a = uc0Var2;
+                        vc0Var2.s(bitmap, i11);
+                        vc0Var2.u(i12);
+                        meVar.a = vc0Var2;
                     }
                     meVar.e = Boolean.TRUE;
                 } else if (str != null) {
@@ -5449,16 +5449,16 @@ public abstract class y6 {
                                 meVar.e = Boolean.FALSE;
                             }
                         } else if (r6Var.e != 0 && r6Var.f != 0) {
-                            uc0 uc0Var3 = new uc0(false, r6Var.d, r6Var.e, r6Var.f, r6Var.g);
-                            uc0Var3.u(i12);
+                            vc0 vc0Var3 = new vc0(false, r6Var.d, r6Var.e, r6Var.f, r6Var.g);
+                            vc0Var3.u(i12);
                             if (((Boolean) meVar.d).booleanValue()) {
                                 File file3 = new File(ApplicationLoader.getFilesDirFixed(), r6Var.a);
                                 if (file3.exists()) {
-                                    uc0Var3.s(l1(new FileInputStream(file3), 0), (int) (r6Var.k * 100.0f));
+                                    vc0Var3.s(l1(new FileInputStream(file3), 0), (int) (r6Var.k * 100.0f));
                                     meVar.e = Boolean.TRUE;
                                 }
                             }
-                            meVar.a = uc0Var3;
+                            meVar.a = vc0Var3;
                         } else if (((Boolean) meVar.d).booleanValue()) {
                             File file4 = new File(ApplicationLoader.getFilesDirFixed(), r6Var.a);
                             if (file4.exists() && (l13 = l1(new FileInputStream(file4), 0)) != null) {
@@ -5493,9 +5493,9 @@ public abstract class y6 {
         }
         if (!LiteMode.isEnabled(32)) {
             Drawable drawable = (Drawable) meVar.a;
-            if (drawable instanceof uc0) {
-                uc0 uc0Var4 = (uc0) drawable;
-                Bitmap bitmap2 = uc0Var4.u;
+            if (drawable instanceof vc0) {
+                vc0 vc0Var4 = (vc0) drawable;
+                Bitmap bitmap2 = vc0Var4.u;
                 if (bitmap2 == null) {
                     Point point3 = AndroidUtilities.displaySize;
                     i13 = Math.min(point3.x, point3.y);
@@ -5503,7 +5503,7 @@ public abstract class y6 {
                     height = Math.max(point4.x, point4.y);
                 } else {
                     int width = bitmap2.getWidth();
-                    height = uc0Var4.u.getHeight();
+                    height = vc0Var4.u.getHeight();
                     i13 = width;
                 }
                 Bitmap createBitmap = Bitmap.createBitmap(i13, height, Bitmap.Config.ARGB_8888);
@@ -5567,16 +5567,16 @@ public abstract class y6 {
             r3 = new l5(1, false, true, null);
             s3 = new l5(1, true, false, null);
             t3 = new l5(1, true, true, null);
-            se0 se0Var = new se0();
-            se0Var.a = new Path();
-            se0Var.b = -1.0f;
-            se0Var.g = new ArrayList();
-            se0Var.c = 0.293f;
-            se0Var.d = -26.0f;
-            se0Var.e = -28.0f;
-            se0Var.f = 1.0f;
-            x3 = se0Var;
-            se0Var.a("M 34.141 16.042 C 37.384 17.921 40.886 20.001 44.211 21.965 C 46.139 23.104 49.285 24.729 49.586 25.917 C 50.289 28.687 48.484 30 46.274 30 L 6 30.021 C 3.79 30.021 2.075 30.023 2 26.021 L 2.009 3.417 C 2.009 0.417 5.326 -0.58 7.068 0.417 C 10.545 2.406 25.024 10.761 34.141 16.042 Z", 166.0f);
+            te0 te0Var = new te0();
+            te0Var.a = new Path();
+            te0Var.b = -1.0f;
+            te0Var.g = new ArrayList();
+            te0Var.c = 0.293f;
+            te0Var.d = -26.0f;
+            te0Var.e = -28.0f;
+            te0Var.f = 1.0f;
+            x3 = te0Var;
+            te0Var.a("M 34.141 16.042 C 37.384 17.921 40.886 20.001 44.211 21.965 C 46.139 23.104 49.285 24.729 49.586 25.917 C 50.289 28.687 48.484 30 46.274 30 L 6 30.021 C 3.79 30.021 2.075 30.023 2 26.021 L 2.009 3.417 C 2.009 0.417 5.326 -0.58 7.068 0.417 C 10.545 2.406 25.024 10.761 34.141 16.042 Z", 166.0f);
             x3.a("M 37.843 17.769 C 41.143 19.508 44.131 21.164 47.429 23.117 C 48.542 23.775 49.623 24.561 49.761 25.993 C 50.074 28.708 48.557 30 46.347 30 L 6 30.012 C 3.79 30.012 2 28.222 2 26.012 L 2.009 4.609 C 2.009 1.626 5.276 0.664 7.074 1.541 C 10.608 3.309 28.488 12.842 37.843 17.769 Z", 200.0f);
             x3.a("M 40.644 18.756 C 43.986 20.389 49.867 23.108 49.884 25.534 C 49.897 27.154 49.88 24.441 49.894 26.059 C 49.911 28.733 48.6 30 46.39 30 L 6 30.013 C 3.79 30.013 2 28.223 2 26.013 L 2.008 5.52 C 2.008 2.55 5.237 1.614 7.079 2.401 C 10.656 4 31.106 14.097 40.644 18.756 Z", 217.0f);
             x3.a("M 43.782 19.218 C 47.117 20.675 50.075 21.538 50.041 24.796 C 50.022 26.606 50.038 24.309 50.039 26.104 C 50.038 28.736 48.663 30 46.453 30 L 6 29.986 C 3.79 29.986 2 28.196 2 25.986 L 2.008 6.491 C 2.008 3.535 5.196 2.627 7.085 3.316 C 10.708 4.731 33.992 14.944 43.782 19.218 Z", 234.0f);
@@ -5593,7 +5593,7 @@ public abstract class y6 {
             D3 = resources.getDrawable(R.drawable.msg_halfcheck).mutate();
             G3 = resources.getDrawable(R.drawable.msg_halfcheck_s).mutate();
             I3 = resources.getDrawable(R.drawable.msg_halfcheck_s).mutate();
-            E3 = new bd0();
+            E3 = new cd0();
             L3 = resources.getDrawable(R.drawable.ic_lock_header).mutate();
             M3 = resources.getDrawable(R.drawable.msg_views).mutate();
             N3 = resources.getDrawable(R.drawable.msg_views).mutate();
@@ -5987,13 +5987,13 @@ public abstract class y6 {
             I2 = new TextPaint(1);
             Paint paint3 = new Paint();
             U1 = paint3;
-            paint3.setPathEffect(s90.c());
+            paint3.setPathEffect(t90.c());
             Paint paint4 = new Paint();
             V1 = paint4;
-            paint4.setPathEffect(s90.c());
+            paint4.setPathEffect(t90.c());
             Paint paint5 = new Paint();
             W1 = paint5;
-            paint5.setPathEffect(s90.c());
+            paint5.setPathEffect(t90.c());
             Paint paint6 = new Paint(1);
             k2 = paint6;
             paint6.setStrokeCap(cap);
@@ -6212,7 +6212,7 @@ public abstract class y6 {
             p0 = new Paint(1);
             Paint paint5 = new Paint();
             m0 = paint5;
-            paint5.setPathEffect(s90.c());
+            paint5.setPathEffect(t90.c());
             Resources resources = context.getResources();
             Drawable drawable = resources.getDrawable(R.drawable.chats_saved);
             Drawable[] drawableArr = r0;
@@ -6241,45 +6241,45 @@ public abstract class y6 {
             drawableArr[22] = resources.getDrawable(R.drawable.filled_giveaway_premium);
             drawableArr[23] = resources.getDrawable(R.drawable.filled_giveaway_stars);
             drawableArr[24] = resources.getDrawable(R.drawable.filled_suggest_chat_avatar);
-            xj0 xj0Var = u1;
-            if (xj0Var != null) {
-                xj0Var.setCallback(null);
+            yj0 yj0Var = u1;
+            if (yj0Var != null) {
+                yj0Var.setCallback(null);
                 u1.C(false);
             }
-            xj0 xj0Var2 = v1;
-            if (xj0Var2 != null) {
-                xj0Var2.C(false);
+            yj0 yj0Var2 = v1;
+            if (yj0Var2 != null) {
+                yj0Var2.C(false);
             }
-            xj0 xj0Var3 = w1;
-            if (xj0Var3 != null) {
-                xj0Var3.C(false);
+            yj0 yj0Var3 = w1;
+            if (yj0Var3 != null) {
+                yj0Var3.C(false);
             }
-            xj0 xj0Var4 = x1;
-            if (xj0Var4 != null) {
-                xj0Var4.C(false);
+            yj0 yj0Var4 = x1;
+            if (yj0Var4 != null) {
+                yj0Var4.C(false);
             }
-            xj0 xj0Var5 = y1;
-            if (xj0Var5 != null) {
-                xj0Var5.C(false);
+            yj0 yj0Var5 = y1;
+            if (yj0Var5 != null) {
+                yj0Var5.C(false);
             }
-            xj0 xj0Var6 = z1;
-            if (xj0Var6 != null) {
-                xj0Var6.C(false);
+            yj0 yj0Var6 = z1;
+            if (yj0Var6 != null) {
+                yj0Var6.C(false);
             }
-            u1 = new xj0(R.raw.chats_archiveavatar, AndroidUtilities.dp(36.0f), AndroidUtilities.dp(36.0f), false, null);
-            v1 = new xj0(R.raw.chats_archive, AndroidUtilities.dp(36.0f), AndroidUtilities.dp(36.0f), false, null);
-            w1 = new xj0(R.raw.chats_unarchive, AndroidUtilities.dp(36.0f), AndroidUtilities.dp(36.0f), false, null);
-            x1 = new xj0(R.raw.chats_hide, AndroidUtilities.dp(36.0f), AndroidUtilities.dp(36.0f), false, null);
-            y1 = new xj0(R.raw.chats_unhide, AndroidUtilities.dp(36.0f), AndroidUtilities.dp(36.0f), false, null);
-            z1 = new xj0(R.raw.chat_audio_record_delete, AndroidUtilities.dp(30.0f), AndroidUtilities.dp(30.0f), false, null);
-            H1 = new xj0(R.raw.swipe_mute, AndroidUtilities.dp(36.0f), AndroidUtilities.dp(36.0f), false, null);
-            I1 = new xj0(R.raw.swipe_unmute, AndroidUtilities.dp(36.0f), AndroidUtilities.dp(36.0f), false, null);
-            L1 = new xj0(R.raw.swipe_read, AndroidUtilities.dp(36.0f), AndroidUtilities.dp(36.0f), false, null);
-            M1 = new xj0(R.raw.swipe_unread, AndroidUtilities.dp(36.0f), AndroidUtilities.dp(36.0f), false, null);
-            J1 = new xj0(R.raw.swipe_delete, AndroidUtilities.dp(36.0f), AndroidUtilities.dp(36.0f), false, null);
-            O1 = new xj0(R.raw.swipe_unpin, AndroidUtilities.dp(36.0f), AndroidUtilities.dp(36.0f), false, null);
-            N1 = new xj0(R.raw.swipe_pin, AndroidUtilities.dp(36.0f), AndroidUtilities.dp(36.0f), false, null);
-            K1 = new xj0(R.raw.swipe_community_ungroup, AndroidUtilities.dp(28.0f), AndroidUtilities.dp(28.0f), false, null);
+            u1 = new yj0(R.raw.chats_archiveavatar, AndroidUtilities.dp(36.0f), AndroidUtilities.dp(36.0f), false, null);
+            v1 = new yj0(R.raw.chats_archive, AndroidUtilities.dp(36.0f), AndroidUtilities.dp(36.0f), false, null);
+            w1 = new yj0(R.raw.chats_unarchive, AndroidUtilities.dp(36.0f), AndroidUtilities.dp(36.0f), false, null);
+            x1 = new yj0(R.raw.chats_hide, AndroidUtilities.dp(36.0f), AndroidUtilities.dp(36.0f), false, null);
+            y1 = new yj0(R.raw.chats_unhide, AndroidUtilities.dp(36.0f), AndroidUtilities.dp(36.0f), false, null);
+            z1 = new yj0(R.raw.chat_audio_record_delete, AndroidUtilities.dp(30.0f), AndroidUtilities.dp(30.0f), false, null);
+            H1 = new yj0(R.raw.swipe_mute, AndroidUtilities.dp(36.0f), AndroidUtilities.dp(36.0f), false, null);
+            I1 = new yj0(R.raw.swipe_unmute, AndroidUtilities.dp(36.0f), AndroidUtilities.dp(36.0f), false, null);
+            L1 = new yj0(R.raw.swipe_read, AndroidUtilities.dp(36.0f), AndroidUtilities.dp(36.0f), false, null);
+            M1 = new yj0(R.raw.swipe_unread, AndroidUtilities.dp(36.0f), AndroidUtilities.dp(36.0f), false, null);
+            J1 = new yj0(R.raw.swipe_delete, AndroidUtilities.dp(36.0f), AndroidUtilities.dp(36.0f), false, null);
+            O1 = new yj0(R.raw.swipe_unpin, AndroidUtilities.dp(36.0f), AndroidUtilities.dp(36.0f), false, null);
+            N1 = new yj0(R.raw.swipe_pin, AndroidUtilities.dp(36.0f), AndroidUtilities.dp(36.0f), false, null);
+            K1 = new yj0(R.raw.swipe_community_ungroup, AndroidUtilities.dp(28.0f), AndroidUtilities.dp(28.0f), false, null);
             k();
         }
     }
@@ -6288,17 +6288,17 @@ public abstract class y6 {
         return (Drawable) ml.get(str);
     }
 
-    public static uc0 R(int i10, int i11) {
-        uc0 uc0Var = new uc0(i10 != 0, -2368069, -9722489, -2762611, -7817084);
+    public static vc0 R(int i10, int i11) {
+        vc0 vc0Var = new vc0(i10 != 0, -2368069, -9722489, -2762611, -7817084);
         if (i10 <= 0 || i11 <= 0) {
             Point point = AndroidUtilities.displaySize;
             i10 = Math.min(point.x, point.y);
             Point point2 = AndroidUtilities.displaySize;
             i11 = Math.max(point2.x, point2.y);
         }
-        uc0Var.s(SvgHelper.getBitmap(R.raw.default_pattern, i10, i11, -16777216, 1.0f, SvgHelper.ScaleMode.ByWidth), 34);
-        uc0Var.t(uc0Var.f());
-        return uc0Var;
+        vc0Var.s(SvgHelper.getBitmap(R.raw.default_pattern, i10, i11, -16777216, 1.0f, SvgHelper.ScaleMode.ByWidth), 34);
+        vc0Var.t(vc0Var.f());
+        return vc0Var;
     }
 
     public static Drawable R0(String str, u6 u6Var) {
@@ -6370,15 +6370,15 @@ public abstract class y6 {
             U0 = resources.getDrawable(R.drawable.minithumb_play).mutate();
             V0 = resources.getDrawable(R.drawable.list_check).mutate();
             W0 = resources.getDrawable(R.drawable.list_halfcheck);
-            X0 = new bd0();
+            X0 = new cd0();
             Y0 = resources.getDrawable(R.drawable.list_warning_sign);
             Z0 = resources.getDrawable(R.drawable.list_reorder).mutate();
             c1 = resources.getDrawable(R.drawable.list_mute).mutate();
             d1 = resources.getDrawable(R.drawable.list_unmute).mutate();
             e1 = resources.getDrawable(R.drawable.mini_ephemeral_hidden_16).mutate();
             f1 = resources.getDrawable(R.drawable.verified_area).mutate();
-            g1 = new en0(0);
-            h1 = new en0(1);
+            g1 = new fn0(0);
+            h1 = new fn0(1);
             i1 = resources.getDrawable(R.drawable.verified_check).mutate();
             m1 = resources.getDrawable(R.drawable.filled_chatlist_mention).mutate();
             n1 = resources.getDrawable(R.drawable.filled_chatlist_reaction).mutate();
@@ -6619,7 +6619,7 @@ public abstract class y6 {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public static Drawable Y0(View view, boolean z10) {
-        uc0 uc0Var;
+        vc0 vc0Var;
         File file;
         int i10;
         Throwable th2;
@@ -6641,9 +6641,9 @@ public abstract class y6 {
             w6 k10 = I.k(false);
             file = (k10 == null || TextUtils.isEmpty(k10.o) || M != null || (d10 = k10.d()) == null || !d10.exists()) ? null : d10;
             if (i14 != 0) {
-                uc0Var = new uc0(true, i11, i13, i14, i15);
+                vc0Var = new vc0(true, i11, i13, i14, i15);
                 if (file == null) {
-                    return uc0Var;
+                    return vc0Var;
                 }
             } else {
                 if (file == null) {
@@ -6651,7 +6651,7 @@ public abstract class y6 {
                     x9Var.f(!z10 ? jg.s0.e0(0.5f, 3) : jg.s0.e0(0.125f, 1), view != null ? new j6(view, z10) : null, 0L);
                     return x9Var;
                 }
-                uc0Var = null;
+                vc0Var = null;
             }
         } else {
             if (g0 > 0) {
@@ -6660,7 +6660,7 @@ public abstract class y6 {
                     String str = x6Var.d;
                     file = str != null ? q0(str) : new File(I.b);
                     i10 = g0;
-                    uc0Var = null;
+                    vc0Var = null;
                     if (file != null) {
                         try {
                             fileInputStream = new FileInputStream(file);
@@ -6691,7 +6691,7 @@ public abstract class y6 {
                             options.inJustDecodeBounds = false;
                             options.inSampleSize = i12;
                             Bitmap decodeStream = BitmapFactory.decodeStream(fileInputStream, null, options);
-                            if (uc0Var == null) {
+                            if (vc0Var == null) {
                                 if (decodeStream == null) {
                                     fileInputStream.close();
                                     return null;
@@ -6712,14 +6712,14 @@ public abstract class y6 {
                                 decodeStream.recycle();
                                 decodeStream = copy;
                             }
-                            uc0Var.s(decodeStream, i17);
-                            uc0Var.t(uc0Var.f());
+                            vc0Var.s(decodeStream, i17);
+                            vc0Var.t(vc0Var.f());
                             try {
                                 fileInputStream.close();
-                                return uc0Var;
+                                return vc0Var;
                             } catch (Exception e11) {
                                 FileLog.e(e11);
-                                return uc0Var;
+                                return vc0Var;
                             }
                         } catch (Throwable th4) {
                             th2 = th4;
@@ -6736,7 +6736,7 @@ public abstract class y6 {
                     return null;
                 }
             }
-            uc0Var = null;
+            vc0Var = null;
             file = null;
         }
         i10 = 0;
@@ -7046,8 +7046,8 @@ public abstract class y6 {
             return;
         }
         int i10 = ul.get(Hc);
-        boolean z10 = (drawable instanceof uc0) && SharedConfig.getDevicePerformanceClass() != 0 && i10 == 0;
-        if (z10 && Y != (bitmap = ((uc0) drawable).k)) {
+        boolean z10 = (drawable instanceof vc0) && SharedConfig.getDevicePerformanceClass() != 0 && i10 == 0;
+        if (z10 && Y != (bitmap = ((vc0) drawable).k)) {
             Y = bitmap;
             Bitmap bitmap2 = Y;
             Shader.TileMode tileMode = Shader.TileMode.CLAMP;
@@ -7095,10 +7095,10 @@ public abstract class y6 {
         int valueAt = indexOfKey >= 0 ? ul.valueAt(indexOfKey) : X;
         int indexOfKey2 = ul.indexOfKey(mc);
         int valueAt2 = indexOfKey2 >= 0 ? ul.valueAt(indexOfKey2) : b0;
-        boolean z10 = drawable instanceof uc0;
+        boolean z10 = drawable instanceof vc0;
         if ((z10 || (drawable instanceof BitmapDrawable)) && SharedConfig.getDevicePerformanceClass() != 0 && LiteMode.isEnabled(32)) {
             if (z10) {
-                bitmap = ((uc0) drawable).k;
+                bitmap = ((vc0) drawable).k;
             } else {
                 if (drawable instanceof BitmapDrawable) {
                     WeakReference weakReference = Jl;
@@ -7203,7 +7203,7 @@ public abstract class y6 {
         }
         ColorMatrix colorMatrix2 = new ColorMatrix();
         if (z10) {
-            if (((uc0) drawable).q >= 0.0f) {
+            if (((vc0) drawable).q >= 0.0f) {
                 colorMatrix2.setSaturation(1.6f);
                 AndroidUtilities.multiplyBrightnessColorMatrix(colorMatrix2, I.q() ? 0.97f : 0.92f);
                 AndroidUtilities.adjustBrightnessColorMatrix(colorMatrix2, I.q() ? 0.12f : -0.06f);
@@ -7385,11 +7385,11 @@ public abstract class y6 {
         A1(i31, Y4);
         int i32 = 0;
         while (true) {
-            rx0[] rx0VarArr = u3;
-            if (i32 >= rx0VarArr.length) {
+            sx0[] sx0VarArr = u3;
+            if (i32 >= sx0VarArr.length) {
                 break;
             }
-            A1(p9, rx0VarArr[i32]);
+            A1(p9, sx0VarArr[i32]);
             i32++;
         }
         for (int i33 = 0; i33 < 5; i33++) {
@@ -7471,47 +7471,47 @@ public abstract class y6 {
             int length = drawableArr.length;
             int i11 = J7;
             if (i10 >= length) {
-                xj0 xj0Var = u1;
-                xj0Var.Z = true;
+                yj0 yj0Var = u1;
+                yj0Var.Z = true;
                 int i12 = M7;
-                xj0Var.Q(x0(null, i12, true), "Arrow1");
+                yj0Var.Q(x0(null, i12, true), "Arrow1");
                 u1.Q(x0(null, i12, true), "Arrow2");
                 u1.Q(x0(null, i11, true), "Box2");
                 u1.Q(x0(null, i11, true), "Box1");
                 u1.o();
                 C1 = false;
                 u1.J(true);
-                xj0 xj0Var2 = x1;
-                xj0Var2.Z = true;
+                yj0 yj0Var2 = x1;
+                yj0Var2.Z = true;
                 int i13 = e9;
-                xj0Var2.Q(x0(null, i13, true), "Arrow");
+                yj0Var2.Q(x0(null, i13, true), "Arrow");
                 x1.Q(x0(null, i13, true), "Line");
                 x1.o();
-                xj0 xj0Var3 = y1;
-                xj0Var3.Z = true;
-                xj0Var3.Q(x0(null, i13, true), "Arrow");
+                yj0 yj0Var3 = y1;
+                yj0Var3.Z = true;
+                yj0Var3.Q(x0(null, i13, true), "Arrow");
                 y1.Q(x0(null, i13, true), "Line");
                 y1.o();
-                xj0 xj0Var4 = z1;
-                xj0Var4.Z = true;
+                yj0 yj0Var4 = z1;
+                yj0Var4.Z = true;
                 int i14 = c9;
-                xj0Var4.Q(x0(null, i14, true), "Line 1");
+                yj0Var4.Q(x0(null, i14, true), "Line 1");
                 z1.Q(x0(null, i14, true), "Line 2");
                 z1.Q(x0(null, i14, true), "Line 3");
                 z1.Q(x0(null, i13, true), "Cup Red");
                 z1.Q(x0(null, i13, true), "Box");
                 z1.o();
                 B1 = false;
-                xj0 xj0Var5 = v1;
-                xj0Var5.Z = true;
-                xj0Var5.Q(x0(null, i14, true), "Arrow");
+                yj0 yj0Var5 = v1;
+                yj0Var5.Z = true;
+                yj0Var5.Q(x0(null, i14, true), "Arrow");
                 v1.Q(x0(null, i13, true), "Box2");
                 v1.Q(x0(null, i13, true), "Box1");
                 v1.o();
                 A1 = false;
-                xj0 xj0Var6 = w1;
-                xj0Var6.Z = true;
-                xj0Var6.Q(x0(null, i13, true), "Arrow1");
+                yj0 yj0Var6 = w1;
+                yj0Var6.Z = true;
+                yj0Var6.Q(x0(null, i13, true), "Arrow1");
                 w1.Q(x0(null, d9, true), "Arrow2");
                 w1.Q(x0(null, i13, true), "Box2");
                 w1.Q(x0(null, i13, true), "Box1");
@@ -7913,9 +7913,9 @@ public abstract class y6 {
                 A1(z9, f1);
                 A1(A9, i1);
                 A1(A8, s1);
-                en0 en0Var = g1;
+                fn0 fn0Var = g1;
                 int i23 = j9;
-                A1(i23, en0Var);
+                A1(i23, fn0Var);
                 A1(i23, h1);
                 return;
             }
@@ -8113,13 +8113,13 @@ public abstract class y6 {
         wl = c10;
         ul = clone;
         if (!z11) {
-            r1(!(LaunchActivity.R() instanceof un));
+            r1(!(LaunchActivity.R() instanceof wn));
         }
         k();
         n();
         p();
         j(false, z10);
-        AndroidUtilities.runOnUIThread(new org.telegram.messenger.e4(3, !O));
+        AndroidUtilities.runOnUIThread(new org.telegram.messenger.f4(3, !O));
     }
 
     public static void r(Bitmap bitmap, BitmapShader bitmapShader, Matrix matrix, int i10, int i11, float f10, float f11) {
@@ -8167,8 +8167,8 @@ public abstract class y6 {
             V = null;
         }
         Drawable drawable = e0;
-        if (drawable instanceof uc0) {
-            S = ((uc0) drawable).i;
+        if (drawable instanceof vc0) {
+            S = ((vc0) drawable).i;
         } else {
             S = 0;
         }
@@ -8186,15 +8186,15 @@ public abstract class y6 {
         int i10 = iArr[0];
         int i11 = iArr[1];
         view2.getLocationOnScreen(iArr);
-        if (view2 instanceof ic1) {
+        if (view2 instanceof kc1) {
             Bitmap bitmap = Y;
             if (bitmap != null) {
                 float width = bitmap.getWidth();
-                i10 = (int) ((((view2.getMeasuredWidth() - (Math.max(view2.getMeasuredWidth() / width, view2.getMeasuredHeight() / Y.getHeight()) * width)) / 2.0f) - ((ic1) view2).I) + i10);
+                i10 = (int) ((((view2.getMeasuredWidth() - (Math.max(view2.getMeasuredWidth() / width, view2.getMeasuredHeight() / Y.getHeight()) * width)) / 2.0f) - ((kc1) view2).I) + i10);
             } else {
-                i10 = (int) (i10 + (-((ic1) view2).I));
+                i10 = (int) (i10 + (-((kc1) view2).I));
             }
-            i11 = (int) (i11 + (-((ic1) view2).J));
+            i11 = (int) (i11 + (-((kc1) view2).J));
         }
         if (u6Var != null) {
             u6Var.b(i10, i11 - iArr[1], view2.getMeasuredWidth(), view2.getMeasuredHeight());
@@ -8455,32 +8455,32 @@ public abstract class y6 {
         }
     }
 
-    public static rx0 u0(int i10) {
+    public static sx0 u0(int i10) {
         if (i10 < 0 || i10 > 5) {
             return null;
         }
-        rx0[] rx0VarArr = u3;
-        rx0 rx0Var = rx0VarArr[i10];
-        if (rx0Var != null) {
-            return rx0Var;
+        sx0[] sx0VarArr = u3;
+        sx0 sx0Var = sx0VarArr[i10];
+        if (sx0Var != null) {
+            return sx0Var;
         }
         if (i10 == 0) {
-            rx0VarArr[0] = new r61(true);
+            sx0VarArr[0] = new s61(true);
         } else if (i10 == 1) {
-            rx0VarArr[1] = new eq(true);
+            sx0VarArr[1] = new eq(true);
         } else if (i10 == 2) {
-            rx0VarArr[2] = new dq0(true);
+            sx0VarArr[2] = new eq0(true);
         } else if (i10 == 3) {
-            rx0VarArr[3] = new eh0(null, true);
+            sx0VarArr[3] = new fh0(null, true);
         } else if (i10 == 4) {
-            rx0VarArr[4] = new bn0(true);
+            sx0VarArr[4] = new cn0(true);
         } else if (i10 == 5) {
-            rx0VarArr[5] = new eq();
+            sx0VarArr[5] = new eq();
         }
-        rx0 rx0Var2 = rx0VarArr[i10];
-        rx0Var2.d();
-        rx0Var2.b(x0(null, p9, false));
-        return rx0Var2;
+        sx0 sx0Var2 = sx0VarArr[i10];
+        sx0Var2.d();
+        sx0Var2.b(x0(null, p9, false));
+        return sx0Var2;
     }
 
     /* JADX WARN: Can't wrap try/catch for region: R(24:0|1|(1:3)(1:155)|(1:5)(1:154)|(1:8)|9|(1:153)(1:13)|(1:15)(1:152)|16|(5:(1:19)(1:42)|(1:21)(1:41)|(1:23)(1:40)|(1:25)(1:39)|(4:28|(2:30|(1:32))|(1:38)(1:36)|37))|43|(12:45|(2:46|(3:48|(2:51|52)|53)(0))|63|65|66|(1:72)|73|(2:75|(2:96|97))(2:101|(3:103|(1:105)|(1:108)))|(6:78|(1:80)|81|(1:83)|(1:85)|86)|88|89|(2:91|92)(1:94))(2:135|(4:138|(2:141|142)|143|136))|62|63|65|66|(3:68|70|72)|73|(0)(0)|(0)|88|89|(0)(0)|(1:(0))) */
@@ -9110,18 +9110,18 @@ public abstract class y6 {
         if (drawable == null) {
             return;
         }
-        if (drawable instanceof rx0) {
-            ((rx0) drawable).b(i10);
+        if (drawable instanceof sx0) {
+            ((sx0) drawable).b(i10);
             return;
         }
-        if (drawable instanceof bd0) {
-            ((bd0) drawable).a(i10);
+        if (drawable instanceof cd0) {
+            ((cd0) drawable).a(i10);
             return;
         }
         if (drawable instanceof ShapeDrawable) {
             ((ShapeDrawable) drawable).getPaint().setColor(i10);
-        } else if (drawable instanceof en0) {
-            ((en0) drawable).b(i10);
+        } else if (drawable instanceof fn0) {
+            ((fn0) drawable).b(i10);
         } else {
             drawable.setColorFilter(new PorterDuffColorFilter(i10, PorterDuff.Mode.MULTIPLY));
         }

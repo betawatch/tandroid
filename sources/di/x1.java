@@ -14,10 +14,10 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.ui.Components.ds;
-import org.telegram.ui.Components.gb1;
+import org.telegram.ui.Components.kb1;
 import org.telegram.ui.Components.zq;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class x1 extends View {
     public float E;
@@ -52,7 +52,7 @@ public final class x1 extends View {
         this.F = new int[2];
         this.G = 1.0f;
         this.a = w1Var;
-        gb1.b(this);
+        kb1.b(this);
         this.s = context.getResources().getDrawable(R.drawable.star).mutate();
         ch.i iVar = new ch.i();
         this.v = iVar;

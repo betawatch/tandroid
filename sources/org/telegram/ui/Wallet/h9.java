@@ -17,16 +17,16 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.messenger.vh;
+import org.telegram.messenger.wh;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.ds;
-import org.telegram.ui.Components.gb1;
+import org.telegram.ui.Components.kb1;
 import org.telegram.ui.Components.xh;
-import org.telegram.ui.fc1;
+import org.telegram.ui.hc1;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class h9 extends FrameLayout implements org.telegram.ui.ActionBar.p6 {
     public static final ds S = ds.h;
@@ -47,7 +47,7 @@ public final class h9 extends FrameLayout implements org.telegram.ui.ActionBar.p
     public int a;
     public final LinearLayout b;
     public final d9 c;
-    public final l6 d;
+    public final m6 d;
     public final FrameLayout e;
     public final TextView f;
     public final org.telegram.ui.Cells.y3 h;
@@ -81,18 +81,18 @@ public final class h9 extends FrameLayout implements org.telegram.ui.ActionBar.p
         linearLayout.setLayoutDirection(0);
         linearLayout.setClipChildren(false);
         linearLayout.setClipToPadding(false);
-        addView(linearLayout, gb1.i(-2, -1, 17));
+        addView(linearLayout, kb1.i(-2, -1, 17));
         FrameLayout frameLayout = new FrameLayout(context);
         this.e = frameLayout;
         frameLayout.setClipChildren(false);
         frameLayout.setClipToPadding(false);
         frameLayout.setTranslationZ(AndroidUtilities.dp(1.0f));
-        linearLayout.addView(frameLayout, gb1.u(59, 60, 16));
+        linearLayout.addView(frameLayout, kb1.u(59, 60, 16));
         this.y = AndroidUtilities.dp(59.0f);
-        l6 l6Var = new l6(60, context, true);
-        this.d = l6Var;
-        l6Var.i();
-        frameLayout.addView(l6Var, gb1.h(60, 60.0f, 19, 0.0f, -5.0f, -2.0f, 0.0f));
+        m6 m6Var = new m6(60, context, true);
+        this.d = m6Var;
+        m6Var.i();
+        frameLayout.addView(m6Var, kb1.h(60, 60.0f, 19, 0.0f, -5.0f, -2.0f, 0.0f));
         TextView textView = new TextView(context);
         this.f = textView;
         int i11 = org.telegram.ui.ActionBar.y6.z6;
@@ -104,7 +104,7 @@ public final class h9 extends FrameLayout implements org.telegram.ui.ActionBar.p
         textView.setSingleLine(true);
         textView.setVisibility(4);
         textView.setAlpha(0.0f);
-        frameLayout.addView(textView, gb1.i(-2, 60, 19));
+        frameLayout.addView(textView, kb1.i(-2, 60, 19));
         d9 d9Var = new d9(this, context);
         this.c = d9Var;
         org.telegram.ui.ActionBar.f7.V(d9Var, org.telegram.ui.ActionBar.y6.G6, u6Var);
@@ -130,7 +130,7 @@ public final class h9 extends FrameLayout implements org.telegram.ui.ActionBar.p
         d9Var.setInputType(8194);
         d9Var.setKeyListener(DigitsKeyListener.getInstance("0123456789.,"));
         d9Var.setImeOptions(33554438);
-        linearLayout.addView(d9Var, gb1.u(-2, 60, 16));
+        linearLayout.addView(d9Var, kb1.u(-2, 60, 16));
         org.telegram.ui.Cells.y3 y3Var = new org.telegram.ui.Cells.y3(context, false, true, false, true, true);
         this.h = y3Var;
         y3Var.c.m(0.35f, 420L, 3.5f, ds.h);
@@ -143,7 +143,7 @@ public final class h9 extends FrameLayout implements org.telegram.ui.ActionBar.p
         y3Var.setGravity(3);
         y3Var.getDrawable().S = false;
         y3Var.c(LocaleController.getString(R.string.GramCurrency), false, true);
-        linearLayout.addView(y3Var, gb1.x(-2, 60, 16, 4, 0, 0, 0));
+        linearLayout.addView(y3Var, kb1.x(-2, 60, 16, 4, 0, 0, 0));
         setOnClickListener(new s2(this, 7));
         d9Var.addTextChangedListener(new xh(this, 1));
     }
@@ -165,36 +165,36 @@ public final class h9 extends FrameLayout implements org.telegram.ui.ActionBar.p
         }
         FrameLayout frameLayout = this.e;
         TextView textView = this.f;
-        l6 l6Var = this.d;
+        m6 m6Var = this.d;
         if (!z10) {
-            l6Var.setAlpha(this.w ? 0.0f : 1.0f);
+            m6Var.setAlpha(this.w ? 0.0f : 1.0f);
             textView.setAlpha(this.x ? 1.0f : 0.0f);
-            l6Var.setConversionWobble(0.0f);
+            m6Var.setConversionWobble(0.0f);
             textView.setRotation(0.0f);
-            l6Var.setEnabled(!this.w);
-            l6Var.setVisibility(this.w ? 4 : 0);
+            m6Var.setEnabled(!this.w);
+            m6Var.setVisibility(this.w ? 4 : 0);
             textView.setVisibility(this.x ? 0 : 4);
             frameLayout.getLayoutParams().width = this.y;
             frameLayout.requestLayout();
             return;
         }
         int i10 = frameLayout.getLayoutParams().width;
-        float alpha = l6Var.getAlpha();
+        float alpha = m6Var.getAlpha();
         float alpha2 = textView.getAlpha();
         float f7 = this.w ? 0.0f : 1.0f;
         float f10 = this.x ? 1.0f : 0.0f;
         if (alpha > 0.0f || f7 > 0.0f) {
-            l6Var.setVisibility(0);
+            m6Var.setVisibility(0);
         }
         if (alpha2 > 0.0f || f10 > 0.0f) {
             textView.setVisibility(0);
         }
-        l6Var.setEnabled(!this.w);
+        m6Var.setEnabled(!this.w);
         float f11 = this.w ? 24.0f : -24.0f;
-        if (l6Var.getAlpha() < 0.01f) {
-            l6Var.setConversionWobble(f11);
+        if (m6Var.getAlpha() < 0.01f) {
+            m6Var.setConversionWobble(f11);
         }
-        o1.j jVar3 = new o1.j(new ac.a(l6Var.getConversionWobble()));
+        o1.j jVar3 = new o1.j(new ac.a(m6Var.getConversionWobble()));
         o1.k kVar = new o1.k(0.0f);
         kVar.a(0.3f);
         kVar.b(180.0f);
@@ -223,7 +223,7 @@ public final class h9 extends FrameLayout implements org.telegram.ui.ActionBar.p
         ofFloat.setDuration(320L);
         this.n.setInterpolator(new LinearInterpolator());
         this.n.addUpdateListener(new c9(this, alpha, f7, alpha2, f10, i10, 0));
-        this.n.addListener(new fc1(this, 12));
+        this.n.addListener(new hc1(this, 12));
         this.n.start();
     }
 
@@ -362,9 +362,9 @@ public final class h9 extends FrameLayout implements org.telegram.ui.ActionBar.p
         LinearLayout linearLayout = this.b;
         float width = (getWidth() / 2.0f) - linearLayout.getLeft();
         FrameLayout frameLayout = this.e;
-        l6 l6Var = this.d;
-        frameLayout.setTranslationX((((width - frameLayout.getLeft()) - l6Var.getLeft()) - (l6Var.getWidth() / 2.0f)) * f11);
-        frameLayout.setTranslationY(vh.y(l6Var.getHeight(), 2.0f, (((getHeight() / 2.0f) - linearLayout.getTop()) - frameLayout.getTop()) - l6Var.getTop(), f11) - (AndroidUtilities.dp(36.0f) * ((float) Math.sin(f7 * 3.141592653589793d))));
+        m6 m6Var = this.d;
+        frameLayout.setTranslationX((((width - frameLayout.getLeft()) - m6Var.getLeft()) - (m6Var.getWidth() / 2.0f)) * f11);
+        frameLayout.setTranslationY(wh.y(m6Var.getHeight(), 2.0f, (((getHeight() / 2.0f) - linearLayout.getTop()) - frameLayout.getTop()) - m6Var.getTop(), f11) - (AndroidUtilities.dp(36.0f) * ((float) Math.sin(f7 * 3.141592653589793d))));
         org.telegram.ui.Cells.y3 y3Var = this.h;
         int visibility = y3Var.getVisibility();
         d9 d9Var = this.c;
@@ -373,8 +373,8 @@ public final class h9 extends FrameLayout implements org.telegram.ui.ActionBar.p
         y3Var.setTranslationX(left);
         d9Var.setAlpha(f10);
         y3Var.setAlpha(f10);
-        l6Var.setEnabled(z10 && !this.w);
-        l6Var.setIntroProgress(f7);
+        m6Var.setEnabled(z10 && !this.w);
+        m6Var.setIntroProgress(f7);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:130:0x02d2  */
@@ -617,7 +617,7 @@ public final class h9 extends FrameLayout implements org.telegram.ui.ActionBar.p
         return this.h;
     }
 
-    public l6 getDiamondView() {
+    public m6 getDiamondView() {
         return this.d;
     }
 

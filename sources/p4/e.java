@@ -30,11 +30,11 @@ import java.util.concurrent.Executor;
 import li.b4;
 import li.h5;
 import org.telegram.ui.Components.b10;
-import org.telegram.ui.Components.cy0;
-import org.telegram.ui.Components.pl0;
+import org.telegram.ui.Components.dy0;
+import org.telegram.ui.Components.ql0;
 import org.telegram.ui.web.h1;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
 public final class e {
     public static final /* synthetic */ int F = 0;
@@ -47,7 +47,7 @@ public final class e {
     public v d;
     public q e;
     public com.google.android.gms.internal.cast.o f;
-    public pl0 g;
+    public ql0 g;
     public final Context h;
     public final e2.s n;
     public final jg.s0 o;
@@ -128,7 +128,7 @@ public final class e {
                     intentFilter.addAction("android.intent.action.PACKAGE_RESTARTED");
                     intentFilter.addDataScheme("package");
                     ((Context) s0Var.b).registerReceiver((androidx.mediarouter.app.g) s0Var.g, intentFilter, null, handler);
-                    handler.post((cy0) s0Var.h);
+                    handler.post((dy0) s0Var.h);
                     return;
                 }
                 return;
@@ -294,20 +294,20 @@ public final class e {
 
     public final void h(e eVar, v vVar, q qVar, int i10, v vVar2, Collection collection) {
         final com.google.android.gms.internal.cast.o oVar;
-        pl0 pl0Var = this.g;
-        if (pl0Var != null) {
-            pl0Var.a();
+        ql0 ql0Var = this.g;
+        if (ql0Var != null) {
+            ql0Var.a();
             this.g = null;
         }
-        pl0 pl0Var2 = new pl0(eVar, vVar, qVar, i10, vVar2, collection);
-        this.g = pl0Var2;
+        ql0 ql0Var2 = new ql0(eVar, vVar, qVar, i10, vVar2, collection);
+        this.g = ql0Var2;
         int i11 = 3;
-        if (pl0Var2.b != 3 || (oVar = this.f) == null) {
-            pl0Var2.b();
+        if (ql0Var2.b != 3 || (oVar = this.f) == null) {
+            ql0Var2.b();
             return;
         }
         final v vVar3 = this.d;
-        final v vVar4 = (v) pl0Var2.g;
+        final v vVar4 = (v) ql0Var2.g;
         com.google.android.gms.internal.cast.o.c.b("Prepare transfer from Route(%s) to Route(%s)", vVar3, vVar4);
         c0.l a2 = w9.a(new c0.j() { // from class: com.google.android.gms.internal.cast.n
             @Override // c0.j
@@ -317,17 +317,17 @@ public final class e {
                 return Boolean.valueOf(oVar2.b.post(new fg(oVar2, vVar3, vVar4, iVar, 1)));
             }
         });
-        pl0 pl0Var3 = this.g;
-        e eVar2 = (e) ((WeakReference) pl0Var3.j).get();
-        if (eVar2 == null || eVar2.g != pl0Var3) {
+        ql0 ql0Var3 = this.g;
+        e eVar2 = (e) ((WeakReference) ql0Var3.j).get();
+        if (eVar2 == null || eVar2.g != ql0Var3) {
             Log.w("AxMediaRouter", "Router is released. Cancel transfer");
-            pl0Var3.a();
+            ql0Var3.a();
         } else {
-            if (((c0.l) pl0Var3.k) != null) {
+            if (((c0.l) ql0Var3.k) != null) {
                 throw new IllegalStateException("future is already set");
             }
-            pl0Var3.k = a2;
-            h1 h1Var = new h1(pl0Var3, 6);
+            ql0Var3.k = a2;
+            h1 h1Var = new h1(ql0Var3, 6);
             b bVar = eVar2.a;
             Objects.requireNonNull(bVar);
             a2.b.a(h1Var, new i2.h0(bVar, i11));

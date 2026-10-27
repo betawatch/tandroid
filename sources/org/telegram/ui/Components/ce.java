@@ -4,7 +4,7 @@ import android.graphics.Canvas;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ce implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -21,7 +21,7 @@ public final /* synthetic */ class ce implements Utilities.Callback {
         ChatActivityEnterView chatActivityEnterView = this.b;
         switch (i10) {
             case 0:
-                chatActivityEnterView.O0((TL_iv.RichMessage) obj);
+                chatActivityEnterView.N0((TL_iv.RichMessage) obj);
                 break;
             case 1:
                 CharSequence charSequence = (CharSequence) obj;
@@ -30,7 +30,7 @@ public final /* synthetic */ class ce implements Utilities.Callback {
                 break;
             default:
                 int i11 = ChatActivityEnterView.r5;
-                chatActivityEnterView.b0((Canvas) obj, false);
+                chatActivityEnterView.a0((Canvas) obj, false);
                 break;
         }
     }

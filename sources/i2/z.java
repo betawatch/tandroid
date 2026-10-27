@@ -34,25 +34,25 @@ import org.telegram.ui.ActionBar.e2;
 import org.telegram.ui.ActionBar.r2;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.f5;
-import org.telegram.ui.Components.io0;
-import org.telegram.ui.Components.md0;
+import org.telegram.ui.Components.jo0;
+import org.telegram.ui.Components.nd0;
 import org.telegram.ui.Components.qc;
-import org.telegram.ui.Components.t61;
+import org.telegram.ui.Components.u61;
 import org.telegram.ui.Components.ub;
 import org.telegram.ui.Components.wc;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PasscodeActivity;
 import org.telegram.ui.SessionsActivity;
 import org.telegram.ui.StickersActivity;
-import org.telegram.ui.dh;
-import org.telegram.ui.pc0;
-import org.telegram.ui.u40;
-import org.telegram.ui.un;
-import org.telegram.ui.vj0;
+import org.telegram.ui.a50;
+import org.telegram.ui.hh;
+import org.telegram.ui.rc0;
+import org.telegram.ui.w40;
+import org.telegram.ui.wn;
 import org.telegram.ui.xj0;
-import org.telegram.ui.y40;
+import org.telegram.ui.zj0;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class z implements e2.o, MediaDataController.KeywordResultCallback, b2, m4.o0, e2.j, NativeInstance.PayloadCallback, Utilities.Callback3Return, Utilities.Callback5, u5.b {
     public final /* synthetic */ int a;
@@ -98,7 +98,7 @@ public final /* synthetic */ class z implements e2.o, MediaDataController.Keywor
     @Override // u5.b
     public Object f() {
         aa.b0 b0Var = (aa.b0) this.c;
-        ((s4.d) b0Var.b).s((m5.i) this.d, this.b + 1, false);
+        ((s4.d) b0Var.b).t((m5.i) this.d, this.b + 1, false);
         return null;
     }
 
@@ -135,15 +135,15 @@ public final /* synthetic */ class z implements e2.o, MediaDataController.Keywor
                 StickersActivity.b0((StickersActivity) this.c, (ArrayList) this.d, this.b);
                 break;
             case 6:
-                un unVar = (un) this.c;
-                unVar.getMessagesController().pinMessage(unVar.e, unVar.f, this.b, false, !r10[1], ((boolean[]) this.d)[0]);
-                qc B = wc.B(unVar, true, null, null, unVar.qa);
+                wn wnVar = (wn) this.c;
+                wnVar.getMessagesController().pinMessage(wnVar.e, wnVar.f, this.b, false, !r10[1], ((boolean[]) this.d)[0]);
+                qc B = wc.B(wnVar, true, null, null, wnVar.ua);
                 B.j();
                 ub ubVar = B.e;
-                ubVar.postDelayed(new dh(0, ubVar), 550L);
+                ubVar.postDelayed(new hh(0, ubVar), 550L);
                 break;
             case 7:
-                un.h0((un) this.c, this.b, (MessageObject) this.d);
+                wn.p0((wn) this.c, this.b, (MessageObject) this.d);
                 break;
             case 8:
                 f5 f5Var = (f5) this.c;
@@ -159,27 +159,27 @@ public final /* synthetic */ class z implements e2.o, MediaDataController.Keywor
                 }
                 break;
             case 9:
-                io0 io0Var = (io0) this.c;
+                jo0 jo0Var = (jo0) this.c;
                 TLRPC.Reaction reaction = (TLRPC.Reaction) this.d;
-                String obj2 = io0Var.getText().toString();
+                String obj2 = jo0Var.getText().toString();
                 if (obj2.length() <= 12) {
                     MessagesController.getInstance(this.b).renameSavedReactionTag(bh.x0.d(reaction), obj2);
                     e2Var.dismiss();
                     break;
                 } else {
-                    AndroidUtilities.shakeView(io0Var);
+                    AndroidUtilities.shakeView(jo0Var);
                     break;
                 }
             case 11:
-                u40 u40Var = (u40) this.c;
+                w40 w40Var = (w40) this.c;
                 EditTextBoldCursor editTextBoldCursor = (EditTextBoldCursor) this.d;
-                y40 y40Var = u40Var.n;
-                ChatObject.Call call = y40Var.b.a1;
+                a50 a50Var = w40Var.n;
+                ChatObject.Call call = a50Var.b.a1;
                 String obj3 = editTextBoldCursor.getText().toString();
                 int i11 = this.b;
                 call.toggleRecord(obj3, i11);
                 AndroidUtilities.hideKeyboard(editTextBoldCursor);
-                y40Var.b.k1().j(i11 == 0 ? 39 : 100, 0L, null);
+                a50Var.b.k1().j(i11 == 0 ? 39 : 100, 0L, null);
                 if (VoIPService.getSharedInstance() != null) {
                     VoIPService.getSharedInstance().playStartRecordSound();
                     break;
@@ -190,17 +190,17 @@ public final /* synthetic */ class z implements e2.o, MediaDataController.Keywor
                 HashMap hashMap = (HashMap) this.d;
                 ArrayList arrayList = launchActivity.d0;
                 if (!arrayList.isEmpty() && AndroidUtilities.isMapsInstalled((r2) ic.a.g(1, arrayList))) {
-                    pc0 pc0Var = new pc0(0);
-                    pc0Var.E0 = new r(hashMap, this.b, 12);
-                    launchActivity.u0(pc0Var);
+                    rc0 rc0Var = new rc0(0);
+                    rc0Var.E0 = new r(hashMap, this.b, 12);
+                    launchActivity.u0(rc0Var);
                     break;
                 }
                 break;
             case 13:
-                ((pc0) this.c).x0(RichMessageLayout.PART_MAX_HEIGHT_DP, (TLRPC.User) this.d, this.b);
+                ((rc0) this.c).x0(RichMessageLayout.PART_MAX_HEIGHT_DP, (TLRPC.User) this.d, this.b);
                 break;
             case 15:
-                PasscodeActivity.V((PasscodeActivity) this.c, (md0) this.d, this.b);
+                PasscodeActivity.V((PasscodeActivity) this.c, (nd0) this.d, this.b);
                 break;
             case 17:
                 SessionsActivity.Y((SessionsActivity) this.c, this.b, (boolean[]) this.d);
@@ -392,10 +392,10 @@ public final /* synthetic */ class z implements e2.o, MediaDataController.Keywor
 
     @Override // org.telegram.messenger.Utilities.Callback5
     public void run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
-        xj0 xj0Var = (xj0) this.c;
-        vj0 vj0Var = (vj0) this.d;
-        t61 t61Var = (t61) obj;
-        Object obj6 = t61Var.G;
+        zj0 zj0Var = (zj0) this.c;
+        xj0 xj0Var = (xj0) this.d;
+        u61 u61Var = (u61) obj;
+        Object obj6 = u61Var.G;
         if (obj6 instanceof MessageObject) {
             MessageObject messageObject = (MessageObject) obj6;
             Bundle bundle = new Bundle();
@@ -404,19 +404,19 @@ public final /* synthetic */ class z implements e2.o, MediaDataController.Keywor
             bundle.putInt("message_id", messageObject.getId());
             bundle.putBoolean("from_news", true);
             bundle.putBoolean("for_news", true);
-            if (xj0Var.getMessagesController().checkCanOpenChat(bundle, xj0Var)) {
-                un unVar = new un(bundle);
-                unVar.ib = messageObject;
-                xj0Var.presentFragment(unVar);
+            if (zj0Var.getMessagesController().checkCanOpenChat(bundle, zj0Var)) {
+                wn wnVar = new wn(bundle);
+                wnVar.mb = messageObject;
+                zj0Var.presentFragment(wnVar);
                 return;
             }
             return;
         }
-        int i10 = t61Var.d;
+        int i10 = u61Var.d;
         if (i10 == -1) {
-            xj0Var.l0(this.b, vj0Var.n);
+            zj0Var.l0(this.b, xj0Var.n);
         } else if (i10 == -2) {
-            xj0Var.k0();
+            zj0Var.k0();
         }
     }
 }

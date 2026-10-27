@@ -12,10 +12,10 @@ import org.telegram.ui.ActionBar.u6;
 import org.telegram.ui.ActionBar.y6;
 import org.telegram.ui.Components.og;
 import org.telegram.ui.Components.s6;
-import org.telegram.ui.fc1;
-import org.telegram.ui.kn;
+import org.telegram.ui.hc1;
+import org.telegram.ui.mn;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class g0 implements og {
     public final /* synthetic */ TL_stars.TL_starGiftUnique a;
@@ -75,7 +75,7 @@ public final class g0 implements og {
         i0Var.F = codePointCount;
         int i12 = i0Var.E;
         if (i12 <= 0 || (i11 = i12 - codePointCount) > 15) {
-            s6Var.animate().alpha(0.0f).scaleX(0.5f).scaleY(0.5f).setDuration(100L).setListener(new fc1(this, 25));
+            s6Var.animate().alpha(0.0f).scaleX(0.5f).scaleY(0.5f).setDuration(100L).setListener(new hc1(this, 25));
             return;
         }
         if (i11 < -9999) {
@@ -122,7 +122,7 @@ public final class g0 implements og {
     }
 
     @Override // org.telegram.ui.Components.og
-    public final /* synthetic */ kn i0() {
+    public final /* synthetic */ mn i0() {
         return null;
     }
 

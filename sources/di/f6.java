@@ -15,20 +15,20 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.gb1;
+import org.telegram.ui.Components.kb1;
 import org.telegram.ui.Components.mc;
 import org.telegram.ui.Components.wc;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.pw;
+import org.telegram.ui.rw;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class f6 extends org.telegram.ui.ActionBar.k3 {
     public static final /* synthetic */ int h = 0;
     public final tg.p0 b;
     public boolean c;
     public final int d;
-    public pw e;
+    public rw e;
     public final bi.u6 f;
 
     public f6(Context context, float f7, int i10, org.telegram.ui.ActionBar.u6 u6Var) {
@@ -45,15 +45,15 @@ public final class f6 extends org.telegram.ui.ActionBar.k3 {
         imageView.setBackground(K);
         org.telegram.ui.ActionBar.f7.k(imageView, K, N, null, null);
         imageView.setImageResource(R.drawable.large_stealth);
-        e6Var.addView(imageView, gb1.h(80, 80.0f, 1, 0.0f, 18.0f, 0.0f, 0.0f));
+        e6Var.addView(imageView, kb1.h(80, 80.0f, 1, 0.0f, 18.0f, 0.0f, 0.0f));
         LinearLayout linearLayout = new LinearLayout(getContext());
         linearLayout.setOrientation(1);
-        e6Var.addView(linearLayout, gb1.h(-1, -2.0f, 0, 0.0f, 116.0f, 0.0f, 0.0f));
+        e6Var.addView(linearLayout, kb1.h(-1, -2.0f, 0, 0.0f, 116.0f, 0.0f, 0.0f));
         TextView textView = new TextView(getContext());
         ic.a.o(20.0f, 1, textView);
         org.telegram.ui.ActionBar.f7.V(textView, org.telegram.ui.ActionBar.y6.G6, u6Var);
         textView.setText(LocaleController.getString(R.string.StealthModeTitle));
-        linearLayout.addView(textView, gb1.u(-2, -2, 1));
+        linearLayout.addView(textView, kb1.u(-2, -2, 1));
         org.telegram.ui.ActionBar.b6 b6Var = new org.telegram.ui.ActionBar.b6(getContext());
         b6Var.setTextSize(14);
         b6Var.setAlignment(Layout.Alignment.ALIGN_CENTER);
@@ -64,23 +64,23 @@ public final class f6 extends org.telegram.ui.ActionBar.k3 {
         } else {
             b6Var.l(LocaleController.getString(R.string.StealthModePremiumHint), false);
         }
-        linearLayout.addView(b6Var, gb1.x(-2, -2, 1, 36, 10, 36, 0));
+        linearLayout.addView(b6Var, kb1.x(-2, -2, 1, 36, 10, 36, 0));
         bi.t1 t1Var = new bi.t1(this, getContext());
         ((ImageView) t1Var.d).setImageResource(R.drawable.msg_stealth_5min);
         ((TextView) t1Var.b).setText(LocaleController.getString(R.string.HideRecentViews));
         ((TextView) t1Var.c).setText(LocaleController.getString(R.string.HideRecentViewsDescription));
-        linearLayout.addView(t1Var, gb1.x(-1, -2, 0, 0, 20, 0, 0));
+        linearLayout.addView(t1Var, kb1.x(-1, -2, 0, 0, 20, 0, 0));
         bi.t1 t1Var2 = new bi.t1(this, getContext());
         ((ImageView) t1Var2.d).setImageResource(R.drawable.msg_stealth_25min);
         ((TextView) t1Var2.b).setText(LocaleController.getString(R.string.HideNextViews));
         ((TextView) t1Var2.c).setText(LocaleController.getString(R.string.HideNextViewsDescription));
-        linearLayout.addView(t1Var2, gb1.x(-1, -2, 0, 0, 10, 0, 0));
+        linearLayout.addView(t1Var2, kb1.x(-1, -2, 0, 0, 10, 0, 0));
         tg.p0 p0Var = new tg.p0(AndroidUtilities.dp(8.0f), context, u6Var, true);
         this.b = p0Var;
         p0Var.J = false;
         p0Var.h.getDrawable().D = false;
         p0Var.setIcon(R.raw.unlock_icon);
-        gb1.b(p0Var);
+        kb1.b(p0Var);
         TLRPC.User currentUser = UserConfig.getInstance(this.currentAccount).getCurrentUser();
         if (currentUser.premium) {
             q(false);
@@ -88,7 +88,7 @@ public final class f6 extends org.telegram.ui.ActionBar.k3 {
             p0Var.setIcon(R.raw.unlock_icon);
             p0Var.a(LocaleController.getString(R.string.UnlockStealthMode), new ai.s(this, 15), false);
         }
-        linearLayout.addView(p0Var, gb1.x(-1, 48, 80, 14, 24, 14, 16));
+        linearLayout.addView(p0Var, kb1.x(-1, 48, 80, 14, 24, 14, 16));
         setCustomView(e6Var);
         p0Var.setOnClickListener(new c6(this, currentUser, i10, u6Var, 0));
     }
@@ -105,9 +105,9 @@ public final class f6 extends org.telegram.ui.ActionBar.k3 {
         }
         if (f6Var.c) {
             f6Var.dismiss();
-            pw pwVar = f6Var.e;
-            if (pwVar != null) {
-                pwVar.a(false);
+            rw rwVar = f6Var.e;
+            if (rwVar != null) {
+                rwVar.a(false);
                 return;
             }
             return;
@@ -120,9 +120,9 @@ public final class f6 extends org.telegram.ui.ActionBar.k3 {
                 return;
             }
             f6Var.dismiss();
-            pw pwVar2 = f6Var.e;
-            if (pwVar2 != null) {
-                pwVar2.a(false);
+            rw rwVar2 = f6Var.e;
+            if (rwVar2 != null) {
+                rwVar2.a(false);
                 return;
             }
             return;
@@ -134,7 +134,7 @@ public final class f6 extends org.telegram.ui.ActionBar.k3 {
         tL_storiesStealthMode2.flags |= 3;
         tL_storiesStealthMode2.cooldown_until_date = ConnectionsManager.getInstance(f6Var.currentAccount).getCurrentTime() + MessagesController.getInstance(f6Var.currentAccount).stealthModeCooldown;
         tL_storiesStealthMode2.active_until_date = ConnectionsManager.getInstance(f6Var.currentAccount).getCurrentTime() + MessagesController.getInstance(f6Var.currentAccount).stealthModeFuture;
-        storiesController.f0(tL_storiesStealthMode2);
+        storiesController.i0(tL_storiesStealthMode2);
         ConnectionsManager.getInstance(f6Var.currentAccount).sendRequest(tL_stories_activateStealthMode, new d6(0));
         try {
             f6Var.containerView.performHapticFeedback(3);
@@ -144,9 +144,9 @@ public final class f6 extends org.telegram.ui.ActionBar.k3 {
         if (i10 == 0) {
             p();
         }
-        pw pwVar3 = f6Var.e;
-        if (pwVar3 != null) {
-            pwVar3.a(true);
+        rw rwVar3 = f6Var.e;
+        if (rwVar3 != null) {
+            rwVar3.a(true);
         }
     }
 

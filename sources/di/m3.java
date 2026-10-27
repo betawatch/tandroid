@@ -3,7 +3,7 @@ package di;
 import android.content.Context;
 import android.graphics.Bitmap;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class m3 extends c9 {
     public final /* synthetic */ y9 H;
@@ -22,7 +22,7 @@ public final class m3 extends c9 {
         if (j4Var != null) {
             y9 y9Var = ((p9) j4Var).d;
             y9Var.i1 = z10;
-            y9Var.P();
+            y9Var.Q();
         }
     }
 

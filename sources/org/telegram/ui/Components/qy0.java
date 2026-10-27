@@ -1,45 +1,83 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.animation.AnimatorSet;
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.widget.TextView;
+import java.io.Serializable;
+import java.util.HashMap;
+import org.telegram.messenger.NotificationCenter;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public final class qy0 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ cz0 c;
+public final class qy0 implements TextWatcher {
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ EditTextBoldCursor b;
+    public final /* synthetic */ Serializable c;
+    public final /* synthetic */ Object d;
+    public final /* synthetic */ NotificationCenter.NotificationCenterDelegate e;
 
-    public qy0(cz0 cz0Var, int i10, boolean z10) {
-        this.c = cz0Var;
-        this.a = i10;
-        this.b = z10;
+    /* JADX WARN: Multi-variable type inference failed */
+    public qy0(dz0 dz0Var, int[] iArr, TextView textView, EditTextBoldCursor editTextBoldCursor) {
+        this.e = dz0Var;
+        this.c = iArr;
+        this.d = textView;
+        this.b = editTextBoldCursor;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationCancel(Animator animator) {
-        AnimatorSet[] animatorSetArr = this.c.I;
-        int i10 = this.a;
-        AnimatorSet animatorSet = animatorSetArr[i10];
-        if (animatorSet == null || !animatorSet.equals(animator)) {
-            return;
+    @Override // android.text.TextWatcher
+    public final void afterTextChanged(Editable editable) {
+        switch (this.a) {
+            case 0:
+                break;
+            default:
+                org.telegram.ui.kn0 kn0Var = (org.telegram.ui.kn0) this.e;
+                String str = (String) this.c;
+                boolean z10 = ((HashMap) this.d) == kn0Var.t1;
+                EditTextBoldCursor editTextBoldCursor = this.b;
+                org.telegram.ui.kn0.J0(kn0Var, editTextBoldCursor, str, editable, z10);
+                int intValue = ((Integer) editTextBoldCursor.getTag()).intValue();
+                EditTextBoldCursor editTextBoldCursor2 = kn0Var.Y[intValue];
+                if (intValue == 6) {
+                    kn0Var.Y0(true);
+                    break;
+                }
+                break;
         }
-        animatorSetArr[i10] = null;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        cz0 cz0Var = this.c;
-        AnimatorSet[] animatorSetArr = cz0Var.I;
-        int i10 = this.a;
-        AnimatorSet animatorSet = animatorSetArr[i10];
-        if (animatorSet == null || !animatorSet.equals(animator)) {
-            return;
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+        int i13 = this.a;
+    }
+
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+        switch (this.a) {
+            case 0:
+                if (((int[]) this.c)[0] == 2) {
+                    ((dz0) this.e).o0((TextView) this.d, this.b.getText().toString(), false);
+                    break;
+                }
+                break;
         }
-        if (!this.b) {
-            cz0Var.J[i10].setVisibility(4);
-        }
-        animatorSetArr[i10] = null;
+    }
+
+    public qy0(org.telegram.ui.kn0 kn0Var, EditTextBoldCursor editTextBoldCursor, String str, HashMap hashMap) {
+        this.e = kn0Var;
+        this.b = editTextBoldCursor;
+        this.c = str;
+        this.d = hashMap;
+    }
+
+    private final void a(Editable editable) {
+    }
+
+    private final void b(int i10, int i11, int i12, CharSequence charSequence) {
+    }
+
+    private final void c(int i10, int i11, int i12, CharSequence charSequence) {
+    }
+
+    private final void d(int i10, int i11, int i12, CharSequence charSequence) {
     }
 }

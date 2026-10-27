@@ -10,29 +10,29 @@ import org.telegram.ui.ActionBar.k3;
 import org.telegram.ui.Cells.v2;
 import org.telegram.ui.Components.ChatActivityEnterView;
 import org.telegram.ui.Components.UndoView;
-import org.telegram.ui.Components.aw0;
-import org.telegram.ui.Components.cz0;
-import org.telegram.ui.Components.dj0;
+import org.telegram.ui.Components.bw0;
 import org.telegram.ui.Components.dv;
-import org.telegram.ui.Components.ep0;
+import org.telegram.ui.Components.dz0;
+import org.telegram.ui.Components.ej0;
+import org.telegram.ui.Components.fp0;
 import org.telegram.ui.Components.g5;
-import org.telegram.ui.Components.le0;
 import org.telegram.ui.Components.m8;
-import org.telegram.ui.Components.mr0;
+import org.telegram.ui.Components.me0;
 import org.telegram.ui.Components.nk;
+import org.telegram.ui.Components.nr0;
 import org.telegram.ui.Components.sl;
 import org.telegram.ui.Components.ti;
 import org.telegram.ui.Components.uz;
-import org.telegram.ui.Components.yp;
+import org.telegram.ui.Components.zp;
 import org.telegram.ui.j4;
 import org.telegram.ui.l9;
-import org.telegram.ui.oj0;
-import org.telegram.ui.po0;
+import org.telegram.ui.qj0;
+import org.telegram.ui.ro0;
 import org.telegram.ui.ta;
-import org.telegram.ui.un;
 import org.telegram.ui.wb;
+import org.telegram.ui.wn;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class d implements View.OnTouchListener {
     public final /* synthetic */ int a;
@@ -67,7 +67,7 @@ public final /* synthetic */ class d implements View.OnTouchListener {
                 int i14 = wb.Q0;
                 break;
             case 8:
-                int i15 = un.bd;
+                int i15 = wn.fd;
                 break;
             case 10:
                 Pattern pattern = g5.a;
@@ -89,7 +89,7 @@ public final /* synthetic */ class d implements View.OnTouchListener {
                 int i19 = sl.B0;
                 break;
             case 16:
-                int i20 = yp.l0;
+                int i20 = zp.l0;
                 break;
             case 17:
                 dv dvVar = dv.S;
@@ -98,22 +98,22 @@ public final /* synthetic */ class d implements View.OnTouchListener {
                 int i21 = uz.h;
                 break;
             case 19:
-                int[] iArr = le0.i0;
+                int[] iArr = me0.i0;
                 break;
             case 20:
-                int i22 = dj0.R;
+                int i22 = ej0.R;
                 break;
             case 21:
-                int i23 = ep0.a1;
+                int i23 = fp0.a1;
                 break;
             case 22:
-                int i24 = mr0.Z0;
+                int i24 = nr0.Z0;
                 break;
             case 23:
-                int[] iArr2 = aw0.p2;
+                int[] iArr2 = bw0.p2;
                 break;
             case 24:
-                int i25 = cz0.w0;
+                int i25 = dz0.w0;
                 break;
             case 25:
                 int i26 = UndoView.i0;
@@ -122,10 +122,10 @@ public final /* synthetic */ class d implements View.OnTouchListener {
                 int i27 = UndoView.i0;
                 break;
             case 27:
-                int i28 = oj0.e0;
+                int i28 = qj0.e0;
                 break;
             default:
-                List list = po0.g1;
+                List list = ro0.g1;
                 break;
         }
         return true;

@@ -1,71 +1,91 @@
 package org.telegram.ui;
 
+import android.content.Context;
+import android.util.SparseArray;
+import android.util.SparseIntArray;
 import android.view.View;
-import org.telegram.messenger.ImageReceiver;
+import java.util.List;
 import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.VideoEditedInfo;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public final class ci extends gu0 {
-    public final /* synthetic */ un a;
+public final class ci extends a5.a {
+    public final /* synthetic */ int c;
+    public final /* synthetic */ SparseArray d;
+    public final /* synthetic */ boolean e;
+    public final /* synthetic */ List f;
+    public final /* synthetic */ MessageObject g;
+    public final /* synthetic */ org.telegram.ui.Components.gk0 h;
+    public final /* synthetic */ MessageObject i;
+    public final /* synthetic */ SparseIntArray j;
+    public final /* synthetic */ int k;
+    public final /* synthetic */ a5.m l;
+    public final /* synthetic */ ActionBarPopupWindow$ActionBarPopupWindowLayout m;
+    public final /* synthetic */ int[] n;
+    public final /* synthetic */ int o;
+    public final /* synthetic */ wn p;
 
-    public ci(un unVar) {
-        this.a = unVar;
+    public ci(wn wnVar, int i10, SparseArray sparseArray, boolean z10, List list, MessageObject messageObject, org.telegram.ui.Components.gk0 gk0Var, MessageObject messageObject2, SparseIntArray sparseIntArray, int i11, a5.m mVar, ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout, int[] iArr, int i12) {
+        this.p = wnVar;
+        this.c = i10;
+        this.d = sparseArray;
+        this.e = z10;
+        this.f = list;
+        this.g = messageObject;
+        this.h = gk0Var;
+        this.i = messageObject2;
+        this.j = sparseIntArray;
+        this.k = i11;
+        this.l = mVar;
+        this.m = actionBarPopupWindow$ActionBarPopupWindowLayout;
+        this.n = iArr;
+        this.o = i12;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:17:0x0076 A[LOOP:0: B:10:0x002a->B:17:0x0076, LOOP_END] */
-    /* JADX WARN: Removed duplicated region for block: B:18:0x004b A[SYNTHETIC] */
-    @Override // org.telegram.ui.gu0, org.telegram.ui.ou0
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final qu0 E(MessageObject messageObject, TLRPC.FileLocation fileLocation, int i10, boolean z10, boolean z11) {
-        zj zjVar;
-        ImageReceiver imageReceiver;
-        if (i10 >= 0) {
-            un unVar = this.a;
-            if (i10 < unVar.Ua.size() && (zjVar = unVar.U1) != null && zjVar.getListView() != null) {
-                int childCount = unVar.U1.getListView().getChildCount();
-                Object obj = unVar.Ua.get(i10);
-                for (int i11 = 0; i11 < childCount; i11++) {
-                    View childAt = unVar.U1.getListView().getChildAt(i11);
-                    if (childAt instanceof org.telegram.ui.Cells.d2) {
-                        org.telegram.ui.Cells.d2 d2Var = (org.telegram.ui.Cells.d2) childAt;
-                        if (d2Var.getResult() == obj) {
-                            imageReceiver = d2Var.getPhotoImage();
-                            if (imageReceiver == null) {
-                                int[] iArr = new int[2];
-                                childAt.getLocationInWindow(iArr);
-                                qu0 qu0Var = new qu0();
-                                qu0Var.b = iArr[0];
-                                qu0Var.c = iArr[1];
-                                qu0Var.d = unVar.U1.getListView();
-                                qu0Var.a = imageReceiver;
-                                qu0Var.e = imageReceiver.getBitmapSafe();
-                                qu0Var.h = imageReceiver.getRoundRadius(true);
-                                return qu0Var;
-                            }
-                        }
-                    }
-                    imageReceiver = null;
-                    if (imageReceiver == null) {
-                    }
-                }
-            }
-        }
-        return null;
+    @Override // a5.a
+    public final void a(a5.m mVar, Object obj) {
+        mVar.removeView((View) obj);
     }
 
-    @Override // org.telegram.ui.gu0, org.telegram.ui.ou0
-    public final void o(int i10, VideoEditedInfo videoEditedInfo, boolean z10, int i11, int i12, boolean z11) {
-        if (i10 >= 0) {
-            un unVar = this.a;
-            if (i10 >= unVar.Ua.size()) {
-                return;
-            }
-            unVar.mb((TLRPC.BotInlineResult) unVar.Ua.get(i10), z10, i11, 0L);
+    @Override // a5.a
+    public final int b() {
+        return this.c;
+    }
+
+    @Override // a5.a
+    public final Object e(a5.m mVar, int i10) {
+        int i11;
+        SparseArray sparseArray = this.d;
+        View view = (View) sparseArray.get(i10);
+        if (view != null) {
+            mVar.addView(view);
+            return view;
         }
+        int i12 = this.e ? i10 - 1 : i10;
+        TLRPC.ReactionCount reactionCount = i12 >= 0 ? (TLRPC.ReactionCount) this.f.get(i12) : null;
+        Context context = mVar.getContext();
+        wn wnVar = this.p;
+        un unVar = wnVar.ua;
+        i11 = ((org.telegram.ui.ActionBar.r2) wnVar).currentAccount;
+        org.telegram.ui.Components.qk0 qk0Var = new org.telegram.ui.Components.qk0(context, unVar, i11, this.g, reactionCount, true);
+        org.telegram.ui.Components.gk0 gk0Var = this.h;
+        qk0Var.h(gk0Var.getSeenUsers());
+        qk0Var.G = new y0(this, 18);
+        qk0Var.E = new m4.s0(18, this, this.i);
+        qk0Var.y = new hi.s4(this.j, i10, this.k, this.l, this.m, this.n);
+        if (i12 < 0) {
+            qk0Var.setPredictiveCount(this.o);
+            gk0Var.setSeenCallback(new h3(qk0Var, 1));
+        }
+        mVar.addView(qk0Var);
+        sparseArray.put(i10, qk0Var);
+        return qk0Var;
+    }
+
+    @Override // a5.a
+    public final boolean f(View view, Object obj) {
+        return view == obj;
     }
 }

@@ -21,24 +21,24 @@ import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.f7;
 import org.telegram.ui.ActionBar.y6;
-import org.telegram.ui.Components.ak0;
-import org.telegram.ui.Components.gb1;
-import org.telegram.ui.Components.h31;
-import org.telegram.ui.Components.k51;
-import org.telegram.ui.Components.xj0;
-import org.telegram.ui.g40;
+import org.telegram.ui.Components.bk0;
+import org.telegram.ui.Components.i31;
+import org.telegram.ui.Components.kb1;
+import org.telegram.ui.Components.l51;
+import org.telegram.ui.Components.yj0;
 import org.telegram.ui.ga;
-import org.telegram.ui.v50;
+import org.telegram.ui.i40;
+import org.telegram.ui.x50;
 import org.webrtc.RendererCommon;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public abstract class v0 extends FrameLayout implements VoIPService.StateListener {
     public boolean a;
     public final a5.m b;
     public final ei.n c;
     public final LinearLayout d;
-    public final ak0 e;
+    public final bk0 e;
     public final TextView[] f;
     public final t2 h;
     public int n;
@@ -61,7 +61,7 @@ public abstract class v0 extends FrameLayout implements VoIPService.StateListene
         mVar.setAdapter(new u0(this));
         mVar.setPageMargin(0);
         mVar.setOffscreenPageLimit(1);
-        addView(mVar, gb1.g(-1.0f, -1));
+        addView(mVar, kb1.g(-1.0f, -1));
         mVar.b(new s0(this));
         t2 t2Var = new t2(context, false, false);
         this.h = t2Var;
@@ -73,7 +73,7 @@ public abstract class v0 extends FrameLayout implements VoIPService.StateListene
         s2Var.setAlpha(0.0f);
         s2Var.setRotateTextureWithScreen(true);
         s2Var.setUseCameraRotation(true);
-        addView(t2Var, gb1.g(-1.0f, -1));
+        addView(t2Var, kb1.g(-1.0f, -1));
         org.telegram.ui.ActionBar.k kVar = new org.telegram.ui.ActionBar.k(context, null);
         kVar.setBackButtonDrawable(new org.telegram.ui.ActionBar.j2(false));
         kVar.setBackgroundColor(0);
@@ -96,10 +96,10 @@ public abstract class v0 extends FrameLayout implements VoIPService.StateListene
         nVar.setForeground(y6.j0(dp, dp, dp, dp, 0, o10, o10));
         nVar.setPadding(0, AndroidUtilities.dp(12.0f), 0, AndroidUtilities.dp(12.0f));
         nVar.setOnClickListener(new ig.d0(this, 13));
-        addView(nVar, gb1.h(-1, 48.0f, 80, 0.0f, 0.0f, 0.0f, 64.0f));
+        addView(nVar, kb1.h(-1, 48.0f, 80, 0.0f, 0.0f, 0.0f, 64.0f));
         LinearLayout linearLayout = new LinearLayout(context);
         this.d = linearLayout;
-        addView(linearLayout, gb1.i(-2, 64, 80));
+        addView(linearLayout, kb1.i(-2, 64, 80));
         int i11 = 0;
         while (true) {
             TextView[] textViewArr = this.f;
@@ -113,7 +113,7 @@ public abstract class v0 extends FrameLayout implements VoIPService.StateListene
             this.f[i11].setPadding(AndroidUtilities.dp(10.0f), 0, AndroidUtilities.dp(10.0f), 0);
             this.f[i11].setGravity(16);
             this.f[i11].setSingleLine(true);
-            this.d.addView(this.f[i11], gb1.r(-2, -1));
+            this.d.addView(this.f[i11], kb1.r(-2, -1));
             if (i11 == 0 && this.y) {
                 this.f[i11].setText(LocaleController.getString(R.string.VoipPhoneScreen));
             } else if (i11 == 0 || (i11 == 1 && this.y)) {
@@ -135,17 +135,17 @@ public abstract class v0 extends FrameLayout implements VoIPService.StateListene
             sharedInstance.setLocalSink(this.h.d, false);
         }
         this.b.setCurrentItem(this.y ? 1 : 0);
-        ak0 ak0Var = new ak0(context);
-        this.e = ak0Var;
-        ak0Var.setPadding(AndroidUtilities.dp(9.0f), AndroidUtilities.dp(9.0f), AndroidUtilities.dp(9.0f), AndroidUtilities.dp(9.0f));
-        ak0Var.setBackground(y6.K(AndroidUtilities.dp(48.0f), i0.a.o(-16777216, 76)));
-        xj0 xj0Var = new xj0(R.raw.voice_mini, AndroidUtilities.dp(24.0f), AndroidUtilities.dp(24.0f), true, null);
-        ak0Var.setAnimation(xj0Var);
-        ak0Var.setScaleType(ImageView.ScaleType.FIT_CENTER);
+        bk0 bk0Var = new bk0(context);
+        this.e = bk0Var;
+        bk0Var.setPadding(AndroidUtilities.dp(9.0f), AndroidUtilities.dp(9.0f), AndroidUtilities.dp(9.0f), AndroidUtilities.dp(9.0f));
+        bk0Var.setBackground(y6.K(AndroidUtilities.dp(48.0f), i0.a.o(-16777216, 76)));
+        yj0 yj0Var = new yj0(R.raw.voice_mini, AndroidUtilities.dp(24.0f), AndroidUtilities.dp(24.0f), true, null);
+        bk0Var.setAnimation(yj0Var);
+        bk0Var.setScaleType(ImageView.ScaleType.FIT_CENTER);
         this.v = true;
-        xj0Var.M(69);
-        ak0Var.setOnClickListener(new k51(5, this, xj0Var));
-        addView(ak0Var, gb1.h(48, 48.0f, 83, 24.0f, 0.0f, 0.0f, 136.0f));
+        yj0Var.M(69);
+        bk0Var.setOnClickListener(new l51(5, this, yj0Var));
+        addView(bk0Var, kb1.h(48, 48.0f, 83, 24.0f, 0.0f, 0.0f, 136.0f));
     }
 
     public static void a(v0 v0Var) {
@@ -170,9 +170,9 @@ public abstract class v0 extends FrameLayout implements VoIPService.StateListene
         }
         this.a = true;
         c();
-        v50 v50Var = ((g40) this).E;
-        boolean z12 = v50Var.z0.v;
-        v50Var.z0 = null;
+        x50 x50Var = ((i40) this).E;
+        boolean z12 = x50Var.z0.v;
+        x50Var.z0 = null;
         VoIPService sharedInstance = VoIPService.getSharedInstance();
         if (z11) {
             if (sharedInstance != null) {
@@ -181,14 +181,14 @@ public abstract class v0 extends FrameLayout implements VoIPService.StateListene
             if (z10 && sharedInstance != null) {
                 sharedInstance.setVideoState(false, 0);
             }
-            v50Var.O1(true, false);
-            v50Var.a1.sortParticipants();
-            v50Var.O0(true);
-            v50Var.e.requestLayout();
+            x50Var.O1(true, false);
+            x50Var.a1.sortParticipants();
+            x50Var.O0(true);
+            x50Var.e.requestLayout();
         } else if (sharedInstance != null) {
             sharedInstance.setVideoState(false, 0);
         }
-        animate().alpha(0.0f).translationX(AndroidUtilities.dp(32.0f)).setDuration(150L).setListener(new h31(this, 12));
+        animate().alpha(0.0f).translationX(AndroidUtilities.dp(32.0f)).setDuration(150L).setListener(new i31(this, 12));
         invalidate();
     }
 
@@ -334,9 +334,9 @@ public abstract class v0 extends FrameLayout implements VoIPService.StateListene
             marginLayoutParams.leftMargin = dp2;
             marginLayoutParams.rightMargin = dp2;
         }
-        ak0 ak0Var = this.e;
-        if (ak0Var != null) {
-            ViewGroup.MarginLayoutParams marginLayoutParams2 = (ViewGroup.MarginLayoutParams) ak0Var.getLayoutParams();
+        bk0 bk0Var = this.e;
+        if (bk0Var != null) {
+            ViewGroup.MarginLayoutParams marginLayoutParams2 = (ViewGroup.MarginLayoutParams) bk0Var.getLayoutParams();
             if (z10) {
                 int dp3 = AndroidUtilities.dp(88.0f);
                 marginLayoutParams2.leftMargin = dp3;

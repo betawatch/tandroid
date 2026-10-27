@@ -12,10 +12,10 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class f2 extends FrameLayout implements org.telegram.ui.Cells.r9, e3 {
-    public final h70 a;
+    public final j70 a;
     public final h4 b;
     public a3 c;
     public final li.z3 d;
@@ -23,15 +23,15 @@ public final class f2 extends FrameLayout implements org.telegram.ui.Cells.r9, e
     public TL_iv.pageBlockPreformatted f;
     public CharSequence h;
 
-    public f2(Context context, final h70 h70Var, h4 h4Var) {
+    public f2(Context context, final j70 j70Var, h4 h4Var) {
         super(context);
-        this.a = h70Var;
+        this.a = j70Var;
         this.b = h4Var;
-        li.z3 z3Var = new li.z3(context, h70Var);
+        li.z3 z3Var = new li.z3(context, j70Var);
         this.d = z3Var;
         z3Var.setPadding(0, AndroidUtilities.dp(8.0f), 0, AndroidUtilities.dp(8.0f));
-        addView(z3Var, org.telegram.ui.Components.gb1.g(-2.0f, -1));
-        e2 e2Var = new e2(this, context, h70Var, h4Var);
+        addView(z3Var, org.telegram.ui.Components.kb1.g(-2.0f, -1));
+        e2 e2Var = new e2(this, context, j70Var, h4Var);
         this.e = e2Var;
         FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(-2, -1);
         int dp = AndroidUtilities.dp(16.0f);
@@ -45,7 +45,7 @@ public final class f2 extends FrameLayout implements org.telegram.ui.Cells.r9, e
         z3Var.setOnScrollChangeListener(new View.OnScrollChangeListener() { // from class: org.telegram.ui.d2
             @Override // android.view.View.OnScrollChangeListener
             public final void onScrollChange(View view, int i10, int i11, int i12, int i13) {
-                org.telegram.ui.Cells.s9 s9Var = ((j4) h70.this).P0;
+                org.telegram.ui.Cells.s9 s9Var = ((j4) j70.this).P0;
                 if (s9Var == null || !s9Var.x()) {
                     return;
                 }

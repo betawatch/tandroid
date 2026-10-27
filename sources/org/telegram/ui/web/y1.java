@@ -42,19 +42,19 @@ import org.telegram.ui.Cells.a9;
 import org.telegram.ui.Cells.p6;
 import org.telegram.ui.Components.f5;
 import org.telegram.ui.Components.g5;
-import org.telegram.ui.Components.gb1;
-import org.telegram.ui.Components.j71;
-import org.telegram.ui.Components.k80;
-import org.telegram.ui.Components.l71;
+import org.telegram.ui.Components.k71;
+import org.telegram.ui.Components.kb1;
+import org.telegram.ui.Components.l80;
 import org.telegram.ui.Components.m71;
-import org.telegram.ui.Components.mm0;
-import org.telegram.ui.Components.t61;
-import org.telegram.ui.Wallet.q6;
+import org.telegram.ui.Components.n71;
+import org.telegram.ui.Components.nm0;
+import org.telegram.ui.Components.u61;
+import org.telegram.ui.Wallet.a6;
 import org.telegram.ui.cg;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
-public final class y1 extends m71 implements NotificationCenter.NotificationCenterDelegate {
+public final class y1 extends n71 implements NotificationCenter.NotificationCenterDelegate {
     public o2 e;
     public final Utilities.Callback f;
     public long h;
@@ -115,125 +115,125 @@ public final class y1 extends m71 implements NotificationCenter.NotificationCent
         return 0L;
     }
 
-    @Override // org.telegram.ui.Components.m71
-    public final void V(ArrayList arrayList, j71 j71Var) {
+    @Override // org.telegram.ui.Components.n71
+    public final void V(ArrayList arrayList, k71 k71Var) {
         boolean isWebBrowserInAppEnabled = getMessagesController().isWebBrowserInAppEnabled();
         arrayList.size();
         String string = LocaleController.getString(R.string.BrowserSettingsEnable);
-        t61 t61Var = new t61(9);
-        t61Var.d = 1;
-        t61Var.l = string;
-        t61Var.L(isWebBrowserInAppEnabled);
-        arrayList.add(t61Var);
+        u61 u61Var = new u61(9);
+        u61Var.d = 1;
+        u61Var.l = string;
+        u61Var.L(isWebBrowserInAppEnabled);
+        arrayList.add(u61Var);
         ic.a.z(R.string.BrowserSettingsEnableInfo, arrayList);
         if (!isWebBrowserInAppEnabled) {
             getMessagesController().isWebBrowserUseCustomTabs();
-            t61 i10 = t61.i(17, LocaleController.getString(R.string.WebBrowserShowCloseButton));
+            u61 i10 = u61.i(17, LocaleController.getString(R.string.WebBrowserShowCloseButton));
             i10.L(getMessagesController().isWebBrowserUseCustomTabs());
             arrayList.add(i10);
             ic.a.z(R.string.WebBrowserShowCloseButtonInfo, arrayList);
-            arrayList.add(t61.u(LocaleController.getString(R.string.BrowserSettingsAlwaysOpenInTitle2)));
+            arrayList.add(u61.u(LocaleController.getString(R.string.BrowserSettingsAlwaysOpenInTitle2)));
             arrayList.size();
             o2 o2Var = this.e;
             String string2 = LocaleController.getString(R.string.BrowserSettingsNeverOpenInAdd);
-            t61 t61Var2 = new t61(3);
-            t61Var2.d = 16;
-            t61Var2.G = o2Var;
-            t61Var2.l = string2;
-            t61Var2.q = true;
-            arrayList.add(t61Var2);
+            u61 u61Var2 = new u61(3);
+            u61Var2.d = 16;
+            u61Var2.G = o2Var;
+            u61Var2.l = string2;
+            u61Var2.q = true;
+            arrayList.add(u61Var2);
             List<TL_account.WebDomainException> webBrowserExceptionsList = getMessagesController().getWebBrowserExceptionsList(false);
             for (TL_account.WebDomainException webDomainException : webBrowserExceptionsList) {
                 String str = webDomainException.domain;
                 String str2 = webDomainException.title;
                 long j10 = webDomainException.favicon;
                 int i11 = w1.a;
-                t61 K = t61.K(w1.class);
+                u61 K = u61.K(w1.class);
                 K.l = str;
                 K.n = str2;
                 K.B = j10;
                 arrayList.add(K);
             }
-            arrayList.add(t61.C(LocaleController.getString(R.string.BrowserSettingsAlwaysOpenInInfo2)));
+            arrayList.add(u61.C(LocaleController.getString(R.string.BrowserSettingsAlwaysOpenInInfo2)));
             if (webBrowserExceptionsList.isEmpty()) {
                 return;
             }
             arrayList.size();
-            t61 e = t61.e(5, LocaleController.getString(R.string.BrowserSettingsNeverOpenInClearList2));
+            u61 e = u61.e(5, LocaleController.getString(R.string.BrowserSettingsNeverOpenInClearList2));
             e.r = true;
             arrayList.add(e);
-            arrayList.add(t61.C(null));
+            arrayList.add(u61.C(null));
             return;
         }
         arrayList.size();
         int i12 = R.drawable.menu_clear_cookies;
         String string3 = LocaleController.getString(R.string.BrowserSettingsCookiesClear);
         long j11 = this.n;
-        arrayList.add(t61.d(3, i12, string3, j11 > 0 ? AndroidUtilities.formatFileSize(j11) : ""));
+        arrayList.add(u61.d(3, i12, string3, j11 > 0 ? AndroidUtilities.formatFileSize(j11) : ""));
         arrayList.size();
         int i13 = R.drawable.menu_clear_cache;
         String string4 = LocaleController.getString(R.string.BrowserSettingsCacheClear);
         long j12 = this.h;
-        arrayList.add(t61.d(2, i13, string4, j12 > 0 ? AndroidUtilities.formatFileSize(j12) : ""));
+        arrayList.add(u61.d(2, i13, string4, j12 > 0 ? AndroidUtilities.formatFileSize(j12) : ""));
         ic.a.z(R.string.BrowserSettingsCookiesInfo, arrayList);
         if (this.r > 0) {
             arrayList.size();
-            arrayList.add(t61.c(9, R.drawable.menu_clear_recent, LocaleController.getString(R.string.BrowserSettingsHistoryShow)));
+            arrayList.add(u61.c(9, R.drawable.menu_clear_recent, LocaleController.getString(R.string.BrowserSettingsHistoryShow)));
             arrayList.size();
-            arrayList.add(t61.d(7, R.drawable.menu_clear_cache, LocaleController.getString(R.string.BrowserSettingsHistoryClear), LocaleController.formatPluralStringComma("BrowserSettingsHistoryPages", (int) this.r, ',')));
-            arrayList.add(t61.C(null));
+            arrayList.add(u61.d(7, R.drawable.menu_clear_cache, LocaleController.getString(R.string.BrowserSettingsHistoryClear), LocaleController.formatPluralStringComma("BrowserSettingsHistoryPages", (int) this.r, ',')));
+            arrayList.add(u61.C(null));
         }
-        arrayList.add(t61.u(LocaleController.getString(R.string.BrowserSettingsNeverOpenInTitle2)));
+        arrayList.add(u61.u(LocaleController.getString(R.string.BrowserSettingsNeverOpenInTitle2)));
         arrayList.size();
         o2 o2Var2 = this.e;
         String string5 = LocaleController.getString(R.string.BrowserSettingsNeverOpenInAdd);
-        t61 t61Var3 = new t61(3);
-        t61Var3.d = 15;
-        t61Var3.G = o2Var2;
-        t61Var3.l = string5;
-        t61Var3.q = true;
-        arrayList.add(t61Var3);
+        u61 u61Var3 = new u61(3);
+        u61Var3.d = 15;
+        u61Var3.G = o2Var2;
+        u61Var3.l = string5;
+        u61Var3.q = true;
+        arrayList.add(u61Var3);
         List<TL_account.WebDomainException> webBrowserExceptionsList2 = getMessagesController().getWebBrowserExceptionsList(true);
         for (TL_account.WebDomainException webDomainException2 : webBrowserExceptionsList2) {
             String str3 = webDomainException2.domain;
             String str4 = webDomainException2.title;
             long j13 = webDomainException2.favicon;
             int i14 = w1.a;
-            t61 K2 = t61.K(w1.class);
+            u61 K2 = u61.K(w1.class);
             K2.l = str3;
             K2.n = str4;
             K2.B = j13;
             arrayList.add(K2);
         }
-        arrayList.add(t61.C(LocaleController.getString(R.string.BrowserSettingsNeverOpenInInfo2)));
+        arrayList.add(u61.C(LocaleController.getString(R.string.BrowserSettingsNeverOpenInInfo2)));
         if (!webBrowserExceptionsList2.isEmpty()) {
             arrayList.size();
-            t61 e10 = t61.e(5, LocaleController.getString(R.string.BrowserSettingsNeverOpenInClearList2));
+            u61 e10 = u61.e(5, LocaleController.getString(R.string.BrowserSettingsNeverOpenInClearList2));
             e10.r = true;
             arrayList.add(e10);
-            arrayList.add(t61.C(null));
+            arrayList.add(u61.C(null));
         }
         arrayList.size();
-        arrayList.add(t61.d(6, R.drawable.msg_search, LocaleController.getString(R.string.SearchEngine), n1.a().a));
+        arrayList.add(u61.d(6, R.drawable.msg_search, LocaleController.getString(R.string.SearchEngine), n1.a().a));
         ic.a.z(R.string.BrowserSettingsSearchEngineInfo, arrayList);
         if (BuildVars.DEBUG_PRIVATE_VERSION) {
-            t61 i15 = t61.i(12, "adaptable colors");
+            u61 i15 = u61.i(12, "adaptable colors");
             i15.L(SharedConfig.adaptableColorInBrowser);
             arrayList.add(i15);
-            t61 i16 = t61.i(13, "only local IV");
+            u61 i16 = u61.i(13, "only local IV");
             i16.L(SharedConfig.onlyLocalInstantView);
             arrayList.add(i16);
         }
     }
 
-    @Override // org.telegram.ui.Components.m71
+    @Override // org.telegram.ui.Components.n71
     public final CharSequence W() {
         return LocaleController.getString(R.string.BrowserSettingsTitle);
     }
 
-    @Override // org.telegram.ui.Components.m71
-    public final void X(t61 t61Var, View view) {
-        int i10 = t61Var.d;
+    @Override // org.telegram.ui.Components.n71
+    public final void X(u61 u61Var, View view) {
+        int i10 = u61Var.d;
         if (i10 == 12) {
             SharedConfig.toggleBrowserAdaptableColors();
             ((a9) view).setChecked(SharedConfig.adaptableColorInBrowser);
@@ -704,16 +704,16 @@ public final class y1 extends m71 implements NotificationCenter.NotificationCent
             alertDialog$Builder4.p();
             return;
         }
-        if (t61Var.H(w1.class)) {
+        if (u61Var.H(w1.class)) {
             x1 x1Var = (x1) view;
             String str2 = x1Var.e;
-            k80 F = k80.F((ViewGroup) this.fragmentView, null, x1Var);
+            l80 F = l80.F((ViewGroup) this.fragmentView, null, x1Var);
             F.s = 40;
-            F.c(R.drawable.menu_delete_old, LocaleController.getString(R.string.Remove), new q6(17, this, str2), false);
+            F.c(R.drawable.menu_delete_old, LocaleController.getString(R.string.Remove), new a6(18, this, str2), false);
             F.Z();
             return;
         }
-        int i19 = t61Var.d;
+        int i19 = u61Var.d;
         if (i19 == 6) {
             if (getParentActivity() == null) {
                 return;
@@ -789,7 +789,7 @@ public final class y1 extends m71 implements NotificationCenter.NotificationCent
             f5Var.setOnEditorActionListener(new org.telegram.ui.Components.d1(v0Var, i12));
             LinearLayout linearLayout2 = new LinearLayout(parentActivity);
             linearLayout2.setOrientation(1);
-            linearLayout2.addView(f5Var, gb1.o(24.0f, 4.0f, 24.0f, 9.0f, -1, -2));
+            linearLayout2.addView(f5Var, kb1.o(24.0f, 4.0f, 24.0f, 9.0f, -1, -2));
             alertDialog$Builder6.c();
             alertDialog$Builder6.o(linearLayout2);
             e2Var6.a = Math.min(AndroidUtilities.dp(320.0f), (AndroidUtilities.displaySize.x * 85) / 100);
@@ -803,24 +803,24 @@ public final class y1 extends m71 implements NotificationCenter.NotificationCent
         }
     }
 
-    @Override // org.telegram.ui.Components.m71
-    public final boolean Y(t61 t61Var, View view) {
+    @Override // org.telegram.ui.Components.n71
+    public final boolean Y(u61 u61Var, View view) {
         return false;
     }
 
     public final void b0() {
-        j71 j71Var;
+        k71 k71Var;
         if (c1.a(new ig.o(this, 15)) != null) {
             this.r = r0.size();
-            l71 l71Var = this.a;
-            if (l71Var != null && (j71Var = l71Var.g3) != null && l71Var.G) {
-                j71Var.O(true);
+            m71 m71Var = this.a;
+            if (m71Var != null && (k71Var = m71Var.g3) != null && m71Var.G) {
+                k71Var.O(true);
             }
         }
         Utilities.globalQueue.postRunnable(new h1(this, 2));
     }
 
-    @Override // org.telegram.ui.Components.m71, org.telegram.ui.ActionBar.r2
+    @Override // org.telegram.ui.Components.n71, org.telegram.ui.ActionBar.r2
     public final View createView(Context context) {
         setHasOwnBackground(true);
         Drawable mutate = context.getResources().getDrawable(R.drawable.poll_add_circle).mutate();
@@ -840,15 +840,15 @@ public final class y1 extends m71 implements NotificationCenter.NotificationCent
 
     @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
     public final void didReceivedNotification(int i10, int i11, Object... objArr) {
-        l71 l71Var;
-        if (i10 != NotificationCenter.webBrowserSettingsUpdate || (l71Var = this.a) == null) {
+        m71 m71Var;
+        if (i10 != NotificationCenter.webBrowserSettingsUpdate || (m71Var = this.a) == null) {
             return;
         }
-        l71Var.g3.O(true);
+        m71Var.g3.O(true);
     }
 
     @Override // org.telegram.ui.ActionBar.r2
-    public final mm0 getListViewForSimpleGlass() {
+    public final nm0 getListViewForSimpleGlass() {
         return this.a;
     }
 
@@ -860,7 +860,7 @@ public final class y1 extends m71 implements NotificationCenter.NotificationCent
     @Override // org.telegram.ui.ActionBar.r2
     public final boolean onFragmentCreate() {
         b0();
-        getNotificationCenter().addObserver(this, NotificationCenter.webBrowserSettingsUpdate);
+        getNotificationCenter().addWeakObserver(this, NotificationCenter.webBrowserSettingsUpdate);
         return super.onFragmentCreate();
     }
 
@@ -891,9 +891,9 @@ public final class y1 extends m71 implements NotificationCenter.NotificationCent
                 if (drawable2 != null) {
                     drawable2.setColorFilter(new PorterDuffColorFilter(themedColor2, PorterDuff.Mode.MULTIPLY));
                 }
-                l71 l71Var = this.a;
-                if (l71Var != null) {
-                    l71Var.g1();
+                m71 m71Var = this.a;
+                if (m71Var != null) {
+                    m71Var.g1();
                 }
             }
         } catch (Exception e) {

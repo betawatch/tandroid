@@ -10,11 +10,11 @@ import android.widget.TextView;
 import java.util.HashSet;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
-import org.telegram.messenger.vh;
+import org.telegram.messenger.wh;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.gb1;
+import org.telegram.ui.Components.kb1;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class g8 extends LinearLayout implements org.telegram.ui.ActionBar.p6 {
     public final org.telegram.ui.ActionBar.u6 a;
@@ -27,22 +27,22 @@ public final class g8 extends LinearLayout implements org.telegram.ui.ActionBar.
         setOrientation(0);
         this.a = u6Var;
         setPadding(AndroidUtilities.dp(20.0f), 0, AndroidUtilities.dp(13.0f), 0);
-        LinearLayout d = vh.d(context, 1);
+        LinearLayout d = wh.d(context, 1);
         d.setPadding(0, AndroidUtilities.dp(10.0f), 0, AndroidUtilities.dp(10.0f));
-        addView(d, gb1.t(0, -2, 1.0f, 19, 0, 0, 0, 0));
+        addView(d, kb1.t(0, -2, 1.0f, 19, 0, 0, 0, 0));
         TextView textView = new TextView(context);
         this.b = textView;
         textView.setTextSize(1, 15.0f);
         textView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MONO));
-        TextView e = vh.e(d, textView, gb1.x(-1, -2, 55, 0, 0, 0, 2), context);
+        TextView e = wh.e(d, textView, kb1.x(-1, -2, 55, 0, 0, 0, 2), context);
         this.c = e;
         e.setTextSize(1, 14.0f);
-        d.addView(e, gb1.x(-1, -2, 55, 0, 0, 0, 0));
+        d.addView(e, kb1.x(-1, -2, 55, 0, 0, 0, 0));
         ImageView imageView = new ImageView(context);
         this.d = imageView;
         imageView.setScaleType(ImageView.ScaleType.CENTER);
         imageView.setImageResource(R.drawable.attach_arrow_right);
-        addView(imageView, gb1.x(21, 21, 21, 9, 0, 0, 0));
+        addView(imageView, kb1.x(21, 21, 21, 9, 0, 0, 0));
         updateColors();
     }
 

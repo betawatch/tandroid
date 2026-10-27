@@ -9,9 +9,9 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.gb1;
+import org.telegram.ui.Components.kb1;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class z4 extends FrameLayout implements org.telegram.ui.ActionBar.p6 {
     public final org.telegram.ui.ActionBar.u6 a;
@@ -25,7 +25,7 @@ public final class z4 extends FrameLayout implements org.telegram.ui.ActionBar.p
         FrameLayout frameLayout = new FrameLayout(context);
         this.b = frameLayout;
         frameLayout.setBackground(org.telegram.ui.ActionBar.o6.e(new float[]{8.0f}, org.telegram.ui.ActionBar.y6.w0(org.telegram.ui.ActionBar.y6.Oh, u6Var)));
-        addView(frameLayout, gb1.h(-1, 48.0f, 51, 16.0f, 10.0f, 16.0f, 0.0f));
+        addView(frameLayout, kb1.h(-1, 48.0f, 51, 16.0f, 10.0f, 16.0f, 0.0f));
         org.telegram.ui.ActionBar.b6 b6Var = new org.telegram.ui.ActionBar.b6(context);
         b6Var.setPadding(AndroidUtilities.dp(34.0f), 0, AndroidUtilities.dp(34.0f), 0);
         b6Var.setGravity(17);
@@ -35,10 +35,10 @@ public final class z4 extends FrameLayout implements org.telegram.ui.ActionBar.p
         b6Var.l(LocaleController.getString(R.string.Directions), false);
         b6Var.setLeftDrawable(R.drawable.filled_directions);
         b6Var.setTypeface(AndroidUtilities.bold());
-        frameLayout.addView(b6Var, gb1.g(-1.0f, -1));
+        frameLayout.addView(b6Var, kb1.g(-1.0f, -1));
         frameLayout.setOutlineProvider(ag.z0.b);
         frameLayout.setClipToOutline(true);
-        gb1.c(frameLayout, 0.02f, 1.2f);
+        kb1.c(frameLayout, 0.02f, 1.2f);
     }
 
     @Override // android.widget.FrameLayout, android.view.View

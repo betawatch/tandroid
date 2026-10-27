@@ -38,15 +38,15 @@ import org.telegram.ui.ActionBar.u6;
 import org.telegram.ui.ActionBar.y6;
 import org.telegram.ui.Cells.s1;
 import org.telegram.ui.Cells.y;
-import org.telegram.ui.Components.aa0;
+import org.telegram.ui.Components.ba0;
 import org.telegram.ui.Components.j9;
-import org.telegram.ui.Components.px0;
-import org.telegram.ui.Components.s90;
-import org.telegram.ui.Components.w90;
-import org.telegram.ui.Components.xj0;
+import org.telegram.ui.Components.qx0;
+import org.telegram.ui.Components.t90;
+import org.telegram.ui.Components.x90;
+import org.telegram.ui.Components.yj0;
 import vg.s;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class c {
     public TextPaint A;
@@ -66,12 +66,12 @@ public final class c {
     public SpannableStringBuilder R;
     public int S;
     public int T;
-    public w90 U;
+    public x90 U;
     public ImageReceiver[] a;
     public j9[] b;
     public final s1 c;
     public ImageReceiver d;
-    public xj0 e;
+    public yj0 e;
     public CharSequence[] f;
     public TLRPC.User[] g;
     public float[] h;
@@ -106,10 +106,10 @@ public final class c {
         int i10;
         MessageObject messageObject = this.M;
         if (messageObject != null && messageObject.isGiveawayResults()) {
-            w90 w90Var = this.U;
+            x90 x90Var = this.U;
             s1 s1Var = this.c;
-            if (w90Var == null) {
-                this.U = new w90(s1Var);
+            if (x90Var == null) {
+                this.U = new x90(s1Var);
             }
             int action = motionEvent.getAction();
             int x9 = (int) motionEvent.getX();
@@ -123,11 +123,11 @@ public final class c {
                         clickableSpanArr[0].onClick(s1Var);
                         return true;
                     }
-                    aa0 aa0Var = new aa0(clickableSpanArr[0], null, x9, y3, 0);
-                    this.U.a(aa0Var, null);
+                    ba0 ba0Var = new ba0(clickableSpanArr[0], null, x9, y3, 0);
+                    this.U.a(ba0Var, null);
                     try {
                         int spanStart = this.R.getSpanStart(clickableSpanArr[0]);
-                        s90 b10 = aa0Var.b();
+                        t90 b10 = ba0Var.b();
                         b10.e(this.t, spanStart, this.T, this.S);
                         this.t.getSelectionPath(spanStart, this.R.getSpanEnd(clickableSpanArr[0]), b10);
                         return true;
@@ -347,8 +347,8 @@ public final class c {
             this.L.setBounds(this.j[this.O]);
             this.L.setCallback(s1Var);
         }
-        w90 w90Var = this.U;
-        if (w90Var == null || !w90Var.f(canvas)) {
+        x90 x90Var = this.U;
+        if (x90Var == null || !x90Var.f(canvas)) {
             return;
         }
         s1Var.invalidate();
@@ -359,9 +359,9 @@ public final class c {
         if (messageObject == null || !messageObject.isGiveawayResults() || this.L == null) {
             return;
         }
-        w90 w90Var = this.U;
-        if (w90Var != null) {
-            w90Var.d(true);
+        x90 x90Var = this.U;
+        if (x90Var != null) {
+            x90Var.d(true);
         }
         s1 s1Var = this.c;
         if (!z10) {
@@ -451,7 +451,7 @@ public final class c {
             }
             this.d.setAllowStartLottieAnimation(false);
             if (this.e == null) {
-                this.e = new xj0(org.telegram.messenger.R.raw.giveaway_results, AndroidUtilities.dp(120.0f), AndroidUtilities.dp(120.0f));
+                this.e = new yj0(org.telegram.messenger.R.raw.giveaway_results, AndroidUtilities.dp(120.0f), AndroidUtilities.dp(120.0f));
             }
             this.d.setImageBitmap(this.e);
             TLRPC.TL_messageMediaGiveawayResults tL_messageMediaGiveawayResults = (TLRPC.TL_messageMediaGiveawayResults) messageObject.messageOwner.media;
@@ -506,9 +506,9 @@ public final class c {
             Layout.Alignment alignment = Layout.Alignment.ALIGN_CENTER;
             float dp3 = AndroidUtilities.dp(2.0f);
             TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
-            this.s = px0.c(spannableStringBuilder, textPaint2, dp2, alignment, dp3, truncateAt, dp2, 10, true);
-            this.t = px0.c(this.R, this.y, dp2, alignment, AndroidUtilities.dp(2.0f), truncateAt, dp2, 10, true);
-            this.u = px0.c(spannableStringBuilder2, this.y, dp2, alignment, AndroidUtilities.dp(3.0f), truncateAt, dp2, 10, true);
+            this.s = qx0.c(spannableStringBuilder, textPaint2, dp2, alignment, dp3, truncateAt, dp2, 10, true);
+            this.t = qx0.c(this.R, this.y, dp2, alignment, AndroidUtilities.dp(2.0f), truncateAt, dp2, 10, true);
+            this.u = qx0.c(spannableStringBuilder2, this.y, dp2, alignment, AndroidUtilities.dp(3.0f), truncateAt, dp2, 10, true);
             int max = Math.max(i10, dp2);
             this.r = max - dp2;
             float f7 = max;

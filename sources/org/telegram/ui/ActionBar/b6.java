@@ -28,14 +28,14 @@ import java.util.ArrayList;
 import java.util.Stack;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Emoji;
-import org.telegram.messenger.vh;
+import org.telegram.messenger.wh;
 import org.telegram.ui.Components.b10;
-import org.telegram.ui.Components.px0;
-import org.telegram.ui.Components.rx0;
+import org.telegram.ui.Components.qx0;
+import org.telegram.ui.Components.sx0;
 import org.telegram.ui.Components.tz;
-import org.telegram.ui.v01;
+import org.telegram.ui.x01;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public class b6 extends View implements Drawable.Callback {
     public final Path A0;
@@ -306,7 +306,7 @@ public class b6 extends View implements Drawable.Callback {
                     } else {
                         Layout.Alignment alignment = getAlignment();
                         TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
-                        StaticLayout c10 = px0.c(charSequence4, textPaint, i17, alignment, 0.0f, truncateAt, i17, this.x0, false);
+                        StaticLayout c10 = qx0.c(charSequence4, textPaint, i17, alignment, 0.0f, truncateAt, i17, this.x0, false);
                         i14 = i17;
                         this.e = c10;
                         if (c10 != null) {
@@ -324,12 +324,12 @@ public class b6 extends View implements Drawable.Callback {
                             }
                             CharSequence charSequence6 = subSequence2;
                             this.f = new StaticLayout(charSequence6, 0, charSequence6.length(), textPaint, this.P ? AndroidUtilities.dp(2000.0f) : i14 + AndroidUtilities.dp(8.0f), getAlignment(), 1.0f, 0.0f, false);
-                            this.e = px0.c(valueOf2, textPaint, i14 + AndroidUtilities.dp(8.0f) + this.t0, getAlignment(), 0.0f, truncateAt, i14 + this.t0, this.x0, false);
+                            this.e = qx0.c(valueOf2, textPaint, i14 + AndroidUtilities.dp(8.0f) + this.t0, getAlignment(), 0.0f, truncateAt, i14 + this.t0, this.x0, false);
                         }
                     }
                     i13 = i14;
                 } else if (this.r > 1) {
-                    StaticLayout c11 = px0.c(charSequence4, textPaint, i17, getAlignment(), 0.0f, TextUtils.TruncateAt.END, i17, this.r, false);
+                    StaticLayout c11 = qx0.c(charSequence4, textPaint, i17, getAlignment(), 0.0f, TextUtils.TruncateAt.END, i17, this.r, false);
                     i13 = i17;
                     this.c = c11;
                 } else {
@@ -436,17 +436,17 @@ public class b6 extends View implements Drawable.Callback {
         return true;
     }
 
-    public final void g(rx0 rx0Var, String str) {
+    public final void g(sx0 sx0Var, String str) {
         Drawable drawable = this.y;
-        if (drawable == rx0Var) {
+        if (drawable == sx0Var) {
             return;
         }
         if (drawable != null) {
             drawable.setCallback(null);
         }
-        this.y = rx0Var;
-        if (rx0Var != null) {
-            rx0Var.setCallback(this);
+        this.y = sx0Var;
+        if (sx0Var != null) {
+            sx0Var.setCallback(this);
         }
         f();
         this.E = str;
@@ -1023,7 +1023,7 @@ public class b6 extends View implements Drawable.Callback {
                     this.U.setAlpha((int) ((this.R / AndroidUtilities.dp(10.0f)) * 255.0f));
                 } else {
                     if (this.R > (AndroidUtilities.dp(f10) + this.f0) - AndroidUtilities.dp(10.0f)) {
-                        this.U.setAlpha((int) vh.y(this.R - ((AndroidUtilities.dp(f10) + this.f0) - AndroidUtilities.dp(10.0f)), AndroidUtilities.dp(10.0f), 1.0f, 255.0f));
+                        this.U.setAlpha((int) wh.y(this.R - ((AndroidUtilities.dp(f10) + this.f0) - AndroidUtilities.dp(10.0f)), AndroidUtilities.dp(10.0f), 1.0f, 255.0f));
                     } else {
                         this.U.setAlpha(255);
                     }
@@ -1063,7 +1063,7 @@ public class b6 extends View implements Drawable.Callback {
                         z10 = true;
                     } else if (this.R >= dp2 - AndroidUtilities.dp(100.0f)) {
                         z10 = true;
-                        f13 = vh.w(this.R - (dp2 - AndroidUtilities.dp(100.0f)), AndroidUtilities.dp(100.0f), 20.0f, 50.0f);
+                        f13 = wh.w(this.R - (dp2 - AndroidUtilities.dp(100.0f)), AndroidUtilities.dp(100.0f), 20.0f, 50.0f);
                     } else {
                         z10 = true;
                         f13 = 50.0f;
@@ -1199,7 +1199,7 @@ public class b6 extends View implements Drawable.Callback {
                 getParent().requestDisallowInterceptTouchEvent(true);
                 Object obj = this.w;
                 if (obj instanceof a6) {
-                    ((v01) ((a6) obj)).f.c(true);
+                    ((x01) ((a6) obj)).f.c(true);
                 }
             } else if (motionEvent.getAction() == 2 && this.E0) {
                 if (Math.abs(motionEvent.getX() - this.F0) >= AndroidUtilities.touchSlop || Math.abs(motionEvent.getY() - this.G0) >= AndroidUtilities.touchSlop) {
@@ -1207,7 +1207,7 @@ public class b6 extends View implements Drawable.Callback {
                     getParent().requestDisallowInterceptTouchEvent(false);
                     Object obj2 = this.w;
                     if (obj2 instanceof a6) {
-                        ((v01) ((a6) obj2)).f.c(false);
+                        ((x01) ((a6) obj2)).f.c(false);
                     }
                 }
             } else if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
@@ -1215,7 +1215,7 @@ public class b6 extends View implements Drawable.Callback {
                     this.D0.onClick(this);
                     Object obj3 = this.w;
                     if (obj3 instanceof a6) {
-                        ((v01) ((a6) obj3)).f.c(false);
+                        ((x01) ((a6) obj3)).f.c(false);
                     }
                 }
                 this.E0 = false;

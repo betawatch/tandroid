@@ -35,12 +35,12 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.vh;
+import org.telegram.messenger.wh;
 import org.telegram.ui.Components.au;
-import org.telegram.ui.Components.gb1;
-import org.telegram.ui.xa1;
+import org.telegram.ui.Components.kb1;
+import org.telegram.ui.za1;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class c5 {
     public static final o4 p = new o4();
@@ -154,7 +154,7 @@ public final class c5 {
                     imageView.setColorFilter(new PorterDuffColorFilter(y6.o1(0.4f, i13), PorterDuff.Mode.SRC_IN));
                 }
                 imageView.setVisibility(8);
-                linearLayout.addView(imageView, gb1.t(-2, -1, 0.0f, 0, 12, 0, 0, 0));
+                linearLayout.addView(imageView, kb1.t(-2, -1, 0.0f, 0, 12, 0, 0, 0));
                 if (menuItem != null) {
                     e(linearLayout, menuItem, c5Var.j != null);
                 }
@@ -183,7 +183,7 @@ public final class c5 {
         if (i12 == 2) {
         }
         imageView2.setVisibility(8);
-        linearLayout.addView(imageView2, gb1.t(-2, -1, 0.0f, 0, 12, 0, 0, 0));
+        linearLayout.addView(imageView2, kb1.t(-2, -1, 0.0f, 0, 12, 0, 0, 0));
         if (menuItem != null) {
         }
         return linearLayout;
@@ -266,16 +266,16 @@ public final class c5 {
         a5Var.J = null;
         a5Var.N = false;
         a5Var.n();
-        xa1 xa1Var = a5Var.g;
-        xa1Var.removeAllViews();
-        xa1Var.setPaddingRelative(0, 0, 0, 0);
+        za1 za1Var = a5Var.g;
+        za1Var.removeAllViews();
+        za1Var.setPaddingRelative(0, 0, 0, 0);
         z4 z4Var = a5Var.h;
         ArrayAdapter arrayAdapter = (ArrayAdapter) z4Var.getAdapter();
         arrayAdapter.clear();
         z4Var.setAdapter((ListAdapter) arrayAdapter);
         a5Var.f.removeAllViews();
         a5Var.b.getWindowVisibleDisplayFrame(rect);
-        int min = Math.min(AndroidUtilities.dp(400.0f), vh.C(16.0f, 2, rect.width()));
+        int min = Math.min(AndroidUtilities.dp(400.0f), wh.C(16.0f, 2, rect.width()));
         LinkedList linkedList = new LinkedList(d);
         Iterator it = linkedList.iterator();
         int i12 = min;
@@ -309,7 +309,7 @@ public final class c5 {
                 }
                 b10.setTag(menuItem3);
                 b10.setOnClickListener(a5Var.L);
-                xa1Var.addView(b10);
+                za1Var.addView(b10);
                 ViewGroup.LayoutParams layoutParams = b10.getLayoutParams();
                 layoutParams.width = min2;
                 b10.setLayoutParams(layoutParams);
@@ -325,10 +325,10 @@ public final class c5 {
             i10 = 0;
         } else {
             i10 = 0;
-            xa1Var.setPaddingRelative(0, 0, size2.getWidth(), 0);
+            za1Var.setPaddingRelative(0, 0, size2.getWidth(), 0);
         }
-        xa1Var.measure(i10, i10);
-        a5Var.J = new Size(xa1Var.getMeasuredWidth(), xa1Var.getMeasuredHeight());
+        za1Var.measure(i10, i10);
+        a5Var.J = new Size(za1Var.getMeasuredWidth(), za1Var.getMeasuredHeight());
         if (!linkedList.isEmpty()) {
             ArrayAdapter arrayAdapter2 = (ArrayAdapter) z4Var.getAdapter();
             arrayAdapter2.clear();

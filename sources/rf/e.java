@@ -24,7 +24,7 @@ import s4.q0;
 import s4.v0;
 import s4.w0;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
 public final class e {
     public int a;
@@ -387,19 +387,19 @@ public final class e {
                 if (indexOfChild < 0) {
                     throw new IllegalArgumentException("view is not a child, cannot hide " + view);
                 }
-                if (!lgVar.z(indexOfChild)) {
+                if (!lgVar.B(indexOfChild)) {
                     throw new RuntimeException("trying to unhide a view that was not hidden" + view);
                 }
-                lgVar.v(indexOfChild);
-                dVar.t(view);
+                lgVar.x(indexOfChild);
+                dVar.u(view);
                 s4.d dVar2 = recyclerView.e;
                 lg lgVar2 = (lg) dVar2.c;
                 int indexOfChild2 = ((RecyclerView) ((s0) dVar2.b).b).indexOfChild(view);
-                int w10 = (indexOfChild2 == -1 || lgVar2.z(indexOfChild2)) ? -1 : indexOfChild2 - lgVar2.w(indexOfChild2);
-                if (w10 == -1) {
+                int y3 = (indexOfChild2 == -1 || lgVar2.B(indexOfChild2)) ? -1 : indexOfChild2 - lgVar2.y(indexOfChild2);
+                if (y3 == -1) {
                     throw new IllegalStateException("layout index should not be -1 after unhiding a view:" + U2 + recyclerView.C());
                 }
-                recyclerView.e.i(w10);
+                recyclerView.e.i(y3);
                 i(view);
                 U2.a(8224);
                 e1Var3 = U2;

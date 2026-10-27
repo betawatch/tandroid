@@ -17,7 +17,7 @@ import java.util.WeakHashMap;
 import m4.w1;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
 public abstract class p0 {
     public d a;
@@ -308,21 +308,21 @@ public abstract class p0 {
             d dVar = this.a;
             lg lgVar = (lg) dVar.c;
             int indexOfChild = ((RecyclerView) ((jg.s0) dVar.b).b).indexOfChild(view);
-            int w10 = (indexOfChild == -1 || lgVar.z(indexOfChild)) ? -1 : indexOfChild - lgVar.w(indexOfChild);
+            int y3 = (indexOfChild == -1 || lgVar.B(indexOfChild)) ? -1 : indexOfChild - lgVar.y(indexOfChild);
             if (i10 == -1) {
                 i10 = this.a.k();
             }
-            if (w10 == -1) {
+            if (y3 == -1) {
                 throw new IllegalStateException("Added View has RecyclerView as parent but view is not a real child. Unfiltered index:" + this.b.indexOfChild(view) + this.b.C());
             }
-            if (w10 != i10) {
+            if (y3 != i10) {
                 p0 p0Var = this.b.x;
-                View q5 = p0Var.q(w10);
+                View q5 = p0Var.q(y3);
                 if (q5 == null) {
-                    throw new IllegalArgumentException("Cannot move a child from non-existing index:" + w10 + p0Var.b.toString());
+                    throw new IllegalArgumentException("Cannot move a child from non-existing index:" + y3 + p0Var.b.toString());
                 }
-                p0Var.q(w10);
-                p0Var.a.i(w10);
+                p0Var.q(y3);
+                p0Var.a.i(y3);
                 q0 q0Var2 = (q0) q5.getLayoutParams();
                 e1 U2 = RecyclerView.U(q5);
                 if (U2.j()) {
@@ -454,8 +454,8 @@ public abstract class p0 {
             if (childAt == null) {
                 return;
             }
-            if (((lg) dVar.c).B(m10)) {
-                dVar.t(childAt);
+            if (((lg) dVar.c).D(m10)) {
+                dVar.u(childAt);
             }
             s0Var.h0(m10);
         }

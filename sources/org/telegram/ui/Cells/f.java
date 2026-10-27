@@ -8,11 +8,11 @@ import android.text.style.URLSpan;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.ui.Components.aa0;
+import org.telegram.ui.Components.ba0;
 import org.telegram.ui.Components.wc;
-import org.telegram.ui.Components.x61;
+import org.telegram.ui.Components.y61;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class f implements Runnable {
     public final /* synthetic */ j a;
@@ -24,10 +24,10 @@ public final class f implements Runnable {
     @Override // java.lang.Runnable
     public final void run() {
         j jVar = this.a;
-        aa0 aa0Var = jVar.w;
-        if (aa0Var != null) {
-            CharacterStyle characterStyle = aa0Var.i;
-            final String url = characterStyle instanceof x61 ? ((x61) characterStyle).getURL() : characterStyle instanceof URLSpan ? ((URLSpan) characterStyle).getURL() : characterStyle.toString();
+        ba0 ba0Var = jVar.w;
+        if (ba0Var != null) {
+            CharacterStyle characterStyle = ba0Var.i;
+            final String url = characterStyle instanceof y61 ? ((y61) characterStyle).getURL() : characterStyle instanceof URLSpan ? ((URLSpan) characterStyle).getURL() : characterStyle.toString();
             try {
                 jVar.performHapticFeedback(0, 2);
             } catch (Exception unused) {

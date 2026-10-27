@@ -28,17 +28,17 @@ import org.telegram.ui.ActionBar.u6;
 import org.telegram.ui.ActionBar.y6;
 import org.telegram.ui.Components.b8;
 import org.telegram.ui.Components.ds;
-import org.telegram.ui.Components.gb1;
-import org.telegram.ui.Components.ll0;
+import org.telegram.ui.Components.kb1;
+import org.telegram.ui.Components.ml0;
 import org.telegram.ui.Components.sa;
 import org.telegram.ui.PremiumPreviewFragment;
 import org.telegram.ui.Wallet.p5;
-import org.telegram.ui.o70;
-import org.telegram.ui.p11;
-import org.telegram.ui.ww0;
-import org.telegram.ui.xw0;
+import org.telegram.ui.q70;
+import org.telegram.ui.r11;
+import org.telegram.ui.yw0;
+import org.telegram.ui.zw0;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class y0 extends k3 implements NotificationCenter.NotificationCenterDelegate {
     public final boolean E;
@@ -46,7 +46,7 @@ public final class y0 extends k3 implements NotificationCenter.NotificationCente
     public int G;
     public int H;
     public float I;
-    public final xw0 J;
+    public final zw0 J;
     public int K;
     public int L;
     public int M;
@@ -127,8 +127,8 @@ public final class y0 extends k3 implements NotificationCenter.NotificationCente
     }
 
     public final ViewGroup C(Context context, int i10) {
-        ww0 ww0Var = (ww0) this.d.get(i10);
-        int i11 = ww0Var.a;
+        yw0 yw0Var = (yw0) this.d.get(i10);
+        int i11 = yw0Var.a;
         if (i11 == 0) {
             c cVar = new c(context, this.resourcesProvider);
             cVar.b.setOnScrollListener(new r0(this, 1));
@@ -145,7 +145,7 @@ public final class y0 extends k3 implements NotificationCenter.NotificationCente
         if (i11 == 10) {
             return new n0(context, this.resourcesProvider);
         }
-        return new a2(context, this.x, this.currentAccount, ww0Var.a, this.resourcesProvider);
+        return new a2(context, this.x, this.currentAccount, yw0Var.a, this.resourcesProvider);
     }
 
     public final void D() {
@@ -227,9 +227,9 @@ public final class y0 extends k3 implements NotificationCenter.NotificationCente
     @Override // org.telegram.ui.ActionBar.k3, android.app.Dialog
     public final void onCreate(Bundle bundle) {
         super.onCreate(bundle);
-        NotificationCenter.getGlobalInstance().addObserver(this, NotificationCenter.billingProductDetailsUpdated);
-        NotificationCenter.getInstance(this.currentAccount).addObserver(this, NotificationCenter.premiumPromoUpdated);
-        NotificationCenter.getInstance(this.currentAccount).addObserver(this, NotificationCenter.currentUserPremiumStatusChanged);
+        NotificationCenter.getGlobalInstance().addWeakObserver(this, NotificationCenter.billingProductDetailsUpdated);
+        NotificationCenter.getInstance(this.currentAccount).addWeakObserver(this, NotificationCenter.premiumPromoUpdated);
+        NotificationCenter.getInstance(this.currentAccount).addWeakObserver(this, NotificationCenter.currentUserPremiumStatusChanged);
         b8 b8Var = new b8(this, getContext(), 7);
         this.N = b8Var;
         f7.i(y6.h5, b8Var, this.resourcesProvider);
@@ -242,19 +242,19 @@ public final class y0 extends k3 implements NotificationCenter.NotificationCente
         this.N.setCastShadows(true);
         this.N.setExtraHeight(AndroidUtilities.dp(2.0f));
         this.N.setBackButtonImage(R.drawable.ic_ab_back);
-        this.N.setActionBarMenuOnItemClick(new p11(this, 17));
-        this.containerView.addView(this.N, gb1.h(-1, -2.0f, 0, 0.0f, 0.0f, 0.0f, 0.0f));
+        this.N.setActionBarMenuOnItemClick(new r11(this, 17));
+        this.containerView.addView(this.N, kb1.h(-1, -2.0f, 0, 0.0f, 0.0f, 0.0f, 0.0f));
         ((FrameLayout.LayoutParams) this.N.getLayoutParams()).topMargin = (-this.backgroundPaddingTop) - AndroidUtilities.dp(2.0f);
         AndroidUtilities.updateViewVisibilityAnimated(this.N, false, 1.0f, false);
         int i11 = this.G;
         ArrayList arrayList = this.d;
-        if (((ww0) arrayList.get(i11)).a == 14) {
+        if (((yw0) arrayList.get(i11)).a == 14) {
             this.N.setTitle(LocaleController.getString(R.string.UpgradedStories));
             this.N.requestLayout();
-        } else if (((ww0) arrayList.get(this.G)).a == 28) {
+        } else if (((yw0) arrayList.get(this.G)).a == 28) {
             this.N.setTitle(LocaleController.getString(R.string.TelegramBusiness));
             this.N.requestLayout();
-        } else if (((ww0) arrayList.get(this.G)).a == 40) {
+        } else if (((yw0) arrayList.get(this.G)).a == 40) {
             this.N.setTitle(LocaleController.getString(R.string.FeaturePreviewGifts));
             this.N.requestLayout();
         } else {
@@ -274,7 +274,7 @@ public final class y0 extends k3 implements NotificationCenter.NotificationCente
                 n0Var.setOffset(r0.getMeasuredWidth());
                 this.w = true;
                 ofFloat.addUpdateListener(new u4(n0Var, 13));
-                ofFloat.addListener(new ll0(20, this, n0Var));
+                ofFloat.addListener(new ml0(20, this, n0Var));
                 ofFloat.setDuration(500L);
                 ofFloat.setStartDelay(100L);
                 ofFloat.setInterpolator(ds.h);
@@ -302,8 +302,8 @@ public final class y0 extends k3 implements NotificationCenter.NotificationCente
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public y0(r2 r2Var, Context context, int i10, boolean z10, int i11, boolean z11, xw0 xw0Var) {
-        this(r2Var, context, i10, z10, i11, z11, xw0Var, r0);
+    public y0(r2 r2Var, Context context, int i10, boolean z10, int i11, boolean z11, zw0 zw0Var) {
+        this(r2Var, context, i10, z10, i11, z11, zw0Var, r0);
         u6 u6Var;
         if (r2Var == null) {
             u6Var = null;
@@ -314,13 +314,13 @@ public final class y0 extends k3 implements NotificationCenter.NotificationCente
         }
     }
 
-    public y0(r2 r2Var, Context context, int i10, boolean z10, int i11, boolean z11, xw0 xw0Var, u6 u6Var) {
+    public y0(r2 r2Var, Context context, int i10, boolean z10, int i11, boolean z11, zw0 zw0Var, u6 u6Var) {
         super(1, context, u6Var, false);
         ArrayList arrayList = new ArrayList();
         this.d = arrayList;
         this.K = 255;
         this.b = r2Var;
-        this.J = xw0Var;
+        this.J = zw0Var;
         fixNavigationBarKey(y6.h5);
         this.y = i11;
         this.E = z11;
@@ -334,26 +334,26 @@ public final class y0 extends k3 implements NotificationCenter.NotificationCente
         }
         if (i11 == 40) {
             arrayList.clear();
-            arrayList.add(new ww0(40, R.drawable.gift, LocaleController.getString(R.string.FeaturePreviewGifts), LocaleController.getString(R.string.FeaturePreviewGiftsDescription)));
+            arrayList.add(new yw0(40, R.drawable.gift, LocaleController.getString(R.string.FeaturePreviewGifts), LocaleController.getString(R.string.FeaturePreviewGiftsDescription)));
         }
         int i12 = 0;
         while (true) {
             if (i12 >= this.d.size()) {
                 i12 = 0;
                 break;
-            } else if (((ww0) this.d.get(i12)).a == i11) {
+            } else if (((yw0) this.d.get(i12)).a == i11) {
                 break;
             } else {
                 i12++;
             }
         }
         if (z11) {
-            ww0 ww0Var = (ww0) this.d.get(i12);
+            yw0 yw0Var = (yw0) this.d.get(i12);
             this.d.clear();
-            this.d.add(ww0Var);
+            this.d.add(yw0Var);
             i12 = 0;
         }
-        ww0 ww0Var2 = (ww0) this.d.get(i12);
+        yw0 yw0Var2 = (yw0) this.d.get(i12);
         setApplyTopPadding(false);
         setApplyBottomPadding(false);
         this.useBackgroundTopPadding = false;
@@ -373,7 +373,7 @@ public final class y0 extends k3 implements NotificationCenter.NotificationCente
         int o10 = i0.a.o(-1, 40);
         int o11 = i0.a.o(-1, 100);
         imageView.setBackground(y6.j0(dp, dp, dp, dp, o10, o11, o11));
-        frameLayout.addView(imageView, gb1.i(24, 24, 17));
+        frameLayout.addView(imageView, kb1.i(24, 24, 17));
         final int i13 = 0;
         frameLayout.setOnClickListener(new View.OnClickListener(this) { // from class: tg.q0
             public final /* synthetic */ y0 b;
@@ -394,16 +394,16 @@ public final class y0 extends k3 implements NotificationCenter.NotificationCente
                 }
             }
         });
-        p5Var.addView(t0Var, gb1.x(-1, -2, 1, 0, 16, 0, 0));
+        p5Var.addView(t0Var, kb1.x(-1, -2, 1, 0, 16, 0, 0));
         v0 v0Var = new v0(this, getContext());
         this.n = v0Var;
         v0Var.setOverScrollMode(2);
         v0Var.setOffscreenPageLimit(0);
-        v0Var.setAdapter(new o70(this, 2));
+        v0Var.setAdapter(new q70(this, 2));
         this.G = i12;
         v0Var.setCurrentItem(i12);
-        p5Var.addView(v0Var, gb1.h(-1, 100.0f, 0, 0.0f, 18.0f, 0.0f, 0.0f));
-        p5Var.addView(frameLayout, gb1.h(52, 52.0f, 53, 0.0f, 24.0f, 0.0f, 0.0f));
+        p5Var.addView(v0Var, kb1.h(-1, 100.0f, 0, 0.0f, 18.0f, 0.0f, 0.0f));
+        p5Var.addView(frameLayout, kb1.h(52, 52.0f, 53, 0.0f, 24.0f, 0.0f, 0.0f));
         sa saVar = new sa(getContext(), v0Var, this.d.size());
         v0Var.b(new w0(this, saVar));
         LinearLayout linearLayout = new LinearLayout(getContext());
@@ -414,11 +414,11 @@ public final class y0 extends k3 implements NotificationCenter.NotificationCente
         saVar.n = i14;
         saVar.r = i15;
         if (!z11) {
-            linearLayout.addView(saVar, gb1.x(this.d.size() * 11, 5, 1, 0, 0, 0, 10));
+            linearLayout.addView(saVar, kb1.x(this.d.size() * 11, 5, 1, 0, 0, 0, 10));
         }
         p0 p0Var = new p0(getContext(), u6Var, true);
         this.c = p0Var;
-        p0Var.v.setOnClickListener(new y3(this, r2Var, z11, ww0Var2, 5));
+        p0Var.v.setOnClickListener(new y3(this, r2Var, z11, yw0Var2, 5));
         final int i16 = 1;
         p0Var.h.setOnClickListener(new View.OnClickListener(this) { // from class: tg.q0
             public final /* synthetic */ y0 b;
@@ -440,9 +440,9 @@ public final class y0 extends k3 implements NotificationCenter.NotificationCente
             }
         });
         FrameLayout frameLayout2 = new FrameLayout(getContext());
-        frameLayout2.addView(p0Var, gb1.h(-1, 48.0f, 16, 16.0f, 0.0f, 16.0f, 0.0f));
+        frameLayout2.addView(p0Var, kb1.h(-1, 48.0f, 16, 16.0f, 0.0f, 16.0f, 0.0f));
         f7.i(y6.h5, frameLayout2, u6Var);
-        linearLayout.addView(frameLayout2, gb1.u(-1, 68, 80));
+        linearLayout.addView(frameLayout2, kb1.u(-1, 68, 80));
         if (i11 == 40) {
             p0Var.b(h7.H2(LocaleController.getString(R.string.Understood)), true, false);
         } else if (UserConfig.getInstance(i10).isPremium()) {

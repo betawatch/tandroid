@@ -12,12 +12,12 @@ import org.telegram.messenger.PushListenerController;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.ui.Components.db1;
-import org.telegram.ui.Components.fb1;
+import org.telegram.ui.Components.gb1;
 import org.telegram.ui.Components.jb1;
+import org.telegram.ui.Components.nb1;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class t2 implements Runnable {
     public final /* synthetic */ int a;
@@ -30,7 +30,7 @@ public final /* synthetic */ class t2 implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        jb1 jb1Var;
+        nb1 nb1Var;
         switch (this.a) {
             case 0:
                 MediaDataController.getInstance(this.b).loadAttachMenuBots(false, true);
@@ -75,22 +75,22 @@ public final /* synthetic */ class t2 implements Runnable {
                 break;
             case 12:
                 int i10 = this.b;
-                fb1.n(i10 + "/", fb1.b.keySet());
-                for (db1 db1Var : fb1.a.values()) {
-                    if (db1Var.b == i10 && db1Var.k.isEmpty() && (jb1Var = db1Var.i) != null) {
-                        jb1Var.m();
-                        jb1Var.g = null;
-                        jb1Var.i = 0;
-                        jb1Var.k = 0;
-                        jb1Var.l = false;
+                jb1.t(i10 + "/", jb1.b.keySet());
+                for (gb1 gb1Var : jb1.a.values()) {
+                    if (gb1Var.b == i10 && gb1Var.u.isEmpty() && (nb1Var = gb1Var.s) != null) {
+                        nb1Var.r();
+                        nb1Var.g = null;
+                        nb1Var.i = 0;
+                        nb1Var.k = 0;
+                        nb1Var.l = false;
                     }
                 }
                 break;
             case 13:
                 String m10 = a1.g.m(this.b, "/");
-                fb1.n(m10, fb1.b.keySet());
-                fb1.n(m10, fb1.c.keySet());
-                fb1.n(m10, fb1.d.keySet());
+                jb1.t(m10, jb1.b.keySet());
+                jb1.t(m10, jb1.c.keySet());
+                jb1.t(m10, jb1.d.keySet());
                 break;
             default:
                 int i11 = this.b;

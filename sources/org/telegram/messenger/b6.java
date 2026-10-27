@@ -1,24 +1,26 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
-/* loaded from: classes.dex */
-public final /* synthetic */ class b6 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ LocationSharingService b;
+import android.location.Location;
 
-    public /* synthetic */ b6(LocationSharingService locationSharingService, int i10) {
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* loaded from: classes.dex */
+public final /* synthetic */ class b6 implements q0.a {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ LocationController b;
+
+    public /* synthetic */ b6(LocationController locationController, int i10) {
         this.a = i10;
-        this.b = locationSharingService;
+        this.b = locationController;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // q0.a
+    public final void accept(Object obj) {
         switch (this.a) {
             case 0:
-                this.b.lambda$onCreate$1();
+                this.b.lambda$onConnected$4((Integer) obj);
                 break;
             default:
-                this.b.lambda$didReceivedNotification$2();
+                this.b.setLastKnownLocation((Location) obj);
                 break;
         }
     }

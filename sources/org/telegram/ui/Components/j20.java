@@ -11,7 +11,7 @@ import java.util.HashSet;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class j20 extends FrameLayout implements oe.d, org.telegram.ui.ActionBar.p6 {
     public int E;
@@ -20,7 +20,7 @@ public final class j20 extends FrameLayout implements oe.d, org.telegram.ui.Acti
     public boolean H;
     public final oe.b a;
     public final oe.b b;
-    public final ak0 c;
+    public final bk0 c;
     public final RadialProgressView d;
     public final org.telegram.ui.ActionBar.u6 e;
     public ArrayList f;
@@ -38,11 +38,11 @@ public final class j20 extends FrameLayout implements oe.d, org.telegram.ui.Acti
     }
 
     public static FrameLayout.LayoutParams b() {
-        return gb1.h(48, 48.0f, (LocaleController.isRTL ? 3 : 5) | 80, 20.0f, 0.0f, 20.0f, 14.0f);
+        return kb1.h(48, 48.0f, (LocaleController.isRTL ? 3 : 5) | 80, 20.0f, 0.0f, 20.0f, 14.0f);
     }
 
     public static FrameLayout.LayoutParams c() {
-        return gb1.h(48, 48.0f, (LocaleController.isRTL ? 3 : 5) | 80, 20.0f, 0.0f, 20.0f, 14.0f);
+        return kb1.h(48, 48.0f, (LocaleController.isRTL ? 3 : 5) | 80, 20.0f, 0.0f, 20.0f, 14.0f);
     }
 
     public static void d(View view, float f7) {
@@ -151,8 +151,8 @@ public final class j20 extends FrameLayout implements oe.d, org.telegram.ui.Acti
     @Override // org.telegram.ui.ActionBar.p6
     public final void updateColors() {
         RadialProgressView radialProgressView;
-        ak0 ak0Var = this.c;
-        if (ak0Var == null || (radialProgressView = this.d) == null) {
+        bk0 bk0Var = this.c;
+        if (bk0Var == null || (radialProgressView = this.d) == null) {
             return;
         }
         boolean z10 = this.v != null && getBackground() == this.v;
@@ -164,7 +164,7 @@ public final class j20 extends FrameLayout implements oe.d, org.telegram.ui.Acti
             if (w02 != this.w || !this.x) {
                 this.w = w02;
                 this.x = true;
-                ak0Var.setColorFilter(w02, PorterDuff.Mode.SRC_IN);
+                bk0Var.setColorFilter(w02, PorterDuff.Mode.SRC_IN);
             }
             radialProgressView.setProgressColor(org.telegram.ui.ActionBar.y6.w0(i10, u6Var));
             int w03 = org.telegram.ui.ActionBar.y6.w0(org.telegram.ui.ActionBar.y6.Oh, u6Var);
@@ -192,7 +192,7 @@ public final class j20 extends FrameLayout implements oe.d, org.telegram.ui.Acti
         if (w05 != this.w || !this.x) {
             this.w = w05;
             this.x = true;
-            ak0Var.setColorFilter(w05, PorterDuff.Mode.SRC_IN);
+            bk0Var.setColorFilter(w05, PorterDuff.Mode.SRC_IN);
         }
         radialProgressView.setProgressColor(org.telegram.ui.ActionBar.y6.w0(i11, u6Var));
         hh.c cVar = this.n;
@@ -232,17 +232,17 @@ public final class j20 extends FrameLayout implements oe.d, org.telegram.ui.Acti
         this.b = new oe.b(1, this, dsVar, 380L, false);
         this.e = u6Var;
         this.h = z10;
-        ak0 ak0Var = new ak0(context);
-        this.c = ak0Var;
-        ak0Var.setScaleType(ImageView.ScaleType.CENTER);
-        addView(ak0Var, gb1.g(-1.0f, -1));
+        bk0 bk0Var = new bk0(context);
+        this.c = bk0Var;
+        bk0Var.setScaleType(ImageView.ScaleType.CENTER);
+        addView(bk0Var, kb1.g(-1.0f, -1));
         RadialProgressView radialProgressView = new RadialProgressView(context, null);
         this.d = radialProgressView;
         radialProgressView.setSize(AndroidUtilities.dp(18.0f));
         radialProgressView.setStrokeWidth(2.0f);
-        addView(radialProgressView, gb1.g(-1.0f, -1));
+        addView(radialProgressView, kb1.g(-1.0f, -1));
         d(radialProgressView, 0.0f);
-        gb1.b(this);
+        kb1.b(this);
         if (!z10) {
             setOutlineProvider(ag.z0.a);
             setTranslationZ(AndroidUtilities.dpf2(0.5f));

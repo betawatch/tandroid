@@ -17,10 +17,10 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class vv extends FrameLayout {
-    public final z90 a;
+    public final aa0 a;
     public final TextView b;
     public final TextView c;
     public final TextView d;
@@ -99,10 +99,10 @@ public final class vv extends FrameLayout {
                             case 2:
                                 bi.v4 v4Var = vvVar.n;
                                 TLRPC.TL_messages_stickerSet tL_messages_stickerSet = vvVar.r;
-                                bq bqVar = new bq(vvVar, 13);
+                                cp cpVar = new cp(vvVar, 14);
                                 Pattern pattern = aw.V;
                                 if (v4Var != null && tL_messages_stickerSet != null && v4Var.getFragmentView() != null) {
-                                    MediaDataController.getInstance(v4Var.getCurrentAccount()).toggleStickerSet(v4Var.getFragmentView().getContext(), tL_messages_stickerSet, 0, v4Var, true, true, bqVar, true);
+                                    MediaDataController.getInstance(v4Var.getCurrentAccount()).toggleStickerSet(v4Var.getFragmentView().getContext(), tL_messages_stickerSet, 0, v4Var, true, true, cpVar, true);
                                 }
                                 vvVar.a(false, true);
                                 break;
@@ -121,7 +121,7 @@ public final class vv extends FrameLayout {
                 marginLayoutParams.width = dp2;
                 ((ViewGroup.MarginLayoutParams) p0Var.getTextView().getLayoutParams()).leftMargin = AndroidUtilities.dp(3.0f);
                 p0Var.getChildAt(0).setPadding(AndroidUtilities.dp(8.0f), 0, AndroidUtilities.dp(8.0f), 0);
-                addView(p0Var, gb1.m(-2.0f, 28.0f, 8388661, 0.0f, 15.66f, 5.66f, 0.0f));
+                addView(p0Var, kb1.m(-2.0f, 28.0f, 8388661, 0.0f, 15.66f, 5.66f, 0.0f));
                 p0Var.measure(View.MeasureSpec.makeMeasureSpec(99999, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(28.0f), TLObject.FLAG_30));
                 f12 = (AndroidUtilities.dp(16.0f) + p0Var.getMeasuredWidth()) / AndroidUtilities.density;
             }
@@ -165,10 +165,10 @@ public final class vv extends FrameLayout {
                         case 2:
                             bi.v4 v4Var = vvVar.n;
                             TLRPC.TL_messages_stickerSet tL_messages_stickerSet = vvVar.r;
-                            bq bqVar = new bq(vvVar, 13);
+                            cp cpVar = new cp(vvVar, 14);
                             Pattern pattern = aw.V;
                             if (v4Var != null && tL_messages_stickerSet != null && v4Var.getFragmentView() != null) {
-                                MediaDataController.getInstance(v4Var.getCurrentAccount()).toggleStickerSet(v4Var.getFragmentView().getContext(), tL_messages_stickerSet, 0, v4Var, true, true, bqVar, true);
+                                MediaDataController.getInstance(v4Var.getCurrentAccount()).toggleStickerSet(v4Var.getFragmentView().getContext(), tL_messages_stickerSet, 0, v4Var, true, true, cpVar, true);
                             }
                             vvVar.a(false, true);
                             break;
@@ -178,7 +178,7 @@ public final class vv extends FrameLayout {
                     }
                 }
             });
-            addView(textView, gb1.m(-2.0f, 28.0f, 8388661, 0.0f, 15.66f, 5.66f, 0.0f));
+            addView(textView, kb1.m(-2.0f, 28.0f, 8388661, 0.0f, 15.66f, 5.66f, 0.0f));
             textView.measure(View.MeasureSpec.makeMeasureSpec(99999, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(f10), TLObject.FLAG_30));
             float max = Math.max(f13, (AndroidUtilities.dp(f11) + textView.getMeasuredWidth()) / AndroidUtilities.density);
             TextView textView2 = new TextView(context);
@@ -218,10 +218,10 @@ public final class vv extends FrameLayout {
                         case 2:
                             bi.v4 v4Var = vvVar.n;
                             TLRPC.TL_messages_stickerSet tL_messages_stickerSet = vvVar.r;
-                            bq bqVar = new bq(vvVar, 13);
+                            cp cpVar = new cp(vvVar, 14);
                             Pattern pattern = aw.V;
                             if (v4Var != null && tL_messages_stickerSet != null && v4Var.getFragmentView() != null) {
-                                MediaDataController.getInstance(v4Var.getCurrentAccount()).toggleStickerSet(v4Var.getFragmentView().getContext(), tL_messages_stickerSet, 0, v4Var, true, true, bqVar, true);
+                                MediaDataController.getInstance(v4Var.getCurrentAccount()).toggleStickerSet(v4Var.getFragmentView().getContext(), tL_messages_stickerSet, 0, v4Var, true, true, cpVar, true);
                             }
                             vvVar.a(false, true);
                             break;
@@ -232,7 +232,7 @@ public final class vv extends FrameLayout {
                 }
             });
             textView2.setClickable(false);
-            addView(textView2, gb1.m(-2.0f, 28.0f, 8388661, 0.0f, 15.66f, 5.66f, 0.0f));
+            addView(textView2, kb1.m(-2.0f, 28.0f, 8388661, 0.0f, 15.66f, 5.66f, 0.0f));
             textView2.setScaleX(0.0f);
             textView2.setScaleY(0.0f);
             textView2.setAlpha(0.0f);
@@ -241,26 +241,26 @@ public final class vv extends FrameLayout {
         }
         float f15 = f7;
         u6Var = ((org.telegram.ui.ActionBar.k3) awVar).resourcesProvider;
-        z90 z90Var = new z90(context, u6Var);
-        this.a = z90Var;
-        z90Var.setPadding(AndroidUtilities.dp(2.0f), 0, AndroidUtilities.dp(2.0f), 0);
-        z90Var.setTypeface(AndroidUtilities.bold());
+        aa0 aa0Var = new aa0(context, u6Var);
+        this.a = aa0Var;
+        aa0Var.setPadding(AndroidUtilities.dp(2.0f), 0, AndroidUtilities.dp(2.0f), 0);
+        aa0Var.setTypeface(AndroidUtilities.bold());
         TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
-        z90Var.setEllipsize(truncateAt);
-        z90Var.setSingleLine(true);
-        z90Var.setLines(1);
+        aa0Var.setEllipsize(truncateAt);
+        aa0Var.setSingleLine(true);
+        aa0Var.setLines(1);
         int i17 = org.telegram.ui.ActionBar.y6.J6;
         u6Var2 = ((org.telegram.ui.ActionBar.k3) awVar).resourcesProvider;
-        org.telegram.ui.ActionBar.f7.H(z90Var, i17, u6Var2);
+        org.telegram.ui.ActionBar.f7.H(aa0Var, i17, u6Var2);
         int i18 = org.telegram.ui.ActionBar.y6.j5;
         u6Var3 = ((org.telegram.ui.ActionBar.k3) awVar).resourcesProvider;
-        org.telegram.ui.ActionBar.f7.V(z90Var, i18, u6Var3);
+        org.telegram.ui.ActionBar.f7.V(aa0Var, i18, u6Var3);
         if (z10) {
-            z90Var.setTextSize(1, 20.0f);
-            addView(z90Var, gb1.m(-1.0f, -2.0f, 8388659, 12.0f, 11.0f, f15, 0.0f));
+            aa0Var.setTextSize(1, 20.0f);
+            addView(aa0Var, kb1.m(-1.0f, -2.0f, 8388659, 12.0f, 11.0f, f15, 0.0f));
         } else {
-            z90Var.setTextSize(1, 17.0f);
-            addView(z90Var, gb1.m(-1.0f, -2.0f, 8388659, 6.0f, 10.0f, f15, 0.0f));
+            aa0Var.setTextSize(1, 17.0f);
+            addView(aa0Var, kb1.m(-1.0f, -2.0f, 8388659, 6.0f, 10.0f, f15, 0.0f));
         }
         if (!z10) {
             TextView textView3 = new TextView(context);
@@ -272,7 +272,7 @@ public final class vv extends FrameLayout {
             textView3.setEllipsize(truncateAt);
             textView3.setSingleLine(true);
             textView3.setLines(1);
-            addView(textView3, gb1.m(-1.0f, -2.0f, 8388659, 8.0f, 31.66f, f15, 0.0f));
+            addView(textView3, kb1.m(-1.0f, -2.0f, 8388659, 8.0f, 31.66f, f15, 0.0f));
         }
         if (z10) {
             int themedColor = awVar.getThemedColor(org.telegram.ui.ActionBar.y6.Ji);
@@ -289,7 +289,7 @@ public final class vv extends FrameLayout {
             w0Var.setBackground(g02);
             org.telegram.ui.ActionBar.f7.k(w0Var, g02, null, N2, u6Var5);
             i10 = ((org.telegram.ui.ActionBar.k3) awVar).backgroundPaddingLeft;
-            addView(w0Var, gb1.h(40, 40.0f, 53, 0.0f, 5.0f, 5.0f - (i10 / AndroidUtilities.density), 0.0f));
+            addView(w0Var, kb1.h(40, 40.0f, 53, 0.0f, 5.0f, 5.0f - (i10 / AndroidUtilities.density), 0.0f));
             w0Var.e(1, R.drawable.msg_share, LocaleController.getString(R.string.StickersShare));
             w0Var.e(2, R.drawable.msg_link, LocaleController.getString(R.string.CopyLink));
             final int i21 = 3;
@@ -317,10 +317,10 @@ public final class vv extends FrameLayout {
                         case 2:
                             bi.v4 v4Var = vvVar.n;
                             TLRPC.TL_messages_stickerSet tL_messages_stickerSet = vvVar.r;
-                            bq bqVar = new bq(vvVar, 13);
+                            cp cpVar = new cp(vvVar, 14);
                             Pattern pattern = aw.V;
                             if (v4Var != null && tL_messages_stickerSet != null && v4Var.getFragmentView() != null) {
-                                MediaDataController.getInstance(v4Var.getCurrentAccount()).toggleStickerSet(v4Var.getFragmentView().getContext(), tL_messages_stickerSet, 0, v4Var, true, true, bqVar, true);
+                                MediaDataController.getInstance(v4Var.getCurrentAccount()).toggleStickerSet(v4Var.getFragmentView().getContext(), tL_messages_stickerSet, 0, v4Var, true, true, cpVar, true);
                             }
                             vvVar.a(false, true);
                             break;

@@ -7,7 +7,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessagesController;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class yo implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -38,12 +38,12 @@ public final /* synthetic */ class yo implements View.OnClickListener {
                 break;
             default:
                 org.telegram.ui.ActionBar.k3 k3Var = (org.telegram.ui.ActionBar.k3) this.d;
-                zp zpVar = (zp) this.e;
+                aq aqVar = (aq) this.e;
                 TLRPC.TL_inputGroupCallSlug tL_inputGroupCallSlug = (TLRPC.TL_inputGroupCallSlug) this.f;
                 k3Var.dismiss();
                 Activity findActivity = AndroidUtilities.findActivity(this.b);
                 if (findActivity != null) {
-                    MessagesController.getGlobalMainSettings().edit().putBoolean("callmiconstart", zpVar.a.q).apply();
+                    MessagesController.getGlobalMainSettings().edit().putBoolean("callmiconstart", aqVar.a.q).apply();
                     org.telegram.ui.Components.voip.g2.g(findActivity, this.c, tL_inputGroupCallSlug, false, null, null);
                     break;
                 }

@@ -12,7 +12,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class p20 extends ViewGroup {
     public AnimatorSet a;
@@ -124,7 +124,7 @@ public final class p20 extends ViewGroup {
             B = AndroidUtilities.dp(372.0f) / 3;
         } else {
             Point point = AndroidUtilities.displaySize;
-            B = org.telegram.messenger.vh.B(158.0f, Math.min(point.x, point.y), 3);
+            B = org.telegram.messenger.wh.B(158.0f, Math.min(point.x, point.y), 3);
         }
         if (dp - i16 < B) {
             dp2 += AndroidUtilities.dp(40.0f);

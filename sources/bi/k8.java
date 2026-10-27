@@ -10,9 +10,9 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.oa0;
+import org.telegram.ui.qa0;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class k8 implements Runnable {
     public final /* synthetic */ int a = 1;
@@ -44,8 +44,8 @@ public final /* synthetic */ class k8 implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        oa0 oa0Var;
-        oa0 oa0Var2;
+        qa0 qa0Var;
+        qa0 qa0Var2;
         switch (this.a) {
             case 0:
                 ca caVar = this.b;
@@ -96,8 +96,8 @@ public final /* synthetic */ class k8 implements Runnable {
                     }
                     MessagesController.getInstance(caVar.a).getMainSettings().edit().putBoolean("show_gift_for_" + j11, true).putBoolean(Calendar.getInstance().get(1) + "show_gift_for_" + j11, true).apply();
                     LaunchActivity launchActivity = LaunchActivity.I1;
-                    if (launchActivity != null && (oa0Var = launchActivity.x0) != null) {
-                        oa0Var.c(true);
+                    if (launchActivity != null && (qa0Var = launchActivity.x0) != null) {
+                        qa0Var.c(true);
                         break;
                     }
                 }
@@ -146,8 +146,8 @@ public final /* synthetic */ class k8 implements Runnable {
                     }
                     MessagesController.getInstance(caVar2.a).getMainSettings().edit().putBoolean("show_gift_for_" + j13, true).putBoolean(Calendar.getInstance().get(1) + "show_gift_for_" + j13, true).apply();
                     LaunchActivity launchActivity2 = LaunchActivity.I1;
-                    if (launchActivity2 != null && (oa0Var2 = launchActivity2.x0) != null) {
-                        oa0Var2.c(true);
+                    if (launchActivity2 != null && (qa0Var2 = launchActivity2.x0) != null) {
+                        qa0Var2.c(true);
                         break;
                     }
                 }

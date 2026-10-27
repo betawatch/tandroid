@@ -2,7 +2,7 @@ package org.telegram.ui;
 
 import android.view.View;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class i5 implements View.OnAttachStateChangeListener {
     public final /* synthetic */ int a;
@@ -23,19 +23,19 @@ public final class i5 implements View.OnAttachStateChangeListener {
                 ((org.telegram.ui.Components.r5) this.b).a();
                 break;
             case 2:
-                ((j70) this.b).b.onAttachedToWindow();
+                ((l70) this.b).b.onAttachedToWindow();
                 break;
             case 3:
-                org.telegram.ui.Components.r5 r5Var = ((mp0) this.b).i;
+                org.telegram.ui.Components.r5 r5Var = ((op0) this.b).i;
                 if (r5Var != null) {
                     r5Var.a();
                     break;
                 }
                 break;
             default:
-                y71 y71Var = (y71) this.b;
-                y71Var.h.a();
-                y71Var.n.a();
+                a81 a81Var = (a81) this.b;
+                a81Var.h.a();
+                a81Var.n.a();
                 break;
         }
     }
@@ -50,19 +50,19 @@ public final class i5 implements View.OnAttachStateChangeListener {
                 ((org.telegram.ui.Components.r5) this.b).b();
                 break;
             case 2:
-                ((j70) this.b).b.onDetachedFromWindow();
+                ((l70) this.b).b.onDetachedFromWindow();
                 break;
             case 3:
-                org.telegram.ui.Components.r5 r5Var = ((mp0) this.b).i;
+                org.telegram.ui.Components.r5 r5Var = ((op0) this.b).i;
                 if (r5Var != null) {
                     r5Var.b();
                     break;
                 }
                 break;
             default:
-                y71 y71Var = (y71) this.b;
-                y71Var.h.b();
-                y71Var.n.b();
+                a81 a81Var = (a81) this.b;
+                a81Var.h.b();
+                a81Var.n.b();
                 break;
         }
     }

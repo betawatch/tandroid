@@ -26,7 +26,7 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.vh;
+import org.telegram.messenger.wh;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
@@ -34,14 +34,14 @@ import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.tgnet.tl.TL_update;
-import org.telegram.ui.Components.gb1;
-import org.telegram.ui.Components.zp;
+import org.telegram.ui.Components.aq;
+import org.telegram.ui.Components.kb1;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.un;
+import org.telegram.ui.wn;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class f2 implements Runnable {
     public final /* synthetic */ int a;
@@ -110,7 +110,7 @@ public final /* synthetic */ class f2 implements Runnable {
                 return;
             case 5:
                 h7 h7Var2 = (h7) this.b;
-                org.telegram.ui.Components.wc.b0((un) this.c).K(R.raw.gift, LocaleController.getString(R.string.StarsGiftUpgradeCompleted), AndroidUtilities.replaceTags(LocaleController.formatString(R.string.StarsGiftUpgradeCompletedText, DialogObject.getShortName(h7Var2.X))), LocaleController.getString(R.string.StarsGiftUpgradeCompletedMoreButton), new a2(h7Var2, 8)).k(true);
+                org.telegram.ui.Components.wc.b0((wn) this.c).K(R.raw.gift, LocaleController.getString(R.string.StarsGiftUpgradeCompleted), AndroidUtilities.replaceTags(LocaleController.formatString(R.string.StarsGiftUpgradeCompletedText, DialogObject.getShortName(h7Var2.X))), LocaleController.getString(R.string.StarsGiftUpgradeCompletedMoreButton), new a2(h7Var2, 8)).k(true);
                 return;
             case 6:
                 h7 h7Var3 = (h7) this.b;
@@ -130,7 +130,7 @@ public final /* synthetic */ class f2 implements Runnable {
                 return;
             case 9:
                 m7 m7Var = (m7) this.b;
-                un unVar = (un) this.c;
+                wn wnVar = (wn) this.c;
                 org.telegram.ui.Cells.z zVar = m7Var.b;
                 if (zVar == null) {
                     return;
@@ -167,11 +167,11 @@ public final /* synthetic */ class f2 implements Runnable {
                 if (aaVar != null) {
                     aaVar.b();
                 }
-                TLRPC.ChatFull chatFull = unVar.l8;
-                be beVar = new be(m7Var.getContext(), unVar.getCurrentAccount(), unVar.a(), unVar, messageObject2, arrayList2, chatFull == null || chatFull.paid_reactions_available, false, 0L, unVar.getResourceProvider());
+                TLRPC.ChatFull chatFull = wnVar.p8;
+                be beVar = new be(m7Var.getContext(), wnVar.getCurrentAccount(), wnVar.a(), wnVar, messageObject2, arrayList2, chatFull == null || chatFull.paid_reactions_available, false, 0L, wnVar.getResourceProvider());
                 messageObject2.getId();
                 org.telegram.ui.Cells.z zVar3 = m7Var.b;
-                beVar.V = unVar;
+                beVar.V = wnVar;
                 beVar.W = zVar3;
                 beVar.show();
                 return;
@@ -278,7 +278,7 @@ public final /* synthetic */ class f2 implements Runnable {
                     throw null;
                 }
             case 23:
-                ((di.y9) this.b).H(ProfileActivity.t4(((di.v0) this.c).c));
+                ((di.y9) this.b).I(ProfileActivity.t4(((di.v0) this.c).c));
                 return;
             case 24:
                 di.m2 m2Var = (di.m2) this.b;
@@ -306,17 +306,17 @@ public final /* synthetic */ class f2 implements Runnable {
                     di.l0 l0Var = new di.l0();
                     org.telegram.ui.ActionBar.k3 k3Var = new org.telegram.ui.ActionBar.k3(1, context2, (org.telegram.ui.ActionBar.u6) l0Var, false);
                     k3Var.fixNavigationBar();
-                    LinearLayout d = vh.d(context2, 1);
+                    LinearLayout d = wh.d(context2, 1);
                     TextView g7 = org.telegram.messenger.t.g(context2, 1, 20.0f);
                     org.telegram.ui.ActionBar.f7.V(g7, org.telegram.ui.ActionBar.y6.j5, l0Var);
                     g7.setTypeface(AndroidUtilities.bold());
                     g7.setText(LocaleController.getString(R.string.DeleteSingleMessagesTitle));
-                    d.addView(g7, gb1.o(22.0f, 12.0f, 22.0f, 0.0f, -1, -2));
+                    d.addView(g7, kb1.o(22.0f, 12.0f, 22.0f, 0.0f, -1, -2));
                     org.telegram.ui.Cells.q4 q4Var2 = new org.telegram.ui.Cells.q4(context2, l0Var);
                     q4Var2.setText(LocaleController.getString(R.string.DeleteAdditionalActions));
-                    d.addView(q4Var2, gb1.o(0.0f, 0.0f, 0.0f, 4.0f, -1, -2));
+                    d.addView(q4Var2, kb1.o(0.0f, 0.0f, 0.0f, 4.0f, -1, -2));
                     final org.telegram.ui.Cells.y1 y1Var = new org.telegram.ui.Cells.y1(4, 21, context2, l0Var, true);
-                    zp checkBoxRound = y1Var.getCheckBoxRound();
+                    aq checkBoxRound = y1Var.getCheckBoxRound();
                     int i16 = org.telegram.ui.ActionBar.y6.V6;
                     int i17 = org.telegram.ui.ActionBar.y6.g7;
                     int i18 = org.telegram.ui.ActionBar.y6.k7;
@@ -343,7 +343,7 @@ public final /* synthetic */ class f2 implements Runnable {
                     org.telegram.ui.ActionBar.b7 N = org.telegram.ui.ActionBar.f7.N(i19);
                     y1Var.setBackground(g02);
                     org.telegram.ui.ActionBar.f7.k(y1Var, g02, null, N, l0Var);
-                    d.addView(y1Var, gb1.r(-1, -2));
+                    d.addView(y1Var, kb1.r(-1, -2));
                     final org.telegram.ui.Cells.y1 y1Var2 = new org.telegram.ui.Cells.y1(4, 21, context2, l0Var, true);
                     y1Var2.getCheckBoxRound().b(i16, i17, i18);
                     final int i20 = 1;
@@ -368,7 +368,7 @@ public final /* synthetic */ class f2 implements Runnable {
                     org.telegram.ui.ActionBar.b7 N2 = org.telegram.ui.ActionBar.f7.N(i19);
                     y1Var2.setBackground(g03);
                     org.telegram.ui.ActionBar.f7.k(y1Var2, g03, null, N2, l0Var);
-                    d.addView(y1Var2, gb1.r(-1, -2));
+                    d.addView(y1Var2, kb1.r(-1, -2));
                     final org.telegram.ui.Cells.y1 y1Var3 = new org.telegram.ui.Cells.y1(4, 21, context2, l0Var, true);
                     y1Var3.getCheckBoxRound().b(i16, i17, i18);
                     y1Var3.e(LocaleController.formatString(R.string.DeleteBan, DialogObject.getName(j11)), null, false, false, false);
@@ -393,17 +393,17 @@ public final /* synthetic */ class f2 implements Runnable {
                     org.telegram.ui.ActionBar.b7 N3 = org.telegram.ui.ActionBar.f7.N(i19);
                     y1Var3.setBackground(g04);
                     org.telegram.ui.ActionBar.f7.k(y1Var3, g04, null, N3, l0Var);
-                    d.addView(y1Var3, gb1.r(-1, -2));
+                    d.addView(y1Var3, kb1.r(-1, -2));
                     org.telegram.ui.Cells.i9 i9Var = new org.telegram.ui.Cells.i9(context2, l0Var);
                     i9Var.setBackgroundColor(-16777216);
                     i9Var.setFixedSize(12);
-                    d.addView(i9Var, gb1.r(-1, -2));
+                    d.addView(i9Var, kb1.r(-1, -2));
                     FrameLayout frameLayout = new FrameLayout(context2);
                     fi.d dVar = new fi.d(context2, l0Var, true);
                     dVar.i(LocaleController.getString(R.string.DeleteProceedBtn), false, true);
                     dVar.setOnClickListener(new di.e0(y1Var, y1Var2, y1Var3, c0Var, k3Var, 0));
-                    frameLayout.addView(dVar, gb1.h(-1, 48.0f, 119, 16.0f, 16.0f, 16.0f, 16.0f));
-                    d.addView(frameLayout, gb1.r(-1, -2));
+                    frameLayout.addView(dVar, kb1.h(-1, 48.0f, 119, 16.0f, 16.0f, 16.0f, 16.0f));
+                    d.addView(frameLayout, kb1.r(-1, -2));
                     k3Var.setCustomView(d);
                     k3Var.show();
                     return;

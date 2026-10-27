@@ -8,9 +8,8 @@ import android.view.MotionEvent;
 import android.view.Surface;
 import android.view.TextureView;
 import android.view.View;
-import sg.u;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public abstract class s extends TextureView implements TextureView.SurfaceTextureListener, Choreographer.FrameCallback {
     public static final p[] x = new p[3];
@@ -101,7 +100,7 @@ public abstract class s extends TextureView implements TextureView.SurfaceTextur
         rVar.c = false;
         pVar.f.remove(rVar);
         pVar.g = (r[]) pVar.f.toArray(new r[0]);
-        pVar.b.post(new u(15, pVar, rVar));
+        pVar.b.post(new s9.g(16, pVar, rVar));
         return true;
     }
 

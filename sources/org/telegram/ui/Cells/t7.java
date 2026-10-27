@@ -23,18 +23,18 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.gb1;
-import org.telegram.ui.Components.zp;
+import org.telegram.ui.Components.aq;
+import org.telegram.ui.Components.kb1;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class t7 extends FrameLayout {
     public final org.telegram.ui.Components.y9 a;
     public final TextView b;
     public final u5 c;
     public final View d;
-    public final zp e;
+    public final aq e;
     public final FrameLayout f;
     public AnimatorSet h;
     public MessageObject n;
@@ -47,39 +47,39 @@ public final class t7 extends FrameLayout {
         setWillNotDraw(false);
         FrameLayout frameLayout = new FrameLayout(context);
         this.f = frameLayout;
-        addView(frameLayout, gb1.g(-1.0f, -1));
+        addView(frameLayout, kb1.g(-1.0f, -1));
         org.telegram.ui.Components.y9 y9Var = new org.telegram.ui.Components.y9(context);
         this.a = y9Var;
         y9Var.getImageReceiver().setNeedsQualityThumb(true);
         y9Var.getImageReceiver().setShouldGenerateQualityThumb(true);
-        frameLayout.addView(y9Var, gb1.g(-1.0f, -1));
+        frameLayout.addView(y9Var, kb1.g(-1.0f, -1));
         u5 u5Var = new u5(context, 1);
         u5Var.b = new RectF();
         this.c = u5Var;
         u5Var.setWillNotDraw(false);
         u5Var.setPadding(AndroidUtilities.dp(5.0f), 0, AndroidUtilities.dp(5.0f), 0);
-        frameLayout.addView(u5Var, gb1.h(-2, 17.0f, 83, 4.0f, 0.0f, 0.0f, 4.0f));
+        frameLayout.addView(u5Var, kb1.h(-2, 17.0f, 83, 4.0f, 0.0f, 0.0f, 4.0f));
         ImageView imageView = new ImageView(context);
         imageView.setImageResource(R.drawable.play_mini_video);
-        u5Var.addView(imageView, gb1.i(-2, -2, 19));
+        u5Var.addView(imageView, kb1.i(-2, -2, 19));
         TextView textView = new TextView(context);
         this.b = textView;
         textView.setTextColor(-1);
         textView.setTypeface(AndroidUtilities.bold());
         textView.setTextSize(1, 12.0f);
         textView.setImportantForAccessibility(2);
-        u5Var.addView(textView, gb1.h(-2, -2.0f, 19, 13.0f, -0.7f, 0.0f, 0.0f));
+        u5Var.addView(textView, kb1.h(-2, -2.0f, 19, 13.0f, -0.7f, 0.0f, 0.0f));
         View view = new View(context);
         this.d = view;
         view.setBackgroundDrawable(org.telegram.ui.ActionBar.y6.M0(false));
-        addView(view, gb1.g(-1.0f, -1));
-        zp zpVar = new zp(context, 21, null);
-        this.e = zpVar;
-        zpVar.setVisibility(4);
-        zpVar.b(-1, org.telegram.ui.ActionBar.y6.Lh, org.telegram.ui.ActionBar.y6.k7);
-        zpVar.setDrawUnchecked(false);
-        zpVar.setDrawBackgroundAsArc(1);
-        addView(zpVar, gb1.h(24, 24.0f, 53, 0.0f, 1.0f, 1.0f, 0.0f));
+        addView(view, kb1.g(-1.0f, -1));
+        aq aqVar = new aq(context, 21, null);
+        this.e = aqVar;
+        aqVar.setVisibility(4);
+        aqVar.b(-1, org.telegram.ui.ActionBar.y6.Lh, org.telegram.ui.ActionBar.y6.k7);
+        aqVar.setDrawUnchecked(false);
+        aqVar.setDrawBackgroundAsArc(1);
+        addView(aqVar, kb1.h(24, 24.0f, 53, 0.0f, 1.0f, 1.0f, 0.0f));
     }
 
     @Override // android.view.View
@@ -96,7 +96,7 @@ public final class t7 extends FrameLayout {
     public final void onDraw(Canvas canvas) {
         if (!this.e.a.q) {
             org.telegram.ui.Components.y9 y9Var = this.a;
-            if (y9Var.getImageReceiver().hasBitmapImage() && y9Var.getImageReceiver().getCurrentAlpha() == 1.0f && !PhotoViewer.P1(this.n)) {
+            if (y9Var.getImageReceiver().hasBitmapImage() && y9Var.getImageReceiver().getCurrentAlpha() == 1.0f && !PhotoViewer.Q1(this.n)) {
                 return;
             }
         }
@@ -131,7 +131,7 @@ public final class t7 extends FrameLayout {
     public void setMessageObject(MessageObject messageObject) {
         TLRPC.PhotoSize photoSize;
         this.n = messageObject;
-        this.a.getImageReceiver().setVisible(!PhotoViewer.P1(messageObject), false);
+        this.a.getImageReceiver().setVisible(!PhotoViewer.Q1(messageObject), false);
         if (!TextUtils.isEmpty(MessagesController.getInstance(this.r.s).getRestrictionReason(messageObject.messageOwner.restriction_reason))) {
             this.c.setVisibility(4);
             this.a.setImageResource(R.drawable.photo_placeholder_in);

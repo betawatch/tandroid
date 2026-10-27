@@ -15,14 +15,14 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.RejectedExecutionException;
 import java.util.concurrent.atomic.AtomicLong;
-import org.telegram.ui.Components.ny0;
-import org.telegram.ui.io;
-import sg.u;
+import org.telegram.ui.Components.oy0;
+import org.telegram.ui.ko;
+import s9.g;
 import ui.h;
 import ui.i;
 import ui.o;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class o {
     public static final sb.b H = new sb.b(24);
@@ -218,11 +218,11 @@ public final class o {
         }
         this.y = true;
         l lVar = this.D;
-        u uVar = new u(17, this, lVar == null ? null : lVar.a);
+        s9.g gVar = new s9.g(18, this, lVar == null ? null : lVar.a);
         try {
-            this.j.execute(uVar);
+            this.j.execute(gVar);
         } catch (RejectedExecutionException unused) {
-            uVar.run();
+            gVar.run();
         }
     }
 
@@ -233,7 +233,7 @@ public final class o {
         i iVar = new i(j10, f7);
         synchronized (this.l) {
             this.A = iVar;
-            this.k.execute(new ny0(this, iVar, f7, 17));
+            this.k.execute(new oy0(this, iVar, f7, 17));
         }
         b bVar = this.h;
         StringBuilder t10 = a1.g.t(j10, "output generation started: id=", ", file=");
@@ -269,7 +269,7 @@ public final class o {
         r(mVar2);
         i iVar = this.A;
         if (iVar != null) {
-            this.k.execute(new ny0(this, iVar, exc, 18));
+            this.k.execute(new oy0(this, iVar, exc, 18));
         }
         this.f.onError(exc);
         org.telegram.utils.recorder.audio.d dVar = this.o;
@@ -334,11 +334,11 @@ public final class o {
                             }
                             oVar2.h.b("final trim completed: source=" + iVar2.b.getName() + ", output=" + file.getName() + ", trim=" + j12 + ".." + j13 + ", bytes=" + file.length() + ", elapsedMs=" + (SystemClock.elapsedRealtime() - elapsedRealtime));
                             oVar2.a(iVar3, file.length());
-                            handler.post(new io(oVar2, j13, j12, 2));
+                            handler.post(new ko(oVar2, j13, j12, 2));
                         } catch (Throwable th2) {
                             th = th2;
                             oVar = absolutePath2;
-                            handler.post(new u(16, oVar, th));
+                            handler.post(new g(17, oVar, th));
                         }
                     } catch (Throwable th3) {
                         th = th3;
@@ -382,7 +382,7 @@ public final class o {
             i iVar = this.A;
             if (iVar != null && iVar.d && !iVar.e) {
                 iVar.d = false;
-                this.k.execute(new ny0(this, iVar, jVar, 19));
+                this.k.execute(new oy0(this, iVar, jVar, 19));
                 this.h.b("output generation invalidated: id=" + iVar.a + ", reason=" + jVar);
             }
         }

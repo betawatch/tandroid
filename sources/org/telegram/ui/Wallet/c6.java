@@ -1,37 +1,20 @@
 package org.telegram.ui.Wallet;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.ti;
+import android.content.Context;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
-public final class c6 extends AnimatorListenerAdapter {
-    public final /* synthetic */ ti a;
-    public final /* synthetic */ l6 b;
-    public final /* synthetic */ d6 c;
+public final class c6 extends ug.s {
+    public final /* synthetic */ e6 y;
 
-    public c6(d6 d6Var, ti tiVar, l6 l6Var) {
-        this.c = d6Var;
-        this.a = tiVar;
-        this.b = l6Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public c6(e6 e6Var, Context context, z5 z5Var) {
+        super(context, z5Var, 2);
+        this.y = e6Var;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationCancel(Animator animator) {
-        this.c.a(false);
-    }
-
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        this.c.a(true);
-    }
-
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationStart(Animator animator) {
-        if (this.a != null) {
-            AndroidUtilities.hideKeyboard(this.b);
-        }
+    @Override // ug.s
+    public final void a() {
+        this.y.s = true;
     }
 }

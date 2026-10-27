@@ -4,10 +4,10 @@ import android.text.SpannableStringBuilder;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.messenger.vh;
+import org.telegram.messenger.wh;
 import org.telegram.ui.Components.zq;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class d implements Runnable {
     public final /* synthetic */ int a;
@@ -46,7 +46,7 @@ public final /* synthetic */ class d implements Runnable {
                     if (qcVar != null) {
                         org.telegram.ui.Components.ub ubVar = qcVar.e;
                         if ((ubVar instanceof org.telegram.ui.Components.yb) && ubVar.isAttachedToWindow()) {
-                            vh.o(R.string.BotStarsWithdrawalToast, new Object[]{y.s0(yVar.P - currentTime)}, ((org.telegram.ui.Components.yb) yVar.j0.e).b);
+                            wh.o(R.string.BotStarsWithdrawalToast, new Object[]{y.s0(yVar.P - currentTime)}, ((org.telegram.ui.Components.yb) yVar.j0.e).b);
                         }
                     }
                     AndroidUtilities.cancelRunOnUIThread(dVar);

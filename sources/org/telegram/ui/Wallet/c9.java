@@ -9,7 +9,7 @@ import android.widget.TextView;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 import org.telegram.ui.Components.ds;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class c9 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -40,10 +40,10 @@ public final /* synthetic */ class c9 implements ValueAnimator.AnimatorUpdateLis
                 ds dsVar = ds.h;
                 float interpolation = dsVar.getInterpolation(floatValue);
                 float interpolation2 = dsVar.getInterpolation(Math.min(1.0f, (floatValue * 320.0f) / 120.0f));
-                l6 l6Var = h9Var.d;
+                m6 m6Var = h9Var.d;
                 float f7 = this.c;
                 float f10 = this.b;
-                l6Var.setAlpha(((f7 - f10) * interpolation2) + f10);
+                m6Var.setAlpha(((f7 - f10) * interpolation2) + f10);
                 TextView textView = h9Var.f;
                 float f11 = this.e;
                 float f12 = this.d;

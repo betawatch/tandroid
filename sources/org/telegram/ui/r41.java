@@ -1,27 +1,137 @@
 package org.telegram.ui;
 
 import android.content.Context;
+import android.graphics.Canvas;
 import android.view.View;
-import org.telegram.tgnet.tl.TL_stars;
+import android.widget.FrameLayout;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public final class r41 extends y51 {
-    public final /* synthetic */ View Q;
-    public final /* synthetic */ TL_stars.TL_starGiftUnique R;
-    public final /* synthetic */ s41 S;
+public final class r41 extends FrameLayout {
+    public final /* synthetic */ int a;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public r41(s41 s41Var, Context context, Runnable runnable, View view, l51 l51Var, org.telegram.ui.ActionBar.u6 u6Var, View view2, TL_stars.TL_starGiftUnique tL_starGiftUnique) {
-        super(s41Var.e, context, runnable, view, l51Var, u6Var);
-        this.S = s41Var;
-        this.Q = view2;
-        this.R = tL_starGiftUnique;
+    public /* synthetic */ r41(Context context, int i10) {
+        super(context);
+        this.a = i10;
     }
 
-    @Override // org.telegram.ui.y51, android.app.Dialog, android.content.DialogInterface
-    public final void dismiss() {
-        super.dismiss();
-        this.S.e.X0 = null;
+    @Override // android.view.ViewGroup, android.view.View
+    public void dispatchDraw(Canvas canvas) {
+        switch (this.a) {
+            case 6:
+                org.telegram.ui.ActionBar.y6.i3.setBounds(0, 0, getMeasuredWidth(), org.telegram.ui.ActionBar.y6.i3.getIntrinsicHeight());
+                org.telegram.ui.ActionBar.y6.i3.draw(canvas);
+                super.dispatchDraw(canvas);
+                break;
+            default:
+                super.dispatchDraw(canvas);
+                break;
+        }
+    }
+
+    @Override // android.view.ViewGroup
+    public boolean drawChild(Canvas canvas, View view, long j10) {
+        switch (this.a) {
+            case 9:
+                return super.drawChild(canvas, view, j10);
+            case 10:
+            default:
+                return super.drawChild(canvas, view, j10);
+            case 11:
+                return false;
+        }
+    }
+
+    @Override // android.view.View
+    public boolean hasOverlappingRendering() {
+        switch (this.a) {
+            case 8:
+                return false;
+            default:
+                return super.hasOverlappingRendering();
+        }
+    }
+
+    @Override // android.view.View
+    public void onDraw(Canvas canvas) {
+        switch (this.a) {
+            case 5:
+                super.onDraw(canvas);
+                canvas.drawRect(0.0f, 0.0f, getMeasuredWidth(), 1.0f, org.telegram.ui.ActionBar.y6.k0);
+                break;
+            default:
+                super.onDraw(canvas);
+                break;
+        }
+    }
+
+    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        switch (this.a) {
+            case 2:
+                int childCount = getChildCount();
+                int i14 = 0;
+                int i15 = 0;
+                for (int i16 = 0; i16 < childCount; i16++) {
+                    if (getChildAt(i16).getMeasuredWidth() + i14 > getMeasuredWidth()) {
+                        i15 += getChildAt(i16).getMeasuredHeight();
+                        i14 = 0;
+                    }
+                    getChildAt(i16).layout(i14, i15, getChildAt(i16).getMeasuredWidth() + i14, getChildAt(i16).getMeasuredHeight() + i15);
+                    i14 += getChildAt(i16).getMeasuredWidth();
+                }
+                break;
+            default:
+                super.onLayout(z10, i10, i11, i12, i13);
+                break;
+        }
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public void onMeasure(int i10, int i11) {
+        switch (this.a) {
+            case 0:
+                super.onMeasure(i10, org.telegram.messenger.wh.D(36.0f, View.MeasureSpec.getSize(i11), TLObject.FLAG_30));
+                break;
+            case 1:
+                super.onMeasure(i10, i11);
+                break;
+            case 2:
+                int size = View.MeasureSpec.getSize(i10);
+                super.onMeasure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), i11);
+                int childCount = getChildCount();
+                int measuredHeight = childCount > 0 ? getChildAt(0).getMeasuredHeight() : 0;
+                int i12 = 0;
+                int i13 = 0;
+                for (int i14 = 0; i14 < childCount; i14++) {
+                    if (getChildAt(i14).getMeasuredWidth() + i12 > size) {
+                        i13 += getChildAt(i14).getMeasuredHeight();
+                        i12 = 0;
+                    }
+                    i12 += getChildAt(i14).getMeasuredWidth();
+                }
+                setMeasuredDimension(getMeasuredWidth(), getChildCount() != 0 ? AndroidUtilities.dp(16.0f) + measuredHeight + i13 : 0);
+                break;
+            case 3:
+                super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(60.0f), TLObject.FLAG_30));
+                break;
+            case 4:
+                super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(60.0f), TLObject.FLAG_30));
+                break;
+            case 5:
+            case 6:
+            case 7:
+            case 8:
+            case 9:
+            default:
+                super.onMeasure(i10, i11);
+                break;
+            case 10:
+                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(86.0f), TLObject.FLAG_30));
+                break;
+        }
     }
 }

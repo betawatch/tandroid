@@ -1,78 +1,17 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import java.util.HashSet;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public final class c70 extends LinearLayout implements org.telegram.ui.ActionBar.p6 {
-    public final org.telegram.ui.Components.ju a;
-    public boolean b;
-    public int c;
-    public sz d;
-    public String e;
-    public final b70 f;
-    public final /* synthetic */ f70 h;
+public final class c70 {
+    public final /* synthetic */ boolean a;
+    public final /* synthetic */ TLRPC.TL_messages_stickerSet b;
+    public final /* synthetic */ h70 c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public c70(f70 f70Var, Context context) {
-        super(context);
-        this.h = f70Var;
-        this.f = new b70(this);
-        TextView g7 = org.telegram.messenger.t.g(context, 1, 16.0f);
-        org.telegram.ui.ActionBar.f7.V(g7, org.telegram.ui.ActionBar.y6.j5, null);
-        g7.setText("t.me/addemoji/");
-        org.telegram.ui.Components.ju juVar = new org.telegram.ui.Components.ju(context, null);
-        this.a = juVar;
-        juVar.setLines(1);
-        juVar.setSingleLine(true);
-        juVar.setInputType(16384);
-        juVar.setTextSize(1, 16.0f);
-        org.telegram.ui.ActionBar.f7.V(juVar, org.telegram.ui.ActionBar.y6.Ud, null);
-        org.telegram.ui.ActionBar.f7.H(juVar, org.telegram.ui.ActionBar.y6.hc, null);
-        org.telegram.ui.ActionBar.f7.D(juVar, org.telegram.ui.ActionBar.y6.uf, null);
-        int i10 = org.telegram.ui.ActionBar.y6.Vd;
-        org.telegram.ui.ActionBar.f7.m(juVar, 34, i10, null);
-        org.telegram.ui.ActionBar.f7.E(juVar, i10, null);
-        org.telegram.ui.ActionBar.f7.m(juVar, 30, org.telegram.ui.ActionBar.y6.Wd, null);
-        org.telegram.ui.ActionBar.f7.m(juVar, 36, org.telegram.ui.ActionBar.y6.vf, null);
-        juVar.setBackground(null);
-        juVar.setHint(LocaleController.getString(R.string.AddEmojiPackLinkHint));
-        addView(g7, org.telegram.ui.Components.gb1.x(-2, -2, 16, 20, 0, 0, 0));
-        addView(juVar, org.telegram.ui.Components.gb1.x(-1, -2, 16, -4, 0, 0, 0));
-        org.telegram.ui.ActionBar.f7.i(org.telegram.ui.ActionBar.y6.d6, this, null);
-        setPadding(0, AndroidUtilities.dp(5.0f), 0, AndroidUtilities.dp(5.0f));
-        setWillNotDraw(false);
-    }
-
-    @Override // android.widget.LinearLayout, android.view.View
-    public final void onDraw(Canvas canvas) {
-        if (this.b) {
-            canvas.drawLine(AndroidUtilities.dp(20.0f), getHeight() - 1, getWidth() - getPaddingRight(), getHeight() - 1, org.telegram.ui.ActionBar.y6.k0);
-        }
-    }
-
-    @Override // org.telegram.ui.ActionBar.p6
-    public final void updateColors() {
-        org.telegram.ui.Components.ju juVar = this.a;
-        try {
-            juVar.setHintColor(org.telegram.ui.ActionBar.y6.x0(null, org.telegram.ui.ActionBar.y6.Vd, false));
-            juVar.setCursorColor(org.telegram.ui.ActionBar.y6.x0(null, org.telegram.ui.ActionBar.y6.Wd, false));
-            juVar.setHandlesColor(org.telegram.ui.ActionBar.y6.x0(null, org.telegram.ui.ActionBar.y6.vf, false));
-            invalidate();
-        } catch (Exception e) {
-            FileLog.e(e);
-        }
-    }
-
-    @Override // org.telegram.ui.ActionBar.p6
-    public final /* synthetic */ void addColorKeys(HashSet hashSet) {
+    public c70(h70 h70Var, boolean z10, TLRPC.TL_messages_stickerSet tL_messages_stickerSet) {
+        this.c = h70Var;
+        this.a = z10;
+        this.b = tL_messages_stickerSet;
     }
 }

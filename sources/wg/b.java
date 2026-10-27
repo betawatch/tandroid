@@ -34,7 +34,7 @@ import org.telegram.ui.Cells.q4;
 import org.telegram.ui.Cells.v8;
 import org.telegram.ui.Components.ds;
 import org.telegram.ui.Components.j9;
-import org.telegram.ui.Components.mm0;
+import org.telegram.ui.Components.nm0;
 import org.telegram.ui.Components.s6;
 import org.telegram.ui.Components.y9;
 import s4.e1;
@@ -48,11 +48,11 @@ import xg.w;
 import xg.x;
 import xg.y;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class b extends qg.b {
     public final u6 d;
-    public mm0 f;
+    public nm0 f;
     public u h;
     public u n;
     public r r;
@@ -65,10 +65,10 @@ public final class b extends qg.b {
         this.d = u6Var;
         o oVar = new o(this, 26);
         MessagesStorage messagesStorage = MessagesStorage.getInstance(UserConfig.selectedAccount);
-        messagesStorage.getStorageQueue().postRunnable(new sg.u(22, messagesStorage, oVar));
+        messagesStorage.getStorageQueue().postRunnable(new s9.g(23, messagesStorage, oVar));
     }
 
-    @Override // org.telegram.ui.Components.lm0
+    @Override // org.telegram.ui.Components.mm0
     public final boolean D(e1 e1Var) {
         int i10 = e1Var.f;
         return i10 == 2 || i10 == 11 || i10 == 8 || i10 == 10 || i10 == 15 || i10 == 12 || i10 == 17 || i10 == 18;

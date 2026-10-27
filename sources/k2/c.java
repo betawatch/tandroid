@@ -18,9 +18,9 @@ import org.telegram.tgnet.TLParseException;
 import org.telegram.ui.ActionBar.x6;
 import org.telegram.ui.Cells.e3;
 import org.telegram.ui.Cells.g3;
-import org.telegram.ui.Components.gb1;
 import org.telegram.ui.Components.ju;
-import org.telegram.ui.Components.ny0;
+import org.telegram.ui.Components.kb1;
+import org.telegram.ui.Components.oy0;
 import org.telegram.ui.Components.voip.h1;
 import org.telegram.ui.Components.voip.h2;
 import org.telegram.ui.Components.voip.i1;
@@ -30,7 +30,7 @@ import org.telegram.ui.Components.voip.u2;
 import org.telegram.ui.Components.voip.y2;
 import org.telegram.ui.web.e1;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class c implements Runnable {
     public final /* synthetic */ int a;
@@ -178,7 +178,7 @@ public final /* synthetic */ class c implements Runnable {
                         i11++;
                     }
                     for (int i13 = 0; i13 < arrayList2.size(); i13++) {
-                        i2Var.addView((View) arrayList2.get(i13), gb1.x(-2, -2, 1, 4, 0, 0, 4));
+                        i2Var.addView((View) arrayList2.get(i13), kb1.x(-2, -2, 1, 4, 0, 0, 4));
                     }
                     for (int i14 = 0; i14 < arrayList.size(); i14++) {
                         i2Var.removeView((View) arrayList.get(i14));
@@ -242,7 +242,7 @@ public final /* synthetic */ class c implements Runnable {
                 break;
             default:
                 e1 e1Var = (e1) this.b;
-                Utilities.searchQueue.postRunnable(new ny0(e1Var, new ArrayList(e1Var.b.f), e1Var.b.r));
+                Utilities.searchQueue.postRunnable(new oy0(e1Var, new ArrayList(e1Var.b.f), e1Var.b.r));
                 break;
         }
     }

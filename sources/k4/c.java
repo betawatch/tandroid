@@ -19,7 +19,7 @@ import java.nio.ByteOrder;
 import java.util.Arrays;
 import java.util.List;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
 public final class c implements o {
     public q a;
@@ -82,14 +82,14 @@ public final class c implements o {
             yb.p(pVar.getPosition() == 0);
             int i13 = this.f;
             if (i13 != -1) {
-                pVar.q(i13);
+                pVar.r(i13);
                 this.c = 4;
                 return 0;
             }
             if (!e.a(pVar)) {
                 throw x0.a(null, "Unsupported or unrecognized wav file type.");
             }
-            pVar.q((int) (pVar.i() - pVar.getPosition()));
+            pVar.r((int) (pVar.i() - pVar.getPosition()));
             this.c = 1;
             return 0;
         }
@@ -104,7 +104,7 @@ public final class c implements o {
                 xVar.N(0);
                 pVar.b(0, 8, xVar.a);
                 j10 = xVar.p();
-                pVar.q(((int) b10.b) + 8);
+                pVar.r(((int) b10.b) + 8);
             }
             this.d = j10;
             this.c = 2;
@@ -123,7 +123,7 @@ public final class c implements o {
             }
             pVar.p();
             d b11 = e.b(1684108385, pVar, new x(8));
-            pVar.q(8);
+            pVar.r(8);
             Pair create = Pair.create(Long.valueOf(pVar.getPosition()), Long.valueOf(b11.b));
             this.f = ((Long) create.first).intValue();
             long longValue = ((Long) create.second).longValue();
@@ -182,7 +182,7 @@ public final class c implements o {
         } else {
             bArr = n0.b;
         }
-        pVar.q((int) (pVar.i() - pVar.getPosition()));
+        pVar.r((int) (pVar.i() - pVar.getPosition()));
         u uVar = new u();
         uVar.a = t11;
         uVar.b = s10;

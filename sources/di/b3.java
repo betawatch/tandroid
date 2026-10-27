@@ -11,7 +11,7 @@ import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.gh;
 import org.telegram.ui.Components.ri;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class b3 implements ri {
     public final /* synthetic */ q4 a;
@@ -32,7 +32,7 @@ public final class b3 implements ri {
 
     @Override // org.telegram.ui.Components.ri
     public final void R() {
-        this.a.Q1.M();
+        this.a.Q1.L();
     }
 
     /* JADX WARN: Multi-variable type inference failed */

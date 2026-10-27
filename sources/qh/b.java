@@ -27,19 +27,19 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.p6;
 import org.telegram.ui.ActionBar.u6;
 import org.telegram.ui.ActionBar.y6;
-import org.telegram.ui.Components.ak0;
+import org.telegram.ui.Components.bk0;
 import org.telegram.ui.Components.ds;
-import org.telegram.ui.Components.gb1;
 import org.telegram.ui.Components.j9;
+import org.telegram.ui.Components.kb1;
 import org.telegram.ui.Components.r6;
-import org.telegram.ui.Components.xj0;
 import org.telegram.ui.Components.y9;
-import org.telegram.ui.qg0;
+import org.telegram.ui.Components.yj0;
+import org.telegram.ui.sg0;
 import tg.b1;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
-public final class b extends FrameLayout implements qg0, d, p6 {
+public final class b extends FrameLayout implements sg0, d, p6 {
     public static final RectF V = new RectF();
     public TLRPC.TL_attachMenuBot E;
     public final TextPaint F;
@@ -59,7 +59,7 @@ public final class b extends FrameLayout implements qg0, d, p6 {
     public TextPaint T;
     public j9 U;
     public final TextView a;
-    public final ak0 b;
+    public final bk0 b;
     public y9 c;
     public u6 d;
     public final Paint e;
@@ -81,10 +81,10 @@ public final class b extends FrameLayout implements qg0, d, p6 {
         this.n = new oe.b(1, this, dsVar, 380L, false);
         this.r = new oe.b(2, this, dsVar, 380L, false);
         this.S = 1.0f;
-        ak0 ak0Var = new ak0(context);
-        this.b = ak0Var;
-        addView(ak0Var, gb1.h(44, 44.0f, 49, 0.0f, -6.0f, 0.0f, 0.0f));
-        ak0Var.setColorFilter(new PorterDuffColorFilter(-16777216, PorterDuff.Mode.SRC_IN));
+        bk0 bk0Var = new bk0(context);
+        this.b = bk0Var;
+        addView(bk0Var, kb1.h(44, 44.0f, 49, 0.0f, -6.0f, 0.0f, 0.0f));
+        bk0Var.setColorFilter(new PorterDuffColorFilter(-16777216, PorterDuff.Mode.SRC_IN));
         TextView textView = new TextView(context);
         this.a = textView;
         textView.setTextSize(1, 12.0f);
@@ -94,7 +94,7 @@ public final class b extends FrameLayout implements qg0, d, p6 {
         textView.setTypeface(AndroidUtilities.bold());
         textView.setGravity(17);
         this.F = new TextPaint(textView.getPaint());
-        addView(textView, gb1.h(-1, -2.0f, 49, 0.0f, 28.33f, 0.0f, 0.0f));
+        addView(textView, kb1.h(-1, -2.0f, 49, 0.0f, 28.33f, 0.0f, 0.0f));
         r6 r6Var = new r6(false, false, false);
         this.f = r6Var;
         r6Var.x(AndroidUtilities.bold());
@@ -110,7 +110,7 @@ public final class b extends FrameLayout implements qg0, d, p6 {
         bVar.y = aVar;
         bVar.a.setText(LocaleController.getString(i10));
         bVar.b(false);
-        bVar.b.setLayoutParams(gb1.h(24, 24.0f, 49, 0.0f, 4.0f, 0.0f, 0.0f));
+        bVar.b.setLayoutParams(kb1.h(24, 24.0f, 49, 0.0f, 4.0f, 0.0f, 0.0f));
         bVar.w = y6.w0(y6.cl, u6Var);
         bVar.s = y6.w0(y6.al, u6Var);
         bVar.v = y6.w0(y6.bl, u6Var);
@@ -176,9 +176,9 @@ public final class b extends FrameLayout implements qg0, d, p6 {
         int i10 = aVar.b;
         int i11 = aVar.a;
         int i12 = aVar.c;
-        ak0 ak0Var = this.b;
+        bk0 bk0Var = this.b;
         if (i12 != -1) {
-            ak0Var.setImageResource(i12);
+            bk0Var.setImageResource(i12);
             a();
             return;
         }
@@ -187,11 +187,11 @@ public final class b extends FrameLayout implements qg0, d, p6 {
             boolean z13 = this.N != z11;
             if (this.O != i13) {
                 this.O = i13;
-                ak0Var.f(i13, 24, 24, null);
+                bk0Var.f(i13, 24, 24, null);
                 z13 = true;
             }
             if (z13) {
-                xj0 animatedDrawable = ak0Var.getAnimatedDrawable();
+                yj0 animatedDrawable = bk0Var.getAnimatedDrawable();
                 if (animatedDrawable == null) {
                     return;
                 }
@@ -225,23 +225,23 @@ public final class b extends FrameLayout implements qg0, d, p6 {
         if (i11 != i10) {
             if (this.O != i13) {
                 this.O = i13;
-                ak0Var.f(i13, 24, 24, null);
-                ak0Var.getAnimatedDrawable().h = false;
+                bk0Var.f(i13, 24, 24, null);
+                bk0Var.getAnimatedDrawable().h = false;
                 if (!z10) {
-                    ak0Var.getAnimatedDrawable().T(0.99f, true);
+                    bk0Var.getAnimatedDrawable().T(0.99f, true);
                     return;
                 } else {
-                    ak0Var.getAnimatedDrawable().M(0);
-                    ak0Var.d();
+                    bk0Var.getAnimatedDrawable().M(0);
+                    bk0Var.d();
                     return;
                 }
             }
             return;
         }
-        if (ak0Var.getAnimatedDrawable() == null) {
-            ak0Var.f(this.y.a, 24, 24, null);
+        if (bk0Var.getAnimatedDrawable() == null) {
+            bk0Var.f(this.y.a, 24, 24, null);
         }
-        xj0 animatedDrawable2 = ak0Var.getAnimatedDrawable();
+        yj0 animatedDrawable2 = bk0Var.getAnimatedDrawable();
         if (animatedDrawable2 == null) {
             return;
         }
@@ -257,7 +257,7 @@ public final class b extends FrameLayout implements qg0, d, p6 {
                 animatedDrawable2.M(iArr[0]);
                 animatedDrawable2.P(0);
             }
-            ak0Var.d();
+            bk0Var.d();
         }
     }
 
@@ -379,9 +379,9 @@ public final class b extends FrameLayout implements qg0, d, p6 {
         TextView textView = this.a;
         textView.setScaleX(f7);
         textView.setScaleY(f7);
-        ak0 ak0Var = this.b;
-        ak0Var.setScaleX(f7);
-        ak0Var.setScaleY(f7);
+        bk0 bk0Var = this.b;
+        bk0Var.setScaleX(f7);
+        bk0Var.setScaleY(f7);
         y9 y9Var = this.c;
         if (y9Var != null) {
             y9Var.setScaleX(f7);

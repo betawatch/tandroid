@@ -1,37 +1,66 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
-/* loaded from: classes.dex */
-public final /* synthetic */ class bl implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ TranslateController b;
-    public final /* synthetic */ String c;
-    public final /* synthetic */ MessageObject d;
-    public final /* synthetic */ long e;
-    public final /* synthetic */ int f;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.TranslateController;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-    public /* synthetic */ bl(TranslateController translateController, String str, MessageObject messageObject, long j10, int i10, int i11) {
-        this.a = i11;
-        this.b = translateController;
-        this.c = str;
-        this.d = messageObject;
-        this.e = j10;
-        this.f = i10;
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* loaded from: classes.dex */
+public final /* synthetic */ class bl implements RequestDelegate {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ BaseController b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ Object d;
+
+    public /* synthetic */ bl(BaseController baseController, long j10, Object obj, int i10) {
+        this.a = i10;
+        this.b = baseController;
+        this.c = j10;
+        this.d = obj;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
         switch (this.a) {
             case 0:
-                long j10 = this.e;
-                int i10 = this.f;
-                this.b.lambda$checkLanguage$16(this.c, this.d, j10, i10);
+                ((TranslateController) this.b).lambda$pushPollToTranslate$26((TranslateController.PendingPollTranslation) this.d, this.c, tLObject, tL_error);
+                break;
+            case 1:
+                ((TranslateController) this.b).lambda$pushRichMessageToTranslate$29((TranslateController.PendingRichTranslation) this.d, this.c, tLObject, tL_error);
+                break;
+            case 2:
+                ((MediaDataController) this.b).lambda$loadPinnedMessageInternal$165(this.c, (TLRPC.TL_messages_getMessages) this.d, tLObject, tL_error);
+                break;
+            case 3:
+                ((MessagesController) this.b).lambda$updateTimerProc$154(this.c, (TLRPC.TL_messages_getMessagesViews) this.d, tLObject, tL_error);
+                break;
+            case 4:
+                ((MessagesController) this.b).lambda$reloadMentionsCountForChannel$220((TLRPC.InputPeer) this.d, this.c, tLObject, tL_error);
+                break;
+            case 5:
+                ((MessagesController) this.b).lambda$getGroupCall$62(this.c, (Runnable) this.d, tLObject, tL_error);
+                break;
+            case 6:
+                ((MessagesController) this.b).lambda$getSponsoredMessages$446(this.c, (MessagesController.SponsoredMessagesInfo) this.d, tLObject, tL_error);
+                break;
+            case 7:
+                ((MessagesController) this.b).lambda$loadUnknownChannel$331(this.c, (TLRPC.TL_channel) this.d, tLObject, tL_error);
+                break;
+            case 8:
+                ((MessagesController) this.b).lambda$setChatReactions$477(this.c, (TLRPC.TL_messages_setChatAvailableReactions) this.d, tLObject, tL_error);
                 break;
             default:
-                long j11 = this.e;
-                int i11 = this.f;
-                this.b.lambda$checkLanguage$12(this.c, this.d, j11, i11);
+                ((MessagesController) this.b).lambda$checkLastDialogMessage$226((TLRPC.Dialog) this.d, this.c, tLObject, tL_error);
                 break;
         }
+    }
+
+    public /* synthetic */ bl(BaseController baseController, Object obj, long j10, int i10) {
+        this.a = i10;
+        this.b = baseController;
+        this.d = obj;
+        this.c = j10;
     }
 }

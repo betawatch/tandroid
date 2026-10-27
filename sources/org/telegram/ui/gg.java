@@ -1,30 +1,61 @@
 package org.telegram.ui;
 
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class gg implements Runnable {
+public final /* synthetic */ class gg implements q0.a {
     public final /* synthetic */ int a;
-    public final /* synthetic */ un b;
-    public final /* synthetic */ TLRPC.User c;
+    public final /* synthetic */ wn b;
 
-    public /* synthetic */ gg(un unVar, TLRPC.User user, int i10) {
+    public /* synthetic */ gg(wn wnVar, int i10) {
         this.a = i10;
-        this.b = unVar;
-        this.c = user;
+        this.b = wnVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // q0.a
+    public final void accept(Object obj) {
         switch (this.a) {
             case 0:
-                un unVar = this.b;
-                unVar.getClass();
-                unVar.presentFragment(un.ba(this.c.id));
-                break;
+                Integer num = (Integer) obj;
+                wn wnVar = this.b;
+                wnVar.getClass();
+                if (num.intValue() != 0) {
+                    wnVar.Sc(true);
+                    wnVar.j(num.intValue(), 0, false, 0, true, 0);
+                    break;
+                } else {
+                    wnVar.x1 = 0;
+                    wnVar.Sc(true);
+                    wnVar.getMessagesController().markReactionsAsRead(wnVar.j6, wnVar.b());
+                    break;
+                }
+            case 1:
+                Integer num2 = (Integer) obj;
+                wn wnVar2 = this.b;
+                wnVar2.getClass();
+                if (num2.intValue() != 0) {
+                    int i10 = wnVar2.y1 - 1;
+                    wnVar2.y1 = i10;
+                    if (i10 <= 0) {
+                        wnVar2.getMessagesController().markPollVotesAsRead(wnVar2.j6, wnVar2.b());
+                    }
+                    wnVar2.Rc(true);
+                    wnVar2.j(num2.intValue(), 0, false, 0, true, 0);
+                    break;
+                } else {
+                    wnVar2.y1 = 0;
+                    wnVar2.Rc(true);
+                    wnVar2.getMessagesController().markPollVotesAsRead(wnVar2.j6, wnVar2.b());
+                    break;
+                }
             default:
-                this.b.wa(this.c);
+                wn wnVar3 = this.b;
+                wnVar3.getClass();
+                boolean booleanValue = ((Boolean) obj).booleanValue();
+                wnVar3.v7 = booleanValue;
+                if (!booleanValue) {
+                    wnVar3.C8();
+                    break;
+                }
                 break;
         }
     }

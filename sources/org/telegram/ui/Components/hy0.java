@@ -1,128 +1,242 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.Rect;
-import android.graphics.RectF;
-import android.graphics.drawable.Drawable;
+import android.content.Context;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.BuildVars;
+import org.telegram.messenger.FileLoader;
+import org.telegram.messenger.ImageLocation;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.UserConfig;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public final class hy0 extends Drawable {
-    public final int a;
-    public final int b;
-    public final t5[] c;
-    public final boolean e;
-    public int d = 255;
-    public final RectF f = new RectF();
-    public boolean g = false;
-
-    public hy0(int i10, ArrayList arrayList, boolean z10) {
-        this.e = z10;
-        int max = (int) Math.max(1.0d, Math.sqrt(arrayList.size()));
-        this.a = max;
-        int min = Math.min(max * max, arrayList.size());
-        this.b = min;
-        this.c = new t5[min];
-        if (!arrayList.isEmpty()) {
-            MessageObject.isAnimatedEmoji((TLRPC.Document) arrayList.get(0));
-        }
-        int i11 = max < 2 ? 1 : 0;
-        for (int i12 = 0; i12 < this.b; i12++) {
-            this.c[i12] = t5.m(i10, i11, (TLRPC.Document) arrayList.get(i12));
-        }
+public final class hy0 extends mc {
+    public hy0(LaunchActivity launchActivity, int i10, TLRPC.Document document) {
+        this(launchActivity, null, 1, i10, document, null);
     }
 
-    public final void a(org.telegram.ui.Cells.s1 s1Var) {
-        for (int i10 = 0; i10 < this.b; i10++) {
-            this.c[i10].o(s1Var);
-        }
-    }
-
-    public final boolean b() {
-        return this.g;
-    }
-
-    public final boolean c(ArrayList arrayList) {
-        t5[] t5VarArr = this.c;
-        if (t5VarArr.length == arrayList.size()) {
-            for (int i10 = 0; i10 < t5VarArr.length; i10++) {
-                TLRPC.Document document = t5VarArr[i10].e;
-                if ((document == null ? 0L : document.id) == ((TLRPC.Document) arrayList.get(i10)).id) {
+    /* JADX WARN: Removed duplicated region for block: B:109:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:11:0x0088 A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:122:0x011d  */
+    /* JADX WARN: Removed duplicated region for block: B:17:0x009f  */
+    /* JADX WARN: Removed duplicated region for block: B:36:0x012e  */
+    /* JADX WARN: Removed duplicated region for block: B:39:0x0142  */
+    /* JADX WARN: Removed duplicated region for block: B:51:0x01cd  */
+    /* JADX WARN: Removed duplicated region for block: B:59:0x0255  */
+    /* JADX WARN: Removed duplicated region for block: B:61:0x0266  */
+    /* JADX WARN: Removed duplicated region for block: B:63:0x0277  */
+    /* JADX WARN: Removed duplicated region for block: B:65:0x0288  */
+    /* JADX WARN: Removed duplicated region for block: B:81:0x02ff  */
+    /* JADX WARN: Removed duplicated region for block: B:93:0x0366  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public hy0(Context context, TLObject tLObject, int i10, int i11, TLRPC.Document document, org.telegram.ui.ActionBar.u6 u6Var) {
+        super(context, u6Var);
+        TLRPC.Document document2;
+        TLRPC.StickerSet stickerSet;
+        TLRPC.TL_stickerSetFullCovered tL_stickerSetFullCovered;
+        ArrayList<TLRPC.Document> arrayList;
+        TLRPC.Document document3;
+        ImageLocation forSticker;
+        TLRPC.TL_messages_stickerSet stickerSet2;
+        boolean z10 = tLObject instanceof TLRPC.TL_messages_stickerSet;
+        if (z10) {
+            TLRPC.TL_messages_stickerSet tL_messages_stickerSet = (TLRPC.TL_messages_stickerSet) tLObject;
+            stickerSet = tL_messages_stickerSet.set;
+            ArrayList<TLRPC.Document> arrayList2 = tL_messages_stickerSet.documents;
+            if (arrayList2 != null && !arrayList2.isEmpty()) {
+                document3 = arrayList2.get(0);
+                document2 = document3;
+                if (stickerSet == null && document2 != null && (stickerSet2 = MediaDataController.getInstance(UserConfig.selectedAccount).getStickerSet(MessageObject.getInputStickerSet(document2), true)) != null) {
+                    stickerSet = stickerSet2.set;
                 }
-            }
-            return true;
-        }
-        return false;
-    }
-
-    public final void d() {
-        this.g = false;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        t5 t5Var;
-        if (this.d <= 0) {
-            return;
-        }
-        Rect bounds = getBounds();
-        RectF rectF = this.f;
-        rectF.set(bounds);
-        float centerX = rectF.centerX() - (AndroidUtilities.dp(48.0f) / 2.0f);
-        float centerY = rectF.centerY() - (AndroidUtilities.dp(48.0f) / 2.0f);
-        int dp = AndroidUtilities.dp(48.0f);
-        int i10 = this.a;
-        float f7 = dp / i10;
-        float dp2 = AndroidUtilities.dp(48.0f) / i10;
-        canvas.save();
-        canvas.clipRect(centerX, centerY, AndroidUtilities.dp(48.0f) + centerX, AndroidUtilities.dp(48.0f) + centerY);
-        for (int i11 = 0; i11 < i10; i11++) {
-            for (int i12 = 0; i12 < i10; i12++) {
-                int i13 = (i11 * i10) + i12;
-                if (i13 >= 0) {
-                    t5[] t5VarArr = this.c;
-                    if (i13 < t5VarArr.length && (t5Var = t5VarArr[i13]) != null) {
-                        t5Var.setBounds((int) ((i12 * f7) + centerX), (int) ((i11 * dp2) + centerY), (int) (((i12 + 1) * f7) + centerX), (int) (((i11 + 1) * dp2) + centerY));
-                        t5VarArr[i13].setAlpha(this.d);
-                        t5VarArr[i13].setColorFilter(this.e ? org.telegram.ui.ActionBar.y6.w3 : org.telegram.ui.ActionBar.y6.v3);
-                        t5VarArr[i13].draw(canvas);
+                TLRPC.StickerSet stickerSet3 = stickerSet;
+                if (document2 == null) {
+                    TLObject closestPhotoSizeWithSize = stickerSet3 != null ? FileLoader.getClosestPhotoSizeWithSize(stickerSet3.thumbs, 90) : null;
+                    closestPhotoSizeWithSize = closestPhotoSizeWithSize == null ? document2 : closestPhotoSizeWithSize;
+                    boolean z11 = closestPhotoSizeWithSize instanceof TLRPC.Document;
+                    if (z11) {
+                        forSticker = ImageLocation.getForDocument(FileLoader.getClosestPhotoSizeWithSize(document2.thumbs, 90), document2);
+                    } else {
+                        forSticker = ImageLocation.getForSticker((TLRPC.PhotoSize) closestPhotoSizeWithSize, document2, tLObject instanceof TLRPC.StickerSetCovered ? ((TLRPC.StickerSetCovered) tLObject).set.thumb_version : z10 ? ((TLRPC.TL_messages_stickerSet) tLObject).set.thumb_version : 0);
                     }
+                    ImageLocation imageLocation = forSticker;
+                    if (z11 && (MessageObject.isAnimatedStickerDocument(document2, true) || MessageObject.isVideoSticker(document2) || MessageObject.isGifDocument(document2))) {
+                        this.a.j(ImageLocation.getForDocument(document2), "50_50", imageLocation, null, 0, tLObject);
+                    } else if (imageLocation == null || imageLocation.imageType != 1) {
+                        this.a.i(imageLocation, "50_50", "webp", null, tLObject);
+                    } else {
+                        this.a.i(imageLocation, "50_50", "tgs", null, tLObject);
+                    }
+                } else {
+                    this.a.i(null, null, "webp", null, tLObject);
+                }
+                if (MessageObject.isTextColorEmoji(document2)) {
+                    this.a.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
+                }
+                switch (i11) {
+                    case 0:
+                        if (stickerSet3 != null) {
+                            if (stickerSet3.masks) {
+                                this.b.setText(LocaleController.getString(R.string.MasksRemoved));
+                                this.c.setText(LocaleController.formatString("MasksRemovedInfo", R.string.MasksRemovedInfo, stickerSet3.title));
+                                return;
+                            } else {
+                                if (!stickerSet3.emojis) {
+                                    this.b.setText(LocaleController.getString(R.string.StickersRemoved));
+                                    this.c.setText(LocaleController.formatString("StickersRemovedInfo", R.string.StickersRemovedInfo, stickerSet3.title));
+                                    return;
+                                }
+                                this.b.setText(LocaleController.getString(R.string.EmojiRemoved));
+                                if (i10 > 1) {
+                                    this.c.setText(LocaleController.formatPluralString("EmojiRemovedMultipleInfo", i10, new Object[0]));
+                                    return;
+                                } else {
+                                    this.c.setText(LocaleController.formatString("EmojiRemovedInfo", R.string.EmojiRemovedInfo, stickerSet3.title));
+                                    return;
+                                }
+                            }
+                        }
+                        return;
+                    case 1:
+                        if (stickerSet3 != null) {
+                            if (stickerSet3.masks) {
+                                this.b.setText(LocaleController.getString(R.string.MasksArchived));
+                                this.c.setText(LocaleController.formatString("MasksArchivedInfo", R.string.MasksArchivedInfo, stickerSet3.title));
+                                return;
+                            } else if (stickerSet3.emojis) {
+                                this.b.setText(LocaleController.getString(R.string.EmojiArchived));
+                                this.c.setText(LocaleController.formatString("EmojiArchivedInfo", R.string.EmojiArchivedInfo, stickerSet3.title));
+                                return;
+                            } else {
+                                this.b.setText(LocaleController.getString(R.string.StickersArchived));
+                                this.c.setText(LocaleController.formatString("StickersArchivedInfo", R.string.StickersArchivedInfo, stickerSet3.title));
+                                return;
+                            }
+                        }
+                        return;
+                    case 2:
+                        if (stickerSet3 != null) {
+                            if (stickerSet3.masks) {
+                                this.b.setText(LocaleController.getString(R.string.AddMasksInstalled));
+                                this.c.setText(LocaleController.formatString("AddMasksInstalledInfo", R.string.AddMasksInstalledInfo, stickerSet3.title));
+                                return;
+                            } else {
+                                if (!stickerSet3.emojis) {
+                                    this.b.setText(LocaleController.getString(R.string.AddStickersInstalled));
+                                    this.c.setText(LocaleController.formatString("AddStickersInstalledInfo", R.string.AddStickersInstalledInfo, stickerSet3.title));
+                                    return;
+                                }
+                                this.b.setText(LocaleController.getString(R.string.AddEmojiInstalled));
+                                if (i10 > 1) {
+                                    this.c.setText(LocaleController.formatPluralString("AddEmojiMultipleInstalledInfo", i10, new Object[0]));
+                                    return;
+                                } else {
+                                    this.c.setText(LocaleController.formatString("AddEmojiInstalledInfo", R.string.AddEmojiInstalledInfo, stickerSet3.title));
+                                    return;
+                                }
+                            }
+                        }
+                        return;
+                    case 3:
+                        this.b.setText(LocaleController.getString(R.string.RemovedFromRecent));
+                        this.c.setVisibility(8);
+                        return;
+                    case 4:
+                        this.b.setText(LocaleController.getString(R.string.RemovedFromFavorites));
+                        this.c.setVisibility(8);
+                        return;
+                    case 5:
+                        this.b.setText(LocaleController.getString(R.string.AddedToFavorites));
+                        this.c.setVisibility(8);
+                        return;
+                    case 6:
+                        if (UserConfig.getInstance(UserConfig.selectedAccount).isPremium() || MessagesController.getInstance(UserConfig.selectedAccount).premiumFeaturesBlocked()) {
+                            this.b.setText(LocaleController.formatString("LimitReachedFavoriteStickers", R.string.LimitReachedFavoriteStickers, Integer.valueOf(MessagesController.getInstance(UserConfig.selectedAccount).stickersFavedLimitPremium)));
+                            this.c.setText(LocaleController.formatString("LimitReachedFavoriteStickersSubtitlePremium", R.string.LimitReachedFavoriteStickersSubtitlePremium, new Object[0]));
+                            return;
+                        } else {
+                            this.b.setText(LocaleController.formatString("LimitReachedFavoriteStickers", R.string.LimitReachedFavoriteStickers, Integer.valueOf(MessagesController.getInstance(UserConfig.selectedAccount).stickersFavedLimitDefault)));
+                            this.c.setText(AndroidUtilities.premiumText(LocaleController.formatString("LimitReachedFavoriteStickersSubtitle", R.string.LimitReachedFavoriteStickersSubtitle, Integer.valueOf(MessagesController.getInstance(UserConfig.selectedAccount).stickersFavedLimitPremium)), new m30(context, 2)));
+                            return;
+                        }
+                    case 7:
+                        boolean isPremium = UserConfig.getInstance(UserConfig.selectedAccount).isPremium();
+                        if (MessagesController.getInstance(UserConfig.selectedAccount).premiumFeaturesBlocked() || isPremium) {
+                            this.b.setText(LocaleController.formatString(R.string.LimitReachedFavoriteGifs, Integer.valueOf(isPremium ? MessagesController.getInstance(UserConfig.selectedAccount).savedGifsLimitPremium : MessagesController.getInstance(UserConfig.selectedAccount).savedGifsLimitDefault)));
+                            this.c.setText(LocaleController.getString(R.string.LimitReachedFavoriteGifsSubtitlePremium));
+                            return;
+                        } else {
+                            this.b.setText(LocaleController.formatString(R.string.LimitReachedFavoriteGifs, Integer.valueOf(MessagesController.getInstance(UserConfig.selectedAccount).savedGifsLimitDefault)));
+                            this.c.setText(AndroidUtilities.premiumText(LocaleController.formatString(R.string.LimitReachedFavoriteGifsSubtitle, Integer.valueOf(MessagesController.getInstance(UserConfig.selectedAccount).savedGifsLimitPremium)), new m30(context, 3)));
+                            return;
+                        }
+                    default:
+                        return;
                 }
             }
+            document3 = document;
+            document2 = document3;
+            if (stickerSet == null) {
+                stickerSet = stickerSet2.set;
+            }
+            TLRPC.StickerSet stickerSet32 = stickerSet;
+            if (document2 == null) {
+            }
+            if (MessageObject.isTextColorEmoji(document2)) {
+            }
+            switch (i11) {
+            }
+        } else if (tLObject instanceof TLRPC.StickerSetCovered) {
+            TLRPC.StickerSetCovered stickerSetCovered = (TLRPC.StickerSetCovered) tLObject;
+            stickerSet = stickerSetCovered.set;
+            TLRPC.Document document4 = stickerSetCovered.cover;
+            if (document4 != null) {
+                document3 = document4;
+            } else if (stickerSetCovered.covers.isEmpty()) {
+                if ((stickerSetCovered instanceof TLRPC.TL_stickerSetFullCovered) && (arrayList = (tL_stickerSetFullCovered = (TLRPC.TL_stickerSetFullCovered) stickerSetCovered).documents) != null && !arrayList.isEmpty()) {
+                    document3 = tL_stickerSetFullCovered.documents.get(0);
+                }
+                document3 = document;
+            } else {
+                document3 = stickerSetCovered.covers.get(0);
+            }
+            document2 = document3;
+            if (stickerSet == null) {
+            }
+            TLRPC.StickerSet stickerSet322 = stickerSet;
+            if (document2 == null) {
+            }
+            if (MessageObject.isTextColorEmoji(document2)) {
+            }
+            switch (i11) {
+            }
+        } else {
+            if (document == null && tLObject != null && BuildVars.DEBUG_VERSION) {
+                throw new IllegalArgumentException("Invalid type of the given setObject: " + tLObject.getClass());
+            }
+            document2 = document;
+            stickerSet = null;
+            if (stickerSet == null) {
+            }
+            TLRPC.StickerSet stickerSet3222 = stickerSet;
+            if (document2 == null) {
+            }
+            if (MessageObject.isTextColorEmoji(document2)) {
+            }
+            switch (i11) {
+            }
         }
-        canvas.restore();
-    }
-
-    public final void e() {
-        this.g = true;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicHeight() {
-        return AndroidUtilities.dp(48.0f);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicWidth() {
-        return AndroidUtilities.dp(48.0f);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return -2;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i10) {
-        this.d = i10;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
     }
 }

@@ -18,14 +18,14 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.aw;
-import org.telegram.ui.Components.ca0;
-import org.telegram.ui.Components.fz0;
+import org.telegram.ui.Components.da0;
 import org.telegram.ui.Components.go;
+import org.telegram.ui.Components.gz0;
 import org.telegram.ui.Components.jy;
 import org.telegram.ui.Components.ry;
-import org.telegram.ui.un;
+import org.telegram.ui.wn;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class v3 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -140,15 +140,15 @@ public final /* synthetic */ class v3 implements Utilities.Callback {
                 break;
             case 7:
                 go goVar = (go) obj4;
-                un unVar = (un) obj3;
+                wn wnVar = (wn) obj3;
                 TLRPC.TL_messageMediaToDo tL_messageMediaToDo = (TLRPC.TL_messageMediaToDo) obj2;
                 Long l10 = (Long) obj;
-                if (!unVar.c()) {
+                if (!wnVar.c()) {
                     goVar.j0.e(tL_messageMediaToDo, null, null, null, true, 0, l10.longValue());
                     goVar.b.dismiss(true);
                     break;
                 } else {
-                    org.telegram.ui.Components.g5.K(unVar.getParentActivity(), unVar.a(), new androidx.car.app.utils.a(goVar, tL_messageMediaToDo, l10, 28));
+                    org.telegram.ui.Components.g5.K(wnVar.getParentActivity(), wnVar.a(), new androidx.car.app.utils.a(goVar, tL_messageMediaToDo, l10, 28));
                     break;
                 }
             case 8:
@@ -177,13 +177,13 @@ public final /* synthetic */ class v3 implements Utilities.Callback {
                 break;
             case 9:
                 org.telegram.ui.ActionBar.e2 e2Var = (org.telegram.ui.ActionBar.e2) obj3;
-                fz0 fz0Var = (fz0) obj2;
+                gz0 gz0Var = (gz0) obj2;
                 ((org.telegram.ui.ActionBar.e2) obj4).dismiss();
                 if (!((Boolean) obj).booleanValue()) {
-                    fz0Var.setErrorText(".");
-                    AndroidUtilities.shakeViewSpring(fz0Var, -6.0f);
+                    gz0Var.setErrorText(".");
+                    AndroidUtilities.shakeViewSpring(gz0Var, -6.0f);
                     BotWebViewVibrationEffect.APP_ERROR.vibrate();
-                    AndroidUtilities.showKeyboard(fz0Var);
+                    AndroidUtilities.showKeyboard(gz0Var);
                     break;
                 } else {
                     e2Var.dismiss();
@@ -209,7 +209,7 @@ public final /* synthetic */ class v3 implements Utilities.Callback {
                 TL_stories.TL_premium_myBoosts tL_premium_myBoosts = (TL_stories.TL_premium_myBoosts) obj2;
                 TL_stories.TL_premium_boostsStatus tL_premium_boostsStatus = (TL_stories.TL_premium_boostsStatus) obj;
                 j0Var.getClass();
-                ((ca0) obj3).setLoading(false);
+                ((da0) obj3).setLoading(false);
                 if (tL_premium_boostsStatus != null) {
                     j0Var.b0.boosts++;
                     if (j0Var.h0 == 32 && (x12 = j0Var.x1()) != null) {

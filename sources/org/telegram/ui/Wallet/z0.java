@@ -13,9 +13,9 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_toncenter;
 import org.telegram.ui.Components.b10;
-import org.telegram.ui.Components.cy0;
+import org.telegram.ui.Components.dy0;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class z0 {
     public final int a;
@@ -33,7 +33,7 @@ public final class z0 {
     public final w0 n;
     public final w0 o;
     public int i = -1;
-    public final cy0 p = new cy0(this, 5);
+    public final dy0 p = new dy0(this, 5);
 
     /* JADX WARN: Type inference failed for: r0v1, types: [org.telegram.ui.Wallet.w0] */
     /* JADX WARN: Type inference failed for: r0v2, types: [org.telegram.ui.Wallet.w0] */

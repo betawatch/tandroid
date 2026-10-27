@@ -5,17 +5,17 @@ import java.util.List;
 import org.telegram.messenger.FileLoader;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class yy extends vz {
-    public final qw0 X;
+    public final rw0 X;
     public final /* synthetic */ sz Y;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public yy(sz szVar) {
         super(100, true);
         this.Y = szVar;
-        this.X = new qw0();
+        this.X = new rw0();
         this.O = new ai.l(this, 6);
     }
 
@@ -31,7 +31,7 @@ public final class yy extends vz {
     }
 
     @Override // org.telegram.ui.Components.vz
-    public final qw0 E1(int i10) {
+    public final rw0 E1(int i10) {
         ArrayList<TLRPC.DocumentAttribute> arrayList;
         TLRPC.Document document;
         sz szVar = this.Y;
@@ -94,27 +94,27 @@ public final class yy extends vz {
         return G1(document2, arrayList);
     }
 
-    public final qw0 G1(TLRPC.Document document, List list) {
+    public final rw0 G1(TLRPC.Document document, List list) {
         TLRPC.PhotoSize closestPhotoSizeWithSize;
         int i10;
         int i11;
-        qw0 qw0Var = this.X;
-        qw0Var.b = 100.0f;
-        qw0Var.a = 100.0f;
+        rw0 rw0Var = this.X;
+        rw0Var.b = 100.0f;
+        rw0Var.a = 100.0f;
         if (document != null && (closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(document.thumbs, 90)) != null && (i10 = closestPhotoSizeWithSize.w) != 0 && (i11 = closestPhotoSizeWithSize.h) != 0) {
-            qw0Var.a = i10;
-            qw0Var.b = i11;
+            rw0Var.a = i10;
+            rw0Var.b = i11;
         }
         if (list != null) {
             for (int i12 = 0; i12 < list.size(); i12++) {
                 TLRPC.DocumentAttribute documentAttribute = (TLRPC.DocumentAttribute) list.get(i12);
                 if ((documentAttribute instanceof TLRPC.TL_documentAttributeImageSize) || (documentAttribute instanceof TLRPC.TL_documentAttributeVideo)) {
-                    qw0Var.a = documentAttribute.w;
-                    qw0Var.b = documentAttribute.h;
+                    rw0Var.a = documentAttribute.w;
+                    rw0Var.b = documentAttribute.h;
                     break;
                 }
             }
         }
-        return qw0Var;
+        return rw0Var;
     }
 }

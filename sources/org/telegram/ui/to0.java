@@ -1,50 +1,44 @@
 package org.telegram.ui;
 
-import android.view.View;
-import android.widget.FrameLayout;
-import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class to0 implements r0.n, org.telegram.ui.ActionBar.b2 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ rp0 b;
+public final /* synthetic */ class to0 implements Utilities.Callback {
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ bg.b b;
+    public final /* synthetic */ TL_stars.TL_starGiftUnique c;
+    public final /* synthetic */ long d;
+    public final /* synthetic */ Object e;
+    public final /* synthetic */ Object f;
 
-    public /* synthetic */ to0(rp0 rp0Var, int i10) {
-        this.a = i10;
-        this.b = rp0Var;
+    public /* synthetic */ to0(tp0 tp0Var, bg.b bVar, TL_stars.TL_starGiftUnique tL_starGiftUnique, long j10, so0 so0Var) {
+        this.e = tp0Var;
+        this.b = bVar;
+        this.c = tL_starGiftUnique;
+        this.d = j10;
+        this.f = so0Var;
     }
 
-    @Override // r0.n
-    public r0.k1 P0(View view, r0.k1 k1Var) {
-        i0.b defaultWindowInsets = AndroidUtilities.getDefaultWindowInsets(k1Var, false);
-        rp0 rp0Var = this.b;
-        rp0Var.b0 = defaultWindowInsets;
-        cp0 cp0Var = rp0Var.h.b;
-        int i10 = defaultWindowInsets.a;
-        int paddingTop = cp0Var.getPaddingTop();
-        i0.b bVar = rp0Var.b0;
-        cp0Var.setPadding(i10, paddingTop, bVar.c, AndroidUtilities.dp(72.0f) + bVar.d);
-        cp0 cp0Var2 = rp0Var.n.b;
-        int i11 = rp0Var.b0.a;
-        int paddingTop2 = cp0Var2.getPaddingTop();
-        i0.b bVar2 = rp0Var.b0;
-        cp0Var2.setPadding(i11, paddingTop2, bVar2.c, AndroidUtilities.dp(72.0f) + bVar2.d);
-        FrameLayout frameLayout = rp0Var.P;
-        i0.b bVar3 = rp0Var.b0;
-        frameLayout.setPadding(bVar3.a, 0, bVar3.c, bVar3.d);
-        return r0.k1.b;
-    }
-
-    @Override // org.telegram.ui.ActionBar.b2
-    public void h(org.telegram.ui.ActionBar.e2 e2Var, int i10) {
+    @Override // org.telegram.messenger.Utilities.Callback
+    public final void run(Object obj) {
         switch (this.a) {
-            case 1:
-                this.b.finishFragment();
+            case 0:
+                tp0.W((tp0) this.e, this.b, this.c, this.d, (so0) this.f, (TLRPC.TL_payments_paymentFormStarGift) obj);
                 break;
             default:
-                this.b.z0();
+                zh.g4.U((zh.g4) this.e, (org.telegram.ui.ActionBar.e2) this.f, this.b, this.c, this.d, (TLRPC.TL_payments_paymentFormStarGift) obj);
                 break;
         }
+    }
+
+    public /* synthetic */ to0(zh.g4 g4Var, org.telegram.ui.ActionBar.e2 e2Var, bg.b bVar, TL_stars.TL_starGiftUnique tL_starGiftUnique, long j10) {
+        this.e = g4Var;
+        this.f = e2Var;
+        this.b = bVar;
+        this.c = tL_starGiftUnique;
+        this.d = j10;
     }
 }

@@ -4,7 +4,7 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class cq extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -21,9 +21,9 @@ public final class cq extends AnimatorListenerAdapter {
             case 0:
                 dq dqVar = this.b;
                 dqVar.d = null;
-                bq bqVar = new bq(this, 0);
-                dqVar.e = bqVar;
-                AndroidUtilities.runOnUIThread(bqVar, 3000L);
+                cp cpVar = new cp(this, 1);
+                dqVar.e = cpVar;
+                AndroidUtilities.runOnUIThread(cpVar, 3000L);
                 break;
             default:
                 dq dqVar2 = this.b;

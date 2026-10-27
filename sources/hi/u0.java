@@ -10,16 +10,16 @@ import android.widget.ScrollView;
 import java.util.ArrayList;
 import java.util.Iterator;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.vh;
+import org.telegram.messenger.wh;
 import org.telegram.tgnet.NativeByteBuffer;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_keyboard;
 import org.telegram.ui.ActionBar.u6;
 import org.telegram.ui.ActionBar.y6;
 import org.telegram.ui.Components.ds;
-import org.telegram.ui.Components.gb1;
+import org.telegram.ui.Components.kb1;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public abstract class u0 extends LinearLayout implements rh.a, oe.k {
     public final u6 a;
@@ -120,7 +120,7 @@ public abstract class u0 extends LinearLayout implements rh.a, oe.k {
         if (this.f) {
             return this.e;
         }
-        return vh.b(4.0f, this.c.rows.size() - 1, AndroidUtilities.dp(16.0f) + (AndroidUtilities.dp(this.h) * tL_replyKeyboardMarkup.rows.size()));
+        return wh.b(4.0f, this.c.rows.size() - 1, AndroidUtilities.dp(16.0f) + (AndroidUtilities.dp(this.h) * tL_replyKeyboardMarkup.rows.size()));
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:18:0x0046, code lost:
@@ -195,13 +195,13 @@ public abstract class u0 extends LinearLayout implements rh.a, oe.k {
         boolean z10 = tL_replyKeyboardMarkup.resize;
         this.f = !z10;
         float f10 = 4.0f;
-        this.h = z10 ? 44 : (int) Math.max(44.0f, (vh.C(4.0f, this.c.rows.size() - 1, this.e - AndroidUtilities.dp(16.0f)) / this.c.rows.size()) / AndroidUtilities.density);
+        this.h = z10 ? 44 : (int) Math.max(44.0f, (wh.C(4.0f, this.c.rows.size() - 1, this.e - AndroidUtilities.dp(16.0f)) / this.c.rows.size()) / AndroidUtilities.density);
         int i11 = 0;
         while (i11 < tL_replyKeyboardMarkup.rows.size()) {
             TL_keyboard.KeyboardButtonRow keyboardButtonRow = tL_replyKeyboardMarkup.rows.get(i11);
             LinearLayout linearLayout = new LinearLayout(getContext());
             linearLayout.setOrientation(i10);
-            t0Var2.addView(linearLayout, gb1.o(8.0f, i11 == 0 ? 8.0f : f10, 8.0f, i11 == tL_replyKeyboardMarkup.rows.size() - 1 ? 8.0f : f7, -1, this.h));
+            t0Var2.addView(linearLayout, kb1.o(8.0f, i11 == 0 ? 8.0f : f10, 8.0f, i11 == tL_replyKeyboardMarkup.rows.size() - 1 ? 8.0f : f7, -1, this.h));
             float size = 1.0f / keyboardButtonRow.buttons.size();
             int i12 = i10;
             while (i12 < keyboardButtonRow.buttons.size()) {
@@ -216,10 +216,10 @@ public abstract class u0 extends LinearLayout implements rh.a, oe.k {
                 s0Var.h = z14;
                 s0Var.a();
                 FrameLayout frameLayout = new FrameLayout(getContext());
-                frameLayout.addView(s0Var, gb1.g(-1.0f, -1));
-                linearLayout.addView(frameLayout, gb1.q(size, 0, -1, 0, i12 != keyboardButtonRow.buttons.size() - 1 ? 4 : 0, 0));
+                frameLayout.addView(s0Var, kb1.g(-1.0f, -1));
+                linearLayout.addView(frameLayout, kb1.q(size, 0, -1, 0, i12 != keyboardButtonRow.buttons.size() - 1 ? 4 : 0, 0));
                 s0Var.setOnClickListener(new ai.s(this, 27));
-                gb1.c(s0Var, 0.02f, 1.5f);
+                kb1.c(s0Var, 0.02f, 1.5f);
                 arrayList.add(s0Var);
                 s0Var.a();
                 i12++;
@@ -242,7 +242,7 @@ public abstract class u0 extends LinearLayout implements rh.a, oe.k {
         if (!this.f || (tL_replyKeyboardMarkup = this.c) == null || tL_replyKeyboardMarkup.rows.isEmpty()) {
             return;
         }
-        int max = !this.f ? 44 : (int) Math.max(44.0f, (vh.C(4.0f, this.c.rows.size() - 1, this.e - AndroidUtilities.dp(16.0f)) / this.c.rows.size()) / AndroidUtilities.density);
+        int max = !this.f ? 44 : (int) Math.max(44.0f, (wh.C(4.0f, this.c.rows.size() - 1, this.e - AndroidUtilities.dp(16.0f)) / this.c.rows.size()) / AndroidUtilities.density);
         this.h = max;
         int dp = AndroidUtilities.dp(max);
         Iterator it = this.x.iterator();

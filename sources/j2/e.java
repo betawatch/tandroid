@@ -40,7 +40,7 @@ import u2.c0;
 import u2.k0;
 import u2.u;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
 public final class e implements e1, k0, k {
     public final g0 a;
@@ -188,7 +188,7 @@ public final class e implements e1, k0, k {
     @Override // b2.e1
     public final void onAudioAttributesChanged(b2.f fVar) {
         a p10 = p();
-        q(p10, 20, new ig.g(p10, fVar, 4));
+        q(p10, 20, new ig.g(p10, fVar, 5));
     }
 
     @Override // b2.e1
@@ -200,7 +200,7 @@ public final class e implements e1, k0, k {
     @Override // b2.e1
     public final void onAvailableCommandsChanged(c1 c1Var) {
         a l4 = l();
-        q(l4, 13, new d(l4, c1Var, 21));
+        q(l4, 13, new d(l4, c1Var, 22));
     }
 
     @Override // b2.e1
@@ -212,7 +212,7 @@ public final class e implements e1, k0, k {
     @Override // b2.e1
     public final void onIsLoadingChanged(boolean z10) {
         a l4 = l();
-        q(l4, 3, new d(l4, z10, 5));
+        q(l4, 3, new d(l4, z10, 14));
     }
 
     @Override // b2.e1
@@ -230,13 +230,13 @@ public final class e implements e1, k0, k {
     @Override // b2.e1
     public final void onMediaMetadataChanged(s0 s0Var) {
         a l4 = l();
-        q(l4, 14, new ig.g(l4, s0Var, 24));
+        q(l4, 14, new d(l4, s0Var, 5));
     }
 
     @Override // b2.e1
     public final void onMetadata(u0 u0Var) {
         a l4 = l();
-        q(l4, 28, new ig.g(l4, u0Var, 5));
+        q(l4, 28, new ig.g(l4, u0Var, 6));
     }
 
     @Override // b2.e1
@@ -260,7 +260,7 @@ public final class e implements e1, k0, k {
     @Override // b2.e1
     public final void onPlaybackSuppressionReasonChanged(int i10) {
         a l4 = l();
-        q(l4, 6, new ig.g(l4, i10, 8, (char) 0));
+        q(l4, 6, new ig.g(l4, i10, 9, (char) 0));
     }
 
     @Override // b2.e1
@@ -274,13 +274,13 @@ public final class e implements e1, k0, k {
     public final void onPlayerErrorChanged(z0 z0Var) {
         u2.g0 g0Var;
         a l4 = (!(z0Var instanceof m) || (g0Var = ((m) z0Var).E) == null) ? l() : n(g0Var);
-        q(l4, 10, new ig.g(l4, z0Var, 10));
+        q(l4, 10, new ig.g(l4, z0Var, 11));
     }
 
     @Override // b2.e1
     public final void onPlayerStateChanged(boolean z10, int i10) {
         a l4 = l();
-        q(l4, -1, new ig.g(l4, z10, i10, 3));
+        q(l4, -1, new ig.g(l4, z10, i10, 4));
     }
 
     @Override // b2.e1
@@ -296,7 +296,7 @@ public final class e implements e1, k0, k {
     @Override // b2.e1
     public final void onRepeatModeChanged(int i10) {
         a l4 = l();
-        q(l4, 8, new ig.g(l4, i10, 16, (char) 0));
+        q(l4, 8, new ig.g(l4, i10, 17, (char) 0));
     }
 
     @Override // b2.e1
@@ -325,7 +325,7 @@ public final class e implements e1, k0, k {
         m0Var.d = m0.n(g1Var, (f9.i0) m0Var.b, (u2.g0) m0Var.e, (m1) m0Var.a);
         m0Var.D(g1Var.y0());
         a l4 = l();
-        q(l4, 0, new d(l4, i10, 22));
+        q(l4, 0, new d(l4, i10, 23));
     }
 
     @Override // b2.e1
@@ -337,7 +337,7 @@ public final class e implements e1, k0, k {
     @Override // b2.e1
     public final void onTracksChanged(w1 w1Var) {
         a l4 = l();
-        q(l4, 2, new ig.g(l4, w1Var, 11));
+        q(l4, 2, new ig.g(l4, w1Var, 16));
     }
 
     @Override // b2.e1
@@ -349,7 +349,7 @@ public final class e implements e1, k0, k {
     @Override // b2.e1
     public final void onVolumeChanged(float f7) {
         a p10 = p();
-        q(p10, 22, new d(p10, f7));
+        q(p10, 22, new ig.g(p10, f7));
     }
 
     public final a p() {
@@ -390,7 +390,7 @@ public final class e implements e1, k0, k {
     @Override // b2.e1
     public final void onCues(d2.c cVar) {
         a l4 = l();
-        q(l4, 27, new ig.g(l4, cVar, 17));
+        q(l4, 27, new ig.g(l4, cVar, 24));
     }
 
     @Override // b2.e1

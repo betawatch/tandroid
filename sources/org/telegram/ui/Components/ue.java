@@ -19,7 +19,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.ChatActivityEnterView;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class ue extends FrameLayout {
     public final Paint a;
@@ -46,9 +46,9 @@ public final class ue extends FrameLayout {
                 f7 = 1.0f - chatActivityEnterView.S0.getAlpha();
             }
             float dpf2 = AndroidUtilities.dpf2(19.0f);
-            int f02 = chatActivityEnterView.f0(org.telegram.ui.ActionBar.y6.Yd);
+            int e02 = chatActivityEnterView.e0(org.telegram.ui.ActionBar.y6.Yd);
             Paint paint = this.a;
-            paint.setColor(f02);
+            paint.setColor(e02);
             float dpf22 = AndroidUtilities.dpf2(3.0f);
             float dpf23 = AndroidUtilities.dpf2(38.0f);
             float measuredWidth = (getMeasuredWidth() - AndroidUtilities.dpf2(38.0f)) - dpf22;
@@ -78,20 +78,20 @@ public final class ue extends FrameLayout {
         long j12;
         ChatActivityEnterView chatActivityEnterView = this.d;
         ue ueVar = chatActivityEnterView.Z0;
-        org.telegram.ui.un unVar = chatActivityEnterView.P2;
+        org.telegram.ui.wn wnVar = chatActivityEnterView.P2;
         af afVar = chatActivityEnterView.H3;
         ig igVar = chatActivityEnterView.K3;
         xe xeVar = chatActivityEnterView.J0;
         final int i10 = 0;
         if (!chatActivityEnterView.p5) {
-            chatActivityEnterView.V();
+            chatActivityEnterView.U();
             int i11 = 5;
             final int i12 = 3;
             final int i13 = 1;
             if (motionEvent.getAction() == 0) {
                 if (!ChatActivityEnterView.this.s4) {
-                    TLRPC.Chat chat = unVar == null ? null : unVar.e;
-                    TLRPC.UserFull userFull = unVar == null ? chatActivityEnterView.K : unVar.m8;
+                    TLRPC.Chat chat = wnVar == null ? null : wnVar.e;
+                    TLRPC.UserFull userFull = wnVar == null ? chatActivityEnterView.K : wnVar.q8;
                     if ((chat != null && !ChatObject.canSendVoice(chat) && (!ChatObject.canSendRoundVideo(chat) || !chatActivityEnterView.e2)) || (userFull != null && userFull.voice_messages_forbidden)) {
                         chatActivityEnterView.Z2.N1();
                         return true;
@@ -111,7 +111,7 @@ public final class ue extends FrameLayout {
                     if (!z10 || !chatActivityEnterView.c1) {
                         if (chatActivityEnterView.F2 && chatActivityEnterView.c()) {
                             Activity activity = chatActivityEnterView.O2;
-                            long a2 = unVar.a();
+                            long a2 = wnVar.a();
                             f2 f2Var = new f2(20);
                             k5 k5Var = new k5(i11);
                             Pattern pattern = g5.a;
@@ -148,16 +148,16 @@ public final class ue extends FrameLayout {
                                     Long l4 = (Long) obj;
                                     switch (i13) {
                                         case 0:
-                                            this.b.d.R0(0, true, 0, false, l4.longValue());
+                                            this.b.d.Q0(0, true, 0, false, l4.longValue());
                                             break;
                                         case 1:
-                                            this.b.d.R0(0, true, 0, false, l4.longValue());
+                                            this.b.d.Q0(0, true, 0, false, l4.longValue());
                                             break;
                                         case 2:
-                                            this.b.d.R0(0, true, 0, false, l4.longValue());
+                                            this.b.d.Q0(0, true, 0, false, l4.longValue());
                                             break;
                                         default:
-                                            this.b.d.R0(0, true, 0, false, l4.longValue());
+                                            this.b.d.Q0(0, true, 0, false, l4.longValue());
                                             break;
                                     }
                                 }
@@ -185,16 +185,16 @@ public final class ue extends FrameLayout {
                                     Long l4 = (Long) obj;
                                     switch (i10) {
                                         case 0:
-                                            this.b.d.R0(0, true, 0, false, l4.longValue());
+                                            this.b.d.Q0(0, true, 0, false, l4.longValue());
                                             break;
                                         case 1:
-                                            this.b.d.R0(0, true, 0, false, l4.longValue());
+                                            this.b.d.Q0(0, true, 0, false, l4.longValue());
                                             break;
                                         case 2:
-                                            this.b.d.R0(0, true, 0, false, l4.longValue());
+                                            this.b.d.Q0(0, true, 0, false, l4.longValue());
                                             break;
                                         default:
-                                            this.b.d.R0(0, true, 0, false, l4.longValue());
+                                            this.b.d.Q0(0, true, 0, false, l4.longValue());
                                             break;
                                     }
                                 }
@@ -307,14 +307,14 @@ public final class ue extends FrameLayout {
                                     sgVar.a.p(true);
                                     sgVar.a.s(LocaleController.getString(R.string.VoicePauseHint));
                                     MessagesController.getGlobalMainSettings().edit().putInt("voicepausehint", MessagesController.getGlobalMainSettings().getInt("voicepausehint", 0) + 1).apply();
-                                    sgVar.addView(sgVar.a, gb1.h(-1, -1.0f, 119, 0.0f, 0.0f, 54.0f, 58.0f));
+                                    sgVar.addView(sgVar.a, kb1.h(-1, -1.0f, 119, 0.0f, 0.0f, 54.0f, 58.0f));
                                     fi.v3 v3Var2 = sgVar.a;
                                     v3Var2.l0 = new qg(sgVar, v3Var2, 3);
                                     v3Var2.u();
                                 }
                             }
                         }
-                        ChatActivityEnterView.j(chatActivityEnterView);
+                        chatActivityEnterView.u1();
                         return false;
                     }
                 }
@@ -323,7 +323,7 @@ public final class ue extends FrameLayout {
             if (motionEvent.getAction() == 3 && chatActivityEnterView.F2) {
                 if (chatActivityEnterView.j4 >= 0.7f) {
                     chatActivityEnterView.s4 = true;
-                    ChatActivityEnterView.j(chatActivityEnterView);
+                    chatActivityEnterView.u1();
                     return false;
                 }
                 if (chatActivityEnterView.e2 && chatActivityEnterView.c1) {
@@ -365,7 +365,7 @@ public final class ue extends FrameLayout {
                     AndroidUtilities.cancelRunOnUIThread(igVar);
                     if (chatActivityEnterView.y0 && chatActivityEnterView.x0) {
                         chatActivityEnterView.Z2.R(!chatActivityEnterView.c1);
-                        chatActivityEnterView.h1(!chatActivityEnterView.c1, true);
+                        chatActivityEnterView.g1(!chatActivityEnterView.c1, true);
                     } else {
                         chatActivityEnterView.Z2.N1();
                     }
@@ -403,16 +403,16 @@ public final class ue extends FrameLayout {
                                         Long l4 = (Long) obj;
                                         switch (i12) {
                                             case 0:
-                                                this.b.d.R0(0, true, 0, false, l4.longValue());
+                                                this.b.d.Q0(0, true, 0, false, l4.longValue());
                                                 break;
                                             case 1:
-                                                this.b.d.R0(0, true, 0, false, l4.longValue());
+                                                this.b.d.Q0(0, true, 0, false, l4.longValue());
                                                 break;
                                             case 2:
-                                                this.b.d.R0(0, true, 0, false, l4.longValue());
+                                                this.b.d.Q0(0, true, 0, false, l4.longValue());
                                                 break;
                                             default:
-                                                this.b.d.R0(0, true, 0, false, l4.longValue());
+                                                this.b.d.Q0(0, true, 0, false, l4.longValue());
                                                 break;
                                         }
                                     }
@@ -421,7 +421,7 @@ public final class ue extends FrameLayout {
                             }
                             if (chatActivityEnterView.F2 && chatActivityEnterView.c()) {
                                 Activity activity2 = chatActivityEnterView.O2;
-                                long a10 = unVar.a();
+                                long a10 = wnVar.a();
                                 f2 f2Var2 = new f2(21);
                                 k5 k5Var2 = new k5(6);
                                 org.telegram.ui.ActionBar.u6 u6Var2 = this.c;
@@ -449,16 +449,16 @@ public final class ue extends FrameLayout {
                                     Long l4 = (Long) obj;
                                     switch (i14) {
                                         case 0:
-                                            this.b.d.R0(0, true, 0, false, l4.longValue());
+                                            this.b.d.Q0(0, true, 0, false, l4.longValue());
                                             break;
                                         case 1:
-                                            this.b.d.R0(0, true, 0, false, l4.longValue());
+                                            this.b.d.Q0(0, true, 0, false, l4.longValue());
                                             break;
                                         case 2:
-                                            this.b.d.R0(0, true, 0, false, l4.longValue());
+                                            this.b.d.Q0(0, true, 0, false, l4.longValue());
                                             break;
                                         default:
-                                            this.b.d.R0(0, true, 0, false, l4.longValue());
+                                            this.b.d.Q0(0, true, 0, false, l4.longValue());
                                             break;
                                     }
                                 }

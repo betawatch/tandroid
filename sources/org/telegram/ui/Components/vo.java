@@ -30,7 +30,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.SvgHelper;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public abstract class vo extends LinearLayout implements org.telegram.ui.ActionBar.p6 {
     public static final /* synthetic */ int L = 0;
@@ -51,7 +51,7 @@ public abstract class vo extends LinearLayout implements org.telegram.ui.ActionB
     public y9 n;
     public final org.telegram.ui.ActionBar.u6 r;
     public boolean s;
-    public ak0 v;
+    public bk0 v;
     public TextView w;
     public ei.n x;
     public boolean y;
@@ -79,15 +79,15 @@ public abstract class vo extends LinearLayout implements org.telegram.ui.ActionB
         y9 y9Var = new y9(context);
         this.h = y9Var;
         y9Var.getImageReceiver().setAspectFit(true);
-        frameLayout.addView(this.h, gb1.g(112.0f, 112));
-        gb1.b(this.h);
+        frameLayout.addView(this.h, kb1.g(112.0f, 112));
+        kb1.b(this.h);
         y9 y9Var2 = new y9(context);
         this.n = y9Var2;
         y9Var2.getImageReceiver().setAspectFit(true);
-        frameLayout.addView(this.n, gb1.g(112.0f, 112));
+        frameLayout.addView(this.n, kb1.g(112.0f, 112));
         this.n.setVisibility(8);
         this.n.setAlpha(0.0f);
-        gb1.b(this.n);
+        kb1.b(this.n);
         e();
         updateColors();
         String string = LocaleController.getString(R.string.NoMessages);
@@ -113,7 +113,7 @@ public abstract class vo extends LinearLayout implements org.telegram.ui.ActionB
         voVar.F = animatorSet2;
         animatorSet2.setDuration(420L);
         voVar.F.setInterpolator(ds.h);
-        voVar.F.addListener(new org.telegram.ui.jo(voVar));
+        voVar.F.addListener(new org.telegram.ui.lo(voVar));
         AnimatorSet animatorSet3 = voVar.F;
         Property property = View.ALPHA;
         ObjectAnimator ofFloat = ObjectAnimator.ofFloat(voVar.n, (Property<y9, Float>) property, 0.0f, 1.0f);
@@ -184,9 +184,9 @@ public abstract class vo extends LinearLayout implements org.telegram.ui.ActionB
         this.E = z11;
         if (z10) {
             if (this.v == null) {
-                ak0 ak0Var = new ak0(getContext());
-                this.v = ak0Var;
-                ak0Var.setScaleType(ImageView.ScaleType.CENTER);
+                bk0 bk0Var = new bk0(getContext());
+                this.v = bk0Var;
+                bk0Var.setScaleType(ImageView.ScaleType.CENTER);
                 this.v.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
                 this.v.setBackground(org.telegram.ui.ActionBar.y6.K(AndroidUtilities.dp(78.0f), 469762048));
                 if (z11) {
@@ -223,7 +223,7 @@ public abstract class vo extends LinearLayout implements org.telegram.ui.ActionB
                 ei.n nVar2 = this.x;
                 int dp = AndroidUtilities.dp(15.0f);
                 nVar2.setBackground(org.telegram.ui.ActionBar.y6.j0(dp, dp, dp, dp, 503316480, 855638016, 855638016));
-                gb1.b(this.x);
+                kb1.b(this.x);
             }
             this.x.setText(str);
             org.telegram.ui.ActionBar.f7.V(this.x, i10, u6Var);
@@ -271,14 +271,14 @@ public abstract class vo extends LinearLayout implements org.telegram.ui.ActionB
     public final void e() {
         removeAllViews();
         if (!this.y) {
-            addView(this.b, gb1.x(-2, -2, 1, 20, 6, 20, 6));
-            addView(this.c, gb1.x(-2, -2, 1, 20, 6, 20, 6));
-            addView(this.f, gb1.x(112, 112, 1, 16, 10, 16, 16));
+            addView(this.b, kb1.x(-2, -2, 1, 20, 6, 20, 6));
+            addView(this.c, kb1.x(-2, -2, 1, 20, 6, 20, 6));
+            addView(this.f, kb1.x(112, 112, 1, 16, 10, 16, 16));
             return;
         }
-        addView(this.v, gb1.x(78, 78, 49, 20, 9, 20, 9));
+        addView(this.v, kb1.x(78, 78, 49, 20, 9, 20, 9));
         boolean premiumFeaturesBlocked = MessagesController.getInstance(this.e).premiumFeaturesBlocked();
-        addView(this.w, gb1.x(-2, -2, 49, 20, 0, 20, premiumFeaturesBlocked ? 13 : 9));
+        addView(this.w, kb1.x(-2, -2, 49, 20, 0, 20, premiumFeaturesBlocked ? 13 : 9));
         if (premiumFeaturesBlocked) {
             return;
         }
@@ -286,7 +286,7 @@ public abstract class vo extends LinearLayout implements org.telegram.ui.ActionB
         if ((nVar == null || TextUtils.isEmpty(nVar.getText())) && this.E) {
             return;
         }
-        addView(this.x, gb1.x(-2, 30, 49, 20, 2, 20, 13));
+        addView(this.x, kb1.x(-2, 30, 49, 20, 2, 20, 13));
     }
 
     @Override // android.view.ViewGroup, android.view.View

@@ -5,13 +5,13 @@ import android.graphics.drawable.Drawable;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.vh;
+import org.telegram.messenger.wh;
 import org.telegram.ui.Components.ds;
 import org.telegram.ui.Components.pg;
 import org.telegram.ui.PhotoViewer;
-import org.telegram.ui.xn;
+import org.telegram.ui.zn;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class f3 extends ImageReceiver {
     public final /* synthetic */ int a;
@@ -28,7 +28,7 @@ public final class f3 extends ImageReceiver {
         Object obj = this.b;
         switch (i10) {
             case 3:
-                View view = ((xn) obj).b;
+                View view = ((zn) obj).b;
                 if (view != null) {
                     view.invalidate();
                     break;
@@ -67,7 +67,7 @@ public final class f3 extends ImageReceiver {
                 return imageBitmapByKey;
             case 1:
                 if (drawable != null && i10 != 1) {
-                    vh.q(((jg.d1) ((k4) obj).H).h.animate().alpha(1.0f).translationY(0.0f), ds.k, 250L);
+                    wh.q(((jg.d1) ((k4) obj).H).h.animate().alpha(1.0f).translationY(0.0f), ds.k, 250L);
                 }
                 return super.setImageBitmapByKey(drawable, str, i10, z10, i11);
             case 2:
@@ -86,7 +86,7 @@ public final class f3 extends ImageReceiver {
                 return imageBitmapByKey2;
             case 5:
                 boolean imageBitmapByKey3 = super.setImageBitmapByKey(drawable, str, i10, z10, i11);
-                ((PhotoViewer) obj).o2();
+                ((PhotoViewer) obj).p2();
                 return imageBitmapByKey3;
             case 7:
                 boolean imageBitmapByKey4 = super.setImageBitmapByKey(drawable, str, i10, z10, i11);

@@ -13,7 +13,7 @@ import org.telegram.tgnet.ResultCallback;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class s1 implements org.telegram.ui.ActionBar.b2, ResultCallback {
     public final /* synthetic */ long a;
@@ -88,19 +88,19 @@ public final /* synthetic */ class s1 implements org.telegram.ui.ActionBar.b2, R
 
     @Override // org.telegram.tgnet.ResultCallback
     public void onComplete(Object obj) {
-        d31 d31Var = (d31) this.c;
-        xp xpVar = (xp) this.d;
+        e31 e31Var = (e31) this.c;
+        yp ypVar = (yp) this.d;
         Pair pair = (Pair) obj;
         if (pair == null || ((Long) pair.first).longValue() != this.a) {
             return;
         }
-        Drawable drawable = xpVar.b;
-        if (drawable instanceof uc0) {
-            uc0 uc0Var = (uc0) drawable;
-            uc0Var.s(d31.e((Bitmap) pair.second), this.b >= 0 ? 100 : -100);
-            uc0Var.t(d31Var.L);
+        Drawable drawable = ypVar.b;
+        if (drawable instanceof vc0) {
+            vc0 vc0Var = (vc0) drawable;
+            vc0Var.s(e31.e((Bitmap) pair.second), this.b >= 0 ? 100 : -100);
+            vc0Var.t(e31Var.L);
         }
-        d31Var.invalidate();
+        e31Var.invalidate();
     }
 
     @Override // org.telegram.tgnet.ResultCallback
@@ -108,10 +108,10 @@ public final /* synthetic */ class s1 implements org.telegram.ui.ActionBar.b2, R
         org.telegram.tgnet.k.a(this, th2);
     }
 
-    public /* synthetic */ s1(d31 d31Var, long j10, xp xpVar, int i10) {
-        this.c = d31Var;
+    public /* synthetic */ s1(e31 e31Var, long j10, yp ypVar, int i10) {
+        this.c = e31Var;
         this.a = j10;
-        this.d = xpVar;
+        this.d = ypVar;
         this.b = i10;
     }
 

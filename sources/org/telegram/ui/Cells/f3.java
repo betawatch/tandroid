@@ -12,9 +12,9 @@ import java.util.HashMap;
 import java.util.Map;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.ge0;
+import org.telegram.ui.ie0;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class f3 implements TextWatcher {
     public final /* synthetic */ int a = 1;
@@ -55,21 +55,21 @@ public final class f3 implements TextWatcher {
             case 1:
                 break;
             default:
-                ge0 ge0Var = (ge0) this.d;
-                fi.c2 c2Var = ge0Var.c;
+                ie0 ie0Var = (ie0) this.d;
+                fi.c2 c2Var = ie0Var.c;
                 if (!this.b) {
-                    ge0Var.p(true);
-                    AndroidUtilities.cancelRunOnUIThread(ge0Var.V);
-                    ge0Var.n(false);
+                    ie0Var.p(true);
+                    AndroidUtilities.cancelRunOnUIThread(ie0Var.V);
+                    ie0Var.n(false);
                     if (TextUtils.isEmpty(editable)) {
-                        ge0Var.y = false;
+                        ie0Var.y = false;
                     }
-                    if (!ge0Var.o(editable.toString())) {
-                        ge0Var.r(true);
+                    if (!ie0Var.o(editable.toString())) {
+                        ie0Var.r(true);
                         this.b = true;
                         boolean z10 = c2Var.getSelectionEnd() >= c2Var.getText().length();
-                        if (!ge0Var.y) {
-                            String str = ge0Var.K;
+                        if (!ie0Var.y) {
+                            String str = ie0Var.K;
                             c2Var.setText(str.substring(0, Utilities.clamp(this.c, str.length(), 0)));
                             if (z10) {
                                 c2Var.setSelection(c2Var.getText().length());
@@ -122,8 +122,8 @@ public final class f3 implements TextWatcher {
                 }
                 break;
             default:
-                if (!this.b && charSequence != null && ((ge0) this.d).K != null) {
-                    this.c = ge0.s(charSequence.toString()).length();
+                if (!this.b && charSequence != null && ((ie0) this.d).K != null) {
+                    this.c = ie0.s(charSequence.toString()).length();
                     break;
                 }
                 break;
@@ -164,8 +164,8 @@ public final class f3 implements TextWatcher {
         this.b = z10;
     }
 
-    public f3(ge0 ge0Var) {
-        this.d = ge0Var;
+    public f3(ie0 ie0Var) {
+        this.d = ie0Var;
     }
 
     private final void a(Editable editable) {

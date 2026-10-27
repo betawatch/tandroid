@@ -7,12 +7,12 @@ import android.widget.FrameLayout;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.vh;
+import org.telegram.messenger.wh;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.RadioButton;
-import org.telegram.ui.Components.gb1;
+import org.telegram.ui.Components.kb1;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class r2 extends FrameLayout {
     public int a;
@@ -45,17 +45,17 @@ public final class r2 extends FrameLayout {
         TextView textView2 = this.c;
         if (textView2.getVisibility() == 0) {
             boolean z10 = LocaleController.isRTL;
-            h = gb1.h(-1, -1.0f, (z10 ? 5 : 3) | 48, z10 ? this.f : 61.0f, 0.0f, z10 ? 61.0f : this.f, 0.0f);
+            h = kb1.h(-1, -1.0f, (z10 ? 5 : 3) | 48, z10 ? this.f : 61.0f, 0.0f, z10 ? 61.0f : this.f, 0.0f);
         } else {
             boolean z11 = LocaleController.isRTL;
-            h = gb1.h(-1, -1.0f, (z11 ? 5 : 3) | 48, z11 ? 61.0f : this.f, 0.0f, z11 ? this.f : 61.0f, 0.0f);
+            h = kb1.h(-1, -1.0f, (z11 ? 5 : 3) | 48, z11 ? 61.0f : this.f, 0.0f, z11 ? this.f : 61.0f, 0.0f);
         }
         textView.setLayoutParams(h);
         RadioButton radioButton = this.d;
         if (textView2.getVisibility() == 0) {
-            h10 = gb1.h(22, 22.0f, (LocaleController.isRTL ? 5 : 3) | 48, 20.0f, 15.0f, 20.0f, 0.0f);
+            h10 = kb1.h(22, 22.0f, (LocaleController.isRTL ? 5 : 3) | 48, 20.0f, 15.0f, 20.0f, 0.0f);
         } else {
-            h10 = gb1.h(22, 22.0f, (LocaleController.isRTL ? 3 : 5) | 48, 20.0f, 15.0f, 20.0f, 0.0f);
+            h10 = kb1.h(22, 22.0f, (LocaleController.isRTL ? 3 : 5) | 48, 20.0f, 15.0f, 20.0f, 0.0f);
         }
         radioButton.setLayoutParams(h10);
     }
@@ -77,7 +77,7 @@ public final class r2 extends FrameLayout {
         this.d.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(22.0f), TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(22.0f), TLObject.FLAG_30));
         if (textView.getVisibility() == 0) {
             textView.measure(View.MeasureSpec.makeMeasureSpec(dp, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(getMeasuredHeight(), TLObject.FLAG_30));
-            dp = vh.z(12.0f, textView.getMeasuredWidth(), dp);
+            dp = wh.z(12.0f, textView.getMeasuredWidth(), dp);
         }
         this.b.measure(View.MeasureSpec.makeMeasureSpec(dp, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(getMeasuredHeight(), TLObject.FLAG_30));
     }

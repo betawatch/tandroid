@@ -41,21 +41,21 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.vh;
+import org.telegram.messenger.wh;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.ds;
-import org.telegram.ui.Components.gb1;
-import org.telegram.ui.Components.gp0;
-import org.telegram.ui.Components.gx0;
+import org.telegram.ui.Components.hp0;
+import org.telegram.ui.Components.hx0;
+import org.telegram.ui.Components.kb1;
 import org.telegram.ui.Components.lo;
 import org.telegram.ui.Components.po;
-import org.telegram.ui.Components.vw0;
 import org.telegram.ui.Components.w00;
+import org.telegram.ui.Components.ww0;
 import org.telegram.ui.Components.x00;
 import org.telegram.ui.Components.y9;
-import org.telegram.ui.my0;
+import org.telegram.ui.oy0;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public class k extends FrameLayout implements oe.d, p6 {
     public CharSequence A0;
@@ -75,7 +75,7 @@ public class k extends FrameLayout implements oe.d, p6 {
     public boolean J;
     public final u6 J0;
     public boolean K;
-    public vw0 K0;
+    public ww0 K0;
     public boolean L;
     public boolean L0;
     public boolean M;
@@ -90,7 +90,7 @@ public class k extends FrameLayout implements oe.d, p6 {
     public boolean Q0;
     public boolean R;
     public boolean R0;
-    public gx0 S;
+    public hx0 S;
     public po S0;
     public x00 T;
     public boolean T0;
@@ -99,7 +99,7 @@ public class k extends FrameLayout implements oe.d, p6 {
     public boolean V;
     public Runnable V0;
     public Rect W;
-    public my0 W0;
+    public oy0 W0;
     public AnimatorSet X0;
     public int Y0;
     public int Z0;
@@ -348,7 +348,7 @@ public class k extends FrameLayout implements oe.d, p6 {
                 this.r.setVisibility(0);
                 this.r.setAlpha(0.0f);
             }
-            vh.p(this.r.animate(), z10 ? 0.0f : 1.0f, 220L);
+            wh.p(this.r.animate(), z10 ? 0.0f : 1.0f, 220L);
         }
         b6 b6Var = b6VarArr[1];
         if (b6Var != null) {
@@ -509,11 +509,11 @@ public class k extends FrameLayout implements oe.d, p6 {
         }
         eh.d c11 = bVar.c(this, null, false);
         c11.v(eVar);
-        vh.s(c11, AndroidUtilities.dp(23.0f), 6.0f);
+        wh.s(c11, AndroidUtilities.dp(23.0f), 6.0f);
         this.b = c11;
         eh.d c12 = bVar.c(this, null, false);
         c12.v(eVar);
-        vh.s(c12, AndroidUtilities.dp(23.0f), 6.0f);
+        wh.s(c12, AndroidUtilities.dp(23.0f), 6.0f);
         this.c = c12;
         z zVar = this.E;
         if (zVar != null) {
@@ -779,11 +779,11 @@ public class k extends FrameLayout implements oe.d, p6 {
                     if (this.q1) {
                         this.K0.H(canvas, getY(), this.N0, paint, true);
                     } else {
-                        vw0 vw0Var = this.K0;
+                        ww0 ww0Var = this.K0;
                         float y3 = getY();
                         float f10 = f7 - (this.r1 ? f7 : this.v1);
-                        vw0Var.getClass();
-                        vw0Var.J(canvas, y3, this.N0, paint, true, AndroidUtilities.lerp(255, Color.alpha(y6.w0((vw0.E() && SharedConfig.getDevicePerformanceClass() == i10) ? y6.xf : y6.yf, vw0Var.getResourceProvider())), f10));
+                        ww0Var.getClass();
+                        ww0Var.J(canvas, y3, this.N0, paint, true, AndroidUtilities.lerp(255, Color.alpha(y6.w0((ww0.E() && SharedConfig.getDevicePerformanceClass() == i10) ? y6.xf : y6.yf, ww0Var.getResourceProvider())), f10));
                     }
                 }
                 this.l1 = true;
@@ -905,14 +905,14 @@ public class k extends FrameLayout implements oe.d, p6 {
                 }
                 if (y6.G1) {
                     if (this.S == null) {
-                        this.S = new gx0(0);
+                        this.S = new hx0(0);
                     }
                 } else if (!this.V && this.S != null) {
                     this.S = null;
                 }
-                gx0 gx0Var = this.S;
-                if (gx0Var != null) {
-                    gx0Var.b(canvas, this);
+                hx0 hx0Var = this.S;
+                if (hx0Var != null) {
+                    hx0Var.b(canvas, this);
                 } else {
                     x00 x00Var = this.T;
                     if (x00Var != null) {
@@ -1234,7 +1234,7 @@ public class k extends FrameLayout implements oe.d, p6 {
         b6Var.setGravity(3);
         this.s.setVisibility(8);
         f7.Y(this.s, y6.B8, this.J0);
-        addView(this.s, 0, gb1.i(-2, -2, 51));
+        addView(this.s, 0, kb1.i(-2, -2, 51));
     }
 
     public final void k() {
@@ -1246,7 +1246,7 @@ public class k extends FrameLayout implements oe.d, p6 {
         imageView.setScaleType(ImageView.ScaleType.CENTER);
         this.e.setBackgroundDrawable(y6.g0(this.p0, 1, -1));
         this.e.setPadding(AndroidUtilities.dp(1.0f), 0, 0, 0);
-        addView(this.e, gb1.i(54, 54, 51));
+        addView(this.e, kb1.i(54, 54, 51));
         this.e.setOnClickListener(new b(this, 1));
         this.e.setContentDescription(LocaleController.getString(R.string.AccDescrGoBack));
     }
@@ -1258,7 +1258,7 @@ public class k extends FrameLayout implements oe.d, p6 {
         }
         z zVar2 = new z(getContext(), this);
         this.E = zVar2;
-        addView(zVar2, 0, gb1.i(-2, -1, 5));
+        addView(zVar2, 0, kb1.i(-2, -1, 5));
         return this.E;
     }
 
@@ -1271,7 +1271,7 @@ public class k extends FrameLayout implements oe.d, p6 {
         b6Var.setGravity(3);
         this.r.setVisibility(8);
         f7.Y(this.r, y6.B8, this.J0);
-        addView(this.r, 0, gb1.i(-2, -2, 51));
+        addView(this.r, 0, kb1.i(-2, -2, 51));
     }
 
     public final void n(int i10) {
@@ -1295,9 +1295,9 @@ public class k extends FrameLayout implements oe.d, p6 {
         b6VarArr[i10].setPadding(0, AndroidUtilities.dp(8.0f), 0, AndroidUtilities.dp(8.0f));
         b6VarArr[i10].setRightDrawableTopPadding(-AndroidUtilities.dp(1.0f));
         if (this.G0) {
-            this.F0.addView(b6VarArr[i10], 0, gb1.i(-2, -2, 51));
+            this.F0.addView(b6VarArr[i10], 0, kb1.i(-2, -2, 51));
         } else {
-            addView(b6VarArr[i10], 0, gb1.i(-2, -2, 51));
+            addView(b6VarArr[i10], 0, kb1.i(-2, -2, 51));
         }
     }
 
@@ -1351,11 +1351,11 @@ public class k extends FrameLayout implements oe.d, p6 {
         Drawable A0;
         if (this.R && !this.i0 && !LocaleController.isRTL && motionEvent.getAction() == 0 && (A0 = y6.A0()) != null && A0.getBounds().contains((int) motionEvent.getX(), (int) motionEvent.getY())) {
             this.V = true;
-            gx0 gx0Var = this.S;
+            hx0 hx0Var = this.S;
             b6[] b6VarArr = this.n;
-            if (gx0Var == null) {
+            if (hx0Var == null) {
                 this.T = null;
-                this.S = new gx0(0);
+                this.S = new hx0(0);
                 b6VarArr[0].invalidate();
                 invalidate();
             } else {
@@ -1564,7 +1564,7 @@ public class k extends FrameLayout implements oe.d, p6 {
                 } else if (AndroidUtilities.isTablet()) {
                     f7 = 74.0f;
                 }
-                makeMeasureSpec = vh.x(f7, size, TLObject.FLAG_30);
+                makeMeasureSpec = wh.x(f7, size, TLObject.FLAG_30);
                 if (!kVar.y) {
                     kVar.E.q(0.0f);
                 }
@@ -1962,10 +1962,10 @@ public class k extends FrameLayout implements oe.d, p6 {
         }
     }
 
-    public void setDrawBlurBackground(vw0 vw0Var) {
+    public void setDrawBlurBackground(ww0 ww0Var) {
         this.L0 = true;
-        this.K0 = vw0Var;
-        vw0Var.O.add(this);
+        this.K0 = ww0Var;
+        ww0Var.O.add(this);
         setBackground(null);
     }
 
@@ -2417,21 +2417,21 @@ public class k extends FrameLayout implements oe.d, p6 {
         imageView3.setColorFilter(new PorterDuffColorFilter(this.r0, PorterDuff.Mode.SRC_IN));
     }
 
-    public void setAdaptiveBackground(gp0 gp0Var) {
+    public void setAdaptiveBackground(hp0 hp0Var) {
         int i10 = y6.a7;
         int i11 = y6.s8;
         this.s1 = i10;
         this.t1 = i11;
         this.r1 = AndroidUtilities.isTablet();
         b();
-        org.telegram.messenger.voip.m0 m0Var = new org.telegram.messenger.voip.m0(3, this, gp0Var);
-        gp0Var.L.add(m0Var);
+        org.telegram.messenger.voip.m0 m0Var = new org.telegram.messenger.voip.m0(3, this, hp0Var);
+        hp0Var.L.add(m0Var);
         if (this.q1) {
             m0Var.run();
             return;
         }
         this.q1 = true;
-        boolean canScrollVertically = gp0Var.canScrollVertically(-1);
+        boolean canScrollVertically = hp0Var.canScrollVertically(-1);
         this.u1 = !canScrollVertically;
         this.v1 = !canScrollVertically ? 1.0f : 0.0f;
         b();

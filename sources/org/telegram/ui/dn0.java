@@ -1,26 +1,48 @@
 package org.telegram.ui;
 
-import java.util.TimerTask;
+import android.content.Context;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public final class dn0 extends TimerTask {
-    public final /* synthetic */ en0 a;
+public final class dn0 extends TextView {
+    public final /* synthetic */ int a;
 
-    public dn0(en0 en0Var) {
-        this.a = en0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ dn0(Context context, int i10) {
+        super(context);
+        this.a = i10;
     }
 
-    @Override // java.util.TimerTask, java.lang.Runnable
-    public final void run() {
-        en0 en0Var = this.a;
-        if (en0Var.v == null) {
-            return;
+    @Override // android.widget.TextView, android.view.View
+    public CharSequence getAccessibilityClassName() {
+        switch (this.a) {
+            case 3:
+                return Button.class.getName();
+            default:
+                return super.getAccessibilityClassName();
         }
-        double currentTimeMillis = System.currentTimeMillis();
-        en0Var.y = (int) (en0Var.y - (currentTimeMillis - en0Var.F));
-        en0Var.F = currentTimeMillis;
-        AndroidUtilities.runOnUIThread(new lj0(this, 8));
+    }
+
+    @Override // android.widget.TextView, android.view.View
+    public void onMeasure(int i10, int i11) {
+        switch (this.a) {
+            case 0:
+                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(100.0f), TLObject.FLAG_31));
+                break;
+            case 1:
+                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(100.0f), TLObject.FLAG_31));
+                break;
+            case 2:
+                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(AndroidUtilities.dp(26.0f)), TLObject.FLAG_30));
+                break;
+            default:
+                super.onMeasure(i10, i11);
+                break;
+        }
     }
 }

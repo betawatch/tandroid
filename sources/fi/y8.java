@@ -7,9 +7,9 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ResultCallback;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.by0;
+import org.telegram.ui.Components.cy0;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class y8 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -63,10 +63,10 @@ public final /* synthetic */ class y8 implements Utilities.Callback {
                 }
                 break;
             default:
-                by0 by0Var = (by0) this.c;
+                cy0 cy0Var = (cy0) this.c;
                 TLRPC.TL_messages_emojiGroups tL_messages_emojiGroups = (TLRPC.TL_messages_emojiGroups) obj;
                 if (tL_messages_emojiGroups != null) {
-                    NotificationCenter.getInstance(UserConfig.selectedAccount).doOnIdle(new a3.i0(by0Var, tL_messages_emojiGroups, this.b, 25));
+                    NotificationCenter.getInstance(UserConfig.selectedAccount).doOnIdle(new a3.i0(cy0Var, tL_messages_emojiGroups, this.b, 25));
                     break;
                 }
                 break;

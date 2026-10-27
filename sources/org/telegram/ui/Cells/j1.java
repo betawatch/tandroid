@@ -8,9 +8,9 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_keyboard;
-import org.telegram.ui.cv0;
+import org.telegram.ui.ev0;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public interface j1 {
     void A0(s1 s1Var);
@@ -31,7 +31,7 @@ public interface j1 {
 
     void E0(int i10, s1 s1Var);
 
-    cv0 E1();
+    ev0 E1();
 
     void F(MessageObject.TextLayoutBlock textLayoutBlock);
 

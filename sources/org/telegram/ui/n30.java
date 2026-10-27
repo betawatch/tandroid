@@ -1,29 +1,20 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.AccountInstance;
-import org.telegram.messenger.ImageLocation;
-import org.telegram.tgnet.TLRPC;
+import android.graphics.Rect;
+import android.view.View;
+import androidx.recyclerview.widget.RecyclerView;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public final class n30 extends u4 {
-    public final /* synthetic */ v50 U;
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public n30(v50 v50Var, LaunchActivity launchActivity) {
-        super(launchActivity);
-        this.U = v50Var;
-    }
-
-    @Override // org.telegram.ui.u4, org.telegram.ui.Components.ii0
-    public final void c() {
-        v50 v50Var = this.U;
-        AccountInstance accountInstance = v50Var.d;
-        o30 o30Var = v50Var.b;
-        long dialogId = o30Var.getDialogId();
-        if (dialogId > 0) {
-            TLRPC.User user = accountInstance.getMessagesController().getUser(Long.valueOf(dialogId));
-            o30Var.H(null, ImageLocation.getForUserOrChat(accountInstance.getCurrentAccount(), user, 0), ImageLocation.getForUserOrChat(accountInstance.getCurrentAccount(), user, 1), false);
+public final class n30 extends s4.n0 {
+    @Override // s4.n0
+    public final void d(Rect rect, View view, RecyclerView recyclerView, s4.b1 b1Var) {
+        RecyclerView.R(view);
+        if (x50.F3) {
+            rect.set(0, AndroidUtilities.dp(4.0f), 0, AndroidUtilities.dp(4.0f));
+        } else {
+            rect.set(AndroidUtilities.dp(4.0f), 0, AndroidUtilities.dp(4.0f), 0);
         }
     }
 }

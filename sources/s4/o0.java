@@ -13,12 +13,12 @@ import com.google.android.gms.tasks.TaskCompletionSource;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.TreeMap;
-import sg.p2;
-import sg.x1;
+import sg.o2;
+import sg.w1;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
-public final class o0 implements j1, com.google.android.gms.common.api.internal.o, x1, com.google.android.gms.common.api.internal.r, v0.h, OnCompleteListener {
+public final class o0 implements j1, com.google.android.gms.common.api.internal.o, w1, com.google.android.gms.common.api.internal.r, v0.h, OnCompleteListener {
     public Object a;
 
     public /* synthetic */ o0(Object obj) {
@@ -46,9 +46,9 @@ public final class o0 implements j1, com.google.android.gms.common.api.internal.
         return p0Var.n - p0Var.C();
     }
 
-    @Override // sg.x1
+    @Override // sg.w1
     public void V(float f7) {
-        ((p2) this.a).setOutlineWidth(f7);
+        ((o2) this.a).setOutlineWidth(f7);
     }
 
     @Override // s4.j1
@@ -105,9 +105,9 @@ public final class o0 implements j1, com.google.android.gms.common.api.internal.
         throw new uc.n(19, "The protocol contained in the Sec-WebSocket-Protocol header is not supported: ".concat(str), aVar);
     }
 
-    @Override // sg.x1
+    @Override // sg.w1
     public float get() {
-        return ((p2) this.a).F;
+        return ((o2) this.a).F;
     }
 
     @Override // s4.j1

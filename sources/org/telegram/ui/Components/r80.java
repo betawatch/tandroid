@@ -1,9 +1,18 @@
 package org.telegram.ui.Components;
 
-import org.telegram.tgnet.TLRPC;
+import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public interface r80 {
-    void a(TLRPC.InputPeer inputPeer, boolean z10, boolean z11, boolean z12);
+public final class r80 extends s4.u0 {
+    public final /* synthetic */ u80 a;
+
+    public r80(u80 u80Var) {
+        this.a = u80Var;
+    }
+
+    @Override // s4.u0
+    public final void b(RecyclerView recyclerView, int i10, int i11) {
+        u80.o(this.a);
+    }
 }

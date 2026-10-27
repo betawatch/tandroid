@@ -13,14 +13,14 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Cells.ab;
 import org.telegram.ui.Cells.eb;
 import org.telegram.ui.Components.gw;
-import org.telegram.ui.bi1;
-import org.telegram.ui.ci1;
-import org.telegram.ui.mo;
+import org.telegram.ui.di1;
+import org.telegram.ui.ei1;
 import org.telegram.ui.nd;
-import org.telegram.ui.re0;
-import org.telegram.ui.x60;
+import org.telegram.ui.oo;
+import org.telegram.ui.te0;
+import org.telegram.ui.z60;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class k4 extends org.telegram.ui.Components.y9 {
     public final /* synthetic */ int G;
@@ -91,7 +91,7 @@ public final class k4 extends org.telegram.ui.Components.y9 {
                 super.onDraw(canvas);
                 eb ebVar = (eb) this.H;
                 Object obj = ebVar.h;
-                if ((obj instanceof bi1) || (obj instanceof ci1)) {
+                if ((obj instanceof di1) || (obj instanceof ei1)) {
                     canvas.drawLine(1.0f, 0.0f, getMeasuredWidth() - 1, 0.0f, ebVar.s.n);
                     canvas2 = canvas;
                     canvas2.drawLine(0.0f, 0.0f, 0.0f, getMeasuredHeight(), ebVar.s.n);
@@ -182,7 +182,7 @@ public final class k4 extends org.telegram.ui.Components.y9 {
                 super.invalidate();
                 break;
             case 6:
-                fi.f6 f6Var2 = ((mo) this.H).f;
+                fi.f6 f6Var2 = ((oo) this.H).f;
                 if (f6Var2 != null) {
                     f6Var2.invalidate();
                 }
@@ -200,14 +200,14 @@ public final class k4 extends org.telegram.ui.Components.y9 {
                 }
                 break;
             case 9:
-                fi.f6 f6Var3 = ((x60) this.H).e;
+                fi.f6 f6Var3 = ((z60) this.H).e;
                 if (f6Var3 != null) {
                     f6Var3.invalidate();
                 }
                 super.invalidate();
                 break;
             case 10:
-                fi.f6 f6Var4 = ((re0) this.H).h;
+                fi.f6 f6Var4 = ((te0) this.H).h;
                 if (f6Var4 != null) {
                     f6Var4.invalidate();
                 }
@@ -230,7 +230,7 @@ public final class k4 extends org.telegram.ui.Components.y9 {
                 super.invalidate(i10, i11, i12, i13);
                 break;
             case 6:
-                fi.f6 f6Var2 = ((mo) this.H).f;
+                fi.f6 f6Var2 = ((oo) this.H).f;
                 if (f6Var2 != null) {
                     f6Var2.invalidate();
                 }
@@ -247,14 +247,14 @@ public final class k4 extends org.telegram.ui.Components.y9 {
                 }
                 break;
             case 9:
-                fi.f6 f6Var3 = ((x60) this.H).e;
+                fi.f6 f6Var3 = ((z60) this.H).e;
                 if (f6Var3 != null) {
                     f6Var3.invalidate();
                 }
                 super.invalidate(i10, i11, i12, i13);
                 break;
             case 10:
-                fi.f6 f6Var4 = ((re0) this.H).h;
+                fi.f6 f6Var4 = ((te0) this.H).h;
                 if (f6Var4 != null) {
                     f6Var4.invalidate();
                 }

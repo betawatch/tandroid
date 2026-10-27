@@ -7,7 +7,7 @@ import java.io.EOFException;
 import java.util.List;
 import org.telegram.messenger.MediaController;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
 public final class d implements c3.o {
     public final int a;
@@ -54,15 +54,15 @@ public final class d implements c3.o {
                 if (g10 <= 6) {
                     i10++;
                     lVar.f = 0;
-                    lVar.s(i10, false);
+                    lVar.u(i10, false);
                 } else {
-                    lVar.s(g10 - 6, false);
+                    lVar.u(g10 - 6, false);
                     i12 += g10;
                 }
             } else {
                 i10++;
                 lVar.f = 0;
-                lVar.s(i10, false);
+                lVar.u(i10, false);
             }
             i11 = 0;
             i12 = 0;
@@ -135,7 +135,7 @@ public final class d implements c3.o {
                         }
                         j10 += g7;
                         i13++;
-                        if (i13 != 1000 && pVar.s(g7 - 6, true)) {
+                        if (i13 != 1000 && pVar.u(g7 - 6, true)) {
                             i12 = 0;
                         }
                     } catch (EOFException unused) {

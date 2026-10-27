@@ -8,7 +8,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class i implements View.OnLongClickListener {
     public final /* synthetic */ int a;
@@ -44,28 +44,28 @@ public final /* synthetic */ class i implements View.OnLongClickListener {
                 if (i10 != 1 && i10 != 3 && i10 != 8) {
                     return false;
                 }
-                org.telegram.ui.ni0 ni0Var = new org.telegram.ui.ni0(chatActivityEnterView.getContext(), u6Var);
-                ni0Var.g0 = true;
+                org.telegram.ui.pi0 pi0Var = new org.telegram.ui.pi0(chatActivityEnterView.getContext(), u6Var);
+                pi0Var.g0 = true;
                 ArrayList arrayList = new ArrayList();
                 if (groupedMessages != null) {
                     int i11 = 0;
                     while (i11 < groupedMessages.messages.size()) {
-                        arrayList.add(chatActivityEnterView.d0(groupedMessages.messages.get(i11), i11 == 0));
+                        arrayList.add(chatActivityEnterView.c0(groupedMessages.messages.get(i11), i11 == 0));
                         i11++;
                     }
                 } else {
-                    arrayList.add(chatActivityEnterView.d0(messageObject, true));
+                    arrayList.add(chatActivityEnterView.c0(messageObject, true));
                 }
-                ni0Var.p(arrayList);
-                k80 F = k80.F(chatActivityEnterView.m1, u6Var, chatActivityEnterView.F1);
-                mc0 mc0Var = new mc0(chatActivityEnterView.getContext(), R.raw.position_below, LocaleController.getString(R.string.CaptionAbove), R.raw.position_above, LocaleController.getString(R.string.CaptionBelow), chatActivityEnterView.W3);
-                mc0Var.a(!chatActivityEnterView.R4, false);
-                mc0Var.setOnClickListener(new di.c4(chatActivityEnterView, arrayList, mc0Var, ni0Var, 10));
-                F.q(mc0Var);
+                pi0Var.p(arrayList);
+                l80 F = l80.F(chatActivityEnterView.m1, u6Var, chatActivityEnterView.F1);
+                nc0 nc0Var = new nc0(chatActivityEnterView.getContext(), R.raw.position_below, LocaleController.getString(R.string.CaptionAbove), R.raw.position_above, LocaleController.getString(R.string.CaptionBelow), chatActivityEnterView.W3);
+                nc0Var.a(!chatActivityEnterView.R4, false);
+                nc0Var.setOnClickListener(new di.c4(chatActivityEnterView, arrayList, nc0Var, pi0Var, 10));
+                F.q(nc0Var);
                 F.Y();
-                ni0Var.o(F);
-                ni0Var.q(chatActivityEnterView.F1, false, new di.c4(chatActivityEnterView, groupedMessages, messageObject, ni0Var, 11));
-                ni0Var.show();
+                pi0Var.o(F);
+                pi0Var.q(chatActivityEnterView.F1, false, new di.c4(chatActivityEnterView, groupedMessages, messageObject, pi0Var, 11));
+                pi0Var.show();
                 return true;
         }
     }

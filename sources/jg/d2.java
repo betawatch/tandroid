@@ -17,10 +17,10 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.ui.ActionBar.p6;
 import org.telegram.ui.ActionBar.u6;
 import org.telegram.ui.ActionBar.y6;
-import org.telegram.ui.Components.ak0;
-import org.telegram.ui.Components.gb1;
+import org.telegram.ui.Components.bk0;
+import org.telegram.ui.Components.kb1;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class d2 extends LinearLayout implements p6 {
     public final TextView a;
@@ -46,29 +46,29 @@ public final class d2 extends LinearLayout implements p6 {
         mdVar.setTextSize(1, 12.0f);
         mdVar.setLineSpacing(AndroidUtilities.dp(2.0f), 1.0f);
         mdVar.setGravity(1);
-        ak0 ak0Var = new ak0(activity);
-        ak0Var.setScaleType(ImageView.ScaleType.CENTER);
-        ak0Var.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
+        bk0 bk0Var = new bk0(activity);
+        bk0Var.setScaleType(ImageView.ScaleType.CENTER);
+        bk0Var.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
         mdVar.setMaxWidth(AndroidUtilities.dp(160.0f));
         int i11 = 22;
         if (i10 == 9) {
-            ak0Var.setImageResource(R.drawable.large_greeting);
+            bk0Var.setImageResource(R.drawable.large_greeting);
             textView.setText(LocaleController.getString(R.string.WelcomeMessageEmptyTitle));
             mdVar.setText(LocaleController.getString(R.string.WelcomeMessageEmptySubtitle));
             mdVar.setMaxWidth(Math.min(AndroidUtilities.dp(160.0f), v3.a(mdVar.getText(), mdVar.getPaint())));
         } else if ("hello".equalsIgnoreCase(str)) {
-            ak0Var.setImageResource(R.drawable.large_greeting);
+            bk0Var.setImageResource(R.drawable.large_greeting);
             textView.setText(LocaleController.getString(R.string.BusinessGreetingIntroTitle));
             mdVar.setText(LocaleController.getString(R.string.BusinessGreetingIntro));
             mdVar.setMaxWidth(Math.min(AndroidUtilities.dp(160.0f), v3.a(mdVar.getText(), mdVar.getPaint())));
         } else if ("away".equalsIgnoreCase(str)) {
-            ak0Var.setImageResource(R.drawable.large_away);
+            bk0Var.setImageResource(R.drawable.large_away);
             textView.setText(LocaleController.getString(R.string.BusinessAwayIntroTitle));
             mdVar.setText(LocaleController.getString(R.string.BusinessAwayIntro));
             mdVar.setMaxWidth(Math.min(AndroidUtilities.dp(160.0f), v3.a(mdVar.getText(), mdVar.getPaint())));
         } else {
             if (i10 == 5) {
-                ak0Var.setImageResource(R.drawable.large_quickreplies);
+                bk0Var.setImageResource(R.drawable.large_quickreplies);
                 b2 c10 = c2.f(UserConfig.selectedAccount).c(j10);
                 String str2 = c10 == null ? str : c10.b;
                 textView.setText(LocaleController.getString(R.string.BusinessRepliesIntroTitle));
@@ -89,12 +89,12 @@ public final class d2 extends LinearLayout implements p6 {
             i11 = 12;
         }
         int i12 = i11;
-        addView(ak0Var, gb1.x(78, 78, 49, 20, 17, 20, 9));
-        addView(textView, gb1.x(-2, -2, 49, 20, 0, 20, 6));
-        addView(mdVar, gb1.x(-2, -2, 49, i12, 0, i12, this.c == null ? 19 : 9));
+        addView(bk0Var, kb1.x(78, 78, 49, 20, 17, 20, 9));
+        addView(textView, kb1.x(-2, -2, 49, 20, 0, 20, 6));
+        addView(mdVar, kb1.x(-2, -2, 49, i12, 0, i12, this.c == null ? 19 : 9));
         View view = this.c;
         if (view != null) {
-            addView(view, gb1.x(-2, -2, 49, 12, 0, 12, 19));
+            addView(view, kb1.x(-2, -2, 49, 12, 0, 12, 19));
         }
         updateColors();
     }

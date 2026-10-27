@@ -14,9 +14,9 @@ import org.telegram.messenger.ImageLocation;
 import org.telegram.messenger.SvgHelper;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.ds;
-import org.telegram.ui.Components.gb1;
+import org.telegram.ui.Components.kb1;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class v1 extends FrameLayout implements oe.d, org.telegram.ui.ActionBar.p6 {
     public final org.telegram.ui.ActionBar.u6 a;
@@ -41,11 +41,11 @@ public final class v1 extends FrameLayout implements oe.d, org.telegram.ui.Actio
         this.c = d1Var;
         frameLayout.setBackground(d1Var);
         d1Var.w = 1;
-        addView(frameLayout, gb1.i(-1, -1, 119));
+        addView(frameLayout, kb1.i(-1, -1, 119));
         org.telegram.ui.Components.y9 y9Var = new org.telegram.ui.Components.y9(context);
         this.d = y9Var;
         y9Var.getImageReceiver().setAutoRepeat(0);
-        addView(y9Var, gb1.h(80, 80.0f, 49, 0.0f, 17.0f, 0.0f, 0.0f));
+        addView(y9Var, kb1.h(80, 80.0f, 49, 0.0f, 17.0f, 0.0f, 0.0f));
         TextView textView = new TextView(context);
         this.e = textView;
         textView.setTypeface(AndroidUtilities.bold());
@@ -53,7 +53,7 @@ public final class v1 extends FrameLayout implements oe.d, org.telegram.ui.Actio
         textView.setGravity(17);
         textView.setEllipsize(TextUtils.TruncateAt.END);
         textView.setTextColor(-1);
-        addView(textView, gb1.h(-1, -2.0f, 0, 12.0f, 106.0f, 12.0f, 14.0f));
+        addView(textView, kb1.h(-1, -2.0f, 0, 12.0f, 106.0f, 12.0f, 14.0f));
         TextView textView2 = new TextView(context);
         this.f = textView2;
         textView2.setClickable(false);
@@ -61,7 +61,7 @@ public final class v1 extends FrameLayout implements oe.d, org.telegram.ui.Actio
         textView2.setTextSize(1, 11.0f);
         textView2.setPadding(AndroidUtilities.dp(5.0f), AndroidUtilities.dp(1.0f), AndroidUtilities.dp(5.0f), AndroidUtilities.dp(1.0f));
         textView2.setBackground(org.telegram.ui.ActionBar.y6.c0(AndroidUtilities.dp(10.0f), 285212671));
-        addView(textView2, gb1.h(-2, -2.0f, 53, 0.0f, 10.0f, 10.0f, 0.0f));
+        addView(textView2, kb1.h(-2, -2.0f, 53, 0.0f, 10.0f, 10.0f, 0.0f));
     }
 
     public static void a(v1 v1Var, TLRPC.Document document, int i10, Object obj, boolean z10) {
@@ -83,7 +83,7 @@ public final class v1 extends FrameLayout implements oe.d, org.telegram.ui.Actio
         sb2.append(i10);
         sb2.append(z10 ? "_nolimit_pcache" : "");
         String sb3 = sb2.toString();
-        y9Var.setLayoutParams(gb1.h(i10, i10, 49, 0.0f, r3 + 17, 0.0f, (80 - i10) / 2));
+        y9Var.setLayoutParams(kb1.h(i10, i10, 49, 0.0f, r3 + 17, 0.0f, (80 - i10) / 2));
         y9Var.l(ImageLocation.getForDocument(document), sb3, ImageLocation.getForDocument(closestPhotoSizeWithSize, document), sb3, svgThumb, obj);
     }
 

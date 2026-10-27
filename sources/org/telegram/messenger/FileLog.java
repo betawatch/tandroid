@@ -27,7 +27,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
 public class FileLog {
     private static volatile FileLog Instance = null;
@@ -53,7 +53,7 @@ public class FileLog {
     private OutputStreamWriter tlStreamWriter = null;
     private File tlRequestsFile = null;
 
-    /* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+    /* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
     public static class ByteArrayHexAdapter extends fb.u {
         @Override // fb.u
         public byte[] read(nb.a aVar) {
@@ -81,14 +81,14 @@ public class FileLog {
         }
     }
 
-    /* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+    /* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
     public static class IgnoreSentException extends Exception {
         public IgnoreSentException(String str) {
             super(str);
         }
     }
 
-    /* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+    /* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
     public static class TLObjectDeserializer implements fb.o {
         private TLObjectDeserializer() {
         }
@@ -272,7 +272,7 @@ public class FileLog {
             final long currentTimeMillis = System.currentTimeMillis();
             final long j12 = currentTimeMillis - j11;
             final boolean z10 = tL_error != null;
-            postProtocolDump(new Runnable() { // from class: org.telegram.messenger.m3
+            postProtocolDump(new Runnable() { // from class: org.telegram.messenger.n3
                 @Override // java.lang.Runnable
                 public final void run() {
                     FileLog.lambda$dumpResponseAndRequest$1(simpleName, tLObject, tLObject2, tL_error, j10, j12, i11, i10, currentTimeMillis, z10);
@@ -283,7 +283,7 @@ public class FileLog {
 
     public static void dumpUnparsedMessage(TLObject tLObject, long j10, int i10) {
         if (BuildVars.DEBUG_PRIVATE_VERSION && BuildVars.LOGS_ENABLED && tLObject != null) {
-            postProtocolDump(new c5(tLObject, gsonDisabled, System.currentTimeMillis(), j10, i10));
+            postProtocolDump(new d5(tLObject, gsonDisabled, System.currentTimeMillis(), j10, i10));
         }
     }
 
@@ -570,7 +570,7 @@ public class FileLog {
             if (dispatchQueue2 == null) {
                 atomicInteger.decrementAndGet();
             } else {
-                dispatchQueue2.postRunnable(new k3(0, runnable));
+                dispatchQueue2.postRunnable(new l3(0, runnable));
             }
         } catch (Throwable th2) {
             pendingProtocolDumps.decrementAndGet();
@@ -630,7 +630,7 @@ public class FileLog {
             ensureInitied();
             th2.printStackTrace();
             if (getInstance().streamWriter != null) {
-                getInstance().logQueue.postRunnable(new l3(1, th2));
+                getInstance().logQueue.postRunnable(new m3(1, th2));
                 return;
             }
             th2.printStackTrace();
@@ -676,7 +676,7 @@ public class FileLog {
             ensureInitied();
             th2.printStackTrace();
             if (getInstance().streamWriter != null) {
-                getInstance().logQueue.postRunnable(new l3(0, th2));
+                getInstance().logQueue.postRunnable(new m3(0, th2));
             } else {
                 th2.printStackTrace();
             }

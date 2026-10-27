@@ -13,10 +13,10 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.q11;
+import org.telegram.ui.Components.r11;
 import org.telegram.ui.Components.xc;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class m0 {
     public final s1 a;
@@ -29,7 +29,7 @@ public final class m0 {
     public final Drawable h;
     public final Paint i;
     public final Paint j;
-    public final q11 k;
+    public final r11 k;
     public boolean l;
     public boolean m;
     public final xc n;
@@ -73,7 +73,7 @@ public final class m0 {
         if (b(this.o) == null) {
             this.k = null;
         } else {
-            this.k = new q11(ic.a.i(i11, "+"), 9.33f, AndroidUtilities.bold());
+            this.k = new r11(ic.a.i(i11, "+"), 9.33f, AndroidUtilities.bold());
         }
     }
 
@@ -144,7 +144,7 @@ public final class m0 {
         if (b(tLObject) == null) {
             this.k = null;
         } else {
-            this.k = new q11(b(tLObject), 9.33f, AndroidUtilities.bold());
+            this.k = new r11(b(tLObject), 9.33f, AndroidUtilities.bold());
         }
     }
 }

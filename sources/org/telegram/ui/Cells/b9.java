@@ -11,17 +11,17 @@ import android.widget.FrameLayout;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.vh;
+import org.telegram.messenger.wh;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.gb1;
-import org.telegram.ui.Components.zp;
+import org.telegram.ui.Components.aq;
+import org.telegram.ui.Components.kb1;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class b9 extends FrameLayout {
     public final TextView a;
     public final TextView b;
-    public final zp c;
+    public final aq c;
     public boolean d;
     public boolean e;
     public int f;
@@ -38,13 +38,13 @@ public final class b9 extends FrameLayout {
         TextView textView = new TextView(context);
         this.a = textView;
         org.telegram.ui.ActionBar.f7.V(textView, org.telegram.ui.ActionBar.y6.G6, null);
-        vh.r(textView, 1, 16.0f, 1, 1);
+        wh.r(textView, 1, 16.0f, 1, 1);
         textView.setSingleLine(true);
         textView.setGravity((LocaleController.isRTL ? 5 : 3) | 16);
         TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
         textView.setEllipsize(truncateAt);
         boolean z10 = LocaleController.isRTL;
-        addView(textView, gb1.h(-1, -1.0f, (z10 ? 5 : 3) | 48, z10 ? 21 : 64.0f, 0.0f, z10 ? 64.0f : 21, 0.0f));
+        addView(textView, kb1.h(-1, -1.0f, (z10 ? 5 : 3) | 48, z10 ? 21 : 64.0f, 0.0f, z10 ? 64.0f : 21, 0.0f));
         TextView textView2 = new TextView(context);
         this.b = textView2;
         org.telegram.ui.ActionBar.f7.V(textView2, org.telegram.ui.ActionBar.y6.z6, null);
@@ -56,14 +56,14 @@ public final class b9 extends FrameLayout {
         textView2.setPadding(0, 0, 0, 0);
         textView2.setEllipsize(truncateAt);
         boolean z11 = LocaleController.isRTL;
-        addView(textView2, gb1.h(-2, -2.0f, (z11 ? 5 : 3) | 48, z11 ? 21 : 64.0f, 36.0f, z11 ? 64.0f : 21, 0.0f));
-        zp zpVar = new zp(context, 21, null);
-        this.c = zpVar;
-        zpVar.setDrawUnchecked(true);
-        zpVar.setDrawBackgroundAsArc(10);
-        zpVar.setDuration(100L);
-        zpVar.b(org.telegram.ui.ActionBar.y6.h7, org.telegram.ui.ActionBar.y6.j7, org.telegram.ui.ActionBar.y6.k7);
-        addView(zpVar, gb1.h(20, 20.0f, (LocaleController.isRTL ? 5 : 3) | 16, 22.0f, 0.0f, 22.0f, 0.0f));
+        addView(textView2, kb1.h(-2, -2.0f, (z11 ? 5 : 3) | 48, z11 ? 21 : 64.0f, 36.0f, z11 ? 64.0f : 21, 0.0f));
+        aq aqVar = new aq(context, 21, null);
+        this.c = aqVar;
+        aqVar.setDrawUnchecked(true);
+        aqVar.setDrawBackgroundAsArc(10);
+        aqVar.setDuration(100L);
+        aqVar.b(org.telegram.ui.ActionBar.y6.h7, org.telegram.ui.ActionBar.y6.j7, org.telegram.ui.ActionBar.y6.k7);
+        addView(aqVar, kb1.h(20, 20.0f, (LocaleController.isRTL ? 5 : 3) | 16, 22.0f, 0.0f, 22.0f, 0.0f));
         setClipChildren(false);
     }
 

@@ -2,44 +2,19 @@ package org.telegram.ui;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
-import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class zb1 extends AnimatorListenerAdapter {
-    public final /* synthetic */ boolean a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ boolean d;
-    public final /* synthetic */ tc1 e;
+    public final /* synthetic */ vc1 a;
 
-    public zb1(tc1 tc1Var, boolean z10, int i10, int i11, boolean z11) {
-        this.e = tc1Var;
-        this.a = z10;
-        this.b = i10;
-        this.c = i11;
-        this.d = z11;
+    public zb1(vc1 vc1Var) {
+        this.a = vc1Var;
     }
 
     @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
     public final void onAnimationEnd(Animator animator) {
-        tc1 tc1Var = this.e;
-        FrameLayout[] frameLayoutArr = tc1Var.M0;
-        tc1Var.s1 = null;
-        int i10 = this.c;
-        int i11 = this.b;
-        boolean z10 = this.a;
-        if (z10 && frameLayoutArr[i11].getVisibility() == 0) {
-            frameLayoutArr[i11].setAlpha(1.0f);
-            frameLayoutArr[i11].setVisibility(4);
-        } else if (!z10) {
-            frameLayoutArr[i10].setVisibility(4);
-        }
-        int i12 = tc1Var.b;
-        if (i12 == 1 || i12 == 2) {
-            tc1Var.K0[this.d ? (char) 0 : (char) 2].setVisibility(4);
-        } else if (i10 == 1) {
-            frameLayoutArr[i11].setAlpha(0.0f);
-        }
+        vc1 vc1Var = this.a;
+        vc1Var.K0[vc1Var.X0 != null ? (char) 0 : (char) 2].setVisibility(4);
     }
 }

@@ -2,7 +2,7 @@ package vi;
 
 import android.os.Handler;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class a implements Runnable {
     public final /* synthetic */ int a;
@@ -38,7 +38,7 @@ public final /* synthetic */ class a implements Runnable {
                     return;
                 }
                 synchronized (mVar) {
-                    z10 = mVar.z;
+                    z10 = mVar.E;
                 }
                 if (z10) {
                     return;
@@ -48,11 +48,11 @@ public final /* synthetic */ class a implements Runnable {
                     jVar2.y = mVar2;
                     Handler handler2 = jVar2.n;
                     if (handler2 != null) {
-                        handler2.removeCallbacks(jVar2.m1);
-                        handler2.postDelayed(jVar2.m1, 3000L);
+                        handler2.removeCallbacks(jVar2.n1);
+                        handler2.postDelayed(jVar2.n1, 3000L);
                     }
-                    mVar2.p(new d(jVar2, mVar2, 0), new d(jVar2, mVar2, 1));
-                    jVar2.j.b("first camera frame received; audio startup requested: segmentElapsedMs=" + j.z(jVar2.E0));
+                    mVar2.t(new d(jVar2, mVar2, 0), new d(jVar2, mVar2, 1));
+                    jVar2.j.b("first camera frame received; audio startup requested: segmentElapsedMs=" + j.z(jVar2.F0));
                     return;
                 } catch (RuntimeException e) {
                     jVar2.k();
@@ -77,10 +77,10 @@ public final /* synthetic */ class a implements Runnable {
                 jVar4.k();
                 m mVar4 = jVar4.x;
                 if (mVar4 != null) {
-                    long l4 = mVar4.l();
+                    long p10 = mVar4.p();
                     s sVar = jVar4.w;
-                    if (sVar != null && l4 != Long.MAX_VALUE) {
-                        sVar.q = Math.max(0L, l4) * 1000;
+                    if (sVar != null && p10 != Long.MAX_VALUE) {
+                        sVar.q = Math.max(0L, p10) * 1000;
                         Handler handler3 = sVar.u;
                         if (handler3 != null) {
                             handler3.removeCallbacks(sVar.x0);
@@ -90,12 +90,12 @@ public final /* synthetic */ class a implements Runnable {
                 jVar4.p();
                 m mVar5 = jVar4.x;
                 if (mVar5 != null) {
-                    mVar5.q();
+                    mVar5.u();
                     jVar4.x = null;
                 }
                 jVar4.b0 = false;
-                s0 s0Var = (s0) jVar4.k.b;
-                s0Var.i.post(new h0(s0Var, 3));
+                u0 u0Var = (u0) jVar4.k.b;
+                u0Var.i.post(new i0(u0Var, 3));
                 return;
             case 7:
                 this.b.I();

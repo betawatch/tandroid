@@ -6,9 +6,9 @@ import android.graphics.Paint;
 import android.view.View;
 import android.view.animation.LinearInterpolator;
 import java.util.ArrayList;
-import org.telegram.ui.Components.h31;
+import org.telegram.ui.Components.i31;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class r1 {
     public final aa.m0 a;
@@ -116,7 +116,7 @@ public final class r1 {
             });
             ofFloat.setInterpolator(new LinearInterpolator());
             ofFloat.setDuration(80L);
-            ofFloat.addListener(new h31(this, 14));
+            ofFloat.addListener(new i31(this, 14));
             ofFloat.start();
             ValueAnimator ofFloat2 = ValueAnimator.ofFloat(0.0f, 1.0f);
             final int i11 = 1;

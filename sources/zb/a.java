@@ -4,7 +4,7 @@ import java.util.Arrays;
 import o6.l;
 import s4.d;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
 public final class a {
     public final String a;
@@ -36,24 +36,24 @@ public final class a {
     }
 
     public final String toString() {
-        d dVar = new d(a.class.getSimpleName(), 19);
-        d dVar2 = new d(18, false);
+        d dVar = new d(a.class.getSimpleName(), 20);
+        d dVar2 = new d(19, false);
         ((d) dVar.d).d = dVar2;
         dVar.d = dVar2;
         dVar2.c = this.a;
         dVar2.b = "text";
         String valueOf = String.valueOf(this.b);
-        z7.a aVar = new z7.a(18, false);
+        z7.a aVar = new z7.a(19, false);
         ((d) dVar.d).d = aVar;
         dVar.d = aVar;
         aVar.c = valueOf;
         aVar.b = "confidence";
         String valueOf2 = String.valueOf(this.c);
-        z7.a aVar2 = new z7.a(18, false);
+        z7.a aVar2 = new z7.a(19, false);
         ((d) dVar.d).d = aVar2;
         aVar2.c = valueOf2;
         aVar2.b = "index";
-        d dVar3 = new d(18, false);
+        d dVar3 = new d(19, false);
         aVar2.d = dVar3;
         dVar.d = dVar3;
         dVar3.c = this.d;

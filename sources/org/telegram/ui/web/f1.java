@@ -17,22 +17,22 @@ import org.telegram.ui.ActionBar.f7;
 import org.telegram.ui.ActionBar.y6;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.NumberTextView;
-import org.telegram.ui.Components.ey0;
-import org.telegram.ui.Components.gb1;
-import org.telegram.ui.Components.j71;
-import org.telegram.ui.Components.m71;
+import org.telegram.ui.Components.fy0;
+import org.telegram.ui.Components.k71;
+import org.telegram.ui.Components.kb1;
 import org.telegram.ui.Components.ml;
-import org.telegram.ui.Components.t61;
+import org.telegram.ui.Components.n71;
+import org.telegram.ui.Components.u61;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
-public final class f1 extends m71 {
+public final class f1 extends n71 {
     public final Utilities.Callback e;
     public boolean n;
     public String r;
     public NumberTextView s;
     public org.telegram.ui.ActionBar.w0 w;
-    public ey0 x;
+    public fy0 x;
     public ArrayList f = c1.a(new ig.o(this, 14));
     public final ArrayList h = new ArrayList();
     public final HashSet v = new HashSet();
@@ -41,8 +41,8 @@ public final class f1 extends m71 {
         this.e = callback;
     }
 
-    @Override // org.telegram.ui.Components.m71
-    public final void V(ArrayList arrayList, j71 j71Var) {
+    @Override // org.telegram.ui.Components.n71
+    public final void V(ArrayList arrayList, k71 k71Var) {
         Calendar calendar = Calendar.getInstance();
         calendar.setTimeZone(TimeZone.getDefault());
         int i10 = 5;
@@ -56,12 +56,12 @@ public final class f1 extends m71 {
                     calendar.setTimeInMillis(b1Var.b);
                     int i13 = calendar.get(5) + (calendar.get(2) * 100) + (calendar.get(1) * 10000);
                     if (i12 != i13) {
-                        arrayList.add(t61.r(LocaleController.formatDateChat(b1Var.b / 1000)));
+                        arrayList.add(u61.r(LocaleController.formatDateChat(b1Var.b / 1000)));
                         i12 = i13;
                     }
                     String str = this.r;
                     int i14 = h.a;
-                    t61 K = t61.K(h.class);
+                    u61 K = u61.K(h.class);
                     K.z = 3;
                     K.q = false;
                     K.H = b1Var;
@@ -78,12 +78,12 @@ public final class f1 extends m71 {
                 calendar.setTimeInMillis(b1Var2.b);
                 int i16 = calendar.get(i10) + (calendar.get(i11) * 100) + (calendar.get(1) * 10000);
                 if (i15 != i16) {
-                    arrayList.add(t61.r(LocaleController.formatDateChat(b1Var2.b / 1000)));
+                    arrayList.add(u61.r(LocaleController.formatDateChat(b1Var2.b / 1000)));
                     i15 = i16;
                 }
                 String str2 = this.r;
                 int i17 = h.a;
-                t61 K2 = t61.K(h.class);
+                u61 K2 = u61.K(h.class);
                 K2.z = 3;
                 K2.q = false;
                 K2.H = b1Var2;
@@ -94,37 +94,37 @@ public final class f1 extends m71 {
                 i11 = 2;
             }
             if (this.n) {
-                arrayList.add(t61.p(32));
-                arrayList.add(t61.p(32));
-                arrayList.add(t61.p(32));
+                arrayList.add(u61.p(32));
+                arrayList.add(u61.p(32));
+                arrayList.add(u61.p(32));
             }
         }
         if (arrayList.isEmpty()) {
             return;
         }
-        arrayList.add(t61.C(null));
+        arrayList.add(u61.C(null));
     }
 
-    @Override // org.telegram.ui.Components.m71
+    @Override // org.telegram.ui.Components.n71
     public final CharSequence W() {
         return LocaleController.getString(R.string.WebHistory);
     }
 
-    @Override // org.telegram.ui.Components.m71
-    public final void X(t61 t61Var, View view) {
-        if (!t61Var.H(h.class) || this.actionBar.q()) {
+    @Override // org.telegram.ui.Components.n71
+    public final void X(u61 u61Var, View view) {
+        if (!u61Var.H(h.class) || this.actionBar.q()) {
             return;
         }
         finishFragment();
-        this.e.run((b1) t61Var.H);
+        this.e.run((b1) u61Var.H);
     }
 
-    @Override // org.telegram.ui.Components.m71
-    public final boolean Y(t61 t61Var, View view) {
+    @Override // org.telegram.ui.Components.n71
+    public final boolean Y(u61 u61Var, View view) {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.m71, org.telegram.ui.ActionBar.r2
+    @Override // org.telegram.ui.Components.n71, org.telegram.ui.ActionBar.r2
     public final View createView(Context context) {
         this.fragmentView = super.createView(context);
         org.telegram.ui.ActionBar.k kVar = this.actionBar;
@@ -147,7 +147,7 @@ public final class f1 extends m71 {
         this.s.setTypeface(AndroidUtilities.bold());
         this.s.setTextColor(getThemedColor(y6.y8));
         this.s.setOnTouchListener(new ei.d(2));
-        i12.addView(this.s, gb1.q(1.0f, 0, -1, 65, 0, 0));
+        i12.addView(this.s, kb1.q(1.0f, 0, -1, 65, 0, 0));
         org.telegram.ui.ActionBar.w0 c10 = this.actionBar.l().c(0, R.drawable.outline_header_search, getResourceProvider());
         c10.N();
         c10.H = new e1(this);
@@ -158,13 +158,13 @@ public final class f1 extends m71 {
         f7.V(searchField, i11, getResourceProvider());
         f7.E(searchField, y6.Si, getResourceProvider());
         f7.w(searchField, i11, getResourceProvider());
-        ey0 ey0Var = new ey0(context, null, 1, null);
-        this.x = ey0Var;
-        ey0Var.d.setText(LocaleController.getString(TextUtils.isEmpty(this.r) ? R.string.WebNoHistory : R.string.WebNoSearchedHistory));
+        fy0 fy0Var = new fy0(context, null, 1, null);
+        this.x = fy0Var;
+        fy0Var.d.setText(LocaleController.getString(TextUtils.isEmpty(this.r) ? R.string.WebNoHistory : R.string.WebNoSearchedHistory));
         this.x.e.setVisibility(8);
         this.x.e(false, false);
         this.x.setAnimateLayoutChange(true);
-        ((FrameLayout) this.fragmentView).addView(this.x, gb1.g(-1.0f, -1));
+        ((FrameLayout) this.fragmentView).addView(this.x, kb1.g(-1.0f, -1));
         this.a.setEmptyView(this.x);
         this.a.j(new ml(this, 23));
         return this.fragmentView;

@@ -16,9 +16,9 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_update;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.un;
+import org.telegram.ui.wn;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
 public class SavedMessagesController {
     private final int currentAccount;
@@ -35,10 +35,10 @@ public class SavedMessagesController {
     private ArrayList<SavedDialog> cachedDialogs = new ArrayList<>();
     private ArrayList<SavedDialog> loadedDialogs = new ArrayList<>();
     public ArrayList<SavedDialog> allDialogs = new ArrayList<>();
-    private final Runnable saveCacheRunnable = new ai(this, 1);
+    private final Runnable saveCacheRunnable = new bi(this, 1);
     private final a0.h checkMessagesCallbacks = new a0.h();
 
-    /* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+    /* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
     public static class SavedDialog {
         public long dialogId;
         private int lastDate;
@@ -120,7 +120,7 @@ public class SavedMessagesController {
         }
         this.saving = true;
         MessagesStorage messagesStorage = MessagesStorage.getInstance(this.currentAccount);
-        messagesStorage.getStorageQueue().postRunnable(new vg(6, this, messagesStorage));
+        messagesStorage.getStorageQueue().postRunnable(new wg(6, this, messagesStorage));
     }
 
     private ArrayList<Long> getCurrentPinnedOrder(ArrayList<SavedDialog> arrayList) {
@@ -183,7 +183,7 @@ public class SavedMessagesController {
         } catch (Exception e) {
             FileLog.e(e);
         }
-        AndroidUtilities.runOnUIThread(new ai(this, 2));
+        AndroidUtilities.runOnUIThread(new bi(this, 2));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -221,7 +221,7 @@ public class SavedMessagesController {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$hasSavedMessages$15(long j10, TLObject tLObject, TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new i4(this, tLObject, j10, 27));
+        AndroidUtilities.runOnUIThread(new j4(this, tLObject, j10, 28));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -569,7 +569,7 @@ public class SavedMessagesController {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$loadDialogs$3(ArrayList arrayList, TLObject tLObject, TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new qk(this, tLObject, arrayList, tL_error, 28));
+        AndroidUtilities.runOnUIThread(new rk(this, tLObject, arrayList, tL_error, 28));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -619,7 +619,7 @@ public class SavedMessagesController {
                 FileLog.e(e);
             }
             sQLitePreparedStatement.dispose();
-            AndroidUtilities.runOnUIThread(new ai(this, 3));
+            AndroidUtilities.runOnUIThread(new bi(this, 3));
         } catch (Throwable th2) {
             if (sQLitePreparedStatement != null) {
                 sQLitePreparedStatement.dispose();
@@ -810,7 +810,7 @@ public class SavedMessagesController {
         }
         Bundle bundle = new Bundle();
         bundle.putLong("user_id", UserConfig.getInstance(R.getCurrentAccount()).getClientUserId());
-        R.presentFragment(new un(bundle));
+        R.presentFragment(new wn(bundle));
     }
 
     public static void openSavedMessagesReminders() {
@@ -821,7 +821,7 @@ public class SavedMessagesController {
         Bundle bundle = new Bundle();
         bundle.putLong("user_id", UserConfig.getInstance(R.getCurrentAccount()).getClientUserId());
         bundle.putInt("chatMode", 1);
-        R.presentFragment(new un(bundle));
+        R.presentFragment(new wn(bundle));
     }
 
     private boolean processUpdateInternal(TLRPC.Update update) {
@@ -902,7 +902,7 @@ public class SavedMessagesController {
         this.saving = true;
         ArrayList arrayList = new ArrayList(this.allDialogs);
         MessagesStorage messagesStorage = MessagesStorage.getInstance(this.currentAccount);
-        messagesStorage.getStorageQueue().postRunnable(new p8(this, messagesStorage, arrayList, 24));
+        messagesStorage.getStorageQueue().postRunnable(new q8(this, messagesStorage, arrayList, 24));
     }
 
     private void saveCacheSchedule() {
@@ -944,7 +944,7 @@ public class SavedMessagesController {
                 }
             }
         }
-        Collections.sort(arrayList, new bi(1));
+        Collections.sort(arrayList, new ci(1));
         this.allDialogs.addAll(arrayList);
         if (z10) {
             NotificationCenter.getInstance(this.currentAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.savedMessagesDialogsUpdate, new Object[0]);
@@ -1112,7 +1112,7 @@ public class SavedMessagesController {
             return;
         }
         if (!this.loadedCache) {
-            loadCache(new ai(this, 4));
+            loadCache(new bi(this, 4));
             return;
         }
         if (z10) {
@@ -1181,11 +1181,11 @@ public class SavedMessagesController {
                 }
                 if (str2 != null) {
                     String translitSafe2 = AndroidUtilities.translitSafe(str2.toLowerCase());
-                    if (translitSafe2.startsWith(translitSafe) || vh.u(" ", translitSafe, translitSafe2)) {
+                    if (translitSafe2.startsWith(translitSafe) || wh.u(" ", translitSafe, translitSafe2)) {
                         arrayList.add(savedDialog);
                     } else if (str3 != null) {
                         String translitSafe3 = AndroidUtilities.translitSafe(str3.toLowerCase());
-                        if (translitSafe3.startsWith(translitSafe) || vh.u(" ", translitSafe, translitSafe3)) {
+                        if (translitSafe3.startsWith(translitSafe) || wh.u(" ", translitSafe, translitSafe3)) {
                             arrayList.add(savedDialog);
                         }
                     }
@@ -1230,7 +1230,7 @@ public class SavedMessagesController {
             updateSavedDialogs = true;
         }
         if (updateSavedDialogs) {
-            AndroidUtilities.runOnUIThread(new ai(this, 0));
+            AndroidUtilities.runOnUIThread(new bi(this, 0));
         }
     }
 
@@ -1508,7 +1508,7 @@ public class SavedMessagesController {
             i11++;
         }
         Collections.sort(arrayList, new s(29));
-        Collections.sort(arrayList4, new bi(0));
+        Collections.sort(arrayList4, new ci(0));
         arrayList.addAll(0, arrayList4);
         return true;
     }

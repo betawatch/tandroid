@@ -1,6 +1,6 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class c00 implements Runnable {
     public final /* synthetic */ int a;
@@ -19,7 +19,7 @@ public final /* synthetic */ class c00 implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        xb1 xb1Var;
+        cc1 cc1Var;
         switch (this.a) {
             case 0:
                 e00 e00Var = (e00) this.e;
@@ -42,17 +42,17 @@ public final /* synthetic */ class c00 implements Runnable {
                 }
                 break;
             case 1:
-                yb1 yb1Var = (yb1) this.e;
+                dc1 dc1Var = (dc1) this.e;
                 boolean z13 = this.b;
                 boolean z14 = this.c;
                 boolean z15 = this.d;
-                if (!yb1Var.s && (xb1Var = yb1Var.H) != null) {
-                    xb1Var.b(z13, z14, z15);
+                if (!dc1Var.t && (cc1Var = dc1Var.I) != null) {
+                    cc1Var.d(z13, z14, z15);
                     break;
                 }
                 break;
             default:
-                ((org.telegram.ui.gg0) this.e).B1(this.b, this.c, this.d);
+                ((org.telegram.ui.ig0) this.e).B1(this.b, this.c, this.d);
                 break;
         }
     }

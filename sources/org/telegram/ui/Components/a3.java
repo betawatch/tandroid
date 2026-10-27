@@ -3,22 +3,22 @@ package org.telegram.ui.Components;
 import j$.time.YearMonth;
 import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class a3 implements Runnable {
-    public final /* synthetic */ md0 a;
+    public final /* synthetic */ nd0 a;
     public final /* synthetic */ int b;
-    public final /* synthetic */ md0 c;
-    public final /* synthetic */ md0 d;
+    public final /* synthetic */ nd0 c;
+    public final /* synthetic */ nd0 d;
     public final /* synthetic */ int e;
     public final /* synthetic */ int f;
     public final /* synthetic */ int h;
 
-    public /* synthetic */ a3(md0 md0Var, int i10, md0 md0Var2, md0 md0Var3, int i11, int i12, int i13) {
-        this.a = md0Var;
+    public /* synthetic */ a3(nd0 nd0Var, int i10, nd0 nd0Var2, nd0 nd0Var3, int i11, int i12, int i13) {
+        this.a = nd0Var;
         this.b = i10;
-        this.c = md0Var2;
-        this.d = md0Var3;
+        this.c = nd0Var2;
+        this.d = nd0Var3;
         this.e = i11;
         this.f = i12;
         this.h = i13;
@@ -26,49 +26,49 @@ public final /* synthetic */ class a3 implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        md0 md0Var = this.a;
-        int value = md0Var.getValue();
+        nd0 nd0Var = this.a;
+        int value = nd0Var.getValue();
         int i10 = this.b;
-        md0 md0Var2 = this.c;
-        md0 md0Var3 = this.d;
+        nd0 nd0Var2 = this.c;
+        nd0 nd0Var3 = this.d;
         if (value == i10) {
-            md0Var2.setMinValue(1);
+            nd0Var2.setMinValue(1);
             try {
-                md0Var2.setMaxValue(YearMonth.of(2024, md0Var3.getValue() + 1).lengthOfMonth());
+                nd0Var2.setMaxValue(YearMonth.of(2024, nd0Var3.getValue() + 1).lengthOfMonth());
             } catch (Exception e) {
                 FileLog.e(e);
-                md0Var2.setMaxValue(31);
+                nd0Var2.setMaxValue(31);
             }
-            md0Var3.setMinValue(0);
-            md0Var3.setMaxValue(11);
+            nd0Var3.setMinValue(0);
+            nd0Var3.setMaxValue(11);
             return;
         }
-        if (md0Var.getValue() != this.e) {
-            md0Var2.setMinValue(1);
+        if (nd0Var.getValue() != this.e) {
+            nd0Var2.setMinValue(1);
             try {
-                md0Var2.setMaxValue(YearMonth.of(md0Var.getValue(), md0Var3.getValue() + 1).lengthOfMonth());
+                nd0Var2.setMaxValue(YearMonth.of(nd0Var.getValue(), nd0Var3.getValue() + 1).lengthOfMonth());
             } catch (Exception e10) {
                 FileLog.e(e10);
-                md0Var2.setMaxValue(31);
+                nd0Var2.setMaxValue(31);
             }
-            md0Var3.setMinValue(0);
-            md0Var3.setMaxValue(11);
+            nd0Var3.setMinValue(0);
+            nd0Var3.setMaxValue(11);
             return;
         }
-        md0Var3.setMinValue(0);
+        nd0Var3.setMinValue(0);
         int i11 = this.f;
-        md0Var3.setMaxValue(i11);
-        if (md0Var3.getValue() == i11) {
-            md0Var2.setMinValue(1);
-            md0Var2.setMaxValue(this.h);
+        nd0Var3.setMaxValue(i11);
+        if (nd0Var3.getValue() == i11) {
+            nd0Var2.setMinValue(1);
+            nd0Var2.setMaxValue(this.h);
             return;
         }
-        md0Var2.setMinValue(1);
+        nd0Var2.setMinValue(1);
         try {
-            md0Var2.setMaxValue(YearMonth.of(md0Var.getValue(), md0Var3.getValue() + 1).lengthOfMonth());
+            nd0Var2.setMaxValue(YearMonth.of(nd0Var.getValue(), nd0Var3.getValue() + 1).lengthOfMonth());
         } catch (Exception e11) {
             FileLog.e(e11);
-            md0Var2.setMaxValue(31);
+            nd0Var2.setMaxValue(31);
         }
     }
 }

@@ -7,38 +7,38 @@ import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.ui.Components.ea0;
-import org.telegram.ui.Components.j71;
-import org.telegram.ui.Components.mm0;
-import org.telegram.ui.Components.r71;
-import org.telegram.ui.Components.s61;
+import org.telegram.ui.Components.fa0;
+import org.telegram.ui.Components.k71;
+import org.telegram.ui.Components.nm0;
+import org.telegram.ui.Components.s71;
 import org.telegram.ui.Components.t61;
+import org.telegram.ui.Components.u61;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
-public final class f8 extends s61 {
+public final class f8 extends t61 {
     public static final /* synthetic */ int a = 0;
 
     static {
-        s61.setup(new f8());
+        t61.setup(new f8());
     }
 
-    @Override // org.telegram.ui.Components.s61
-    public final void bindView(View view, t61 t61Var, boolean z10, j71 j71Var, r71 r71Var) {
+    @Override // org.telegram.ui.Components.t61
+    public final void bindView(View view, u61 u61Var, boolean z10, k71 k71Var, s71 s71Var) {
         g8 g8Var = (g8) view;
-        String charSequence = t61Var.l.toString();
-        long j10 = t61Var.B;
-        int i10 = t61Var.z;
-        boolean z11 = t61Var.q;
+        String charSequence = u61Var.l.toString();
+        long j10 = u61Var.B;
+        int i10 = u61Var.z;
+        boolean z11 = u61Var.q;
         TextView textView = g8Var.c;
         TextView textView2 = g8Var.b;
         textView2.setText(w7.Y(charSequence));
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
         if (j10 < 0) {
             spannableStringBuilder.append((CharSequence) LocaleController.getString(R.string.Loading));
-            spannableStringBuilder.setSpan(new ea0(AndroidUtilities.dp(35.0f), textView), 0, spannableStringBuilder.length(), 33);
+            spannableStringBuilder.setSpan(new fa0(AndroidUtilities.dp(35.0f), textView), 0, spannableStringBuilder.length(), 33);
         } else {
-            spannableStringBuilder.append((CharSequence) l0.r(j10, false));
+            spannableStringBuilder.append((CharSequence) l0.s(j10, false));
         }
         if (i10 > 0) {
             spannableStringBuilder = new SpannableStringBuilder(LocaleController.formatSpannable(R.string.WalletPreviousWalletLastUsed, spannableStringBuilder, LocaleController.formatShortDateTime(i10)));
@@ -49,8 +49,8 @@ public final class f8 extends s61 {
         g8Var.d.setAlpha(z11 ? 0.5f : 1.0f);
     }
 
-    @Override // org.telegram.ui.Components.s61
-    public final View createView(Context context, mm0 mm0Var, int i10, int i11, org.telegram.ui.ActionBar.u6 u6Var) {
+    @Override // org.telegram.ui.Components.t61
+    public final View createView(Context context, nm0 nm0Var, int i10, int i11, org.telegram.ui.ActionBar.u6 u6Var) {
         return new g8(context, u6Var);
     }
 }

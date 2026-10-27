@@ -24,17 +24,17 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.ds;
-import org.telegram.ui.Components.gb1;
-import org.telegram.ui.Components.k80;
-import org.telegram.ui.Components.q11;
-import org.telegram.ui.Components.vw0;
-import org.telegram.ui.Components.xj0;
+import org.telegram.ui.Components.kb1;
+import org.telegram.ui.Components.l80;
+import org.telegram.ui.Components.r11;
+import org.telegram.ui.Components.ww0;
+import org.telegram.ui.Components.yj0;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public abstract class r extends m {
     public static final int[] Q1 = {21600, 43200, 86400, 172800};
-    public q11 A1;
+    public r11 A1;
     public Utilities.Callback B1;
     public Utilities.Callback C1;
     public p D1;
@@ -53,7 +53,7 @@ public abstract class r extends m {
     public final ImageView S0;
     public final ImageView T0;
     public final l U0;
-    public k80 V0;
+    public l80 V0;
     public boolean W0;
     public int X0;
     public Drawable Y0;
@@ -81,12 +81,12 @@ public abstract class r extends m {
     public final RectF u1;
     public final RectF v1;
     public final Path w1;
-    public q11 x1;
+    public r11 x1;
     public Path y1;
     public Paint z1;
 
-    public r(Context context, FrameLayout frameLayout, vw0 vw0Var, FrameLayout frameLayout2, di.b bVar, org.telegram.ui.Components.la laVar) {
-        super(context, frameLayout, vw0Var, frameLayout2, bVar, laVar);
+    public r(Context context, FrameLayout frameLayout, ww0 ww0Var, FrameLayout frameLayout2, di.b bVar, org.telegram.ui.Components.la laVar) {
+        super(context, frameLayout, ww0Var, frameLayout2, bVar, laVar);
         this.W0 = true;
         this.X0 = 0;
         ib ibVar = (ib) this;
@@ -144,7 +144,7 @@ public abstract class r extends m {
         ImageView.ScaleType scaleType = ImageView.ScaleType.CENTER;
         imageView.setScaleType(scaleType);
         imageView.setContentDescription(LocaleController.getString(R.string.AccDescrVideoMessage));
-        addView(imageView, gb1.h(44, 44.0f, 85, 0.0f, 0.0f, 11.0f, 6.0f));
+        addView(imageView, kb1.h(44, 44.0f, 85, 0.0f, 0.0f, 11.0f, 6.0f));
         imageView.setOnClickListener(new ai.s(ibVar, 20));
         ImageView imageView2 = new ImageView(context);
         this.T0 = imageView2;
@@ -155,7 +155,7 @@ public abstract class r extends m {
         imageView2.setScaleType(scaleType);
         imageView2.setContentDescription(LocaleController.getString(R.string.StoryPeriodHint));
         A(86400, false);
-        addView(imageView2, gb1.h(44, 44.0f, 85, 0.0f, 0.0f, 51.0f, 6.0f));
+        addView(imageView2, kb1.h(44, 44.0f, 85, 0.0f, 0.0f, 51.0f, 6.0f));
         imageView2.setOnClickListener(new bi.w0(ibVar, frameLayout, bVar, 7));
     }
 
@@ -284,10 +284,10 @@ public abstract class r extends m {
                         imageView.setVisibility(4);
                         this.T0.setVisibility(4);
                         qVar.g = true;
-                        xj0 xj0Var = qVar.h;
-                        xj0Var.T(0.0f, true);
+                        yj0 yj0Var = qVar.h;
+                        yj0Var.T(0.0f, true);
                         if (qVar.f) {
-                            xj0Var.start();
+                            yj0Var.start();
                         }
                         p pVar2 = this.D1;
                         if (pVar2 != null) {
@@ -339,9 +339,9 @@ public abstract class r extends m {
             this.L1 = false;
             this.M1 = false;
             qVar.g = false;
-            xj0 xj0Var2 = qVar.h;
-            xj0Var2.stop();
-            xj0Var2.T(0.0f, true);
+            yj0 yj0Var2 = qVar.h;
+            yj0Var2.stop();
+            yj0Var2.T(0.0f, true);
             this.O1 = true;
             this.e1 = System.currentTimeMillis();
             this.K0 = true;
@@ -369,7 +369,7 @@ public abstract class r extends m {
             pVar3.r = new n(ibVar, 2);
             eb ebVar = sbVar.h0;
             sbVar.q1 = pVar3;
-            ebVar.addView(pVar3, gb1.g(-1.0f, -1));
+            ebVar.addView(pVar3, kb1.g(-1.0f, -1));
             return true;
         }
         return true;
@@ -449,7 +449,7 @@ public abstract class r extends m {
             }
             if (f11 > 0.0f) {
                 if (this.x1 == null) {
-                    this.x1 = new q11(LocaleController.getString(R.string.SlideToCancel2), 15.0f, null);
+                    this.x1 = new r11(LocaleController.getString(R.string.SlideToCancel2), 15.0f, null);
                 }
                 if (this.y1 == null) {
                     Path path = new Path();
@@ -479,7 +479,7 @@ public abstract class r extends m {
             }
             if (e10 > 0.0f) {
                 if (this.A1 == null) {
-                    this.A1 = new q11(LocaleController.getString(R.string.CancelRound), f12, AndroidUtilities.bold());
+                    this.A1 = new r11(LocaleController.getString(R.string.CancelRound), f12, AndroidUtilities.bold());
                 }
                 this.A1.p = (int) ((rectF.width() - AndroidUtilities.dp(116.0f)) - r6Var.c());
                 float width = ((rectF.width() / 4.0f) * f13) + (rectF.centerX() - (this.A1.l() / 2.0f));
@@ -681,12 +681,12 @@ public abstract class r extends m {
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
         q qVar = this.a1;
-        xj0 xj0Var = qVar.h;
+        yj0 yj0Var = qVar.h;
         qVar.f = true;
         if (qVar.g) {
-            xj0Var.start();
+            yj0Var.start();
         }
-        xj0Var.R(qVar.i);
+        yj0Var.R(qVar.i);
     }
 
     @Override // fi.m, android.view.ViewGroup, android.view.View
@@ -694,9 +694,9 @@ public abstract class r extends m {
         super.onDetachedFromWindow();
         q qVar = this.a1;
         qVar.f = false;
-        xj0 xj0Var = qVar.h;
-        xj0Var.stop();
-        xj0Var.R(null);
+        yj0 yj0Var = qVar.h;
+        yj0Var.stop();
+        yj0Var.R(null);
     }
 
     public void setAmplitude(double d) {

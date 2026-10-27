@@ -18,15 +18,15 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.ActionBar.ActionBarLayout;
-import org.telegram.ui.Components.md0;
+import org.telegram.ui.Components.nd0;
 import org.telegram.ui.ExternalActionActivity;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.lh0;
-import org.telegram.ui.ph1;
-import org.telegram.ui.qo0;
-import org.telegram.ui.r41;
+import org.telegram.ui.nh0;
+import org.telegram.ui.rh1;
+import org.telegram.ui.so0;
+import org.telegram.ui.u41;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class u3 implements DialogInterface.OnDismissListener {
     public final /* synthetic */ int a;
@@ -123,7 +123,7 @@ public final /* synthetic */ class u3 implements DialogInterface.OnDismissListen
                 AndroidUtilities.hideKeyboard((EditText) obj);
                 break;
             case 9:
-                ((ai.i) obj2).run(Integer.valueOf(((md0) obj).getValue()));
+                ((ai.i) obj2).run(Integer.valueOf(((nd0) obj).getValue()));
                 break;
             case 10:
                 ExternalActionActivity externalActionActivity = (ExternalActionActivity) obj2;
@@ -165,23 +165,23 @@ public final /* synthetic */ class u3 implements DialogInterface.OnDismissListen
                 launchActivity.E0.remove(e2Var);
                 break;
             case 12:
-                qo0 qo0Var = (qo0) obj;
+                so0 so0Var = (so0) obj;
                 if (!((boolean[]) obj2)[0]) {
-                    qo0Var.run(Boolean.FALSE);
+                    so0Var.run(Boolean.FALSE);
                     break;
                 }
                 break;
             case 13:
-                r41 r41Var = (r41) obj;
+                u41 u41Var = (u41) obj;
                 if (!((boolean[]) obj2)[0]) {
-                    r41Var.c(true);
+                    u41Var.c(true);
                 }
-                r41Var.w = null;
+                u41Var.w = null;
                 break;
             case 14:
-                ph1 ph1Var = (ph1) obj;
+                rh1 rh1Var = (rh1) obj;
                 if (!((boolean[]) obj2)[0]) {
-                    ph1Var.u0.b();
+                    rh1Var.u0.b();
                     break;
                 }
                 break;
@@ -219,9 +219,9 @@ public final /* synthetic */ class u3 implements DialogInterface.OnDismissListen
                 }
                 break;
             default:
-                lh0 lh0Var = (lh0) obj;
+                nh0 nh0Var = (nh0) obj;
                 if (!((AtomicBoolean) obj2).get()) {
-                    lh0Var.run();
+                    nh0Var.run();
                     break;
                 }
                 break;

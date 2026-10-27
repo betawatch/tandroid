@@ -2,7 +2,7 @@ package org.telegram.ui.Wallet;
 
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class w8 implements Utilities.Callback3 {
     public final /* synthetic */ int a;
@@ -25,7 +25,7 @@ public final /* synthetic */ class w8 implements Utilities.Callback3 {
                 final Utilities.Callback callback = (Utilities.Callback) obj3;
                 final i9 i9Var = this.b;
                 final int i10 = 0;
-                this.c.b0(i9Var.f, i9Var.h, this.d, str, ((Boolean) obj2).booleanValue() ? i9Var.n0() : null, null, i9Var.n, new Utilities.Callback() { // from class: org.telegram.ui.Wallet.z8
+                this.c.d0(i9Var.f, i9Var.h, this.d, str, ((Boolean) obj2).booleanValue() ? i9Var.n0() : null, null, i9Var.n, new Utilities.Callback() { // from class: org.telegram.ui.Wallet.z8
                     @Override // org.telegram.messenger.Utilities.Callback
                     public final void run(Object obj4) {
                         String str2 = (String) obj4;
@@ -59,7 +59,7 @@ public final /* synthetic */ class w8 implements Utilities.Callback3 {
                 final Utilities.Callback callback2 = (Utilities.Callback) obj3;
                 final i9 i9Var2 = this.b;
                 final int i11 = 1;
-                this.c.b0(i9Var2.f, i9Var2.h, this.d, str2, ((Boolean) obj2).booleanValue() ? i9Var2.n0() : null, null, i9Var2.n, new Utilities.Callback() { // from class: org.telegram.ui.Wallet.z8
+                this.c.d0(i9Var2.f, i9Var2.h, this.d, str2, ((Boolean) obj2).booleanValue() ? i9Var2.n0() : null, null, i9Var2.n, new Utilities.Callback() { // from class: org.telegram.ui.Wallet.z8
                     @Override // org.telegram.messenger.Utilities.Callback
                     public final void run(Object obj4) {
                         String str22 = (String) obj4;

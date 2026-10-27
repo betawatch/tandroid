@@ -25,24 +25,24 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_keyboard;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.ChatActivityEnterView;
-import org.telegram.ui.Components.aw0;
+import org.telegram.ui.Components.bw0;
 import org.telegram.ui.Components.cg;
 import org.telegram.ui.Components.ds;
 import org.telegram.ui.Components.go;
-import org.telegram.ui.Components.k80;
+import org.telegram.ui.Components.l80;
 import org.telegram.ui.Components.qc;
 import org.telegram.ui.Components.sl;
 import org.telegram.ui.Components.sy;
 import org.telegram.ui.Components.wc;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.bd;
-import org.telegram.ui.c61;
-import org.telegram.ui.cy;
+import org.telegram.ui.ey;
+import org.telegram.ui.f61;
 import org.telegram.ui.nd;
-import org.telegram.ui.nq;
-import org.telegram.ui.un;
+import org.telegram.ui.pq;
+import org.telegram.ui.wn;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class y2 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -88,7 +88,7 @@ public final /* synthetic */ class y2 implements Utilities.Callback {
                 Long l4 = (Long) obj;
                 q4 q4Var = ((z2) obj5).a;
                 SendMessagesHelper.getInstance(q4Var.r2).sendSticker(tL_document, (String) obj3, q4Var.q1, null, null, q4Var.D1.a, null, null, true, 0, 0, false, this.e, null, l4.longValue(), q4Var.Q1.getSendMonoForumPeerId(), q4Var.Q1.getSendMessageSuggestionParams());
-                q4Var.Q1.l(tL_document);
+                q4Var.Q1.k(tL_document);
                 q4Var.Q1.setFieldText("");
                 q4Var.i0(l4.longValue() <= 0);
                 break;
@@ -108,9 +108,9 @@ public final /* synthetic */ class y2 implements Utilities.Callback {
                     if (R2 != null) {
                         storyItem.dialogId = k8Var.b.longValue();
                         y9 createOverlayStoryViewer = R2.createOverlayStoryViewer();
-                        createOverlayStoryViewer.F(u3Var.getContext(), storyItem, null);
+                        createOverlayStoryViewer.G(u3Var.getContext(), storyItem, null);
                         createOverlayStoryViewer.o1 = new s3(y9Var, 0);
-                        y9Var.P();
+                        y9Var.Q();
                         break;
                     }
                 }
@@ -130,7 +130,7 @@ public final /* synthetic */ class y2 implements Utilities.Callback {
                     h7Var.getClass();
                     ArrayList arrayList = new ArrayList(1);
                     arrayList.add(storyItem2);
-                    h7Var.c0(i14, j10, arrayList);
+                    h7Var.f0(i14, j10, arrayList);
                     formatString = LocaleController.formatString(R.string.StoryRemovedFromAlbumX, a7Var.b);
                 }
                 new wc(q4Var2.R0, u6Var2).R(R.raw.contact_check, 36, AndroidUtilities.replaceTags(formatString)).j();
@@ -184,27 +184,27 @@ public final /* synthetic */ class y2 implements Utilities.Callback {
                     Bundle bundle = new Bundle();
                     bundle.putLong("user_id", user2.id);
                     cg cgVar = new cg(bundle, user2, user, j11);
-                    un unVar = chatActivityEnterView.P2;
-                    if (unVar != null) {
-                        unVar.presentFragment(cgVar);
+                    wn wnVar = chatActivityEnterView.P2;
+                    if (wnVar != null) {
+                        wnVar.presentFragment(cgVar);
                         break;
                     }
                 }
                 break;
             case 6:
-                sl.O((sl) obj5, (un) obj4, (TLRPC.TL_messageMediaGeo) obj3, (org.telegram.ui.ActionBar.u6) obj2, (Long) obj);
+                sl.O((sl) obj5, (wn) obj4, (TLRPC.TL_messageMediaGeo) obj3, (org.telegram.ui.ActionBar.u6) obj2, (Long) obj);
                 break;
             case 7:
-                sl.S((sl) obj5, (un) obj4, (TLRPC.TL_messageMediaVenue) obj3, (org.telegram.ui.ActionBar.u6) obj2);
+                sl.S((sl) obj5, (wn) obj4, (TLRPC.TL_messageMediaVenue) obj3, (org.telegram.ui.ActionBar.u6) obj2);
                 break;
             case 8:
                 go goVar = (go) obj5;
-                un unVar2 = (un) obj4;
+                wn wnVar2 = (wn) obj4;
                 TLRPC.TL_messageMediaPoll tL_messageMediaPoll = (TLRPC.TL_messageMediaPoll) obj3;
                 ArrayList arrayList2 = (ArrayList) obj2;
                 Long l10 = (Long) obj;
-                if (unVar2.c()) {
-                    org.telegram.ui.Components.g5.K(unVar2.getParentActivity(), unVar2.a(), new a1.d(goVar, tL_messageMediaPoll, arrayList2, l10, 10));
+                if (wnVar2.c()) {
+                    org.telegram.ui.Components.g5.K(wnVar2.getParentActivity(), wnVar2.a(), new a1.d(goVar, tL_messageMediaPoll, arrayList2, l10, 10));
                     break;
                 } else {
                     goVar.j0.e(tL_messageMediaPoll, goVar.O, goVar.m1, arrayList2, true, 0, l10.longValue());
@@ -232,19 +232,19 @@ public final /* synthetic */ class y2 implements Utilities.Callback {
                 }
                 break;
             case 10:
-                aw0.p((aw0) obj5, (HashSet) obj4, (TL_stories.StoryItem) obj3, (k80) obj2, (a7) obj);
+                bw0.p((bw0) obj5, (HashSet) obj4, (TL_stories.StoryItem) obj3, (l80) obj2, (a7) obj);
                 break;
             case 11:
-                cy cyVar = (cy) obj5;
-                cyVar.Y4(cyVar.getMessagesController().getChat((Long) obj4), (Runnable) obj, new nq(cyVar, (nd) obj3, (org.telegram.ui.ActionBar.r2) obj2, i13));
+                ey eyVar = (ey) obj5;
+                eyVar.Y4(eyVar.getMessagesController().getChat((Long) obj4), (Runnable) obj, new pq(eyVar, (nd) obj3, (org.telegram.ui.ActionBar.r2) obj2, i13));
                 break;
             case 12:
-                c61 c61Var = (c61) obj5;
+                f61 f61Var = (f61) obj5;
                 String[] strArr = (String[]) obj4;
                 String str2 = (String) obj3;
                 LinkedHashSet linkedHashSet = (LinkedHashSet) obj2;
                 Runnable runnable2 = (Runnable) obj;
-                int i16 = c61Var.V;
+                int i16 = f61Var.V;
                 if (ConnectionsManager.getInstance(i16).getConnectionState() != 3) {
                     runnable2.run();
                     break;
@@ -252,17 +252,17 @@ public final /* synthetic */ class y2 implements Utilities.Callback {
                     if (strArr != null && strArr.length != 0) {
                         str = strArr[0];
                     }
-                    MediaDataController.getInstance(i16).searchStickers(true, str, str2, new org.telegram.ui.y(c61Var, linkedHashSet, runnable2, 13));
+                    MediaDataController.getInstance(i16).searchStickers(true, str, str2, new org.telegram.ui.y(f61Var, linkedHashSet, runnable2, 13));
                     break;
                 }
             case 13:
-                c61 c61Var2 = (c61) obj5;
+                f61 f61Var2 = (f61) obj5;
                 String str3 = (String) obj3;
                 ArrayList arrayList5 = (ArrayList) obj4;
                 HashMap hashMap = (HashMap) obj2;
                 Runnable runnable3 = (Runnable) obj;
-                int i17 = c61Var2.V;
-                if (c61Var2.W != 4) {
+                int i17 = f61Var2.V;
+                if (f61Var2.W != 4) {
                     runnable3.run();
                     break;
                 } else {
@@ -313,7 +313,7 @@ public final /* synthetic */ class y2 implements Utilities.Callback {
                         }
                     }
                     if (allStickers != null && !allStickers.isEmpty() && str3.length() > 1) {
-                        MediaDataController.getInstance(i17).getEmojiSuggestions(c61.b2, str3, false, new a1.d(allStickers, hashMap, arrayList5, runnable3, 18), false);
+                        MediaDataController.getInstance(i17).getEmojiSuggestions(f61.b2, str3, false, new a1.d(allStickers, hashMap, arrayList5, runnable3, 18), false);
                         break;
                     }
                 }
@@ -359,7 +359,7 @@ public final /* synthetic */ class y2 implements Utilities.Callback {
                     if (tL_payments_checkedGiftCode.from_id == null) {
                         TLRPC.TL_premiumGiftOption tL_premiumGiftOption = new TLRPC.TL_premiumGiftOption();
                         tL_premiumGiftOption.months = tL_payments_checkedGiftCode.months;
-                        TLRPC.User i22 = r2Var instanceof un ? ((un) r2Var).i() : null;
+                        TLRPC.User i22 = r2Var instanceof wn ? ((wn) r2Var).i() : null;
                         if (i22 == null || i22.self) {
                             i22 = new TLRPC.TL_user();
                         }
@@ -398,7 +398,7 @@ public final /* synthetic */ class y2 implements Utilities.Callback {
                 }
                 p1Var.dismiss();
                 if (tL_error != null) {
-                    AndroidUtilities.runOnUIThread(new vi.i0(9, a1Var3, tL_error));
+                    AndroidUtilities.runOnUIThread(new vi.k0(9, a1Var3, tL_error));
                     break;
                 } else {
                     p1Var.dismiss();

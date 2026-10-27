@@ -7,7 +7,7 @@ import org.telegram.messenger.MediaController;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class w10 implements View.OnLongClickListener {
     public final /* synthetic */ int a;
@@ -32,7 +32,7 @@ public final /* synthetic */ class w10 implements View.OnLongClickListener {
                 int i11 = org.telegram.ui.ActionBar.y6.G8;
                 org.telegram.ui.ActionBar.f7.i(i11, c1Var, fragmentContextView.q0);
                 org.telegram.ui.ActionBar.c1 c1Var2 = fragmentContextView.I;
-                c1Var2.N = fragmentContextView.h instanceof org.telegram.ui.un;
+                c1Var2.N = fragmentContextView.h instanceof org.telegram.ui.wn;
                 c1Var2.F.setShader(null);
                 c1Var2.h = null;
                 Bitmap bitmap = c1Var2.f;
@@ -60,16 +60,16 @@ public final /* synthetic */ class w10 implements View.OnLongClickListener {
                 MessagesController.getGlobalNotificationsSettings().edit().putInt("speedhint", -15).apply();
                 return true;
             case 1:
-                le0 le0Var = (le0) obj;
-                le0Var.r.setText("");
-                fi.t8.a(le0Var.s, true);
-                Drawable drawable = le0Var.a;
-                if (drawable instanceof uc0) {
-                    ((uc0) drawable).x();
+                me0 me0Var = (me0) obj;
+                me0Var.r.setText("");
+                fi.t8.a(me0Var.s, true);
+                Drawable drawable = me0Var.a;
+                if (drawable instanceof vc0) {
+                    ((vc0) drawable).x();
                 }
                 return true;
             default:
-                return mr0.q((mr0) obj);
+                return nr0.q((nr0) obj);
         }
     }
 }

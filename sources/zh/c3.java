@@ -8,34 +8,34 @@ import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.Components.qc;
 import org.telegram.ui.Components.wc;
 import org.telegram.ui.Components.z00;
-import org.telegram.ui.un;
+import org.telegram.ui.wn;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
-public final class c3 extends un {
-    public boolean kd;
-    public final /* synthetic */ TL_stars.TL_starGiftUnique ld;
-    public final /* synthetic */ long md;
+public final class c3 extends wn {
+    public boolean od;
+    public final /* synthetic */ TL_stars.TL_starGiftUnique pd;
+    public final /* synthetic */ long qd;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public c3(Bundle bundle, TL_stars.TL_starGiftUnique tL_starGiftUnique, long j10) {
         super(bundle);
-        this.ld = tL_starGiftUnique;
-        this.md = j10;
-        this.kd = false;
+        this.pd = tL_starGiftUnique;
+        this.qd = j10;
+        this.od = false;
     }
 
-    @Override // org.telegram.ui.un, org.telegram.ui.ActionBar.r2
+    @Override // org.telegram.ui.wn, org.telegram.ui.ActionBar.r2
     public final void onBecomeFullyVisible() {
         super.onBecomeFullyVisible();
-        if (this.kd) {
+        if (this.od) {
             return;
         }
-        this.kd = true;
-        qc O = wc.b0(this).O(this.ld.getDocument(), LocaleController.getString(R.string.BoughtResoldGiftToTitle), LocaleController.formatString(R.string.BoughtResoldGiftToText, DialogObject.getShortName(this.currentAccount, this.md)));
+        this.od = true;
+        qc O = wc.b0(this).O(this.pd.getDocument(), LocaleController.getString(R.string.BoughtResoldGiftToTitle), LocaleController.formatString(R.string.BoughtResoldGiftToText, DialogObject.getShortName(this.currentAccount, this.qd)));
         O.s = false;
         O.j();
-        z00 z00Var = this.y9;
+        z00 z00Var = this.C9;
         if (z00Var != null) {
             z00Var.c(true);
         }

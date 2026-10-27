@@ -13,7 +13,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class p5 implements Comparator {
     public final /* synthetic */ int a;
@@ -46,20 +46,20 @@ public final /* synthetic */ class p5 implements Comparator {
                 TL_stories.PeerStories peerStories2 = (TL_stories.PeerStories) obj2;
                 long peerDialogId = DialogObject.getPeerDialogId(peerStories.peer);
                 long peerDialogId2 = DialogObject.getPeerDialogId(peerStories2.peer);
-                boolean K = h7Var.K(peerDialogId);
-                boolean K2 = h7Var.K(peerDialogId2);
-                boolean J = h7Var.J(peerDialogId);
-                boolean J2 = h7Var.J(peerDialogId2);
-                boolean F = h7Var.F(peerDialogId);
-                boolean F2 = h7Var.F(peerDialogId2);
-                if (F != F2) {
-                    return (F2 ? 1 : 0) - (F ? 1 : 0);
+                boolean M = h7Var.M(peerDialogId);
+                boolean M2 = h7Var.M(peerDialogId2);
+                boolean L = h7Var.L(peerDialogId);
+                boolean L2 = h7Var.L(peerDialogId2);
+                boolean H = h7Var.H(peerDialogId);
+                boolean H2 = h7Var.H(peerDialogId2);
+                if (H != H2) {
+                    return (H2 ? 1 : 0) - (H ? 1 : 0);
                 }
-                if (K != K2) {
-                    return (K2 ? 1 : 0) - (K ? 1 : 0);
+                if (M != M2) {
+                    return (M2 ? 1 : 0) - (M ? 1 : 0);
                 }
-                if (J != J2) {
-                    return (J2 ? 1 : 0) - (J ? 1 : 0);
+                if (L != L2) {
+                    return (L2 ? 1 : 0) - (L ? 1 : 0);
                 }
                 boolean isService = UserObject.isService(peerDialogId);
                 boolean isService2 = UserObject.isService(peerDialogId2);

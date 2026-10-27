@@ -1,8 +1,8 @@
 package org.telegram.ui.Wallet;
 
-import org.telegram.ui.nc0;
+import org.telegram.ui.pc0;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class l7 implements Runnable {
     public final /* synthetic */ int a;
@@ -66,7 +66,7 @@ public final /* synthetic */ class l7 implements Runnable {
                     t7Var3.q0 = false;
                     t7Var3.p0 = true;
                     t7Var3.removeCallbacks(t7Var3.B1);
-                    ((nc0) t7Var3.d.b).X();
+                    ((pc0) t7Var3.d.b).X();
                     t7Var3.getParent().requestDisallowInterceptTouchEvent(true);
                     t7Var3.performHapticFeedback(4);
                     g7 j12 = t7Var3.j(t7Var3.g0);

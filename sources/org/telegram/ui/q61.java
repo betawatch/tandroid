@@ -1,23 +1,24 @@
 package org.telegram.ui;
 
-import android.view.View;
-
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public final class q61 implements View.OnClickListener {
-    public final /* synthetic */ z61 a;
+public final class q61 extends g.o {
+    public final /* synthetic */ s61 c;
 
-    public q61(z61 z61Var) {
-        this.a = z61Var;
+    public q61(s61 s61Var) {
+        this.c = s61Var;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        org.telegram.ui.Components.ak0 ak0Var = this.a.d;
-        if (ak0Var.b() || ak0Var.getAnimatedDrawable() == null) {
-            return;
+    @Override // g.o
+    public final int i(int i10) {
+        int i11;
+        s61 s61Var = this.c;
+        org.telegram.ui.Components.vz vzVar = s61Var.X;
+        org.telegram.ui.Components.k71 k71Var = s61Var.d0;
+        if (k71Var == null) {
+            return vzVar.J;
         }
-        ak0Var.getAnimatedDrawable().M(40);
-        ak0Var.d();
+        org.telegram.ui.Components.u61 G = k71Var.G(i10 - 1);
+        return (G == null || (i11 = G.u) == -1) ? vzVar.J : i11;
     }
 }

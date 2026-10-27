@@ -11,7 +11,7 @@ import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class c3 extends FrameLayout {
     public final LinearLayout a;
@@ -33,37 +33,37 @@ public final class c3 extends FrameLayout {
         linearLayout.setPadding(AndroidUtilities.dp(32.0f), AndroidUtilities.dp(24.0f), AndroidUtilities.dp(32.0f), AndroidUtilities.dp(24.0f));
         linearLayout.setOrientation(1);
         linearLayout.setGravity(3);
-        addView(linearLayout, org.telegram.ui.Components.gb1.i(-2, -2, 17));
+        addView(linearLayout, org.telegram.ui.Components.kb1.i(-2, -2, 17));
         org.telegram.ui.Components.y9 y9Var = new org.telegram.ui.Components.y9(context);
         this.c = y9Var;
-        linearLayout.addView(y9Var, org.telegram.ui.Components.gb1.r(100, 100));
+        linearLayout.addView(y9Var, org.telegram.ui.Components.kb1.r(100, 100));
         TextView textView = new TextView(context);
         this.d = textView;
         textView.setTextSize(1, 19.0f);
         textView.setTypeface(AndroidUtilities.bold());
         textView.setTextColor(-1);
-        TextView e = org.telegram.messenger.vh.e(linearLayout, textView, org.telegram.ui.Components.gb1.x(-2, -2, 3, 0, 4, 0, 2), context);
+        TextView e = org.telegram.messenger.wh.e(linearLayout, textView, org.telegram.ui.Components.kb1.x(-2, -2, 3, 0, 4, 0, 2), context);
         this.e = e;
         e.setTextSize(1, 15.0f);
         e.setTextColor(-1);
         e.setSingleLine(false);
         e.setMaxLines(3);
-        TextView e10 = org.telegram.messenger.vh.e(linearLayout, e, org.telegram.ui.Components.gb1.x(-2, -2, 3, 0, 0, 0, 1), context);
+        TextView e10 = org.telegram.messenger.wh.e(linearLayout, e, org.telegram.ui.Components.kb1.x(-2, -2, 3, 0, 0, 0, 1), context);
         this.f = e10;
         e10.setTextSize(1, 12.0f);
         e10.setTextColor(-1);
         e10.setAlpha(0.4f);
-        linearLayout.addView(e10, org.telegram.ui.Components.gb1.u(-2, -2, 3));
+        linearLayout.addView(e10, org.telegram.ui.Components.kb1.u(-2, -2, 3));
         fi.d dVar = new fi.d(context, null, true);
         this.h = dVar;
         dVar.setMinWidth(AndroidUtilities.dp(140.0f));
         dVar.i(LocaleController.getString(R.string.Refresh), false, true);
-        linearLayout.addView(dVar, org.telegram.ui.Components.gb1.x(-2, 40, 3, 0, 12, 0, 0));
+        linearLayout.addView(dVar, org.telegram.ui.Components.kb1.x(-2, 40, 3, 0, 12, 0, 0));
     }
 
     public final void a(String str, String str2) {
         this.d.setText(LocaleController.getString(R.string.WebErrorTitle));
-        org.telegram.messenger.vh.o(R.string.WebErrorInfoBot, new Object[]{str}, this.e);
+        org.telegram.messenger.wh.o(R.string.WebErrorInfoBot, new Object[]{str}, this.e);
         this.f.setText(str2);
     }
 

@@ -22,7 +22,7 @@ import java.io.Serializable;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class t00 extends FrameLayout {
     public final /* synthetic */ int a = 1;
@@ -45,7 +45,7 @@ public final class t00 extends FrameLayout {
             return;
         }
         textViewArr[1].setText(str);
-        ((t80) this.e).G = true;
+        ((u80) this.e).G = true;
         AnimatorSet animatorSet = new AnimatorSet();
         animatorSet.setDuration(180L);
         animatorSet.setInterpolator(ds.g);
@@ -376,9 +376,9 @@ public final class t00 extends FrameLayout {
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     /* JADX WARN: Type inference failed for: r1v0, types: [android.widget.TextView[], java.io.Serializable] */
-    public t00(t80 t80Var, Context context, boolean z10) {
+    public t00(u80 u80Var, Context context, boolean z10) {
         super(context);
-        this.e = t80Var;
+        this.e = u80Var;
         this.d = new TextView[2];
         this.b = !z10;
         setBackground(null);
@@ -387,7 +387,7 @@ public final class t00 extends FrameLayout {
         if (!z10) {
             view.setBackground(org.telegram.ui.ActionBar.o6.f(new float[]{4.0f}, org.telegram.ui.ActionBar.y6.Oh));
         }
-        addView(view, gb1.h(-1, -1.0f, 0, 16.0f, z10 ? 0.0f : 16.0f, 16.0f, 16.0f));
+        addView(view, kb1.h(-1, -1.0f, 0, 16.0f, z10 ? 0.0f : 16.0f, 16.0f, 16.0f));
         for (int i10 = 0; i10 < 2; i10++) {
             ((TextView[]) this.d)[i10] = new TextView(context);
             ((TextView[]) this.d)[i10].setFocusable(false);
@@ -405,7 +405,7 @@ public final class t00 extends FrameLayout {
             ((TextView[]) this.d)[i10].setImportantForAccessibility(2);
             ((TextView[]) this.d)[i10].setTextSize(1, 14.0f);
             ((TextView[]) this.d)[i10].setPadding(0, 0, 0, this.b ? 0 : AndroidUtilities.dp(13.0f));
-            addView(((TextView[]) this.d)[i10], gb1.h(-2, -2.0f, 17, 24.0f, 0.0f, 24.0f, 0.0f));
+            addView(((TextView[]) this.d)[i10], kb1.h(-2, -2.0f, 17, 24.0f, 0.0f, 24.0f, 0.0f));
             if (i10 == 1) {
                 ((TextView[]) this.d)[i10].setAlpha(0.0f);
             }

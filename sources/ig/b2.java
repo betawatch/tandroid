@@ -11,10 +11,10 @@ import org.telegram.messenger.Emoji;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.d61;
+import org.telegram.ui.Components.e61;
 import org.telegram.ui.Components.rq;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class b2 implements Runnable {
     public final /* synthetic */ d2 a;
@@ -65,12 +65,12 @@ public final class b2 implements Runnable {
         HashMap hashMap3 = d2Var.H;
         HashMap hashMap4 = d2Var.I;
         ArrayList arrayList = d2Var.F;
-        d61 d61Var = d2Var.e;
+        e61 e61Var = d2Var.e;
         int i13 = d2Var.c;
         if (TextUtils.isEmpty(d2Var.R)) {
             return;
         }
-        rq progressDrawable = d61Var.b.h.getProgressDrawable();
+        rq progressDrawable = e61Var.b.h.getProgressDrawable();
         progressDrawable.e = true;
         progressDrawable.b = System.currentTimeMillis();
         progressDrawable.invalidateSelf();
@@ -144,11 +144,11 @@ public final class b2 implements Runnable {
         }
         if (allStickers != null && !allStickers.isEmpty() && d2Var.R.length() > i11) {
             String[] currentKeyboardLanguage = AndroidUtilities.getCurrentKeyboardLanguage();
-            if (!Arrays.equals(d61Var.a.b(), currentKeyboardLanguage)) {
+            if (!Arrays.equals(e61Var.a.b(), currentKeyboardLanguage)) {
                 MediaDataController.getInstance(i10).fetchNewEmojiKeywords(currentKeyboardLanguage);
             }
-            d61Var.a.i(currentKeyboardLanguage);
-            MediaDataController.getInstance(i10).getEmojiSuggestions(d61Var.a.b(), d2Var.R, false, new i2.z(this, i14, allStickers, 1), false);
+            e61Var.a.i(currentKeyboardLanguage);
+            MediaDataController.getInstance(i10).getEmojiSuggestions(e61Var.a.b(), d2Var.R, false, new i2.z(this, i14, allStickers, 1), false);
         }
         ArrayList<TLRPC.TL_messages_stickerSet> stickerSets = MediaDataController.getInstance(i10).getStickerSets(0);
         int size2 = stickerSets.size();
@@ -199,7 +199,7 @@ public final class b2 implements Runnable {
             }
         }
         if (!arrayList.isEmpty() || !hashMap5.isEmpty()) {
-            d61Var.b(true);
+            e61Var.b(true);
         }
         TLRPC.TL_messages_searchStickerSets tL_messages_searchStickerSets = new TLRPC.TL_messages_searchStickerSets();
         tL_messages_searchStickerSets.q = d2Var.R;

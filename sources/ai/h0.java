@@ -51,14 +51,14 @@ import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.k3;
 import org.telegram.ui.ActionBar.r2;
 import org.telegram.ui.ActionBar.y6;
-import org.telegram.ui.Components.ak0;
+import org.telegram.ui.Components.bk0;
 import org.telegram.ui.Components.c6;
 import org.telegram.ui.Components.ds;
-import org.telegram.ui.Components.gb1;
+import org.telegram.ui.Components.kb1;
 import org.telegram.ui.Stories.recorder.FfmpegAudioWaveformLoader;
 import org.telegram.ui.j4;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class h0 implements Runnable {
     public final /* synthetic */ int a;
@@ -105,14 +105,14 @@ public final /* synthetic */ class h0 implements Runnable {
                 s5 s5Var = z5Var.h;
                 if (starGift == null) {
                     FrameLayout frameLayout = new FrameLayout(z5Var.getContext());
-                    ak0 ak0Var = new ak0(z5Var.getContext());
-                    ak0Var.f(R.raw.gift_broken, 32, 32, null);
-                    frameLayout.addView(ak0Var, gb1.i(32, 32, 17));
-                    ak0Var.setScaleX(0.5f);
-                    ak0Var.setScaleY(0.5f);
-                    ak0Var.setAlpha(0.0f);
-                    ak0Var.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f).start();
-                    z5Var.l0 = ak0Var;
+                    bk0 bk0Var = new bk0(z5Var.getContext());
+                    bk0Var.f(R.raw.gift_broken, 32, 32, null);
+                    frameLayout.addView(bk0Var, kb1.i(32, 32, 17));
+                    bk0Var.setScaleX(0.5f);
+                    bk0Var.setScaleY(0.5f);
+                    bk0Var.setAlpha(0.0f);
+                    bk0Var.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f).start();
+                    z5Var.l0 = bk0Var;
                     frameLayout.setBackground(new p6(AndroidUtilities.dp(12.0f), y6.o1(0.075f, -1)));
                     s5Var.a[i13].setVisibility(8);
                     frameLayout.setRotation(180.0f);
@@ -239,11 +239,11 @@ public final /* synthetic */ class h0 implements Runnable {
                     e6Var.R0 = true;
                 }
                 e6Var.i(lVar);
-                sg.t1 t1Var = e6Var.Z0;
-                int i22 = t1Var.d + 1;
-                t1Var.a(i22);
-                AndroidUtilities.updateImageViewImageAnimated(t1Var.a[i22], i21);
-                t1Var.e = true;
+                sg.s1 s1Var = e6Var.Z0;
+                int i22 = s1Var.d + 1;
+                s1Var.a(i22);
+                AndroidUtilities.updateImageViewImageAnimated(s1Var.a[i22], i21);
+                s1Var.e = true;
                 break;
             case 13:
                 AndroidUtilities.runOnUIThread(new ag.r0(this.b, ((MessagesStorage) this.c).getUsers(new ArrayList<>((HashSet) this.d)), 9));
@@ -260,7 +260,7 @@ public final /* synthetic */ class h0 implements Runnable {
                     iArr3[0] = -1;
                 }
                 if (notificationCenterDelegateArr[0] != null) {
-                    NotificationCenter.getInstance(i23).addObserver(notificationCenterDelegateArr[0], NotificationCenter.didReceivedWebpagesInUpdates);
+                    NotificationCenter.getInstance(i23).removeObserver(notificationCenterDelegateArr[0], NotificationCenter.didReceivedWebpagesInUpdates);
                     notificationCenterDelegateArr[0] = null;
                     break;
                 }

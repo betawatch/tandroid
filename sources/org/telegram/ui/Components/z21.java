@@ -1,25 +1,64 @@
 package org.telegram.ui.Components;
 
-import android.util.SparseIntArray;
+import android.content.Context;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.ui.Components.ThemeEditorView;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public final class z21 extends org.telegram.ui.ActionBar.l5 {
-    public final /* synthetic */ SparseIntArray T;
+public final class z21 extends FrameLayout {
+    public final ImageView a;
+    public final x21 b;
+    public final /* synthetic */ ThemeEditorView.EditorAlert c;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public z21(boolean z10, SparseIntArray sparseIntArray) {
-        super(2, z10, false, null);
-        this.T = sparseIntArray;
-    }
-
-    @Override // org.telegram.ui.ActionBar.l5
-    public final int g(int i10) {
-        return this.T.get(i10);
-    }
-
-    @Override // org.telegram.ui.ActionBar.l5
-    public final int h(int i10) {
-        return this.T.get(i10);
+    public z21(ThemeEditorView.EditorAlert editorAlert, Context context) {
+        super(context);
+        this.c = editorAlert;
+        View view = new View(context);
+        view.setBackgroundDrawable(org.telegram.ui.ActionBar.y6.c0(AndroidUtilities.dp(18.0f), -854795));
+        addView(view, kb1.h(-1, 36.0f, 51, 14.0f, 11.0f, 14.0f, 0.0f));
+        ImageView imageView = new ImageView(context);
+        ImageView.ScaleType scaleType = ImageView.ScaleType.CENTER;
+        imageView.setScaleType(scaleType);
+        imageView.setImageResource(R.drawable.smiles_inputsearch);
+        imageView.setColorFilter(new PorterDuffColorFilter(-6182737, PorterDuff.Mode.MULTIPLY));
+        addView(imageView, kb1.h(36, 36.0f, 51, 16.0f, 11.0f, 0.0f, 0.0f));
+        ImageView imageView2 = new ImageView(context);
+        this.a = imageView2;
+        imageView2.setScaleType(scaleType);
+        w21 w21Var = new w21();
+        imageView2.setImageDrawable(w21Var);
+        w21Var.f = AndroidUtilities.dp(7.0f);
+        imageView2.setScaleX(0.1f);
+        imageView2.setScaleY(0.1f);
+        imageView2.setAlpha(0.0f);
+        addView(imageView2, kb1.h(36, 36.0f, 53, 14.0f, 11.0f, 14.0f, 0.0f));
+        imageView2.setOnClickListener(new x80(this, 19));
+        x21 x21Var = new x21(this, context);
+        this.b = x21Var;
+        x21Var.setTextSize(1, 16.0f);
+        x21Var.setHintTextColor(-6774617);
+        x21Var.setTextColor(-14540254);
+        x21Var.setBackgroundDrawable(null);
+        x21Var.setPadding(0, 0, 0, 0);
+        x21Var.setMaxLines(1);
+        x21Var.setLines(1);
+        x21Var.setSingleLine(true);
+        x21Var.setImeOptions(268435459);
+        x21Var.setHint(LocaleController.getString(R.string.Search));
+        x21Var.setCursorColor(-11491093);
+        x21Var.setCursorSize(AndroidUtilities.dp(20.0f));
+        x21Var.setCursorWidth(1.5f);
+        addView(x21Var, kb1.h(-1, 40.0f, 51, 54.0f, 9.0f, 46.0f, 0.0f));
+        x21Var.addTextChangedListener(new y21(this));
+        x21Var.setOnEditorActionListener(new d1(this, 10));
     }
 }

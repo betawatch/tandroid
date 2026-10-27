@@ -1,47 +1,41 @@
 package org.telegram.ui;
 
-import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public final class uq implements dq {
-    public final /* synthetic */ TLObject a;
-    public final /* synthetic */ long b;
-    public final /* synthetic */ boolean c;
-    public final /* synthetic */ kr d;
+public final class uq extends iq {
+    public final /* synthetic */ boolean[] c1;
+    public final /* synthetic */ long d1;
+    public final /* synthetic */ mr e1;
 
-    public uq(kr krVar, TLObject tLObject, long j10, boolean z10) {
-        this.d = krVar;
-        this.a = tLObject;
-        this.b = j10;
-        this.c = z10;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public uq(mr mrVar, long j10, long j11, TLRPC.TL_chatAdminRights tL_chatAdminRights, TLRPC.TL_chatBannedRights tL_chatBannedRights, TLRPC.TL_chatBannedRights tL_chatBannedRights2, String str, int i10, boolean[] zArr, long j12) {
+        super(j10, j11, tL_chatAdminRights, tL_chatBannedRights, tL_chatBannedRights2, str, i10, true, false, null);
+        this.e1 = mrVar;
+        this.c1 = zArr;
+        this.d1 = j12;
     }
 
-    @Override // org.telegram.ui.dq
-    public final void a(TLRPC.User user) {
-        kr.d0(this.d, user);
-    }
-
-    @Override // org.telegram.ui.dq
-    public final void b(int i10, TLRPC.TL_chatAdminRights tL_chatAdminRights, TLRPC.TL_chatBannedRights tL_chatBannedRights, String str) {
-        TLObject tLObject = this.a;
-        if (tLObject instanceof TLRPC.ChannelParticipant) {
-            TLRPC.ChannelParticipant channelParticipant = (TLRPC.ChannelParticipant) tLObject;
-            channelParticipant.admin_rights = tL_chatAdminRights;
-            channelParticipant.banned_rights = tL_chatBannedRights;
-            channelParticipant.rank = str;
-        }
-        kr krVar = this.d;
-        dr drVar = krVar.l1;
-        long j10 = this.b;
-        if (drVar != null && i10 == 1) {
-            drVar.b(j10);
-        } else if (drVar != null) {
-            drVar.c(j10, tLObject);
-        }
-        if (this.c) {
-            krVar.removeSelfFromStack();
+    @Override // org.telegram.ui.ActionBar.r2
+    public final void onTransitionAnimationEnd(boolean z10, boolean z11) {
+        if (!z10 && z11 && this.c1[0]) {
+            mr mrVar = this.e1;
+            if (org.telegram.ui.Components.wc.a(mrVar)) {
+                long j10 = this.d1;
+                if (j10 > 0) {
+                    TLRPC.User user = getMessagesController().getUser(Long.valueOf(j10));
+                    if (user != null) {
+                        org.telegram.ui.Components.wc.C(mrVar, user.first_name).j();
+                        return;
+                    }
+                    return;
+                }
+                TLRPC.Chat chat = getMessagesController().getChat(Long.valueOf(-j10));
+                if (chat != null) {
+                    org.telegram.ui.Components.wc.C(mrVar, chat.title).j();
+                }
+            }
         }
     }
 }

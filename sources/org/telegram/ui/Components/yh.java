@@ -7,7 +7,7 @@ import android.view.Menu;
 import android.view.MotionEvent;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class yh extends ru {
     public final /* synthetic */ ti V;
@@ -33,8 +33,8 @@ public final class yh extends ru {
     @Override // org.telegram.ui.Components.ru
     public final void i(ActionMode actionMode, Menu menu) {
         org.telegram.ui.ActionBar.r2 r2Var = this.V.f0;
-        if (r2Var instanceof org.telegram.ui.un) {
-            org.telegram.ui.un.r8(menu, ((org.telegram.ui.un) r2Var).h, true, true, true, true);
+        if (r2Var instanceof org.telegram.ui.wn) {
+            org.telegram.ui.wn.t8(menu, ((org.telegram.ui.wn) r2Var).h, true, true, true, true);
         }
     }
 
@@ -44,9 +44,9 @@ public final class yh extends ru {
         yh yhVar = tiVar.S0;
         if (!tiVar.x1) {
             if (motionEvent.getX() <= yhVar.getEditText().getLeft() || motionEvent.getX() >= yhVar.getEditText().getRight() || motionEvent.getY() <= yhVar.getEditText().getTop() || motionEvent.getY() >= yhVar.getEditText().getBottom()) {
-                tiVar.y1(yhVar.getEditText(), false);
+                tiVar.z1(yhVar.getEditText(), false);
             } else {
-                tiVar.y1(yhVar.getEditText(), true);
+                tiVar.z1(yhVar.getEditText(), true);
             }
         }
         return super.onInterceptTouchEvent(motionEvent);
@@ -55,15 +55,15 @@ public final class yh extends ru {
     @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
     public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
         super.onLayout(z10, i10, i11, i12, i13);
-        this.V.i2();
+        this.V.j2();
     }
 
     @Override // org.telegram.ui.Components.ru
     public final void q(int i10, int i11) {
         ti tiVar = this.V;
-        tiVar.i2();
+        tiVar.j2();
         if (tiVar.c0) {
-            tiVar.T1(i11 > 2 && !TextUtils.isEmpty(getEditText().getText().toString().trim()));
+            tiVar.U1(i11 > 2 && !TextUtils.isEmpty(getEditText().getText().toString().trim()));
         }
     }
 }

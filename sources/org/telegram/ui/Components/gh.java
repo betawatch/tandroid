@@ -1,8 +1,9 @@
 package org.telegram.ui.Components;
 
 import android.text.TextUtils;
+import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class gh implements Runnable {
     public final /* synthetic */ int a;
@@ -15,15 +16,15 @@ public final /* synthetic */ class gh implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        boolean M1;
+        boolean N1;
         switch (this.a) {
             case 0:
                 ti tiVar = this.b;
                 ru ruVar = tiVar.c0 ? tiVar.S0 : tiVar.H0;
-                tiVar.T1(ruVar.getEditText().getLineCount() > 2 && !TextUtils.isEmpty(ruVar.getText().toString().trim()));
+                tiVar.U1(ruVar.getEditText().getLineCount() > 2 && !TextUtils.isEmpty(ruVar.getText().toString().trim()));
                 break;
             case 1:
-                ti.n(this.b);
+                ti.w(this.b);
                 break;
             case 2:
                 ti tiVar2 = this.b;
@@ -34,25 +35,34 @@ public final /* synthetic */ class gh implements Runnable {
                 biVar.setEffect(j10);
                 li liVar = tiVar2.B0;
                 if (liVar == tiVar2.j0 || liVar == tiVar2.q0) {
-                    M1 = tiVar2.M1(0, false, 0, tiVar2.w1(), j10);
+                    N1 = tiVar2.N1(0, false, 0, tiVar2.x1(), j10);
                 } else {
-                    if (!liVar.K(0, false, 0, tiVar2.w1(), j10)) {
+                    if (!liVar.K(0, false, 0, tiVar2.x1(), j10)) {
                         tiVar2.dismiss();
                     }
-                    M1 = false;
+                    N1 = false;
                 }
                 mf mfVar2 = tiVar2.h0;
                 if (mfVar2 != null) {
-                    mfVar2.g(!M1);
+                    mfVar2.g(!N1);
                     tiVar2.h0 = null;
                     break;
                 }
                 break;
             case 3:
-                this.b.L1();
+                ti tiVar3 = this.b;
+                tiVar3.dismiss(true);
+                org.telegram.ui.ActionBar.r2 r2Var = tiVar3.f0;
+                if (r2Var != null) {
+                    r2Var.presentFragment(new PremiumPreviewFragment(0, "caption_limit"));
+                    break;
+                }
+                break;
+            case 4:
+                this.b.M1();
                 break;
             default:
-                ti.m(this.b);
+                ti.y(this.b);
                 break;
         }
     }

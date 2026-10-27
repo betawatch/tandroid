@@ -15,9 +15,9 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.Components.xj0;
+import org.telegram.ui.Components.yj0;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class o7 implements Runnable {
     public final /* synthetic */ t7 a;
@@ -400,7 +400,7 @@ public final class o7 implements Runnable {
                         if (f3Var.isLottieRunning()) {
                             z13 = z16;
                         } else {
-                            xj0 lottieAnimation = f3Var.getLottieAnimation();
+                            yj0 lottieAnimation = f3Var.getLottieAnimation();
                             int i14 = lottieAnimation == null ? 0 : lottieAnimation.a0;
                             if (i14 >= 2) {
                                 s7Var2.T = true;

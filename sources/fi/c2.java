@@ -12,20 +12,20 @@ import android.view.accessibility.AccessibilityNodeInfo;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.Components.do0;
+import org.telegram.ui.Components.eo0;
 import org.telegram.ui.Components.l20;
 import org.telegram.ui.Components.m20;
-import org.telegram.ui.Components.pd0;
+import org.telegram.ui.Components.qd0;
 import org.telegram.ui.Components.x30;
 import org.telegram.ui.UsersSelectActivity;
-import org.telegram.ui.ap;
-import org.telegram.ui.ge0;
-import org.telegram.ui.ix;
-import org.telegram.ui.p00;
-import org.telegram.ui.uo;
-import org.telegram.ui.w10;
+import org.telegram.ui.cp;
+import org.telegram.ui.ie0;
+import org.telegram.ui.lx;
+import org.telegram.ui.r00;
+import org.telegram.ui.wo;
+import org.telegram.ui.y10;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class c2 extends EditTextBoldCursor {
     public final /* synthetic */ int b;
@@ -42,7 +42,7 @@ public final class c2 extends EditTextBoldCursor {
     public boolean dispatchTouchEvent(MotionEvent motionEvent) {
         switch (this.b) {
             case 7:
-                ((do0) this.c).getClass();
+                ((eo0) this.c).getClass();
                 break;
         }
         return super.dispatchTouchEvent(motionEvent);
@@ -52,15 +52,15 @@ public final class c2 extends EditTextBoldCursor {
     public void onDraw(Canvas canvas) {
         switch (this.b) {
             case 10:
-                w10 w10Var = (w10) this.c;
+                y10 y10Var = (y10) this.c;
                 if (length() != 0) {
                     canvas.saveLayerAlpha(getScrollX(), 0.0f, getWidth() + getScrollX(), getHeight(), 255, 31);
                     super.onDraw(canvas);
                     RectF rectF = AndroidUtilities.rectTmp;
                     rectF.set(getScrollX(), 0.0f, AndroidUtilities.dp(12.0f) + getScrollX(), getHeight());
-                    w10Var.b(canvas, rectF, 0, 1.0f);
+                    y10Var.b(canvas, rectF, 0, 1.0f);
                     rectF.set((getWidth() + getScrollX()) - AndroidUtilities.dp(12.0f), 0.0f, getWidth() + getScrollX(), getHeight());
-                    w10Var.b(canvas, rectF, 2, 1.0f);
+                    y10Var.b(canvas, rectF, 2, 1.0f);
                     canvas.restore();
                     break;
                 } else {
@@ -85,9 +85,9 @@ public final class c2 extends EditTextBoldCursor {
                 break;
             case 6:
                 super.onFocusChanged(z10, i10, rect);
-                pd0 pd0Var = (pd0) this.c;
+                qd0 qd0Var = (qd0) this.c;
                 float f7 = (z10 || isFocused()) ? 1.0f : 0.0f;
-                pd0Var.b(f7, f7, true);
+                qd0Var.b(f7, f7, true);
                 break;
             default:
                 super.onFocusChanged(z10, i10, rect);
@@ -102,11 +102,11 @@ public final class c2 extends EditTextBoldCursor {
                 super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
                 StringBuilder sb2 = new StringBuilder();
                 sb2.append((CharSequence) getText());
-                ap apVar = (ap) this.c;
-                uo uoVar = apVar.h;
-                if (uoVar != null && uoVar.getTextView() != null && !TextUtils.isEmpty(apVar.h.getTextView().getText())) {
+                cp cpVar = (cp) this.c;
+                wo woVar = cpVar.h;
+                if (woVar != null && woVar.getTextView() != null && !TextUtils.isEmpty(cpVar.h.getTextView().getText())) {
                     sb2.append("\n");
-                    sb2.append(apVar.h.getTextView().getText());
+                    sb2.append(cpVar.h.getTextView().getText());
                 }
                 accessibilityNodeInfo.setText(sb2);
                 break;
@@ -157,7 +157,7 @@ public final class c2 extends EditTextBoldCursor {
                 ig.p0 p0Var2 = (ig.p0) ic.a.g(1, m20Var.F);
                 l20 l20Var = m20Var.H;
                 if (l20Var != null) {
-                    ((ix) l20Var).f(p0Var2);
+                    ((lx) l20Var).f(p0Var2);
                 }
                 m20Var.f(p0Var2);
                 return true;
@@ -187,8 +187,8 @@ public final class c2 extends EditTextBoldCursor {
         switch (this.b) {
             case 8:
                 if (i10 == 16908322 || i10 == 16908337) {
-                    ((ge0) this.c).y = true;
-                    postDelayed(new p00(this, 23), 1000L);
+                    ((ie0) this.c).y = true;
+                    postDelayed(new r00(this, 23), 1000L);
                 }
                 break;
         }
@@ -233,7 +233,7 @@ public final class c2 extends EditTextBoldCursor {
             case 7:
                 if (isEnabled()) {
                     if (motionEvent.getAction() == 1) {
-                        ((do0) this.c).getClass();
+                        ((eo0) this.c).getClass();
                     }
                     break;
                 }
@@ -271,6 +271,6 @@ public final class c2 extends EditTextBoldCursor {
     public c2(Context context) {
         super(context);
         this.b = 10;
-        this.c = new w10();
+        this.c = new y10();
     }
 }

@@ -25,15 +25,15 @@ import org.telegram.messenger.UserObject;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.Components.ci0;
+import org.telegram.ui.Components.di0;
 import org.telegram.ui.Components.ds;
-import org.telegram.ui.Components.gb1;
-import org.telegram.ui.Components.hn0;
+import org.telegram.ui.Components.in0;
+import org.telegram.ui.Components.kb1;
 import org.telegram.ui.Components.zq;
-import org.telegram.ui.w10;
-import org.telegram.ui.xd0;
+import org.telegram.ui.y10;
+import org.telegram.ui.zd0;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class y2 extends Dialog {
     public static final /* synthetic */ int W = 0;
@@ -44,7 +44,7 @@ public final class y2 extends Dialog {
     public float I;
     public float J;
     public boolean K;
-    public final w10 L;
+    public final y10 L;
     public final RectF M;
     public final RectF N;
     public ValueAnimator O;
@@ -56,7 +56,7 @@ public final class y2 extends Dialog {
     public Runnable U;
     public final int[] V;
     public final org.telegram.ui.ActionBar.r2 a;
-    public final ci0 b;
+    public final di0 b;
     public final boolean c;
     public final boolean d;
     public final boolean e;
@@ -70,7 +70,7 @@ public final class y2 extends Dialog {
     public final Paint x;
     public final RectF y;
 
-    public y2(org.telegram.ui.ActionBar.r2 r2Var, ci0 ci0Var, TLRPC.User user, TL_wallet.card cardVar) {
+    public y2(org.telegram.ui.ActionBar.r2 r2Var, di0 di0Var, TLRPC.User user, TL_wallet.card cardVar) {
         super(r2Var.getParentActivity(), R.style.TransparentDialog);
         RectF rectF = new RectF();
         this.f = rectF;
@@ -79,20 +79,20 @@ public final class y2 extends Dialog {
         hh.b bVar = new hh.b();
         this.E = bVar;
         this.H = i0.b.e;
-        this.L = new w10();
+        this.L = new y10();
         this.M = new RectF();
         this.N = new RectF();
         this.V = new int[2];
         this.a = r2Var;
-        this.b = ci0Var;
+        this.b = di0Var;
         int i10 = 1;
         boolean z10 = user != null && user.id == UserConfig.getInstance(r2Var.getCurrentAccount()).getClientUserId();
         this.e = z10;
         boolean z11 = (user == null || z10 || !MessagesController.getInstance(r2Var.getCurrentAccount()).config.walletAvailable.get()) ? false : true;
         this.c = z11;
         this.d = (user == null || z10 || z11) ? false : true;
-        ci0Var.getLocationOnScreen(new int[2]);
-        rectF.set(ci0Var.v);
+        di0Var.getLocationOnScreen(new int[2]);
+        rectF.set(di0Var.v);
         rectF.offset(r12[0], r12[1]);
         AndroidUtilities.enableEdgeToEdge(getWindow());
         w2 w2Var = new w2(this, getContext());
@@ -100,7 +100,7 @@ public final class y2 extends Dialog {
         x2 x2Var = new x2(this, getContext());
         this.n = x2Var;
         x2Var.setAlpha(0.0f);
-        w2Var.addView(x2Var, gb1.g(-1.0f, -1));
+        w2Var.addView(x2Var, kb1.g(-1.0f, -1));
         w2Var.setClipChildren(false);
         w2Var.setClipToPadding(false);
         w2Var.setOnClickListener(new s2(this, r9));
@@ -118,18 +118,18 @@ public final class y2 extends Dialog {
             w5Var.setCardNumber(w5.d(cardVar.address.toUpperCase(locale)));
         }
         w5Var.j(currentAccount, cardVar.balance);
-        CharSequence l4 = l0.w(currentAccount).l(cardVar.balance, false);
-        if (!TextUtils.isEmpty(l4)) {
-            w5Var.O.c(l4, false, true);
+        CharSequence m10 = l0.x(currentAccount).m(cardVar.balance, false);
+        if (!TextUtils.isEmpty(m10)) {
+            w5Var.O.c(m10, false, true);
         }
         int i11 = 24;
-        w5Var.setCardOnClickListener(new xd0(i11, this, r2Var));
+        w5Var.setCardOnClickListener(new zd0(i11, this, r2Var));
         w5Var.setOnClickListener(new bh.f(i11));
         w5Var.setAlpha(0.0f);
-        w2Var.addView(w5Var, gb1.g(-2.0f, -2));
+        w2Var.addView(w5Var, kb1.g(-2.0f, -2));
         t7 t7Var = new t7(r2Var, w5Var, null, cardVar);
         this.s = t7Var;
-        w2Var.addView(t7Var, gb1.g(-1.0f, -1));
+        w2Var.addView(t7Var, kb1.g(-1.0f, -1));
         ch.b bVar2 = new ch.b(bVar);
         this.F = bVar2;
         bVar2.f = new jh.k(w2Var);
@@ -140,7 +140,7 @@ public final class y2 extends Dialog {
         c10.w(AndroidUtilities.dp(8.0f));
         c10.x(AndroidUtilities.dp(22.0f));
         i4Var.setBackground(c10);
-        gb1.c(i4Var, 0.02f, 1.2f);
+        kb1.c(i4Var, 0.02f, 1.2f);
         fi.d dVar = new fi.d(getContext(), r2Var.getResourceProvider(), true);
         dVar.setUseWrapContent(true);
         dVar.setPadding(AndroidUtilities.dp(16.0f), 0, AndroidUtilities.dp(16.0f), 0);
@@ -157,12 +157,12 @@ public final class y2 extends Dialog {
             dVar.i(string, false, true);
         }
         dVar.setStateListAnimator(null);
-        i4Var.addView(dVar, gb1.i(-2, -1, 17));
+        i4Var.addView(dVar, kb1.i(-2, -1, 17));
         i4Var.setContentDescription(string);
         i4Var.setOnClickListener(new m1(this, r2Var, cardVar, i10));
         i4Var.setAlpha(0.0f);
         i4Var.setVisibility(c() ? 0 : 8);
-        w2Var.addView(i4Var, gb1.i(-2, 60, 81));
+        w2Var.addView(i4Var, kb1.i(-2, 60, 81));
         TextView textView = new TextView(getContext());
         this.w = textView;
         textView.setTextSize(14.0f);
@@ -175,10 +175,10 @@ public final class y2 extends Dialog {
             textView.setText(LocaleController.getString(R.string.WalletPublicBalanceNote));
         } else if (user != null) {
             String firstName = UserObject.getFirstName(user);
-            textView.setText(fi.v3.b(new BigDecimal(l0.o(cardVar.balance, false)).signum() == 0 ? LocaleController.formatString(R.string.WalletProfileOwnsNoGrams, firstName) : LocaleController.formatString(R.string.WalletProfileOwnsGrams, firstName, l0.k("Grams", w5.e(cardVar.balance).toString(), R.string.Grams_other).toString().replace(' ', (char) 160)), textView.getPaint()));
+            textView.setText(fi.v3.b(new BigDecimal(l0.p(cardVar.balance, false)).signum() == 0 ? LocaleController.formatString(R.string.WalletProfileOwnsNoGrams, firstName) : LocaleController.formatString(R.string.WalletProfileOwnsGrams, firstName, l0.l("Grams", w5.e(cardVar.balance).toString(), R.string.Grams_other).toString().replace(' ', (char) 160)), textView.getPaint()));
         }
         textView.setVisibility(user == null ? 8 : 0);
-        w2Var.addView(textView, gb1.i(-2, -2, 49));
+        w2Var.addView(textView, kb1.i(-2, -2, 49));
     }
 
     public final void a(float f7) {
@@ -350,7 +350,7 @@ public final class y2 extends Dialog {
     @Override // android.app.Dialog
     public final void show() {
         if (AndroidUtilities.isSafeToShow(getContext())) {
-            hn0.d(new d(this, 6));
+            in0.d(new d(this, 6));
             super.show();
             WeakHashMap weakHashMap = r0.i0.a;
             r0.y.c(this.h);

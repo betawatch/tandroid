@@ -2,13 +2,13 @@ package org.telegram.ui.Cells;
 
 import androidx.recyclerview.widget.RecyclerView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.da0;
-import org.telegram.ui.Components.mm0;
+import org.telegram.ui.Components.ea0;
+import org.telegram.ui.Components.nm0;
 import org.telegram.ui.Components.qc;
 import org.telegram.ui.SessionsActivity;
-import org.telegram.ui.cy;
+import org.telegram.ui.ey;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class g implements Runnable {
     public final /* synthetic */ int a;
@@ -24,9 +24,9 @@ public final /* synthetic */ class g implements Runnable {
         switch (this.a) {
             case 0:
                 h hVar = (h) this.b;
-                da0 da0Var = hVar.d;
-                if (da0Var != null) {
-                    hVar.h.E.l(da0Var, true);
+                ea0 ea0Var = hVar.d;
+                if (ea0Var != null) {
+                    hVar.h.E.l(ea0Var, true);
                     break;
                 }
                 break;
@@ -48,11 +48,11 @@ public final /* synthetic */ class g implements Runnable {
                 break;
             case 5:
                 m6 m6Var = (m6) this.b;
-                if (!(m6Var.getParent() instanceof mm0)) {
+                if (!(m6Var.getParent() instanceof nm0)) {
                     m6Var.callOnClick();
                     break;
                 } else {
-                    ((mm0) m6Var.getParent()).getOnItemClickListener().c(RecyclerView.R(m6Var), m6Var);
+                    ((nm0) m6Var.getParent()).getOnItemClickListener().c(RecyclerView.R(m6Var), m6Var);
                     break;
                 }
             case 6:
@@ -83,9 +83,9 @@ public final /* synthetic */ class g implements Runnable {
                     }
                 }
             case 10:
-                cy cyVar = (cy) this.b;
+                ey eyVar = (ey) this.b;
                 qc.e();
-                cyVar.presentFragment(new SessionsActivity(0));
+                eyVar.presentFragment(new SessionsActivity(0));
                 break;
             default:
                 org.telegram.ui.ActionBar.k3 k3Var = (org.telegram.ui.ActionBar.k3) this.b;

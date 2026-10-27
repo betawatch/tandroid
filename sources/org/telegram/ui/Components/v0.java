@@ -3,7 +3,7 @@ package org.telegram.ui.Components;
 import java.util.function.ToLongFunction;
 import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class v0 implements ToLongFunction {
     public final /* synthetic */ int a;
@@ -18,7 +18,7 @@ public final /* synthetic */ class v0 implements ToLongFunction {
             case 0:
                 return ((MessageObject) obj).getFromChatId();
             case 1:
-                if (((org.telegram.ui.t91) obj).b == null) {
+                if (((org.telegram.ui.v91) obj).b == null) {
                     return 0L;
                 }
                 return r3.messageOwner.date;

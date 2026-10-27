@@ -6,7 +6,7 @@ import android.view.KeyEvent;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class d8 extends g8 {
     public final /* synthetic */ Context E;
@@ -28,41 +28,41 @@ public final class d8 extends g8 {
         org.telegram.ui.ActionBar.u6 u6Var3;
         switch (this.y) {
             case 0:
-                oa0 oa0Var = new oa0(this.E);
+                pa0 pa0Var = new pa0(this.E);
                 int i10 = org.telegram.ui.ActionBar.y6.Oi;
                 u6Var = ((org.telegram.ui.ActionBar.k3) ((m8) this.F)).resourcesProvider;
-                org.telegram.ui.ActionBar.f7.V(oa0Var, i10, u6Var);
-                oa0Var.setTextSize(1, 17.0f);
-                oa0Var.setTypeface(AndroidUtilities.bold());
-                oa0Var.setEllipsize(TextUtils.TruncateAt.END);
-                oa0Var.setSingleLine(true);
-                return oa0Var;
+                org.telegram.ui.ActionBar.f7.V(pa0Var, i10, u6Var);
+                pa0Var.setTextSize(1, 17.0f);
+                pa0Var.setTypeface(AndroidUtilities.bold());
+                pa0Var.setEllipsize(TextUtils.TruncateAt.END);
+                pa0Var.setSingleLine(true);
+                return pa0Var;
             case 1:
-                oa0 oa0Var2 = new oa0(this.E);
+                pa0 pa0Var2 = new pa0(this.E);
                 int i11 = org.telegram.ui.ActionBar.y6.Si;
                 m8 m8Var = (m8) this.F;
                 u6Var2 = ((org.telegram.ui.ActionBar.k3) m8Var).resourcesProvider;
-                org.telegram.ui.ActionBar.f7.V(oa0Var2, i11, u6Var2);
-                oa0Var2.setTextSize(1, 13.0f);
-                oa0Var2.setEllipsize(TextUtils.TruncateAt.END);
-                oa0Var2.setSingleLine(true);
-                oa0Var2.setPadding(AndroidUtilities.dp(6.0f), 0, AndroidUtilities.dp(6.0f), AndroidUtilities.dp(1.0f));
+                org.telegram.ui.ActionBar.f7.V(pa0Var2, i11, u6Var2);
+                pa0Var2.setTextSize(1, 13.0f);
+                pa0Var2.setEllipsize(TextUtils.TruncateAt.END);
+                pa0Var2.setSingleLine(true);
+                pa0Var2.setPadding(AndroidUtilities.dp(6.0f), 0, AndroidUtilities.dp(6.0f), AndroidUtilities.dp(1.0f));
                 int i12 = org.telegram.ui.ActionBar.y6.i6;
                 org.telegram.ui.Cells.y Z = org.telegram.ui.ActionBar.y6.Z(m8Var.getThemedColor(i12), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f));
                 org.telegram.ui.ActionBar.b7 N = org.telegram.ui.ActionBar.f7.N(i12);
                 u6Var3 = ((org.telegram.ui.ActionBar.k3) m8Var).resourcesProvider;
-                oa0Var2.setBackground(Z);
-                org.telegram.ui.ActionBar.f7.k(oa0Var2, Z, null, N, u6Var3);
-                oa0Var2.setOnClickListener(new org.telegram.ui.ActionBar.u1(28, this, oa0Var2));
-                return oa0Var2;
+                pa0Var2.setBackground(Z);
+                org.telegram.ui.ActionBar.f7.k(pa0Var2, Z, null, N, u6Var3);
+                pa0Var2.setOnClickListener(new org.telegram.ui.ActionBar.u1(28, this, pa0Var2));
+                return pa0Var2;
             default:
-                oa0 oa0Var3 = new oa0(this.E);
-                org.telegram.ui.ActionBar.f7.V(oa0Var3, org.telegram.ui.ActionBar.y6.Si, ((lp0) this.F).N);
-                oa0Var3.setTextSize(1, 12.0f);
-                oa0Var3.setEllipsize(TextUtils.TruncateAt.END);
-                oa0Var3.setSingleLine(true);
-                oa0Var3.setPadding(AndroidUtilities.dp(0.0f), 0, AndroidUtilities.dp(0.0f), AndroidUtilities.dp(0.0f));
-                return oa0Var3;
+                pa0 pa0Var3 = new pa0(this.E);
+                org.telegram.ui.ActionBar.f7.V(pa0Var3, org.telegram.ui.ActionBar.y6.Si, ((mp0) this.F).N);
+                pa0Var3.setTextSize(1, 12.0f);
+                pa0Var3.setEllipsize(TextUtils.TruncateAt.END);
+                pa0Var3.setSingleLine(true);
+                pa0Var3.setPadding(AndroidUtilities.dp(0.0f), 0, AndroidUtilities.dp(0.0f), AndroidUtilities.dp(0.0f));
+                return pa0Var3;
         }
     }
 }

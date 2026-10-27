@@ -7,7 +7,7 @@ import android.widget.FrameLayout;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class s7 extends FrameLayout {
     public final /* synthetic */ int a;
@@ -25,7 +25,7 @@ public final class s7 extends FrameLayout {
         TextView textView;
         switch (this.a) {
             case 0:
-                int B = org.telegram.messenger.vh.B(248.0f, i12 - i10, 4);
+                int B = org.telegram.messenger.wh.B(248.0f, i12 - i10, 4);
                 for (int i14 = 0; i14 < 5; i14++) {
                     int dp = (B * i14) + AndroidUtilities.dp((i14 * 48) + 4);
                     int dp2 = AndroidUtilities.dp(9.0f);

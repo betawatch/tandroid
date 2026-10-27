@@ -10,7 +10,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class da extends View {
     public Bitmap a;
@@ -38,7 +38,7 @@ public final class da extends View {
     @Override // android.view.View
     public final void onMeasure(int i10, int i11) {
         int i12 = this.d;
-        setMeasuredDimension(org.telegram.messenger.vh.b(16.0f, i12 - 1, AndroidUtilities.dp(32.0f) * i12), AndroidUtilities.dp(32.0f));
+        setMeasuredDimension(org.telegram.messenger.wh.b(16.0f, i12 - 1, AndroidUtilities.dp(32.0f) * i12), AndroidUtilities.dp(32.0f));
     }
 
     @Override // android.view.View

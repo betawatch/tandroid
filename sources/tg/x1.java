@@ -17,13 +17,13 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LiteMode;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.ui.ActionBar.p6;
-import org.telegram.ui.Components.cy0;
+import org.telegram.ui.Components.dy0;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public class x1 extends View implements p6 {
     public w1 a;
-    public final cy0 b;
+    public final dy0 b;
     public int c;
     public ig.o d;
     public boolean e;
@@ -35,7 +35,7 @@ public class x1 extends View implements p6 {
     public x1(Context context) {
         super(context);
         int i10 = SharedConfig.getDevicePerformanceClass() == 2 ? 200 : SharedConfig.getDevicePerformanceClass() == 1 ? 100 : 50;
-        this.b = new cy0(this, 14);
+        this.b = new dy0(this, 14);
         this.e = true;
         this.a = new w1(i10);
         a();
@@ -170,9 +170,9 @@ public class x1 extends View implements p6 {
 
     @Override // org.telegram.ui.ActionBar.p6
     public final void updateColors() {
-        cy0 cy0Var = this.b;
-        removeCallbacks(cy0Var);
-        postDelayed(cy0Var, 150L);
+        dy0 dy0Var = this.b;
+        removeCallbacks(dy0Var);
+        postDelayed(dy0Var, 150L);
     }
 
     @Override // org.telegram.ui.ActionBar.p6

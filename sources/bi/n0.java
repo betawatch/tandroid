@@ -1,11 +1,11 @@
 package bi;
 
-import org.telegram.ui.Components.j71;
+import org.telegram.ui.Components.k71;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
-public final class n0 extends j71 {
-    @Override // org.telegram.ui.Components.j71, org.telegram.ui.Components.lm0
+public final class n0 extends k71 {
+    @Override // org.telegram.ui.Components.k71, org.telegram.ui.Components.mm0
     public final boolean D(s4.e1 e1Var) {
         return false;
     }

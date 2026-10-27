@@ -2,10 +2,10 @@ package org.telegram.ui.Cells;
 
 import android.view.View;
 import org.telegram.ui.Components.lo;
-import org.telegram.ui.Components.mm0;
+import org.telegram.ui.Components.nm0;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class q6 extends di.w7 {
     public final /* synthetic */ int S = 1;
@@ -28,13 +28,13 @@ public final class q6 extends di.w7 {
                 org.telegram.ui.ActionBar.r2 R = LaunchActivity.R();
                 if (R != null) {
                     R.getOrCreateStoryViewer().getClass();
-                    R.getOrCreateStoryViewer().D(abVar.getContext(), j10, di.q7.a((mm0) abVar.getParent()));
+                    R.getOrCreateStoryViewer().E(abVar.getContext(), j10, di.q7.a((nm0) abVar.getParent()));
                     break;
                 }
                 break;
             default:
                 lo loVar = (lo) this.T;
-                loVar.H.getOrCreateStoryViewer().D(loVar.getContext(), j10, new org.telegram.ui.Components.s(this, 25));
+                loVar.H.getOrCreateStoryViewer().E(loVar.getContext(), j10, new org.telegram.ui.Components.s(this, 25));
                 break;
         }
     }

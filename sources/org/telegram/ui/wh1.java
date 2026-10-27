@@ -1,25 +1,24 @@
 package org.telegram.ui;
 
-import android.graphics.Bitmap;
-import java.io.File;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public final class wh1 implements org.telegram.ui.Components.aa1 {
+public final /* synthetic */ class wh1 implements org.telegram.ui.ActionBar.b2, uc1 {
     public final /* synthetic */ WallpapersListActivity a;
 
-    public wh1(WallpapersListActivity wallpapersListActivity) {
+    public /* synthetic */ wh1(WallpapersListActivity wallpapersListActivity) {
         this.a = wallpapersListActivity;
     }
 
-    @Override // org.telegram.ui.Components.aa1
-    public final void b(File file, Bitmap bitmap, boolean z10) {
-        tc1 tc1Var = new tc1(new ci1(file, file, ""), bitmap, false);
-        tc1Var.d1(0L);
-        this.a.presentFragment(tc1Var, z10);
+    @Override // org.telegram.ui.uc1
+    public void a(TLRPC.TL_wallPaper tL_wallPaper) {
+        int[][] iArr = WallpapersListActivity.g0;
+        this.a.removeSelfFromStack();
     }
 
-    @Override // org.telegram.ui.Components.aa1
-    public final void a() {
+    @Override // org.telegram.ui.ActionBar.b2
+    public void h(org.telegram.ui.ActionBar.e2 e2Var, int i10) {
+        WallpapersListActivity.W(this.a);
     }
 }

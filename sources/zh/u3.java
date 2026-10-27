@@ -7,9 +7,9 @@ import java.util.HashSet;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.l71;
+import org.telegram.ui.n71;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class u3 implements u9 {
     public final int a;
@@ -156,7 +156,7 @@ public final class u3 implements u9 {
                     }
                 }
             }
-            this.v = ConnectionsManager.getInstance(this.a).sendRequest(getresalestargifts, new l71(14, this, getresalestargifts));
+            this.v = ConnectionsManager.getInstance(this.a).sendRequest(getresalestargifts, new n71(14, this, getresalestargifts));
         }
     }
 

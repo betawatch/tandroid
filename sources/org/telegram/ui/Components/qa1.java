@@ -1,247 +1,173 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.os.Handler;
-import android.os.Looper;
 import android.os.SystemClock;
-import android.util.Log;
-import java.io.ByteArrayOutputStream;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.concurrent.CountDownLatch;
-import java.util.concurrent.TimeUnit;
-import org.json.JSONArray;
 import org.json.JSONObject;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.WidgetConformanceActivity;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public final class qa1 {
-    public final Context a;
-    public final File b;
-    public final String c;
-    public final org.telegram.ui.hl0 d;
-    public final Handler e = new Handler(Looper.getMainLooper());
+public final class qa1 implements cc1 {
+    public volatile JSONObject a;
+    public volatile String b;
+    public final ArrayList c = new ArrayList();
+    public final ArrayList d = new ArrayList();
+    public final Object e = new Object();
 
-    public qa1(WidgetConformanceActivity widgetConformanceActivity, String str, org.telegram.ui.hl0 hl0Var) {
-        this.a = widgetConformanceActivity.getApplicationContext();
-        this.b = new File(widgetConformanceActivity.getExternalFilesDir(null), "attacks");
-        this.c = str;
-        this.d = hl0Var;
+    @Override // org.telegram.ui.Components.cc1
+    public final void e(String str) {
+        synchronized (this.e) {
+            this.b = str;
+            this.e.notifyAll();
+        }
     }
 
-    public final void a(String str) {
-        Log.i("WidgetAttacks", str);
-        this.e.post(new c71(7, this, str));
+    @Override // org.telegram.ui.Components.cc1
+    public final void g(JSONObject jSONObject) {
+        synchronized (this.c) {
+            this.c.add(jSONObject);
+        }
     }
 
-    public final void b() {
-        boolean z10;
-        int i10;
-        File file = this.b;
-        JSONArray jSONArray = new JSONArray();
-        try {
-            try {
-                int i11 = 2;
-                File[] listFiles = file.listFiles(new da.a(2));
+    @Override // org.telegram.ui.Components.cc1
+    public final void h(JSONObject jSONObject) {
+        synchronized (this.e) {
+            this.a = jSONObject;
+            this.e.notifyAll();
+        }
+    }
+
+    public final int k() {
+        int size;
+        synchronized (this.c) {
+            size = this.c.size();
+        }
+        return size;
+    }
+
+    public final String l() {
+        String obj;
+        synchronized (this.c) {
+            obj = this.c.toString();
+        }
+        return obj;
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:13:0x002a, code lost:
+    
+        return;
+     */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void m() {
+        long uptimeMillis = SystemClock.uptimeMillis() + 10000;
+        synchronized (this.e) {
+            while (true) {
                 try {
-                    if (listFiles == null) {
-                        throw new IllegalStateException("no " + file);
+                    if (this.a != null && (this.a.optBoolean("loaded") || !this.a.optString("dead").isEmpty())) {
+                        break;
                     }
-                    Arrays.sort(listFiles);
-                    boolean z11 = true;
-                    WidgetSandboxNative.attackScan(true);
-                    int length = listFiles.length;
-                    int i12 = 0;
-                    int i13 = 0;
-                    int i14 = 0;
-                    int i15 = 0;
-                    while (true) {
-                        String str = "dead";
-                        if (i12 < length) {
-                            File file2 = listFiles[i12];
-                            String str2 = this.c;
-                            if (str2 == null || str2.isEmpty()) {
-                                z10 = z11;
-                            } else {
-                                z10 = z11;
-                                if (!file2.getName().contains(str2)) {
-                                    i10 = i11;
-                                    i12++;
-                                    z11 = z10;
-                                    i11 = i10;
-                                }
-                            }
-                            JSONObject c10 = c(file2);
-                            jSONArray.put(c10);
-                            i13++;
-                            if (!c10.optBoolean("ok")) {
-                                i14++;
-                            }
-                            if (!c10.optString("dead").isEmpty()) {
-                                i15++;
-                            }
-                            String name = file2.getName();
-                            if (!c10.optBoolean("ok")) {
-                                str = "FAIL";
-                            } else if (c10.optString("dead").isEmpty()) {
-                                str = "ok";
-                            }
-                            String optString = c10.optString("summary");
-                            i10 = i11;
-                            Object[] objArr = new Object[3];
-                            objArr[0] = name;
-                            objArr[z10 ? 1 : 0] = str;
-                            objArr[i10] = optString;
-                            a(String.format("%-40s %-6s %s", objArr));
-                            JSONArray optJSONArray = c10.optJSONArray("problems");
-                            for (int i16 = 0; optJSONArray != null && i16 < optJSONArray.length(); i16++) {
-                                a("    " + optJSONArray.optString(i16));
-                            }
-                            i12++;
-                            z11 = z10;
-                            i11 = i10;
-                        } else {
-                            int i17 = i11;
-                            JSONObject put = new JSONObject().put("width", 390).put("files", i13).put("failed", i14).put("dead", i15).put("results", jSONArray);
-                            File file3 = new File(file, "report.json");
-                            FileOutputStream fileOutputStream = new FileOutputStream(file3);
-                            try {
-                                fileOutputStream.write(put.toString(i17).getBytes(StandardCharsets.UTF_8));
-                                fileOutputStream.close();
-                                a("done · " + i13 + " attacks · " + i14 + " failed · " + i15 + " runtimes killed by limits · " + file3);
-                                WidgetSandboxNative.attackScan(false);
-                                return;
-                            } finally {
-                            }
-                        }
+                    if (this.b != null) {
+                        return;
                     }
-                } catch (Exception e) {
-                    e = e;
-                    a("error · " + e);
-                    WidgetSandboxNative.attackScan(false);
+                    long uptimeMillis2 = uptimeMillis - SystemClock.uptimeMillis();
+                    if (uptimeMillis2 <= 0) {
+                        return;
+                    } else {
+                        this.e.wait(uptimeMillis2);
+                    }
+                } catch (Throwable th2) {
+                    throw th2;
+                }
+            }
+        }
+    }
+
+    public final int n() {
+        int i10;
+        synchronized (this.c) {
+            try {
+                ArrayList arrayList = this.c;
+                int size = arrayList.size();
+                i10 = 0;
+                int i11 = 0;
+                while (i11 < size) {
+                    Object obj = arrayList.get(i11);
+                    i11++;
+                    if ("haptic".equals(((JSONObject) obj).optString("kind"))) {
+                        i10++;
+                    }
                 }
             } catch (Throwable th2) {
-                th = th2;
-                WidgetSandboxNative.attackScan(false);
-                throw th;
+                throw th2;
             }
-        } catch (Exception e10) {
-            e = e10;
-        } catch (Throwable th3) {
-            th = th3;
-            WidgetSandboxNative.attackScan(false);
-            throw th;
         }
+        return i10;
     }
 
-    /* JADX WARN: Finally extract failed */
-    public final JSONObject c(File file) {
-        String str;
-        String str2;
-        JSONObject put = new JSONObject().put("file", file.getName());
-        pa1 pa1Var = new pa1();
-        Context context = this.a;
-        FileInputStream fileInputStream = new FileInputStream(file);
-        try {
-            ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
-            byte[] bArr = new byte[16384];
-            while (true) {
-                int read = fileInputStream.read(bArr);
-                if (read <= 0) {
-                    break;
-                }
-                byteArrayOutputStream.write(bArr, 0, read);
-            }
-            String byteArrayOutputStream2 = byteArrayOutputStream.toString("UTF-8");
-            fileInputStream.close();
-            yb1 yb1Var = new yb1(context, byteArrayOutputStream2, zb1.d(false), 1, "en-US", null);
-            yb1Var.J = new b3(pa1Var, 13);
-            d(new c71(6, yb1Var, pa1Var));
-            try {
-                long uptimeMillis = SystemClock.uptimeMillis();
+    public final int o(int i10) {
+        int i11;
+        synchronized (this.c) {
+            i11 = 0;
+            while (i10 < this.c.size()) {
                 try {
-                    yb1Var.f(Math.round(AndroidUtilities.density * 390.0f));
-                } catch (Exception e) {
-                    pa1Var.b = String.valueOf(e.getMessage());
-                }
-                pa1Var.j();
-                int h = pa1Var.h();
-                d(new na1(yb1Var, 0));
-                Thread.sleep(80L);
-                d(new na1(yb1Var, 1));
-                Thread.sleep(1500L);
-                int h10 = pa1Var.h() - h;
-                JSONArray jSONArray = new JSONArray();
-                synchronized (pa1Var.d) {
-                    try {
-                        ArrayList arrayList = pa1Var.d;
-                        int size = arrayList.size();
-                        int i10 = 0;
-                        while (i10 < size) {
-                            Object obj = arrayList.get(i10);
-                            i10++;
-                            jSONArray.put("LEAK " + ((String) obj));
-                        }
-                    } finally {
+                    if ("haptic".equals(((JSONObject) this.c.get(i10)).optString("kind"))) {
+                        i11++;
                     }
+                    i10++;
+                } catch (Throwable th2) {
+                    throw th2;
                 }
-                if (h > 0) {
-                    jSONArray.put("ACTION before the tap: " + pa1Var.i());
-                }
-                boolean z10 = true;
-                if (h10 > 1) {
-                    jSONArray.put("ACTIONS after one tap: " + pa1Var.i());
-                }
-                JSONObject jSONObject = pa1Var.a;
-                String optString = jSONObject == null ? "" : jSONObject.optString("dead");
-                JSONObject put2 = put.put("ok", jSONArray.length() == 0).put("problems", jSONArray).put("dead", optString);
-                if (jSONObject == null || !jSONObject.optBoolean("loaded")) {
-                    z10 = false;
-                }
-                put2.put("loaded", z10).put("actions", pa1Var.h()).put("ms", SystemClock.uptimeMillis() - uptimeMillis);
-                StringBuilder sb2 = new StringBuilder();
-                sb2.append(jSONObject == null ? "no diagnostics" : jSONObject.optString("diagnostic"));
-                if (optString.isEmpty()) {
-                    str = "";
-                } else {
-                    str = " — " + optString;
-                }
-                sb2.append(str);
-                if (pa1Var.b != null) {
-                    str2 = " — failure: " + pa1Var.b;
-                } else {
-                    str2 = "";
-                }
-                sb2.append(str2);
-                String sb3 = sb2.toString();
-                if (sb3.length() > 140) {
-                    sb3 = sb3.substring(0, 140);
-                }
-                put.put("summary", sb3);
-                return put;
-            } finally {
-                d(new na1(yb1Var, 2));
-            }
-        } catch (Throwable th2) {
-            try {
-                fileInputStream.close();
-                throw th2;
-            } catch (Throwable th3) {
-                th2.addSuppressed(th3);
-                throw th2;
             }
         }
+        return i11;
     }
 
-    public final void d(Runnable runnable) {
-        CountDownLatch countDownLatch = new CountDownLatch(1);
-        this.e.post(new oa1(runnable, countDownLatch, 0));
-        countDownLatch.await(5L, TimeUnit.SECONDS);
+    public final int p(int i10) {
+        int i11;
+        synchronized (this.c) {
+            i11 = 0;
+            for (int i12 = 0; i12 < i10; i12++) {
+                try {
+                    if (i12 >= this.c.size()) {
+                        break;
+                    }
+                    if ("haptic".equals(((JSONObject) this.c.get(i12)).optString("kind"))) {
+                        i11++;
+                    }
+                } catch (Throwable th2) {
+                    throw th2;
+                }
+            }
+        }
+        return i11;
+    }
+
+    @Override // org.telegram.ui.Components.cc1
+    public final /* synthetic */ void a(boolean z10) {
+    }
+
+    @Override // org.telegram.ui.Components.cc1
+    public final /* synthetic */ void b(String str) {
+    }
+
+    @Override // org.telegram.ui.Components.cc1
+    public final /* synthetic */ void c(String str) {
+    }
+
+    @Override // org.telegram.ui.Components.cc1
+    public final void f(dc1 dc1Var) {
+    }
+
+    @Override // org.telegram.ui.Components.cc1
+    public final /* synthetic */ void i(long j10, String str) {
+    }
+
+    @Override // org.telegram.ui.Components.cc1
+    public final /* synthetic */ void j(String str, JSONObject jSONObject) {
+    }
+
+    @Override // org.telegram.ui.Components.cc1
+    public final void d(boolean z10, boolean z11, boolean z12) {
     }
 }

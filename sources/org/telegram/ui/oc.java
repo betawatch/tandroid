@@ -14,16 +14,16 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public final class oc extends org.telegram.ui.Components.lm0 {
+public final class oc extends org.telegram.ui.Components.mm0 {
     public final /* synthetic */ bd c;
 
     public oc(bd bdVar) {
         this.c = bdVar;
     }
 
-    @Override // org.telegram.ui.Components.lm0
+    @Override // org.telegram.ui.Components.mm0
     public final boolean D(s4.e1 e1Var) {
         int i10 = e1Var.f;
         return i10 == 5 || i10 == 6;
@@ -73,10 +73,10 @@ public final class oc extends org.telegram.ui.Components.lm0 {
         View view = e1Var.a;
         if (i16 == 1) {
             uc ucVar = (uc) view;
-            xo0 xo0Var = ucVar.a;
+            zo0 zo0Var = ucVar.a;
             tc tcVar = ucVar.b;
             i11 = ((org.telegram.ui.ActionBar.r2) bdVar).currentAccount;
-            xo0Var.b(i11, bdVar.s, false);
+            zo0Var.b(i11, bdVar.s, false);
             tcVar.b(bdVar.s, false);
             tcVar.d(bdVar.w, false, false);
             tcVar.setForum(bdVar.U0());
@@ -89,7 +89,7 @@ public final class oc extends org.telegram.ui.Components.lm0 {
             return;
         }
         if (i16 == 4) {
-            ((op0) view).a(bdVar.s, false);
+            ((qp0) view).a(bdVar.s, false);
             return;
         }
         if (i16 == 5) {
@@ -325,7 +325,7 @@ public final class oc extends org.telegram.ui.Components.lm0 {
             pcVar.a = b6Var;
             b6Var.setTextSize(16);
             org.telegram.ui.ActionBar.f7.Y(b6Var, org.telegram.ui.ActionBar.y6.G6, u6Var6);
-            pcVar.addView(b6Var, org.telegram.ui.Components.gb1.h(-1, -2.0f, 23, 23.0f, 0.0f, 48.0f, 0.0f));
+            pcVar.addView(b6Var, org.telegram.ui.Components.kb1.h(-1, -2.0f, 23, 23.0f, 0.0f, 48.0f, 0.0f));
             pcVar.c = new org.telegram.ui.Components.r5(AndroidUtilities.dp(24.0f), 13, pcVar, false);
             frameLayout = pcVar;
         } else if (i10 == 3) {
@@ -339,10 +339,10 @@ public final class oc extends org.telegram.ui.Components.lm0 {
             Activity parentActivity5 = bdVar.getParentActivity();
             i11 = ((org.telegram.ui.ActionBar.r2) bdVar).currentAccount;
             u6Var4 = ((org.telegram.ui.ActionBar.r2) bdVar).resourceProvider;
-            op0 op0Var = new op0(0, i11, parentActivity5, u6Var4);
-            op0Var.setDivider(false);
+            qp0 qp0Var = new qp0(0, i11, parentActivity5, u6Var4);
+            qp0Var.setDivider(false);
             final int i16 = 1;
-            op0Var.setOnColorClick(new Utilities.Callback(this) { // from class: org.telegram.ui.nc
+            qp0Var.setOnColorClick(new Utilities.Callback(this) { // from class: org.telegram.ui.nc
                 public final /* synthetic */ oc b;
 
                 {
@@ -383,7 +383,7 @@ public final class oc extends org.telegram.ui.Components.lm0 {
                     }
                 }
             });
-            frameLayout = op0Var;
+            frameLayout = qp0Var;
         } else if (i10 == 1) {
             FrameLayout ucVar = new uc(bdVar, bdVar.getParentActivity());
             frameLayout = ucVar;
@@ -398,7 +398,7 @@ public final class oc extends org.telegram.ui.Components.lm0 {
         } else if (i10 == 9) {
             Activity parentActivity7 = bdVar.getParentActivity();
             u6Var2 = ((org.telegram.ui.ActionBar.r2) bdVar).resourceProvider;
-            frameLayout = new zo0(parentActivity7, u6Var2, false);
+            frameLayout = new bp0(parentActivity7, u6Var2, false);
         } else if (i10 == 10) {
             Activity parentActivity8 = bdVar.getParentActivity();
             u6Var = ((org.telegram.ui.ActionBar.r2) bdVar).resourceProvider;
@@ -409,7 +409,7 @@ public final class oc extends org.telegram.ui.Components.lm0 {
         } else {
             frameLayout = new org.telegram.ui.Cells.i9(bdVar.getParentActivity());
         }
-        return new org.telegram.ui.Components.vl0(frameLayout);
+        return new org.telegram.ui.Components.wl0(frameLayout);
     }
 
     @Override // s4.h0

@@ -8,10 +8,10 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.vh;
+import org.telegram.messenger.wh;
 import org.telegram.ui.d3;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class v1 {
     public long a;
@@ -157,7 +157,7 @@ public final class v1 {
             long j13 = this.o;
             float clamp2 = 1.0f - Utilities.clamp((j10 - j13) / Math.max(1L, this.a - j13), 1.0f, 0.0f);
             min2 *= (2.2f * clamp2 * clamp2) + 0.15f;
-            this.e = vh.w(f14, f11, AndroidUtilities.dp(5.0f), this.e);
+            this.e = wh.w(f14, f11, AndroidUtilities.dp(5.0f), this.e);
         }
         this.d = (this.j * min2) + this.d;
         this.e = (this.k * min2) + this.e;

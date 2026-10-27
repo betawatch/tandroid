@@ -1,18 +1,21 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.IMapsProvider;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public final class jc0 {
-    public long a;
-    public TLRPC.Message b;
-    public TLRPC.User c;
-    public TLRPC.Chat d;
-    public IMapsProvider.IMarker e;
-    public IMapsProvider.IMarker f;
-    public boolean g;
-    public ImageReceiver h;
+public final class jc0 extends org.telegram.ui.ActionBar.o1 {
+    public final /* synthetic */ rc0 o;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public jc0(rc0 rc0Var, ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout) {
+        super(actionBarPopupWindow$ActionBarPopupWindowLayout, -2, -2);
+        this.o = rc0Var;
+    }
+
+    @Override // org.telegram.ui.ActionBar.o1, android.widget.PopupWindow
+    public final void dismiss() {
+        d(true);
+        this.o.H0 = null;
+    }
 }

@@ -4,13 +4,13 @@ import android.view.ViewGroup;
 import java.util.LinkedList;
 import org.telegram.ui.Components.gh;
 import org.telegram.ui.Components.kg;
-import org.telegram.ui.Components.le0;
+import org.telegram.ui.Components.me0;
 import org.telegram.ui.Components.pg;
 import org.telegram.ui.Components.ti;
 import org.telegram.ui.Components.ub;
-import org.telegram.ui.Components.uc0;
+import org.telegram.ui.Components.vc0;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class k4 implements o1.f {
     public final /* synthetic */ int a;
@@ -62,7 +62,7 @@ public final /* synthetic */ class k4 implements o1.f {
                 }
                 break;
             case 2:
-                ti.w((ti) this.b, (kg) this.c);
+                ti.r((ti) this.b, (kg) this.c);
                 break;
             case 3:
                 bi.x4 x4Var = (bi.x4) this.b;
@@ -75,21 +75,21 @@ public final /* synthetic */ class k4 implements o1.f {
                 viewGroup = ((org.telegram.ui.ActionBar.k3) tiVar).containerView;
                 viewGroup.invalidate();
                 ghVar.run();
-                tiVar.h2(0);
+                tiVar.i2(0);
                 break;
             default:
-                le0 le0Var = (le0) this.b;
-                uc0 uc0Var = (uc0) this.c;
-                LinkedList linkedList = le0Var.U;
-                le0Var.T = null;
-                uc0Var.D = null;
-                uc0Var.y();
+                me0 me0Var = (me0) this.b;
+                vc0 vc0Var = (vc0) this.c;
+                LinkedList linkedList = me0Var.U;
+                me0Var.T = null;
+                vc0Var.D = null;
+                vc0Var.y();
                 if (!z10) {
-                    uc0Var.h = 1.0f;
-                    uc0Var.y();
+                    vc0Var.h = 1.0f;
+                    vc0Var.y();
                     if (!linkedList.isEmpty()) {
                         ((Runnable) linkedList.poll()).run();
-                        le0Var.V.poll();
+                        me0Var.V.poll();
                         break;
                     }
                 }

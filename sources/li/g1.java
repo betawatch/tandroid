@@ -22,16 +22,16 @@ import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.ActionBar.p6;
 import org.telegram.ui.ActionBar.u6;
 import org.telegram.ui.ActionBar.y6;
+import org.telegram.ui.Components.a21;
+import org.telegram.ui.Components.a71;
 import org.telegram.ui.Components.ju;
-import org.telegram.ui.Components.s90;
-import org.telegram.ui.Components.z11;
-import org.telegram.ui.Components.z61;
+import org.telegram.ui.Components.t90;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class g1 extends ju implements p6 {
     public boolean E;
-    public s90 F;
+    public t90 F;
     public Paint G;
     public Layout H;
     public int I;
@@ -122,7 +122,7 @@ public final class g1 extends ju implements p6 {
     }
 
     @Override // org.telegram.ui.Components.ju
-    public final z61 createUrlSpan(String str) {
+    public final a71 createUrlSpan(String str) {
         return f6.k(str);
     }
 
@@ -246,7 +246,7 @@ public final class g1 extends ju implements p6 {
     public final void onDraw(Canvas canvas) {
         int i10;
         Layout layout = getLayout();
-        s90 s90Var = null;
+        t90 t90Var = null;
         if (layout == null) {
             this.F = null;
             this.H = null;
@@ -260,40 +260,40 @@ public final class g1 extends ju implements p6 {
                 this.F = null;
                 if (text instanceof Spanned) {
                     Spanned spanned = (Spanned) text;
-                    z11[] z11VarArr = (z11[]) spanned.getSpans(0, spanned.length(), z11.class);
-                    int length = z11VarArr.length;
+                    a21[] a21VarArr = (a21[]) spanned.getSpans(0, spanned.length(), a21.class);
+                    int length = a21VarArr.length;
                     int i11 = 0;
                     while (i11 < length) {
-                        z11 z11Var = z11VarArr[i11];
-                        int i12 = z11Var.b.a;
+                        a21 a21Var = a21VarArr[i11];
+                        int i12 = a21Var.b.a;
                         if ((65536 & i12) != 0) {
-                            int spanStart = spanned.getSpanStart(z11Var);
-                            int spanEnd = spanned.getSpanEnd(z11Var);
-                            s90Var = s90Var;
+                            int spanStart = spanned.getSpanStart(a21Var);
+                            int spanEnd = spanned.getSpanEnd(a21Var);
+                            t90Var = t90Var;
                             if (spanStart >= 0 && spanEnd > spanStart) {
-                                if (s90Var == null) {
-                                    s90 s90Var2 = new s90(0);
-                                    s90Var2.n = false;
-                                    s90Var = s90Var2;
+                                if (t90Var == null) {
+                                    t90 t90Var2 = new t90(0);
+                                    t90Var2.n = false;
+                                    t90Var = t90Var2;
                                 }
-                                s90Var.d(layout, spanStart, 0.0f);
+                                t90Var.d(layout, spanStart, 0.0f);
                                 int dp = (32768 & i12) != 0 ? -AndroidUtilities.dp(6.0f) : (i12 & 16384) != 0 ? AndroidUtilities.dp(2.0f) : 0;
                                 if (dp != 0) {
                                     i10 = AndroidUtilities.dp(dp > 0 ? 5.0f : -2.0f) + dp;
                                 } else {
                                     i10 = 0;
                                 }
-                                s90Var.o = i10;
-                                layout.getSelectionPath(spanStart, spanEnd, s90Var);
+                                t90Var.o = i10;
+                                layout.getSelectionPath(spanStart, spanEnd, t90Var);
                             }
                         }
                         i11++;
-                        s90Var = s90Var;
+                        t90Var = t90Var;
                     }
-                    if (s90Var != null) {
-                        s90Var.n = true;
+                    if (t90Var != null) {
+                        t90Var.n = true;
                     }
-                    this.F = s90Var;
+                    this.F = t90Var;
                 }
             }
         }
@@ -301,7 +301,7 @@ public final class g1 extends ju implements p6 {
             if (this.G == null) {
                 Paint paint = new Paint(1);
                 this.G = paint;
-                paint.setPathEffect(s90.c());
+                paint.setPathEffect(t90.c());
             }
             this.G.setColor(y6.w0(y6.K6, this.e) & 872415231);
             canvas.save();

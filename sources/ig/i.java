@@ -12,10 +12,10 @@ import org.telegram.ui.ActionBar.f7;
 import org.telegram.ui.ActionBar.o6;
 import org.telegram.ui.ActionBar.y6;
 import org.telegram.ui.Cells.z2;
-import org.telegram.ui.Components.gb1;
+import org.telegram.ui.Components.kb1;
 import org.telegram.ui.Components.y9;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class i extends z2 {
     public final /* synthetic */ n f;
@@ -60,20 +60,20 @@ public final class i extends z2 {
             }
         });
         a();
-        l5Var.addView(y9Var, gb1.u(130, 130, 49));
+        l5Var.addView(y9Var, kb1.u(130, 130, 49));
         TextView textView = new TextView(context);
         this.c = textView;
         textView.setGravity(17);
         textView.setTextSize(1, 18.0f);
         f7.V(textView, y6.G6, null);
         textView.setTypeface(AndroidUtilities.bold());
-        l5Var.addView(textView, gb1.x(-1, -2, 49, 0, 6, 0, 0));
+        l5Var.addView(textView, kb1.x(-1, -2, 49, 0, 6, 0, 0));
         TextView textView2 = new TextView(context);
         this.d = textView2;
         textView2.setGravity(17);
         textView2.setTextSize(1, 14.0f);
         f7.V(textView2, y6.y6, null);
-        l5Var.addView(textView2, gb1.x(-1, -2, 49, 0, 7, 0, 0));
+        l5Var.addView(textView2, kb1.x(-1, -2, 49, 0, 7, 0, 0));
         TextView textView3 = new TextView(context);
         this.e = textView3;
         textView3.setGravity(17);
@@ -101,8 +101,8 @@ public final class i extends z2 {
                 }
             }
         });
-        l5Var.addView(textView3, gb1.x(-1, -2, 49, 0, 18, 0, 0));
-        addView(l5Var, gb1.r(-1, -2));
+        l5Var.addView(textView3, kb1.x(-1, -2, 49, 0, 18, 0, 0));
+        addView(l5Var, kb1.r(-1, -2));
         set(null);
     }
 }

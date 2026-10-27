@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessagesStorage;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class w40 extends HorizontalScrollView {
     public static final RectF v = new RectF();
@@ -40,7 +40,7 @@ public final class w40 extends HorizontalScrollView {
         this.d = linearLayout;
         linearLayout.setLayerType(0, null);
         linearLayout.setOrientation(0);
-        addView(linearLayout, gb1.B(-1, -1, 8388611));
+        addView(linearLayout, kb1.B(-1, -1, 8388611));
         textPaint.setTextSize(AndroidUtilities.dp(13.0f));
         textPaint.setTypeface(AndroidUtilities.bold());
         final int i10 = 0;
@@ -132,11 +132,11 @@ public final class w40 extends HorizontalScrollView {
             ccVar.setDrawingCacheEnabled(false);
             ccVar.setOnClickListener(new bi.pa(this, i10, intCallback, 10));
             ccVar.setPadding(AndroidUtilities.dp(12.0f), AndroidUtilities.dp(5.0f), AndroidUtilities.dp(12.0f), AndroidUtilities.dp(5.0f));
-            LinearLayout.LayoutParams r6 = gb1.r(-2, -2);
+            LinearLayout.LayoutParams r6 = kb1.r(-2, -2);
             if (i10 < arrayList.size() - 1) {
                 r6.rightMargin = AndroidUtilities.dp(4.0f);
             }
-            ccVar.b = new q11(charSequence, this.f);
+            ccVar.b = new r11(charSequence, this.f);
             linearLayout.addView(ccVar, r6);
         }
     }

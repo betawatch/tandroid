@@ -6,23 +6,23 @@ import android.view.View;
 import android.widget.FrameLayout;
 import java.util.WeakHashMap;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.gb1;
-import org.telegram.ui.Components.m91;
-import org.telegram.ui.Components.r71;
+import org.telegram.ui.Components.kb1;
+import org.telegram.ui.Components.n91;
+import org.telegram.ui.Components.s71;
 import org.telegram.ui.Components.wz;
-import org.telegram.ui.o41;
-import org.telegram.ui.sg1;
-import org.telegram.ui.t21;
-import org.telegram.ui.u21;
+import org.telegram.ui.r41;
 import org.telegram.ui.ug1;
 import org.telegram.ui.v21;
-import org.telegram.ui.vj0;
-import org.telegram.ui.x50;
+import org.telegram.ui.w21;
+import org.telegram.ui.wg1;
+import org.telegram.ui.x21;
 import org.telegram.ui.xj0;
+import org.telegram.ui.z50;
+import org.telegram.ui.zj0;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
-public final class e5 extends m91 {
+public final class e5 extends n91 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
     public final /* synthetic */ Object c;
@@ -33,7 +33,7 @@ public final class e5 extends m91 {
         this.b = context;
     }
 
-    @Override // org.telegram.ui.Components.m91
+    @Override // org.telegram.ui.Components.n91
     public final void b(View view, int i10, int i11) {
         j5 j5Var;
         org.telegram.ui.ActionBar.r2 r2Var;
@@ -61,38 +61,38 @@ public final class e5 extends m91 {
                 frameLayout.addView(j5Var);
                 break;
             case 1:
-                xj0 xj0Var = (xj0) obj;
-                vj0[] vj0VarArr = xj0Var.b;
-                vj0VarArr[i10].d.g3.O(false);
-                if (!vj0VarArr[i10].i) {
-                    xj0Var.l0(i10, false);
+                zj0 zj0Var = (zj0) obj;
+                xj0[] xj0VarArr = zj0Var.b;
+                xj0VarArr[i10].d.g3.O(false);
+                if (!xj0VarArr[i10].i) {
+                    zj0Var.l0(i10, false);
                     break;
                 }
                 break;
             case 3:
-                ((u21) view).a(i11);
+                ((w21) view).a(i11);
                 break;
             case 5:
-                ug1 ug1Var = (ug1) obj;
-                SparseArray sparseArray = ug1Var.a;
-                sg1 sg1Var = (sg1) sparseArray.get(i10);
-                if (sg1Var != null) {
-                    r2Var = sg1Var.a;
+                wg1 wg1Var = (wg1) obj;
+                SparseArray sparseArray = wg1Var.a;
+                ug1 ug1Var = (ug1) sparseArray.get(i10);
+                if (ug1Var != null) {
+                    r2Var = ug1Var.a;
                 } else {
-                    org.telegram.ui.ActionBar.r2 W = ug1Var.W(i10);
-                    sg1 sg1Var2 = new sg1(W);
-                    sparseArray.put(i10, sg1Var2);
+                    org.telegram.ui.ActionBar.r2 W = wg1Var.W(i10);
+                    ug1 ug1Var2 = new ug1(W);
+                    sparseArray.put(i10, ug1Var2);
                     r2Var = W;
-                    sg1Var = sg1Var2;
+                    ug1Var = ug1Var2;
                 }
-                if (!sg1Var.b) {
+                if (!ug1Var.b) {
                     r2Var.onFragmentCreate();
-                    sg1Var.b = true;
+                    ug1Var.b = true;
                 }
-                r2Var.setParentLayout(ug1Var.getParentLayout());
+                r2Var.setParentLayout(wg1Var.getParentLayout());
                 if (r2Var.getFragmentView() == null) {
                     r2Var.performCreateView((Context) this.b);
-                    r2Var.setTitleOverlayText(ug1Var.n, ug1Var.r, ug1Var.s);
+                    r2Var.setTitleOverlayText(wg1Var.n, wg1Var.r, wg1Var.s);
                 }
                 FrameLayout frameLayout2 = (FrameLayout) view;
                 frameLayout2.removeAllViews();
@@ -101,20 +101,20 @@ public final class e5 extends m91 {
                 if (!r2Var.hasOwnBackground() && fragmentView.getBackground() == null) {
                     org.telegram.ui.ActionBar.f7.i(org.telegram.ui.ActionBar.y6.d6, fragmentView, null);
                 }
-                frameLayout2.addView(fragmentView, gb1.g(-1.0f, -1));
+                frameLayout2.addView(fragmentView, kb1.g(-1.0f, -1));
                 if (r2Var.getActionBar() != null && r2Var.getActionBar().K) {
                     AndroidUtilities.removeFromParent(r2Var.getActionBar());
                     frameLayout2.addView(r2Var.getActionBar());
                 }
                 WeakHashMap weakHashMap = r0.i0.a;
                 r0.y.c(frameLayout2);
-                ug1Var.checkSystemBarColors();
-                ug1Var.V();
+                wg1Var.checkSystemBarColors();
+                wg1Var.V();
                 break;
         }
     }
 
-    @Override // org.telegram.ui.Components.m91
+    @Override // org.telegram.ui.Components.n91
     public final View d(int i10) {
         j5 j5Var;
         org.telegram.ui.ActionBar.u6 u6Var;
@@ -128,7 +128,7 @@ public final class e5 extends m91 {
                         j5Var = l2Var.Y;
                         AndroidUtilities.removeFromParent(j5Var);
                         FrameLayout frameLayout = new FrameLayout((Context) this.b);
-                        frameLayout.addView(j5Var, gb1.i(-1, -1, 119));
+                        frameLayout.addView(j5Var, kb1.i(-1, -1, 119));
                         return frameLayout;
                     }
                     return null;
@@ -146,36 +146,36 @@ public final class e5 extends m91 {
                 j5Var = h7Var.Y;
                 AndroidUtilities.removeFromParent(j5Var);
                 FrameLayout frameLayout2 = new FrameLayout((Context) this.b);
-                frameLayout2.addView(j5Var, gb1.i(-1, -1, 119));
+                frameLayout2.addView(j5Var, kb1.i(-1, -1, 119));
                 return frameLayout2;
             case 1:
-                xj0 xj0Var = (xj0) this.c;
-                vj0 vj0Var = xj0Var.b[i10];
+                zj0 zj0Var = (zj0) this.c;
+                xj0 xj0Var = zj0Var.b[i10];
                 Context context = (Context) this.b;
-                vj0Var.d = xj0Var.h0(context, i10);
-                r71 r71Var = vj0Var.d;
-                u6Var = ((org.telegram.ui.ActionBar.r2) xj0Var).resourceProvider;
-                wz wzVar = new wz(context, r71Var, u6Var, new org.telegram.ui.Components.h2(this, i10, 21));
-                vj0Var.e = wzVar;
+                xj0Var.d = zj0Var.h0(context, i10);
+                s71 s71Var = xj0Var.d;
+                u6Var = ((org.telegram.ui.ActionBar.r2) zj0Var).resourceProvider;
+                wz wzVar = new wz(context, s71Var, u6Var, new org.telegram.ui.Components.h2(this, i10, 21));
+                xj0Var.e = wzVar;
                 return wzVar;
             case 2:
                 FrameLayout frameLayout3 = new FrameLayout((Context) this.b);
-                frameLayout3.setOnClickListener(new x50(this, 25));
+                frameLayout3.setOnClickListener(new z50(this, 25));
                 return frameLayout3;
             case 3:
-                return new u21((v21) this.c, (Context) this.b);
+                return new w21((x21) this.c, (Context) this.b);
             case 4:
                 FrameLayout frameLayout4 = new FrameLayout((Context) this.b);
-                frameLayout4.setOnClickListener(new t21(this, 8));
+                frameLayout4.setOnClickListener(new v21(this, 8));
                 return frameLayout4;
             case 5:
-                return new o41((Context) this.b, 7);
+                return new r41((Context) this.b, 7);
             default:
                 return i10 == 0 ? ((vg.a0) this.b).getContainerView() : ((vg.z0) this.c).getContainerView();
         }
     }
 
-    @Override // org.telegram.ui.Components.m91
+    @Override // org.telegram.ui.Components.n91
     public final int e() {
         switch (this.a) {
             case 0:
@@ -190,14 +190,14 @@ public final class e5 extends m91 {
             case 4:
                 return 2;
             case 5:
-                ((ug1) this.c).getClass();
+                ((wg1) this.c).getClass();
                 return 4;
             default:
                 return 2;
         }
     }
 
-    @Override // org.telegram.ui.Components.m91
+    @Override // org.telegram.ui.Components.n91
     public int h(int i10) {
         switch (this.a) {
             case 0:

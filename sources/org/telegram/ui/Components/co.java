@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class co extends org.telegram.ui.Cells.h6 {
     public final /* synthetic */ eo F;
@@ -24,9 +24,9 @@ public final class co extends org.telegram.ui.Cells.h6 {
     @Override // org.telegram.ui.Cells.h6
     public final boolean e() {
         go goVar = this.F.d;
-        org.telegram.ui.za1 za1Var = goVar.s;
-        View F = za1Var.F(this);
-        s4.e1 T = F == null ? null : za1Var.T(F);
+        org.telegram.ui.bb1 bb1Var = goVar.s;
+        View F = bb1Var.F(this);
+        s4.e1 T = F == null ? null : bb1Var.T(F);
         if (T != null) {
             int b10 = T.b();
             int i10 = goVar.M;
@@ -41,9 +41,9 @@ public final class co extends org.telegram.ui.Cells.h6 {
     public final boolean f(org.telegram.ui.Cells.h6 h6Var) {
         int b10;
         go goVar = this.F.d;
-        org.telegram.ui.za1 za1Var = goVar.s;
-        View F = za1Var.F(h6Var);
-        s4.e1 T = F == null ? null : za1Var.T(F);
+        org.telegram.ui.bb1 bb1Var = goVar.s;
+        View F = bb1Var.F(h6Var);
+        s4.e1 T = F == null ? null : bb1Var.T(F);
         if (T == null || (b10 = T.b()) == -1) {
             return false;
         }
@@ -58,7 +58,7 @@ public final class co extends org.telegram.ui.Cells.h6 {
             if (menu.findItem(R.id.copy) == null) {
                 return;
             }
-            org.telegram.ui.un.r8(menu, ((org.telegram.ui.un) goVar.b.f0).h, false, true, true, true);
+            org.telegram.ui.wn.t8(menu, ((org.telegram.ui.wn) goVar.b.f0).h, false, true, true, true);
         }
     }
 
@@ -79,9 +79,9 @@ public final class co extends org.telegram.ui.Cells.h6 {
             }
         }
         super.h(h6Var, z10);
-        org.telegram.ui.za1 za1Var = goVar.s;
-        View F = za1Var.F(h6Var);
-        s4.e1 T = F == null ? null : za1Var.T(F);
+        org.telegram.ui.bb1 bb1Var = goVar.s;
+        View F = bb1Var.F(h6Var);
+        s4.e1 T = F == null ? null : bb1Var.T(F);
         if (T != null && (b10 = T.b()) != -1) {
             goVar.L[b10 - goVar.t0] = z10;
         }
@@ -100,7 +100,7 @@ public final class co extends org.telegram.ui.Cells.h6 {
 
     @Override // org.telegram.ui.Cells.h6
     public final void k(org.telegram.ui.Cells.g6 g6Var) {
-        this.F.d.b.y1(g6Var, true);
+        this.F.d.b.z1(g6Var, true);
     }
 
     @Override // org.telegram.ui.Cells.h6

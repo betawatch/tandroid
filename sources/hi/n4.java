@@ -15,13 +15,13 @@ import fi.aa;
 import fi.ua;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.GenericProvider;
-import org.telegram.ui.Components.pw0;
 import org.telegram.ui.Components.qc;
+import org.telegram.ui.Components.qw0;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public abstract class n4 extends FrameLayout {
-    public static final pw0 b0 = new pw0(new gh.a(16), new gh.a(17));
+    public static final qw0 b0 = new qw0(new gh.a(16), new gh.a(17));
     public Runnable E;
     public m4 F;
     public o1.j G;

@@ -15,9 +15,9 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.gb1;
+import org.telegram.ui.Components.kb1;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class b6 extends FrameLayout {
     public final v5 E;
@@ -60,8 +60,8 @@ public final class b6 extends FrameLayout {
         y5 y5Var = new y5(context, this, y9Var);
         this.a = y5Var;
         v5Var.setAdapter(y5Var);
-        z5Var.addView(v5Var, gb1.h(-1, -1.0f, 0, 0.0f, 0.0f, 0.0f, 0.0f));
-        addView(u5Var, gb1.g(-1.0f, -1));
+        z5Var.addView(v5Var, kb1.h(-1, -1.0f, 0, 0.0f, 0.0f, 0.0f, 0.0f));
+        addView(u5Var, kb1.g(-1.0f, -1));
         addView(z5Var);
         setVisibility(4);
     }
@@ -83,10 +83,10 @@ public final class b6 extends FrameLayout {
             a6Var.a = storyItem;
             arrayList2.add(a6Var);
         }
-        ArrayList E = MessagesController.getInstance(this.r.h).storiesController.E(UserConfig.getInstance(UserConfig.selectedAccount).getClientUserId());
-        if (E != null) {
-            for (int i12 = 0; i12 < E.size(); i12++) {
-                g7 g7Var = (g7) E.get(i12);
+        ArrayList F = MessagesController.getInstance(this.r.h).storiesController.F(UserConfig.getInstance(UserConfig.selectedAccount).getClientUserId());
+        if (F != null) {
+            for (int i12 = 0; i12 < F.size(); i12++) {
+                g7 g7Var = (g7) F.get(i12);
                 a6 a6Var2 = new a6();
                 a6Var2.b = g7Var;
                 arrayList2.add(a6Var2);
@@ -203,7 +203,7 @@ public final class b6 extends FrameLayout {
         this.f = clamp;
         Utilities.clamp(clamp / 0.5f, 1.0f, 0.0f);
         y9 y9Var = this.r;
-        q4 t10 = y9Var.t();
+        q4 u10 = y9Var.u();
         v9 v9Var = y9Var.s0;
         u5 u5Var = this.h;
         if (f10 == 1.0f && this.f != 1.0f) {
@@ -264,9 +264,9 @@ public final class b6 extends FrameLayout {
                         i11++;
                     }
                 }
-            } else if (t10 != null && t10.y1 != (closestPosition = u5Var.getClosestPosition())) {
-                t10.y1 = closestPosition;
-                t10.d1(false);
+            } else if (u10 != null && u10.y1 != (closestPosition = u5Var.getClosestPosition())) {
+                u10.y1 = closestPosition;
+                u10.d1(false);
             }
             u5Var.d.abortAnimation();
             ValueAnimator valueAnimator = u5Var.M;
@@ -276,8 +276,8 @@ public final class b6 extends FrameLayout {
             }
             u5Var.c(u5Var.K, false, true);
         }
-        if (t10 != null) {
-            q3 q3Var = t10.R0;
+        if (u10 != null) {
+            q3 q3Var = u10.R0;
             u5Var.a = q3Var.getTop();
             u5Var.b = q3Var.getMeasuredWidth();
             u5Var.c = q3Var.getMeasuredHeight();

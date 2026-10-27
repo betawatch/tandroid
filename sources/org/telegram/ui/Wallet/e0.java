@@ -6,9 +6,9 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.Wallet.WalletEngine2;
-import org.telegram.ui.u90;
+import org.telegram.ui.w90;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class e0 implements Utilities.Callback2 {
     public final /* synthetic */ int a;
@@ -40,7 +40,7 @@ public final /* synthetic */ class e0 implements Utilities.Callback2 {
                     if (str == null) {
                         str = "NULL_ERROR";
                     }
-                    l0.i("disable backup: failed to prove challenge: ".concat(str));
+                    l0.j("disable backup: failed to prove challenge: ".concat(str));
                     break;
                 }
             default:
@@ -48,9 +48,9 @@ public final /* synthetic */ class e0 implements Utilities.Callback2 {
                 Object obj3 = (TLRPC.TL_error) obj2;
                 l0 l0Var2 = this.b.d;
                 if (walletState != null) {
-                    l0Var2.i0(walletState);
-                    l0Var2.P();
-                    AndroidUtilities.runOnUIThread(new u90(11), 1000L);
+                    l0Var2.l0(walletState);
+                    l0Var2.R();
+                    AndroidUtilities.runOnUIThread(new w90(12), 1000L);
                     break;
                 } else {
                     StringBuilder sb2 = new StringBuilder("disable backup: failed to disable backup on server: ");
@@ -58,7 +58,7 @@ public final /* synthetic */ class e0 implements Utilities.Callback2 {
                         obj3 = "NULL_ERROR";
                     }
                     sb2.append(obj3);
-                    l0.i(sb2.toString());
+                    l0.j(sb2.toString());
                     break;
                 }
         }

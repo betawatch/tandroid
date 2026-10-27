@@ -30,11 +30,11 @@ import org.telegram.tgnet.NativeByteBuffer;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.aa0;
-import org.telegram.ui.Components.w90;
+import org.telegram.ui.Components.ba0;
+import org.telegram.ui.Components.x90;
 import org.telegram.ui.Components.xc;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class b4 implements Runnable {
     public final /* synthetic */ int a;
@@ -178,7 +178,7 @@ public final /* synthetic */ class b4 implements Runnable {
                 callback2.run(z6Var);
                 return;
             case 7:
-                MessagesController.getInstance(((g7) this.b).M.a).getStoriesController().Z((TL_stories.TL_updateStory) this.c);
+                MessagesController.getInstance(((g7) this.b).M.a).getStoriesController().c0((TL_stories.TL_updateStory) this.c);
                 return;
             case 8:
                 g7 g7Var = (g7) this.b;
@@ -344,17 +344,17 @@ public final /* synthetic */ class b4 implements Runnable {
                 return;
             case 19:
                 n8 n8Var = (n8) this.b;
-                aa0 aa0Var = (aa0) this.c;
-                aa0 aa0Var2 = n8Var.a;
-                if (aa0Var != aa0Var2 || aa0Var2 == null) {
+                ba0 ba0Var = (ba0) this.c;
+                ba0 ba0Var2 = n8Var.a;
+                if (ba0Var != ba0Var2 || ba0Var2 == null) {
                     return;
                 }
-                CharacterStyle characterStyle = aa0Var2.i;
+                CharacterStyle characterStyle = ba0Var2.i;
                 if (characterStyle instanceof URLSpan) {
                     o8 o8Var = n8Var.v;
-                    w90 w90Var = n8Var.c;
-                    Objects.requireNonNull(w90Var);
-                    o8Var.J.H((URLSpan) characterStyle, o8Var, new bi.u6(w90Var, i11));
+                    x90 x90Var = n8Var.c;
+                    Objects.requireNonNull(x90Var);
+                    o8Var.J.H((URLSpan) characterStyle, o8Var, new bi.u6(x90Var, i11));
                     n8Var.a = null;
                     return;
                 }

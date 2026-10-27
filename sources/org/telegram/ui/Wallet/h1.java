@@ -8,9 +8,9 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.eb0;
+import org.telegram.ui.gb0;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class h1 implements Utilities.Callback2 {
     public final /* synthetic */ int a;
@@ -37,7 +37,7 @@ public final /* synthetic */ class h1 implements Utilities.Callback2 {
         switch (this.a) {
             case 0:
                 e2 e2Var = this.b;
-                eb0 eb0Var = (eb0) this.d;
+                gb0 gb0Var = (gb0) this.d;
                 String str = this.c;
                 String str2 = (String) this.e;
                 String str3 = (String) this.f;
@@ -46,7 +46,7 @@ public final /* synthetic */ class h1 implements Utilities.Callback2 {
                 TLRPC.TL_error tL_error = (TLRPC.TL_error) obj2;
                 e2Var.getClass();
                 if (tL_error != null || tonconnectsession2 == null) {
-                    eb0Var.run(null, e2.x(tL_error, "createSession"));
+                    gb0Var.run(null, e2.x(tL_error, "createSession"));
                     break;
                 } else {
                     ArrayList arrayList = e2Var.d;
@@ -60,7 +60,7 @@ public final /* synthetic */ class h1 implements Utilities.Callback2 {
                         if (tonconnectsession3.id == tonconnectsession2.id && (tonconnectsession3.manifest != null || tonconnectsession3.manifest_error != null || tonconnectsession3.closed || tonconnectsession3.closing)) {
                             tonconnectsession = tonconnectsession3;
                             e2Var.n(tonconnectsession);
-                            eb0Var.run(new z1(tonconnectsession, str, str2, str3, str4), null);
+                            gb0Var.run(new z1(tonconnectsession, str, str2, str3, str4), null);
                             break;
                         } else {
                             size = i11;
@@ -68,7 +68,7 @@ public final /* synthetic */ class h1 implements Utilities.Callback2 {
                     }
                     tonconnectsession = tonconnectsession2;
                     e2Var.n(tonconnectsession);
-                    eb0Var.run(new z1(tonconnectsession, str, str2, str3, str4), null);
+                    gb0Var.run(new z1(tonconnectsession, str, str2, str3, str4), null);
                 }
                 break;
             case 1:
@@ -99,11 +99,11 @@ public final /* synthetic */ class h1 implements Utilities.Callback2 {
                 TLRPC.TL_error tL_error3 = (TLRPC.TL_error) obj2;
                 l0 l0Var = e2Var3.b;
                 if (tL_error3 == null && tonconnectsession5 != null) {
-                    if (tonconnectsession5.id != tL_urlAuthResultRequest.tc_session_id || !tL_urlAuthResultRequest.tc_client_id.equals(tonconnectsession5.dapp_client_id) || tonconnectsession5.closed || tonconnectsession5.closing || tonconnectsession5.nonce == null || !TextUtils.equals(str6, l0Var.s()) || !Arrays.equals(bArr2, l0Var.x())) {
+                    if (tonconnectsession5.id != tL_urlAuthResultRequest.tc_session_id || !tL_urlAuthResultRequest.tc_client_id.equals(tonconnectsession5.dapp_client_id) || tonconnectsession5.closed || tonconnectsession5.closing || tonconnectsession5.nonce == null || !TextUtils.equals(str6, l0Var.t()) || !Arrays.equals(bArr2, l0Var.y())) {
                         r1Var.run(null, "Wallet or TON Connect session changed. Open the request again.");
                         break;
                     } else {
-                        l0Var.y(new b1(e2Var3, r1Var, tonconnectsession5, str6, bArr2, jSONArray, tL_urlAuthResultRequest), true, false);
+                        l0Var.z(new b1(e2Var3, r1Var, tonconnectsession5, str6, bArr2, jSONArray, tL_urlAuthResultRequest), true, false);
                         break;
                     }
                 } else {
@@ -134,10 +134,10 @@ public final /* synthetic */ class h1 implements Utilities.Callback2 {
         }
     }
 
-    public /* synthetic */ h1(e2 e2Var, eb0 eb0Var, String str, String str2, String str3, String str4) {
+    public /* synthetic */ h1(e2 e2Var, gb0 gb0Var, String str, String str2, String str3, String str4) {
         this.a = 0;
         this.b = e2Var;
-        this.d = eb0Var;
+        this.d = gb0Var;
         this.c = str;
         this.e = str2;
         this.f = str3;

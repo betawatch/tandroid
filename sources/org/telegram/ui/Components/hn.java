@@ -9,9 +9,9 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class hn implements zl0 {
+public final /* synthetic */ class hn implements am0 {
     public final /* synthetic */ int a = 1;
     public final /* synthetic */ org.telegram.ui.ActionBar.u6 b;
     public final /* synthetic */ Object c;
@@ -25,7 +25,7 @@ public final /* synthetic */ class hn implements zl0 {
         this.e = context;
     }
 
-    @Override // org.telegram.ui.Components.zl0
+    @Override // org.telegram.ui.Components.am0
     public final void c(int i10, View view) {
         boolean z10;
         boolean z11;
@@ -39,7 +39,7 @@ public final /* synthetic */ class hn implements zl0 {
                 d5.f fVar = goVar.N0;
                 sn snVar = goVar.v;
                 eo eoVar = goVar.r;
-                org.telegram.ui.za1 za1Var = goVar.s;
+                org.telegram.ui.bb1 bb1Var = goVar.s;
                 int i11 = goVar.L0;
                 org.telegram.ui.ActionBar.u6 u6Var = this.b;
                 if (i10 == i11) {
@@ -51,7 +51,7 @@ public final /* synthetic */ class hn implements zl0 {
                     fVar2.show();
                     break;
                 } else if (i10 == goVar.I0) {
-                    k80 F = k80.F(tiVar.container, u6Var, view);
+                    l80 F = l80.F(tiVar.container, u6Var, view);
                     int i12 = 0;
                     while (true) {
                         int[] iArr = goVar.T0;
@@ -63,7 +63,7 @@ public final /* synthetic */ class hn implements zl0 {
                             break;
                         } else {
                             int i13 = iArr[i12];
-                            e31 a2 = e31.a(i13);
+                            f31 a2 = f31.a(i13);
                             int i14 = org.telegram.ui.ActionBar.y6.F8;
                             org.telegram.ui.ActionBar.f7.y(goVar, a2, i14, u6Var, PorterDuff.Mode.SRC_IN);
                             F.b(0, a2, LocaleController.formatPluralString("Hours", i13 / 3600, new Object[0]), i14, org.telegram.ui.ActionBar.y6.E8, new org.telegram.ui.g4(goVar, i13, view, 6));
@@ -95,7 +95,7 @@ public final /* synthetic */ class hn implements zl0 {
                                     go goVar2 = (go) fVar.c;
                                     eo eoVar2 = goVar2.r;
                                     if (i10 == i16) {
-                                        za1Var.setItemAnimator(snVar);
+                                        bb1Var.setItemAnimator(snVar);
                                         int i17 = fVar.a;
                                         if (i17 >= 0) {
                                             s4.e1 K = goVar2.s.K(i17);
@@ -148,14 +148,14 @@ public final /* synthetic */ class hn implements zl0 {
                                         int i19 = goVar.I0;
                                         goVar.l0();
                                         if (i19 < 0) {
-                                            s4.e1 K2 = za1Var.K(goVar.H0);
+                                            s4.e1 K2 = bb1Var.K(goVar.H0);
                                             if (K2 != null) {
                                                 View view3 = K2.a;
                                                 if (view3 instanceof org.telegram.ui.Cells.e6) {
                                                     ((org.telegram.ui.Cells.e6) view3).setDivider(true);
                                                 }
                                             }
-                                            za1Var.setItemAnimator(snVar);
+                                            bb1Var.setItemAnimator(snVar);
                                             eoVar.s(goVar.I0, 3);
                                         }
                                     } else {
@@ -163,9 +163,9 @@ public final /* synthetic */ class hn implements zl0 {
                                         goVar.V = 0;
                                         int i20 = goVar.I0;
                                         goVar.l0();
-                                        za1Var.setItemAnimator(snVar);
+                                        bb1Var.setItemAnimator(snVar);
                                         eoVar.t(i20, 3);
-                                        s4.e1 K3 = za1Var.K(goVar.H0);
+                                        s4.e1 K3 = bb1Var.K(goVar.H0);
                                         if (K3 != null) {
                                             View view4 = K3.a;
                                             if (view4 instanceof org.telegram.ui.Cells.e6) {
@@ -183,10 +183,10 @@ public final /* synthetic */ class hn implements zl0 {
                                     goVar.l0();
                                     int i21 = goVar.y0;
                                     if (i21 >= 0 && i18 < 0) {
-                                        za1Var.setItemAnimator(snVar);
+                                        bb1Var.setItemAnimator(snVar);
                                         eoVar.o(goVar.y0);
                                     } else if (i18 >= 0 && i21 < 0) {
-                                        za1Var.setItemAnimator(snVar);
+                                        bb1Var.setItemAnimator(snVar);
                                         eoVar.u(i18);
                                     }
                                 } else if (i10 == goVar.F0) {
@@ -203,9 +203,9 @@ public final /* synthetic */ class hn implements zl0 {
                                             }
                                         }
                                     }
-                                    int childCount = za1Var.getChildCount();
+                                    int childCount = bb1Var.getChildCount();
                                     for (int i23 = 0; i23 < childCount; i23++) {
-                                        s4.e1 T = za1Var.T(za1Var.getChildAt(i23));
+                                        s4.e1 T = bb1Var.T(bb1Var.getChildAt(i23));
                                         if (T.f == 5) {
                                             ((org.telegram.ui.Cells.h6) T.a).a.a(goVar.b0, true);
                                         }
@@ -215,7 +215,7 @@ public final /* synthetic */ class hn implements zl0 {
                                     goVar.W = z11;
                                 } else if (i10 == goVar.G0) {
                                     if (!goVar.e0) {
-                                        za1Var.setItemAnimator(snVar);
+                                        bb1Var.setItemAnimator(snVar);
                                         z11 = !goVar.c0;
                                         goVar.c0 = z11;
                                         int i24 = goVar.o0;
@@ -230,7 +230,7 @@ public final /* synthetic */ class hn implements zl0 {
                                             goVar.R = false;
                                             int i25 = goVar.D0;
                                             if (i25 >= 0) {
-                                                s4.e1 K4 = za1Var.K(i25);
+                                                s4.e1 K4 = bb1Var.K(i25);
                                                 if (K4 != null) {
                                                     ((org.telegram.ui.Cells.e6) K4.a).setChecked(false);
                                                 } else {
@@ -239,7 +239,7 @@ public final /* synthetic */ class hn implements zl0 {
                                             }
                                         } else {
                                             int i26 = goVar.D0;
-                                            if (i26 >= 0 && za1Var.K(i26) == null) {
+                                            if (i26 >= 0 && bb1Var.K(i26) == null) {
                                                 eoVar.m(goVar.D0);
                                             }
                                         }
@@ -259,11 +259,11 @@ public final /* synthetic */ class hn implements zl0 {
                             }
                         }
                         if (goVar.d0 && !goVar.c0) {
-                            za1Var.getChildCount();
+                            bb1Var.getChildCount();
                             t40Var.b(true);
                         }
                         for (int i28 = goVar.t0; i28 < goVar.t0 + goVar.M; i28++) {
-                            s4.e1 K5 = za1Var.K(i28);
+                            s4.e1 K5 = bb1Var.K(i28);
                             if (K5 != null) {
                                 View view5 = K5.a;
                                 if (view5 instanceof org.telegram.ui.Cells.h6) {

@@ -10,9 +10,9 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.gb1;
+import org.telegram.ui.Components.kb1;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class x1 extends LinearLayout {
     public final ImageView a;
@@ -42,19 +42,19 @@ public final class x1 extends LinearLayout {
         org.telegram.ui.ActionBar.f7.y(this, mutate, i11, u6Var, PorterDuff.Mode.MULTIPLY);
         view.setBackground(mutate);
         if (LocaleController.isRTL) {
-            addView(view, gb1.x(16, 16, 16, 11, 0, 3, 0));
-            addView(s6Var, gb1.x(-2, 16, 16, 0, 0, this.a != null ? 3 : 11, 0));
+            addView(view, kb1.x(16, 16, 16, 11, 0, 3, 0));
+            addView(s6Var, kb1.x(-2, 16, 16, 0, 0, this.a != null ? 3 : 11, 0));
             View view2 = this.a;
             if (view2 != null) {
-                addView(view2, gb1.x(16, 16, 16, 0, 0, 11, 0));
+                addView(view2, kb1.x(16, 16, 16, 0, 0, 11, 0));
             }
         } else {
             View view3 = this.a;
             if (view3 != null) {
-                addView(view3, gb1.x(16, 16, 16, 11, 0, 3, 0));
+                addView(view3, kb1.x(16, 16, 16, 11, 0, 3, 0));
             }
-            addView(s6Var, gb1.x(-2, 16, 16, this.a == null ? 11 : 0, 0, 3, 0));
-            addView(view, gb1.x(16, 16, 16, 0, 0, 11, 0));
+            addView(s6Var, kb1.x(-2, 16, 16, this.a == null ? 11 : 0, 0, 3, 0));
+            addView(view, kb1.x(16, 16, 16, 0, 0, 11, 0));
         }
         int i12 = org.telegram.ui.ActionBar.y6.i6;
         Drawable Z = org.telegram.ui.ActionBar.y6.Z(org.telegram.ui.ActionBar.y6.w0(i12, u6Var), 16, 16);

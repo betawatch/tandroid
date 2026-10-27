@@ -14,7 +14,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class e0 implements Runnable {
     public final /* synthetic */ int a;
@@ -51,7 +51,7 @@ public final /* synthetic */ class e0 implements Runnable {
                 ((MessagesController) this.b).lambda$didReceivedNotification$43((TLRPC.WallPaper) this.c, (TLRPC.TL_wallPaperSettings) this.d, (org.telegram.ui.ActionBar.r6) this.e, (File) this.f, (String) this.h);
                 break;
             case 4:
-                ((MessagesController) this.b).lambda$checkCanOpenChat$456((org.telegram.ui.ActionBar.e2) this.c, (qf.c) this.d, (TLObject) this.e, (org.telegram.ui.ActionBar.r2) this.f, (Bundle) this.h);
+                ((MessagesController) this.b).lambda$checkCanOpenChat$457((org.telegram.ui.ActionBar.e2) this.c, (qf.c) this.d, (TLObject) this.e, (org.telegram.ui.ActionBar.r2) this.f, (Bundle) this.h);
                 break;
             case 5:
                 ((SavedMessagesController) this.b).lambda$loadCache$6((ArrayList) this.c, (ArrayList) this.d, (ArrayList) this.e, (ArrayList) this.f, (Runnable) this.h);

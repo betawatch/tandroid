@@ -11,7 +11,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class bz extends ImageView {
     public int a;
@@ -90,7 +90,7 @@ public final class bz extends ImageView {
                 ValueAnimator ofFloat = ValueAnimator.ofFloat(f7, 0.0f);
                 this.n = ofFloat;
                 ofFloat.addUpdateListener(new n6(this, 22));
-                this.n.addListener(new org.telegram.ui.qp(this, 27));
+                this.n.addListener(new org.telegram.ui.sp(this, 27));
                 org.telegram.ui.d3.m(5.0f, this.n);
                 this.n.setDuration(350L);
                 this.n.start();

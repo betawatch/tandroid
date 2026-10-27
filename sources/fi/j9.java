@@ -12,11 +12,11 @@ import android.view.animation.LinearInterpolator;
 import android.widget.ScrollView;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.vh;
+import org.telegram.messenger.wh;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.x30;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class j9 extends ViewGroup {
     public final /* synthetic */ int a = 0;
@@ -331,7 +331,7 @@ public final class j9 extends ViewGroup {
                     B = AndroidUtilities.dp(394.0f) / 3;
                 } else {
                     Point point = AndroidUtilities.displaySize;
-                    B = vh.B(136.0f, Math.min(point.x, point.y), 3);
+                    B = wh.B(136.0f, Math.min(point.x, point.y), 3);
                 }
                 if (i31 - i32 < B) {
                     dp2 += AndroidUtilities.dp(36.0f);
@@ -492,7 +492,7 @@ public final class j9 extends ViewGroup {
                     B2 = AndroidUtilities.dp(376.0f) / 3;
                 } else {
                     Point point2 = AndroidUtilities.displaySize;
-                    B2 = vh.B(154.0f, Math.min(point2.x, point2.y), 3);
+                    B2 = wh.B(154.0f, Math.min(point2.x, point2.y), 3);
                 }
                 if (dp8 - i35 < B2) {
                     i33 += AndroidUtilities.dp(36.0f);

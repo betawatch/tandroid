@@ -25,17 +25,16 @@ import org.telegram.ui.ActionBar.e2;
 import org.telegram.ui.Cells.y1;
 import org.telegram.ui.Components.e5;
 import org.telegram.ui.Components.f50;
-import org.telegram.ui.Components.hn0;
+import org.telegram.ui.Components.in0;
 import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.cy;
-import org.telegram.ui.qu0;
-import org.telegram.ui.rz0;
-import org.telegram.ui.un;
-import org.telegram.ui.v50;
-import sg.u;
+import org.telegram.ui.ey;
+import org.telegram.ui.su0;
+import org.telegram.ui.tz0;
+import org.telegram.ui.wn;
+import org.telegram.ui.x50;
 import vg.n1;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class j0 implements f50, b2, u7, e5, u5.b, t9.g {
     public final /* synthetic */ int a;
@@ -54,12 +53,12 @@ public final /* synthetic */ class j0 implements f50, b2, u7, e5, u5.b, t9.g {
 
     @Override // org.telegram.ui.Components.e5
     public void G(int i10, int i11, boolean z10) {
-        un.Y((un) this.c, (ArrayList) this.d, this.b, (hn0) this.e, z10, i10);
+        wn.v0((wn) this.c, (ArrayList) this.d, this.b, (in0) this.e, z10, i10);
     }
 
     @Override // org.telegram.ui.Components.f50
     public void R(TLRPC.InputFile inputFile, TLRPC.InputFile inputFile2, double d, String str, TLRPC.PhotoSize photoSize, TLRPC.PhotoSize photoSize2, boolean z10, TLRPC.VideoSize videoSize) {
-        un unVar = (un) this.c;
+        wn wnVar = (wn) this.c;
         TLRPC.FileLocation[] fileLocationArr = (TLRPC.FileLocation[]) this.d;
         TLRPC.FileLocation[] fileLocationArr2 = (TLRPC.FileLocation[]) this.e;
         if (inputFile == null && inputFile2 == null && videoSize == null) {
@@ -82,7 +81,7 @@ public final /* synthetic */ class j0 implements f50, b2, u7, e5, u5.b, t9.g {
             tL_photos_uploadProfilePhoto.video_emoji_markup = videoSize;
             tL_photos_uploadProfilePhoto.flags |= 16;
         }
-        unVar.getConnectionsManager().sendRequest(tL_photos_uploadProfilePhoto, new l0(unVar, fileLocationArr, str, fileLocationArr2, this.b));
+        wnVar.getConnectionsManager().sendRequest(tL_photos_uploadProfilePhoto, new l0(wnVar, fileLocationArr, str, fileLocationArr2, this.b));
     }
 
     @Override // t9.g
@@ -98,7 +97,7 @@ public final /* synthetic */ class j0 implements f50, b2, u7, e5, u5.b, t9.g {
                 return fVar2.b.schedule(new Callable() { // from class: t9.e
                     @Override // java.util.concurrent.Callable
                     public final Object call() {
-                        return f.this.a.submit(new u(4, callable, e3Var));
+                        return f.this.a.submit(new s9.g(5, callable, e3Var));
                     }
                 }, this.b, (TimeUnit) this.e);
         }
@@ -164,7 +163,7 @@ public final /* synthetic */ class j0 implements f50, b2, u7, e5, u5.b, t9.g {
     }
 
     @Override // org.telegram.ui.Components.f50
-    public /* synthetic */ qu0 getCloseIntoObject() {
+    public /* synthetic */ su0 getCloseIntoObject() {
         return null;
     }
 
@@ -192,25 +191,25 @@ public final /* synthetic */ class j0 implements f50, b2, u7, e5, u5.b, t9.g {
                 if (y1Var != null && y1Var.b()) {
                     z10 = true;
                 }
-                v50.w1(call, z10, this.b, runnable);
+                x50.w1(call, z10, this.b, runnable);
                 break;
             default:
-                rz0 rz0Var = (rz0) this.c;
-                cy cyVar = (cy) this.d;
+                tz0 tz0Var = (tz0) this.c;
+                ey eyVar = (ey) this.d;
                 TLRPC.User user = (TLRPC.User) this.e;
-                ProfileActivity profileActivity = rz0Var.b;
+                ProfileActivity profileActivity = tz0Var.b;
                 profileActivity.N1 = true;
                 Bundle i11 = a1.g.i("scrollToTopOnResume", true);
                 long j10 = -this.b;
                 i11.putLong("chat_id", j10);
-                if (profileActivity.getMessagesController().checkCanOpenChat(i11, cyVar)) {
-                    un unVar = new un(i11);
+                if (profileActivity.getMessagesController().checkCanOpenChat(i11, eyVar)) {
+                    wn wnVar = new wn(i11);
                     NotificationCenter notificationCenter = profileActivity.getNotificationCenter();
                     int i12 = NotificationCenter.closeChats;
                     notificationCenter.removeObserver(profileActivity, i12);
                     profileActivity.getNotificationCenter().lambda$postNotificationNameOnUIThread$1(i12, new Object[0]);
-                    profileActivity.getMessagesController().addUserToChat(j10, user, 0, null, unVar, true, null, null);
-                    profileActivity.presentFragment(unVar, true);
+                    profileActivity.getMessagesController().addUserToChat(j10, user, 0, null, wnVar, true, null, null);
+                    profileActivity.presentFragment(wnVar, true);
                     break;
                 }
                 break;

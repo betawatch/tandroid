@@ -4,7 +4,7 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import org.telegram.messenger.SharedConfig;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class uf extends AnimatorListenerAdapter {
     public final /* synthetic */ boolean a;
@@ -21,7 +21,7 @@ public final class uf extends AnimatorListenerAdapter {
         if (animator.equals(chatActivityEnterView.t2)) {
             chatActivityEnterView.t2 = null;
         }
-        chatActivityEnterView.u0();
+        chatActivityEnterView.t0();
         chatActivityEnterView.k1.setAlpha(1.0f);
         chatActivityEnterView.k1.setTranslationX(0.0f);
         sg sgVar = chatActivityEnterView.O1;
@@ -35,15 +35,15 @@ public final class uf extends AnimatorListenerAdapter {
             pfVar.setAlpha(0.0f);
         }
         if (this.a) {
-            gl0 gl0Var = chatActivityEnterView.h1;
-            if (gl0Var != null) {
-                gl0Var.setVisibility(8);
+            hl0 hl0Var = chatActivityEnterView.h1;
+            if (hl0Var != null) {
+                hl0Var.setVisibility(8);
             }
             ke keVar = chatActivityEnterView.e1;
             if (keVar != null) {
                 keVar.setVisibility(8);
             }
-            chatActivityEnterView.u0();
+            chatActivityEnterView.t0();
         }
     }
 }

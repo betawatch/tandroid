@@ -35,13 +35,13 @@ import org.telegram.tgnet.tl.TL_keyboard;
 import org.telegram.ui.Cells.ka;
 import org.telegram.ui.Cells.s9;
 import org.telegram.ui.Cells.t9;
-import org.telegram.ui.Components.ir0;
-import org.telegram.ui.Components.mr0;
-import org.telegram.ui.cv0;
+import org.telegram.ui.Components.jr0;
+import org.telegram.ui.Components.nr0;
+import org.telegram.ui.ev0;
 import org.telegram.ui.p9;
 import org.telegram.ui.x9;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public class e3 implements f1, m.x0, org.telegram.ui.Cells.j1, ig.z1, x9, s4.e0, com.google.android.gms.common.api.internal.r, o5.b, Continuation, y2.g {
     public final /* synthetic */ int a;
@@ -108,7 +108,7 @@ public class e3 implements f1, m.x0, org.telegram.ui.Cells.j1, ig.z1, x9, s4.e0,
     }
 
     @Override // org.telegram.ui.Cells.j1
-    public /* synthetic */ cv0 E1() {
+    public /* synthetic */ ev0 E1() {
         return null;
     }
 
@@ -343,21 +343,21 @@ public class e3 implements f1, m.x0, org.telegram.ui.Cells.j1, ig.z1, x9, s4.e0,
 
     @Override // ig.z1
     public void f(int i10) {
-        ir0 ir0Var = (ir0) this.b;
-        mr0 mr0Var = ir0Var.K;
-        ir0Var.s = i10;
-        if (ir0Var.v != i10) {
-            ir0Var.d.clear();
+        jr0 jr0Var = (jr0) this.b;
+        nr0 nr0Var = jr0Var.K;
+        jr0Var.s = i10;
+        if (jr0Var.v != i10) {
+            jr0Var.d.clear();
         }
-        int i11 = ir0Var.J;
-        if (ir0Var.h() != 0 || ir0Var.e.e() || ir0Var.I) {
-            mr0Var.y0.b(i11);
+        int i11 = jr0Var.J;
+        if (jr0Var.h() != 0 || jr0Var.e.e() || jr0Var.I) {
+            nr0Var.y0.b(i11);
         } else {
-            mr0Var.R.e(false, true);
+            nr0Var.R.e(false, true);
         }
-        ir0Var.l();
-        int i12 = mr0.Z0;
-        mr0Var.M0(true);
+        jr0Var.l();
+        int i12 = nr0.Z0;
+        nr0Var.M0(true);
     }
 
     @Override // li.f1
@@ -401,7 +401,7 @@ public class e3 implements f1, m.x0, org.telegram.ui.Cells.j1, ig.z1, x9, s4.e0,
 
     @Override // ig.z1
     public boolean k0(int i10) {
-        return i10 == ((ir0) this.b).r;
+        return i10 == ((jr0) this.b).r;
     }
 
     @Override // org.telegram.ui.Cells.j1

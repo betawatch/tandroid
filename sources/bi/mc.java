@@ -12,12 +12,12 @@ import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.ak0;
-import org.telegram.ui.Components.gb1;
+import org.telegram.ui.Components.aa0;
+import org.telegram.ui.Components.bk0;
+import org.telegram.ui.Components.kb1;
 import org.telegram.ui.Components.yq;
-import org.telegram.ui.Components.z90;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class mc extends LinearLayout {
     public final /* synthetic */ int a;
@@ -38,19 +38,19 @@ public final class mc extends LinearLayout {
                 org.telegram.ui.Components.y9 y9Var = new org.telegram.ui.Components.y9(context);
                 this.b = y9Var;
                 y9Var.setRoundRadius(AndroidUtilities.dp(35.0f));
-                addView(y9Var, gb1.u(70, 70, 1));
+                addView(y9Var, kb1.u(70, 70, 1));
                 TextView textView = new TextView(context);
                 this.c = textView;
                 textView.setTypeface(AndroidUtilities.bold());
                 textView.setTextSize(1, 20.0f);
                 textView.setGravity(17);
-                addView(textView, gb1.v(-1, -2, 0, 0.0f, 11.33f, 0.0f, 7.0f));
+                addView(textView, kb1.v(-1, -2, 0, 0.0f, 11.33f, 0.0f, 7.0f));
                 TextView textView2 = new TextView(context);
                 this.d = textView2;
                 textView2.setTextSize(1, 14.0f);
                 textView2.setLineSpacing(AndroidUtilities.dp(2.0f), 1.0f);
                 textView2.setGravity(17);
-                addView(textView2, gb1.r(-1, -2));
+                addView(textView2, kb1.r(-1, -2));
                 break;
         }
     }
@@ -118,7 +118,7 @@ public final class mc extends LinearLayout {
             case 5:
                 TextView textView = (TextView) this.b;
                 TextView textView2 = (TextView) this.c;
-                ak0 ak0Var = (ak0) this.d;
+                bk0 bk0Var = (bk0) this.d;
                 int size = View.MeasureSpec.getSize(i11);
                 if (View.MeasureSpec.getMode(i11) != 0) {
                     int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(Math.max(0, (View.MeasureSpec.getSize(i10) - getPaddingLeft()) - getPaddingRight()), TLObject.FLAG_31);
@@ -126,10 +126,10 @@ public final class mc extends LinearLayout {
                     textView2.measure(makeMeasureSpec, makeMeasureSpec2);
                     textView.measure(makeMeasureSpec, makeMeasureSpec2);
                     int g7 = org.telegram.ui.d3.g(24.0f, (((size - getPaddingTop()) - getPaddingBottom()) - textView2.getMeasuredHeight()) - textView.getMeasuredHeight(), AndroidUtilities.dp(130.0f));
-                    LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams) ak0Var.getLayoutParams();
+                    LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams) bk0Var.getLayoutParams();
                     int i12 = g7 < AndroidUtilities.dp(56.0f) ? 8 : 0;
-                    if (ak0Var.getVisibility() != i12) {
-                        ak0Var.setVisibility(i12);
+                    if (bk0Var.getVisibility() != i12) {
+                        bk0Var.setVisibility(i12);
                     }
                     int max = Math.max(0, g7);
                     layoutParams.height = max;
@@ -153,12 +153,12 @@ public final class mc extends LinearLayout {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public mc(Context context, TextView textView, TextView textView2, ak0 ak0Var) {
+    public mc(Context context, TextView textView, TextView textView2, bk0 bk0Var) {
         super(context);
         this.a = 5;
         this.c = textView;
         this.b = textView2;
-        this.d = ak0Var;
+        this.d = bk0Var;
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -181,52 +181,52 @@ public final class mc extends LinearLayout {
                 frameLayout.setClipChildren(false);
                 frameLayout.setClipToPadding(false);
                 gi.d dVar = new gi.d(context, 70, 0);
-                frameLayout.addView(dVar, gb1.g(-1.0f, -1));
-                org.telegram.ui.Wallet.l6 l6Var = new org.telegram.ui.Wallet.l6(170, context, false);
-                this.b = l6Var;
-                l6Var.setStarParticlesView(dVar);
-                frameLayout.addView(l6Var, gb1.h(170, 170.0f, 17, 0.0f, 32.0f, 0.0f, 24.0f));
-                l6Var.setPaused(false);
-                addView(frameLayout, gb1.g(180.0f, -1));
+                frameLayout.addView(dVar, kb1.g(-1.0f, -1));
+                org.telegram.ui.Wallet.m6 m6Var = new org.telegram.ui.Wallet.m6(170, context, false);
+                this.b = m6Var;
+                m6Var.setStarParticlesView(dVar);
+                frameLayout.addView(m6Var, kb1.h(170, 170.0f, 17, 0.0f, 32.0f, 0.0f, 24.0f));
+                m6Var.setPaused(false);
+                addView(frameLayout, kb1.g(180.0f, -1));
                 TextView textView = new TextView(context);
                 this.c = textView;
                 ic.a.o(20.0f, 1, textView);
                 int i11 = org.telegram.ui.ActionBar.y6.j5;
                 org.telegram.ui.ActionBar.f7.V(textView, i11, u6Var);
                 textView.setGravity(17);
-                addView(textView, gb1.x(-2, -2, 1, 0, 2, 0, 0));
+                addView(textView, kb1.x(-2, -2, 1, 0, 2, 0, 0));
                 TextView textView2 = new TextView(context);
                 this.d = textView2;
                 textView2.setTextSize(1, 14.0f);
                 org.telegram.ui.ActionBar.f7.V(textView2, i11, u6Var);
                 textView2.setGravity(17);
-                addView(textView2, gb1.x(-2, -2, 1, 0, 9, 0, 18));
+                addView(textView2, kb1.x(-2, -2, 1, 0, 9, 0, 18));
                 break;
             default:
                 setOrientation(1);
                 FrameLayout frameLayout2 = new FrameLayout(context);
                 frameLayout2.setClipChildren(false);
                 frameLayout2.setClipToPadding(false);
-                frameLayout2.addView(new ec(context, 70, 0), gb1.g(-1.0f, -1));
+                frameLayout2.addView(new ec(context, 70, 0), kb1.g(-1.0f, -1));
                 org.telegram.ui.Components.y9 y9Var = new org.telegram.ui.Components.y9(context);
                 this.b = y9Var;
                 y9Var.setRoundRadius(AndroidUtilities.dp(50.0f));
-                frameLayout2.addView(y9Var, gb1.h(100, 100.0f, 17, 0.0f, 32.0f, 0.0f, 24.0f));
-                addView(frameLayout2, gb1.g(150.0f, -1));
+                frameLayout2.addView(y9Var, kb1.h(100, 100.0f, 17, 0.0f, 32.0f, 0.0f, 24.0f));
+                addView(frameLayout2, kb1.g(150.0f, -1));
                 TextView textView3 = new TextView(context);
                 this.c = textView3;
                 ic.a.o(20.0f, 1, textView3);
                 int i12 = org.telegram.ui.ActionBar.y6.j5;
                 org.telegram.ui.ActionBar.f7.V(textView3, i12, u6Var);
                 textView3.setGravity(17);
-                addView(textView3, gb1.x(-2, -2, 1, 0, 2, 0, 0));
-                z90 z90Var = new z90(context, u6Var);
-                this.d = z90Var;
-                org.telegram.ui.ActionBar.f7.H(z90Var, org.telegram.ui.ActionBar.y6.gc, u6Var);
-                z90Var.setTextSize(1, 14.0f);
-                org.telegram.ui.ActionBar.f7.V(z90Var, i12, u6Var);
-                z90Var.setGravity(17);
-                addView(z90Var, gb1.x(-2, -2, 1, 0, 9, 0, 18));
+                addView(textView3, kb1.x(-2, -2, 1, 0, 2, 0, 0));
+                aa0 aa0Var = new aa0(context, u6Var);
+                this.d = aa0Var;
+                org.telegram.ui.ActionBar.f7.H(aa0Var, org.telegram.ui.ActionBar.y6.gc, u6Var);
+                aa0Var.setTextSize(1, 14.0f);
+                org.telegram.ui.ActionBar.f7.V(aa0Var, i12, u6Var);
+                aa0Var.setGravity(17);
+                addView(aa0Var, kb1.x(-2, -2, 1, 0, 9, 0, 18));
                 break;
         }
     }

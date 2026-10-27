@@ -8,13 +8,13 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_toncenter;
 import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.Components.j71;
-import org.telegram.ui.Components.l71;
-import org.telegram.ui.Components.t61;
+import org.telegram.ui.Components.k71;
+import org.telegram.ui.Components.m71;
+import org.telegram.ui.Components.u61;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.Wallet.WalletEngine2;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class d implements Utilities.Callback2 {
     public final /* synthetic */ int a;
@@ -27,7 +27,7 @@ public final /* synthetic */ class d implements Utilities.Callback2 {
 
     @Override // org.telegram.messenger.Utilities.Callback2
     public final void run(Object obj, Object obj2) {
-        j71 j71Var;
+        k71 k71Var;
         String str;
         switch (this.a) {
             case 0:
@@ -49,7 +49,7 @@ public final /* synthetic */ class d implements Utilities.Callback2 {
                     jVar.run(Long.valueOf(wallettransaction.fee), null);
                     break;
                 } else {
-                    l0.i("emulate disable backup, no transaction: ".concat(str2 != null ? str2 : "NULL_ERROR"));
+                    l0.j("emulate disable backup, no transaction: ".concat(str2 != null ? str2 : "NULL_ERROR"));
                     if (str2 == null) {
                         str2 = "NULL_ERROR";
                     }
@@ -76,15 +76,15 @@ public final /* synthetic */ class d implements Utilities.Callback2 {
                     if (arrayList2 != null) {
                         arrayList.addAll(arrayList2);
                     }
-                    l0Var.J();
+                    l0Var.L();
                     break;
                 } else {
                     e2.x(tL_error3, "getSessions");
-                    l0Var.J();
+                    l0Var.L();
                     break;
                 }
             case 5:
-                ((ArrayList) obj).add(t61.k(((j2) this.b).Y));
+                ((ArrayList) obj).add(u61.k(((j2) this.b).Y));
                 break;
             case 6:
                 y2 y2Var = (y2) this.b;
@@ -109,9 +109,9 @@ public final /* synthetic */ class d implements Utilities.Callback2 {
                 if (password != null) {
                     m5Var.R0 = true;
                     m5Var.S0 = password.has_password;
-                    l71 l71Var = m5Var.a;
-                    if (l71Var != null && (j71Var = l71Var.g3) != null) {
-                        j71Var.O(true);
+                    m71 m71Var = m5Var.a;
+                    if (m71Var != null && (k71Var = m71Var.g3) != null) {
+                        k71Var.O(true);
                         break;
                     }
                 }

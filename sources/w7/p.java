@@ -6,7 +6,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.mlkit.nl.languageid.internal.LanguageIdentifierImpl;
 import java.util.concurrent.Executor;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
 public abstract class p {
     public static LanguageIdentifierImpl a() {
@@ -17,7 +17,7 @@ public abstract class p {
         LanguageIdentifierImpl languageIdentifierImpl = new LanguageIdentifierImpl(eVar, d9Var, (Executor) aVar.c.a.get());
         ti.e eVar2 = new ti.e(13, false);
         eVar2.d = languageIdentifierImpl.f;
-        s4.d dVar = new s4.d(10, false);
+        s4.d dVar = new s4.d(11, false);
         dVar.c = LanguageIdentifierImpl.k();
         eVar2.e = new k7(dVar);
         ng ngVar = new ng(eVar2, 1);

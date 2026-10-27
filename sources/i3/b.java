@@ -23,7 +23,7 @@ import java.util.Map;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.MediaDataController;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
 public final class b implements o {
     public final x a = new x(4);
@@ -66,7 +66,7 @@ public final class b implements o {
                 xVar.N(0);
                 int m10 = xVar.m();
                 lVar.f = 0;
-                lVar.s(m10, false);
+                lVar.u(m10, false);
                 lVar.h(xVar.a, 0, 4, false);
                 xVar.N(0);
                 if (xVar.m() == 0) {
@@ -139,7 +139,7 @@ public final class b implements o {
                 this.j = xVar.m() - 5;
                 this.g = 2;
             } else if (i12 == 2) {
-                pVar.q(this.j);
+                pVar.r(this.j);
                 this.j = 0;
                 this.g = 3;
             } else if (i12 == 3) {
@@ -170,7 +170,7 @@ public final class b implements o {
                         if (i10 == 9 || this.p == null) {
                             j12 = -9223372036854775807L;
                             if (i10 == 18 || this.n) {
-                                pVar.q(this.l);
+                                pVar.r(this.l);
                                 z10 = false;
                                 z11 = false;
                             } else {
@@ -400,7 +400,7 @@ public final class b implements o {
                 j12 = -9223372036854775807L;
                 if (i10 == 18) {
                 }
-                pVar.q(this.l);
+                pVar.r(this.l);
                 z10 = false;
                 z11 = false;
                 if (!this.h) {

@@ -16,9 +16,9 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.gb1;
+import org.telegram.ui.Components.kb1;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class l5 extends LinearLayout {
     public final org.telegram.ui.Components.y9 a;
@@ -41,7 +41,7 @@ public final class l5 extends LinearLayout {
         org.telegram.ui.Components.y9 y9Var = new org.telegram.ui.Components.y9(context);
         this.a = y9Var;
         y9Var.setRoundRadius(AndroidUtilities.dp(14.0f));
-        addView(y9Var, gb1.o(8.0f, 4.0f, 0.0f, 0.0f, 28, 28));
+        addView(y9Var, kb1.o(8.0f, 4.0f, 0.0f, 0.0f, 28, 28));
         md mdVar = new md(context, 7);
         this.b = mdVar;
         org.telegram.ui.ActionBar.f7.V(mdVar, org.telegram.ui.ActionBar.y6.G6, u6Var);
@@ -50,7 +50,7 @@ public final class l5 extends LinearLayout {
         mdVar.setGravity(3);
         TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
         mdVar.setEllipsize(truncateAt);
-        addView(mdVar, gb1.x(-2, -2, 16, 12, 0, 0, 0));
+        addView(mdVar, kb1.x(-2, -2, 16, 12, 0, 0, 0));
         TextView textView = new TextView(context);
         this.c = textView;
         org.telegram.ui.ActionBar.f7.V(textView, org.telegram.ui.ActionBar.y6.A6, u6Var);
@@ -58,7 +58,7 @@ public final class l5 extends LinearLayout {
         textView.setSingleLine(true);
         textView.setGravity(3);
         textView.setEllipsize(truncateAt);
-        addView(textView, gb1.x(-2, -2, 16, 12, 0, 8, 0));
+        addView(textView, kb1.x(-2, -2, 16, 12, 0, 8, 0));
     }
 
     public final void a() {

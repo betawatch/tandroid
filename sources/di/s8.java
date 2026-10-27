@@ -24,10 +24,10 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.qc;
 import org.telegram.ui.Components.ti;
-import org.telegram.ui.Components.us0;
+import org.telegram.ui.Components.vs0;
 import org.telegram.ui.Stories.recorder.FfmpegAudioWaveformLoader;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class s8 implements Runnable {
     public final /* synthetic */ int a;
@@ -84,12 +84,13 @@ public final /* synthetic */ class s8 implements Runnable {
                         y9Var.n.removeView(m9Var);
                     }
                     y9Var.s = null;
+                    y9Var.r();
                     return;
                 } catch (Exception unused) {
                     return;
                 }
             case 4:
-                ((m9) this.b).x0.K(true);
+                ((m9) this.b).x0.L(true);
                 return;
             case 5:
                 ((ha) this.b).c();
@@ -120,10 +121,10 @@ public final /* synthetic */ class s8 implements Runnable {
                                             d = wb.d(Locale.getDefault().getCountry());
                                             fVar.o = d;
                                         }
-                                        fVar.l = fVar.a(b10);
+                                        fVar.l = fVar.b(b10);
                                         fVar.d.getClass();
                                         long elapsedRealtime = SystemClock.elapsedRealtime();
-                                        fVar.c(fVar.g > 0 ? (int) (elapsedRealtime - fVar.h) : 0, fVar.i, fVar.l);
+                                        fVar.d(fVar.g > 0 ? (int) (elapsedRealtime - fVar.h) : 0, fVar.i, fVar.l);
                                         fVar.h = elapsedRealtime;
                                         fVar.i = 0L;
                                         fVar.k = 0L;
@@ -149,9 +150,9 @@ public final /* synthetic */ class s8 implements Runnable {
                 return;
             case 8:
                 ei.r rVar2 = (ei.r) this.b;
-                us0 us0Var = rVar2.W;
+                vs0 vs0Var = rVar2.W;
                 s6 s6Var = rVar2.a;
-                us0Var.a(s6Var == null ? "" : s6Var.E);
+                vs0Var.a(s6Var == null ? "" : s6Var.E);
                 return;
             case 9:
                 ((fi.h) this.b).c.W = false;

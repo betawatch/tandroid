@@ -15,10 +15,10 @@ import li.d6;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.ActionBar.u6;
 import org.telegram.ui.ActionBar.y6;
-import org.telegram.ui.Components.gb1;
-import org.telegram.ui.Components.k80;
+import org.telegram.ui.Components.kb1;
+import org.telegram.ui.Components.l80;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
 public final class r3 implements o5.b {
     public Object a;
@@ -49,9 +49,9 @@ public final class r3 implements o5.b {
 
     public void a() {
         e(null);
-        k80 k80Var = (k80) this.c;
-        if (k80Var != null) {
-            k80Var.u();
+        l80 l80Var = (l80) this.c;
+        if (l80Var != null) {
+            l80Var.u();
             this.c = null;
         }
         this.d = null;
@@ -76,7 +76,7 @@ public final class r3 implements o5.b {
             l0Var.setPadding(AndroidUtilities.dp(8.0f), 0, AndroidUtilities.dp(12.0f), 0);
             l0Var.setBackground(y6.Z(y6.w0(y6.i6, u6Var), 0, 0));
             l0Var.setOnClickListener(new bi.w0(this, d6Var, m0Var, 13));
-            ((LinearLayout) this.d).addView(l0Var, gb1.r(-1, 48));
+            ((LinearLayout) this.d).addView(l0Var, kb1.r(-1, 48));
         }
     }
 
@@ -135,8 +135,8 @@ public final class r3 implements o5.b {
     }
 
     public void f(d6 d6Var, String str) {
-        k80 k80Var;
-        k80 k80Var2;
+        l80 l80Var;
+        l80 l80Var2;
         if (str == null) {
             a();
             return;
@@ -147,13 +147,13 @@ public final class r3 implements o5.b {
             return;
         }
         e(d6Var);
-        if (((d6) this.f) == d6Var && a2.equals((ArrayList) this.e) && (k80Var2 = (k80) this.c) != null && k80Var2.D()) {
+        if (((d6) this.f) == d6Var && a2.equals((ArrayList) this.e) && (l80Var2 = (l80) this.c) != null && l80Var2.D()) {
             return;
         }
-        if (((d6) this.f) == d6Var && (k80Var = (k80) this.c) != null && k80Var.D() && ((LinearLayout) this.d) != null) {
+        if (((d6) this.f) == d6Var && (l80Var = (l80) this.c) != null && l80Var.D() && ((LinearLayout) this.d) != null) {
             this.e = a2;
             b(d6Var, a2);
-            ((k80) this.c).O();
+            ((l80) this.c).O();
             return;
         }
         a();
@@ -164,11 +164,11 @@ public final class r3 implements o5.b {
         this.d = linearLayout;
         linearLayout.setOrientation(1);
         b(d6Var, a2);
-        k80 a10 = ((li.n0) this.a).a(d6Var.getEditText());
+        l80 a10 = ((li.n0) this.a).a(d6Var.getEditText());
         a10.Q = true;
         a10.s = 0;
         a10.t = false;
-        a10.r((LinearLayout) this.d, gb1.r(220, -2));
+        a10.r((LinearLayout) this.d, kb1.r(220, -2));
         a10.X = AndroidUtilities.dp(240.0f);
         a10.i = 3;
         a10.a0(-AndroidUtilities.dp(12.0f), 0.0f);

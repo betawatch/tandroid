@@ -1,36 +1,27 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.view.View;
+import android.content.Context;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public final class w00 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ rq b;
+public final class w00 extends org.telegram.ui.Components.c10 {
+    public final /* synthetic */ int U;
+    public final /* synthetic */ Object V;
 
-    public w00(rq rqVar) {
-        this.b = rqVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ w00(Object obj, Context context, int i10) {
+        super(context, null);
+        this.U = i10;
+        this.V = obj;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
+    @Override // org.telegram.ui.Components.c10
+    public final int getColumnsCount() {
+        switch (this.U) {
             case 0:
-                ((h10) this.b.d).l0.unlock();
-                break;
+                return ((j10) this.V).s;
             default:
-                rq rqVar = this.b;
-                View view = rqVar.b;
-                view.setAlpha(1.0f);
-                s4.p0.x0(view);
-                ((h10) rqVar.d).b.removeView(view);
-                break;
+                return ((h10) this.V).d.s;
         }
-    }
-
-    public w00(rq rqVar, s4.p0 p0Var) {
-        this.b = rqVar;
     }
 }

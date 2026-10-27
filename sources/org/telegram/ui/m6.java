@@ -5,16 +5,16 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class m6 extends x7 {
     public final /* synthetic */ int G = 0;
     public final /* synthetic */ Object H;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public m6(vu vuVar, Context context, c7 c7Var) {
+    public m6(xu xuVar, Context context, c7 c7Var) {
         super(context, c7Var, null, null);
-        this.H = vuVar;
+        this.H = xuVar;
     }
 
     public void f(boolean z10) {
@@ -38,7 +38,7 @@ public final class m6 extends x7 {
     public void onMeasure(int i10, int i11) {
         switch (this.G) {
             case 1:
-                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec((((vu) this.H).h - org.telegram.ui.ActionBar.k.getCurrentActionBarHeight()) - AndroidUtilities.statusBarHeight, TLObject.FLAG_30));
+                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec((((xu) this.H).h - org.telegram.ui.ActionBar.k.getCurrentActionBarHeight()) - AndroidUtilities.statusBarHeight, TLObject.FLAG_30));
                 break;
             default:
                 super.onMeasure(i10, i11);
@@ -47,8 +47,8 @@ public final class m6 extends x7 {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public m6(c7 c7Var, Context context, c7 c7Var2, oi.q qVar, org.telegram.ui.Components.lw0 lw0Var) {
-        super(context, c7Var2, qVar, lw0Var);
+    public m6(c7 c7Var, Context context, c7 c7Var2, oi.q qVar, org.telegram.ui.Components.mw0 mw0Var) {
+        super(context, c7Var2, qVar, mw0Var);
         this.H = c7Var;
     }
 }

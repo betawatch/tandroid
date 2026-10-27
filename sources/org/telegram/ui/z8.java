@@ -3,7 +3,7 @@ package org.telegram.ui;
 import android.view.View;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class z8 implements Utilities.Callback5, Utilities.Callback5Return, r0.n {
     public final /* synthetic */ o9 a;
@@ -22,7 +22,7 @@ public final /* synthetic */ class z8 implements Utilities.Callback5, Utilities.
         ((Integer) obj3).getClass();
         ((Float) obj4).getClass();
         ((Float) obj5).getClass();
-        o9.W(this.a, (org.telegram.ui.Components.t61) obj, (View) obj2);
+        o9.W(this.a, (org.telegram.ui.Components.u61) obj, (View) obj2);
     }
 
     @Override // org.telegram.messenger.Utilities.Callback5Return
@@ -32,7 +32,7 @@ public final /* synthetic */ class z8 implements Utilities.Callback5, Utilities.
         ((Integer) obj3).getClass();
         ((Float) obj4).getClass();
         ((Float) obj5).getClass();
-        Object obj6 = ((org.telegram.ui.Components.t61) obj).G;
+        Object obj6 = ((org.telegram.ui.Components.u61) obj).G;
         if (obj6 instanceof k9) {
             this.a.b0(((k9) obj6).c, (j9) view);
             z10 = true;

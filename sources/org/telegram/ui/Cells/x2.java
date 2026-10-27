@@ -15,16 +15,16 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.gb1;
-import org.telegram.ui.Components.z90;
+import org.telegram.ui.Components.aa0;
+import org.telegram.ui.Components.kb1;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class x2 extends FrameLayout implements org.telegram.ui.ActionBar.p6 {
     public final LinearLayout a;
     public final LinearLayout b;
     public final org.telegram.ui.Components.b6 c;
-    public final z90 d;
+    public final aa0 d;
     public final ImageView e;
     public final ImageView f;
     public final org.telegram.ui.Components.y9 h;
@@ -54,39 +54,39 @@ public final class x2 extends FrameLayout implements org.telegram.ui.ActionBar.p
         b6Var.setTextSize(1, 14.0f);
         b6Var.setTypeface(AndroidUtilities.bold());
         b6Var.setMaxLines(5);
-        linearLayout.addView(b6Var, gb1.s(-2, -2, 0.0f, (LocaleController.isRTL ? 5 : 3) | 48));
-        z90 z90Var = new z90(context, null);
-        this.d = z90Var;
-        z90Var.setTextSize(1, 13.0f);
-        z90Var.setEllipsize(truncateAt);
-        z90Var.setMaxLines(5);
-        linearLayout.addView(z90Var, gb1.s(-1, -2, 0.0f, 48));
+        linearLayout.addView(b6Var, kb1.s(-2, -2, 0.0f, (LocaleController.isRTL ? 5 : 3) | 48));
+        aa0 aa0Var = new aa0(context, null);
+        this.d = aa0Var;
+        aa0Var.setTextSize(1, 13.0f);
+        aa0Var.setEllipsize(truncateAt);
+        aa0Var.setMaxLines(5);
+        linearLayout.addView(aa0Var, kb1.s(-1, -2, 0.0f, 48));
         NotificationCenter.listenEmojiLoading(b6Var);
-        NotificationCenter.listenEmojiLoading(z90Var);
+        NotificationCenter.listenEmojiLoading(aa0Var);
         LinearLayout linearLayout2 = new LinearLayout(context);
         this.a = linearLayout2;
         linearLayout2.setOrientation(0);
         if (LocaleController.isRTL) {
-            linearLayout2.addView(linearLayout, gb1.h(-1, -1.0f, 16, 7.0f, 0.0f, 7.0f, 0.0f));
-            linearLayout2.addView(m9Var, gb1.h(0, -1.0f, 16, 0.0f, 0.0f, -2.0f, 0.0f));
-            linearLayout2.addView(y9Var, gb1.h(36, 36.0f, 21, 0.0f, 0.0f, -2.0f, 0.0f));
+            linearLayout2.addView(linearLayout, kb1.h(-1, -1.0f, 16, 7.0f, 0.0f, 7.0f, 0.0f));
+            linearLayout2.addView(m9Var, kb1.h(0, -1.0f, 16, 0.0f, 0.0f, -2.0f, 0.0f));
+            linearLayout2.addView(y9Var, kb1.h(36, 36.0f, 21, 0.0f, 0.0f, -2.0f, 0.0f));
         } else {
-            linearLayout2.addView(y9Var, gb1.h(36, 36.0f, 19, -2.0f, 0.0f, 0.0f, 0.0f));
-            linearLayout2.addView(m9Var, gb1.h(0, -1.0f, 16, -2.0f, 0.0f, 0.0f, 0.0f));
-            linearLayout2.addView(linearLayout, gb1.h(-1, -1.0f, 16, 7.0f, 0.0f, 7.0f, 0.0f));
+            linearLayout2.addView(y9Var, kb1.h(36, 36.0f, 19, -2.0f, 0.0f, 0.0f, 0.0f));
+            linearLayout2.addView(m9Var, kb1.h(0, -1.0f, 16, -2.0f, 0.0f, 0.0f, 0.0f));
+            linearLayout2.addView(linearLayout, kb1.h(-1, -1.0f, 16, 7.0f, 0.0f, 7.0f, 0.0f));
         }
-        addView(linearLayout2, gb1.g(-1.0f, -1));
+        addView(linearLayout2, kb1.g(-1.0f, -1));
         linearLayout2.setClipChildren(false);
         linearLayout2.setClipToPadding(false);
         ImageView imageView = new ImageView(context);
         this.e = imageView;
         imageView.setImageResource(R.drawable.arrow_newchat);
-        addView(imageView, gb1.h(16, 16.0f, (LocaleController.isRTL ? 3 : 5) | 16, 4.0f, 0.0f, 4.0f, 0.0f));
+        addView(imageView, kb1.h(16, 16.0f, (LocaleController.isRTL ? 3 : 5) | 16, 4.0f, 0.0f, 4.0f, 0.0f));
         ImageView imageView2 = new ImageView(context);
         this.f = imageView2;
         imageView2.setImageResource(R.drawable.msg_close);
         imageView2.setPadding(AndroidUtilities.dp(6.0f), AndroidUtilities.dp(6.0f), AndroidUtilities.dp(6.0f), AndroidUtilities.dp(6.0f));
-        addView(imageView2, gb1.h(36, 36.0f, (LocaleController.isRTL ? 3 : 5) | 16, -4.0f, 0.0f, -4.0f, 0.0f));
+        addView(imageView2, kb1.h(36, 36.0f, (LocaleController.isRTL ? 3 : 5) | 16, -4.0f, 0.0f, -4.0f, 0.0f));
         imageView2.setVisibility(8);
         setClipToPadding(false);
         setClipChildren(false);
@@ -181,9 +181,9 @@ public final class x2 extends FrameLayout implements org.telegram.ui.ActionBar.p
         this.c.setTextColor(org.telegram.ui.ActionBar.y6.x0(null, this.r ? org.telegram.ui.ActionBar.y6.q7 : org.telegram.ui.ActionBar.y6.G6, false));
         int i10 = org.telegram.ui.ActionBar.y6.y6;
         int x02 = org.telegram.ui.ActionBar.y6.x0(null, i10, false);
-        z90 z90Var = this.d;
-        z90Var.setTextColor(x02);
-        z90Var.setLinkTextColor(org.telegram.ui.ActionBar.y6.x0(null, org.telegram.ui.ActionBar.y6.gc, false));
+        aa0 aa0Var = this.d;
+        aa0Var.setTextColor(x02);
+        aa0Var.setLinkTextColor(org.telegram.ui.ActionBar.y6.x0(null, org.telegram.ui.ActionBar.y6.gc, false));
         int x03 = org.telegram.ui.ActionBar.y6.x0(null, i10, false);
         PorterDuff.Mode mode = PorterDuff.Mode.SRC_IN;
         this.e.setColorFilter(x03, mode);

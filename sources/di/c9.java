@@ -37,13 +37,13 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.ds;
-import org.telegram.ui.Components.gb1;
+import org.telegram.ui.Components.kb1;
 import org.telegram.ui.Components.zq;
-import org.telegram.ui.ny;
-import org.telegram.ui.oy;
-import org.telegram.ui.un;
+import org.telegram.ui.py;
+import org.telegram.ui.qy;
+import org.telegram.ui.wn;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public abstract class c9 extends FrameLayout implements View.OnClickListener {
     public final Path E;
@@ -105,7 +105,7 @@ public abstract class c9 extends FrameLayout implements View.OnClickListener {
 
     public abstract void b(boolean z10);
 
-    public final void c(TL_stories.StoryItem storyItem, ArrayList arrayList, oy oyVar) {
+    public final void c(TL_stories.StoryItem storyItem, ArrayList arrayList, qy qyVar) {
         FrameLayout frameLayout;
         View view;
         ArrayList arrayList2 = this.r;
@@ -144,24 +144,24 @@ public abstract class c9 extends FrameLayout implements View.OnClickListener {
             TL_stories.MediaArea mediaArea = (TL_stories.MediaArea) arrayList.get(i11);
             if (mediaArea != null && mediaArea.coordinates != null) {
                 if (mediaArea instanceof TL_stories.TL_mediaAreaSuggestedReaction) {
-                    f9 f9Var = new f9(getContext(), this, (TL_stories.TL_mediaAreaSuggestedReaction) mediaArea, oyVar);
+                    f9 f9Var = new f9(getContext(), this, (TL_stories.TL_mediaAreaSuggestedReaction) mediaArea, qyVar);
                     if (storyItem != null) {
                         f9Var.c(storyItem.views, false);
                     }
-                    gb1.b(f9Var);
+                    kb1.b(f9Var);
                     view = f9Var;
                 } else if (mediaArea instanceof TL_stories.TL_mediaAreaWeather) {
                     TL_stories.TL_mediaAreaWeather tL_mediaAreaWeather = (TL_stories.TL_mediaAreaWeather) mediaArea;
                     pc pcVar = new pc();
                     pcVar.c = tL_mediaAreaWeather.emoji;
                     pcVar.d = (float) tL_mediaAreaWeather.temperature_c;
-                    sg.t0 t0Var = new sg.t0(getContext(), AndroidUtilities.density);
-                    t0Var.setMaxWidth(AndroidUtilities.displaySize.x);
-                    t0Var.setIsVideo(true);
-                    t0Var.d(UserConfig.selectedAccount, pcVar.c);
-                    t0Var.setText(pcVar.a());
-                    t0Var.e(3, tL_mediaAreaWeather.color);
-                    view = new b9(getContext(), t0Var, mediaArea);
+                    sg.s0 s0Var = new sg.s0(getContext(), AndroidUtilities.density);
+                    s0Var.setMaxWidth(AndroidUtilities.displaySize.x);
+                    s0Var.setIsVideo(true);
+                    s0Var.d(UserConfig.selectedAccount, pcVar.c);
+                    s0Var.setText(pcVar.a());
+                    s0Var.e(3, tL_mediaAreaWeather.color);
+                    view = new b9(getContext(), s0Var, mediaArea);
                 } else {
                     view = new a9(getContext(), this.h, mediaArea);
                 }
@@ -173,8 +173,8 @@ public abstract class c9 extends FrameLayout implements View.OnClickListener {
         frameLayout.bringToFront();
     }
 
-    public final void d(TL_stories.StoryItem storyItem, oy oyVar) {
-        c(storyItem, storyItem != null ? storyItem.media_areas : null, oyVar);
+    public final void d(TL_stories.StoryItem storyItem, qy qyVar) {
+        c(storyItem, storyItem != null ? storyItem.media_areas : null, qyVar);
     }
 
     @Override // android.view.ViewGroup
@@ -336,17 +336,17 @@ public abstract class c9 extends FrameLayout implements View.OnClickListener {
                 }
                 f9Var.performHapticFeedback(3);
                 f9Var.K.a.startAnimation();
-                oy oyVar = q4Var.Z0;
-                Random random = oyVar.h;
-                FrameLayout frameLayout = oyVar.G;
-                ArrayList arrayList2 = oyVar.F;
+                qy qyVar = q4Var.Z0;
+                Random random = qyVar.h;
+                FrameLayout frameLayout = qyVar.G;
+                ArrayList arrayList2 = qyVar.F;
                 if (arrayList2.size() > 12) {
                     return;
                 }
                 bh.x0 d10 = bh.x0.d(mediaArea.reaction);
                 String str = d10.f;
                 if (str == null) {
-                    str = MessageObject.findAnimatedEmojiEmoticon(org.telegram.ui.Components.t5.f(oyVar.b, d10.g));
+                    str = MessageObject.findAnimatedEmojiEmoticon(org.telegram.ui.Components.t5.f(qyVar.b, d10.g));
                 }
                 float measuredHeight = f9Var.getMeasuredHeight();
                 float measuredWidth = f9Var.getMeasuredWidth();
@@ -358,7 +358,7 @@ public abstract class c9 extends FrameLayout implements View.OnClickListener {
                     f7 = measuredHeight;
                     f10 = measuredWidth;
                 }
-                String p10 = oy.p(str);
+                String p10 = qy.p(str);
                 int hashCode = f9Var.hashCode();
                 boolean z14 = f9Var.getTranslationX() > ((float) frameLayout.getMeasuredWidth()) / 2.0f;
                 if (d10.f != null) {
@@ -366,23 +366,23 @@ public abstract class c9 extends FrameLayout implements View.OnClickListener {
                     f11 = f10;
                     f12 = f7;
                     z12 = z14;
-                    if (oyVar.d(p10, hashCode, null, null, -1, false, false, f10, f7, z14)) {
+                    if (qyVar.d(p10, hashCode, null, null, -1, false, false, f10, f7, z14)) {
                         if (arrayList.isEmpty()) {
                             return;
                         }
-                        ny nyVar = (ny) ic.a.g(1, arrayList);
-                        nyVar.getClass();
-                        nyVar.e = f12;
-                        nyVar.d = f11;
-                        nyVar.a = f9Var.getTranslationX() - (nyVar.d / 2.0f);
+                        py pyVar = (py) ic.a.g(1, arrayList);
+                        pyVar.getClass();
+                        pyVar.e = f12;
+                        pyVar.d = f11;
+                        pyVar.a = f9Var.getTranslationX() - (pyVar.d / 2.0f);
                         float translationY = f9Var.getTranslationY();
-                        float f14 = nyVar.d;
-                        nyVar.b = translationY - (1.5f * f14);
-                        if (nyVar.m) {
-                            nyVar.a = ((-f14) * 1.8f) + nyVar.a;
+                        float f14 = pyVar.d;
+                        pyVar.b = translationY - (1.5f * f14);
+                        if (pyVar.m) {
+                            pyVar.a = ((-f14) * 1.8f) + pyVar.a;
                             return;
                         } else {
-                            nyVar.a = ((-f14) * 0.2f) + nyVar.a;
+                            pyVar.a = ((-f14) * 0.2f) + pyVar.a;
                             return;
                         }
                     }
@@ -400,7 +400,7 @@ public abstract class c9 extends FrameLayout implements View.OnClickListener {
                 while (i10 < arrayList.size()) {
                     float f15 = f13;
                     int i12 = i10;
-                    if (((ny) arrayList.get(i10)).k == d10.g) {
+                    if (((py) arrayList.get(i10)).k == d10.g) {
                         i11++;
                     }
                     i10 = i12 + 1;
@@ -410,27 +410,27 @@ public abstract class c9 extends FrameLayout implements View.OnClickListener {
                 if (i11 >= 4) {
                     return;
                 }
-                ny nyVar2 = new ny();
-                nyVar2.j = bh.e.a(f9Var.getAnimatedEmojiDrawable(), true, true);
-                if (!nyVar2.i) {
-                    nyVar2.f = ((random.nextInt() % 101) / 100.0f) * (f11 / 4.0f);
-                    nyVar2.g = ((random.nextInt() % 101) / 100.0f) * (f12 / 4.0f);
+                py pyVar2 = new py();
+                pyVar2.j = bh.e.a(f9Var.getAnimatedEmojiDrawable(), true, true);
+                if (!pyVar2.i) {
+                    pyVar2.f = ((random.nextInt() % 101) / 100.0f) * (f11 / 4.0f);
+                    pyVar2.g = ((random.nextInt() % 101) / 100.0f) * (f12 / 4.0f);
                 }
-                nyVar2.p = hashCode;
-                nyVar2.q = null;
-                nyVar2.k = d10.g;
-                nyVar2.m = z12;
-                nyVar2.e = f12;
-                nyVar2.d = f11;
-                nyVar2.a = f9Var.getTranslationX() - (nyVar2.d / f16);
+                pyVar2.p = hashCode;
+                pyVar2.q = null;
+                pyVar2.k = d10.g;
+                pyVar2.m = z12;
+                pyVar2.e = f12;
+                pyVar2.d = f11;
+                pyVar2.a = f9Var.getTranslationX() - (pyVar2.d / f16);
                 float translationY2 = f9Var.getTranslationY();
-                float f17 = nyVar2.d;
-                nyVar2.b = translationY2 - (1.5f * f17);
-                nyVar2.a = ((-f17) * 1.8f) + nyVar2.a;
-                if (oyVar.n) {
-                    nyVar2.j.f(frameLayout);
+                float f17 = pyVar2.d;
+                pyVar2.b = translationY2 - (1.5f * f17);
+                pyVar2.a = ((-f17) * 1.8f) + pyVar2.a;
+                if (qyVar.n) {
+                    pyVar2.j.f(frameLayout);
                 }
-                arrayList.add(nyVar2);
+                arrayList.add(pyVar2);
                 return;
             }
             if (this.b == view) {
@@ -440,7 +440,7 @@ public abstract class c9 extends FrameLayout implements View.OnClickListener {
                     Bundle bundle = new Bundle();
                     bundle.putLong("chat_id", ((TL_stories.TL_mediaAreaChannelPost) this.b.b).channel_id);
                     bundle.putInt("message_id", ((TL_stories.TL_mediaAreaChannelPost) this.b.b).msg_id);
-                    ((m3) this).H.H(new un(bundle));
+                    ((m3) this).H.I(new wn(bundle));
                     this.b = null;
                     invalidate();
                     return;
@@ -486,7 +486,7 @@ public abstract class c9 extends FrameLayout implements View.OnClickListener {
                 }
                 y8Var.N0 = false;
                 y8Var.v0(new MessageObject(UserConfig.selectedAccount, tL_message, false, false));
-                ((m3) this).H.H(y8Var);
+                ((m3) this).H.I(y8Var);
                 this.b = null;
                 invalidate();
                 return;
@@ -557,7 +557,7 @@ public abstract class c9 extends FrameLayout implements View.OnClickListener {
                     }
                     v3Var2.setOnClickListener(new ai.s(this, 16));
                     v3Var2.setPadding(AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f));
-                    this.d.addView(v3Var2, gb1.g(f18, -1));
+                    this.d.addView(v3Var2, kb1.g(f18, -1));
                     v3Var2.u();
                     b(true);
                 }
@@ -589,7 +589,7 @@ public abstract class c9 extends FrameLayout implements View.OnClickListener {
             }
             v3Var2.setOnClickListener(new ai.s(this, 16));
             v3Var2.setPadding(AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f));
-            this.d.addView(v3Var2, gb1.g(f182, -1));
+            this.d.addView(v3Var2, kb1.g(f182, -1));
             v3Var2.u();
             b(true);
         }

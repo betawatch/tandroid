@@ -25,13 +25,13 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.ct;
 import org.telegram.ui.Components.et;
-import org.telegram.ui.Components.j71;
-import org.telegram.ui.Components.xj0;
-import org.telegram.ui.ou;
-import org.telegram.ui.pu;
+import org.telegram.ui.Components.k71;
+import org.telegram.ui.Components.yj0;
+import org.telegram.ui.qu;
 import org.telegram.ui.ru;
+import org.telegram.ui.tu;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class db implements Runnable {
     public final /* synthetic */ int a;
@@ -54,7 +54,7 @@ public final /* synthetic */ class db implements Runnable {
     public final void run() {
         String str;
         TLRPC.Document document;
-        xj0 xj0Var;
+        yj0 yj0Var;
         int i10 = this.a;
         char c10 = 1;
         Object obj = this.f;
@@ -227,44 +227,44 @@ public final /* synthetic */ class db implements Runnable {
                 }
                 break;
             case 5:
-                pu puVar = (pu) obj3;
+                ru ruVar = (ru) obj3;
                 Context context = (Context) obj2;
                 org.telegram.ui.ActionBar.r2 r2Var = (org.telegram.ui.ActionBar.r2) obj;
-                ru ruVar = puVar.c;
-                ruVar.a();
-                org.telegram.ui.Cells.v8 v8Var = ruVar.e;
-                ruVar.c();
+                tu tuVar = ruVar.c;
+                tuVar.a();
+                org.telegram.ui.Cells.v8 v8Var = tuVar.e;
+                tuVar.c();
                 int x02 = org.telegram.ui.ActionBar.y6.x0(null, org.telegram.ui.ActionBar.y6.q6, false);
-                xj0 xj0Var2 = ruVar.d;
-                xj0Var2.setColorFilter(new PorterDuffColorFilter(x02, PorterDuff.Mode.SRC_IN));
+                yj0 yj0Var2 = tuVar.d;
+                yj0Var2.setColorFilter(new PorterDuffColorFilter(x02, PorterDuff.Mode.SRC_IN));
                 int x03 = org.telegram.ui.ActionBar.y6.x0(null, org.telegram.ui.ActionBar.y6.a7, false);
                 Activity activity = context instanceof Activity ? (Activity) context : null;
                 if ((activity != null ? activity.getWindow() : null) != null) {
-                    ValueAnimator valueAnimator = ruVar.h;
+                    ValueAnimator valueAnimator = tuVar.h;
                     if (valueAnimator != null && valueAnimator.isRunning()) {
-                        ruVar.h.cancel();
+                        tuVar.h.cancel();
                     }
-                    ValueAnimator valueAnimator2 = ruVar.h;
+                    ValueAnimator valueAnimator2 = tuVar.h;
                     if (valueAnimator2 != null && valueAnimator2.isRunning()) {
-                        i11 = ruVar.n;
+                        i11 = tuVar.n;
                     }
                     int i18 = i11;
                     ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
-                    ruVar.h = ofFloat;
+                    tuVar.h = ofFloat;
                     float f7 = z10 ? 50.0f : 200.0f;
-                    xj0Var = xj0Var2;
-                    ofFloat.addUpdateListener(new ou(puVar, f7, i18, x03, activity));
-                    ruVar.h.addListener(new org.telegram.ui.t0(activity, x03, c10 == true ? 1 : 0));
-                    ruVar.h.setDuration(350L);
-                    ruVar.h.start();
+                    yj0Var = yj0Var2;
+                    ofFloat.addUpdateListener(new qu(ruVar, f7, i18, x03, activity));
+                    tuVar.h.addListener(new org.telegram.ui.t0(activity, x03, c10 == true ? 1 : 0));
+                    tuVar.h.setDuration(350L);
+                    tuVar.h.start();
                 } else {
-                    xj0Var = xj0Var2;
+                    yj0Var = yj0Var2;
                 }
                 if (org.telegram.ui.ActionBar.y6.i1()) {
-                    v8Var.p(LocaleController.getString(R.string.SettingsSwitchToNightMode), xj0Var, true);
+                    v8Var.p(LocaleController.getString(R.string.SettingsSwitchToNightMode), yj0Var, true);
                     v8Var.w += 2;
                 } else {
-                    v8Var.p(LocaleController.getString(R.string.SettingsSwitchToDayMode), xj0Var, true);
+                    v8Var.p(LocaleController.getString(R.string.SettingsSwitchToDayMode), yj0Var, true);
                     v8Var.w += 2;
                 }
                 org.telegram.ui.ActionBar.y6.J1(r2Var);
@@ -302,9 +302,9 @@ public final /* synthetic */ class db implements Runnable {
         this.f = aVar;
     }
 
-    public /* synthetic */ db(j71 j71Var, int i10, TLRPC.TL_messages_searchGlobal tL_messages_searchGlobal, boolean z10, TLObject tLObject, int i11) {
+    public /* synthetic */ db(k71 k71Var, int i10, TLRPC.TL_messages_searchGlobal tL_messages_searchGlobal, boolean z10, TLObject tLObject, int i11) {
         this.a = i11;
-        this.d = j71Var;
+        this.d = k71Var;
         this.b = i10;
         this.e = tL_messages_searchGlobal;
         this.c = z10;

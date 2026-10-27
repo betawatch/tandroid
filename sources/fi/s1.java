@@ -14,13 +14,13 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.lm0;
-import org.telegram.ui.Components.vl0;
+import org.telegram.ui.Components.mm0;
+import org.telegram.ui.Components.wl0;
 import org.telegram.ui.Components.xc;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
-public final class s1 extends lm0 {
+public final class s1 extends mm0 {
     public String e;
     public TLRPC.User f;
     public String h;
@@ -46,7 +46,7 @@ public final class s1 extends lm0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.lm0
+    @Override // org.telegram.ui.Components.mm0
     public final boolean D(s4.e1 e1Var) {
         return e1Var.f == 2;
     }
@@ -234,15 +234,15 @@ public final class s1 extends lm0 {
         } else {
             org.telegram.ui.Cells.d2 d2Var2 = new org.telegram.ui.Cells.d2(u1Var.getContext());
             d2Var2.getPhotoImage().setLayerNum(7);
-            if (d2Var2.c0 == null) {
+            if (d2Var2.d0 == null) {
                 xc xcVar = new xc(d2Var2, 1.0f, 3.0f);
                 xcVar.e = 120L;
-                d2Var2.c0 = xcVar;
+                d2Var2.d0 = xcVar;
             }
             d2Var2.setIsKeyboard(true);
             d2Var2.setCanPreviewGif(true);
             d2Var = d2Var2;
         }
-        return new vl0(d2Var);
+        return new wl0(d2Var);
     }
 }

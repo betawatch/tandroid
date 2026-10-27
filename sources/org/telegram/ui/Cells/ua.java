@@ -12,9 +12,9 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.gb1;
+import org.telegram.ui.Components.kb1;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class ua extends FrameLayout implements org.telegram.ui.ActionBar.p6 {
     public final org.telegram.ui.Components.y9 a;
@@ -30,11 +30,11 @@ public final class ua extends FrameLayout implements org.telegram.ui.ActionBar.p
         this.b = textView;
         org.telegram.messenger.t.r(textView, org.telegram.ui.ActionBar.y6.G6, null, 1, 16.0f);
         if (LocaleController.isRTL) {
-            addView(y9Var, gb1.h(30, 30.0f, 21, 12.0f, 0.0f, 12.0f, 0.0f));
-            addView(textView, gb1.h(-1, -2.0f, 21, 12.0f, 0.0f, 56.0f, 0.0f));
+            addView(y9Var, kb1.h(30, 30.0f, 21, 12.0f, 0.0f, 12.0f, 0.0f));
+            addView(textView, kb1.h(-1, -2.0f, 21, 12.0f, 0.0f, 56.0f, 0.0f));
         } else {
-            addView(y9Var, gb1.h(30, 30.0f, 16, 12.0f, 0.0f, 12.0f, 0.0f));
-            addView(textView, gb1.h(-1, -2.0f, 16, 56.0f, 0.0f, 12.0f, 0.0f));
+            addView(y9Var, kb1.h(30, 30.0f, 16, 12.0f, 0.0f, 12.0f, 0.0f));
+            addView(textView, kb1.h(-1, -2.0f, 16, 56.0f, 0.0f, 12.0f, 0.0f));
         }
     }
 

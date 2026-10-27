@@ -16,12 +16,12 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.ds;
-import org.telegram.ui.Components.gb1;
-import org.telegram.ui.Components.mm0;
-import org.telegram.ui.Components.uc0;
-import org.telegram.ui.xn;
+import org.telegram.ui.Components.kb1;
+import org.telegram.ui.Components.nm0;
+import org.telegram.ui.Components.vc0;
+import org.telegram.ui.zn;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public class ka extends LinearLayout {
     public org.telegram.ui.Components.w9 a;
@@ -78,8 +78,8 @@ public class ka extends LinearLayout {
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
         Drawable drawable = this.w;
-        if (drawable instanceof xn) {
-            ((xn) drawable).f(this);
+        if (drawable instanceof zn) {
+            ((zn) drawable).f(this);
         }
     }
 
@@ -97,8 +97,8 @@ public class ka extends LinearLayout {
             this.b = null;
         }
         Drawable drawable = this.w;
-        if (drawable instanceof xn) {
-            ((xn) drawable).g(this);
+        if (drawable instanceof zn) {
+            ((zn) drawable).g(this);
         }
     }
 
@@ -137,7 +137,7 @@ public class ka extends LinearLayout {
                 int i11 = (i10 != 1 || this.d == null || (j5Var == null && !this.x)) ? 255 : (int) (255.0f * d);
                 if (i11 > 0) {
                     drawable3.setAlpha(i11);
-                    if ((drawable3 instanceof ColorDrawable) || (drawable3 instanceof GradientDrawable) || (drawable3 instanceof uc0)) {
+                    if ((drawable3 instanceof ColorDrawable) || (drawable3 instanceof GradientDrawable) || (drawable3 instanceof vc0)) {
                         drawable3.setBounds(0, 0, getMeasuredWidth(), getMeasuredHeight());
                         if (drawable3 instanceof org.telegram.ui.Components.x9) {
                             this.a = ((org.telegram.ui.Components.x9) drawable3).c(canvas, this);
@@ -181,7 +181,7 @@ public class ka extends LinearLayout {
             }
             i10++;
         }
-        if ((getParent() instanceof mm0) && ((mm0) getParent()).b1()) {
+        if ((getParent() instanceof nm0) && ((nm0) getParent()).b1()) {
             return;
         }
         int measuredWidth2 = getMeasuredWidth();
@@ -212,8 +212,8 @@ public class ka extends LinearLayout {
         if (drawable != null) {
             drawable.setCallback(this);
         }
-        if ((this.w instanceof xn) && isAttachedToWindow()) {
-            ((xn) this.w).f(this);
+        if ((this.w instanceof zn) && isAttachedToWindow()) {
+            ((zn) this.w).f(this);
         }
         invalidate();
     }
@@ -475,7 +475,7 @@ public class ka extends LinearLayout {
                 MessageObject messageObject8 = i12 == 0 ? messageObject2 : messageObject;
                 if (messageObject8 != null) {
                     this.e[i12].Z3(messageObject8, null, false, false, false, false);
-                    addView(this.e[i12], gb1.r(-1, -2));
+                    addView(this.e[i12], kb1.r(-1, -2));
                 }
                 i12++;
                 context2 = context;

@@ -11,11 +11,11 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.Components.ds;
-import org.telegram.ui.gh;
-import org.telegram.ui.gj;
-import org.telegram.ui.un;
+import org.telegram.ui.ah;
+import org.telegram.ui.jj;
+import org.telegram.ui.wn;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class l5 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -87,23 +87,23 @@ public final /* synthetic */ class l5 implements Utilities.Callback {
                 }
                 break;
             case 1:
-                un.z0((un) obj2, this.b, this.c, (Long) obj);
+                wn.m1((wn) obj2, this.b, this.c, (Long) obj);
                 break;
             default:
-                gj gjVar = (gj) obj2;
+                jj jjVar = (jj) obj2;
                 Long l4 = (Long) obj;
-                un unVar = gjVar.b;
-                if (unVar.getParentActivity() != null) {
-                    Activity parentActivity = unVar.getParentActivity();
+                wn wnVar = jjVar.b;
+                if (wnVar.getParentActivity() != null) {
+                    Activity parentActivity = wnVar.getParentActivity();
                     String string = LocaleController.getString(R.string.RemoveMessageFeeTitle);
-                    int i13 = ChatObject.isMonoForum(unVar.e) ? R.string.RemoveMessageFeeMessageChannel : R.string.RemoveMessageFeeMessage;
+                    int i13 = ChatObject.isMonoForum(wnVar.e) ? R.string.RemoveMessageFeeMessageChannel : R.string.RemoveMessageFeeMessage;
                     long j10 = this.b;
                     SpannableStringBuilder replaceTags = AndroidUtilities.replaceTags(LocaleController.formatString(i13, DialogObject.getShortName(j10)));
                     String formatPluralStringComma = l4.longValue() > 0 ? LocaleController.formatPluralStringComma("RemoveMessageFeeRefund", (int) l4.longValue()) : null;
                     String string2 = LocaleController.getString(R.string.Confirm);
-                    gh ghVar = new gh(gjVar, j10, this.c, l4, 1);
-                    u6Var = ((org.telegram.ui.ActionBar.r2) unVar).resourceProvider;
-                    org.telegram.ui.Components.g5.h0(parentActivity, string, replaceTags, formatPluralStringComma, string2, ghVar, u6Var, true);
+                    ah ahVar = new ah(jjVar, j10, this.c, l4, 1);
+                    u6Var = ((org.telegram.ui.ActionBar.r2) wnVar).resourceProvider;
+                    org.telegram.ui.Components.g5.h0(parentActivity, string, replaceTags, formatPluralStringComma, string2, ahVar, u6Var, true);
                     break;
                 }
                 break;

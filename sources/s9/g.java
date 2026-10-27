@@ -1,301 +1,397 @@
 package s9;
 
-import aa.m1;
-import android.util.Log;
-import com.google.android.gms.internal.play_billing.s1;
-import com.google.firebase.components.ComponentRegistrar;
-import j$.util.concurrent.ConcurrentHashMap;
-import java.util.ArrayDeque;
+import a8.fg;
+import android.graphics.Bitmap;
+import android.opengl.EGL14;
+import android.opengl.EGLDisplay;
+import android.opengl.EGLSurface;
+import android.os.Handler;
+import android.os.HandlerThread;
+import android.os.Process;
+import android.os.StrictMode;
+import android.util.Base64;
+import c3.b0;
+import java.io.File;
+import java.io.InputStream;
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
 import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.Map;
-import java.util.Set;
-import java.util.concurrent.Executor;
-import java.util.concurrent.atomic.AtomicReference;
-import org.telegram.ui.Wallet.q6;
+import java.util.concurrent.Callable;
+import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.atomic.AtomicBoolean;
+import li.e3;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.FileLoader;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessagesStorage;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.R;
+import org.telegram.messenger.UserConfig;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stars;
+import org.telegram.tgnet.tl.TL_stories;
+import org.telegram.ui.Components.c2;
+import org.telegram.ui.Components.da0;
+import org.telegram.ui.Components.ds;
+import org.telegram.ui.Components.nm0;
+import org.telegram.ui.Components.oy;
+import org.telegram.ui.Components.qc;
+import org.telegram.ui.Components.wc;
+import org.telegram.ui.wn;
+import s4.c0;
+import sg.l2;
+import sg.m0;
+import sg.o2;
+import sg.y1;
+import tg.a2;
+import tg.h0;
+import tg.i0;
+import tg.j0;
+import u2.w0;
+import vg.a0;
+import vg.n1;
+import vg.v;
+import vi.n0;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
-public final class g implements b {
-    public static final f n = new f(0);
-    public final l e;
-    public final e h;
-    public final HashMap a = new HashMap();
-    public final HashMap b = new HashMap();
-    public final HashMap c = new HashMap();
-    public final HashSet d = new HashSet();
-    public final AtomicReference f = new AtomicReference();
+public final /* synthetic */ class g implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
+    public final /* synthetic */ Object c;
 
-    public g(Executor executor, ArrayList arrayList, ArrayList arrayList2, e eVar) {
-        l lVar = new l(executor);
-        this.e = lVar;
-        this.h = eVar;
-        ArrayList arrayList3 = new ArrayList();
-        int i10 = 2;
-        int i11 = 0;
-        arrayList3.add(a.c(lVar, l.class, oa.b.class, oa.a.class));
-        arrayList3.add(a.c(this, g.class, new Class[0]));
-        int size = arrayList2.size();
-        int i12 = 0;
-        while (i12 < size) {
-            Object obj = arrayList2.get(i12);
-            i12++;
-            a aVar = (a) obj;
-            if (aVar != null) {
-                arrayList3.add(aVar);
-            }
-        }
-        ArrayList arrayList4 = new ArrayList();
-        int size2 = arrayList.size();
-        int i13 = 0;
-        while (i13 < size2) {
-            Object obj2 = arrayList.get(i13);
-            i13++;
-            arrayList4.add(obj2);
-        }
-        ArrayList arrayList5 = new ArrayList();
-        synchronized (this) {
-            Iterator it = arrayList4.iterator();
-            while (it.hasNext()) {
-                try {
-                    ComponentRegistrar componentRegistrar = (ComponentRegistrar) ((ra.b) it.next()).get();
-                    if (componentRegistrar != null) {
-                        arrayList3.addAll(this.h.a(componentRegistrar));
-                        it.remove();
-                    }
-                } catch (m e) {
-                    it.remove();
-                    Log.w("ComponentDiscovery", "Invalid component registrar.", e);
-                }
-            }
-            Iterator it2 = arrayList3.iterator();
-            while (it2.hasNext()) {
-                Object[] array = ((a) it2.next()).b.toArray();
-                int length = array.length;
-                int i14 = 0;
-                while (true) {
-                    if (i14 < length) {
-                        Object obj3 = array[i14];
-                        if (obj3.toString().contains("kotlinx.coroutines.CoroutineDispatcher")) {
-                            if (this.d.contains(obj3.toString())) {
-                                it2.remove();
-                                break;
-                            }
-                            this.d.add(obj3.toString());
+    public /* synthetic */ g(int i10, Object obj, Object obj2) {
+        this.a = i10;
+        this.b = obj;
+        this.c = obj2;
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:67:0x00a2, code lost:
+    
+        return;
+     */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    private final void a() {
+        ti.j jVar = (ti.j) this.b;
+        ti.i iVar = (ti.i) this.c;
+        byte[] bArr = new byte[65536];
+        try {
+            InputStream inputStream = iVar.b.getInputStream();
+            while (true) {
+                synchronized (jVar.a) {
+                    while (!jVar.u && jVar.m.get(Integer.valueOf(iVar.a)) == iVar && (!jVar.t || !iVar.e || iVar.c == 0)) {
+                        try {
+                            jVar.a.wait();
+                        } finally {
                         }
-                        i14++;
+                    }
+                    if (jVar.u || jVar.m.get(Integer.valueOf(iVar.a)) != iVar) {
+                        break;
+                    }
+                    int read = inputStream.read(bArr, 0, (int) Math.min(65536L, iVar.c));
+                    if (read < 0) {
+                        jVar.c(iVar, true);
+                        return;
+                    }
+                    if (read != 0) {
+                        byte[] bArr2 = new byte[read];
+                        System.arraycopy(bArr, 0, bArr2, 0, read);
+                        synchronized (jVar.a) {
+                            try {
+                                if (jVar.u || jVar.m.get(Integer.valueOf(iVar.a)) != iVar || !jVar.t) {
+                                    break;
+                                }
+                                iVar.c -= read;
+                                jVar.l(2, iVar.a, bArr2);
+                            } finally {
+                            }
+                        }
                     }
                 }
             }
-            if (this.a.isEmpty()) {
-                m1.a(arrayList3);
-            } else {
-                ArrayList arrayList6 = new ArrayList(this.a.keySet());
-                arrayList6.addAll(arrayList3);
-                m1.a(arrayList6);
-            }
-            int size3 = arrayList3.size();
-            int i15 = 0;
-            while (i15 < size3) {
-                Object obj4 = arrayList3.get(i15);
-                i15++;
-                a aVar2 = (a) obj4;
-                this.a.put(aVar2, new n(new m9.d(i10, this, aVar2)));
-            }
-            arrayList5.addAll(g(arrayList3));
-            arrayList5.addAll(i());
-            f();
-        }
-        int size4 = arrayList5.size();
-        while (i11 < size4) {
-            Object obj5 = arrayList5.get(i11);
-            i11++;
-            ((Runnable) obj5).run();
-        }
-        Boolean bool = (Boolean) this.f.get();
-        if (bool != null) {
-            c(this.a, bool.booleanValue());
+        } catch (Exception unused) {
+            jVar.c(iVar, true);
         }
     }
 
-    @Override // s9.b
-    public final Object a(Class cls) {
-        return n(r.a(cls));
-    }
-
-    @Override // s9.b
-    public final synchronized ra.b b(r rVar) {
-        s1.a(rVar, "Null interface requested.");
-        return (ra.b) this.b.get(rVar);
-    }
-
-    public final void c(HashMap hashMap, boolean z10) {
-        ArrayDeque arrayDeque;
-        for (Map.Entry entry : hashMap.entrySet()) {
-            a aVar = (a) entry.getKey();
-            ra.b bVar = (ra.b) entry.getValue();
-            int i10 = aVar.d;
-            if (i10 == 1 || (i10 == 2 && z10)) {
-                bVar.get();
-            }
-        }
-        l lVar = this.e;
-        synchronized (lVar) {
-            try {
-                arrayDeque = lVar.b;
-                if (arrayDeque != null) {
-                    lVar.b = null;
-                } else {
-                    arrayDeque = null;
+    private final void b() {
+        int i10;
+        ui.o oVar = (ui.o) this.b;
+        File file = (File) this.c;
+        synchronized (oVar.m) {
+            while (i10 < oVar.m.size()) {
+                try {
+                    File file2 = (File) oVar.m.get(i10);
+                    i10 = (file != null && file.equals(file2)) ? i10 + 1 : 0;
+                    if (file2.exists() && !file2.delete()) {
+                        oVar.h.b("temporary file deletion failed: " + file2.getName());
+                    }
+                } catch (Throwable th2) {
+                    throw th2;
                 }
-            } catch (Throwable th2) {
-                throw th2;
             }
-        }
-        if (arrayDeque != null) {
-            Iterator it = arrayDeque.iterator();
-            if (it.hasNext()) {
-                throw a1.g.j(it);
-            }
+            oVar.m.clear();
         }
     }
 
-    @Override // s9.b
-    public final ra.b d(Class cls) {
-        return b(r.a(cls));
-    }
-
-    public final void e(boolean z10) {
-        HashMap hashMap;
-        AtomicReference atomicReference = this.f;
-        Boolean valueOf = Boolean.valueOf(z10);
-        while (!atomicReference.compareAndSet(null, valueOf)) {
-            if (atomicReference.get() != null) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i10;
+        int i11 = 1;
+        switch (this.a) {
+            case 0:
+                p pVar = (p) this.b;
+                ra.b bVar = (ra.b) this.c;
+                synchronized (pVar) {
+                    try {
+                        if (pVar.b == null) {
+                            pVar.a.add(bVar);
+                        } else {
+                            pVar.b.add(bVar.get());
+                        }
+                    } finally {
+                    }
+                }
                 return;
-            }
-        }
-        synchronized (this) {
-            hashMap = new HashMap(this.a);
-        }
-        c(hashMap, z10);
-    }
-
-    public final void f() {
-        HashMap hashMap = this.b;
-        HashMap hashMap2 = this.c;
-        for (a aVar : this.a.keySet()) {
-            for (j jVar : aVar.c) {
-                boolean z10 = jVar.b == 2;
-                r rVar = jVar.a;
-                if (z10 && !hashMap2.containsKey(rVar)) {
-                    Set set = Collections.EMPTY_SET;
-                    o oVar = new o();
-                    oVar.b = null;
-                    oVar.a = Collections.newSetFromMap(new ConcurrentHashMap());
-                    oVar.a.addAll(set);
-                    hashMap2.put(rVar, oVar);
-                } else if (hashMap.containsKey(rVar)) {
-                    continue;
-                } else {
-                    int i10 = jVar.b;
-                    if (i10 == 1) {
-                        throw new k("Unsatisfied dependency for component " + aVar + ": " + rVar);
+            case 1:
+                m0 m0Var = (m0) this.b;
+                y1 y1Var = (y1) this.c;
+                y1Var.m();
+                m0Var.q0(y1Var, true);
+                return;
+            case 2:
+                ((y1) this.b).s((Bitmap) this.c);
+                return;
+            case 3:
+                o2 o2Var = (o2) this.b;
+                ArrayList arrayList = (ArrayList) this.c;
+                o2Var.G = false;
+                l2[] l2VarArr = (l2[]) arrayList.toArray(new l2[0]);
+                o2Var.H = l2VarArr;
+                if (l2VarArr.length > 0) {
+                    o2Var.b0.setScaleX(0.3f);
+                    o2Var.b0.setScaleY(0.3f);
+                    o2Var.b0.setAlpha(0.0f);
+                    o2Var.b0.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f).setDuration(250L).setInterpolator(ds.f).start();
+                    return;
+                }
+                return;
+            case 4:
+                t9.a aVar = (t9.a) this.b;
+                Runnable runnable = (Runnable) this.c;
+                Process.setThreadPriority(aVar.c);
+                StrictMode.ThreadPolicy threadPolicy = aVar.d;
+                if (threadPolicy != null) {
+                    StrictMode.setThreadPolicy(threadPolicy);
+                }
+                runnable.run();
+                return;
+            case 5:
+                Callable callable = (Callable) this.b;
+                t9.h hVar = (t9.h) ((e3) this.c).b;
+                try {
+                    hVar.k(callable.call());
+                    return;
+                } catch (Exception e) {
+                    hVar.l(e);
+                    return;
+                }
+            case 6:
+                j0 j0Var = (j0) this.b;
+                TLObject tLObject = (TLObject) this.c;
+                ArrayList arrayList2 = j0Var.i0;
+                nm0 nm0Var = j0Var.d;
+                if (tLObject != null) {
+                    arrayList2.clear();
+                    arrayList2.addAll(((TLRPC.TL_messages_chats) tLObject).chats);
+                    j0Var.I0 = false;
+                    j0Var.J0.b(j0Var.n0 + 4);
+                    int i12 = 0;
+                    while (true) {
+                        if (i12 >= nm0Var.getChildCount()) {
+                            i10 = 0;
+                        } else if (nm0Var.getChildAt(i12) instanceof i0) {
+                            i10 = nm0Var.getChildAt(i12).getTop();
+                        } else {
+                            i12++;
+                        }
                     }
-                    if (i10 != 2) {
-                        hashMap.put(rVar, new p(p.c, p.d));
+                    j0Var.Q1();
+                    if (j0Var.l0 >= 0 && i10 != 0) {
+                        ((c0) nm0Var.getLayoutManager()).h1(j0Var.l0 + 1, i10);
                     }
                 }
-            }
-        }
-    }
-
-    public final ArrayList g(ArrayList arrayList) {
-        ArrayList arrayList2 = new ArrayList();
-        int size = arrayList.size();
-        int i10 = 0;
-        while (i10 < size) {
-            Object obj = arrayList.get(i10);
-            i10++;
-            a aVar = (a) obj;
-            if (aVar.e == 0) {
-                ra.b bVar = (ra.b) this.a.get(aVar);
-                for (r rVar : aVar.b) {
-                    HashMap hashMap = this.b;
-                    if (hashMap.containsKey(rVar)) {
-                        arrayList2.add(new q6(28, (p) ((ra.b) hashMap.get(rVar)), bVar));
-                    } else {
-                        hashMap.put(rVar, bVar);
+                int max = Math.max(arrayList2.size(), j0Var.M0.b);
+                j0Var.x0.i(max, false);
+                j0Var.x0.setBagePosition(max / j0Var.M0.c);
+                h0 h0Var = j0Var.x0;
+                h0Var.H = true;
+                h0Var.requestLayout();
+                return;
+            case 7:
+                ((j0) this.b).q1((da0) this.c, true);
+                return;
+            case 8:
+                a2 a2Var = (a2) this.b;
+                AndroidUtilities.runOnUIThread(new g(9, a2Var, FileLoader.getInstance(a2Var.s).getPathToAttach((TLRPC.Document) this.c)));
+                return;
+            case 9:
+                a2 a2Var2 = (a2) this.b;
+                a2Var2.e = (File) this.c;
+                a2Var2.a();
+                return;
+            case 10:
+                a();
+                return;
+            case 11:
+                ti.j jVar = (ti.j) this.b;
+                String str = (String) this.c;
+                jVar.getClass();
+                try {
+                    byte[] decode = Base64.decode(str.substring(14), 2);
+                    if (decode.length >= 8 && decode.length <= 1048584) {
+                        jVar.k(decode);
+                        return;
+                    }
+                    jVar.f();
+                    return;
+                } catch (IllegalArgumentException e10) {
+                    FileLog.e(e10);
+                    jVar.f();
+                    return;
+                }
+            case 12:
+                ((ti.j) this.b).k((byte[]) this.c);
+                return;
+            case 13:
+                ((e2.j) this.b).accept(this.c);
+                return;
+            case 14:
+                ((w0) this.b).y((b0) this.c);
+                return;
+            case 15:
+                ((ug.f) this.b).c((ArrayList) this.c);
+                return;
+            case 16:
+                ug.p pVar2 = (ug.p) this.b;
+                ug.r rVar = (ug.r) this.c;
+                pVar2.getClass();
+                try {
+                    EGLDisplay eGLDisplay = pVar2.j;
+                    if (eGLDisplay != EGL14.EGL_NO_DISPLAY) {
+                        EGLSurface eGLSurface = pVar2.l;
+                        EGL14.eglMakeCurrent(eGLDisplay, eGLSurface, eGLSurface, pVar2.k);
+                        EGLSurface eGLSurface2 = rVar.h;
+                        if (eGLSurface2 != EGL14.EGL_NO_SURFACE) {
+                            EGL14.eglDestroySurface(pVar2.j, eGLSurface2);
+                        }
+                        rVar.h = EGL14.EGL_NO_SURFACE;
+                        if (pVar2.g.length == 0) {
+                            pVar2.b();
+                        }
+                    }
+                    rVar.b.release();
+                    return;
+                } catch (Throwable th2) {
+                    rVar.b.release();
+                    throw th2;
+                }
+            case 17:
+                ui.o oVar = (ui.o) this.b;
+                Throwable th3 = (Throwable) this.c;
+                oVar.getClass();
+                oVar.g(th3 instanceof Exception ? (Exception) th3 : new RuntimeException(th3));
+                return;
+            case 18:
+                b();
+                return;
+            case 19:
+                fg fgVar = (fg) this.b;
+                uf.b bVar2 = (uf.b) this.c;
+                if (((AtomicBoolean) fgVar.e).compareAndSet(false, true)) {
+                    bVar2.a(true);
+                    return;
+                }
+                return;
+            case 20:
+                ((vg.w0) this.b).run((ArrayList) this.c);
+                return;
+            case 21:
+                ((v) this.b).run((TLRPC.TL_error) this.c);
+                return;
+            case 22:
+                ((oy) this.b).run((ArrayList) this.c);
+                return;
+            case 23:
+                MessagesStorage messagesStorage = (MessagesStorage) this.b;
+                Utilities.Callback callback = (Utilities.Callback) this.c;
+                HashMap<Long, Integer> smallGroupsParticipantsCount = messagesStorage.getSmallGroupsParticipantsCount();
+                if (smallGroupsParticipantsCount == null || smallGroupsParticipantsCount.isEmpty()) {
+                    return;
+                }
+                AndroidUtilities.runOnUIThread(new c2(callback, smallGroupsParticipantsCount, i11));
+                return;
+            case 24:
+                qc M = wc.b0((wn) this.b).M(LocaleController.getString(R.string.StarsGiveawaySentPopup), AndroidUtilities.replaceTags(LocaleController.formatPluralStringComma("StarsGiveawaySentPopupInfo", (int) ((TL_stars.TL_starsGiveawayOption) this.c).stars)), R.raw.stars_send);
+                M.j = 5000;
+                M.k(true);
+                return;
+            case 25:
+                a0 a0Var = (a0) this.b;
+                TL_stories.PrepaidGiveaway prepaidGiveaway = (TL_stories.PrepaidGiveaway) this.c;
+                a0Var.getClass();
+                NotificationCenter.getInstance(UserConfig.selectedAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.boostByChannelCreated, a0Var.b0, Boolean.TRUE, prepaidGiveaway);
+                return;
+            case 26:
+                n1.P((n1) this.b, (TLObject) this.c);
+                return;
+            case 27:
+                ((vi.j) this.b).a0((n0) this.c);
+                return;
+            case 28:
+                vi.j jVar2 = (vi.j) this.b;
+                HandlerThread handlerThread = (HandlerThread) this.c;
+                jVar2.k();
+                vi.m mVar = jVar2.x;
+                if (mVar != null) {
+                    long p10 = mVar.p();
+                    vi.s sVar = jVar2.w;
+                    if (sVar != null && p10 != Long.MAX_VALUE) {
+                        sVar.q = Math.max(0L, p10) * 1000;
+                        Handler handler = sVar.u;
+                        if (handler != null) {
+                            handler.removeCallbacks(sVar.x0);
+                        }
                     }
                 }
-            }
-        }
-        return arrayList2;
-    }
-
-    @Override // s9.b
-    public final p h(r rVar) {
-        ra.b b10 = b(rVar);
-        return b10 == null ? new p(p.c, p.d) : b10 instanceof p ? (p) b10 : new p(null, b10);
-    }
-
-    public final ArrayList i() {
-        HashMap hashMap = this.c;
-        ArrayList arrayList = new ArrayList();
-        HashMap hashMap2 = new HashMap();
-        for (Map.Entry entry : this.a.entrySet()) {
-            a aVar = (a) entry.getKey();
-            if (aVar.e != 0) {
-                ra.b bVar = (ra.b) entry.getValue();
-                for (r rVar : aVar.b) {
-                    if (!hashMap2.containsKey(rVar)) {
-                        hashMap2.put(rVar, new HashSet());
+                jVar2.p();
+                vi.m mVar2 = jVar2.x;
+                if (mVar2 != null) {
+                    mVar2.u();
+                    jVar2.x = null;
+                }
+                handlerThread.quitSafely();
+                return;
+            default:
+                vi.s sVar2 = (vi.s) this.b;
+                CountDownLatch countDownLatch = (CountDownLatch) this.c;
+                sVar2.getClass();
+                try {
+                    try {
+                        sVar2.f();
+                        sVar2.r0 = true;
+                    } catch (RuntimeException e11) {
+                        sVar2.w0 = e11;
+                        sVar2.i();
                     }
-                    ((Set) hashMap2.get(rVar)).add(bVar);
+                    return;
+                } finally {
+                    countDownLatch.countDown();
                 }
-            }
         }
-        for (Map.Entry entry2 : hashMap2.entrySet()) {
-            if (hashMap.containsKey(entry2.getKey())) {
-                o oVar = (o) hashMap.get(entry2.getKey());
-                Iterator it = ((Set) entry2.getValue()).iterator();
-                while (it.hasNext()) {
-                    arrayList.add(new q6(29, oVar, (ra.b) it.next()));
-                }
-            } else {
-                r rVar2 = (r) entry2.getKey();
-                Set set = (Set) ((Collection) entry2.getValue());
-                o oVar2 = new o();
-                oVar2.b = null;
-                oVar2.a = Collections.newSetFromMap(new ConcurrentHashMap());
-                oVar2.a.addAll(set);
-                hashMap.put(rVar2, oVar2);
-            }
-        }
-        return arrayList;
-    }
-
-    @Override // s9.b
-    public final Set j(r rVar) {
-        ra.b bVar;
-        synchronized (this) {
-            bVar = (o) this.c.get(rVar);
-            if (bVar == null) {
-                bVar = n;
-            }
-        }
-        return (Set) bVar.get();
-    }
-
-    @Override // s9.b
-    public final Object n(r rVar) {
-        ra.b b10 = b(rVar);
-        if (b10 == null) {
-            return null;
-        }
-        return b10.get();
     }
 }

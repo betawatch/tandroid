@@ -20,15 +20,15 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.bk0;
+import org.telegram.ui.Components.ck0;
 import org.telegram.ui.Components.ds;
-import org.telegram.ui.Components.fl0;
+import org.telegram.ui.Components.gl0;
 import org.telegram.ui.Components.qc;
-import org.telegram.ui.Components.vw0;
+import org.telegram.ui.Components.ww0;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
-public final class m9 extends vw0 {
+public final class m9 extends ww0 {
     public float l0;
     public float m0;
     public float n0;
@@ -66,7 +66,7 @@ public final class m9 extends vw0 {
     /* JADX WARN: Type inference failed for: r17v0 */
     /* JADX WARN: Type inference failed for: r17v1 */
     /* JADX WARN: Type inference failed for: r17v6 */
-    @Override // org.telegram.ui.Components.vw0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.ww0, android.view.ViewGroup, android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -104,8 +104,8 @@ public final class m9 extends vw0 {
         q3 q3Var;
         w7 w7Var3;
         int i12;
-        q4 t10;
-        bk0 bk0Var;
+        q4 u10;
+        ck0 ck0Var;
         boolean z11;
         float f23;
         y9 y9Var = this.x0;
@@ -458,19 +458,19 @@ public final class m9 extends vw0 {
                         canvas.restore();
                         if (y9.A1) {
                             ArrayList arrayList = y9Var.x0;
-                            y9Var.Q();
+                            y9Var.R();
                             y9Var.U = 0.0f;
-                            y9Var.M(true);
+                            y9Var.N(true);
                             y9Var.d = false;
                             y9.x1 = true;
                             y9Var.b0 = y9Var.W;
-                            if (v9Var.d != null && (t10 = y9Var.t()) != null && (bk0Var = t10.d1.d) != null) {
-                                bk0 bk0Var2 = v9Var.d;
-                                bk0Var.c = bk0Var2.c;
-                                bk0Var.f = bk0Var2.f;
-                                bk0Var.b = bk0Var2.b;
-                                bk0Var.a = System.currentTimeMillis();
-                                bk0Var.c();
+                            if (v9Var.d != null && (u10 = y9Var.u()) != null && (ck0Var = u10.d1.d) != null) {
+                                ck0 ck0Var2 = v9Var.d;
+                                ck0Var.c = ck0Var2.c;
+                                ck0Var.f = ck0Var2.f;
+                                ck0Var.b = ck0Var2.b;
+                                ck0Var.a = System.currentTimeMillis();
+                                ck0Var.c();
                             }
                             y9Var.E = true;
                             float[] fArr3 = new float[i11];
@@ -567,7 +567,7 @@ public final class m9 extends vw0 {
         int keyCode = keyEvent.getKeyCode();
         y9 y9Var = this.x0;
         if (keyCode == 24 || keyEvent.getKeyCode() == 25) {
-            y9Var.r(keyEvent);
+            y9Var.s(keyEvent);
             return true;
         }
         if (keyEvent.getKeyCode() != 4 || keyEvent.getAction() != 1) {
@@ -587,7 +587,7 @@ public final class m9 extends vw0 {
         boolean z11;
         o9 o9Var;
         int i10;
-        fl0 fl0Var;
+        gl0 gl0Var;
         y9 y9Var = this.x0;
         float[] fArr = y9Var.o0;
         q4 currentPeerView = y9Var.n0.getCurrentPeerView();
@@ -605,7 +605,7 @@ public final class m9 extends vw0 {
         }
         float f7 = 0.0f;
         int i11 = 0;
-        if (y9Var.p1 && currentPeerView != null && (fl0Var = currentPeerView.g3) != null) {
+        if (y9Var.p1 && currentPeerView != null && (gl0Var = currentPeerView.g3) != null) {
             float f10 = 0.0f;
             for (View view = currentPeerView; view != null && (view.getParent() instanceof View); view = (View) view.getParent()) {
                 f7 += view.getX();
@@ -617,14 +617,14 @@ public final class m9 extends vw0 {
                 return true;
             }
             Rect rect = AndroidUtilities.rectTmp2;
-            fl0Var.getHitRect(rect);
+            gl0Var.getHitRect(rect);
             rect.offset((int) f7, (int) f10);
             if (motionEvent.getAction() == 0 && !rect.contains((int) motionEvent.getX(), (int) motionEvent.getY())) {
                 currentPeerView.Z0(false);
                 return true;
             }
             motionEvent.offsetLocation(-rect.left, -rect.top);
-            fl0Var.dispatchTouchEvent(motionEvent);
+            gl0Var.dispatchTouchEvent(motionEvent);
             return true;
         }
         if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
@@ -643,8 +643,8 @@ public final class m9 extends vw0 {
             if (y9Var.V >= 0.3f) {
                 y9Var.q(true);
             }
-            y9Var.K(false);
             y9Var.L(false);
+            y9Var.M(false);
             z10 = true;
         } else {
             z10 = false;
@@ -706,9 +706,9 @@ public final class m9 extends vw0 {
                         if (y9Var.e0 != 0.0f && !y9Var.g1 && y9Var.p0 < AndroidUtilities.dp(20.0f)) {
                             y9Var.n(y9Var.w.f > 0.5f);
                         }
-                        q4 t10 = y9Var.t();
-                        if (t10 != null) {
-                            t10.z0.w0 = false;
+                        q4 u10 = y9Var.u();
+                        if (u10 != null) {
+                            u10.z0.w0 = false;
                         }
                     }
                     if (z10 && !y9Var.a0) {
@@ -745,7 +745,7 @@ public final class m9 extends vw0 {
         return super.drawChild(canvas, view, j10);
     }
 
-    @Override // org.telegram.ui.Components.vw0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.ww0, android.view.ViewGroup, android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
         y9 y9Var = this.x0;
@@ -754,14 +754,14 @@ public final class m9 extends vw0 {
             AndroidUtilities.requestAdjustResize(r2Var.getParentActivity(), r2Var.getClassGuid());
         }
         qc.a(this, new l9(this));
-        NotificationCenter.getInstance(y9Var.h).addObserver(y9Var, NotificationCenter.storiesListUpdated);
-        NotificationCenter.getInstance(y9Var.h).addObserver(y9Var, NotificationCenter.storiesUpdated);
-        NotificationCenter.getInstance(y9Var.h).addObserver(y9Var, NotificationCenter.articleClosed);
-        NotificationCenter.getInstance(y9Var.h).addObserver(y9Var, NotificationCenter.openArticle);
-        NotificationCenter.getInstance(y9Var.h).addObserver(y9Var, NotificationCenter.storyDeleted);
+        NotificationCenter.getInstance(y9Var.h).addWeakObserver(y9Var, NotificationCenter.storiesListUpdated);
+        NotificationCenter.getInstance(y9Var.h).addWeakObserver(y9Var, NotificationCenter.storiesUpdated);
+        NotificationCenter.getInstance(y9Var.h).addWeakObserver(y9Var, NotificationCenter.articleClosed);
+        NotificationCenter.getInstance(y9Var.h).addWeakObserver(y9Var, NotificationCenter.openArticle);
+        NotificationCenter.getInstance(y9Var.h).addWeakObserver(y9Var, NotificationCenter.storyDeleted);
     }
 
-    @Override // org.telegram.ui.Components.vw0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.ww0, android.view.ViewGroup, android.view.View
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         qc.h(this);
@@ -804,9 +804,9 @@ public final class m9 extends vw0 {
             y9Var.g0 = false;
             y9Var.f0 = (y9Var.I0 || y9.i(y9Var, y9Var.s, motionEvent.getX(), motionEvent.getY(), false)) ? false : true;
             y9Var.h0 = (y9Var.I0 || y9.i(y9Var, y9Var.s, motionEvent.getX(), motionEvent.getY(), true)) ? false : true;
-            y9Var.K(y9Var.f0 && !y9Var.m1);
-            q4 t10 = y9Var.t();
-            if (y9Var.f0 && t10 != null && (m2Var2 = t10.A0) != null) {
+            y9Var.L(y9Var.f0 && !y9Var.m1);
+            q4 u10 = y9Var.u();
+            if (y9Var.f0 && u10 != null && (m2Var2 = u10.A0) != null) {
                 m2Var2.setAllowTouches(false);
             }
             if (y9Var.f0 && !y9Var.I0 && y9Var.m1) {
@@ -867,7 +867,7 @@ public final class m9 extends vw0 {
                             }
                             AndroidUtilities.cancelRunOnUIThread(s3Var);
                         }
-                        y9Var.y();
+                        y9Var.z();
                     }
                 }
             }
@@ -898,7 +898,7 @@ public final class m9 extends vw0 {
                     }
                     AndroidUtilities.cancelRunOnUIThread(s3Var);
                 }
-                y9Var.y();
+                y9Var.z();
             }
         } else {
             f7 = 1.0f;
@@ -909,15 +909,15 @@ public final class m9 extends vw0 {
                     AndroidUtilities.cancelRunOnUIThread(s8Var3);
                     y9Var.n1 = null;
                 }
-                y9Var.K(false);
+                y9Var.L(false);
                 y9Var.g0 = false;
                 y9Var.k0 = false;
                 p4 p4Var2 = y9Var.G0;
                 if (p4Var2 != null && (x9Var = (x9) p4Var2.c) != null) {
                     x9Var.setSeeking(false);
                 }
-                q4 t11 = y9Var.t();
-                if (t11 != null && (m2Var = t11.A0) != null) {
+                q4 u11 = y9Var.u();
+                if (u11 != null && (m2Var = u11.A0) != null) {
                     m2Var.setAllowTouches(true);
                 }
             }
@@ -946,7 +946,7 @@ public final class m9 extends vw0 {
         int i10 = 1;
         if (action == 1 || motionEvent.getAction() == 3) {
             y9Var.j0 = false;
-            y9Var.K(false);
+            y9Var.L(false);
             if (y9Var.V >= 1.0f) {
                 y9Var.q(true);
             } else if (!y9Var.H0) {
@@ -958,8 +958,8 @@ public final class m9 extends vw0 {
                 y9Var.G.setInterpolator(ds.f);
                 y9Var.G.start();
             }
-            q4 t10 = y9Var.t();
-            if (t10 != null && (m2Var = t10.A0) != null) {
+            q4 u10 = y9Var.u();
+            if (u10 != null && (m2Var = u10.A0) != null) {
                 m2Var.setAllowTouches(true);
             }
         }

@@ -13,7 +13,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class v3 implements org.telegram.ui.ActionBar.n2, org.telegram.ui.ActionBar.y3 {
     public ValueAnimator E;
@@ -106,7 +106,7 @@ public final class v3 implements org.telegram.ui.ActionBar.n2, org.telegram.ui.A
         dismiss(true);
     }
 
-    public final void e(boolean z10, zt0 zt0Var) {
+    public final void e(boolean z10, bu0 bu0Var) {
         ValueAnimator valueAnimator = this.E;
         if (valueAnimator != null) {
             valueAnimator.cancel();
@@ -114,7 +114,7 @@ public final class v3 implements org.telegram.ui.ActionBar.n2, org.telegram.ui.A
         ValueAnimator ofFloat = ValueAnimator.ofFloat(this.x, z10 ? 1.0f : 0.0f);
         this.E = ofFloat;
         ofFloat.addUpdateListener(new s3(this, 2));
-        this.E.addListener(new ai.l0(this, z10, zt0Var, 5));
+        this.E.addListener(new ai.l0(this, z10, bu0Var, 5));
         this.E.setInterpolator(org.telegram.ui.Components.ds.h);
         this.E.setDuration(250L);
         this.E.start();
@@ -135,14 +135,14 @@ public final class v3 implements org.telegram.ui.ActionBar.n2, org.telegram.ui.A
     }
 
     public final void g(org.telegram.ui.ActionBar.r2 r2Var) {
-        un unVar;
-        hk hkVar;
+        wn wnVar;
+        jk jkVar;
         this.r = false;
         this.b = r2Var;
         r2Var.getResourceProvider();
-        if ((r2Var instanceof un) && (hkVar = (unVar = (un) r2Var).Y) != null) {
-            hkVar.M();
-            unVar.Y.k0(true, false, true);
+        if ((r2Var instanceof wn) && (jkVar = (wnVar = (wn) r2Var).Y) != null) {
+            jkVar.L();
+            wnVar.Y.j0(true, false, true);
         }
         org.telegram.ui.ActionBar.o3 o3Var = this.e;
         if (o3Var == null) {
@@ -437,7 +437,7 @@ public final class v3 implements org.telegram.ui.ActionBar.n2, org.telegram.ui.A
         if (z10) {
             LaunchActivity.I1.y0.b(this);
         } else {
-            e(true, new zt0(this, 10));
+            e(true, new bu0(this, 10));
         }
         i();
         h();

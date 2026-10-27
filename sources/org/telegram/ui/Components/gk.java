@@ -8,9 +8,9 @@ import java.util.ArrayList;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public final class gk extends lm0 {
+public final class gk extends mm0 {
     public final ArrayList c = new ArrayList();
     public final ArrayList d = new ArrayList();
     public final ArrayList e = new ArrayList();
@@ -22,7 +22,7 @@ public final class gk extends lm0 {
         this.f = context;
     }
 
-    @Override // org.telegram.ui.Components.lm0
+    @Override // org.telegram.ui.Components.mm0
     public final boolean D(s4.e1 e1Var) {
         return e1Var.f == 1;
     }
@@ -124,11 +124,11 @@ public final class gk extends lm0 {
                 } else {
                     view = new org.telegram.ui.Cells.f7(context, (org.telegram.ui.d3) null);
                 }
-                return new vl0(view);
+                return new wl0(view);
             }
             q4Var = new org.telegram.ui.Cells.o7(context, 1, u6Var);
         }
         view = q4Var;
-        return new vl0(view);
+        return new wl0(view);
     }
 }

@@ -1,83 +1,52 @@
 package org.telegram.ui;
 
-import android.animation.ValueAnimator;
-import android.content.Context;
-import android.graphics.ColorFilter;
-import android.util.SparseIntArray;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public final class y41 extends org.telegram.ui.Components.kw {
-    public final /* synthetic */ int g0;
-    public final /* synthetic */ c61 h0;
+public final class y41 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ f61 c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public y41(c61 c61Var, Context context, org.telegram.ui.ActionBar.u6 u6Var, boolean z10, boolean z11, int i10, fy0 fy0Var, int i11, int i12) {
-        super(context, u6Var, z10, z11, false, true, i10, fy0Var, i11, false);
-        this.h0 = c61Var;
-        this.g0 = i12;
+    public /* synthetic */ y41(f61 f61Var, boolean z10, int i10) {
+        this.a = i10;
+        this.c = f61Var;
+        this.b = z10;
     }
 
-    @Override // org.telegram.ui.Components.kw
-    public final ColorFilter getEmojiColorFilter() {
-        return this.h0.k1;
-    }
-
-    @Override // org.telegram.ui.Components.kw
-    public final boolean h(int i10) {
-        int i11;
-        q51 q51Var;
-        c61 c61Var = this.h0;
-        SparseIntArray sparseIntArray = c61Var.x0;
-        if (c61Var.x1) {
-            return false;
-        }
-        int i12 = this.g0;
-        if (i12 == 4 && i10 == 0) {
-            c61Var.Q = !c61Var.Q;
-            c61Var.d0.setVisibility(8);
-            org.telegram.ui.Components.kw kwVar = c61Var.c0[c61Var.Q ? 1 : 0];
-            c61Var.d0 = kwVar;
-            kwVar.setVisibility(0);
-            c61Var.d0.x.setDrawable(getContext().getDrawable(c61Var.Q ? R.drawable.msg_emoji_stickers : R.drawable.msg_emoji_smiles));
-            c61Var.d0.x.setContentDescription(LocaleController.getString(c61Var.Q ? R.string.AccDescrStickers : R.string.Emoji));
-            c61Var.B(true, false, false);
-            c61Var.r0.h1(0, 0);
-            return true;
-        }
-        org.telegram.ui.Components.gw gwVar = this.E;
-        int i13 = ((gwVar == null || !this.b0) ? 0 : 1) + 1;
-        if (gwVar != null && this.b0 && i10 == 1) {
-            i11 = c61Var.n;
-        } else {
-            if ((i12 != 4 || i10 != 0) && i10 > 0) {
-                int i14 = i10 - i13;
-                if (sparseIntArray.indexOfKey(i14) >= 0) {
-                    i11 = sparseIntArray.get(i14);
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        ArrayList arrayList;
+        ArrayList arrayList2;
+        switch (this.a) {
+            case 0:
+                f61 f61Var = this.c;
+                s41 s41Var = f61Var.i0;
+                boolean z10 = this.b;
+                s41Var.setVisibility(z10 ? 0 : 8);
+                f61Var.h0.setVisibility(z10 ? 8 : 0);
+                f61Var.F1 = null;
+                if (!z10 && (arrayList2 = f61Var.B1) != null) {
+                    arrayList2.clear();
+                    ArrayList arrayList3 = f61Var.E1;
+                    if (arrayList3 != null) {
+                        arrayList3.clear();
+                    }
+                    f61Var.q0.E(false);
                 }
-            }
-            i11 = 0;
-        }
-        c61.a(c61Var, i11, AndroidUtilities.dp((i12 == 6 ? 7 : 0) - 2));
-        c61Var.d0.j(i10, true);
-        c61Var.h0.J1 = true;
-        c61Var.v(null, true, true);
-        t41 t41Var = c61Var.f0;
-        if (t41Var != null && (q51Var = t41Var.n) != null) {
-            q51Var.L1(null);
-        }
-        return true;
-    }
-
-    @Override // org.telegram.ui.Components.kw
-    public final void i(org.telegram.ui.Components.gw gwVar) {
-        ValueAnimator valueAnimator = this.h0.V1;
-        if (valueAnimator == null || valueAnimator.isRunning()) {
-            gwVar.setScaleX(0.0f);
-            gwVar.setScaleY(0.0f);
+                if (!z10 && (arrayList = f61Var.C1) != null) {
+                    arrayList.clear();
+                    break;
+                }
+                break;
+            default:
+                f61 f61Var2 = this.c;
+                f61Var2.j0.setVisibility((this.b && f61Var2.i0.getVisibility() == 0) ? 0 : 8);
+                f61Var2.I1 = null;
+                break;
         }
     }
 }

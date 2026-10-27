@@ -13,9 +13,9 @@ import org.telegram.messenger.SvgHelper;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public final class qz extends lm0 {
+public final class qz extends mm0 {
     public final boolean c;
     public final /* synthetic */ sz d;
 
@@ -24,7 +24,7 @@ public final class qz extends lm0 {
         this.c = z10;
     }
 
-    @Override // org.telegram.ui.Components.lm0
+    @Override // org.telegram.ui.Components.mm0
     public final boolean D(s4.e1 e1Var) {
         return true;
     }
@@ -128,6 +128,6 @@ public final class qz extends lm0 {
         pzVar.setLayerNum(1);
         pzVar.setAspectFit(true);
         pzVar.setLayoutParams(new s4.q0(AndroidUtilities.dp(34.0f), AndroidUtilities.dp(34.0f)));
-        return new vl0(pzVar);
+        return new wl0(pzVar);
     }
 }

@@ -12,9 +12,9 @@ import java.util.HashSet;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.Components.ds;
-import org.telegram.ui.Components.gb1;
+import org.telegram.ui.Components.kb1;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class g5 extends FrameLayout implements org.telegram.ui.ActionBar.p6 {
     public final org.telegram.ui.ActionBar.u6 a;
@@ -45,12 +45,12 @@ public final class g5 extends FrameLayout implements org.telegram.ui.ActionBar.p
             textView.setTextSize(1, 14.0f);
             textView.setText(charSequenceArr[i10]);
             textView.setOnClickListener(new pa(this, kVar, i10, 19));
-            gb1.b(textView);
-            this.b.addView(textView, gb1.t(-2, -2, 0.0f, 19, i10 == 0 ? 0 : 3, 0, 0, 0));
+            kb1.b(textView);
+            this.b.addView(textView, kb1.t(-2, -2, 0.0f, 19, i10 == 0 ? 0 : 3, 0, 0, 0));
             this.c[i10] = textView;
             i10++;
         }
-        addView(this.b, gb1.i(-2, -2, 17));
+        addView(this.b, kb1.i(-2, -2, 17));
         updateColors();
     }
 

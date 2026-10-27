@@ -1,31 +1,66 @@
 package sg;
 
-import android.content.Context;
-import android.graphics.Bitmap;
-import org.telegram.ui.nt0;
+import org.telegram.ui.pt0;
+import org.telegram.ui.zq0;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public final class d0 extends rg.c1 {
-    public final /* synthetic */ Bitmap E;
-    public final /* synthetic */ nt0 F;
+public final class d0 implements rg.b1 {
+    public final /* synthetic */ zq0 a;
+    public final /* synthetic */ pt0 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public d0(nt0 nt0Var, Context context, rg.q0 q0Var, Bitmap bitmap, Bitmap bitmap2) {
-        super(context, q0Var, bitmap, null, null);
-        this.F = nt0Var;
-        this.E = bitmap2;
+    public d0(pt0 pt0Var, zq0 zq0Var) {
+        this.b = pt0Var;
+        this.a = zq0Var;
     }
 
-    @Override // rg.c1
-    public final void g(rg.m mVar) {
-        int indexOf = rg.m.a.indexOf(mVar);
-        int i10 = indexOf + 1;
-        if (i10 <= 1 || this.E != null) {
-            indexOf = i10;
+    @Override // rg.b1
+    public final void a() {
+        this.a.run();
+    }
+
+    @Override // rg.b1
+    public final void b() {
+        e0 e0Var = this.b.M0;
+        if (e0Var != null) {
+            e0Var.invalidate();
         }
-        nt0 nt0Var = this.F;
-        nt0Var.i1.b(indexOf);
-        nt0Var.i(mVar);
+    }
+
+    @Override // rg.b1
+    public final void c() {
+        pt0 pt0Var = this.b;
+        if (pt0Var.Z0) {
+            pt0Var.Z0 = false;
+        } else {
+            pt0Var.i1.b(1);
+            pt0Var.i((rg.m) rg.m.a.get(0));
+        }
+    }
+
+    @Override // rg.b1
+    public final boolean d() {
+        pt0 pt0Var = this.b;
+        boolean z10 = pt0Var.H0 == null;
+        if (!z10) {
+            pt0Var.q0(null, true);
+        }
+        return z10;
+    }
+
+    @Override // rg.b1
+    public final void e() {
+        pt0 pt0Var = this.b;
+        pt0Var.u0.a.a();
+        pt0Var.a1.setViewHidden(false);
+    }
+
+    @Override // rg.b1
+    public final void f() {
+        pt0 pt0Var = this.b;
+        if (pt0Var.H0 != null) {
+            pt0Var.q0(null, true);
+        }
+        pt0Var.a1.setViewHidden(true);
     }
 }

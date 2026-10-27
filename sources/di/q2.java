@@ -3,7 +3,7 @@ package di;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class q2 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -40,7 +40,7 @@ public final class q2 extends AnimatorListenerAdapter {
                     y9 y9Var = ((p9) q4Var2.F1).d;
                     if (y9Var.x) {
                         y9Var.x = false;
-                        y9Var.P();
+                        y9Var.Q();
                     }
                 }
                 if (!q4Var2.k2 && (w2Var = q4Var2.S2) != null) {

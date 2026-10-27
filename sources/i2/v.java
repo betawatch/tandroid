@@ -20,16 +20,16 @@ import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.r2;
-import org.telegram.ui.Components.ac0;
 import org.telegram.ui.Components.ap;
-import org.telegram.ui.Components.hc0;
+import org.telegram.ui.Components.bc0;
+import org.telegram.ui.Components.ic0;
 import org.telegram.ui.Components.wo;
-import org.telegram.ui.un;
+import org.telegram.ui.wn;
 import org.webrtc.SurfaceTextureHelper;
 import org.webrtc.SurfaceViewRenderer;
 import org.webrtc.TextureViewRenderer;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class v implements Runnable {
     public final /* synthetic */ int a;
@@ -173,7 +173,7 @@ public final /* synthetic */ class v implements Runnable {
                 Bundle bundle = new Bundle();
                 bundle.putLong("user_id", UserConfig.getInstance(this.b).getClientUserId());
                 bundle.putInt("message_id", this.c);
-                r2Var.presentFragment(new un(bundle));
+                r2Var.presentFragment(new wn(bundle));
                 break;
             case 8:
                 ap apVar = (ap) this.d;
@@ -182,7 +182,7 @@ public final /* synthetic */ class v implements Runnable {
                     SharedPreferences notificationsSettings = MessagesController.getNotificationsSettings(this.c);
                     notificationsSettings.edit().putInt("last_selected_mute_until_time", i18).putInt("last_selected_mute_until_time2", notificationsSettings.getInt("last_selected_mute_until_time", 0)).apply();
                 }
-                apVar.u(i18);
+                apVar.w(i18);
                 break;
             case 9:
                 wo woVar = (wo) this.d;
@@ -194,22 +194,22 @@ public final /* synthetic */ class v implements Runnable {
                 woVar.run(Integer.valueOf(i19));
                 break;
             case 10:
-                hc0 hc0Var = ((ac0) this.d).f3;
-                View d = hc0Var.d();
-                ac0 ac0Var = hc0Var.f;
+                ic0 ic0Var = ((bc0) this.d).f3;
+                View d = ic0Var.d();
+                bc0 bc0Var = ic0Var.f;
                 if (d != null) {
                     int top = d.getTop() + this.b;
                     int top2 = d.getTop() + this.c;
                     int i20 = top2 - top;
-                    int paddingTop = ac0Var.getPaddingTop();
-                    int height = ac0Var.getHeight() - ac0Var.getPaddingBottom();
+                    int paddingTop = bc0Var.getPaddingTop();
+                    int height = bc0Var.getHeight() - bc0Var.getPaddingBottom();
                     if (i20 <= height - paddingTop) {
                         top = (top + top2) / 2;
                         paddingTop = (paddingTop + height) / 2;
                     }
                     int i21 = top - paddingTop;
                     if (i21 < 0) {
-                        ac0Var.scrollBy(0, i21);
+                        bc0Var.scrollBy(0, i21);
                         break;
                     }
                 }

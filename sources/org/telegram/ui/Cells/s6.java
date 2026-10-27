@@ -31,18 +31,18 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.b10;
 import org.telegram.ui.Components.ds;
-import org.telegram.ui.Components.gb1;
+import org.telegram.ui.Components.kb1;
 import org.telegram.ui.Components.nt;
-import org.telegram.ui.Components.qx0;
-import org.telegram.ui.Components.sc0;
+import org.telegram.ui.Components.rx0;
+import org.telegram.ui.Components.tc0;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public class s6 extends FrameLayout implements org.telegram.ui.ActionBar.p6 {
-    public static final sc0 H;
-    public static final sc0 I;
-    public static final sc0 J;
-    public static final sc0 K;
+    public static final tc0 H;
+    public static final tc0 I;
+    public static final tc0 J;
+    public static final tc0 K;
     public final q6 E;
     public float F;
     public ValueAnimator G;
@@ -56,7 +56,7 @@ public class s6 extends FrameLayout implements org.telegram.ui.ActionBar.p6 {
     public int n;
     public final org.telegram.ui.Components.j9 r;
     public final View s;
-    public final qx0 v;
+    public final rx0 v;
     public final org.telegram.ui.ActionBar.u6 w;
     public final int x;
     public long y;
@@ -64,16 +64,16 @@ public class s6 extends FrameLayout implements org.telegram.ui.ActionBar.p6 {
     static {
         int i10 = R.drawable.msg_mini_checks;
         int i11 = org.telegram.ui.ActionBar.y6.y6;
-        H = new sc0(i10, i11);
-        sc0 sc0Var = new sc0(R.drawable.msg_reactions, i11);
-        sc0Var.g = 16;
-        sc0Var.h = 16;
-        sc0Var.i = 5.66f;
-        I = sc0Var;
+        H = new tc0(i10, i11);
+        tc0 tc0Var = new tc0(R.drawable.msg_reactions, i11);
+        tc0Var.g = 16;
+        tc0Var.h = 16;
+        tc0Var.i = 5.66f;
+        I = tc0Var;
         int i12 = R.drawable.mini_repost_story;
         int i13 = org.telegram.ui.ActionBar.y6.hk;
-        J = new sc0(i12, i13);
-        K = new sc0(R.drawable.mini_forward_story, i13);
+        J = new tc0(i12, i13);
+        K = new tc0(R.drawable.mini_forward_story, i13);
     }
 
     public s6(int i10, int i11, Context context, org.telegram.ui.ActionBar.u6 u6Var, boolean z10, boolean z11) {
@@ -90,7 +90,7 @@ public class s6 extends FrameLayout implements org.telegram.ui.ActionBar.p6 {
         this.c = r6Var;
         float f7 = i12;
         r6Var.setRoundRadius(AndroidUtilities.dp(f7));
-        addView(r6Var, gb1.m(f7, f7, 8388627, 10.0f, 0.0f, 0.0f, 0.0f));
+        addView(r6Var, kb1.m(f7, f7, 8388627, 10.0f, 0.0f, 0.0f, 0.0f));
         if (i10 == 1) {
             setClipChildren(false);
         }
@@ -106,11 +106,11 @@ public class s6 extends FrameLayout implements org.telegram.ui.ActionBar.p6 {
         l4Var.setRightDrawableOutside(true);
         float f10 = i10 == 1 ? 7.66f : 5.33f;
         float f11 = i10 == 1 ? 73.0f : 55.0f;
-        addView(l4Var, gb1.m(-1.0f, -2.0f, 55, f11, f10, 12.0f, 0.0f));
-        qx0 qx0Var = new qx0(this);
-        this.v = qx0Var;
+        addView(l4Var, kb1.m(-1.0f, -2.0f, 55, f11, f10, 12.0f, 0.0f));
+        rx0 rx0Var = new rx0(this);
+        this.v = rx0Var;
         l4Var.setDrawablePadding(AndroidUtilities.dp(3.0f));
-        l4Var.i(qx0Var.a);
+        l4Var.i(rx0Var.a);
         org.telegram.ui.ActionBar.b6 b6Var = new org.telegram.ui.ActionBar.b6(context);
         this.e = b6Var;
         b6Var.setTextSize(13);
@@ -118,20 +118,20 @@ public class s6 extends FrameLayout implements org.telegram.ui.ActionBar.p6 {
         b6Var.setEllipsizeByGradient(true);
         b6Var.setImportantForAccessibility(2);
         b6Var.setTranslationX(LocaleController.isRTL ? AndroidUtilities.dp(30.0f) : 0.0f);
-        addView(b6Var, gb1.m(-1.0f, -2.0f, 55, f11, i10 == 1 ? 24.0f : 19.0f, 20.0f, 0.0f));
+        addView(b6Var, kb1.m(-1.0f, -2.0f, 55, f11, i10 == 1 ? 24.0f : 19.0f, 20.0f, 0.0f));
         if (z11) {
             org.telegram.ui.Components.y9 y9Var = new org.telegram.ui.Components.y9(context);
             this.f = y9Var;
-            addView(y9Var, gb1.m(24.0f, 24.0f, 8388629, 0.0f, 0.0f, 12.0f, 0.0f));
+            addView(y9Var, kb1.m(24.0f, 24.0f, 8388629, 0.0f, 0.0f, 12.0f, 0.0f));
             org.telegram.ui.Components.y9 y9Var2 = new org.telegram.ui.Components.y9(context);
             this.h = y9Var2;
-            addView(y9Var2, gb1.m(22.0f, 35.0f, 8388629, 0.0f, 0.0f, 12.0f, 0.0f));
+            addView(y9Var2, kb1.m(22.0f, 35.0f, 8388629, 0.0f, 0.0f, 12.0f, 0.0f));
         }
         if (z10) {
             View view = new View(context);
             this.s = view;
             view.setBackground(org.telegram.ui.ActionBar.y6.M0(false));
-            addView(view, gb1.g(-1.0f, -1));
+            addView(view, kb1.g(-1.0f, -1));
         }
     }
 
@@ -338,9 +338,9 @@ public class s6 extends FrameLayout implements org.telegram.ui.ActionBar.p6 {
                 ?? r62 = this.e;
                 if (j11 != 0) {
                     r62.setVisibility(0);
-                    sc0 sc0Var = storyItem != null ? z11 ? K : J : z12 ? H : I;
+                    tc0 tc0Var = storyItem != null ? z11 ? K : J : z12 ? H : I;
                     SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
-                    spannableStringBuilder.append(sc0Var.a(getContext(), u6Var));
+                    spannableStringBuilder.append(tc0Var.a(getContext(), u6Var));
                     spannableStringBuilder.append((CharSequence) LocaleController.formatSeenDate(j11));
                     if (z11 || storyItem == null) {
                         f10 = 9.0f;
@@ -497,10 +497,10 @@ public class s6 extends FrameLayout implements org.telegram.ui.ActionBar.p6 {
 
     @Override // org.telegram.ui.ActionBar.p6
     public final void updateColors() {
-        qx0 qx0Var = this.v;
-        if (qx0Var != null) {
+        rx0 rx0Var = this.v;
+        if (rx0Var != null) {
             try {
-                org.telegram.ui.Components.r5 r5Var = qx0Var.a;
+                org.telegram.ui.Components.r5 r5Var = rx0Var.a;
                 if (!(r5Var != null) || r5Var.F == null) {
                     return;
                 }

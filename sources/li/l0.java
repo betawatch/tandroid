@@ -14,9 +14,9 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.p6;
 import org.telegram.ui.ActionBar.u6;
 import org.telegram.ui.ActionBar.y6;
-import org.telegram.ui.Components.gb1;
+import org.telegram.ui.Components.kb1;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class l0 extends LinearLayout implements p6 {
     public final u6 a;
@@ -31,7 +31,7 @@ public final class l0 extends LinearLayout implements p6 {
         ImageView imageView = new ImageView(context);
         this.b = imageView;
         imageView.setScaleType(ImageView.ScaleType.CENTER);
-        addView(imageView, gb1.x(42, 42, 19, 0, 0, 0, 0));
+        addView(imageView, kb1.x(42, 42, 19, 0, 0, 0, 0));
         TextView textView = new TextView(context);
         this.c = textView;
         textView.setTextSize(1, 16.0f);
@@ -39,9 +39,9 @@ public final class l0 extends LinearLayout implements p6 {
         this.d = textView2;
         textView2.setTextSize(1, 16.0f);
         textView2.setGravity(5);
-        addView(textView, gb1.x(-2, -2, 19, 8, 0, 0, 0));
-        addView(new Space(context), gb1.s(0, -2, 1.0f, 119));
-        addView(textView2, gb1.x(-2, -2, 21, 8, 0, 0, 0));
+        addView(textView, kb1.x(-2, -2, 19, 8, 0, 0, 0));
+        addView(new Space(context), kb1.s(0, -2, 1.0f, 119));
+        addView(textView2, kb1.x(-2, -2, 21, 8, 0, 0, 0));
         imageView.setImageResource(m0Var.a);
         textView.setText(m0Var.b);
         textView2.setText((CharSequence) m0Var.c.get(0));

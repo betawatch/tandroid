@@ -1,75 +1,37 @@
 package org.telegram.messenger;
 
-import java.util.ArrayList;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class oa implements Runnable {
+public final /* synthetic */ class oa implements RequestDelegate {
     public final /* synthetic */ int a;
-    public final /* synthetic */ MessagesController b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ int d;
-    public final /* synthetic */ long e;
-    public final /* synthetic */ ArrayList f;
+    public final /* synthetic */ BaseController b;
+    public final /* synthetic */ int c;
 
-    public /* synthetic */ oa(MessagesController messagesController, long j10, int i10, long j11, ArrayList arrayList, int i11) {
+    public /* synthetic */ oa(BaseController baseController, int i10, int i11) {
         this.a = i11;
-        this.b = messagesController;
-        this.c = j10;
-        this.d = i10;
-        this.e = j11;
-        this.f = arrayList;
+        this.b = baseController;
+        this.c = i10;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
         switch (this.a) {
             case 0:
-                int i10 = this.d;
-                ArrayList arrayList = this.f;
-                this.b.lambda$checkUnreadPollVotesInternal2$438(this.c, this.e, i10, arrayList);
+                ((MessagesController) this.b).lambda$migrateDialogs$215(this.c, tLObject, tL_error);
                 break;
             case 1:
-                long j10 = this.e;
-                ArrayList arrayList2 = this.f;
-                int i11 = this.d;
-                this.b.lambda$checkUnreadReactionsInternal2$427(this.c, i11, j10, arrayList2);
+                ((MessagesController) this.b).lambda$loadPinnedDialogs$368(this.c, tLObject, tL_error);
                 break;
             case 2:
-                int i12 = this.d;
-                ArrayList arrayList3 = this.f;
-                this.b.lambda$checkUnreadReactionsInternal2$431(this.c, this.e, i12, arrayList3);
-                break;
-            case 3:
-                long j11 = this.e;
-                ArrayList arrayList4 = this.f;
-                int i13 = this.d;
-                this.b.lambda$checkUnreadPollVotesInternal2$434(this.c, i13, j11, arrayList4);
-                break;
-            case 4:
-                int i14 = this.d;
-                ArrayList arrayList5 = this.f;
-                this.b.lambda$checkUnreadPollVotesInternal2$440(this.c, this.e, i14, arrayList5);
-                break;
-            case 5:
-                int i15 = this.d;
-                ArrayList arrayList6 = this.f;
-                this.b.lambda$checkUnreadReactionsInternal2$433(this.c, this.e, i15, arrayList6);
+                ((MessagesController) this.b).lambda$loadGlobalNotificationsSettings$200(this.c, tLObject, tL_error);
                 break;
             default:
-                int i16 = this.d;
-                ArrayList arrayList7 = this.f;
-                this.b.lambda$checkUnreadReactionsInternal2$429(this.c, this.e, i16, arrayList7);
+                ((ContactsController) this.b).lambda$loadPrivacySettings$65(this.c, tLObject, tL_error);
                 break;
         }
-    }
-
-    public /* synthetic */ oa(MessagesController messagesController, long j10, long j11, int i10, ArrayList arrayList, int i11) {
-        this.a = i11;
-        this.b = messagesController;
-        this.c = j10;
-        this.e = j11;
-        this.d = i10;
-        this.f = arrayList;
     }
 }

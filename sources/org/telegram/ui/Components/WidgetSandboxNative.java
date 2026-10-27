@@ -2,11 +2,13 @@ package org.telegram.ui.Components;
 
 import android.graphics.Bitmap;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 final class WidgetSandboxNative {
     private WidgetSandboxNative() {
     }
+
+    public static native void answerRequest(long j10, long j11, int i10, byte[] bArr);
 
     public static native void arbiterCancel(long j10);
 
@@ -28,7 +30,9 @@ final class WidgetSandboxNative {
 
     public static native void conformance(boolean z10);
 
-    public static native long create(byte[] bArr, byte[] bArr2, byte[] bArr3, float f7, float f10, int i10, byte[] bArr4, byte[] bArr5, byte[] bArr6, boolean z10, WidgetSandboxBackend widgetSandboxBackend);
+    public static native long create(byte[] bArr, byte[] bArr2, byte[] bArr3, float f7, float f10, int i10, byte[] bArr4, byte[] bArr5, byte[] bArr6, byte[] bArr7, boolean z10, WidgetSandboxBackend widgetSandboxBackend);
+
+    public static native void data(long j10, byte[] bArr);
 
     public static native void destroy(long j10);
 

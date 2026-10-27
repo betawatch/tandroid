@@ -4,26 +4,26 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.accessibility.AccessibilityNodeInfo;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public abstract class d10 extends jp0 {
+public abstract class d10 extends kp0 {
     public final boolean d;
 
     public d10(boolean z10) {
         this.d = z10;
     }
 
-    @Override // org.telegram.ui.Components.jp0
+    @Override // org.telegram.ui.Components.kp0
     public final boolean a() {
         return k() > j();
     }
 
-    @Override // org.telegram.ui.Components.jp0
+    @Override // org.telegram.ui.Components.kp0
     public final boolean b() {
         return k() < i();
     }
 
-    @Override // org.telegram.ui.Components.jp0
+    @Override // org.telegram.ui.Components.kp0
     public final void c(boolean z10) {
         float h = h();
         if (z10) {
@@ -32,7 +32,7 @@ public abstract class d10 extends jp0 {
         l(Math.min(i(), Math.max(j(), k() + h)));
     }
 
-    @Override // org.telegram.ui.Components.jp0
+    @Override // org.telegram.ui.Components.kp0
     public final void e(View view, AccessibilityNodeInfo accessibilityNodeInfo) {
         super.e(view, accessibilityNodeInfo);
         if (this.d) {
@@ -41,7 +41,7 @@ public abstract class d10 extends jp0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.jp0
+    @Override // org.telegram.ui.Components.kp0
     public final boolean g(View view, int i10, Bundle bundle) {
         if (super.g(view, i10, bundle)) {
             return true;

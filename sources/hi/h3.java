@@ -23,14 +23,14 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.u6;
 import org.telegram.ui.Components.c6;
 import org.telegram.ui.Components.qc;
-import org.telegram.ui.Components.sd0;
+import org.telegram.ui.Components.td0;
 import org.telegram.ui.Components.wc;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.cy;
-import org.telegram.ui.po0;
-import org.telegram.ui.un;
+import org.telegram.ui.ey;
+import org.telegram.ui.ro0;
+import org.telegram.ui.wn;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class h3 implements org.telegram.ui.web.g0 {
     public boolean a;
@@ -198,7 +198,7 @@ public final class h3 implements org.telegram.ui.web.g0 {
         d3 d3Var = m3Var.w;
         l3 l3Var = m3Var.f;
         org.telegram.ui.ActionBar.r2 lastFragment = ((LaunchActivity) m3Var.l0).O().getLastFragment();
-        po0 po0Var = null;
+        ro0 ro0Var = null;
         if (tLObject instanceof TLRPC.TL_payments_paymentFormStars) {
             AndroidUtilities.hideKeyboard(l3Var);
             org.telegram.ui.ActionBar.e2 e2Var = new org.telegram.ui.ActionBar.e2(m3Var.getContext(), 3, null);
@@ -209,18 +209,18 @@ public final class h3 implements org.telegram.ui.web.g0 {
         if (tLObject instanceof TLRPC.PaymentForm) {
             TLRPC.PaymentForm paymentForm = (TLRPC.PaymentForm) tLObject;
             MessagesController.getInstance(m3Var.H).putUsers(paymentForm.users, false);
-            po0Var = new po0(paymentForm, null, str, lastFragment);
+            ro0Var = new ro0(paymentForm, null, str, lastFragment);
         } else if (tLObject instanceof TLRPC.PaymentReceipt) {
-            po0Var = new po0((TLRPC.PaymentReceipt) tLObject);
+            ro0Var = new ro0((TLRPC.PaymentReceipt) tLObject);
         }
-        if (po0Var != null) {
+        if (ro0Var != null) {
             d3Var.e(d3Var.getTopActionBarOffsetY() + (-d3Var.getOffsetY()));
             AndroidUtilities.hideKeyboard(l3Var);
-            sd0 sd0Var = new sd0(this.b);
-            sd0Var.show();
-            po0Var.Z0 = new androidx.car.app.utils.a(this, sd0Var, str, 9);
-            po0Var.Y0 = this.c;
-            sd0Var.c(po0Var);
+            td0 td0Var = new td0(this.b);
+            td0Var.show();
+            ro0Var.Z0 = new androidx.car.app.utils.a(this, td0Var, str, 9);
+            ro0Var.Y0 = this.c;
+            td0Var.c(ro0Var);
         }
     }
 
@@ -304,8 +304,8 @@ public final class h3 implements org.telegram.ui.web.g0 {
             Activity activity = m3Var.l0;
             if (activity instanceof LaunchActivity) {
                 org.telegram.ui.ActionBar.r2 lastFragment = ((LaunchActivity) activity).O().getLastFragment();
-                if (lastFragment instanceof un) {
-                    ((un) lastFragment).Y.setFieldText("@" + UserObject.getPublicUsername(user) + " " + str);
+                if (lastFragment instanceof wn) {
+                    ((wn) lastFragment).Y.setFieldText("@" + UserObject.getPublicUsername(user) + " " + str);
                     m3Var.k(false);
                     return;
                 }
@@ -322,12 +322,12 @@ public final class h3 implements org.telegram.ui.web.g0 {
         bundle.putBoolean("allowUsers", arrayList.contains("users"));
         bundle.putBoolean("allowChannels", arrayList.contains("channels"));
         bundle.putBoolean("allowBots", arrayList.contains("bots"));
-        cy cyVar = new cy(bundle);
+        ey eyVar = new ey(bundle);
         AndroidUtilities.hideKeyboard(m3Var.f);
-        sd0 sd0Var = new sd0(this.b);
-        cyVar.C2 = new a1.d(this, user, str, sd0Var, 4);
-        sd0Var.show();
-        sd0Var.c(cyVar);
+        td0 td0Var = new td0(this.b);
+        eyVar.C2 = new a1.d(this, user, str, td0Var, 4);
+        td0Var.show();
+        td0Var.c(eyVar);
     }
 
     @Override // org.telegram.ui.web.g0

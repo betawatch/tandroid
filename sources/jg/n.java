@@ -33,20 +33,20 @@ import org.telegram.ui.ActionBar.f7;
 import org.telegram.ui.ActionBar.l6;
 import org.telegram.ui.ActionBar.u5;
 import org.telegram.ui.ActionBar.y6;
-import org.telegram.ui.Components.gb1;
-import org.telegram.ui.Components.j71;
-import org.telegram.ui.Components.l71;
+import org.telegram.ui.Components.k71;
+import org.telegram.ui.Components.kb1;
 import org.telegram.ui.Components.m71;
-import org.telegram.ui.Components.mm0;
+import org.telegram.ui.Components.n71;
+import org.telegram.ui.Components.nm0;
 import org.telegram.ui.Components.ro;
-import org.telegram.ui.Components.t61;
 import org.telegram.ui.Components.to;
+import org.telegram.ui.Components.u61;
 import org.telegram.ui.Components.vo;
-import org.telegram.ui.ft;
+import org.telegram.ui.ht;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public final class n extends m71 implements NotificationCenter.NotificationCenterDelegate {
+public final class n extends n71 implements NotificationCenter.NotificationCenterDelegate {
     public TLRPC.InputDocument E;
     public boolean F;
     public String G;
@@ -68,7 +68,7 @@ public final class n extends m71 implements NotificationCenter.NotificationCente
 
     public static void Z(n nVar) {
         n nVar2;
-        ft.o().T = null;
+        ht.o().T = null;
         if (nVar.getParentActivity() == null) {
             return;
         }
@@ -80,12 +80,12 @@ public final class n extends m71 implements NotificationCenter.NotificationCente
             nVar2.L = a3Var;
             a3Var.c2 = new i(nVar2);
         }
-        nVar2.L.j0.f0();
-        nVar2.L.Q1(1, false);
+        nVar2.L.j0.g0();
+        nVar2.L.R1(1, false);
         a3 a3Var2 = nVar2.L;
         a3Var2.X1 = true;
-        a3Var2.n1(new hi.e2(nVar2, 6));
-        nVar2.L.v1();
+        a3Var2.o1(new hi.e2(nVar2, 6));
+        nVar2.L.w1();
         a3 a3Var3 = nVar2.L;
         a3Var3.r = null;
         if (nVar2.visibleDialog != null) {
@@ -131,53 +131,53 @@ public final class n extends m71 implements NotificationCenter.NotificationCente
         }
     }
 
-    @Override // org.telegram.ui.Components.m71
-    public final void V(ArrayList arrayList, j71 j71Var) {
-        arrayList.add(t61.k(this.h));
+    @Override // org.telegram.ui.Components.n71
+    public final void V(ArrayList arrayList, k71 k71Var) {
+        arrayList.add(u61.k(this.h));
         ic.a.p(R.string.BusinessIntroHeader, arrayList);
-        arrayList.add(t61.k(this.s));
-        arrayList.add(t61.k(this.v));
+        arrayList.add(u61.k(this.s));
+        arrayList.add(u61.k(this.v));
         if (this.w) {
-            arrayList.add(t61.f(LocaleController.getString(R.string.BusinessIntroSticker), LocaleController.getString(R.string.BusinessIntroStickerRandom), 1));
+            arrayList.add(u61.f(LocaleController.getString(R.string.BusinessIntroSticker), LocaleController.getString(R.string.BusinessIntroStickerRandom), 1));
         } else if (this.y != null) {
             String string = LocaleController.getString(R.string.BusinessIntroSticker);
             String str = this.y;
-            t61 t61Var = new t61(3);
-            t61Var.d = 1;
-            t61Var.l = string;
-            t61Var.G = str;
-            arrayList.add(t61Var);
+            u61 u61Var = new u61(3);
+            u61Var.d = 1;
+            u61Var.l = string;
+            u61Var.G = str;
+            arrayList.add(u61Var);
         } else {
             String string2 = LocaleController.getString(R.string.BusinessIntroSticker);
             TLRPC.Document document = this.x;
-            t61 t61Var2 = new t61(3);
-            t61Var2.d = 1;
-            t61Var2.l = string2;
-            t61Var2.G = document;
-            arrayList.add(t61Var2);
+            u61 u61Var2 = new u61(3);
+            u61Var2.d = 1;
+            u61Var2.l = string2;
+            u61Var2.G = document;
+            arrayList.add(u61Var2);
         }
-        arrayList.add(t61.C(LocaleController.getString(R.string.BusinessIntroInfo)));
+        arrayList.add(u61.C(LocaleController.getString(R.string.BusinessIntroInfo)));
         boolean h02 = h0();
         this.K = !h02;
         if (!h02) {
-            arrayList.add(t61.C(null));
-            t61 e = t61.e(2, LocaleController.getString(R.string.BusinessIntroReset));
+            arrayList.add(u61.C(null));
+            u61 e = u61.e(2, LocaleController.getString(R.string.BusinessIntroReset));
             e.r = true;
             arrayList.add(e);
         }
-        t61 t61Var3 = new t61(8);
-        t61Var3.l = null;
-        arrayList.add(t61Var3);
+        u61 u61Var3 = new u61(8);
+        u61Var3.l = null;
+        arrayList.add(u61Var3);
     }
 
-    @Override // org.telegram.ui.Components.m71
+    @Override // org.telegram.ui.Components.n71
     public final CharSequence W() {
         return LocaleController.getString(R.string.BusinessIntro);
     }
 
-    @Override // org.telegram.ui.Components.m71
-    public final void X(t61 t61Var, View view) {
-        int i10 = t61Var.d;
+    @Override // org.telegram.ui.Components.n71
+    public final void X(u61 u61Var, View view) {
+        int i10 = u61Var.d;
         if (i10 == 1) {
             l2 l2Var = new l2(getParentActivity(), getResourceProvider(), true, true);
             l2Var.E = new ai.f0(21, this, view);
@@ -215,12 +215,12 @@ public final class n extends m71 implements NotificationCenter.NotificationCente
         }
     }
 
-    @Override // org.telegram.ui.Components.m71
-    public final boolean Y(t61 t61Var, View view) {
+    @Override // org.telegram.ui.Components.n71
+    public final boolean Y(u61 u61Var, View view) {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.m71, org.telegram.ui.ActionBar.r2
+    @Override // org.telegram.ui.Components.n71, org.telegram.ui.ActionBar.r2
     public final View createView(Context context) {
         setHasOwnBackground(true);
         AndroidUtilities.requestAdjustResize(getParentActivity(), this.classGuid);
@@ -239,8 +239,8 @@ public final class n extends m71 implements NotificationCenter.NotificationCente
         l lVar = new l(context, 0);
         lVar.setScaleType(ImageView.ScaleType.MATRIX);
         lVar.setImageDrawable(o6.e(null, this.currentAccount, getUserConfig().getClientUserId(), y6.I.q()));
-        this.h.addView(lVar, gb1.i(-1, -1, 119));
-        this.h.addView(this.n, gb1.h(-2, -2.0f, 17, 42.0f, 18.0f, 42.0f, 18.0f));
+        this.h.addView(lVar, kb1.i(-1, -1, 119));
+        this.h.addView(this.n, kb1.h(-2, -2.0f, 17, 42.0f, 18.0f, 42.0f, 18.0f));
         m mVar = new m(this, context, LocaleController.getString(R.string.BusinessIntroTitleHint), getMessagesController().introTitleLengthLimit, this.resourceProvider, 0);
         this.s = mVar;
         mVar.r = true;
@@ -272,9 +272,9 @@ public final class n extends m71 implements NotificationCenter.NotificationCente
         f0(false);
         this.a.addOnLayoutChangeListener(new x2(this, 1));
         this.a.j(new ai.b(this, 17));
-        l71 l71Var = this.a;
-        l71Var.i3 = true;
-        l71Var.setClipChildren(false);
+        m71 m71Var = this.a;
+        m71Var.i3 = true;
+        m71Var.setClipChildren(false);
         View view = this.fragmentView;
         if (view instanceof ViewGroup) {
             ((ViewGroup) view).setClipChildren(false);
@@ -296,12 +296,12 @@ public final class n extends m71 implements NotificationCenter.NotificationCente
             return;
         }
         this.f.a(g0(), z10);
-        l71 l71Var = this.a;
-        if (l71Var == null || l71Var.g3 == null || this.K == (!h0())) {
+        m71 m71Var = this.a;
+        if (m71Var == null || m71Var.g3 == null || this.K == (!h0())) {
             return;
         }
-        l71 l71Var2 = this.a;
-        if (l71Var2 != null && l71Var2.getChildCount() > 0) {
+        m71 m71Var2 = this.a;
+        if (m71Var2 != null && m71Var2.getChildCount() > 0) {
             View view = null;
             int i10 = ConnectionsManager.DEFAULT_DATACENTER_ID;
             int i11 = -1;
@@ -327,8 +327,8 @@ public final class n extends m71 implements NotificationCenter.NotificationCente
         this.a.g3.O(true);
         int i13 = this.c;
         if (i13 >= 0) {
-            l71 l71Var3 = this.a;
-            l71Var3.f3.h1(i13, this.d - l71Var3.getPaddingTop());
+            m71 m71Var3 = this.a;
+            m71Var3.f3.h1(i13, this.d - m71Var3.getPaddingTop());
         }
     }
 
@@ -355,7 +355,7 @@ public final class n extends m71 implements NotificationCenter.NotificationCente
     }
 
     @Override // org.telegram.ui.ActionBar.r2
-    public final mm0 getListViewForSimpleGlass() {
+    public final nm0 getListViewForSimpleGlass() {
         return this.a;
     }
 
@@ -418,7 +418,7 @@ public final class n extends m71 implements NotificationCenter.NotificationCente
     }
 
     public final void j0() {
-        j71 j71Var;
+        k71 k71Var;
         if (this.J) {
             return;
         }
@@ -466,9 +466,9 @@ public final class n extends m71 implements NotificationCenter.NotificationCente
             AndroidUtilities.cancelRunOnUIThread(gVar);
             AndroidUtilities.runOnUIThread(gVar, 5000L);
         }
-        l71 l71Var = this.a;
-        if (l71Var != null && (j71Var = l71Var.g3) != null) {
-            j71Var.O(true);
+        m71 m71Var = this.a;
+        if (m71Var != null && (k71Var = m71Var.g3) != null) {
+            k71Var.O(true);
         }
         this.J = true;
     }
@@ -530,7 +530,7 @@ public final class n extends m71 implements NotificationCenter.NotificationCente
 
     @Override // org.telegram.ui.ActionBar.r2
     public final boolean onFragmentCreate() {
-        getNotificationCenter().addObserver(this, NotificationCenter.userInfoDidLoad);
+        getNotificationCenter().addWeakObserver(this, NotificationCenter.userInfoDidLoad);
         MediaDataController.getInstance(this.currentAccount).checkStickers(0);
         MediaDataController.getInstance(this.currentAccount).loadRecents(0, false, true, false);
         MediaDataController.getInstance(this.currentAccount).loadRecents(2, false, true, false);

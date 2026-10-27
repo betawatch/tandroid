@@ -6,9 +6,9 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.WindowManager;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.pw0;
+import org.telegram.ui.Components.qw0;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class k1 extends GestureDetector.SimpleOnGestureListener {
     public float a;
@@ -16,7 +16,7 @@ public final class k1 extends GestureDetector.SimpleOnGestureListener {
     public final /* synthetic */ int c;
 
     public k1(int i10) {
-        pw0 pw0Var = o1.X;
+        qw0 qw0Var = o1.X;
         this.c = i10;
     }
 

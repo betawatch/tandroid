@@ -12,9 +12,9 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.ActionBar.y6;
 import org.telegram.ui.Components.CheckBoxBase;
-import org.telegram.ui.Components.k80;
+import org.telegram.ui.Components.l80;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class u5 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -61,7 +61,7 @@ public final /* synthetic */ class u5 implements View.OnClickListener {
                         ArrayList arrayList = new ArrayList(set);
                         Collections.sort(arrayList);
                         TL_iv.pageBlockPreformatted pageblockpreformatted = (TL_iv.pageBlockPreformatted) aVar3.b;
-                        k80 P = v3Var2.p3.P(view);
+                        l80 P = v3Var2.p3.P(view);
                         P.W(y6.c0(AndroidUtilities.dp(3.0f), y6.w0(y6.d6, v3Var2.o3)));
                         P.Z = true;
                         P.X = AndroidUtilities.dp(350.0f);

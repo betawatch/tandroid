@@ -16,9 +16,9 @@ import org.telegram.ui.ActionBar.k3;
 import org.telegram.ui.ActionBar.u6;
 import org.telegram.ui.ActionBar.y6;
 import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.Components.gb1;
+import org.telegram.ui.Components.kb1;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class y extends k3 {
     public static final /* synthetic */ int s = 0;
@@ -67,17 +67,17 @@ public final class y extends k3 {
         mcVar.d = new x(this, context);
         q qVar = new q(context, this.resourcesProvider);
         qVar.setAdapter(new r(mcVar));
-        mcVar.addView(qVar, gb1.p(1.0f, -1, 0));
-        mcVar.addView(pVar, gb1.o(12.0f, 0.0f, 12.0f, 0.0f, -1, 48));
+        mcVar.addView(qVar, kb1.p(1.0f, -1, 0));
+        mcVar.addView(pVar, kb1.o(12.0f, 0.0f, 12.0f, 0.0f, -1, 48));
         LinearLayout linearLayout2 = new LinearLayout(context);
         linearLayout2.setOrientation(0);
         linearLayout2.setGravity(16);
-        linearLayout2.addView(imageView, gb1.r(28, 28));
-        linearLayout2.addView(qVar.n(8, false), gb1.t(-1, 40, 1.0f, 16, 12, 0, 12, 0));
-        linearLayout2.addView(imageView2, gb1.r(28, 28));
-        mcVar.addView(linearLayout2, gb1.o(14.0f, 0.0f, 14.0f, 0.0f, -1, 48));
+        linearLayout2.addView(imageView, kb1.r(28, 28));
+        linearLayout2.addView(qVar.n(8, false), kb1.t(-1, 40, 1.0f, 16, 12, 0, 12, 0));
+        linearLayout2.addView(imageView2, kb1.r(28, 28));
+        mcVar.addView(linearLayout2, kb1.o(14.0f, 0.0f, 14.0f, 0.0f, -1, 48));
         this.b = mcVar;
-        linearLayout.addView(mcVar, gb1.r(-1, 0));
+        linearLayout.addView(mcVar, kb1.r(-1, 0));
         o oVar = new o(this, context, linearLayout);
         oVar.addView(linearLayout);
         setCustomView(oVar);

@@ -13,16 +13,16 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public final class rr extends lm0 {
+public final class rr extends mm0 {
     public final /* synthetic */ tr c;
 
     public rr(tr trVar) {
         this.c = trVar;
     }
 
-    @Override // org.telegram.ui.Components.lm0
+    @Override // org.telegram.ui.Components.mm0
     public final boolean D(s4.e1 e1Var) {
         return e1Var.f == 3;
     }
@@ -59,7 +59,7 @@ public final class rr extends lm0 {
         if (i13 != 3) {
             if (i13 != 2) {
                 if (i13 == 1) {
-                    ((org.telegram.ui.Cells.i9) view).setText(AndroidUtilities.replaceArrows(AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.VoipChatStreamWithAnotherApp), org.telegram.ui.ActionBar.y6.L6, 0, new bq(this, 4)), true, AndroidUtilities.dp(1.0f), AndroidUtilities.dp(1.0f)));
+                    ((org.telegram.ui.Cells.i9) view).setText(AndroidUtilities.replaceArrows(AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.VoipChatStreamWithAnotherApp), org.telegram.ui.ActionBar.y6.L6, 0, new cp(this, 5)), true, AndroidUtilities.dp(1.0f), AndroidUtilities.dp(1.0f)));
                     return;
                 }
                 return;
@@ -110,29 +110,29 @@ public final class rr extends lm0 {
             boolean z10 = trVar.b0;
             ?? srVar = new sr(context);
             srVar.setOrientation(1);
-            ak0 ak0Var = new ak0(context);
-            ak0Var.setAutoRepeat(true);
-            ak0Var.f(R.raw.utyan_schedule, 112, 112, null);
-            ak0Var.d();
-            srVar.addView(ak0Var, gb1.x(112, 112, 49, 0, 24, 0, 0));
+            bk0 bk0Var = new bk0(context);
+            bk0Var.setAutoRepeat(true);
+            bk0Var.f(R.raw.utyan_schedule, 112, 112, null);
+            bk0Var.d();
+            srVar.addView(bk0Var, kb1.x(112, 112, 49, 0, 24, 0, 0));
             TextView textView = new TextView(context);
             textView.setTypeface(AndroidUtilities.bold());
             textView.setText(z10 ? LocaleController.formatString(R.string.StartVoipChannelTitle, new Object[0]) : LocaleController.formatString(R.string.StartVoipChatTitle, new Object[0]));
             textView.setTextSize(1, 20.0f);
             org.telegram.ui.ActionBar.f7.V(textView, org.telegram.ui.ActionBar.y6.G6, null);
-            srVar.addView(textView, gb1.x(-2, -2, 1, 0, 14, 0, 7));
+            srVar.addView(textView, kb1.x(-2, -2, 1, 0, 14, 0, 7));
             TextView textView2 = new TextView(context);
             textView2.setTextSize(1, 14.0f);
             textView2.setGravity(1);
             org.telegram.ui.ActionBar.f7.V(textView2, org.telegram.ui.ActionBar.y6.j5, null);
             textView2.setText(z10 ? LocaleController.formatString(R.string.VoipChannelStart2, new Object[0]) : LocaleController.formatString(R.string.VoipGroupStart2, new Object[0]));
             textView2.setLineSpacing(textView2.getLineSpacingExtra(), textView2.getLineSpacingMultiplier() * 1.1f);
-            srVar.addView(textView2, gb1.x(-2, -2, 1, 28, 0, 28, 17));
+            srVar.addView(textView2, kb1.x(-2, -2, 1, 28, 0, 28, 17));
             frameLayout = srVar;
         } else {
             frameLayout = new org.telegram.ui.Cells.k4(context, 1, 0, false);
         }
         frameLayout.setLayoutParams(new s4.q0(-1, -2));
-        return new vl0(frameLayout);
+        return new wl0(frameLayout);
     }
 }

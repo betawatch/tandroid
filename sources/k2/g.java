@@ -3,9 +3,9 @@ package k2;
 import j$.util.function.Function$-CC;
 import java.util.function.Function;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.jt;
+import org.telegram.ui.lt;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class g implements Function {
     public final /* synthetic */ int a;
@@ -29,7 +29,7 @@ public final /* synthetic */ class g implements Function {
                 }
                 break;
         }
-        return ((jt) obj).a;
+        return ((lt) obj).a;
     }
 
     public /* synthetic */ Function compose(Function function) {

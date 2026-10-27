@@ -1,6 +1,6 @@
 package x7;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
 public final class sa extends ta {
     public final transient int c;
@@ -15,7 +15,7 @@ public final class sa extends ta {
 
     @Override // java.util.List
     public final Object get(int i10) {
-        w7.b0.a(i10, this.d);
+        w7.c0.a(i10, this.d);
         return this.e.get(i10 + this.c);
     }
 
@@ -37,7 +37,7 @@ public final class sa extends ta {
     @Override // x7.ta, java.util.List
     /* renamed from: p, reason: merged with bridge method [inline-methods] */
     public final ta subList(int i10, int i11) {
-        w7.b0.b(i10, i11, this.d);
+        w7.c0.b(i10, i11, this.d);
         int i12 = this.c;
         return this.e.subList(i10 + i12, i11 + i12);
     }

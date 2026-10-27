@@ -1,14 +1,18 @@
 package vi;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+import android.media.MediaCodec;
+import java.nio.ByteBuffer;
+
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class u {
-    public long a = Long.MIN_VALUE;
-    public long b = Long.MIN_VALUE;
-    public long c = Long.MIN_VALUE;
-    public long d;
+    public final boolean a;
+    public final ByteBuffer b;
+    public final MediaCodec.BufferInfo c;
 
-    public u(long j10) {
-        this.d = j10;
+    public u(boolean z10, ByteBuffer byteBuffer, MediaCodec.BufferInfo bufferInfo) {
+        this.a = z10;
+        this.b = byteBuffer;
+        this.c = bufferInfo;
     }
 }

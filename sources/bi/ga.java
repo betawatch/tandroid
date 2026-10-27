@@ -13,11 +13,11 @@ import org.telegram.messenger.SendMessagesHelper;
 import org.telegram.messenger.support.LongSparseIntArray;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.aw0;
+import org.telegram.ui.Components.bw0;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.un;
+import org.telegram.ui.wn;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class ga implements Runnable {
     public final /* synthetic */ int a;
@@ -39,11 +39,11 @@ public final /* synthetic */ class ga implements Runnable {
                 Long l4 = (Long) this.d;
                 org.telegram.ui.ActionBar.r2 U = LaunchActivity.U();
                 if (U != null) {
-                    un ba2 = un.ba(l4.longValue());
-                    U.presentFragment(ba2);
+                    wn ea2 = wn.ea(l4.longValue());
+                    U.presentFragment(ea2);
                     TLRPC.Chat chat = MessagesController.getInstance(this.c).getChat(Long.valueOf(-l4.longValue()));
                     if (chat != null) {
-                        AndroidUtilities.runOnUIThread(new ia(ba2, this.b, chat, 0), 250L);
+                        AndroidUtilities.runOnUIThread(new ia(ea2, this.b, chat, 0), 250L);
                         break;
                     }
                 }
@@ -75,7 +75,7 @@ public final /* synthetic */ class ga implements Runnable {
                 ((MediaDataController) this.d).lambda$deletePeer$159(this.b, this.c);
                 break;
             case 5:
-                ((MessagesController) this.d).lambda$processUpdateArray$425(this.b, this.c);
+                ((MessagesController) this.d).lambda$processUpdateArray$426(this.b, this.c);
                 break;
             case 6:
                 SendMessagesHelper.lambda$finishGroup$120((AccountInstance) this.d, this.b, this.c);
@@ -88,7 +88,7 @@ public final /* synthetic */ class ga implements Runnable {
                 }
                 break;
             default:
-                aw0.m((aw0) this.d, this.b, this.c);
+                bw0.m((bw0) this.d, this.b, this.c);
                 break;
         }
     }

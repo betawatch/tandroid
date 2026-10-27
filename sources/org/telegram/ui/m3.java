@@ -19,7 +19,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class m3 extends FrameLayout {
     public org.telegram.ui.web.f2 E;
@@ -70,7 +70,7 @@ public final class m3 extends FrameLayout {
         this.d = c0Var;
         vVar.setLayoutManager(c0Var);
         vVar.setOnScrollListener(new i3(this, 0));
-        addView(vVar, org.telegram.ui.Components.gb1.g(-1.0f, -1));
+        addView(vVar, org.telegram.ui.Components.kb1.g(-1.0f, -1));
         j3 j3Var = new j3(this, getContext());
         this.e = j3Var;
         j3Var.setShouldWaitWebViewScroll(true);
@@ -142,7 +142,7 @@ public final class m3 extends FrameLayout {
         k3Var.setWebViewProgressListener(new h3(this, i11));
         k3Var.setDelegate(new l3(this));
         k3Var.setWebViewScrollListener(new f(this, 2));
-        j3Var.addView(k3Var, org.telegram.ui.Components.gb1.g(-1.0f, -1));
+        j3Var.addView(k3Var, org.telegram.ui.Components.kb1.g(-1.0f, -1));
         final int i12 = 1;
         j3Var.setScrollEndListener(new Runnable(this) { // from class: org.telegram.ui.g3
             public final /* synthetic */ m3 b;
@@ -267,7 +267,7 @@ public final class m3 extends FrameLayout {
             }
         });
         j3Var.setTopActionBarOffsetY(AndroidUtilities.dp(56.0f) + AndroidUtilities.statusBarHeight);
-        addView(j3Var, org.telegram.ui.Components.gb1.g(-1.0f, -1));
+        addView(j3Var, org.telegram.ui.Components.kb1.g(-1.0f, -1));
         b();
         setType(0);
     }
@@ -413,7 +413,7 @@ public final class m3 extends FrameLayout {
         return height;
     }
 
-    public org.telegram.ui.Components.mm0 getListView() {
+    public org.telegram.ui.Components.nm0 getListView() {
         return this.b;
     }
 

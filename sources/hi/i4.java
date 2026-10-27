@@ -10,12 +10,12 @@ import org.telegram.messenger.FileLog;
 import org.telegram.ui.ActionBar.p6;
 import org.telegram.ui.ActionBar.u6;
 import org.telegram.ui.ActionBar.y6;
-import org.telegram.ui.Components.pw0;
+import org.telegram.ui.Components.qw0;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public class i4 extends View implements p6 {
-    public final pw0 a;
+    public final qw0 a;
     public final Paint b;
     public float c;
     public o1.j d;
@@ -23,9 +23,9 @@ public class i4 extends View implements p6 {
 
     public i4(Context context, u6 u6Var) {
         super(context);
-        pw0 pw0Var = new pw0(new gh.a(14), new gh.a(15));
-        pw0Var.c = 100.0f;
-        this.a = pw0Var;
+        qw0 qw0Var = new qw0(new gh.a(14), new gh.a(15));
+        qw0Var.c = 100.0f;
+        this.a = qw0Var;
         Paint paint = new Paint(1);
         this.b = paint;
         this.e = u6Var;

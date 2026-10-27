@@ -23,10 +23,10 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.gb1;
-import org.telegram.ui.zv0;
+import org.telegram.ui.Components.kb1;
+import org.telegram.ui.bw0;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class ha extends FrameLayout {
     public final Rect E;
@@ -78,7 +78,7 @@ public final class ha extends FrameLayout {
         textView.setIncludeFontPadding(false);
         textView.setText((i10 + 1) + ".");
         org.telegram.ui.ActionBar.f7.V(textView, org.telegram.ui.ActionBar.y6.A6, u6Var);
-        addView(textView, gb1.h(22, -2.0f, 16, 0.0f, 0.0f, 8.0f, 0.0f));
+        addView(textView, kb1.h(22, -2.0f, 16, 0.0f, 0.0f, 8.0f, 0.0f));
         setClipChildren(false);
         EditText editText = new EditText(context);
         this.a = editText;
@@ -116,10 +116,10 @@ public final class ha extends FrameLayout {
             }
         });
         editText.addTextChangedListener(new bi.u(this, 18));
-        addView(editText, gb1.h(-1, -1.0f, 16, 30.0f, 0.0f, z10 ? 64.0f : 8.0f, 0.0f));
+        addView(editText, kb1.h(-1, -1.0f, 16, 30.0f, 0.0f, z10 ? 64.0f : 8.0f, 0.0f));
         editText.setOnEditorActionListener(new l8(this, 2));
         FrameLayout frameLayout = new FrameLayout(context);
-        addView(frameLayout, gb1.i(-2, -2, 21));
+        addView(frameLayout, kb1.i(-2, -2, 21));
         if (z10) {
             TextView textView2 = new TextView(context);
             this.c = textView2;
@@ -172,7 +172,7 @@ public final class ha extends FrameLayout {
                     }
                 }
             });
-            frameLayout.addView(textView2, gb1.i(-2, -2, 17));
+            frameLayout.addView(textView2, kb1.i(-2, -2, 17));
         } else {
             this.c = null;
         }
@@ -226,7 +226,7 @@ public final class ha extends FrameLayout {
                 }
             }
         });
-        frameLayout.addView(imageView, gb1.i(28, 28, 17));
+        frameLayout.addView(imageView, kb1.i(28, 28, 17));
         e();
         d();
     }
@@ -372,7 +372,7 @@ public final class ha extends FrameLayout {
             imageView.setScaleType(ImageView.ScaleType.FIT_XY);
             this.x.setColorFilter(new PorterDuffColorFilter(-872415232, PorterDuff.Mode.SRC_IN));
             this.x.setImageResource(R.drawable.wallet_tooltip_arrow);
-            linearLayout.addView(this.x, gb1.x(18, 9, 1, 0, 0, 0, 0));
+            linearLayout.addView(this.x, kb1.x(18, 9, 1, 0, 0, 0, 0));
             LinearLayout linearLayout2 = new LinearLayout(context);
             this.w = linearLayout2;
             linearLayout2.setOrientation(0);
@@ -395,12 +395,12 @@ public final class ha extends FrameLayout {
                 textView.setMaxWidth(AndroidUtilities.dp(140.0f));
                 textView.setPadding(AndroidUtilities.dp(14.0f), AndroidUtilities.dp(9.0f), AndroidUtilities.dp(14.0f), AndroidUtilities.dp(9.0f));
                 textView.setVisibility(8);
-                textView.setOnClickListener(new zv0(this, i10, 3));
+                textView.setOnClickListener(new bw0(this, i10, 3));
                 textViewArr[i10] = textView;
-                this.w.addView(textView, gb1.x(-2, -2, 16, i10 == 0 ? 0 : 12, 0, 0, 0));
+                this.w.addView(textView, kb1.x(-2, -2, 16, i10 == 0 ? 0 : 12, 0, 0, 0));
                 i10++;
             }
-            linearLayout.addView(this.w, gb1.r(-2, -2));
+            linearLayout.addView(this.w, kb1.r(-2, -2));
             this.s.setContentView(linearLayout);
             this.s.setWidth(-2);
             this.s.setHeight(-2);

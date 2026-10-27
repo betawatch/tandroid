@@ -22,9 +22,9 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public final class jz extends lm0 {
+public final class jz extends mm0 {
     public final Context c;
     public int d;
     public final SparseArray e = new SparseArray();
@@ -40,9 +40,9 @@ public final class jz extends lm0 {
         this.c = context;
     }
 
-    @Override // org.telegram.ui.Components.lm0
+    @Override // org.telegram.ui.Components.mm0
     public final boolean D(s4.e1 e1Var) {
-        return e1Var.a instanceof mm0;
+        return e1Var.a instanceof nm0;
     }
 
     public final int E(Object obj) {
@@ -111,7 +111,7 @@ public final class jz extends lm0 {
         int i12;
         sz szVar2 = this.v;
         int i13 = szVar2.c1;
-        if (szVar2.R2) {
+        if (szVar2.T2) {
             return;
         }
         int measuredWidth = szVar2.getMeasuredWidth();
@@ -181,7 +181,7 @@ public final class jz extends lm0 {
                         obj = "fav";
                     } else if (i10 == -2) {
                         arrayList = szVar2.j1;
-                        if (!arrayList.isEmpty() && !szVar2.Q2) {
+                        if (!arrayList.isEmpty() && !szVar2.S2) {
                             z10 = true;
                         }
                         hashMap2.put("recent", Integer.valueOf(this.s));
@@ -190,7 +190,7 @@ public final class jz extends lm0 {
                         if (i10 != -1) {
                             TLRPC.TL_messages_stickerSet tL_messages_stickerSet2 = (TLRPC.TL_messages_stickerSet) arrayList2.get(i10);
                             ArrayList<TLRPC.Document> arrayList3 = tL_messages_stickerSet2.documents;
-                            if (!z10 && !szVar2.Q2) {
+                            if (!z10 && !szVar2.S2) {
                                 ArrayList<TLRPC.Document> arrayList4 = new ArrayList<>(arrayList3);
                                 arrayList4.add(0, new TLRPC.TL_documentEmpty());
                                 arrayList3 = arrayList4;
@@ -371,7 +371,7 @@ public final class jz extends lm0 {
                 i3Var.setHeight(AndroidUtilities.dp(8.0f));
                 return;
             } else {
-                int C = org.telegram.messenger.vh.C(82.0f, (int) Math.ceil(arrayList.size() / this.d), szVar.h.getHeight());
+                int C = org.telegram.messenger.wh.C(82.0f, (int) Math.ceil(arrayList.size() / this.d), szVar.h.getHeight());
                 i3Var.setHeight(C > 0 ? C : 1);
                 return;
             }
@@ -403,7 +403,7 @@ public final class jz extends lm0 {
             TLRPC.StickerSet stickerSet = tL_messages_stickerSet.set;
             if (stickerSet != null) {
                 s8Var.a(0, stickerSet.title);
-                if (tL_messages_stickerSet.set.creator && !szVar.Q2) {
+                if (tL_messages_stickerSet.set.creator && !szVar.S2) {
                     s8Var.setEdit(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.iz
                         public final /* synthetic */ jz b;
 
@@ -485,7 +485,7 @@ public final class jz extends lm0 {
                 org.telegram.ui.ActionBar.f7.V(textView, org.telegram.ui.ActionBar.y6.We, null);
                 textView.setTextSize(1, 14.0f);
                 textView.setText(LocaleController.getString(R.string.GroupStickersInfo));
-                q8Var.addView(textView, gb1.x(-1, -2, 51, 17, 4, 17, 0));
+                q8Var.addView(textView, kb1.x(-1, -2, 51, 17, 4, 17, 0));
                 TextView textView2 = new TextView(context);
                 q8Var.a = textView2;
                 textView2.setPadding(AndroidUtilities.dp(17.0f), 0, AndroidUtilities.dp(17.0f), 0);
@@ -493,7 +493,7 @@ public final class jz extends lm0 {
                 org.telegram.messenger.t.r(textView2, org.telegram.ui.ActionBar.y6.Sh, null, 1, 14.0f);
                 textView2.setBackground(org.telegram.ui.ActionBar.o6.f(new float[]{4.0f}, org.telegram.ui.ActionBar.y6.Oh));
                 textView2.setText(LocaleController.getString(R.string.ChooseStickerSet).toUpperCase());
-                q8Var.addView(textView2, gb1.x(-2, 28, 51, 17, 10, 14, 8));
+                q8Var.addView(textView2, kb1.x(-2, 28, 51, 17, 10, 14, 8));
                 q8Var.setAddOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.hz
                     public final /* synthetic */ jz b;
 
@@ -521,14 +521,14 @@ public final class jz extends lm0 {
                                     if (jzVar != null) {
                                         jzVar.t(1, 2);
                                     }
-                                    szVar3.X(false);
+                                    szVar3.Y(false);
                                     break;
                                 }
                                 break;
                             default:
                                 org.telegram.ui.ActionBar.r2 r2Var = this.b.v.Y1;
-                                if (r2Var instanceof org.telegram.ui.un) {
-                                    ((org.telegram.ui.un) r2Var).ia();
+                                if (r2Var instanceof org.telegram.ui.wn) {
+                                    ((org.telegram.ui.wn) r2Var).la();
                                     break;
                                 }
                                 break;
@@ -572,14 +572,14 @@ public final class jz extends lm0 {
                                     if (jzVar != null) {
                                         jzVar.t(1, 2);
                                     }
-                                    szVar3.X(false);
+                                    szVar3.Y(false);
                                     break;
                                 }
                                 break;
                             default:
                                 org.telegram.ui.ActionBar.r2 r2Var = this.b.v.Y1;
-                                if (r2Var instanceof org.telegram.ui.un) {
-                                    ((org.telegram.ui.un) r2Var).ia();
+                                if (r2Var instanceof org.telegram.ui.wn) {
+                                    ((org.telegram.ui.wn) r2Var).la();
                                     break;
                                 }
                                 break;
@@ -610,7 +610,7 @@ public final class jz extends lm0 {
                 org.telegram.ui.ActionBar.b7 L = org.telegram.ui.ActionBar.f7.L(0.12f, i13);
                 linearLayout.setBackground(c02);
                 org.telegram.ui.ActionBar.f7.k(linearLayout, c02, L, null, u6Var);
-                gb1.c(linearLayout, 0.1f, 1.5f);
+                kb1.c(linearLayout, 0.1f, 1.5f);
                 final int i14 = 2;
                 linearLayout.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.hz
                     public final /* synthetic */ jz b;
@@ -639,14 +639,14 @@ public final class jz extends lm0 {
                                     if (jzVar != null) {
                                         jzVar.t(1, 2);
                                     }
-                                    szVar3.X(false);
+                                    szVar3.Y(false);
                                     break;
                                 }
                                 break;
                             default:
                                 org.telegram.ui.ActionBar.r2 r2Var = this.b.v.Y1;
-                                if (r2Var instanceof org.telegram.ui.un) {
-                                    ((org.telegram.ui.un) r2Var).ia();
+                                if (r2Var instanceof org.telegram.ui.wn) {
+                                    ((org.telegram.ui.wn) r2Var).la();
                                     break;
                                 }
                                 break;
@@ -656,16 +656,16 @@ public final class jz extends lm0 {
                 ImageView imageView = new ImageView(context);
                 imageView.setImageResource(R.drawable.menu_sticker_add);
                 org.telegram.ui.ActionBar.f7.t(imageView, i13, u6Var, PorterDuff.Mode.SRC_IN);
-                linearLayout.addView(imageView, gb1.x(24, 24, 17, 0, 0, 0, 0));
+                linearLayout.addView(imageView, kb1.x(24, 24, 17, 0, 0, 0, 0));
                 TextView textView3 = new TextView(context);
                 textView3.setGravity(17);
                 org.telegram.messenger.t.r(textView3, i13, u6Var, 1, 11.0f);
                 textView3.setText(LocaleController.getString(R.string.Create));
-                linearLayout.addView(textView3, gb1.x(-1, -2, 17, 0, 3, 0, 0));
-                frameLayout.addView(linearLayout, gb1.h(-1, -1.0f, 119, 8.0f, 8.0f, 8.0f, 8.0f));
+                linearLayout.addView(textView3, kb1.x(-1, -2, 17, 0, 3, 0, 0));
+                frameLayout.addView(linearLayout, kb1.h(-1, -1.0f, 119, 8.0f, 8.0f, 8.0f, 8.0f));
                 view = frameLayout;
                 break;
         }
-        return new vl0(view);
+        return new wl0(view);
     }
 }

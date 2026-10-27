@@ -74,22 +74,22 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.SendMessagesHelper;
 import org.telegram.ui.Cells.s1;
 import org.telegram.ui.Cells.z;
-import org.telegram.ui.Components.c01;
-import org.telegram.ui.Components.e81;
-import org.telegram.ui.Components.el0;
+import org.telegram.ui.Components.d01;
+import org.telegram.ui.Components.f81;
 import org.telegram.ui.Components.fl0;
 import org.telegram.ui.Components.g5;
+import org.telegram.ui.Components.gl0;
 import org.telegram.ui.Components.nk;
-import org.telegram.ui.Components.q01;
+import org.telegram.ui.Components.r01;
 import org.telegram.ui.Components.ti;
-import org.telegram.ui.qq0;
-import org.telegram.ui.un;
+import org.telegram.ui.sq0;
+import org.telegram.ui.wn;
 import org.xmlpull.v1.XmlPullParserException;
 import u7.s;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
-public /* synthetic */ class c implements OnCompleteListener, o5.b, el0, qq0 {
+public /* synthetic */ class c implements OnCompleteListener, o5.b, fl0, sq0 {
     public final /* synthetic */ int a;
     public Object b;
     public Object c;
@@ -122,7 +122,7 @@ public /* synthetic */ class c implements OnCompleteListener, o5.b, el0, qq0 {
     public static Object[] q(Object[] objArr, int[] iArr) {
         int length = objArr.length;
         Class<?> componentType = objArr.getClass().getComponentType();
-        c01 c01Var = q01.R;
+        d01 d01Var = r01.R;
         int i10 = -1;
         for (int i11 : iArr) {
             i10 = Math.max(i10, i11);
@@ -328,12 +328,12 @@ public /* synthetic */ class c implements OnCompleteListener, o5.b, el0, qq0 {
         cVar.c = str;
     }
 
-    @Override // org.telegram.ui.qq0
+    @Override // org.telegram.ui.sq0
     public void c() {
         ((nk) this.d).Q.x();
     }
 
-    @Override // org.telegram.ui.qq0
+    @Override // org.telegram.ui.sq0
     public void d(int i10, boolean z10, boolean z11) {
         if (z10) {
             return;
@@ -370,15 +370,15 @@ public /* synthetic */ class c implements OnCompleteListener, o5.b, el0, qq0 {
                 sendingMediaInfo.ttl = photoEntry.ttl;
             }
         }
-        g5.Z(tiVar.M1, tiVar.o1() + arrayList2.size(), tiVar.s1(), new x2(i10, 2, nkVar, arrayList2, z11));
+        g5.Z(tiVar.M1, tiVar.p1() + arrayList2.size(), tiVar.t1(), new x2(i10, 2, nkVar, arrayList2, z11));
     }
 
-    @Override // org.telegram.ui.qq0
+    @Override // org.telegram.ui.sq0
     public /* synthetic */ boolean e() {
         return true;
     }
 
-    @Override // org.telegram.ui.Components.el0
+    @Override // org.telegram.ui.Components.fl0
     public /* synthetic */ boolean f() {
         return true;
     }
@@ -405,7 +405,7 @@ public /* synthetic */ class c implements OnCompleteListener, o5.b, el0, qq0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.el0
+    @Override // org.telegram.ui.Components.fl0
     public /* synthetic */ boolean i() {
         return false;
     }
@@ -455,7 +455,7 @@ public /* synthetic */ class c implements OnCompleteListener, o5.b, el0, qq0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.el0
+    @Override // org.telegram.ui.Components.fl0
     public /* synthetic */ boolean o() {
         return false;
     }
@@ -472,7 +472,7 @@ public /* synthetic */ class c implements OnCompleteListener, o5.b, el0, qq0 {
     }
 
     /* JADX WARN: Removed duplicated region for block: B:9:0x0063  */
-    @Override // org.telegram.ui.Components.el0
+    @Override // org.telegram.ui.Components.fl0
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -483,24 +483,24 @@ public /* synthetic */ class c implements OnCompleteListener, o5.b, el0, qq0 {
         float f10;
         int i10;
         float f11;
-        un unVar = (un) this.d;
-        z x82 = unVar.x8(((MessageObject) this.b).getId(), true);
+        wn wnVar = (wn) this.d;
+        z A8 = wnVar.A8(((MessageObject) this.b).getId(), true);
         float f12 = 0.0f;
-        if (x82 instanceof s1) {
-            y0 y0Var2 = ((s1) x82).N;
+        if (A8 instanceof s1) {
+            y0 y0Var2 = ((s1) A8).N;
             v0 l10 = y0Var2.l(x0Var);
             if (l10 == null) {
                 f11 = 0.0f;
                 f7 = f11;
-                unVar.jb(x82, (MessageObject) this.b, (fl0) this.c, view, f12, f7, x0Var, false, (x0Var == null && x0Var.a) ? true : z10, z11, false);
+                wnVar.nb(A8, (MessageObject) this.b, (gl0) this.c, view, f12, f7, x0Var, false, (x0Var == null && x0Var.a) ? true : z10, z11, false);
             } else {
                 f12 = y0Var2.c + l10.x + (l10.A / 2.0f);
                 f10 = y0Var2.d + l10.y;
                 i10 = l10.B;
             }
-        } else if (!(x82 instanceof org.telegram.ui.Cells.v0) || (l4 = (y0Var = ((org.telegram.ui.Cells.v0) x82).E0).l(x0Var)) == null) {
+        } else if (!(A8 instanceof org.telegram.ui.Cells.v0) || (l4 = (y0Var = ((org.telegram.ui.Cells.v0) A8).E0).l(x0Var)) == null) {
             f7 = 0.0f;
-            unVar.jb(x82, (MessageObject) this.b, (fl0) this.c, view, f12, f7, x0Var, false, (x0Var == null && x0Var.a) ? true : z10, z11, false);
+            wnVar.nb(A8, (MessageObject) this.b, (gl0) this.c, view, f12, f7, x0Var, false, (x0Var == null && x0Var.a) ? true : z10, z11, false);
         } else {
             f12 = y0Var.c + l4.x + (l4.A / 2.0f);
             f10 = y0Var.d + l4.y;
@@ -508,7 +508,7 @@ public /* synthetic */ class c implements OnCompleteListener, o5.b, el0, qq0 {
         }
         f11 = f10 + (i10 / 2.0f);
         f7 = f11;
-        unVar.jb(x82, (MessageObject) this.b, (fl0) this.c, view, f12, f7, x0Var, false, (x0Var == null && x0Var.a) ? true : z10, z11, false);
+        wnVar.nb(A8, (MessageObject) this.b, (gl0) this.c, view, f12, f7, x0Var, false, (x0Var == null && x0Var.a) ? true : z10, z11, false);
     }
 
     public void s(Object obj, ByteArrayOutputStream byteArrayOutputStream) {
@@ -837,9 +837,9 @@ public /* synthetic */ class c implements OnCompleteListener, o5.b, el0, qq0 {
     public c(View view) {
         this.a = 20;
         this.d = view;
-        e81 e81Var = new e81(this, view);
-        this.b = e81Var;
-        view.addOnLayoutChangeListener(e81Var);
+        f81 f81Var = new f81(this, view);
+        this.b = f81Var;
+        view.addOnLayoutChangeListener(f81Var);
     }
 
     public c(int i10) {
@@ -863,11 +863,11 @@ public /* synthetic */ class c implements OnCompleteListener, o5.b, el0, qq0 {
         this.d = new File(file.getPath() + ".bak");
     }
 
-    @Override // org.telegram.ui.qq0
+    @Override // org.telegram.ui.sq0
     public void a() {
     }
 
-    @Override // org.telegram.ui.Components.el0
+    @Override // org.telegram.ui.Components.fl0
     public /* synthetic */ void m() {
     }
 
@@ -878,7 +878,7 @@ public /* synthetic */ class c implements OnCompleteListener, o5.b, el0, qq0 {
         this.b = runnable;
     }
 
-    @Override // org.telegram.ui.qq0
+    @Override // org.telegram.ui.sq0
     public void b(Editable editable) {
     }
 
@@ -995,7 +995,7 @@ public /* synthetic */ class c implements OnCompleteListener, o5.b, el0, qq0 {
         this.d = q(objArr2, iArr);
     }
 
-    @Override // org.telegram.ui.Components.el0
+    @Override // org.telegram.ui.Components.fl0
     public /* synthetic */ void l(Canvas canvas, RectF rectF, float f7, float f10, float f11, int i10, boolean z10) {
     }
 }

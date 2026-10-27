@@ -17,11 +17,11 @@ import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.Components.n10;
 import org.telegram.ui.Components.qc;
 import org.telegram.ui.Components.wc;
-import org.telegram.ui.dr0;
-import org.telegram.ui.fi1;
+import org.telegram.ui.fr0;
+import org.telegram.ui.hi1;
 import org.telegram.ui.q6;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class p4 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -69,7 +69,7 @@ public final /* synthetic */ class p4 implements Utilities.Callback {
                 callback.run(Integer.valueOf(i11));
                 break;
             case 5:
-                Utilities.themeQueue.postRunnable(new fi1((sg.p2) this.c, this.b, (List) obj, new ArrayList(), (dr0) this.d, 1));
+                Utilities.themeQueue.postRunnable(new hi1((sg.o2) this.c, this.b, (List) obj, new ArrayList(), (fr0) this.d, 1));
                 break;
             default:
                 zh.r2 r2Var2 = (zh.r2) this.c;

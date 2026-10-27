@@ -21,7 +21,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public class c10 extends View implements org.telegram.ui.ActionBar.p6 {
     public int E;
@@ -733,8 +733,8 @@ public class c10 extends View implements org.telegram.ui.ActionBar.p6 {
                         paint8.setColor(org.telegram.ui.ActionBar.y6.v0(org.telegram.ui.ActionBar.y6.G8));
                     }
                     for (int i42 = 0; i42 < 3; i42++) {
-                        canvas2.drawCircle(org.telegram.messenger.vh.b(12.0f, i42, AndroidUtilities.dp(13.0f) + (getMeasuredWidth() - AndroidUtilities.dp(56.0f))), measuredHeight2, AndroidUtilities.dp(13.0f), this.N);
-                        canvas2.drawCircle(org.telegram.messenger.vh.b(12.0f, i42, AndroidUtilities.dp(13.0f) + (getMeasuredWidth() - AndroidUtilities.dp(56.0f))), measuredHeight2, AndroidUtilities.dp(12.0f), paint5);
+                        canvas2.drawCircle(org.telegram.messenger.wh.b(12.0f, i42, AndroidUtilities.dp(13.0f) + (getMeasuredWidth() - AndroidUtilities.dp(56.0f))), measuredHeight2, AndroidUtilities.dp(13.0f), this.N);
+                        canvas2.drawCircle(org.telegram.messenger.wh.b(12.0f, i42, AndroidUtilities.dp(13.0f) + (getMeasuredWidth() - AndroidUtilities.dp(56.0f))), measuredHeight2, AndroidUtilities.dp(12.0f), paint5);
                     }
                 } else {
                     float f20 = 21.0f;

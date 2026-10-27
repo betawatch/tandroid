@@ -8,13 +8,13 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.ui.Components.gb1;
-import org.telegram.ui.Components.k80;
+import org.telegram.ui.Components.kb1;
+import org.telegram.ui.Components.l80;
 import org.telegram.ui.Components.sz;
 import org.telegram.ui.Components.yg;
-import org.telegram.ui.ni0;
+import org.telegram.ui.pi0;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class i1 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -71,14 +71,14 @@ public final /* synthetic */ class i1 implements View.OnClickListener {
                         if (indexOfChild < 0) {
                             indexOfChild = b2Var2.O.getChildCount();
                         }
-                        FrameLayout.LayoutParams i10 = gb1.i(-1, b2Var2.k0(), 87);
+                        FrameLayout.LayoutParams i10 = kb1.i(-1, b2Var2.k0(), 87);
                         i10.bottomMargin = b2Var2.T0;
                         b2Var2.O.addView(b2Var2.A0, indexOfChild, i10);
                     }
                     int k02 = b2Var2.k0();
                     FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) b2Var2.A0.getLayoutParams();
                     if (layoutParams == null) {
-                        layoutParams = gb1.i(-1, k02, 87);
+                        layoutParams = kb1.i(-1, k02, 87);
                     } else {
                         layoutParams.height = k02;
                     }
@@ -106,12 +106,12 @@ public final /* synthetic */ class i1 implements View.OnClickListener {
                 break;
             case 6:
                 final b2 b2Var3 = this.b;
-                k80 k80Var = b2Var3.x0;
-                if (k80Var != null) {
-                    k80Var.u();
+                l80 l80Var = b2Var3.x0;
+                if (l80Var != null) {
+                    l80Var.u();
                     b2Var3.x0 = null;
                 }
-                final k80 H = k80.H(b2Var3, view);
+                final l80 H = l80.H(b2Var3, view);
                 H.Q = true;
                 a W2 = b2Var3.P.W2();
                 H.j(W2 == null || !W2.b(), R.drawable.field_carret_empty, null, LocaleController.getString(R.string.ArticleNone), new l1(b2Var3, W2, 5));
@@ -171,10 +171,10 @@ public final /* synthetic */ class i1 implements View.OnClickListener {
                 break;
             case 7:
                 b2 b2Var4 = this.b;
-                k80 k80Var2 = b2Var4.x0;
+                l80 l80Var2 = b2Var4.x0;
                 TL_iv.pageTableCell pagetablecell = null;
-                if (k80Var2 != null) {
-                    k80Var2.u();
+                if (l80Var2 != null) {
+                    l80Var2.u();
                     b2Var4.x0 = null;
                 }
                 v3 v3Var2 = b2Var4.P;
@@ -203,10 +203,10 @@ public final /* synthetic */ class i1 implements View.OnClickListener {
                 break;
             case 8:
                 b2 b2Var5 = this.b;
-                k80 k80Var3 = b2Var5.x0;
+                l80 l80Var3 = b2Var5.x0;
                 TL_iv.pageBlockMath pageblockmath = null;
-                if (k80Var3 != null) {
-                    k80Var3.u();
+                if (l80Var3 != null) {
+                    l80Var3.u();
                     b2Var5.x0 = null;
                 }
                 a W22 = b2Var5.P.W2();
@@ -226,9 +226,9 @@ public final /* synthetic */ class i1 implements View.OnClickListener {
             case 10:
                 b2 b2Var7 = this.b;
                 b2Var7.s0();
-                ni0 ni0Var = b2Var7.O0;
-                if (ni0Var != null) {
-                    ni0Var.g(true);
+                pi0 pi0Var = b2Var7.O0;
+                if (pi0Var != null) {
+                    pi0Var.g(true);
                     b2Var7.O0 = null;
                     break;
                 }

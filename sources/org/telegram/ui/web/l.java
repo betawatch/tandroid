@@ -30,11 +30,11 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.h5;
 import org.telegram.ui.ActionBar.y6;
-import org.telegram.ui.Components.gb1;
+import org.telegram.ui.Components.kb1;
 import org.telegram.ui.Components.vn;
-import org.telegram.ui.bv;
+import org.telegram.ui.dv;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class l extends FrameLayout {
     public int E;
@@ -79,7 +79,7 @@ public final class l extends FrameLayout {
         dVar.g3.r = false;
         dVar.setOverScrollMode(2);
         dVar.setPadding(0, 0, 0, 0);
-        addView(dVar, gb1.i(-1, -1, 119));
+        addView(dVar, kb1.i(-1, -1, 119));
         FrameLayout frameLayout = new FrameLayout(activity);
         this.d = frameLayout;
         FrameLayout frameLayout2 = new FrameLayout(activity);
@@ -87,36 +87,36 @@ public final class l extends FrameLayout {
         org.telegram.ui.Cells.y a02 = y6.a0(this.G, this.I, 15, 15);
         this.c = a02;
         frameLayout2.setBackground(a02);
-        gb1.c(frameLayout2, 0.04f, 1.25f);
-        frameLayout.addView(frameLayout2, gb1.h(-1, -2.0f, 7, 12.0f, 0.0f, 12.0f, 15.0f));
+        kb1.c(frameLayout2, 0.04f, 1.25f);
+        frameLayout.addView(frameLayout2, kb1.h(-1, -2.0f, 7, 12.0f, 0.0f, 12.0f, 15.0f));
         ImageView imageView = new ImageView(activity);
         this.f = imageView;
-        frameLayout2.addView(imageView, gb1.h(24, 24.0f, 19, 16.0f, 16.0f, 16.0f, 16.0f));
+        frameLayout2.addView(imageView, kb1.h(24, 24.0f, 19, 16.0f, 16.0f, 16.0f, 16.0f));
         ImageView imageView2 = new ImageView(activity);
         this.n = imageView2;
-        gb1.b(imageView2);
+        kb1.b(imageView2);
         imageView2.setScaleType(ImageView.ScaleType.CENTER);
         imageView2.setImageResource(R.drawable.msg_copy);
         org.telegram.ui.Cells.y a03 = y6.a0(0, 0, 6, 6);
         this.h = a03;
         imageView2.setBackground(a03);
-        frameLayout2.addView(imageView2, gb1.h(32, 32.0f, 53, 14.0f, 14.0f, 14.0f, 14.0f));
+        frameLayout2.addView(imageView2, kb1.h(32, 32.0f, 53, 14.0f, 14.0f, 14.0f, 14.0f));
         LinearLayout linearLayout = new LinearLayout(activity);
         linearLayout.setOrientation(1);
-        frameLayout2.addView(linearLayout, gb1.h(-1, -2.0f, 16, 54.0f, 9.0f, 54.0f, 9.0f));
+        frameLayout2.addView(linearLayout, kb1.h(-1, -2.0f, 16, 54.0f, 9.0f, 54.0f, 9.0f));
         TextView textView = new TextView(activity);
         this.r = textView;
         textView.setTextSize(1, 16.0f);
         textView.setTypeface(AndroidUtilities.bold());
         textView.setMaxLines(4);
         textView.setEllipsize(TextUtils.TruncateAt.END);
-        linearLayout.addView(textView, gb1.x(-1, -2, 55, 0, 0, 0, 2));
+        linearLayout.addView(textView, kb1.x(-1, -2, 55, 0, 0, 0, 2));
         TextView textView2 = new TextView(activity);
         this.s = textView2;
         textView2.setTextSize(1, 14.0f);
         textView2.setMaxLines(3);
         textView2.setEllipsize(TextUtils.TruncateAt.MIDDLE);
-        linearLayout.addView(textView2, gb1.x(-1, -2, 55, 0, 0, 0, 0));
+        linearLayout.addView(textView2, kb1.x(-1, -2, 55, 0, 0, 0, 0));
         this.y = new j(null, i10, new k2.c(this, 25));
         this.v = new vn(activity, 28);
         int i12 = y6.Pk;
@@ -161,7 +161,7 @@ public final class l extends FrameLayout {
                     kVar2.c = jSONObject.optDouble("rank", 0.0d);
                     arrayList.add(kVar2);
                 }
-                Collections.sort(arrayList, new bv(17));
+                Collections.sort(arrayList, new dv(17));
             } catch (Exception e) {
                 FileLog.e(e);
             }

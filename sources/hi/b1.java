@@ -27,11 +27,11 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.ActionBar.y6;
-import org.telegram.ui.Components.xe0;
+import org.telegram.ui.Components.ye0;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.fy0;
+import org.telegram.ui.by0;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class b1 {
     public static final HashMap g = new HashMap();
@@ -204,7 +204,7 @@ public final class b1 {
                             boolean a2 = b1Var.a();
                             org.telegram.ui.web.r rVar2 = rVar;
                             if (!a2) {
-                                xe0.e(new String[]{"android.permission.ACCESS_COARSE_LOCATION", "android.permission.ACCESS_FINE_LOCATION"}, new ai.n1(17, b1Var, rVar2));
+                                ye0.e(new String[]{"android.permission.ACCESS_COARSE_LOCATION", "android.permission.ACCESS_FINE_LOCATION"}, new ai.n1(17, b1Var, rVar2));
                                 break;
                             } else {
                                 b1Var.d = true;
@@ -258,7 +258,7 @@ public final class b1 {
                         boolean a2 = b1Var.a();
                         org.telegram.ui.web.r rVar2 = rVar;
                         if (!a2) {
-                            xe0.e(new String[]{"android.permission.ACCESS_COARSE_LOCATION", "android.permission.ACCESS_FINE_LOCATION"}, new ai.n1(17, b1Var, rVar2));
+                            ye0.e(new String[]{"android.permission.ACCESS_COARSE_LOCATION", "android.permission.ACCESS_FINE_LOCATION"}, new ai.n1(17, b1Var, rVar2));
                             break;
                         } else {
                             b1Var.d = true;
@@ -362,7 +362,7 @@ public final class b1 {
         edit.apply();
     }
 
-    public final void l(boolean z10, final fy0 fy0Var) {
+    public final void l(boolean z10, final by0 by0Var) {
         final int i10 = 1;
         this.d = true;
         if (!z10 || a()) {
@@ -371,8 +371,8 @@ public final class b1 {
             while (it.hasNext()) {
                 ((Runnable) it.next()).run();
             }
-            if (fy0Var != null) {
-                fy0Var.run();
+            if (by0Var != null) {
+                by0Var.run();
             }
         } else {
             Activity f7 = f();
@@ -408,7 +408,7 @@ public final class b1 {
                             case 0:
                                 b1 b1Var = this.b;
                                 if (!b1Var.a()) {
-                                    xe0.e(new String[]{"android.permission.ACCESS_COARSE_LOCATION", "android.permission.ACCESS_FINE_LOCATION"}, new ai.n1(18, b1Var, fy0Var));
+                                    ye0.e(new String[]{"android.permission.ACCESS_COARSE_LOCATION", "android.permission.ACCESS_FINE_LOCATION"}, new ai.n1(18, b1Var, by0Var));
                                     break;
                                 } else {
                                     b1Var.d = true;
@@ -429,7 +429,7 @@ public final class b1 {
                                 while (it3.hasNext()) {
                                     ((Runnable) it3.next()).run();
                                 }
-                                Runnable runnable = fy0Var;
+                                Runnable runnable = by0Var;
                                 if (runnable != null) {
                                     runnable.run();
                                     break;
@@ -454,7 +454,7 @@ public final class b1 {
                         case 0:
                             b1 b1Var = this.b;
                             if (!b1Var.a()) {
-                                xe0.e(new String[]{"android.permission.ACCESS_COARSE_LOCATION", "android.permission.ACCESS_FINE_LOCATION"}, new ai.n1(18, b1Var, fy0Var));
+                                ye0.e(new String[]{"android.permission.ACCESS_COARSE_LOCATION", "android.permission.ACCESS_FINE_LOCATION"}, new ai.n1(18, b1Var, by0Var));
                                 break;
                             } else {
                                 b1Var.d = true;
@@ -475,7 +475,7 @@ public final class b1 {
                             while (it3.hasNext()) {
                                 ((Runnable) it3.next()).run();
                             }
-                            Runnable runnable = fy0Var;
+                            Runnable runnable = by0Var;
                             if (runnable != null) {
                                 runnable.run();
                                 break;

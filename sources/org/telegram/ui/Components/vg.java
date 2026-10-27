@@ -21,9 +21,9 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public abstract class vg extends View implements j80 {
+public abstract class vg extends View implements k80 {
     public boolean E;
     public boolean F;
     public Drawable G;
@@ -119,7 +119,7 @@ public abstract class vg extends View implements j80 {
         r6Var.b = 17;
     }
 
-    @Override // org.telegram.ui.Components.j80
+    @Override // org.telegram.ui.Components.k80
     public final void a(RectF rectF) {
         float circleWidth = getCircleWidth();
         float circleHeight = getCircleHeight();
@@ -128,7 +128,7 @@ public abstract class vg extends View implements j80 {
         rectF.set(measuredWidth - circleWidth, measuredHeight - circleHeight, measuredWidth, measuredHeight);
     }
 
-    @Override // org.telegram.ui.Components.j80
+    @Override // org.telegram.ui.Components.k80
     public final void b(Canvas canvas, float f7) {
         float lerp;
         float lerp2;
@@ -189,7 +189,7 @@ public abstract class vg extends View implements j80 {
         this.l0 = ofFloat;
         int i10 = 9;
         ofFloat.addUpdateListener(new n6(this, i10));
-        this.l0.addListener(new org.telegram.ui.qp(this, i10));
+        this.l0.addListener(new org.telegram.ui.sp(this, i10));
         this.l0.setDuration(180L);
         this.l0.setInterpolator(new OvershootInterpolator());
         this.l0.start();

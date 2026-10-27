@@ -25,17 +25,17 @@ import org.telegram.ui.ActionBar.u6;
 import org.telegram.ui.ActionBar.y6;
 import org.telegram.ui.Components.bb;
 import org.telegram.ui.Components.ds;
-import org.telegram.ui.Components.gb1;
 import org.telegram.ui.Components.h2;
-import org.telegram.ui.Components.j71;
 import org.telegram.ui.Components.j9;
-import org.telegram.ui.Components.lm0;
+import org.telegram.ui.Components.k71;
+import org.telegram.ui.Components.kb1;
 import org.telegram.ui.Components.mm0;
+import org.telegram.ui.Components.nm0;
 import org.telegram.ui.Components.wc;
 import org.telegram.ui.Components.y9;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class k0 extends bb {
     public static final int k0 = -1;
@@ -47,7 +47,7 @@ public final class k0 extends bb {
     public final FrameLayout b0;
     public final fi.d c0;
     public final fi.d d0;
-    public j71 e0;
+    public k71 e0;
     public boolean f0;
     public Boolean g0;
     public int h0;
@@ -74,21 +74,21 @@ public final class k0 extends bb {
         y9Var.setRoundRadius(AndroidUtilities.dp(40.0f));
         j9Var.r(user);
         y9Var.f(user, j9Var);
-        linearLayout.addView(y9Var, gb1.x(80, 80, 1, 0, 0, 0, 0));
+        linearLayout.addView(y9Var, kb1.x(80, 80, 1, 0, 0, 0, 0));
         TextView textView = new TextView(activity);
         textView.setTextSize(1, 20.0f);
         f7.V(textView, y6.G6, u6Var);
         textView.setGravity(17);
         textView.setTypeface(AndroidUtilities.bold());
         textView.setText(UserObject.getUserName(user));
-        linearLayout.addView(textView, gb1.v(-1, -2, 1, 32.0f, 15.66f, 32.0f, 3.66f));
+        linearLayout.addView(textView, kb1.v(-1, -2, 1, 32.0f, 15.66f, 32.0f, 3.66f));
         this.e.setTitle(UserObject.getUserName(user));
         TextView textView2 = new TextView(activity);
         textView2.setTextSize(1, 14.0f);
         f7.V(textView2, y6.y6, u6Var);
         textView2.setGravity(17);
         textView2.setText(LocaleController.getString(R.string.SessionBot));
-        linearLayout.addView(textView2, gb1.v(-1, -2, 1, 32.0f, 0.0f, 32.0f, 3.66f));
+        linearLayout.addView(textView2, kb1.v(-1, -2, 1, 32.0f, 0.0f, 32.0f, 3.66f));
         String publicUsername = UserObject.getPublicUsername(user);
         if (!TextUtils.isEmpty(publicUsername)) {
             TextView textView3 = new TextView(activity);
@@ -96,15 +96,15 @@ public final class k0 extends bb {
             f7.V(textView3, y6.gc, u6Var);
             textView3.setText("@" + publicUsername);
             textView3.setGravity(17);
-            linearLayout.addView(textView3, gb1.x(-1, -2, 1, 32, 0, 32, 18));
+            linearLayout.addView(textView3, kb1.x(-1, -2, 1, 32, 0, 32, 18));
         }
         int i10 = y6.a7;
         setBackgroundColor(getThemedColor(i10));
         fixNavigationBarKey(i10);
         this.h0 = this.navBarColor;
-        mm0 mm0Var = this.d;
+        nm0 nm0Var = this.d;
         int i11 = this.backgroundPaddingLeft;
-        mm0Var.setPadding(i11, 0, i11, AndroidUtilities.dp(72.0f));
+        nm0Var.setPadding(i11, 0, i11, AndroidUtilities.dp(72.0f));
         this.d.u1();
         this.d.setOnItemClickListener(new ai.k(this, 16));
         FrameLayout frameLayout = new FrameLayout(activity);
@@ -119,15 +119,15 @@ public final class k0 extends bb {
         dVar.setColor(themedColor);
         dVar.setText(LocaleController.getString(R.string.TerminateSession));
         dVar.setOnClickListener(new bi.w0(this, tL_connectedBot, h2Var, 11));
-        frameLayout.addView(dVar, gb1.h(-1, 48.0f, 87, 0.0f, 0.0f, 0.0f, 0.0f));
+        frameLayout.addView(dVar, kb1.h(-1, 48.0f, 87, 0.0f, 0.0f, 0.0f, 0.0f));
         fi.d dVar2 = new fi.d(activity, u6Var, true);
         dVar2.setRoundRadius(24);
         this.d0 = dVar2;
         dVar2.setText(LocaleController.getString(R.string.BusinessBotUpdate));
         dVar2.setOnClickListener(new bi.q(21, this, tL_connectedBot));
-        frameLayout.addView(dVar2, gb1.h(-1, 48.0f, 87, 0.0f, 0.0f, 0.0f, 0.0f));
+        frameLayout.addView(dVar2, kb1.h(-1, 48.0f, 87, 0.0f, 0.0f, 0.0f, 0.0f));
         T(false);
-        FrameLayout.LayoutParams i12 = gb1.i(-1, -2, 80);
+        FrameLayout.LayoutParams i12 = kb1.i(-1, -2, 80);
         int i13 = i12.leftMargin;
         int i14 = this.backgroundPaddingLeft;
         i12.leftMargin = i13 + i14;
@@ -139,9 +139,9 @@ public final class k0 extends bb {
         lVar.o(ds.h);
         lVar.n(350L);
         this.d.setItemAnimator(lVar);
-        j71 j71Var = this.e0;
-        if (j71Var != null) {
-            j71Var.O(false);
+        k71 k71Var = this.e0;
+        if (k71Var != null) {
+            k71Var.O(false);
         }
     }
 
@@ -343,11 +343,11 @@ public final class k0 extends bb {
     }
 
     @Override // org.telegram.ui.Components.bb
-    public final lm0 v(mm0 mm0Var) {
-        j71 j71Var = new j71(mm0Var, getContext(), this.currentAccount, 0, true, new hi.e2(this, 7), this.resourcesProvider);
-        this.e0 = j71Var;
-        j71Var.r = false;
-        return j71Var;
+    public final mm0 v(nm0 nm0Var) {
+        k71 k71Var = new k71(nm0Var, getContext(), this.currentAccount, 0, true, new hi.e2(this, 7), this.resourcesProvider);
+        this.e0 = k71Var;
+        k71Var.r = false;
+        return k71Var;
     }
 
     @Override // org.telegram.ui.Components.bb

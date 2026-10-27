@@ -41,9 +41,8 @@ import u2.b1;
 import u2.f1;
 import u2.r1;
 import u2.u;
-import vi.y;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
 public final class q implements y2.g, y2.j, f1, c3.q, b1 {
     public static final Set p0 = DesugarCollections.unmodifiableSet(new HashSet(Arrays.asList(1, 2, 5)));
@@ -1368,7 +1367,7 @@ public final class q implements y2.g, y2.j, f1, c3.q, b1 {
         z zVar = new z(iOException, i10, 17);
         boolean z12 = fVar instanceof j;
         i iVar2 = this.d;
-        y a10 = z12 ? iVar2.a(((j) fVar).x) : new y(1, 0, iVar2.r.length(), iVar2.d(SystemClock.elapsedRealtime()));
+        vi.z a10 = z12 ? iVar2.a(((j) fVar).x) : new vi.z(1, 0, iVar2.r.length(), iVar2.d(SystemClock.elapsedRealtime()));
         this.r.getClass();
         k4.d z02 = u7.s.z0(a10, zVar);
         if (z02 != null) {

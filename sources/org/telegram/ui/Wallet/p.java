@@ -18,13 +18,13 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.Vector;
 import org.telegram.tgnet.tl.TL_toncenter;
 import org.telegram.tgnet.tl.TL_wallet;
+import org.telegram.ui.Components.a21;
 import org.telegram.ui.Components.wc;
-import org.telegram.ui.Components.y11;
 import org.telegram.ui.Components.z11;
 import org.telegram.ui.Wallet.WalletEngine2;
-import org.telegram.ui.o01;
+import org.telegram.ui.q01;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class p implements Utilities.Callback2 {
     public final /* synthetic */ int a;
@@ -92,11 +92,11 @@ public final /* synthetic */ class p implements Utilities.Callback2 {
                     try {
                         c0Var.b = Long.parseLong(new JSONObject(apiresponse.response.data).getString("balance"));
                         if (l0Var.N.get(str5) == c0Var) {
-                            l0Var.h0(c0Var);
-                            l0Var.J();
+                            l0Var.k0(c0Var);
+                            l0Var.L();
                         }
                     } catch (Exception e) {
-                        l0.j("failed to get balance of " + str5, e);
+                        l0.k("failed to get balance of " + str5, e);
                     }
                 }
                 runnable.run();
@@ -112,7 +112,7 @@ public final /* synthetic */ class p implements Utilities.Callback2 {
                     if (tL_error == null || (str3 = tL_error.text) == null) {
                         str3 = "NULL_ERROR";
                     }
-                    l0.i("enable backup: didnt get backup holders: ".concat(str3));
+                    l0.j("enable backup: didnt get backup holders: ".concat(str3));
                     if (tL_error != null && (str4 = tL_error.text) != null) {
                         str = str4;
                     }
@@ -121,7 +121,7 @@ public final /* synthetic */ class p implements Utilities.Callback2 {
                 }
                 int size = vector.objects.size();
                 if (size != 3) {
-                    l0.i("enable backup: expected three backup holders");
+                    l0.j("enable backup: expected three backup holders");
                     sVar.run("INVALID_BACKUP_HOLDERS_COUNT");
                     return;
                 }
@@ -137,9 +137,9 @@ public final /* synthetic */ class p implements Utilities.Callback2 {
                     bArr = null;
                 }
                 try {
-                    bArr2 = l0.R(c10);
+                    bArr2 = l0.T(c10);
                     try {
-                        bArr3 = l0.c0(bArr2, new SecureRandom());
+                        bArr3 = l0.e0(bArr2, new SecureRandom());
                         try {
                             try {
                             } catch (Exception e11) {
@@ -170,7 +170,7 @@ public final /* synthetic */ class p implements Utilities.Callback2 {
                                             length = i13;
                                             str = str6;
                                         }
-                                        l0.F("enable backup: diagnostics sharesReconstructPaddedMnemonic=" + Arrays.equals(bArr2, bArr8));
+                                        l0.H("enable backup: diagnostics sharesReconstructPaddedMnemonic=" + Arrays.equals(bArr2, bArr8));
                                         Arrays.fill(bArr8, (byte) 0);
                                     } catch (Throwable th4) {
                                         th = th4;
@@ -335,7 +335,7 @@ public final /* synthetic */ class p implements Utilities.Callback2 {
                                 }
                                 for (int i19 = 0; i19 < size; i19++) {
                                     if (bArr11[i19] == null) {
-                                        l0.i("part " + i19 + " is null");
+                                        l0.j("part " + i19 + " is null");
                                         sVar.run("PART_" + i19 + "_NULL");
                                         return;
                                     }
@@ -343,13 +343,13 @@ public final /* synthetic */ class p implements Utilities.Callback2 {
                                 TL_wallet.enableBackup enablebackup = new TL_wallet.enableBackup();
                                 enablebackup.parts = new ArrayList<>(Arrays.asList(bArr11));
                                 enablebackup.new_public_key = bArr6;
-                                l0Var2.S(i0Var, false, new j((Object) l0Var2, (Object) sVar, (Object) enablebackup, 7));
+                                l0Var2.U(i0Var, false, new j((Object) l0Var2, (Object) sVar, (Object) enablebackup, 7));
                                 return;
                             } catch (Exception e12) {
                                 e = e12;
                                 bArr = c10;
                                 try {
-                                    l0.j("enable backup", e);
+                                    l0.k("enable backup", e);
                                     sVar.run(e.getMessage() == null ? str2 : e.getMessage());
                                     byte b11 = 0;
                                     if (bArr != null) {
@@ -401,7 +401,7 @@ public final /* synthetic */ class p implements Utilities.Callback2 {
                         str2 = "NULL_ERROR";
                         bArr = c10;
                         bArr3 = null;
-                        l0.j("enable backup", e);
+                        l0.k("enable backup", e);
                         sVar.run(e.getMessage() == null ? str2 : e.getMessage());
                         byte b112 = 0;
                         if (bArr != null) {
@@ -428,7 +428,7 @@ public final /* synthetic */ class p implements Utilities.Callback2 {
                     bArr = c10;
                     bArr2 = null;
                     bArr3 = null;
-                    l0.j("enable backup", e);
+                    l0.k("enable backup", e);
                     sVar.run(e.getMessage() == null ? str2 : e.getMessage());
                     byte b1122 = 0;
                     if (bArr != null) {
@@ -452,7 +452,7 @@ public final /* synthetic */ class p implements Utilities.Callback2 {
                 }
                 break;
             case 2:
-                ((l0) this.b).S((i0) this.c, true, new p((Utilities.Callback) this.d, (Utilities.Callback) obj2, (byte[]) this.e, (TLRPC.InputCheckPasswordSRP) obj, 3));
+                ((l0) this.b).U((i0) this.c, true, new p((Utilities.Callback) this.d, (Utilities.Callback) obj2, (byte[]) this.e, (TLRPC.InputCheckPasswordSRP) obj, 3));
                 return;
             case 3:
                 Utilities.Callback callback = (Utilities.Callback) this.b;
@@ -538,7 +538,7 @@ public final /* synthetic */ class p implements Utilities.Callback2 {
                     sVar2.run(e2.x(tL_error2, "registerKey"));
                     return;
                 } else {
-                    Utilities.globalQueue.postRunnable(new o01(i0Var2, a2Var, tonconnectchallenge, sVar2, n3Var, 5));
+                    Utilities.globalQueue.postRunnable(new q01(i0Var2, a2Var, tonconnectchallenge, sVar2, n3Var, 5));
                     return;
                 }
             case 7:
@@ -549,7 +549,7 @@ public final /* synthetic */ class p implements Utilities.Callback2 {
                 TL_wallet.sendTransfer sendtransfer = (TL_wallet.sendTransfer) obj;
                 String str13 = (String) obj2;
                 if (sendtransfer != null && str13 == null && e2Var.y(a2Var2) && !e2Var.i(a2Var2)) {
-                    Utilities.globalQueue.postRunnable(new o01(e2Var, sendtransfer, a2Var2, callback3, i0Var3, 6));
+                    Utilities.globalQueue.postRunnable(new q01(e2Var, sendtransfer, a2Var2, callback3, i0Var3, 6));
                     return;
                 }
                 if (str13 == null) {
@@ -592,9 +592,9 @@ public final /* synthetic */ class p implements Utilities.Callback2 {
                 }
                 nVar.setPadding(AndroidUtilities.dp(19.0f), AndroidUtilities.dp(9.0f), AndroidUtilities.dp(15.0f), AndroidUtilities.dp(8.0f));
                 SpannableString spannableString = new SpannableString(str16);
-                y11 y11Var = new y11();
-                y11Var.a |= 256;
-                spannableString.setSpan(new z11(y11Var, 0), 0, spannableString.length(), 33);
+                z11 z11Var = new z11();
+                z11Var.a |= 256;
+                spannableString.setSpan(new a21(z11Var, 0), 0, spannableString.length(), 33);
                 nVar.setText(spannableString);
                 nVar.setTextIsSelectable(true);
                 nVar.setOnClickListener(null);

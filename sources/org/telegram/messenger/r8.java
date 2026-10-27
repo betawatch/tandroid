@@ -1,38 +1,49 @@
 package org.telegram.messenger;
 
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLRPC;
+import java.util.ArrayList;
+import org.telegram.messenger.support.LongSparseIntArray;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class r8 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ MediaDataController b;
-    public final /* synthetic */ TLRPC.TL_messages_stickerSet c;
-    public final /* synthetic */ String d;
-    public final /* synthetic */ Utilities.Callback e;
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ ArrayList b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ int d;
+    public final /* synthetic */ int e;
     public final /* synthetic */ boolean f;
-    public final /* synthetic */ TLRPC.InputStickerSet h;
+    public final /* synthetic */ BaseController h;
+    public final /* synthetic */ Object n;
 
-    public /* synthetic */ r8(MediaDataController mediaDataController, TLRPC.TL_messages_stickerSet tL_messages_stickerSet, String str, Utilities.Callback callback, boolean z10, TLRPC.InputStickerSet inputStickerSet, int i10) {
-        this.a = i10;
-        this.b = mediaDataController;
-        this.c = tL_messages_stickerSet;
-        this.d = str;
-        this.e = callback;
+    public /* synthetic */ r8(MediaDataController mediaDataController, boolean z10, ArrayList arrayList, int i10, long j10, int i11, Runnable runnable) {
+        this.h = mediaDataController;
         this.f = z10;
-        this.h = inputStickerSet;
+        this.b = arrayList;
+        this.d = i10;
+        this.c = j10;
+        this.e = i11;
+        this.n = runnable;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$getStickerSet$33(this.c, this.d, this.e, this.f, this.h);
+                ((MediaDataController) this.h).lambda$processLoadedStickers$107(this.f, this.b, this.d, this.c, this.e, (Runnable) this.n);
                 break;
             default:
-                this.b.lambda$getStickerSet$36(this.c, this.d, this.e, this.f, this.h);
+                ((NotificationsController) this.h).lambda$processReadMessages$22((LongSparseIntArray) this.n, this.b, this.c, this.d, this.e, this.f);
                 break;
         }
+    }
+
+    public /* synthetic */ r8(NotificationsController notificationsController, LongSparseIntArray longSparseIntArray, ArrayList arrayList, long j10, int i10, int i11, boolean z10) {
+        this.h = notificationsController;
+        this.n = longSparseIntArray;
+        this.b = arrayList;
+        this.c = j10;
+        this.d = i10;
+        this.e = i11;
+        this.f = z10;
     }
 }

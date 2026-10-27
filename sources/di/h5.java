@@ -7,10 +7,10 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
-import org.telegram.ui.Components.gb1;
 import org.telegram.ui.Components.js;
+import org.telegram.ui.Components.kb1;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class h5 extends js {
     public final /* synthetic */ i5 c;
@@ -150,7 +150,7 @@ public final class h5 extends js {
         });
         View l1Var = new org.telegram.ui.ActionBar.l1(i5Var.getContext(), org.telegram.ui.ActionBar.y6.H8, t5Var.s);
         l1Var.setTag(R.id.fit_width_tag, 1);
-        actionBarPopupWindow$ActionBarPopupWindowLayout.a(l1Var, gb1.r(-1, 8));
+        actionBarPopupWindow$ActionBarPopupWindowLayout.a(l1Var, kb1.r(-1, 8));
         String string = LocaleController.getString(z10 ? R.string.StoryReactionsSortDescription : R.string.StoryViewsSortDescription);
         b bVar = t5Var.s;
         TextView textView = new TextView(actionBarPopupWindow$ActionBarPopupWindowLayout.getContext());
@@ -160,7 +160,7 @@ public final class h5 extends js {
         textView.setText(string);
         textView.setTag(R.id.fit_width_tag, 1);
         textView.setMaxWidth(AndroidUtilities.dp(200.0f));
-        actionBarPopupWindow$ActionBarPopupWindowLayout.a(textView, gb1.r(-1, -2));
+        actionBarPopupWindow$ActionBarPopupWindowLayout.a(textView, kb1.r(-1, -2));
     }
 
     @Override // org.telegram.ui.Components.js

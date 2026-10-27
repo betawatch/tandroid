@@ -1,70 +1,46 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ChatObject;
-import org.telegram.messenger.LocaleController;
+import android.view.View;
 import org.telegram.messenger.MediaController;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public final class oq0 implements org.telegram.ui.Cells.w5 {
-    public final /* synthetic */ pq0 a;
+public final class oq0 implements org.telegram.ui.Components.qm0 {
+    public final /* synthetic */ tq0 a;
 
-    public oq0(pq0 pq0Var) {
-        this.a = pq0Var;
+    public oq0(tq0 tq0Var) {
+        this.a = tq0Var;
     }
 
-    public final void a() {
-        un unVar;
-        TLRPC.Chat chat;
-        rq0 rq0Var = this.a.d;
-        if (!rq0Var.I || (unVar = rq0Var.U) == null || (chat = unVar.e) == null || ChatObject.hasAdminRights(chat) || !chat.slowmode_enabled || rq0Var.W == 2) {
-            return;
+    @Override // org.telegram.ui.Components.qm0
+    public final void a(boolean z10) {
+        org.telegram.ui.ActionBar.j5 j5Var;
+        tq0 tq0Var = this.a;
+        tq0Var.W = z10 ? 1 : 0;
+        if (z10) {
+            j5Var = ((org.telegram.ui.ActionBar.r2) tq0Var).parentLayout;
+            j5Var.getView().requestDisallowInterceptTouchEvent(true);
         }
-        org.telegram.ui.Components.g5.t0(rq0Var, LocaleController.getString(R.string.Slowmode), LocaleController.getString(R.string.SlowmodeSelectSendError), null);
-        if (rq0Var.W == 1) {
-            rq0Var.W = 2;
+        tq0Var.K.d1(true);
+    }
+
+    @Override // org.telegram.ui.Components.qm0
+    public final boolean b(int i10) {
+        return this.a.L.j(i10) == 0;
+    }
+
+    @Override // org.telegram.ui.Components.qm0
+    public final void c(View view, boolean z10) {
+        if (z10 == this.a.X && (view instanceof org.telegram.ui.Cells.x5)) {
+            org.telegram.ui.Cells.x5 x5Var = (org.telegram.ui.Cells.x5) view;
+            x5Var.w.b(x5Var);
         }
     }
 
-    @Override // org.telegram.ui.Cells.w5
-    public final void b(org.telegram.ui.Cells.x5 x5Var) {
-        boolean z10;
-        int intValue = ((Integer) x5Var.getTag()).intValue();
-        rq0 rq0Var = this.a.d;
-        MediaController.AlbumEntry albumEntry = rq0Var.J;
-        int i10 = -1;
-        if (albumEntry != null) {
-            MediaController.PhotoEntry photoEntry = albumEntry.photos.get(intValue);
-            boolean containsKey = rq0Var.b.containsKey(Integer.valueOf(photoEntry.imageId));
-            z10 = !containsKey;
-            if (!containsKey && rq0Var.H > 0 && rq0Var.b.size() >= rq0Var.H) {
-                a();
-                return;
-            }
-            if (rq0Var.e && !containsKey) {
-                i10 = rq0Var.c.size();
-            }
-            x5Var.b(i10, z10, true);
-            rq0Var.Z(intValue, photoEntry);
-        } else {
-            AndroidUtilities.hideKeyboard(rq0Var.getParentActivity().getCurrentFocus());
-            MediaController.SearchImage searchImage = (MediaController.SearchImage) rq0Var.f.get(intValue);
-            boolean containsKey2 = rq0Var.b.containsKey(searchImage.id);
-            z10 = !containsKey2;
-            if (!containsKey2 && rq0Var.H > 0 && rq0Var.b.size() >= rq0Var.H) {
-                a();
-                return;
-            }
-            if (rq0Var.e && !containsKey2) {
-                i10 = rq0Var.c.size();
-            }
-            x5Var.b(i10, z10, true);
-            rq0Var.Z(intValue, searchImage);
-        }
-        rq0Var.j0(z10 ? 1 : 2);
-        rq0Var.s0.a();
+    @Override // org.telegram.ui.Components.qm0
+    public final boolean d(int i10) {
+        tq0 tq0Var = this.a;
+        MediaController.AlbumEntry albumEntry = tq0Var.J;
+        return tq0Var.b.containsKey(albumEntry != null ? Integer.valueOf(albumEntry.photos.get(i10).imageId) : ((MediaController.SearchImage) tq0Var.f.get(i10)).id);
     }
 }

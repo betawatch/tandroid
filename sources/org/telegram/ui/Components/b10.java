@@ -9,7 +9,7 @@ import java.util.HashMap;
 import java.util.List;
 import org.telegram.messenger.BuildConfig;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public abstract /* synthetic */ class b10 {
     public static z3.b a(z3.m mVar, byte[] bArr, int i10) {
@@ -29,7 +29,7 @@ public abstract /* synthetic */ class b10 {
     }
 
     public static float c(RecyclerView recyclerView) {
-        int i10 = lw0.l0;
+        int i10 = mw0.l0;
         s4.p0 layoutManager = recyclerView.getLayoutManager();
         if (layoutManager == null || !recyclerView.canScrollVertically(-1)) {
             return 0.0f;

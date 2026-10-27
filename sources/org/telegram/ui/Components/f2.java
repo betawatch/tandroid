@@ -12,9 +12,9 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class f2 implements id0, org.telegram.ui.ActionBar.b2, org.telegram.ui.ActionBar.c7, org.telegram.ui.ActionBar.d7, e5, ImageReceiver.ImageReceiverDelegate, GenericProvider, p.a, ih.b, nw0, ow0 {
+public final /* synthetic */ class f2 implements jd0, org.telegram.ui.ActionBar.b2, org.telegram.ui.ActionBar.c7, org.telegram.ui.ActionBar.d7, e5, ImageReceiver.ImageReceiverDelegate, GenericProvider, p.a, ih.b, ow0, pw0 {
     public final /* synthetic */ int a;
 
     public /* synthetic */ f2(int i10) {
@@ -38,15 +38,15 @@ public final /* synthetic */ class f2 implements id0, org.telegram.ui.ActionBar.
         return bitmap.getConfig() == Bitmap.Config.ALPHA_8 ? bitmap : bitmap.extractAlpha();
     }
 
-    @Override // org.telegram.ui.Components.ow0
+    @Override // org.telegram.ui.Components.pw0
     public void b(Object obj, float f7) {
-        rd0 rd0Var = (rd0) obj;
-        rd0Var.f = f7;
-        if (!rd0Var.y || rd0Var.F) {
-            rd0Var.c.setStrokeWidth(AndroidUtilities.lerp(rd0Var.v, rd0Var.w, f7));
-            rd0Var.f();
+        sd0 sd0Var = (sd0) obj;
+        sd0Var.f = f7;
+        if (!sd0Var.y || sd0Var.F) {
+            sd0Var.c.setStrokeWidth(AndroidUtilities.lerp(sd0Var.v, sd0Var.w, f7));
+            sd0Var.f();
         }
-        rd0Var.invalidate();
+        sd0Var.invalidate();
     }
 
     @Override // p.a
@@ -62,17 +62,17 @@ public final /* synthetic */ class f2 implements id0, org.telegram.ui.ActionBar.
     @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
     public void didSetImage(ImageReceiver imageReceiver, boolean z10, boolean z11, boolean z12) {
         Drawable drawable = imageReceiver.getDrawable();
-        if (drawable instanceof xj0) {
-            xj0 xj0Var = (xj0) drawable;
-            xj0Var.P(0);
-            xj0Var.stop();
-            xj0Var.T(0.0f, false);
+        if (drawable instanceof yj0) {
+            yj0 yj0Var = (yj0) drawable;
+            yj0Var.P(0);
+            yj0Var.stop();
+            yj0Var.T(0.0f, false);
         }
     }
 
     @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
     public /* synthetic */ void didSetImageBitmap(int i10, String str, Drawable drawable) {
-        org.telegram.messenger.o5.a(this, i10, str, drawable);
+        org.telegram.messenger.p5.a(this, i10, str, drawable);
     }
 
     @Override // org.telegram.ui.ActionBar.c7
@@ -84,7 +84,7 @@ public final /* synthetic */ class f2 implements id0, org.telegram.ui.ActionBar.
         return 0;
     }
 
-    @Override // org.telegram.ui.Components.id0
+    @Override // org.telegram.ui.Components.jd0
     public String f(int i10) {
         switch (this.a) {
             case 0:
@@ -171,9 +171,9 @@ public final /* synthetic */ class f2 implements id0, org.telegram.ui.ActionBar.
         }
     }
 
-    @Override // org.telegram.ui.Components.nw0
+    @Override // org.telegram.ui.Components.ow0
     public float get(Object obj) {
-        return ((rd0) obj).f;
+        return ((sd0) obj).f;
     }
 
     @Override // org.telegram.ui.ActionBar.b2
@@ -193,7 +193,7 @@ public final /* synthetic */ class f2 implements id0, org.telegram.ui.ActionBar.
 
     @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
     public /* synthetic */ void onAnimationReady(ImageReceiver imageReceiver) {
-        org.telegram.messenger.o5.b(this, imageReceiver);
+        org.telegram.messenger.p5.b(this, imageReceiver);
     }
 
     @Override // org.telegram.messenger.GenericProvider
@@ -202,7 +202,7 @@ public final /* synthetic */ class f2 implements id0, org.telegram.ui.ActionBar.
             case 24:
                 return CheckBoxBase.I;
             default:
-                int i10 = sz.S2;
+                int i10 = sz.U2;
                 return 0;
         }
     }

@@ -4,7 +4,7 @@ import android.content.Context;
 import b2.n0;
 import java.util.UUID;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
 public final class k {
     public static final s9.a b;
@@ -12,8 +12,8 @@ public final class k {
 
     static {
         n0 a2 = s9.a.a(k.class);
-        a2.a(s9.j.a(g.class));
-        a2.a(s9.j.a(Context.class));
+        a2.a(s9.k.a(g.class));
+        a2.a(s9.k.a(Context.class));
         a2.f = new u7.s(22);
         b = a2.b();
     }

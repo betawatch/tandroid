@@ -26,15 +26,15 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.R;
-import org.telegram.messenger.vh;
+import org.telegram.messenger.wh;
 import org.telegram.ui.ActionBar.y6;
 import org.telegram.ui.Cells.s1;
 import org.telegram.ui.Cells.x8;
 import org.telegram.ui.Components.voip.j1;
 import org.telegram.ui.Components.yb;
-import vi.i0;
+import vi.k0;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class h extends Drawable implements Animator.AnimatorListener {
     public static final RectF b0 = new RectF();
@@ -56,7 +56,7 @@ public final class h extends Drawable implements Animator.AnimatorListener {
     public float X;
     public float Y;
     public final i a;
-    public final i0 b;
+    public final k0 b;
     public final LinearGradient f;
     public final d[] w;
     public final Drawable x;
@@ -80,8 +80,8 @@ public final class h extends Drawable implements Animator.AnimatorListener {
     public final ObjectAnimator Z = ObjectAnimator.ofFloat(this, e0, 1.0f).setDuration(560L);
     public final ObjectAnimator a0 = ObjectAnimator.ofFloat(this, f0, 1.0f).setDuration(240L);
 
-    public h(i iVar, s1 s1Var, ArrayList arrayList, i0 i0Var) {
-        this.b = i0Var;
+    public h(i iVar, s1 s1Var, ArrayList arrayList, k0 k0Var) {
+        this.b = k0Var;
         this.a = iVar;
         this.y = s1Var;
         this.E = s1Var.getMessageObject();
@@ -459,7 +459,7 @@ public final class h extends Drawable implements Animator.AnimatorListener {
                         float f30 = dVar2.o * f22;
                         i13 = i12;
                         i14 = 2;
-                        float b10 = vh.b(8, 2, dVar2.h.getWidth());
+                        float b10 = wh.b(8, 2, dVar2.h.getWidth());
                         dVar2.i = d.b(d.b(f10, b10, f26, f27), b10, dp5, measuredWidth) - (b10 / 2.0f);
                         dVar2.j = centerY2 - AndroidUtilities.dp(58.0f);
                         if (dVar2.f == null) {
@@ -578,13 +578,13 @@ public final class h extends Drawable implements Animator.AnimatorListener {
     @Override // android.animation.Animator.AnimatorListener
     public final void onAnimationEnd(Animator animator) {
         ObjectAnimator objectAnimator = this.Z;
-        i0 i0Var = this.b;
+        k0 k0Var = this.b;
         if (animator == objectAnimator) {
             this.y.setHideSideButtonByQuickShare(false);
             this.M = true;
             invalidateSelf();
             if (this.N) {
-                i0Var.run();
+                k0Var.run();
                 return;
             }
             return;
@@ -597,7 +597,7 @@ public final class h extends Drawable implements Animator.AnimatorListener {
                 ybVar.a.setVisibility(0);
             }
             if (this.M) {
-                i0Var.run();
+                k0Var.run();
             }
         }
     }

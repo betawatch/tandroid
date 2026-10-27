@@ -1,0 +1,27 @@
+package org.telegram.ui.Components;
+
+import android.view.TextureView;
+import android.view.View;
+import android.view.ViewGroup;
+
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* loaded from: classes3.dex */
+public interface ka1 {
+    TextureView a(View view, boolean z10, float f7, int i10, boolean z11);
+
+    void b();
+
+    void c(float f7);
+
+    void d();
+
+    void e(na1 na1Var, boolean z10);
+
+    TextureView f(View view, boolean z10, int i10, int i11, boolean z11);
+
+    ViewGroup g();
+
+    boolean h();
+
+    void i(boolean z10, fa1 fa1Var, float f7, boolean z11);
+}

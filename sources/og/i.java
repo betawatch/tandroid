@@ -32,11 +32,11 @@ import org.telegram.ui.ActionBar.j5;
 import org.telegram.ui.ActionBar.y6;
 import org.telegram.ui.Cells.y;
 import org.telegram.ui.Components.ar;
-import org.telegram.ui.Components.mm0;
+import org.telegram.ui.Components.nm0;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.d3;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class i extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     public ArrayList E;
@@ -54,7 +54,7 @@ public final class i extends FrameLayout implements NotificationCenter.Notificat
     public int v;
     public LinearLayout w;
     public TextView x;
-    public mm0 y;
+    public nm0 y;
 
     public static float a(DisplayMetrics displayMetrics, float f7) {
         return ee.a(f7, AndroidUtilities.dp(16.0f), displayMetrics.widthPixels - AndroidUtilities.dp(72.0f));
@@ -215,7 +215,7 @@ public final class i extends FrameLayout implements NotificationCenter.Notificat
         kVar2.a(0.75f);
         jVar2.u = kVar2;
         this.d = jVar2;
-        NotificationCenter.getGlobalInstance().addObserver(this, NotificationCenter.didSetNewTheme);
+        NotificationCenter.getGlobalInstance().addWeakObserver(this, NotificationCenter.didSetNewTheme);
     }
 
     @Override // android.view.View

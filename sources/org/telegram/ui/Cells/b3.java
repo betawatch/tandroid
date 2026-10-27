@@ -9,13 +9,13 @@ import android.view.Menu;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.ui.Components.q61;
+import org.telegram.ui.Components.a21;
+import org.telegram.ui.Components.r61;
 import org.telegram.ui.Components.ru;
-import org.telegram.ui.Components.vw0;
-import org.telegram.ui.Components.y11;
+import org.telegram.ui.Components.ww0;
 import org.telegram.ui.Components.z11;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class b3 extends ru {
     public final /* synthetic */ org.telegram.ui.ActionBar.u6 V;
@@ -23,8 +23,8 @@ public final class b3 extends ru {
     public final /* synthetic */ d3 a0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public b3(d3 d3Var, Context context, vw0 vw0Var, org.telegram.ui.ActionBar.u6 u6Var, boolean z10) {
-        super(context, vw0Var, null, 4, true, null);
+    public b3(d3 d3Var, Context context, ww0 ww0Var, org.telegram.ui.ActionBar.u6 u6Var, boolean z10) {
+        super(context, ww0Var, null, 4, true, null);
         this.a0 = d3Var;
         this.V = u6Var;
         this.W = z10;
@@ -48,15 +48,15 @@ public final class b3 extends ru {
         menu.removeItem(android.R.id.shareText);
         menu.add(R.id.menu_groupbolditalic, R.id.menu_spoiler, 6, LocaleController.getString(R.string.Spoiler));
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(LocaleController.getString(R.string.Bold));
-        spannableStringBuilder.setSpan(new q61(AndroidUtilities.bold()), 0, spannableStringBuilder.length(), 33);
+        spannableStringBuilder.setSpan(new r61(AndroidUtilities.bold()), 0, spannableStringBuilder.length(), 33);
         menu.add(R.id.menu_groupbolditalic, R.id.menu_bold, 7, spannableStringBuilder);
         SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder(LocaleController.getString(R.string.Italic));
-        spannableStringBuilder2.setSpan(new q61(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM_ITALIC)), 0, spannableStringBuilder2.length(), 33);
+        spannableStringBuilder2.setSpan(new r61(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM_ITALIC)), 0, spannableStringBuilder2.length(), 33);
         menu.add(R.id.menu_groupbolditalic, R.id.menu_italic, 8, spannableStringBuilder2);
         SpannableStringBuilder spannableStringBuilder3 = new SpannableStringBuilder(LocaleController.getString(R.string.Strike));
-        y11 y11Var = new y11();
-        y11Var.a |= 8;
-        spannableStringBuilder3.setSpan(new z11(y11Var, 0), 0, spannableStringBuilder3.length(), 33);
+        z11 z11Var = new z11();
+        z11Var.a |= 8;
+        spannableStringBuilder3.setSpan(new a21(z11Var, 0), 0, spannableStringBuilder3.length(), 33);
         menu.add(R.id.menu_groupbolditalic, R.id.menu_strike, 9, spannableStringBuilder3);
         menu.add(R.id.menu_groupbolditalic, R.id.menu_regular, 10, LocaleController.getString(R.string.Regular));
     }

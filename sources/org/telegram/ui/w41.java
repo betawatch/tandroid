@@ -2,67 +2,50 @@ package org.telegram.ui;
 
 import android.content.Context;
 import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.Path;
-import android.widget.FrameLayout;
+import android.graphics.RectF;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public final class w41 extends FrameLayout {
-    public final Path a;
-    public final Paint b;
-    public final /* synthetic */ boolean c;
-    public final /* synthetic */ boolean d;
-    public final /* synthetic */ org.telegram.ui.ActionBar.u6 e;
-    public final /* synthetic */ Integer f;
-    public final /* synthetic */ c61 h;
+public final class w41 extends u51 {
+    public final /* synthetic */ f61 G;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public w41(c61 c61Var, Context context, boolean z10, boolean z11, org.telegram.ui.ActionBar.u6 u6Var, Integer num) {
-        super(context);
-        this.h = c61Var;
-        this.c = z10;
-        this.d = z11;
-        this.e = u6Var;
-        this.f = num;
-        this.a = new Path();
-        this.b = new Paint(1);
+    public w41(f61 f61Var, Context context, boolean z10) {
+        super(f61Var, context, z10);
+        this.G = f61Var;
     }
 
     @Override // android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
-        c61 c61Var = this.h;
-        if (!c61Var.Q0) {
-            super.dispatchDraw(canvas);
-            return;
+        f61 f61Var = this.G;
+        r41 r41Var = f61Var.g0;
+        w41 w41Var = f61Var.f0;
+        f51 f51Var = f61Var.U;
+        if (f51Var != null) {
+            int measuredWidth = getMeasuredWidth();
+            int measuredHeight = getMeasuredHeight();
+            float x9 = r41Var.getX() + w41Var.getX();
+            float y3 = r41Var.getY() + w41Var.getY();
+            ai.f0 f0Var = (ai.f0) f51Var;
+            bh.i0 i0Var = (bh.i0) f0Var.b;
+            bh.h0 h0Var = i0Var.a;
+            org.telegram.ui.Components.gl0 gl0Var = (org.telegram.ui.Components.gl0) f0Var.c;
+            RectF rectF = AndroidUtilities.rectTmp;
+            float f7 = 0;
+            rectF.set(f7, f7, measuredWidth, measuredHeight);
+            gl0Var.getDelegate().l(canvas, rectF, 0.0f, h0Var.getX() + x9, (i0Var.y == 1 ? h0Var.getY() - AndroidUtilities.statusBarHeight : h0Var.getY() + i0Var.c.getY()) + y3, 255, true);
         }
-        if (!this.c) {
-            super.dispatchDraw(canvas);
-            return;
-        }
-        canvas.save();
-        boolean z10 = this.d;
-        Paint paint = this.b;
-        if (z10) {
-            org.telegram.ui.ActionBar.y6.m(paint);
-        }
-        paint.setColor(org.telegram.ui.ActionBar.y6.w0(org.telegram.ui.ActionBar.y6.G8, this.e));
-        paint.setAlpha((int) (getAlpha() * 255.0f));
-        float width = (this.f == null ? getWidth() / 2.0f : r1.intValue()) + AndroidUtilities.dp(20.0f);
-        float width2 = (getWidth() - getPaddingLeft()) - getPaddingRight();
-        float height = (getHeight() - getPaddingBottom()) - getPaddingTop();
-        if (c61Var.n()) {
-            AndroidUtilities.rectTmp.set((width - (c61Var.a1 * width)) + getPaddingLeft(), c3.h0.z(1.0f, c61Var.b1, height, getPaddingTop()), ((width2 - width) * c61Var.a1) + getPaddingLeft() + width, getPaddingTop() + height);
-        } else {
-            AndroidUtilities.rectTmp.set((width - (c61Var.a1 * width)) + getPaddingLeft(), getPaddingTop(), ((width2 - width) * c61Var.a1) + getPaddingLeft() + width, (height * c61Var.b1) + getPaddingTop());
-        }
-        Path path = this.a;
-        path.rewind();
-        path.addRoundRect(AndroidUtilities.rectTmp, AndroidUtilities.dp(12.0f), AndroidUtilities.dp(12.0f), Path.Direction.CW);
-        canvas.drawPath(path, paint);
-        canvas.clipPath(path);
         super.dispatchDraw(canvas);
-        canvas.restore();
+    }
+
+    @Override // android.view.View
+    public final void setTranslationY(float f7) {
+        if (f7 != getTranslationY()) {
+            super.setTranslationY(f7);
+            if (this.G.U != null) {
+                invalidate();
+            }
+        }
     }
 }

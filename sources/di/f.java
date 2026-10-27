@@ -11,18 +11,18 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.support.LongSparseIntArray;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.c90;
-import org.telegram.ui.Components.y80;
-import org.telegram.ui.hk;
-import org.telegram.ui.o00;
-import org.telegram.ui.og1;
-import org.telegram.ui.un;
-import org.telegram.ui.v50;
-import org.telegram.ui.y40;
+import org.telegram.ui.Components.d90;
+import org.telegram.ui.Components.z80;
+import org.telegram.ui.a50;
+import org.telegram.ui.jk;
+import org.telegram.ui.q00;
+import org.telegram.ui.qg1;
+import org.telegram.ui.wn;
+import org.telegram.ui.x50;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class f implements p7, og1, m4.h1, e2.j, org.telegram.ui.ActionBar.b2, ag.s, MessagesController.ErrorDelegate, xh.k {
+public final /* synthetic */ class f implements p7, qg1, m4.h1, e2.j, org.telegram.ui.ActionBar.b2, ag.s, MessagesController.ErrorDelegate, xh.k {
     public final /* synthetic */ int a;
     public final /* synthetic */ boolean b;
     public final /* synthetic */ Object c;
@@ -33,7 +33,7 @@ public final /* synthetic */ class f implements p7, og1, m4.h1, e2.j, org.telegr
         this.b = z10;
     }
 
-    @Override // org.telegram.ui.og1
+    @Override // org.telegram.ui.qg1
     public void a(int i10, ArrayList arrayList) {
         switch (this.a) {
             case 1:
@@ -61,21 +61,21 @@ public final /* synthetic */ class f implements p7, og1, m4.h1, e2.j, org.telegr
                 b0Var.e.run();
                 break;
             default:
-                o00 o00Var = (o00) this.c;
-                LongSparseIntArray longSparseIntArray = o00Var.H;
-                o00Var.y = i10;
+                q00 q00Var = (q00) this.c;
+                LongSparseIntArray longSparseIntArray = q00Var.H;
+                q00Var.y = i10;
                 if (this.b) {
-                    o00Var.q0(o00Var.F, arrayList, true);
-                    o00Var.F = arrayList;
-                    for (int i12 = 0; i12 < o00Var.F.size(); i12++) {
-                        o00Var.G.remove(o00Var.F.get(i12));
+                    q00Var.q0(q00Var.F, arrayList, true);
+                    q00Var.F = arrayList;
+                    for (int i12 = 0; i12 < q00Var.F.size(); i12++) {
+                        q00Var.G.remove(q00Var.F.get(i12));
                     }
                     ArrayList arrayList4 = new ArrayList();
                     int size = longSparseIntArray.size();
                     for (int i13 = 0; i13 < size; i13++) {
                         long keyAt = longSparseIntArray.keyAt(i13);
                         Long valueOf = Long.valueOf(keyAt);
-                        if (!DialogObject.isEncryptedDialog(keyAt) && !o00Var.F.contains(valueOf)) {
+                        if (!DialogObject.isEncryptedDialog(keyAt) && !q00Var.F.contains(valueOf)) {
                             arrayList4.add(valueOf);
                         }
                     }
@@ -84,17 +84,17 @@ public final /* synthetic */ class f implements p7, og1, m4.h1, e2.j, org.telegr
                         longSparseIntArray.delete(((Long) arrayList4.get(i14)).longValue());
                     }
                 } else {
-                    o00Var.q0(o00Var.G, arrayList, false);
-                    o00Var.G = arrayList;
-                    for (int i15 = 0; i15 < o00Var.G.size(); i15++) {
-                        Long l4 = (Long) o00Var.G.get(i15);
-                        o00Var.F.remove(l4);
+                    q00Var.q0(q00Var.G, arrayList, false);
+                    q00Var.G = arrayList;
+                    for (int i15 = 0; i15 < q00Var.G.size(); i15++) {
+                        Long l4 = (Long) q00Var.G.get(i15);
+                        q00Var.F.remove(l4);
                         longSparseIntArray.delete(l4.longValue());
                     }
                 }
-                o00Var.l0();
-                o00Var.k0(false);
-                o00Var.y0();
+                q00Var.l0();
+                q00Var.k0(false);
+                q00Var.y0();
                 break;
         }
     }
@@ -117,7 +117,7 @@ public final /* synthetic */ class f implements p7, og1, m4.h1, e2.j, org.telegr
             } else if (!h7Var.p) {
                 return;
             }
-            h7Var.Q(z11);
+            h7Var.T(z11);
         }
     }
 
@@ -151,19 +151,19 @@ public final /* synthetic */ class f implements p7, og1, m4.h1, e2.j, org.telegr
                 break;
             case 6:
             default:
-                v50 v50Var = ((y40) this.c).b;
-                v50Var.a1.toggleRecord(null, 0);
-                v50Var.k1().j(this.b ? 101 : 40, 0L, null);
+                x50 x50Var = ((a50) this.c).b;
+                x50Var.a1.toggleRecord(null, 0);
+                x50Var.k1().j(this.b ? 101 : 40, 0L, null);
                 break;
             case 7:
-                un unVar = (un) this.c;
-                hk hkVar = unVar.Y;
-                if (hkVar != null) {
+                wn wnVar = (wn) this.c;
+                jk jkVar = wnVar.Y;
+                if (jkVar != null) {
                     if (!this.b) {
-                        hkVar.x();
+                        jkVar.w();
                         break;
                     } else {
-                        unVar.finishFragment();
+                        wnVar.finishFragment();
                         break;
                     }
                 }
@@ -202,11 +202,11 @@ public final /* synthetic */ class f implements p7, og1, m4.h1, e2.j, org.telegr
 
     @Override // org.telegram.messenger.MessagesController.ErrorDelegate
     public boolean run(TLRPC.TL_error tL_error) {
-        c90 c90Var = (c90) this.c;
+        d90 d90Var = (d90) this.c;
         if (tL_error != null && "INVITE_REQUEST_SENT".equals(tL_error.text)) {
-            c90Var.setOnDismissListener(new y80(0, c90Var, this.b));
+            d90Var.setOnDismissListener(new z80(0, d90Var, this.b));
         }
-        c90Var.dismiss();
+        d90Var.dismiss();
         return false;
     }
 }

@@ -10,7 +10,7 @@ import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.camera.CameraController;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public abstract class k5 extends androidx.fragment.app.u {
     public int O = -1;
@@ -28,9 +28,9 @@ public abstract class k5 extends androidx.fragment.app.u {
                 x(R.raw.permission_request_camera, LocaleController.getString(R.string.VoipNeedCameraPermission));
                 return true;
             }
-            v50 v50Var = v50.D3;
-            if (v50Var != null) {
-                v50Var.n.callOnClick();
+            x50 x50Var = x50.D3;
+            if (x50Var != null) {
+                x50Var.n.callOnClick();
                 return true;
             }
         } else {

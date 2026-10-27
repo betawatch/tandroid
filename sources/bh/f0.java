@@ -30,17 +30,17 @@ import org.telegram.ui.Cells.s1;
 import org.telegram.ui.Cells.w7;
 import org.telegram.ui.Cells.x5;
 import org.telegram.ui.Components.RadialProgressView;
-import org.telegram.ui.Components.fl0;
+import org.telegram.ui.Components.gl0;
 import org.telegram.ui.c5;
 import org.telegram.ui.f5;
 import org.telegram.ui.j4;
 import org.telegram.ui.kd;
 import org.telegram.ui.nd;
 import org.telegram.ui.qa;
-import org.telegram.ui.un;
 import org.telegram.ui.v4;
+import org.telegram.ui.wn;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class f0 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -61,9 +61,9 @@ public final class f0 extends AnimatorListenerAdapter {
                 break;
             case 23:
                 d2 d2Var = (d2) this.c;
-                AnimatorSet animatorSet = d2Var.R;
+                AnimatorSet animatorSet = d2Var.S;
                 if (animatorSet != null && animatorSet.equals(animator)) {
-                    d2Var.R = null;
+                    d2Var.S = null;
                     break;
                 }
                 break;
@@ -87,10 +87,10 @@ public final class f0 extends AnimatorListenerAdapter {
                 ((nd) this.c).r = null;
                 break;
             case 29:
-                un unVar = (un) this.c;
-                AnimatorSet animatorSet4 = unVar.T0;
+                wn wnVar = (wn) this.c;
+                AnimatorSet animatorSet4 = wnVar.T0;
                 if (animatorSet4 != null && animatorSet4.equals(animator)) {
-                    unVar.T0 = null;
+                    wnVar.T0 = null;
                     break;
                 }
                 break;
@@ -109,7 +109,7 @@ public final class f0 extends AnimatorListenerAdapter {
         switch (this.a) {
             case 0:
                 i0 i0Var = (i0) this.c;
-                fl0 fl0Var = i0Var.n;
+                gl0 gl0Var = i0Var.n;
                 i0Var.k();
                 i0Var.l();
                 boolean z10 = this.b;
@@ -120,14 +120,14 @@ public final class f0 extends AnimatorListenerAdapter {
                     i0Var.k = true;
                     i0Var.a.invalidate();
                 }
-                fl0Var.setCustomEmojiEnterProgress(Utilities.clamp(i0Var.j, 1.0f, 0.0f));
+                gl0Var.setCustomEmojiEnterProgress(Utilities.clamp(i0Var.j, 1.0f, 0.0f));
                 if (!z10) {
-                    fl0Var.setImportantForAccessibility(0);
-                    fl0Var.setSkipDraw(false);
+                    gl0Var.setImportantForAccessibility(0);
+                    gl0Var.setSkipDraw(false);
                     i0Var.f();
                     Runtime.getRuntime().gc();
                     int i10 = i0Var.y;
-                    fl0Var.setCustomEmojiReactionsBackground((i10 == 4 || i10 == 5) ? false : true);
+                    gl0Var.setCustomEmojiReactionsBackground((i10 == 4 || i10 == 5) ? false : true);
                 }
                 i0Var.C = false;
                 break;
@@ -367,9 +367,9 @@ public final class f0 extends AnimatorListenerAdapter {
                 }
             case 23:
                 d2 d2Var = (d2) this.c;
-                AnimatorSet animatorSet = d2Var.R;
+                AnimatorSet animatorSet = d2Var.S;
                 if (animatorSet != null && animatorSet.equals(animator)) {
-                    d2Var.R = null;
+                    d2Var.S = null;
                     if (!this.b) {
                         d2Var.setBackgroundColor(0);
                         break;
@@ -423,14 +423,14 @@ public final class f0 extends AnimatorListenerAdapter {
                 }
                 break;
             default:
-                un unVar = (un) this.c;
-                AnimatorSet animatorSet4 = unVar.T0;
+                wn wnVar = (wn) this.c;
+                AnimatorSet animatorSet4 = wnVar.T0;
                 if (animatorSet4 != null && animatorSet4.equals(animator)) {
                     if (!this.b) {
-                        unVar.G0.setVisibility(4);
+                        wnVar.G0.setVisibility(4);
                         break;
                     } else {
-                        (unVar.C0 ? unVar.D0 : unVar.B0).setVisibility(4);
+                        (wnVar.C0 ? wnVar.D0 : wnVar.B0).setVisibility(4);
                         break;
                     }
                 }

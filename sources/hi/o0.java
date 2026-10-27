@@ -12,21 +12,21 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.vh;
+import org.telegram.messenger.wh;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.f7;
 import org.telegram.ui.ActionBar.u6;
 import org.telegram.ui.ActionBar.y6;
-import org.telegram.ui.Components.gb1;
 import org.telegram.ui.Components.h6;
+import org.telegram.ui.Components.kb1;
 import org.telegram.ui.Components.mb;
 import org.telegram.ui.Components.nb;
 import org.telegram.ui.Components.oc;
 import org.telegram.ui.Components.qc;
-import org.telegram.ui.Components.xj0;
+import org.telegram.ui.Components.yj0;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class o0 extends nb {
     public final u6 a;
@@ -50,21 +50,21 @@ public final class o0 extends nb {
         n0 n0Var = new n0(context, imageView);
         this.c = n0Var;
         imageView.setImageDrawable(n0Var);
-        addView(imageView, gb1.h(40, 40.0f, 23, 7.0f, 0.0f, 0.0f, 0.0f));
+        addView(imageView, kb1.h(40, 40.0f, 23, 7.0f, 0.0f, 0.0f, 0.0f));
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setOrientation(1);
-        addView(linearLayout, gb1.h(-1, -2.0f, 23, 54.0f, 0.0f, 0.0f, 0.0f));
+        addView(linearLayout, kb1.h(-1, -2.0f, 23, 54.0f, 0.0f, 0.0f, 0.0f));
         TextView textView = new TextView(context);
         this.d = textView;
         textView.setTextSize(1, 14.0f);
         int i10 = y6.Hi;
         f7.V(textView, i10, u6Var);
         textView.setTypeface(AndroidUtilities.bold());
-        TextView e = vh.e(linearLayout, textView, gb1.x(-1, -2, 55, 0, 0, 0, 2), context);
+        TextView e = wh.e(linearLayout, textView, kb1.x(-1, -2, 55, 0, 0, 0, 2), context);
         this.e = e;
         e.setTextSize(1, 13.0f);
         f7.V(e, i10, u6Var);
-        linearLayout.addView(e, gb1.x(-1, -2, 55, 0, 0, 0, 0));
+        linearLayout.addView(e, kb1.x(-1, -2, 55, 0, 0, 0, 0));
     }
 
     private void setButton(int i10) {
@@ -186,9 +186,9 @@ public final class o0 extends nb {
             n0Var.h = false;
             h6Var.getClass();
             h6Var.d(0.0f, true);
-            xj0 xj0Var = n0Var.l;
-            if (xj0Var != null) {
-                xj0Var.C(true);
+            yj0 yj0Var = n0Var.l;
+            if (yj0Var != null) {
+                yj0Var.C(true);
                 n0Var.l = null;
             }
             h6 h6Var2 = n0Var.i;
@@ -231,9 +231,9 @@ public final class o0 extends nb {
             setButton(2);
             if (!n0Var.h) {
                 n0Var.h = true;
-                xj0 xj0Var2 = new xj0(R.raw.contact_check, AndroidUtilities.dp(40.0f), AndroidUtilities.dp(40.0f));
-                n0Var.l = xj0Var2;
-                xj0Var2.R(n0Var.a);
+                yj0 yj0Var2 = new yj0(R.raw.contact_check, AndroidUtilities.dp(40.0f), AndroidUtilities.dp(40.0f));
+                n0Var.l = yj0Var2;
+                yj0Var2.R(n0Var.a);
                 n0Var.l.J(true);
                 n0Var.l.start();
                 n0Var.g = 1.0f;

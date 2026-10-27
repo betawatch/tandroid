@@ -1,116 +1,50 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
-import android.content.Context;
-import android.graphics.Canvas;
-import android.view.accessibility.AccessibilityNodeInfo;
-import android.widget.Button;
-import android.widget.FrameLayout;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
+import android.view.View;
+import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public final class qq0 extends FrameLayout {
+public final class qq0 extends s4.u0 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ mr0 b;
+    public final /* synthetic */ nr0 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ qq0(mr0 mr0Var, Context context, int i10) {
-        super(context);
+    public /* synthetic */ qq0(nr0 nr0Var, int i10) {
         this.a = i10;
-        this.b = mr0Var;
+        this.b = nr0Var;
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public void dispatchDraw(Canvas canvas) {
+    @Override // s4.u0
+    public final void b(RecyclerView recyclerView, int i10, int i11) {
+        ub ubVar;
         switch (this.a) {
             case 0:
-                mr0 mr0Var = this.b;
-                mr0Var.X0.setBounds(0, (int) mr0Var.v0, getMeasuredWidth(), getMeasuredHeight());
-                mr0Var.X0.draw(canvas);
-                canvas.save();
-                canvas.clipRect(0.0f, mr0Var.v0, getMeasuredWidth(), getMeasuredHeight());
-                super.dispatchDraw(canvas);
-                canvas.restore();
-                break;
-            default:
-                super.dispatchDraw(canvas);
-                break;
-        }
-    }
-
-    @Override // android.view.View
-    public void onDraw(Canvas canvas) {
-        switch (this.a) {
-            case 0:
-                mr0 mr0Var = this.b;
-                qq0 qq0Var = mr0Var.c;
-                float f7 = mr0Var.w0;
-                if (f7 != 0.0f && f7 != qq0Var.getTop() + mr0Var.w0) {
-                    ValueAnimator valueAnimator = mr0Var.x0;
-                    if (valueAnimator != null) {
-                        valueAnimator.cancel();
-                    }
-                    float top = mr0Var.w0 - (qq0Var.getTop() + mr0Var.v0);
-                    mr0Var.v0 = top;
-                    ValueAnimator ofFloat = ValueAnimator.ofFloat(top, 0.0f);
-                    mr0Var.x0 = ofFloat;
-                    ofFloat.addUpdateListener(new e80(this, 18));
-                    mr0Var.x0.setInterpolator(ds.f);
-                    mr0Var.x0.setDuration(200L);
-                    mr0Var.x0.start();
-                    mr0Var.w0 = 0.0f;
+                nr0 nr0Var = this.b;
+                if (i11 != 0) {
+                    nr0.r0(nr0Var);
+                    nr0Var.r0 = nr0Var.q0;
                 }
-                mr0Var.T[1].setTranslationY((-(qq0Var.getMeasuredHeight() - AndroidUtilities.dp(48.0f))) + mr0Var.v0 + mr0Var.u0 + ((1.0f - getAlpha()) * (qq0Var.getMeasuredHeight() - AndroidUtilities.dp(48.0f))));
+                qc qcVar = qc.x;
+                if (qcVar != null && (ubVar = qcVar.e) != null && (ubVar.getParent() instanceof View) && ((View) qc.x.e.getParent()).getParent() == nr0Var.x) {
+                    qc.e();
+                    break;
+                }
                 break;
-            default:
-                super.onDraw(canvas);
-                break;
-        }
-    }
-
-    @Override // android.view.View
-    public void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
-        switch (this.a) {
             case 1:
-                super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-                accessibilityNodeInfo.setText(LocaleController.formatPluralString("AccDescrShareInChats", this.b.V.m(), new Object[0]));
-                accessibilityNodeInfo.setClassName(Button.class.getName());
-                accessibilityNodeInfo.setLongClickable(true);
-                accessibilityNodeInfo.setClickable(true);
-                break;
-            default:
-                super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-                break;
-        }
-    }
-
-    @Override // android.view.View
-    public void setAlpha(float f7) {
-        switch (this.a) {
-            case 0:
-                super.setAlpha(f7);
-                invalidate();
-                break;
-            default:
-                super.setAlpha(f7);
-                break;
-        }
-    }
-
-    @Override // android.view.View
-    public void setVisibility(int i10) {
-        switch (this.a) {
-            case 0:
-                super.setVisibility(i10);
-                if (i10 != 0) {
-                    this.b.T[1].setTranslationY(0.0f);
+                if (i11 != 0) {
+                    nr0 nr0Var2 = this.b;
+                    nr0.r0(nr0Var2);
+                    nr0Var2.r0 = nr0Var2.q0;
                     break;
                 }
                 break;
             default:
-                super.setVisibility(i10);
+                if (i11 != 0) {
+                    nr0 nr0Var3 = this.b;
+                    nr0.r0(nr0Var3);
+                    nr0Var3.r0 = nr0Var3.q0;
+                    break;
+                }
                 break;
         }
     }

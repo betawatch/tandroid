@@ -14,7 +14,7 @@ import org.telegram.messenger.TelegramMediaSession;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class j1 implements Runnable {
     public final /* synthetic */ int a;
@@ -83,40 +83,40 @@ public final /* synthetic */ class j1 implements Runnable {
                 ((FactCheckController) this.b).loadMissing();
                 break;
             case 18:
-                ((FileLoaderPriorityQueue) this.b).lambda$new$0();
-                break;
-            case 19:
                 ((FilePathDatabase) this.b).lambda$clear$3();
                 break;
-            case 20:
+            case 19:
                 FileRefController.lambda$onRequestComplete$46((TLRPC.TL_theme) this.b);
                 break;
-            case 21:
+            case 20:
                 ((ImageReceiver) this.b).invalidate();
                 break;
-            case 22:
+            case 21:
                 MediaController.lambda$saveFile$49((org.telegram.ui.ActionBar.e2) this.b);
                 break;
-            case 23:
+            case 22:
                 ((org.telegram.ui.Components.oc) this.b).f();
                 break;
-            case 24:
+            case 23:
                 MediaDataController.lambda$addRecentGif$27((TLRPC.Document) this.b);
                 break;
-            case 25:
-                MessagesController.lambda$setContentSettings$508((TLRPC.TL_error) this.b);
-                break;
-            case 26:
+            case 24:
                 MessagesController.lambda$performLogout$322((TLObject) this.b);
                 break;
-            case 27:
+            case 25:
                 MessagesController.lambda$convertToGigaGroup$267((MessagesStorage.BooleanCallback) this.b);
                 break;
-            case 28:
+            case 26:
+                MessagesController.lambda$setContentSettings$509((TLRPC.TL_error) this.b);
+                break;
+            case 27:
                 ((MusicPlayerService) this.b).stopSelf();
                 break;
-            default:
+            case 28:
                 NotificationBadge.HuaweiHomeBadger.lambda$executeBadge$0((Bundle) this.b);
+                break;
+            default:
+                ((NotificationsSettingsFacade) this.b).lambda$applyDialogNotificationsSettings$0();
                 break;
         }
     }

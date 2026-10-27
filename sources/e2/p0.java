@@ -12,7 +12,7 @@ import org.telegram.ui.Cells.d2;
 import org.telegram.ui.Components.s2;
 import org.telegram.ui.Wallet.r2;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class p0 implements Runnable {
     public final /* synthetic */ int a;
@@ -47,12 +47,12 @@ public final /* synthetic */ class p0 implements Runnable {
                 a2 a2Var = (a2) this.d;
                 String str = (String) this.e;
                 d2 d2Var = a2Var.b;
-                d2Var.d0 = false;
-                d2Var.e0 = str;
+                d2Var.e0 = false;
+                d2Var.f0 = str;
                 if (str == null) {
-                    d2Var.e0 = "";
+                    d2Var.f0 = "";
                 }
-                d2Var.f0 = this.b;
+                d2Var.g0 = this.b;
                 d2Var.f(this.c, true);
                 break;
             case 3:
@@ -61,7 +61,7 @@ public final /* synthetic */ class p0 implements Runnable {
                 TL_wallet.TL_walletState tL_walletState = (TL_wallet.TL_walletState) l0Var.e;
                 org.telegram.ui.Wallet.p0 p0Var = l0Var.c;
                 if (p0Var == null || !TextUtils.equals(p0Var.c, tL_walletState.address) || !l0Var.c.f(tL_walletState.public_key)) {
-                    l0Var.y(new org.telegram.ui.Wallet.j((Object) l0Var, (Object) callback, (Object) tL_walletState, 4), this.b, this.c);
+                    l0Var.z(new org.telegram.ui.Wallet.j((Object) l0Var, (Object) callback, (Object) tL_walletState, 4), this.b, this.c);
                     break;
                 } else {
                     callback.run(null);
@@ -71,21 +71,21 @@ public final /* synthetic */ class p0 implements Runnable {
             default:
                 org.telegram.ui.Wallet.l0 l0Var2 = (org.telegram.ui.Wallet.l0) this.d;
                 Utilities.Callback2 callback2 = (Utilities.Callback2) this.e;
-                org.telegram.ui.Wallet.l0.F("getSecretPhrase: ready!");
+                org.telegram.ui.Wallet.l0.H("getSecretPhrase: ready!");
                 TL_wallet.TL_walletState tL_walletState2 = (TL_wallet.TL_walletState) l0Var2.e;
                 if (!l0Var2.c.f(tL_walletState2.public_key)) {
                     Object obj = null;
                     if (!tL_walletState2.backup_enabled) {
-                        org.telegram.ui.Wallet.l0.i("getSecretPhrase: no server backup!");
+                        org.telegram.ui.Wallet.l0.j("getSecretPhrase: no server backup!");
                         callback2.run(null, "NO_LOCAL_BACKUP");
                         break;
                     } else {
-                        org.telegram.ui.Wallet.l0.F("getSecretPhrase: exportSecretPhrase through password request");
+                        org.telegram.ui.Wallet.l0.H("getSecretPhrase: exportSecretPhrase through password request");
                         r2.a(l0Var2.a, new ai.d0(12), null, null, null, new di.c0(4, l0Var2, callback2), this.b, this.c, new b1(obj, 2));
                         break;
                     }
                 } else {
-                    org.telegram.ui.Wallet.l0.F("getSecretPhrase: device has secured phrase, requesting");
+                    org.telegram.ui.Wallet.l0.H("getSecretPhrase: device has secured phrase, requesting");
                     org.telegram.ui.Wallet.p0 p0Var2 = l0Var2.c;
                     byte[] bArr = tL_walletState2.public_key;
                     org.telegram.ui.Wallet.k kVar = new org.telegram.ui.Wallet.k(callback2, 1);

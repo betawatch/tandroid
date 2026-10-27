@@ -18,7 +18,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class f1 implements NotificationCenter.NotificationCenterDelegate {
     public static final LongSparseArray[] I = new LongSparseArray[4];
@@ -237,7 +237,7 @@ public final class f1 implements NotificationCenter.NotificationCenterDelegate {
             if (user == null) {
                 return;
             }
-            NotificationCenter.getInstance(i10).addObserver(this, NotificationCenter.userInfoDidLoad);
+            NotificationCenter.getInstance(i10).addWeakObserver(this, NotificationCenter.userInfoDidLoad);
             messagesController.loadUserInfo(user, true, 0);
             return;
         }
@@ -245,7 +245,7 @@ public final class f1 implements NotificationCenter.NotificationCenterDelegate {
         if (chat == null) {
             return;
         }
-        NotificationCenter.getInstance(i10).addObserver(this, NotificationCenter.chatInfoDidLoad);
+        NotificationCenter.getInstance(i10).addWeakObserver(this, NotificationCenter.chatInfoDidLoad);
         MessagesStorage.getInstance(i10).loadChatInfo(chat.id, ChatObject.isChannel(chat), null, true, false);
     }
 

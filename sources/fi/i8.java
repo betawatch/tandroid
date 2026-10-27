@@ -11,9 +11,9 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.Components.ds;
-import org.telegram.ui.Components.gb1;
+import org.telegram.ui.Components.kb1;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public abstract class i8 extends FrameLayout implements p2 {
     public final h8 a;
@@ -43,8 +43,8 @@ public abstract class i8 extends FrameLayout implements p2 {
         textView.setTypeface(AndroidUtilities.bold());
         textView.setTextColor(-1);
         textView.setText(LocaleController.getString(R.string.StoryLive));
-        frameLayout.addView(textView, gb1.h(-2, -2.0f, 80, 16.0f, 0.0f, 16.0f, 7.0f));
-        h8Var.addView(frameLayout, gb1.v(-2, -1, 112, 0.0f, 0.0f, 6.66f, 0.0f));
+        frameLayout.addView(textView, kb1.h(-2, -2.0f, 80, 16.0f, 0.0f, 16.0f, 7.0f));
+        h8Var.addView(frameLayout, kb1.v(-2, -1, 112, 0.0f, 0.0f, 6.66f, 0.0f));
         final int i10 = 0;
         frameLayout.setOnClickListener(new View.OnClickListener(this) { // from class: fi.g8
             public final /* synthetic */ i8 b;
@@ -68,7 +68,7 @@ public abstract class i8 extends FrameLayout implements p2 {
                 }
             }
         });
-        gb1.b(frameLayout);
+        kb1.b(frameLayout);
         FrameLayout frameLayout2 = new FrameLayout(context);
         this.d = frameLayout2;
         TextView textView2 = new TextView(context);
@@ -77,8 +77,8 @@ public abstract class i8 extends FrameLayout implements p2 {
         textView2.setTypeface(AndroidUtilities.bold());
         textView2.setTextColor(-1);
         textView2.setText(LocaleController.getString(R.string.StoryPhoto));
-        frameLayout2.addView(textView2, gb1.h(-2, -2.0f, 80, 16.0f, 0.0f, 16.0f, 7.0f));
-        h8Var.addView(frameLayout2, gb1.v(-2, -1, 112, 0.0f, 0.0f, 6.66f, 0.0f));
+        frameLayout2.addView(textView2, kb1.h(-2, -2.0f, 80, 16.0f, 0.0f, 16.0f, 7.0f));
+        h8Var.addView(frameLayout2, kb1.v(-2, -1, 112, 0.0f, 0.0f, 6.66f, 0.0f));
         final int i11 = 1;
         frameLayout2.setOnClickListener(new View.OnClickListener(this) { // from class: fi.g8
             public final /* synthetic */ i8 b;
@@ -102,7 +102,7 @@ public abstract class i8 extends FrameLayout implements p2 {
                 }
             }
         });
-        gb1.b(frameLayout2);
+        kb1.b(frameLayout2);
         FrameLayout frameLayout3 = new FrameLayout(context);
         this.f = frameLayout3;
         TextView textView3 = new TextView(context);
@@ -111,8 +111,8 @@ public abstract class i8 extends FrameLayout implements p2 {
         textView3.setTypeface(AndroidUtilities.bold());
         textView3.setTextColor(-1);
         textView3.setText(LocaleController.getString(R.string.StoryVideo));
-        frameLayout3.addView(textView3, gb1.h(-2, -2.0f, 80, 16.0f, 0.0f, 16.0f, 7.0f));
-        h8Var.addView(frameLayout3, gb1.x(-2, -1, 112, 0, 0, 0, 0));
+        frameLayout3.addView(textView3, kb1.h(-2, -2.0f, 80, 16.0f, 0.0f, 16.0f, 7.0f));
+        h8Var.addView(frameLayout3, kb1.x(-2, -1, 112, 0, 0, 0, 0));
         final int i12 = 2;
         frameLayout3.setOnClickListener(new View.OnClickListener(this) { // from class: fi.g8
             public final /* synthetic */ i8 b;
@@ -136,8 +136,8 @@ public abstract class i8 extends FrameLayout implements p2 {
                 }
             }
         });
-        gb1.b(frameLayout3);
-        addView(h8Var, gb1.i(-2, -1, 113));
+        kb1.b(frameLayout3);
+        addView(h8Var, kb1.i(-2, -1, 113));
     }
 
     public final void a(int i10) {

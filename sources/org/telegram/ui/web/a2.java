@@ -7,9 +7,9 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.R;
-import org.telegram.ui.Components.ny0;
+import org.telegram.ui.Components.oy0;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class a2 implements ValueCallback {
     public final /* synthetic */ int a;
@@ -56,11 +56,11 @@ public final /* synthetic */ class a2 implements ValueCallback {
                 return;
             default:
                 ti.j jVar = (ti.j) this.b;
-                ny0 ny0Var = (ny0) this.d;
+                oy0 oy0Var = (oy0) this.d;
                 WebView webView3 = this.c;
                 c5.h hVar = (c5.h) this.e;
                 String str = (String) obj;
-                AndroidUtilities.cancelRunOnUIThread(ny0Var);
+                AndroidUtilities.cancelRunOnUIThread(oy0Var);
                 synchronized (jVar.a) {
                     if (!jVar.u && jVar.o == webView3 && jVar.p == hVar && !jVar.r) {
                         if (!"true".equals(str)) {
@@ -84,10 +84,10 @@ public final /* synthetic */ class a2 implements ValueCallback {
         }
     }
 
-    public /* synthetic */ a2(ti.j jVar, ny0 ny0Var, WebView webView, c5.h hVar) {
+    public /* synthetic */ a2(ti.j jVar, oy0 oy0Var, WebView webView, c5.h hVar) {
         this.a = 2;
         this.b = jVar;
-        this.d = ny0Var;
+        this.d = oy0Var;
         this.c = webView;
         this.e = hVar;
     }

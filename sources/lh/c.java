@@ -13,10 +13,10 @@ import org.telegram.messenger.R;
 import org.telegram.ui.ActionBar.f7;
 import org.telegram.ui.ActionBar.u6;
 import org.telegram.ui.ActionBar.y6;
-import org.telegram.ui.Components.gb1;
-import org.telegram.ui.cj;
+import org.telegram.ui.Components.kb1;
+import org.telegram.ui.fj;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class c extends LinearLayout {
     public static final /* synthetic */ int e = 0;
@@ -25,27 +25,27 @@ public final class c extends LinearLayout {
     public final me c;
     public float d;
 
-    public c(Context context, u6 u6Var, cj cjVar, ch.b bVar) {
+    public c(Context context, u6 u6Var, fj fjVar, ch.b bVar) {
         super(context);
         me meVar = new me(this);
         this.b = meVar;
         me meVar2 = new me(this);
         this.c = meVar2;
         this.a = u6Var;
-        kh.a c10 = kh.a.c(context, bVar, cjVar, u6Var);
+        kh.a c10 = kh.a.c(context, bVar, fjVar, u6Var);
         meVar.a = c10;
         c10.setOnClickListener(new bh.f(6));
-        gb1.c((kh.a) meVar.a, 0.065f, 2.0f);
-        kh.a c11 = kh.a.c(context, bVar, cjVar, u6Var);
+        kb1.c((kh.a) meVar.a, 0.065f, 2.0f);
+        kh.a c11 = kh.a.c(context, bVar, fjVar, u6Var);
         meVar2.a = c11;
         c11.setOnClickListener(new bh.f(6));
-        gb1.c((kh.a) meVar2.a, 0.065f, 2.0f);
+        kb1.c((kh.a) meVar2.a, 0.065f, 2.0f);
         a(meVar, LocaleController.getString(R.string.Reply), R.drawable.input_reply, false);
         a(meVar2, LocaleController.getString(R.string.Forward), R.drawable.input_forward, true);
         setOrientation(0);
         setClipChildren(false);
-        addView((kh.a) meVar.a, gb1.q(1.0f, 0, 56, 1, -1, 0));
-        addView((kh.a) meVar2.a, gb1.q(1.0f, 0, 56, -1, 1, 0));
+        addView((kh.a) meVar.a, kb1.q(1.0f, 0, 56, 1, -1, 0));
+        addView((kh.a) meVar2.a, kb1.q(1.0f, 0, 56, -1, 1, 0));
     }
 
     public final void a(me meVar, String str, int i10, boolean z10) {
@@ -67,7 +67,7 @@ public final class c extends LinearLayout {
         }
         textView.setCompoundDrawablesWithIntrinsicBounds(drawable, (Drawable) null, mutate, (Drawable) null);
         meVar.b = textView;
-        ((kh.a) meVar.a).addView(textView, gb1.i(-2, -2, 17));
+        ((kh.a) meVar.a).addView(textView, kb1.i(-2, -2, 17));
     }
 
     public final void b(me meVar) {

@@ -1,42 +1,39 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.text.Editable;
-
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public final class ig1 extends org.telegram.ui.Cells.g3 {
-    public final /* synthetic */ int E;
-    public final /* synthetic */ UserInfoActivity F;
+public final /* synthetic */ class ig1 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ UserInfoActivity b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ ig1(UserInfoActivity userInfoActivity, Context context, String str, org.telegram.ui.ActionBar.u6 u6Var, int i10) {
-        super(context, str, false, false, -1, u6Var);
-        this.E = i10;
-        this.F = userInfoActivity;
+    public /* synthetic */ ig1(UserInfoActivity userInfoActivity, int i10) {
+        this.a = i10;
+        this.b = userInfoActivity;
     }
 
-    @Override // org.telegram.ui.Cells.g3
-    public final void b(Editable editable) {
-        switch (this.E) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
             case 0:
-                this.F.c0(true);
+                this.b.presentFragment(new PrivacyControlActivity(9, true));
                 break;
             case 1:
-                this.F.c0(true);
+                org.telegram.ui.Components.m71 m71Var = this.b.x;
+                if (m71Var != null) {
+                    m71Var.g3.O(true);
+                    break;
+                }
+                break;
+            case 2:
+                UserInfoActivity userInfoActivity = this.b;
+                userInfoActivity.getClass();
+                userInfoActivity.presentFragment(new PrivacyControlActivity(11, false));
                 break;
             default:
-                UserInfoActivity userInfoActivity = this.F;
-                userInfoActivity.c0(true);
-                userInfoActivity.f0();
+                UserInfoActivity userInfoActivity2 = this.b;
+                userInfoActivity2.getClass();
+                userInfoActivity2.presentFragment(new PremiumPreviewFragment(0, "add_account"));
                 break;
         }
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ig1(UserInfoActivity userInfoActivity, Context context, String str, int i10, org.telegram.ui.ActionBar.u6 u6Var) {
-        super(context, str, true, false, i10, u6Var);
-        this.E = 2;
-        this.F = userInfoActivity;
     }
 }

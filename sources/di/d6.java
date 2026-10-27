@@ -9,18 +9,18 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.dx;
-import org.telegram.ui.Components.p11;
+import org.telegram.ui.Components.q11;
 import org.telegram.ui.Components.s00;
 import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.en0;
-import org.telegram.ui.jf0;
-import org.telegram.ui.lj0;
-import org.telegram.ui.po0;
+import org.telegram.ui.bp;
+import org.telegram.ui.c71;
+import org.telegram.ui.gn0;
+import org.telegram.ui.lf0;
+import org.telegram.ui.nj0;
+import org.telegram.ui.ro0;
 import org.telegram.ui.ta;
-import org.telegram.ui.z61;
-import org.telegram.ui.zo;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class d6 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -62,7 +62,7 @@ public final /* synthetic */ class d6 implements RequestDelegate {
                 Paint paint = ta.H;
                 break;
             case 10:
-                int i10 = zo.j3;
+                int i10 = bp.j3;
                 break;
             case 11:
                 AndroidUtilities.runOnUIThread(new ag.c(25));
@@ -80,25 +80,25 @@ public final /* synthetic */ class d6 implements RequestDelegate {
                 AndroidUtilities.runOnUIThread(new ag.c(25));
                 break;
             case 16:
-                int i13 = p11.e;
+                int i13 = q11.e;
                 break;
             case 17:
-                int i14 = jf0.v0;
+                int i14 = lf0.v0;
                 break;
             case 18:
-                AndroidUtilities.runOnUIThread(new lj0(tLObject, 4));
+                AndroidUtilities.runOnUIThread(new nj0(tLObject, 4));
                 break;
             case 19:
-                int i15 = en0.R;
+                int i15 = gn0.R;
                 break;
             case 20:
-                List list = po0.g1;
+                List list = ro0.g1;
                 break;
             case 21:
                 int i16 = ProfileActivity.R6;
                 break;
             default:
-                int i17 = z61.e;
+                int i17 = c71.e;
                 break;
         }
     }

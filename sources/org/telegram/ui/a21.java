@@ -1,34 +1,13 @@
 package org.telegram.ui;
 
-import android.transition.Transition;
+import android.graphics.Canvas;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public final class a21 implements Transition.TransitionListener {
-    public final /* synthetic */ Runnable a;
-
-    public a21(Runnable runnable) {
-        this.a = runnable;
-    }
-
-    @Override // android.transition.Transition.TransitionListener
-    public final void onTransitionEnd(Transition transition) {
-        this.a.run();
-    }
-
-    @Override // android.transition.Transition.TransitionListener
-    public final void onTransitionCancel(Transition transition) {
-    }
-
-    @Override // android.transition.Transition.TransitionListener
-    public final void onTransitionPause(Transition transition) {
-    }
-
-    @Override // android.transition.Transition.TransitionListener
-    public final void onTransitionResume(Transition transition) {
-    }
-
-    @Override // android.transition.Transition.TransitionListener
-    public final void onTransitionStart(Transition transition) {
+public final class a21 extends org.telegram.ui.Components.hp0 {
+    @Override // org.telegram.ui.Components.hp0, android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        super.dispatchDraw(canvas);
+        invalidate();
     }
 }

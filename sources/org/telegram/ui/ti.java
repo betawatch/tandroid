@@ -1,85 +1,32 @@
 package org.telegram.ui;
 
-import android.util.SparseArray;
-import android.view.View;
-import java.util.ArrayList;
-import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.NotificationCenter;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public final class ti {
-    public boolean a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ SparseArray c;
-    public final /* synthetic */ un d;
+public final class ti implements NotificationCenter.NotificationCenterDelegate {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ai.h1 b;
+    public final /* synthetic */ wn c;
+    public final /* synthetic */ wn d;
 
-    public ti(un unVar, boolean z10, SparseArray sparseArray) {
-        this.d = unVar;
-        this.b = z10;
-        this.c = sparseArray;
+    public ti(wn wnVar, int i10, ai.h1 h1Var, wn wnVar2) {
+        this.d = wnVar;
+        this.a = i10;
+        this.b = h1Var;
+        this.c = wnVar2;
     }
 
-    public final boolean a(int i10) {
-        un unVar = this.d;
-        int i11 = i10 - unVar.A0.J;
-        if (i11 < 0 || i11 >= unVar.G6.size()) {
-            return false;
-        }
-        MessageObject messageObject = (MessageObject) unVar.G6.get(i11);
-        if (messageObject.contentType != 0) {
-            return false;
-        }
-        SparseArray sparseArray = this.c;
-        boolean z10 = this.b;
-        if (z10 || sparseArray.get(messageObject.getId(), null) != null) {
-            return z10 && sparseArray.get(messageObject.getId(), null) != null;
-        }
-        return true;
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:30:0x007c  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void b(int i10, boolean z10, float f7, float f10) {
-        s4.e1 K;
-        un unVar = this.d;
-        ArrayList arrayList = unVar.G6;
-        SparseArray[] sparseArrayArr = unVar.i6;
-        int i11 = i10 - unVar.A0.J;
-        if (this.b) {
-            z10 = !z10;
-        }
-        if (i11 < 0 || i11 >= arrayList.size()) {
-            return;
-        }
-        MessageObject messageObject = (MessageObject) arrayList.get(i11);
-        if (!z10 || (sparseArrayArr[0].indexOfKey(messageObject.getId()) < 0 && sparseArrayArr[1].indexOfKey(messageObject.getId()) < 0)) {
-            if ((z10 || sparseArrayArr[0].indexOfKey(messageObject.getId()) >= 0 || sparseArrayArr[1].indexOfKey(messageObject.getId()) >= 0) && messageObject.contentType == 0) {
-                if (z10) {
-                    if (sparseArrayArr[1].size() + sparseArrayArr[0].size() >= 100) {
-                        this.a = true;
-                        K = unVar.x0.K(i10);
-                        if (K != null) {
-                            View view = K.a;
-                            if (view instanceof org.telegram.ui.Cells.s1) {
-                                un.e2(unVar, view, false, f7, f10);
-                                return;
-                            }
-                        }
-                        unVar.C6(messageObject, false, true);
-                        unVar.qc();
-                        unVar.jd(false);
-                    }
-                }
-                this.a = false;
-                K = unVar.x0.K(i10);
-                if (K != null) {
-                }
-                unVar.C6(messageObject, false, true);
-                unVar.qc();
-                unVar.jd(false);
-            }
+    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
+    public final void didReceivedNotification(int i10, int i11, Object... objArr) {
+        int i12;
+        int i13 = NotificationCenter.messagesDidLoad;
+        if (i10 == i13 && ((Integer) objArr[10]).intValue() == this.a) {
+            this.b.run();
+            AndroidUtilities.runOnUIThread(new i2.b0(this.c, i10, i11, objArr), 50L);
+            i12 = ((org.telegram.ui.ActionBar.r2) this.d).currentAccount;
+            NotificationCenter.getInstance(i12).removeObserver(this, i13);
         }
     }
 }

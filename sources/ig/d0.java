@@ -29,18 +29,18 @@ import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.ActionBar.p2;
 import org.telegram.ui.ActionBar.r2;
 import org.telegram.ui.Cells.q3;
+import org.telegram.ui.Components.aa0;
 import org.telegram.ui.Components.s6;
 import org.telegram.ui.Components.wc;
-import org.telegram.ui.Components.z90;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PremiumPreviewFragment;
-import org.telegram.ui.ih1;
-import org.telegram.ui.jg;
-import org.telegram.ui.ni0;
-import org.telegram.ui.yx;
-import sg.v2;
+import org.telegram.ui.fx;
+import org.telegram.ui.ig;
+import org.telegram.ui.kh1;
+import org.telegram.ui.pi0;
+import sg.u2;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class d0 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -135,9 +135,9 @@ public final /* synthetic */ class d0 implements View.OnClickListener {
             case 9:
                 li.q qVar = (li.q) this.b;
                 qVar.K(0, true, 0, false, 0L);
-                ni0 ni0Var = qVar.O;
-                if (ni0Var != null) {
-                    ni0Var.g(true);
+                pi0 pi0Var = qVar.O;
+                if (pi0Var != null) {
+                    pi0Var.g(true);
                     qVar.O = null;
                     break;
                 }
@@ -192,13 +192,13 @@ public final /* synthetic */ class d0 implements View.OnClickListener {
                 }
                 break;
             case 14:
-                ih1 ih1Var = (ih1) this.b;
-                if (!ih1Var.a) {
-                    if (ih1Var.w != 0) {
-                        ih1Var.a(false, true);
+                kh1 kh1Var = (kh1) this.b;
+                if (!kh1Var.a) {
+                    if (kh1Var.w != 0) {
+                        kh1Var.a(false, true);
                         break;
                     } else {
-                        ((Activity) ih1Var.getContext()).startActivityForResult(((MediaProjectionManager) ih1Var.getContext().getSystemService("media_projection")).createScreenCaptureIntent(), 520);
+                        ((Activity) kh1Var.getContext()).startActivityForResult(((MediaProjectionManager) kh1Var.getContext().getSystemService("media_projection")).createScreenCaptureIntent(), 520);
                         break;
                     }
                 }
@@ -228,16 +228,16 @@ public final /* synthetic */ class d0 implements View.OnClickListener {
                 ((rg.y) this.b).dismiss();
                 break;
             case 18:
-                ((yx) this.b).run();
+                ((fx) this.b).run();
                 break;
             case 19:
-                ((v2) this.b).onBackPressed();
+                ((u2) this.b).onBackPressed();
                 break;
             case 20:
-                ((jg) this.b).run();
+                ((ig) this.b).run();
                 break;
             case 21:
-                ((z90) this.b).performClick();
+                ((aa0) this.b).performClick();
                 break;
             case 22:
                 tg.m1 m1Var = (tg.m1) this.b;

@@ -12,7 +12,7 @@ import org.telegram.ui.ActionBar.y6;
 import org.telegram.ui.Components.qc;
 import org.telegram.ui.Components.wc;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class c implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -31,19 +31,17 @@ public final /* synthetic */ class c implements Runnable {
     @Override // java.lang.Runnable
     public final void run() {
         String string;
-        boolean z10;
-        long j10;
-        int i10;
         File file;
+        int i10;
         switch (this.a) {
             case 0:
                 wc wcVar = (wc) this.c;
+                boolean z10 = this.b;
                 TLRPC.Chat chat = (TLRPC.Chat) this.d;
                 u6 u6Var = (u6) this.e;
                 int i11 = R.raw.star_premium_2;
-                boolean z11 = this.b;
-                String string2 = z11 ? LocaleController.getString("BoostingGiveawayCreated", R.string.BoostingGiveawayCreated) : LocaleController.getString("BoostingAwardsCreated", R.string.BoostingAwardsCreated);
-                if (z11) {
+                String string2 = z10 ? LocaleController.getString("BoostingGiveawayCreated", R.string.BoostingGiveawayCreated) : LocaleController.getString("BoostingAwardsCreated", R.string.BoostingAwardsCreated);
+                if (z10) {
                     string = LocaleController.getString(ChatObject.isChannelAndNotMegaGroup(chat) ? R.string.BoostingCheckStatistic : R.string.BoostingCheckStatisticGroup);
                 } else {
                     string = LocaleController.getString(ChatObject.isChannelAndNotMegaGroup(chat) ? R.string.BoostingCheckGiftsStatistic : R.string.BoostingCheckGiftsStatisticGroup);
@@ -53,67 +51,63 @@ public final /* synthetic */ class c implements Runnable {
                 M.j();
                 return;
             default:
-                vi.s0 s0Var = (vi.s0) this.c;
-                vi.v vVar = (vi.v) this.d;
-                vi.o0 o0Var = (vi.o0) this.e;
+                vi.u0 u0Var = (vi.u0) this.c;
+                vi.w wVar = (vi.w) this.d;
+                boolean z11 = this.b;
+                vi.q0 q0Var = (vi.q0) this.e;
+                long j10 = u0Var.q;
                 long nanoTime = System.nanoTime();
                 try {
-                    vVar.g();
-                    File file2 = vVar.a;
-                    long e = w7.x.e(file2) / 1000;
-                    s0Var.m.b("active output finalized: size=" + file2.length() + ", durationMs=" + e + ", elapsedMs=" + vi.s0.f(nanoTime));
-                    s0Var.g();
-                    long j11 = s0Var.o;
-                    if (e > j11) {
-                        z10 = true;
-                        j10 = j11;
-                        i10 = 1;
-                    } else {
-                        z10 = false;
-                        j10 = j11;
-                        i10 = 1;
-                    }
-                    long j12 = j10;
-                    boolean z12 = this.b;
-                    if (z12 && !z10) {
+                    wVar.g();
+                    long h = wVar.h();
+                    u0Var.m.b("active output finalized: size=" + wVar.a.length() + ", durationMs=" + h + ", elapsedMs=" + vi.u0.f(nanoTime));
+                    u0Var.g();
+                    boolean z12 = h > j10;
+                    if (z11 && !z12) {
                         try {
-                            s0Var.k.execute(new vi.f0(s0Var, o0Var, vVar.a, e, true));
+                            u0Var.k.execute(new vi.g0(u0Var, q0Var, wVar.a, h, true));
                             return;
-                        } catch (Exception e10) {
-                            e = e10;
-                            s0Var = s0Var;
-                            s0Var.i.post(new vi.d0(s0Var, e, 2));
+                        } catch (Exception e) {
+                            e = e;
+                            u0Var = u0Var;
+                            u0Var.i.post(new vi.e0(u0Var, e, 2));
                             return;
                         }
                     }
-                    File file3 = vVar.a;
+                    File file2 = wVar.a;
                     try {
-                        long min = Math.min(j12, e);
-                        int i12 = z10 ? i10 : 2;
-                        file = file3;
-                        try {
-                            s0Var.s(file, 0L, min, z12, i12);
-                            w7.x.c(file);
-                            return;
-                        } catch (Throwable th2) {
-                            th = th2;
-                            w7.x.c(file);
-                            throw th;
+                        synchronized (wVar) {
+                            file = file2;
+                            try {
+                                i10 = wVar.s;
+                            } catch (Throwable th2) {
+                                th = th2;
+                            }
                         }
                     } catch (Throwable th3) {
                         th = th3;
-                        file = file3;
+                        file = file2;
                     }
-                } catch (Exception e11) {
-                    e = e11;
+                    try {
+                        u0Var.t(file, i10, 0L, Math.min(j10, h), z11, z12 ? 1 : 2);
+                        w7.x.c(file);
+                        return;
+                    } catch (Throwable th4) {
+                        th = th4;
+                        file = file;
+                        w7.x.c(file);
+                        throw th;
+                    }
+                } catch (Exception e10) {
+                    e = e10;
                 }
         }
     }
 
-    public /* synthetic */ c(vi.s0 s0Var, vi.v vVar, boolean z10, vi.o0 o0Var) {
-        this.c = s0Var;
-        this.d = vVar;
+    public /* synthetic */ c(vi.u0 u0Var, vi.w wVar, boolean z10, vi.q0 q0Var) {
+        this.c = u0Var;
+        this.d = wVar;
         this.b = z10;
-        this.e = o0Var;
+        this.e = q0Var;
     }
 }

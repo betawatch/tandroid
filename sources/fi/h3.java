@@ -10,26 +10,26 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.R;
-import org.telegram.ui.Components.gb1;
-import org.telegram.ui.Components.mm0;
-import org.telegram.ui.Components.tl0;
-import org.telegram.ui.Components.vl0;
+import org.telegram.ui.Components.kb1;
+import org.telegram.ui.Components.nm0;
+import org.telegram.ui.Components.ul0;
+import org.telegram.ui.Components.wl0;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
-public final class h3 extends tl0 {
+public final class h3 extends ul0 {
     public final /* synthetic */ o3 c;
 
     public h3(o3 o3Var) {
         this.c = o3Var;
     }
 
-    @Override // org.telegram.ui.Components.lm0
+    @Override // org.telegram.ui.Components.mm0
     public final boolean D(s4.e1 e1Var) {
         return e1Var.f == 2;
     }
 
-    @Override // org.telegram.ui.Components.tl0
+    @Override // org.telegram.ui.Components.ul0
     public final String F(int i10) {
         MediaController.PhotoEntry photoEntry;
         int i11 = i10 - 2;
@@ -56,27 +56,27 @@ public final class h3 extends tl0 {
         return LocaleController.formatYearMont(j10, true);
     }
 
-    @Override // org.telegram.ui.Components.tl0
-    public final void G(mm0 mm0Var, float f7, int[] iArr) {
+    @Override // org.telegram.ui.Components.ul0
+    public final void G(nm0 nm0Var, float f7, int[] iArr) {
         int k10 = k();
-        float width = (mm0Var.getWidth() - mm0Var.getPaddingLeft()) - mm0Var.getPaddingRight();
+        float width = (nm0Var.getWidth() - nm0Var.getPaddingLeft()) - nm0Var.getPaddingRight();
         o3 o3Var = this.c;
         y2 y2Var = o3Var.e;
         float f10 = y2Var.J;
         int i10 = (int) (((int) (width / f10)) * o3Var.O);
         int ceil = (int) Math.ceil(k10 / f10);
-        float lerp = (AndroidUtilities.lerp(0, Math.max(0, r2 - ((AndroidUtilities.displaySize.y - mm0Var.getPaddingTop()) - mm0Var.getPaddingBottom())), f7) / (ceil * i10)) * ceil;
+        float lerp = (AndroidUtilities.lerp(0, Math.max(0, r2 - ((AndroidUtilities.displaySize.y - nm0Var.getPaddingTop()) - nm0Var.getPaddingBottom())), f7) / (ceil * i10)) * ceil;
         int round = Math.round(lerp);
         iArr[0] = Math.max(0, y2Var.J * round) + 2;
-        iArr[1] = mm0Var.getPaddingTop() + ((int) ((lerp - round) * i10));
+        iArr[1] = nm0Var.getPaddingTop() + ((int) ((lerp - round) * i10));
     }
 
-    @Override // org.telegram.ui.Components.tl0
-    public final float H(mm0 mm0Var) {
+    @Override // org.telegram.ui.Components.ul0
+    public final float H(nm0 nm0Var) {
         int k10 = k();
-        float width = (mm0Var.getWidth() - mm0Var.getPaddingLeft()) - mm0Var.getPaddingRight();
+        float width = (nm0Var.getWidth() - nm0Var.getPaddingLeft()) - nm0Var.getPaddingRight();
         float f7 = this.c.e.J;
-        return (Math.max(0, mm0Var.computeVerticalScrollOffset() - r2.getPadding()) - mm0Var.getPaddingTop()) / ((((int) Math.ceil(k10 / f7)) * ((int) (((int) (width / f7)) * r2.O))) - (AndroidUtilities.displaySize.y - mm0Var.getPaddingTop()));
+        return (Math.max(0, nm0Var.computeVerticalScrollOffset() - r2.getPadding()) - nm0Var.getPaddingTop()) / ((((int) Math.ceil(k10 / f7)) * ((int) (((int) (width / f7)) * r2.O))) - (AndroidUtilities.displaySize.y - nm0Var.getPaddingTop()));
     }
 
     @Override // s4.h0
@@ -178,13 +178,13 @@ public final class h3 extends tl0 {
             textView.setTextColor(-1);
             textView.setTypeface(AndroidUtilities.bold());
             textView.setText(o3Var.getTitle());
-            i4Var.addView(textView, gb1.h(-1, -1.0f, 119, 0.0f, 0.0f, z10 ? 32.0f : 0.0f, 0.0f));
+            i4Var.addView(textView, kb1.h(-1, -1.0f, 119, 0.0f, 0.0f, z10 ? 32.0f : 0.0f, 0.0f));
             o3Var.i0 = i4Var;
             view = i4Var;
         } else {
             view = new k3(o3Var.getContext(), o3Var.b, o3Var.O, o3Var.M);
         }
-        return new vl0(view);
+        return new wl0(view);
     }
 
     @Override // s4.h0

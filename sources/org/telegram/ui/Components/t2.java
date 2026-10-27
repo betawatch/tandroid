@@ -10,7 +10,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.SerializedData;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class t2 implements org.telegram.ui.ActionBar.b2 {
     public final /* synthetic */ int a;
@@ -62,7 +62,7 @@ public final /* synthetic */ class t2 implements org.telegram.ui.ActionBar.b2 {
                         MessagesController.getInstance(currentAccount).putUser(user, true);
                         Bundle bundle = new Bundle();
                         bundle.putLong("user_id", user.id);
-                        r2Var2.presentFragment(new org.telegram.ui.un(bundle));
+                        r2Var2.presentFragment(new org.telegram.ui.wn(bundle));
                         break;
                     } else {
                         org.telegram.ui.ActionBar.e2 e2Var2 = new org.telegram.ui.ActionBar.e2(r2Var2.getParentActivity(), 3, null);

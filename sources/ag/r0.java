@@ -36,17 +36,17 @@ import org.telegram.ui.ActionBar.r2;
 import org.telegram.ui.Cells.j1;
 import org.telegram.ui.Cells.s1;
 import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.aj;
+import org.telegram.ui.dj;
 import org.telegram.ui.fe;
-import org.telegram.ui.fn;
 import org.telegram.ui.ge;
-import org.telegram.ui.mm;
-import org.telegram.ui.ri;
-import org.telegram.ui.si;
+import org.telegram.ui.hn;
+import org.telegram.ui.om;
 import org.telegram.ui.t4;
-import org.telegram.ui.un;
+import org.telegram.ui.ui;
+import org.telegram.ui.vi;
+import org.telegram.ui.wn;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class r0 implements Runnable {
     public final /* synthetic */ int a;
@@ -248,49 +248,49 @@ public final /* synthetic */ class r0 implements Runnable {
                 geVar.c(i13);
                 break;
             case 22:
-                un unVar = ((ri) obj).g;
-                if (unVar.Sb == i13) {
-                    unVar.Va();
+                wn wnVar = ((ui) obj).g;
+                if (wnVar.Wb == i13) {
+                    wnVar.Ya();
                     break;
                 }
                 break;
             case 23:
-                un unVar2 = ((si) obj).g;
-                if (unVar2.Sb == i13) {
-                    unVar2.Va();
+                wn wnVar2 = ((vi) obj).g;
+                if (wnVar2.Wb == i13) {
+                    wnVar2.Ya();
                     break;
                 }
                 break;
             case 24:
-                ((aj) obj).a.j(this.b, 0, true, 0, true, 0);
+                ((dj) obj).a.j(this.b, 0, true, 0, true, 0);
                 break;
             case 25:
-                un unVar3 = ((ri) obj).g;
-                if (unVar3.Sb == i13) {
-                    unVar3.Va();
+                wn wnVar3 = ((ui) obj).g;
+                if (wnVar3.Wb == i13) {
+                    wnVar3.Ya();
                     break;
                 }
                 break;
             case 26:
-                un unVar4 = ((si) obj).g;
-                if (unVar4.Sb == i13) {
-                    unVar4.Va();
+                wn wnVar4 = ((vi) obj).g;
+                if (wnVar4.Wb == i13) {
+                    wnVar4.Ya();
                     break;
                 }
                 break;
             case 27:
-                un unVar5 = ((si) obj).g;
-                if (unVar5.Sb == i13) {
-                    unVar5.Va();
+                wn wnVar5 = ((vi) obj).g;
+                if (wnVar5.Wb == i13) {
+                    wnVar5.Ya();
                     break;
                 }
                 break;
             case 28:
-                un unVar6 = ((mm) obj).B0;
-                unVar6.z0.h1(i13, unVar6.K4);
+                wn wnVar6 = ((om) obj).B0;
+                wnVar6.z0.h1(i13, wnVar6.K4);
                 break;
             default:
-                i10 = ((r2) ((fn) obj).a).currentAccount;
+                i10 = ((r2) ((hn) obj).a).currentAccount;
                 ConnectionsManager.getInstance(i10).cancelRequest(i13, true);
                 break;
         }

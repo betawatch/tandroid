@@ -33,15 +33,15 @@ import java.util.Iterator;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.ActionBar.r2;
-import org.telegram.ui.Components.kx0;
+import org.telegram.ui.Components.lx0;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.Wallet.s4;
 import org.telegram.ui.Wallet.t4;
 import org.telegram.ui.Wallet.t7;
-import org.telegram.ui.un;
+import org.telegram.ui.wn;
 import tg.y0;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class d implements Runnable {
     public final /* synthetic */ int a;
@@ -143,7 +143,7 @@ public final /* synthetic */ class d implements Runnable {
                                 aVar.getClass();
                                 o0.h[] hVarArr = {d};
                                 sc scVar = i0.e.a;
-                                w7.a0.a("TypefaceCompat.createFromFontInfo");
+                                w7.b0.a("TypefaceCompat.createFromFontInfo");
                                 try {
                                     Typeface b10 = i0.e.a.b(context, hVarArr, 0);
                                     Trace.endSection();
@@ -222,14 +222,14 @@ public final /* synthetic */ class d implements Runnable {
                 if (wVar != null) {
                     wVar.d(true);
                 }
-                xVar.a.G7(true);
+                xVar.a.I7(true);
                 return;
             case 14:
                 ((ValueAnimator) this.b).start();
                 return;
             case 15:
                 r2 r2Var = ((bh.d0) this.b).g2.r;
-                if (r2Var instanceof un) {
+                if (r2Var instanceof wn) {
                     r2Var.showDialog(new y0(r2Var, 11, false));
                     return;
                 }
@@ -252,7 +252,7 @@ public final /* synthetic */ class d implements Runnable {
                 xVar2.a();
                 return;
             case 18:
-                new kx0(((q0) this.b).getContext()).show();
+                new lx0(((q0) this.b).getContext()).show();
                 return;
             case 19:
                 AndroidUtilities.showKeyboard(((b1) this.b).e0);

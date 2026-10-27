@@ -21,13 +21,13 @@ import org.telegram.ui.ActionBar.r2;
 import org.telegram.ui.ActionBar.y6;
 import org.telegram.ui.Cells.m6;
 import org.telegram.ui.Components.g5;
-import org.telegram.ui.Components.gb1;
-import org.telegram.ui.Components.j71;
 import org.telegram.ui.Components.j9;
-import org.telegram.ui.Components.r71;
-import org.telegram.ui.Components.t61;
+import org.telegram.ui.Components.k71;
+import org.telegram.ui.Components.kb1;
+import org.telegram.ui.Components.s71;
+import org.telegram.ui.Components.u61;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class f extends r2 implements NotificationCenter.NotificationCenterDelegate {
     public hh.c a;
@@ -35,20 +35,20 @@ public final class f extends r2 implements NotificationCenter.NotificationCenter
     public TLRPC.Chat c;
     public TLRPC.User d;
     public FrameLayout e;
-    public r71 f;
+    public s71 f;
     public e h;
     public ArrayList n;
     public NotificationCenter.ObserversGroup r;
 
-    public static void V(f fVar, t61 t61Var) {
+    public static void V(f fVar, u61 u61Var) {
         f fVar2;
-        if (t61Var.d == 1) {
+        if (u61Var.d == 1) {
             fVar2 = fVar;
             g5.Q(fVar.getParentActivity(), fVar2, LocaleController.getString(R.string.CommunityNewCommunityTitle), null, LocaleController.getString(R.string.CommunityNewCommunityNameHint), null, ConnectionsManager.DEFAULT_DATACENTER_ID, LocaleController.getString(R.string.Create), fVar.resourceProvider, new c(fVar));
         } else {
             fVar2 = fVar;
         }
-        Object obj = t61Var.G;
+        Object obj = u61Var.G;
         if (obj instanceof TLRPC.Chat) {
             TLRPC.Chat chat = (TLRPC.Chat) obj;
             fVar2.getMessagesController().getChat(Long.valueOf(-fVar2.b));
@@ -110,16 +110,16 @@ public final class f extends r2 implements NotificationCenter.NotificationCenter
                 this.h.a.f(chat, new j9(this.c));
             }
         }
-        r71 r71Var = new r71(this, new b(this, 0), new c(this), new c(this));
-        this.f = r71Var;
-        r71Var.setClipToPadding(false);
-        r71 r71Var2 = this.f;
-        j71 j71Var = r71Var2.g3;
-        j71Var.r = false;
-        j71Var.s = true;
-        r71Var2.u1();
-        this.e.addView(this.f, gb1.g(-1.0f, -1));
-        this.e.addView(this.actionBar, gb1.i(-1, -2, 48));
+        s71 s71Var = new s71(this, new b(this, 0), new c(this), new c(this));
+        this.f = s71Var;
+        s71Var.setClipToPadding(false);
+        s71 s71Var2 = this.f;
+        k71 k71Var = s71Var2.g3;
+        k71Var.r = false;
+        k71Var.s = true;
+        s71Var2.u1();
+        this.e.addView(this.f, kb1.g(-1.0f, -1));
+        this.e.addView(this.actionBar, kb1.i(-1, -2, 48));
         FrameLayout frameLayout2 = this.e;
         this.fragmentView = frameLayout2;
         return frameLayout2;

@@ -17,14 +17,14 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public final class t2 extends FrameLayout implements org.telegram.ui.Components.p01, org.telegram.ui.Cells.r9 {
-    public final h70 a;
+public final class t2 extends FrameLayout implements org.telegram.ui.Components.q01, org.telegram.ui.Cells.r9 {
+    public final j70 a;
     public final h4 b;
     public final s2 c;
     public a3 d;
-    public final org.telegram.ui.Components.q01 e;
+    public final org.telegram.ui.Components.r01 e;
     public int f;
     public int h;
     public int n;
@@ -32,34 +32,34 @@ public final class t2 extends FrameLayout implements org.telegram.ui.Components.
     public TL_iv.pageBlockTable s;
     public final androidx.emoji2.text.n v;
 
-    public t2(Context context, h70 h70Var, h4 h4Var) {
+    public t2(Context context, j70 j70Var, h4 h4Var) {
         super(context);
         this.v = new androidx.emoji2.text.n(this);
-        this.a = h70Var;
+        this.a = j70Var;
         this.b = h4Var;
-        s2 s2Var = new s2(this, context, h70Var);
+        s2 s2Var = new s2(this, context, j70Var);
         this.c = s2Var;
         float f7 = 18;
         s2Var.setPadding(AndroidUtilities.dp(f7), 0, AndroidUtilities.dp(f7), 0);
         s2Var.setClipToPadding(false);
-        addView(s2Var, org.telegram.ui.Components.gb1.g(-2.0f, -1));
-        org.telegram.ui.Components.q01 q01Var = new org.telegram.ui.Components.q01(context, this, ((j4) h70Var).P0);
-        this.e = q01Var;
-        q01Var.setOrientation(0);
-        q01Var.setRowOrderPreserved(true);
-        s2Var.addView(q01Var, new FrameLayout.LayoutParams(-2, -2));
+        addView(s2Var, org.telegram.ui.Components.kb1.g(-2.0f, -1));
+        org.telegram.ui.Components.r01 r01Var = new org.telegram.ui.Components.r01(context, this, ((j4) j70Var).P0);
+        this.e = r01Var;
+        r01Var.setOrientation(0);
+        r01Var.setRowOrderPreserved(true);
+        s2Var.addView(r01Var, new FrameLayout.LayoutParams(-2, -2));
         setWillNotDraw(false);
     }
 
     public final void a() {
         int i10 = this.d == null ? 0 : 1;
-        org.telegram.ui.Components.q01 q01Var = this.e;
-        int childCount = q01Var.getChildCount();
+        org.telegram.ui.Components.r01 r01Var = this.e;
+        int childCount = r01Var.getChildCount();
         for (int i11 = 0; i11 < childCount; i11++) {
-            org.telegram.ui.Components.j01 d = q01Var.d(i11);
-            org.telegram.ui.Components.i01 i01Var = d.b;
-            if (i01Var != null) {
-                i01Var.setX((AndroidUtilities.dp(18.0f) + (d.b() + this.f)) - this.c.getScrollX());
+            org.telegram.ui.Components.k01 d = r01Var.d(i11);
+            org.telegram.ui.Components.j01 j01Var = d.b;
+            if (j01Var != null) {
+                j01Var.setX((AndroidUtilities.dp(18.0f) + (d.b() + this.f)) - this.c.getScrollX());
                 d.b.setY(d.c() + this.h);
                 d.b.setRow(d.j + 10);
                 d.r = i10;
@@ -68,8 +68,8 @@ public final class t2 extends FrameLayout implements org.telegram.ui.Components.
         }
     }
 
-    @Override // org.telegram.ui.Components.p01
-    public final org.telegram.ui.Components.i01 createTextLayout(TL_iv.pageTableCell pagetablecell, int i10) {
+    @Override // org.telegram.ui.Components.q01
+    public final org.telegram.ui.Components.j01 createTextLayout(TL_iv.pageTableCell pagetablecell, int i10) {
         if (pagetablecell == null) {
             return null;
         }
@@ -93,12 +93,12 @@ public final class t2 extends FrameLayout implements org.telegram.ui.Components.
         if (a3Var != null) {
             arrayList.add(a3Var);
         }
-        org.telegram.ui.Components.q01 q01Var = this.e;
-        int childCount = q01Var.getChildCount();
+        org.telegram.ui.Components.r01 r01Var = this.e;
+        int childCount = r01Var.getChildCount();
         for (int i10 = 0; i10 < childCount; i10++) {
-            org.telegram.ui.Components.i01 i01Var = q01Var.d(i10).b;
-            if (i01Var != null) {
-                arrayList.add(i01Var);
+            org.telegram.ui.Components.j01 j01Var = r01Var.d(i10).b;
+            if (j01Var != null) {
+                arrayList.add(j01Var);
             }
         }
     }
@@ -107,17 +107,17 @@ public final class t2 extends FrameLayout implements org.telegram.ui.Components.
         return j4.u1;
     }
 
-    @Override // org.telegram.ui.Components.p01
+    @Override // org.telegram.ui.Components.q01
     public Paint getHeaderPaint() {
         return j4.v1;
     }
 
-    @Override // org.telegram.ui.Components.p01
+    @Override // org.telegram.ui.Components.q01
     public Paint getLinePaint() {
         return j4.t1;
     }
 
-    @Override // org.telegram.ui.Components.p01
+    @Override // org.telegram.ui.Components.q01
     public Paint getStripPaint() {
         return j4.w1;
     }
@@ -135,12 +135,12 @@ public final class t2 extends FrameLayout implements org.telegram.ui.Components.
         if (a3Var != null) {
             a3Var.attach(this);
         }
-        org.telegram.ui.Components.q01 q01Var = this.e;
-        int childCount = q01Var.getChildCount();
+        org.telegram.ui.Components.r01 r01Var = this.e;
+        int childCount = r01Var.getChildCount();
         for (int i10 = 0; i10 < childCount; i10++) {
-            org.telegram.ui.Components.i01 i01Var = q01Var.d(i10).b;
-            if (i01Var != null) {
-                i01Var.attach(this);
+            org.telegram.ui.Components.j01 j01Var = r01Var.d(i10).b;
+            if (j01Var != null) {
+                j01Var.attach(this);
             }
         }
     }
@@ -152,12 +152,12 @@ public final class t2 extends FrameLayout implements org.telegram.ui.Components.
         if (a3Var != null) {
             a3Var.detach(this);
         }
-        org.telegram.ui.Components.q01 q01Var = this.e;
-        int childCount = q01Var.getChildCount();
+        org.telegram.ui.Components.r01 r01Var = this.e;
+        int childCount = r01Var.getChildCount();
         for (int i10 = 0; i10 < childCount; i10++) {
-            org.telegram.ui.Components.i01 i01Var = q01Var.d(i10).b;
-            if (i01Var != null) {
-                i01Var.detach(this);
+            org.telegram.ui.Components.j01 j01Var = r01Var.d(i10).b;
+            if (j01Var != null) {
+                j01Var.detach(this);
             }
         }
     }
@@ -168,15 +168,15 @@ public final class t2 extends FrameLayout implements org.telegram.ui.Components.
             return;
         }
         a3 a3Var = this.d;
-        h70 h70Var = this.a;
+        j70 j70Var = this.a;
         if (a3Var != null) {
             canvas.save();
             canvas.translate(this.n, 0);
-            j4.v(h70Var, canvas, this, 0);
+            j4.v(j70Var, canvas, this, 0);
             this.d.draw(canvas, this);
             canvas.restore();
         }
-        j4.u(canvas, h70Var, this.s, getMeasuredHeight());
+        j4.u(canvas, j70Var, this.s, getMeasuredHeight());
     }
 
     @Override // android.view.View
@@ -208,27 +208,27 @@ public final class t2 extends FrameLayout implements org.telegram.ui.Components.
         }
     }
 
-    @Override // org.telegram.ui.Components.p01
-    public final void onLayoutChild(org.telegram.ui.Components.i01 i01Var, int i10, int i11) {
-        if (!(i01Var instanceof a3)) {
+    @Override // org.telegram.ui.Components.q01
+    public final void onLayoutChild(org.telegram.ui.Components.j01 j01Var, int i10, int i11) {
+        if (!(j01Var instanceof a3)) {
             return;
         }
-        h70 h70Var = this.a;
-        if (h70Var.E.isEmpty() || h70Var.F == null) {
+        j70 j70Var = this.a;
+        if (j70Var.E.isEmpty() || j70Var.F == null) {
             return;
         }
-        a3 a3Var = (a3) i01Var;
+        a3 a3Var = (a3) j01Var;
         String lowerCase = a3Var.d.getText().toString().toLowerCase();
         int i12 = 0;
         while (true) {
-            int indexOf = lowerCase.indexOf(h70Var.F, i12);
+            int indexOf = lowerCase.indexOf(j70Var.F, i12);
             if (indexOf < 0) {
                 return;
             }
-            int length = h70Var.F.length() + indexOf;
+            int length = j70Var.F.length() + indexOf;
             if (indexOf == 0 || AndroidUtilities.isPunctuationCharacter(lowerCase.charAt(indexOf - 1))) {
                 HashMap hashMap = this.b.y;
-                String str = h70Var.F + this.s + a3Var.r + indexOf;
+                String str = j70Var.F + this.s + a3Var.r + indexOf;
                 StaticLayout staticLayout = a3Var.d;
                 hashMap.put(str, Integer.valueOf(staticLayout.getLineTop(staticLayout.getLineForOffset(indexOf)) + i11));
             }
@@ -245,17 +245,17 @@ public final class t2 extends FrameLayout implements org.telegram.ui.Components.
         TL_iv.pageBlockTable pageblocktable = this.s;
         if (pageblocktable != null) {
             int i14 = pageblocktable.level;
-            h70 h70Var = this.a;
+            j70 j70Var = this.a;
             if (i14 > 0) {
                 int dp2 = AndroidUtilities.dp(i14 * 14);
                 this.f = dp2;
-                h70Var.getClass();
+                j70Var.getClass();
                 int dp3 = AndroidUtilities.dp(18) + dp2;
                 this.n = dp3;
                 dp = size - dp3;
             } else {
                 this.f = 0;
-                h70Var.getClass();
+                j70Var.getClass();
                 this.n = AndroidUtilities.dp(18);
                 dp = size - AndroidUtilities.dp(36);
             }
@@ -292,14 +292,14 @@ public final class t2 extends FrameLayout implements org.telegram.ui.Components.
     @Override // android.view.View
     public final boolean onTouchEvent(MotionEvent motionEvent) {
         MotionEvent motionEvent2;
-        org.telegram.ui.Components.q01 q01Var = this.e;
-        int childCount = q01Var.getChildCount();
+        org.telegram.ui.Components.r01 r01Var = this.e;
+        int childCount = r01Var.getChildCount();
         int i10 = 0;
         while (i10 < childCount) {
-            org.telegram.ui.Components.j01 d = q01Var.d(i10);
-            org.telegram.ui.Components.i01 i01Var = d.b;
-            if (i01Var instanceof a3) {
-                a3 a3Var = (a3) i01Var;
+            org.telegram.ui.Components.k01 d = r01Var.d(i10);
+            org.telegram.ui.Components.j01 j01Var = d.b;
+            if (j01Var instanceof a3) {
+                a3 a3Var = (a3) j01Var;
                 s2 s2Var = this.c;
                 MotionEvent motionEvent3 = motionEvent;
                 motionEvent2 = motionEvent3;
@@ -322,14 +322,14 @@ public final class t2 extends FrameLayout implements org.telegram.ui.Components.
         int i11 = org.telegram.ui.ActionBar.y6.d6;
         ((j4) this.a).getClass();
         AndroidUtilities.setScrollViewEdgeEffectColor(this.c, org.telegram.ui.ActionBar.y6.x0(null, i11, false));
-        org.telegram.ui.Components.q01 q01Var = this.e;
-        q01Var.P.clear();
-        q01Var.K.clear();
-        q01Var.h();
-        q01Var.setDrawLines(this.s.bordered);
-        q01Var.setStriped(this.s.striped);
+        org.telegram.ui.Components.r01 r01Var = this.e;
+        r01Var.P.clear();
+        r01Var.K.clear();
+        r01Var.h();
+        r01Var.setDrawLines(this.s.bordered);
+        r01Var.setStriped(this.s.striped);
         h4 h4Var = this.b;
-        q01Var.setRtl(h4Var != null && h4Var.G);
+        r01Var.setRtl(h4Var != null && h4Var.G);
         if (this.s.rows.isEmpty()) {
             i10 = 0;
         } else {
@@ -360,14 +360,14 @@ public final class t2 extends FrameLayout implements org.telegram.ui.Components.
                     i18 = 1;
                 }
                 if (pagetablecell.text != null) {
-                    q01Var.b(pagetablecell, i15, i14, i17);
+                    r01Var.b(pagetablecell, i15, i14, i17);
                 } else {
-                    q01Var.a(i15, i14, i17, i18);
+                    r01Var.a(i15, i14, i17, i18);
                 }
                 i15 += i17;
             }
         }
-        q01Var.setColumnCount(i10);
+        r01Var.setColumnCount(i10);
         this.r = true;
         requestLayout();
     }

@@ -6,10 +6,10 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class kc extends nb {
-    public final ak0 a;
+    public final bk0 a;
     public final s6 b;
     public final s6 c;
     public final int d;
@@ -19,15 +19,15 @@ public final class kc extends nb {
         int i10 = org.telegram.ui.ActionBar.y6.Hi;
         this.d = getThemedColor(i10);
         setBackground(getThemedColor(org.telegram.ui.ActionBar.y6.Fi));
-        ak0 ak0Var = new ak0(context);
-        this.a = ak0Var;
-        ak0Var.setScaleType(ImageView.ScaleType.CENTER);
-        addView(ak0Var, gb1.l(56.0f, 48.0f, 8388627));
+        bk0 bk0Var = new bk0(context);
+        this.a = bk0Var;
+        bk0Var.setScaleType(ImageView.ScaleType.CENTER);
+        addView(bk0Var, kb1.l(56.0f, 48.0f, 8388627));
         getThemedColor(i10);
         getThemedColor(org.telegram.ui.ActionBar.y6.Gi);
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setOrientation(1);
-        addView(linearLayout, gb1.m(-1.0f, -2.0f, 8388627, 52.0f, 8.0f, 8.0f, 8.0f));
+        addView(linearLayout, kb1.m(-1.0f, -2.0f, 8388627, 52.0f, 8.0f, 8.0f, 8.0f));
         s6 s6Var = new s6(context, true, true, true);
         this.b = s6Var;
         s6Var.setPadding(AndroidUtilities.dp(4.0f), 0, AndroidUtilities.dp(4.0f), 0);
@@ -35,7 +35,7 @@ public final class kc extends nb {
         s6Var.setTextSize(AndroidUtilities.dp(14.0f));
         s6Var.setTypeface(AndroidUtilities.bold());
         s6Var.setEllipsizeByGradient(true);
-        linearLayout.addView(s6Var, gb1.r(-1, 20));
+        linearLayout.addView(s6Var, kb1.r(-1, 20));
         s6 s6Var2 = new s6(context, true, true, true);
         this.c = s6Var2;
         s6Var2.setPadding(AndroidUtilities.dp(4.0f), 0, AndroidUtilities.dp(4.0f), 0);
@@ -43,14 +43,14 @@ public final class kc extends nb {
         s6Var2.setTypeface(Typeface.SANS_SERIF);
         s6Var2.setTextSize(AndroidUtilities.dp(13.0f));
         s6Var2.setEllipsizeByGradient(true);
-        linearLayout.addView(s6Var2, gb1.r(-1, 18));
+        linearLayout.addView(s6Var2, kb1.r(-1, 18));
     }
 
     public final void c(int i10, String... strArr) {
-        ak0 ak0Var = this.a;
-        ak0Var.f(i10, 32, 32, null);
+        bk0 bk0Var = this.a;
+        bk0Var.f(i10, 32, 32, null);
         for (String str : strArr) {
-            ak0Var.h(this.d, str);
+            bk0Var.h(this.d, str);
         }
     }
 

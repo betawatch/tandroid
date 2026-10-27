@@ -1,33 +1,18 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Utilities;
+import android.view.animation.Interpolator;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class rs0 implements Utilities.Callback {
+public final /* synthetic */ class rs0 implements Interpolator {
     public final /* synthetic */ int a;
-    public final /* synthetic */ aw0 b;
 
-    public /* synthetic */ rs0(aw0 aw0Var, int i10) {
-        this.a = i10;
-        this.b = aw0Var;
-    }
-
-    @Override // org.telegram.messenger.Utilities.Callback
-    public final void run(Object obj) {
-        int i10 = this.a;
-        int i11 = 18;
-        aw0 aw0Var = this.b;
-        di.a7 a7Var = (di.a7) obj;
-        switch (i10) {
-            case 0:
-                AndroidUtilities.runOnUIThread(new t90(i11, aw0Var, a7Var), 100L);
-                break;
-            default:
-                int[] iArr = aw0.p2;
-                AndroidUtilities.runOnUIThread(new t90(i11, aw0Var, a7Var), 100L);
-                break;
+    /* JADX WARN: Failed to find 'out' block for switch in B:2:0x0002. Please report as an issue. */
+    @Override // android.animation.TimeInterpolator
+    public final float getInterpolation(float f7) {
+        switch (this.a) {
         }
+        float f10 = f7 - 1.0f;
+        return (f10 * f10 * f10 * f10 * f10) + 1.0f;
     }
 }

@@ -13,9 +13,9 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.gb1;
+import org.telegram.ui.Components.kb1;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class u1 extends FrameLayout implements org.telegram.ui.ActionBar.p6 {
     public final TextView a;
@@ -34,7 +34,7 @@ public final class u1 extends FrameLayout implements org.telegram.ui.ActionBar.p
         int i10 = org.telegram.ui.ActionBar.y6.Fe;
         PorterDuff.Mode mode = PorterDuff.Mode.MULTIPLY;
         org.telegram.ui.ActionBar.f7.y(frameLayout, background, i10, u6Var, mode);
-        addView(frameLayout, gb1.h(-1, 27.0f, 51, 0.0f, 7.0f, 0.0f, 0.0f));
+        addView(frameLayout, kb1.h(-1, 27.0f, 51, 0.0f, 7.0f, 0.0f, 0.0f));
         ImageView imageView = new ImageView(context);
         this.b = imageView;
         imageView.setImageResource(R.drawable.ic_ab_new);
@@ -42,14 +42,14 @@ public final class u1 extends FrameLayout implements org.telegram.ui.ActionBar.p
         Integer valueOf = u6Var != null ? Integer.valueOf(u6Var.g(i11)) : null;
         imageView.setColorFilter(new PorterDuffColorFilter(valueOf != null ? valueOf.intValue() : org.telegram.ui.ActionBar.y6.x0(null, i11, false), mode));
         imageView.setPadding(0, AndroidUtilities.dp(2.0f), 0, 0);
-        frameLayout.addView(imageView, gb1.h(-2, -2.0f, 21, 0.0f, 0.0f, 10.0f, 0.0f));
+        frameLayout.addView(imageView, kb1.h(-2, -2.0f, 21, 0.0f, 0.0f, 10.0f, 0.0f));
         TextView textView = new TextView(context);
         this.a = textView;
         textView.setPadding(0, 0, 0, AndroidUtilities.dp(1.0f));
         textView.setTextSize(1, 14.0f);
         org.telegram.ui.ActionBar.f7.V(textView, org.telegram.ui.ActionBar.y6.Ee, u6Var);
         textView.setTypeface(AndroidUtilities.bold());
-        addView(textView, gb1.h(-2, -2.0f, 17, 32.0f, 0.0f, 32.0f, 0.0f));
+        addView(textView, kb1.h(-2, -2.0f, 17, 32.0f, 0.0f, 32.0f, 0.0f));
     }
 
     public FrameLayout getBackgroundLayout() {

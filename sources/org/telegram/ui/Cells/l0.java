@@ -7,9 +7,9 @@ import android.graphics.Path;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.mr0;
+import org.telegram.ui.Components.nr0;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class l0 extends Drawable {
     public final /* synthetic */ int a;
@@ -45,9 +45,9 @@ public final class l0 extends Drawable {
                 Rect bounds = getBounds();
                 float dp = AndroidUtilities.dp(25.0f);
                 float f7 = bounds.top;
-                mr0 mr0Var = (mr0) this.d;
-                float min = Math.min(f7, mr0Var.n - mr0Var.b.getY());
-                int themedColor = mr0Var.getThemedColor(org.telegram.ui.ActionBar.y6.h5);
+                nr0 nr0Var = (nr0) this.d;
+                float min = Math.min(f7, nr0Var.n - nr0Var.b.getY());
+                int themedColor = nr0Var.getThemedColor(org.telegram.ui.ActionBar.y6.h5);
                 Paint paint2 = this.b;
                 paint2.setColor(themedColor);
                 Path path = (Path) this.c;
@@ -89,9 +89,9 @@ public final class l0 extends Drawable {
         }
     }
 
-    public l0(mr0 mr0Var) {
+    public l0(nr0 nr0Var) {
         this.a = 1;
-        this.d = mr0Var;
+        this.d = nr0Var;
         this.b = new Paint(1);
         this.c = new Path();
     }

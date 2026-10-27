@@ -13,9 +13,9 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.ds;
 import org.telegram.ui.Components.r6;
 import org.telegram.ui.d3;
-import org.telegram.ui.fc1;
+import org.telegram.ui.hc1;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class b extends View {
     public final r6 a;
@@ -62,7 +62,7 @@ public final class b extends View {
             ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
             this.c = ofFloat;
             ofFloat.addUpdateListener(new e4(this, 29));
-            this.c.addListener(new fc1(this, 23));
+            this.c.addListener(new hc1(this, 23));
             d3.m(2.0f, this.c);
             this.c.setDuration(200L);
             this.c.start();

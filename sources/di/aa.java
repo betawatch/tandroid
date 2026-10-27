@@ -6,9 +6,9 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.xj0;
+import org.telegram.ui.Components.yj0;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class aa extends z9 {
     public final e9 a;
@@ -39,7 +39,7 @@ public final class aa extends z9 {
         org.telegram.ui.Components.t5 t5Var = n0Var.b;
         ImageReceiver imageReceiver = t5Var != null ? t5Var.k : n0Var.a;
         if (imageReceiver != null && imageReceiver.hasImageSet() && imageReceiver.hasImageLoaded()) {
-            xj0 lottieAnimation = imageReceiver.getLottieAnimation();
+            yj0 lottieAnimation = imageReceiver.getLottieAnimation();
             if (lottieAnimation == null || !lottieAnimation.y()) {
                 da daVar = this.d;
                 double d = daVar.b;

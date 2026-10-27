@@ -7,7 +7,7 @@ import android.widget.FrameLayout;
 import android.widget.PopupWindow;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class md extends PopupWindow {
     public final lh.e a;
@@ -20,11 +20,11 @@ public final class md extends PopupWindow {
     public Runnable h;
     public final bi.i6 i;
 
-    public md(org.telegram.ui.lk lkVar, org.telegram.ui.ActionBar.u6 u6Var, ch.b bVar) {
-        super(lkVar.getContext());
+    public md(org.telegram.ui.nk nkVar, org.telegram.ui.ActionBar.u6 u6Var, ch.b bVar) {
+        super(nkVar.getContext());
         this.i = new bi.i6(this, 8);
-        this.a = lkVar;
-        this.b = lkVar.getContainer();
+        this.a = nkVar;
+        this.b = nkVar.getContainer();
         this.d = u6Var;
         ld ldVar = new ld(this, bVar);
         this.c = ldVar;
@@ -35,7 +35,7 @@ public final class md extends PopupWindow {
         setClippingEnabled(true);
         setInputMethodMode(2);
         setAnimationStyle(0);
-        setOnDismissListener(new org.telegram.ui.ActionBar.c0(1, this, lkVar));
+        setOnDismissListener(new org.telegram.ui.ActionBar.c0(1, this, nkVar));
     }
 
     public final void b(int i10, String str, boolean z10, Runnable runnable) {
@@ -45,7 +45,7 @@ public final class md extends PopupWindow {
         g1Var.c(z10 ? org.telegram.ui.ActionBar.y6.p7 : org.telegram.ui.ActionBar.y6.E8, z10 ? org.telegram.ui.ActionBar.y6.p7 : org.telegram.ui.ActionBar.y6.F8);
         g1Var.h(0.12f, z10 ? org.telegram.ui.ActionBar.y6.p7 : org.telegram.ui.ActionBar.y6.E8);
         g1Var.setOnClickListener(new ga(2, this, runnable));
-        this.c.a.addView(g1Var, gb1.r(-1, 48));
+        this.c.a.addView(g1Var, kb1.r(-1, 48));
     }
 
     public final void c(float f7) {

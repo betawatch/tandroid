@@ -14,13 +14,13 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.vh;
+import org.telegram.messenger.wh;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.wc;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class q9 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -108,9 +108,9 @@ public final /* synthetic */ class q9 implements Utilities.Callback {
                     if (!z10) {
                         TL_stories.TL_peerStories tL_peerStories = new TL_stories.TL_peerStories();
                         tL_peerStories.peer = MessagesController.getInstance(i11).getPeer(j10);
-                        storiesController.b0(j10, tL_peerStories);
+                        storiesController.e0(j10, tL_peerStories);
                         arrayList2.add(0, tL_peerStories);
-                        storiesController.O(j10);
+                        storiesController.R(j10);
                     }
                 }
                 g7Var.d();
@@ -176,7 +176,7 @@ public final /* synthetic */ class q9 implements Utilities.Callback {
                 }
                 sbVar5.X0.x(2, bool.booleanValue());
                 sbVar5.Y0.clearAnimation();
-                vh.p(sbVar5.Y0.animate(), bool.booleanValue() ? 0.0f : 1.0f, 120L);
+                wh.p(sbVar5.Y0.animate(), bool.booleanValue() ? 0.0f : 1.0f, 120L);
                 org.telegram.ui.Components.qc qcVar = org.telegram.ui.Components.qc.x;
                 if (qcVar != null && qcVar.a == 2) {
                     qcVar.l();

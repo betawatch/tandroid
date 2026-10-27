@@ -14,19 +14,19 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_bots;
 import org.telegram.ui.ActionBar.f7;
 import org.telegram.ui.ActionBar.y6;
-import org.telegram.ui.Components.gb1;
-import org.telegram.ui.Components.lm0;
-import org.telegram.ui.Components.vl0;
+import org.telegram.ui.Components.kb1;
+import org.telegram.ui.Components.mm0;
+import org.telegram.ui.Components.wl0;
 import org.telegram.ui.Components.zq;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
-public final class h0 extends lm0 {
+public final class h0 extends mm0 {
     public ArrayList c;
     public ArrayList d;
     public ArrayList e;
 
-    @Override // org.telegram.ui.Components.lm0
+    @Override // org.telegram.ui.Components.mm0
     public final boolean D(s4.e1 e1Var) {
         return true;
     }
@@ -91,15 +91,15 @@ public final class h0 extends lm0 {
         mdVar.setTag(Integer.valueOf(i11));
         mdVar.setMaxLines(2);
         mdVar.setEllipsize(TextUtils.TruncateAt.END);
-        g0Var.addView(mdVar, gb1.t(-1, -2, 1.0f, 16, 0, 0, AndroidUtilities.dp(8.0f), 0));
+        g0Var.addView(mdVar, kb1.t(-1, -2, 1.0f, 16, 0, 0, AndroidUtilities.dp(8.0f), 0));
         TextView textView = new TextView(context);
         g0Var.a = textView;
         textView.setTextSize(1, 14.0f);
         int i12 = y6.y6;
         f7.V(textView, i12, null);
         textView.setTag(Integer.valueOf(i12));
-        g0Var.addView(textView, gb1.s(-2, -2, 0.0f, 16));
+        g0Var.addView(textView, kb1.s(-2, -2, 0.0f, 16));
         g0Var.setLayoutParams(new s4.q0(-1, -2));
-        return new vl0(g0Var);
+        return new wl0(g0Var);
     }
 }

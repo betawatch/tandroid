@@ -8,11 +8,11 @@ import java.util.Random;
 import org.telegram.tgnet.ResultCallback;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.ju;
-import org.telegram.ui.Components.uc0;
-import org.telegram.ui.on;
-import org.telegram.ui.sn;
+import org.telegram.ui.Components.vc0;
+import org.telegram.ui.qn;
+import org.telegram.ui.un;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class o2 implements org.telegram.ui.ActionBar.b2, ResultCallback {
     public final /* synthetic */ boolean a;
@@ -36,37 +36,37 @@ public final /* synthetic */ class o2 implements org.telegram.ui.ActionBar.b2, R
 
     @Override // org.telegram.tgnet.ResultCallback
     public void onComplete(Object obj) {
-        sn snVar = (sn) this.c;
+        un unVar = (un) this.c;
         org.telegram.ui.ActionBar.h4 h4Var = (org.telegram.ui.ActionBar.h4) this.d;
-        uc0 uc0Var = (uc0) this.e;
+        vc0 vc0Var = (vc0) this.e;
         Pair pair = (Pair) obj;
         if (pair == null) {
             return;
         }
         long longValue = ((Long) pair.first).longValue();
         Bitmap bitmap = ((fg.a) pair.second).b;
-        org.telegram.ui.ActionBar.h4 h4Var2 = snVar.f;
-        if (h4Var2 == null || longValue != h4Var2.h(snVar.q ? 1 : 0) || bitmap == null) {
+        org.telegram.ui.ActionBar.h4 h4Var2 = unVar.f;
+        if (h4Var2 == null || longValue != h4Var2.h(unVar.q ? 1 : 0) || bitmap == null) {
             return;
         }
-        ValueAnimator valueAnimator = snVar.i;
+        ValueAnimator valueAnimator = unVar.i;
         if (valueAnimator != null) {
             valueAnimator.cancel();
         }
         int i10 = h4Var.j(this.a ? 1 : 0).settings.intensity;
         List list = ((fg.a) pair.second).c;
-        uc0Var.R = list;
-        long j10 = snVar.F.db;
+        vc0Var.R = list;
+        long j10 = unVar.F.hb;
         if (list != null) {
-            uc0Var.S = new Random(j10).nextInt(uc0Var.R.size());
+            vc0Var.S = new Random(j10).nextInt(vc0Var.R.size());
         }
-        uc0Var.s(bitmap, i10);
-        uc0Var.t(this.b);
+        vc0Var.s(bitmap, i10);
+        vc0Var.t(this.b);
         ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
-        snVar.i = ofFloat;
-        ofFloat.addUpdateListener(new on(uc0Var, 2));
-        snVar.i.setDuration(250L);
-        snVar.i.start();
+        unVar.i = ofFloat;
+        ofFloat.addUpdateListener(new qn(vc0Var, 2));
+        unVar.i.setDuration(250L);
+        unVar.i.start();
     }
 
     @Override // org.telegram.tgnet.ResultCallback
@@ -74,11 +74,11 @@ public final /* synthetic */ class o2 implements org.telegram.ui.ActionBar.b2, R
         org.telegram.tgnet.k.a(this, th2);
     }
 
-    public /* synthetic */ o2(sn snVar, org.telegram.ui.ActionBar.h4 h4Var, boolean z10, uc0 uc0Var, int i10) {
-        this.c = snVar;
+    public /* synthetic */ o2(un unVar, org.telegram.ui.ActionBar.h4 h4Var, boolean z10, vc0 vc0Var, int i10) {
+        this.c = unVar;
         this.d = h4Var;
         this.a = z10;
-        this.e = uc0Var;
+        this.e = vc0Var;
         this.b = i10;
     }
 

@@ -51,14 +51,14 @@ import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.k3;
 import org.telegram.ui.ActionBar.r2;
-import org.telegram.ui.Components.dh0;
-import org.telegram.ui.Components.h81;
-import org.telegram.ui.Components.j71;
-import org.telegram.ui.Components.r71;
-import org.telegram.ui.Components.t61;
+import org.telegram.ui.Components.eh0;
+import org.telegram.ui.Components.i81;
+import org.telegram.ui.Components.k71;
+import org.telegram.ui.Components.s71;
+import org.telegram.ui.Components.u61;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class i implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -80,7 +80,7 @@ public final /* synthetic */ class i implements Utilities.Callback {
     public final void run(Object obj) {
         String str;
         String str2;
-        j71 j71Var;
+        k71 k71Var;
         int i10 = 2;
         int i11 = 0;
         switch (this.a) {
@@ -223,7 +223,7 @@ public final /* synthetic */ class i implements Utilities.Callback {
             case 11:
                 y9 y9Var = (y9) this.b;
                 y9Var.k1 = false;
-                y9Var.P();
+                y9Var.Q();
                 break;
             case 12:
                 t5 t5Var = (t5) obj;
@@ -306,7 +306,7 @@ public final /* synthetic */ class i implements Utilities.Callback {
                 if (view2 instanceof j4) {
                     f4Var.getClass();
                     int R = RecyclerView.R(view2);
-                    t61 G = f4Var.g3.G(R);
+                    u61 G = f4Var.g3.G(R);
                     if (G != null) {
                         j4 j4Var = (j4) view2;
                         j4Var.setPosition(k4Var.b(R));
@@ -340,7 +340,7 @@ public final /* synthetic */ class i implements Utilities.Callback {
                 if (w7Var != null && sbVar.O1 != 1) {
                     boolean isEmpty = TextUtils.isEmpty(w7Var.y);
                     boolean z10 = !isEmpty;
-                    ((dh0) sbVar.j1.c).a(!sbVar.X0.k(), false);
+                    ((eh0) sbVar.j1.c).a(!sbVar.X0.k(), false);
                     sbVar.j1.setVisibility(0);
                     sbVar.j1.animate().alpha(!isEmpty ? 1.0f : 0.0f).withEndAction(new bh.n(9, taVar, z10)).start();
                 }
@@ -363,9 +363,9 @@ public final /* synthetic */ class i implements Utilities.Callback {
                 break;
             case 23:
                 v7 v7Var = (v7) obj;
-                h81 h81Var = ((o6) this.b).n;
-                if (h81Var != null) {
-                    h81Var.setHDRInfo(v7Var);
+                i81 i81Var = ((o6) this.b).n;
+                if (i81Var != null) {
+                    i81Var.setHDRInfo(v7Var);
                     break;
                 }
                 break;
@@ -374,10 +374,10 @@ public final /* synthetic */ class i implements Utilities.Callback {
                 break;
             case 25:
                 f8 f8Var = (f8) this.b;
-                sg.o0 o0Var = (sg.o0) obj;
-                if (o0Var != null) {
-                    f8Var.o0 = o0Var.e;
-                    f8Var.n0 = o0Var.f;
+                sg.n0 n0Var = (sg.n0) obj;
+                if (n0Var != null) {
+                    f8Var.o0 = n0Var.e;
+                    f8Var.n0 = n0Var.f;
                     break;
                 } else {
                     f8Var.U();
@@ -394,9 +394,9 @@ public final /* synthetic */ class i implements Utilities.Callback {
                 ArrayList arrayList5 = a0Var.b;
                 arrayList5.clear();
                 arrayList5.addAll((ArrayList) obj);
-                r71 r71Var = a0Var.a;
-                if (r71Var != null && (j71Var = r71Var.g3) != null) {
-                    j71Var.O(true);
+                s71 s71Var = a0Var.a;
+                if (s71Var != null && (k71Var = s71Var.g3) != null) {
+                    k71Var.O(true);
                     break;
                 }
                 break;

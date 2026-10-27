@@ -7,7 +7,7 @@ import java.io.File;
 import java.util.HashMap;
 import java.util.HashSet;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
 final class AudioRecorderV2Controller {
     private boolean finishRequested;
@@ -20,7 +20,7 @@ final class AudioRecorderV2Controller {
     private final HashSet<Long> deliveredOutputIds = new HashSet<>();
     private ui.m previousState = ui.m.a;
 
-    /* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+    /* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
     public interface Listener {
         void onCompleted(ui.l lVar);
 
@@ -301,7 +301,7 @@ final class AudioRecorderV2Controller {
         return false;
     }
 
-    /* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+    /* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
     public class 2 implements ui.k {
         final /* synthetic */ Listener val$listener;
 

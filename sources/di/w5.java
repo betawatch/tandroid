@@ -3,10 +3,10 @@ package di;
 import android.animation.ValueAnimator;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.ei0;
-import org.telegram.ui.Components.wd0;
+import org.telegram.ui.Components.fi0;
+import org.telegram.ui.Components.xd0;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class w5 implements a5.i {
     public final /* synthetic */ int a;
@@ -21,14 +21,14 @@ public final class w5 implements a5.i {
     public final void a(int i10) {
         switch (this.a) {
             case 1:
-                wd0 wd0Var = (wd0) this.b;
-                a5.i iVar = wd0Var.c;
+                xd0 xd0Var = (xd0) this.b;
+                a5.i iVar = xd0Var.c;
                 if (iVar != null) {
                     iVar.a(i10);
                 }
                 int i11 = 0;
-                while (i11 < wd0Var.d.getChildCount()) {
-                    wd0Var.d.getChildAt(i11).setSelected(i11 == i10);
+                while (i11 < xd0Var.d.getChildCount()) {
+                    xd0Var.d.getChildAt(i11).setSelected(i11 == i10);
                     i11++;
                 }
                 break;
@@ -69,13 +69,13 @@ public final class w5 implements a5.i {
                 }
                 break;
             case 1:
-                wd0 wd0Var = (wd0) this.b;
-                wd0Var.h = i10;
-                wd0Var.n = f7;
-                if (wd0Var.d.getChildAt(i10) != null) {
-                    wd0.a(wd0Var, i10, (int) (wd0Var.d.getChildAt(i10).getWidth() * f7));
-                    wd0Var.invalidate();
-                    a5.i iVar = wd0Var.c;
+                xd0 xd0Var = (xd0) this.b;
+                xd0Var.h = i10;
+                xd0Var.n = f7;
+                if (xd0Var.d.getChildAt(i10) != null) {
+                    xd0.a(xd0Var, i10, (int) (xd0Var.d.getChildAt(i10).getWidth() * f7));
+                    xd0Var.invalidate();
+                    a5.i iVar = xd0Var.c;
                     if (iVar != null) {
                         iVar.b(f7, i10, i11);
                         break;
@@ -83,23 +83,23 @@ public final class w5 implements a5.i {
                 }
                 break;
             default:
-                ei0 ei0Var = (ei0) this.b;
-                if (!ei0Var.a && Math.abs(i10 - ei0Var.w) == 1) {
-                    int i12 = ei0Var.w;
+                fi0 fi0Var = (fi0) this.b;
+                if (!fi0Var.a && Math.abs(i10 - fi0Var.w) == 1) {
+                    int i12 = fi0Var.w;
                     if (i10 > i12) {
-                        ei0.a(ei0Var, 0, 1, 1);
+                        fi0.a(fi0Var, 0, 1, 1);
                     } else if (i10 < i12) {
-                        ei0.a(ei0Var, 1, 0, 0);
-                        ei0.a(ei0Var, 2, 0, -1);
+                        fi0.a(fi0Var, 1, 0, 0);
+                        fi0.a(fi0Var, 2, 0, -1);
                     }
                 }
-                int i13 = ei0Var.w;
-                int i14 = ei0Var.x;
-                ei0Var.w = i10;
-                ei0Var.x = i11;
+                int i13 = fi0Var.w;
+                int i14 = fi0Var.x;
+                fi0Var.w = i10;
+                fi0Var.x = i11;
                 if (i13 != i10 || i14 != i11) {
-                    ei0Var.H = true;
-                    ei0Var.postInvalidateOnAnimation();
+                    fi0Var.H = true;
+                    fi0Var.postInvalidateOnAnimation();
                     break;
                 }
                 break;
@@ -117,11 +117,11 @@ public final class w5 implements a5.i {
                 }
                 break;
             case 1:
-                wd0 wd0Var = (wd0) this.b;
+                xd0 xd0Var = (xd0) this.b;
                 if (i10 == 0) {
-                    wd0.a(wd0Var, wd0Var.e.getCurrentItem(), 0);
+                    xd0.a(xd0Var, xd0Var.e.getCurrentItem(), 0);
                 }
-                a5.i iVar = wd0Var.c;
+                a5.i iVar = xd0Var.c;
                 if (iVar != null) {
                     iVar.c(i10);
                     break;

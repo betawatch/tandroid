@@ -1,37 +1,26 @@
 package org.telegram.ui;
 
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.view.View;
-import java.util.HashSet;
-import org.telegram.messenger.FileLog;
+import java.util.TimerTask;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public final class fn0 extends View implements org.telegram.ui.ActionBar.p6 {
-    public Paint a;
-    public Paint b;
-    public float c;
+public final class fn0 extends TimerTask {
+    public final /* synthetic */ gn0 a;
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        float measuredWidth = (int) (getMeasuredWidth() * this.c);
-        canvas.drawRect(0.0f, 0.0f, measuredWidth, getMeasuredHeight(), this.b);
-        canvas.drawRect(measuredWidth, 0.0f, getMeasuredWidth(), getMeasuredHeight(), this.a);
+    public fn0(gn0 gn0Var) {
+        this.a = gn0Var;
     }
 
-    @Override // org.telegram.ui.ActionBar.p6
-    public final void updateColors() {
-        try {
-            this.a.setColor(org.telegram.ui.ActionBar.y6.x0(null, org.telegram.ui.ActionBar.y6.gi, false));
-            this.b.setColor(org.telegram.ui.ActionBar.y6.x0(null, org.telegram.ui.ActionBar.y6.hi, false));
-            invalidate();
-        } catch (Exception e) {
-            FileLog.e(e);
+    @Override // java.util.TimerTask, java.lang.Runnable
+    public final void run() {
+        gn0 gn0Var = this.a;
+        if (gn0Var.v == null) {
+            return;
         }
-    }
-
-    @Override // org.telegram.ui.ActionBar.p6
-    public final /* synthetic */ void addColorKeys(HashSet hashSet) {
+        double currentTimeMillis = System.currentTimeMillis();
+        gn0Var.y = (int) (gn0Var.y - (currentTimeMillis - gn0Var.F));
+        gn0Var.F = currentTimeMillis;
+        AndroidUtilities.runOnUIThread(new nj0(this, 8));
     }
 }

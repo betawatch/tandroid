@@ -1,569 +1,471 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Rect;
-import android.opengl.GLES20;
-import android.os.SystemClock;
-import android.util.Log;
+import android.animation.ValueAnimator;
+import android.content.Context;
+import android.content.res.Configuration;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.graphics.RectF;
+import android.graphics.drawable.Drawable;
+import android.text.TextUtils;
 import android.view.MotionEvent;
 import android.view.View;
-import android.view.animation.AnimationUtils;
 import androidx.recyclerview.widget.RecyclerView;
-import java.nio.Buffer;
-import java.nio.FloatBuffer;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.List;
-import java.util.RandomAccess;
-import java.util.WeakHashMap;
+import java.util.HashSet;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLog;
+import org.telegram.messenger.R;
+import org.telegram.messenger.UserConfig;
+import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.ui.LaunchActivity;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public final class cy0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final Object b;
+public abstract class cy0 extends nm0 implements org.telegram.ui.ActionBar.p6 {
+    public static final ay0 F3 = new ay0();
+    public static final by0 G3 = new by0();
+    public final h6 A3;
+    public final RectF B3;
+    public final RectF C3;
+    public final RectF D3;
+    public boolean E3;
+    public float f3;
+    public yx0[] g3;
+    public final tx0 h3;
+    public final h6 i3;
+    public Drawable j3;
+    public Drawable k3;
+    public Paint l3;
+    public final Paint m3;
+    public int n3;
+    public int o3;
+    public Utilities.Callback p3;
+    public Utilities.Callback q3;
+    public boolean r3;
+    public boolean s3;
+    public bi.cc t3;
+    public int u3;
+    public Utilities.Callback v3;
+    public float w3;
+    public ValueAnimator x3;
+    public boolean y3;
+    public final h6 z3;
 
-    public /* synthetic */ cy0(Object obj, int i10) {
-        this.a = i10;
-        this.b = obj;
+    static {
+        new HashSet();
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:43:0x0206  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    private final void a() {
-        float f7;
-        float f10;
-        int i10;
-        rg.a1 a1Var = (rg.a1) this.b;
-        if (!a1Var.f || a1Var.y.y) {
-            return;
-        }
-        rg.a1.b(a1Var);
-        GLES20.glBindFramebuffer(36160, 0);
-        rg.a1 a1Var2 = (rg.a1) this.b;
-        GLES20.glViewport(0, 0, a1Var2.n, a1Var2.r);
-        GLES20.glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
-        GLES20.glClear(16384);
-        rg.q0 q0Var = ((rg.a1) this.b).y.c;
-        if (q0Var.r != null) {
-            if (q0Var.D != null && q0Var.F != null && q0Var.E) {
-                GLES20.glBindFramebuffer(36160, 0);
-                rg.d1 d1Var = (rg.d1) q0Var.r.get("videoBlur");
-                if (d1Var != null) {
-                    GLES20.glUseProgram(d1Var.a);
-                    GLES20.glUniformMatrix4fv(d1Var.d("mvpMatrix"), 1, false, FloatBuffer.wrap(q0Var.y));
-                    GLES20.glUniform1f(d1Var.d("flipy"), 0.0f);
-                    GLES20.glUniform1i(d1Var.d("texture"), 0);
-                    GLES20.glActiveTexture(33984);
-                    GLES20.glBindTexture(3553, q0Var.D.c());
-                    GLES20.glTexParameteri(3553, 10241, 9729);
-                    GLES20.glUniform1i(d1Var.d("blured"), 1);
-                    GLES20.glActiveTexture(33985);
-                    ra raVar = q0Var.F.m;
-                    GLES20.glBindTexture(3553, raVar != null ? raVar.s[2] : -1);
-                    if (q0Var.b == null || !(q0Var.i instanceof rg.d)) {
-                        GLES20.glUniform1f(d1Var.d("eraser"), 0.0f);
-                    } else {
-                        GLES20.glUniform1f(d1Var.d("eraser"), 1.0f);
-                        GLES20.glUniform1i(d1Var.d("mask"), 2);
-                        GLES20.glActiveTexture(33986);
-                        GLES20.glBindTexture(3553, q0Var.g());
-                    }
-                    GLES20.glBlendFunc(1, 0);
-                    GLES20.glVertexAttribPointer(0, 2, 5126, false, 8, (Buffer) q0Var.m);
-                    GLES20.glEnableVertexAttribArray(0);
-                    GLES20.glVertexAttribPointer(1, 2, 5126, false, 8, (Buffer) q0Var.n);
-                    GLES20.glEnableVertexAttribArray(1);
-                    synchronized (q0Var.F.h) {
-                        GLES20.glDrawArrays(5, 0, 4);
-                    }
-                }
-            }
-            if (q0Var.b != null) {
-                q0Var.n(q0Var.g(), q0Var.b, (1.0f - (q0Var.I * 0.5f)) - (q0Var.J * 0.5f));
-            } else if (q0Var.c != null) {
-                q0Var.o(q0Var.j(), q0Var.g(), q0Var.c, 1.0f);
+    public cy0(Context context, int i10, org.telegram.ui.ActionBar.u6 u6Var) {
+        super(context, u6Var);
+        this.f3 = 6.5f;
+        this.g3 = null;
+        ds dsVar = ds.h;
+        this.i3 = new h6(this, 360L, dsVar);
+        Paint paint = new Paint(1);
+        this.m3 = paint;
+        this.u3 = -1;
+        this.w3 = 0.0f;
+        this.y3 = true;
+        this.z3 = new h6(this, 350L, dsVar);
+        this.A3 = new h6(this, 350L, dsVar);
+        this.B3 = new RectF();
+        this.C3 = new RectF();
+        this.D3 = new RectF();
+        setPadding(0, 0, AndroidUtilities.dp(2.0f), 0);
+        tx0 tx0Var = new tx0(this);
+        this.h3 = tx0Var;
+        setAdapter(tx0Var);
+        s4.c0 c0Var = new s4.c0();
+        setLayoutManager(c0Var);
+        c0Var.k1(0);
+        setSelectorRadius(AndroidUtilities.dp(15.0f));
+        setSelectorType(1);
+        int i11 = org.telegram.ui.ActionBar.y6.i6;
+        org.telegram.ui.ActionBar.f7.m(this, 20, i11, u6Var);
+        paint.setColor(org.telegram.ui.ActionBar.y6.w0(i11, this.n2));
+        setWillNotDraw(false);
+        setOnItemClickListener(new j(this, 15));
+        long currentTimeMillis = System.currentTimeMillis();
+        F3.fetch(UserConfig.selectedAccount, Integer.valueOf(i10), new fi.y8(this, currentTimeMillis, 2));
+    }
+
+    public static void D1(cy0 cy0Var, TLRPC.TL_messages_emojiGroups tL_messages_emojiGroups, long j10) {
+        cy0Var.g3 = new yx0[tL_messages_emojiGroups.groups.size()];
+        for (int i10 = 0; i10 < tL_messages_emojiGroups.groups.size(); i10++) {
+            yx0[] yx0VarArr = cy0Var.g3;
+            TLRPC.EmojiGroup emojiGroup = tL_messages_emojiGroups.groups.get(i10);
+            yx0 yx0Var = new yx0();
+            yx0Var.c = emojiGroup.icon_emoji_id;
+            if (emojiGroup instanceof TLRPC.TL_emojiGroupPremium) {
+                yx0Var.a = "premium";
             } else {
-                int j10 = q0Var.j();
-                f7 = 0.0f;
-                rg.d1 d1Var2 = (rg.d1) q0Var.r.get(q0Var.G ? "maskingBlit" : "blit");
-                if (j10 != 0 && d1Var2 != null) {
-                    GLES20.glUseProgram(d1Var2.a);
-                    f10 = 0.5f;
-                    GLES20.glUniformMatrix4fv(d1Var2.d("mvpMatrix"), 1, false, FloatBuffer.wrap(q0Var.y));
-                    GLES20.glUniform1f(d1Var2.d("alpha"), 1.0f);
-                    if (q0Var.G) {
-                        GLES20.glUniform1i(d1Var2.d("texture"), 1);
-                        GLES20.glUniform1i(d1Var2.d("mask"), 0);
-                        GLES20.glUniform1f(d1Var2.d("preview"), 0.4f);
-                        GLES20.glActiveTexture(33984);
-                        GLES20.glBindTexture(3553, j10);
-                        GLES20.glActiveTexture(33985);
-                        GLES20.glBindTexture(3553, q0Var.l.c());
-                    } else {
-                        GLES20.glUniform1i(d1Var2.d("texture"), 0);
-                        GLES20.glActiveTexture(33984);
-                        GLES20.glBindTexture(3553, j10);
-                    }
-                    GLES20.glBlendFunc(1, 771);
-                    GLES20.glVertexAttribPointer(0, 2, 5126, false, 8, (Buffer) q0Var.m);
-                    GLES20.glEnableVertexAttribArray(0);
-                    GLES20.glVertexAttribPointer(1, 2, 5126, false, 8, (Buffer) q0Var.n);
-                    GLES20.glEnableVertexAttribArray(1);
-                    GLES20.glDrawArrays(5, 0, 4);
-                    a8.yf.a();
-                    i10 = q0Var.q;
-                    if (i10 != 0 && q0Var.d != null && q0Var.I > f7) {
-                        q0Var.o(i10, q0Var.g(), q0Var.d, (q0Var.J * f10) + (q0Var.I * f10));
-                    }
-                }
-                f10 = 0.5f;
-                i10 = q0Var.q;
-                if (i10 != 0) {
-                    q0Var.o(i10, q0Var.g(), q0Var.d, (q0Var.J * f10) + (q0Var.I * f10));
-                }
+                yx0Var.a = TextUtils.concat((CharSequence[]) emojiGroup.emoticons.toArray(new String[0])).toString();
             }
-            f7 = 0.0f;
-            f10 = 0.5f;
-            i10 = q0Var.q;
-            if (i10 != 0) {
-            }
+            yx0Var.b = emojiGroup instanceof TLRPC.TL_emojiGroupGreeting;
+            yx0Var.d = emojiGroup.title;
+            yx0VarArr[i10] = yx0Var;
         }
-        GLES20.glBlendFunc(1, 771);
-        rg.a1 a1Var3 = (rg.a1) this.b;
-        a1Var3.b.eglSwapBuffers(a1Var3.c, a1Var3.e);
-        rg.c1 c1Var = ((rg.a1) this.b).y;
-        if (!c1Var.s) {
-            c1Var.s = true;
-            AndroidUtilities.runOnUIThread(new org.telegram.ui.web.h1(this, 11));
-        }
-        if (((rg.a1) this.b).h) {
-            return;
-        }
-        ((rg.a1) this.b).h = true;
+        cy0Var.g3 = cy0Var.H1(cy0Var.g3);
+        cy0Var.h3.l();
+        cy0Var.setCategoriesShownT(0.0f);
+        cy0Var.M1(cy0Var.y3, System.currentTimeMillis() - j10 > 16);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:121:0x02e3, code lost:
-    
-        if (r13 < 0) goto L120;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:152:0x0306, code lost:
-    
-        if (r13 > 0) goto L120;
-     */
+    public static void F1(RectF rectF, View view) {
+        float left = (view.getLeft() + view.getRight()) / 2.0f;
+        float top = (view.getTop() + view.getBottom()) / 2.0f;
+        float f7 = 1.0f;
+        float width = (view.getWidth() / 2.0f) - AndroidUtilities.dp(1.0f);
+        if (view instanceof xx0) {
+            xx0 xx0Var = (xx0) view;
+            f7 = c3.h0.z(1.0f, xx0Var.E, 0.15f, 0.85f) * xx0Var.y;
+        }
+        float f10 = width * f7;
+        rectF.set(left - f10, top - f10, left + f10, top + f10);
+    }
+
+    private int getScrollToStartWidth() {
+        if (getChildCount() <= 0) {
+            return 0;
+        }
+        View childAt = getChildAt(0);
+        if (!(childAt instanceof xx0)) {
+            return -childAt.getLeft();
+        }
+        return Math.max(0, getHeight() * (RecyclerView.R(childAt) - 1)) + this.n3 + (-childAt.getLeft());
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public void setCategoriesShownT(float f7) {
+        this.w3 = f7;
+        for (int i10 = 0; i10 < getChildCount(); i10++) {
+            View childAt = getChildAt(i10);
+            if (childAt instanceof xx0) {
+                float cascade = AndroidUtilities.cascade(f7, (getChildCount() - 1) - RecyclerView.R(childAt), getChildCount() - 1, 3.0f);
+                if (cascade > 0.0f && childAt.getAlpha() <= 0.0f) {
+                    ((xx0) childAt).j();
+                }
+                childAt.setAlpha(cascade);
+                childAt.setScaleX(cascade);
+                childAt.setScaleY(cascade);
+            }
+        }
+        invalidate();
+    }
+
+    public abstract boolean G1();
+
+    public final void I1() {
+        int dp = (AndroidUtilities.dp(34.0f) * this.u3) + ((-getScrollToStartWidth()) - Math.max(0, this.o3));
+        scrollBy(dp, 0);
+        post(new np0((fi.e2) this, dp));
+    }
+
+    public final void J1() {
+        w0(-getScrollToStartWidth(), 0, ds.h);
+    }
+
+    public void K1(int i10) {
+        if (this.u3 < 0 && i10 >= 0) {
+            this.A3.d(i10, true);
+        }
+        this.u3 = i10;
+        for (int i11 = 0; i11 < getChildCount(); i11++) {
+            View childAt = getChildAt(i11);
+            if (childAt instanceof xx0) {
+                ((xx0) childAt).l(this.u3 == RecyclerView.R(childAt) - 1, true);
+            }
+        }
+        invalidate();
+    }
+
+    public final void L1(yx0 yx0Var) {
+        int i10;
+        if (this.g3 != null) {
+            i10 = 0;
+            while (true) {
+                yx0[] yx0VarArr = this.g3;
+                if (i10 >= yx0VarArr.length) {
+                    break;
+                } else if (yx0VarArr[i10] == yx0Var) {
+                    break;
+                } else {
+                    i10++;
+                }
+            }
+            K1(i10);
+        }
+        i10 = -1;
+        K1(i10);
+    }
+
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r8v0, types: [boolean] */
-    /* JADX WARN: Type inference failed for: r8v10 */
-    /* JADX WARN: Type inference failed for: r8v13 */
-    /* JADX WARN: Type inference failed for: r8v14 */
-    /* JADX WARN: Type inference failed for: r8v9 */
-    @Override // java.lang.Runnable
+    /* JADX WARN: Type inference failed for: r5v1, types: [int] */
+    /* JADX WARN: Type inference failed for: r5v10 */
+    /* JADX WARN: Type inference failed for: r5v9 */
+    public final void M1(boolean z10, boolean z11) {
+        this.y3 = z10;
+        ?? r52 = z10;
+        if (this.g3 == null) {
+            r52 = 0;
+        }
+        if (this.w3 == ((float) r52)) {
+            return;
+        }
+        ValueAnimator valueAnimator = this.x3;
+        if (valueAnimator != null) {
+            valueAnimator.cancel();
+            this.x3 = null;
+        }
+        if (!z11) {
+            setCategoriesShownT(r52 != 0 ? 1.0f : 0.0f);
+            return;
+        }
+        ValueAnimator ofFloat = ValueAnimator.ofFloat(this.w3, r52 != 0 ? 1.0f : 0.0f);
+        this.x3 = ofFloat;
+        ofFloat.addUpdateListener(new f80(this, 23));
+        this.x3.addListener(new i10(this, 24));
+        this.x3.setInterpolator(ds.h);
+        this.x3.setDuration((this.g3 == null ? 5 : r6.length) * 120);
+        this.x3.start();
+    }
+
+    @Override // org.telegram.ui.Components.nm0, android.view.ViewGroup, android.view.View
+    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        if (motionEvent.getAction() == 0) {
+            View E = E(motionEvent.getX(), motionEvent.getY());
+            if (!(E instanceof xx0) || E.getAlpha() < 0.5f) {
+                return false;
+            }
+        }
+        return super.dispatchTouchEvent(motionEvent);
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:21:0x008d  */
+    /* JADX WARN: Removed duplicated region for block: B:24:0x009c  */
+    /* JADX WARN: Removed duplicated region for block: B:27:0x00aa  */
+    /* JADX WARN: Removed duplicated region for block: B:52:0x0121  */
+    /* JADX WARN: Removed duplicated region for block: B:63:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:64:0x00a2  */
+    /* JADX WARN: Removed duplicated region for block: B:65:0x008f  */
+    @Override // androidx.recyclerview.widget.RecyclerView, android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void run() {
-        int i10;
-        int height;
-        int R;
-        i2.j0 j0Var;
-        int i11 = 0;
-        i11 = 0;
-        i11 = 0;
-        switch (this.a) {
-            case 0:
-                ey0 ey0Var = (ey0) this.b;
-                View view = ey0Var.s;
-                if (view == null) {
-                    ey0Var.c.animate().alpha(1.0f).scaleY(1.0f).scaleX(1.0f).setDuration(150L).start();
-                    return;
+    public final void draw(Canvas canvas) {
+        Canvas canvas2;
+        float d;
+        Drawable drawable;
+        Drawable drawable2;
+        if (this.l3 != null) {
+            int i10 = ConnectionsManager.DEFAULT_DATACENTER_ID;
+            int i11 = TLObject.FLAG_31;
+            for (int i12 = 0; i12 < getChildCount(); i12++) {
+                View childAt = getChildAt(i12);
+                if (childAt instanceof xx0) {
+                    i10 = Math.min(i10, childAt.getLeft());
+                    i11 = Math.max(i11, childAt.getRight());
                 }
-                if (view.getVisibility() != 0) {
-                    ey0Var.s.setVisibility(0);
-                    ey0Var.s.setAlpha(0.0f);
+            }
+            if (i10 < i11) {
+                int z10 = (int) c3.h0.z(1.0f, this.w3, AndroidUtilities.dp(32.0f) + getWidth(), i10);
+                int z11 = (int) c3.h0.z(1.0f, this.w3, AndroidUtilities.dp(32.0f) + getWidth(), i11);
+                canvas2 = canvas;
+                canvas2.drawRect(z10, 0.0f, z11, getHeight(), this.l3);
+                if (z11 < getWidth() && (drawable2 = this.j3) != null) {
+                    drawable2.setAlpha(255);
+                    Drawable drawable3 = this.j3;
+                    drawable3.setBounds(z11, 0, drawable3.getIntrinsicWidth() + z11, getHeight());
+                    this.j3.draw(canvas2);
                 }
-                ey0Var.s.animate().setListener(null).cancel();
-                ey0Var.s.animate().alpha(1.0f).setDuration(150L).start();
-                return;
-            case 1:
-                ((ThemeEditorView) this.b).a = false;
-                try {
-                    org.telegram.ui.ActionBar.y6.k();
-                    org.telegram.ui.ActionBar.y6.n();
-                    org.telegram.ui.ActionBar.y6.p();
-                    org.telegram.ui.ActionBar.y6.j(false, false);
-                    org.telegram.ui.ActionBar.f7.d0(null, true);
-                    LaunchActivity launchActivity = LaunchActivity.I1;
-                    if (launchActivity != null) {
-                        launchActivity.d0();
-                        return;
-                    }
-                    return;
-                } catch (Exception e) {
-                    FileLog.e(e);
-                    return;
-                }
-            case 2:
-                t91 t91Var = (t91) this.b;
-                if (t91Var.J) {
-                    long elapsedRealtime = SystemClock.elapsedRealtime();
-                    if (elapsedRealtime > 17) {
-                        elapsedRealtime = 17;
-                    }
-                    float f7 = t91Var.f0 + (elapsedRealtime / 200.0f);
-                    t91Var.f0 = f7;
-                    t91Var.setAnimationIdicatorProgress(t91Var.a0.getInterpolation(f7));
-                    if (t91Var.f0 > 1.0f) {
-                        t91Var.f0 = 1.0f;
-                    }
-                    if (t91Var.f0 < 1.0f) {
-                        AndroidUtilities.runOnUIThread(t91Var.i0);
-                        return;
-                    }
-                    t91Var.J = false;
-                    t91Var.setEnabled(true);
-                    s91 s91Var = t91Var.y;
-                    if (s91Var != null) {
-                        ((jg.i) s91Var).e0(1.0f);
-                        return;
-                    }
-                    return;
-                }
-                return;
-            case 3:
-                if (fb1.h.remove(this)) {
-                    AndroidUtilities.cancelRunOnUIThread(this);
-                    ((org.telegram.ui.kf) this.b).run();
-                    return;
-                }
-                return;
-            case 4:
-                org.telegram.ui.m30 m30Var = (org.telegram.ui.m30) this.b;
-                if (!m30Var.b || m30Var.Q0.z0 != null) {
-                    AndroidUtilities.runOnUIThread(m30Var.h0, 3000L);
-                    return;
-                } else {
-                    m30Var.g0 = false;
-                    m30Var.setUiVisible(false);
-                    return;
-                }
-            case 5:
-                org.telegram.ui.Wallet.z0 z0Var = (org.telegram.ui.Wallet.z0) this.b;
-                if (z0Var.d && z0Var.e && z0Var.k != null) {
-                    if (SystemClock.elapsedRealtime() - z0Var.l >= 30000) {
-                        z0Var.f("heartbeat timed out");
-                        return;
-                    }
-                    z0Var.d("sending ping; last pong " + (SystemClock.elapsedRealtime() - z0Var.l) + " ms ago");
-                    z0Var.g("{\"operation\":\"ping\",\"id\":\"heartbeat\"}");
-                    AndroidUtilities.runOnUIThread(this, 15000L);
-                    return;
-                }
-                return;
-            case 6:
-                org.telegram.ui.Wallet.m5 m5Var = (org.telegram.ui.Wallet.m5) this.b;
-                if (m5Var.a == null || m5Var.e == null) {
-                    return;
-                }
-                m5Var.S0();
-                if (m5Var.s) {
-                    m5Var.a.postOnAnimation(this);
-                    return;
-                }
-                return;
-            case 7:
-                org.telegram.ui.Wallet.r5 r5Var = (org.telegram.ui.Wallet.r5) this.b;
-                org.telegram.ui.Wallet.y5 y5Var = r5Var.G;
-                if (r5Var.a0) {
-                    long nanoTime = System.nanoTime();
-                    if (y5Var.a) {
-                        if (y5Var.j == 0) {
-                            y5Var.j = nanoTime;
-                        } else {
-                            float min = Math.min(0.1f, Math.max(0.0f, (nanoTime - r7) * 1.0E-9f));
-                            y5Var.j = nanoTime;
-                            if (y5Var.i - y5Var.h >= 1000000000) {
-                                float exp = 1.0f - ((float) Math.exp((-min) / 1.0f));
-                                float f10 = y5Var.d;
-                                y5Var.d = c3.h0.z(y5Var.b, f10, exp, f10);
-                                float f11 = y5Var.e;
-                                y5Var.e = c3.h0.z(y5Var.c, f11, exp, f11);
-                            }
+                d = this.z3.d(this.u3 < 0 ? 1.0f : 0.0f, false);
+                int i13 = this.u3;
+                h6 h6Var = this.A3;
+                float d10 = i13 < 0 ? h6Var.d(i13, false) : h6Var.c;
+                if (d > 0.0f) {
+                    float f7 = d10 + 1.0f;
+                    double d11 = f7;
+                    int max = Math.max(1, (int) Math.floor(d11));
+                    int max2 = Math.max(1, (int) Math.ceil(d11));
+                    View view = null;
+                    View view2 = null;
+                    for (int i14 = 0; i14 < getChildCount(); i14++) {
+                        View childAt2 = getChildAt(i14);
+                        int R = RecyclerView.R(childAt2);
+                        if (R == max) {
+                            view = childAt2;
                         }
-                    }
-                    r5Var.K = y5Var.a ? Math.max(-15.0f, Math.min(15.0f, y5Var.b - y5Var.d)) : 0.0f;
-                    float c10 = org.telegram.ui.Wallet.r5.c((y5Var.a ? Math.max(-15.0f, Math.min(15.0f, y5Var.c - y5Var.e)) : 0.0f) * 1.5f, -15.0f, 15.0f);
-                    float f12 = r5Var.K;
-                    float f13 = r5Var.L;
-                    float z10 = c3.h0.z(f12, f13, 1.0f, f13);
-                    r5Var.L = z10;
-                    float f14 = r5Var.M;
-                    float z11 = c3.h0.z(c10, f14, 1.0f, f14);
-                    r5Var.M = z11;
-                    float f15 = r5Var.e0;
-                    r5Var.b((z10 * f15) + r5Var.N + r5Var.d0, (z11 * f15) + r5Var.O);
-                    r5Var.postOnAnimation(this);
-                    return;
-                }
-                return;
-            case 8:
-                ((p4.s0) this.b).c();
-                return;
-            case 9:
-                q8.a aVar = (q8.a) this.b;
-                synchronized (aVar.a) {
-                    try {
-                        if (aVar.b()) {
-                            Log.e("WakeLock", String.valueOf(aVar.j).concat(" ** IS FORCE-RELEASED ON TIMEOUT **"));
-                            aVar.d();
-                            if (aVar.b()) {
-                                aVar.c = 1;
-                                aVar.e();
-                                return;
-                            }
-                            return;
+                        if (R == max2) {
+                            view2 = childAt2;
                         }
-                        return;
-                    } finally {
-                    }
-                }
-            case 10:
-                a();
-                return;
-            case 11:
-                s4.z zVar = (s4.z) this.b;
-                s4.w wVar = zVar.x;
-                if (zVar.c != null) {
-                    long currentTimeMillis = System.currentTimeMillis();
-                    long j10 = zVar.R;
-                    long j11 = j10 == Long.MIN_VALUE ? 0L : currentTimeMillis - j10;
-                    s4.p0 layoutManager = zVar.H.getLayoutManager();
-                    if (zVar.Q == null) {
-                        zVar.Q = new Rect();
-                    }
-                    layoutManager.c(zVar.c.a, zVar.Q);
-                    if (layoutManager.d()) {
-                        int i12 = (int) (zVar.s + zVar.n);
-                        i10 = (i12 - zVar.Q.left) - zVar.H.getPaddingLeft();
-                        float f16 = zVar.n;
-                        if (f16 < 0.0f) {
-                        }
-                        if (f16 > 0.0f) {
-                            i10 = ((zVar.c.a.getWidth() + i12) + zVar.Q.right) - (zVar.H.getWidth() - zVar.H.getPaddingRight());
+                        if (view != null && view2 != null) {
                             break;
                         }
                     }
-                    i10 = 0;
-                    if (layoutManager.e()) {
-                        int i13 = (int) (zVar.v + zVar.r);
-                        int paddingTop = (i13 - zVar.Q.top) - zVar.H.getPaddingTop();
-                        float f17 = zVar.r;
-                        if (f17 < 0.0f && paddingTop < 0) {
-                            i11 = paddingTop;
-                        } else if (f17 > 0.0f && (height = ((zVar.c.a.getHeight() + i13) + zVar.Q.bottom) - (zVar.H.getHeight() - zVar.H.getPaddingBottom())) > 0) {
-                            i11 = height;
-                        }
+                    Paint paint = this.m3;
+                    int alpha = paint.getAlpha();
+                    paint.setAlpha((int) (alpha * d));
+                    if (view != null && view2 != null) {
+                        float f10 = max == max2 ? 0.5f : (f7 - max) / (max2 - max);
+                        RectF rectF = this.B3;
+                        F1(rectF, view);
+                        RectF rectF2 = this.C3;
+                        F1(rectF2, view2);
+                        RectF rectF3 = this.D3;
+                        AndroidUtilities.lerp(rectF, rectF2, f10, rectF3);
+                        canvas2.drawRoundRect(rectF3, AndroidUtilities.dp(15.0f), AndroidUtilities.dp(15.0f), paint);
                     }
-                    if (i10 != 0) {
-                        int width = zVar.c.a.getWidth();
-                        zVar.H.getWidth();
-                        i10 = wVar.i(width, i10, j11);
-                    }
-                    if (i11 != 0) {
-                        int height2 = zVar.c.a.getHeight();
-                        zVar.H.getHeight();
-                        i11 = wVar.i(height2, i11, j11);
-                    }
-                    if (i10 == 0 && i11 == 0) {
-                        zVar.R = Long.MIN_VALUE;
-                        return;
-                    }
-                    if (zVar.R == Long.MIN_VALUE) {
-                        zVar.R = currentTimeMillis;
-                    }
-                    zVar.H.scrollBy(i10, i11);
-                    s4.e1 e1Var = zVar.c;
-                    if (e1Var != null) {
-                        zVar.p(e1Var);
-                    }
-                    zVar.H.removeCallbacks(zVar.I);
-                    RecyclerView recyclerView = zVar.H;
-                    WeakHashMap weakHashMap = r0.i0.a;
-                    recyclerView.postOnAnimation(this);
-                    return;
+                    paint.setAlpha(alpha);
                 }
-                return;
-            case 12:
-                sg.j jVar = ((org.telegram.ui.nt0) this.b).H0;
-                if (jVar instanceof sg.x2) {
-                    ((sg.x2) jVar).getEditText();
-                    return;
-                }
-                return;
-            case 13:
-                tg.s0 s0Var = (tg.s0) this.b;
-                ArrayList arrayList = s0Var.o3;
-                if (s0Var.v3) {
-                    if (!arrayList.isEmpty() && (R = RecyclerView.R((tg.p1) ic.a.g(1, arrayList))) >= 0) {
-                        View m10 = s0Var.g3.m(R + 1);
-                        if (m10 != null) {
-                            s0Var.l3 = false;
-                            s0Var.C1(m10, true);
-                            s0Var.w0(0, m10.getTop() - ((s0Var.getMeasuredHeight() - m10.getMeasuredHeight()) / 2), AndroidUtilities.overshootInterpolator);
-                        }
-                    }
-                    s0Var.D1();
-                    return;
-                }
-                return;
-            case 14:
-                tg.x1 x1Var = (tg.x1) this.b;
-                try {
-                    tg.w1 w1Var = x1Var.a;
-                    if (w1Var != null) {
-                        w1Var.g();
-                        x1Var.invalidate();
+                super.draw(canvas2);
+                drawable = this.j3;
+                if (drawable == null) {
+                    drawable.setAlpha((int) (this.i3.d((canScrollHorizontally(-1) && this.s3) ? 1.0f : 0.0f, false) * 255.0f * this.w3));
+                    if (this.j3.getAlpha() > 0) {
+                        Drawable drawable4 = this.j3;
+                        drawable4.setBounds(0, 0, drawable4.getIntrinsicWidth(), getHeight());
+                        this.j3.draw(canvas2);
                         return;
                     }
                     return;
-                } catch (Exception e10) {
-                    FileLog.e(e10);
-                    return;
-                }
-            case 15:
-                u0.d dVar = (u0.d) this.b;
-                m.r1 r1Var = dVar.c;
-                u0.a aVar2 = dVar.a;
-                if (dVar.E) {
-                    if (dVar.x) {
-                        dVar.x = false;
-                        long currentAnimationTimeMillis = AnimationUtils.currentAnimationTimeMillis();
-                        aVar2.e = currentAnimationTimeMillis;
-                        aVar2.g = -1L;
-                        aVar2.f = currentAnimationTimeMillis;
-                        aVar2.h = 0.5f;
-                    }
-                    if ((aVar2.g > 0 && AnimationUtils.currentAnimationTimeMillis() > aVar2.g + aVar2.i) || !dVar.e()) {
-                        dVar.E = false;
-                        return;
-                    }
-                    if (dVar.y) {
-                        dVar.y = false;
-                        long uptimeMillis = SystemClock.uptimeMillis();
-                        MotionEvent obtain = MotionEvent.obtain(uptimeMillis, uptimeMillis, 3, 0.0f, 0.0f, 0);
-                        r1Var.onTouchEvent(obtain);
-                        obtain.recycle();
-                    }
-                    if (aVar2.f == 0) {
-                        throw new RuntimeException("Cannot compute scroll delta before calling start()");
-                    }
-                    long currentAnimationTimeMillis2 = AnimationUtils.currentAnimationTimeMillis();
-                    float a2 = aVar2.a(currentAnimationTimeMillis2);
-                    long j12 = currentAnimationTimeMillis2 - aVar2.f;
-                    aVar2.f = currentAnimationTimeMillis2;
-                    dVar.G.scrollListBy((int) (j12 * ((a2 * 4.0f) + ((-4.0f) * a2 * a2)) * aVar2.d));
-                    WeakHashMap weakHashMap2 = r0.i0.a;
-                    r1Var.postOnAnimation(this);
-                    return;
                 }
                 return;
-            case 16:
-                vg.z0 z0Var2 = (vg.z0) this.b;
-                String str = z0Var2.n0;
-                if (str != null) {
-                    z0Var2.T(z0Var2.r0, str, false);
-                    return;
-                }
-                return;
-            case 17:
-                vg.n1 n1Var = (vg.n1) this.b;
-                String str2 = n1Var.o0;
-                if (str2 != null) {
-                    vg.n1.U(n1Var, str2);
-                    return;
-                }
-                return;
-            case 18:
-                vi.s0 s0Var2 = (vi.s0) this.b;
-                if (s0Var2.W == 5 && (j0Var = s0Var2.S) != null && s0Var2.x) {
-                    long M0 = j0Var.M0();
-                    long j13 = s0Var2.G;
-                    if (M0 < j13 || M0 >= s0Var2.H) {
-                        s0Var2.S.Z0(5, j13);
-                    }
-                    s0Var2.d.getClass();
-                    s0Var2.i.postDelayed(this, 33L);
-                    return;
-                }
-                return;
-            case 19:
-                ((y2.j) this.b).a();
-                return;
-            case 20:
-                y7.ca caVar = (y7.ca) this.b;
-                y7.m7 m7Var = y7.m7.f;
-                HashMap hashMap = caVar.j;
-                y7.e eVar = (y7.e) hashMap.get(m7Var);
-                if (eVar != null) {
-                    y7.e eVar2 = eVar;
-                    y7.a aVar3 = eVar2.a;
-                    if (aVar3 == null) {
-                        y7.e eVar3 = eVar2;
-                        y7.a aVar4 = new y7.a(eVar3, eVar3.c);
-                        eVar2.a = aVar4;
-                        aVar3 = aVar4;
-                    }
-                    Iterator it = aVar3.iterator();
-                    while (it.hasNext()) {
-                        Object next = it.next();
-                        Collection collection = (Collection) eVar.c.get(next);
-                        Collection collection2 = collection;
-                        if (collection == null) {
-                            collection2 = new ArrayList(3);
-                        }
-                        List list = (List) collection2;
-                        ArrayList arrayList2 = new ArrayList(list instanceof RandomAccess ? new y7.b(eVar, next, list, null) : new a8.dh(eVar, next, list, (a8.dh) null));
-                        Collections.sort(arrayList2);
-                        a8.ua uaVar = new a8.ua();
-                        int size = arrayList2.size();
-                        int i14 = 0;
-                        long j14 = 0;
-                        while (i14 < size) {
-                            Object obj = arrayList2.get(i14);
-                            i14++;
-                            j14 = ((Long) obj).longValue() + j14;
-                        }
-                        uaVar.c = Long.valueOf((j14 / arrayList2.size()) & Long.MAX_VALUE);
-                        uaVar.a = Long.valueOf(y7.ca.a(arrayList2, 100.0d) & Long.MAX_VALUE);
-                        uaVar.f = Long.valueOf(y7.ca.a(arrayList2, 75.0d) & Long.MAX_VALUE);
-                        uaVar.e = Long.valueOf(y7.ca.a(arrayList2, 50.0d) & Long.MAX_VALUE);
-                        uaVar.d = Long.valueOf(y7.ca.a(arrayList2, 25.0d) & Long.MAX_VALUE);
-                        uaVar.b = Long.valueOf(Long.MAX_VALUE & y7.ca.a(arrayList2, 0.0d));
-                        y7.y6 y6Var = new y7.y6(uaVar);
-                        int size2 = arrayList2.size();
-                        aa.m0 m0Var = new aa.m0();
-                        m0Var.c = y7.k7.b;
-                        s4.d dVar2 = new s4.d(15, (boolean) i11);
-                        dVar2.c = Integer.valueOf(size2 & ConnectionsManager.DEFAULT_DATACENTER_ID);
-                        dVar2.b = (y7.q0) next;
-                        dVar2.d = y6Var;
-                        m0Var.f = new y7.r0(dVar2);
-                        sb.m.a.execute(new a8.fg(caVar, new a8.ng(m0Var, 0), m7Var, caVar.b(), 8));
-                    }
-                    hashMap.remove(m7Var);
-                    return;
-                }
-                return;
-            default:
-                ((ThreadLocal) ((com.google.firebase.messaging.q) this.b).d).set(Boolean.TRUE);
-                return;
+            }
         }
+        canvas2 = canvas;
+        d = this.z3.d(this.u3 < 0 ? 1.0f : 0.0f, false);
+        int i132 = this.u3;
+        h6 h6Var2 = this.A3;
+        if (i132 < 0) {
+        }
+        if (d > 0.0f) {
+        }
+        super.draw(canvas2);
+        drawable = this.j3;
+        if (drawable == null) {
+        }
+    }
+
+    public int getCategoryIndex() {
+        return this.u3;
+    }
+
+    public yx0 getSelectedCategory() {
+        int i10;
+        yx0[] yx0VarArr = this.g3;
+        if (yx0VarArr == null || (i10 = this.u3) < 0 || i10 >= yx0VarArr.length) {
+            return null;
+        }
+        return yx0VarArr[i10];
+    }
+
+    @Override // androidx.recyclerview.widget.RecyclerView
+    public final void l0(int i10) {
+        boolean z10;
+        boolean z11;
+        Utilities.Callback callback;
+        if (getChildCount() > 0) {
+            View childAt = getChildAt(0);
+            if (childAt instanceof xx0) {
+                z10 = true;
+            } else {
+                z11 = childAt.getRight() <= this.o3;
+                z10 = false;
+            }
+        } else {
+            z10 = false;
+            z11 = false;
+        }
+        boolean z12 = this.r3;
+        if (z12 != z11) {
+            this.r3 = z11;
+            Utilities.Callback callback2 = this.p3;
+            if (callback2 != null) {
+                callback2.run(Integer.valueOf(z11 ? Math.max(0, getScrollToStartWidth() - (this.n3 - this.o3)) : 0));
+            }
+            invalidate();
+        } else if (z12 && (callback = this.p3) != null) {
+            callback.run(Integer.valueOf(Math.max(0, getScrollToStartWidth() - (this.n3 - this.o3))));
+        }
+        if (this.s3 != z10) {
+            this.s3 = z10;
+            Utilities.Callback callback3 = this.q3;
+            if (callback3 != null) {
+                callback3.run(Boolean.valueOf(z10));
+            }
+            invalidate();
+        }
+    }
+
+    @Override // org.telegram.ui.Components.nm0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        M1(this.y3, false);
+    }
+
+    @Override // android.view.View
+    public final void onConfigurationChanged(Configuration configuration) {
+        super.onConfigurationChanged(configuration);
+        bi.cc ccVar = this.t3;
+        if (ccVar != null) {
+            ccVar.requestLayout();
+        }
+    }
+
+    @Override // android.view.View
+    public void setBackgroundColor(int i10) {
+        if (this.l3 == null) {
+            this.l3 = new Paint(1);
+        }
+        this.l3.setColor(i10);
+        Drawable mutate = getContext().getResources().getDrawable(R.drawable.gradient_right).mutate();
+        this.j3 = mutate;
+        PorterDuff.Mode mode = PorterDuff.Mode.MULTIPLY;
+        mutate.setColorFilter(new PorterDuffColorFilter(i10, mode));
+        Drawable mutate2 = getContext().getResources().getDrawable(R.drawable.gradient_left).mutate();
+        this.k3 = mutate2;
+        mutate2.setColorFilter(new PorterDuffColorFilter(i10, mode));
+    }
+
+    public void setDontOccupyWidth(int i10) {
+        this.o3 = i10;
+    }
+
+    public void setOnCategoryClick(Utilities.Callback<yx0> callback) {
+        this.v3 = callback;
+    }
+
+    public void setOnScrollFully(Utilities.Callback<Boolean> callback) {
+        this.q3 = callback;
+    }
+
+    public void setOnScrollIntoOccupiedWidth(Utilities.Callback<Integer> callback) {
+        this.p3 = callback;
+    }
+
+    public void setShownButtonsAtStart(float f7) {
+        this.f3 = f7;
+    }
+
+    @Override // org.telegram.ui.ActionBar.p6
+    public final void updateColors() {
+        try {
+            this.m3.setColor(org.telegram.ui.ActionBar.y6.w0(org.telegram.ui.ActionBar.y6.i6, this.n2));
+            invalidate();
+        } catch (Exception e) {
+            FileLog.e(e);
+        }
+    }
+
+    public yx0[] H1(yx0[] yx0VarArr) {
+        return yx0VarArr;
+    }
+
+    @Override // org.telegram.ui.ActionBar.p6
+    public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 }

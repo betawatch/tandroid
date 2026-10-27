@@ -29,7 +29,7 @@ import org.telegram.messenger.MediaController;
 import s4.o0;
 import u2.z0;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
 public abstract class c {
     public static final byte[] a;
@@ -49,7 +49,7 @@ public abstract class c {
     }
 
     /*  JADX ERROR: Type inference failed
-        jadx.core.utils.exceptions.JadxOverflowException: Type update terminated with stack overflow, arg: (r38v14 java.util.List), method size: 3238
+        jadx.core.utils.exceptions.JadxOverflowException: Type update terminated with stack overflow, arg: (r38v16 java.util.List), method size: 3238
         	at jadx.core.utils.ErrorsCounter.addError(ErrorsCounter.java:59)
         	at jadx.core.utils.ErrorsCounter.error(ErrorsCounter.java:31)
         	at jadx.core.dex.attributes.nodes.NotificationAttrNode.addError(NotificationAttrNode.java:19)

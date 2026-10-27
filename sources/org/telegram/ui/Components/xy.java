@@ -16,9 +16,9 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public final class xy extends lm0 {
+public final class xy extends mm0 {
     public so E;
     public boolean F;
     public int G;
@@ -48,7 +48,7 @@ public final class xy extends lm0 {
         this.e = z10 ? null : new zy(szVar, context);
     }
 
-    @Override // org.telegram.ui.Components.lm0
+    @Override // org.telegram.ui.Components.mm0
     public final boolean D(s4.e1 e1Var) {
         return e1Var.f == 0;
     }
@@ -133,7 +133,7 @@ public final class xy extends lm0 {
         }
         if (z11 && !TextUtils.isEmpty(str) && TextUtils.isEmpty(str2)) {
             szVar.i0.h1(0, 0);
-            szVar.F(2);
+            szVar.G(2);
         }
     }
 
@@ -206,7 +206,7 @@ public final class xy extends lm0 {
             }
             l();
             szVar.i0.h1(0, 0);
-            szVar.F(2);
+            szVar.G(2);
         }
         if (z12 && hashMap.containsKey(m10)) {
             E(str, str2, z10, z11, true, m10, (TLObject) hashMap.get(m10));
@@ -351,7 +351,7 @@ public final class xy extends lm0 {
                     int i14 = 0;
                     for (int i15 = 0; i15 < size; i15++) {
                         TLRPC.Document document = (TLRPC.Document) szVar.i1.get(i15);
-                        qw0 D1 = vz.D1(yyVar.G1(document, document.attributes));
+                        rw0 D1 = vz.D1(yyVar.G1(document, document.attributes));
                         int min = Math.min(i11, (int) Math.floor((((D1.a / D1.b) * dp) / measuredWidth) * i11));
                         if (i12 < min) {
                             this.H += i13;
@@ -420,6 +420,6 @@ public final class xy extends lm0 {
             d2Var.setCanPreviewGif(true);
             view = d2Var;
         }
-        return new vl0(view);
+        return new wl0(view);
     }
 }

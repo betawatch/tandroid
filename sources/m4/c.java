@@ -56,23 +56,23 @@ import org.telegram.ui.Cells.p2;
 import org.telegram.ui.Cells.t9;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.c6;
-import org.telegram.ui.Components.cm0;
-import org.telegram.ui.Components.i11;
-import org.telegram.ui.Components.kp0;
-import org.telegram.ui.Components.vw0;
+import org.telegram.ui.Components.dm0;
+import org.telegram.ui.Components.j11;
+import org.telegram.ui.Components.lp0;
+import org.telegram.ui.Components.ww0;
 import org.telegram.ui.PremiumPreviewFragment;
 import org.telegram.ui.Wallet.m5;
-import org.telegram.ui.ay;
-import org.telegram.ui.cv0;
-import org.telegram.ui.cy;
 import org.telegram.ui.d3;
+import org.telegram.ui.dy;
+import org.telegram.ui.ev0;
+import org.telegram.ui.ey;
 import org.telegram.ui.l5;
-import org.telegram.ui.qx;
+import org.telegram.ui.tx;
 import x7.qa;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
-public final class c implements e2.d, kp0, org.telegram.ui.Cells.j1, cm0, hh.a, oe.d, y2.n, SuccessContinuation {
+public final class c implements e2.d, lp0, org.telegram.ui.Cells.j1, dm0, hh.a, oe.d, y2.n, SuccessContinuation {
     public final /* synthetic */ int a;
     public Object b;
     public Object c;
@@ -221,7 +221,7 @@ public final class c implements e2.d, kp0, org.telegram.ui.Cells.j1, cm0, hh.a, 
 
     @Override // org.telegram.ui.Cells.j1
     public boolean C0(long j10) {
-        return ((i11) this.c).v;
+        return ((j11) this.c).v;
     }
 
     @Override // org.telegram.ui.Cells.j1
@@ -239,7 +239,7 @@ public final class c implements e2.d, kp0, org.telegram.ui.Cells.j1, cm0, hh.a, 
     }
 
     @Override // org.telegram.ui.Cells.j1
-    public /* synthetic */ cv0 E1() {
+    public /* synthetic */ ev0 E1() {
         return null;
     }
 
@@ -319,7 +319,7 @@ public final class c implements e2.d, kp0, org.telegram.ui.Cells.j1, cm0, hh.a, 
 
     @Override // org.telegram.ui.Cells.j1
     public boolean G1(long j10) {
-        return ((i11) this.c).s;
+        return ((j11) this.c).s;
     }
 
     @Override // e2.d
@@ -419,13 +419,13 @@ public final class c implements e2.d, kp0, org.telegram.ui.Cells.j1, cm0, hh.a, 
         return resources.getString(identifier);
     }
 
-    @Override // org.telegram.ui.Components.kp0
+    @Override // org.telegram.ui.Components.lp0
     public void U(float f7, boolean z10) {
         l5.c = f7;
         ((TextView) this.b).setText("Saturation " + (f7 * 5.0f));
-        vw0 vw0Var = ((l5) this.c).b;
-        vw0Var.M();
-        vw0Var.L();
+        ww0 ww0Var = ((l5) this.c).b;
+        ww0Var.M();
+        ww0Var.L();
     }
 
     @Override // org.telegram.ui.Cells.j1
@@ -519,21 +519,21 @@ public final class c implements e2.d, kp0, org.telegram.ui.Cells.j1, cm0, hh.a, 
         return true;
     }
 
-    @Override // org.telegram.ui.Components.cm0
+    @Override // org.telegram.ui.Components.dm0
     public boolean e(float f7, float f10, int i10, View view) {
-        cy cyVar = (cy) this.c;
+        ey eyVar = (ey) this.c;
         if (view instanceof p2) {
             p2 p2Var = (p2) view;
             if (p2Var.n2) {
-                cyVar.V4(p2Var.getDialogId(), view);
+                eyVar.V4(p2Var.getDialogId(), view);
                 return true;
             }
         }
-        qx qxVar = cyVar.z0;
-        if (qxVar != null && qxVar.getVisibility() == 0 && cyVar.z0.n) {
+        tx txVar = eyVar.z0;
+        if (txVar != null && txVar.getVisibility() == 0 && eyVar.z0.n) {
             return false;
         }
-        return cyVar.w4(view, i10, f7, ((ay) this.b).d);
+        return eyVar.w4(view, i10, f7, ((dy) this.b).d);
     }
 
     @Override // org.telegram.ui.Cells.j1
@@ -551,15 +551,15 @@ public final class c implements e2.d, kp0, org.telegram.ui.Cells.j1, cm0, hh.a, 
         return m5Var.I0 > 0.0f || m5Var.w0();
     }
 
-    @Override // org.telegram.ui.Components.cm0
+    @Override // org.telegram.ui.Components.dm0
     public void g() {
         Point point = AndroidUtilities.displaySize;
         if (point.x > point.y) {
-            ((cy) this.c).finishPreviewFragment();
+            ((ey) this.c).finishPreviewFragment();
         }
     }
 
-    @Override // org.telegram.ui.Components.kp0
+    @Override // org.telegram.ui.Components.lp0
     public /* synthetic */ CharSequence getContentDescription() {
         return null;
     }
@@ -631,7 +631,7 @@ public final class c implements e2.d, kp0, org.telegram.ui.Cells.j1, cm0, hh.a, 
         return arrayList2;
     }
 
-    @Override // org.telegram.ui.Components.kp0
+    @Override // org.telegram.ui.Components.lp0
     public /* synthetic */ int k0() {
         return 0;
     }
@@ -672,11 +672,11 @@ public final class c implements e2.d, kp0, org.telegram.ui.Cells.j1, cm0, hh.a, 
         return null;
     }
 
-    @Override // org.telegram.ui.Components.cm0
+    @Override // org.telegram.ui.Components.dm0
     public void o(float f7) {
         Point point = AndroidUtilities.displaySize;
         if (point.x > point.y) {
-            ((cy) this.c).movePreviewFragment(f7);
+            ((ey) this.c).movePreviewFragment(f7);
         }
     }
 
@@ -768,7 +768,7 @@ public final class c implements e2.d, kp0, org.telegram.ui.Cells.j1, cm0, hh.a, 
         if (trim.length() > 16) {
             trim = trim.substring(0, 16);
         }
-        if (((i11) this.c).s || !TextUtils.isEmpty(trim)) {
+        if (((j11) this.c).s || !TextUtils.isEmpty(trim)) {
             return trim;
         }
         return null;
@@ -1011,7 +1011,7 @@ public final class c implements e2.d, kp0, org.telegram.ui.Cells.j1, cm0, hh.a, 
     public /* synthetic */ void s0() {
     }
 
-    @Override // org.telegram.ui.Components.kp0
+    @Override // org.telegram.ui.Components.lp0
     public void y() {
     }
 

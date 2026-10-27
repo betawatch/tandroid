@@ -1,196 +1,68 @@
 package org.telegram.ui.Components;
 
-import android.animation.AnimatorSet;
-import android.animation.ObjectAnimator;
 import android.content.Context;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.graphics.drawable.Drawable;
-import android.text.TextUtils;
-import android.util.Property;
 import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import java.io.File;
+import androidx.core.widget.NestedScrollView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.BetaUpdate;
-import org.telegram.messenger.Emoji;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.R;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public final class x71 extends org.telegram.ui.ActionBar.k3 {
-    public final Drawable b;
-    public final w71 c;
-    public AnimatorSet d;
-    public final View e;
-    public final LinearLayout f;
-    public int h;
-    public final int[] n;
+public final class x71 extends NestedScrollView {
+    public boolean W;
+    public final /* synthetic */ y71 a0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public x71(Context context, BetaUpdate betaUpdate) {
-        super(context, false);
-        final int i10 = 0;
-        this.n = new int[2];
-        setCanceledOnTouchOutside(false);
-        setApplyTopPadding(false);
-        setApplyBottomPadding(false);
-        Drawable mutate = context.getResources().getDrawable(R.drawable.sheet_shadow_round).mutate();
-        this.b = mutate;
-        mutate.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.y6.x0(null, org.telegram.ui.ActionBar.y6.h5, false), PorterDuff.Mode.MULTIPLY));
-        bh.r rVar = new bh.r(this, context, 27);
-        rVar.setWillNotDraw(false);
-        this.containerView = rVar;
-        w71 w71Var = new w71(this, context);
-        this.c = w71Var;
-        final int i11 = 1;
-        w71Var.setFillViewport(true);
-        w71Var.setWillNotDraw(false);
-        w71Var.setClipToPadding(false);
-        w71Var.setVerticalScrollBarEnabled(false);
-        rVar.addView(w71Var, gb1.h(-1, -1.0f, 51, 0.0f, 0.0f, 0.0f, 130.0f));
-        LinearLayout linearLayout = new LinearLayout(context);
-        this.f = linearLayout;
-        linearLayout.setOrientation(1);
-        w71Var.addView(linearLayout, gb1.B(-1, -2, 51));
-        TextView textView = new TextView(context);
-        org.telegram.messenger.vh.j(20.0f, 1, textView);
-        int i12 = org.telegram.ui.ActionBar.y6.j5;
-        textView.setTextColor(org.telegram.ui.ActionBar.y6.x0(null, i12, false));
-        textView.setSingleLine(true);
-        textView.setEllipsize(TextUtils.TruncateAt.END);
-        textView.setText(LocaleController.getString(R.string.AppUpdateBeta));
-        linearLayout.addView(textView, gb1.x(-2, -2, 49, 23, 16, 23, 0));
-        TextView textView2 = new TextView(getContext());
-        textView2.setTextColor(org.telegram.ui.ActionBar.y6.x0(null, org.telegram.ui.ActionBar.y6.r5, false));
-        textView2.setTextSize(1, 14.0f);
-        textView2.setMovementMethod(new AndroidUtilities.LinkMovementMethodMy());
-        int i13 = org.telegram.ui.ActionBar.y6.k5;
-        textView2.setLinkTextColor(org.telegram.ui.ActionBar.y6.x0(null, i13, false));
-        textView2.setText(LocaleController.formatString(R.string.AppBetaUpdateVersion, betaUpdate.version, Integer.valueOf(betaUpdate.versionCode)));
-        textView2.setGravity(49);
-        linearLayout.addView(textView2, gb1.x(-2, -2, 49, 23, 0, 23, 5));
-        if (!TextUtils.isEmpty(betaUpdate.changelog)) {
-            TextView textView3 = new TextView(getContext());
-            textView3.setTextColor(org.telegram.ui.ActionBar.y6.x0(null, i12, false));
-            textView3.setTextSize(1, 14.0f);
-            textView3.setMovementMethod(new AndroidUtilities.LinkMovementMethodMy());
-            textView3.setLinkTextColor(org.telegram.ui.ActionBar.y6.x0(null, i13, false));
-            textView3.setText(Emoji.replaceEmoji(betaUpdate.changelog, textView3.getPaint().getFontMetricsInt(), false));
-            NotificationCenter.listenEmojiLoading(textView3);
-            textView3.setGravity(51);
-            linearLayout.addView(textView3, gb1.x(-2, -2, 51, 23, 15, 23, 0));
-        }
-        FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(-1, AndroidUtilities.getShadowHeight(), 83);
-        layoutParams.bottomMargin = AndroidUtilities.dp(130.0f);
-        View view = new View(context);
-        this.e = view;
-        view.setBackgroundColor(org.telegram.ui.ActionBar.y6.x0(null, org.telegram.ui.ActionBar.y6.V5, false));
-        view.setAlpha(0.0f);
-        view.setTag(1);
-        rVar.addView(view, layoutParams);
-        fi.d dVar = new fi.d(context, null, true);
-        File downloadedUpdateFile = ApplicationLoader.applicationLoaderInstance.getDownloadedUpdateFile();
-        if (downloadedUpdateFile != null) {
-            dVar.i(LocaleController.formatString(R.string.AppUpdateNow, new Object[0]), false, true);
-            dVar.setOnClickListener(new k51(3, this, downloadedUpdateFile));
-        } else {
-            dVar.i(LocaleController.formatString(R.string.AppUpdateDownloadNow, new Object[0]), false, true);
-            dVar.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.v71
-                public final /* synthetic */ x71 b;
-
-                {
-                    this.b = this;
-                }
-
-                @Override // android.view.View.OnClickListener
-                public final void onClick(View view2) {
-                    switch (i10) {
-                        case 0:
-                            x71 x71Var = this.b;
-                            x71Var.getClass();
-                            ApplicationLoader.applicationLoaderInstance.downloadUpdate();
-                            x71Var.dismiss();
-                            break;
-                        default:
-                            this.b.dismiss();
-                            break;
-                    }
-                }
-            });
-        }
-        rVar.addView(dVar, gb1.h(-1, 48.0f, 87, 20.0f, 0.0f, 20.0f, 60.0f));
-        fi.d dVar2 = new fi.d(context, null, false);
-        dVar2.i(LocaleController.getString(R.string.AppUpdateRemindMeLater), false, true);
-        dVar2.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.v71
-            public final /* synthetic */ x71 b;
-
-            {
-                this.b = this;
-            }
-
-            @Override // android.view.View.OnClickListener
-            public final void onClick(View view2) {
-                switch (i11) {
-                    case 0:
-                        x71 x71Var = this.b;
-                        x71Var.getClass();
-                        ApplicationLoader.applicationLoaderInstance.downloadUpdate();
-                        x71Var.dismiss();
-                        break;
-                    default:
-                        this.b.dismiss();
-                        break;
-                }
-            }
-        });
-        rVar.addView(dVar2, gb1.h(-1, 48.0f, 87, 20.0f, 4.0f, 20.0f, 8.0f));
+    public x71(y71 y71Var, Context context) {
+        super(context);
+        this.a0 = y71Var;
     }
 
-    public static void m(x71 x71Var) {
-        View childAt = x71Var.f.getChildAt(0);
-        int[] iArr = x71Var.n;
-        childAt.getLocationInWindow(iArr);
-        int max = Math.max(iArr[1] - AndroidUtilities.dp(24.0f), 0);
-        if (r0.getMeasuredHeight() + iArr[1] <= x71Var.containerView.getTranslationY() + (x71Var.container.getMeasuredHeight() - AndroidUtilities.dp(113.0f))) {
-            x71Var.o(false);
-        } else {
-            x71Var.o(true);
-        }
-        if (x71Var.h != max) {
-            x71Var.h = max;
-            x71Var.c.invalidate();
-        }
+    @Override // androidx.core.widget.NestedScrollView, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        super.onLayout(z10, i10, i11, i12, i13);
+        y71.m(this.a0);
     }
 
-    @Override // org.telegram.ui.ActionBar.k3
-    public final boolean canDismissWithSwipe() {
-        return false;
+    /* JADX WARN: Code restructure failed: missing block: B:4:0x002d, code lost:
+    
+        if (r9 < (org.telegram.messenger.AndroidUtilities.dp(90.0f) + (r0 / 2))) goto L6;
+     */
+    @Override // androidx.core.widget.NestedScrollView, android.widget.FrameLayout, android.view.View
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void onMeasure(int i10, int i11) {
+        int size = View.MeasureSpec.getSize(i11);
+        y71 y71Var = this.a0;
+        measureChildWithMargins(y71Var.f, i10, 0, i11, 0);
+        int measuredHeight = y71Var.f.getMeasuredHeight();
+        int i12 = (size / 5) * 2;
+        if (measuredHeight - (size - i12) >= AndroidUtilities.dp(90.0f)) {
+        }
+        i12 = size - measuredHeight;
+        if (i12 < 0) {
+            i12 = 0;
+        }
+        if (getPaddingTop() != i12) {
+            this.W = true;
+            setPadding(0, i12, 0, 0);
+            this.W = false;
+        }
+        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30));
     }
 
-    public final void o(boolean z10) {
-        View view = this.e;
-        if ((!z10 || view.getTag() == null) && (z10 || view.getTag() != null)) {
+    @Override // androidx.core.widget.NestedScrollView, android.view.View
+    public final void onScrollChanged(int i10, int i11, int i12, int i13) {
+        super.onScrollChanged(i10, i11, i12, i13);
+        y71.m(this.a0);
+    }
+
+    @Override // androidx.core.widget.NestedScrollView, android.view.View, android.view.ViewParent
+    public final void requestLayout() {
+        if (this.W) {
             return;
         }
-        view.setTag(z10 ? null : 1);
-        if (z10) {
-            view.setVisibility(0);
-        }
-        AnimatorSet animatorSet = this.d;
-        if (animatorSet != null) {
-            animatorSet.cancel();
-        }
-        AnimatorSet animatorSet2 = new AnimatorSet();
-        this.d = animatorSet2;
-        animatorSet2.playTogether(ObjectAnimator.ofFloat(view, (Property<View, Float>) View.ALPHA, z10 ? 1.0f : 0.0f));
-        this.d.setDuration(150L);
-        this.d.addListener(new org.telegram.ui.jo(24, this, z10));
-        this.d.start();
+        super.requestLayout();
     }
 }

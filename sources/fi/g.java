@@ -20,9 +20,9 @@ import org.telegram.ui.Components.ju;
 import org.telegram.ui.Components.nu;
 import org.telegram.ui.Components.ru;
 import org.telegram.ui.Components.sz;
-import org.telegram.ui.Components.vw0;
+import org.telegram.ui.Components.ww0;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class g extends ru {
     public org.telegram.ui.Components.pa V;
@@ -32,8 +32,8 @@ public final class g extends ru {
     public final /* synthetic */ m c0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public g(m mVar, Context context, vw0 vw0Var, int i10, di.b bVar, org.telegram.ui.ActionBar.u6 u6Var, org.telegram.ui.Components.la laVar) {
-        super(context, vw0Var, null, i10, true, bVar);
+    public g(m mVar, Context context, ww0 ww0Var, int i10, di.b bVar, org.telegram.ui.ActionBar.u6 u6Var, org.telegram.ui.Components.la laVar) {
+        super(context, ww0Var, null, i10, true, bVar);
         this.c0 = mVar;
         this.a0 = u6Var;
         this.b0 = laVar;

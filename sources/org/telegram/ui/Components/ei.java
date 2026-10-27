@@ -4,7 +4,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class ei extends u6 {
     public final /* synthetic */ int b;
@@ -50,19 +50,19 @@ public final class ei extends u6 {
                         li liVar2 = tiVar.C0;
                         go goVar = tiVar.m0;
                         if (liVar2 == goVar || tiVar.B0 == goVar) {
-                            tiVar.h2(liVar2 == goVar ? 1 : 0);
+                            tiVar.i2(liVar2 == goVar ? 1 : 0);
                         }
                         li liVar3 = tiVar.C0;
                         go goVar2 = tiVar.n0;
                         if (liVar3 == goVar2 || tiVar.B0 == goVar2) {
-                            tiVar.h2(liVar3 == goVar2 ? 1 : 0);
+                            tiVar.i2(liVar3 == goVar2 ? 1 : 0);
                         }
                         tiVar.C0.setTranslationY(AndroidUtilities.dp(78.0f) * f7);
                         tiVar.B0.u(1.0f - Math.min(1.0f, f7 / 0.7f));
                         tiVar.B0.l(tiVar.o2);
                     }
                     if (tiVar.w1 != null) {
-                        tiVar.h2(1);
+                        tiVar.i2(1);
                     }
                     viewGroup = ((org.telegram.ui.ActionBar.k3) tiVar).containerView;
                     viewGroup.invalidate();

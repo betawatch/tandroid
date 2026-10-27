@@ -23,7 +23,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class h0 implements Runnable {
     public final /* synthetic */ int a;
@@ -124,7 +124,7 @@ public final /* synthetic */ class h0 implements Runnable {
                     TL_stories.TL_updateStory tL_updateStory = new TL_stories.TL_updateStory();
                     tL_updateStory.peer = MessagesController.getInstance(i15).getPeer(j10);
                     tL_updateStory.story = storyItem;
-                    h7Var.Z(tL_updateStory);
+                    h7Var.c0(tL_updateStory);
                     break;
                 }
             case 3:
@@ -134,16 +134,16 @@ public final /* synthetic */ class h0 implements Runnable {
                 ((MediaDataController) obj3).lambda$loadStickers$100((TLObject) obj, this.b, (Utilities.Callback) obj2, this.c);
                 break;
             case 5:
-                ((MessagesStorage) obj3).lambda$checkMessageId$157(this.c, this.b, (boolean[]) obj2, (CountDownLatch) obj);
+                ((MessagesStorage) obj3).lambda$checkMessageId$158(this.c, this.b, (boolean[]) obj2, (CountDownLatch) obj);
                 break;
             case 6:
-                ((MessagesStorage) obj3).lambda$overwriteChannel$193(this.c, this.b, (TLRPC.TL_updates_channelDifferenceTooLong) obj2, (Runnable) obj);
+                ((MessagesStorage) obj3).lambda$overwriteChannel$194(this.c, this.b, (TLRPC.TL_updates_channelDifferenceTooLong) obj2, (Runnable) obj);
                 break;
             case 7:
-                ((MessagesStorage) obj3).lambda$updateMessageVoiceTranscription$112(this.b, this.c, (TLRPC.Message) obj2, (String) obj);
+                ((MessagesStorage) obj3).lambda$updateMessageVoiceTranscription$113(this.b, this.c, (TLRPC.Message) obj2, (String) obj);
                 break;
             case 8:
-                ((MessagesStorage) obj3).lambda$setDialogsFolderId$247((ArrayList) obj2, (ArrayList) obj, this.b, this.c);
+                ((MessagesStorage) obj3).lambda$setDialogsFolderId$248((ArrayList) obj2, (ArrayList) obj, this.b, this.c);
                 break;
             case 9:
                 ((SendMessagesHelper) obj3).lambda$completeSendingGramTransfer$6((MessageObject) obj2, (TLRPC.Message) obj, this.c, this.b);

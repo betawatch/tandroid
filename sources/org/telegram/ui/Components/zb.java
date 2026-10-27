@@ -5,19 +5,19 @@ import android.view.MotionEvent;
 import android.view.WindowManager;
 import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public final class zb extends fl0 {
+public final class zb extends gl0 {
     public final /* synthetic */ int m1 = 0;
     public final /* synthetic */ Object n1;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zb(org.telegram.ui.ft ftVar, Context context, int i10, org.telegram.ui.ActionBar.u6 u6Var) {
+    public zb(org.telegram.ui.ht htVar, Context context, int i10, org.telegram.ui.ActionBar.u6 u6Var) {
         super(4, i10, context, null, u6Var);
-        this.n1 = ftVar;
+        this.n1 = htVar;
     }
 
-    @Override // org.telegram.ui.Components.fl0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.gl0, android.view.ViewGroup, android.view.View
     public boolean dispatchTouchEvent(MotionEvent motionEvent) {
         qc qcVar;
         switch (this.m1) {
@@ -36,21 +36,21 @@ public final class zb extends fl0 {
         return super.dispatchTouchEvent(motionEvent);
     }
 
-    @Override // org.telegram.ui.Components.fl0
+    @Override // org.telegram.ui.Components.gl0
     public void j() {
         switch (this.m1) {
             case 1:
                 super.j();
-                org.telegram.ui.ft ftVar = (org.telegram.ui.ft) this.n1;
+                org.telegram.ui.ht htVar = (org.telegram.ui.ht) this.n1;
                 if (getReactionsWindow() != null) {
-                    WindowManager.LayoutParams layoutParams = ftVar.x;
+                    WindowManager.LayoutParams layoutParams = htVar.x;
                     layoutParams.flags &= -131073;
                     layoutParams.softInputMode = 16;
                 } else {
-                    ftVar.x.flags |= 131072;
+                    htVar.x.flags |= 131072;
                 }
                 try {
-                    ((WindowManager) ftVar.w.getSystemService("window")).updateViewLayout(ftVar.y, ftVar.x);
+                    ((WindowManager) htVar.w.getSystemService("window")).updateViewLayout(htVar.y, htVar.x);
                     break;
                 } catch (Exception e) {
                     FileLog.e(e);
@@ -62,7 +62,7 @@ public final class zb extends fl0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.fl0
+    @Override // org.telegram.ui.Components.gl0
     public void m() {
         switch (this.m1) {
             case 0:

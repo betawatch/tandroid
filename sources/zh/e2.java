@@ -8,12 +8,12 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.t91;
-import org.telegram.ui.Components.vs0;
+import org.telegram.ui.Components.u91;
 import org.telegram.ui.Components.wc;
+import org.telegram.ui.Components.ws0;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class e2 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -38,22 +38,22 @@ public final /* synthetic */ class e2 implements Utilities.Callback {
                 break;
             default:
                 TL_stars.TL_starGiftCollection tL_starGiftCollection = (TL_stars.TL_starGiftCollection) obj;
-                vs0 vs0Var = m2Var.a;
-                q9 q9Var = vs0Var.e;
+                ws0 ws0Var = m2Var.a;
+                q9 q9Var = ws0Var.e;
                 int i12 = tL_starGiftCollection.collection_id;
                 q9Var.getClass();
                 ArrayList arrayList = new ArrayList();
                 arrayList.add(savedStarGift);
                 q9Var.a(i12, arrayList);
-                vs0Var.f(true);
-                t91 t91Var = vs0Var.n;
+                ws0Var.f(true);
+                u91 u91Var = ws0Var.n;
                 int i13 = tL_starGiftCollection.collection_id;
-                t91Var.d(i13, vs0Var.e.f(i13) + 1);
-                org.telegram.ui.ActionBar.r2 r2Var = vs0Var.a;
+                u91Var.d(i13, ws0Var.e.f(i13) + 1);
+                org.telegram.ui.ActionBar.r2 r2Var = ws0Var.a;
                 if (r2Var instanceof ProfileActivity) {
                     ((ProfileActivity) r2Var).O4(true);
                 }
-                vs0Var.o();
+                ws0Var.o();
                 wc.b0(r2Var).S(savedStarGift.gift.getDocument(), AndroidUtilities.replaceTags(LocaleController.formatString(R.string.Gift2AddedToCollection, h7.X1(savedStarGift.gift), tL_starGiftCollection.title))).j();
                 break;
         }

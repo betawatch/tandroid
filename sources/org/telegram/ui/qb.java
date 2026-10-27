@@ -11,7 +11,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class qb implements org.telegram.ui.Cells.s0 {
     public final /* synthetic */ sb a;
@@ -52,7 +52,7 @@ public final class qb implements org.telegram.ui.Cells.s0 {
             bundle.putLong("chat_id", -j10);
             i11 = ((org.telegram.ui.ActionBar.r2) wbVar).currentAccount;
             if (MessagesController.getInstance(i11).checkCanOpenChat(bundle, wbVar)) {
-                wbVar.presentFragment(new un(bundle), true);
+                wbVar.presentFragment(new wn(bundle), true);
                 return;
             }
             return;
@@ -77,12 +77,12 @@ public final class qb implements org.telegram.ui.Cells.s0 {
             wbVar.presentFragment(bdVar);
             return;
         }
-        PhotoViewer.u1().M2(null, wbVar, null);
+        PhotoViewer.v1().N2(null, wbVar, null);
         TLRPC.PhotoSize closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(messageObject.photoThumbs, 640);
         if (closestPhotoSizeWithSize == null) {
-            PhotoViewer.u1().h2(messageObject, null, 0L, 0L, 0L, wbVar.B0);
+            PhotoViewer.v1().i2(messageObject, null, 0L, 0L, 0L, wbVar.B0);
         } else {
-            PhotoViewer.u1().f2(closestPhotoSizeWithSize.location, ImageLocation.getForPhoto(closestPhotoSizeWithSize, messageObject.messageOwner.action.photo), wbVar.B0);
+            PhotoViewer.v1().g2(closestPhotoSizeWithSize.location, ImageLocation.getForPhoto(closestPhotoSizeWithSize, messageObject.messageOwner.action.photo), wbVar.B0);
         }
     }
 

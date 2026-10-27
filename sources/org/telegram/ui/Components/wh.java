@@ -9,7 +9,7 @@ import android.view.Menu;
 import android.view.MotionEvent;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class wh extends ru {
     public boolean V;
@@ -31,8 +31,8 @@ public final class wh extends ru {
         th thVar = tiVar.G0;
         thVar.setTranslationY(f7);
         thVar.invalidate();
-        tiVar.l1();
-        tiVar.e2(tiVar.B0, 0);
+        tiVar.m1();
+        tiVar.f2(tiVar.B0, 0);
     }
 
     @Override // android.view.ViewGroup, android.view.View
@@ -75,8 +75,8 @@ public final class wh extends ru {
     @Override // org.telegram.ui.Components.ru
     public final void i(ActionMode actionMode, Menu menu) {
         org.telegram.ui.ActionBar.r2 r2Var = this.c0.f0;
-        if (r2Var instanceof org.telegram.ui.un) {
-            org.telegram.ui.un.r8(menu, ((org.telegram.ui.un) r2Var).h, true, true, true, true);
+        if (r2Var instanceof org.telegram.ui.wn) {
+            org.telegram.ui.wn.t8(menu, ((org.telegram.ui.wn) r2Var).h, true, true, true, true);
         }
     }
 
@@ -86,9 +86,9 @@ public final class wh extends ru {
         wh whVar = tiVar.H0;
         if (!tiVar.x1) {
             if (motionEvent.getX() <= whVar.getEditText().getLeft() || motionEvent.getX() >= whVar.getEditText().getRight() || motionEvent.getY() <= whVar.getEditText().getTop() || motionEvent.getY() >= whVar.getEditText().getBottom()) {
-                tiVar.y1(whVar.getEditText(), false);
+                tiVar.z1(whVar.getEditText(), false);
             } else {
-                tiVar.y1(whVar.getEditText(), true);
+                tiVar.z1(whVar.getEditText(), true);
             }
         }
         return super.onInterceptTouchEvent(motionEvent);
@@ -97,7 +97,7 @@ public final class wh extends ru {
     @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
     public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
         super.onLayout(z10, i10, i11, i12, i13);
-        this.c0.b2();
+        this.c0.c2();
     }
 
     @Override // org.telegram.ui.Components.ru
@@ -119,10 +119,10 @@ public final class wh extends ru {
             if (i11 > 2 && !TextUtils.isEmpty(getEditText().getText().toString().trim())) {
                 z10 = true;
             }
-            tiVar.T1(z10);
+            tiVar.U1(z10);
         }
         tiVar.Z1 = thVar.getTop() + tiVar.Y1;
         thVar.invalidate();
-        tiVar.b2();
+        tiVar.c2();
     }
 }

@@ -12,11 +12,11 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.ActionBar.u6;
 import org.telegram.ui.ActionBar.y6;
 import org.telegram.ui.Components.ds;
-import org.telegram.ui.Components.r61;
-import org.telegram.ui.Components.u91;
+import org.telegram.ui.Components.s61;
+import org.telegram.ui.Components.v91;
 import org.telegram.ui.Wallet.m4;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class h extends View {
     public final /* synthetic */ int a = 0;
@@ -30,11 +30,11 @@ public final class h extends View {
         this.c = new oe.b(this, ds.h, 380L);
         this.b = new Paint(1);
         this.d = u6Var;
-        r61 r61Var = new r61(true);
-        this.e = r61Var;
-        r61Var.setCallback(this);
-        r61Var.b(-1);
-        r61Var.i = true;
+        s61 s61Var = new s61(true);
+        this.e = s61Var;
+        s61Var.setCallback(this);
+        s61Var.b(-1);
+        s61Var.i = true;
     }
 
     @Override // android.view.View
@@ -42,7 +42,7 @@ public final class h extends View {
         switch (this.a) {
             case 0:
                 super.onAttachedToWindow();
-                ((r61) this.e).d();
+                ((s61) this.e).d();
                 break;
             default:
                 super.onAttachedToWindow();
@@ -55,7 +55,7 @@ public final class h extends View {
         switch (this.a) {
             case 0:
                 super.onDetachedFromWindow();
-                ((r61) this.e).e();
+                ((s61) this.e).e();
                 break;
             default:
                 super.onDetachedFromWindow();
@@ -77,7 +77,7 @@ public final class h extends View {
                 float f7 = ((oe.b) this.c).e;
                 float f10 = 1.0f - f7;
                 if (f10 > 0.0f) {
-                    v.b(canvas, (r61) this.e, f10 * 1.35f);
+                    v.b(canvas, (s61) this.e, f10 * 1.35f);
                     invalidate();
                 }
                 if (f7 > 0.0f) {
@@ -99,12 +99,12 @@ public final class h extends View {
                 int[] iArr2 = (int[]) this.d;
                 getLocationInWindow(iArr2);
                 float f11 = iArr[0] - iArr2[0];
-                View view = ((u91) m4Var.b0).getViewPages()[0];
+                View view = ((v91) m4Var.b0).getViewPages()[0];
                 int paddingLeft = view != null ? view.getPaddingLeft() : 0;
                 int paddingRight = view != null ? view.getPaddingRight() : 0;
                 canvas.save();
                 canvas.clipRect(paddingLeft + f11, 0.0f, (f11 + m4Var.b0.getWidth()) - paddingRight, getHeight());
-                for (View view2 : ((u91) m4Var.b0).getViewPages()) {
+                for (View view2 : ((v91) m4Var.b0).getViewPages()) {
                     if (view2 != null && view2.getVisibility() == 0) {
                         canvas.save();
                         canvas.translate(view2.getLeft() + (iArr[0] - iArr2[0]), view2.getTop() + (iArr[1] - iArr2[1]));
@@ -123,7 +123,7 @@ public final class h extends View {
         switch (this.a) {
             case 0:
                 super.onSizeChanged(i10, i11, i12, i13);
-                v.d((r61) this.e, i10 / 2.0f, i11 / 2.0f, 17);
+                v.d((s61) this.e, i10 / 2.0f, i11 / 2.0f, 17);
                 break;
             default:
                 super.onSizeChanged(i10, i11, i12, i13);
@@ -135,7 +135,7 @@ public final class h extends View {
     public boolean verifyDrawable(Drawable drawable) {
         switch (this.a) {
             case 0:
-                return super.verifyDrawable(drawable) || (drawable == ((r61) this.e) && !((oe.b) this.c).f);
+                return super.verifyDrawable(drawable) || (drawable == ((s61) this.e) && !((oe.b) this.c).f);
             default:
                 return super.verifyDrawable(drawable);
         }

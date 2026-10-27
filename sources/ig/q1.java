@@ -1,15 +1,15 @@
 package ig;
 
 import java.util.ArrayList;
-import org.telegram.ui.ns;
+import org.telegram.ui.ps;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class q1 implements z1 {
-    public final /* synthetic */ ns a;
+    public final /* synthetic */ ps a;
 
-    public q1(ns nsVar) {
-        this.a = nsVar;
+    public q1(ps psVar) {
+        this.a = psVar;
     }
 
     @Override // ig.z1
@@ -19,10 +19,10 @@ public final class q1 implements z1 {
 
     @Override // ig.z1
     public final void f(int i10) {
-        ns nsVar = this.a;
-        nsVar.l();
+        ps psVar = this.a;
+        psVar.l();
         if (i10 != 0) {
-            nsVar.F();
+            psVar.F();
         }
     }
 

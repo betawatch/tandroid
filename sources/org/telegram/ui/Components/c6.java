@@ -24,7 +24,7 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public class c6 extends ReplacementSpan {
     private static boolean lockPositionChanging;
@@ -92,10 +92,10 @@ public class c6 extends ReplacementSpan {
 
     public static boolean c(Layout layout, int i10, int i11) {
         if (layout.getText() instanceof Spanned) {
-            z11[] z11VarArr = (z11[]) ((Spanned) layout.getText()).getSpans(Math.max(0, i10), Math.min(layout.getText().length() - 1, i11), z11.class);
-            for (int i12 = 0; z11VarArr != null && i12 < z11VarArr.length; i12++) {
-                z11 z11Var = z11VarArr[i12];
-                if (z11Var != null && z11Var.c()) {
+            a21[] a21VarArr = (a21[]) ((Spanned) layout.getText()).getSpans(Math.max(0, i10), Math.min(layout.getText().length() - 1, i11), a21.class);
+            for (int i12 = 0; a21VarArr != null && i12 < a21VarArr.length; i12++) {
+                a21 a21Var = a21VarArr[i12];
+                if (a21Var != null && a21Var.c()) {
                     return true;
                 }
             }

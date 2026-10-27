@@ -31,10 +31,10 @@ import org.telegram.ui.Cells.y;
 import org.telegram.ui.Components.RadialProgressView;
 import org.telegram.ui.Components.ar;
 import org.telegram.ui.Components.b6;
-import org.telegram.ui.Components.gb1;
+import org.telegram.ui.Components.kb1;
 import org.telegram.ui.ke;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public class e extends FrameLayout {
     public boolean E;
@@ -90,11 +90,11 @@ public class e extends FrameLayout {
         radialProgressView.setSize(AndroidUtilities.dp(12.0f));
         radialProgressView.setStrokeWidth(AndroidUtilities.dp(0.5f));
         radialProgressView.setVisibility(8);
-        addView(linearLayout, gb1.h(-2, -2.0f, 0, 0.0f, 22.0f, 0.0f, 0.0f));
-        addView(textView, gb1.h(-2, -2.0f, 8388611, 4.0f, 0.0f, 4.0f, 0.0f));
-        addView(textView2, gb1.h(-2, -2.0f, 8388613, 4.0f, 0.0f, 4.0f, 0.0f));
-        addView(imageView, gb1.h(18, 18.0f, 8388661, 0.0f, 2.0f, 0.0f, 0.0f));
-        addView(radialProgressView, gb1.h(18, 18.0f, 8388661, 0.0f, 2.0f, 0.0f, 0.0f));
+        addView(linearLayout, kb1.h(-2, -2.0f, 0, 0.0f, 22.0f, 0.0f, 0.0f));
+        addView(textView, kb1.h(-2, -2.0f, 8388611, 4.0f, 0.0f, 4.0f, 0.0f));
+        addView(textView2, kb1.h(-2, -2.0f, 8388613, 4.0f, 0.0f, 4.0f, 0.0f));
+        addView(imageView, kb1.h(18, 18.0f, 8388661, 0.0f, 2.0f, 0.0f, 0.0f));
+        addView(radialProgressView, kb1.h(18, 18.0f, 8388661, 0.0f, 2.0f, 0.0f, 0.0f));
         b();
     }
 

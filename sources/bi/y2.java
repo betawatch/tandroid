@@ -43,24 +43,24 @@ import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.Components.UndoView;
 import org.telegram.ui.Components.c40;
-import org.telegram.ui.Components.e41;
-import org.telegram.ui.Components.k80;
+import org.telegram.ui.Components.f41;
+import org.telegram.ui.Components.l80;
 import org.telegram.ui.Components.ti;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.Wallet.WalletEngine2;
-import org.telegram.ui.ay;
-import org.telegram.ui.cy;
-import org.telegram.ui.ia0;
-import org.telegram.ui.ja0;
-import org.telegram.ui.nq;
-import org.telegram.ui.o00;
-import org.telegram.ui.r80;
-import org.telegram.ui.un;
-import org.telegram.ui.v50;
-import org.telegram.ui.yl0;
+import org.telegram.ui.am0;
+import org.telegram.ui.dy;
+import org.telegram.ui.ey;
+import org.telegram.ui.ka0;
+import org.telegram.ui.la0;
+import org.telegram.ui.pq;
+import org.telegram.ui.q00;
+import org.telegram.ui.t80;
+import org.telegram.ui.wn;
+import org.telegram.ui.x50;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class y2 implements Runnable {
     public final /* synthetic */ int a;
@@ -78,16 +78,16 @@ public final /* synthetic */ class y2 implements Runnable {
     }
 
     private final void a() {
-        v50 v50Var = (v50) this.b;
+        x50 x50Var = (x50) this.b;
         org.telegram.ui.ActionBar.e2[] e2VarArr = (org.telegram.ui.ActionBar.e2[]) this.d;
         TLRPC.User user = (TLRPC.User) this.e;
-        ChatObject.Call call = v50Var.a1;
-        if (call == null || v50Var.s0) {
+        ChatObject.Call call = x50Var.a1;
+        if (call == null || x50Var.s0) {
             return;
         }
         call.addInvitedUser(this.c);
-        v50Var.O0(true);
-        c40 c40Var = v50Var.E1;
+        x50Var.O0(true);
+        c40 c40Var = x50Var.E1;
         if (c40Var != null) {
             c40Var.dismiss();
         }
@@ -96,12 +96,12 @@ public final /* synthetic */ class y2 implements Runnable {
         } catch (Throwable unused) {
         }
         e2VarArr[0] = null;
-        v50Var.k1().k(0L, 34, user, v50Var.Z0, null, null);
+        x50Var.k1().k(0L, 34, user, x50Var.Z0, null, null);
     }
 
     private final void b() {
-        ja0 ja0Var = (ja0) this.b;
-        LaunchActivity launchActivity = ja0Var.g;
+        la0 la0Var = (la0) this.b;
+        LaunchActivity launchActivity = la0Var.g;
         String str = (String) this.d;
         org.telegram.ui.ActionBar.r2 r2Var = (org.telegram.ui.ActionBar.r2) this.e;
         if (str != null) {
@@ -118,7 +118,7 @@ public final /* synthetic */ class y2 implements Runnable {
             TLRPC.ChatFull chatFull = accountInstance.getMessagesController().getChatFull(j11);
             if (chatFull != null) {
                 if (chatFull.call != null) {
-                    accountInstance.getMessagesController().getGroupCall(j11, true, new ia0(ja0Var, accountInstance, j10, r2Var, 0));
+                    accountInstance.getMessagesController().getGroupCall(j11, true, new ka0(la0Var, accountInstance, j10, r2Var, 0));
                 } else if (r2Var.getParentActivity() != null) {
                     org.telegram.messenger.t.q(R.string.InviteExpired, org.telegram.ui.Components.wc.b0(r2Var), R.raw.linkbroken, 36);
                 }
@@ -135,7 +135,7 @@ public final /* synthetic */ class y2 implements Runnable {
         t2 t2Var = new t2(photoViewer, str, photoEntry, j10, 6);
         if (photoViewer.D2) {
             Bitmap createBitmap = Bitmap.createBitmap(photoViewer.C2.getWidth(), photoViewer.C2.getHeight(), Bitmap.Config.ARGB_8888);
-            AndroidUtilities.getBitmapFromSurface(photoViewer.C2, createBitmap, new yl0(9, t2Var, createBitmap));
+            AndroidUtilities.getBitmapFromSurface(photoViewer.C2, createBitmap, new am0(10, t2Var, createBitmap));
             return;
         }
         TextureView textureView = photoViewer.B2;
@@ -176,7 +176,7 @@ public final /* synthetic */ class y2 implements Runnable {
                                     bArr3 = (byte[]) bArr5.clone();
                                 } else {
                                     if (bArr5.length != bArr3.length) {
-                                        org.telegram.ui.Wallet.l0.i("getSecretPhrase: part " + i10 + " has length " + mnemonic_decryptedkeypart.share.length + " while other had " + bArr3.length);
+                                        org.telegram.ui.Wallet.l0.j("getSecretPhrase: part " + i10 + " has length " + mnemonic_decryptedkeypart.share.length + " while other had " + bArr3.length);
                                         jVar.run(null, "WALLET_PART_SHARE_UNEQUAL_LENGHTS");
                                         byte[] bArr6 = mnemonic_decryptedkeypart.share;
                                         if (bArr6 != null) {
@@ -208,7 +208,7 @@ public final /* synthetic */ class y2 implements Runnable {
                             throw th;
                         }
                     }
-                    org.telegram.ui.Wallet.l0.i("getSecretPhrase: couldn't decrypt " + i10 + " part");
+                    org.telegram.ui.Wallet.l0.j("getSecretPhrase: couldn't decrypt " + i10 + " part");
                     jVar.run(null, "WALLET_PART_" + i10 + "_CANT_DECRYPT");
                     if (mnemonic_decryptedkeypart != null && (bArr2 = mnemonic_decryptedkeypart.share) != null) {
                         Arrays.fill(bArr2, (byte) 0);
@@ -230,7 +230,7 @@ public final /* synthetic */ class y2 implements Runnable {
             }
         }
         if (bArr3 == null) {
-            org.telegram.ui.Wallet.l0.i("getSecretPhrase: no parts???");
+            org.telegram.ui.Wallet.l0.j("getSecretPhrase: no parts???");
             jVar.run(null, "WALLET_NO_PARTS");
             if (bArr3 != null) {
                 Arrays.fill(bArr3, (byte) 0);
@@ -246,11 +246,11 @@ public final /* synthetic */ class y2 implements Runnable {
             byte[] bArr8 = walletState instanceof TL_wallet.TL_walletState ? ((TL_wallet.TL_walletState) walletState).public_key : null;
             if (secretPhraseToPublicKey != null && bArr8 != null && Arrays.equals(secretPhraseToPublicKey, bArr8)) {
                 Arrays.fill(bArr3, (byte) 0);
-                org.telegram.ui.Wallet.l0.F("getSecretPhrase, received the phrase!");
+                org.telegram.ui.Wallet.l0.H("getSecretPhrase, received the phrase!");
                 jVar.run(i0Var, null);
                 return;
             }
-            org.telegram.ui.Wallet.l0.i("getSecretPhrase: mnemonic public key doesn't match one from server: server=" + Utilities.bytesToHex(bArr8) + " derived=" + Utilities.bytesToHex(secretPhraseToPublicKey));
+            org.telegram.ui.Wallet.l0.j("getSecretPhrase: mnemonic public key doesn't match one from server: server=" + Utilities.bytesToHex(bArr8) + " derived=" + Utilities.bytesToHex(secretPhraseToPublicKey));
             i0Var.close();
             jVar.run(null, "WALLET_WORDS_DONT_MATCH");
             Arrays.fill(bArr3, (byte) 0);
@@ -267,7 +267,7 @@ public final /* synthetic */ class y2 implements Runnable {
                 }
             }
             jVar.run(null, th.getMessage() == null ? "NULL_ERROR" : th.getMessage());
-            org.telegram.ui.Wallet.l0.j("getSecretPhrase: encryption error", th);
+            org.telegram.ui.Wallet.l0.k("getSecretPhrase: encryption error", th);
             if (bArr3 != null) {
                 Arrays.fill(bArr3, (byte) 0);
             }
@@ -347,7 +347,7 @@ public final /* synthetic */ class y2 implements Runnable {
                 R.j();
                 return;
             case 1:
-                h7.X((h7) this.b, this.c, (TL_stars.TL_starGiftUnique) this.d, (cy) this.e);
+                h7.X((h7) this.b, this.c, (TL_stars.TL_starGiftUnique) this.d, (ey) this.e);
                 return;
             case 2:
                 h7 h7Var2 = (h7) this.b;
@@ -391,11 +391,11 @@ public final /* synthetic */ class y2 implements Runnable {
                     return;
                 }
             case 6:
-                un unVar = (un) this.b;
+                wn wnVar = (wn) this.b;
                 TL_stars.StarGift starGift2 = (TL_stars.StarGift) this.d;
                 CharSequence charSequence = (CharSequence) this.e;
                 long j14 = this.c;
-                org.telegram.ui.Components.wc b02 = org.telegram.ui.Components.wc.b0(unVar);
+                org.telegram.ui.Components.wc b02 = org.telegram.ui.Components.wc.b0(wnVar);
                 TLRPC.Document document = starGift2.sticker;
                 String string = LocaleController.getString(R.string.StarsGiftCompleted);
                 if (charSequence == null) {
@@ -415,8 +415,8 @@ public final /* synthetic */ class y2 implements Runnable {
                 ArrayList arrayList4 = h7Var3.g;
                 int i11 = h7Var3.a;
                 FileLog.d("StoriesController update stories for dialog " + j15);
-                h7Var3.n0(j15, Collections.singletonList(tL_updateStory.story), false);
-                h7Var3.l0(j15, Collections.singletonList(tL_updateStory.story), true);
+                h7Var3.q0(j15, Collections.singletonList(tL_updateStory.story), false);
+                h7Var3.o0(j15, Collections.singletonList(tL_updateStory.story), true);
                 a0.h hVar = h7Var3.i;
                 TL_stories.PeerStories peerStories = (TL_stories.PeerStories) hVar.f(j15);
                 ArrayList arrayList5 = new ArrayList();
@@ -464,20 +464,20 @@ public final /* synthetic */ class y2 implements Runnable {
                             FileLog.d("StoriesController can't add new story isExpired");
                             return;
                         }
-                        if (j15 > 0 && (user == null || (!user.self && !h7Var3.M(user)))) {
+                        if (j15 > 0 && (user == null || (!user.self && !h7Var3.O(user)))) {
                             FileLog.d("StoriesController can't add new story user is not contact");
                             return;
                         }
                         arrayList5.add(storyItem2);
                         peerStories.stories.add(storyItem2);
                         FileLog.d("StoriesController add new story id=" + storyItem2.id + " total stories count " + peerStories.stories.size());
-                        h7Var3.W(j15, storyItem2);
+                        h7Var3.Z(j15, storyItem2);
                         h7Var3.g(peerStories);
                         z10 = true;
                         z12 = true;
                     }
                     if (z12) {
-                        if (!peerStories.stories.isEmpty() || h7Var3.K(j15)) {
+                        if (!peerStories.stories.isEmpty() || h7Var3.M(j15)) {
                             Collections.sort(peerStories.stories, di.h7.X);
                         } else {
                             arrayList4.remove(peerStories);
@@ -512,7 +512,7 @@ public final /* synthetic */ class y2 implements Runnable {
                     FileLog.d("StoriesController can't add user " + j15 + " with new story isExpired");
                     return;
                 }
-                if (j15 > 0 && (user == null || (!user.self && !h7Var3.M(user)))) {
+                if (j15 > 0 && (user == null || (!user.self && !h7Var3.O(user)))) {
                     FileLog.d("StoriesController can't add user cause is not contact");
                     return;
                 }
@@ -521,18 +521,18 @@ public final /* synthetic */ class y2 implements Runnable {
                 tL_peerStories.stories.add(tL_updateStory.story);
                 org.telegram.messenger.t.o(tL_updateStory.story.id, new StringBuilder("StoriesController add new user with story id="));
                 long peerDialogId = DialogObject.getPeerDialogId(tL_peerStories.peer);
-                h7Var3.b0(peerDialogId, tL_peerStories);
+                h7Var3.e0(peerDialogId, tL_peerStories);
                 if (peerDialogId != UserConfig.getInstance(UserConfig.selectedAccount).clientUserId) {
                     TLRPC.User user2 = MessagesController.getInstance(i11).getUser(Long.valueOf(peerDialogId));
                     h7Var3.g(tL_peerStories);
                     if (user2 != null && !user2.stories_hidden) {
-                        h7Var3.X(tL_peerStories);
+                        h7Var3.a0(tL_peerStories);
                     }
                 }
                 FileLog.d("StoriesController applyNewStories " + peerDialogId);
-                h7Var3.n0(peerDialogId, tL_peerStories.stories, false);
+                h7Var3.q0(peerDialogId, tL_peerStories.stories, false);
                 h7Var3.u = h7Var3.u + 1;
-                h7Var3.O(j15);
+                h7Var3.R(j15);
                 z10 = true;
                 if (i12 != h7Var3.u) {
                 }
@@ -546,7 +546,7 @@ public final /* synthetic */ class y2 implements Runnable {
                 di.p6 p6Var = (di.p6) this.b;
                 TLObject tLObject2 = (TLObject) this.d;
                 long j16 = this.c;
-                r80 r80Var = (r80) this.e;
+                t80 t80Var = (t80) this.e;
                 di.h7 h7Var4 = p6Var.c;
                 int i14 = h7Var4.a;
                 if (tLObject2 != null) {
@@ -560,14 +560,14 @@ public final /* synthetic */ class y2 implements Runnable {
                                 a0.h hVar2 = h7Var4.E;
                                 obj = (TL_stories.StoryItem) peerStories2.stories.get(i15);
                                 hVar2.k(obj, j16);
-                                r80Var.run(obj);
+                                t80Var.run(obj);
                                 return;
                             }
                         }
                     }
                 }
                 obj = null;
-                r80Var.run(obj);
+                t80Var.run(obj);
                 return;
             case 10:
                 di.q6 q6Var = (di.q6) this.b;
@@ -794,36 +794,36 @@ public final /* synthetic */ class y2 implements Runnable {
             case 16:
                 ti tiVar = (ti) this.b;
                 long j22 = this.c;
-                un unVar2 = (un) this.d;
+                wn wnVar2 = (wn) this.d;
                 org.telegram.ui.ActionBar.u6 u6Var = (org.telegram.ui.ActionBar.u6) this.e;
                 Context context = tiVar.getContext();
                 int i18 = tiVar.M1;
-                MessageSuggestionParams messageSuggestionParams = unVar2.s5;
+                MessageSuggestionParams messageSuggestionParams = wnVar2.w5;
                 if (messageSuggestionParams == null) {
                     messageSuggestionParams = MessageSuggestionParams.empty();
                 }
-                new g1(context, i18, j22, messageSuggestionParams, unVar2, u6Var, 0, new li.s2(25, tiVar, unVar2)).show();
+                new g1(context, i18, j22, messageSuggestionParams, wnVar2, u6Var, 0, new li.s2(25, tiVar, wnVar2)).show();
                 return;
             case 17:
-                e41 e41Var = (e41) this.b;
-                k80 k80Var = (k80) this.d;
+                f41 f41Var = (f41) this.b;
+                l80 l80Var = (l80) this.d;
                 long j23 = this.c;
                 TLRPC.Chat chat2 = (TLRPC.Chat) this.e;
-                k80Var.u();
-                TLRPC.User user3 = MessagesController.getInstance(e41Var.b).getUser(Long.valueOf(j23));
+                l80Var.u();
+                TLRPC.User user3 = MessagesController.getInstance(f41Var.b).getUser(Long.valueOf(j23));
                 if (user3 != null) {
-                    un unVar3 = e41Var.h;
-                    org.telegram.ui.Components.g5.q(unVar3, -1, user3, chat2, true, new di.d1(e41Var, j23, 6), unVar3.getResourceProvider());
+                    wn wnVar3 = f41Var.h;
+                    org.telegram.ui.Components.g5.q(wnVar3, -1, user3, chat2, true, new di.d1(f41Var, j23, 6), wnVar3.getResourceProvider());
                     return;
                 }
                 return;
             case 18:
-                e41 e41Var2 = (e41) this.b;
+                f41 f41Var2 = (f41) this.b;
                 HashSet hashSet = (HashSet) this.d;
                 ArrayList arrayList15 = (ArrayList) this.e;
                 long j24 = this.c;
-                e41Var2.h0.removeAll(hashSet);
-                e41Var2.p();
+                f41Var2.h0.removeAll(hashSet);
+                f41Var2.p();
                 int size = arrayList15.size();
                 int i19 = 0;
                 while (i19 < size) {
@@ -831,35 +831,35 @@ public final /* synthetic */ class y2 implements Runnable {
                     i19++;
                     long intValue = ((Integer) obj2).intValue();
                     if (j24 == intValue) {
-                        e41Var2.n(intValue, false);
+                        f41Var2.n(intValue, false);
                         return;
                     }
                 }
                 return;
             case 19:
-                cy cyVar = (cy) this.b;
+                ey eyVar = (ey) this.b;
                 MessagesController.DialogFilter dialogFilter = (MessagesController.DialogFilter) this.d;
                 TLRPC.Dialog dialog = (TLRPC.Dialog) this.e;
                 long j25 = this.c;
                 int i20 = ConnectionsManager.DEFAULT_DATACENTER_ID;
-                if (dialogFilter != null && cyVar.o4(dialog)) {
+                if (dialogFilter != null && eyVar.o4(dialog)) {
                     int size2 = dialogFilter.pinnedDialogs.size();
                     for (int i21 = 0; i21 < size2; i21++) {
                         i20 = Math.min(i20, dialogFilter.pinnedDialogs.valueAt(i21));
                     }
-                    i20 -= cyVar.O2;
+                    i20 -= eyVar.O2;
                 }
                 int i22 = i20;
-                TLRPC.EncryptedChat m10 = DialogObject.isEncryptedDialog(j25) ? org.telegram.messenger.t.m(cyVar.getMessagesController(), j25) : null;
-                UndoView g42 = cyVar.g4();
+                TLRPC.EncryptedChat m10 = DialogObject.isEncryptedDialog(j25) ? org.telegram.messenger.t.m(eyVar.getMessagesController(), j25) : null;
+                UndoView g42 = eyVar.g4();
                 if (g42 == null) {
                     return;
                 }
-                if (cyVar.o4(dialog)) {
-                    cyVar.A4(j25, false, dialogFilter, i22, true);
+                if (eyVar.o4(dialog)) {
+                    eyVar.A4(j25, false, dialogFilter, i22, true);
                     g42.k(0L, 79, 1, 1600, null, null);
                 } else {
-                    cyVar.A4(j25, true, dialogFilter, i22, true);
+                    eyVar.A4(j25, true, dialogFilter, i22, true);
                     g42.k(0L, 78, 1, 1600, null, null);
                     if (dialogFilter != null) {
                         if (m10 != null) {
@@ -872,22 +872,22 @@ public final /* synthetic */ class y2 implements Runnable {
                     }
                 }
                 if (dialogFilter != null) {
-                    o00.v0(dialogFilter, dialogFilter.flags, dialogFilter.name, dialogFilter.entities, dialogFilter.title_noanimate, dialogFilter.color, dialogFilter.alwaysShow, dialogFilter.neverShow, dialogFilter.pinnedDialogs, false, false, true, true, false, cyVar, null);
-                    cyVar = cyVar;
+                    q00.v0(dialogFilter, dialogFilter.flags, dialogFilter.name, dialogFilter.entities, dialogFilter.title_noanimate, dialogFilter.color, dialogFilter.alwaysShow, dialogFilter.neverShow, dialogFilter.pinnedDialogs, false, false, true, true, false, eyVar, null);
+                    eyVar = eyVar;
                 }
-                cyVar.getMessagesController().reorderPinnedDialogs(cyVar.W2, null, 0L);
-                cyVar.b5(true);
-                if (cyVar.e0 != null) {
+                eyVar.getMessagesController().reorderPinnedDialogs(eyVar.W2, null, 0L);
+                eyVar.b5(true);
+                if (eyVar.e0 != null) {
                     int i23 = 0;
                     while (true) {
-                        ay[] ayVarArr = cyVar.e0;
-                        if (i23 < ayVarArr.length) {
-                            ayVarArr[i23].d.H = false;
+                        dy[] dyVarArr = eyVar.e0;
+                        if (i23 < dyVarArr.length) {
+                            dyVarArr[i23].d.H = false;
                             i23++;
                         }
                     }
                 }
-                cyVar.q5(MessagesController.UPDATE_MASK_REORDER | MessagesController.UPDATE_MASK_CHECK, true);
+                eyVar.q5(MessagesController.UPDATE_MASK_REORDER | MessagesController.UPDATE_MASK_CHECK, true);
                 return;
             case 20:
                 a();
@@ -896,16 +896,16 @@ public final /* synthetic */ class y2 implements Runnable {
                 TLObject tLObject4 = (TLObject) this.b;
                 MessagesController messagesController = (MessagesController) this.d;
                 long j26 = this.c;
-                nq nqVar = (nq) this.e;
+                pq pqVar = (pq) this.e;
                 Pattern pattern = LaunchActivity.D1;
                 if (!(tLObject4 instanceof TL_stories.TL_stories_peerStories)) {
-                    nqVar.run();
+                    pqVar.run();
                     return;
                 }
                 TL_stories.TL_stories_peerStories tL_stories_peerStories2 = (TL_stories.TL_stories_peerStories) tLObject4;
                 messagesController.putUsers(tL_stories_peerStories2.users, false);
-                messagesController.getStoriesController().a0(j26, tL_stories_peerStories2.stories);
-                nqVar.run();
+                messagesController.getStoriesController().d0(j26, tL_stories_peerStories2.stories);
+                pqVar.run();
                 return;
             case 22:
                 b();

@@ -1,91 +1,39 @@
 package org.telegram.ui;
 
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.RectF;
-import android.text.style.ReplacementSpan;
 import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ImageReceiver;
+import java.util.ArrayList;
+import org.telegram.messenger.video.VideoPlayerHolderBase;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public final class j70 extends ReplacementSpan {
-    public final Paint a;
-    public final ImageReceiver b;
-    public final float c;
-    public float d;
-    public final View e;
-    public boolean f;
-    public float h;
-    public int n;
+public abstract class j70 {
+    public String F;
+    public int G;
+    public org.telegram.ui.ActionBar.o1 H;
+    public org.telegram.ui.ActionBar.k3 I;
+    public org.telegram.ui.Components.ba0 b;
+    public a3 d;
+    public int e;
+    public View f;
+    public boolean h;
+    public TLRPC.Chat n;
+    public boolean r;
+    public View s;
+    public org.telegram.ui.Components.ea0 v;
+    public VideoPlayerHolderBase w;
+    public w2 x;
+    public int a = 0;
+    public final org.telegram.ui.Components.x90 c = new org.telegram.ui.Components.x90();
+    public final a0.h y = new a0.h();
+    public ArrayList E = new ArrayList();
 
-    public j70(View view, float f7, int i10) {
-        i5 i5Var = new i5(this, 2);
-        this.f = true;
-        this.n = 255;
-        ImageReceiver imageReceiver = new ImageReceiver(view);
-        this.b = imageReceiver;
-        imageReceiver.setCurrentAccount(i10);
-        this.c = f7;
-        Paint paint = new Paint(1);
-        this.a = paint;
-        paint.setShadowLayer(AndroidUtilities.dp(1.0f), 0.0f, AndroidUtilities.dp(0.66f), 855638016);
-        View view2 = this.e;
-        if (view2 == view) {
-            return;
-        }
-        if (view2 != null) {
-            view2.removeOnAttachStateChangeListener(i5Var);
-            if (this.e.isAttachedToWindow() && !view.isAttachedToWindow()) {
-                imageReceiver.onDetachedFromWindow();
-            }
-        }
-        View view3 = this.e;
-        if ((view3 == null || !view3.isAttachedToWindow()) && view != null && view.isAttachedToWindow()) {
-            imageReceiver.onAttachedToWindow();
-        }
-        this.e = view;
-        imageReceiver.setParentView(view);
-        if (view != null) {
-            view.addOnAttachStateChangeListener(i5Var);
-        }
-    }
+    public abstract int a();
 
-    public final void a(float f7) {
-        float dp = AndroidUtilities.dp(f7);
-        this.d = dp;
-        this.b.setRoundRadius((int) dp);
-    }
+    public abstract int b();
 
-    @Override // android.text.style.ReplacementSpan
-    public final void draw(Canvas canvas, CharSequence charSequence, int i10, int i11, float f7, int i12, int i13, int i14, Paint paint) {
-        boolean z10 = this.f;
-        Paint paint2 = this.a;
-        if (z10 && this.n != paint.getAlpha()) {
-            int alpha = paint.getAlpha();
-            this.n = alpha;
-            paint2.setAlpha(alpha);
-            paint2.setShadowLayer(AndroidUtilities.dp(1.0f), 0.0f, AndroidUtilities.dp(0.66f), org.telegram.ui.ActionBar.y6.o1(this.n / 255.0f, 855638016));
-        }
-        float f10 = this.h + f7;
-        float dp = (((i12 + i14) / 2.0f) + 0.0f) - (AndroidUtilities.dp(this.c) / 2.0f);
-        if (this.f) {
-            RectF rectF = AndroidUtilities.rectTmp;
-            rectF.set(f10, dp, AndroidUtilities.dp(this.c) + f10, AndroidUtilities.dp(this.c) + dp);
-            float f11 = this.d;
-            canvas.drawRoundRect(rectF, f11, f11, paint2);
-        }
-        float dp2 = AndroidUtilities.dp(this.c);
-        float dp3 = AndroidUtilities.dp(this.c);
-        ImageReceiver imageReceiver = this.b;
-        imageReceiver.setImageCoords(f10, dp, dp2, dp3);
-        imageReceiver.setAlpha(paint.getAlpha() / 255.0f);
-        imageReceiver.draw(canvas);
-    }
+    public abstract void c(h4 h4Var, org.telegram.ui.Components.v11 v11Var);
 
-    @Override // android.text.style.ReplacementSpan
-    public final int getSize(Paint paint, CharSequence charSequence, int i10, int i11, Paint.FontMetricsInt fontMetricsInt) {
-        return AndroidUtilities.dp(this.c);
-    }
+    public abstract boolean d(TL_iv.PageBlock pageBlock, h4 h4Var);
 }

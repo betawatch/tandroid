@@ -37,12 +37,12 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.b10;
 import org.telegram.ui.Components.ds;
-import org.telegram.ui.Components.el0;
-import org.telegram.ui.ii1;
+import org.telegram.ui.Components.fl0;
+import org.telegram.ui.ki1;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
-public final class me implements z3.d, el0, oe.d, o5.b, s9.b {
+public final class me implements z3.d, fl0, oe.d, o5.b, s9.b {
     public Object a;
     public Object b;
     public Object c;
@@ -501,22 +501,22 @@ public final class me implements z3.d, el0, oe.d, o5.b, s9.b {
 
     @Override // s9.b
     public Object a(Class cls) {
-        if (!((Set) this.a).contains(s9.r.a(cls))) {
+        if (!((Set) this.a).contains(s9.s.a(cls))) {
             throw new androidx.car.app.j("Attempting to request an undeclared dependency " + cls + ".");
         }
         Object a2 = ((s9.b) this.e).a(cls);
         if (!cls.equals(oa.a.class)) {
             return a2;
         }
-        return new s9.s();
+        return new s9.t();
     }
 
     @Override // s9.b
-    public ra.b b(s9.r rVar) {
-        if (((Set) this.b).contains(rVar)) {
-            return ((s9.b) this.e).b(rVar);
+    public ra.b b(s9.s sVar) {
+        if (((Set) this.b).contains(sVar)) {
+            return ((s9.b) this.e).b(sVar);
         }
-        throw new androidx.car.app.j("Attempting to request an undeclared dependency Provider<" + rVar + ">.");
+        throw new androidx.car.app.j("Attempting to request an undeclared dependency Provider<" + sVar + ">.");
     }
 
     @Override // z3.d
@@ -531,7 +531,7 @@ public final class me implements z3.d, el0, oe.d, o5.b, s9.b {
 
     @Override // s9.b
     public ra.b d(Class cls) {
-        return b(s9.r.a(cls));
+        return b(s9.s.a(cls));
     }
 
     @Override // z3.d
@@ -539,7 +539,7 @@ public final class me implements z3.d, el0, oe.d, o5.b, s9.b {
         return ((long[]) this.b)[i10];
     }
 
-    @Override // org.telegram.ui.Components.el0
+    @Override // org.telegram.ui.Components.fl0
     public /* synthetic */ boolean f() {
         return true;
     }
@@ -642,24 +642,24 @@ public final class me implements z3.d, el0, oe.d, o5.b, s9.b {
     }
 
     @Override // s9.b
-    public s9.p h(s9.r rVar) {
-        if (((Set) this.c).contains(rVar)) {
-            return ((s9.b) this.e).h(rVar);
+    public s9.q h(s9.s sVar) {
+        if (((Set) this.c).contains(sVar)) {
+            return ((s9.b) this.e).h(sVar);
         }
-        throw new androidx.car.app.j("Attempting to request an undeclared dependency Deferred<" + rVar + ">.");
+        throw new androidx.car.app.j("Attempting to request an undeclared dependency Deferred<" + sVar + ">.");
     }
 
-    @Override // org.telegram.ui.Components.el0
+    @Override // org.telegram.ui.Components.fl0
     public /* synthetic */ boolean i() {
         return false;
     }
 
     @Override // s9.b
-    public Set j(s9.r rVar) {
-        if (((Set) this.d).contains(rVar)) {
-            return ((s9.b) this.e).j(rVar);
+    public Set j(s9.s sVar) {
+        if (((Set) this.d).contains(sVar)) {
+            return ((s9.b) this.e).j(sVar);
         }
-        throw new androidx.car.app.j("Attempting to request an undeclared dependency Set<" + rVar + ">.");
+        throw new androidx.car.app.j("Attempting to request an undeclared dependency Set<" + sVar + ">.");
     }
 
     @Override // z3.d
@@ -667,7 +667,7 @@ public final class me implements z3.d, el0, oe.d, o5.b, s9.b {
         return ((long[]) this.b).length;
     }
 
-    @Override // org.telegram.ui.Components.el0
+    @Override // org.telegram.ui.Components.fl0
     public void l(Canvas canvas, RectF rectF, float f7, float f10, float f11, int i10, boolean z10) {
         Paint paint;
         org.telegram.ui.Components.la laVar;
@@ -710,26 +710,26 @@ public final class me implements z3.d, el0, oe.d, o5.b, s9.b {
     }
 
     @Override // s9.b
-    public Object n(s9.r rVar) {
-        if (((Set) this.a).contains(rVar)) {
-            return ((s9.b) this.e).n(rVar);
+    public Object n(s9.s sVar) {
+        if (((Set) this.a).contains(sVar)) {
+            return ((s9.b) this.e).n(sVar);
         }
-        throw new androidx.car.app.j("Attempting to request an undeclared dependency " + rVar + ".");
+        throw new androidx.car.app.j("Attempting to request an undeclared dependency " + sVar + ".");
     }
 
-    @Override // org.telegram.ui.Components.el0
+    @Override // org.telegram.ui.Components.fl0
     public boolean o() {
         return true;
     }
 
-    @Override // org.telegram.ui.Components.el0
+    @Override // org.telegram.ui.Components.fl0
     public void p(View view, bh.x0 x0Var, boolean z10, boolean z11) {
         fi.e6 e6Var = (fi.e6) this.e;
-        sg.c2 c2Var = e6Var.P1;
-        if (c2Var == null) {
+        sg.b2 b2Var = e6Var.P1;
+        if (b2Var == null) {
             return;
         }
-        c2Var.s(x0Var, true);
+        b2Var.s(x0Var, true);
         e6Var.L0(false);
     }
 
@@ -738,23 +738,23 @@ public final class me implements z3.d, el0, oe.d, o5.b, s9.b {
         byte[] bArr2 = (byte[]) this.a;
         SecureRandom secureRandom = new SecureRandom();
         BigInteger bigInteger = new BigInteger(2048, secureRandom);
-        BigInteger bigInteger2 = ii1.b;
-        BigInteger bigInteger3 = ii1.a;
+        BigInteger bigInteger2 = ki1.b;
+        BigInteger bigInteger3 = ki1.a;
         BigInteger modPow = bigInteger2.modPow(bigInteger, bigInteger3);
         BigInteger bigInteger4 = BigInteger.ONE;
         if (modPow.compareTo(bigInteger4) <= 0 || modPow.compareTo(bigInteger3.subtract(bigInteger4)) >= 0) {
             throw new IllegalStateException("our pubkey invalid (extremely unlikely)");
         }
-        byte[] a2 = ii1.a(modPow);
+        byte[] a2 = ki1.a(modPow);
         BigInteger bigInteger5 = new BigInteger(1, bArr);
         if (bigInteger5.compareTo(bigInteger4) <= 0 || bigInteger5.compareTo(bigInteger3.subtract(bigInteger4)) >= 0) {
             throw new IllegalArgumentException("peer pubkey out of range");
         }
-        byte[] a10 = ii1.a(bigInteger5.modPow(bigInteger, bigInteger3));
+        byte[] a10 = ki1.a(bigInteger5.modPow(bigInteger, bigInteger3));
         byte[] bArr3 = new byte[16];
         secureRandom.nextBytes(bArr3);
-        byte[] b10 = ii1.b(new byte[][]{a10, bArr2, bArr3});
-        byte[] b11 = ii1.b(new byte[][]{a10, bArr});
+        byte[] b10 = ki1.b(new byte[][]{a10, bArr2, bArr3});
+        byte[] b11 = ki1.b(new byte[][]{a10, bArr});
         this.d = b10;
         String[] strArr = {"👋", "👍", "👎", "👌", "👊", "🤟", "\u1faf5", "👏", "🤝", "✍", "💪", "👀", "👅", "🥶", "🤡", "💀", "👽", "😈", "😎", "🤠", "🤩", "😍", "🤯", "🦄", "🐶", "🐷", "🐔", "🐥", "🦊", "🐙", "🐸", "🐳", "🦉", "🦆", "🐢", "🦖", "🐵", "🐝", "🦁", "🐧", "🦋", "🐬", "🦀", "🐌", "🦠", "🐠", "🌵", "💐", "💐", "🎄", "🍄", "🍔", "🍕", "☕", "🍩", "🍪", "🎂", "🍫", "🍭", "🍎", "🥥", "🍒", "🌶", "🥒", "🥦", "🍇", "🍋", "🍓", "🍌", "🍍", "🍆", "🌽", "🍺", "🍷", "🍾", "🍦", "🍰", "🍞", "🍖", "🌭", "🧊", "🍳", "⭐", "☁", "🚀", "🎈", "💎", "💡", "🔑", "❄", "🔎", "👠", "👕", "👗", "👖", "👙", "👜", "👓", "🎀", "💄", "💍", "♠", "❤", "♦", "♣", "🌈", "🌊", "🎃", "👻", "🎁", "🔮", "🎥", "💿", "💻", "📡", "🔉", "⏳", "🔒", "🚗", "🔱", "🔗", "🎲", "🎮", "⚽", "🎳", "🏁", "🏆", "🎸", "💣", "🚽", "🎹", "🎤", "🎨", "🔫", "💊", "💰", "📦", "📅", "📚", "❗", "❓", "💯", "💦", "💤", "🌍", "🏝", "🚂", "🛢", "🛹", "🚢", "✈", "🛎", "🧳", "🌖", "🌞", "🔥", "🏓", "🎰", "🧸", "\u1faa9", "🎭", "👑", "🎩", "🧢", "🔈", "🔋", "🕯", "✏", "💼", "📌", "✂", "🗑", "🛡", "⚙", "🧲", "\u1fa8f", "⚖", "🧪", "🚪", "\u1fae7", "🛒", "🪑", "🗿", "🏁", "🏴\u200d☠", "📊", "🥁", "🎧", "🎵", "🧩", "⛳", "🥇", "🥈", "🥈", "🌪", "⛺", "🧭", "\u1fac6", "🧠", "💋"};
         ArrayList arrayList = new ArrayList(4);
@@ -763,7 +763,7 @@ public final class me implements z3.d, el0, oe.d, o5.b, s9.b {
             arrayList.add(strArr[(int) (((b11[i11 + 7] & 255) | ((((((((b11[i11] & 127) << 56) | ((b11[i11 + 1] & 255) << 48)) | ((b11[i11 + 2] & 255) << 40)) | ((b11[i11 + 3] & 255) << 32)) | ((b11[i11 + 4] & 255) << 24)) | ((b11[i11 + 5] & 255) << 16)) | ((b11[i11 + 6] & 255) << 8))) % 200)]);
         }
         this.e = arrayList;
-        FileLog.d("wear-auth: built answer; session " + ii1.d(bArr2) + " emojis=" + ((ArrayList) this.e));
+        FileLog.d("wear-auth: built answer; session " + ki1.d(bArr2) + " emojis=" + ((ArrayList) this.e));
         byte[] bArr4 = new byte[288];
         System.arraycopy(bArr2, 0, bArr4, 0, 16);
         System.arraycopy(bArr3, 0, bArr4, 16, 16);
@@ -785,7 +785,7 @@ public final class me implements z3.d, el0, oe.d, o5.b, s9.b {
         if (!str.isEmpty()) {
             throw new IllegalStateException("Missing required properties:".concat(str));
         }
-        return new aa.u0((String) this.b, ((Integer) this.e).intValue(), (String) this.c, ((Long) this.a).longValue(), ((Long) this.d).longValue());
+        return new aa.u0(((Integer) this.e).intValue(), ((Long) this.a).longValue(), (String) this.b, ((Long) this.d).longValue(), (String) this.c);
     }
 
     public void s(Canvas canvas, boolean z10, boolean z11, int i10, float f7) {
@@ -819,8 +819,8 @@ public final class me implements z3.d, el0, oe.d, o5.b, s9.b {
         canvas.clipPath(path);
     }
 
-    public s9.p u(Class cls) {
-        return h(s9.r.a(cls));
+    public s9.q u(Class cls) {
+        return h(s9.s.a(cls));
     }
 
     public String v() {
@@ -843,7 +843,7 @@ public final class me implements z3.d, el0, oe.d, o5.b, s9.b {
     }
 
     public Set x(Class cls) {
-        return j(s9.r.a(cls));
+        return j(s9.s.a(cls));
     }
 
     public void y(Bitmap bitmap) {
@@ -915,7 +915,7 @@ public final class me implements z3.d, el0, oe.d, o5.b, s9.b {
         this.a = s3Var;
     }
 
-    @Override // org.telegram.ui.Components.el0
+    @Override // org.telegram.ui.Components.fl0
     public /* synthetic */ void m() {
     }
 

@@ -8,9 +8,9 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.support.LongSparseLongArray;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Cells.ab;
-import org.telegram.ui.Components.mm0;
+import org.telegram.ui.Components.nm0;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class ga {
     public static final ga[] f = new ga[4];
@@ -26,13 +26,13 @@ public final class ga {
         this.a = i10;
     }
 
-    public final void a(mm0 mm0Var) {
+    public final void a(nm0 nm0Var) {
         TLRPC.UserStatus userStatus;
         long currentTimeMillis = System.currentTimeMillis();
         ArrayList arrayList = this.c;
         arrayList.clear();
-        for (int i10 = 0; i10 < mm0Var.getChildCount(); i10++) {
-            View childAt = mm0Var.getChildAt(i10);
+        for (int i10 = 0; i10 < nm0Var.getChildCount(); i10++) {
+            View childAt = nm0Var.getChildAt(i10);
             long dialogId = childAt instanceof org.telegram.ui.Cells.p2 ? ((org.telegram.ui.Cells.p2) childAt).getDialogId() : childAt instanceof ab ? ((ab) childAt).getDialogId() : 0L;
             int i11 = this.a;
             LongSparseLongArray longSparseLongArray = this.b;

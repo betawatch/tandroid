@@ -18,7 +18,7 @@ import java.util.concurrent.Executor;
 import k2.t;
 import s4.o0;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
 public final class f implements c, c0 {
     public static final s1 p = i0.x(4300000L, 3200000L, 2400000L, 1700000L, 860000L);
@@ -63,7 +63,7 @@ public final class f implements c, c0 {
         w a2 = w.a(context);
         int b10 = a2.b();
         this.n = b10;
-        this.l = a(b10);
+        this.l = b(b10);
         e eVar = new e(this);
         Executor e = e2.a.e();
         CopyOnWriteArrayList copyOnWriteArrayList = (CopyOnWriteArrayList) a2.d;
@@ -84,7 +84,7 @@ public final class f implements c, c0 {
         }
     }
 
-    public static synchronized f b(Context context) {
+    public static synchronized f c(Context context) {
         f fVar;
         synchronized (f.class) {
             try {
@@ -109,7 +109,11 @@ public final class f implements c, c0 {
         return fVar;
     }
 
-    public final long a(int i10) {
+    public final synchronized long a() {
+        return this.l;
+    }
+
+    public final long b(int i10) {
         int[] iArr;
         long longValue;
         Integer valueOf = Integer.valueOf(i10);
@@ -717,7 +721,7 @@ public final class f implements c, c0 {
         return l4.longValue();
     }
 
-    public final void c(int i10, long j10, long j11) {
+    public final void d(int i10, long j10, long j11) {
         int i11;
         long j12;
         long j13;
@@ -744,7 +748,7 @@ public final class f implements c, c0 {
         }
     }
 
-    public final synchronized void d(long j10, long j11) {
+    public final synchronized void e(long j10, long j11) {
         try {
             this.d.getClass();
             long elapsedRealtime = SystemClock.elapsedRealtime();
@@ -755,12 +759,12 @@ public final class f implements c, c0 {
                 if (this.j < 2000) {
                     if (this.k >= 524288) {
                     }
-                    c((int) j11, j10, this.l);
+                    d((int) j11, j10, this.l);
                     this.h = elapsedRealtime;
                     this.i = 0L;
                 }
                 this.l = (long) this.f.b();
-                c((int) j11, j10, this.l);
+                d((int) j11, j10, this.l);
                 this.h = elapsedRealtime;
                 this.i = 0L;
             }
@@ -782,7 +786,7 @@ public final class f implements c, c0 {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final synchronized void e(g2.m mVar, boolean z10) {
+    public final synchronized void f(g2.m mVar, boolean z10) {
         Throwable th2;
         boolean z11;
         f fVar;
@@ -814,7 +818,7 @@ public final class f implements c, c0 {
                         }
                         this.l = (long) this.f.b();
                         fVar = this;
-                        fVar.c(i10, this.i, this.l);
+                        fVar.d(i10, this.i, this.l);
                         fVar.h = elapsedRealtime;
                         fVar.i = 0L;
                     } else {
@@ -845,7 +849,7 @@ public final class f implements c, c0 {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final synchronized void f(g2.m mVar, boolean z10) {
+    public final synchronized void g(g2.m mVar, boolean z10) {
         boolean z11;
         if (z10) {
             if (mVar != null) {

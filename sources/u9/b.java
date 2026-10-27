@@ -4,12 +4,12 @@ import aa.b0;
 import com.google.android.gms.tasks.TaskCompletionSource;
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutorService;
-import org.telegram.ui.Components.ny0;
+import org.telegram.ui.Components.oy0;
 import u4.f;
 import y9.p;
 import y9.x;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
 public final class b implements Callable {
     public final /* synthetic */ boolean a;
@@ -32,7 +32,7 @@ public final class b implements Callable {
         f fVar = new f(3, pVar, this.c);
         ExecutorService executorService2 = x.a;
         TaskCompletionSource taskCompletionSource = new TaskCompletionSource();
-        executorService.execute(new ny0(fVar, executorService, taskCompletionSource, 29));
+        executorService.execute(new oy0(fVar, executorService, taskCompletionSource, 29));
         taskCompletionSource.getTask();
         return null;
     }

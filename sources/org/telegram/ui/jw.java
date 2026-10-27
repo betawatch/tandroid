@@ -1,72 +1,40 @@
 package org.telegram.ui;
 
-import android.app.Activity;
-import android.text.TextUtils;
-import android.view.MotionEvent;
-import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.DialogObject;
-import org.telegram.ui.Components.ChatActivityEnterView;
+import android.content.Context;
+import org.telegram.ui.Components.FragmentContextView;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public final class jw extends ChatActivityEnterView {
-    public final /* synthetic */ cy s5;
+public final class jw extends FragmentContextView {
+    public final /* synthetic */ int X0;
+    public final /* synthetic */ ey Y0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public jw(cy cyVar, Activity activity, tx txVar) {
-        super(activity, txVar, null, false, null);
-        this.s5 = cyVar;
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        int i10;
-        if (motionEvent.getAction() == 0) {
-            cy cyVar = this.s5;
-            Activity parentActivity = cyVar.getParentActivity();
-            i10 = ((org.telegram.ui.ActionBar.r2) cyVar).classGuid;
-            AndroidUtilities.requestAdjustResize(parentActivity, i10);
+    public jw(ey eyVar, Context context, ey eyVar2, int i10) {
+        super(context, eyVar2, true);
+        this.X0 = i10;
+        switch (i10) {
+            case 1:
+                this.Y0 = eyVar;
+                super(context, eyVar2, false);
+                break;
+            default:
+                this.Y0 = eyVar;
+                break;
         }
-        return super.dispatchTouchEvent(motionEvent);
     }
 
-    @Override // org.telegram.ui.Components.ChatActivityEnterView
-    public final int getMessagesCount() {
-        cy cyVar = this.s5;
-        int i10 = cyVar.S0;
-        jw jwVar = cyVar.B1;
-        return Math.max(1, i10 + (!TextUtils.isEmpty(jwVar == null ? "" : jwVar.getFieldText()) ? 1 : 0));
-    }
-
-    @Override // org.telegram.ui.Components.ChatActivityEnterView
-    public final long getStarsPrice() {
-        cy cyVar = this.s5;
-        ArrayList arrayList = cyVar.I2;
-        if (arrayList == null) {
-            return 0L;
+    @Override // org.telegram.ui.Components.FragmentContextView, android.view.View
+    public final void setVisibility(int i10) {
+        switch (this.X0) {
+            case 0:
+                ey eyVar = this.Y0;
+                eyVar.J1.i(eyVar.G1, i10 == 0, true);
+                break;
+            default:
+                ey eyVar2 = this.Y0;
+                eyVar2.J1.i(eyVar2.I1, i10 == 0, true);
+                break;
         }
-        int size = arrayList.size();
-        int i10 = 0;
-        long j10 = 0;
-        while (i10 < size) {
-            Object obj = arrayList.get(i10);
-            i10++;
-            long longValue = ((Long) obj).longValue();
-            long sendPaidMessagesStars = cyVar.getMessagesController().getSendPaidMessagesStars(longValue);
-            if (sendPaidMessagesStars <= 0 && longValue > 0) {
-                sendPaidMessagesStars = DialogObject.getMessagesStarsPrice(cyVar.getMessagesController().isUserContactBlocked(longValue));
-            }
-            j10 += sendPaidMessagesStars;
-        }
-        return j10;
-    }
-
-    @Override // org.telegram.ui.Components.ChatActivityEnterView
-    public final void y0(float f7) {
-        cy cyVar = this.s5;
-        cyVar.y1.setInputBubbleHeight(f7);
-        cyVar.A3();
-        cyVar.B3();
     }
 }

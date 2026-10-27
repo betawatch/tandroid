@@ -30,12 +30,12 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_payments;
 import org.telegram.ui.Components.qc;
-import org.telegram.ui.Components.s81;
-import org.telegram.ui.Components.t61;
+import org.telegram.ui.Components.t81;
+import org.telegram.ui.Components.u61;
 import org.telegram.ui.Components.wc;
-import org.telegram.ui.un;
+import org.telegram.ui.wn;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class u2 implements Runnable {
     public final /* synthetic */ int a;
@@ -78,7 +78,7 @@ public final /* synthetic */ class u2 implements Runnable {
                 d4 d4Var2 = (d4) this.b;
                 TL_payments.connectedBotStarRef connectedbotstarref = (TL_payments.connectedBotStarRef) this.c;
                 d4Var2.getClass();
-                d4Var2.presentFragment(un.ba(connectedbotstarref.bot_id));
+                d4Var2.presentFragment(wn.ea(connectedbotstarref.bot_id));
                 return;
             case 3:
                 o4 o4Var = (o4) this.b;
@@ -165,7 +165,7 @@ public final /* synthetic */ class u2 implements Runnable {
                 while (i12 < size) {
                     Object obj2 = arrayList2.get(i12);
                     i12++;
-                    ((s81) ((b2.a2) obj2)).J.onSurfaceTextureUpdated(surfaceTexture);
+                    ((t81) ((b2.a2) obj2)).J.onSurfaceTextureUpdated(surfaceTexture);
                 }
                 return;
             case 7:
@@ -277,10 +277,10 @@ public final /* synthetic */ class u2 implements Runnable {
                 ii.r rVar = (ii.r) this.b;
                 ji.f fVar = (ji.f) this.c;
                 rVar.getClass();
-                rVar.presentFragment(un.ba(fVar.b.id));
+                rVar.presentFragment(wn.ea(fVar.b.id));
                 return;
             case 14:
-                ((ii.j0) this.b).s.presentFragment(un.ba(((ji.f) this.c).b.id));
+                ((ii.j0) this.b).s.presentFragment(wn.ea(((ji.f) this.c).b.id));
                 return;
             case 15:
                 ((j2.h) this.b).d.reportTrackChangeEvent((TrackChangeEvent) this.c);
@@ -318,9 +318,9 @@ public final /* synthetic */ class u2 implements Runnable {
                 return;
             case 23:
                 jg.h1 h1Var = (jg.h1) this.b;
-                t61 t61Var = (t61) this.c;
+                u61 u61Var = (u61) this.c;
                 h1Var.getClass();
-                h1Var.Y(t61Var.d);
+                h1Var.Y(u61Var.d);
                 return;
             case 24:
                 MessagesStorage messagesStorage = (MessagesStorage) this.b;
@@ -440,7 +440,7 @@ public final /* synthetic */ class u2 implements Runnable {
                 String str3 = e2.n0.a;
                 j2.e eVar = ((i2.d0) vVar).a.s;
                 j2.a p10 = eVar.p();
-                eVar.q(p10, 1012, new j2.d(p10, str2, 14));
+                eVar.q(p10, 1012, new j2.d(p10, str2, 21));
                 return;
             case 28:
                 rf.b bVar2 = (rf.b) this.b;

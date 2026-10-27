@@ -25,18 +25,18 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.UserObject;
-import org.telegram.messenger.vh;
+import org.telegram.messenger.wh;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.Components.a21;
 import org.telegram.ui.Components.b10;
-import org.telegram.ui.Components.gb1;
-import org.telegram.ui.Components.q61;
-import org.telegram.ui.Components.rj0;
-import org.telegram.ui.Components.w61;
-import org.telegram.ui.Components.y11;
+import org.telegram.ui.Components.kb1;
+import org.telegram.ui.Components.r61;
+import org.telegram.ui.Components.sj0;
+import org.telegram.ui.Components.x61;
 import org.telegram.ui.Components.z11;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class w3 extends FrameLayout {
     public final int a;
@@ -67,7 +67,7 @@ public final class w3 extends FrameLayout {
         org.telegram.ui.Components.y9 y9Var = new org.telegram.ui.Components.y9(context);
         this.c = y9Var;
         y9Var.setRoundRadius(AndroidUtilities.dp(8.0f));
-        linearLayout.addView(y9Var, gb1.r(16, 16));
+        linearLayout.addView(y9Var, kb1.r(16, 16));
         int i11 = org.telegram.ui.ActionBar.y6.G6;
         TextView c10 = c(context, 13, i11);
         this.f = c10;
@@ -76,11 +76,11 @@ public final class w3 extends FrameLayout {
         c10.setSingleLine(true);
         TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
         c10.setEllipsize(truncateAt);
-        linearLayout.addView(c10, gb1.o(6.0f, 0.0f, 6.0f, 0.0f, -2, 16));
+        linearLayout.addView(c10, kb1.o(6.0f, 0.0f, 6.0f, 0.0f, -2, 16));
         TextView c11 = c(context, 13, org.telegram.ui.ActionBar.y6.y6);
         this.h = c11;
         c11.setSingleLine(true);
-        linearLayout.addView(c11, gb1.r(-2, 16));
+        linearLayout.addView(c11, kb1.r(-2, 16));
         addView(linearLayout);
         TextView c12 = c(context, 14, i11);
         this.n = c12;
@@ -203,27 +203,27 @@ public final class w3 extends FrameLayout {
         int i20 = 0;
         while (i20 < length) {
             Object obj = spans[i20];
-            if ((obj instanceof ClickableSpan) || (obj instanceof w61) || (obj instanceof TypefaceSpan) || (obj instanceof ni.h) || (obj instanceof ni.d) || (obj instanceof rj0) || (obj instanceof ParagraphStyle)) {
+            if ((obj instanceof ClickableSpan) || (obj instanceof x61) || (obj instanceof TypefaceSpan) || (obj instanceof ni.h) || (obj instanceof ni.d) || (obj instanceof sj0) || (obj instanceof ParagraphStyle)) {
                 objArr = spans;
                 i16 = i18;
                 spannableStringBuilder.removeSpan(obj);
-            } else if ((obj instanceof q61) || ((obj instanceof StyleSpan) && ((StyleSpan) obj).getStyle() == i18)) {
+            } else if ((obj instanceof r61) || ((obj instanceof StyleSpan) && ((StyleSpan) obj).getStyle() == i18)) {
                 objArr = spans;
                 i16 = i18;
                 spannableStringBuilder.removeSpan(obj);
-            } else if (obj instanceof z11) {
-                y11 y11Var = ((z11) obj).b;
+            } else if (obj instanceof a21) {
+                z11 z11Var = ((a21) obj).b;
                 i16 = i18;
-                if (y11Var.b() == AndroidUtilities.bold()) {
+                if (z11Var.b() == AndroidUtilities.bold()) {
                     int spanStart = spannableStringBuilder.getSpanStart(obj);
                     int spanEnd = spannableStringBuilder.getSpanEnd(obj);
                     int spanFlags = spannableStringBuilder.getSpanFlags(obj);
                     objArr = spans;
-                    y11 y11Var2 = new y11(y11Var);
-                    y11Var2.a &= -2;
+                    z11 z11Var2 = new z11(z11Var);
+                    z11Var2.a &= -2;
                     spannableStringBuilder.removeSpan(obj);
-                    if (y11Var2.a != 0) {
-                        spannableStringBuilder.setSpan(new z11(y11Var2, 0), spanStart, spanEnd, spanFlags);
+                    if (z11Var2.a != 0) {
+                        spannableStringBuilder.setSpan(new a21(z11Var2, 0), spanStart, spanEnd, spanFlags);
                     }
                 } else {
                     objArr = spans;
@@ -466,7 +466,7 @@ public final class w3 extends FrameLayout {
             y9VarArr[2].layout(i16, i17 - measuredWidth, i18, i17);
         } else {
             for (int i19 = 0; i19 < y9VarArr.length; i19++) {
-                int b10 = vh.b(52.0f, i19, dp3);
+                int b10 = wh.b(52.0f, i19, dp3);
                 org.telegram.ui.Components.y9 y9Var = y9VarArr[i19];
                 y9Var.layout(b10, dp4, y9Var.getMeasuredWidth() + b10, dp4 + dp5);
             }
@@ -477,7 +477,7 @@ public final class w3 extends FrameLayout {
                 return;
             }
             TextView textView2 = textViewArr[i15];
-            int measuredWidth2 = (y9VarArr[i15].getMeasuredWidth() + vh.b(52.0f, i15, dp3)) - AndroidUtilities.dp(4.0f);
+            int measuredWidth2 = (y9VarArr[i15].getMeasuredWidth() + wh.b(52.0f, i15, dp3)) - AndroidUtilities.dp(4.0f);
             textView2.layout(measuredWidth2 - textView2.getMeasuredWidth(), AndroidUtilities.dp(62.0f), measuredWidth2, AndroidUtilities.dp(78.0f));
             i15++;
         }
@@ -496,7 +496,7 @@ public final class w3 extends FrameLayout {
         TextView textView2 = this.n;
         textView2.measure(makeMeasureSpec, makeMeasureSpec2);
         textView2.measure(View.MeasureSpec.makeMeasureSpec(a2, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(Math.max(1, Math.min(3, textView2.getLineCount())) * 18), TLObject.FLAG_30));
-        int B = vh.B(2.0f, AndroidUtilities.dp(72.0f), 2);
+        int B = wh.B(2.0f, AndroidUtilities.dp(72.0f), 2);
         int i12 = 0;
         while (true) {
             org.telegram.ui.Components.y9[] y9VarArr = this.d;

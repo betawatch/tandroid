@@ -23,11 +23,11 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.R;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.RadioButton;
-import org.telegram.ui.Components.mm0;
-import org.telegram.ui.b50;
-import org.telegram.ui.r40;
+import org.telegram.ui.Components.nm0;
+import org.telegram.ui.d50;
+import org.telegram.ui.t40;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public abstract class f7 {
     public static final e7 a = new e7();
@@ -75,12 +75,12 @@ public abstract class f7 {
         m(recyclerView, 21, i10, u6Var);
     }
 
-    public static void J(int i10, b50 b50Var) {
-        m(b50Var, 20, i10, null);
+    public static void J(int i10, d50 d50Var) {
+        m(d50Var, 20, i10, null);
     }
 
-    public static void K(mm0 mm0Var, int i10, u6 u6Var) {
-        m(mm0Var, 20, i10, u6Var);
+    public static void K(nm0 nm0Var, int i10, u6 u6Var) {
+        m(nm0Var, 20, i10, u6Var);
     }
 
     public static b7 L(float f7, int i10) {
@@ -170,8 +170,8 @@ public abstract class f7 {
             default:
                 switch (i11) {
                     case 20:
-                        if (view instanceof mm0) {
-                            ((mm0) view).setSelectorDrawableColor(i10);
+                        if (view instanceof nm0) {
+                            ((nm0) view).setSelectorDrawableColor(i10);
                             break;
                         }
                         break;
@@ -522,8 +522,8 @@ public abstract class f7 {
                             default:
                                 switch (i15) {
                                     case 20:
-                                        if (view instanceof mm0) {
-                                            e = ((mm0) view).getSelectorDrawableColor();
+                                        if (view instanceof nm0) {
+                                            e = ((nm0) view).getSelectorDrawableColor();
                                             break;
                                         } else {
                                             i10 = z6Var5.g;
@@ -661,8 +661,8 @@ public abstract class f7 {
         }
     }
 
-    public static void e(r40 r40Var, int i10) {
-        m(r40Var, 5, i10, null);
+    public static void e(t40 t40Var, int i10) {
+        m(t40Var, 5, i10, null);
     }
 
     public static void e0(FrameLayout frameLayout, boolean z10) {

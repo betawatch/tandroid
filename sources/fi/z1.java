@@ -5,9 +5,9 @@ import android.text.TextUtils;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.ui.Components.ds;
-import org.telegram.ui.Components.gb1;
+import org.telegram.ui.Components.kb1;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class z1 extends v1 {
     public final n1 b;
@@ -49,16 +49,16 @@ public final class z1 extends v1 {
         lVar.g = 160L;
         lVar.i = ds.g;
         n1Var.setItemAnimator(lVar);
-        addView(n1Var, gb1.g(-1.0f, -1));
+        addView(n1Var, kb1.g(-1.0f, -1));
         u6Var = ((org.telegram.ui.ActionBar.k3) l2Var).resourcesProvider;
         f2 f2Var = new f2(context, u6Var);
         this.f = f2Var;
         f2Var.w = new ai.e(this, 17);
-        addView(f2Var, gb1.i(-1, -2, 48));
+        addView(f2Var, kb1.i(-1, -2, 48));
         u6Var2 = ((org.telegram.ui.ActionBar.k3) l2Var).resourcesProvider;
         x1 x1Var = new x1(this, context, u6Var2);
         this.e = x1Var;
-        addView(x1Var, gb1.g(36.0f, -1));
+        addView(x1Var, kb1.g(36.0f, -1));
     }
 
     @Override // fi.v1

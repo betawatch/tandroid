@@ -2,9 +2,9 @@ package org.telegram.ui.Cells;
 
 import org.telegram.messenger.MessagesController;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.cy;
+import org.telegram.ui.ey;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class i2 extends di.w7 {
     public final /* synthetic */ p2 S;
@@ -24,8 +24,8 @@ public final class i2 extends di.w7 {
     public final boolean d(long j10) {
         p2 p2Var = this.S;
         int i10 = p2Var.F0;
-        cy cyVar = p2Var.D4;
-        if (cyVar == null || p2Var.O0) {
+        ey eyVar = p2Var.D4;
+        if (eyVar == null || p2Var.O0) {
             return false;
         }
         if (j10 > 0) {
@@ -33,14 +33,14 @@ public final class i2 extends di.w7 {
             if (user == null || user.linked_community_id == 0) {
                 return false;
             }
-            cyVar.showDialog(new ii.j0(cyVar, user.linked_community_id));
+            eyVar.showDialog(new ii.j0(eyVar, user.linked_community_id));
             return true;
         }
         TLRPC.Chat chat = MessagesController.getInstance(i10).getChat(Long.valueOf(-j10));
         if (chat == null || chat.linked_community_id == 0) {
             return false;
         }
-        cyVar.showDialog(new ii.j0(cyVar, chat.linked_community_id));
+        eyVar.showDialog(new ii.j0(eyVar, chat.linked_community_id));
         return true;
     }
 

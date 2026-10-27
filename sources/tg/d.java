@@ -10,19 +10,19 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
-import org.telegram.messenger.vh;
+import org.telegram.messenger.wh;
 import org.telegram.ui.ActionBar.f7;
 import org.telegram.ui.ActionBar.u6;
 import org.telegram.ui.ActionBar.y6;
 import org.telegram.ui.Cells.x3;
 import org.telegram.ui.Components.Premium.LimitPreviewView;
-import org.telegram.ui.Components.gb1;
-import org.telegram.ui.Components.lm0;
-import org.telegram.ui.o41;
+import org.telegram.ui.Components.kb1;
+import org.telegram.ui.Components.mm0;
+import org.telegram.ui.r41;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
-public final class d extends lm0 {
+public final class d extends mm0 {
     public final u6 c;
     public final int d;
     public final int e;
@@ -59,7 +59,7 @@ public final class d extends lm0 {
         this.d = arrayList.size() + 1;
     }
 
-    @Override // org.telegram.ui.Components.lm0
+    @Override // org.telegram.ui.Components.mm0
     public final boolean D(s4.e1 e1Var) {
         return false;
     }
@@ -91,7 +91,7 @@ public final class d extends lm0 {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r1v3, types: [android.view.ViewGroup, org.telegram.ui.o41] */
+    /* JADX WARN: Type inference failed for: r1v3, types: [android.view.ViewGroup, org.telegram.ui.r41] */
     /* JADX WARN: Type inference failed for: r1v7, types: [tg.f] */
     @Override // s4.h0
     public final s4.e1 x(ViewGroup viewGroup, int i10) {
@@ -108,20 +108,20 @@ public final class d extends lm0 {
                 x3Var = new x3(context, 16);
             }
         } else if (this.s) {
-            ?? o41Var = new o41(context, 10);
-            LinearLayout d = vh.d(context, 0);
+            ?? r41Var = new r41(context, 10);
+            LinearLayout d = wh.d(context, 0);
             ImageView imageView = new ImageView(context);
             imageView.setImageDrawable(b1.c(context.getDrawable(R.drawable.other_2x_large), b1.d().a));
-            d.addView(imageView, gb1.h(40, 28.0f, 16, 0.0f, 0.0f, 8.0f, 0.0f));
+            d.addView(imageView, kb1.h(40, 28.0f, 16, 0.0f, 0.0f, 8.0f, 0.0f));
             TextView textView = new TextView(context);
             textView.setText(LocaleController.getString(R.string.DoubledLimits));
             textView.setGravity(17);
             textView.setTextSize(1, 20.0f);
             f7.V(textView, y6.G6, u6Var);
             textView.setTypeface(AndroidUtilities.bold());
-            d.addView(textView, gb1.i(-2, -2, 16));
-            o41Var.addView(d, gb1.i(-2, -2, 17));
-            x3Var = o41Var;
+            d.addView(textView, kb1.i(-2, -2, 16));
+            r41Var.addView(d, kb1.i(-2, -2, 17));
+            x3Var = r41Var;
         } else {
             x3Var = new x3(context, 64);
         }

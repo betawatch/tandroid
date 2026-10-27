@@ -13,17 +13,17 @@ import org.telegram.ui.Cells.s1;
 import org.telegram.ui.Cells.t9;
 import org.telegram.ui.Components.ds;
 import org.telegram.ui.Components.g9;
-import org.telegram.ui.Components.mb0;
-import org.telegram.ui.Components.o60;
-import org.telegram.ui.Components.pp0;
+import org.telegram.ui.Components.nb0;
+import org.telegram.ui.Components.p60;
+import org.telegram.ui.Components.qp0;
 import org.telegram.ui.Components.voip.w2;
 import org.telegram.ui.Components.y9;
 import org.telegram.ui.Components.z8;
-import org.telegram.ui.a41;
-import org.telegram.ui.c41;
-import org.telegram.ui.ni0;
+import org.telegram.ui.d41;
+import org.telegram.ui.f41;
+import org.telegram.ui.pi0;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class a0 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -39,7 +39,7 @@ public final /* synthetic */ class a0 implements ValueAnimator.AnimatorUpdateLis
     @Override // android.animation.ValueAnimator.AnimatorUpdateListener
     public final void onAnimationUpdate(ValueAnimator valueAnimator) {
         ViewGroup viewGroup;
-        a41 a41Var;
+        d41 d41Var;
         switch (this.a) {
             case 0:
                 i0 i0Var = (i0) this.c;
@@ -119,17 +119,17 @@ public final /* synthetic */ class a0 implements ValueAnimator.AnimatorUpdateLis
                 }
                 break;
             case 7:
-                o60 o60Var = (o60) this.c;
-                o60Var.E0 = this.b ? 0.0f : ((Float) valueAnimator.getAnimatedValue()).floatValue() * (o60Var.getMeasuredHeight() / 2.0f);
-                o60Var.w();
+                p60 p60Var = (p60) this.c;
+                p60Var.D0 = this.b ? 0.0f : ((Float) valueAnimator.getAnimatedValue()).floatValue() * (p60Var.getMeasuredHeight() / 2.0f);
+                p60Var.x();
                 break;
             case 8:
-                mb0 mb0Var = (mb0) this.c;
-                mb0Var.getClass();
-                mb0Var.M = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                mb0Var.invalidate();
+                nb0 nb0Var = (nb0) this.c;
+                nb0Var.getClass();
+                nb0Var.M = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                nb0Var.invalidate();
                 if (this.b) {
-                    mb0Var.requestLayout();
+                    nb0Var.requestLayout();
                     break;
                 }
                 break;
@@ -149,33 +149,33 @@ public final /* synthetic */ class a0 implements ValueAnimator.AnimatorUpdateLis
                 }
                 break;
             case 10:
-                ni0 ni0Var = (ni0) this.c;
+                pi0 pi0Var = (pi0) this.c;
                 float floatValue4 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                ni0Var.y = floatValue4;
-                ni0Var.G.setAlpha(floatValue4);
-                ni0Var.J.setAlpha(ni0Var.y);
-                if (!this.b && (viewGroup = ni0Var.Y) != null) {
-                    viewGroup.setAlpha(ni0Var.y);
+                pi0Var.y = floatValue4;
+                pi0Var.G.setAlpha(floatValue4);
+                pi0Var.J.setAlpha(pi0Var.y);
+                if (!this.b && (viewGroup = pi0Var.Y) != null) {
+                    viewGroup.setAlpha(pi0Var.y);
                 }
-                ni0Var.E.invalidate();
-                ni0Var.F.invalidate();
+                pi0Var.E.invalidate();
+                pi0Var.F.invalidate();
                 break;
             case 11:
-                c41 c41Var = (c41) this.c;
-                c41Var.s = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                c41Var.b.invalidate();
-                c41Var.c.invalidate();
-                if (c41Var.S) {
-                    c41Var.N.invalidate();
+                f41 f41Var = (f41) this.c;
+                f41Var.s = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                f41Var.b.invalidate();
+                f41Var.c.invalidate();
+                if (f41Var.S) {
+                    f41Var.N.invalidate();
                 }
-                c41Var.e();
-                TextView textView = c41Var.y;
+                f41Var.e();
+                TextView textView = f41Var.y;
                 if (textView != null) {
-                    textView.setAlpha(c41Var.s);
+                    textView.setAlpha(f41Var.s);
                 }
-                if (!c41Var.S && (a41Var = c41Var.N) != null && a41Var.getSeekBarWaveform() != null) {
-                    pp0 seekBarWaveform = c41Var.N.getSeekBarWaveform();
-                    seekBarWaveform.L = (this.b ? ds.g : ds.i).getInterpolation(Utilities.clamp(c41Var.s * 1.25f, 1.0f, 0.0f));
+                if (!f41Var.S && (d41Var = f41Var.N) != null && d41Var.getSeekBarWaveform() != null) {
+                    qp0 seekBarWaveform = f41Var.N.getSeekBarWaveform();
+                    seekBarWaveform.L = (this.b ? ds.g : ds.i).getInterpolation(Utilities.clamp(f41Var.s * 1.25f, 1.0f, 0.0f));
                     s1 s1Var2 = seekBarWaveform.n;
                     if (s1Var2 != null) {
                         s1Var2.invalidate();
@@ -184,13 +184,13 @@ public final /* synthetic */ class a0 implements ValueAnimator.AnimatorUpdateLis
                 }
                 break;
             default:
-                sg.m0 m0Var = (sg.m0) this.c;
+                sg.l0 l0Var = (sg.l0) this.c;
                 float floatValue5 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                m0Var.e = floatValue5;
+                l0Var.e = floatValue5;
                 if (!this.b) {
-                    m0Var.c.setAlpha(1.0f - floatValue5);
+                    l0Var.c.setAlpha(1.0f - floatValue5);
                 }
-                m0Var.b.invalidate();
+                l0Var.b.invalidate();
                 break;
         }
     }

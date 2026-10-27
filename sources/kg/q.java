@@ -9,10 +9,10 @@ import di.u4;
 import java.util.ArrayList;
 import org.telegram.messenger.SegmentTree;
 import org.telegram.ui.ActionBar.u6;
-import org.telegram.ui.g91;
-import org.telegram.ui.hl0;
+import org.telegram.ui.i91;
+import org.telegram.ui.jl0;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class q extends h {
     public long[] D1;
@@ -59,9 +59,9 @@ public final class q extends h {
             f fVar = this.Q0;
             if (fVar != null) {
                 getSelectedDate();
-                g91 g91Var = (g91) ((hl0) fVar).b;
-                g91Var.f();
-                g91Var.b.t0.d(false, false);
+                i91 i91Var = (i91) ((jl0) fVar).b;
+                i91Var.f();
+                i91Var.b.t0.d(false, false);
             }
             invalidate();
             B();

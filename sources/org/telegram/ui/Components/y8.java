@@ -13,9 +13,9 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public final class y8 extends vw0 {
+public final class y8 extends ww0 {
     public final b2.v0 l0;
     public final /* synthetic */ g9 m0;
     public boolean n0;
@@ -32,7 +32,7 @@ public final class y8 extends vw0 {
         this.l0 = new b2.v0();
     }
 
-    @Override // org.telegram.ui.Components.vw0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.ww0, android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         Canvas canvas2;
         int save = canvas.save();
@@ -135,9 +135,9 @@ public final class y8 extends vw0 {
             if (g9Var.U) {
                 g9Var.j0(0.0f, false);
                 g9Var.a.setExpanded(false);
-                addView(g9Var.a, 0, gb1.g(-1.0f, -1));
+                addView(g9Var.a, 0, kb1.g(-1.0f, -1));
             } else {
-                g9Var.r.addView(g9Var.a, 0, gb1.g(-2.0f, -1));
+                g9Var.r.addView(g9Var.a, 0, kb1.g(-2.0f, -1));
             }
             AndroidUtilities.requestAdjustResize(g9Var.getParentActivity(), g9Var.getClassGuid());
         }
@@ -169,8 +169,8 @@ public final class y8 extends vw0 {
             } else {
                 i12 = 0;
             }
-            org.telegram.ui.xa1 xa1Var = g9Var.r;
-            xa1Var.setTranslationY((xa1Var.getTranslationY() + ((ViewGroup.MarginLayoutParams) g9Var.r.getLayoutParams()).topMargin) - i12);
+            org.telegram.ui.za1 za1Var = g9Var.r;
+            za1Var.setTranslationY((za1Var.getTranslationY() + ((ViewGroup.MarginLayoutParams) g9Var.r.getLayoutParams()).topMargin) - i12);
             ((ViewGroup.MarginLayoutParams) g9Var.r.getLayoutParams()).topMargin = i12;
             boolean z13 = g9Var.L;
             if (!g9Var.U) {

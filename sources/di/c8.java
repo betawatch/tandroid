@@ -6,23 +6,22 @@ import android.widget.FrameLayout;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessageObject;
-import org.telegram.ui.Components.fl0;
-import org.telegram.ui.Components.o60;
+import org.telegram.ui.Components.gl0;
+import org.telegram.ui.Components.p60;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class c8 extends a5.a {
-    public final ArrayList c = new ArrayList();
-    public final /* synthetic */ Context d;
-    public final /* synthetic */ y9 e;
-    public final /* synthetic */ org.telegram.ui.ActionBar.u6 f;
-    public final /* synthetic */ o9 g;
+    public final /* synthetic */ Context c;
+    public final /* synthetic */ y9 d;
+    public final /* synthetic */ org.telegram.ui.ActionBar.u6 e;
+    public final /* synthetic */ x f;
 
-    public c8(o9 o9Var, Context context, y9 y9Var, org.telegram.ui.ActionBar.u6 u6Var) {
-        this.g = o9Var;
-        this.d = context;
-        this.e = y9Var;
-        this.f = u6Var;
+    public c8(x xVar, Context context, y9 y9Var, org.telegram.ui.ActionBar.u6 u6Var) {
+        this.f = xVar;
+        this.c = context;
+        this.d = y9Var;
+        this.e = u6Var;
     }
 
     @Override // a5.a
@@ -31,45 +30,45 @@ public final class c8 extends a5.a {
         mVar.removeView(frameLayout);
         q4 q4Var = (q4) frameLayout.getChildAt(0);
         AndroidUtilities.removeFromParent(q4Var);
-        this.c.add(q4Var);
+        this.f.P0.add(q4Var);
     }
 
     @Override // a5.a
     public final int b() {
-        o9 o9Var = this.g;
-        ArrayList arrayList = o9Var.x0;
-        return arrayList != null ? arrayList.size() : o9Var.A0.size();
+        x xVar = this.f;
+        ArrayList arrayList = xVar.x0;
+        return arrayList != null ? arrayList.size() : xVar.A0.size();
     }
 
     @Override // a5.a
     public final Object e(a5.m mVar, int i10) {
         q4 b8Var;
-        Context context = this.d;
-        o9 o9Var = this.g;
-        e8 e8Var = new e8(o9Var, context);
-        ArrayList arrayList = this.c;
+        Context context = this.c;
+        x xVar = this.f;
+        e8 e8Var = new e8(xVar, context);
+        ArrayList arrayList = xVar.P0;
         boolean isEmpty = arrayList.isEmpty();
-        y9 y9Var = this.e;
+        y9 y9Var = this.d;
         if (isEmpty) {
-            b8Var = new b8(this, this.d, y9Var, o9Var.H0, this.f);
+            b8Var = new b8(this, this.c, y9Var, xVar.H0, this.e);
         } else {
             b8Var = (q4) arrayList.remove(0);
             b8Var.d1.a.getImageReceiver().setVisible(true, true);
             if (b8Var.T1 != null) {
-                b8Var.Q1.N0();
-                b8Var.Q1.setAlpha(1.0f - b8Var.S3);
+                b8Var.Q1.M0();
+                b8Var.Q1.setAlpha(1.0f - b8Var.T3);
             }
-            fl0 fl0Var = b8Var.U1;
-            if (fl0Var != null) {
-                fl0Var.n();
+            gl0 gl0Var = b8Var.U1;
+            if (gl0Var != null) {
+                gl0Var.n();
             }
-            fl0 fl0Var2 = b8Var.g3;
-            if (fl0Var2 != null) {
-                fl0Var2.n();
+            gl0 gl0Var2 = b8Var.g3;
+            if (gl0Var2 != null) {
+                gl0Var2.n();
             }
-            o60 o60Var = b8Var.y2;
-            if (o60Var != null) {
-                AndroidUtilities.removeFromParent(o60Var);
+            p60 p60Var = b8Var.y2;
+            if (p60Var != null) {
+                AndroidUtilities.removeFromParent(p60Var);
                 b8Var.y2.c(true);
                 b8Var.y2 = null;
             }
@@ -82,11 +81,11 @@ public final class c8 extends a5.a {
             b8Var.n0();
         }
         e8Var.a = b8Var;
-        b8Var.setAccount(o9Var.y0);
-        b8Var.setDelegate(o9Var.B0);
+        b8Var.setAccount(xVar.y0);
+        b8Var.setDelegate(xVar.B0);
         b8Var.setLongpressed(y9Var.a1);
         e8Var.setTag(Integer.valueOf(i10));
-        ArrayList arrayList2 = o9Var.x0;
+        ArrayList arrayList2 = xVar.x0;
         if (arrayList2 != null) {
             if (y9Var.R0) {
                 i10 = (arrayList2.size() - 1) - i10;
@@ -96,13 +95,13 @@ public final class c8 extends a5.a {
             z6 z6Var = y9Var.O0;
             if ((z6Var instanceof t6) || (z6Var instanceof c7)) {
                 MessageObject f7 = z6Var.f(((Integer) arrayList3.get(0)).intValue());
-                e8Var.b = f7 == null ? o9Var.w0 : f7.getDialogId();
+                e8Var.b = f7 == null ? xVar.w0 : f7.getDialogId();
             } else {
-                e8Var.b = o9Var.w0;
+                e8Var.b = xVar.w0;
             }
         } else {
             e8Var.c = null;
-            e8Var.b = ((Long) o9Var.A0.get(i10)).longValue();
+            e8Var.b = ((Long) xVar.A0.get(i10)).longValue();
         }
         e8Var.addView(b8Var);
         b8Var.requestLayout();

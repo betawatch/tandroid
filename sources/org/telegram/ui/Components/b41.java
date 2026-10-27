@@ -1,34 +1,30 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
-
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
+/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class b41 implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ d41 b;
+public final class b41 {
+    public static final b41 a;
+    public static final b41 b;
+    public static final b41 c;
+    public static final /* synthetic */ b41[] d;
 
-    public /* synthetic */ b41(d41 d41Var, int i10) {
-        this.a = i10;
-        this.b = d41Var;
+    static {
+        b41 b41Var = new b41("TOP", 0);
+        a = b41Var;
+        b41 b41Var2 = new b41("LEFT", 1);
+        b = b41Var2;
+        b41 b41Var3 = new b41("BOTTOM", 2);
+        c = b41Var3;
+        d = new b41[]{b41Var, b41Var2, b41Var3};
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        switch (this.a) {
-            case 0:
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                d41 d41Var = this.b;
-                d41Var.U = floatValue;
-                d41Var.h();
-                d41Var.g();
-                break;
-            default:
-                float max = Math.max(1.0f, ((Float) valueAnimator.getAnimatedValue()).floatValue());
-                d41 d41Var2 = this.b;
-                d41Var2.L = max;
-                d41Var2.h.invalidate();
-                break;
-        }
+    public static b41 valueOf(String str) {
+        return (b41) Enum.valueOf(b41.class, str);
+    }
+
+    public static b41[] values() {
+        return (b41[]) d.clone();
     }
 }

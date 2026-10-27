@@ -10,11 +10,11 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.v51;
+import org.telegram.ui.Components.w51;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.dl0;
+import org.telegram.ui.fl0;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class s2 implements Utilities.Callback2 {
     public final /* synthetic */ int a;
@@ -46,20 +46,20 @@ public final /* synthetic */ class s2 implements Utilities.Callback2 {
                 h7.n0((h7) obj6, (qf.c) obj5, (vg.n1) obj4, (q3) obj3, (TL_stars.starGiftDepositPayload) obj, (TLRPC.TL_error) obj2);
                 break;
             case 2:
-                v51 v51Var = (v51) obj5;
+                w51 w51Var = (w51) obj5;
                 String str = (String) obj4;
                 org.telegram.ui.ActionBar.u6 u6Var = (org.telegram.ui.ActionBar.u6) obj3;
                 ((org.telegram.ui.ActionBar.e2) obj6).dismiss();
                 if (!(((TLRPC.Bool) obj) instanceof TLRPC.TL_boolTrue)) {
-                    org.telegram.ui.ActionBar.k3 k3Var = dl0.a;
+                    org.telegram.ui.ActionBar.k3 k3Var = fl0.a;
                     if (k3Var != null) {
                         k3Var.dismiss();
-                        dl0.a = null;
+                        fl0.a = null;
                     }
-                    dl0.a().M(LocaleController.getString(R.string.BotAuthLoggedInFailTitle), TextUtils.isEmpty(str) ? LocaleController.getString(R.string.BotAuthLoggedInFailNoDomain) : AndroidUtilities.replaceSingleLinkBold(LocaleController.formatString(R.string.BotAuthLoggedInFail, str), org.telegram.ui.ActionBar.y6.w0(org.telegram.ui.ActionBar.y6.Gi, u6Var)), R.raw.error).j();
+                    fl0.a().M(LocaleController.getString(R.string.BotAuthLoggedInFailTitle), TextUtils.isEmpty(str) ? LocaleController.getString(R.string.BotAuthLoggedInFailNoDomain) : AndroidUtilities.replaceSingleLinkBold(LocaleController.formatString(R.string.BotAuthLoggedInFail, str), org.telegram.ui.ActionBar.y6.w0(org.telegram.ui.ActionBar.y6.Gi, u6Var)), R.raw.error).j();
                     break;
                 } else {
-                    v51Var.run();
+                    w51Var.run();
                     break;
                 }
             default:

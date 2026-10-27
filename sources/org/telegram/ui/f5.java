@@ -21,7 +21,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 import org.telegram.ui.Components.RadialProgress2;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public abstract class f5 extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     public static final /* synthetic */ int F = 0;
@@ -55,10 +55,10 @@ public abstract class f5 extends FrameLayout implements NotificationCenter.Notif
         View view = new View(context);
         this.v = view;
         view.setOnClickListener(new a(this, 4));
-        addView(view, org.telegram.ui.Components.gb1.g(-1.0f, -1));
+        addView(view, org.telegram.ui.Components.kb1.g(-1.0f, -1));
         k0 k0Var = new k0(this, context, 2);
         this.b = k0Var;
-        addView(k0Var, org.telegram.ui.Components.gb1.g(-1.0f, -1));
+        addView(k0Var, org.telegram.ui.Components.kb1.g(-1.0f, -1));
         x4 x4Var = new x4(context, u6Var);
         this.c = x4Var;
         float dp = AndroidUtilities.dp(12.0f);
@@ -66,7 +66,7 @@ public abstract class f5 extends FrameLayout implements NotificationCenter.Notif
         x4Var.setOutlineProvider(new ag.x0(0, dp));
         x4Var.setElevation(AndroidUtilities.dp(4.0f));
         x4Var.setClipToOutline(true);
-        k0Var.addView(x4Var, org.telegram.ui.Components.gb1.i(0, 0, 1));
+        k0Var.addView(x4Var, org.telegram.ui.Components.kb1.i(0, 0, 1));
         if (Build.VERSION.SDK_INT >= 28) {
             x4Var.setOutlineSpotShadowColor(TLObject.FLAG_31);
             x4Var.setOutlineAmbientShadowColor(TLObject.FLAG_31);
@@ -79,7 +79,7 @@ public abstract class f5 extends FrameLayout implements NotificationCenter.Notif
         c10.x.e = true;
         c10.x(AndroidUtilities.dp(12.0f));
         actionBarPopupWindow$ActionBarPopupWindowLayout.setBackground(c10);
-        k0Var.addView(actionBarPopupWindow$ActionBarPopupWindowLayout, org.telegram.ui.Components.gb1.l(-2.0f, -2.0f, 8388611));
+        k0Var.addView(actionBarPopupWindow$ActionBarPopupWindowLayout, org.telegram.ui.Components.kb1.l(-2.0f, -2.0f, 8388611));
     }
 
     public final void a(a5 a5Var) {
@@ -288,8 +288,8 @@ public abstract class f5 extends FrameLayout implements NotificationCenter.Notif
     @Override // android.view.ViewGroup, android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
-        NotificationCenter.getInstance(UserConfig.selectedAccount).addObserver(this, NotificationCenter.fileLoaded);
-        NotificationCenter.getInstance(UserConfig.selectedAccount).addObserver(this, NotificationCenter.fileLoadProgressChanged);
+        NotificationCenter.getInstance(UserConfig.selectedAccount).addWeakObserver(this, NotificationCenter.fileLoaded);
+        NotificationCenter.getInstance(UserConfig.selectedAccount).addWeakObserver(this, NotificationCenter.fileLoadProgressChanged);
     }
 
     @Override // android.view.ViewGroup, android.view.View
@@ -303,7 +303,7 @@ public abstract class f5 extends FrameLayout implements NotificationCenter.Notif
     public final void onSizeChanged(int i10, int i11, int i12, int i13) {
         if (i10 != 0 && i11 != 0 && this.r) {
             this.v.setBackground(null);
-            AndroidUtilities.runOnUIThread(new zt0(this, 12));
+            AndroidUtilities.runOnUIThread(new bu0(this, 12));
         }
         ih.d.c(this.h, this);
         ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = this.d;

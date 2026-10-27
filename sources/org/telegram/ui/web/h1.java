@@ -13,17 +13,16 @@ import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.UserConfig;
 import org.telegram.ui.Cells.g6;
-import org.telegram.ui.Components.ak0;
-import org.telegram.ui.Components.cy0;
-import org.telegram.ui.Components.pl0;
-import org.telegram.ui.af1;
-import org.telegram.ui.io;
-import org.telegram.ui.un;
-import org.telegram.ui.w91;
-import sg.n2;
-import sg.x2;
+import org.telegram.ui.Components.bk0;
+import org.telegram.ui.Components.dy0;
+import org.telegram.ui.Components.ql0;
+import org.telegram.ui.cf1;
+import org.telegram.ui.ko;
+import org.telegram.ui.wn;
+import org.telegram.ui.y91;
+import sg.w2;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class h1 implements Runnable {
     public final /* synthetic */ int a;
@@ -60,7 +59,7 @@ public final /* synthetic */ class h1 implements Runnable {
                     length += y1.a0(file2, null);
                 }
                 File file3 = new File(ApplicationLoader.applicationContext.getApplicationInfo().dataDir, "app_webview");
-                AndroidUtilities.runOnUIThread(new io(y1Var, length, file3.exists() ? y1.a0(file3, Boolean.TRUE) : 0L, 1));
+                AndroidUtilities.runOnUIThread(new ko(y1Var, length, file3.exists() ? y1.a0(file3, Boolean.TRUE) : 0L, 1));
                 return;
             case 3:
                 ((boolean[]) this.b)[0] = true;
@@ -72,17 +71,17 @@ public final /* synthetic */ class h1 implements Runnable {
                 ((p4.g) this.b).n = -1;
                 return;
             case 6:
-                ((pl0) this.b).b();
+                ((ql0) this.b).b();
                 return;
             case 7:
-                af1 af1Var = (af1) this.b;
-                if (af1Var.getParentLayout() != null) {
-                    af1Var.H = true;
+                cf1 cf1Var = (cf1) this.b;
+                if (cf1Var.getParentLayout() != null) {
+                    cf1Var.H = true;
                     Bundle bundle = new Bundle();
-                    bundle.putLong("chat_id", af1Var.a);
-                    un unVar = new un(bundle);
-                    unVar.va = true;
-                    af1Var.presentFragment(unVar);
+                    bundle.putLong("chat_id", cf1Var.a);
+                    wn wnVar = new wn(bundle);
+                    wnVar.za = true;
+                    cf1Var.presentFragment(wnVar);
                     return;
                 }
                 return;
@@ -137,7 +136,7 @@ public final /* synthetic */ class h1 implements Runnable {
                 q0Var.L = null;
                 return;
             case 11:
-                ((rg.a1) ((cy0) this.b).b).y.a.a();
+                ((rg.a1) ((dy0) this.b).b).y.a.a();
                 return;
             case 12:
                 rg.s1 s1Var = ((rg.t1) this.b).a;
@@ -179,10 +178,10 @@ public final /* synthetic */ class h1 implements Runnable {
                 ((View) this.b).performClick();
                 return;
             case 18:
-                MediaDataController.getInstance(UserConfig.selectedAccount).addRecentSticker(2, null, ((n2) this.b).f.document, (int) (System.currentTimeMillis() / 1000), false);
+                MediaDataController.getInstance(UserConfig.selectedAccount).addRecentSticker(2, null, ((sg.m2) this.b).f.document, (int) (System.currentTimeMillis() / 1000), false);
                 return;
             case 19:
-                AndroidUtilities.showKeyboard(((x2) this.b).q0);
+                AndroidUtilities.showKeyboard(((w2) this.b).q0);
                 return;
             case 20:
                 AndroidUtilities.showKeyboard(((sh.c) this.b).a);
@@ -203,12 +202,12 @@ public final /* synthetic */ class h1 implements Runnable {
                 return;
             case 24:
                 tg.j0 j0Var = ((tg.c0) this.b).c;
-                j0Var.n.presentFragment(w91.c0(j0Var.w1(), true));
+                j0Var.n.presentFragment(y91.c0(j0Var.w1(), true));
                 return;
             case 25:
-                ak0 ak0Var = ((tg.p0) this.b).F;
-                ak0Var.getAnimatedDrawable().N(0, true, false);
-                ak0Var.d();
+                bk0 bk0Var = ((tg.p0) this.b).F;
+                bk0Var.getAnimatedDrawable().N(0, true, false);
+                bk0Var.d();
                 return;
             case 26:
                 ((tg.w0) this.b).b.B();

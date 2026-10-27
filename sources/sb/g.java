@@ -5,12 +5,12 @@ import com.google.mlkit.common.internal.MlKitComponentDiscoveryService;
 import java.util.ArrayList;
 import java.util.concurrent.Executor;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
 public final class g {
     public static final Object b = new Object();
     public static g c;
-    public s9.g a;
+    public s9.h a;
 
     public static g c() {
         g gVar;
@@ -39,9 +39,9 @@ public final class g {
             arrayList.addAll(k10);
             arrayList2.add(s9.a.c(context, Context.class, new Class[0]));
             arrayList2.add(s9.a.c(gVar2, g.class, new Class[0]));
-            s9.g gVar3 = new s9.g(executor, arrayList, arrayList2, bVar);
-            gVar2.a = gVar3;
-            gVar3.e(true);
+            s9.h hVar = new s9.h(executor, arrayList, arrayList2, bVar);
+            gVar2.a = hVar;
+            hVar.e(true);
             gVar = c;
         }
         return gVar;

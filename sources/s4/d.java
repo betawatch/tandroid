@@ -9,6 +9,8 @@ import android.content.ClipDescription;
 import android.content.ComponentName;
 import android.content.Context;
 import android.database.Cursor;
+import android.media.MediaCodec;
+import android.media.MediaFormat;
 import android.net.Uri;
 import android.os.PersistableBundle;
 import android.util.Base64;
@@ -30,9 +32,9 @@ import java.util.WeakHashMap;
 import java.util.zip.Adler32;
 import u2.s1;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
-public class d implements t0.h, la.a {
+public class d implements t0.h, vi.x0, la.a {
     public final /* synthetic */ int a;
     public Object b;
     public Object c;
@@ -55,11 +57,11 @@ public class d implements t0.h, la.a {
     @Override // la.a
     public /* bridge */ /* synthetic */ la.a d(Class cls, ka.d dVar) {
         switch (this.a) {
-            case 6:
+            case 7:
                 ((HashMap) this.b).put(cls, dVar);
                 ((HashMap) this.c).remove(cls);
                 break;
-            case 11:
+            case 12:
                 ((HashMap) this.b).put(cls, dVar);
                 ((HashMap) this.c).remove(cls);
                 break;
@@ -79,7 +81,7 @@ public class d implements t0.h, la.a {
     public void g(View view, int i10, boolean z10) {
         RecyclerView recyclerView = (RecyclerView) ((jg.s0) this.b).b;
         int childCount = i10 < 0 ? recyclerView.getChildCount() : m(i10);
-        ((lg) this.c).A(childCount, z10);
+        ((lg) this.c).C(childCount, z10);
         if (z10) {
             p(view);
         }
@@ -106,7 +108,7 @@ public class d implements t0.h, la.a {
     public void h(View view, int i10, ViewGroup.LayoutParams layoutParams, boolean z10) {
         RecyclerView recyclerView = (RecyclerView) ((jg.s0) this.b).b;
         int childCount = i10 < 0 ? recyclerView.getChildCount() : m(i10);
-        ((lg) this.c).A(childCount, z10);
+        ((lg) this.c).C(childCount, z10);
         if (z10) {
             p(view);
         }
@@ -123,7 +125,7 @@ public class d implements t0.h, la.a {
     public void i(int i10) {
         e1 U;
         int m10 = m(i10);
-        ((lg) this.c).B(m10);
+        ((lg) this.c).D(m10);
         RecyclerView recyclerView = (RecyclerView) ((jg.s0) this.b).b;
         View childAt = recyclerView.getChildAt(m10);
         if (childAt != null && (U = RecyclerView.U(childAt)) != null) {
@@ -159,14 +161,14 @@ public class d implements t0.h, la.a {
         int childCount = ((RecyclerView) ((jg.s0) this.b).b).getChildCount();
         int i11 = i10;
         while (i11 < childCount) {
-            int w10 = i10 - (i11 - lgVar.w(i11));
-            if (w10 == 0) {
-                while (lgVar.z(i11)) {
+            int y3 = i10 - (i11 - lgVar.y(i11));
+            if (y3 == 0) {
+                while (lgVar.B(i11)) {
                     i11++;
                 }
                 return i11;
             }
-            i11 += w10;
+            i11 += y3;
         }
         return -1;
     }
@@ -203,6 +205,18 @@ public class d implements t0.h, la.a {
         }
     }
 
+    @Override // vi.x0
+    public void q(ByteBuffer byteBuffer, MediaCodec.BufferInfo bufferInfo) {
+        ByteBuffer allocateDirect = ByteBuffer.allocateDirect(bufferInfo.size);
+        byteBuffer.position(bufferInfo.offset);
+        byteBuffer.limit(bufferInfo.offset + bufferInfo.size);
+        allocateDirect.put(byteBuffer).flip();
+        MediaCodec.BufferInfo bufferInfo2 = new MediaCodec.BufferInfo();
+        bufferInfo2.set(0, bufferInfo.size, bufferInfo.presentationTimeUs, bufferInfo.flags);
+        ((ArrayList) this.d).add(allocateDirect);
+        ((ArrayList) this.b).add(bufferInfo2);
+    }
+
     /* JADX WARN: Code restructure failed: missing block: B:28:0x0056, code lost:
     
         if (r1.d != r11) goto L23;
@@ -218,7 +232,7 @@ public class d implements t0.h, la.a {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public void q(g2.h hVar, Uri uri, Map map, long j10, long j11, u2.w0 w0Var) {
+    public void r(g2.h hVar, Uri uri, Map map, long j10, long j11, u2.w0 w0Var) {
         c3.l lVar = new c3.l(hVar, j10, j11);
         this.d = lVar;
         if (((c3.o) this.c) != null) {
@@ -274,10 +288,10 @@ public class d implements t0.h, la.a {
         ((c3.o) this.c).c(w0Var);
     }
 
-    public void r() {
+    public void s() {
         int i10;
         RecyclerView recyclerView = (RecyclerView) ((jg.s0) this.b).b;
-        ((lg) this.c).C();
+        ((lg) this.c).E();
         ArrayList arrayList = (ArrayList) this.d;
         int size = arrayList.size();
         while (true) {
@@ -309,7 +323,7 @@ public class d implements t0.h, la.a {
         recyclerView.removeAllViews();
     }
 
-    public void s(m5.i iVar, int i10, boolean z10) {
+    public void t(m5.i iVar, int i10, boolean z10) {
         char c10;
         s5.a aVar = (s5.a) this.d;
         Context context = (Context) this.b;
@@ -394,32 +408,12 @@ public class d implements t0.h, la.a {
         }
     }
 
-    public void t(View view) {
-        if (((ArrayList) this.d).remove(view)) {
-            jg.s0 s0Var = (jg.s0) this.b;
-            e1 U = RecyclerView.U(view);
-            if (U != null) {
-                RecyclerView recyclerView = (RecyclerView) s0Var.b;
-                int i10 = U.r;
-                if (recyclerView.c0()) {
-                    U.s = i10;
-                    recyclerView.K0.add(U);
-                } else {
-                    View view2 = U.a;
-                    WeakHashMap weakHashMap = r0.i0.a;
-                    view2.setImportantForAccessibility(i10);
-                }
-                U.r = 0;
-            }
-        }
-    }
-
     public String toString() {
         String str = "";
         switch (this.a) {
             case 0:
                 return ((lg) this.c).toString() + ", hidden list:" + ((ArrayList) this.d).size();
-            case 8:
+            case 9:
                 StringBuilder sb2 = new StringBuilder(32);
                 sb2.append((String) this.b);
                 sb2.append('{');
@@ -442,7 +436,7 @@ public class d implements t0.h, la.a {
                 }
                 sb2.append('}');
                 return sb2.toString();
-            case 19:
+            case 20:
                 StringBuilder sb3 = new StringBuilder(32);
                 sb3.append((String) this.b);
                 sb3.append('{');
@@ -470,6 +464,31 @@ public class d implements t0.h, la.a {
         }
     }
 
+    public void u(View view) {
+        if (((ArrayList) this.d).remove(view)) {
+            jg.s0 s0Var = (jg.s0) this.b;
+            e1 U = RecyclerView.U(view);
+            if (U != null) {
+                RecyclerView recyclerView = (RecyclerView) s0Var.b;
+                int i10 = U.r;
+                if (recyclerView.c0()) {
+                    U.s = i10;
+                    recyclerView.K0.add(U);
+                } else {
+                    View view2 = U.a;
+                    WeakHashMap weakHashMap = r0.i0.a;
+                    view2.setImportantForAccessibility(i10);
+                }
+                U.r = 0;
+            }
+        }
+    }
+
+    @Override // vi.x0
+    public void v(MediaFormat mediaFormat) {
+        this.c = mediaFormat;
+    }
+
     public /* synthetic */ d(Object obj, Object obj2, Object obj3, int i10) {
         this.a = i10;
         this.b = obj;
@@ -477,38 +496,17 @@ public class d implements t0.h, la.a {
         this.d = obj3;
     }
 
-    public d(int i10) {
-        this.a = i10;
-        switch (i10) {
-            case 11:
-                this.b = new HashMap();
-                this.c = new HashMap();
-                this.d = x7.e.c;
-                break;
-            case 14:
-                this.b = new HashMap();
-                this.c = new HashMap();
-                this.d = y7.c0.c;
-                break;
-            default:
-                this.b = new HashMap();
-                this.c = new HashMap();
-                this.d = w7.i.c;
-                break;
-        }
-    }
-
     public /* synthetic */ d(String str, int i10) {
         this.a = i10;
         switch (i10) {
-            case 19:
-                d dVar = new d(18, false);
+            case 20:
+                d dVar = new d(19, false);
                 this.c = dVar;
                 this.d = dVar;
                 this.b = str;
                 break;
             default:
-                d dVar2 = new d(7, false);
+                d dVar2 = new d(8, false);
                 this.c = dVar2;
                 this.d = dVar2;
                 this.b = str;
@@ -517,7 +515,7 @@ public class d implements t0.h, la.a {
     }
 
     public d(String str, Boolean bool, xc.a aVar, String str2) {
-        this.a = 13;
+        this.a = 14;
         this.b = str;
         this.c = str2;
         this.d = aVar;
@@ -533,6 +531,31 @@ public class d implements t0.h, la.a {
     public d(c3.r rVar) {
         this.a = 4;
         this.b = rVar;
+    }
+
+    public d(int i10) {
+        this.a = i10;
+        switch (i10) {
+            case 7:
+                this.b = new HashMap();
+                this.c = new HashMap();
+                this.d = w7.i.c;
+                break;
+            case 12:
+                this.b = new HashMap();
+                this.c = new HashMap();
+                this.d = x7.e.c;
+                break;
+            case 15:
+                this.b = new HashMap();
+                this.c = new HashMap();
+                this.d = y7.c0.c;
+                break;
+            default:
+                this.d = new ArrayList();
+                this.b = new ArrayList();
+                break;
+        }
     }
 
     @Override // t0.h

@@ -10,9 +10,9 @@ import org.telegram.messenger.SendMessageChatArguments;
 import org.telegram.messenger.SendMessagesHelper;
 import org.telegram.messenger.VideoEditedInfo;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public final class mg extends org.telegram.ui.gu0 {
+public final class mg extends org.telegram.ui.iu0 {
     public boolean a;
     public final /* synthetic */ MediaController.PhotoEntry b;
     public final /* synthetic */ File c;
@@ -24,7 +24,7 @@ public final class mg extends org.telegram.ui.gu0 {
         this.c = file;
     }
 
-    @Override // org.telegram.ui.gu0, org.telegram.ui.ou0
+    @Override // org.telegram.ui.iu0, org.telegram.ui.qu0
     public final void G() {
         if (this.a) {
             return;
@@ -35,20 +35,20 @@ public final class mg extends org.telegram.ui.gu0 {
         }
     }
 
-    @Override // org.telegram.ui.gu0, org.telegram.ui.ou0
+    @Override // org.telegram.ui.iu0, org.telegram.ui.qu0
     public final boolean g() {
         return false;
     }
 
-    @Override // org.telegram.ui.gu0, org.telegram.ui.ou0
+    @Override // org.telegram.ui.iu0, org.telegram.ui.qu0
     public final void o(int i10, VideoEditedInfo videoEditedInfo, boolean z10, int i11, int i12, boolean z11) {
         MessageObject threadMessage;
         String str;
-        org.telegram.ui.un unVar;
+        org.telegram.ui.wn wnVar;
         ChatActivityEnterView chatActivityEnterView = this.d.d;
-        org.telegram.ui.kn knVar = chatActivityEnterView.V2;
-        if (knVar != null && (unVar = chatActivityEnterView.P2) != null && knVar.f) {
-            unVar.dc();
+        org.telegram.ui.mn mnVar = chatActivityEnterView.V2;
+        if (mnVar != null && (wnVar = chatActivityEnterView.P2) != null && mnVar.f) {
+            wnVar.hc();
             return;
         }
         ArrayList arrayList = new ArrayList();
@@ -84,17 +84,17 @@ public final class mg extends org.telegram.ui.gu0 {
         long j10 = chatActivityEnterView.Q2;
         MessageObject messageObject = chatActivityEnterView.T2;
         threadMessage = chatActivityEnterView.getThreadMessage();
-        org.telegram.ui.kn knVar2 = chatActivityEnterView.V2;
+        org.telegram.ui.mn mnVar2 = chatActivityEnterView.V2;
         MessageObject messageObject2 = chatActivityEnterView.Z1;
-        org.telegram.ui.un unVar2 = chatActivityEnterView.P2;
-        int i13 = unVar2 == null ? 0 : unVar2.d4;
-        SendMessageChatArguments L8 = unVar2 != null ? unVar2.L8() : null;
+        org.telegram.ui.wn wnVar2 = chatActivityEnterView.P2;
+        int i13 = wnVar2 == null ? 0 : wnVar2.d4;
+        SendMessageChatArguments O8 = wnVar2 != null ? wnVar2.O8() : null;
         long sendMonoForumPeerId = chatActivityEnterView.getSendMonoForumPeerId();
-        org.telegram.ui.un unVar3 = chatActivityEnterView.P2;
-        if (unVar3 != null) {
-            messageSuggestionParams = unVar3.s5;
+        org.telegram.ui.wn wnVar3 = chatActivityEnterView.P2;
+        if (wnVar3 != null) {
+            messageSuggestionParams = wnVar3.w5;
         }
-        SendMessagesHelper.prepareSendingMedia(accountInstance, arrayList, j10, messageObject, threadMessage, null, knVar2, false, false, messageObject2, z10, i11, i12, i13, checkUpdateStickersOrder, null, L8, 0L, false, 0L, sendMonoForumPeerId, messageSuggestionParams);
+        SendMessagesHelper.prepareSendingMedia(accountInstance, arrayList, j10, messageObject, threadMessage, null, mnVar2, false, false, messageObject2, z10, i11, i12, i13, checkUpdateStickersOrder, null, O8, 0L, false, 0L, sendMonoForumPeerId, messageSuggestionParams);
         og ogVar = chatActivityEnterView.Z2;
         if (ogVar != null) {
             ogVar.A(null, true, i11, i12, 0L);

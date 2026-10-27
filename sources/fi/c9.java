@@ -12,18 +12,18 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.ey0;
-import org.telegram.ui.Components.mm0;
-import org.telegram.ui.Components.vl0;
+import org.telegram.ui.Components.fy0;
+import org.telegram.ui.Components.nm0;
 import org.telegram.ui.Components.vn;
+import org.telegram.ui.Components.wl0;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class c9 extends qg.b {
     public final Context d;
     public final org.telegram.ui.ActionBar.u6 e;
     public final z8 f;
-    public mm0 h;
+    public nm0 h;
     public final /* synthetic */ g9 n;
 
     public c9(g9 g9Var, Context context, org.telegram.ui.ActionBar.u6 u6Var, z8 z8Var, di.e4 e4Var) {
@@ -33,7 +33,7 @@ public final class c9 extends qg.b {
         this.f = z8Var;
     }
 
-    @Override // org.telegram.ui.Components.lm0
+    @Override // org.telegram.ui.Components.mm0
     public final boolean D(s4.e1 e1Var) {
         int i10 = e1Var.f;
         return (i10 == 3 && this.n.W.F) || i10 == 7 || i10 == 9 || i10 == 10;
@@ -118,8 +118,8 @@ public final class c9 extends qg.b {
         }
         if (i14 == -1) {
             if (u8Var.o > 0) {
-                mm0 mm0Var = this.h;
-                i12 = Math.max(((mm0Var == null || mm0Var.getMeasuredHeight() <= 0) ? AndroidUtilities.displaySize.y : this.h.getMeasuredHeight() + g9Var.T) - u8Var.o, AndroidUtilities.dp(120.0f));
+                nm0 nm0Var = this.h;
+                i12 = Math.max(((nm0Var == null || nm0Var.getMeasuredHeight() <= 0) ? AndroidUtilities.displaySize.y : this.h.getMeasuredHeight() + g9Var.T) - u8Var.o, AndroidUtilities.dp(120.0f));
                 view.setTag(33);
             } else {
                 i12 = u8Var.p;
@@ -153,7 +153,7 @@ public final class c9 extends qg.b {
         }
         if (i14 == 5) {
             try {
-                ((ey0) view).b.getImageReceiver().startAnimation();
+                ((fy0) view).b.getImageReceiver().startAnimation();
                 return;
             } catch (Exception unused) {
                 return;
@@ -242,11 +242,11 @@ public final class c9 extends qg.b {
                     c8Var = new org.telegram.ui.Cells.q4(context, u6Var);
                     org.telegram.ui.ActionBar.f7.i(org.telegram.ui.ActionBar.y6.h5, c8Var, u6Var);
                 } else if (i10 == 5) {
-                    ey0 ey0Var = new ey0(context, null, 1, u6Var);
-                    ey0Var.d.setText(LocaleController.getString(R.string.NoResult));
-                    ey0Var.e.setText(LocaleController.getString(R.string.SearchEmptyViewFilteredSubtitle2));
-                    ey0Var.a.setTranslationY(AndroidUtilities.dp(24.0f));
-                    view = ey0Var;
+                    fy0 fy0Var = new fy0(context, null, 1, u6Var);
+                    fy0Var.d.setText(LocaleController.getString(R.string.NoResult));
+                    fy0Var.e.setText(LocaleController.getString(R.string.SearchEmptyViewFilteredSubtitle2));
+                    fy0Var.a.setTranslationY(AndroidUtilities.dp(24.0f));
+                    view = fy0Var;
                 } else if (i10 == 6) {
                     c8Var = new org.telegram.ui.Cells.i9(context, u6Var);
                     c8Var.setBackgroundColor(-15921907);
@@ -263,6 +263,6 @@ public final class c9 extends qg.b {
                 c8Var = view;
             }
         }
-        return new vl0(c8Var);
+        return new wl0(c8Var);
     }
 }

@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.TextView;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class hf implements Runnable {
     public final /* synthetic */ int a;
@@ -39,29 +39,29 @@ public final class hf implements Runnable {
                     chatActivityEnterView.y3 = currentPage == 0;
                     if (chatActivityEnterView.z3) {
                         if (chatActivityEnterView.R1 != 0) {
-                            chatActivityEnterView.j1(currentPage != 0 ? 1 : 2, true);
-                            chatActivityEnterView.H();
+                            chatActivityEnterView.i1(currentPage != 0 ? 1 : 2, true);
+                            chatActivityEnterView.G();
                         } else if (!z11) {
-                            chatActivityEnterView.k1(false, true, false, true);
+                            chatActivityEnterView.j1(false, true, false, true);
                         }
                     }
                     if (z10 != chatActivityEnterView.x3 || z12 != chatActivityEnterView.y3) {
-                        chatActivityEnterView.G(true);
+                        chatActivityEnterView.F(true);
                         break;
                     }
                 }
                 break;
             case 1:
                 int i11 = this.b;
-                yp ypVar = (yp) callback;
-                s4.p0 layoutManager = ypVar.w.getLayoutManager();
+                zp zpVar = (zp) callback;
+                s4.p0 layoutManager = zpVar.w.getLayoutManager();
                 if (layoutManager != null) {
-                    int min = i11 > ypVar.P ? Math.min(i11 + 1, ypVar.h.d.size() - 1) : Math.max(i11 - 1, 0);
-                    tp tpVar = ypVar.G;
-                    tpVar.a = min;
-                    layoutManager.w0(tpVar);
+                    int min = i11 > zpVar.P ? Math.min(i11 + 1, zpVar.h.d.size() - 1) : Math.max(i11 - 1, 0);
+                    up upVar = zpVar.G;
+                    upVar.a = min;
+                    layoutManager.w0(upVar);
                 }
-                ypVar.P = i11;
+                zpVar.P = i11;
                 break;
             default:
                 int i12 = this.b;

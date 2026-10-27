@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.tl.TL_wallet;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class d0 {
     public String e;
@@ -24,7 +24,7 @@ public final class d0 {
 
     public d0(l0 l0Var) {
         this.m = l0Var;
-        this.e = l0Var.s();
+        this.e = l0Var.t();
     }
 
     public static void a(d0 d0Var, TL_wallet.walletTransaction wallettransaction) {
@@ -77,7 +77,7 @@ public final class d0 {
         while (i10 < size) {
             Object obj = arrayList.get(i10);
             i10++;
-            if (l0.a(((TL_wallet.nftItem) obj).address, str)) {
+            if (l0.b(((TL_wallet.nftItem) obj).address, str)) {
                 return true;
             }
         }
@@ -138,7 +138,7 @@ public final class d0 {
                 Object obj2 = arrayList3.get(i11);
                 i11++;
                 TL_wallet.walletTransaction wallettransaction = (TL_wallet.walletTransaction) obj2;
-                if (wallettransaction.failed || !l0.a(wallettransaction.nft.address, nftitem.address)) {
+                if (wallettransaction.failed || !l0.b(wallettransaction.nft.address, nftitem.address)) {
                 }
             }
         }

@@ -1,11 +1,11 @@
 package org.telegram.ui.Cells;
 
 import android.content.Context;
-import org.telegram.ui.Components.z90;
+import org.telegram.ui.Components.aa0;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public final class f9 extends z90 {
+public final class f9 extends aa0 {
     public final /* synthetic */ int L;
     public final /* synthetic */ g9 M;
 
@@ -16,7 +16,7 @@ public final class f9 extends z90 {
         this.M = g9Var;
     }
 
-    @Override // org.telegram.ui.Components.z90
+    @Override // org.telegram.ui.Components.aa0
     public final int c() {
         switch (this.L) {
             case 0:
@@ -26,7 +26,7 @@ public final class f9 extends z90 {
         }
     }
 
-    @Override // org.telegram.ui.Components.z90
+    @Override // org.telegram.ui.Components.aa0
     public final int d(int i10) {
         switch (this.L) {
         }

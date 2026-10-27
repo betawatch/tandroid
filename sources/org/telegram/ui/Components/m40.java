@@ -16,7 +16,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class m40 extends org.telegram.ui.ActionBar.r2 implements NotificationCenter.NotificationCenterDelegate {
     public float E;
@@ -26,7 +26,7 @@ public final class m40 extends org.telegram.ui.ActionBar.r2 implements Notificat
     public final String c;
     public final di.t6 d;
     public di.i4 e;
-    public org.telegram.ui.ck f;
+    public org.telegram.ui.ek f;
     public FrameLayout h;
     public j40 n;
     public ig.m1 r;
@@ -67,7 +67,7 @@ public final class m40 extends org.telegram.ui.ActionBar.r2 implements Notificat
     }
 
     public final void W(boolean z10, boolean z11) {
-        org.telegram.ui.vn vnVar;
+        org.telegram.ui.xn xnVar;
         bi.r1 r1Var;
         ValueAnimator valueAnimator = this.F;
         if (valueAnimator != null) {
@@ -95,8 +95,8 @@ public final class m40 extends org.telegram.ui.ActionBar.r2 implements Notificat
         this.n.setScaleY(z10 ? 1.0f : 0.95f);
         this.h.setAlpha(z10 ? 1.0f : 0.0f);
         this.h.setVisibility(z10 ? 0 : 8);
-        org.telegram.ui.ck ckVar = this.f;
-        if (ckVar == null || (vnVar = ckVar.a) == null || (r1Var = vnVar.X3) == null) {
+        org.telegram.ui.ek ekVar = this.f;
+        if (ekVar == null || (xnVar = ekVar.a) == null || (r1Var = xnVar.X3) == null) {
             return;
         }
         r1Var.setScaleX(AndroidUtilities.lerp(1.0f, 0.95f, this.E));
@@ -145,18 +145,18 @@ public final class m40 extends org.telegram.ui.ActionBar.r2 implements Notificat
         di.i4 i4Var = new di.i4(context, 15);
         this.e = i4Var;
         i4Var.setClipChildren(false);
-        frameLayout.addView(this.e, gb1.i(-1, -1, 119));
+        frameLayout.addView(this.e, kb1.i(-1, -1, 119));
         AndroidUtilities.setViewLayoutMargins(this.e, 0, V(), 0, 0);
         HashtagSearchController.getInstance(this.currentAccount).clearSearchResults(3);
         Bundle bundle = new Bundle();
         bundle.putInt("chatMode", 7);
         bundle.putInt("searchType", 3);
         bundle.putString("searchHashtag", str);
-        org.telegram.ui.ck ckVar = new org.telegram.ui.ck(context, getParentLayout(), bundle, 1);
-        ckVar.h = false;
-        this.f = ckVar;
-        this.e.addView(ckVar, gb1.i(-1, -1, 119));
-        j40 j40Var = new j40(this, context, new sv0(null), this, new i40(), this.resourceProvider);
+        org.telegram.ui.ek ekVar = new org.telegram.ui.ek(context, getParentLayout(), bundle, 1);
+        ekVar.h = false;
+        this.f = ekVar;
+        this.e.addView(ekVar, kb1.i(-1, -1, 119));
+        j40 j40Var = new j40(this, context, new tv0(null), this, new i40(), this.resourceProvider);
         this.n = j40Var;
         if (j40Var.getSearchOptionsItem() != null) {
             org.telegram.ui.ActionBar.f7.t(this.n.getSearchOptionsItem(), org.telegram.ui.ActionBar.y6.G6, this.resourceProvider, PorterDuff.Mode.SRC_IN);
@@ -169,17 +169,17 @@ public final class m40 extends org.telegram.ui.ActionBar.r2 implements Notificat
         j40 j40Var2 = this.n;
         di.t6 t6Var = this.d;
         j40Var2.W1 = t6Var;
-        hu0 hu0Var = j40Var2.e0;
-        hu0Var.s = t6Var;
-        hu0Var.l();
-        xv0 xv0Var = j40Var2.f0;
-        xv0Var.s = t6Var;
-        xv0Var.l();
+        iu0 iu0Var = j40Var2.e0;
+        iu0Var.s = t6Var;
+        iu0Var.l();
+        yv0 yv0Var = j40Var2.f0;
+        yv0Var.s = t6Var;
+        yv0Var.l();
         this.n.h1(0, oi.a.c(AndroidUtilities.statusBarHeight) + AndroidUtilities.dp(48.0f) + V(), AndroidUtilities.dp(8.0f), 0);
         FrameLayout frameLayout2 = new FrameLayout(context);
         this.h = frameLayout2;
         frameLayout2.setClipChildren(false);
-        this.h.addView(this.n, gb1.h(-1, -1.0f, 119, 0.0f, 0.0f, 0.0f, 49.0f));
+        this.h.addView(this.n, kb1.h(-1, -1.0f, 119, 0.0f, 0.0f, 0.0f, 49.0f));
         FrameLayout frameLayout3 = new FrameLayout(context);
         this.s = frameLayout3;
         org.telegram.ui.ActionBar.f7.i(i10, frameLayout3, getResourceProvider());
@@ -189,12 +189,12 @@ public final class m40 extends org.telegram.ui.ActionBar.r2 implements Notificat
         this.v.setTextSize(1, 15.0f);
         org.telegram.ui.ActionBar.f7.V(this.v, org.telegram.ui.ActionBar.y6.ye, getResourceProvider());
         this.v.setText(LocaleController.formatPluralString("FoundStories", t6Var.J, new Object[0]));
-        this.s.addView(this.v, gb1.h(-1, -2.0f, 19, 18.0f, 0.0f, 18.0f, 0.0f));
+        this.s.addView(this.v, kb1.h(-1, -2.0f, 19, 18.0f, 0.0f, 18.0f, 0.0f));
         View view = new View(context);
         org.telegram.ui.ActionBar.f7.i(org.telegram.ui.ActionBar.y6.d7, view, this.resourceProvider);
-        this.s.addView(view, gb1.e(-1.0f, 1.0f / AndroidUtilities.density, 55));
-        this.h.addView(this.s, gb1.i(-1, 49, 87));
-        this.e.addView(this.h, gb1.i(-1, -1, 119));
+        this.s.addView(view, kb1.e(-1.0f, 1.0f / AndroidUtilities.density, 55));
+        this.h.addView(this.s, kb1.i(-1, 49, 87));
+        this.e.addView(this.h, kb1.i(-1, -1, 119));
         ig.m1 m1Var = new ig.m1(context, this.resourceProvider);
         this.r = m1Var;
         int themedColor = getThemedColor(i10);
@@ -208,7 +208,7 @@ public final class m40 extends org.telegram.ui.ActionBar.r2 implements Notificat
         this.r.setOnClickListener(new f0(this, 24));
         X(this.r.a(t6Var), false);
         this.r.b(HashtagSearchController.getInstance(this.currentAccount).getCount(3), this.b, this.c);
-        frameLayout.addView(this.r, gb1.i(-1, 48, 55));
+        frameLayout.addView(this.r, kb1.i(-1, 48, 55));
         AndroidUtilities.setViewLayoutMargins(this.r, 0, V(), 0, 0);
         oi.a baseSimpleGlass = getBaseSimpleGlass();
         org.telegram.ui.ActionBar.r5 r5Var2 = this.simpleActionBar;
@@ -226,9 +226,9 @@ public final class m40 extends org.telegram.ui.ActionBar.r2 implements Notificat
 
     @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
     public final void didReceivedNotification(int i10, int i11, Object... objArr) {
-        org.telegram.ui.ck ckVar;
+        org.telegram.ui.ek ekVar;
         if (i10 != NotificationCenter.storiesListUpdated) {
-            if (i10 != NotificationCenter.hashtagSearchUpdated || (ckVar = this.f) == null || ckVar.a == null || ((Integer) objArr[0]).intValue() != this.f.a.getClassGuid()) {
+            if (i10 != NotificationCenter.hashtagSearchUpdated || (ekVar = this.f) == null || ekVar.a == null || ((Integer) objArr[0]).intValue() != this.f.a.getClassGuid()) {
                 return;
             }
             int intValue = ((Integer) objArr[1]).intValue();
@@ -263,8 +263,8 @@ public final class m40 extends org.telegram.ui.ActionBar.r2 implements Notificat
         ArrayList arrayList = getMessagesController().getStoriesController().I;
         di.t6 t6Var = this.d;
         arrayList.add(t6Var);
-        NotificationCenter.getInstance(this.currentAccount).addObserver(this, NotificationCenter.storiesListUpdated);
-        NotificationCenter.getInstance(this.currentAccount).addObserver(this, NotificationCenter.hashtagSearchUpdated);
+        NotificationCenter.getInstance(this.currentAccount).addWeakObserver(this, NotificationCenter.storiesListUpdated);
+        NotificationCenter.getInstance(this.currentAccount).addWeakObserver(this, NotificationCenter.hashtagSearchUpdated);
         t6Var.p(18, true);
         return super.onFragmentCreate();
     }

@@ -6,11 +6,11 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.vh;
+import org.telegram.messenger.wh;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.t61;
+import org.telegram.ui.Components.u61;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class v3 implements Utilities.Callback2 {
     public final /* synthetic */ int a;
@@ -56,11 +56,11 @@ public final /* synthetic */ class v3 implements Utilities.Callback2 {
                     TL_stars.starGiftAttributeModel stargiftattributemodel = (TL_stars.starGiftAttributeModel) obj3;
                     boolean contains = u3Var.j.contains(Long.valueOf(stargiftattributemodel.document.id));
                     boolean z12 = !contains;
-                    if (TextUtils.isEmpty(lowerCase) || stargiftattributemodel.name.toLowerCase().startsWith(lowerCase) || stargiftattributemodel.name.toLowerCase().startsWith(translitSafe) || vh.u(" ", lowerCase, stargiftattributemodel.name.toLowerCase()) || vh.u(" ", translitSafe, stargiftattributemodel.name.toLowerCase())) {
+                    if (TextUtils.isEmpty(lowerCase) || stargiftattributemodel.name.toLowerCase().startsWith(lowerCase) || stargiftattributemodel.name.toLowerCase().startsWith(translitSafe) || wh.u(" ", lowerCase, stargiftattributemodel.name.toLowerCase()) || wh.u(" ", translitSafe, stargiftattributemodel.name.toLowerCase())) {
                         Integer num = (Integer) u3Var.m.get(Long.valueOf(stargiftattributemodel.document.id));
                         int intValue = num == null ? 0 : num.intValue();
                         int i12 = o3.a;
-                        t61 K = t61.K(o3.class);
+                        u61 K = u61.K(o3.class);
                         K.G = stargiftattributemodel;
                         K.l = lowerCase;
                         K.z = intValue;
@@ -94,12 +94,12 @@ public final /* synthetic */ class v3 implements Utilities.Callback2 {
                         str2 = str;
                     } else {
                         str2 = str;
-                        str = (vh.u(str2, lowerCase2, stargiftattributebackdrop.name.toLowerCase()) || vh.u(str2, translitSafe2, stargiftattributebackdrop.name.toLowerCase())) ? " " : str2;
+                        str = (wh.u(str2, lowerCase2, stargiftattributebackdrop.name.toLowerCase()) || wh.u(str2, translitSafe2, stargiftattributebackdrop.name.toLowerCase())) ? " " : str2;
                     }
                     Integer num2 = (Integer) u3Var2.n.get(Integer.valueOf(stargiftattributebackdrop.backdrop_id));
                     int intValue2 = num2 == null ? 0 : num2.intValue();
                     int i14 = h3.a;
-                    t61 K2 = t61.K(h3.class);
+                    u61 K2 = u61.K(h3.class);
                     K2.G = stargiftattributebackdrop;
                     K2.l = lowerCase2;
                     K2.z = intValue2;
@@ -128,13 +128,13 @@ public final /* synthetic */ class v3 implements Utilities.Callback2 {
                     TL_stars.starGiftAttributePattern stargiftattributepattern = (TL_stars.starGiftAttributePattern) obj5;
                     boolean contains3 = u3Var3.l.contains(Long.valueOf(stargiftattributepattern.document.id));
                     boolean z14 = !contains3;
-                    if (TextUtils.isEmpty(lowerCase3) || stargiftattributepattern.name.toLowerCase().startsWith(lowerCase3) || stargiftattributepattern.name.toLowerCase().startsWith(translitSafe3) || vh.u(str4, lowerCase3, stargiftattributepattern.name.toLowerCase()) || vh.u(str4, translitSafe3, stargiftattributepattern.name.toLowerCase())) {
+                    if (TextUtils.isEmpty(lowerCase3) || stargiftattributepattern.name.toLowerCase().startsWith(lowerCase3) || stargiftattributepattern.name.toLowerCase().startsWith(translitSafe3) || wh.u(str4, lowerCase3, stargiftattributepattern.name.toLowerCase()) || wh.u(str4, translitSafe3, stargiftattributepattern.name.toLowerCase())) {
                         z10 = z11;
                         str3 = str4;
                         Integer num3 = (Integer) u3Var3.o.get(Long.valueOf(stargiftattributepattern.document.id));
                         ?? intValue3 = num3 == null ? z10 : num3.intValue();
                         int i16 = r3.a;
-                        t61 K3 = t61.K(r3.class);
+                        u61 K3 = u61.K(r3.class);
                         K3.G = stargiftattributepattern;
                         K3.l = lowerCase3;
                         K3.z = intValue3;

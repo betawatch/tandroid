@@ -1,133 +1,202 @@
 package org.telegram.ui;
 
 import android.animation.ValueAnimator;
-import android.view.animation.LinearInterpolator;
+import android.content.ClipboardManager;
+import android.content.DialogInterface;
+import java.util.ArrayList;
+import java.util.HashSet;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.SharedConfig;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.UserConfig;
+import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class yg1 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ ph1 b;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ Object c;
 
-    public /* synthetic */ yg1(ph1 ph1Var, int i10) {
-        this.a = i10;
-        this.b = ph1Var;
+    public /* synthetic */ yg1(int i10, kb0 kb0Var) {
+        this.a = 2;
+        this.b = i10;
+        this.c = kb0Var;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        switch (this.a) {
+        CharSequence text;
+        int i10 = this.a;
+        int i11 = 2;
+        final int i12 = this.b;
+        Object obj = this.c;
+        switch (i10) {
             case 0:
-                this.b.u0.b();
-                break;
+                rh1 rh1Var = (rh1) obj;
+                rh1Var.F.setSignalBarCount(i12);
+                if (i12 <= 1) {
+                    org.telegram.ui.Components.voip.d3 d3Var = rh1Var.v;
+                    if (d3Var.V != 3) {
+                        d3Var.V = 3;
+                        ValueAnimator ofInt = ValueAnimator.ofInt(d3Var.H, 255);
+                        d3Var.O = ofInt;
+                        ofInt.addUpdateListener(new org.telegram.ui.Components.voip.b3(d3Var, 2));
+                        d3Var.O.setDuration(500L);
+                        d3Var.O.start();
+                    }
+                    rh1Var.F.c(true);
+                    break;
+                } else {
+                    org.telegram.ui.Components.voip.d3 d3Var2 = rh1Var.v;
+                    if (d3Var2.V != 2) {
+                        d3Var2.V = 2;
+                        d3Var2.c();
+                        ValueAnimator valueAnimator = d3Var2.O;
+                        if (valueAnimator != null) {
+                            valueAnimator.removeAllUpdateListeners();
+                            d3Var2.O.cancel();
+                        }
+                        ValueAnimator ofInt2 = ValueAnimator.ofInt(d3Var2.H, 0);
+                        d3Var2.O = ofInt2;
+                        ofInt2.addUpdateListener(new org.telegram.ui.Components.voip.b3(d3Var2, 0));
+                        d3Var2.O.setDuration(500L);
+                        d3Var2.O.start();
+                    }
+                    rh1Var.F.c(false);
+                    break;
+                }
             case 1:
-                this.b.u0.b();
+                org.telegram.ui.Wallet.l0 l0Var = (org.telegram.ui.Wallet.l0) obj;
+                HashSet hashSet = l0Var.E;
+                hashSet.remove(Integer.valueOf(i12));
+                if (hashSet.isEmpty()) {
+                    l0Var.S();
+                    break;
+                }
                 break;
             case 2:
-                this.b.u0.b();
+                org.telegram.ui.Wallet.l0 x9 = org.telegram.ui.Wallet.l0.x(i12);
+                NotificationCenter notificationCenter = NotificationCenter.getInstance(i12);
+                org.telegram.ui.Wallet.a0 a0Var = new org.telegram.ui.Wallet.a0(notificationCenter, (kb0) obj, x9);
+                notificationCenter.addObserver(a0Var, NotificationCenter.walletUpdate);
+                AndroidUtilities.runOnUIThread(a0Var, 10000L);
+                if (x9.e == null && x9.A < 0) {
+                    x9.Y();
+                }
+                x9.W();
+                a0Var.a();
                 break;
             case 3:
-                this.b.u0.b();
+                org.telegram.ui.Wallet.n5 n5Var = (org.telegram.ui.Wallet.n5) obj;
+                AndroidUtilities.runOnUIThread(new fx(n5Var, i12, org.telegram.ui.Wallet.n5.h(n5Var.R, i12), 18));
                 break;
             case 4:
-                org.telegram.ui.Components.voip.v1 v1Var = this.b.Z;
-                v1Var.c0 = false;
-                v1Var.invalidate();
+                org.telegram.ui.Wallet.m6 m6Var = (org.telegram.ui.Wallet.m6) obj;
+                if (m6Var.r && !m6Var.x && i12 == m6Var.k0) {
+                    m6Var.postDelayed(m6Var.l0, 500L);
+                    break;
+                }
                 break;
             case 5:
-                ph1 ph1Var = this.b;
-                ph1Var.q0 = ph1Var.p0;
-                ph1Var.G();
+                org.telegram.ui.Wallet.w7 w7Var = (org.telegram.ui.Wallet.w7) obj;
+                ArrayList arrayList = w7Var.v;
+                try {
+                    ClipboardManager clipboardManager = (ClipboardManager) w7Var.getParentActivity().getSystemService("clipboard");
+                    if (clipboardManager != null && clipboardManager.getPrimaryClip() != null && clipboardManager.getPrimaryClip().getItemCount() != 0 && (text = clipboardManager.getPrimaryClip().getItemAt(0).getText()) != null) {
+                        String[] split = text.toString().trim().toLowerCase().split("\\s+");
+                        for (int i13 = 0; i12 < arrayList.size() && i13 < split.length; i13++) {
+                            ((org.telegram.ui.Wallet.ha) arrayList.get(i12)).setText(split[i13]);
+                            i12++;
+                        }
+                        w7Var.Z();
+                        break;
+                    }
+                } catch (Exception unused) {
+                    return;
+                }
                 break;
             case 6:
-                this.b.A();
+                org.telegram.ui.Wallet.r9 r9Var = (org.telegram.ui.Wallet.r9) obj;
+                if (!r9Var.r && i12 == r9Var.J) {
+                    r9Var.L = false;
+                    r9Var.a.g3.O(true);
+                    break;
+                }
                 break;
             case 7:
-                int[] iArr = new int[2];
-                ph1 ph1Var2 = this.b;
-                ph1Var2.e0.getLocationOnScreen(iArr);
-                int i10 = iArr[0];
-                int i11 = iArr[1];
-                ph1Var2.e.getLocationOnScreen(iArr);
-                ph1Var2.e.setTranslationX(AndroidUtilities.dp(42.0f) + (i10 - iArr[0]));
-                ph1Var2.e.setTranslationY(AndroidUtilities.dp(44.0f) + (i11 - iArr[1]));
-                ph1Var2.h.getLocationOnScreen(iArr);
-                ph1Var2.h.setTranslationX(AndroidUtilities.dp(42.0f) + (i10 - iArr[0]));
-                ph1Var2.h.setTranslationY(AndroidUtilities.dp(44.0f) + (i11 - iArr[1]));
-                ph1Var2.f.getLocationOnScreen(iArr);
-                ph1Var2.f.setTranslationX(AndroidUtilities.dp(42.0f) + (i10 - iArr[0]));
-                ph1Var2.f.setTranslationY(AndroidUtilities.dp(44.0f) + (i11 - iArr[1]));
-                ph1Var2.n.getLocationOnScreen(iArr);
-                ph1Var2.n.setTranslationX((((ph1Var2.e0.getWidth() + i10) - iArr[0]) - AndroidUtilities.dp(49.0f)) - AndroidUtilities.dp(60.0f));
-                ph1Var2.n.setTranslationY(AndroidUtilities.dp(44.0f) + (i11 - iArr[1]));
-                ph1Var2.n.setAlpha(1.0f);
-                ph1Var2.e.setAlpha(1.0f);
-                ph1Var2.h.setAlpha(1.0f);
-                ph1Var2.f.setAlpha(1.0f);
-                long j10 = 200;
-                ph1Var2.n.animate().setStartDelay(0L).translationY(0.0f).setInterpolator(new LinearInterpolator()).translationX(0.0f).setDuration(j10).start();
-                ph1Var2.e.animate().setStartDelay(0L).translationY(0.0f).setInterpolator(new LinearInterpolator()).translationX(0.0f).setDuration(j10).start();
-                ph1Var2.h.animate().setStartDelay(0L).translationY(0.0f).setInterpolator(new LinearInterpolator()).translationX(0.0f).setDuration(j10).start();
-                ph1Var2.f.animate().setStartDelay(0L).translationY(0.0f).setInterpolator(new LinearInterpolator()).translationX(0.0f).setDuration(j10).start();
+                ((ph.a) obj).w0(i12, 0, null);
                 break;
             case 8:
-                this.b.u0.b();
-                break;
-            case 9:
-                if (SharedConfig.callEncryptionHintDisplayedCount < 2) {
-                    SharedConfig.incrementCallEncryptionHintDisplayed(1);
-                    ph1 ph1Var3 = this.b;
-                    ph1Var3.O0.setTranslationY(ph1Var3.N.getY() + AndroidUtilities.dp(36.0f));
-                    ph1Var3.O0.u();
-                    break;
-                }
-                break;
-            case 10:
-                this.b.u0.b();
-                break;
-            case 11:
-                ph1 ph1Var4 = this.b;
-                ph1Var4.u0.setAlpha(1.0f);
-                ph1Var4.u0.invalidate();
-                ValueAnimator j11 = ph1Var4.j(true);
-                ph1Var4.H.setAlpha(0.0f);
-                ph1Var4.I.setAlpha(0.0f);
-                ph1Var4.N.setAlpha(0.0f);
-                ph1Var4.X.setAlpha(0.0f);
-                ph1Var4.j0.setAlpha(0.0f);
-                ph1Var4.h0.setAlpha(0.0f);
-                ph1Var4.i0.setAlpha(0.0f);
-                ph1Var4.K.setAlpha(0.0f);
-                ph1Var4.M0.setAlpha(0.0f);
-                ph1Var4.Y.b0 = true;
-                AndroidUtilities.runOnUIThread(new zc1(12, ph1Var4, j11), 32L);
-                break;
-            case 12:
-                ph1 ph1Var5 = this.b;
-                ph1Var5.R0 = false;
-                org.telegram.ui.Components.voip.e3 e3Var = ph1Var5.N0;
-                boolean z10 = e3Var != null && e3Var.V;
-                if (ph1Var5.z0 && ph1Var5.x0 && !ph1Var5.C0 && !z10) {
-                    ph1Var5.K0 = System.currentTimeMillis();
-                    ph1Var5.z(false);
-                    ph1Var5.q0 = ph1Var5.p0;
-                    ph1Var5.G();
-                    break;
-                }
-                break;
-            default:
-                ph1 ph1Var6 = this.b;
-                if (ph1Var6.p0 == 3) {
-                    ph1Var6.y.b(true, false);
-                    org.telegram.ui.Components.voip.d3 d3Var = ph1Var6.v;
-                    if (!d3Var.R) {
-                        d3Var.R = true;
+                org.telegram.ui.ActionBar.e2[] e2VarArr = (org.telegram.ui.ActionBar.e2[]) obj;
+                org.telegram.ui.ActionBar.e2 e2Var = e2VarArr[0];
+                if (e2Var != null) {
+                    try {
+                        e2Var.setOnCancelListener(new DialogInterface.OnCancelListener() { // from class: qf.a
+                            @Override // android.content.DialogInterface.OnCancelListener
+                            public final void onCancel(DialogInterface dialogInterface) {
+                                ConnectionsManager.getInstance(UserConfig.selectedAccount).cancelRequest(i12, true);
+                            }
+                        });
+                        e2VarArr[0].show();
                         break;
+                    } catch (Exception unused2) {
+                        return;
                     }
                 }
                 break;
+            case 9:
+                sg.j jVar = (sg.j) obj;
+                jVar.L = i12;
+                jVar.K = true;
+                try {
+                    jVar.performHapticFeedback(3, 2);
+                } catch (Exception unused3) {
+                }
+                ValueAnimator valueAnimator2 = jVar.P;
+                if (valueAnimator2 != null) {
+                    valueAnimator2.cancel();
+                }
+                ValueAnimator valueAnimator3 = jVar.Q;
+                if (valueAnimator3 != null) {
+                    valueAnimator3.cancel();
+                }
+                ValueAnimator duration = ValueAnimator.ofFloat(0.0f, 1.0f).setDuration(150L);
+                jVar.P = duration;
+                duration.setInterpolator(org.telegram.ui.Components.ds.f);
+                jVar.P.addUpdateListener(new sg.f(jVar, 5));
+                jVar.P.addListener(new sg.g(jVar, i11));
+                jVar.P.start();
+                break;
+            case 10:
+                pt0 pt0Var = (pt0) obj;
+                rg.q1 q1Var = pt0Var.z1;
+                pt0Var.r0(q1Var, null);
+                rg.s0.e(i12).j(q1Var.c);
+                break;
+            case 11:
+                sg.o2 o2Var = (sg.o2) obj;
+                o2Var.getClass();
+                NotificationCenter.getInstance(i12).lambda$postNotificationNameOnUIThread$1(NotificationCenter.customStickerCreated, Boolean.FALSE);
+                o2Var.h();
+                break;
+            default:
+                org.telegram.ui.Components.aa0 aa0Var = ((vg.r0) obj).e;
+                try {
+                    if (aa0Var.getLayout().getLineForOffset(i12) == 0) {
+                        aa0Var.getEditableText().insert(i12, "\n");
+                        break;
+                    }
+                } catch (Exception e) {
+                    FileLog.e(e);
+                }
+                break;
         }
+    }
+
+    public /* synthetic */ yg1(Object obj, int i10, int i11) {
+        this.a = i11;
+        this.c = obj;
+        this.b = i10;
     }
 }

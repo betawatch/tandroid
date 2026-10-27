@@ -19,12 +19,12 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.Components.v51;
+import org.telegram.ui.Components.w51;
 import org.telegram.ui.UserInfoActivity;
-import org.telegram.ui.eb0;
-import org.telegram.ui.lb0;
+import org.telegram.ui.gb0;
+import org.telegram.ui.ob0;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class i8 implements Runnable {
     public final /* synthetic */ int a;
@@ -130,7 +130,7 @@ public final /* synthetic */ class i8 implements Runnable {
                 ((MessagesStorage) this.b).lambda$loadUnreadMessages$79((a0.h) this.c, (ArrayList) this.d, (ArrayList) this.n, (ArrayList) this.e, (ArrayList) this.r, (ArrayList) this.f, (HashMap) this.h);
                 break;
             case 4:
-                lb0 lb0Var = (lb0) this.b;
+                ob0 ob0Var = (ob0) this.b;
                 org.telegram.ui.Wallet.l0 l0Var = (org.telegram.ui.Wallet.l0) this.c;
                 String str3 = (String) this.d;
                 String str4 = (String) this.n;
@@ -139,12 +139,12 @@ public final /* synthetic */ class i8 implements Runnable {
                 String str7 = (String) this.f;
                 String str8 = (String) this.h;
                 org.telegram.ui.Wallet.e2 e2Var2 = l0Var.g;
-                eb0 eb0Var = new eb0(lb0Var, str8, 1);
+                gb0 gb0Var = new gb0(ob0Var, str8, 1);
                 e2Var2.getClass();
                 TL_wallet.tonConnectCreateSession tonconnectcreatesession = new TL_wallet.tonConnectCreateSession();
                 tonconnectcreatesession.dapp_client_id = str3;
                 tonconnectcreatesession.manifest_url = str4;
-                e2Var2.f.sendRequestTyped(tonconnectcreatesession, new org.telegram.messenger.a(), new org.telegram.ui.Wallet.h1(e2Var2, eb0Var, str5, str4, str6, str7));
+                e2Var2.f.sendRequestTyped(tonconnectcreatesession, new org.telegram.messenger.a(), new org.telegram.ui.Wallet.h1(e2Var2, gb0Var, str5, str4, str6, str7));
                 break;
             case 5:
                 UserInfoActivity.Z((UserInfoActivity) this.c, (TLRPC.TL_error) this.h, (TLObject) this.b, (TL_account.TL_birthday) this.d, (TLRPC.UserFull) this.n, (TLObject) this.e, (int[]) this.r, (ArrayList) this.f);
@@ -177,7 +177,7 @@ public final /* synthetic */ class i8 implements Runnable {
                 org.telegram.ui.Wallet.r1 r1Var2 = (org.telegram.ui.Wallet.r1) this.h;
                 e2Var4.getClass();
                 try {
-                    AndroidUtilities.runOnUIThread(new v51(e2Var4, str10, bArr2, tonconnectsession2, org.telegram.ui.Wallet.e2.q(i0Var2, tonconnectsession2, str10, bArr2, jSONArray, tL_urlAuthResultRequest.domain, null, null, e2Var4.f.getCurrentTime()), r1Var2, i0Var2, jSONArray, tL_urlAuthResultRequest));
+                    AndroidUtilities.runOnUIThread(new w51(e2Var4, str10, bArr2, tonconnectsession2, org.telegram.ui.Wallet.e2.q(i0Var2, tonconnectsession2, str10, bArr2, jSONArray, tL_urlAuthResultRequest.domain, null, null, e2Var4.f.getCurrentTime()), r1Var2, i0Var2, jSONArray, tL_urlAuthResultRequest));
                     break;
                 } catch (Exception e10) {
                     r1Var2.run(null, org.telegram.ui.Wallet.e2.h("prepare OAuth identity", e10));

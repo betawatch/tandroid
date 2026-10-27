@@ -25,24 +25,23 @@ import org.telegram.ui.ActionBar.y6;
 import org.telegram.ui.Cells.v8;
 import org.telegram.ui.Cells.y3;
 import org.telegram.ui.Cells.z3;
-import org.telegram.ui.Components.ey0;
-import org.telegram.ui.Components.gb1;
-import org.telegram.ui.Components.mm0;
-import org.telegram.ui.Components.vl0;
+import org.telegram.ui.Components.aq;
+import org.telegram.ui.Components.fy0;
+import org.telegram.ui.Components.kb1;
+import org.telegram.ui.Components.nm0;
+import org.telegram.ui.Components.wl0;
 import org.telegram.ui.Components.y9;
-import org.telegram.ui.Components.zp;
 import s4.e1;
 import s4.q0;
-import sg.u;
 import vg.c1;
 import zg.l;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class h extends qg.b {
     public final u6 d;
     public final Context e;
-    public mm0 f;
+    public nm0 f;
     public ArrayList n;
     public boolean s;
     public z3 v;
@@ -58,10 +57,10 @@ public final class h extends qg.b {
         this.d = u6Var;
         o oVar = new o(this, 28);
         MessagesStorage messagesStorage = MessagesStorage.getInstance(UserConfig.selectedAccount);
-        messagesStorage.getStorageQueue().postRunnable(new u(22, messagesStorage, oVar));
+        messagesStorage.getStorageQueue().postRunnable(new s9.g(23, messagesStorage, oVar));
     }
 
-    @Override // org.telegram.ui.Components.lm0
+    @Override // org.telegram.ui.Components.mm0
     public final boolean D(e1 e1Var) {
         int i10 = e1Var.f;
         return i10 == 3 || i10 == 6 || i10 == 9;
@@ -140,7 +139,7 @@ public final class h extends qg.b {
             }
             if (i12 == 5) {
                 try {
-                    ((ey0) view).b.getImageReceiver().startAnimation();
+                    ((fy0) view).b.getImageReceiver().startAnimation();
                     return;
                 } catch (Exception unused) {
                     return;
@@ -159,7 +158,7 @@ public final class h extends qg.b {
                             return;
                         }
                         AndroidUtilities.removeFromParent(gVar.q);
-                        frameLayout.addView(gVar.q, gb1.g(-2.0f, -1));
+                        frameLayout.addView(gVar.q, kb1.g(-2.0f, -1));
                         return;
                     }
                     return;
@@ -203,9 +202,9 @@ public final class h extends qg.b {
             zArr[0] = false;
             lVar.setSubtitle(charSequence4);
             f7.Y(lVar.e, zArr[0] ? y6.n5 : y6.r5, lVar.a);
-            zp zpVar = lVar.v;
-            if (zpVar != null) {
-                zpVar.setAlpha(1.0f);
+            aq aqVar = lVar.v;
+            if (aqVar != null) {
+                aqVar.setAlpha(1.0f);
             }
             l4Var.i(null);
         } else {
@@ -278,11 +277,11 @@ public final class h extends qg.b {
         } else {
             u6 u6Var = this.d;
             if (i10 == 5) {
-                ey0 ey0Var = new ey0(context, null, 1, u6Var);
-                ey0Var.d.setText(LocaleController.getString(R.string.NoResult));
-                ey0Var.e.setText(LocaleController.getString(R.string.SearchEmptyViewFilteredSubtitle2));
-                ey0Var.a.setTranslationY(AndroidUtilities.dp(24.0f));
-                lVar = ey0Var;
+                fy0 fy0Var = new fy0(context, null, 1, u6Var);
+                fy0Var.d.setText(LocaleController.getString(R.string.NoResult));
+                fy0Var.e.setText(LocaleController.getString(R.string.SearchEmptyViewFilteredSubtitle2));
+                fy0Var.a.setTranslationY(AndroidUtilities.dp(24.0f));
+                lVar = fy0Var;
             } else {
                 boolean z10 = this.h;
                 if (i10 == 7) {
@@ -319,7 +318,7 @@ public final class h extends qg.b {
                 }
             }
         }
-        return new vl0(lVar);
+        return new wl0(lVar);
     }
 
     @Override // s4.h0

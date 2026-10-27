@@ -71,7 +71,7 @@ import org.telegram.messenger.MessagesStorage;
 import org.telegram.messenger.SendMessagesHelper;
 import org.telegram.messenger.UserObject;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.vh;
+import org.telegram.messenger.wh;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
@@ -96,25 +96,25 @@ import org.telegram.ui.Components.g5;
 import org.telegram.ui.Components.go;
 import org.telegram.ui.Components.i4;
 import org.telegram.ui.Components.j4;
-import org.telegram.ui.Components.kd0;
-import org.telegram.ui.Components.md0;
+import org.telegram.ui.Components.ld0;
+import org.telegram.ui.Components.nd0;
 import org.telegram.ui.Components.nl;
-import org.telegram.ui.Components.sd0;
 import org.telegram.ui.Components.sl;
-import org.telegram.ui.Components.sl0;
+import org.telegram.ui.Components.td0;
 import org.telegram.ui.Components.ti;
+import org.telegram.ui.Components.tl0;
 import org.telegram.ui.Components.z3;
-import org.telegram.ui.af1;
-import org.telegram.ui.cy;
-import org.telegram.ui.oo0;
-import org.telegram.ui.un;
-import org.telegram.ui.ux;
+import org.telegram.ui.cf1;
+import org.telegram.ui.ey;
+import org.telegram.ui.qo0;
 import org.telegram.ui.web.r;
+import org.telegram.ui.wn;
+import org.telegram.ui.xx;
 import org.telegram.ui.z7;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class a implements c, ux, SuccessContinuation, MessagesStorage.StringCallback, t9, MediaDataController.KeywordResultCallback, b2, oo0, nl, o0, q, kd0, r0, e5 {
+public final /* synthetic */ class a implements c, xx, SuccessContinuation, MessagesStorage.StringCallback, t9, MediaDataController.KeywordResultCallback, b2, qo0, nl, o0, q, ld0, r0, e5 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
     public final /* synthetic */ Object c;
@@ -127,7 +127,7 @@ public final /* synthetic */ class a implements c, ux, SuccessContinuation, Mess
         this.c = obj3;
     }
 
-    @Override // org.telegram.ui.ux
+    @Override // org.telegram.ui.xx
     public /* synthetic */ boolean C() {
         switch (this.a) {
         }
@@ -150,31 +150,31 @@ public final /* synthetic */ class a implements c, ux, SuccessContinuation, Mess
         }
     }
 
-    @Override // org.telegram.ui.ux
-    public /* synthetic */ boolean K(cy cyVar) {
+    @Override // org.telegram.ui.xx
+    public /* synthetic */ boolean K(ey eyVar) {
         switch (this.a) {
         }
         return false;
     }
 
-    @Override // org.telegram.ui.oo0
+    @Override // org.telegram.ui.qo0
     public void a(int i10) {
         switch (this.a) {
             case 9:
                 h3 h3Var = (h3) this.b;
-                sd0 sd0Var = (sd0) this.d;
+                td0 td0Var = (td0) this.d;
                 String str = (String) this.c;
                 if (i10 != 3) {
-                    sd0Var.dismiss();
+                    td0Var.dismiss();
                 }
                 h3Var.d.y.F(str, b10.v(i10).toLowerCase(Locale.ROOT), false);
                 break;
             default:
-                sd0 sd0Var2 = (sd0) this.b;
+                td0 td0Var2 = (td0) this.b;
                 o4 o4Var = (o4) this.d;
                 String str2 = (String) this.c;
                 if (i10 != 3) {
-                    sd0Var2.dismiss();
+                    td0Var2.dismiss();
                 }
                 o4Var.getWebViewContainer().F(str2, b10.v(i10).toLowerCase(Locale.ROOT), false);
                 break;
@@ -380,7 +380,7 @@ public final /* synthetic */ class a implements c, ux, SuccessContinuation, Mess
                 callback.run(Boolean.FALSE);
                 e2VarArr[0].dismiss();
                 break;
-            case 21:
+            case 22:
                 ChatActivityEnterView chatActivityEnterView = (ChatActivityEnterView) this.b;
                 MessageObject messageObject = (MessageObject) this.d;
                 TL_keyboard.KeyboardButtonProto keyboardButtonProto = (TL_keyboard.KeyboardButtonProto) this.c;
@@ -466,7 +466,7 @@ public final /* synthetic */ class a implements c, ux, SuccessContinuation, Mess
     @Override // di.t9
     public void k(Canvas canvas, RectF rectF, float f7) {
         w7 w7Var = (w7) this.b;
-        sl0 sl0Var = (sl0) this.d;
+        tl0 tl0Var = (tl0) this.d;
         int[] iArr = (int[]) this.c;
         w7Var.c(canvas, rectF, f7);
         w7Var.f(canvas, rectF, f7);
@@ -475,22 +475,22 @@ public final /* synthetic */ class a implements c, ux, SuccessContinuation, Mess
         } else {
             w7Var.e(canvas, rectF, f7);
         }
-        if (sl0Var != null && sl0Var.a0 && sl0Var.getVisibility() == 0) {
+        if (tl0Var != null && tl0Var.a0 && tl0Var.getVisibility() == 0) {
             canvas.saveLayerAlpha(0.0f, 0.0f, canvas.getWidth(), canvas.getHeight(), (int) (f7 * 255.0f), 31);
             canvas.translate(iArr[0], iArr[1]);
-            sl0Var.draw(canvas);
+            tl0Var.draw(canvas);
             canvas.restore();
         }
     }
 
-    @Override // org.telegram.ui.Components.kd0
-    public void q(md0 md0Var, int i10) {
+    @Override // org.telegram.ui.Components.ld0
+    public void q(nd0 nd0Var, int i10) {
         switch (this.a) {
             case 18:
-                g5.g(null, null, 0L, 0L, 0, (md0) this.b, (i4) this.d, (j4) this.c);
+                g5.g(null, null, 0L, 0L, 0, (nd0) this.b, (i4) this.d, (j4) this.c);
                 break;
             default:
-                g5.g(null, null, 0L, 0L, 0, (md0) this.b, (z3) this.d, (b4) this.c);
+                g5.g(null, null, 0L, 0L, 0, (nd0) this.b, (z3) this.d, (b4) this.c);
                 break;
         }
     }
@@ -602,7 +602,7 @@ public final /* synthetic */ class a implements c, ux, SuccessContinuation, Mess
                 TLRPC.TL_messages_stickerSet tL_messages_stickerSet = (TLRPC.TL_messages_stickerSet) arrayList6.get(i21);
                 if (tL_messages_stickerSet != null && tL_messages_stickerSet.set != null) {
                     String translitSafe2 = AndroidUtilities.translitSafe((tL_messages_stickerSet.set.title + "").toLowerCase());
-                    if (translitSafe2.startsWith(translitSafe) || vh.u(" ", translitSafe, translitSafe2)) {
+                    if (translitSafe2.startsWith(translitSafe) || wh.u(" ", translitSafe, translitSafe2)) {
                         int size = arrayList7.size();
                         arrayList7.add(tL_messages_stickerSet);
                         sparseIntArray.put(y1Var.x, size);
@@ -667,16 +667,16 @@ public final /* synthetic */ class a implements c, ux, SuccessContinuation, Mess
         return Tasks.forResult(str2);
     }
 
-    @Override // org.telegram.ui.ux
-    public boolean v(cy cyVar, ArrayList arrayList, CharSequence charSequence, boolean z10, boolean z11, int i10, int i11, af1 af1Var) {
+    @Override // org.telegram.ui.xx
+    public boolean v(ey eyVar, ArrayList arrayList, CharSequence charSequence, boolean z10, boolean z11, int i10, int i11, cf1 cf1Var) {
         switch (this.a) {
             case 2:
-                return h7.R0((h7) this.b, (TL_stars.TL_starGiftUnique) this.d, (cy) this.c, arrayList);
+                return h7.R0((h7) this.b, (TL_stars.TL_starGiftUnique) this.d, (ey) this.c, arrayList);
             default:
                 ChatActivityEnterView chatActivityEnterView = (ChatActivityEnterView) this.b;
                 MessageObject messageObject = (MessageObject) this.d;
                 TL_keyboard.TL_inlineButtonTypeSwitchInline tL_inlineButtonTypeSwitchInline = (TL_keyboard.TL_inlineButtonTypeSwitchInline) this.c;
-                un unVar = chatActivityEnterView.P2;
+                wn wnVar = chatActivityEnterView.P2;
                 TLRPC.Message message = messageObject.messageOwner;
                 long j10 = message.from_id.user_id;
                 long j11 = message.via_bot_id;
@@ -685,14 +685,14 @@ public final /* synthetic */ class a implements c, ux, SuccessContinuation, Mess
                 }
                 TLRPC.User user = chatActivityEnterView.R.getMessagesController().getUser(Long.valueOf(j10));
                 if (user == null) {
-                    cyVar.finishFragment();
+                    eyVar.finishFragment();
                 } else {
                     long j12 = ((MessagesStorage.TopicKey) arrayList.get(0)).dialogId;
                     MediaDataController.getInstance(chatActivityEnterView.Q).saveDraft(j12, 0, "@" + UserObject.getPublicUsername(user) + " " + tL_inlineButtonTypeSwitchInline.query, null, null, true, 0L);
                     if (j12 == chatActivityEnterView.Q2) {
-                        cyVar.finishFragment();
+                        eyVar.finishFragment();
                     } else if (DialogObject.isEncryptedDialog(j12)) {
-                        cyVar.finishFragment();
+                        eyVar.finishFragment();
                     } else {
                         Bundle bundle = new Bundle();
                         if (DialogObject.isUserDialog(j12)) {
@@ -700,11 +700,11 @@ public final /* synthetic */ class a implements c, ux, SuccessContinuation, Mess
                         } else {
                             bundle.putLong("chat_id", -j12);
                         }
-                        if (chatActivityEnterView.R.getMessagesController().checkCanOpenChat(bundle, cyVar)) {
-                            if (!unVar.presentFragment(new un(bundle), true)) {
-                                cyVar.finishFragment();
+                        if (chatActivityEnterView.R.getMessagesController().checkCanOpenChat(bundle, eyVar)) {
+                            if (!wnVar.presentFragment(new wn(bundle), true)) {
+                                eyVar.finishFragment();
                             } else if (!AndroidUtilities.isTablet()) {
-                                unVar.removeSelfFromStack();
+                                wnVar.removeSelfFromStack();
                             }
                         }
                     }

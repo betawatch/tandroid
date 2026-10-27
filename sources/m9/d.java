@@ -10,9 +10,10 @@ import android.os.Bundle;
 import j$.util.DesugarCollections;
 import java.util.HashSet;
 import java.util.Set;
-import s9.r;
+import s9.k;
+import s9.s;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class d implements ra.b {
     public final /* synthetic */ int a;
@@ -57,7 +58,7 @@ public final /* synthetic */ class d implements ra.b {
             case 1:
                 return new pa.g((Context) this.b, (String) this.c);
             default:
-                s9.g gVar = (s9.g) this.c;
+                s9.h hVar2 = (s9.h) this.c;
                 s9.a aVar2 = (s9.a) this.b;
                 s9.d dVar = aVar2.f;
                 me meVar = new me();
@@ -66,36 +67,36 @@ public final /* synthetic */ class d implements ra.b {
                 HashSet hashSet3 = new HashSet();
                 HashSet hashSet4 = new HashSet();
                 HashSet hashSet5 = new HashSet();
-                Set<s9.j> set = aVar2.c;
+                Set<k> set = aVar2.c;
                 Set set2 = aVar2.g;
-                for (s9.j jVar : set) {
-                    int i11 = jVar.c;
-                    int i12 = jVar.b;
+                for (k kVar : set) {
+                    int i11 = kVar.c;
+                    int i12 = kVar.b;
                     boolean z11 = i11 == 0;
-                    r rVar = jVar.a;
+                    s sVar = kVar.a;
                     if (z11) {
                         if (i12 == 2) {
-                            hashSet4.add(rVar);
+                            hashSet4.add(sVar);
                         } else {
-                            hashSet.add(rVar);
+                            hashSet.add(sVar);
                         }
                     } else if (i11 == 2) {
-                        hashSet3.add(rVar);
+                        hashSet3.add(sVar);
                     } else if (i12 == 2) {
-                        hashSet5.add(rVar);
+                        hashSet5.add(sVar);
                     } else {
-                        hashSet2.add(rVar);
+                        hashSet2.add(sVar);
                     }
                 }
                 if (!set2.isEmpty()) {
-                    hashSet.add(r.a(oa.a.class));
+                    hashSet.add(s.a(oa.a.class));
                 }
                 meVar.a = DesugarCollections.unmodifiableSet(hashSet);
                 meVar.b = DesugarCollections.unmodifiableSet(hashSet2);
                 meVar.c = DesugarCollections.unmodifiableSet(hashSet3);
                 meVar.d = DesugarCollections.unmodifiableSet(hashSet4);
                 DesugarCollections.unmodifiableSet(hashSet5);
-                meVar.e = gVar;
+                meVar.e = hVar2;
                 return dVar.d1(meVar);
         }
     }

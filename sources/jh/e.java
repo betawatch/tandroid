@@ -24,9 +24,9 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.y6;
 import org.telegram.ui.Cells.s1;
 import org.telegram.ui.Cells.v0;
-import org.telegram.ui.oj;
+import org.telegram.ui.rj;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class e extends View implements ViewTreeObserver.OnPreDrawListener, ViewTreeObserver.OnScrollChangedListener, ViewTreeObserver.OnGlobalLayoutListener {
     public static final RectF H = new RectF();
@@ -76,11 +76,11 @@ public final class e extends View implements ViewTreeObserver.OnPreDrawListener,
         arrayList.clear();
     }
 
-    public final void b(int i10, long j10, ViewGroup viewGroup, oj ojVar) {
+    public final void b(int i10, long j10, ViewGroup viewGroup, rj rjVar) {
         this.d = j10;
         this.e = i10;
         this.f = viewGroup;
-        this.h = ojVar;
+        this.h = rjVar;
     }
 
     /* JADX WARN: Removed duplicated region for block: B:130:0x02a8  */

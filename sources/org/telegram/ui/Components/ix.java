@@ -2,7 +2,7 @@ package org.telegram.ui.Components;
 
 import org.telegram.messenger.MessagesController;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class ix implements a5.i {
     public final /* synthetic */ boolean a;
@@ -26,11 +26,11 @@ public final class ix implements a5.i {
                 MessagesController.getGlobalEmojiSettings().edit().putInt("selected_page", i11).commit();
             }
         }
-        szVar.L(i10 == 0, true);
+        szVar.M(i10 == 0, true);
         if (i10 == 2 && (this.a || szVar.v0)) {
             z10 = true;
         }
-        szVar.Q(z10, true);
+        szVar.R(z10, true);
         if (szVar.t1.z()) {
             if (i10 == 0) {
                 rw rwVar = szVar.V;
@@ -114,7 +114,7 @@ public final class ix implements a5.i {
                 tyVar.s(0);
             }
         }
-        szVar.M(true);
+        szVar.N(true);
         int currentItem = szVar.h.getCurrentItem();
         fz fzVar4 = currentItem == 0 ? fzVar3 : currentItem == 1 ? fzVar2 : fzVar;
         String obj = fzVar4.d.getText().toString();
@@ -134,7 +134,7 @@ public final class ix implements a5.i {
             z10 = false;
         }
         sz.a(szVar, z10);
-        szVar.Y();
+        szVar.Z();
     }
 
     @Override // a5.i

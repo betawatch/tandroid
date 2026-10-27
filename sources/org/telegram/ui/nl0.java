@@ -1,24 +1,62 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.widget.FrameLayout;
-import org.telegram.messenger.AndroidUtilities;
+import android.text.Editable;
+import android.text.TextWatcher;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public final class nl0 extends FrameLayout {
-    public final org.telegram.ui.Components.ak0 a;
+public final class nl0 implements TextWatcher {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ PasscodeActivity b;
 
-    public nl0(Context context) {
-        super(context);
-        org.telegram.ui.Components.ak0 ak0Var = new org.telegram.ui.Components.ak0(context);
-        this.a = ak0Var;
-        ak0Var.setOnClickListener(new x50(this, 16));
-        int dp = AndroidUtilities.dp(120.0f);
-        FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(dp, dp);
-        layoutParams.gravity = 1;
-        addView(ak0Var, layoutParams);
-        setPadding(0, AndroidUtilities.dp(32.0f), 0, 0);
-        setLayoutParams(new s4.q0(-1, -2));
+    public /* synthetic */ nl0(PasscodeActivity passcodeActivity, int i10) {
+        this.a = i10;
+        this.b = passcodeActivity;
+    }
+
+    @Override // android.text.TextWatcher
+    public final void afterTextChanged(Editable editable) {
+        int i10 = this.a;
+    }
+
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+        switch (this.a) {
+            case 0:
+                PasscodeActivity passcodeActivity = this.b;
+                hl0 hl0Var = passcodeActivity.S;
+                if (passcodeActivity.R) {
+                    passcodeActivity.n.removeCallbacks(hl0Var);
+                    hl0Var.run();
+                    break;
+                }
+                break;
+            default:
+                PasscodeActivity passcodeActivity2 = this.b;
+                hl0 hl0Var2 = passcodeActivity2.S;
+                if (passcodeActivity2.R) {
+                    passcodeActivity2.n.removeCallbacks(hl0Var2);
+                    hl0Var2.run();
+                    break;
+                }
+                break;
+        }
+    }
+
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+        int i13 = this.a;
+    }
+
+    private final void a(Editable editable) {
+    }
+
+    private final void b(Editable editable) {
+    }
+
+    private final void c(int i10, int i11, int i12, CharSequence charSequence) {
+    }
+
+    private final void d(int i10, int i11, int i12, CharSequence charSequence) {
     }
 }

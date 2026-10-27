@@ -36,7 +36,7 @@ import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class so implements Runnable {
     public final /* synthetic */ int a;
@@ -53,7 +53,7 @@ public final /* synthetic */ class so implements Runnable {
     public final void run() {
         ys ysVar;
         int i10;
-        n70 n70Var;
+        o70 o70Var;
         org.telegram.ui.jb jbVar;
         int i11;
         int i12 = this.a;
@@ -67,10 +67,10 @@ public final /* synthetic */ class so implements Runnable {
                 ((jg.g) obj).run();
                 break;
             case 1:
-                ((up) obj2).b.C((List) obj);
+                ((vp) obj2).b.C((List) obj);
                 break;
             case 2:
-                ((vp) obj2).b.C((List) obj);
+                ((wp) obj2).b.C((List) obj);
                 break;
             case 3:
                 ((org.telegram.ui.ActionBar.k3) obj2).dismiss();
@@ -102,11 +102,11 @@ public final /* synthetic */ class so implements Runnable {
                     zrVar2.c0 = groupcallstreamrtmpurl.key;
                     SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(zrVar2.c0);
                     zrVar2.d0 = spannableStringBuilder;
-                    y11 y11Var = new y11();
-                    y11Var.a |= 256;
-                    y11Var.b = 0;
-                    y11Var.c = spannableStringBuilder.length();
-                    zrVar2.d0.setSpan(new z11(y11Var, 0), 0, zrVar2.d0.length(), 0);
+                    z11 z11Var = new z11();
+                    z11Var.a |= 256;
+                    z11Var.b = 0;
+                    z11Var.c = spannableStringBuilder.length();
+                    zrVar2.d0.setSpan(new a21(z11Var, 0), 0, zrVar2.d0.length(), 0);
                     zrVar2.e0.O(false);
                     break;
                 }
@@ -235,7 +235,7 @@ public final /* synthetic */ class so implements Runnable {
                                             TLRPC.TL_messages_stickerSet tL_messages_stickerSet3 = stickerSets.get(i18);
                                             if (tL_messages_stickerSet3 != null && (stickerSet2 = tL_messages_stickerSet3.set) != null && stickerSet2.title != null && (arrayList7 = tL_messages_stickerSet3.documents) != null && !arrayList7.isEmpty() && !hashSet.contains(Long.valueOf(tL_messages_stickerSet3.set.id))) {
                                                 String translitSafe2 = AndroidUtilities.translitSafe(tL_messages_stickerSet3.set.title.toLowerCase());
-                                                if (translitSafe2.startsWith(translitSafe) || org.telegram.messenger.vh.u(" ", translitSafe, translitSafe2)) {
+                                                if (translitSafe2.startsWith(translitSafe) || org.telegram.messenger.wh.u(" ", translitSafe, translitSafe2)) {
                                                     arrayList8.add(new jy(tL_messages_stickerSet3, tL_messages_stickerSet3.documents));
                                                     hashSet.add(Long.valueOf(tL_messages_stickerSet3.set.id));
                                                 }
@@ -248,7 +248,7 @@ public final /* synthetic */ class so implements Runnable {
                                             TLRPC.StickerSetCovered stickerSetCovered = featuredEmojiSets.get(i19);
                                             if (stickerSetCovered != null && (stickerSet = stickerSetCovered.set) != null && stickerSet.title != null && !hashSet.contains(Long.valueOf(stickerSet.id))) {
                                                 String translitSafe3 = AndroidUtilities.translitSafe(stickerSetCovered.set.title.toLowerCase());
-                                                if (translitSafe3.startsWith(translitSafe) || org.telegram.messenger.vh.u(" ", translitSafe, translitSafe3)) {
+                                                if (translitSafe3.startsWith(translitSafe) || org.telegram.messenger.wh.u(" ", translitSafe, translitSafe3)) {
                                                     if (stickerSetCovered instanceof TLRPC.TL_stickerSetFullCovered) {
                                                         arrayList6 = ((TLRPC.TL_stickerSetFullCovered) stickerSetCovered).documents;
                                                     } else if (stickerSetCovered instanceof TLRPC.TL_stickerSetNoCovered) {
@@ -296,7 +296,7 @@ public final /* synthetic */ class so implements Runnable {
                                             TLRPC.TL_messages_stickerSet tL_messages_stickerSet3 = stickerSets.get(i18);
                                             if (tL_messages_stickerSet3 != null && (stickerSet2 = tL_messages_stickerSet3.set) != null && stickerSet2.title != null && (arrayList7 = tL_messages_stickerSet3.documents) != null && !arrayList7.isEmpty() && !hashSet.contains(Long.valueOf(tL_messages_stickerSet3.set.id))) {
                                                 String translitSafe2 = AndroidUtilities.translitSafe(tL_messages_stickerSet3.set.title.toLowerCase());
-                                                if (translitSafe2.startsWith(translitSafe) || org.telegram.messenger.vh.u(" ", translitSafe, translitSafe2)) {
+                                                if (translitSafe2.startsWith(translitSafe) || org.telegram.messenger.wh.u(" ", translitSafe, translitSafe2)) {
                                                     arrayList8.add(new jy(tL_messages_stickerSet3, tL_messages_stickerSet3.documents));
                                                     hashSet.add(Long.valueOf(tL_messages_stickerSet3.set.id));
                                                 }
@@ -309,7 +309,7 @@ public final /* synthetic */ class so implements Runnable {
                                             TLRPC.StickerSetCovered stickerSetCovered = featuredEmojiSets.get(i19);
                                             if (stickerSetCovered != null && (stickerSet = stickerSetCovered.set) != null && stickerSet.title != null && !hashSet.contains(Long.valueOf(stickerSet.id))) {
                                                 String translitSafe3 = AndroidUtilities.translitSafe(stickerSetCovered.set.title.toLowerCase());
-                                                if (translitSafe3.startsWith(translitSafe) || org.telegram.messenger.vh.u(" ", translitSafe, translitSafe3)) {
+                                                if (translitSafe3.startsWith(translitSafe) || org.telegram.messenger.wh.u(" ", translitSafe, translitSafe3)) {
                                                     if (stickerSetCovered instanceof TLRPC.TL_stickerSetFullCovered) {
                                                         arrayList6 = ((TLRPC.TL_stickerSetFullCovered) stickerSetCovered).documents;
                                                     } else if (stickerSetCovered instanceof TLRPC.TL_stickerSetNoCovered) {
@@ -387,11 +387,11 @@ public final /* synthetic */ class so implements Runnable {
                         if (uri != null) {
                             bundle.putParcelable("photoUri", uri);
                         }
-                        org.telegram.ui.dq0 dq0Var = new org.telegram.ui.dq0(bundle);
-                        dq0Var.e = false;
-                        dq0Var.f = false;
-                        dq0Var.c = g50Var;
-                        launchActivity.u0(dq0Var);
+                        org.telegram.ui.fq0 fq0Var = new org.telegram.ui.fq0(bundle);
+                        fq0Var.e = false;
+                        fq0Var.f = false;
+                        fq0Var.c = g50Var;
+                        launchActivity.u0(fq0Var);
                         break;
                     } else {
                         break;
@@ -404,35 +404,35 @@ public final /* synthetic */ class so implements Runnable {
             case 24:
                 h60 h60Var = (h60) obj2;
                 c60 c60Var = (c60) obj;
-                o60 o60Var = h60Var.H0;
+                p60 p60Var = h60Var.H0;
                 VideoEditedInfo videoEditedInfo = new VideoEditedInfo();
-                o60Var.S = videoEditedInfo;
+                p60Var.R = videoEditedInfo;
                 videoEditedInfo.startTime = -1L;
                 videoEditedInfo.endTime = -1L;
-                videoEditedInfo.estimatedSize = Math.max(1L, o60Var.Q);
-                VideoEditedInfo videoEditedInfo2 = o60Var.S;
+                videoEditedInfo.estimatedSize = Math.max(1L, p60Var.P);
+                VideoEditedInfo videoEditedInfo2 = p60Var.R;
                 videoEditedInfo2.roundVideo = true;
-                videoEditedInfo2.file = o60Var.M;
-                videoEditedInfo2.encryptedFile = o60Var.N;
-                videoEditedInfo2.key = o60Var.O;
-                videoEditedInfo2.iv = o60Var.P;
+                videoEditedInfo2.file = p60Var.L;
+                videoEditedInfo2.encryptedFile = p60Var.M;
+                videoEditedInfo2.key = p60Var.N;
+                videoEditedInfo2.iv = p60Var.O;
                 videoEditedInfo2.framerate = 25;
                 videoEditedInfo2.originalWidth = 360;
                 videoEditedInfo2.resultWidth = 360;
                 videoEditedInfo2.originalHeight = 360;
                 videoEditedInfo2.resultHeight = 360;
                 videoEditedInfo2.originalPath = h60Var.a.getAbsolutePath();
-                VideoEditedInfo videoEditedInfo3 = o60Var.S;
+                VideoEditedInfo videoEditedInfo3 = p60Var.R;
                 videoEditedInfo3.notReadyYet = true;
-                videoEditedInfo3.thumb = o60Var.j1;
-                videoEditedInfo3.estimatedDuration = o60Var.k0;
-                o60Var.j1 = null;
+                videoEditedInfo3.thumb = p60Var.i1;
+                videoEditedInfo3.estimatedDuration = p60Var.j0;
+                p60Var.i1 = null;
                 MediaController.PhotoEntry photoEntry = new MediaController.PhotoEntry(0, 0, 0L, h60Var.a.getAbsolutePath(), 0, true, 0, 0, 0L);
                 if (c60Var != null) {
                     photoEntry.ttl = c60Var.c;
                     photoEntry.effectId = c60Var.d;
                 }
-                o60Var.n.r(photoEntry, o60Var.S, c60Var == null || c60Var.a, c60Var != null ? c60Var.b : 0, 0, false, c60Var != null ? c60Var.e : 0L);
+                p60Var.h.r(photoEntry, p60Var.R, c60Var == null || c60Var.a, c60Var != null ? c60Var.b : 0, 0, false, c60Var != null ? c60Var.e : 0L);
                 break;
             case 25:
                 Bitmap bitmap = (Bitmap) obj;
@@ -447,22 +447,22 @@ public final /* synthetic */ class so implements Runnable {
                 }
                 break;
             case 26:
-                n70 n70Var2 = (n70) obj2;
+                o70 o70Var2 = (o70) obj2;
                 TLObject tLObject4 = (TLObject) obj;
-                n70Var2.getClass();
+                o70Var2.getClass();
                 if (tLObject4 instanceof Vector) {
                     Vector vector = (Vector) tLObject4;
                     if (!vector.objects.isEmpty()) {
-                        n70Var2.c.put(Long.valueOf(n70Var2.b.admin_id), (TLRPC.User) vector.objects.get(0));
-                        n70Var2.T.l();
+                        o70Var2.c.put(Long.valueOf(o70Var2.b.admin_id), (TLRPC.User) vector.objects.get(0));
+                        o70Var2.T.l();
                         break;
                     }
                 }
                 break;
             case 27:
-                h70 h70Var = (h70) obj2;
-                if (((TLRPC.TL_error) obj) == null && (jbVar = (n70Var = h70Var.a.c).j0) != null) {
-                    TLRPC.TL_chatInviteExported tL_chatInviteExported = n70Var.b;
+                i70 i70Var = (i70) obj2;
+                if (((TLRPC.TL_error) obj) == null && (jbVar = (o70Var = i70Var.a.c).j0) != null) {
+                    TLRPC.TL_chatInviteExported tL_chatInviteExported = o70Var.b;
                     org.telegram.ui.wb wbVar = jbVar.a;
                     ArrayList arrayList9 = wbVar.o0;
                     int size = arrayList9.size();
@@ -490,14 +490,14 @@ public final /* synthetic */ class so implements Runnable {
                 break;
             case 28:
                 EditTextBoldCursor editTextBoldCursor = (EditTextBoldCursor) obj;
-                ((y70) obj2).setFocusable(true);
+                ((z70) obj2).setFocusable(true);
                 editTextBoldCursor.requestFocus();
-                AndroidUtilities.runOnUIThread(new o70(editTextBoldCursor, i13));
+                AndroidUtilities.runOnUIThread(new p70(editTextBoldCursor, i13));
                 break;
             default:
                 Bundle bundle2 = new Bundle();
                 bundle2.putLong("user_id", ((TLRPC.ChatFull) obj2).guard_bot_id);
-                ((org.telegram.ui.ap) obj).presentFragment(new ProfileActivity(bundle2, null));
+                ((org.telegram.ui.cp) obj).presentFragment(new ProfileActivity(bundle2, null));
                 break;
         }
     }

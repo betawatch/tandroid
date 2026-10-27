@@ -1,26 +1,31 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+import android.content.DialogInterface;
+
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class ib implements Runnable {
+public final /* synthetic */ class ib implements DialogInterface.OnCancelListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ q0.a b;
+    public final /* synthetic */ BaseController b;
     public final /* synthetic */ int c;
 
-    public /* synthetic */ ib(q0.a aVar, int i10, int i11) {
+    public /* synthetic */ ib(BaseController baseController, int i10, int i11) {
         this.a = i11;
-        this.b = aVar;
+        this.b = baseController;
         this.c = i10;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.content.DialogInterface.OnCancelListener
+    public final void onCancel(DialogInterface dialogInterface) {
         switch (this.a) {
             case 0:
-                MessagesController.lambda$getNextReactionMentionInternal$1(this.b, this.c);
+                ((MessagesController) this.b).lambda$convertToGigaGroup$270(this.c, dialogInterface);
+                break;
+            case 1:
+                ((MessagesController) this.b).lambda$convertToMegaGroup$265(this.c, dialogInterface);
                 break;
             default:
-                MessagesController.lambda$getNextReactionMentionInternal$2(this.b, this.c);
+                ((SecretChatHelper) this.b).lambda$startSecretChat$31(this.c, dialogInterface);
                 break;
         }
     }

@@ -7,7 +7,7 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class k8 implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -98,7 +98,7 @@ public final /* synthetic */ class k8 implements Runnable {
                     l8Var.e = str2;
                     l8Var.l();
                     m8Var.r.n0(0);
-                    org.telegram.messenger.vh.o(R.string.NoAudioFoundPlayerInfo, new Object[]{str2}, m8Var.x);
+                    org.telegram.messenger.wh.o(R.string.NoAudioFoundPlayerInfo, new Object[]{str2}, m8Var.x);
                     break;
                 }
                 break;

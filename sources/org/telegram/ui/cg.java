@@ -11,53 +11,53 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class cg implements org.telegram.ui.Components.yl0, fh.d, org.telegram.ui.ActionBar.b2, Utilities.Callback2Return, org.telegram.ui.Components.nw0, org.telegram.ui.Components.ow0, LanguageDetector.ExceptionCallback, org.telegram.ui.Components.id0, org.telegram.ui.Components.kd0 {
+public final /* synthetic */ class cg implements org.telegram.ui.Components.zl0, fh.d, org.telegram.ui.ActionBar.b2, Utilities.Callback2Return, org.telegram.ui.Components.ow0, org.telegram.ui.Components.pw0, LanguageDetector.ExceptionCallback, org.telegram.ui.Components.jd0, org.telegram.ui.Components.ld0 {
     public final /* synthetic */ int a;
 
     public /* synthetic */ cg(int i10) {
         this.a = i10;
     }
 
-    @Override // org.telegram.ui.Components.ow0
+    @Override // org.telegram.ui.Components.pw0
     public void b(Object obj, float f7) {
-        xr xrVar = (xr) obj;
+        zr zrVar = (zr) obj;
         switch (this.a) {
             case 5:
-                xrVar.b = f7;
-                if (xrVar.getParent() != null) {
-                    ((View) xrVar.getParent()).invalidate();
+                zrVar.b = f7;
+                if (zrVar.getParent() != null) {
+                    ((View) zrVar.getParent()).invalidate();
                     break;
                 }
                 break;
             case 6:
             case 8:
             default:
-                xrVar.e = f7;
-                if (xrVar.getParent() != null) {
-                    ((View) xrVar.getParent()).invalidate();
+                zrVar.e = f7;
+                if (zrVar.getParent() != null) {
+                    ((View) zrVar.getParent()).invalidate();
                     break;
                 }
                 break;
             case 7:
-                xrVar.c = f7;
-                if (xrVar.getParent() != null) {
-                    ((View) xrVar.getParent()).invalidate();
+                zrVar.c = f7;
+                if (zrVar.getParent() != null) {
+                    ((View) zrVar.getParent()).invalidate();
                     break;
                 }
                 break;
             case 9:
-                xrVar.d = f7;
-                if (xrVar.getParent() != null) {
-                    ((View) xrVar.getParent()).invalidate();
+                zrVar.d = f7;
+                if (zrVar.getParent() != null) {
+                    ((View) zrVar.getParent()).invalidate();
                     break;
                 }
                 break;
         }
     }
 
-    @Override // org.telegram.ui.Components.id0
+    @Override // org.telegram.ui.Components.jd0
     public String f(int i10) {
         switch (this.a) {
             case 14:
@@ -137,20 +137,20 @@ public final /* synthetic */ class cg implements org.telegram.ui.Components.yl0,
         }
     }
 
-    @Override // org.telegram.ui.Components.nw0
+    @Override // org.telegram.ui.Components.ow0
     public float get(Object obj) {
-        xr xrVar = (xr) obj;
+        zr zrVar = (zr) obj;
         switch (this.a) {
             case 4:
-                return xrVar.b;
+                return zrVar.b;
             case 5:
             case 7:
             default:
-                return xrVar.e;
+                return zrVar.e;
             case 6:
-                return xrVar.c;
+                return zrVar.c;
             case 8:
-                return xrVar.d;
+                return zrVar.d;
         }
     }
 
@@ -174,8 +174,8 @@ public final /* synthetic */ class cg implements org.telegram.ui.Components.yl0,
         return TLObject.FLAG_31;
     }
 
-    @Override // org.telegram.ui.Components.kd0
-    public void q(org.telegram.ui.Components.md0 md0Var, int i10) {
+    @Override // org.telegram.ui.Components.ld0
+    public void q(org.telegram.ui.Components.nd0 nd0Var, int i10) {
         Pattern pattern = org.telegram.ui.Components.g5.a;
     }
 

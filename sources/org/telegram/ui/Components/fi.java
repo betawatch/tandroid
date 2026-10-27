@@ -2,7 +2,7 @@ package org.telegram.ui.Components;
 
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class fi extends org.telegram.ui.ActionBar.q1 {
     public final /* synthetic */ gi x;
@@ -19,7 +19,7 @@ public final class fi extends org.telegram.ui.ActionBar.q1 {
         ti tiVar = this.x.q0;
         if ((!tiVar.isDismissed() || tiVar.x0) && tiVar.v1) {
             li liVar = tiVar.B0;
-            if (liVar != tiVar.m0 && liVar != tiVar.n0 && !tiVar.r1().m()) {
+            if (liVar != tiVar.m0 && liVar != tiVar.n0 && !tiVar.s1().m()) {
                 return true;
             }
             li liVar2 = tiVar.B0;
@@ -61,11 +61,11 @@ public final class fi extends org.telegram.ui.ActionBar.q1 {
             v3Var.setTranslationY(tiVar.d1.getTranslationY());
         }
         tiVar.i1.setTranslationY(tiVar.o2);
-        tiVar.h2(0);
+        tiVar.i2(0);
         tiVar.setCurrentPanTranslationY(tiVar.B0 != tiVar.w0 ? tiVar.o2 : 0.0f);
         giVar.invalidate();
         tiVar.G0.invalidate();
-        tiVar.b2();
+        tiVar.c2();
         li liVar = tiVar.B0;
         if (liVar != null) {
             liVar.m(tiVar.o2, f10);
@@ -76,7 +76,7 @@ public final class fi extends org.telegram.ui.ActionBar.q1 {
     public final void f() {
         boolean z10;
         ti tiVar = this.x.q0;
-        tiVar.e2(tiVar.B0, 0);
+        tiVar.f2(tiVar.B0, 0);
         tiVar.f2 = tiVar.e2[0];
         tiVar.B0.x();
         if (!(tiVar.B0 instanceof hi.o4) || tiVar.G1) {

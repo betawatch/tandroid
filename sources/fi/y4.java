@@ -1,17 +1,17 @@
 package fi;
 
 import android.widget.PopupWindow;
-import org.telegram.ui.Components.ww0;
+import org.telegram.ui.Components.xw0;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class y4 implements PopupWindow.OnDismissListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ ww0 b;
+    public final /* synthetic */ xw0 b;
 
-    public /* synthetic */ y4(ww0 ww0Var, int i10) {
+    public /* synthetic */ y4(xw0 xw0Var, int i10) {
         this.a = i10;
-        this.b = ww0Var;
+        this.b = xw0Var;
     }
 
     @Override // android.widget.PopupWindow.OnDismissListener
@@ -21,7 +21,7 @@ public final /* synthetic */ class y4 implements PopupWindow.OnDismissListener {
                 ((e6) this.b).x1.d();
                 break;
             default:
-                ((sg.n0) this.b).H1.d();
+                ((sg.m0) this.b).H1.d();
                 break;
         }
     }

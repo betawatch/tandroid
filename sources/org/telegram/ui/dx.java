@@ -1,77 +1,64 @@
 package org.telegram.ui;
 
-import android.app.Activity;
+import android.content.Context;
+import android.graphics.Rect;
+import android.view.View;
+import android.widget.ScrollView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.UndoView;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public final class dx extends UndoView {
-    public final /* synthetic */ cy j0;
+public final class dx extends ScrollView {
+    public final /* synthetic */ int a;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public dx(cy cyVar, Activity activity) {
-        super(activity);
-        this.j0 = cyVar;
+    public /* synthetic */ dx(Context context, int i10) {
+        super(context);
+        this.a = i10;
     }
 
-    @Override // org.telegram.ui.Components.UndoView
-    public final boolean a() {
-        int i10 = 0;
-        while (true) {
-            ay[] ayVarArr = this.j0.e0;
-            if (i10 >= ayVarArr.length) {
-                return true;
-            }
-            if (ayVarArr[i10].x.k()) {
+    @Override // android.widget.ScrollView, android.widget.FrameLayout, android.view.View
+    public void onMeasure(int i10, int i11) {
+        switch (this.a) {
+            case 0:
+                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec((int) Math.min(View.MeasureSpec.getSize(i11), Math.min(AndroidUtilities.displaySize.y * 0.35f, AndroidUtilities.dp(400.0f))), View.MeasureSpec.getMode(i11)));
+                break;
+            case 1:
+            default:
+                super.onMeasure(i10, i11);
+                break;
+            case 2:
+                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(Math.min(View.MeasureSpec.getSize(i11), AndroidUtilities.dp(320.0f)), TLObject.FLAG_31));
+                break;
+            case 3:
+                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(Math.min(View.MeasureSpec.getSize(i11), AndroidUtilities.dp(360.0f)), TLObject.FLAG_31));
+                break;
+            case 4:
+                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(Math.min(AndroidUtilities.dp(260.0f), View.MeasureSpec.getSize(i11)), View.MeasureSpec.getMode(i11)));
+                break;
+        }
+    }
+
+    @Override // android.widget.ScrollView, android.view.ViewGroup
+    public boolean onRequestFocusInDescendants(int i10, Rect rect) {
+        switch (this.a) {
+            case 1:
                 return false;
-            }
-            i10++;
+            default:
+                return super.onRequestFocusInDescendants(i10, rect);
         }
     }
 
-    @Override // org.telegram.ui.Components.UndoView
-    public final void g(int i10, long j10) {
-        if (i10 == 1 || i10 == 27) {
-            cy cyVar = this.j0;
-            cyVar.z3 = 1;
-            cyVar.I4(true, true);
-            if (cyVar.R1 != null) {
-                int i11 = 0;
-                while (true) {
-                    if (i11 >= cyVar.R1.size()) {
-                        i11 = -1;
-                        break;
-                    } else if (((TLRPC.Dialog) cyVar.R1.get(i11)).id == j10) {
-                        break;
-                    } else {
-                        i11++;
-                    }
-                }
-                if (i11 >= 0) {
-                    TLRPC.Dialog dialog = (TLRPC.Dialog) cyVar.R1.remove(i11);
-                    cyVar.e0[0].d.l();
-                    AndroidUtilities.runOnUIThread(new g4(this, i11, dialog, 29));
-                } else {
-                    cyVar.I4(false, true);
-                }
-            }
-            cyVar.w3();
+    @Override // android.widget.ScrollView, android.view.ViewGroup, android.view.ViewParent
+    public boolean requestChildRectangleOnScreen(View view, Rect rect, boolean z10) {
+        switch (this.a) {
+            case 1:
+                rect.offset(view.getLeft() - view.getScrollX(), view.getTop() - view.getScrollY());
+                rect.top = AndroidUtilities.dp(20.0f) + rect.top;
+                rect.bottom = AndroidUtilities.dp(50.0f) + rect.bottom;
+                break;
         }
-    }
-
-    @Override // android.view.View
-    public final void setTranslationY(float f7) {
-        super.setTranslationY(f7);
-        cy cyVar = this.j0;
-        UndoView[] undoViewArr = cyVar.y0;
-        if (this == undoViewArr[0]) {
-            UndoView undoView = undoViewArr[1];
-            if (undoView == null || undoView.getVisibility() != 0) {
-                cyVar.u1 = Math.max(0.0f, (AndroidUtilities.dp(8.0f) + getMeasuredHeight()) - f7);
-                cyVar.g5();
-            }
-        }
+        return super.requestChildRectangleOnScreen(view, rect, z10);
     }
 }

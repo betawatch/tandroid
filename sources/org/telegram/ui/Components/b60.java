@@ -4,18 +4,18 @@ import android.content.Context;
 import android.graphics.Canvas;
 import org.telegram.messenger.ImageReceiver;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public abstract class b60 extends q60 {
+public abstract class b60 extends r60 {
     public ImageReceiver a;
     public float b;
-    public final /* synthetic */ o60 c;
+    public final /* synthetic */ p60 c;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public b60(o60 o60Var, Context context) {
+    public b60(p60 p60Var, Context context) {
         super(context);
-        this.c = o60Var;
-        o60Var.setWillNotDraw(false);
+        this.c = p60Var;
+        p60Var.setWillNotDraw(false);
     }
 
     @Override // android.view.ViewGroup, android.view.View
@@ -33,7 +33,7 @@ public abstract class b60 extends q60 {
         if (this.a != null) {
             canvas.save();
             float imageWidth = this.a.getImageWidth();
-            int i10 = this.c.X0;
+            int i10 = this.c.W0;
             if (imageWidth != i10) {
                 float imageWidth2 = i10 / this.a.getImageWidth();
                 canvas.scale(imageWidth2, imageWidth2);
@@ -47,7 +47,7 @@ public abstract class b60 extends q60 {
         }
     }
 
-    @Override // org.telegram.ui.Components.q60
+    @Override // org.telegram.ui.Components.r60
     public void setImageReceiver(ImageReceiver imageReceiver) {
         if (this.a == null) {
             this.b = 0.0f;

@@ -9,7 +9,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
 public class UserNameResolver {
     private static final long CACHE_TIME = 3600000;
@@ -17,7 +17,7 @@ public class UserNameResolver {
     android.util.LruCache<String, CachedPeer> resolvedCache = new android.util.LruCache<>(100);
     HashMap<String, ArrayList<Utilities.Callback<Long>>> resolvingConsumers = new HashMap<>();
 
-    /* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+    /* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
     public class CachedPeer {
         final long peerId;
         final long time = System.currentTimeMillis();
@@ -68,12 +68,12 @@ public class UserNameResolver {
         if (str3 == null || !str3.contains("FLOOD_WAIT") || (R = LaunchActivity.R()) == null) {
             return;
         }
-        vh.n(R.string.FloodWait, org.telegram.ui.Components.wc.b0(R), null);
+        wh.n(R.string.FloodWait, org.telegram.ui.Components.wc.b0(R), null);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$resolve$1(String str, TLObject tLObject, TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new xj(this, str, tL_error, tLObject, 3), 2L);
+        AndroidUtilities.runOnUIThread(new yj(this, str, tL_error, tLObject, 3), 2L);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -138,7 +138,7 @@ public class UserNameResolver {
             }
             tL_contacts_resolveUsername = tL_contacts_resolveUsername2;
         }
-        return new x4(this, str, ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_contacts_resolveUsername, new x1(11, this, str)), 23);
+        return new y4(this, str, ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_contacts_resolveUsername, new x1(11, this, str)), 23);
     }
 
     public void update(TLRPC.Chat chat, TLRPC.Chat chat2) {

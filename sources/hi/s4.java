@@ -9,14 +9,14 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
-import org.telegram.ui.Components.kd0;
-import org.telegram.ui.Components.md0;
-import org.telegram.ui.Components.nk0;
-import org.telegram.ui.Components.pk0;
+import org.telegram.ui.Components.ld0;
+import org.telegram.ui.Components.nd0;
+import org.telegram.ui.Components.ok0;
+import org.telegram.ui.Components.qk0;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class s4 implements org.telegram.ui.ActionBar.b2, nk0, kd0 {
+public final /* synthetic */ class s4 implements org.telegram.ui.ActionBar.b2, ok0, ld0 {
     public final /* synthetic */ int a;
     public final /* synthetic */ int b;
     public final /* synthetic */ Object c;
@@ -33,8 +33,8 @@ public final /* synthetic */ class s4 implements org.telegram.ui.ActionBar.b2, n
         this.f = callback;
     }
 
-    @Override // org.telegram.ui.Components.nk0
-    public void a(pk0 pk0Var, int i10) {
+    @Override // org.telegram.ui.Components.ok0
+    public void a(qk0 qk0Var, int i10) {
         SparseIntArray sparseIntArray = (SparseIntArray) this.c;
         a5.m mVar = (a5.m) this.d;
         ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = (ActionBarPopupWindow$ActionBarPopupWindowLayout) this.e;
@@ -71,25 +71,25 @@ public final /* synthetic */ class s4 implements org.telegram.ui.ActionBar.b2, n
         ConnectionsManager.getInstance(i11).sendRequest(updateemojistatus, new q8(zArr2, callback, i11, updateemojistatus, 1));
     }
 
-    @Override // org.telegram.ui.Components.kd0
-    public void q(md0 md0Var, int i10) {
+    @Override // org.telegram.ui.Components.ld0
+    public void q(nd0 nd0Var, int i10) {
         org.telegram.ui.Components.e4 e4Var = (org.telegram.ui.Components.e4) this.c;
         vg.h hVar = (vg.h) this.d;
         vg.i iVar = (vg.i) this.e;
-        md0 md0Var2 = (md0) this.f;
+        nd0 nd0Var2 = (nd0) this.f;
         try {
             e4Var.performHapticFeedback(3, 2);
         } catch (Exception unused) {
         }
-        if (md0Var.getTag() != null && md0Var.getTag().equals("DAY")) {
-            if (md0Var.getValue() == md0Var.getMinValue()) {
+        if (nd0Var.getTag() != null && nd0Var.getTag().equals("DAY")) {
+            if (nd0Var.getValue() == nd0Var.getMinValue()) {
                 Calendar calendar = Calendar.getInstance();
                 calendar.setTimeInMillis(System.currentTimeMillis());
                 int i11 = calendar.get(11);
                 int i12 = (calendar.get(12) / 5) + 1;
                 if (i12 > 11) {
                     if (i11 == 23) {
-                        md0Var.setMinValue(md0Var.getMinValue() + 1);
+                        nd0Var.setMinValue(nd0Var.getMinValue() + 1);
                         hVar.setMinValue(0);
                     } else {
                         hVar.setMinValue(i11 + 1);
@@ -99,7 +99,7 @@ public final /* synthetic */ class s4 implements org.telegram.ui.ActionBar.b2, n
                     hVar.setMinValue(i11);
                     iVar.setMinValue(i12);
                 }
-            } else if (md0Var.getValue() == md0Var.getMaxValue()) {
+            } else if (nd0Var.getValue() == nd0Var.getMaxValue()) {
                 hVar.setMaxValue(this.a);
                 iVar.setMaxValue(Math.min(this.b / 5, 11));
             } else {
@@ -109,8 +109,8 @@ public final /* synthetic */ class s4 implements org.telegram.ui.ActionBar.b2, n
                 iVar.setMaxValue(11);
             }
         }
-        if (md0Var.getTag() != null && md0Var.getTag().equals("HOUR") && md0Var2.getValue() == md0Var2.getMinValue()) {
-            if (md0Var.getValue() != md0Var.getMinValue()) {
+        if (nd0Var.getTag() != null && nd0Var.getTag().equals("HOUR") && nd0Var2.getValue() == nd0Var2.getMinValue()) {
+            if (nd0Var.getValue() != nd0Var.getMinValue()) {
                 iVar.setMinValue(0);
                 iVar.setMaxValue(11);
                 return;
@@ -135,12 +135,12 @@ public final /* synthetic */ class s4 implements org.telegram.ui.ActionBar.b2, n
         this.f = iArr;
     }
 
-    public /* synthetic */ s4(org.telegram.ui.Components.e4 e4Var, vg.h hVar, vg.i iVar, int i10, int i11, md0 md0Var) {
+    public /* synthetic */ s4(org.telegram.ui.Components.e4 e4Var, vg.h hVar, vg.i iVar, int i10, int i11, nd0 nd0Var) {
         this.c = e4Var;
         this.d = hVar;
         this.e = iVar;
         this.a = i10;
         this.b = i11;
-        this.f = md0Var;
+        this.f = nd0Var;
     }
 }

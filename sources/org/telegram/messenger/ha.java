@@ -1,37 +1,50 @@
 package org.telegram.messenger;
 
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class ha implements RequestDelegate {
+public final /* synthetic */ class ha implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ BaseController b;
-    public final /* synthetic */ int c;
+    public final /* synthetic */ MessagesController b;
+    public final /* synthetic */ ArrayList c;
+    public final /* synthetic */ long d;
 
-    public /* synthetic */ ha(BaseController baseController, int i10, int i11) {
-        this.a = i11;
-        this.b = baseController;
-        this.c = i10;
+    public /* synthetic */ ha(MessagesController messagesController, long j10, ArrayList arrayList, int i10) {
+        this.a = i10;
+        this.b = messagesController;
+        this.d = j10;
+        this.c = arrayList;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                ((MessagesController) this.b).lambda$migrateDialogs$215(this.c, tLObject, tL_error);
+                this.b.lambda$markAllTopicsAsRead$7(this.c, this.d);
                 break;
             case 1:
-                ((MessagesController) this.b).lambda$loadPinnedDialogs$368(this.c, tLObject, tL_error);
+                this.b.lambda$deleteMessagesByPush$370(this.c, this.d);
                 break;
             case 2:
-                ((MessagesController) this.b).lambda$loadGlobalNotificationsSettings$200(this.c, tLObject, tL_error);
+                this.b.lambda$generateJoinMessage$369(this.d, this.c);
+                break;
+            case 3:
+                this.b.lambda$getDifference$356(this.d, this.c);
+                break;
+            case 4:
+                this.b.lambda$processUpdateArray$424(this.d, this.c);
                 break;
             default:
-                ((ContactsController) this.b).lambda$loadPrivacySettings$65(this.c, tLObject, tL_error);
+                this.b.lambda$getDifference$355(this.d, this.c);
                 break;
         }
+    }
+
+    public /* synthetic */ ha(MessagesController messagesController, ArrayList arrayList, long j10, int i10) {
+        this.a = i10;
+        this.b = messagesController;
+        this.c = arrayList;
+        this.d = j10;
     }
 }

@@ -1,63 +1,9 @@
 package sg;
 
-import a8.ee;
-import android.view.GestureDetector;
-import android.view.MotionEvent;
-
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public final class w1 extends GestureDetector.SimpleOnGestureListener {
-    public float a;
-    public boolean b;
-    public float c;
-    public final /* synthetic */ y1 d;
+public interface w1 {
+    void V(float f7);
 
-    public w1(y1 y1Var) {
-        this.d = y1Var;
-    }
-
-    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnGestureListener
-    public final boolean onDown(MotionEvent motionEvent) {
-        y1 y1Var = this.d;
-        boolean contains = y1Var.e.contains(motionEvent.getX(), motionEvent.getY());
-        if (y1Var.f != contains) {
-            y1Var.f = contains;
-            y1Var.invalidate();
-            if (contains) {
-                x1 x1Var = y1Var.K;
-                this.a = x1Var != null ? x1Var.get() : y1Var.H.c;
-                this.b = false;
-            }
-        }
-        return y1Var.f;
-    }
-
-    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnGestureListener
-    public final boolean onScroll(MotionEvent motionEvent, MotionEvent motionEvent2, float f7, float f10) {
-        y1 y1Var = this.d;
-        if (y1Var.f) {
-            if (!this.b) {
-                this.c = motionEvent.getY() - motionEvent2.getY();
-                this.b = true;
-            }
-            float f11 = this.a;
-            float y3 = ((motionEvent.getY() - motionEvent2.getY()) - this.c) / y1Var.e.height();
-            float f12 = y1Var.G;
-            float f13 = y1Var.F;
-            float a2 = ee.a(c3.h0.z(f12, f13, y3, f11), f13, f12);
-            x1 x1Var = y1Var.K;
-            if (x1Var != null) {
-                x1Var.V(a2);
-            } else {
-                y1Var.H.c = a2;
-            }
-            y1Var.w.d(a2, true);
-            Runnable runnable = y1Var.I;
-            if (runnable != null) {
-                runnable.run();
-            }
-            y1Var.invalidate();
-        }
-        return y1Var.f;
-    }
+    float get();
 }

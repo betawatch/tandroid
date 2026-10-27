@@ -8,11 +8,11 @@ import android.credentials.GetCredentialResponse;
 import android.os.Bundle;
 import android.os.OutcomeReceiver;
 import android.util.Log;
-import w7.l5;
+import w7.m5;
 import w7.t;
 import w7.u;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
 public final class k implements OutcomeReceiver {
     public final /* synthetic */ int a = 0;
@@ -31,7 +31,7 @@ public final class k implements OutcomeReceiver {
                 me.b bVar = (me.b) this.b;
                 String type = error.getType();
                 kotlin.jvm.internal.i.d(type, "getType(...)");
-                bVar.onError(l5.a(error.getMessage(), type));
+                bVar.onError(m5.a(error.getMessage(), type));
                 break;
             default:
                 GetCredentialException error2 = (GetCredentialException) th2;
@@ -39,7 +39,7 @@ public final class k implements OutcomeReceiver {
                 Log.i("CredManProvService", "GetCredentialResponse error returned from framework");
                 String type2 = error2.getType();
                 kotlin.jvm.internal.i.d(type2, "getType(...)");
-                this.b.onError(l5.b(error2.getMessage(), type2));
+                this.b.onError(m5.b(error2.getMessage(), type2));
                 break;
         }
     }

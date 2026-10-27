@@ -11,12 +11,12 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.tl.TL_aicompose;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.Components.k80;
-import org.telegram.ui.Components.mm0;
+import org.telegram.ui.Components.l80;
+import org.telegram.ui.Components.nm0;
 import org.telegram.ui.Components.wc;
-import org.telegram.ui.ip;
+import org.telegram.ui.kp;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class d5 implements Utilities.CallbackReturn {
     public final /* synthetic */ int a;
@@ -85,7 +85,7 @@ public final /* synthetic */ class d5 implements Utilities.CallbackReturn {
                 }
                 int i10 = 0;
                 for (int i11 = 0; i11 < y5Var.getChildCount(); i11++) {
-                    if (y5Var.getChildAt(i11) instanceof sg.r0) {
+                    if (y5Var.getChildAt(i11) instanceof sg.q0) {
                         i10++;
                     }
                 }
@@ -107,7 +107,7 @@ public final /* synthetic */ class d5 implements Utilities.CallbackReturn {
                     return Boolean.FALSE;
                 }
                 final TL_aicompose.TL_aiComposeTone tL_aiComposeTone = (TL_aicompose.TL_aiComposeTone) aiComposeTone;
-                k80 F = k80.F(e0Var.container, u6Var, c0Var);
+                l80 F = l80.F(e0Var.container, u6Var, c0Var);
                 F.W(org.telegram.ui.ActionBar.y6.c0(AndroidUtilities.dp(12.0f), org.telegram.ui.ActionBar.y6.w0(org.telegram.ui.ActionBar.y6.d6, u6Var)));
                 final int i12 = 0;
                 F.l(R.drawable.msg_edit, LocaleController.getString(R.string.AIEditorEditStyle), new Runnable() { // from class: org.telegram.ui.Components.f
@@ -145,7 +145,7 @@ public final /* synthetic */ class d5 implements Utilities.CallbackReturn {
                     }
                 }, tL_aiComposeTone.creator);
                 F.c(R.drawable.msg_share, LocaleController.getString(R.string.AIEditorShareStyle), new m4.v0(e0Var, tL_aiComposeTone, context, u6Var, 22), false);
-                F.m(R.drawable.msg_delete, new ip(3, e0Var, tL_aiComposeTone), LocaleController.getString(R.string.AIEditorRemoveStyle), !tL_aiComposeTone.creator, true);
+                F.m(R.drawable.msg_delete, new kp(3, e0Var, tL_aiComposeTone), LocaleController.getString(R.string.AIEditorRemoveStyle), !tL_aiComposeTone.creator, true);
                 final int i13 = 1;
                 F.m(R.drawable.msg_delete, new Runnable() { // from class: org.telegram.ui.Components.f
                     @Override // java.lang.Runnable
@@ -189,17 +189,17 @@ public final /* synthetic */ class d5 implements Utilities.CallbackReturn {
                 MessageObject messageObject = ((th.g) this.d).b;
                 return th.c.d((View) obj, str, str2, messageObject.getDocument(), messageObject);
             default:
-                mm0 mm0Var = (mm0) this.b;
+                nm0 nm0Var = (nm0) this.b;
                 Utilities.CallbackReturn callbackReturn = (Utilities.CallbackReturn) this.c;
                 SparseIntArray sparseIntArray = (SparseIntArray) this.d;
                 View view = (View) obj;
                 try {
-                    if (view.getParent() != mm0Var) {
+                    if (view.getParent() != nm0Var) {
                         return Boolean.FALSE;
                     }
                     Boolean bool = (Boolean) callbackReturn.run(view);
                     boolean booleanValue = bool.booleanValue();
-                    s4.e1 T = mm0Var.T(view);
+                    s4.e1 T = nm0Var.T(view);
                     if (T != null) {
                         sparseIntArray.put(T.f, booleanValue ? 1 : 0);
                     }

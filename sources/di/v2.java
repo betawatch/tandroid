@@ -13,13 +13,13 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.gb1;
-import org.telegram.ui.Components.o60;
+import org.telegram.ui.Components.kb1;
 import org.telegram.ui.Components.og;
+import org.telegram.ui.Components.p60;
 import org.telegram.ui.Components.t40;
-import org.telegram.ui.kn;
+import org.telegram.ui.mn;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class v2 implements og {
     public final /* synthetic */ q4 a;
@@ -56,9 +56,9 @@ public final class v2 implements og {
 
     @Override // org.telegram.ui.Components.og
     public final void G(float f7, int i10) {
-        o60 o60Var = this.a.y2;
-        if (o60Var != null) {
-            o60Var.b(f7, i10);
+        p60 p60Var = this.a.y2;
+        if (p60Var != null) {
+            p60Var.b(f7, i10);
         }
     }
 
@@ -79,7 +79,7 @@ public final class v2 implements og {
             t40 t40Var = new t40(9, q4Var.getContext(), q4Var.q0, false);
             q4Var.L2 = t40Var;
             t40Var.setVisibility(8);
-            q4Var.addView(q4Var.L2, gb1.h(-2, -2.0f, 51, 10.0f, 0.0f, 10.0f, 0.0f));
+            q4Var.addView(q4Var.L2, kb1.h(-2, -2.0f, 51, 10.0f, 0.0f, 10.0f, 0.0f));
         }
         if (q4Var.q1 >= 0) {
             str = UserObject.getFirstName(MessagesController.getInstance(q4Var.r2).getUser(Long.valueOf(q4Var.q1)));
@@ -100,19 +100,19 @@ public final class v2 implements og {
     public final void P1(int i10, int i11, int i12, long j10, long j11, boolean z10) {
         q4 q4Var = this.a;
         if (q4Var.y2 == null && CameraView.isCameraAllowed()) {
-            q4Var.y2 = new o60(q4Var.getContext(), new j3(q4Var), q4Var.q0, false);
-            q4Var.addView(q4Var.y2, Math.min(q4Var.indexOfChild(q4Var.Q1.getRecordCircle()), q4Var.indexOfChild(q4Var.Q1.O1)), gb1.i(-1, -1, 51));
+            q4Var.y2 = new p60(q4Var.getContext(), new j3(q4Var), q4Var.q0, false);
+            q4Var.addView(q4Var.y2, Math.min(q4Var.indexOfChild(q4Var.Q1.getRecordCircle()), q4Var.indexOfChild(q4Var.Q1.O1)), kb1.i(-1, -1, 51));
         }
-        o60 o60Var = q4Var.y2;
-        if (o60Var != null) {
+        p60 p60Var = q4Var.y2;
+        if (p60Var != null) {
             if (i10 == 0) {
-                o60Var.h(false);
+                p60Var.i(false);
                 return;
             }
             if (i10 == 1 || i10 == 3 || i10 == 4) {
-                o60Var.f(i10, i11, i12, j10, j11, z10);
+                p60Var.g(i10, i11, i12, j10, j11, z10);
             } else if (i10 == 2 || i10 == 5) {
-                o60Var.a(i10 == 2);
+                p60Var.a(i10 == 2);
             }
         }
     }
@@ -138,7 +138,7 @@ public final class v2 implements og {
             }
             q4Var.p0(true);
             q4Var.Q1.M1(true);
-            q4Var.Q1.G(true);
+            q4Var.Q1.F(true);
             q4Var.d1(false);
         }
         return true;
@@ -146,8 +146,8 @@ public final class v2 implements og {
 
     @Override // org.telegram.ui.Components.og
     public final boolean T0() {
-        o60 o60Var = this.a.y2;
-        return (o60Var == null || o60Var.j0) ? false : true;
+        p60 p60Var = this.a.y2;
+        return (p60Var == null || p60Var.i0) ? false : true;
     }
 
     @Override // org.telegram.ui.Components.og
@@ -157,7 +157,7 @@ public final class v2 implements og {
             w2 w2Var = new w2(q4Var, q4Var.getContext(), q4Var.q1, q4Var.y0.f, q4Var.q0);
             q4Var.S2 = w2Var;
             w2Var.p(new z2(q4Var));
-            q4Var.addView(q4Var.S2, gb1.i(-1, -1, 83));
+            q4Var.addView(q4Var.S2, kb1.i(-1, -1, 83));
         }
         if (q4Var.S2.getAdapter() != null) {
             q4Var.S2.setDialogId(q4Var.q1);
@@ -212,9 +212,9 @@ public final class v2 implements og {
 
     @Override // org.telegram.ui.Components.og
     public final void X0() {
-        o60 o60Var = this.a.y2;
-        if (o60Var != null) {
-            o60Var.i();
+        p60 p60Var = this.a.y2;
+        if (p60Var != null) {
+            p60Var.j();
         }
     }
 
@@ -256,7 +256,7 @@ public final class v2 implements og {
     }
 
     @Override // org.telegram.ui.Components.og
-    public final /* synthetic */ kn i0() {
+    public final /* synthetic */ mn i0() {
         return null;
     }
 

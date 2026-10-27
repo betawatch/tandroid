@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Map;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
 public abstract class c implements h {
     private m dataSpec;
@@ -58,7 +58,7 @@ public abstract class c implements h {
         m mVar = this.dataSpec;
         String str = n0.a;
         for (int i10 = 0; i10 < this.listenerCount; i10++) {
-            ((y2.f) this.listeners.get(i10)).e(mVar, this.isNetwork);
+            ((y2.f) this.listeners.get(i10)).f(mVar, this.isNetwork);
         }
         this.dataSpec = null;
     }
@@ -72,7 +72,7 @@ public abstract class c implements h {
     public final void transferStarted(m mVar) {
         this.dataSpec = mVar;
         for (int i10 = 0; i10 < this.listenerCount; i10++) {
-            ((y2.f) this.listeners.get(i10)).f(mVar, this.isNetwork);
+            ((y2.f) this.listeners.get(i10)).g(mVar, this.isNetwork);
         }
     }
 }

@@ -5,13 +5,13 @@ import android.graphics.Canvas;
 import android.view.accessibility.AccessibilityNodeInfo;
 import android.widget.ImageView;
 import java.util.ArrayList;
-import org.telegram.ui.Components.ba0;
+import org.telegram.ui.Components.ca0;
 import org.telegram.ui.Components.yq;
 import org.telegram.ui.PhotoViewer;
-import org.telegram.ui.dg1;
-import org.telegram.ui.ms0;
+import org.telegram.ui.fg1;
+import org.telegram.ui.os0;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class k0 extends ImageView {
     public final /* synthetic */ int a;
@@ -70,7 +70,7 @@ public final class k0 extends ImageView {
             case 3:
                 super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
                 accessibilityNodeInfo.setCheckable(true);
-                accessibilityNodeInfo.setChecked(((dg1) this.b).n.getTransformationMethod() == null);
+                accessibilityNodeInfo.setChecked(((fg1) this.b).n.getTransformationMethod() == null);
                 break;
             default:
                 super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
@@ -107,13 +107,13 @@ public final class k0 extends ImageView {
                         ((fi.v3) obj).setTranslationY(f7);
                     }
                 }
-                ms0 ms0Var = photoViewer.g1;
-                if (ms0Var != null) {
-                    ms0Var.setTranslationY(f7);
+                os0 os0Var = photoViewer.g1;
+                if (os0Var != null) {
+                    os0Var.setTranslationY(f7);
                 }
-                ba0 ba0Var = photoViewer.f1;
-                if (ba0Var != null) {
-                    ba0Var.setTranslationY(f7);
+                ca0 ca0Var = photoViewer.f1;
+                if (ca0Var != null) {
+                    ca0Var.setTranslationY(f7);
                     break;
                 }
                 break;

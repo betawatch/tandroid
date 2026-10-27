@@ -17,13 +17,13 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
-import org.telegram.ui.cy;
-import org.telegram.ui.mo;
-import org.telegram.ui.ux;
-import org.telegram.ui.xq0;
-import org.telegram.ui.yw;
+import org.telegram.ui.ax;
+import org.telegram.ui.ey;
+import org.telegram.ui.oo;
+import org.telegram.ui.xx;
+import org.telegram.ui.zq0;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class t2 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -106,27 +106,27 @@ public final /* synthetic */ class t2 implements Utilities.Callback {
                     break;
                 }
             case 4:
-                mo.Z((mo) obj4, (org.telegram.ui.ActionBar.e2) obj2, (TL_stories.TL_premium_boostsStatus) obj3, this.b, (ChannelBoostsController.CanApplyBoost) obj);
+                oo.Z((oo) obj4, (org.telegram.ui.ActionBar.e2) obj2, (TL_stories.TL_premium_boostsStatus) obj3, this.b, (ChannelBoostsController.CanApplyBoost) obj);
                 break;
             case 5:
-                yw ywVar = (yw) obj4;
+                ax axVar = (ax) obj4;
                 org.telegram.ui.ActionBar.r2[] r2VarArr = (org.telegram.ui.ActionBar.r2[]) obj2;
-                ywVar.getClass();
+                axVar.getClass();
                 ((org.telegram.ui.ActionBar.e2) obj3).dismiss();
-                cy cyVar = ywVar.b;
-                cyVar.getMessagesController().loadChannelParticipants(Long.valueOf(j10));
-                ux uxVar = cyVar.C2;
-                cyVar.removeSelfFromStack();
+                ey eyVar = axVar.b;
+                eyVar.getMessagesController().loadChannelParticipants(Long.valueOf(j10));
+                xx xxVar = eyVar.C2;
+                eyVar.removeSelfFromStack();
                 if (r2VarArr[1] != null) {
                     r2VarArr[0].removeSelfFromStack();
                     r2VarArr[1].finishFragment();
                 } else {
                     r2VarArr[0].finishFragment();
                 }
-                if (uxVar != null) {
+                if (xxVar != null) {
                     ArrayList arrayList = new ArrayList();
                     arrayList.add(MessagesStorage.TopicKey.of(-j10, 0L));
-                    uxVar.v(cyVar, arrayList, null, false, cyVar.J2, cyVar.K2, cyVar.L2, null);
+                    xxVar.v(eyVar, arrayList, null, false, eyVar.J2, eyVar.K2, eyVar.L2, null);
                     break;
                 }
                 break;
@@ -137,7 +137,7 @@ public final /* synthetic */ class t2 implements Utilities.Callback {
                 Bitmap bitmap = (Bitmap) obj;
                 Drawable[] drawableArr = PhotoViewer.U8;
                 if (bitmap == null) {
-                    AndroidUtilities.runOnUIThread(new xq0(photoViewer, 16));
+                    AndroidUtilities.runOnUIThread(new zq0(photoViewer, 16));
                     break;
                 } else {
                     try {
@@ -151,11 +151,11 @@ public final /* synthetic */ class t2 implements Utilities.Callback {
                         float max = Math.max(createBitmap.getWidth() / bitmap.getWidth(), createBitmap.getHeight() / bitmap.getHeight());
                         canvas.scale(max, max);
                         canvas.drawBitmap(bitmap, (-bitmap.getWidth()) / 2.0f, (-bitmap.getHeight()) / 2.0f, paint);
-                        AndroidUtilities.runOnUIThread(new a0(photoViewer, photoEntry, this.b, str, createBitmap, 14));
+                        AndroidUtilities.runOnUIThread(new a0(photoViewer, photoEntry, this.b, str, createBitmap, 15));
                         break;
                     } catch (Exception e) {
                         FileLog.e(e);
-                        AndroidUtilities.runOnUIThread(new xq0(photoViewer, 17));
+                        AndroidUtilities.runOnUIThread(new zq0(photoViewer, 17));
                         return;
                     }
                 }
@@ -184,9 +184,9 @@ public final /* synthetic */ class t2 implements Utilities.Callback {
         this.b = j10;
     }
 
-    public /* synthetic */ t2(mo moVar, org.telegram.ui.ActionBar.e2 e2Var, TL_stories.TL_premium_boostsStatus tL_premium_boostsStatus, long j10) {
+    public /* synthetic */ t2(oo ooVar, org.telegram.ui.ActionBar.e2 e2Var, TL_stories.TL_premium_boostsStatus tL_premium_boostsStatus, long j10) {
         this.a = 4;
-        this.c = moVar;
+        this.c = ooVar;
         this.e = e2Var;
         this.d = tL_premium_boostsStatus;
         this.b = j10;

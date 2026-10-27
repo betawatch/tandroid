@@ -3,9 +3,9 @@ package org.telegram.ui.Components;
 import android.content.Context;
 import org.telegram.messenger.LiteMode;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public final class ez extends by0 {
+public final class ez extends cy0 {
     public final /* synthetic */ int H3;
     public final /* synthetic */ fz I3;
 
@@ -16,12 +16,12 @@ public final class ez extends by0 {
         this.H3 = i11;
     }
 
-    @Override // org.telegram.ui.Components.by0
+    @Override // org.telegram.ui.Components.cy0
     public final boolean G1() {
         return LiteMode.isEnabled(LiteMode.FLAG_ANIMATED_EMOJI_REACTIONS);
     }
 
-    @Override // org.telegram.ui.Components.by0
+    @Override // org.telegram.ui.Components.cy0
     public final void K1(int i10) {
         dx dxVar;
         ux uxVar;
@@ -30,8 +30,8 @@ public final class ez extends by0 {
         sz szVar = fzVar.G;
         ez ezVar = fzVar.r;
         boolean z10 = ezVar.getSelectedCategory() == null;
-        int i11 = sz.S2;
-        szVar.M(z10);
+        int i11 = sz.U2;
+        szVar.N(z10);
         int i12 = this.H3;
         if (i12 == 1 && (uxVar = szVar.I) != null) {
             uxVar.n(ezVar.getSelectedCategory() == null);

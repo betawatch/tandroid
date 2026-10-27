@@ -11,7 +11,7 @@ import android.view.ViewGroup;
 import android.widget.ScrollView;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public class q20 extends ScrollView {
     public final int a;
@@ -31,7 +31,7 @@ public class q20 extends ScrollView {
         p20 p20Var = new p20(this, context);
         this.d = p20Var;
         setVerticalScrollBarEnabled(false);
-        addView(p20Var, gb1.g(-2.0f, -1));
+        addView(p20Var, kb1.g(-2.0f, -1));
     }
 
     public void a(x30 x30Var) {

@@ -21,11 +21,11 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.p6;
 import org.telegram.ui.ActionBar.u6;
 import org.telegram.ui.ActionBar.y6;
-import org.telegram.ui.Components.gb1;
 import org.telegram.ui.Components.j9;
+import org.telegram.ui.Components.kb1;
 import org.telegram.ui.Components.y9;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class c extends FrameLayout implements p6 {
     public final u6 a;
@@ -40,7 +40,7 @@ public final class c extends FrameLayout implements p6 {
         y9 y9Var = new y9(context);
         this.b = y9Var;
         y9Var.setRoundRadius(AndroidUtilities.dp(9.0f));
-        addView(y9Var, gb1.h(32, 32.0f, 19, 20.0f, 0.0f, 0.0f, 0.0f));
+        addView(y9Var, kb1.h(32, 32.0f, 19, 20.0f, 0.0f, 0.0f, 0.0f));
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setOrientation(1);
         linearLayout.setGravity(16);
@@ -51,19 +51,19 @@ public final class c extends FrameLayout implements p6 {
         textView.setSingleLine(true);
         TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
         textView.setEllipsize(truncateAt);
-        linearLayout.addView(textView, gb1.r(-1, -2));
+        linearLayout.addView(textView, kb1.r(-1, -2));
         TextView textView2 = new TextView(context);
         this.d = textView2;
         textView2.setTextSize(1, 13.0f);
         textView2.setSingleLine(true);
         textView2.setEllipsize(truncateAt);
-        linearLayout.addView(textView2, gb1.o(0.0f, 2.0f, 0.0f, 0.0f, -1, -2));
-        addView(linearLayout, gb1.h(-1, -2.0f, 19, 67.0f, 0.0f, 48.0f, 1.0f));
+        linearLayout.addView(textView2, kb1.o(0.0f, 2.0f, 0.0f, 0.0f, -1, -2));
+        addView(linearLayout, kb1.h(-1, -2.0f, 19, 67.0f, 0.0f, 48.0f, 1.0f));
         ImageView imageView = new ImageView(context);
         this.e = imageView;
         imageView.setImageResource(R.drawable.msg_inputarrow);
         imageView.setScaleType(ImageView.ScaleType.CENTER);
-        addView(imageView, gb1.h(24, 24.0f, 21, 0.0f, 0.0f, 11.0f, 0.0f));
+        addView(imageView, kb1.h(24, 24.0f, 21, 0.0f, 0.0f, 11.0f, 0.0f));
         updateColors();
     }
 

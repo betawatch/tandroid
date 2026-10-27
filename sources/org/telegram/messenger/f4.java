@@ -1,39 +1,33 @@
 package org.telegram.messenger;
 
-import org.telegram.messenger.GiftAuctionController;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_payments;
-
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class f4 implements Utilities.Callback2 {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ GiftAuctionController b;
-    public final /* synthetic */ GiftAuctionController.AuctionInternal c;
-    public final /* synthetic */ Object d;
+public final /* synthetic */ class f4 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ boolean b;
 
-    public /* synthetic */ f4(GiftAuctionController giftAuctionController, GiftAuctionController.AuctionInternal auctionInternal, Utilities.Callback2 callback2) {
-        this.b = giftAuctionController;
-        this.c = auctionInternal;
-        this.d = callback2;
+    public /* synthetic */ f4(int i10, boolean z10) {
+        this.a = i10;
+        this.b = z10;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback2
-    public final void run(Object obj, Object obj2) {
-        switch (this.a) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i10 = this.a;
+        boolean z10 = this.b;
+        switch (i10) {
             case 0:
-                this.b.lambda$sendBid$8(this.c, (Utilities.Callback2) this.d, (TLRPC.payments_PaymentResult) obj, (TLRPC.TL_error) obj2);
+                FingerprintController.generateNewKey(z10);
+                break;
+            case 1:
+                FingerprintController.lambda$generateNewKey$0(z10);
+                break;
+            case 2:
+                LiteMode.lambda$onPowerSaverApplied$1(z10);
                 break;
             default:
-                this.b.lambda$getOrRequestAcquiredGifts$11((Utilities.Callback) this.d, this.c, (TL_payments.TL_StarGiftAuctionAcquiredGifts) obj, (TLRPC.TL_error) obj2);
+                NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.didSetNewTheme, Boolean.FALSE, Boolean.valueOf(z10));
                 break;
         }
-    }
-
-    public /* synthetic */ f4(GiftAuctionController giftAuctionController, Utilities.Callback callback, GiftAuctionController.AuctionInternal auctionInternal) {
-        this.b = giftAuctionController;
-        this.d = callback;
-        this.c = auctionInternal;
     }
 }

@@ -1,41 +1,32 @@
 package org.telegram.ui;
 
-import android.animation.AnimatorSet;
-import android.animation.ObjectAnimator;
-import java.util.ArrayList;
-import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
+import android.content.DialogInterface;
+import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public final class v40 extends org.telegram.ui.ActionBar.o1 {
-    public final /* synthetic */ v50 o;
+public final /* synthetic */ class v40 implements DialogInterface.OnShowListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ org.telegram.ui.ActionBar.e2 b;
+    public final /* synthetic */ EditTextBoldCursor c;
+    public final /* synthetic */ Object d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public v40(v50 v50Var, ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout) {
-        super(actionBarPopupWindow$ActionBarPopupWindowLayout, -2, -2);
-        this.o = v50Var;
+    public /* synthetic */ v40(Object obj, org.telegram.ui.ActionBar.e2 e2Var, EditTextBoldCursor editTextBoldCursor, int i10) {
+        this.a = i10;
+        this.d = obj;
+        this.b = e2Var;
+        this.c = editTextBoldCursor;
     }
 
-    @Override // org.telegram.ui.ActionBar.o1, android.widget.PopupWindow
-    public final void dismiss() {
-        d(true);
-        v50 v50Var = this.o;
-        if (v50Var.f3 != this) {
-            return;
+    @Override // android.content.DialogInterface.OnShowListener
+    public final void onShow(DialogInterface dialogInterface) {
+        switch (this.a) {
+            case 0:
+                ((a50) this.d).b.s1(null, this.b, this.c, true);
+                break;
+            default:
+                ((w40) this.d).n.b.s1(null, this.b, this.c, true);
+                break;
         }
-        v50Var.f3 = null;
-        AnimatorSet animatorSet = v50Var.e3;
-        if (animatorSet != null) {
-            animatorSet.cancel();
-            v50Var.e3 = null;
-        }
-        v50Var.Y.X = true;
-        v50Var.e3 = new AnimatorSet();
-        ArrayList arrayList = new ArrayList();
-        arrayList.add(ObjectAnimator.ofInt(v50Var.W2, org.telegram.ui.Components.v6.b, 0));
-        v50Var.e3.playTogether(arrayList);
-        v50Var.e3.setDuration(220L);
-        v50Var.e3.addListener(new org.telegram.ui.Components.h31(this, 29));
-        v50Var.e3.start();
     }
 }

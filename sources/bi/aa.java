@@ -15,17 +15,17 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.gb1;
+import org.telegram.ui.Components.kb1;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.sn;
 import org.telegram.ui.un;
+import org.telegram.ui.wn;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class aa {
     public final v9 a;
     public final MessageObject b;
-    public final un c;
+    public final wn c;
     public final org.telegram.ui.Components.qc d;
     public final org.telegram.ui.Components.kc e;
     public final ba f;
@@ -41,40 +41,40 @@ public final class aa {
     public boolean j = false;
     public Long n = null;
 
-    public aa(ca caVar, v9 v9Var, MessageObject messageObject, un unVar, boolean z10) {
+    public aa(ca caVar, v9 v9Var, MessageObject messageObject, wn wnVar, boolean z10) {
         this.q = caVar;
         y9 y9Var = new y9(this, 0);
         this.p = y9Var;
         this.a = v9Var;
         this.b = messageObject;
-        this.c = unVar;
-        Context t10 = ca.t(unVar);
-        org.telegram.ui.Components.kc kcVar = new org.telegram.ui.Components.kc(t10, unVar.qa);
+        this.c = wnVar;
+        Context t10 = ca.t(wnVar);
+        org.telegram.ui.Components.kc kcVar = new org.telegram.ui.Components.kc(t10, wnVar.ua);
         this.e = kcVar;
         kcVar.c(R.raw.stars_topup, new String[0]);
         kcVar.b.setText(d());
-        org.telegram.ui.Components.oc ocVar = new org.telegram.ui.Components.oc(t10, unVar.qa, true, false);
+        org.telegram.ui.Components.oc ocVar = new org.telegram.ui.Components.oc(t10, wnVar.ua, true, false);
         ocVar.e(LocaleController.getString(R.string.StarsSentUndo));
         ocVar.b = new y9(this, 1);
-        ba baVar = new ba(t10, unVar.qa);
+        ba baVar = new ba(t10, wnVar.ua);
         this.f = baVar;
         baVar.b = 5000L;
         int i10 = org.telegram.ui.ActionBar.y6.Gi;
-        sn snVar = unVar.qa;
+        un unVar = wnVar.ua;
         ag.w wVar = new ag.w(27);
         ag.w wVar2 = new ag.w(28);
-        int Q = org.telegram.ui.ActionBar.f7.Q(i10, -1, 0, 0.0f, snVar);
+        int Q = org.telegram.ui.ActionBar.f7.Q(i10, -1, 0, 0.0f, unVar);
         wVar2.d(Q, baVar);
         org.telegram.ui.ActionBar.z6 x9 = org.telegram.ui.ActionBar.f7.x(101, baVar);
-        x9.c(i10, -1, 0, 0.0f, snVar);
+        x9.c(i10, -1, 0, 0.0f, unVar);
         x9.n = wVar;
         x9.o = wVar2;
         x9.m = false;
         x9.g = Q;
-        ocVar.addView(baVar, gb1.h(20, 20.0f, 21, 0.0f, 0.0f, 12.0f, 0.0f));
+        ocVar.addView(baVar, kb1.h(20, 20.0f, 21, 0.0f, 0.0f, 12.0f, 0.0f));
         ocVar.e.setPadding(AndroidUtilities.dp(12.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(30.0f), AndroidUtilities.dp(8.0f));
         kcVar.setButton(ocVar);
-        org.telegram.ui.Components.qc b10 = org.telegram.ui.Components.wc.b0(unVar).b(kcVar, -1);
+        org.telegram.ui.Components.qc b10 = org.telegram.ui.Components.wc.b0(wnVar).b(kcVar, -1);
         this.d = b10;
         b10.s = false;
         if (z10) {

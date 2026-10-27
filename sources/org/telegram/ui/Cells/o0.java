@@ -14,14 +14,14 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
-import org.telegram.messenger.vh;
+import org.telegram.messenger.wh;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.Components.gb1;
+import org.telegram.ui.Components.kb1;
 import org.telegram.ui.Components.zq;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class o0 implements Runnable {
     public final /* synthetic */ int a;
@@ -64,7 +64,7 @@ public final /* synthetic */ class o0 implements Runnable {
             case 1:
                 int i12 = v0Var3.H;
                 if (v0Var3.L() && (messageObject = v0Var3.P0) != null && messageObject.messageOwner != null) {
-                    org.telegram.ui.Wallet.l0 w10 = org.telegram.ui.Wallet.l0.w(i12);
+                    org.telegram.ui.Wallet.l0 x9 = org.telegram.ui.Wallet.l0.x(i12);
                     TLRPC.TL_messageActionGramTransfer tL_messageActionGramTransfer = (TLRPC.TL_messageActionGramTransfer) messageObject.messageOwner.action;
                     boolean z10 = messageObject.isOutOwner() && messageObject.messageOwner.send_state == 2;
                     boolean z11 = messageObject.isOutOwner() && messageObject.messageOwner.send_state == 1;
@@ -74,9 +74,9 @@ public final /* synthetic */ class o0 implements Runnable {
                         TLRPC.MessageAction messageAction = message.action;
                         if (messageAction instanceof TLRPC.TL_messageActionGramTransfer) {
                             TLRPC.TL_messageActionGramTransfer tL_messageActionGramTransfer2 = (TLRPC.TL_messageActionGramTransfer) messageAction;
-                            if (!TextUtils.isEmpty(tL_messageActionGramTransfer2.transaction_id) && w10.n != null) {
-                                for (int i13 = 0; i13 < w10.n.c.size(); i13++) {
-                                    wallettransaction = (TL_wallet.walletTransaction) w10.n.c.get(i13);
+                            if (!TextUtils.isEmpty(tL_messageActionGramTransfer2.transaction_id) && x9.n != null) {
+                                for (int i13 = 0; i13 < x9.n.c.size(); i13++) {
+                                    wallettransaction = (TL_wallet.walletTransaction) x9.n.c.get(i13);
                                     j10 = 0;
                                     if (TextUtils.equals(wallettransaction.id, tL_messageActionGramTransfer2.transaction_id)) {
                                         v0Var = v0Var3;
@@ -108,7 +108,7 @@ public final /* synthetic */ class o0 implements Runnable {
                                             MessagesController.getInstance(i12).removeSuggestion(j10, "WALLET_FIRST_INCOMING_TRANSFER");
                                             Context context = v0Var2.getContext();
                                             org.telegram.ui.ActionBar.u6 u6Var = v0Var2.g1;
-                                            org.telegram.ui.ActionBar.k3 i14 = vh.i(1, context, u6Var, false);
+                                            org.telegram.ui.ActionBar.k3 i14 = wh.i(1, context, u6Var, false);
                                             FrameLayout frameLayout = new FrameLayout(context);
                                             int dp = AndroidUtilities.dp(16.0f);
                                             int i15 = org.telegram.ui.ActionBar.y6.h5;
@@ -120,29 +120,29 @@ public final /* synthetic */ class o0 implements Runnable {
                                             LinearLayout linearLayout = new LinearLayout(context);
                                             linearLayout.setOrientation(1);
                                             linearLayout.setGravity(1);
-                                            frameLayout.addView(linearLayout, gb1.g(-2.0f, -1));
-                                            linearLayout.addView(new org.telegram.ui.Wallet.l6(120, context, false), gb1.x(120, 120, 1, 0, 0, 0, -8));
+                                            frameLayout.addView(linearLayout, kb1.g(-2.0f, -1));
+                                            linearLayout.addView(new org.telegram.ui.Wallet.m6(120, context, false), kb1.x(120, 120, 1, 0, 0, 0, -8));
                                             TextView textView = new TextView(context);
                                             textView.setText(LocaleController.getString(R.string.WalletFirstGrams));
                                             org.telegram.ui.ActionBar.f7.V(textView, org.telegram.ui.ActionBar.y6.j5, u6Var);
                                             textView.setTextSize(1, 17.0f);
                                             textView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
                                             textView.setGravity(17);
-                                            TextView e = vh.e(linearLayout, textView, gb1.x(-1, -2, 1, 0, 0, 0, 6), context);
+                                            TextView e = wh.e(linearLayout, textView, kb1.x(-1, -2, 1, 0, 0, 0, 6), context);
                                             double d = MessagesController.getInstance(i12).config.tonUsdRate.get();
                                             if (d <= 0.0d || Double.isNaN(d) || Double.isInfinite(d)) {
                                                 i10 = 1;
                                                 string = LocaleController.getString(R.string.WalletFirstGramsActions);
                                             } else {
                                                 i10 = 1;
-                                                string = LocaleController.formatString(R.string.WalletFirstGramsRate, org.telegram.ui.Wallet.l0.r(1000000000L, false), String.format(LocaleController.getInstance().getCurrentLocale(), "%.2f", Double.valueOf(d)));
+                                                string = LocaleController.formatString(R.string.WalletFirstGramsRate, org.telegram.ui.Wallet.l0.s(1000000000L, false), String.format(LocaleController.getInstance().getCurrentLocale(), "%.2f", Double.valueOf(d)));
                                             }
                                             e.setText(string);
                                             org.telegram.ui.ActionBar.f7.V(e, org.telegram.ui.ActionBar.y6.r5, u6Var);
                                             e.setTextSize(i10, 14.0f);
                                             e.setGravity(17);
                                             e.setLineSpacing(AndroidUtilities.dp(1.0f), 1.0f);
-                                            linearLayout.addView(e, gb1.x(-1, -2, 1, 0, 0, 0, 24));
+                                            linearLayout.addView(e, kb1.x(-1, -2, 1, 0, 0, 0, 24));
                                             org.telegram.ui.Wallet.d5 d5Var = new org.telegram.ui.Wallet.d5(context, u6Var);
                                             SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(LocaleController.getString(R.string.WalletFirstGramsSendInfo));
                                             zq zqVar = new zq(R.drawable.mini_attach, 2);
@@ -156,12 +156,12 @@ public final /* synthetic */ class o0 implements Runnable {
                                             int i16 = org.telegram.ui.ActionBar.y6.n6;
                                             PorterDuff.Mode mode = PorterDuff.Mode.SRC_IN;
                                             org.telegram.ui.ActionBar.f7.t(d5Var.b, i16, u6Var, mode);
-                                            linearLayout.addView(d5Var, gb1.o(0.0f, 0.0f, 0.0f, 0.0f, -1, -2));
+                                            linearLayout.addView(d5Var, kb1.o(0.0f, 0.0f, 0.0f, 0.0f, -1, -2));
                                             org.telegram.ui.Wallet.d5 d5Var2 = new org.telegram.ui.Wallet.d5(context, u6Var);
                                             d5Var2.setPadding(AndroidUtilities.dp(0.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(0.0f), AndroidUtilities.dp(8.0f));
                                             d5Var2.a(LocaleController.getString(R.string.WalletTrade), LocaleController.getString(R.string.WalletFirstGramsTradeInfo), R.drawable.wallet_intro_trade);
                                             org.telegram.ui.ActionBar.f7.t(d5Var2.b, i16, u6Var, mode);
-                                            linearLayout.addView(d5Var2, gb1.o(0.0f, 0.0f, 0.0f, 0.0f, -1, -2));
+                                            linearLayout.addView(d5Var2, kb1.o(0.0f, 0.0f, 0.0f, 0.0f, -1, -2));
                                             org.telegram.ui.Wallet.d5 d5Var3 = new org.telegram.ui.Wallet.d5(context, u6Var);
                                             SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder(LocaleController.getString(R.string.WalletFirstGramsStoreInfo));
                                             zq zqVar2 = new zq(R.drawable.wallet_intro_chats, 2);
@@ -178,11 +178,11 @@ public final /* synthetic */ class o0 implements Runnable {
                                             d5Var3.setPadding(AndroidUtilities.dp(0.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(0.0f), AndroidUtilities.dp(8.0f));
                                             d5Var3.a(LocaleController.getString(R.string.WalletStore), spannableStringBuilder2, R.drawable.wallet_intro_store);
                                             org.telegram.ui.ActionBar.f7.t(d5Var3.b, org.telegram.ui.ActionBar.y6.n6, u6Var, PorterDuff.Mode.SRC_IN);
-                                            linearLayout.addView(d5Var3, gb1.o(0.0f, 0.0f, 0.0f, 14.0f, -1, -2));
-                                            fi.d f7 = vh.f(24, context, u6Var, true);
+                                            linearLayout.addView(d5Var3, kb1.o(0.0f, 0.0f, 0.0f, 14.0f, -1, -2));
+                                            fi.d f7 = wh.f(24, context, u6Var, true);
                                             f7.setText(LocaleController.getString(R.string.WalletGotIt));
-                                            linearLayout.addView(f7, gb1.x(-1, 48, 1, 0, 0, 0, 0));
-                                            gb1.c(f7, 0.02f, 1.1f);
+                                            linearLayout.addView(f7, kb1.x(-1, 48, 1, 0, 0, 0, 0));
+                                            kb1.c(f7, 0.02f, 1.1f);
                                             i14.customView = frameLayout;
                                             org.telegram.ui.ActionBar.k3[] k3VarArr = {i14};
                                             k3VarArr[0].setAllowNestedScroll(true);
@@ -197,7 +197,7 @@ public final /* synthetic */ class o0 implements Runnable {
                             }
                             j10 = 0;
                             if (messageObject.messageOwner.random_id != 0) {
-                                ArrayList arrayList = w10.p;
+                                ArrayList arrayList = x9.p;
                                 int size = arrayList.size();
                                 int i18 = 0;
                                 while (i18 < size) {

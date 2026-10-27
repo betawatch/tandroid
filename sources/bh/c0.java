@@ -14,14 +14,14 @@ import org.telegram.ui.ActionBar.k3;
 import org.telegram.ui.ActionBar.r2;
 import org.telegram.ui.ActionBar.u6;
 import org.telegram.ui.Components.a8;
-import org.telegram.ui.Components.cz0;
+import org.telegram.ui.Components.dz0;
 import org.telegram.ui.Components.ob;
 import org.telegram.ui.Components.pm;
 import org.telegram.ui.Components.qc;
-import org.telegram.ui.Components.ta0;
+import org.telegram.ui.Components.ua0;
 import org.telegram.ui.Components.ub;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class c0 implements ob {
     public final /* synthetic */ int a;
@@ -50,7 +50,7 @@ public final class c0 implements ob {
                 if (qcVar.a == 2 && (j4Var = ((q3) this.b).x.F1) != null) {
                     y9 y9Var = ((p9) j4Var).d;
                     y9Var.Y0 = true;
-                    y9Var.P();
+                    y9Var.Q();
                     break;
                 }
                 break;
@@ -96,7 +96,7 @@ public final class c0 implements ob {
                 if (qcVar.a == 2 && (j4Var = ((q3) this.b).x.F1) != null) {
                     y9 y9Var = ((p9) j4Var).d;
                     y9Var.Y0 = false;
-                    y9Var.P();
+                    y9Var.Q();
                     break;
                 }
                 break;
@@ -146,12 +146,12 @@ public final class c0 implements ob {
                 dp = ((pm) this.b).c.b.getBottomInset();
                 break;
             case 9:
-                bVar = ((r2) ((ta0) this.b)).mSystemInsets;
+                bVar = ((r2) ((ua0) this.b)).mSystemInsets;
                 editTextHeight = bVar.d;
                 dp = AndroidUtilities.dp(72.0f);
                 break;
             case 10:
-                FrameLayout frameLayout = ((cz0) this.b).w;
+                FrameLayout frameLayout = ((dz0) this.b).w;
                 if (frameLayout != null) {
                     return frameLayout.getHeight();
                 }

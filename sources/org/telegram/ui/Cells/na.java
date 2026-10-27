@@ -9,14 +9,14 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.CheckBoxBase;
-import org.telegram.ui.Components.aq;
-import org.telegram.ui.Components.bm0;
-import org.telegram.ui.Components.xj0;
+import org.telegram.ui.Components.bq;
+import org.telegram.ui.Components.cm0;
+import org.telegram.ui.Components.yj0;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class na implements bm0, ag.s, ImageReceiver.ImageReceiverDelegate, FlagSecureReason.FlagSecureCondition, aq, Utilities.Callback2Return {
+public final /* synthetic */ class na implements cm0, ag.s, ImageReceiver.ImageReceiverDelegate, FlagSecureReason.FlagSecureCondition, bq, Utilities.Callback2Return {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
@@ -25,7 +25,7 @@ public final /* synthetic */ class na implements bm0, ag.s, ImageReceiver.ImageR
         this.b = obj;
     }
 
-    @Override // org.telegram.ui.Components.aq
+    @Override // org.telegram.ui.Components.bq
     public void a() {
         switch (this.a) {
             case 4:
@@ -47,7 +47,7 @@ public final /* synthetic */ class na implements bm0, ag.s, ImageReceiver.ImageR
         }
     }
 
-    @Override // org.telegram.ui.Components.bm0
+    @Override // org.telegram.ui.Components.cm0
     public boolean c(int i10, View view) {
         ra raVar = (ra) this.b;
         raVar.getClass();
@@ -57,7 +57,7 @@ public final /* synthetic */ class na implements bm0, ag.s, ImageReceiver.ImageR
 
     @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
     public void didSetImage(ImageReceiver imageReceiver, boolean z10, boolean z11, boolean z12) {
-        xj0 lottieAnimation;
+        yj0 lottieAnimation;
         s0 s0Var;
         int v;
         MessageObject messageObject;
@@ -120,7 +120,7 @@ public final /* synthetic */ class na implements bm0, ag.s, ImageReceiver.ImageR
     @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
     public /* synthetic */ void didSetImageBitmap(int i10, String str, Drawable drawable) {
         int i11 = this.a;
-        org.telegram.messenger.o5.a(this, i10, str, drawable);
+        org.telegram.messenger.p5.a(this, i10, str, drawable);
     }
 
     @Override // ag.s
@@ -131,7 +131,7 @@ public final /* synthetic */ class na implements bm0, ag.s, ImageReceiver.ImageR
     @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
     public /* synthetic */ void onAnimationReady(ImageReceiver imageReceiver) {
         int i10 = this.a;
-        org.telegram.messenger.o5.b(this, imageReceiver);
+        org.telegram.messenger.p5.b(this, imageReceiver);
     }
 
     @Override // org.telegram.messenger.Utilities.Callback2Return

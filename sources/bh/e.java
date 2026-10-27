@@ -16,10 +16,10 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.ds;
 import org.telegram.ui.Components.t5;
-import org.telegram.ui.Components.xj0;
-import org.telegram.ui.oy;
+import org.telegram.ui.Components.yj0;
+import org.telegram.ui.qy;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class e {
     public static int m;
@@ -211,7 +211,7 @@ public final class e {
                 sb2.append(i11);
                 sb2.append(" ");
                 imageReceiver.setUniqKeyPrefix(sb2.toString());
-                int f7 = oy.f();
+                int f7 = qy.f();
                 TLRPC.Document document3 = tL_availableReaction.around_animation;
                 z10 = true;
                 imageReceiver.setImage(ImageLocation.getForDocument(tL_availableReaction.around_animation), f7 + "_" + f7 + "_pcache_compress", null, null, document3, 0);
@@ -240,7 +240,7 @@ public final class e {
                     sb3.append(i12);
                     sb3.append(" ");
                     imageReceiver.setUniqKeyPrefix(sb3.toString());
-                    int f10 = oy.f();
+                    int f10 = qy.f();
                     imageReceiver.setImage(ImageLocation.getForDocument(tL_messages_stickerSet.documents.get(this.k)), f10 + "_" + f10 + "_pcache_compress", null, null, tL_messages_stickerSet.documents.get(this.k), 0);
                 } else {
                     imageReceiver.setImage(ImageLocation.getForDocument(tL_messages_stickerSet.documents.get(this.k)), "60_60", null, null, tL_messages_stickerSet.documents.get(this.k), 0);
@@ -249,7 +249,7 @@ public final class e {
             }
         }
         if (!z11) {
-            imageReceiver.setImageBitmap(new xj0(R.raw.custom_emoji_reaction, AndroidUtilities.dp(60.0f), AndroidUtilities.dp(60.0f), false, null));
+            imageReceiver.setImageBitmap(new yj0(R.raw.custom_emoji_reaction, AndroidUtilities.dp(60.0f), AndroidUtilities.dp(60.0f), false, null));
             return;
         }
         if (imageReceiver.getLottieAnimation() != null) {

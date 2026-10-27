@@ -51,11 +51,10 @@ import org.telegram.ui.Cells.j1;
 import org.telegram.ui.Cells.s1;
 import org.telegram.ui.Cells.t9;
 import org.telegram.ui.Components.c6;
-import org.telegram.ui.cv0;
 import org.telegram.ui.d3;
-import vi.y;
+import org.telegram.ui.ev0;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
 public class s implements s0, c3.g, j5.e, dg.a, eg.a, ga.a, hb.n, com.google.android.gms.common.api.internal.r, fh.a, n2.q, o6.k, j1, s9.d, r2.k, o5.b, v5.a, z6.d {
     public static s b;
@@ -201,8 +200,8 @@ public class s implements s0, c3.g, j5.e, dg.a, eg.a, ga.a, hb.n, com.google.and
         return createByCodecName;
     }
 
-    public static k4.d z0(y yVar, z zVar) {
-        IOException iOException = (IOException) zVar.c;
+    public static k4.d z0(vi.z zVar, z zVar2) {
+        IOException iOException = (IOException) zVar2.c;
         if (!(iOException instanceof x)) {
             return null;
         }
@@ -210,10 +209,10 @@ public class s implements s0, c3.g, j5.e, dg.a, eg.a, ga.a, hb.n, com.google.and
         if (i10 != 403 && i10 != 404 && i10 != 410 && i10 != 416 && i10 != 500 && i10 != 503) {
             return null;
         }
-        if (yVar.a(1)) {
+        if (zVar.a(1)) {
             return new k4.d(1, 300000L);
         }
-        if (yVar.a(2)) {
+        if (zVar.a(2)) {
             return new k4.d(2, 60000L);
         }
         return null;
@@ -251,7 +250,7 @@ public class s implements s0, c3.g, j5.e, dg.a, eg.a, ga.a, hb.n, com.google.and
     }
 
     @Override // org.telegram.ui.Cells.j1
-    public /* synthetic */ cv0 E1() {
+    public /* synthetic */ ev0 E1() {
         return null;
     }
 

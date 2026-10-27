@@ -2,12 +2,12 @@ package fi;
 
 import android.graphics.drawable.Drawable;
 import android.widget.FrameLayout;
-import org.telegram.ui.Components.nf0;
 import org.telegram.ui.Components.of0;
+import org.telegram.ui.Components.pf0;
 import org.telegram.ui.PhotoViewer;
-import org.telegram.ui.gs0;
+import org.telegram.ui.is0;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class h0 implements ng.e {
     public final /* synthetic */ int a;
@@ -32,11 +32,11 @@ public final class h0 implements ng.e {
                 m0Var.e.invalidate();
                 return m0Var.h.j();
             default:
-                nf0 nf0Var = ((of0) frameLayout).a;
-                if (nf0Var == null) {
+                of0 of0Var = ((pf0) frameLayout).a;
+                if (of0Var == null) {
                     return false;
                 }
-                PhotoViewer photoViewer = ((gs0) nf0Var).a;
+                PhotoViewer photoViewer = ((is0) of0Var).a;
                 Drawable[] drawableArr = PhotoViewer.U8;
                 return photoViewer.O0();
         }
@@ -52,7 +52,7 @@ public final class h0 implements ng.e {
                 ((m0) this.b).h.o();
                 break;
             default:
-                ((of0) this.b).b.o();
+                ((pf0) this.b).b.o();
                 break;
         }
     }
@@ -67,7 +67,7 @@ public final class h0 implements ng.e {
                 ((m0) this.b).h.a.g(1, true);
                 break;
             default:
-                ((of0) this.b).b.a.g(1, true);
+                ((pf0) this.b).b.a.g(1, true);
                 break;
         }
     }
@@ -92,11 +92,11 @@ public final class h0 implements ng.e {
                 m0Var.e.invalidate();
                 return m11;
             default:
-                nf0 nf0Var = ((of0) frameLayout).a;
-                if (nf0Var == null) {
+                of0 of0Var = ((pf0) frameLayout).a;
+                if (of0Var == null) {
                     return false;
                 }
-                PhotoViewer photoViewer = ((gs0) nf0Var).a;
+                PhotoViewer photoViewer = ((is0) of0Var).a;
                 Drawable[] drawableArr = PhotoViewer.U8;
                 return photoViewer.P0(-90.0f, false, null);
         }
@@ -112,7 +112,7 @@ public final class h0 implements ng.e {
                 ((m0) this.b).h.k();
                 break;
             default:
-                ((of0) this.b).b.k();
+                ((pf0) this.b).b.k();
                 break;
         }
     }
@@ -127,12 +127,12 @@ public final class h0 implements ng.e {
                 ((m0) this.b).h.setRotation(f7);
                 break;
             default:
-                of0 of0Var = (of0) this.b;
-                of0Var.b.setRotation(f7);
-                of0Var.getClass();
-                nf0 nf0Var = of0Var.a;
-                if (nf0Var != null) {
-                    ((gs0) nf0Var).d(false);
+                pf0 pf0Var = (pf0) this.b;
+                pf0Var.b.setRotation(f7);
+                pf0Var.getClass();
+                of0 of0Var = pf0Var.a;
+                if (of0Var != null) {
+                    ((is0) of0Var).d(false);
                     break;
                 }
                 break;

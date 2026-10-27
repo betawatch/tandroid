@@ -1,6 +1,6 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class hb implements o1.f {
     public final /* synthetic */ int a;
@@ -35,38 +35,38 @@ public final /* synthetic */ class hb implements o1.f {
                 alVar.k0();
                 break;
             case 3:
-                bq0 bq0Var = (bq0) this.b;
-                bq0Var.q = false;
-                bq0Var.dismiss();
+                cq0 cq0Var = (cq0) this.b;
+                cq0Var.q = false;
+                cq0Var.dismiss();
                 break;
             case 4:
-                cq0 cq0Var = (cq0) this.b;
-                cq0Var.s = false;
-                cq0Var.r = false;
+                dq0 dq0Var = (dq0) this.b;
+                dq0Var.s = false;
+                dq0Var.r = false;
                 if (!z10) {
                     hVar.c();
                 }
-                if (hVar == cq0Var.f) {
-                    cq0Var.f = null;
+                if (hVar == dq0Var.f) {
+                    dq0Var.f = null;
                     break;
                 }
                 break;
             case 5:
-                mr0 mr0Var = (mr0) this.b;
-                mr0Var.F.setVisibility(8);
-                mr0Var.A0.setVisibility(8);
-                jr0 jr0Var = mr0Var.M;
-                jr0Var.f = null;
-                jr0Var.l();
-                mr0Var.C0 = null;
-                mr0Var.N0 = false;
+                nr0 nr0Var = (nr0) this.b;
+                nr0Var.F.setVisibility(8);
+                nr0Var.A0.setVisibility(8);
+                kr0 kr0Var = nr0Var.M;
+                kr0Var.f = null;
+                kr0Var.l();
+                nr0Var.C0 = null;
+                nr0Var.N0 = false;
                 break;
             default:
-                mr0 mr0Var2 = ((tq0) this.b).d;
-                mr0Var2.G.setVisibility(8);
-                mr0Var2.H.setVisibility(8);
-                mr0Var2.z0.setVisibility(8);
-                mr0Var2.C0 = null;
+                nr0 nr0Var2 = ((uq0) this.b).d;
+                nr0Var2.G.setVisibility(8);
+                nr0Var2.H.setVisibility(8);
+                nr0Var2.z0.setVisibility(8);
+                nr0Var2.C0 = null;
                 break;
         }
     }

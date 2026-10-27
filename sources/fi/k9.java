@@ -21,10 +21,10 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.ds;
-import org.telegram.ui.Components.gb1;
+import org.telegram.ui.Components.kb1;
 import org.telegram.ui.Components.x30;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public abstract class k9 extends ScrollView implements org.telegram.ui.ActionBar.p6 {
     public final LinearGradient E;
@@ -78,7 +78,7 @@ public abstract class k9 extends ScrollView implements org.telegram.ui.ActionBar
         AndroidUtilities.setScrollViewEdgeEffectColor(this, org.telegram.ui.ActionBar.y6.x0(null, org.telegram.ui.ActionBar.y6.d6, false));
         j9 j9Var = new j9(this, context);
         this.d = j9Var;
-        addView(j9Var, gb1.g(-2.0f, -1));
+        addView(j9Var, kb1.g(-2.0f, -1));
         c2 c2Var = new c2(this, context, 1);
         this.b = c2Var;
         if (Build.VERSION.SDK_INT >= 25) {

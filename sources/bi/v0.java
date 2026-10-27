@@ -21,15 +21,15 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_update;
 import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.Components.t61;
+import org.telegram.ui.Components.u61;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PasskeysActivity;
 import org.telegram.ui.PrivacySettingsActivity;
-import org.telegram.ui.vj0;
+import org.telegram.ui.bu0;
 import org.telegram.ui.xj0;
-import org.telegram.ui.zt0;
+import org.telegram.ui.zj0;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class v0 implements Utilities.Callback2 {
     public final /* synthetic */ int a;
@@ -173,7 +173,7 @@ public final /* synthetic */ class v0 implements Utilities.Callback2 {
                     if (i14 == 0) {
                         MessagesController.getInstance(i17).generateJoinMessage(chat2.id, true);
                     }
-                    AndroidUtilities.runOnUIThread(new zt0(c1Var, 5));
+                    AndroidUtilities.runOnUIThread(new bu0(c1Var, 5));
                     AndroidUtilities.runOnUIThread(new ag.r0(i17, chat2, 18), 1000L);
                     MessagesStorage messagesStorage = MessagesStorage.getInstance(i17);
                     long j11 = chat2.id;
@@ -211,13 +211,13 @@ public final /* synthetic */ class v0 implements Utilities.Callback2 {
                 }
                 break;
             case 8:
-                xj0 xj0Var = (xj0) obj5;
-                vj0 vj0Var = (vj0) obj4;
+                zj0 zj0Var = (zj0) obj5;
+                xj0 xj0Var = (xj0) obj4;
                 Context context2 = (Context) obj3;
                 ArrayList arrayList3 = (ArrayList) obj;
-                ArrayList arrayList4 = xj0Var.c;
-                if (i13 != 2 || !TextUtils.isEmpty(xj0Var.N)) {
-                    ArrayList arrayList5 = vj0Var.a;
+                ArrayList arrayList4 = zj0Var.c;
+                if (i13 != 2 || !TextUtils.isEmpty(zj0Var.N)) {
+                    ArrayList arrayList5 = xj0Var.a;
                     int size = arrayList5.size();
                     int i20 = 0;
                     while (i20 < size) {
@@ -225,64 +225,64 @@ public final /* synthetic */ class v0 implements Utilities.Callback2 {
                         i20++;
                         if (obj6 instanceof MessageObject) {
                             MessageObject messageObject = (MessageObject) obj6;
-                            ArrayList arrayList6 = (ArrayList) vj0Var.c.get(messageObject);
+                            ArrayList arrayList6 = (ArrayList) xj0Var.c.get(messageObject);
                             int i21 = org.telegram.ui.Cells.v3.a;
-                            t61 K = t61.K(org.telegram.ui.Cells.v3.class);
+                            u61 K = u61.K(org.telegram.ui.Cells.v3.class);
                             K.G = messageObject;
                             K.H = arrayList6 == null ? null : new ArrayList(arrayList6);
                             K.d = messageObject.getId();
                             K.B = messageObject.getDialogId();
                             arrayList3.add(K);
                         } else if (!arrayList4.isEmpty()) {
-                            HashSet hashSet = xj0Var.d;
-                            org.telegram.ui.t3 t3Var = new org.telegram.ui.t3(xj0Var, 14);
+                            HashSet hashSet = zj0Var.d;
+                            org.telegram.ui.t3 t3Var = new org.telegram.ui.t3(zj0Var, 14);
                             int i22 = org.telegram.ui.Cells.r3.a;
-                            t61 K2 = t61.K(org.telegram.ui.Cells.r3.class);
+                            u61 K2 = u61.K(org.telegram.ui.Cells.r3.class);
                             K2.G = new org.telegram.ui.Cells.s3(arrayList4, hashSet, t3Var);
                             arrayList3.add(K2);
-                        } else if (xj0Var.r) {
-                            arrayList3.add(t61.e(-2, LocaleController.getString(R.string.Retry)));
+                        } else if (zj0Var.r) {
+                            arrayList3.add(u61.e(-2, LocaleController.getString(R.string.Retry)));
                         }
                     }
-                    if ((i13 == 2 || !vj0Var.m) && (vj0Var.h || !vj0Var.i)) {
+                    if ((i13 == 2 || !xj0Var.m) && (xj0Var.h || !xj0Var.i)) {
                         while (true) {
-                            if (i14 < (vj0Var.a.isEmpty() ? 3 : 1)) {
-                                arrayList3.add(t61.q((-10) - i14, 39));
+                            if (i14 < (xj0Var.a.isEmpty() ? 3 : 1)) {
+                                arrayList3.add(u61.q((-10) - i14, 39));
                                 i14++;
                             }
                         }
-                    } else if (vj0Var.k) {
-                        if (vj0Var.f == null) {
-                            vj0Var.f = i13 == 2 ? xj0Var.g0(context2) : xj0Var.f0(context2, vj0Var.g);
+                    } else if (xj0Var.k) {
+                        if (xj0Var.f == null) {
+                            xj0Var.f = i13 == 2 ? zj0Var.g0(context2) : zj0Var.f0(context2, xj0Var.g);
                         }
-                        ViewGroup viewGroup = vj0Var.f;
-                        t61 t61Var = new t61(-3);
-                        t61Var.c = viewGroup;
-                        t61Var.z = 0;
-                        t61Var.y = 1;
-                        arrayList3.add(t61Var);
-                    } else if (!vj0Var.h && vj0Var.i && (arrayList3.isEmpty() || (vj0Var.j && i13 != 2))) {
-                        if (vj0Var.f == null) {
-                            vj0Var.f = i13 == 2 ? xj0Var.g0(context2) : xj0Var.f0(context2, vj0Var.g);
+                        ViewGroup viewGroup = xj0Var.f;
+                        u61 u61Var = new u61(-3);
+                        u61Var.c = viewGroup;
+                        u61Var.z = 0;
+                        u61Var.y = 1;
+                        arrayList3.add(u61Var);
+                    } else if (!xj0Var.h && xj0Var.i && (arrayList3.isEmpty() || (xj0Var.j && i13 != 2))) {
+                        if (xj0Var.f == null) {
+                            xj0Var.f = i13 == 2 ? zj0Var.g0(context2) : zj0Var.f0(context2, xj0Var.g);
                         }
                         if (arrayList3.isEmpty()) {
-                            ViewGroup viewGroup2 = vj0Var.f;
-                            t61 t61Var2 = new t61(-3);
-                            t61Var2.c = viewGroup2;
-                            t61Var2.z = 0;
-                            t61Var2.y = 1;
-                            arrayList3.add(t61Var2);
+                            ViewGroup viewGroup2 = xj0Var.f;
+                            u61 u61Var2 = new u61(-3);
+                            u61Var2.c = viewGroup2;
+                            u61Var2.z = 0;
+                            u61Var2.y = 1;
+                            arrayList3.add(u61Var2);
                         } else {
-                            ((t61) ic.a.g(1, arrayList3)).j = true;
-                            ViewGroup viewGroup3 = vj0Var.f;
-                            t61 t61Var3 = new t61(-1);
-                            t61Var3.c = viewGroup3;
-                            t61Var3.z = -2;
-                            arrayList3.add(t61Var3);
+                            ((u61) ic.a.g(1, arrayList3)).j = true;
+                            ViewGroup viewGroup3 = xj0Var.f;
+                            u61 u61Var3 = new u61(-1);
+                            u61Var3.c = viewGroup3;
+                            u61Var3.z = -2;
+                            arrayList3.add(u61Var3);
                         }
                     }
                     if (!arrayList3.isEmpty()) {
-                        ((t61) ic.a.g(1, arrayList3)).j = true;
+                        ((u61) ic.a.g(1, arrayList3)).j = true;
                         break;
                     }
                 }

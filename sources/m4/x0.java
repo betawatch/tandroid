@@ -13,14 +13,14 @@ import org.telegram.messenger.Utilities;
 import org.telegram.ui.ActionBar.b2;
 import org.telegram.ui.ActionBar.e2;
 import org.telegram.ui.Components.b10;
-import org.telegram.ui.Components.jw0;
-import org.telegram.ui.Components.yw0;
+import org.telegram.ui.Components.kw0;
+import org.telegram.ui.Components.zw0;
 import org.telegram.ui.ee;
 import org.telegram.utils.code.highlight.PrismaHighlighter;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class x0 implements h1, e2.j, j5.g, n2.l, e9.k, b2, yw0, Utilities.Callback2Return, jw0, jh.i {
+public final /* synthetic */ class x0 implements h1, e2.j, j5.g, n2.l, e9.k, b2, zw0, Utilities.Callback2Return, kw0, jh.i {
     public final /* synthetic */ int a;
 
     public /* synthetic */ x0(int i10) {
@@ -87,7 +87,7 @@ public final /* synthetic */ class x0 implements h1, e2.j, j5.g, n2.l, e9.k, b2,
         return f9.i0.u(f9.o.x(qVar.Y.b, new s0.b(20)));
     }
 
-    @Override // org.telegram.ui.Components.jw0
+    @Override // org.telegram.ui.Components.kw0
     public /* synthetic */ float b(RecyclerView recyclerView) {
         return b10.c(recyclerView);
     }
@@ -127,12 +127,12 @@ public final /* synthetic */ class x0 implements h1, e2.j, j5.g, n2.l, e9.k, b2,
         }
     }
 
-    @Override // org.telegram.ui.Components.jw0
+    @Override // org.telegram.ui.Components.kw0
     public RecyclerView i(View view) {
         return ((ee) view).a;
     }
 
-    @Override // org.telegram.ui.Components.yw0
+    @Override // org.telegram.ui.Components.zw0
     public void j(int i10) {
         if (i10 == 0) {
             SharedConfig.setKeepMedia(3);
@@ -152,7 +152,7 @@ public final /* synthetic */ class x0 implements h1, e2.j, j5.g, n2.l, e9.k, b2,
         view.invalidate();
     }
 
-    @Override // org.telegram.ui.Components.jw0
+    @Override // org.telegram.ui.Components.kw0
     public /* synthetic */ void n(RecyclerView recyclerView) {
         b10.b(recyclerView);
     }
@@ -166,7 +166,7 @@ public final /* synthetic */ class x0 implements h1, e2.j, j5.g, n2.l, e9.k, b2,
         return "" + num;
     }
 
-    @Override // org.telegram.ui.Components.yw0
+    @Override // org.telegram.ui.Components.zw0
     public /* synthetic */ void m() {
     }
 

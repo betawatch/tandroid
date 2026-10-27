@@ -23,30 +23,30 @@ import org.telegram.ui.Cells.w7;
 import org.telegram.ui.Cells.z5;
 import org.telegram.ui.Components.Crop.CropAreaView;
 import org.telegram.ui.Components.t40;
-import org.telegram.ui.Components.t60;
-import org.telegram.ui.Components.wi0;
+import org.telegram.ui.Components.u60;
+import org.telegram.ui.Components.xi0;
 import org.telegram.ui.bd;
+import org.telegram.ui.bm;
 import org.telegram.ui.dc;
-import org.telegram.ui.e01;
-import org.telegram.ui.em;
-import org.telegram.ui.fm;
-import org.telegram.ui.hk;
+import org.telegram.ui.g01;
+import org.telegram.ui.gm;
+import org.telegram.ui.hm;
 import org.telegram.ui.i3;
 import org.telegram.ui.j4;
+import org.telegram.ui.jk;
 import org.telegram.ui.k8;
 import org.telegram.ui.mc;
 import org.telegram.ui.n8;
-import org.telegram.ui.pi;
+import org.telegram.ui.si;
 import org.telegram.ui.u4;
 import org.telegram.ui.v3;
-import org.telegram.ui.vh;
 import org.telegram.ui.wb;
 import org.telegram.ui.x4;
 import org.telegram.ui.x5;
+import org.telegram.ui.xh;
 import org.telegram.ui.y9;
-import org.telegram.ui.zl;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class e extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -142,7 +142,7 @@ public final class e extends AnimatorListenerAdapter {
                 break;
             case 11:
                 org.telegram.ui.Cells.j jVar = (org.telegram.ui.Cells.j) this.b;
-                ((e01) jVar).e0.e.c.r = false;
+                ((g01) jVar).e0.e.c.r = false;
                 FrameLayout frameLayout = jVar.J;
                 if (frameLayout.getBackground() == null) {
                     frameLayout.setBackground(jVar.K);
@@ -152,9 +152,9 @@ public final class e extends AnimatorListenerAdapter {
             case 12:
                 v vVar = (v) this.b;
                 Button button = vVar.n;
-                wi0 wi0Var = vVar.f;
-                if (button != wi0Var) {
-                    wi0Var.setVisibility(4);
+                xi0 xi0Var = vVar.f;
+                if (button != xi0Var) {
+                    xi0Var.setVisibility(4);
                     break;
                 } else {
                     vVar.e.setVisibility(4);
@@ -234,33 +234,33 @@ public final class e extends AnimatorListenerAdapter {
                 super.onAnimationEnd(animator);
                 break;
             case 25:
-                vh vhVar = (vh) this.b;
-                if (vhVar.a) {
-                    vhVar.d.setTranslationY(0.0f);
+                xh xhVar = (xh) this.b;
+                if (xhVar.a) {
+                    xhVar.d.setTranslationY(0.0f);
                 }
-                if (vhVar.b) {
-                    vhVar.e.setTranslationY(0.0f);
+                if (xhVar.b) {
+                    xhVar.e.setTranslationY(0.0f);
                 }
-                if (vhVar.f) {
-                    vhVar.h.setTranslationY(0.0f);
+                if (xhVar.f) {
+                    xhVar.h.setTranslationY(0.0f);
                 }
-                org.telegram.ui.Components.y9 y9Var = vhVar.c;
+                org.telegram.ui.Components.y9 y9Var = xhVar.c;
                 if (y9Var != null) {
                     y9Var.setTranslationY(0.0f);
                 }
-                vhVar.n.T2[1] = null;
+                xhVar.n.T2[1] = null;
                 break;
             case 26:
-                hk hkVar = (hk) this.b;
-                hkVar.setAnimatedTop(0);
-                View view = hkVar.G1;
+                jk jkVar = (jk) this.b;
+                jkVar.setAnimatedTop(0);
+                View view = jkVar.G1;
                 if (view != null && view.getVisibility() == 0) {
-                    hkVar.G1.setTranslationY(((1.0f - hkVar.getTopViewEnterProgress()) * hkVar.G1.getLayoutParams().height) + hkVar.T1);
+                    jkVar.G1.setTranslationY(((1.0f - jkVar.getTopViewEnterProgress()) * jkVar.G1.getLayoutParams().height) + jkVar.T1);
                 }
-                hkVar.v5.B9 = null;
+                jkVar.v5.F9 = null;
                 break;
             case 27:
-                t40 t40Var = ((pi) this.b).b.q2;
+                t40 t40Var = ((si) this.b).b.q2;
                 if (t40Var != null) {
                     t40Var.setVisibility(8);
                     break;
@@ -268,24 +268,24 @@ public final class e extends AnimatorListenerAdapter {
                 break;
             case 28:
                 ce ceVar = (ce) this.b;
-                t60 t60Var = ((fm) ((zl) ceVar.c).c).Q.n3;
-                if (t60Var != null) {
-                    t60Var.setIsMessageTransition(false);
-                    ((fm) ((zl) ceVar.c).c).Q.n3.c(true);
-                    ((fm) ((zl) ceVar.c).c).Q.n3.setVisibility(4);
+                u60 u60Var = ((hm) ((bm) ceVar.c).c).Q.n3;
+                if (u60Var != null) {
+                    u60Var.setIsMessageTransition(false);
+                    ((hm) ((bm) ceVar.c).c).Q.n3.c(true);
+                    ((hm) ((bm) ceVar.c).c).Q.n3.setVisibility(4);
                     break;
                 }
                 break;
             case 29:
-                em emVar = (em) this.b;
-                fm fmVar = emVar.b;
-                ArrayList arrayList = fmVar.Q.z6;
-                s1 s1Var = emVar.a;
+                gm gmVar = (gm) this.b;
+                hm hmVar = gmVar.b;
+                ArrayList arrayList = hmVar.Q.D6;
+                s1 s1Var = gmVar.a;
                 arrayList.remove(s1Var);
-                View view2 = fmVar.Q.fragmentView;
+                View view2 = hmVar.Q.fragmentView;
                 if (view2 != null) {
                     view2.invalidate();
-                    fmVar.Q.x0.invalidate();
+                    hmVar.Q.x0.invalidate();
                 }
                 s1Var.setAlpha(1.0f);
                 s1Var.getTransitionParams().x0 = false;
@@ -306,7 +306,7 @@ public final class e extends AnimatorListenerAdapter {
                 }
                 break;
             case 11:
-                ((e01) ((org.telegram.ui.Cells.j) this.b)).e0.e.c.r = true;
+                ((g01) ((org.telegram.ui.Cells.j) this.b)).e0.e.c.r = true;
                 break;
             default:
                 super.onAnimationStart(animator);

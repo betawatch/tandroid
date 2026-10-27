@@ -8,7 +8,7 @@ import android.view.KeyEvent;
 import org.telegram.messenger.Emoji;
 import org.telegram.messenger.LocaleController;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class xh implements TextWatcher {
     public final /* synthetic */ int a;
@@ -53,7 +53,7 @@ public final class xh implements TextWatcher {
                 tiVar.e.a(codePointCount > 0, true);
                 int i11 = tiVar.K;
                 if (i11 <= 0 || (i10 = i11 - tiVar.L) > 100) {
-                    s6Var2.animate().alpha(0.0f).scaleX(0.5f).scaleY(0.5f).setDuration(100L).setListener(new org.telegram.ui.qp(this, 10));
+                    s6Var2.animate().alpha(0.0f).scaleX(0.5f).scaleY(0.5f).setDuration(100L).setListener(new org.telegram.ui.sp(this, 10));
                     s6Var.setAlpha(0.0f);
                     z10 = true;
                 } else {
@@ -92,9 +92,9 @@ public final class xh implements TextWatcher {
                     if (whVar.getEditText().getLineCount() > 2 && !TextUtils.isEmpty(whVar.getText().toString().trim())) {
                         z11 = true;
                     }
-                    tiVar.T1(z11);
+                    tiVar.U1(z11);
                 }
-                tiVar.i1(true);
+                tiVar.j1(true);
                 return;
             default:
                 org.telegram.ui.Wallet.h9 h9Var = (org.telegram.ui.Wallet.h9) this.d;
@@ -146,7 +146,7 @@ public final class xh implements TextWatcher {
                 if (tiVar.H2.getAdapter() != null) {
                     tiVar.H2.setReversed(false);
                     tiVar.H2.getAdapter().U(charSequence, tiVar.H0.getEditText().getSelectionStart(), null, false, false);
-                    tiVar.b2();
+                    tiVar.c2();
                     break;
                 }
                 break;
@@ -156,18 +156,18 @@ public final class xh implements TextWatcher {
                 org.telegram.ui.Wallet.h9 h9Var = (org.telegram.ui.Wallet.h9) this.d;
                 if (!h9Var.R && !this.c) {
                     if (i11 != 0 || i12 != 0) {
-                        org.telegram.ui.Wallet.l6 l6Var = h9Var.d;
+                        org.telegram.ui.Wallet.m6 m6Var = h9Var.d;
                         if (i12 > 0 && i12 >= i11) {
                             z10 = true;
                         }
-                        if (l6Var.x && l6Var.r && l6Var.y == -1) {
-                            ak0 ak0Var = l6Var.h;
-                            if (ak0Var == null) {
-                                l6Var.d0 = org.telegram.messenger.vh.A(l6Var.d0, z10 ? -160.0f : 160.0f, 360.0f, -360.0f);
+                        if (m6Var.x && m6Var.r && m6Var.y == -1) {
+                            bk0 bk0Var = m6Var.h;
+                            if (bk0Var == null) {
+                                m6Var.d0 = org.telegram.messenger.wh.A(m6Var.d0, z10 ? -160.0f : 160.0f, 360.0f, -360.0f);
                                 break;
-                            } else if (!ak0Var.b()) {
-                                l6Var.h.setProgress(0.0f);
-                                l6Var.h.d();
+                            } else if (!bk0Var.b()) {
+                                m6Var.h.setProgress(0.0f);
+                                m6Var.h.d();
                                 break;
                             }
                         }

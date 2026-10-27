@@ -1,38 +1,56 @@
 package org.telegram.ui.Components;
 
-import android.os.Bundle;
+import android.graphics.Rect;
+import android.view.View;
+import androidx.recyclerview.widget.RecyclerView;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public final class it0 extends org.telegram.ui.un {
-    public boolean kd;
-    public final /* synthetic */ int ld;
-    public final /* synthetic */ aw0 md;
+public final class it0 extends s4.n0 {
+    public final /* synthetic */ bt0 a;
+    public final /* synthetic */ bw0 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public it0(aw0 aw0Var, Bundle bundle, int i10) {
-        super(bundle);
-        this.md = aw0Var;
-        this.ld = i10;
-        this.kd = true;
+    public it0(bw0 bw0Var, bt0 bt0Var) {
+        this.b = bw0Var;
+        this.a = bt0Var;
     }
 
-    @Override // org.telegram.ui.un, org.telegram.ui.ActionBar.r2
-    public final void onTransitionAnimationStart(boolean z10, boolean z11) {
-        aw0 aw0Var = this.md;
-        mv0 mv0Var = aw0Var.U;
-        if (this.kd) {
-            if (this.j0 != null) {
-                va("");
-                this.j0.P(mv0Var.w, false);
+    @Override // s4.n0
+    public final void d(Rect rect, View view, RecyclerView recyclerView, s4.b1 b1Var) {
+        bt0 bt0Var = this.a;
+        if (bt0Var.h.getAdapter() == this.b.Q) {
+            int R = RecyclerView.R(view);
+            rect.left = 0;
+            rect.bottom = 0;
+            ct0 ct0Var = bt0Var.w;
+            ct0Var.C1();
+            if (R <= ct0Var.U) {
+                rect.top = 0;
+            } else {
+                rect.top = AndroidUtilities.dp(2.0f);
             }
-            org.telegram.ui.sk skVar = this.A1;
-            if (skVar != null) {
-                skVar.e(mv0Var.x, false);
-            }
-            aw0Var.x1.getMediaDataController().portSavedSearchResults(getClassGuid(), mv0Var.x, mv0Var.w, mv0Var.n, mv0Var.h, this.ld, mv0Var.v, mv0Var.s);
-            this.kd = false;
+            rect.right = bt0Var.w.F1(R) ? 0 : AndroidUtilities.dp(2.0f);
+            return;
         }
-        super.onTransitionAnimationStart(z10, z11);
+        if (!(view instanceof org.telegram.ui.Cells.w7)) {
+            rect.left = 0;
+            rect.top = 0;
+            rect.bottom = 0;
+            rect.right = 0;
+            return;
+        }
+        org.telegram.ui.Cells.w7 w7Var = (org.telegram.ui.Cells.w7) view;
+        bt0Var.h.getClass();
+        int R2 = RecyclerView.R(w7Var);
+        int i10 = bt0Var.w.J;
+        w7Var.a0 = R2 < i10;
+        int i11 = R2 % i10;
+        w7Var.V = i11 == 0;
+        w7Var.W = i11 == i10 - 1;
+        rect.left = 0;
+        rect.top = 0;
+        rect.bottom = 0;
+        rect.right = 0;
     }
 }

@@ -16,10 +16,10 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.Timer;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.gb1;
+import org.telegram.ui.Components.kb1;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class z1 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -80,7 +80,7 @@ public final /* synthetic */ class z1 implements Utilities.Callback {
                                 settings.setAllowUniversalAccessFromFileURLs(false);
                                 webView.setWebViewClient(new c2(h2Var, inputStream));
                                 webView.setWebChromeClient(new d2());
-                                b2Var.addView(webView, gb1.g(-1.0f, -1));
+                                b2Var.addView(webView, kb1.g(-1.0f, -1));
                                 final boolean[] zArr2 = {false};
                                 webView.addJavascriptInterface(new Object() { // from class: org.telegram.ui.web.WebInstantView$4
                                     @JavascriptInterface

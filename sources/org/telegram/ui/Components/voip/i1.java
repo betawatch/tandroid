@@ -36,19 +36,19 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.f7;
 import org.telegram.ui.ActionBar.y6;
 import org.telegram.ui.Components.ds;
-import org.telegram.ui.Components.gb1;
 import org.telegram.ui.Components.j9;
 import org.telegram.ui.Components.k5;
-import org.telegram.ui.Components.pw0;
-import org.telegram.ui.Components.ra1;
+import org.telegram.ui.Components.kb1;
+import org.telegram.ui.Components.qw0;
+import org.telegram.ui.Components.sa1;
 import org.telegram.ui.Components.y9;
 import org.webrtc.RendererCommon;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class i1 implements NotificationCenter.NotificationCenterDelegate, uf.a {
-    public static final pw0 b0 = new pw0(new ra1(), new c1(0));
-    public static final pw0 c0 = new pw0(new c1(1), new c1(2));
+    public static final qw0 b0 = new qw0(new sa1(), new c1(0));
+    public static final qw0 c0 = new qw0(new c1(1), new c1(2));
     public static final i1 d0;
     public AccountInstance E;
     public ScaleGestureDetector F;
@@ -169,13 +169,13 @@ public final class i1 implements NotificationCenter.NotificationCenterDelegate, 
         i1Var.e = new bh.p(i1Var, activity2);
         org.telegram.ui.e eVar = new org.telegram.ui.e(i1Var, activity2, i10);
         i1Var.d = eVar;
-        eVar.addView(i1Var.e, gb1.g(-1.0f, -1));
+        eVar.addView(i1Var.e, kb1.g(-1.0f, -1));
         i1Var.e.setOutlineProvider(new ag.v0(19));
         i1Var.e.setClipToOutline(true);
         f7.i(y6.gg, i1Var.e, null);
         y9 y9Var = new y9(activity2);
         i1Var.r = y9Var;
-        i1Var.e.addView(y9Var, gb1.g(-1.0f, -1));
+        i1Var.e.addView(y9Var, kb1.g(-1.0f, -1));
         t2 t2Var = new t2(activity2, false, false, false, false);
         i1Var.f = t2Var;
         t2Var.setAlpha(0.0f);
@@ -184,10 +184,10 @@ public final class i1 implements NotificationCenter.NotificationCenterDelegate, 
         t2Var2.a0 = 0;
         t2Var2.d.setRotateTextureWithScreen(true);
         i1Var.f.d.init(VideoCapturerDevice.getEglBase().getEglBaseContext(), new h1(i1Var));
-        i1Var.e.addView(i1Var.f, gb1.g(-1.0f, -1));
+        i1Var.e.addView(i1Var.f, kb1.g(-1.0f, -1));
         cc ccVar = new cc(i1Var, activity2, 28);
         i1Var.s = ccVar;
-        i1Var.e.addView(ccVar, gb1.g(-1.0f, -1));
+        i1Var.e.addView(ccVar, kb1.g(-1.0f, -1));
         FrameLayout frameLayout = new FrameLayout(activity2);
         i1Var.h = frameLayout;
         frameLayout.setAlpha(0.0f);
@@ -196,7 +196,7 @@ public final class i1 implements NotificationCenter.NotificationCenterDelegate, 
         gradientDrawable.setColors(new int[]{1140850688, 0});
         gradientDrawable.setOrientation(GradientDrawable.Orientation.TOP_BOTTOM);
         view.setBackground(gradientDrawable);
-        i1Var.h.addView(view, gb1.g(-1.0f, -1));
+        i1Var.h.addView(view, kb1.g(-1.0f, -1));
         int dp = AndroidUtilities.dp(8.0f);
         ImageView imageView = new ImageView(activity2);
         imageView.setImageResource(R.drawable.pip_video_close);
@@ -210,15 +210,15 @@ public final class i1 implements NotificationCenter.NotificationCenterDelegate, 
         imageView.setOnClickListener(new bh.f(i13));
         float f7 = 38;
         float f10 = 4;
-        i1Var.h.addView(imageView, gb1.h(38, f7, 5, 0.0f, f10, f10, 0.0f));
+        i1Var.h.addView(imageView, kb1.h(38, f7, 5, 0.0f, f10, f10, 0.0f));
         ImageView imageView2 = new ImageView(activity2);
         imageView2.setImageResource(R.drawable.pip_video_expand);
         f7.t(imageView2, i11, null, mode);
         imageView2.setBackground(y6.g0(y6.x0(null, i12, false), 1, -1));
         imageView2.setPadding(dp, dp, dp, dp);
         imageView2.setOnClickListener(new ig.d0(activity2, i13));
-        i1Var.h.addView(imageView2, gb1.h(38, f7, 5, 0.0f, f10, 48, 0.0f));
-        i1Var.e.addView(i1Var.h, gb1.g(-1.0f, -1));
+        i1Var.h.addView(imageView2, kb1.h(38, f7, 5, 0.0f, f10, 48, 0.0f));
+        i1Var.e.addView(i1Var.h, kb1.g(-1.0f, -1));
         i1Var.b = (WindowManager) activity2.getSystemService("window");
         WindowManager.LayoutParams b10 = vf.b.b(activity2, false);
         i1Var.c = b10;

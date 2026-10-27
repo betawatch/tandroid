@@ -11,9 +11,9 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.ActionBar.u6;
 import org.telegram.ui.ActionBar.y6;
-import org.telegram.ui.Components.gb1;
+import org.telegram.ui.Components.kb1;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class q2 extends org.telegram.ui.ActionBar.k3 {
     public long b;
@@ -24,21 +24,21 @@ public final class q2 extends org.telegram.ui.ActionBar.k3 {
         fixNavigationBar();
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setOrientation(1);
-        TextView L = gb1.L(context, 20.0f, y6.G6, true, u6Var);
+        TextView L = kb1.L(context, 20.0f, y6.G6, true, u6Var);
         L.setText(LocaleController.getString(R.string.Gift2UnpinAlertTitle));
-        linearLayout.addView(L, gb1.o(22.0f, 12.0f, 22.0f, 0.0f, -1, -2));
-        TextView L2 = gb1.L(context, 14.0f, y6.y6, false, u6Var);
+        linearLayout.addView(L, kb1.o(22.0f, 12.0f, 22.0f, 0.0f, -1, -2));
+        TextView L2 = kb1.L(context, 14.0f, y6.y6, false, u6Var);
         L2.setText(LocaleController.getString(R.string.Gift2UnpinAlertSubtitle));
-        linearLayout.addView(L2, gb1.o(22.0f, 4.33f, 22.0f, 10.0f, -1, -2));
+        linearLayout.addView(L2, kb1.o(22.0f, 4.33f, 22.0f, 10.0f, -1, -2));
         fi.d dVar = new fi.d(context, u6Var, true);
         t9 G = ca.y(this.currentAccount, false).G(j10, true);
         p2 p2Var = new p2(context, this.currentAccount, 0, false, new org.telegram.ui.Wallet.r1(7, this, G), new o2(this, dVar), null, u6Var);
         p2Var.setSpanCount(3);
         p2Var.setOverScrollMode(2);
         p2Var.setScrollEnabled(false);
-        linearLayout.addView(p2Var, gb1.o(11.0f, 0.0f, 11.0f, 0.0f, -1, -2));
+        linearLayout.addView(p2Var, kb1.o(11.0f, 0.0f, 11.0f, 0.0f, -1, -2));
         dVar.i(LocaleController.getString(R.string.Gift2UnpinAlertButton), false, true);
-        linearLayout.addView(dVar, gb1.o(22.0f, 9.0f, 22.0f, 9.0f, -1, 48));
+        linearLayout.addView(dVar, kb1.o(22.0f, 9.0f, 22.0f, 9.0f, -1, 48));
         dVar.setEnabled(false);
         dVar.setOnClickListener(new di.c4(this, G, savedStarGift, callback0Return, 16));
         setCustomView(linearLayout);

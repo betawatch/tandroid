@@ -39,21 +39,21 @@ import org.telegram.ui.Cells.b8;
 import org.telegram.ui.Cells.c8;
 import org.telegram.ui.Cells.i9;
 import org.telegram.ui.Cells.q4;
+import org.telegram.ui.Components.aa0;
 import org.telegram.ui.Components.c6;
 import org.telegram.ui.Components.ds;
-import org.telegram.ui.Components.gb1;
-import org.telegram.ui.Components.mm0;
-import org.telegram.ui.Components.r71;
+import org.telegram.ui.Components.kb1;
+import org.telegram.ui.Components.nm0;
+import org.telegram.ui.Components.s71;
 import org.telegram.ui.Components.t5;
 import org.telegram.ui.Components.wc;
-import org.telegram.ui.Components.z90;
 import org.telegram.ui.Components.zq;
-import org.telegram.ui.b51;
+import org.telegram.ui.e51;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class u extends r2 implements NotificationCenter.NotificationCenterDelegate {
-    public r71 E;
+    public s71 E;
     public final ArrayList F;
     public final ArrayList G;
     public final LinkedHashMap H;
@@ -259,9 +259,9 @@ public final class u extends r2 implements NotificationCenter.NotificationCenter
         this.simpleActionBar.setBackButtonImage(R.drawable.ic_ab_back);
         this.simpleActionBar.setActionBarMenuOnItemClick(new m(this, 0));
         TLRPC.Document document = null;
-        r71 r71Var = new r71(this, new ai.e(this, 1), null, null);
-        this.E = r71Var;
-        r71Var.setSections(true);
+        s71 s71Var = new s71(this, new ai.e(this, 1), null, null);
+        this.E = s71Var;
+        s71Var.setSections(true);
         this.E.setSectionsDrawBackground(true);
         p pVar = new p(this, context);
         pVar.setFocusableInTouchMode(true);
@@ -326,7 +326,7 @@ public final class u extends r2 implements NotificationCenter.NotificationCenter
         });
         i9 i9Var = new i9(context, 12, this.resourceProvider);
         this.f = i9Var;
-        z90 textView = i9Var.getTextView();
+        aa0 textView = i9Var.getTextView();
         int i13 = y6.B6;
         f7.V(textView, i13, null);
         this.f.setTopPadding(12);
@@ -447,7 +447,7 @@ public final class u extends r2 implements NotificationCenter.NotificationCenter
         imageView.setImageResource(R.drawable.gradient_bottom);
         this.w.setScaleType(ImageView.ScaleType.FIT_XY);
         f7.t(this.w, y6.a7, this.resourceProvider, PorterDuff.Mode.SRC_ATOP);
-        this.v.addView(this.w, gb1.i(-1, -1, 119));
+        this.v.addView(this.w, kb1.i(-1, -1, 119));
         b1 b1Var = new b1(context, getResourceProvider(), true);
         this.s = b1Var;
         b1Var.f();
@@ -510,13 +510,13 @@ public final class u extends r2 implements NotificationCenter.NotificationCenter
             }
         });
         pVar.addView(this.E);
-        pVar.addView(this.v, gb1.h(-1, 74.0f, 80, 0.0f, 0.0f, 0.0f, 0.0f));
-        this.v.addView(this.s, gb1.h(-1, 48.0f, 80, 13.0f, 13.0f, 13.0f, 13.0f));
+        pVar.addView(this.v, kb1.h(-1, 74.0f, 80, 0.0f, 0.0f, 0.0f, 0.0f));
+        this.v.addView(this.s, kb1.h(-1, 48.0f, 80, 13.0f, 13.0f, 13.0f, 13.0f));
         h0();
         r rVar = new r(this, context);
         this.c = rVar;
         rVar.setVisibility(4);
-        pVar.addView(this.c, gb1.i(-1, -2, 80));
+        pVar.addView(this.c, kb1.i(-1, -2, 80));
         this.P = new oe.b(0, new a4.l(this, 6), ds.f, 350L, false);
         i0();
         j0();
@@ -760,9 +760,9 @@ public final class u extends r2 implements NotificationCenter.NotificationCenter
                 }
                 this.h.append(spannableStringBuilder);
                 this.h.m();
-                b51 b51Var = this.b.p0;
-                if (b51Var != null) {
-                    b51Var.l();
+                e51 e51Var = this.b.p0;
+                if (e51Var != null) {
+                    e51Var.l();
                 }
                 a0(false);
             }
@@ -822,7 +822,7 @@ public final class u extends r2 implements NotificationCenter.NotificationCenter
     }
 
     @Override // org.telegram.ui.ActionBar.r2
-    public final mm0 getListViewForSimpleGlass() {
+    public final nm0 getListViewForSimpleGlass() {
         return this.E;
     }
 
@@ -859,9 +859,9 @@ public final class u extends r2 implements NotificationCenter.NotificationCenter
         }
         oe.b bVar = this.P;
         int lerp = AndroidUtilities.lerp(AndroidUtilities.dp(72.0f), AndroidUtilities.dp(12.0f) + Math.max(0, this.c.getMeasuredHeight() - this.mSystemInsets.d), bVar != null ? bVar.e : 0.0f);
-        r71 r71Var = this.E;
+        s71 s71Var = this.E;
         i0.b bVar2 = this.mSystemInsets;
-        oi.a.d(r71Var, bVar2.b, bVar2.d, org.telegram.ui.ActionBar.k.getCurrentActionBarHeight(), lerp);
+        oi.a.d(s71Var, bVar2.b, bVar2.d, org.telegram.ui.ActionBar.k.getCurrentActionBarHeight(), lerp);
     }
 
     @Override // org.telegram.ui.ActionBar.r2
@@ -894,10 +894,10 @@ public final class u extends r2 implements NotificationCenter.NotificationCenter
         }
         if (this.Q != null) {
             getMessagesController().getBoostsController().getBoostsStats(-j10, new k(this, i10));
-            getNotificationCenter().addObserver(this, NotificationCenter.reactionsDidLoad);
+            getNotificationCenter().addWeakObserver(this, NotificationCenter.reactionsDidLoad);
             this.K.addAll(getMediaDataController().getEnabledReactionsList());
             NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.stopAllHeavyOperations, 512);
-            getNotificationCenter().addObserver(this, NotificationCenter.dialogDeleted);
+            getNotificationCenter().addWeakObserver(this, NotificationCenter.dialogDeleted);
             return super.onFragmentCreate();
         }
         return false;
@@ -910,6 +910,7 @@ public final class u extends r2 implements NotificationCenter.NotificationCenter
         if (this.X == 2 && this.T != this.S) {
             getMessagesController().setCustomChatReactions(this.R, this.X, d0(false), this.T, null, null, null);
         }
+        getNotificationCenter().removeObserver(this, NotificationCenter.reactionsDidLoad);
         getNotificationCenter().removeObserver(this, NotificationCenter.dialogDeleted);
     }
 
@@ -977,11 +978,11 @@ public final class u extends r2 implements NotificationCenter.NotificationCenter
             sVar.setAnimationsEnabled(false);
             this.b.setClipChildren(false);
             f7.i(y6.d6, this.b, null);
-            this.c.addView(this.b, gb1.i(-1, -2, 80));
+            this.c.addView(this.b, kb1.i(-1, -2, 80));
             h hVar = new h(getParentActivity(), getResourceProvider());
             this.d = hVar;
             hVar.setOnBackspace(new k(this, 1));
-            this.c.addView(this.d, gb1.h(-1, -2.0f, 85, 0.0f, 0.0f, 8.0f, 8.0f));
+            this.c.addView(this.d, kb1.h(-1, -2.0f, 85, 0.0f, 0.0f, 8.0f, 8.0f));
             ArrayList arrayList = this.I;
             int size = arrayList.size();
             int i10 = 0;

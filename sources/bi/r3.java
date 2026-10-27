@@ -31,23 +31,23 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.al;
 import org.telegram.ui.Components.cg;
-import org.telegram.ui.Components.gb1;
 import org.telegram.ui.Components.gi;
-import org.telegram.ui.Components.hg0;
-import org.telegram.ui.Components.mg0;
-import org.telegram.ui.Components.th0;
+import org.telegram.ui.Components.ig0;
+import org.telegram.ui.Components.kb1;
+import org.telegram.ui.Components.ng0;
 import org.telegram.ui.Components.ti;
-import org.telegram.ui.Components.wh0;
+import org.telegram.ui.Components.uh0;
+import org.telegram.ui.Components.xh0;
 import org.telegram.ui.Components.zk;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
-import org.telegram.ui.cy;
-import org.telegram.ui.kb0;
-import org.telegram.ui.un;
-import org.telegram.ui.v50;
-import org.telegram.ui.w91;
+import org.telegram.ui.ey;
+import org.telegram.ui.nb0;
+import org.telegram.ui.wn;
+import org.telegram.ui.x50;
+import org.telegram.ui.y91;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class r3 implements Runnable {
     public final /* synthetic */ int a;
@@ -75,10 +75,10 @@ public final /* synthetic */ class r3 implements Runnable {
                 org.telegram.ui.Components.wc.b0((dd) obj).M(LocaleController.getString(R.string.Gift2ConvertedTitle), LocaleController.formatPluralStringComma("Gift2Converted", (int) j10), R.raw.stars_topup).k(true);
                 break;
             case 1:
-                org.telegram.ui.Components.wc.b0((w91) obj).M(LocaleController.getString(R.string.Gift2ConvertedTitle), LocaleController.formatPluralStringComma("Gift2ConvertedChannel", (int) j10), R.raw.stars_topup).k(true);
+                org.telegram.ui.Components.wc.b0((y91) obj).M(LocaleController.getString(R.string.Gift2ConvertedTitle), LocaleController.formatPluralStringComma("Gift2ConvertedChannel", (int) j10), R.raw.stars_topup).k(true);
                 break;
             case 2:
-                ((di.r) obj).s.e0(j10, false);
+                ((di.r) obj).s.h0(j10, false);
                 break;
             case 3:
                 ((di.v2) obj).a.i0(j10 <= 0);
@@ -87,7 +87,7 @@ public final /* synthetic */ class r3 implements Runnable {
                 AndroidUtilities.runOnUIThread((di.z3) obj, Math.max(0L, 500 - (System.currentTimeMillis() - j10)));
                 break;
             case 5:
-                org.telegram.ui.ActionBar.r2 c02 = w91.c0(MessagesController.getInstance(((di.h7) obj).a).getChat(Long.valueOf(-j10)), true);
+                org.telegram.ui.ActionBar.r2 c02 = y91.c0(MessagesController.getInstance(((di.h7) obj).a).getChat(Long.valueOf(-j10)), true);
                 org.telegram.ui.ActionBar.r2 R = LaunchActivity.R();
                 if (R != null) {
                     fi.sb sbVar = fi.sb.F2;
@@ -226,7 +226,7 @@ public final /* synthetic */ class r3 implements Runnable {
                 }
                 org.telegram.ui.ActionBar.r2 U = LaunchActivity.U();
                 if (U != null) {
-                    U.presentFragment(new un(a1.g.h(j10, "user_id")));
+                    U.presentFragment(new wn(a1.g.h(j10, "user_id")));
                     break;
                 }
                 break;
@@ -238,7 +238,7 @@ public final /* synthetic */ class r3 implements Runnable {
             case 23:
                 cg cgVar = (cg) obj;
                 cgVar.getClass();
-                cgVar.presentFragment(un.ba(j10));
+                cgVar.presentFragment(wn.ea(j10));
                 break;
             case 24:
                 al alVar = (al) obj;
@@ -288,8 +288,8 @@ public final /* synthetic */ class r3 implements Runnable {
                             y1Var.setOnClickListener(new org.telegram.ui.Components.i1(y1Var, 1));
                             LinearLayout linearLayout = new LinearLayout(context2);
                             linearLayout.setOrientation(1);
-                            linearLayout.addView(a1Var, gb1.o(24.0f, 4.0f, 24.0f, 4.0f, -1, -2));
-                            linearLayout.addView(y1Var, gb1.x(-1, -2, 83, 8, 0, 8, 0));
+                            linearLayout.addView(a1Var, kb1.o(24.0f, 4.0f, 24.0f, 4.0f, -1, -2));
+                            linearLayout.addView(y1Var, kb1.x(-1, -2, 83, 8, 0, 8, 0));
                             e2Var.G = 6;
                             alertDialog$Builder.o(linearLayout);
                             e2Var.a = AndroidUtilities.dp(292.0f);
@@ -329,35 +329,35 @@ public final /* synthetic */ class r3 implements Runnable {
                 }
                 break;
             case 25:
-                mg0 mg0Var = (mg0) obj;
-                mg0Var.h("seekTo(" + Math.round(j10 / 1000.0f) + ", true);");
-                AndroidUtilities.runOnUIThread(new hg0(mg0Var, 1), 100L);
+                ng0 ng0Var = (ng0) obj;
+                ng0Var.h("seekTo(" + Math.round(j10 / 1000.0f) + ", true);");
+                AndroidUtilities.runOnUIThread(new ig0(ng0Var, 1), 100L);
                 break;
             case 26:
-                wh0 wh0Var = (wh0) obj;
+                xh0 xh0Var = (xh0) obj;
                 Activity activity2 = AndroidUtilities.getActivity();
                 org.telegram.ui.ActionBar.r2 U2 = LaunchActivity.U();
-                if (PhotoViewer.u1().T1() || (U2 != null && U2.hasShownSheet())) {
+                if (PhotoViewer.v1().U1() || (U2 != null && U2.hasShownSheet())) {
                     u6Var2 = new di.b();
                 } else if (U2 != null) {
                     u6Var2 = U2.getResourceProvider();
                 }
-                new tc(activity2, u6Var2, this.b, 15, "", new th0(wh0Var, 0), 0L).show();
+                new tc(activity2, u6Var2, this.b, 15, "", new uh0(xh0Var, 0), 0L).show();
                 break;
             case 27:
-                cy cyVar = (cy) obj;
-                cyVar.I4(true, true);
+                ey eyVar = (ey) obj;
+                eyVar.I4(true, true);
                 ArrayList arrayList = new ArrayList();
                 arrayList.add(MessagesStorage.TopicKey.of(j10, 0L));
-                cyVar.C2.v(cyVar, arrayList, null, false, cyVar.J2, cyVar.K2, cyVar.L2, null);
+                eyVar.C2.v(eyVar, arrayList, null, false, eyVar.J2, eyVar.K2, eyVar.L2, null);
                 break;
             case 28:
-                ((v50) obj).m1(j10, false);
+                ((x50) obj).m1(j10, false);
                 break;
             default:
-                kb0 kb0Var = (kb0) obj;
-                kb0Var.getClass();
-                kb0Var.presentFragment(un.ba(j10));
+                nb0 nb0Var = (nb0) obj;
+                nb0Var.getClass();
+                nb0Var.presentFragment(wn.ea(j10));
                 break;
         }
     }

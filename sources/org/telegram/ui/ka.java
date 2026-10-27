@@ -8,16 +8,16 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public final class ka extends org.telegram.ui.Components.lm0 {
+public final class ka extends org.telegram.ui.Components.mm0 {
     public final /* synthetic */ ta c;
 
     public ka(ta taVar) {
         this.c = taVar;
     }
 
-    @Override // org.telegram.ui.Components.lm0
+    @Override // org.telegram.ui.Components.mm0
     public final boolean D(s4.e1 e1Var) {
         return e1Var.f == 4;
     }
@@ -25,14 +25,14 @@ public final class ka extends org.telegram.ui.Components.lm0 {
     @Override // s4.h0
     public final int h() {
         ta taVar = this.c;
-        org.telegram.ui.Components.mm0 mm0Var = taVar.b;
+        org.telegram.ui.Components.nm0 nm0Var = taVar.b;
         ArrayList arrayList = taVar.v;
-        if (mm0Var != null) {
-            ArrayList arrayList2 = mm0Var.K2;
+        if (nm0Var != null) {
+            ArrayList arrayList2 = nm0Var.K2;
             if (arrayList2 != null) {
                 arrayList2.clear();
             } else {
-                mm0Var.K2 = new ArrayList();
+                nm0Var.K2 = new ArrayList();
             }
             if (arrayList.size() > 0) {
                 taVar.b.K2.add(Long.valueOf(AndroidUtilities.pack(3, arrayList.size() + 3)));
@@ -97,22 +97,22 @@ public final class ka extends org.telegram.ui.Components.lm0 {
     public final s4.e1 x(ViewGroup viewGroup, int i10) {
         ta taVar = this.c;
         if (i10 == 0) {
-            return new org.telegram.ui.Components.vl0(new org.telegram.ui.Cells.q4(taVar.getParentActivity()));
+            return new org.telegram.ui.Components.wl0(new org.telegram.ui.Cells.q4(taVar.getParentActivity()));
         }
         if (i10 == 1) {
             sa saVar = new sa(taVar, taVar.getParentActivity());
             saVar.setTag(-33024);
-            return new org.telegram.ui.Components.vl0(saVar);
+            return new org.telegram.ui.Components.wl0(saVar);
         }
         if (i10 == 2) {
-            return new org.telegram.ui.Components.vl0(new org.telegram.ui.Cells.i9(taVar.getParentActivity()));
+            return new org.telegram.ui.Components.wl0(new org.telegram.ui.Cells.i9(taVar.getParentActivity()));
         }
         if (i10 == 3) {
-            return new org.telegram.ui.Components.vl0(new na(taVar, taVar.getParentActivity()));
+            return new org.telegram.ui.Components.wl0(new na(taVar, taVar.getParentActivity()));
         }
         if (i10 != 4) {
             return null;
         }
-        return new org.telegram.ui.Components.vl0(new ja(this, taVar.getParentActivity(), taVar.getResourceProvider()));
+        return new org.telegram.ui.Components.wl0(new ja(this, taVar.getParentActivity(), taVar.getResourceProvider()));
     }
 }

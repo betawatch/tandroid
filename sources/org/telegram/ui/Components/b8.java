@@ -15,7 +15,7 @@ import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.SecretMediaViewer;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class b8 extends org.telegram.ui.ActionBar.k {
     public final /* synthetic */ int x1;
@@ -32,7 +32,7 @@ public final class b8 extends org.telegram.ui.ActionBar.k {
     public boolean J(View view) {
         switch (this.x1) {
             case 3:
-                return super.J(view) || view == ((org.telegram.ui.cy) this.y1).m0;
+                return super.J(view) || view == ((org.telegram.ui.ey) this.y1).m0;
             default:
                 return super.J(view);
         }
@@ -43,7 +43,7 @@ public final class b8 extends org.telegram.ui.ActionBar.k {
         switch (this.x1) {
             case 3:
                 super.K(viewArr, zArr);
-                ((org.telegram.ui.cy) this.y1).h.a(true, true);
+                ((org.telegram.ui.ey) this.y1).h.a(true, true);
                 break;
             default:
                 super.K(viewArr, zArr);
@@ -55,9 +55,9 @@ public final class b8 extends org.telegram.ui.ActionBar.k {
     public boolean dispatchTouchEvent(MotionEvent motionEvent) {
         switch (this.x1) {
             case 3:
-                org.telegram.ui.cy cyVar = (org.telegram.ui.cy) this.y1;
-                org.telegram.ui.ox oxVar = cyVar.X;
-                if (oxVar == null || oxVar.getAlpha() <= 0.0f || !cyVar.b.f) {
+                org.telegram.ui.ey eyVar = (org.telegram.ui.ey) this.y1;
+                org.telegram.ui.rx rxVar = eyVar.X;
+                if (rxVar == null || rxVar.getAlpha() <= 0.0f || !eyVar.b.f) {
                     break;
                 }
                 break;
@@ -69,13 +69,13 @@ public final class b8 extends org.telegram.ui.ActionBar.k {
     public void g(boolean z10) {
         switch (this.x1) {
             case 3:
-                org.telegram.ui.cy cyVar = (org.telegram.ui.cy) this.y1;
-                cyVar.X.r.getText().clear();
-                if (z10 && cyVar.X.r.isFocused()) {
-                    AndroidUtilities.hideKeyboard(cyVar.X.r);
+                org.telegram.ui.ey eyVar = (org.telegram.ui.ey) this.y1;
+                eyVar.X.r.getText().clear();
+                if (z10 && eyVar.X.r.isFocused()) {
+                    AndroidUtilities.hideKeyboard(eyVar.X.r);
                 }
-                cyVar.X.r.clearFocus();
-                cyVar.Y.b(false);
+                eyVar.X.r.clearFocus();
+                eyVar.Y.b(false);
                 break;
             default:
                 super.g(z10);
@@ -119,7 +119,7 @@ public final class b8 extends org.telegram.ui.ActionBar.k {
         switch (this.x1) {
             case 3:
                 super.p();
-                ((org.telegram.ui.cy) this.y1).h.a(false, true);
+                ((org.telegram.ui.ey) this.y1).h.a(false, true);
                 break;
             default:
                 super.p();
@@ -131,8 +131,8 @@ public final class b8 extends org.telegram.ui.ActionBar.k {
     public boolean s() {
         switch (this.x1) {
             case 3:
-                org.telegram.ui.tw twVar = ((org.telegram.ui.cy) this.y1).G3;
-                return twVar != null && twVar.c();
+                org.telegram.ui.vw vwVar = ((org.telegram.ui.ey) this.y1).G3;
+                return vwVar != null && vwVar.c();
             default:
                 return super.s();
         }
@@ -189,7 +189,7 @@ public final class b8 extends org.telegram.ui.ActionBar.k {
                 break;
             case 2:
                 super.setAlpha(f7);
-                viewGroup3 = ((org.telegram.ui.ActionBar.k3) ((nh0) this.y1)).containerView;
+                viewGroup3 = ((org.telegram.ui.ActionBar.k3) ((oh0) this.y1)).containerView;
                 viewGroup3.invalidate();
                 break;
             case 3:
@@ -247,7 +247,7 @@ public final class b8 extends org.telegram.ui.ActionBar.k {
         View view;
         switch (this.x1) {
             case 3:
-                if (f7 != getTranslationY() && (view = ((org.telegram.ui.cy) this.y1).fragmentView) != null) {
+                if (f7 != getTranslationY() && (view = ((org.telegram.ui.ey) this.y1).fragmentView) != null) {
                     view.invalidate();
                 }
                 super.setTranslationY(f7);
@@ -275,8 +275,8 @@ public final class b8 extends org.telegram.ui.ActionBar.k {
     public void t(boolean z10) {
         switch (this.x1) {
             case 3:
-                org.telegram.ui.tw twVar = ((org.telegram.ui.cy) this.y1).G3;
-                if (twVar != null && twVar.c() && getBackButton() != null) {
+                org.telegram.ui.vw vwVar = ((org.telegram.ui.ey) this.y1).G3;
+                if (vwVar != null && vwVar.c() && getBackButton() != null) {
                     getBackButton().animate().alpha(z10 ? 1.0f : 0.0f).start();
                 }
                 super.t(z10);

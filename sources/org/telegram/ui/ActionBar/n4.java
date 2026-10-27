@@ -9,17 +9,17 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.camera.Size;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.ar0;
+import org.telegram.ui.Components.av0;
 import org.telegram.ui.Components.bd;
-import org.telegram.ui.Components.db1;
-import org.telegram.ui.Components.im0;
-import org.telegram.ui.Components.kh0;
+import org.telegram.ui.Components.br0;
+import org.telegram.ui.Components.gb1;
+import org.telegram.ui.Components.jm0;
+import org.telegram.ui.Components.lh0;
 import org.telegram.ui.Components.p9;
-import org.telegram.ui.Components.zu0;
-import org.telegram.ui.gu;
-import org.telegram.ui.kr;
+import org.telegram.ui.iu;
+import org.telegram.ui.mr;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class n4 implements Comparator {
     public final /* synthetic */ int a;
@@ -124,8 +124,8 @@ public final /* synthetic */ class n4 implements Comparator {
             case 11:
                 TLObject tLObject = (TLObject) obj;
                 TLObject tLObject2 = (TLObject) obj2;
-                int k02 = kr.k0(tLObject);
-                int k03 = kr.k0(tLObject2);
+                int k02 = mr.k0(tLObject);
+                int k03 = mr.k0(tLObject2);
                 if (k02 > k03) {
                     return 1;
                 }
@@ -137,8 +137,8 @@ public final /* synthetic */ class n4 implements Comparator {
                 }
                 return 0;
             case 12:
-                int k04 = kr.k0((TLObject) obj);
-                int k05 = kr.k0((TLObject) obj2);
+                int k04 = mr.k0((TLObject) obj);
+                int k05 = mr.k0((TLObject) obj2);
                 if (k04 > k05) {
                     return 1;
                 }
@@ -172,14 +172,14 @@ public final /* synthetic */ class n4 implements Comparator {
                 id3 = ((Integer) obj).intValue();
                 break;
             case 19:
-                float f11 = ((kh0) obj).a;
-                float f12 = ((kh0) obj2).a;
+                float f11 = ((lh0) obj).a;
+                float f12 = ((lh0) obj2).a;
                 if (f11 > f12) {
                     return -1;
                 }
                 return f11 < f12 ? 1 : 0;
             case 20:
-                return Float.compare(((im0) obj).a, ((im0) obj2).a);
+                return Float.compare(((jm0) obj).a, ((jm0) obj2).a);
             case 21:
                 Pair pair = (Pair) obj;
                 Pair pair2 = (Pair) obj2;
@@ -195,15 +195,15 @@ public final /* synthetic */ class n4 implements Comparator {
                 }
                 return ((Float) pair4.first).floatValue() > ((Float) pair3.first).floatValue() ? -1 : 0;
             case 23:
-                int i16 = ((ar0) obj).c;
-                int i17 = ((ar0) obj2).c;
+                int i16 = ((br0) obj).c;
+                int i17 = ((br0) obj2).c;
                 if (i16 < i17) {
                     return 1;
                 }
                 return i16 > i17 ? -1 : 0;
             case 24:
-                id2 = ((zu0) obj2).c;
-                id3 = ((zu0) obj).c;
+                id2 = ((av0) obj2).c;
+                id3 = ((av0) obj).c;
                 break;
             case 25:
                 return String.valueOf(m5.c(((Integer) obj).intValue())).compareTo(String.valueOf(m5.c(((Integer) obj2).intValue())));
@@ -215,7 +215,7 @@ public final /* synthetic */ class n4 implements Comparator {
                 }
                 return ((Float) pair6.first).floatValue() > ((Float) pair5.first).floatValue() ? -1 : 0;
             case 27:
-                return Long.compare(((db1) obj2).n, ((db1) obj).n);
+                return Long.compare(((gb1) obj2).x, ((gb1) obj).x);
             case 28:
                 DownloadController.Preset preset = (DownloadController.Preset) obj;
                 DownloadController.Preset preset2 = (DownloadController.Preset) obj2;
@@ -272,7 +272,7 @@ public final /* synthetic */ class n4 implements Comparator {
                 }
                 return j12 < j13 ? -1 : 0;
             default:
-                return Long.compare(((gu) obj2).c, ((gu) obj).c);
+                return Long.compare(((iu) obj2).c, ((iu) obj).c);
         }
         return id2 - id3;
     }

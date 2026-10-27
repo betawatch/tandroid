@@ -47,9 +47,9 @@ import org.telegram.ui.Cells.t9;
 import org.telegram.ui.Components.b10;
 import org.telegram.ui.Components.c6;
 import org.telegram.ui.Components.og;
-import org.telegram.ui.cv0;
 import org.telegram.ui.d3;
-import org.telegram.ui.kn;
+import org.telegram.ui.ev0;
+import org.telegram.ui.mn;
 import org.xml.sax.Attributes;
 import r4.c;
 import s9.d;
@@ -57,7 +57,7 @@ import ti.e;
 import z3.k;
 import z3.m;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
 public final class a implements q, dg.a, eg.a, b, n, y2.n, og, j1, d, c, SuccessContinuation, k, z9.c {
     public static volatile a b;
@@ -332,7 +332,7 @@ public final class a implements q, dg.a, eg.a, b, n, y2.n, og, j1, d, c, Success
     }
 
     @Override // org.telegram.ui.Cells.j1
-    public /* synthetic */ cv0 E1() {
+    public /* synthetic */ ev0 E1() {
         switch (this.a) {
         }
         return null;
@@ -789,7 +789,7 @@ public final class a implements q, dg.a, eg.a, b, n, y2.n, og, j1, d, c, Success
     }
 
     @Override // org.telegram.ui.Components.og
-    public /* synthetic */ kn i0() {
+    public /* synthetic */ mn i0() {
         return null;
     }
 

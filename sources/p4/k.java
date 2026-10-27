@@ -20,9 +20,9 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import org.telegram.messenger.beta.R;
-import org.telegram.ui.ji1;
+import org.telegram.ui.li1;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
 public final class k extends g3 {
     public final i2.h0 E;
@@ -210,7 +210,7 @@ public final class k extends g3 {
         while (i10 < size) {
             Object obj = arrayList.get(i10);
             i10++;
-            MediaRoute2Info d = ji1.d(obj);
+            MediaRoute2Info d = li1.d(obj);
             if (TextUtils.equals(d.getId(), str)) {
                 return d;
             }
@@ -223,7 +223,7 @@ public final class k extends g3 {
         ArraySet arraySet = new ArraySet();
         Iterator<MediaRoute2Info> it = this.r.getRoutes().iterator();
         while (it.hasNext()) {
-            MediaRoute2Info d = ji1.d(it.next());
+            MediaRoute2Info d = li1.d(it.next());
             if (d != null && !arraySet.contains(d) && !d.isSystemRoute()) {
                 arraySet.add(d);
                 arrayList.add(d);
@@ -242,7 +242,7 @@ public final class k extends g3 {
         while (i11 < size) {
             Object obj = arrayList2.get(i11);
             i11++;
-            MediaRoute2Info d10 = ji1.d(obj);
+            MediaRoute2Info d10 = li1.d(obj);
             Bundle extras = d10.getExtras();
             if (extras == null || extras.getString("androidx.mediarouter.media.KEY_ORIGINAL_ROUTE_ID") == null) {
                 Log.w("MR2Provider", "Cannot find the original route Id. route=" + d10);
@@ -257,7 +257,7 @@ public final class k extends g3 {
         while (i12 < size2) {
             Object obj2 = arrayList4.get(i12);
             i12++;
-            MediaRoute2Info d11 = ji1.d(obj2);
+            MediaRoute2Info d11 = li1.d(obj2);
             m w10 = g0.f.w(d11);
             if (d11 != null) {
                 arrayList3.add(w10);
@@ -296,7 +296,7 @@ public final class k extends g3 {
         }
         ArrayList h = g0.f.h(selectedRoutes);
         int i10 = 0;
-        m w10 = g0.f.w(ji1.d(selectedRoutes.get(0)));
+        m w10 = g0.f.w(li1.d(selectedRoutes.get(0)));
         Bundle controlHints = routingController.getControlHints();
         String string = this.a.getString(R.string.mr_dialog_default_group_name);
         m mVar = null;

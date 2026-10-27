@@ -4,7 +4,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.ob;
 import org.telegram.ui.Components.qc;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class l9 implements ob {
     public final float[] a = new float[2];
@@ -27,11 +27,11 @@ public final class l9 implements ob {
     @Override // org.telegram.ui.Components.ob
     public final int f(int i10) {
         y9 y9Var = this.b.x0;
-        q4 t10 = y9Var.t();
-        if (t10 == null) {
+        q4 u10 = y9Var.u();
+        if (u10 == null) {
             return 0;
         }
-        q3 q3Var = t10.R0;
+        q3 q3Var = u10.R0;
         m9 m9Var = y9Var.s;
         float[] fArr = this.a;
         AndroidUtilities.getViewPositionInParent(q3Var, m9Var, fArr);

@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class w implements Runnable {
     public final /* synthetic */ int a;
@@ -39,7 +39,7 @@ public final /* synthetic */ class w implements Runnable {
                 ((MessagesStorage) this.b).lambda$updateTopicData$52(this.c, (TLRPC.TL_forumTopic) this.f, this.d, this.e);
                 break;
             default:
-                ((MessagesStorage) this.b).lambda$markMessagesContentAsRead$221(this.d, (ArrayList) this.f, this.c, this.e);
+                ((MessagesStorage) this.b).lambda$markMessagesContentAsRead$222(this.d, (ArrayList) this.f, this.c, this.e);
                 break;
         }
     }

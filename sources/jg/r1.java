@@ -9,11 +9,11 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.j5;
 import org.telegram.ui.Components.sz;
-import org.telegram.ui.Components.vw0;
+import org.telegram.ui.Components.ww0;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public final class r1 extends vw0 {
+public final class r1 extends ww0 {
     public final /* synthetic */ int l0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -22,7 +22,7 @@ public final class r1 extends vw0 {
         this.l0 = i10;
     }
 
-    @Override // org.telegram.ui.Components.vw0
+    @Override // org.telegram.ui.Components.ww0
     public boolean O() {
         switch (this.l0) {
             case 2:
@@ -62,7 +62,7 @@ public final class r1 extends vw0 {
     /* JADX WARN: Removed duplicated region for block: B:20:0x007a  */
     /* JADX WARN: Removed duplicated region for block: B:28:0x00a0  */
     /* JADX WARN: Removed duplicated region for block: B:38:0x0090  */
-    @Override // org.telegram.ui.Components.vw0, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.ww0, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */

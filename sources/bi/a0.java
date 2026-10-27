@@ -28,6 +28,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserObject;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.voip.ConferenceCall;
+import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_payments;
@@ -37,20 +38,22 @@ import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.CheckBox;
 import org.telegram.ui.Components.at;
 import org.telegram.ui.Components.bt;
-import org.telegram.ui.Components.t80;
+import org.telegram.ui.Components.dc1;
+import org.telegram.ui.Components.nb1;
+import org.telegram.ui.Components.u80;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.bc0;
-import org.telegram.ui.gq;
-import org.telegram.ui.kr;
-import org.telegram.ui.ms0;
-import org.telegram.ui.ou0;
-import org.telegram.ui.un;
-import org.telegram.ui.vq;
-import org.telegram.ui.wq;
+import org.telegram.ui.dc0;
+import org.telegram.ui.iq;
+import org.telegram.ui.mr;
+import org.telegram.ui.os0;
+import org.telegram.ui.qu0;
+import org.telegram.ui.wn;
+import org.telegram.ui.xq;
+import org.telegram.ui.yq;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class a0 implements Runnable {
     public final /* synthetic */ int a;
@@ -69,17 +72,17 @@ public final /* synthetic */ class a0 implements Runnable {
         this.f = runnable;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:100:0x02de, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:107:0x02fb, code lost:
+    
+        org.telegram.messenger.AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.at(r2, 1));
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:108:0x0304, code lost:
     
         return;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:108:0x02d2, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:112:0x02f8, code lost:
     
-        if (r5 == null) goto L90;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:99:0x02d5, code lost:
-    
-        org.telegram.messenger.AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.at(r2, 1));
+        if (r5 == null) goto L97;
      */
     @Override // java.lang.Runnable
     /*
@@ -88,11 +91,11 @@ public final /* synthetic */ class a0 implements Runnable {
     public final void run() {
         String str;
         String formatString;
-        String str2;
+        zh.u0 u0Var;
         TL_stars.StarGift starGift;
         TLRPC.Document document;
-        int i10 = 3;
-        int i11 = 2;
+        int i10 = 2;
+        int i11 = 3;
         SQLitePreparedStatement sQLitePreparedStatement = null;
         int i12 = 1;
         int i13 = 0;
@@ -175,13 +178,13 @@ public final /* synthetic */ class a0 implements Runnable {
                 TL_stars.StarGift starGift3 = (TL_stars.StarGift) this.e;
                 CharSequence charSequence = (CharSequence) this.b;
                 long j14 = this.c;
-                String str3 = (String) this.f;
+                String str2 = (String) this.f;
                 AndroidUtilities.runOnUIThread(new p8(profileActivity, 0), 200L);
                 org.telegram.ui.Components.wc b02 = org.telegram.ui.Components.wc.b0(profileActivity);
                 TLRPC.Document document2 = starGift3.sticker;
                 String string = LocaleController.getString(R.string.StarsGiftCompleted);
                 if (charSequence == null) {
-                    charSequence = AndroidUtilities.replaceTags(LocaleController.formatPluralString("StarsGiftCompletedChannelText", (int) j14, str3));
+                    charSequence = AndroidUtilities.replaceTags(LocaleController.formatPluralString("StarsGiftCompletedChannelText", (int) j14, str2));
                 }
                 b02.s(document2, string, charSequence).k(false);
                 return;
@@ -206,7 +209,7 @@ public final /* synthetic */ class a0 implements Runnable {
                             TLRPC.Chat chat = aaVar.c.getMessagesController().getChat(Long.valueOf(-aaVar.a.a));
                             str = chat == null ? "" : chat.title;
                         }
-                        String str4 = str;
+                        String str3 = str;
                         Context parentActivity = aaVar.c.getParentActivity();
                         if (parentActivity == null) {
                             parentActivity = LaunchActivity.I1;
@@ -214,7 +217,7 @@ public final /* synthetic */ class a0 implements Runnable {
                         if (parentActivity == null) {
                             parentActivity = ApplicationLoader.applicationContext;
                         }
-                        new tc(parentActivity, aaVar.c.getResourceProvider(), j15, 5, str4, new z9(aaVar, j15, 1), 0L).show();
+                        new tc(parentActivity, aaVar.c.getResourceProvider(), j15, 5, str3, new z9(aaVar, j15, 1), 0L).show();
                     }
                     aaVar.q.T(false);
                     aaVar.q.P();
@@ -226,10 +229,10 @@ public final /* synthetic */ class a0 implements Runnable {
                 long j16 = this.c;
                 ca caVar4 = (ca) this.e;
                 MessageObject messageObject2 = (MessageObject) this.b;
-                un unVar = (un) this.f;
+                wn wnVar = (wn) this.f;
                 a1.c cVar = beVar.R;
                 if (cVar == null) {
-                    aa d02 = caVar4.d0(messageObject2, unVar, j16, false, true, Long.valueOf(beVar.E));
+                    aa d02 = caVar4.d0(messageObject2, wnVar, j16, false, true, Long.valueOf(beVar.E));
                     if (d02 == null) {
                         return;
                     }
@@ -249,31 +252,31 @@ public final /* synthetic */ class a0 implements Runnable {
                 ((ConferenceCall) this.d).lambda$requestLastBlock$2(this.c, (TLObject) this.b, (TLRPC.TL_error) this.e, (Runnable) this.f);
                 return;
             case 9:
-                kr krVar = (kr) this.d;
+                mr mrVar = (mr) this.d;
                 long j17 = this.c;
                 TLRPC.TL_chatBannedRights tL_chatBannedRights = (TLRPC.TL_chatBannedRights) this.e;
-                String str5 = (String) this.f;
+                String str4 = (String) this.f;
                 TLObject tLObject5 = (TLObject) this.b;
-                gq gqVar = new gq(j17, krVar.M, null, krVar.y, tL_chatBannedRights, str5, 1, true, false, null);
-                gqVar.X0 = new vq(krVar, tLObject5);
-                krVar.presentFragment(gqVar);
+                iq iqVar = new iq(j17, mrVar.M, null, mrVar.y, tL_chatBannedRights, str4, 1, true, false, null);
+                iqVar.X0 = new xq(mrVar, tLObject5);
+                mrVar.presentFragment(iqVar);
                 return;
             case 10:
-                kr krVar2 = (kr) this.d;
+                mr mrVar2 = (mr) this.d;
                 long j18 = this.c;
                 TLRPC.TL_chatAdminRights tL_chatAdminRights = (TLRPC.TL_chatAdminRights) this.e;
-                String str6 = (String) this.f;
+                String str5 = (String) this.f;
                 TLObject tLObject6 = (TLObject) this.b;
-                gq gqVar2 = new gq(j18, krVar2.M, tL_chatAdminRights, null, null, str6, 0, true, false, null);
-                gqVar2.X0 = new wq(krVar2, tLObject6);
-                krVar2.presentFragment(gqVar2);
+                iq iqVar2 = new iq(j18, mrVar2.M, tL_chatAdminRights, null, null, str5, 0, true, false, null);
+                iqVar2.X0 = new yq(mrVar2, tLObject6);
+                mrVar2.presentFragment(iqVar2);
                 return;
             case 11:
                 bt btVar = (bt) this.d;
                 MessagesStorage messagesStorage = (MessagesStorage) this.e;
                 ArrayList arrayList = (ArrayList) this.b;
                 long j19 = this.c;
-                String str7 = (String) this.f;
+                String str6 = (String) this.f;
                 SQLiteDatabase database = messagesStorage.getDatabase();
                 try {
                     try {
@@ -283,31 +286,31 @@ public final /* synthetic */ class a0 implements Runnable {
                             sQLitePreparedStatement.requery();
                             sQLitePreparedStatement.bindLong(1, ((Long) arrayList.get(i16)).longValue());
                             sQLitePreparedStatement.bindLong(2, j19);
-                            sQLitePreparedStatement.bindString(3, str7);
+                            sQLitePreparedStatement.bindString(3, str6);
                             sQLitePreparedStatement.bindInteger(4, i16);
                             sQLitePreparedStatement.step();
                         }
                         break;
-                    } finally {
-                        if (sQLitePreparedStatement != null) {
-                            sQLitePreparedStatement.dispose();
-                        }
+                    } catch (Exception e) {
+                        FileLog.e(e);
+                        break;
                     }
-                } catch (Exception e) {
-                    FileLog.e(e);
-                    break;
+                } finally {
+                    if (sQLitePreparedStatement != null) {
+                        sQLitePreparedStatement.dispose();
+                    }
                 }
             case 12:
                 bt btVar2 = (bt) this.d;
                 ArrayList<TLRPC.User> arrayList2 = (ArrayList) this.e;
                 long j20 = this.c;
-                String str8 = (String) this.b;
+                String str7 = (String) this.b;
                 at atVar = (at) this.f;
                 MessagesController.getInstance(btVar2.a).putUsers(arrayList2, true);
                 btVar2.h.addAll(arrayList2);
                 btVar2.f = j20;
-                btVar2.g = str8;
-                btVar2.e = TextUtils.isEmpty(str8);
+                btVar2.g = str7;
+                btVar2.e = TextUtils.isEmpty(str7);
                 btVar2.d = true;
                 atVar.run();
                 return;
@@ -324,10 +327,10 @@ public final /* synthetic */ class a0 implements Runnable {
                 }
                 if (tLObject7 != null) {
                     TL_phone.joinAsPeers joinaspeers = (TL_phone.joinAsPeers) tLObject7;
-                    t80.I = joinaspeers.peers;
-                    t80.K = j21;
-                    t80.J = SystemClock.elapsedRealtime();
-                    t80.L = accountInstance.getCurrentAccount();
+                    u80.I = joinaspeers.peers;
+                    u80.K = j21;
+                    u80.J = SystemClock.elapsedRealtime();
+                    u80.L = accountInstance.getCurrentAccount();
                     accountInstance.getMessagesController().putChats(joinaspeers.chats, false);
                     accountInstance.getMessagesController().putUsers(joinaspeers.users, false);
                     booleanCallback.run(joinaspeers.peers.size() == 1);
@@ -335,10 +338,27 @@ public final /* synthetic */ class a0 implements Runnable {
                 }
                 return;
             case 14:
+                boolean[] zArr = (boolean[]) this.d;
+                ConnectionsManager connectionsManager = (ConnectionsManager) this.e;
+                int[] iArr = (int[]) this.b;
+                nb1 nb1Var = (nb1) this.f;
+                long j22 = this.c;
+                if (zArr[0]) {
+                    return;
+                }
+                zArr[0] = true;
+                connectionsManager.cancelRequest(iArr[0], true);
+                dc1 dc1Var = nb1Var.f;
+                if (dc1Var != null) {
+                    dc1Var.a(3, null, j22);
+                    return;
+                }
+                return;
+            case 15:
                 PhotoViewer photoViewer = (PhotoViewer) this.d;
                 MediaController.PhotoEntry photoEntry = (MediaController.PhotoEntry) this.e;
-                long j22 = this.c;
-                String str9 = (String) this.b;
+                long j23 = this.c;
+                String str8 = (String) this.b;
                 Bitmap bitmap = (Bitmap) this.f;
                 Drawable[] drawableArr = PhotoViewer.U8;
                 if (photoEntry.coverPath != null) {
@@ -348,49 +368,49 @@ public final /* synthetic */ class a0 implements Runnable {
                         FileLog.e(e11);
                     }
                 }
-                photoEntry.coverSavedPosition = j22;
-                photoEntry.coverPath = str9;
+                photoEntry.coverSavedPosition = j23;
+                photoEntry.coverPath = str8;
                 photoEntry.coverPhoto = null;
                 photoEntry.coverPhotoParentObject = null;
                 photoViewer.q5.b.setLoading(false);
-                ou0 ou0Var = photoViewer.d;
-                if (ou0Var != null) {
-                    ou0Var.X(photoViewer.P4);
+                qu0 qu0Var = photoViewer.d;
+                if (qu0Var != null) {
+                    qu0Var.X(photoViewer.P4);
                 }
-                ms0 ms0Var = photoViewer.g1;
-                if (ms0Var != null) {
-                    ms0Var.setImage(bitmap);
+                os0 os0Var = photoViewer.g1;
+                if (os0Var != null) {
+                    os0Var.setImage(bitmap);
                 }
-                photoViewer.g3(0);
+                photoViewer.h3(0);
                 CheckBox checkBox = photoViewer.N0;
                 if (checkBox.x) {
                     return;
                 }
                 checkBox.callOnClick();
                 return;
-            case 15:
+            case 16:
                 ProfileActivity profileActivity2 = (ProfileActivity) this.d;
-                boolean[] zArr = (boolean[]) this.e;
+                boolean[] zArr2 = (boolean[]) this.e;
                 ArrayList arrayList3 = (ArrayList) this.b;
-                boolean[] zArr2 = (boolean[]) this.f;
-                long j23 = this.c;
+                boolean[] zArr3 = (boolean[]) this.f;
+                long j24 = this.c;
                 int i17 = ProfileActivity.R6;
-                zArr[0] = true;
+                zArr2[0] = true;
                 AndroidUtilities.cancelRunOnUIThread(profileActivity2.D5);
                 for (int i18 = 0; i18 < arrayList3.size(); i18++) {
-                    ((TL_stories.StoryItem) arrayList3.get(i18)).pinned = zArr2[i18];
+                    ((TL_stories.StoryItem) arrayList3.get(i18)).pinned = zArr3[i18];
                 }
-                profileActivity2.getMessagesController().getStoriesController().n0(j23, arrayList3, false);
+                profileActivity2.getMessagesController().getStoriesController().q0(j24, arrayList3, false);
                 return;
             default:
                 zh.p1 p1Var = (zh.p1) this.d;
                 t9 t9Var = (t9) this.e;
-                long j24 = this.c;
+                long j25 = this.c;
                 Utilities.Callback callback3 = (Utilities.Callback) this.f;
                 Context context = (Context) this.b;
-                zh.u0 u0Var = p1Var.l0;
+                zh.u0 u0Var2 = p1Var.l0;
                 int i19 = 0;
-                while (i19 < i11) {
+                while (i19 < i10) {
                     SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
                     if (i19 == i12) {
                         formatString = LocaleController.getString(R.string.Gift2StarsCollectibleInfo);
@@ -401,52 +421,52 @@ public final /* synthetic */ class a0 implements Runnable {
                         formatString = LocaleController.formatString(i20, objArr);
                     }
                     spannableStringBuilder.append((CharSequence) AndroidUtilities.replaceTags(formatString));
-                    String str10 = " ";
                     spannableStringBuilder.append((CharSequence) " ");
                     HashSet hashSet = new HashSet();
                     HashSet hashSet2 = new HashSet();
                     int i21 = i13;
-                    while (i13 < t9Var.l.size() && hashSet.size() < i10) {
+                    while (i13 < t9Var.l.size() && hashSet.size() < i11) {
                         TL_stars.SavedStarGift savedStarGift = (TL_stars.SavedStarGift) t9Var.l.get(i13);
                         if (savedStarGift == null || (starGift = savedStarGift.gift) == null || (document = starGift.getDocument()) == null) {
-                            str2 = str10;
+                            u0Var = u0Var2;
                         } else {
-                            str2 = str10;
+                            u0Var = u0Var2;
                             if (!hashSet.contains(Long.valueOf(document.id))) {
                                 hashSet2.add(document);
                                 hashSet.add(Long.valueOf(document.id));
                             }
                         }
                         i13++;
-                        str10 = str2;
-                        i10 = 3;
+                        u0Var2 = u0Var;
+                        i11 = 3;
                     }
-                    String str11 = str10;
+                    zh.u0 u0Var3 = u0Var2;
                     if (hashSet2.size() > 0) {
                         SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder();
                         int i22 = R.string.Gift2StarsInfoProfileLink;
                         Object[] objArr2 = new Object[1];
-                        objArr2[i21] = DialogObject.getShortName(j24);
-                        spannableStringBuilder2.append((CharSequence) LocaleController.formatString(i22, objArr2).replaceAll(str11, " "));
+                        objArr2[i21] = DialogObject.getShortName(j25);
+                        spannableStringBuilder2.append((CharSequence) LocaleController.formatString(i22, objArr2).replaceAll(" ", " "));
                         spannableStringBuilder2.append((CharSequence) " ");
                         Iterator it = hashSet2.iterator();
                         while (it.hasNext()) {
                             TLRPC.Document document3 = (TLRPC.Document) it.next();
                             spannableStringBuilder2.append((CharSequence) "\u2060e");
-                            spannableStringBuilder2.setSpan(new org.telegram.ui.Components.c6(document3, u0Var.getPaint().getFontMetricsInt()), spannableStringBuilder2.length() - 1, spannableStringBuilder2.length(), 33);
+                            spannableStringBuilder2.setSpan(new org.telegram.ui.Components.c6(document3, u0Var3.getPaint().getFontMetricsInt()), spannableStringBuilder2.length() - 1, spannableStringBuilder2.length(), 33);
                         }
                         spannableStringBuilder2.append((CharSequence) " >");
-                        spannableStringBuilder.append(AndroidUtilities.replaceArrows(AndroidUtilities.makeClickable(spannableStringBuilder2, new bc0(p1Var, callback3, j24, 4)), true));
+                        spannableStringBuilder.append(AndroidUtilities.replaceArrows(AndroidUtilities.makeClickable(spannableStringBuilder2, new dc0(p1Var, callback3, j25, 4)), true));
                     } else {
                         spannableStringBuilder.append(AndroidUtilities.replaceArrows(AndroidUtilities.makeClickable(LocaleController.getString(R.string.Gift2StarsInfoLink), new ra(context, 12)), true));
                     }
-                    TextView textView = i19 == 0 ? u0Var : p1Var.m0;
+                    TextView textView = i19 == 0 ? u0Var3 : p1Var.m0;
                     textView.setText(spannableStringBuilder);
                     textView.setMaxWidth(fi.v3.a(textView.getText(), textView.getPaint()));
                     i19++;
                     i13 = i21;
-                    i10 = 3;
-                    i11 = 2;
+                    u0Var2 = u0Var3;
+                    i10 = 2;
+                    i11 = 3;
                     i12 = 1;
                 }
                 return;
@@ -471,13 +491,13 @@ public final /* synthetic */ class a0 implements Runnable {
         this.f = runnable;
     }
 
-    public /* synthetic */ a0(be beVar, long j10, ca caVar, MessageObject messageObject, un unVar) {
+    public /* synthetic */ a0(be beVar, long j10, ca caVar, MessageObject messageObject, wn wnVar) {
         this.a = 7;
         this.d = beVar;
         this.c = j10;
         this.e = caVar;
         this.b = messageObject;
-        this.f = unVar;
+        this.f = wnVar;
     }
 
     public /* synthetic */ a0(Object obj, Object obj2, long j10, Object obj3, Object obj4, int i10) {
@@ -516,9 +536,9 @@ public final /* synthetic */ class a0 implements Runnable {
         this.f = booleanCallback;
     }
 
-    public /* synthetic */ a0(kr krVar, long j10, TLObject tLObject, String str, TLObject tLObject2, int i10) {
+    public /* synthetic */ a0(mr mrVar, long j10, TLObject tLObject, String str, TLObject tLObject2, int i10) {
         this.a = i10;
-        this.d = krVar;
+        this.d = mrVar;
         this.c = j10;
         this.e = tLObject;
         this.f = str;
@@ -526,7 +546,7 @@ public final /* synthetic */ class a0 implements Runnable {
     }
 
     public /* synthetic */ a0(zh.p1 p1Var, t9 t9Var, long j10, Utilities.Callback callback, Context context) {
-        this.a = 16;
+        this.a = 17;
         this.d = p1Var;
         this.e = t9Var;
         this.c = j10;

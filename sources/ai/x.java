@@ -12,14 +12,14 @@ import android.widget.LinearLayout;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.xa1;
+import org.telegram.ui.za1;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class x extends HorizontalScrollView {
     public f0 a;
     public p0 b;
-    public final xa1 c;
+    public final za1 c;
     public final Paint d;
     public int e;
     public float f;
@@ -37,12 +37,12 @@ public final class x extends HorizontalScrollView {
         setOverScrollMode(2);
         setFillViewport(true);
         setWillNotDraw(false);
-        xa1 xa1Var = new xa1(this, context, 1);
-        this.c = xa1Var;
-        xa1Var.setOrientation(0);
-        xa1Var.setGravity(16);
-        xa1Var.setPadding(AndroidUtilities.dp(3.0f), 0, AndroidUtilities.dp(3.0f), 0);
-        addView(xa1Var, new FrameLayout.LayoutParams(-2, -1));
+        za1 za1Var = new za1(this, context, 1);
+        this.c = za1Var;
+        za1Var.setOrientation(0);
+        za1Var.setGravity(16);
+        za1Var.setPadding(AndroidUtilities.dp(3.0f), 0, AndroidUtilities.dp(3.0f), 0);
+        addView(za1Var, new FrameLayout.LayoutParams(-2, -1));
         paint.setColor(1560281087);
     }
 
@@ -50,15 +50,15 @@ public final class x extends HorizontalScrollView {
         if (i10 == this.e || i10 < 0) {
             return;
         }
-        xa1 xa1Var = this.c;
-        if (i10 >= xa1Var.getChildCount()) {
+        za1 za1Var = this.c;
+        if (i10 >= za1Var.getChildCount()) {
             return;
         }
         this.e = i10;
         if (!z10) {
             this.f = Float.NaN;
         }
-        View childAt = xa1Var.getChildAt(i10);
+        View childAt = za1Var.getChildAt(i10);
         int left = childAt.getLeft() - AndroidUtilities.dp(30.0f);
         int dp = AndroidUtilities.dp(30.0f) + childAt.getRight();
         if (left >= getScrollX()) {
@@ -74,7 +74,7 @@ public final class x extends HorizontalScrollView {
         } else {
             scrollTo(left, 0);
         }
-        xa1Var.invalidate();
+        za1Var.invalidate();
     }
 
     /* JADX WARN: Removed duplicated region for block: B:16:0x00e7  */
@@ -153,8 +153,8 @@ public final class x extends HorizontalScrollView {
     }
 
     public void setSections(ArrayList<u> arrayList) {
-        xa1 xa1Var = this.c;
-        xa1Var.removeAllViews();
+        za1 za1Var = this.c;
+        za1Var.removeAllViews();
         for (int i10 = 0; i10 < arrayList.size(); i10++) {
             u uVar = arrayList.get(i10);
             Context context = getContext();
@@ -162,7 +162,7 @@ public final class x extends HorizontalScrollView {
             v vVar = new v(this.h, context, i11, i11 == 2 ? (TLRPC.Document) uVar.c.get(0) : null);
             vVar.setOnClickListener(new w(this, i10, 0));
             vVar.setContentDescription(uVar.b);
-            xa1Var.addView(vVar, new LinearLayout.LayoutParams(AndroidUtilities.dp(34.0f), AndroidUtilities.dp(30.0f)));
+            za1Var.addView(vVar, new LinearLayout.LayoutParams(AndroidUtilities.dp(34.0f), AndroidUtilities.dp(30.0f)));
         }
         this.e = -1;
         this.f = Float.NaN;

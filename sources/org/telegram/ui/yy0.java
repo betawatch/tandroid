@@ -1,38 +1,66 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.view.accessibility.AccessibilityNodeInfo;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
+import androidx.recyclerview.widget.RecyclerView;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public final class yy0 extends wz0 {
-    public yy0(Context context) {
-        super(context);
+public final class yy0 extends s4.u0 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ProfileActivity b;
+
+    public /* synthetic */ yy0(ProfileActivity profileActivity, int i10) {
+        this.a = i10;
+        this.b = profileActivity;
     }
 
-    @Override // android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        di.f3 f3Var;
-        super.dispatchDraw(canvas);
-        org.telegram.ui.Components.t5 t5Var = this.e;
-        if (t5Var == null || (f3Var = t5Var.k) == null) {
-            return;
+    @Override // s4.u0
+    public final void a(RecyclerView recyclerView, int i10) {
+        switch (this.a) {
+            case 0:
+                if (i10 == 1) {
+                    AndroidUtilities.hideKeyboard(this.b.getParentActivity().getCurrentFocus());
+                    break;
+                }
+                break;
+            default:
+                ProfileActivity profileActivity = this.b;
+                if (i10 == 1) {
+                    AndroidUtilities.hideKeyboard(profileActivity.getParentActivity().getCurrentFocus());
+                }
+                if (profileActivity.F0 && i10 != 2) {
+                    profileActivity.F0 = false;
+                }
+                org.telegram.ui.ActionBar.w0 w0Var = profileActivity.U0;
+                if (w0Var != null) {
+                    boolean z10 = i10 != 0;
+                    profileActivity.z1 = z10;
+                    w0Var.setEnabled((z10 || profileActivity.p2) ? false : true);
+                }
+                xz0 xz0Var = profileActivity.N;
+                boolean z11 = profileActivity.a.I1;
+                xz0Var.getClass();
+                break;
         }
-        f3Var.startAnimation();
     }
 
-    @Override // android.view.View
-    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
-        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-        if (!getImageReceiver().hasNotThumb()) {
-            accessibilityNodeInfo.setVisibleToUser(false);
-            return;
+    @Override // s4.u0
+    public void b(RecyclerView recyclerView, int i10, int i11) {
+        switch (this.a) {
+            case 1:
+                ProfileActivity profileActivity = this.b;
+                org.telegram.ui.Components.t40 t40Var = profileActivity.W;
+                if (t40Var != null) {
+                    t40Var.b(true);
+                }
+                profileActivity.I3();
+                if (profileActivity.C1 != null && !profileActivity.D1 && profileActivity.c.N0() > profileActivity.A4 - 8) {
+                    profileActivity.a4(false);
+                }
+                xz0 xz0Var = profileActivity.N;
+                xz0Var.setPinnedToTop(xz0Var.getY() <= 0.0f);
+                profileActivity.g5();
+                break;
         }
-        accessibilityNodeInfo.setText(LocaleController.getString(R.string.AccDescrProfilePicture));
-        accessibilityNodeInfo.addAction(new AccessibilityNodeInfo.AccessibilityAction(16, LocaleController.getString(R.string.Open)));
-        accessibilityNodeInfo.addAction(new AccessibilityNodeInfo.AccessibilityAction(32, LocaleController.getString(R.string.AccDescrOpenInPhotoViewer)));
     }
 }

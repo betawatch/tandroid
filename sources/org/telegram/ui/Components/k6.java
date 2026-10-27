@@ -7,7 +7,7 @@ import android.text.TextPaint;
 import java.util.ArrayList;
 import java.util.Locale;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class k6 {
     public static final org.telegram.ui.Cells.x8 h = new org.telegram.ui.Cells.x8("progress", 3);
@@ -86,7 +86,7 @@ public final class k6 {
                 ObjectAnimator ofFloat = ObjectAnimator.ofFloat(this, h, z11 ? -1.0f : 1.0f, f11);
                 this.d = ofFloat;
                 ofFloat.setDuration(150L);
-                this.d.addListener(new org.telegram.ui.qp(this, 2));
+                this.d.addListener(new org.telegram.ui.sp(this, 2));
                 this.d.start();
             }
             this.g.invalidate();

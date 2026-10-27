@@ -20,10 +20,10 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.Components.ds;
-import org.telegram.ui.Components.q11;
+import org.telegram.ui.Components.r11;
 import org.telegram.ui.Components.zq;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class ae extends View implements org.telegram.ui.ActionBar.p6 {
     public PorterDuffColorFilter a;
@@ -247,7 +247,7 @@ public final class ae extends View implements org.telegram.ui.ActionBar.p6 {
             r92.a = (arrayList3.size() - r82) - i12;
             long j10 = udVar3.d;
             Paint paint = r92.h;
-            r92.o = new q11(dd.Q0(org.telegram.messenger.t.i(j10, ',', new StringBuilder("⭐️")), 0.85f, zqVarArr), 12.0f, AndroidUtilities.getTypeface("fonts/num.otf"));
+            r92.o = new r11(dd.Q0(org.telegram.messenger.t.i(j10, ',', new StringBuilder("⭐️")), 0.85f, zqVarArr), 12.0f, AndroidUtilities.getTypeface("fonts/num.otf"));
             boolean z13 = aeVar.c;
             int i15 = beVar.c;
             if (z13) {
@@ -267,7 +267,7 @@ public final class ae extends View implements org.telegram.ui.ActionBar.p6 {
             if (this.c) {
                 int i17 = i12 + 1;
                 r92.v = i17;
-                r92.u = new q11(ic.a.i(i17, ""), 10.0f, AndroidUtilities.getTypeface("fonts/num.otf"));
+                r92.u = new r11(ic.a.i(i17, ""), 10.0f, AndroidUtilities.getTypeface("fonts/num.otf"));
                 if (i17 > 0 && r92.s == null) {
                     Drawable mutate = aeVar.getContext().getResources().getDrawable(R.drawable.filled_stream_crown).mutate();
                     r92.s = mutate;
@@ -286,7 +286,7 @@ public final class ae extends View implements org.telegram.ui.ActionBar.p6 {
                 if (!r92.i && r92.p != z14) {
                     r92.p = z14;
                     zqVarArr = null;
-                    r92.n = new q11(z14 ? LocaleController.getString(R.string.StarsReactionAnonymous) : DialogObject.getShortName(r92.j), 12.0f, null);
+                    r92.n = new r11(z14 ? LocaleController.getString(R.string.StarsReactionAnonymous) : DialogObject.getShortName(r92.j), 12.0f, null);
                     aeVar.invalidate();
                     i12++;
                     arrayList3 = arrayList;

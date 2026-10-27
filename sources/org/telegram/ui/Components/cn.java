@@ -18,7 +18,7 @@ import org.telegram.messenger.MediaController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class cn extends li {
     public static final HashMap U = new HashMap();
@@ -125,8 +125,8 @@ public final class cn extends li {
             bnVar.c();
             bnVar.requestLayout();
             this.s.h1(0, 0);
-            this.r.post(new org.telegram.ui.ip(29, this, liVar));
-            postDelayed(new pg(this, 26), 250L);
+            this.r.post(new org.telegram.ui.kp(29, this, liVar));
+            postDelayed(new pg(this, 27), 250L);
             bnVar.i(this.P, false);
         } else {
             J();
@@ -189,9 +189,9 @@ public final class cn extends li {
     public final void dispatchDraw(Canvas canvas) {
         Drawable l4;
         int i10;
-        org.telegram.ui.sn snVar = this.b.r;
+        org.telegram.ui.un unVar = this.b.r;
         boolean z10 = false;
-        if (snVar != null && (l4 = snVar.l()) != null) {
+        if (unVar != null && (l4 = unVar.l()) != null) {
             int currentItemTop = getCurrentItemTop();
             if (AndroidUtilities.isTablet()) {
                 i10 = 16;
@@ -223,10 +223,10 @@ public final class cn extends li {
             return ConnectionsManager.DEFAULT_DATACENTER_ID;
         }
         View childAt = r1Var.getChildAt(0);
-        vl0 vl0Var = (vl0) r1Var.G(childAt);
+        wl0 wl0Var = (wl0) r1Var.G(childAt);
         int top = childAt.getTop();
         int dp = AndroidUtilities.dp(8.0f);
-        if (top < AndroidUtilities.dp(8.0f) || vl0Var == null || vl0Var.b() != 0) {
+        if (top < AndroidUtilities.dp(8.0f) || wl0Var == null || wl0Var.b() != 0) {
             top = dp;
         }
         r1Var.setTopGlowOffset(top);
@@ -271,7 +271,7 @@ public final class cn extends li {
 
     @Override // org.telegram.ui.Components.li
     public final boolean j() {
-        this.b.g2(false);
+        this.b.h2(false);
         return true;
     }
 

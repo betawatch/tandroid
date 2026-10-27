@@ -25,20 +25,20 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.f7;
 import org.telegram.ui.ActionBar.u6;
 import org.telegram.ui.ActionBar.y6;
-import org.telegram.ui.Components.gb1;
+import org.telegram.ui.Components.aq;
 import org.telegram.ui.Components.j9;
+import org.telegram.ui.Components.kb1;
 import org.telegram.ui.Components.p10;
-import org.telegram.ui.Components.q11;
-import org.telegram.ui.Components.q61;
-import org.telegram.ui.Components.zp;
+import org.telegram.ui.Components.r11;
+import org.telegram.ui.Components.r61;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class y1 extends FrameLayout {
     public final j9 a;
     public final ImageReceiver b;
     public final xh.n c;
-    public final zp d;
+    public final aq d;
     public final ImageView e;
     public final u6 f;
     public boolean h;
@@ -60,7 +60,7 @@ public final class y1 extends FrameLayout {
         f7.V(nVar, y6.z6, u6Var);
         nVar.setTextSize(1, 14.0f);
         boolean z11 = LocaleController.isRTL;
-        addView(nVar, gb1.h(-1, -2.0f, 7, z11 ? i10 : 64.0f, 7.0f, z11 ? 64.0f : i10, 0.0f));
+        addView(nVar, kb1.h(-1, -2.0f, 7, z11 ? i10 : 64.0f, 7.0f, z11 ? 64.0f : i10, 0.0f));
         if (z10) {
             ImageView imageView = new ImageView(context);
             this.e = imageView;
@@ -68,16 +68,16 @@ public final class y1 extends FrameLayout {
             imageView.setImageResource(R.drawable.list_reorder);
             f7.t(imageView, y6.Uh, null, PorterDuff.Mode.MULTIPLY);
             imageView.setAlpha(0.0f);
-            addView(imageView, gb1.i(50, 50, (LocaleController.isRTL ? 3 : 5) | 112));
+            addView(imageView, kb1.i(50, 50, (LocaleController.isRTL ? 3 : 5) | 112));
         } else {
             this.e = null;
         }
-        zp zpVar = new zp(getContext(), 21, u6Var);
-        this.d = zpVar;
-        zpVar.b(-1, y6.d6, y6.k7);
-        zpVar.setDrawUnchecked(false);
-        zpVar.setDrawBackgroundAsArc(3);
-        addView(zpVar, gb1.m(24.0f, 24.0f, 8388659, 33.0f, 25.0f, 0.0f, 0.0f));
+        aq aqVar = new aq(getContext(), 21, u6Var);
+        this.d = aqVar;
+        aqVar.b(-1, y6.d6, y6.k7);
+        aqVar.setDrawUnchecked(false);
+        aqVar.setDrawBackgroundAsArc(3);
+        addView(aqVar, kb1.m(24.0f, 24.0f, 8388659, 33.0f, 25.0f, 0.0f, 0.0f));
     }
 
     public final void a(b2 b2Var, String str, boolean z10) {
@@ -94,7 +94,7 @@ public final class y1 extends FrameLayout {
             str3 = "/".concat(str3);
         }
         spannableStringBuilder.append((CharSequence) "/").append((CharSequence) b2Var.b);
-        spannableStringBuilder.setSpan(new q61(AndroidUtilities.bold()), 0, spannableStringBuilder.length(), 33);
+        spannableStringBuilder.setSpan(new r61(AndroidUtilities.bold()), 0, spannableStringBuilder.length(), 33);
         int i10 = y6.G6;
         u6 u6Var = this.f;
         spannableStringBuilder.setSpan(new p10(i10, u6Var), 0, spannableStringBuilder.length(), 33);
@@ -123,7 +123,7 @@ public final class y1 extends FrameLayout {
             int i11 = x1.d;
             SpannableString spannableString = new SpannableString("+");
             x1 x1Var = new x1(a2);
-            int dp2 = (int) (((q11) x1Var.c).c + AndroidUtilities.dp(10.0f));
+            int dp2 = (int) (((r11) x1Var.c).c + AndroidUtilities.dp(10.0f));
             this.n[0] = dp2;
             spannableString.setSpan(x1Var, 0, spannableString.length(), 33);
             SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder(TextUtils.ellipsize(spannableStringBuilder, nVar.getPaint(), (dp * 1.5f) - r12[0], TextUtils.TruncateAt.END));

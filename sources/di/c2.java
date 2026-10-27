@@ -6,10 +6,10 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
-import org.telegram.ui.Components.gb1;
+import org.telegram.ui.Components.kb1;
 import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class c2 implements Runnable {
     public final /* synthetic */ int a;
@@ -40,7 +40,7 @@ public final /* synthetic */ class c2 implements Runnable {
                         v3Var2.U = false;
                         v3Var2.s(LocaleController.getString(R.string.ReactionLongTapHint));
                         q4Var.w0.setPadding(AndroidUtilities.dp(8.0f), 0, AndroidUtilities.dp(8.0f), AndroidUtilities.dp(1.0f));
-                        q4Var.R0.addView(q4Var.w0, gb1.h(-1, -2.0f, 85, 0.0f, 0.0f, 0.0f, q4Var.m2 ? 0.0f : 56.0f));
+                        q4Var.R0.addView(q4Var.w0, kb1.h(-1, -2.0f, 85, 0.0f, 0.0f, 0.0f, q4Var.m2 ? 0.0f : 56.0f));
                     }
                     q4Var.w0.u();
                     SharedConfig.setStoriesReactionsLongPressHintUsed(true);
@@ -59,7 +59,7 @@ public final /* synthetic */ class c2 implements Runnable {
             case 5:
                 y9 y9Var = this.b.y0;
                 if (y9Var != null) {
-                    y9Var.H(new PremiumPreviewFragment(0, "noncontacts"));
+                    y9Var.I(new PremiumPreviewFragment(0, "noncontacts"));
                     break;
                 }
                 break;
@@ -71,7 +71,7 @@ public final /* synthetic */ class c2 implements Runnable {
                 q4Var2.A3 = 0L;
                 u2 u2Var = q4Var2.Q1;
                 if (u2Var != null) {
-                    u2Var.G(true);
+                    u2Var.F(true);
                     q4Var2.Q1.O1();
                     q4Var2.p0(true);
                     break;
@@ -99,7 +99,7 @@ public final /* synthetic */ class c2 implements Runnable {
             case 9:
                 y9 y9Var3 = ((p9) this.b.F1).d;
                 y9Var3.i1 = false;
-                y9Var3.P();
+                y9Var3.Q();
                 break;
             case 10:
                 this.b.J0(null);

@@ -20,13 +20,13 @@ import org.telegram.messenger.GenericProvider;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.b2;
 import org.telegram.ui.ActionBar.e2;
-import org.telegram.ui.Components.id0;
+import org.telegram.ui.Components.jd0;
 import u2.r1;
 import zh.g4;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class d implements b2, id0, e9.k, e2.j, Continuation, s9.d, GenericProvider {
+public final /* synthetic */ class d implements b2, jd0, e9.k, e2.j, Continuation, s9.d, GenericProvider {
     public final /* synthetic */ int a;
 
     public /* synthetic */ d(int i10) {
@@ -330,7 +330,7 @@ public final /* synthetic */ class d implements b2, id0, e9.k, e2.j, Continuatio
         return new za.b(x9, cVar);
     }
 
-    @Override // org.telegram.ui.Components.id0
+    @Override // org.telegram.ui.Components.jd0
     public String f(int i10) {
         switch (this.a) {
             case 1:

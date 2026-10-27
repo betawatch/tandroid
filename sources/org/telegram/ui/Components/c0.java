@@ -11,7 +11,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.tgnet.tl.TL_aicompose;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class c0 extends FrameLayout implements org.telegram.ui.ActionBar.p6 {
     public final int a;
@@ -32,19 +32,19 @@ public final class c0 extends FrameLayout implements org.telegram.ui.ActionBar.p
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setClipToPadding(false);
         linearLayout.setOrientation(1);
-        addView(linearLayout, gb1.h(-2, -2.0f, 17, 0.0f, 2.0f, 0.0f, 2.0f));
+        addView(linearLayout, kb1.h(-2, -2.0f, 17, 0.0f, 2.0f, 0.0f, 2.0f));
         y9 y9Var = new y9(context);
         this.h = y9Var;
         NotificationCenter.listenEmojiLoading(y9Var);
-        linearLayout.addView(y9Var, gb1.x(24, 24, 49, 0, 4, 0, 0));
+        linearLayout.addView(y9Var, kb1.x(24, 24, 49, 0, 4, 0, 0));
         TextView textView = new TextView(context);
         this.n = textView;
         textView.setTypeface(AndroidUtilities.bold());
         textView.setTextSize(1, 12.0f);
         textView.setGravity(17);
         textView.setSingleLine();
-        linearLayout.addView(textView, gb1.x(-2, -2, 49, 0, 2, 0, 0));
-        gb1.c(this, 0.05f, 1.5f);
+        linearLayout.addView(textView, kb1.x(-2, -2, 49, 0, 2, 0, 0));
+        kb1.c(this, 0.05f, 1.5f);
         a(0.0f, true);
     }
 

@@ -8,10 +8,10 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.RichMessageLayout;
-import org.telegram.messenger.fe;
+import org.telegram.messenger.ge;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public abstract class u {
     public static int[] a() {
@@ -164,7 +164,7 @@ public abstract class u {
             return a();
         }
         try {
-            return DesugarArrays.stream(str.split(",")).mapToInt(new org.telegram.messenger.j4(1)).toArray();
+            return DesugarArrays.stream(str.split(",")).mapToInt(new org.telegram.messenger.k4(1)).toArray();
         } catch (Exception e) {
             FileLog.e(e);
             return a();
@@ -183,6 +183,6 @@ public abstract class u {
     }
 
     public static String f(int[] iArr) {
-        return (String) DesugarArrays.stream(iArr).mapToObj(new fe(0)).collect(Collectors.joining(","));
+        return (String) DesugarArrays.stream(iArr).mapToObj(new ge(0)).collect(Collectors.joining(","));
     }
 }

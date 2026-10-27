@@ -31,15 +31,15 @@ import org.telegram.ui.ActionBar.r2;
 import org.telegram.ui.ActionBar.u6;
 import org.telegram.ui.ActionBar.y6;
 import org.telegram.ui.Components.g5;
-import org.telegram.ui.Components.gb1;
 import org.telegram.ui.Components.ju;
+import org.telegram.ui.Components.kb1;
 import org.telegram.ui.Components.qy;
 import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.bh1;
 import org.telegram.ui.j4;
 import org.telegram.ui.m3;
-import org.telegram.ui.zg1;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class u0 extends WebChromeClient {
     public org.telegram.ui.ActionBar.e2 a;
@@ -225,11 +225,11 @@ public final class u0 extends WebChromeClient {
         juVar.setText(str3);
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setOrientation(1);
-        linearLayout.addView(juVar, gb1.o(24.0f, 0.0f, 24.0f, 10.0f, -1, -2));
+        linearLayout.addView(juVar, kb1.o(24.0f, 0.0f, 24.0f, 10.0f, -1, -2));
         alertDialog$Builder.c();
         alertDialog$Builder.o(linearLayout);
         e2Var.a = AndroidUtilities.dp(292.0f);
-        alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), new zg1(zArr, jsPromptResult));
+        alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), new bh1(zArr, jsPromptResult));
         alertDialog$Builder.k(LocaleController.getString(R.string.OK), new qy(zArr, jsPromptResult, juVar, 6));
         alertDialog$Builder.j(new u3(17, zArr, jsPromptResult));
         e2Var.O = new ig.o(juVar, 12);

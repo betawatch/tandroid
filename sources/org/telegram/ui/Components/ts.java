@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class ts {
     public final org.telegram.ui.Cells.p2 a;
@@ -36,7 +36,7 @@ public final class ts {
                 break;
             }
             ss ssVar = (ss) arrayList.get(i11);
-            dp = org.telegram.messenger.vh.z(4.0f, ssVar.g, dp);
+            dp = org.telegram.messenger.wh.z(4.0f, ssVar.g, dp);
             if (dp < 0) {
                 break;
             }
@@ -56,13 +56,13 @@ public final class ts {
             if (ssVar2 == null || ssVar2.a != size) {
                 ss ssVar3 = new ss();
                 ssVar3.a = size;
-                q11 q11Var = new q11(ic.a.i(size, "+"), 10.0f, AndroidUtilities.bold());
-                q11Var.s(this.a);
-                ssVar3.c = q11Var;
+                r11 r11Var = new r11(ic.a.i(size, "+"), 10.0f, AndroidUtilities.bold());
+                r11Var.s(this.a);
+                ssVar3.c = r11Var;
                 int dp2 = AndroidUtilities.dp(9.32f);
-                q11 q11Var2 = ssVar3.c;
-                ssVar3.g = dp2 + ((int) q11Var2.c);
-                q11Var2.j();
+                r11 r11Var2 = ssVar3.c;
+                ssVar3.g = dp2 + ((int) r11Var2.c);
+                r11Var2.j();
                 int i12 = org.telegram.ui.ActionBar.y6.n8;
                 ssVar3.f = i12;
                 ssVar3.e = true;

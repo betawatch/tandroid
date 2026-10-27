@@ -8,9 +8,9 @@ import org.telegram.messenger.DialogObject;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.gb1;
+import org.telegram.ui.Components.kb1;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class u0 extends FrameLayout {
     public final r0 a;
@@ -22,20 +22,20 @@ public final class u0 extends FrameLayout {
 
     public u0(Context context) {
         super(context);
-        gb1.b(this);
+        kb1.b(this);
         r0 r0Var = new r0(this, context);
         this.a = r0Var;
         r0Var.setOrientation(0);
-        addView(r0Var, gb1.h(-2, -2.0f, 119, 0.0f, 0.0f, 6.0f, 0.0f));
+        addView(r0Var, kb1.h(-2, -2.0f, 119, 0.0f, 0.0f, 6.0f, 0.0f));
         this.c = new org.telegram.ui.Components.j9((org.telegram.ui.ActionBar.u6) null);
         org.telegram.ui.Components.y9 y9Var = new org.telegram.ui.Components.y9(context);
         this.b = y9Var;
         y9Var.setRoundRadius(AndroidUtilities.dp(11.0f));
-        r0Var.addView(y9Var, gb1.t(22, 22, 0.0f, 51, 3, 2, 7, 2));
+        r0Var.addView(y9Var, kb1.t(22, 22, 0.0f, 51, 3, 2, 7, 2));
         ImageView imageView = new ImageView(context);
         this.d = imageView;
         imageView.setVisibility(8);
-        r0Var.addView(imageView, gb1.x(18, 18, 19, 0, 0, 3, 0));
+        r0Var.addView(imageView, kb1.x(18, 18, 19, 0, 0, 3, 0));
         s0 s0Var = new s0(context);
         this.e = s0Var;
         s0Var.setLines(1);
@@ -43,7 +43,7 @@ public final class u0 extends FrameLayout {
         s0Var.setTextColor(-1);
         s0Var.setTextSize(1, 14.0f);
         s0Var.setTypeface(AndroidUtilities.bold());
-        r0Var.addView(s0Var, gb1.x(-2, -2, 16, 0, 0, 7, 0));
+        r0Var.addView(s0Var, kb1.x(-2, -2, 16, 0, 0, 7, 0));
     }
 
     public void set(w0 w0Var) {

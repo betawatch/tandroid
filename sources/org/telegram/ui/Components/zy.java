@@ -12,7 +12,7 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class zy extends FrameLayout implements org.telegram.ui.ActionBar.p6 {
     public final ImageView a;
@@ -33,17 +33,17 @@ public final class zy extends FrameLayout implements org.telegram.ui.ActionBar.p
         int i10 = org.telegram.ui.ActionBar.y6.Le;
         org.telegram.ui.ActionBar.u6 u6Var = szVar.Z1;
         org.telegram.ui.ActionBar.f7.t(imageView, i10, u6Var, PorterDuff.Mode.MULTIPLY);
-        addView(imageView, gb1.h(-2, -2.0f, 17, 0.0f, 8.0f, 0.0f, 0.0f));
+        addView(imageView, kb1.h(-2, -2.0f, 17, 0.0f, 8.0f, 0.0f, 0.0f));
         TextView textView = new TextView(getContext());
         this.b = textView;
         org.telegram.ui.d3.o(R.string.NoGIFsFound, textView, 1, 16.0f);
         org.telegram.ui.ActionBar.f7.V(textView, i10, u6Var);
-        addView(textView, gb1.h(-2, -2.0f, 17, 0.0f, 42.0f, 0.0f, 0.0f));
+        addView(textView, kb1.h(-2, -2.0f, 17, 0.0f, 42.0f, 0.0f, 0.0f));
         RadialProgressView radialProgressView = new RadialProgressView(context, u6Var);
         this.c = radialProgressView;
         radialProgressView.setVisibility(8);
         radialProgressView.setProgressColor(szVar.A(org.telegram.ui.ActionBar.y6.h6));
-        addView(radialProgressView, gb1.i(-2, -2, 17));
+        addView(radialProgressView, kb1.i(-2, -2, 17));
     }
 
     public final void a(boolean z10) {
@@ -57,7 +57,7 @@ public final class zy extends FrameLayout implements org.telegram.ui.ActionBar.p
 
     @Override // android.widget.FrameLayout, android.view.View
     public final void onMeasure(int i10, int i11) {
-        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(!this.d ? (int) (org.telegram.messenger.vh.B(8.0f, r0 - r4.b1, 3) * 1.7f) : this.e.h0.getMeasuredHeight() - AndroidUtilities.dp(80.0f), TLObject.FLAG_30));
+        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(!this.d ? (int) (org.telegram.messenger.wh.B(8.0f, r0 - r4.b1, 3) * 1.7f) : this.e.h0.getMeasuredHeight() - AndroidUtilities.dp(80.0f), TLObject.FLAG_30));
     }
 
     @Override // org.telegram.ui.ActionBar.p6

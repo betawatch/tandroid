@@ -1,36 +1,36 @@
 package org.telegram.ui.Components;
 
-import android.graphics.drawable.Drawable;
-import android.view.View;
-import org.telegram.messenger.ImageReceiver;
-
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public final class bl0 extends ImageReceiver {
+public final class bl0 implements Runnable {
     public final /* synthetic */ int a;
+    public final /* synthetic */ el0 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ bl0(int i10, View view) {
-        super(view);
+    public /* synthetic */ bl0(el0 el0Var, int i10) {
         this.a = i10;
+        this.b = el0Var;
     }
 
-    @Override // org.telegram.messenger.ImageReceiver
-    public final boolean setImageBitmapByKey(Drawable drawable, String str, int i10, boolean z10, int i11) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                if (drawable instanceof xj0) {
-                    ((xj0) drawable).N(0, false, true);
+                if (this.b.a.getImageReceiver().getLottieAnimation() != null && !this.b.a.getImageReceiver().getLottieAnimation().k0 && !this.b.a.getImageReceiver().getLottieAnimation().y()) {
+                    this.b.a.getImageReceiver().getLottieAnimation().start();
                 }
-                return super.setImageBitmapByKey(drawable, str, i10, z10, i11);
+                this.b.E = false;
+                break;
             default:
-                boolean imageBitmapByKey = super.setImageBitmapByKey(drawable, str, i10, z10, i11);
-                if (imageBitmapByKey && (drawable instanceof xj0)) {
-                    xj0 xj0Var = (xj0) drawable;
-                    xj0Var.N(0, false, true);
-                    xj0Var.stop();
+                el0 el0Var = this.b;
+                gl0 gl0Var = el0Var.P;
+                try {
+                    el0Var.performHapticFeedback(0);
+                } catch (Exception unused) {
                 }
-                return imageBitmapByKey;
+                gl0Var.m0 = gl0Var.T.indexOf(el0Var.e);
+                gl0Var.l0 = el0Var.e;
+                gl0Var.invalidate();
+                break;
         }
     }
 }

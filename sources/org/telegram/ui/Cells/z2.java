@@ -12,7 +12,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.SvgHelper;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public abstract class z2 extends LinearLayout implements NotificationCenter.NotificationCenterDelegate {
     public int a;
@@ -53,13 +53,13 @@ public abstract class z2 extends LinearLayout implements NotificationCenter.Noti
     @Override // android.view.ViewGroup, android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
-        NotificationCenter.getInstance(this.a).addObserver(this, NotificationCenter.diceStickersDidLoad);
+        NotificationCenter.getInstance(this.a).addWeakObserver(this, NotificationCenter.diceStickersDidLoad);
     }
 
     @Override // android.view.ViewGroup, android.view.View
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
-        NotificationCenter.getInstance(this.a).addObserver(this, NotificationCenter.diceStickersDidLoad);
+        NotificationCenter.getInstance(this.a).removeObserver(this, NotificationCenter.diceStickersDidLoad);
     }
 
     public void set(TLRPC.RequestPeerType requestPeerType) {

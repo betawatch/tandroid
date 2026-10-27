@@ -1,9 +1,33 @@
 package org.telegram.ui;
 
-import org.telegram.tgnet.TLRPC;
+import android.content.Context;
+import android.widget.TextView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public interface kc0 {
-    void d(TLRPC.MessageMedia messageMedia, int i10, boolean z10, int i11, long j10);
+public final class kc0 extends ig.t0 {
+    public final /* synthetic */ rc0 N;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public kc0(rc0 rc0Var, Context context, org.telegram.ui.ActionBar.u6 u6Var, boolean z10) {
+        super(context, u6Var, false, z10);
+        this.N = rc0Var;
+    }
+
+    @Override // s4.h0
+    public final void l() {
+        rc0 rc0Var = this.N;
+        org.telegram.ui.ActionBar.w0 w0Var = rc0Var.w;
+        if (w0Var != null) {
+            w0Var.setShowSearchProgress(rc0Var.W.J);
+        }
+        TextView textView = rc0Var.r;
+        if (textView != null) {
+            textView.setText(AndroidUtilities.replaceTags(LocaleController.formatString("NoPlacesFoundInfo", R.string.NoPlacesFoundInfo, rc0Var.W.x)));
+        }
+        super.l();
+    }
 }

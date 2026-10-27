@@ -15,17 +15,17 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.vh;
+import org.telegram.messenger.wh;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.da0;
 import org.telegram.ui.Components.ds;
-import org.telegram.ui.Components.gb1;
+import org.telegram.ui.Components.ea0;
+import org.telegram.ui.Components.kb1;
 import org.telegram.ui.Components.pq;
 import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.a01;
+import org.telegram.ui.c01;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public abstract class l6 extends FrameLayout implements org.telegram.ui.ActionBar.p6 {
     public final org.telegram.ui.ActionBar.u6 a;
@@ -34,7 +34,7 @@ public abstract class l6 extends FrameLayout implements org.telegram.ui.ActionBa
     public final p2 d;
     public boolean e;
     public final org.telegram.ui.Components.h6 f;
-    public final da0 h;
+    public final ea0 h;
     public boolean n;
 
     public l6(org.telegram.ui.ActionBar.r2 r2Var) {
@@ -45,13 +45,13 @@ public abstract class l6 extends FrameLayout implements org.telegram.ui.ActionBa
         Context context = r2Var.getContext();
         org.telegram.ui.ActionBar.u6 resourceProvider = r2Var.getResourceProvider();
         this.a = resourceProvider;
-        LinearLayout d = vh.d(context, 0);
-        addView(d, gb1.h(-1, -2.0f, 55, 16.66f, 11.6f, 16.66f, 0.0f));
+        LinearLayout d = wh.d(context, 0);
+        addView(d, kb1.h(-1, -2.0f, 55, 16.66f, 11.6f, 16.66f, 0.0f));
         TextView textView = new TextView(context);
         this.b = textView;
-        vh.j(14.0f, 1, textView);
+        wh.j(14.0f, 1, textView);
         textView.setText(LocaleController.getString(R.string.ProfileChannel));
-        d.addView(textView, gb1.u(-2, -2, 51));
+        d.addView(textView, kb1.u(-2, -2, 51));
         pq pqVar = new pq(context);
         this.c = pqVar;
         pqVar.getDrawable().r(true, true);
@@ -60,21 +60,21 @@ public abstract class l6 extends FrameLayout implements org.telegram.ui.ActionBa
         pqVar.setTextSize(AndroidUtilities.dp(11.0f));
         pqVar.setPadding(AndroidUtilities.dp(4.33f), 0, AndroidUtilities.dp(4.33f), 0);
         pqVar.setGravity(3);
-        d.addView(pqVar, gb1.x(-1, 17, 51, 4, 1, 4, 0));
+        d.addView(pqVar, kb1.x(-1, 17, 51, 4, 1, 4, 0));
         p2 p2Var = new p2(null, context, true, UserConfig.selectedAccount, resourceProvider);
         this.d = p2Var;
         p2Var.setBackgroundColor(0);
-        p2Var.setDialogCellDelegate(new i6((a01) this, r2Var, context));
+        p2Var.setDialogCellDelegate(new i6((c01) this, r2Var, context));
         p2Var.H = 15;
         p2Var.I = 83;
-        addView(p2Var, gb1.i(-1, -2, 87));
+        addView(p2Var, kb1.i(-1, -2, 87));
         updateColors();
         setWillNotDraw(false);
-        da0 da0Var = new da0();
-        this.h = da0Var;
+        ea0 ea0Var = new ea0();
+        this.h = ea0Var;
         int i10 = org.telegram.ui.ActionBar.y6.i6;
-        da0Var.f(org.telegram.ui.ActionBar.y6.o1(1.25f, org.telegram.ui.ActionBar.y6.w0(i10, resourceProvider)), org.telegram.ui.ActionBar.y6.o1(0.8f, org.telegram.ui.ActionBar.y6.w0(i10, resourceProvider)));
-        da0Var.k(8.0f);
+        ea0Var.f(org.telegram.ui.ActionBar.y6.o1(1.25f, org.telegram.ui.ActionBar.y6.w0(i10, resourceProvider)), org.telegram.ui.ActionBar.y6.o1(0.8f, org.telegram.ui.ActionBar.y6.w0(i10, resourceProvider)));
+        ea0Var.k(8.0f);
     }
 
     public final void a(ArrayList arrayList, TLRPC.Chat chat) {
@@ -152,19 +152,19 @@ public abstract class l6 extends FrameLayout implements org.telegram.ui.ActionBa
         super.dispatchDraw(canvas);
         float e = this.f.e(this.e);
         if (e > 0.0f) {
-            da0 da0Var = this.h;
-            da0Var.setAlpha((int) (e * 255.0f));
+            ea0 ea0Var = this.h;
+            ea0Var.setAlpha((int) (e * 255.0f));
             RectF rectF = AndroidUtilities.rectTmp;
             p2 p2Var = this.d;
             rectF.set(p2Var.getX() + AndroidUtilities.dp(p2Var.I + 6), p2Var.getY() + AndroidUtilities.dp(38.0f), (getWidth() * 0.5f) + p2Var.getX() + AndroidUtilities.dp(p2Var.I + 6), p2Var.getY() + AndroidUtilities.dp(46.33f));
-            da0Var.e(rectF);
-            da0Var.draw(canvas);
+            ea0Var.e(rectF);
+            ea0Var.draw(canvas);
             rectF.set(p2Var.getX() + AndroidUtilities.dp(p2Var.I + 6), p2Var.getY() + AndroidUtilities.dp(56.0f), (getWidth() * 0.36f) + p2Var.getX() + AndroidUtilities.dp(p2Var.I + 6), p2Var.getY() + AndroidUtilities.dp(64.33f));
-            da0Var.e(rectF);
-            da0Var.draw(canvas);
+            ea0Var.e(rectF);
+            ea0Var.draw(canvas);
             rectF.set(((p2Var.getX() + p2Var.getWidth()) - AndroidUtilities.dp(16.0f)) - AndroidUtilities.dp(43.0f), p2Var.getY() + AndroidUtilities.dp(12.0f), (p2Var.getX() + p2Var.getWidth()) - AndroidUtilities.dp(16.0f), p2Var.getY() + AndroidUtilities.dp(20.33f));
-            da0Var.e(rectF);
-            da0Var.draw(canvas);
+            ea0Var.e(rectF);
+            ea0Var.draw(canvas);
             invalidate();
         }
     }

@@ -15,7 +15,7 @@ import org.telegram.messenger.voip.VoIPService;
 import org.telegram.ui.ActionBar.r2;
 import org.telegram.ui.Cells.y1;
 import org.telegram.ui.Components.FragmentContextView;
-import org.telegram.ui.Components.ch0;
+import org.telegram.ui.Components.dh0;
 import org.telegram.ui.Components.dv;
 import org.telegram.ui.Components.hs;
 import org.telegram.ui.Components.voip.i1;
@@ -30,7 +30,7 @@ import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.Wallet.y2;
 import vg.n1;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class f implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -55,7 +55,7 @@ public final /* synthetic */ class f implements View.OnClickListener {
                 int i12 = a4.d;
                 break;
             case 4:
-                PhotoViewer.u1().k0(1.0f, 0.0f, 0.0f, false);
+                PhotoViewer.v1().k0(1.0f, 0.0f, 0.0f, false);
                 break;
             case 5:
                 int i13 = hi.u.n;
@@ -97,18 +97,18 @@ public final /* synthetic */ class f implements View.OnClickListener {
                 MediaController.getInstance().updateSilent(false);
                 break;
             case 14:
-                ch0 ch0Var = ch0.p0;
-                dv dvVar = ch0Var.U;
+                dh0 dh0Var = dh0.p0;
+                dv dvVar = dh0Var.U;
                 if (dvVar != null) {
                     dvVar.G();
                 } else {
-                    PhotoViewer photoViewer = ch0Var.V;
+                    PhotoViewer photoViewer = dh0Var.V;
                     if (photoViewer != null) {
                         photoViewer.Q0();
                         MediaController.getInstance().tryResumePausedAudio();
                     }
                 }
-                ch0.j(false);
+                dh0.j(false);
                 break;
             case 15:
                 i1.j();
@@ -151,7 +151,7 @@ public final /* synthetic */ class f implements View.OnClickListener {
                 int i19 = y2.W;
                 break;
             case 25:
-                PhotoViewer.u1().k0(1.0f, 0.0f, 0.0f, false);
+                PhotoViewer.v1().k0(1.0f, 0.0f, 0.0f, false);
                 break;
             case 26:
                 try {

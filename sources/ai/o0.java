@@ -49,10 +49,10 @@ import org.telegram.ui.ActionBar.j2;
 import org.telegram.ui.ActionBar.j5;
 import org.telegram.ui.ActionBar.r2;
 import org.telegram.ui.Components.ds;
-import org.telegram.ui.Components.gb1;
-import org.telegram.ui.Components.m71;
+import org.telegram.ui.Components.kb1;
+import org.telegram.ui.Components.n71;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class o0 extends FrameLayout {
     public final Paint E;
@@ -308,10 +308,10 @@ public final class o0 extends FrameLayout {
         return f7 >= rectF.left - ((float) AndroidUtilities.dp(8.0f)) && f7 <= rectF.right + ((float) AndroidUtilities.dp(8.0f)) && f10 >= rectF.top - ((float) AndroidUtilities.dp(8.0f)) && f10 <= rectF.bottom + ((float) AndroidUtilities.dp(8.0f));
     }
 
-    public static o0 k(m71 m71Var, View view, Utilities.CallbackReturn callbackReturn, Utilities.Callback callback, Runnable runnable) {
-        j5 parentLayout = m71Var.getParentLayout();
+    public static o0 k(n71 n71Var, View view, Utilities.CallbackReturn callbackReturn, Utilities.Callback callback, Runnable runnable) {
+        j5 parentLayout = n71Var.getParentLayout();
         FrameLayout overlayContainerView = parentLayout != null ? parentLayout.getOverlayContainerView() : null;
-        if (overlayContainerView == null || m71Var.getParentActivity() == null) {
+        if (overlayContainerView == null || n71Var.getParentActivity() == null) {
             return null;
         }
         overlayContainerView.getLocationInWindow(new int[2]);
@@ -320,11 +320,11 @@ public final class o0 extends FrameLayout {
         float width = (view.getWidth() / 2.0f) + (r1[0] - r2[0]);
         float height = (view.getHeight() / 2.0f) + (r1[1] - r2[1]);
         float f7 = min / 2.0f;
-        o0 o0Var = new o0(m71Var.getParentActivity(), new RectF(width - f7, height - f7, width + f7, height + f7), new RectF(), new i0(callback, runnable));
+        o0 o0Var = new o0(n71Var.getParentActivity(), new RectF(width - f7, height - f7, width + f7, height + f7), new RectF(), new i0(callback, runnable));
         o0Var.setPlainButton(true);
         o0Var.setAccept(callbackReturn);
-        o0Var.setOnGallery(new e0(m71Var, o0Var, callbackReturn, callback, 0));
-        overlayContainerView.addView(o0Var, gb1.g(-1.0f, -1));
+        o0Var.setOnGallery(new e0(n71Var, o0Var, callbackReturn, callback, 0));
+        overlayContainerView.addView(o0Var, kb1.g(-1.0f, -1));
         return o0Var;
     }
 

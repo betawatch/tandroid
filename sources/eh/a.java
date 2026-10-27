@@ -9,11 +9,11 @@ import android.graphics.RectF;
 import java.util.ArrayList;
 import java.util.Arrays;
 import org.telegram.ui.PrivacyControlActivity;
-import org.telegram.ui.n60;
+import org.telegram.ui.p60;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class a implements ih.f, n60 {
+public final /* synthetic */ class a implements ih.f, p60 {
     public final /* synthetic */ int a;
     public final /* synthetic */ boolean b;
     public final /* synthetic */ Object c;
@@ -103,7 +103,7 @@ public final /* synthetic */ class a implements ih.f, n60 {
         }
     }
 
-    @Override // org.telegram.ui.n60
+    @Override // org.telegram.ui.p60
     public void b(ArrayList arrayList, boolean z10, boolean z11) {
         PrivacyControlActivity privacyControlActivity = (PrivacyControlActivity) this.c;
         boolean[] zArr = privacyControlActivity.y;

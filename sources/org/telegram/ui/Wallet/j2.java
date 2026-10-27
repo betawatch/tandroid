@@ -8,14 +8,14 @@ import android.view.ViewGroup;
 import java.util.HashSet;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.bb;
-import org.telegram.ui.Components.j71;
-import org.telegram.ui.Components.lm0;
+import org.telegram.ui.Components.k71;
 import org.telegram.ui.Components.mm0;
+import org.telegram.ui.Components.nm0;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public class j2 extends bb implements org.telegram.ui.ActionBar.p6 {
-    public j71 X;
+    public k71 X;
     public final ViewGroup Y;
     public final Paint Z;
     public float a0;
@@ -25,9 +25,9 @@ public class j2 extends bb implements org.telegram.ui.ActionBar.p6 {
         this.Z = new Paint();
         this.v = 0.1f;
         this.Y = viewGroup;
-        mm0 mm0Var = this.d;
+        nm0 nm0Var = this.d;
         int i10 = this.backgroundPaddingLeft;
-        mm0Var.setPadding(i10, 0, i10, 0);
+        nm0Var.setPadding(i10, 0, i10, 0);
         updateColors();
         this.X.O(false);
     }
@@ -93,10 +93,10 @@ public class j2 extends bb implements org.telegram.ui.ActionBar.p6 {
     }
 
     @Override // org.telegram.ui.Components.bb
-    public final lm0 v(mm0 mm0Var) {
-        j71 j71Var = new j71(mm0Var, getContext(), this.currentAccount, 0, true, new d(this, 5), this.resourcesProvider);
-        this.X = j71Var;
-        return j71Var;
+    public final mm0 v(nm0 nm0Var) {
+        k71 k71Var = new k71(nm0Var, getContext(), this.currentAccount, 0, true, new d(this, 5), this.resourcesProvider);
+        this.X = k71Var;
+        return k71Var;
     }
 
     @Override // org.telegram.ui.Components.bb

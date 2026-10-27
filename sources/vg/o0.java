@@ -11,11 +11,11 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.p6;
 import org.telegram.ui.ActionBar.u6;
 import org.telegram.ui.ActionBar.y6;
-import org.telegram.ui.Components.gb1;
 import org.telegram.ui.Components.j9;
+import org.telegram.ui.Components.kb1;
 import org.telegram.ui.Components.y9;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class o0 extends FrameLayout implements p6 {
     public final y9 a;
@@ -40,8 +40,8 @@ public final class o0 extends FrameLayout implements p6 {
         paint2.setColor(y6.x0(null, i10, false));
         this.b = p0Var;
         p0Var.setAlpha(0.0f);
-        addView(y9Var, gb1.h(-1, -1.0f, 0, 5.0f, 5.0f, 5.0f, 5.0f));
-        addView(p0Var, gb1.h(28, 28.0f, 85, 0.0f, 0.0f, 0.0f, 3.0f));
+        addView(y9Var, kb1.h(-1, -1.0f, 0, 5.0f, 5.0f, 5.0f, 5.0f));
+        addView(p0Var, kb1.h(28, 28.0f, 85, 0.0f, 0.0f, 0.0f, 3.0f));
         paint.setColor(y6.x0(null, i10, false));
     }
 

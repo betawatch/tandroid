@@ -13,19 +13,19 @@ import java.util.HashMap;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.RichMessageLayout;
 import org.telegram.messenger.SharedConfig;
-import org.telegram.ui.Components.k60;
+import org.telegram.ui.Components.l60;
 import org.telegram.ui.Components.v50;
-import org.telegram.ui.o41;
+import org.telegram.ui.r41;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class f {
     public static HashMap n;
     public final double a;
     public final double b;
     public final int c;
-    public final o41 d;
-    public final k60 e;
+    public final r41 d;
+    public final l60 e;
     public e f;
     public final int g;
     public final int h;
@@ -35,19 +35,19 @@ public final class f {
     public int l = 0;
     public final d m = new d(this, 0);
 
-    public f(int i10, o41 o41Var, int i11, int i12) {
+    public f(int i10, r41 r41Var, int i11, int i12) {
         double d = 1.0d / ((int) AndroidUtilities.screenRefreshRate);
         this.a = d;
         this.b = d * 4.0d;
         this.c = i10;
         this.g = i11;
         this.h = i12;
-        this.d = o41Var;
-        k60 k60Var = new k60(this, o41Var.getContext(), 1);
-        this.e = k60Var;
-        k60Var.setSurfaceTextureListener(new v50(this, 5));
-        k60Var.setOpaque(false);
-        o41Var.addView(k60Var);
+        this.d = r41Var;
+        l60 l60Var = new l60(this, r41Var.getContext(), 1);
+        this.e = l60Var;
+        l60Var.setSurfaceTextureListener(new v50(this, 5));
+        l60Var.setOpaque(false);
+        r41Var.addView(l60Var);
     }
 
     public static f d(int i10, View view, ViewGroup viewGroup) {
@@ -76,9 +76,9 @@ public final class f {
             }
             HashMap hashMap = n;
             Integer valueOf = Integer.valueOf(i10);
-            o41 o41Var = new o41(viewGroup.getContext(), 11);
-            viewGroup.addView(o41Var);
-            f fVar2 = new f(i10, o41Var, min, min);
+            r41 r41Var = new r41(viewGroup.getContext(), 11);
+            viewGroup.addView(r41Var);
+            f fVar2 = new f(i10, r41Var, min, min);
             hashMap.put(valueOf, fVar2);
             fVar = fVar2;
         }
@@ -160,9 +160,9 @@ public final class f {
         if (num.intValue() % 4 == 3) {
             canvas.scale(1.0f, -1.0f, i12 / 2.0f, i13 / 2.0f);
         }
-        k60 k60Var = this.e;
+        l60 l60Var = this.e;
         if (z10) {
-            Bitmap bitmap = k60Var.getBitmap();
+            Bitmap bitmap = l60Var.getBitmap();
             if (bitmap != null) {
                 Paint paint = new Paint(7);
                 paint.setColor(-1);
@@ -170,8 +170,8 @@ public final class f {
                 bitmap.recycle();
             }
         } else {
-            k60Var.setAlpha(f7);
-            k60Var.draw(canvas);
+            l60Var.setAlpha(f7);
+            l60Var.draw(canvas);
         }
         canvas.restore();
     }

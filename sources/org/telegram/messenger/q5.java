@@ -1,32 +1,41 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+import org.telegram.messenger.LocaleController;
+import org.telegram.tgnet.TLObject;
+
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class q5 implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ LocaleController b;
-    public final /* synthetic */ int c;
+    public final /* synthetic */ LocaleController.LocaleInfo c;
+    public final /* synthetic */ TLObject d;
+    public final /* synthetic */ int e;
+    public final /* synthetic */ Runnable f;
 
-    public /* synthetic */ q5(LocaleController localeController, int i10, int i11) {
+    public /* synthetic */ q5(LocaleController localeController, LocaleController.LocaleInfo localeInfo, TLObject tLObject, int i10, Runnable runnable, int i11) {
         this.a = i11;
         this.b = localeController;
-        this.c = i10;
+        this.c = localeInfo;
+        this.d = tLObject;
+        this.e = i10;
+        this.f = runnable;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$applyLanguage$8(this.c);
+                this.b.lambda$applyRemoteLanguage$16(this.c, this.d, this.e, this.f);
                 break;
             case 1:
-                this.b.lambda$checkPatchLangpack$4(this.c);
+                this.b.lambda$applyRemoteLanguage$20(this.c, this.d, this.e, this.f);
                 break;
             case 2:
-                this.b.lambda$checkUpdateForCurrentRemoteLocale$2(this.c);
+                this.b.lambda$applyRemoteLanguage$18(this.c, this.d, this.e, this.f);
                 break;
             default:
-                this.b.lambda$checkUpdateForCurrentRemoteLocale$3(this.c);
+                this.b.lambda$applyRemoteLanguage$14(this.c, this.d, this.e, this.f);
                 break;
         }
     }

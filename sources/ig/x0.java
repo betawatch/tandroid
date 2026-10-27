@@ -23,13 +23,13 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_keyboard;
 import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.Components.bb0;
+import org.telegram.ui.Components.cb0;
 import org.telegram.ui.Components.y9;
 import org.telegram.ui.TwoStepVerificationActivity;
 import org.telegram.ui.Wallet.e2;
-import org.telegram.ui.un;
+import org.telegram.ui.wn;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class x0 implements Runnable {
     public final /* synthetic */ int a;
@@ -85,13 +85,13 @@ public final /* synthetic */ class x0 implements Runnable {
                 String str2 = (String) obj5;
                 MessagesStorage messagesStorage = (MessagesStorage) obj;
                 String str3 = (String) obj4;
-                bb0 bb0Var = j1Var.V;
+                cb0 cb0Var = j1Var.V;
                 if (str.equals(j1Var.r0)) {
                     j1Var.u0 = 0;
                     if (z11 && tLObject == null) {
                         j1Var.T(false, user, str, str2);
-                    } else if (bb0Var != null) {
-                        bb0Var.b(false);
+                    } else if (cb0Var != null) {
+                        cb0Var.b(false);
                     }
                     if (tLObject instanceof TLRPC.TL_messages_botResults) {
                         TLRPC.TL_messages_botResults tL_messages_botResults = (TLRPC.TL_messages_botResults) tLObject;
@@ -143,7 +143,7 @@ public final /* synthetic */ class x0 implements Runnable {
                         j1Var.K = r10;
                         j1Var.P = r10;
                         j1Var.o0 = false;
-                        bb0Var.a((j1Var.R.isEmpty() && j1Var.T == null && j1Var.U == null) ? false : true);
+                        cb0Var.a((j1Var.R.isEmpty() && j1Var.T == null && j1Var.U == null) ? false : true);
                         if (!z10) {
                             j1Var.l();
                             break;
@@ -163,7 +163,7 @@ public final /* synthetic */ class x0 implements Runnable {
                 ((MediaDataController) obj7).lambda$broadcastPinnedMessage$169((ArrayList) obj6, this.b, (ArrayList) obj5, (ArrayList) obj4, (ArrayList) obj3, (a0.h) obj2, (a0.h) obj);
                 break;
             case 3:
-                ((SendMessagesHelper) obj7).lambda$sendCallback$46((TLRPC.TL_error) obj6, (TLObject) obj3, (TwoStepVerificationActivity) obj5, this.b, (MessageObject) obj4, (TL_keyboard.KeyboardButtonProto) obj2, (un) obj);
+                ((SendMessagesHelper) obj7).lambda$sendCallback$46((TLRPC.TL_error) obj6, (TLObject) obj3, (TwoStepVerificationActivity) obj5, this.b, (MessageObject) obj4, (TL_keyboard.KeyboardButtonProto) obj2, (wn) obj);
                 break;
             case 4:
                 ((CameraController) obj7).lambda$recordVideo$14((Camera) obj6, (CameraSession) obj5, this.b, (File) obj4, (CameraInfo) obj3, (CameraController.VideoTakeCallback) obj2, (Runnable) obj);
@@ -232,7 +232,7 @@ public final /* synthetic */ class x0 implements Runnable {
                         break;
                     }
                 } else {
-                    dVar.setEnabled((!l0Var.E() || l0Var.s() == null || l0Var.x() == null || dVar.Q) ? false : true);
+                    dVar.setEnabled((!l0Var.G() || l0Var.t() == null || l0Var.y() == null || dVar.Q) ? false : true);
                     break;
                 }
                 break;
@@ -263,7 +263,7 @@ public final /* synthetic */ class x0 implements Runnable {
         this.r = hVar2;
     }
 
-    public /* synthetic */ x0(MessageObject messageObject, SendMessagesHelper sendMessagesHelper, TLObject tLObject, TLRPC.TL_error tL_error, TL_keyboard.KeyboardButtonProto keyboardButtonProto, un unVar, TwoStepVerificationActivity twoStepVerificationActivity, boolean z10) {
+    public /* synthetic */ x0(MessageObject messageObject, SendMessagesHelper sendMessagesHelper, TLObject tLObject, TLRPC.TL_error tL_error, TL_keyboard.KeyboardButtonProto keyboardButtonProto, wn wnVar, TwoStepVerificationActivity twoStepVerificationActivity, boolean z10) {
         this.a = 3;
         this.c = sendMessagesHelper;
         this.d = tL_error;
@@ -272,7 +272,7 @@ public final /* synthetic */ class x0 implements Runnable {
         this.b = z10;
         this.f = messageObject;
         this.n = keyboardButtonProto;
-        this.r = unVar;
+        this.r = wnVar;
     }
 
     public /* synthetic */ x0(boolean z10, fi.d dVar, org.telegram.ui.Wallet.l0 l0Var, TL_wallet.tonConnectSession tonconnectsession, org.telegram.ui.Wallet.z1 z1Var, TextView textView, y9 y9Var, TextView textView2) {

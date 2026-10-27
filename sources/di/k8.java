@@ -12,11 +12,11 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.ds;
-import org.telegram.ui.Components.q11;
+import org.telegram.ui.Components.r11;
 import org.telegram.ui.Components.xc;
 import org.telegram.ui.Components.zq;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class k8 {
     public static CharSequence[] y;
@@ -29,8 +29,8 @@ public final class k8 {
     public SpannableStringBuilder k;
     public String l;
     public boolean m;
-    public q11 n;
-    public q11 o;
+    public r11 n;
+    public r11 o;
     public boolean p;
     public boolean q;
     public View r;
@@ -68,11 +68,11 @@ public final class k8 {
                 charSequence = "";
             }
             TLRPC.Document document = this.g;
-            this.n = new q11(charSequence, document != null ? 12.0f : 14.0f, document != null ? null : AndroidUtilities.bold());
+            this.n = new r11(charSequence, document != null ? 12.0f : 14.0f, document != null ? null : AndroidUtilities.bold());
         }
         if (this.o == null || this.m) {
             String str = this.l;
-            this.o = new q11(str != null ? str : "", 14.0f, null);
+            this.o = new r11(str != null ? str : "", 14.0f, null);
         }
         float e = this.h.e(this.f);
         Paint paint = this.t;
@@ -111,13 +111,13 @@ public final class k8 {
         if (f10 < f7) {
             dp = (int) Math.min(AndroidUtilities.dp(12.0f) + dp, f7 - AndroidUtilities.dp(20.0f));
         }
-        q11 q11Var = this.n;
+        r11 r11Var = this.n;
         float f12 = dp;
-        q11Var.p = f12;
-        q11Var.c(AndroidUtilities.lerp(AndroidUtilities.dp(10.0f), AndroidUtilities.dp(7.0f), e), AndroidUtilities.lerp(AndroidUtilities.dp(12.0f), AndroidUtilities.dp(11.0f), e), 1.0f, -1, canvas);
-        q11 q11Var2 = this.o;
-        q11Var2.p = f12;
-        q11Var2.c(AndroidUtilities.dp(10.0f), AndroidUtilities.dp(30.0f), f11, -1, canvas);
+        r11Var.p = f12;
+        r11Var.c(AndroidUtilities.lerp(AndroidUtilities.dp(10.0f), AndroidUtilities.dp(7.0f), e), AndroidUtilities.lerp(AndroidUtilities.dp(12.0f), AndroidUtilities.dp(11.0f), e), 1.0f, -1, canvas);
+        r11 r11Var2 = this.o;
+        r11Var2.p = f12;
+        r11Var2.c(AndroidUtilities.dp(10.0f), AndroidUtilities.dp(30.0f), f11, -1, canvas);
         canvas.restore();
     }
 
@@ -130,7 +130,7 @@ public final class k8 {
             return;
         }
         this.q = true;
-        MessagesController.getInstance(this.a).getStoriesController().d0(this.b.longValue(), this.c.intValue(), new ai.i(this, 13));
+        MessagesController.getInstance(this.a).getStoriesController().g0(this.b.longValue(), this.c.intValue(), new ai.i(this, 13));
     }
 
     public final void e(float f7, float f10, boolean z10) {

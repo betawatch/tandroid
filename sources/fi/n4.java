@@ -1,11 +1,11 @@
 package fi;
 
 import android.animation.ValueAnimator;
-import org.telegram.ui.Components.mm0;
-import org.telegram.ui.Components.ww0;
-import org.telegram.ui.Components.zt0;
+import org.telegram.ui.Components.au0;
+import org.telegram.ui.Components.nm0;
+import org.telegram.ui.Components.xw0;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class n4 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -13,11 +13,11 @@ public final /* synthetic */ class n4 implements ValueAnimator.AnimatorUpdateLis
     public final /* synthetic */ Object c;
     public final /* synthetic */ Object d;
 
-    public /* synthetic */ n4(zt0 zt0Var, int i10, mm0 mm0Var) {
+    public /* synthetic */ n4(au0 au0Var, int i10, nm0 nm0Var) {
         this.a = 1;
-        this.c = zt0Var;
+        this.c = au0Var;
         this.b = i10;
-        this.d = mm0Var;
+        this.d = nm0Var;
     }
 
     @Override // android.animation.ValueAnimator.AnimatorUpdateListener
@@ -35,28 +35,28 @@ public final /* synthetic */ class n4 implements ValueAnimator.AnimatorUpdateLis
                 }
                 break;
             case 1:
-                zt0 zt0Var = (zt0) this.c;
-                mm0 mm0Var = (mm0) this.d;
-                zt0Var.e.R1.put(this.b, (Float) valueAnimator.getAnimatedValue());
-                mm0Var.invalidate();
+                au0 au0Var = (au0) this.c;
+                nm0 nm0Var = (nm0) this.d;
+                au0Var.e.R1.put(this.b, (Float) valueAnimator.getAnimatedValue());
+                nm0Var.invalidate();
                 break;
             default:
-                sg.n0 n0Var = (sg.n0) this.c;
+                sg.m0 m0Var = (sg.m0) this.c;
                 Integer num2 = (Integer) this.d;
                 float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                n0Var.z1.a = i0.a.f(floatValue2, num2.intValue(), this.b);
-                sg.l0 l0Var = n0Var.R0;
-                if (l0Var != null) {
-                    l0Var.invalidate();
+                m0Var.z1.a = i0.a.f(floatValue2, num2.intValue(), this.b);
+                sg.k0 k0Var = m0Var.R0;
+                if (k0Var != null) {
+                    k0Var.invalidate();
                     break;
                 }
                 break;
         }
     }
 
-    public /* synthetic */ n4(ww0 ww0Var, Integer num, int i10, int i11) {
+    public /* synthetic */ n4(xw0 xw0Var, Integer num, int i10, int i11) {
         this.a = i11;
-        this.c = ww0Var;
+        this.c = xw0Var;
         this.d = num;
         this.b = i10;
     }

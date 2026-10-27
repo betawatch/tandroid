@@ -11,12 +11,12 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.ActionBar.ActionBarLayout;
-import org.telegram.ui.Components.ak0;
-import org.telegram.ui.Components.mv0;
-import org.telegram.ui.cy;
-import org.telegram.ui.qw;
+import org.telegram.ui.Components.bk0;
+import org.telegram.ui.Components.nv0;
+import org.telegram.ui.ey;
+import org.telegram.ui.sw;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class h2 implements Utilities.Callback4 {
     public final /* synthetic */ int a;
@@ -35,7 +35,7 @@ public final /* synthetic */ class h2 implements Utilities.Callback4 {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final void run(Object obj, Object obj2, Object obj3, Object obj4) {
-        qw qwVar;
+        sw swVar;
         org.telegram.ui.ActionBar.r2 r2Var;
         org.telegram.ui.ActionBar.j5 parentLayout;
         switch (this.a) {
@@ -56,9 +56,9 @@ public final /* synthetic */ class h2 implements Utilities.Callback4 {
                         p4Var.a = false;
                         x9Var.setOnReadyListener(new k2(0, currentTimeMillis, runnable));
                         ((p9) q4Var.F1).g(false);
-                        ak0 ak0Var = q4Var.o0;
-                        if (ak0Var != null) {
-                            ak0Var.setAnimation(q4Var.m1.u);
+                        bk0 bk0Var = q4Var.o0;
+                        if (bk0Var != null) {
+                            bk0Var.setAnimation(q4Var.m1.u);
                         }
                         if (q4Var.G2 > 0 && l4.longValue() > q4Var.G2 - 1400) {
                             l4 = 0L;
@@ -88,11 +88,11 @@ public final /* synthetic */ class h2 implements Utilities.Callback4 {
                         ArrayList arrayList = new ArrayList();
                         for (int size = fragmentStack.size() - 1; size >= 0; size--) {
                             org.telegram.ui.ActionBar.r2 r2Var3 = (org.telegram.ui.ActionBar.r2) fragmentStack.get(size);
-                            if (r2Var3 instanceof cy) {
-                                cy cyVar = (cy) r2Var3;
-                                cyVar.S3();
-                                qwVar = cyVar.E0;
-                                r3 = qwVar != null ? qwVar.e(l10.longValue()) : null;
+                            if (r2Var3 instanceof ey) {
+                                ey eyVar = (ey) r2Var3;
+                                eyVar.S3();
+                                swVar = eyVar.E0;
+                                r3 = swVar != null ? swVar.e(l10.longValue()) : null;
                                 for (int i10 = 0; i10 < arrayList.size(); i10++) {
                                     ((ActionBarLayout) parentLayout).c0((org.telegram.ui.ActionBar.r2) arrayList.get(i10), false);
                                 }
@@ -100,14 +100,14 @@ public final /* synthetic */ class h2 implements Utilities.Callback4 {
                                 if (r2Var != null) {
                                     r2Var.clearSheets();
                                 }
-                                y9Var.v();
+                                y9Var.w();
                                 q4Var.J3 = false;
-                                if (qwVar != null || !qwVar.k(l10.longValue())) {
+                                if (swVar != null || !swVar.k(l10.longValue())) {
                                     sbVar.X(nb.c(r3));
                                     AndroidUtilities.runOnUIThread(runnable, 400L);
                                     break;
                                 } else {
-                                    qwVar.b0.add(new bi.u0(r3, qwVar, l10, sbVar, runnable, 8));
+                                    swVar.b0.add(new bi.u0(r3, swVar, l10, sbVar, runnable, 8));
                                     break;
                                 }
                             } else {
@@ -115,23 +115,23 @@ public final /* synthetic */ class h2 implements Utilities.Callback4 {
                             }
                         }
                     }
-                    qwVar = null;
+                    swVar = null;
                     r2Var = y9Var.f;
                     if (r2Var != null) {
                     }
-                    y9Var.v();
+                    y9Var.w();
                     q4Var.J3 = false;
-                    if (qwVar != null) {
+                    if (swVar != null) {
                     }
                     sbVar.X(nb.c(r3));
                     AndroidUtilities.runOnUIThread(runnable, 400L);
                 }
                 break;
             case 1:
-                mv0 mv0Var = (mv0) this.b;
+                nv0 nv0Var = (nv0) this.b;
                 org.telegram.ui.g4 g4Var = (org.telegram.ui.g4) this.c;
                 ArrayList arrayList2 = (ArrayList) obj;
-                int i11 = mv0Var.d;
+                int i11 = nv0Var.d;
                 MessagesController.getInstance(i11).putUsers((ArrayList) obj2, true);
                 MessagesController.getInstance(i11).putChats((ArrayList) obj3, true);
                 org.telegram.ui.Components.t5.h(i11).d((ArrayList) obj4);
@@ -140,10 +140,10 @@ public final /* synthetic */ class h2 implements Utilities.Callback4 {
                     if (messageObject.hasValidGroupId() && messageObject.messageOwner.reactions != null) {
                         messageObject.isPrimaryGroupMessage = true;
                     }
-                    messageObject.setQuery(mv0Var.w);
-                    mv0Var.n.add(messageObject);
+                    messageObject.setQuery(nv0Var.w);
+                    nv0Var.n.add(messageObject);
                 }
-                mv0Var.G(true);
+                nv0Var.G(true);
                 AndroidUtilities.runOnUIThread(g4Var, 540L);
                 break;
             default:
@@ -154,7 +154,7 @@ public final /* synthetic */ class h2 implements Utilities.Callback4 {
                 byte[] bArr = (byte[]) obj3;
                 String str = (String) obj4;
                 if (sendtransfer != null && i0Var != null && bArr != null) {
-                    org.telegram.ui.Wallet.l0.F("prepare disable backup: transfer ready, initing storage with new secret phrase!");
+                    org.telegram.ui.Wallet.l0.H("prepare disable backup: transfer ready, initing storage with new secret phrase!");
                     org.telegram.ui.Wallet.g0 g0Var = new org.telegram.ui.Wallet.g0();
                     g0Var.c = bArr;
                     g0Var.b = i0Var.b();
@@ -162,7 +162,7 @@ public final /* synthetic */ class h2 implements Utilities.Callback4 {
                     l0Var.c.p(UserConfig.getInstance(l0Var.a).getClientUserId(), bArr, i0Var, new org.telegram.ui.Wallet.s(l0Var, g0Var, z7Var));
                     break;
                 } else {
-                    org.telegram.ui.Wallet.l0.i("prepare disable backup, failed to prepare transfer: ".concat(str == null ? "NULL_ERROR" : str));
+                    org.telegram.ui.Wallet.l0.j("prepare disable backup, failed to prepare transfer: ".concat(str == null ? "NULL_ERROR" : str));
                     if (str == null) {
                         str = "NULL_ERROR";
                     }

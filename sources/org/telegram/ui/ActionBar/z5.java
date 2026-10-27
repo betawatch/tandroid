@@ -16,10 +16,10 @@ import android.view.animation.AnimationUtils;
 import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.vh;
+import org.telegram.messenger.wh;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class z5 extends FrameLayout {
     public float E;
@@ -397,7 +397,7 @@ public final class z5 extends FrameLayout {
             return;
         }
         c();
-        this.c.measure(vh.x(16.0f, size, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(Math.max(AndroidUtilities.dp(48.0f), (int) (((size2 - this.I.top) - AndroidUtilities.dp(16.0f)) - AndroidUtilities.navigationBarHeight)), TLObject.FLAG_31));
+        this.c.measure(wh.x(16.0f, size, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(Math.max(AndroidUtilities.dp(48.0f), (int) (((size2 - this.I.top) - AndroidUtilities.dp(16.0f)) - AndroidUtilities.navigationBarHeight)), TLObject.FLAG_31));
     }
 
     public void setOnClosed(Runnable runnable) {

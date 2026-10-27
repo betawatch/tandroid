@@ -4,10 +4,10 @@ import android.content.Context;
 import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class ee extends FrameLayout {
-    public final org.telegram.ui.Components.r71 a;
+    public final org.telegram.ui.Components.s71 a;
     public final org.telegram.ui.ActionBar.u6 b;
     public final int c;
     public final int d;
@@ -22,20 +22,20 @@ public final class ee extends FrameLayout {
         this.c = i11;
         this.b = u6Var;
         this.e = r0Var;
-        org.telegram.ui.Components.r71 r71Var = new org.telegram.ui.Components.r71(context, i11, i12, true, new e5(this, 3), new y0(this, 15), null, u6Var);
-        this.a = r71Var;
+        org.telegram.ui.Components.s71 s71Var = new org.telegram.ui.Components.s71(context, i11, i12, true, new e5(this, 3), new y0(this, 15), null, u6Var);
+        this.a = s71Var;
         setClipChildren(false);
         setClipToPadding(false);
-        r71Var.setClipToPadding(false);
-        r71Var.v1(AndroidUtilities.dp(12.0f), AndroidUtilities.dp(16.0f), false);
-        r71Var.g3.r = false;
-        r71Var.setCaptureSectionsDecoratorAllowed(true);
-        r71Var.setOverScrollMode(0);
-        addView(r71Var, org.telegram.ui.Components.gb1.g(-1.0f, -1));
-        r71Var.setOnScrollListener(new ai.u0(2, this, r0Var));
+        s71Var.setClipToPadding(false);
+        s71Var.v1(AndroidUtilities.dp(12.0f), AndroidUtilities.dp(16.0f), false);
+        s71Var.g3.r = false;
+        s71Var.setCaptureSectionsDecoratorAllowed(true);
+        s71Var.setOverScrollMode(0);
+        addView(s71Var, org.telegram.ui.Components.kb1.g(-1.0f, -1));
+        s71Var.setOnScrollListener(new ai.u0(2, this, r0Var));
         oi.q qVar = geVar.w.d1;
         if (qVar != null) {
-            qVar.b(r71Var);
+            qVar.b(s71Var);
         }
     }
 

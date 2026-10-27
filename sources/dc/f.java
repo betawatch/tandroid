@@ -38,9 +38,9 @@ import o6.o;
 import sb.g;
 import sb.j;
 import sb.m;
-import w7.j5;
+import w7.k5;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
 public final class f extends sb.e {
     public static final l6.c[] k = {j.c};
@@ -154,7 +154,7 @@ public final class f extends sb.e {
                     long elapsedRealtime = SystemClock.elapsedRealtime();
                     wg wgVar = this.j;
                     l.h(wgVar);
-                    tg tgVar = new tg(aVar.e, aVar.b, aVar.c, SystemClock.elapsedRealtime(), j5.a(aVar.d));
+                    tg tgVar = new tg(aVar.e, aVar.b, aVar.c, SystemClock.elapsedRealtime(), k5.a(aVar.d));
                     int i10 = aVar.e;
                     try {
                         if (i10 != -1) {

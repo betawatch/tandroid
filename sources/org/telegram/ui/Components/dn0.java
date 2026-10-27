@@ -1,63 +1,123 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
 import android.graphics.Canvas;
+import android.graphics.ColorFilter;
 import android.graphics.Paint;
-import android.graphics.RectF;
-import android.widget.FrameLayout;
+import android.graphics.drawable.Drawable;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public final class dn0 extends FrameLayout {
-    public final Paint a;
-    public final r50 b;
-    public final RectF c;
-    public final float d;
+public final class dn0 extends Drawable {
+    public long a;
+    public boolean b;
+    public Paint c;
+    public float d;
     public float e;
+    public float f;
+    public int g;
+    public int h;
+    public int i;
+    public org.telegram.ui.Cells.s1 j;
+    public float k;
+    public int l;
+    public int m;
+    public org.telegram.ui.ActionBar.u6 n;
 
-    public dn0(Context context) {
-        super(context);
-        Paint paint = new Paint(1);
-        this.a = paint;
-        r50 r50Var = new r50(this, 1);
-        this.b = r50Var;
-        this.c = new RectF();
-        this.d = (AndroidUtilities.dp(3.0f) * 0.5f) + AndroidUtilities.dp(5.0f);
-        a(paint, 0.2f);
-        a(r50Var, 1.0f);
-        setWillNotDraw(false);
-    }
-
-    public static void a(Paint paint, float f7) {
-        paint.setColor(-1);
-        paint.setAlpha(Math.round(f7 * 255.0f));
-        paint.setStyle(Paint.Style.STROKE);
-        paint.setStrokeWidth(AndroidUtilities.dp(3.0f));
-        paint.setStrokeCap(Paint.Cap.ROUND);
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        super.dispatchDraw(canvas);
-        float width = getWidth();
-        float f7 = this.d;
-        RectF rectF = this.c;
-        rectF.set(f7, f7, width - f7, getHeight() - f7);
-        canvas.drawOval(rectF, this.a);
-        canvas.drawArc(rectF, -90.0f, this.e * 360.0f, false, this.b);
-    }
-
-    public Paint getPaint() {
-        return this.b;
-    }
-
-    public void setProgress(float f7) {
-        float max = Math.max(0.0f, Math.min(1.0f, f7));
-        if (this.e == max) {
+    public final void a() {
+        if (this.b) {
             return;
         }
-        this.e = max;
-        invalidate();
+        this.a = System.currentTimeMillis();
+        this.b = true;
+        this.j.invalidate();
+    }
+
+    public final void b() {
+        if (this.b) {
+            this.b = false;
+        }
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        Paint paint = this.c;
+        paint.setColor(i0.a.f(this.k, org.telegram.ui.ActionBar.y6.w0(org.telegram.ui.ActionBar.y6.ic, this.n), this.l));
+        int i10 = this.m;
+        if (i10 != 255) {
+            paint.setAlpha((int) ((paint.getAlpha() / 255.0f) * i10));
+        }
+        int i11 = getBounds().left;
+        int i12 = getBounds().top;
+        int i13 = 0;
+        while (i13 < 3) {
+            Canvas canvas2 = canvas;
+            canvas2.drawRect(AndroidUtilities.dp(2.0f) + i11, AndroidUtilities.dp((this.d * 7.0f) + 2.0f) + i12, AndroidUtilities.dp(4.0f) + i11, AndroidUtilities.dp(10.0f) + i12, paint);
+            canvas2.drawRect(AndroidUtilities.dp(5.0f) + i11, AndroidUtilities.dp((this.e * 7.0f) + 2.0f) + i12, AndroidUtilities.dp(7.0f) + i11, AndroidUtilities.dp(10.0f) + i12, paint);
+            canvas2.drawRect(AndroidUtilities.dp(8.0f) + i11, AndroidUtilities.dp((this.f * 7.0f) + 2.0f) + i12, AndroidUtilities.dp(10.0f) + i11, AndroidUtilities.dp(10.0f) + i12, paint);
+            i13++;
+            canvas = canvas2;
+        }
+        if (this.b) {
+            long currentTimeMillis = System.currentTimeMillis();
+            long j10 = currentTimeMillis - this.a;
+            this.a = currentTimeMillis;
+            if (j10 > 50) {
+                j10 = 50;
+            }
+            float f7 = j10;
+            float f10 = ((f7 / 300.0f) * this.g) + this.d;
+            this.d = f10;
+            if (f10 > 1.0f) {
+                this.g = -1;
+                this.d = 1.0f;
+            } else if (f10 < 0.0f) {
+                this.g = 1;
+                this.d = 0.0f;
+            }
+            float f11 = ((f7 / 310.0f) * this.h) + this.e;
+            this.e = f11;
+            if (f11 > 1.0f) {
+                this.h = -1;
+                this.e = 1.0f;
+            } else if (f11 < 0.0f) {
+                this.h = 1;
+                this.e = 0.0f;
+            }
+            float f12 = ((f7 / 320.0f) * this.i) + this.f;
+            this.f = f12;
+            if (f12 > 1.0f) {
+                this.i = -1;
+                this.f = 1.0f;
+            } else if (f12 < 0.0f) {
+                this.i = 1;
+                this.f = 0.0f;
+            }
+            this.j.invalidate();
+        }
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicHeight() {
+        return AndroidUtilities.dp(12.0f);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicWidth() {
+        return AndroidUtilities.dp(12.0f);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return -2;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i10) {
+        this.m = i10;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
     }
 }

@@ -1,33 +1,84 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import org.telegram.messenger.AndroidUtilities;
+import android.view.View;
+import java.util.ArrayList;
+import org.telegram.messenger.MediaDataController;
+import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public final class qc0 extends org.telegram.ui.ActionBar.b6 {
-    public final Paint M0;
-    public final /* synthetic */ org.telegram.ui.ActionBar.u6 N0;
+public final /* synthetic */ class qc0 implements View.OnClickListener {
+    public final /* synthetic */ int a = 1;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ Object c;
+    public final /* synthetic */ Object d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public qc0(Context context, org.telegram.ui.ActionBar.u6 u6Var) {
-        super(context);
-        this.N0 = u6Var;
-        this.M0 = new Paint(1);
+    public /* synthetic */ qc0(jg.i iVar, boolean z10, Runnable runnable) {
+        this.d = iVar;
+        this.b = z10;
+        this.c = runnable;
     }
 
-    @Override // android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        int w02 = org.telegram.ui.ActionBar.y6.w0(org.telegram.ui.ActionBar.y6.K5, this.N0);
-        Paint paint = this.M0;
-        paint.setColor(w02);
-        paint.setStyle(Paint.Style.STROKE);
-        paint.setStrokeWidth(1.0f);
-        float height = getHeight() / 2.0f;
-        canvas.drawLine(0.0f, height, ((getWidth() / 2.0f) - (getTextWidth() / 2.0f)) - AndroidUtilities.dp(8.0f), height, paint);
-        canvas.drawLine((getTextWidth() / 2.0f) + (getWidth() / 2.0f) + AndroidUtilities.dp(8.0f), height, getWidth(), height, paint);
-        super.dispatchDraw(canvas);
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        switch (this.a) {
+            case 0:
+                org.telegram.ui.s6 s6Var = (org.telegram.ui.s6) this.d;
+                Runnable runnable = (Runnable) this.c;
+                org.telegram.ui.ActionBar.r2 R = LaunchActivity.R();
+                if (R != null) {
+                    R.presentFragment(new PremiumPreviewFragment(0, this.b ? "lastseen" : "readtime"));
+                    s6Var.dismiss();
+                    if (runnable != null) {
+                        runnable.run();
+                        break;
+                    }
+                }
+                break;
+            case 1:
+                jg.i iVar = (jg.i) this.d;
+                Runnable runnable2 = (Runnable) this.c;
+                if (this.b) {
+                    ((bw0) iVar.a).I.o();
+                }
+                runnable2.run();
+                break;
+            default:
+                org.telegram.ui.dt dtVar = (org.telegram.ui.dt) this.d;
+                ArrayList arrayList = (ArrayList) this.c;
+                org.telegram.ui.ht htVar = dtVar.a;
+                if (htVar.w != null && htVar.l != null) {
+                    int intValue = ((Integer) arrayList.get(((Integer) view.getTag()).intValue())).intValue();
+                    if (intValue == 0) {
+                        htVar.l.B(htVar.W);
+                    } else if (intValue == 1) {
+                        htVar.l.u(htVar.W);
+                    } else if (intValue == 2) {
+                        htVar.l.u(null);
+                    } else if (intValue == 3) {
+                        htVar.l.G(htVar.W);
+                    } else if (intValue == 4) {
+                        htVar.l.q(htVar.W);
+                    } else if (intValue == 5) {
+                        MediaDataController.getInstance(htVar.r).addRecentSticker(2, htVar.b0, htVar.W, (int) (System.currentTimeMillis() / 1000), this.b);
+                    }
+                    htVar.n();
+                    break;
+                }
+                break;
+        }
+    }
+
+    public /* synthetic */ qc0(org.telegram.ui.dt dtVar, ArrayList arrayList, boolean z10) {
+        this.d = dtVar;
+        this.c = arrayList;
+        this.b = z10;
+    }
+
+    public /* synthetic */ qc0(boolean z10, org.telegram.ui.s6 s6Var, Runnable runnable) {
+        this.b = z10;
+        this.d = s6Var;
+        this.c = runnable;
     }
 }

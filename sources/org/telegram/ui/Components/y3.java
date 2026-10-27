@@ -6,22 +6,22 @@ import android.graphics.Point;
 import android.widget.LinearLayout;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class y3 extends LinearLayout {
     public final /* synthetic */ int a;
     public boolean b;
-    public final /* synthetic */ md0 c;
-    public final /* synthetic */ md0 d;
-    public final /* synthetic */ md0 e;
+    public final /* synthetic */ nd0 c;
+    public final /* synthetic */ nd0 d;
+    public final /* synthetic */ nd0 e;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ y3(Context context, md0 md0Var, md0 md0Var2, md0 md0Var3, int i10) {
+    public /* synthetic */ y3(Context context, nd0 nd0Var, nd0 nd0Var2, nd0 nd0Var3, int i10) {
         super(context);
         this.a = i10;
-        this.c = md0Var;
-        this.d = md0Var2;
-        this.e = md0Var3;
+        this.c = nd0Var;
+        this.d = nd0Var2;
+        this.e = nd0Var3;
         this.b = false;
     }
 
@@ -34,11 +34,11 @@ public final class y3 extends LinearLayout {
                 this.b = true;
                 Point point = AndroidUtilities.displaySize;
                 int i12 = point.x > point.y ? 3 : 5;
-                md0 md0Var = this.c;
-                md0Var.setItemCount(i12);
+                nd0 nd0Var = this.c;
+                nd0Var.setItemCount(i12);
                 w3Var.setItemCount(i12);
                 x3Var.setItemCount(i12);
-                md0Var.getLayoutParams().height = AndroidUtilities.dp(42.0f) * i12;
+                nd0Var.getLayoutParams().height = AndroidUtilities.dp(42.0f) * i12;
                 w3Var.getLayoutParams().height = AndroidUtilities.dp(42.0f) * i12;
                 x3Var.getLayoutParams().height = AndroidUtilities.dp(42.0f) * i12;
                 this.b = false;
@@ -50,11 +50,11 @@ public final class y3 extends LinearLayout {
                 this.b = true;
                 Point point2 = AndroidUtilities.displaySize;
                 int i13 = point2.x > point2.y ? 3 : 5;
-                md0 md0Var2 = this.c;
-                md0Var2.setItemCount(i13);
+                nd0 nd0Var2 = this.c;
+                nd0Var2.setItemCount(i13);
                 z3Var.setItemCount(i13);
                 b4Var.setItemCount(i13);
-                md0Var2.getLayoutParams().height = AndroidUtilities.dp(42.0f) * i13;
+                nd0Var2.getLayoutParams().height = AndroidUtilities.dp(42.0f) * i13;
                 z3Var.getLayoutParams().height = AndroidUtilities.dp(42.0f) * i13;
                 b4Var.getLayoutParams().height = AndroidUtilities.dp(42.0f) * i13;
                 this.b = false;
@@ -66,11 +66,11 @@ public final class y3 extends LinearLayout {
                 this.b = true;
                 Point point3 = AndroidUtilities.displaySize;
                 int i14 = point3.x > point3.y ? 3 : 5;
-                md0 md0Var3 = this.c;
-                md0Var3.setItemCount(i14);
+                nd0 nd0Var3 = this.c;
+                nd0Var3.setItemCount(i14);
                 f4Var.setItemCount(i14);
                 g4Var.setItemCount(i14);
-                md0Var3.getLayoutParams().height = AndroidUtilities.dp(42.0f) * i14;
+                nd0Var3.getLayoutParams().height = AndroidUtilities.dp(42.0f) * i14;
                 f4Var.getLayoutParams().height = AndroidUtilities.dp(42.0f) * i14;
                 g4Var.getLayoutParams().height = AndroidUtilities.dp(42.0f) * i14;
                 this.b = false;
@@ -82,11 +82,11 @@ public final class y3 extends LinearLayout {
                 this.b = true;
                 Point point4 = AndroidUtilities.displaySize;
                 int i15 = point4.x > point4.y ? 3 : 5;
-                md0 md0Var4 = this.c;
-                md0Var4.setItemCount(i15);
+                nd0 nd0Var4 = this.c;
+                nd0Var4.setItemCount(i15);
                 i4Var.setItemCount(i15);
                 j4Var.setItemCount(i15);
-                md0Var4.getLayoutParams().height = AndroidUtilities.dp(42.0f) * i15;
+                nd0Var4.getLayoutParams().height = AndroidUtilities.dp(42.0f) * i15;
                 i4Var.getLayoutParams().height = AndroidUtilities.dp(42.0f) * i15;
                 j4Var.getLayoutParams().height = AndroidUtilities.dp(42.0f) * i15;
                 this.b = false;
@@ -102,9 +102,9 @@ public final class y3 extends LinearLayout {
                 m4Var.getLayoutParams().height = AndroidUtilities.dp(42.0f) * i16;
                 n4Var.setItemCount(i16);
                 n4Var.getLayoutParams().height = AndroidUtilities.dp(42.0f) * i16;
-                md0 md0Var5 = this.c;
-                md0Var5.setItemCount(i16);
-                md0Var5.getLayoutParams().height = AndroidUtilities.dp(42.0f) * i16;
+                nd0 nd0Var5 = this.c;
+                nd0Var5.setItemCount(i16);
+                nd0Var5.getLayoutParams().height = AndroidUtilities.dp(42.0f) * i16;
                 this.b = false;
                 super.onMeasure(i10, i11);
                 break;
@@ -114,11 +114,11 @@ public final class y3 extends LinearLayout {
                 this.b = true;
                 Point point6 = AndroidUtilities.displaySize;
                 int i17 = point6.x > point6.y ? 3 : 5;
-                md0 md0Var6 = this.c;
-                md0Var6.setItemCount(i17);
+                nd0 nd0Var6 = this.c;
+                nd0Var6.setItemCount(i17);
                 v4Var.setItemCount(i17);
                 w4Var.setItemCount(i17);
-                md0Var6.getLayoutParams().height = AndroidUtilities.dp(42.0f) * i17;
+                nd0Var6.getLayoutParams().height = AndroidUtilities.dp(42.0f) * i17;
                 v4Var.getLayoutParams().height = AndroidUtilities.dp(42.0f) * i17;
                 w4Var.getLayoutParams().height = AndroidUtilities.dp(42.0f) * i17;
                 this.b = false;
@@ -170,12 +170,12 @@ public final class y3 extends LinearLayout {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public y3(Activity activity, m4 m4Var, n4 n4Var, md0 md0Var) {
+    public y3(Activity activity, m4 m4Var, n4 n4Var, nd0 nd0Var) {
         super(activity);
         this.a = 4;
         this.d = m4Var;
         this.e = n4Var;
-        this.c = md0Var;
+        this.c = nd0Var;
         this.b = false;
     }
 }

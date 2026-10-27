@@ -1,63 +1,54 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import java.util.ArrayList;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.ui.WallpapersListActivity;
-
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class hp implements View.OnClickListener {
+public final /* synthetic */ class hp implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ yp b;
+    public final /* synthetic */ zp b;
 
-    public /* synthetic */ hp(yp ypVar, int i10) {
+    public /* synthetic */ hp(zp zpVar, int i10) {
         this.a = i10;
-        this.b = ypVar;
+        this.b = zpVar;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                yp ypVar = this.b;
-                ti tiVar = ypVar.X;
-                if (tiVar.B0 != tiVar.j0) {
-                    ypVar.Z.setText(LocaleController.getString(R.string.SetColorAsBackground));
-                    ti tiVar2 = ypVar.X;
-                    tiVar2.X1(tiVar2.j0);
-                    break;
-                } else {
-                    ypVar.Z.setText(LocaleController.getString(R.string.ChooseBackgroundFromGallery));
-                    ypVar.X.H1();
-                    ij ijVar = ypVar.X.r0;
-                    boolean z10 = ypVar.M;
-                    za zaVar = ijVar.v;
-                    ((ArrayList) zaVar.e).clear();
-                    WallpapersListActivity.A0((ArrayList) zaVar.e, z10);
-                    zaVar.l();
-                    break;
-                }
+                this.b.h.l();
+                break;
             case 1:
-                yp ypVar2 = this.b;
-                if (!ypVar2.A()) {
-                    ypVar2.dismiss();
-                    break;
-                } else {
-                    ypVar2.F(true);
-                    ypVar2.L(true);
-                    break;
-                }
+                this.b.u(true);
+                break;
             case 2:
-                yp ypVar3 = this.b;
-                if (ypVar3.S == null) {
-                    ypVar3.H(!ypVar3.M);
-                    break;
-                }
+                zp zpVar = this.b;
+                org.telegram.ui.wn wnVar = zpVar.v;
+                org.telegram.ui.ActionBar.r2 c02 = org.telegram.ui.y91.c0(wnVar.getMessagesController().getChat(Long.valueOf(-wnVar.a())), true);
+                org.telegram.ui.ActionBar.p2 p2Var = new org.telegram.ui.ActionBar.p2();
+                p2Var.a = true;
+                c02.setResourceProvider(wnVar.getResourceProvider());
+                p2Var.c = new k5(9);
+                p2Var.d = new hp(zpVar, 3);
+                p2Var.b = new hp(zpVar, 4);
+                p2Var.e = true;
+                zpVar.W = c02;
+                wnVar.showAsSheet(c02, p2Var);
+                break;
+            case 3:
+                this.b.y();
+                break;
+            case 4:
+                this.b.W = null;
+                break;
+            case 5:
+                this.b.y();
+                break;
+            case 6:
+                this.b.W = null;
                 break;
             default:
-                this.b.u(false);
+                zp zpVar2 = this.b;
+                zpVar2.T.f(zpVar2.F, true);
                 break;
         }
     }

@@ -10,9 +10,9 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.gb1;
+import org.telegram.ui.Components.kb1;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class z1 extends FrameLayout {
     public final org.telegram.ui.Components.s6 a;
@@ -30,13 +30,13 @@ public final class z1 extends FrameLayout {
         s6Var.setGravity(LocaleController.isRTL ? 5 : 3);
         s6Var.setImportantForAccessibility(2);
         s6Var.setOnWidthUpdatedListener(new g(this, 2));
-        addView(s6Var, gb1.m(-2.0f, -2.0f, 8388627, 21.0f, 0.0f, 38.0f, 3.0f));
+        addView(s6Var, kb1.m(-2.0f, -2.0f, 8388627, 21.0f, 0.0f, 38.0f, 3.0f));
         View view = new View(context);
         this.b = view;
         Drawable mutate = getContext().getResources().getDrawable(R.drawable.arrow_more).mutate();
         org.telegram.ui.ActionBar.f7.y(this, mutate, i10, u6Var, PorterDuff.Mode.MULTIPLY);
         view.setBackground(mutate);
-        addView(view, gb1.m(14.0f, 14.0f, 8388627, 21.0f, 1.0f, 0.0f, 3.0f));
+        addView(view, kb1.m(14.0f, 14.0f, 8388627, 21.0f, 1.0f, 0.0f, 3.0f));
     }
 
     public final void a() {

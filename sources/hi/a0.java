@@ -14,16 +14,16 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserObject;
 import org.telegram.ui.ActionBar.f7;
 import org.telegram.ui.ActionBar.y6;
-import org.telegram.ui.Components.gb1;
-import org.telegram.ui.Components.j71;
-import org.telegram.ui.Components.r71;
-import org.telegram.ui.Components.t61;
+import org.telegram.ui.Components.k71;
+import org.telegram.ui.Components.kb1;
+import org.telegram.ui.Components.s71;
+import org.telegram.ui.Components.u61;
 import org.telegram.ui.j5;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class a0 extends org.telegram.ui.ActionBar.r2 {
-    public r71 a;
+    public s71 a;
     public final ArrayList b;
     public final HashMap c;
 
@@ -48,21 +48,21 @@ public final class a0 extends org.telegram.ui.ActionBar.r2 {
                 spannableStringBuilder.append((CharSequence) UserObject.getUserName(xVar.a));
                 hashMap.put(xVar, spannableStringBuilder);
             }
-            t61 i11 = t61.i(i10, spannableStringBuilder);
+            u61 i11 = u61.i(i10, spannableStringBuilder);
             i11.L(!xVar.b);
             arrayList.add(i11);
         }
         ic.a.z(R.string.PrivacyBiometryBotsInfo, arrayList);
     }
 
-    public static void W(a0 a0Var, t61 t61Var) {
+    public static void W(a0 a0Var, u61 u61Var) {
         int i10;
-        j71 j71Var;
+        k71 k71Var;
         ArrayList arrayList = a0Var.b;
-        if (t61Var.a != 4 || (i10 = t61Var.d) < 0 || i10 >= arrayList.size()) {
+        if (u61Var.a != 4 || (i10 = u61Var.d) < 0 || i10 >= arrayList.size()) {
             return;
         }
-        x xVar = (x) arrayList.get(t61Var.d);
+        x xVar = (x) arrayList.get(u61Var.d);
         xVar.b = !xVar.b;
         Activity parentActivity = a0Var.getParentActivity();
         int i11 = a0Var.currentAccount;
@@ -76,11 +76,11 @@ public final class a0 extends org.telegram.ui.ActionBar.r2 {
             edit.putString(String.valueOf(j10), "");
         }
         edit.apply();
-        r71 r71Var = a0Var.a;
-        if (r71Var == null || (j71Var = r71Var.g3) == null) {
+        s71 s71Var = a0Var.a;
+        if (s71Var == null || (k71Var = s71Var.g3) == null) {
             return;
         }
-        j71Var.O(true);
+        k71Var.O(true);
     }
 
     @Override // org.telegram.ui.ActionBar.r2
@@ -91,9 +91,9 @@ public final class a0 extends org.telegram.ui.ActionBar.r2 {
         this.actionBar.setActionBarMenuOnItemClick(new bh.m(this, 2));
         FrameLayout frameLayout = new FrameLayout(context);
         f7.i(y6.a7, frameLayout, this.resourceProvider);
-        r71 r71Var = new r71(this, new ai.e(this, 27), new z(this), new z(this));
-        this.a = r71Var;
-        frameLayout.addView(r71Var, gb1.i(-1, -1, 119));
+        s71 s71Var = new s71(this, new ai.e(this, 27), new z(this), new z(this));
+        this.a = s71Var;
+        frameLayout.addView(s71Var, kb1.i(-1, -1, 119));
         y.d(getParentActivity(), this.currentAccount, new ai.i(this, 28));
         this.fragmentView = frameLayout;
         return frameLayout;

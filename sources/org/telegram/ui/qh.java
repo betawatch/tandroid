@@ -1,81 +1,77 @@
 package org.telegram.ui;
 
-import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
 import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
-import org.telegram.messenger.Utilities;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ApplicationLoader;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.FlagSecureReason;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class qh implements Utilities.Callback0Return {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ Object c;
+public final /* synthetic */ class qh implements FlagSecureReason.FlagSecureCondition, bv0, r0.n, org.telegram.ui.ActionBar.b2 {
+    public final /* synthetic */ wn a;
 
-    public /* synthetic */ qh(int i10, Object obj, Object obj2) {
-        this.a = i10;
-        this.b = obj;
-        this.c = obj2;
+    public /* synthetic */ qh(wn wnVar) {
+        this.a = wnVar;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:31:0x007b  */
-    /* JADX WARN: Removed duplicated region for block: B:33:? A[RETURN, SYNTHETIC] */
-    @Override // org.telegram.messenger.Utilities.Callback0Return
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final Object run() {
-        View childAt;
-        switch (this.a) {
-            case 0:
-                return un.m0((un) this.b, (Context) this.c);
-            case 1:
-                org.telegram.ui.Components.j71 j71Var = (org.telegram.ui.Components.j71) this.b;
-                Object obj = ((org.telegram.ui.Components.t61) this.c).G;
-                org.telegram.ui.Components.mm0 mm0Var = j71Var.d;
-                int i10 = 0;
-                while (true) {
-                    if (i10 < j71Var.y.size()) {
-                        org.telegram.ui.Components.t61 G = j71Var.G(i10);
-                        if (G == null || G.G != obj) {
-                            i10++;
-                        }
-                    } else {
-                        i10 = -1;
-                    }
-                }
-                if (i10 != -1) {
-                    for (int i11 = 0; i11 < mm0Var.getChildCount(); i11++) {
-                        childAt = mm0Var.getChildAt(i11);
-                        int R = RecyclerView.R(childAt);
-                        if (R != -1 && R == i10) {
-                            if (childAt instanceof u91) {
-                                return null;
-                            }
-                            return (u91) childAt;
-                        }
-                    }
-                }
-                childAt = null;
-                if (childAt instanceof u91) {
-                }
-                break;
-            default:
-                w91 w91Var = (w91) this.b;
-                i91 i91Var = (i91) this.c;
-                int childCount = w91Var.S.getChildCount();
-                for (int i12 = 0; i12 < childCount; i12++) {
-                    View childAt2 = w91Var.S.getChildAt(i12);
-                    if (childAt2 instanceof h91) {
-                        h91 h91Var = (h91) childAt2;
-                        if (h91Var.r == i91Var) {
-                            return h91Var;
-                        }
-                    }
-                }
-                w91Var.S.setItemAnimator(null);
-                w91Var.B0.f();
-                return null;
+    @Override // r0.n
+    public r0.k1 P0(View view, r0.k1 k1Var) {
+        wn wnVar = this.a;
+        r0.k1 F8 = wnVar.F8(k1Var);
+        i0.b defaultWindowInsets = AndroidUtilities.getDefaultWindowInsets(F8, false);
+        int i10 = defaultWindowInsets.a;
+        int i11 = defaultWindowInsets.c;
+        if (wnVar.tb != i10 || wnVar.ub != i11) {
+            wnVar.tb = i10;
+            wnVar.ub = i11;
+            wnVar.j1.requestLayout();
         }
+        wnVar.v.j(F8);
+        bh.r rVar = wnVar.W3;
+        if (rVar != null) {
+            rVar.setPadding(i10, 0, i11, 0);
+        }
+        wnVar.w7();
+        wnVar.A7();
+        wnVar.B9();
+        boolean p10 = F8.a.p(8);
+        if (wnVar.sb != p10) {
+            wnVar.sb = p10;
+            wnVar.j1.R();
+        }
+        fi.h1 h1Var = wnVar.C1;
+        if (h1Var != null) {
+            r0.i0.b(h1Var, F8);
+        }
+        return r0.k1.b;
+    }
+
+    @Override // org.telegram.ui.bv0
+    public void a(float[] fArr) {
+        wn wnVar = this.a;
+        fArr[1] = wnVar.x0.getBottom() - wnVar.Ra;
+        fArr[0] = (wnVar.x0.getTop() + wnVar.I9) - AndroidUtilities.dp(4.0f);
+    }
+
+    @Override // org.telegram.ui.ActionBar.b2
+    public void h(org.telegram.ui.ActionBar.e2 e2Var, int i10) {
+        wn wnVar = this.a;
+        wnVar.getClass();
+        try {
+            Intent intent = new Intent("android.settings.APPLICATION_DETAILS_SETTINGS");
+            intent.setData(Uri.parse("package:" + ApplicationLoader.applicationContext.getPackageName()));
+            wnVar.getParentActivity().startActivity(intent);
+        } catch (Exception e) {
+            FileLog.e(e);
+        }
+    }
+
+    @Override // org.telegram.messenger.FlagSecureReason.FlagSecureCondition
+    public boolean run() {
+        wn wnVar = this.a;
+        return wnVar.h != null || wnVar.K9();
     }
 }

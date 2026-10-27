@@ -24,16 +24,16 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.e00;
-import org.telegram.ui.Components.ec1;
-import org.telegram.ui.Components.eg0;
 import org.telegram.ui.Components.f00;
-import org.telegram.ui.Components.fc1;
-import org.telegram.ui.Components.g81;
-import org.telegram.ui.Components.xe0;
+import org.telegram.ui.Components.fg0;
+import org.telegram.ui.Components.h81;
+import org.telegram.ui.Components.jc1;
+import org.telegram.ui.Components.kc1;
+import org.telegram.ui.Components.ye0;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class y9 implements CameraView.CameraViewDelegate, r0.n, org.telegram.ui.ActionBar.b2, ec1, Utilities.CallbackVoidReturn, g81, r8, u7 {
+public final /* synthetic */ class y9 implements CameraView.CameraViewDelegate, r0.n, org.telegram.ui.ActionBar.b2, jc1, Utilities.CallbackVoidReturn, h81, r8, u7 {
     public final /* synthetic */ int a;
     public final /* synthetic */ sb b;
 
@@ -55,7 +55,7 @@ public final /* synthetic */ class y9 implements CameraView.CameraViewDelegate, 
         return r0.k1.b;
     }
 
-    @Override // org.telegram.ui.Components.ec1
+    @Override // org.telegram.ui.Components.jc1
     public void a(float f7) {
         sb sbVar = this.b;
         va vaVar = sbVar.B0;
@@ -119,7 +119,7 @@ public final /* synthetic */ class y9 implements CameraView.CameraViewDelegate, 
                 int i15 = R.string.PermissionNoCameraMicVideo;
                 String[] strArr = z13 ? new String[0] : new String[]{"android.permission.CAMERA", "android.permission.RECORD_AUDIO"};
                 final sb sbVar2 = this.b;
-                xe0.b(i14, i15, strArr, new Utilities.Callback() { // from class: fi.w9
+                ye0.b(i14, i15, strArr, new Utilities.Callback() { // from class: fi.w9
                     @Override // org.telegram.messenger.Utilities.Callback
                     public final void run(Object obj2) {
                         boolean z14;
@@ -163,7 +163,7 @@ public final /* synthetic */ class y9 implements CameraView.CameraViewDelegate, 
         }
     }
 
-    @Override // org.telegram.ui.Components.g81
+    @Override // org.telegram.ui.Components.h81
     public void d(e00 e00Var) {
         MediaController.SavedFilterState savedFilterState;
         sb sbVar = this.b;
@@ -297,10 +297,10 @@ public final /* synthetic */ class y9 implements CameraView.CameraViewDelegate, 
             B = null;
         }
         sbVar.d0(sbVar.f0 == 0 ? B : null);
-        fc1 fc1Var = sbVar.V0;
-        if (fc1Var != null) {
+        kc1 kc1Var = sbVar.V0;
+        if (kc1Var != null) {
             sbVar.T1 = 0.0f;
-            fc1Var.b(0.0f, false);
+            kc1Var.b(0.0f, false);
         }
         sbVar.l0(true);
     }
@@ -309,8 +309,8 @@ public final /* synthetic */ class y9 implements CameraView.CameraViewDelegate, 
     public Object run() {
         gb gbVar;
         sb sbVar = this.b;
-        eg0 eg0Var = sbVar.B1;
-        Bitmap uiBlurBitmap = eg0Var != null ? eg0Var.getUiBlurBitmap() : null;
+        fg0 fg0Var = sbVar.B1;
+        Bitmap uiBlurBitmap = fg0Var != null ? fg0Var.getUiBlurBitmap() : null;
         return (uiBlurBitmap != null || (gbVar = sbVar.X0) == null || gbVar.getTextureView() == null) ? uiBlurBitmap : sbVar.X0.getTextureView().getUiBlurBitmap();
     }
 }

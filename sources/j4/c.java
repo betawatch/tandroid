@@ -4,7 +4,7 @@ import f9.i0;
 import f9.s1;
 import java.util.List;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
 public final class c implements c3.o {
     public final b a = new b(0, 1, null, "audio/ac4");
@@ -34,10 +34,10 @@ public final class c implements c3.o {
             xVar.O(3);
             int z10 = xVar.z();
             i11 += z10 + 10;
-            lVar.s(z10, false);
+            lVar.u(z10, false);
         }
         lVar.f = 0;
-        lVar.s(i11, false);
+        lVar.u(i11, false);
         int i12 = 0;
         int i13 = i11;
         while (true) {
@@ -68,14 +68,14 @@ public final class c implements c3.o {
                 if (i10 == -1) {
                     break;
                 }
-                lVar.s(i10 - 7, false);
+                lVar.u(i10 - 7, false);
             } else {
                 lVar.f = 0;
                 i13++;
                 if (i13 - i11 >= 8192) {
                     break;
                 }
-                lVar.s(i13, false);
+                lVar.u(i13, false);
                 i12 = 0;
             }
         }

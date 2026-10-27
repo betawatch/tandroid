@@ -5,11 +5,11 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.ActionBar.u6;
-import org.telegram.ui.Components.gb1;
 import org.telegram.ui.Components.gq;
 import org.telegram.ui.Components.hr;
+import org.telegram.ui.Components.kb1;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class b extends FrameLayout {
     public final u6 a;
@@ -27,7 +27,7 @@ public final class b extends FrameLayout {
             hr hrVar = new hr(getContext(), this.a);
             this.c = hrVar;
             hrVar.setReverse(this.d);
-            addView(this.c, gb1.i(-1, 28, 48));
+            addView(this.c, kb1.i(-1, 28, 48));
         }
         this.c.a.c(i10, z10);
     }
@@ -50,7 +50,7 @@ public final class b extends FrameLayout {
             aVar.d = imageView;
             imageView.setBackground(aVar.e);
             aVar.d.setVisibility(8);
-            aVar.addView(aVar.d, gb1.i(46, 46, 17));
+            aVar.addView(aVar.d, kb1.i(46, 46, 17));
         }
         oe.b bVar = aVar.a;
         if (!bVar.f && bVar.e == 0.0f) {

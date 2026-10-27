@@ -1,77 +1,58 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.animation.AnimatorSet;
-import android.widget.FrameLayout;
+import android.graphics.Rect;
+import android.view.MotionEvent;
+import android.view.View;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public final class vq0 extends AnimatorListenerAdapter {
+public final class vq0 implements View.OnTouchListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ mr0 c;
+    public final Rect b;
+    public final /* synthetic */ nr0 c;
 
-    public /* synthetic */ vq0(mr0 mr0Var, boolean z10, int i10) {
+    public vq0(nr0 nr0Var, int i10) {
         this.a = i10;
-        this.c = mr0Var;
-        this.b = z10;
-    }
-
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationCancel(Animator animator) {
-        switch (this.a) {
-            case 0:
-                AnimatorSet[] animatorSetArr = this.c.U;
-                AnimatorSet animatorSet = animatorSetArr[0];
-                if (animatorSet != null && animatorSet.equals(animator)) {
-                    animatorSetArr[0] = null;
-                    break;
-                }
+        switch (i10) {
+            case 1:
+                this.c = nr0Var;
+                this.b = new Rect();
                 break;
             default:
-                mr0 mr0Var = this.c;
-                if (animator.equals(mr0Var.E)) {
-                    mr0Var.E = null;
-                    break;
-                }
+                this.c = nr0Var;
+                this.b = new Rect();
                 break;
         }
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
+    @Override // android.view.View.OnTouchListener
+    public final boolean onTouch(View view, MotionEvent motionEvent) {
+        nr0 nr0Var;
+        org.telegram.ui.ActionBar.o1 o1Var;
+        nr0 nr0Var2;
+        org.telegram.ui.ActionBar.o1 o1Var2;
         switch (this.a) {
             case 0:
-                mr0 mr0Var = this.c;
-                AnimatorSet[] animatorSetArr = mr0Var.U;
-                AnimatorSet animatorSet = animatorSetArr[0];
-                if (animatorSet != null && animatorSet.equals(animator)) {
-                    if (!this.b) {
-                        mr0Var.T[0].setVisibility(4);
+                if (motionEvent.getActionMasked() == 0 && (o1Var = (nr0Var = this.c).K0) != null && o1Var.isShowing()) {
+                    Rect rect = this.b;
+                    view.getHitRect(rect);
+                    if (!rect.contains((int) motionEvent.getX(), (int) motionEvent.getY())) {
+                        nr0Var.K0.d(true);
+                        break;
                     }
-                    animatorSetArr[0] = null;
-                    break;
                 }
                 break;
             default:
-                mr0 mr0Var2 = this.c;
-                FrameLayout frameLayout = mr0Var2.h;
-                if (animator.equals(mr0Var2.E)) {
-                    if (!this.b) {
-                        mr0Var2.c.setVisibility(4);
-                        FrameLayout frameLayout2 = mr0Var2.d0;
-                        if (frameLayout2 != null && frameLayout == null) {
-                            frameLayout2.setVisibility(4);
-                        }
-                        mr0Var2.f.setVisibility(4);
-                    } else if (frameLayout != null) {
-                        frameLayout.setVisibility(4);
+                if (motionEvent.getActionMasked() == 0 && (o1Var2 = (nr0Var2 = this.c).K0) != null && o1Var2.isShowing()) {
+                    Rect rect2 = this.b;
+                    view.getHitRect(rect2);
+                    if (!rect2.contains((int) motionEvent.getX(), (int) motionEvent.getY())) {
+                        nr0Var2.K0.d(true);
+                        break;
                     }
-                    mr0Var2.E = null;
-                    break;
                 }
                 break;
         }
+        return false;
     }
 }

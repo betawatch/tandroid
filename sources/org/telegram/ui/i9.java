@@ -16,21 +16,21 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public final class i9 extends org.telegram.ui.Components.s61 {
+public final class i9 extends org.telegram.ui.Components.t61 {
     public static final /* synthetic */ int a = 0;
 
     static {
-        org.telegram.ui.Components.s61.setup(new i9());
+        org.telegram.ui.Components.t61.setup(new i9());
     }
 
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Type inference failed for: r12v10, types: [boolean, int] */
     /* JADX WARN: Type inference failed for: r12v12 */
     /* JADX WARN: Type inference failed for: r12v9 */
-    @Override // org.telegram.ui.Components.s61
-    public final void bindView(View view, org.telegram.ui.Components.t61 t61Var, boolean z10, org.telegram.ui.Components.j71 j71Var, org.telegram.ui.Components.r71 r71Var) {
+    @Override // org.telegram.ui.Components.t61
+    public final void bindView(View view, org.telegram.ui.Components.u61 u61Var, boolean z10, org.telegram.ui.Components.k71 k71Var, org.telegram.ui.Components.s71 s71Var) {
         int i10;
         boolean z11;
         SpannableString spannableString;
@@ -39,9 +39,9 @@ public final class i9 extends org.telegram.ui.Components.s61 {
         boolean z12;
         ?? r12;
         int i12;
-        k9 k9Var = (k9) t61Var.G;
+        k9 k9Var = (k9) u61Var.G;
         j9 j9Var = (j9) view;
-        View.OnClickListener onClickListener = t61Var.D;
+        View.OnClickListener onClickListener = u61Var.D;
         int i13 = j9Var.a;
         org.telegram.ui.Components.m9 m9Var = j9Var.b;
         org.telegram.ui.Cells.m6 m6Var = j9Var.d;
@@ -151,16 +151,16 @@ public final class i9 extends org.telegram.ui.Components.s61 {
         }
         imageView.setTag(k9Var);
         imageView.setOnClickListener(onClickListener);
-        boolean z15 = t61Var.e;
-        org.telegram.ui.Components.zp zpVar = j9Var.e;
-        if (zpVar == null) {
+        boolean z15 = u61Var.e;
+        org.telegram.ui.Components.aq aqVar = j9Var.e;
+        if (aqVar == null) {
             return;
         }
-        zpVar.a(z15, z12);
+        aqVar.a(z15, z12);
     }
 
-    @Override // org.telegram.ui.Components.s61
-    public final View createView(Context context, org.telegram.ui.Components.mm0 mm0Var, int i10, int i11, org.telegram.ui.ActionBar.u6 u6Var) {
+    @Override // org.telegram.ui.Components.t61
+    public final View createView(Context context, org.telegram.ui.Components.nm0 nm0Var, int i10, int i11, org.telegram.ui.ActionBar.u6 u6Var) {
         return new j9(context, i10);
     }
 }

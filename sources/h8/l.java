@@ -1,6 +1,6 @@
 package h8;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
 public abstract class l {
     public static final l6.c[] a = {new l6.c("name_ulr_private", 1), new l6.c("name_sleep_segment_request", 1), new l6.c("get_last_activity_feature_id", 1), new l6.c("support_context_feature_id", 1), new l6.c("get_current_location", 2), new l6.c("get_last_location_with_request", 1), new l6.c("set_mock_mode_with_callback", 1), new l6.c("set_mock_location_with_callback", 1), new l6.c("inject_location_with_callback", 1), new l6.c("location_updates_with_callback", 1), new l6.c("use_safe_parcelable_in_intents", 1)};

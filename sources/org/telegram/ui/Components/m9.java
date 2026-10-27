@@ -8,12 +8,12 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public class m9 extends View {
     public final l9 a;
     public tg.a1 b;
-    public q11 c;
+    public r11 c;
     public Paint d;
 
     public m9(Context context, boolean z10) {

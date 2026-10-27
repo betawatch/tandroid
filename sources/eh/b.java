@@ -9,14 +9,14 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.ActionBar.k;
 import org.telegram.ui.ActionBar.r2;
 import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
-import org.telegram.ui.Components.hc0;
-import org.telegram.ui.Components.o60;
+import org.telegram.ui.Components.ic0;
+import org.telegram.ui.Components.p60;
 import org.telegram.ui.Components.ti;
 import org.telegram.ui.Components.voip.t2;
 import org.telegram.ui.Components.voip.v1;
 import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class b extends ViewOutlineProvider {
     public final /* synthetic */ int a;
@@ -69,11 +69,11 @@ public final class b extends ViewOutlineProvider {
                     break;
                 }
             case 2:
-                int i11 = ((o60) obj).X0;
+                int i11 = ((p60) obj).W0;
                 outline.setOval(0, 0, i11, i11);
                 break;
             case 3:
-                outline.setRoundRect(0, ((hc0) obj).T + 1, view.getMeasuredWidth(), view.getMeasuredHeight(), AndroidUtilities.dp(8.0f));
+                outline.setRoundRect(0, ((ic0) obj).T + 1, view.getMeasuredWidth(), view.getMeasuredHeight(), AndroidUtilities.dp(8.0f));
                 break;
             case 4:
                 v1 v1Var = (v1) obj;

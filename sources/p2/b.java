@@ -17,9 +17,9 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.concurrent.CopyOnWriteArrayList;
 import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.ui.Wallet.q6;
+import org.telegram.ui.Wallet.a6;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
 public final class b implements y2.g {
     public final Uri a;
@@ -115,7 +115,7 @@ public final class b implements y2.g {
             b(uri);
         } else {
             this.s = true;
-            this.x.n.postDelayed(new q6(20, this, uri), j10 - elapsedRealtime);
+            this.x.n.postDelayed(new a6(21, this, uri), j10 - elapsedRealtime);
         }
     }
 

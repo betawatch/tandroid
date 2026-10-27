@@ -14,10 +14,10 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.ds;
-import org.telegram.ui.Components.gb1;
-import org.telegram.ui.fc1;
+import org.telegram.ui.Components.kb1;
+import org.telegram.ui.hc1;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class n8 extends FrameLayout {
     public final View a;
@@ -46,7 +46,7 @@ public final class n8 extends FrameLayout {
         this.e = v3Var;
         this.f = v3Var3;
         setWillNotDraw(false);
-        addView(view, gb1.i(-2, 40, 51));
+        addView(view, kb1.i(-2, 40, 51));
         EditTextBoldCursor editTextBoldCursor = new EditTextBoldCursor(context);
         this.b = editTextBoldCursor;
         editTextBoldCursor.setSingleLine(true);
@@ -64,7 +64,7 @@ public final class n8 extends FrameLayout {
         editTextBoldCursor.setEnabled(false);
         editTextBoldCursor.setOnEditorActionListener(new l8(this, 0));
         editTextBoldCursor.addTextChangedListener(new m8(v3Var2));
-        addView(editTextBoldCursor, gb1.h(-1, 40.0f, 48, 40.0f, 0.0f, 44.0f, 0.0f));
+        addView(editTextBoldCursor, kb1.h(-1, 40.0f, 48, 40.0f, 0.0f, 44.0f, 0.0f));
         View view2 = new View(context);
         this.c = view2;
         view2.setContentDescription(LocaleController.getString(R.string.Search));
@@ -74,7 +74,7 @@ public final class n8 extends FrameLayout {
         view2.setBackground(g02);
         org.telegram.ui.ActionBar.f7.k(view2, g02, null, N, u6Var);
         view2.setOnClickListener(new s2(this, 5));
-        addView(view2, gb1.i(40, 40, 53));
+        addView(view2, kb1.i(40, 40, 53));
     }
 
     public static float c(float f7, float f10, float f11) {
@@ -118,7 +118,7 @@ public final class n8 extends FrameLayout {
         this.s.setInterpolator(ds.h);
         this.a.setVisibility(0);
         this.s.addUpdateListener(new a3(this, 7));
-        this.s.addListener(new fc1(this, 11));
+        this.s.addListener(new hc1(this, 11));
         this.s.start();
     }
 

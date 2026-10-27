@@ -6,42 +6,42 @@ import java.util.HashMap;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.VideoEditedInfo;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public abstract class om extends org.telegram.ui.gu0 {
+public abstract class om extends org.telegram.ui.iu0 {
     public final /* synthetic */ ChatAttachAlertPhotoLayout a;
 
     public om(ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout) {
         this.a = chatAttachAlertPhotoLayout;
     }
 
-    @Override // org.telegram.ui.gu0, org.telegram.ui.ou0
+    @Override // org.telegram.ui.iu0, org.telegram.ui.qu0
     public final int H() {
         return ChatAttachAlertPhotoLayout.s1.size();
     }
 
-    @Override // org.telegram.ui.gu0, org.telegram.ui.ou0
+    @Override // org.telegram.ui.iu0, org.telegram.ui.qu0
     public final boolean O() {
         ti tiVar = this.a.b;
         return tiVar != null && tiVar.i0;
     }
 
-    @Override // org.telegram.ui.gu0, org.telegram.ui.ou0
+    @Override // org.telegram.ui.iu0, org.telegram.ui.qu0
     public final int S(int i10) {
         boolean z10 = ChatAttachAlertPhotoLayout.q1;
-        MediaController.PhotoEntry b02 = this.a.b0(i10);
-        if (b02 == null) {
+        MediaController.PhotoEntry c02 = this.a.c0(i10);
+        if (c02 == null) {
             return -1;
         }
-        return ChatAttachAlertPhotoLayout.t1.indexOf(Integer.valueOf(b02.imageId));
+        return ChatAttachAlertPhotoLayout.t1.indexOf(Integer.valueOf(c02.imageId));
     }
 
-    @Override // org.telegram.ui.gu0, org.telegram.ui.ou0
+    @Override // org.telegram.ui.iu0, org.telegram.ui.qu0
     public final ArrayList c() {
         return ChatAttachAlertPhotoLayout.t1;
     }
 
-    @Override // org.telegram.ui.gu0, org.telegram.ui.ou0
+    @Override // org.telegram.ui.iu0, org.telegram.ui.qu0
     public final int k(int i10, VideoEditedInfo videoEditedInfo) {
         boolean z10;
         ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = this.a;
@@ -50,18 +50,18 @@ public abstract class om extends org.telegram.ui.gu0 {
         ti tiVar = chatAttachAlertPhotoLayout.b;
         if (tiVar.V1 < 0 || ChatAttachAlertPhotoLayout.s1.size() < tiVar.V1 || x(i10)) {
             boolean z11 = ChatAttachAlertPhotoLayout.q1;
-            MediaController.PhotoEntry b02 = chatAttachAlertPhotoLayout.b0(i10);
-            if (b02 != null && !chatAttachAlertPhotoLayout.X(b02)) {
+            MediaController.PhotoEntry c02 = chatAttachAlertPhotoLayout.c0(i10);
+            if (c02 != null && !chatAttachAlertPhotoLayout.Y(c02)) {
                 if (ChatAttachAlertPhotoLayout.s1.size() + 1 <= ChatAttachAlertPhotoLayout.P(chatAttachAlertPhotoLayout)) {
-                    int Q = chatAttachAlertPhotoLayout.Q(b02, -1);
-                    if (Q == -1) {
-                        Q = ChatAttachAlertPhotoLayout.t1.indexOf(Integer.valueOf(b02.imageId));
+                    int R = chatAttachAlertPhotoLayout.R(c02, -1);
+                    if (R == -1) {
+                        R = ChatAttachAlertPhotoLayout.t1.indexOf(Integer.valueOf(c02.imageId));
                         z10 = true;
                     } else {
-                        b02.editedInfo = null;
+                        c02.editedInfo = null;
                         z10 = false;
                     }
-                    b02.editedInfo = videoEditedInfo;
+                    c02.editedInfo = videoEditedInfo;
                     int childCount = fmVar2.getChildCount();
                     int i11 = 0;
                     while (true) {
@@ -71,8 +71,8 @@ public abstract class om extends org.telegram.ui.gu0 {
                         View childAt = fmVar2.getChildAt(i11);
                         if (!(childAt instanceof org.telegram.ui.Cells.x5) || ((Integer) childAt.getTag()).intValue() != i10) {
                             i11++;
-                        } else if ((tiVar.f0 instanceof org.telegram.ui.un) && tiVar.W1) {
-                            ((org.telegram.ui.Cells.x5) childAt).b(Q, z10, false);
+                        } else if ((tiVar.f0 instanceof org.telegram.ui.wn) && tiVar.W1) {
+                            ((org.telegram.ui.Cells.x5) childAt).b(R, z10, false);
                         } else {
                             ((org.telegram.ui.Cells.x5) childAt).b(-1, z10, false);
                         }
@@ -86,35 +86,35 @@ public abstract class om extends org.telegram.ui.gu0 {
                         View childAt2 = fmVar.getChildAt(i12);
                         if (!(childAt2 instanceof org.telegram.ui.Cells.x5) || ((Integer) childAt2.getTag()).intValue() != i10) {
                             i12++;
-                        } else if ((tiVar.f0 instanceof org.telegram.ui.un) && tiVar.W1) {
-                            ((org.telegram.ui.Cells.x5) childAt2).b(Q, z10, false);
+                        } else if ((tiVar.f0 instanceof org.telegram.ui.wn) && tiVar.W1) {
+                            ((org.telegram.ui.Cells.x5) childAt2).b(R, z10, false);
                         } else {
                             ((org.telegram.ui.Cells.x5) childAt2).b(-1, z10, false);
                         }
                     }
-                    tiVar.c2(z10 ? 1 : 2);
-                    return Q;
+                    tiVar.d2(z10 ? 1 : 2);
+                    return R;
                 }
             }
         }
         return -1;
     }
 
-    @Override // org.telegram.ui.gu0, org.telegram.ui.ou0
+    @Override // org.telegram.ui.iu0, org.telegram.ui.qu0
     public final void m() {
         boolean z10 = ChatAttachAlertPhotoLayout.q1;
-        this.a.v0();
+        this.a.w0();
     }
 
-    @Override // org.telegram.ui.gu0, org.telegram.ui.ou0
+    @Override // org.telegram.ui.iu0, org.telegram.ui.qu0
     public final HashMap v() {
         return ChatAttachAlertPhotoLayout.s1;
     }
 
-    @Override // org.telegram.ui.gu0, org.telegram.ui.ou0
+    @Override // org.telegram.ui.iu0, org.telegram.ui.qu0
     public final boolean x(int i10) {
         boolean z10 = ChatAttachAlertPhotoLayout.q1;
-        MediaController.PhotoEntry b02 = this.a.b0(i10);
-        return b02 != null && ChatAttachAlertPhotoLayout.s1.containsKey(Integer.valueOf(b02.imageId));
+        MediaController.PhotoEntry c02 = this.a.c0(i10);
+        return c02 != null && ChatAttachAlertPhotoLayout.s1.containsKey(Integer.valueOf(c02.imageId));
     }
 }

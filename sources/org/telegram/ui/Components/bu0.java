@@ -1,47 +1,62 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.TLRPC;
+import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
+import android.util.Property;
+import android.view.KeyEvent;
+import android.view.View;
+import android.view.ViewTreeObserver;
+import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public final class bu0 implements org.telegram.ui.Cells.q7 {
-    public final /* synthetic */ aw0 a;
+public final class bu0 implements ViewTreeObserver.OnPreDrawListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ KeyEvent.Callback c;
 
-    public bu0(aw0 aw0Var) {
-        this.a = aw0Var;
+    public /* synthetic */ bu0(KeyEvent.Callback callback, int i10, int i11) {
+        this.a = i11;
+        this.c = callback;
+        this.b = i10;
     }
 
-    @Override // org.telegram.ui.Cells.q7
-    public final void a(String str, boolean z10) {
-        aw0 aw0Var = this.a;
-        org.telegram.ui.ActionBar.r2 r2Var = aw0Var.x1;
-        if (!z10) {
-            aw0Var.X0(str);
-            return;
+    @Override // android.view.ViewTreeObserver.OnPreDrawListener
+    public final boolean onPreDraw() {
+        int i10 = this.a;
+        int i11 = this.b;
+        KeyEvent.Callback callback = this.c;
+        switch (i10) {
+            case 0:
+                bw0 bw0Var = (bw0) callback;
+                bw0Var.m0[i11].getViewTreeObserver().removeOnPreDrawListener(this);
+                bw0Var.b0(i11);
+                break;
+            default:
+                c81 c81Var = (c81) callback;
+                bi.r1 r1Var = c81Var.d;
+                r1Var.getViewTreeObserver().removeOnPreDrawListener(this);
+                int childCount = r1Var.getChildCount();
+                AnimatorSet animatorSet = new AnimatorSet();
+                for (int i12 = 0; i12 < childCount; i12++) {
+                    View childAt = r1Var.getChildAt(i12);
+                    r1Var.getClass();
+                    int R = RecyclerView.R(childAt);
+                    if (R >= i11) {
+                        if (R == 1 && r1Var.getAdapter() == c81Var.e && (childAt instanceof org.telegram.ui.Cells.z3)) {
+                            childAt = ((org.telegram.ui.Cells.z3) childAt).getTextView();
+                        }
+                        childAt.setAlpha(0.0f);
+                        int min = (int) ((Math.min(r1Var.getMeasuredHeight(), Math.max(0, childAt.getTop())) / r1Var.getMeasuredHeight()) * 100.0f);
+                        ObjectAnimator ofFloat = ObjectAnimator.ofFloat(childAt, (Property<View, Float>) View.ALPHA, 0.0f, 1.0f);
+                        ofFloat.setStartDelay(min);
+                        ofFloat.setDuration(200L);
+                        animatorSet.playTogether(ofFloat);
+                    }
+                }
+                animatorSet.start();
+                break;
         }
-        org.telegram.ui.ActionBar.k3 k3Var = new org.telegram.ui.ActionBar.k3(1, (Context) r2Var.getParentActivity(), (org.telegram.ui.ActionBar.u6) null, false);
-        k3Var.fixNavigationBar();
-        k3Var.title = str;
-        k3Var.bigTitle = false;
-        CharSequence[] charSequenceArr = {LocaleController.getString("Open", R.string.Open), LocaleController.getString("Copy", R.string.Copy)};
-        ng.j jVar = new ng.j(6, this, str);
-        k3Var.items = charSequenceArr;
-        k3Var.onClickListener = jVar;
-        r2Var.showDialog(k3Var);
-    }
-
-    @Override // org.telegram.ui.Cells.q7
-    public final void b(TLRPC.WebPage webPage, MessageObject messageObject) {
-        aw0 aw0Var = this.a;
-        dv.I(aw0Var.x1, messageObject, aw0Var.t1, webPage.site_name, webPage.description, webPage.url, webPage.embed_url, webPage.embed_width, webPage.embed_height, -1, false);
-    }
-
-    @Override // org.telegram.ui.Cells.q7
-    public final boolean c() {
-        return !this.a.E1;
+        return true;
     }
 }

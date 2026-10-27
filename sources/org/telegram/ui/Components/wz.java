@@ -16,7 +16,7 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class wz extends FrameLayout implements org.telegram.ui.ActionBar.p6 {
     public final org.telegram.ui.ActionBar.u6 a;
@@ -34,14 +34,14 @@ public final class wz extends FrameLayout implements org.telegram.ui.ActionBar.p
     public boolean x;
     public int y;
 
-    public wz(Context context, r71 r71Var, org.telegram.ui.ActionBar.u6 u6Var, h2 h2Var) {
+    public wz(Context context, s71 s71Var, org.telegram.ui.ActionBar.u6 u6Var, h2 h2Var) {
         super(context);
         int i10;
         this.y = -1;
-        this.c = r71Var;
+        this.c = s71Var;
         this.f = h2Var;
         this.h = ViewConfiguration.get(context).getScaledTouchSlop();
-        addView(r71Var, gb1.g(-1.0f, -1));
+        addView(s71Var, kb1.g(-1.0f, -1));
         FrameLayout frameLayout = new FrameLayout(context);
         this.d = frameLayout;
         int dp = AndroidUtilities.dp(20.0f);
@@ -51,7 +51,7 @@ public final class wz extends FrameLayout implements org.telegram.ui.ActionBar.p
         frameLayout.setBackground(c02);
         org.telegram.ui.ActionBar.f7.k(frameLayout, c02, N, null, u6Var);
         frameLayout.setElevation(AndroidUtilities.dp(4.0f));
-        addView(frameLayout, gb1.i(40, 40, 49));
+        addView(frameLayout, kb1.i(40, 40, 49));
         w4.c cVar = new w4.c(context);
         this.e = cVar;
         float f7 = cVar.c.getDisplayMetrics().density;
@@ -77,11 +77,11 @@ public final class wz extends FrameLayout implements org.telegram.ui.ActionBar.p
         cVar.invalidateSelf();
         ImageView imageView = new ImageView(context);
         imageView.setImageDrawable(cVar);
-        frameLayout.addView(imageView, gb1.i(32, 32, 17));
+        frameLayout.addView(imageView, kb1.i(32, 32, 17));
         frameLayout.setImportantForAccessibility(2);
         String string = LocaleController.getString(R.string.Refresh);
         p1 p1Var = new p1(21, this, h2Var);
-        ArrayList e = r0.i0.e(r71Var);
+        ArrayList e = r0.i0.e(s71Var);
         int i12 = 0;
         while (true) {
             if (i12 >= e.size()) {
@@ -113,11 +113,11 @@ public final class wz extends FrameLayout implements org.telegram.ui.ActionBar.p
         }
         if (i10 != -1) {
             s0.c cVar2 = new s0.c(null, i10, string, p1Var, null);
-            View.AccessibilityDelegate d = r0.i0.d(r71Var);
+            View.AccessibilityDelegate d = r0.i0.d(s71Var);
             r0.b bVar2 = d != null ? d instanceof r0.a ? ((r0.a) d).a : new r0.b(d) : null;
-            r0.i0.k(r71Var, bVar2 == null ? new r0.b() : bVar2);
+            r0.i0.k(s71Var, bVar2 == null ? new r0.b() : bVar2);
             int a2 = cVar2.a();
-            ArrayList e10 = r0.i0.e(r71Var);
+            ArrayList e10 = r0.i0.e(s71Var);
             int i17 = 0;
             while (true) {
                 if (i17 >= e10.size()) {
@@ -129,8 +129,8 @@ public final class wz extends FrameLayout implements org.telegram.ui.ActionBar.p
                 }
                 i17++;
             }
-            r0.i0.e(r71Var).add(cVar2);
-            r0.i0.g(0, r71Var);
+            r0.i0.e(s71Var).add(cVar2);
+            r0.i0.g(0, s71Var);
         }
         b();
     }
@@ -286,7 +286,7 @@ public final class wz extends FrameLayout implements org.telegram.ui.ActionBar.p
         view.animate().cancel();
         if (!z10) {
             view.animate().translationY(0.0f).setDuration(180L).start();
-            frameLayout.animate().translationY(-AndroidUtilities.dp(20.0f)).alpha(0.0f).setDuration(180L).withEndAction(new bq(this, 18)).start();
+            frameLayout.animate().translationY(-AndroidUtilities.dp(20.0f)).alpha(0.0f).setDuration(180L).withEndAction(new cp(this, 19)).start();
             return;
         }
         frameLayout.setVisibility(0);

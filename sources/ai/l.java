@@ -4,17 +4,17 @@ import bi.x1;
 import fi.z1;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
-import org.telegram.ui.Components.cz0;
+import org.telegram.ui.Components.dz0;
 import org.telegram.ui.Components.ij;
 import org.telegram.ui.Components.sz;
-import org.telegram.ui.Components.t61;
+import org.telegram.ui.Components.u61;
 import org.telegram.ui.Components.vz;
 import org.telegram.ui.Components.xy;
 import org.telegram.ui.Components.yy;
-import org.telegram.ui.lp0;
+import org.telegram.ui.np0;
 import zh.g4;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class l extends g.o {
     public final /* synthetic */ int c;
@@ -43,7 +43,7 @@ public final class l extends g.o {
                 if (q1Var == null || i10 == 0) {
                     return vzVar.J;
                 }
-                t61 G = q1Var.G(i10 - 1);
+                u61 G = q1Var.G(i10 - 1);
                 return (G == null || (i11 = G.u) == -1) ? vzVar.J : i11;
             case 2:
                 fi.t1 t1Var = (fi.t1) this.d;
@@ -89,19 +89,19 @@ public final class l extends g.o {
                 yyVar.C1();
                 return yyVar.R.get(i10);
             case 7:
-                cz0 cz0Var = (cz0) this.d;
-                if ((cz0Var.W == null || !(cz0Var.d.e.get(i10) instanceof Integer)) && i10 != cz0Var.d.h) {
+                dz0 dz0Var = (dz0) this.d;
+                if ((dz0Var.W == null || !(dz0Var.d.e.get(i10) instanceof Integer)) && i10 != dz0Var.d.h) {
                     return 1;
                 }
-                return cz0Var.d.d;
+                return dz0Var.d.d;
             case 8:
-                lp0 lp0Var = (lp0) this.d;
-                if (i10 < lp0Var.b0 || i10 >= lp0Var.c0) {
-                    return (i10 < lp0Var.d0 || i10 >= lp0Var.e0) ? 3 : 1;
+                np0 np0Var = (np0) this.d;
+                if (i10 < np0Var.b0 || i10 >= np0Var.c0) {
+                    return (i10 < np0Var.d0 || i10 >= np0Var.e0) ? 3 : 1;
                 }
                 return 1;
             default:
-                t61 G2 = ((g4) this.d).i0.G(i10 - 1);
+                u61 G2 = ((g4) this.d).i0.G(i10 - 1);
                 if (G2 == null || (i12 = G2.u) == -1) {
                     return 3;
                 }

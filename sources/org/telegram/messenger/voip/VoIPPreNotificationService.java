@@ -41,13 +41,13 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_phone;
-import org.telegram.ui.Components.xe0;
+import org.telegram.ui.Components.ye0;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.VoIPPermissionActivity;
-import org.telegram.ui.ph1;
+import org.telegram.ui.rh1;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
 public class VoIPPreNotificationService {
     public static State currentState;
@@ -57,7 +57,7 @@ public class VoIPPreNotificationService {
     private static final Object sync = new Object();
     private static Vibrator vibrator;
 
-    /* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+    /* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
     public static final class State implements VoIPServiceState {
         private final TL_phone.PhoneCall call;
         private final int currentAccount;
@@ -85,9 +85,9 @@ public class VoIPPreNotificationService {
                 return;
             }
             this.destroyed = true;
-            ph1 ph1Var = ph1.n1;
-            if (ph1Var != null) {
-                ph1Var.onStateChanged(getCallState());
+            rh1 rh1Var = rh1.n1;
+            if (rh1Var != null) {
+                rh1Var.onStateChanged(getCallState());
             }
         }
 
@@ -193,7 +193,7 @@ public class VoIPPreNotificationService {
             VoIPService.getSharedInstance().acceptIncomingCall();
         } else {
             pendingVoIP.putExtra("openFragment", true);
-            if (!xe0.d("android.permission.RECORD_AUDIO") || (isVideo() && !xe0.d("android.permission.CAMERA"))) {
+            if (!ye0.d("android.permission.RECORD_AUDIO") || (isVideo() && !ye0.d("android.permission.CAMERA"))) {
                 try {
                     PendingIntent.getActivity(context, 0, new Intent(context, (Class<?>) VoIPPermissionActivity.class).addFlags(TLObject.FLAG_28), 1107296256).send();
                     return;
@@ -324,9 +324,9 @@ public class VoIPPreNotificationService {
         LaunchActivity launchActivity = LaunchActivity.I1;
         if (launchActivity != null && launchActivity.i1 && VoIPService.getSharedInstance() == null) {
             launchActivity.i1 = false;
-            ph1 ph1Var = ph1.n1;
-            if (ph1Var != null) {
-                ph1Var.m();
+            rh1 rh1Var = rh1.n1;
+            if (rh1Var != null) {
+                rh1Var.m();
             }
             launchActivity.moveTaskToBack(true);
         }

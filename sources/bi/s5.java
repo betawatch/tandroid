@@ -11,9 +11,9 @@ import java.lang.reflect.Array;
 import java.util.HashMap;
 import java.util.HashSet;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.gb1;
+import org.telegram.ui.Components.kb1;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class s5 extends FrameLayout {
     public float E;
@@ -59,7 +59,7 @@ public final class s5 extends FrameLayout {
         android.opengl.Matrix.setIdentityM(fArr, 0);
         this.a = viewArr;
         for (View view : viewArr) {
-            addView(view, gb1.i(108, 108, 17));
+            addView(view, kb1.i(108, 108, 17));
         }
     }
 
@@ -355,7 +355,7 @@ public final class s5 extends FrameLayout {
         }
         AndroidUtilities.removeFromParent(frameLayout);
         int childCount = getChildCount();
-        addView(frameLayout, gb1.i(64, 64, 17));
+        addView(frameLayout, kb1.i(64, 64, 17));
         this.v.add(Integer.valueOf(i10));
         this.w.put(Integer.valueOf(childCount), Integer.valueOf(i10));
     }

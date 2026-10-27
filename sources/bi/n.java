@@ -21,14 +21,14 @@ import org.telegram.ui.Components.gg;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.TwoStepVerificationActivity;
-import org.telegram.ui.cy;
-import org.telegram.ui.gq;
-import org.telegram.ui.lb0;
-import org.telegram.ui.qz0;
-import org.telegram.ui.rz0;
-import org.telegram.ui.v50;
+import org.telegram.ui.ey;
+import org.telegram.ui.iq;
+import org.telegram.ui.ob0;
+import org.telegram.ui.sz0;
+import org.telegram.ui.tz0;
+import org.telegram.ui.x50;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class n implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -78,7 +78,7 @@ public final /* synthetic */ class n implements Runnable {
                 di.h7 storiesController = messagesController.getStoriesController();
                 final long j11 = this.b;
                 final boolean z11 = this.c;
-                storiesController.i0(j11, z11, false);
+                storiesController.l0(j11, z11, false);
                 m4.c cVar = new m4.c(9, false);
                 final int i11 = 0;
                 cVar.b = new Runnable() { // from class: di.i2
@@ -86,10 +86,10 @@ public final /* synthetic */ class n implements Runnable {
                     public final void run() {
                         switch (i11) {
                             case 0:
-                                messagesController.getStoriesController().i0(j11, !z11, false);
+                                messagesController.getStoriesController().l0(j11, !z11, false);
                                 break;
                             default:
-                                messagesController.getStoriesController().i0(j11, z11, true);
+                                messagesController.getStoriesController().l0(j11, z11, true);
                                 break;
                         }
                     }
@@ -100,10 +100,10 @@ public final /* synthetic */ class n implements Runnable {
                     public final void run() {
                         switch (i12) {
                             case 0:
-                                messagesController.getStoriesController().i0(j11, !z11, false);
+                                messagesController.getStoriesController().l0(j11, !z11, false);
                                 break;
                             default:
-                                messagesController.getStoriesController().i0(j11, z11, true);
+                                messagesController.getStoriesController().l0(j11, z11, true);
                                 break;
                         }
                     }
@@ -196,18 +196,18 @@ public final /* synthetic */ class n implements Runnable {
                     throw th2;
                 }
             case 4:
-                v50.y((v50) obj4, (org.telegram.ui.ActionBar.e2[]) obj2, this.c, (TLRPC.TL_error) obj3, this.b, (TL_phone.inviteToGroupCall) obj);
+                x50.y((x50) obj4, (org.telegram.ui.ActionBar.e2[]) obj2, this.c, (TLRPC.TL_error) obj3, this.b, (TL_phone.inviteToGroupCall) obj);
                 return;
             case 5:
-                lb0 lb0Var = (lb0) obj4;
+                ob0 ob0Var = (ob0) obj4;
                 TLObject tLObject3 = (TLObject) obj2;
                 String str3 = (String) obj;
                 TLRPC.TL_error tL_error2 = (TLRPC.TL_error) obj3;
-                int i13 = lb0Var.b;
-                lb0Var.c();
+                int i13 = ob0Var.b;
+                ob0Var.c();
                 if (!(tLObject3 instanceof TLRPC.TL_contacts_resolvedPeer)) {
                     if (tL_error2 != null) {
-                        lb0.d().g0(tL_error2, false);
+                        ob0.d().g0(tL_error2, false);
                         return;
                     }
                     return;
@@ -222,16 +222,16 @@ public final /* synthetic */ class n implements Runnable {
                     i9Var.g0 = str3;
                     i9Var.h0 = z10;
                     i9Var.f0 = true;
-                    lb0Var.u(i9Var, false);
+                    ob0Var.u(i9Var, false);
                     return;
                 }
                 return;
             default:
-                rz0 rz0Var = (rz0) obj4;
-                ProfileActivity profileActivity = rz0Var.b;
-                gq gqVar = new gq(profileActivity.e1, -j10, (TLRPC.TL_chatAdminRights) obj3, null, null, (String) obj2, 2, true, !z10, null);
-                gqVar.X0 = new qz0(rz0Var, (cy) obj);
-                profileActivity.presentFragment(gqVar);
+                tz0 tz0Var = (tz0) obj4;
+                ProfileActivity profileActivity = tz0Var.b;
+                iq iqVar = new iq(profileActivity.e1, -j10, (TLRPC.TL_chatAdminRights) obj3, null, null, (String) obj2, 2, true, !z10, null);
+                iqVar.X0 = new sz0(tz0Var, (ey) obj);
+                profileActivity.presentFragment(iqVar);
                 return;
         }
     }
@@ -263,8 +263,8 @@ public final /* synthetic */ class n implements Runnable {
         this.c = z10;
     }
 
-    public /* synthetic */ n(v50 v50Var, org.telegram.ui.ActionBar.e2[] e2VarArr, boolean z10, TLRPC.TL_error tL_error, long j10, TL_phone.inviteToGroupCall invitetogroupcall) {
-        this.e = v50Var;
+    public /* synthetic */ n(x50 x50Var, org.telegram.ui.ActionBar.e2[] e2VarArr, boolean z10, TLRPC.TL_error tL_error, long j10, TL_phone.inviteToGroupCall invitetogroupcall) {
+        this.e = x50Var;
         this.d = e2VarArr;
         this.c = z10;
         this.f = tL_error;
@@ -272,8 +272,8 @@ public final /* synthetic */ class n implements Runnable {
         this.h = invitetogroupcall;
     }
 
-    public /* synthetic */ n(lb0 lb0Var, TLObject tLObject, long j10, String str, boolean z10, TLRPC.TL_error tL_error) {
-        this.e = lb0Var;
+    public /* synthetic */ n(ob0 ob0Var, TLObject tLObject, long j10, String str, boolean z10, TLRPC.TL_error tL_error) {
+        this.e = ob0Var;
         this.d = tLObject;
         this.b = j10;
         this.h = str;
@@ -281,12 +281,12 @@ public final /* synthetic */ class n implements Runnable {
         this.f = tL_error;
     }
 
-    public /* synthetic */ n(rz0 rz0Var, long j10, TLRPC.TL_chatAdminRights tL_chatAdminRights, String str, boolean z10, cy cyVar) {
-        this.e = rz0Var;
+    public /* synthetic */ n(tz0 tz0Var, long j10, TLRPC.TL_chatAdminRights tL_chatAdminRights, String str, boolean z10, ey eyVar) {
+        this.e = tz0Var;
         this.b = j10;
         this.f = tL_chatAdminRights;
         this.d = str;
         this.c = z10;
-        this.h = cyVar;
+        this.h = eyVar;
     }
 }

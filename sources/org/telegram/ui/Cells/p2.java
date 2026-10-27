@@ -71,7 +71,7 @@ import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.UserObject;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.vh;
+import org.telegram.messenger.wh;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
@@ -79,35 +79,36 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.b10;
-import org.telegram.ui.Components.d81;
 import org.telegram.ui.Components.ds;
-import org.telegram.ui.Components.e31;
+import org.telegram.ui.Components.e81;
 import org.telegram.ui.Components.ed;
-import org.telegram.ui.Components.fj0;
-import org.telegram.ui.Components.gb1;
-import org.telegram.ui.Components.hj0;
+import org.telegram.ui.Components.f31;
+import org.telegram.ui.Components.gj0;
 import org.telegram.ui.Components.i10;
-import org.telegram.ui.Components.kf0;
+import org.telegram.ui.Components.ij0;
+import org.telegram.ui.Components.kb1;
+import org.telegram.ui.Components.lf0;
 import org.telegram.ui.Components.p10;
-import org.telegram.ui.Components.px0;
-import org.telegram.ui.Components.q11;
-import org.telegram.ui.Components.q61;
-import org.telegram.ui.Components.rj0;
-import org.telegram.ui.Components.rx0;
+import org.telegram.ui.Components.qx0;
+import org.telegram.ui.Components.r11;
+import org.telegram.ui.Components.r61;
 import org.telegram.ui.Components.sj0;
 import org.telegram.ui.Components.ss;
+import org.telegram.ui.Components.sx0;
+import org.telegram.ui.Components.tj0;
 import org.telegram.ui.Components.ts;
 import org.telegram.ui.Components.tz;
-import org.telegram.ui.Components.x61;
 import org.telegram.ui.Components.xc;
-import org.telegram.ui.Components.xj0;
 import org.telegram.ui.Components.y61;
+import org.telegram.ui.Components.yj0;
+import org.telegram.ui.Components.z61;
 import org.telegram.ui.Components.zq;
-import org.telegram.ui.cy;
-import org.telegram.ui.n00;
-import org.telegram.ui.tw;
+import org.telegram.ui.ey;
+import org.telegram.ui.g31;
+import org.telegram.ui.p00;
+import org.telegram.ui.vw;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public class p2 extends z implements di.n7, org.telegram.ui.ActionBar.p6 {
     public boolean A0;
@@ -129,7 +130,7 @@ public class p2 extends z implements di.n7, org.telegram.ui.ActionBar.p6 {
     public float D1;
     public boolean D2;
     public int D3;
-    public final cy D4;
+    public final ey D4;
     public boolean E;
     public int E0;
     public boolean E1;
@@ -156,7 +157,7 @@ public class p2 extends z implements di.n7, org.telegram.ui.ActionBar.p6 {
     public int H4;
     public int I;
     public String I0;
-    public q11 I1;
+    public r11 I1;
     public int I2;
     public int I3;
     public final m2 I4;
@@ -204,7 +205,7 @@ public class p2 extends z implements di.n7, org.telegram.ui.ActionBar.p6 {
     public int P4;
     public boolean Q;
     public boolean Q0;
-    public xj0 Q1;
+    public yj0 Q1;
     public boolean Q2;
     public int Q3;
     public int Q4;
@@ -255,7 +256,7 @@ public class p2 extends z implements di.n7, org.telegram.ui.ActionBar.p6 {
     public StaticLayout Y3;
     public int[] Y4;
     public boolean Z0;
-    public kf0 Z1;
+    public lf0 Z1;
     public int Z2;
     public StaticLayout Z3;
     public Runnable Z4;
@@ -281,7 +282,7 @@ public class p2 extends z implements di.n7, org.telegram.ui.ActionBar.p6 {
     public boolean d4;
     public boolean e0;
     public boolean e1;
-    public hj0 e2;
+    public ij0 e2;
     public StaticLayout e3;
     public int e4;
     public boolean f;
@@ -327,7 +328,7 @@ public class p2 extends z implements di.n7, org.telegram.ui.ActionBar.p6 {
     public org.telegram.ui.Components.y5 m3;
     public final cc m4;
     public float n;
-    public e31 n0;
+    public f31 n0;
     public boolean n1;
     public boolean n2;
     public org.telegram.ui.Components.y5 n3;
@@ -353,7 +354,7 @@ public class p2 extends z implements di.n7, org.telegram.ui.ActionBar.p6 {
     public final boolean r2;
     public int r3;
     public final RectF r4;
-    public xj0 s;
+    public yj0 s;
     public boolean s0;
     public int s1;
     public boolean s2;
@@ -389,7 +390,7 @@ public class p2 extends z implements di.n7, org.telegram.ui.ActionBar.p6 {
     public int x4;
     public boolean y;
     public boolean y0;
-    public xj0 y1;
+    public yj0 y1;
     public int y2;
     public boolean y3;
     public float y4;
@@ -601,9 +602,9 @@ public class p2 extends z implements di.n7, org.telegram.ui.ActionBar.p6 {
         boolean z14 = (this.l0 <= 0 || Q() || this.v2 || this.u0.w) ? false : true;
         this.w2 = z14;
         if (this.i0 != 1.0f && (z14 || this.m0 > 0.0f)) {
-            e31 e31Var = this.n0;
-            if (e31Var != null) {
-                int i15 = e31Var.f;
+            f31 f31Var = this.n0;
+            if (f31Var != null) {
+                int i15 = f31Var.f;
                 int i16 = this.l0;
                 if (i15 != i16) {
                 }
@@ -621,8 +622,8 @@ public class p2 extends z implements di.n7, org.telegram.ui.ActionBar.p6 {
                     this.o0.setShader(null);
                     if (this.Y1.getBitmap() != null && !this.Y1.getBitmap().isRecycled()) {
                         this.o0.setColor(AndroidUtilities.getDominantColor(this.Y1.getBitmap()));
-                    } else if (this.Y1.getDrawable() instanceof d81) {
-                        this.o0.setColor(((d81) this.Y1.getDrawable()).a.a());
+                    } else if (this.Y1.getDrawable() instanceof e81) {
+                        this.o0.setColor(((e81) this.Y1.getDrawable()).a.a());
                     } else {
                         this.o0.setColor(this.a2.c());
                     }
@@ -656,10 +657,10 @@ public class p2 extends z implements di.n7, org.telegram.ui.ActionBar.p6 {
                 canvas.restore();
             }
             int i17 = this.l0;
-            e31 e31Var2 = new e31(ApplicationLoader.applicationContext, null);
-            e31Var2.m = true;
-            e31Var2.b(i17);
-            this.n0 = e31Var2;
+            f31 f31Var2 = new f31(ApplicationLoader.applicationContext, null);
+            f31Var2.m = true;
+            f31Var2.b(i17);
+            this.n0 = f31Var2;
             if (this.o0 == null) {
             }
             int imageY222 = (int) (this.Y1.getImageY2() - AndroidUtilities.dp(9.0f));
@@ -1126,7 +1127,7 @@ public class p2 extends z implements di.n7, org.telegram.ui.ActionBar.p6 {
                     if (this.t4 == null) {
                         this.t4 = new Path();
                     }
-                    gb1.a(this.t4, this.u4, AndroidUtilities.dp(10.33f));
+                    kb1.a(this.t4, this.u4, AndroidUtilities.dp(10.33f));
                 }
                 canvas.drawPath(this.t4, paint);
                 if (z11) {
@@ -1169,7 +1170,7 @@ public class p2 extends z implements di.n7, org.telegram.ui.ActionBar.p6 {
                     if (this.t4 == null) {
                         this.t4 = new Path();
                     }
-                    gb1.a(this.t4, this.u4, AndroidUtilities.dp(10.33f));
+                    kb1.a(this.t4, this.u4, AndroidUtilities.dp(10.33f));
                 }
                 canvas.drawPath(this.t4, paint);
                 if (z11) {
@@ -1256,15 +1257,15 @@ public class p2 extends z implements di.n7, org.telegram.ui.ActionBar.p6 {
                 int length2 = string.length() + length;
                 spannableStringBuilder.append((CharSequence) string);
                 if (dialog.unread_count > 0) {
-                    spannableStringBuilder.setSpan(new q61(AndroidUtilities.bold(), org.telegram.ui.ActionBar.y6.w0(org.telegram.ui.ActionBar.y6.Y8, this.J4)), length, length2, 33);
+                    spannableStringBuilder.setSpan(new r61(AndroidUtilities.bold(), org.telegram.ui.ActionBar.y6.w0(org.telegram.ui.ActionBar.y6.Y8, this.J4)), length, length2, 33);
                 }
                 if (spannableStringBuilder.length() > 150) {
                     break;
                 }
             }
         }
-        if (MessagesController.getInstance(i10).storiesController.C(true) > 0) {
-            int max = Math.max(1, MessagesController.getInstance(i10).storiesController.C(true));
+        if (MessagesController.getInstance(i10).storiesController.D(true) > 0) {
+            int max = Math.max(1, MessagesController.getInstance(i10).storiesController.D(true));
             if (spannableStringBuilder.length() > 0) {
                 spannableStringBuilder.append((CharSequence) ", ");
             }
@@ -1307,7 +1308,7 @@ public class p2 extends z implements di.n7, org.telegram.ui.ActionBar.p6 {
                 int length2 = string.length() + length;
                 spannableStringBuilder.append((CharSequence) string);
                 if (dialog.unread_count > 0) {
-                    spannableStringBuilder.setSpan(new q61(AndroidUtilities.bold(), org.telegram.ui.ActionBar.y6.w0(org.telegram.ui.ActionBar.y6.Y8, this.J4)), length, length2, 33);
+                    spannableStringBuilder.setSpan(new r61(AndroidUtilities.bold(), org.telegram.ui.ActionBar.y6.w0(org.telegram.ui.ActionBar.y6.Y8, this.J4)), length, length2, 33);
                 }
                 if (spannableStringBuilder.length() > 150) {
                     break;
@@ -1709,10 +1710,10 @@ public class p2 extends z implements di.n7, org.telegram.ui.ActionBar.p6 {
         }
         if (dialog instanceof TLRPC.TL_dialogFolder) {
             this.J0 = ((TLRPC.TL_dialogFolder) dialog).folder.id;
-            hj0 hj0Var = this.e2;
-            if (hj0Var != null) {
-                hj0Var.H = this;
-                hj0Var.i();
+            ij0 ij0Var = this.e2;
+            if (ij0Var != null) {
+                ij0Var.H = this;
+                ij0Var.i();
             }
         } else {
             this.J0 = 0;
@@ -1743,7 +1744,7 @@ public class p2 extends z implements di.n7, org.telegram.ui.ActionBar.p6 {
     }
 
     public final void X(TLRPC.TL_forumTopic tL_forumTopic, long j10, MessageObject messageObject, boolean z10, boolean z11) {
-        hj0 hj0Var;
+        ij0 ij0Var;
         this.N = tL_forumTopic;
         this.P = tL_forumTopic != null;
         if (this.H0 != j10) {
@@ -1773,9 +1774,9 @@ public class p2 extends z implements di.n7, org.telegram.ui.ActionBar.p6 {
             this.g1 = tL_forumTopic.groupedMessages;
         }
         TLRPC.TL_forumTopic tL_forumTopic2 = this.N;
-        if (tL_forumTopic2 != null && tL_forumTopic2.id == 1 && (hj0Var = this.e2) != null) {
-            hj0Var.H = this;
-            hj0Var.i();
+        if (tL_forumTopic2 != null && tL_forumTopic2.id == 1 && (ij0Var = this.e2) != null) {
+            ij0Var.H = this;
+            ij0Var.i();
         }
         a0(0, z11);
     }
@@ -1829,61 +1830,61 @@ public class p2 extends z implements di.n7, org.telegram.ui.ActionBar.p6 {
     }
 
     public final void Z() {
-        hj0 hj0Var = this.e2;
-        if (hj0Var != null) {
+        ij0 ij0Var = this.e2;
+        if (ij0Var != null) {
             if (this.P) {
-                hj0Var.K = AndroidUtilities.dp(24.0f);
+                ij0Var.K = AndroidUtilities.dp(24.0f);
                 this.e2.L = AndroidUtilities.dp(24.0f);
                 this.e2.M = 0.0f;
             } else {
                 i2 i2Var = this.u0;
                 RectF rectF = i2Var.F;
                 RectF rectF2 = i2Var.F;
-                hj0Var.K = rectF.centerY();
+                ij0Var.K = rectF.centerY();
                 this.e2.L = rectF2.centerX();
                 this.e2.M = rectF2.width() / 2.0f;
                 if (!MessagesController.getInstance(this.F0).getStoriesController().h.isEmpty()) {
                     this.e2.M -= AndroidUtilities.dpf2(3.5f);
                 }
-                hj0 hj0Var2 = this.e2;
+                ij0 ij0Var2 = this.e2;
                 this.Y1.getBitmapWidth();
-                hj0Var2.getClass();
+                ij0Var2.getClass();
             }
-            hj0 hj0Var3 = this.e2;
-            if (hj0Var3.E || hj0Var3.I == null) {
+            ij0 ij0Var3 = this.e2;
+            if (ij0Var3.E || ij0Var3.I == null) {
                 return;
             }
-            AnimatorSet animatorSet = hj0Var3.B;
+            AnimatorSet animatorSet = ij0Var3.B;
             if (animatorSet != null) {
                 animatorSet.removeAllListeners();
-                hj0Var3.B.cancel();
+                ij0Var3.B.cancel();
             }
-            hj0Var3.E = true;
-            hj0Var3.F = true;
-            hj0Var3.D = 0.0f;
-            hj0Var3.I.getTranslationY();
+            ij0Var3.E = true;
+            ij0Var3.F = true;
+            ij0Var3.D = 0.0f;
+            ij0Var3.I.getTranslationY();
             AndroidUtilities.dp(100.0f);
             ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
-            ofFloat.addUpdateListener(new fj0(hj0Var3, 5));
+            ofFloat.addUpdateListener(new gj0(ij0Var3, 5));
             ofFloat.setInterpolator(ds.h);
             ofFloat.setDuration(250L);
             ValueAnimator ofFloat2 = ValueAnimator.ofFloat(0.0f, 1.0f);
-            ofFloat2.addUpdateListener(new fj0(hj0Var3, 6));
+            ofFloat2.addUpdateListener(new gj0(ij0Var3, 6));
             ds dsVar = ds.j;
             ofFloat2.setInterpolator(dsVar);
             ofFloat2.setDuration(150L);
             ValueAnimator ofFloat3 = ValueAnimator.ofFloat(1.0f, 0.0f);
-            ofFloat3.addUpdateListener(new fj0(hj0Var3, 7));
+            ofFloat3.addUpdateListener(new gj0(ij0Var3, 7));
             ofFloat3.setInterpolator(dsVar);
             ofFloat3.setDuration(135L);
             AnimatorSet animatorSet2 = new AnimatorSet();
-            hj0Var3.B = animatorSet2;
-            animatorSet2.addListener(new i10(hj0Var3, 13));
+            ij0Var3.B = animatorSet2;
+            animatorSet2.addListener(new i10(ij0Var3, 13));
             AnimatorSet animatorSet3 = new AnimatorSet();
             animatorSet3.playSequentially(ofFloat2, ofFloat3);
             animatorSet3.setStartDelay(180L);
-            hj0Var3.B.playTogether(ofFloat, animatorSet3);
-            hj0Var3.B.start();
+            ij0Var3.B.playTogether(ofFloat, animatorSet3);
+            ij0Var3.B.start();
         }
     }
 
@@ -2094,7 +2095,7 @@ public class p2 extends z implements di.n7, org.telegram.ui.ActionBar.p6 {
                 }
                 z11 = z29;
                 if (this.H0 != 0) {
-                    int i28 = org.telegram.ui.e31.R;
+                    int i28 = g31.R;
                     z11 = z29;
                 }
             } else {
@@ -2391,8 +2392,8 @@ public class p2 extends z implements di.n7, org.telegram.ui.ActionBar.p6 {
                     if (i13 == 0) {
                         this.Z0 = false;
                         this.b1 = false;
-                        cy cyVar = this.D4;
-                        if (cyVar == null || (Z3 = cyVar.Z3(i22, this.j1, i13, false)) == null || Z3.isEmpty()) {
+                        ey eyVar = this.D4;
+                        if (eyVar == null || (Z3 = eyVar.Z3(i22, this.j1, i13, false)) == null || Z3.isEmpty()) {
                             messageObject2 = null;
                         } else {
                             int size = Z3.size();
@@ -3178,9 +3179,9 @@ public class p2 extends z implements di.n7, org.telegram.ui.ActionBar.p6 {
             imageReceiverArr[i10].onDetachedFromWindow();
             i10++;
         }
-        xj0 xj0Var = this.y1;
-        if (xj0Var != null) {
-            xj0Var.stop();
+        yj0 yj0Var = this.y1;
+        if (yj0Var != null) {
+            yj0Var.stop();
             this.y1.T(0.0f, true);
             this.y1.setCallback(null);
             this.y1 = null;
@@ -3317,7 +3318,7 @@ public class p2 extends z implements di.n7, org.telegram.ui.ActionBar.p6 {
         StaticLayout staticLayout;
         float f14;
         boolean z12;
-        xj0 xj0Var;
+        yj0 yj0Var;
         float f15;
         float f16;
         org.telegram.ui.ActionBar.u6 u6Var2;
@@ -3346,7 +3347,7 @@ public class p2 extends z implements di.n7, org.telegram.ui.ActionBar.p6 {
         TLRPC.Chat chat;
         TLRPC.User user;
         TLRPC.TL_forumTopic tL_forumTopic2;
-        hj0 hj0Var;
+        ij0 ij0Var;
         m2 m2Var;
         float f21;
         float f22;
@@ -3378,13 +3379,13 @@ public class p2 extends z implements di.n7, org.telegram.ui.ActionBar.p6 {
         float z23;
         StaticLayout staticLayout2;
         int i27;
-        rx0 u02;
+        sx0 u02;
         int i28;
         k2 k2Var;
-        cy cyVar;
-        tw twVar;
+        ey eyVar;
+        vw vwVar;
         TLRPC.TL_forumTopic tL_forumTopic3;
-        hj0 hj0Var2;
+        ij0 ij0Var2;
         TLRPC.TL_forumTopic tL_forumTopic4;
         final p2 p2Var4 = this;
         Canvas canvas3 = canvas;
@@ -3393,7 +3394,7 @@ public class p2 extends z implements di.n7, org.telegram.ui.ActionBar.p6 {
         }
         boolean z24 = p2Var4.h;
         cc ccVar3 = p2Var4.m4;
-        if (z24 && ((p2Var4.J0 != 0 || (p2Var4.P && (tL_forumTopic4 = p2Var4.N) != null && tL_forumTopic4.id == 1)) && (hj0Var2 = p2Var4.e2) != null && hj0Var2.C == 0.0f && p2Var4.w1 == 0.0f)) {
+        if (z24 && ((p2Var4.J0 != 0 || (p2Var4.P && (tL_forumTopic4 = p2Var4.N) != null && tL_forumTopic4.id == 1)) && (ij0Var2 = p2Var4.e2) != null && ij0Var2.C == 0.0f && p2Var4.w1 == 0.0f)) {
             canvas3.save();
             canvas3.translate(0.0f, (-p2Var4.E3) - p2Var4.n);
             canvas3.clipRect(0.0f, (1.0f - p2Var4.e2.J) * p2Var4.getMeasuredHeight(), p2Var4.getMeasuredWidth(), p2Var4.getMeasuredHeight());
@@ -3402,9 +3403,9 @@ public class p2 extends z implements di.n7, org.telegram.ui.ActionBar.p6 {
             ccVar3.setVisibility(4);
             return;
         }
-        boolean z25 = z24 && (p2Var4.J0 != 0 || (p2Var4.P && (tL_forumTopic3 = p2Var4.N) != null && tL_forumTopic3.id == 1)) && p2Var4.e2 != null && p2Var4.w1 == 0.0f && (cyVar = p2Var4.D4) != null && cyVar.h4() && ((twVar = cyVar.G3) == null || !twVar.c());
-        hj0 hj0Var3 = p2Var4.e2;
-        float f28 = hj0Var3 != null ? hj0Var3.J : 1.0f;
+        boolean z25 = z24 && (p2Var4.J0 != 0 || (p2Var4.P && (tL_forumTopic3 = p2Var4.N) != null && tL_forumTopic3.id == 1)) && p2Var4.e2 != null && p2Var4.w1 == 0.0f && (eyVar = p2Var4.D4) != null && eyVar.h4() && ((vwVar = eyVar.G3) == null || !vwVar.c());
+        ij0 ij0Var3 = p2Var4.e2;
+        float f28 = ij0Var3 != null ? ij0Var3.J : 1.0f;
         if (z25) {
             canvas3.save();
             canvas3.clipRect(0.0f, (1.0f - f28) * p2Var4.getMeasuredHeight(), p2Var4.getMeasuredWidth(), p2Var4.getMeasuredHeight());
@@ -3417,9 +3418,9 @@ public class p2 extends z implements di.n7, org.telegram.ui.ActionBar.p6 {
         a5.c cVar5 = p2Var4.d2;
         org.telegram.ui.ActionBar.u6 u6Var5 = p2Var4.J4;
         if (f29 == 0.0f && p2Var4.o1 == 0.0f) {
-            xj0 xj0Var2 = p2Var4.y1;
-            if (xj0Var2 != null) {
-                xj0Var2.stop();
+            yj0 yj0Var2 = p2Var4.y1;
+            if (yj0Var2 != null) {
+                yj0Var2.stop();
                 p2Var4.y1.T(0.0f, true);
                 p2Var4.y1.setCallback(null);
                 p2Var4.y1 = null;
@@ -3477,11 +3478,11 @@ public class p2 extends z implements di.n7, org.telegram.ui.ActionBar.p6 {
                         str = string2;
                         i11 = i29;
                         i12 = w02;
-                        if (p2Var4.w || (xj0Var = p2Var4.s) == null) {
+                        if (p2Var4.w || (yj0Var = p2Var4.s) == null) {
                             p2Var4.s = p2Var4.y1;
                             p2Var4.v = i11;
                         } else {
-                            p2Var4.y1 = xj0Var;
+                            p2Var4.y1 = yj0Var;
                             i11 = p2Var4.v;
                         }
                         if (!p2Var4.z1 && Math.abs(p2Var4.w1) > AndroidUtilities.dp(43.0f)) {
@@ -3508,10 +3509,10 @@ public class p2 extends z implements di.n7, org.telegram.ui.ActionBar.p6 {
                                     org.telegram.ui.ActionBar.y6.A1 = z10;
                                 }
                                 if (org.telegram.ui.ActionBar.y6.B1) {
-                                    xj0 xj0Var3 = org.telegram.ui.ActionBar.y6.z1;
-                                    xj0Var3.Z = true;
+                                    yj0 yj0Var3 = org.telegram.ui.ActionBar.y6.z1;
+                                    yj0Var3.Z = true;
                                     int i30 = org.telegram.ui.ActionBar.y6.c9;
-                                    xj0Var3.Q(org.telegram.ui.ActionBar.y6.G0(i30), "Line 1");
+                                    yj0Var3.Q(org.telegram.ui.ActionBar.y6.G0(i30), "Line 1");
                                     org.telegram.ui.ActionBar.y6.z1.Q(org.telegram.ui.ActionBar.y6.G0(i30), "Line 2");
                                     org.telegram.ui.ActionBar.y6.z1.Q(org.telegram.ui.ActionBar.y6.G0(i30), "Line 3");
                                     org.telegram.ui.ActionBar.y6.z1.o();
@@ -3529,7 +3530,7 @@ public class p2 extends z implements di.n7, org.telegram.ui.ActionBar.p6 {
                             f11 = measuredWidth;
                         }
                         int measuredWidth2 = (p2Var4.getMeasuredWidth() - AndroidUtilities.dp(43.0f)) - (p2Var4.y1.getIntrinsicWidth() / 2);
-                        int B = vh.B(52.0f, p2Var4.getMeasuredHeight(), 2);
+                        int B = wh.B(52.0f, p2Var4.getMeasuredHeight(), 2);
                         int intrinsicWidth = (p2Var4.y1.getIntrinsicWidth() / 2) + measuredWidth2;
                         int intrinsicHeight = (p2Var4.y1.getIntrinsicHeight() / 2) + B;
                         if (p2Var4.B1 <= f10) {
@@ -3550,10 +3551,10 @@ public class p2 extends z implements di.n7, org.telegram.ui.ActionBar.p6 {
                                 org.telegram.ui.ActionBar.y6.A1 = true;
                             }
                             if (!org.telegram.ui.ActionBar.y6.B1) {
-                                xj0 xj0Var4 = org.telegram.ui.ActionBar.y6.z1;
-                                xj0Var4.Z = z12;
+                                yj0 yj0Var4 = org.telegram.ui.ActionBar.y6.z1;
+                                yj0Var4.Z = z12;
                                 int i31 = org.telegram.ui.ActionBar.y6.d9;
-                                xj0Var4.Q(org.telegram.ui.ActionBar.y6.G0(i31), "Line 1");
+                                yj0Var4.Q(org.telegram.ui.ActionBar.y6.G0(i31), "Line 1");
                                 org.telegram.ui.ActionBar.y6.z1.Q(org.telegram.ui.ActionBar.y6.G0(i31), "Line 2");
                                 org.telegram.ui.ActionBar.y6.z1.Q(org.telegram.ui.ActionBar.y6.G0(i31), "Line 3");
                                 org.telegram.ui.ActionBar.y6.z1.o();
@@ -3672,7 +3673,7 @@ public class p2 extends z implements di.n7, org.telegram.ui.ActionBar.p6 {
             if (p2Var4.B1 >= f7) {
             }
             int measuredWidth22 = (p2Var4.getMeasuredWidth() - AndroidUtilities.dp(43.0f)) - (p2Var4.y1.getIntrinsicWidth() / 2);
-            int B2 = vh.B(52.0f, p2Var4.getMeasuredHeight(), 2);
+            int B2 = wh.B(52.0f, p2Var4.getMeasuredHeight(), 2);
             int intrinsicWidth2 = (p2Var4.y1.getIntrinsicWidth() / 2) + measuredWidth22;
             int intrinsicHeight2 = (p2Var4.y1.getIntrinsicHeight() / 2) + B2;
             if (p2Var4.B1 <= f10) {
@@ -3758,7 +3759,7 @@ public class p2 extends z implements di.n7, org.telegram.ui.ActionBar.p6 {
                     i21 = -1;
                     m2Var = m2Var4;
                     f22 = 1.0f;
-                    i34 = canvas3.saveLayerAlpha(ic.a.d(1.0f, clamp, AndroidUtilities.dp(8.0f), AndroidUtilities.dp(org.telegram.ui.e31.getRightPaddingSize() + 1)), 0.0f, p2Var4.getMeasuredWidth(), p2Var4.getMeasuredHeight(), (int) ((1.0f - p2Var4.i0) * 255.0f), 31);
+                    i34 = canvas3.saveLayerAlpha(ic.a.d(1.0f, clamp, AndroidUtilities.dp(8.0f), AndroidUtilities.dp(g31.getRightPaddingSize() + 1)), 0.0f, p2Var4.getMeasuredWidth(), p2Var4.getMeasuredHeight(), (int) ((1.0f - p2Var4.i0) * 255.0f), 31);
                     i20 = 1;
                 } else {
                     m2Var = m2Var4;
@@ -3767,7 +3768,7 @@ public class p2 extends z implements di.n7, org.telegram.ui.ActionBar.p6 {
                     f22 = 1.0f;
                     int save = canvas3.save();
                     i20 = 1;
-                    canvas3.clipRect(ic.a.d(1.0f, clamp, AndroidUtilities.dp(8.0f), AndroidUtilities.dp(org.telegram.ui.e31.getRightPaddingSize() + 1)), 0.0f, p2Var4.getMeasuredWidth(), p2Var4.getMeasuredHeight());
+                    canvas3.clipRect(ic.a.d(1.0f, clamp, AndroidUtilities.dp(8.0f), AndroidUtilities.dp(g31.getRightPaddingSize() + 1)), 0.0f, p2Var4.getMeasuredWidth(), p2Var4.getMeasuredHeight());
                     i34 = save;
                 }
                 canvas3.translate((-(p2Var4.getMeasuredWidth() - AndroidUtilities.dp(74.0f))) * 0.7f * p2Var4.i0, 0.0f);
@@ -4975,9 +4976,9 @@ public class p2 extends z implements di.n7, org.telegram.ui.ActionBar.p6 {
                                         canvas3.scale(a2, a2, rectF8.centerX(), rectF8.centerY());
                                         p2Var3.G1.setColor(org.telegram.ui.ActionBar.y6.w0(org.telegram.ui.ActionBar.y6.Oh, u6Var3));
                                         canvas3.drawRoundRect(rectF8, rectF8.height() / 2.0f, rectF8.height() / 2.0f, p2Var3.G1);
-                                        q11 q11Var = p2Var3.I1;
-                                        if (q11Var != null) {
-                                            q11Var.c(rectF8.left + AndroidUtilities.dp(13.0f), rectF8.centerY(), 1.0f, org.telegram.ui.ActionBar.y6.w0(org.telegram.ui.ActionBar.y6.Sh, u6Var3), canvas);
+                                        r11 r11Var = p2Var3.I1;
+                                        if (r11Var != null) {
+                                            r11Var.c(rectF8.left + AndroidUtilities.dp(13.0f), rectF8.centerY(), 1.0f, org.telegram.ui.ActionBar.y6.w0(org.telegram.ui.ActionBar.y6.Sh, u6Var3), canvas);
                                         }
                                         canvas.restore();
                                     }
@@ -5101,10 +5102,10 @@ public class p2 extends z implements di.n7, org.telegram.ui.ActionBar.p6 {
         }
         z15 = p2Var.x;
         i2Var = p2Var.u0;
-        if (z15 && (!p2Var.P || (tL_forumTopic2 = p2Var.N) == null || tL_forumTopic2.id != 1 || (hj0Var = p2Var.e2) == null || !hj0Var.X || hj0Var.Y)) {
+        if (z15 && (!p2Var.P || (tL_forumTopic2 = p2Var.N) == null || tL_forumTopic2.id != 1 || (ij0Var = p2Var.e2) == null || !ij0Var.X || ij0Var.Y)) {
             if (!p2Var.y) {
                 if (p2Var.Z1 == null) {
-                    p2Var.Z1 = new kf0();
+                    p2Var.Z1 = new lf0();
                 }
                 p2Var.Z1.a((int) i2Var.F.centerX(), (int) i2Var.F.centerY(), (int) (i2Var.F.width() / 2.0f));
                 canvas3.save();
@@ -5361,9 +5362,9 @@ public class p2 extends z implements di.n7, org.telegram.ui.ActionBar.p6 {
 
     @Override // android.view.View
     public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
-        hj0 hj0Var;
+        ij0 ij0Var;
         super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-        if (O() && (hj0Var = this.e2) != null && SharedConfig.archiveHidden && hj0Var.J == 0.0f) {
+        if (O() && (ij0Var = this.e2) != null && SharedConfig.archiveHidden && ij0Var.J == 0.0f) {
             accessibilityNodeInfo.setVisibleToUser(false);
         } else {
             accessibilityNodeInfo.addAction(16);
@@ -5650,11 +5651,11 @@ public class p2 extends z implements di.n7, org.telegram.ui.ActionBar.p6 {
 
     @Override // android.view.View
     public final boolean performAccessibilityAction(int i10, Bundle bundle) {
-        cy cyVar;
-        if (i10 != R.id.acc_action_chat_preview || (cyVar = this.D4) == null) {
+        ey eyVar;
+        if (i10 != R.id.acc_action_chat_preview || (eyVar = this.D4) == null) {
             return super.performAccessibilityAction(i10, bundle);
         }
-        cyVar.P4(this);
+        eyVar.P4(this);
         return true;
     }
 
@@ -6050,11 +6051,11 @@ public class p2 extends z implements di.n7, org.telegram.ui.ActionBar.p6 {
             SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder(charSequence30);
             f10 = 16.0f;
             f7 = 17.0f;
+            for (z61 z61Var : (z61[]) spannableStringBuilder2.getSpans(0, spannableStringBuilder2.length(), z61.class)) {
+                spannableStringBuilder2.removeSpan(z61Var);
+            }
             for (y61 y61Var : (y61[]) spannableStringBuilder2.getSpans(0, spannableStringBuilder2.length(), y61.class)) {
                 spannableStringBuilder2.removeSpan(y61Var);
-            }
-            for (x61 x61Var : (x61[]) spannableStringBuilder2.getSpans(0, spannableStringBuilder2.length(), x61.class)) {
-                spannableStringBuilder2.removeSpan(x61Var);
             }
             charSequence30 = spannableStringBuilder2;
         } else {
@@ -6376,7 +6377,7 @@ public class p2 extends z implements di.n7, org.telegram.ui.ActionBar.p6 {
                                         charSequence2 = charSequence;
                                         int intValue = MessagesController.getInstance(this.F0).getPrintingStringType(this.H0, getTopicId()).intValue();
                                         this.j2 = intValue;
-                                        rx0 u02 = org.telegram.ui.ActionBar.y6.u0(intValue);
+                                        sx0 u02 = org.telegram.ui.ActionBar.y6.u0(intValue);
                                         int dp8 = u02 != null ? AndroidUtilities.dp(3.0f) + u02.getIntrinsicWidth() : 0;
                                         SpannableStringBuilder spannableStringBuilder3 = new SpannableStringBuilder();
                                         CharSequence replace = TextUtils.replace(printingString, new String[]{"..."}, new String[]{""});
@@ -6656,7 +6657,7 @@ public class p2 extends z implements di.n7, org.telegram.ui.ActionBar.p6 {
                                                                 spannableStringBuilder5.append(charSequence4);
                                                                 int length3 = spannableStringBuilder5.length();
                                                                 spannableStringBuilder5.append((CharSequence) LocaleController.getString(R.string.MonoforumSpan));
-                                                                spannableStringBuilder5.setSpan(new n00(LocaleController.getString(R.string.MonoforumSpan), org.telegram.ui.ActionBar.y6.y6, this.J4), length3, spannableStringBuilder5.length(), 33);
+                                                                spannableStringBuilder5.setSpan(new p00(LocaleController.getString(R.string.MonoforumSpan), org.telegram.ui.ActionBar.y6.y6, this.J4), length3, spannableStringBuilder5.length(), 33);
                                                                 charSequence22 = spannableStringBuilder5;
                                                             } else {
                                                                 escape = AndroidUtilities.escape(this.g2.title);
@@ -6804,8 +6805,8 @@ public class p2 extends z implements di.n7, org.telegram.ui.ActionBar.p6 {
                                                                         this.L3 = false;
                                                                         str4 = str5;
                                                                     } else if (i37 == 3 && UserObject.isUserSelf(this.f2)) {
-                                                                        cy cyVar = this.D4;
-                                                                        str4 = LocaleController.getString((cyVar == null || !cyVar.O0) ? R.string.SavedMessagesInfo : R.string.SavedMessagesInfoQuote);
+                                                                        ey eyVar = this.D4;
+                                                                        str4 = LocaleController.getString((eyVar == null || !eyVar.O0) ? R.string.SavedMessagesInfo : R.string.SavedMessagesInfoQuote);
                                                                     } else {
                                                                         boolean z32 = this.r2;
                                                                         if (!z32 && !SharedConfig.useThreeLinesLayout && this.K0 != 0) {
@@ -7321,7 +7322,7 @@ public class p2 extends z implements di.n7, org.telegram.ui.ActionBar.p6 {
                                                                                                     TextPaint textPaint6 = this.a0;
                                                                                                     float dp9 = AndroidUtilities.dp(1.0f);
                                                                                                     TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
-                                                                                                    this.e3 = px0.b(charSequence27, textPaint6, i26, dp9, i26, charSequence28 != null ? 1 : 2);
+                                                                                                    this.e3 = qx0.b(charSequence27, textPaint6, i26, dp9, i26, charSequence28 != null ? 1 : 2);
                                                                                                     max = i26;
                                                                                                     this.i3.addAll(this.j3);
                                                                                                     this.j3.clear();
@@ -7509,11 +7510,11 @@ public class p2 extends z implements di.n7, org.telegram.ui.ActionBar.p6 {
                                                         formatString = encryptedChat.admin_id == UserConfig.getInstance(this.F0).getClientUserId() ? LocaleController.formatString(R.string.EncryptedChatStartedOutgoing, UserObject.getFirstName(this.f2)) : LocaleController.getString(R.string.EncryptedChatStartedIncoming);
                                                     }
                                                 } else if (this.j1 == 3 && UserObject.isUserSelf(this.f2)) {
-                                                    cy cyVar2 = this.D4;
+                                                    ey eyVar2 = this.D4;
                                                     z26 = z15;
                                                     z27 = false;
                                                     z16 = false;
-                                                    replaceEmoji = LocaleController.getString((cyVar2 == null || !cyVar2.O0) ? R.string.SavedMessagesInfo : R.string.SavedMessagesInfoQuote);
+                                                    replaceEmoji = LocaleController.getString((eyVar2 == null || !eyVar2.O0) ? R.string.SavedMessagesInfo : R.string.SavedMessagesInfoQuote);
                                                     charSequence4 = " ";
                                                     string = null;
                                                     charSequence8 = charSequence3;
@@ -8051,7 +8052,7 @@ public class p2 extends z implements di.n7, org.telegram.ui.ActionBar.p6 {
                             TextPaint textPaint62 = this.a0;
                             float dp92 = AndroidUtilities.dp(1.0f);
                             TextUtils.TruncateAt truncateAt2 = TextUtils.TruncateAt.END;
-                            this.e3 = px0.b(charSequence27, textPaint62, i26, dp92, i26, charSequence28 != null ? 1 : 2);
+                            this.e3 = qx0.b(charSequence27, textPaint62, i26, dp92, i26, charSequence28 != null ? 1 : 2);
                             max = i26;
                             this.i3.addAll(this.j3);
                             this.j3.clear();
@@ -8092,7 +8093,7 @@ public class p2 extends z implements di.n7, org.telegram.ui.ActionBar.p6 {
                         TextPaint textPaint622 = this.a0;
                         float dp922 = AndroidUtilities.dp(1.0f);
                         TextUtils.TruncateAt truncateAt22 = TextUtils.TruncateAt.END;
-                        this.e3 = px0.b(charSequence27, textPaint622, i26, dp922, i26, charSequence28 != null ? 1 : 2);
+                        this.e3 = qx0.b(charSequence27, textPaint622, i26, dp922, i26, charSequence28 != null ? 1 : 2);
                         max = i26;
                         this.i3.addAll(this.j3);
                         this.j3.clear();
@@ -8150,7 +8151,7 @@ public class p2 extends z implements di.n7, org.telegram.ui.ActionBar.p6 {
                     TextPaint textPaint6222 = this.a0;
                     float dp9222 = AndroidUtilities.dp(1.0f);
                     TextUtils.TruncateAt truncateAt222 = TextUtils.TruncateAt.END;
-                    this.e3 = px0.b(charSequence27, textPaint6222, i26, dp9222, i26, charSequence28 != null ? 1 : 2);
+                    this.e3 = qx0.b(charSequence27, textPaint6222, i26, dp9222, i26, charSequence28 != null ? 1 : 2);
                     max = i26;
                     this.i3.addAll(this.j3);
                     this.j3.clear();
@@ -8249,7 +8250,7 @@ public class p2 extends z implements di.n7, org.telegram.ui.ActionBar.p6 {
                     TextPaint textPaint62222 = this.a0;
                     float dp92222 = AndroidUtilities.dp(1.0f);
                     TextUtils.TruncateAt truncateAt2222 = TextUtils.TruncateAt.END;
-                    this.e3 = px0.b(charSequence27, textPaint62222, i26, dp92222, i26, charSequence28 != null ? 1 : 2);
+                    this.e3 = qx0.b(charSequence27, textPaint62222, i26, dp92222, i26, charSequence28 != null ? 1 : 2);
                     max = i26;
                     this.i3.addAll(this.j3);
                     this.j3.clear();
@@ -8278,7 +8279,7 @@ public class p2 extends z implements di.n7, org.telegram.ui.ActionBar.p6 {
                 TextPaint textPaint7 = org.telegram.ui.ActionBar.y6.B0[this.E0];
                 Layout.Alignment alignment3 = Layout.Alignment.ALIGN_NORMAL;
                 TextUtils.TruncateAt truncateAt3 = TextUtils.TruncateAt.END;
-                this.z2 = px0.b(charSequence45, textPaint7, dp7, 0.0f, dp7, 2);
+                this.z2 = qx0.b(charSequence45, textPaint7, dp7, 0.0f, dp7, 2);
             }
             this.B2 = (this.D2 || !this.z2.isRtlCharAt(0)) ? f12 : -AndroidUtilities.dp(f13);
             this.C2 = this.z2.isRtlCharAt(0);
@@ -8420,7 +8421,7 @@ public class p2 extends z implements di.n7, org.telegram.ui.ActionBar.p6 {
                     this.c3 += dp21;
                     this.r3 += dp21;
                 } else {
-                    this.N3 = vh.z(12.666f, this.O3, getMeasuredWidth() - AndroidUtilities.dp(15.666f));
+                    this.N3 = wh.z(12.666f, this.O3, getMeasuredWidth() - AndroidUtilities.dp(15.666f));
                 }
                 this.G3 = true;
             } else {
@@ -8444,7 +8445,7 @@ public class p2 extends z implements di.n7, org.telegram.ui.ActionBar.p6 {
                     this.c3 += dp22;
                     this.r3 += dp22;
                 } else {
-                    int z33 = vh.z(12.666f, this.h4, getMeasuredWidth()) - AndroidUtilities.dp(15.666f);
+                    int z33 = wh.z(12.666f, this.h4, getMeasuredWidth()) - AndroidUtilities.dp(15.666f);
                     int i47 = this.O3;
                     this.e4 = z33 - (i47 != 0 ? i47 + AndroidUtilities.dp(f7) : 0);
                 }
@@ -8615,7 +8616,7 @@ public class p2 extends z implements di.n7, org.telegram.ui.ActionBar.p6 {
                     TextPaint textPaint8 = org.telegram.ui.ActionBar.y6.G0;
                     Layout.Alignment alignment4 = Layout.Alignment.ALIGN_NORMAL;
                     TextUtils.TruncateAt truncateAt4 = TextUtils.TruncateAt.END;
-                    this.s3 = px0.b(charSequence26, textPaint8, max, 0.0f, max, 1);
+                    this.s3 = qx0.b(charSequence26, textPaint8, max, 0.0f, max, 1);
                     this.a3 = AndroidUtilities.dp(51.0f);
                     dp4 = (this.R || !this.P) ? 0 : AndroidUtilities.dp(20.0f);
                     i24 = 0;
@@ -8634,7 +8635,7 @@ public class p2 extends z implements di.n7, org.telegram.ui.ActionBar.p6 {
             TextPaint textPaint82 = org.telegram.ui.ActionBar.y6.G0;
             Layout.Alignment alignment42 = Layout.Alignment.ALIGN_NORMAL;
             TextUtils.TruncateAt truncateAt42 = TextUtils.TruncateAt.END;
-            this.s3 = px0.b(charSequence26, textPaint82, max, 0.0f, max, 1);
+            this.s3 = qx0.b(charSequence26, textPaint82, max, 0.0f, max, 1);
             this.a3 = AndroidUtilities.dp(51.0f);
             if (this.R) {
             }
@@ -8715,7 +8716,7 @@ public class p2 extends z implements di.n7, org.telegram.ui.ActionBar.p6 {
                     TextPaint textPaint622222 = this.a0;
                     float dp922222 = AndroidUtilities.dp(1.0f);
                     TextUtils.TruncateAt truncateAt22222 = TextUtils.TruncateAt.END;
-                    this.e3 = px0.b(charSequence27, textPaint622222, i26, dp922222, i26, charSequence28 != null ? 1 : 2);
+                    this.e3 = qx0.b(charSequence27, textPaint622222, i26, dp922222, i26, charSequence28 != null ? 1 : 2);
                     max = i26;
                     this.i3.addAll(this.j3);
                     this.j3.clear();
@@ -8741,7 +8742,7 @@ public class p2 extends z implements di.n7, org.telegram.ui.ActionBar.p6 {
                     float dp32 = AndroidUtilities.dp(1.0f);
                     TextUtils.TruncateAt truncateAt5 = TextUtils.TruncateAt.END;
                     try {
-                        this.f3 = px0.b(charSequence23, textPaint9, max, dp32, max, 1);
+                        this.f3 = qx0.b(charSequence23, textPaint9, max, dp32, max, 1);
                     } catch (Exception e17) {
                         e = e17;
                         max = max;
@@ -8762,7 +8763,7 @@ public class p2 extends z implements di.n7, org.telegram.ui.ActionBar.p6 {
                         TextPaint textPaint6222222 = this.a0;
                         float dp9222222 = AndroidUtilities.dp(1.0f);
                         TextUtils.TruncateAt truncateAt222222 = TextUtils.TruncateAt.END;
-                        this.e3 = px0.b(charSequence27, textPaint6222222, i26, dp9222222, i26, charSequence28 != null ? 1 : 2);
+                        this.e3 = qx0.b(charSequence27, textPaint6222222, i26, dp9222222, i26, charSequence28 != null ? 1 : 2);
                         max = i26;
                         this.i3.addAll(this.j3);
                         this.j3.clear();
@@ -8788,13 +8789,13 @@ public class p2 extends z implements di.n7, org.telegram.ui.ActionBar.p6 {
                     if (!(obj instanceof ClickableSpan) && !(obj instanceof ni.h)) {
                         if (this.K0 == 0) {
                             if (!O()) {
-                                if (!(obj instanceof q61)) {
+                                if (!(obj instanceof r61)) {
                                 }
                             }
                         }
                         if (!(obj instanceof ni.d)) {
-                            if (!(obj instanceof sj0)) {
-                                if (!(obj instanceof rj0)) {
+                            if (!(obj instanceof tj0)) {
+                                if (!(obj instanceof sj0)) {
                                     if ((obj instanceof StyleSpan) && ((StyleSpan) obj).getStyle() == 1) {
                                     }
                                 }
@@ -8832,7 +8833,7 @@ public class p2 extends z implements di.n7, org.telegram.ui.ActionBar.p6 {
                 TextPaint textPaint62222222 = this.a0;
                 float dp92222222 = AndroidUtilities.dp(1.0f);
                 TextUtils.TruncateAt truncateAt2222222 = TextUtils.TruncateAt.END;
-                this.e3 = px0.b(charSequence27, textPaint62222222, i26, dp92222222, i26, charSequence28 != null ? 1 : 2);
+                this.e3 = qx0.b(charSequence27, textPaint62222222, i26, dp92222222, i26, charSequence28 != null ? 1 : 2);
                 max = i26;
             } else {
                 if (this.R1 > 0) {
@@ -9036,8 +9037,8 @@ public class p2 extends z implements di.n7, org.telegram.ui.ActionBar.p6 {
         d0();
     }
 
-    public void setArchivedPullAnimation(hj0 hj0Var) {
-        this.e2 = hj0Var;
+    public void setArchivedPullAnimation(ij0 ij0Var) {
+        this.e2 = ij0Var;
     }
 
     public void setBottomClip(int i10) {
@@ -9100,7 +9101,7 @@ public class p2 extends z implements di.n7, org.telegram.ui.ActionBar.p6 {
             return;
         }
         if (this.I1 == null) {
-            this.I1 = new q11(LocaleController.getString(R.string.BotOpen), 14.0f, AndroidUtilities.bold());
+            this.I1 = new r11(LocaleController.getString(R.string.BotOpen), 14.0f, AndroidUtilities.bold());
         }
         this.E1 = z10;
         this.F1.c(false);
@@ -9143,9 +9144,9 @@ public class p2 extends z implements di.n7, org.telegram.ui.ActionBar.p6 {
             return;
         }
         this.w1 = f7;
-        xj0 xj0Var = this.y1;
-        if (xj0Var != null && f7 == 0.0f) {
-            xj0Var.T(0.0f, true);
+        yj0 yj0Var = this.y1;
+        if (yj0Var != null && f7 == 0.0f) {
+            yj0Var.T(0.0f, true);
             this.z1 = false;
             this.m1 = SharedConfig.archiveHidden;
             this.B1 = 0.0f;
@@ -9256,7 +9257,7 @@ public class p2 extends z implements di.n7, org.telegram.ui.ActionBar.p6 {
         this.A4.start();
     }
 
-    public p2(cy cyVar, Context context, boolean z10, int i10, org.telegram.ui.ActionBar.u6 u6Var) {
+    public p2(ey eyVar, Context context, boolean z10, int i10, org.telegram.ui.ActionBar.u6 u6Var) {
         super(context);
         this.h = true;
         this.x = true;
@@ -9304,7 +9305,7 @@ public class p2 extends z implements di.n7, org.telegram.ui.ActionBar.p6 {
         this.I4 = new m2(this);
         i2Var.I = true;
         this.J4 = u6Var;
-        this.D4 = cyVar;
+        this.D4 = eyVar;
         org.telegram.ui.ActionBar.y6.S(context);
         this.y = false;
         this.E = false;

@@ -5,9 +5,9 @@ import android.graphics.drawable.Drawable;
 import android.text.TextPaint;
 import android.view.View;
 import org.telegram.messenger.ImageReceiver;
-import org.telegram.ui.dg1;
+import org.telegram.ui.fg1;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class n2 implements org.telegram.ui.ActionBar.b2, r0.n, ImageReceiver.ImageReceiverDelegate {
     public final /* synthetic */ int a;
@@ -47,14 +47,14 @@ public final /* synthetic */ class n2 implements org.telegram.ui.ActionBar.b2, r
 
     @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
     public /* synthetic */ void didSetImageBitmap(int i10, String str, Drawable drawable) {
-        org.telegram.messenger.o5.a(this, i10, str, drawable);
+        org.telegram.messenger.p5.a(this, i10, str, drawable);
     }
 
     @Override // org.telegram.ui.ActionBar.b2
     public void h(org.telegram.ui.ActionBar.e2 e2Var, int i10) {
         switch (this.a) {
             case 0:
-                ((org.telegram.ui.ActionBar.r2) this.b).presentFragment(new dg1(6, null));
+                ((org.telegram.ui.ActionBar.r2) this.b).presentFragment(new fg1(6, null));
                 break;
             default:
                 h8.a0((h8) this.b, e2Var, i10);
@@ -64,6 +64,6 @@ public final /* synthetic */ class n2 implements org.telegram.ui.ActionBar.b2, r
 
     @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
     public /* synthetic */ void onAnimationReady(ImageReceiver imageReceiver) {
-        org.telegram.messenger.o5.b(this, imageReceiver);
+        org.telegram.messenger.p5.b(this, imageReceiver);
     }
 }

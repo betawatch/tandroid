@@ -1,11 +1,11 @@
 package hi;
 
 import android.os.Bundle;
-import org.telegram.ui.cy;
+import org.telegram.ui.ey;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
-public final class q1 extends cy {
+public final class q1 extends ey {
     public final /* synthetic */ bi.t0 C4;
     public final /* synthetic */ s1 D4;
 
@@ -16,12 +16,12 @@ public final class q1 extends cy {
         this.C4 = t0Var;
     }
 
-    @Override // org.telegram.ui.cy
+    @Override // org.telegram.ui.ey
     public final boolean Q3() {
         return true;
     }
 
-    @Override // org.telegram.ui.cy, org.telegram.ui.ActionBar.r2
+    @Override // org.telegram.ui.ey, org.telegram.ui.ActionBar.r2
     public final void onFragmentDestroy() {
         super.onFragmentDestroy();
         s1 s1Var = this.D4;

@@ -20,25 +20,25 @@ import org.telegram.messenger.SendMessagesHelper;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.UserObject;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.vh;
+import org.telegram.messenger.wh;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.u6;
 import org.telegram.ui.ActionBar.y6;
 import org.telegram.ui.Components.bb;
-import org.telegram.ui.Components.gb1;
-import org.telegram.ui.Components.j71;
-import org.telegram.ui.Components.lm0;
+import org.telegram.ui.Components.k71;
+import org.telegram.ui.Components.kb1;
 import org.telegram.ui.Components.mm0;
+import org.telegram.ui.Components.nm0;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class s1 extends bb {
     public final int X;
     public final String Y;
-    public j71 Z;
+    public k71 Z;
     public final p1 a0;
     public boolean b0;
     public boolean c0;
@@ -298,24 +298,24 @@ public final class s1 extends bb {
         n1 n1Var = new n1(context, i11);
         n1Var.setDelegate(new o1());
         n1Var.Z3(r1Var, null, false, false, false, false);
-        LinearLayout d = vh.d(context, r11);
-        d.addView(v0Var, gb1.r(-1, -2));
-        d.addView(n1Var, gb1.r(-1, -2));
+        LinearLayout d = wh.d(context, r11);
+        d.addView(v0Var, kb1.r(-1, -2));
+        d.addView(n1Var, kb1.r(-1, -2));
         p1 p1Var = new p1(context, null);
         this.a0 = p1Var;
         p1Var.U(o6.e(null, i11, j10, y6.I.q()));
-        p1Var.addView(d, gb1.h(-1, -1.0f, 119, 4.0f, 8.0f, 4.0f, 8.0f));
+        p1Var.addView(d, kb1.h(-1, -1.0f, 119, 4.0f, 8.0f, 4.0f, 8.0f));
         FrameLayout frameLayout = new FrameLayout(context);
-        fi.d f7 = vh.f(24, context, u6Var, r11);
+        fi.d f7 = wh.f(24, context, u6Var, r11);
         f7.i(LocaleController.getString(R.string.BotShareMessageShare), false, r11);
         f7.setOnClickListener(new bi.d1(this, tL_messages_preparedInlineMessage, t0Var, i11, j10, tVar));
-        frameLayout.addView(f7, gb1.h(-1, 48.0f, 119, 10.0f, 10.0f, 10.0f, 10.0f));
+        frameLayout.addView(f7, kb1.h(-1, 48.0f, 119, 10.0f, 10.0f, 10.0f, 10.0f));
         ViewGroup viewGroup = this.containerView;
         int i13 = this.backgroundPaddingLeft;
-        viewGroup.addView(frameLayout, gb1.j(-2.0f, 87, i13, 0, i13, 0));
-        mm0 mm0Var = this.d;
+        viewGroup.addView(frameLayout, kb1.j(-2.0f, 87, i13, 0, i13, 0));
+        nm0 nm0Var = this.d;
         int i14 = this.backgroundPaddingLeft;
-        mm0Var.setPadding(i14, 0, i14, AndroidUtilities.dp(68.0f) + r11);
+        nm0Var.setPadding(i14, 0, i14, AndroidUtilities.dp(68.0f) + r11);
         this.d.u1();
         int i15 = y6.a7;
         setBackgroundColor(getThemedColor(i15));
@@ -472,8 +472,8 @@ public final class s1 extends bb {
     @Override // org.telegram.ui.ActionBar.k3, android.app.Dialog
     public final void onCreate(Bundle bundle) {
         super.onCreate(bundle);
-        mm0 mm0Var = this.d;
-        mm0Var.v0(Math.max((mm0Var.getAdapter() == null ? 0 : mm0Var.getAdapter().h()) - 1, 0));
+        nm0 nm0Var = this.d;
+        nm0Var.v0(Math.max((nm0Var.getAdapter() == null ? 0 : nm0Var.getAdapter().h()) - 1, 0));
     }
 
     @Override // org.telegram.ui.ActionBar.k3
@@ -491,10 +491,10 @@ public final class s1 extends bb {
     }
 
     @Override // org.telegram.ui.Components.bb
-    public final lm0 v(mm0 mm0Var) {
-        j71 j71Var = new j71(mm0Var, getContext(), this.X, 0, true, new ai.e(this, 29), this.resourcesProvider);
-        this.Z = j71Var;
-        return j71Var;
+    public final mm0 v(nm0 nm0Var) {
+        k71 k71Var = new k71(nm0Var, getContext(), this.X, 0, true, new ai.e(this, 29), this.resourcesProvider);
+        this.Z = k71Var;
+        return k71Var;
     }
 
     @Override // org.telegram.ui.Components.bb

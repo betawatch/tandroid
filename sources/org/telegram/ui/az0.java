@@ -2,106 +2,37 @@ package org.telegram.ui;
 
 import android.content.Context;
 import android.graphics.Canvas;
-import android.graphics.Picture;
-import org.telegram.messenger.AndroidUtilities;
+import android.view.accessibility.AccessibilityNodeInfo;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public final class az0 extends org.telegram.ui.Components.u90 implements oe.d {
-    public final oe.e P0;
-    public Picture Q0;
-    public final /* synthetic */ ProfileActivity R0;
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public az0(ProfileActivity profileActivity, Context context) {
+public final class az0 extends yz0 {
+    public az0(Context context) {
         super(context);
-        this.R0 = profileActivity;
-        this.P0 = new oe.e(0, this, org.telegram.ui.Components.ds.h, 320L, 1.0f);
-    }
-
-    public final void n(Canvas canvas, float f7, float f10) {
-        if (f7 >= 1.0f && f10 == 0.0f) {
-            super.onDraw(canvas);
-            return;
-        }
-        canvas.save();
-        canvas.translate(0.0f, f10);
-        canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), (int) (f7 * 255.0f));
-        super.onDraw(canvas);
-        canvas.restore();
-        canvas.restore();
-    }
-
-    @Override // org.telegram.ui.Components.u90, org.telegram.ui.ActionBar.b6, android.view.View
-    public final void onDraw(Canvas canvas) {
-        if (this.Q0 == null) {
-            super.onDraw(canvas);
-            return;
-        }
-        float f7 = this.P0.f;
-        int dp = AndroidUtilities.dp(6.0f);
-        canvas.save();
-        canvas.translate(0.0f, (-dp) * f7);
-        float f10 = 1.0f - f7;
-        canvas.saveLayerAlpha(0.0f, 0.0f, this.Q0.getWidth(), this.Q0.getHeight(), (int) (255.0f * f10));
-        canvas.drawPicture(this.Q0);
-        canvas.restore();
-        canvas.restore();
-        n(canvas, f7, dp * f10);
     }
 
     @Override // android.view.View
-    public final void setAlpha(float f7) {
-        super.setAlpha(f7);
-        int i10 = ProfileActivity.R6;
-        this.R0.J3();
-    }
-
-    @Override // org.telegram.ui.ActionBar.b6
-    public final void setTextColor(int i10) {
-        int o12;
-        super.setTextColor(i10);
-        v01 v01Var = this.R0.p6;
-        if (v01Var == null || v01Var.c == (o12 = org.telegram.ui.ActionBar.y6.o1(1.4f, org.telegram.ui.ActionBar.y6.b(-0.02f, 0.15f, i10)))) {
+    public final void dispatchDraw(Canvas canvas) {
+        di.f3 f3Var;
+        super.dispatchDraw(canvas);
+        org.telegram.ui.Components.t5 t5Var = this.e;
+        if (t5Var == null || (f3Var = t5Var.k) == null) {
             return;
         }
-        v01Var.c = o12;
-        v01Var.invalidateSelf();
+        f3Var.startAnimation();
     }
 
     @Override // android.view.View
-    public final void setTranslationX(float f7) {
-        super.setTranslationX(f7);
-        int i10 = ProfileActivity.R6;
-        ProfileActivity profileActivity = this.R0;
-        profileActivity.h4();
-        profileActivity.getClass();
-        org.telegram.ui.Components.ox0 ox0Var = profileActivity.S;
-        if (ox0Var != null) {
-            ox0Var.setTranslationX(f7 - profileActivity.h4());
+    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
+        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+        if (!getImageReceiver().hasNotThumb()) {
+            accessibilityNodeInfo.setVisibleToUser(false);
+            return;
         }
-    }
-
-    @Override // android.view.View
-    public final void setTranslationY(float f7) {
-        super.setTranslationY(f7);
-        int i10 = ProfileActivity.R6;
-        ProfileActivity profileActivity = this.R0;
-        if (profileActivity.S != null) {
-            AndroidUtilities.dp(3.0f);
-            profileActivity.S.getVisibilityFactor();
-        }
-        org.telegram.ui.Components.ox0 ox0Var = profileActivity.S;
-        if (ox0Var != null) {
-            ox0Var.setTranslationY(f7 - AndroidUtilities.dp(5.0f));
-        }
-    }
-
-    @Override // oe.d
-    public final void z(float f7, int i10) {
-        if (f7 == 1.0f) {
-            this.Q0 = null;
-            invalidate();
-        }
+        accessibilityNodeInfo.setText(LocaleController.getString(R.string.AccDescrProfilePicture));
+        accessibilityNodeInfo.addAction(new AccessibilityNodeInfo.AccessibilityAction(16, LocaleController.getString(R.string.Open)));
+        accessibilityNodeInfo.addAction(new AccessibilityNodeInfo.AccessibilityAction(32, LocaleController.getString(R.string.AccDescrOpenInPhotoViewer)));
     }
 }

@@ -7,9 +7,9 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.xj0;
+import org.telegram.ui.Components.yj0;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public class z extends LinearLayout {
     public boolean a;
@@ -73,8 +73,8 @@ public class z extends LinearLayout {
             addView(w0Var, i10, layoutParams);
         } else {
             if (drawable != null) {
-                if (drawable instanceof xj0) {
-                    w0Var.x.setAnimation((xj0) drawable);
+                if (drawable instanceof yj0) {
+                    w0Var.x.setAnimation((yj0) drawable);
                 } else {
                     w0Var.x.setImageDrawable(drawable);
                 }

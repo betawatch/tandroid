@@ -44,16 +44,17 @@ import org.telegram.ui.ActionBar.y6;
 import org.telegram.ui.Components.c10;
 import org.telegram.ui.Components.ds;
 import org.telegram.ui.Components.g5;
-import org.telegram.ui.Components.gp0;
-import org.telegram.ui.Components.ij0;
+import org.telegram.ui.Components.hp0;
+import org.telegram.ui.Components.jj0;
 import org.telegram.ui.Components.wc;
-import org.telegram.ui.Components.xp;
+import org.telegram.ui.Components.yp;
 import org.telegram.ui.b6;
-import org.telegram.ui.b80;
 import org.telegram.ui.b9;
+import org.telegram.ui.bb1;
 import org.telegram.ui.bd;
 import org.telegram.ui.c6;
 import org.telegram.ui.c7;
+import org.telegram.ui.d80;
 import org.telegram.ui.dc;
 import org.telegram.ui.j4;
 import org.telegram.ui.k9;
@@ -64,19 +65,18 @@ import org.telegram.ui.q4;
 import org.telegram.ui.t4;
 import org.telegram.ui.ta;
 import org.telegram.ui.v3;
-import org.telegram.ui.w91;
 import org.telegram.ui.wb;
 import org.telegram.ui.x5;
 import org.telegram.ui.x9;
 import org.telegram.ui.xc;
 import org.telegram.ui.y9;
+import org.telegram.ui.y91;
 import org.telegram.ui.yc;
 import org.telegram.ui.z5;
-import org.telegram.ui.za1;
 import org.telegram.ui.zc;
 import s4.e1;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class m0 implements Runnable {
     public final /* synthetic */ int a;
@@ -132,7 +132,7 @@ public final /* synthetic */ class m0 implements Runnable {
                 break;
             case 3:
                 org.telegram.ui.ActionBar.k kVar = (org.telegram.ui.ActionBar.k) obj2;
-                boolean canScrollVertically = ((gp0) obj).canScrollVertically(-1);
+                boolean canScrollVertically = ((hp0) obj).canScrollVertically(-1);
                 boolean z11 = !canScrollVertically;
                 if (kVar.u1 != z11) {
                     ValueAnimator valueAnimator = kVar.w1;
@@ -318,10 +318,10 @@ public final /* synthetic */ class m0 implements Runnable {
                 e1 K = c6Var.b.K(i10);
                 if (K != null) {
                     View view2 = K.a;
-                    b80 b80Var = new b80(c6Var.getParentActivity(), c6Var);
-                    b80Var.h(true);
-                    b80Var.setParentWindow(g5.P(c6Var, b80Var, view2, view2.getMeasuredWidth() / 2.0f, view2.getMeasuredHeight() / 2.0f));
-                    b80Var.setCallback(new z5(c6Var, keepMediaException, i18));
+                    d80 d80Var = new d80(c6Var.getParentActivity(), c6Var);
+                    d80Var.h(true);
+                    d80Var.setParentWindow(g5.P(c6Var, d80Var, view2, view2.getMeasuredWidth() / 2.0f, view2.getMeasuredHeight() / 2.0f));
+                    d80Var.setCallback(new z5(c6Var, keepMediaException, i18));
                     break;
                 }
                 break;
@@ -329,9 +329,9 @@ public final /* synthetic */ class m0 implements Runnable {
                 c7.Y((c7) obj2, (e2) obj);
                 break;
             case 17:
-                ij0 ij0Var = new ij0((Context) obj2, LocaleController.getString(R.string.InviteByQRCode), ((String[]) obj)[0], LocaleController.getString(R.string.QRCodeLinkGroupCall), false);
-                ij0Var.m(R.raw.qr_code_logo);
-                ij0Var.show();
+                jj0 jj0Var = new jj0((Context) obj2, LocaleController.getString(R.string.InviteByQRCode), ((String[]) obj)[0], LocaleController.getString(R.string.QRCodeLinkGroupCall), false);
+                jj0Var.m(R.raw.qr_code_logo);
+                jj0Var.show();
                 break;
             case 18:
                 ((b9) obj2).b.e0(((TLRPC.Message) ic.a.g(1, ((k9) obj).c)).id, 100);
@@ -465,35 +465,35 @@ public final /* synthetic */ class m0 implements Runnable {
             case 26:
                 bd bdVar = (bd) obj2;
                 bdVar.getClass();
-                bdVar.presentFragment(w91.c0((TLRPC.Chat) obj, true));
+                bdVar.presentFragment(y91.c0((TLRPC.Chat) obj, true));
                 break;
             case 27:
                 List list = (List) obj;
                 zc zcVar = ((yc) obj2).b;
                 int i28 = zcVar.a;
-                za1 za1Var = zcVar.d;
+                bb1 bb1Var = zcVar.d;
                 ArrayList arrayList7 = zcVar.c;
                 if (list != null && !list.isEmpty()) {
                     zcVar.n = true;
                     arrayList7.clear();
-                    arrayList7.add(0, new xp((h4) list.get(0)));
+                    arrayList7.add(0, new yp((h4) list.get(0)));
                     if (zcVar.v != null && zcVar.f) {
-                        arrayList7.add(0, new xp(h4.a(i28)));
+                        arrayList7.add(0, new yp(h4.a(i28)));
                     }
                     u6 u6Var = zcVar.b;
                     int a2 = u6Var != null ? u6Var.a() : y6.I.q();
                     for (int i29 = 1; i29 < list.size(); i29++) {
                         h4 h4Var = (h4) list.get(i29);
-                        xp xpVar = new xp(h4Var);
+                        yp ypVar = new yp(h4Var);
                         h4Var.m(i28);
-                        xpVar.c = a2;
-                        arrayList7.add(xpVar);
+                        ypVar.c = a2;
+                        arrayList7.add(ypVar);
                     }
                     int i30 = -1;
                     for (int i31 = 0; i31 < arrayList7.size(); i31++) {
-                        xp xpVar2 = (xp) arrayList7.get(i31);
-                        boolean z13 = TextUtils.equals(zcVar.s, xpVar2.a()) || (TextUtils.isEmpty(zcVar.s) && xpVar2.a.a);
-                        xpVar2.d = z13;
+                        yp ypVar2 = (yp) arrayList7.get(i31);
+                        boolean z13 = TextUtils.equals(zcVar.s, ypVar2.a()) || (TextUtils.isEmpty(zcVar.s) && ypVar2.a.a);
+                        ypVar2.d = z13;
                         if (z13) {
                             i30 = i31;
                         }
@@ -502,15 +502,15 @@ public final /* synthetic */ class m0 implements Runnable {
                     if (xcVar != null) {
                         xcVar.l();
                     }
-                    za1Var.animate().alpha(1.0f).setDuration(150L).start();
+                    bb1Var.animate().alpha(1.0f).setDuration(150L).start();
                     c10 c10Var = zcVar.e;
                     if (zcVar.n) {
                         AndroidUtilities.updateViewVisibilityAnimated(c10Var, false, 1.0f, true, true);
                     } else {
                         AndroidUtilities.updateViewVisibilityAnimated(c10Var, true, 1.0f, true, true);
                     }
-                    if (i30 >= 0 && (za1Var.getLayoutManager() instanceof s4.c0)) {
-                        ((s4.c0) za1Var.getLayoutManager()).h1(i30, (AndroidUtilities.displaySize.x - AndroidUtilities.dp(83.0f)) / 2);
+                    if (i30 >= 0 && (bb1Var.getLayoutManager() instanceof s4.c0)) {
+                        ((s4.c0) bb1Var.getLayoutManager()).h1(i30, (AndroidUtilities.displaySize.x - AndroidUtilities.dp(83.0f)) / 2);
                         break;
                     }
                 }

@@ -12,9 +12,9 @@ import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 import java.util.concurrent.atomic.AtomicReference;
-import org.telegram.ui.Components.cy0;
+import org.telegram.ui.Components.dy0;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
 public final class p {
     public final Context a;
@@ -48,7 +48,7 @@ public final class p {
         qVar.c = new Object();
         qVar.d = new ThreadLocal();
         qVar.a = executorService;
-        executorService.execute(new cy0(qVar, 21));
+        executorService.execute(new dy0(qVar, 21));
         this.l = qVar;
         this.m = jVar;
         this.o = fVar;

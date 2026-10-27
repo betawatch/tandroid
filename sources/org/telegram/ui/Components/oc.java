@@ -10,7 +10,7 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class oc extends mb implements org.telegram.ui.ActionBar.p6 {
     public final org.telegram.ui.ActionBar.u6 a;
@@ -34,11 +34,11 @@ public final class oc extends mb implements org.telegram.ui.ActionBar.p6 {
             this.h = textView.getBackground();
             ic.a.o(14.0f, 1, textView);
             org.telegram.ui.ActionBar.f7.V(textView, i10, u6Var);
-            org.telegram.messenger.vh.k(R.string.UndoNoCaps, textView, 16);
+            org.telegram.messenger.wh.k(R.string.UndoNoCaps, textView, 16);
             float f7 = z11 ? 34.0f : 12.0f;
             boolean z12 = LocaleController.isRTL;
-            gb1.U(textView, z12 ? 12.0f : f7, 8.0f, z12 ? f7 : 12.0f, 8.0f);
-            addView(textView, gb1.m(-2.0f, -2.0f, 16, 8.0f, 0.0f, 8.0f, 0.0f));
+            kb1.U(textView, z12 ? 12.0f : f7, 8.0f, z12 ? f7 : 12.0f, 8.0f);
+            addView(textView, kb1.m(-2.0f, -2.0f, 16, 8.0f, 0.0f, 8.0f, 0.0f));
         }
         if (z11) {
             ImageView imageView = new ImageView(getContext());
@@ -48,8 +48,8 @@ public final class oc extends mb implements org.telegram.ui.ActionBar.p6 {
                 imageView.setBackground(org.telegram.ui.ActionBar.y6.g0((g7 & 16777215) | 419430400, 1, -1));
                 this.n = imageView.getBackground();
             }
-            gb1.U(imageView, 0.0f, 12.0f, 0.0f, 12.0f);
-            addView(imageView, gb1.l(56.0f, 48.0f, 16));
+            kb1.U(imageView, 0.0f, 12.0f, 0.0f, 12.0f);
+            addView(imageView, kb1.l(56.0f, 48.0f, 16));
         }
         setOnClickListener(new f0(this, 5));
     }

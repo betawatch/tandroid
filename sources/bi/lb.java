@@ -9,9 +9,9 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.MessagesController;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.un;
+import org.telegram.ui.wn;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class lb implements View.OnClickListener {
     public final /* synthetic */ int a = 1;
@@ -25,10 +25,10 @@ public final /* synthetic */ class lb implements View.OnClickListener {
     public final /* synthetic */ Context r;
     public final /* synthetic */ Object s;
 
-    public /* synthetic */ lb(be beVar, MessageObject messageObject, un unVar, int i10, boolean z10, Context context, org.telegram.ui.ActionBar.u6 u6Var, long j10, TLRPC.Chat chat) {
+    public /* synthetic */ lb(be beVar, MessageObject messageObject, wn wnVar, int i10, boolean z10, Context context, org.telegram.ui.ActionBar.u6 u6Var, long j10, TLRPC.Chat chat) {
         this.f = beVar;
         this.h = messageObject;
-        this.n = unVar;
+        this.n = wnVar;
         this.b = i10;
         this.c = z10;
         this.r = context;
@@ -63,15 +63,15 @@ public final /* synthetic */ class lb implements View.OnClickListener {
             default:
                 be beVar = (be) this.f;
                 MessageObject messageObject = (MessageObject) this.h;
-                un unVar = (un) this.n;
+                wn wnVar = (wn) this.n;
                 TLRPC.Chat chat = (TLRPC.Chat) this.s;
                 if (!beVar.T) {
                     long value = beVar.r.getValue();
-                    if ((beVar.R != null || (messageObject != null && unVar != null)) && beVar.X == null) {
+                    if ((beVar.R != null || (messageObject != null && wnVar != null)) && beVar.X == null) {
                         int i11 = this.b;
                         if (!MessagesController.getInstance(i11).isFrozen()) {
                             ca y10 = ca.y(i11, false);
-                            a0 a0Var = new a0(beVar, value, y10, messageObject, unVar);
+                            a0 a0Var = new a0(beVar, value, y10, messageObject, wnVar);
                             if (y10.e && y10.p().amount < value) {
                                 boolean z10 = this.c;
                                 Context context = this.r;

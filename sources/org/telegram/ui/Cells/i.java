@@ -11,11 +11,11 @@ import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.FileLog;
 import org.telegram.ui.Components.so;
 import org.telegram.ui.Components.wc;
-import org.telegram.ui.uo;
-import org.telegram.ui.xc1;
-import org.telegram.ui.zc1;
+import org.telegram.ui.ad1;
+import org.telegram.ui.wo;
+import org.telegram.ui.yc1;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class i extends ClickableSpan {
     public final /* synthetic */ int a;
@@ -72,7 +72,7 @@ public final class i extends ClickableSpan {
                 qf.d.r(((w1) this.c).getContext(), "https://fragment.com/username/" + ((String) this.b));
                 break;
             case 5:
-                qf.d.r(((uo) this.c).getContext(), "https://fragment.com/username/" + ((String) this.b));
+                qf.d.r(((wo) this.c).getContext(), "https://fragment.com/username/" + ((String) this.b));
                 break;
             case 6:
                 ((so) this.c).run();
@@ -84,8 +84,8 @@ public final class i extends ClickableSpan {
             case 8:
                 try {
                     ((ClipboardManager) ApplicationLoader.applicationContext.getSystemService("clipboard")).setPrimaryClip(ClipData.newPlainText("label", (String) this.b));
-                    if (wc.a((xc1) this.c)) {
-                        wc.j((xc1) this.c).j();
+                    if (wc.a((ad1) this.c)) {
+                        wc.j((ad1) this.c).j();
                         break;
                     }
                 } catch (Exception e10) {
@@ -95,7 +95,7 @@ public final class i extends ClickableSpan {
                 break;
             default:
                 AndroidUtilities.addToClipboard((String) this.b);
-                ((zc1) this.c).run();
+                ((yc1) this.c).run();
                 break;
         }
     }

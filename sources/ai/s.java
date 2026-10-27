@@ -32,9 +32,9 @@ import org.telegram.ui.Components.ChatActivityEnterView;
 import org.telegram.ui.Components.ae;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PremiumPreviewFragment;
-import org.telegram.ui.kf;
+import org.telegram.ui.jf;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class s implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -111,7 +111,7 @@ public final /* synthetic */ class s implements View.OnClickListener {
                 ((m2) this.b).q(!r5.f0, true);
                 break;
             case 14:
-                ((y9) this.b).N();
+                ((y9) this.b).O();
                 break;
             case 15:
                 ((f6) this.b).dismiss();
@@ -165,13 +165,13 @@ public final /* synthetic */ class s implements View.OnClickListener {
                 }
                 break;
             case 25:
-                ((kf) this.b).run();
+                ((jf) this.b).run();
                 break;
             case 26:
-                ((kf) this.b).run();
+                ((jf) this.b).run();
                 break;
             case 27:
-                ChatActivityEnterView.f(((ae) ((hi.u0) this.b).d).a, (TL_keyboard.KeyboardButton) view.getTag());
+                ChatActivityEnterView.e(((ae) ((hi.u0) this.b).d).a, (TL_keyboard.KeyboardButton) view.getTag());
                 break;
             case 28:
                 ((e0) this.b).run();

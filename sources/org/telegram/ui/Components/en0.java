@@ -1,98 +1,63 @@
 package org.telegram.ui.Components;
 
+import android.content.Context;
 import android.graphics.Canvas;
-import android.graphics.Color;
-import android.graphics.ColorFilter;
 import android.graphics.Paint;
-import android.graphics.Rect;
 import android.graphics.RectF;
-import android.graphics.drawable.Drawable;
-import android.text.TextPaint;
+import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public final class en0 extends Drawable {
-    public final RectF a = new RectF();
-    public final Paint b;
-    public final TextPaint c;
-    public int d;
-    public String e;
-    public final int f;
-    public int g;
-    public final int h;
+public final class en0 extends FrameLayout {
+    public final Paint a;
+    public final r50 b;
+    public final RectF c;
+    public final float d;
+    public float e;
 
-    public en0(int i10) {
+    public en0(Context context) {
+        super(context);
         Paint paint = new Paint(1);
-        this.b = paint;
-        TextPaint textPaint = new TextPaint(1);
-        this.c = textPaint;
-        this.g = 255;
-        this.h = 255;
-        this.f = i10;
-        textPaint.setTextSize(AndroidUtilities.dp(11));
-        textPaint.setTypeface(AndroidUtilities.bold());
-        paint.setStyle(Paint.Style.STROKE);
-        paint.setStrokeWidth(AndroidUtilities.dp(1.0f));
-        if (i10 == 0) {
-            this.e = LocaleController.getString(R.string.ScamMessage);
-        } else {
-            this.e = LocaleController.getString(R.string.FakeMessage);
-        }
-        this.d = (int) Math.ceil(textPaint.measureText(this.e));
+        this.a = paint;
+        r50 r50Var = new r50(this, 1);
+        this.b = r50Var;
+        this.c = new RectF();
+        this.d = (AndroidUtilities.dp(3.0f) * 0.5f) + AndroidUtilities.dp(5.0f);
+        a(paint, 0.2f);
+        a(r50Var, 1.0f);
+        setWillNotDraw(false);
     }
 
-    public final void a() {
-        String string = this.f == 0 ? LocaleController.getString(R.string.ScamMessage) : LocaleController.getString(R.string.FakeMessage);
-        if (string.equals(this.e)) {
+    public static void a(Paint paint, float f7) {
+        paint.setColor(-1);
+        paint.setAlpha(Math.round(f7 * 255.0f));
+        paint.setStyle(Paint.Style.STROKE);
+        paint.setStrokeWidth(AndroidUtilities.dp(3.0f));
+        paint.setStrokeCap(Paint.Cap.ROUND);
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        super.dispatchDraw(canvas);
+        float width = getWidth();
+        float f7 = this.d;
+        RectF rectF = this.c;
+        rectF.set(f7, f7, width - f7, getHeight() - f7);
+        canvas.drawOval(rectF, this.a);
+        canvas.drawArc(rectF, -90.0f, this.e * 360.0f, false, this.b);
+    }
+
+    public Paint getPaint() {
+        return this.b;
+    }
+
+    public void setProgress(float f7) {
+        float max = Math.max(0.0f, Math.min(1.0f, f7));
+        if (this.e == max) {
             return;
         }
-        this.e = string;
-        this.d = (int) Math.ceil(this.c.measureText(string));
-    }
-
-    public final void b(int i10) {
-        this.c.setColor(i10);
-        this.b.setColor(i10);
-        this.g = Color.alpha(i10);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        Rect bounds = getBounds();
-        RectF rectF = this.a;
-        rectF.set(bounds);
-        canvas.drawRoundRect(rectF, AndroidUtilities.dp(2.0f), AndroidUtilities.dp(2.0f), this.b);
-        canvas.drawText(this.e, rectF.left + AndroidUtilities.dp(5.0f), rectF.top + AndroidUtilities.dp(12.0f), this.c);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicHeight() {
-        return AndroidUtilities.dp(16.0f);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicWidth() {
-        return AndroidUtilities.dp(10.0f) + this.d;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return -2;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i10) {
-        if (this.h != i10) {
-            int i11 = (int) ((i10 / 255.0f) * this.g);
-            this.b.setAlpha(i11);
-            this.c.setAlpha(i11);
-        }
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
+        this.e = max;
+        invalidate();
     }
 }

@@ -6,7 +6,7 @@ import java.util.Collections;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class f implements ra.b {
     public final /* synthetic */ int a;
@@ -25,13 +25,13 @@ public final /* synthetic */ class f implements ra.b {
             case 2:
                 return ExecutorsRegistrar.a();
             case 3:
-                n nVar = ExecutorsRegistrar.a;
+                o oVar = ExecutorsRegistrar.a;
                 return new t9.f(Executors.newFixedThreadPool(Math.max(2, Runtime.getRuntime().availableProcessors()), new t9.a("Firebase Lite", 0, new StrictMode.ThreadPolicy.Builder().detectAll().penaltyLog().build())), (ScheduledExecutorService) ExecutorsRegistrar.d.get());
             case 4:
-                n nVar2 = ExecutorsRegistrar.a;
+                o oVar2 = ExecutorsRegistrar.a;
                 return new t9.f(Executors.newCachedThreadPool(new t9.a("Firebase Blocking", 11, null)), (ScheduledExecutorService) ExecutorsRegistrar.d.get());
             default:
-                n nVar3 = ExecutorsRegistrar.a;
+                o oVar3 = ExecutorsRegistrar.a;
                 return Executors.newSingleThreadScheduledExecutor(new t9.a("Firebase Scheduler", 0, null));
         }
     }

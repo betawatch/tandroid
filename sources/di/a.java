@@ -14,11 +14,11 @@ import android.widget.ImageView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.messenger.vh;
+import org.telegram.messenger.wh;
 import org.telegram.ui.Components.ds;
-import org.telegram.ui.Components.gb1;
+import org.telegram.ui.Components.kb1;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class a extends FrameLayout {
     public final ImageView a;
@@ -37,7 +37,7 @@ public final class a extends FrameLayout {
         Paint paint2 = new Paint(1);
         this.d = paint2;
         this.h = 1.0f;
-        gb1.b(this);
+        kb1.b(this);
         org.telegram.ui.Components.r6 r6Var = new org.telegram.ui.Components.r6(false, true, true);
         this.b = r6Var;
         r6Var.u(-9866632);
@@ -54,17 +54,17 @@ public final class a extends FrameLayout {
         iVar.invalidateSelf();
         iVar.f = AndroidUtilities.dp(1.0f);
         frameLayout.setBackground(iVar);
-        addView(frameLayout, gb1.i(40, 40, 17));
+        addView(frameLayout, kb1.i(40, 40, 17));
         ImageView imageView = new ImageView(context);
         imageView.setImageResource(R.drawable.menu_comments);
         PorterDuff.Mode mode = PorterDuff.Mode.SRC_IN;
         imageView.setColorFilter(new PorterDuffColorFilter(-2960428, mode));
-        frameLayout.addView(imageView, gb1.i(20, 20, 17));
+        frameLayout.addView(imageView, kb1.i(20, 20, 17));
         ImageView imageView2 = new ImageView(context);
         this.a = imageView2;
         imageView2.setImageResource(R.drawable.menu_comments_arrow);
         imageView2.setColorFilter(new PorterDuffColorFilter(-2960428, mode));
-        frameLayout.addView(imageView2, gb1.i(20, 20, 17));
+        frameLayout.addView(imageView2, kb1.i(20, 20, 17));
         imageView2.setPivotX(AndroidUtilities.dp(10.27f));
         imageView2.setPivotY(AndroidUtilities.dp(9.58f));
     }
@@ -76,7 +76,7 @@ public final class a extends FrameLayout {
         this.e = z10;
         ImageView imageView = this.a;
         if (z11) {
-            vh.q(imageView.animate().rotation(z10 ? 0.0f : 180.0f), ds.h, 420L);
+            wh.q(imageView.animate().rotation(z10 ? 0.0f : 180.0f), ds.h, 420L);
         } else {
             imageView.setRotation(z10 ? 0.0f : 180.0f);
         }

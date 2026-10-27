@@ -26,7 +26,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
 public class FileLoader extends BaseController {
     public static final long DEFAULT_MAX_FILE_SIZE = 2097152000;
@@ -76,7 +76,7 @@ public class FileLoader extends BaseController {
     private static final FileLoader[] Instance = new FileLoader[4];
     private static final FileLoadOperationStream pendingPlayerStream = new g3();
 
-    /* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+    /* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
     public class 1 implements FileUploadOperation.FileUploadOperationDelegate {
         final /* synthetic */ boolean val$encrypted;
         final /* synthetic */ String val$location;
@@ -162,7 +162,7 @@ public class FileLoader extends BaseController {
         }
     }
 
-    /* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+    /* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
     public class 2 implements FileLoadOperation.FileLoadOperationDelegate {
         final /* synthetic */ TLRPC.Document val$document;
         final /* synthetic */ String val$fileName;
@@ -179,7 +179,7 @@ public class FileLoader extends BaseController {
         /* JADX INFO: Access modifiers changed from: private */
         public static /* synthetic */ void lambda$didPreFinishLoading$0(FileLoadOperation fileLoadOperation, FileLoaderPriorityQueue fileLoaderPriorityQueue) {
             fileLoadOperation.preFinished = true;
-            fileLoaderPriorityQueue.checkLoadingOperations();
+            fileLoaderPriorityQueue.lambda$new$0();
         }
 
         @Override // org.telegram.messenger.FileLoadOperation.FileLoadOperationDelegate
@@ -250,7 +250,7 @@ public class FileLoader extends BaseController {
         }
     }
 
-    /* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+    /* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
     public interface FileLoaderDelegate {
         void fileDidFailedLoad(String str, int i10);
 
@@ -265,12 +265,12 @@ public class FileLoader extends BaseController {
         void fileUploadProgressChanged(FileUploadOperation fileUploadOperation, String str, long j10, long j11, boolean z10);
     }
 
-    /* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+    /* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
     public interface FileResolver {
         File getFile();
     }
 
-    /* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+    /* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
     public static class LoadOperationUIObject {
         Runnable loadInternalRunnable;
 
@@ -808,7 +808,7 @@ public class FileLoader extends BaseController {
         FileLoaderPriorityQueue queue = fileLoadOperation.getQueue();
         queue.remove(fileLoadOperation);
         queue.add(fileLoadOperation);
-        queue.checkLoadingOperations();
+        queue.lambda$new$0();
         StringBuilder sb2 = new StringBuilder("update priority ");
         sb2.append(str);
         sb2.append(" position in queue ");
@@ -942,7 +942,7 @@ public class FileLoader extends BaseController {
             fileLoadOperation.setPriority(getPriorityValue(4));
             fileLoadOperation.getQueue().remove(fileLoadOperation);
             fileLoadOperation.getQueue().add(fileLoadOperation);
-            fileLoadOperation.getQueue().checkLoadingOperations();
+            fileLoadOperation.getQueue().lambda$new$0();
         }
     }
 
@@ -1126,7 +1126,7 @@ public class FileLoader extends BaseController {
                         fileLoadOperation4.getQueue().add(fileLoadOperation4);
                         fileLoadOperation4.updateProgress();
                         if (z12) {
-                            fileLoadOperation4.getQueue().checkLoadingOperations();
+                            fileLoadOperation4.getQueue().lambda$new$0();
                         }
                         return fileLoadOperation4;
                     }
@@ -1367,7 +1367,7 @@ public class FileLoader extends BaseController {
         if (str == null) {
             return;
         }
-        fileLoaderQueue.postRunnable(new v6(this, z10, str, 1));
+        fileLoaderQueue.postRunnable(new w6(this, z10, str, 1));
     }
 
     public void cancelLoadAllFiles() {
@@ -1405,7 +1405,7 @@ public class FileLoader extends BaseController {
         } else if (webFile != null) {
             str2 = getAttachFileName(webFile);
         }
-        fileLoaderQueue.postRunnable(new x4(this, str2, i10, 3));
+        fileLoaderQueue.postRunnable(new y4(this, str2, i10, 3));
     }
 
     public void checkCurrentDownloadsFiles() {
@@ -1461,7 +1461,7 @@ public class FileLoader extends BaseController {
         if (arrayList == null || arrayList.isEmpty()) {
             return;
         }
-        fileLoaderQueue.postRunnable(new x6(arrayList, i10, 5));
+        fileLoaderQueue.postRunnable(new y6(arrayList, i10, 5));
     }
 
     public void dumpFilesQueue() {

@@ -8,11 +8,11 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.Vector;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public class TL_agent {
 
-    /* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+    /* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
     public static class Providers extends TLObject {
         public static Providers TLdeserialize(InputSerializedData inputSerializedData, int i10, boolean z10) {
             return (Providers) TLObject.TLdeserialize(Providers.class, fromConstructor(i10), inputSerializedData, i10, z10);
@@ -29,7 +29,7 @@ public class TL_agent {
         }
     }
 
-    /* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+    /* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
     public static class TL_providers extends Providers {
         public static final int constructor = -2027776014;
         public long hash;
@@ -49,7 +49,7 @@ public class TL_agent {
         }
     }
 
-    /* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+    /* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
     public static class agentProvider extends TLObject {
         public static final int constructor = 1194491015;
         public int flags;
@@ -97,7 +97,7 @@ public class TL_agent {
         }
     }
 
-    /* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+    /* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
     public static class connect extends TLMethod<settings> {
         public static final int constructor = -14388756;
         public String key;
@@ -116,7 +116,7 @@ public class TL_agent {
         }
     }
 
-    /* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+    /* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
     public static class disconnect extends TLMethod<settings> {
         public static final int constructor = -1698892007;
         public String provider;
@@ -133,7 +133,7 @@ public class TL_agent {
         }
     }
 
-    /* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+    /* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
     public static class getProviders extends TLMethod<Providers> {
         public static final int constructor = -837913581;
         public long hash;
@@ -150,7 +150,7 @@ public class TL_agent {
         }
     }
 
-    /* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+    /* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
     public static class getSettings extends TLMethod<settings> {
         public static final int constructor = -82864297;
 
@@ -165,7 +165,7 @@ public class TL_agent {
         }
     }
 
-    /* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+    /* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
     public static class providerKey extends TLObject {
         public static final int constructor = 2018344464;
         public int date_connected;
@@ -192,7 +192,7 @@ public class TL_agent {
         }
     }
 
-    /* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+    /* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
     public static class setActiveProvider extends TLMethod<settings> {
         public static final int constructor = -1129164408;
         public String provider;
@@ -209,7 +209,7 @@ public class TL_agent {
         }
     }
 
-    /* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+    /* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
     public static class settings extends TLObject {
         public static final int constructor = -54304075;
         public String active_provider;
@@ -246,7 +246,7 @@ public class TL_agent {
         }
     }
 
-    /* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+    /* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
     public static class updateAgentSettings extends TLRPC.Update {
         public static final int constructor = -1808471667;
         public settings settings;
@@ -265,7 +265,7 @@ public class TL_agent {
         }
     }
 
-    /* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+    /* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
     public static class TL_providersNotModified extends Providers {
         public static final int constructor = 1140283053;
 

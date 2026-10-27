@@ -3,9 +3,9 @@ package org.telegram.ui.Wallet;
 import android.content.Context;
 import android.graphics.Canvas;
 import j$.util.Objects;
-import org.telegram.ui.zc1;
+import org.telegram.ui.yc1;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class u5 extends org.telegram.ui.Components.s6 {
     public final /* synthetic */ int s;
@@ -32,7 +32,7 @@ public final class u5 extends org.telegram.ui.Components.s6 {
                 float d = (1.0f - w5Var.T) * w5Var.f0.d(w5Var.d0, false);
                 org.telegram.ui.Components.r6 drawable = getDrawable();
                 Objects.requireNonNull(drawable);
-                w5Var.c(d, new n2(drawable, 4), new zc1(27, this, canvas));
+                w5Var.c(d, new n2(drawable, 4), new yc1(28, this, canvas));
                 canvas.restoreToCount(save);
                 break;
             default:
@@ -40,7 +40,7 @@ public final class u5 extends org.telegram.ui.Components.s6 {
                 float d10 = (1.0f - w5Var2.T) * w5Var2.f0.d(w5Var2.d0, false);
                 org.telegram.ui.Components.r6 drawable2 = getDrawable();
                 Objects.requireNonNull(drawable2);
-                w5Var2.c(d10, new n2(drawable2, 4), new zc1(28, this, canvas));
+                w5Var2.c(d10, new n2(drawable2, 4), new yc1(29, this, canvas));
                 break;
         }
     }

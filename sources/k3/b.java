@@ -21,7 +21,7 @@ import org.xmlpull.v1.XmlPullParserException;
 import w3.l;
 import z3.k;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
 public final class b implements o {
     public q b;
@@ -58,7 +58,7 @@ public final class b implements o {
                     break;
                 }
                 if (this.d != 65505) {
-                    lVar.s(H2, false);
+                    lVar.u(H2, false);
                 } else {
                     xVar.K(H2);
                     lVar.h(xVar.a, 0, H2, false);
@@ -136,7 +136,7 @@ public final class b implements o {
             xVar.K(2);
             pVar.b(0, 2, xVar.a);
             this.e = xVar.H() - 2;
-            pVar.q(2);
+            pVar.r(2);
             this.c = 2;
             return 0;
         }
@@ -256,7 +256,7 @@ public final class b implements o {
                 }
             }
         } else {
-            pVar.q(this.e);
+            pVar.r(this.e);
         }
         this.c = 0;
         return 0;

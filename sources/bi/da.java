@@ -23,9 +23,9 @@ import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.un;
+import org.telegram.ui.wn;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class da implements Runnable {
     public final /* synthetic */ int a;
@@ -59,7 +59,7 @@ public final /* synthetic */ class da implements Runnable {
                 ca.y(i11, false).S();
                 org.telegram.ui.ActionBar.r2 U = LaunchActivity.U();
                 if (U != null) {
-                    U.presentFragment(un.ba(j10));
+                    U.presentFragment(wn.ea(j10));
                     break;
                 }
                 break;
@@ -79,10 +79,10 @@ public final /* synthetic */ class da implements Runnable {
                 ((MessagesController) obj2).lambda$processUpdateArray$394(j10, i11, (TLRPC.TL_sendMessageRichMessageDraftAction) obj);
                 break;
             case 6:
-                ((MessagesStorage) obj2).lambda$updateMessageVoiceTranscriptionOpen$110(i11, j10, (TLRPC.Message) obj);
+                ((MessagesStorage) obj2).lambda$updateMessageVoiceTranscriptionOpen$111(i11, j10, (TLRPC.Message) obj);
                 break;
             case 7:
-                ((MessagesStorage) obj2).lambda$updateMessageReactions$107(i11, j10, (TLRPC.TL_messageReactions) obj);
+                ((MessagesStorage) obj2).lambda$updateMessageReactions$108(i11, j10, (TLRPC.TL_messageReactions) obj);
                 break;
             case 8:
                 ((MessagesStorage) obj2).lambda$putWidgetStorage$43((String) obj, j10, i11);
@@ -91,7 +91,7 @@ public final /* synthetic */ class da implements Runnable {
                 ((MessagesStorage) obj2).lambda$updateTopicData$51(j10, (TLRPC.TL_forumTopic) obj, i11);
                 break;
             case 10:
-                ((MessagesStorage) obj2).lambda$updateChatDefaultBannedRights$183(j10, i11, (TLRPC.TL_chatBannedRights) obj);
+                ((MessagesStorage) obj2).lambda$updateChatDefaultBannedRights$184(j10, i11, (TLRPC.TL_chatBannedRights) obj);
                 break;
             case 11:
                 ((SendMessagesHelper) obj2).lambda$sendNotificationCallback$33(j10, i11, (byte[]) obj);
@@ -167,7 +167,7 @@ public final /* synthetic */ class da implements Runnable {
                 String string = LocaleController.getString(R.string.WalletNetworkFee);
                 org.telegram.ui.ActionBar.e2 e2Var2 = alertDialog$Builder.a;
                 e2Var2.R = string;
-                e2Var2.T = AndroidUtilities.replaceTags(LocaleController.formatSpannable(R.string.WalletNetworkFeeInfo, org.telegram.ui.Wallet.l0.w(i11).l(j10, true)));
+                e2Var2.T = AndroidUtilities.replaceTags(LocaleController.formatSpannable(R.string.WalletNetworkFeeInfo, org.telegram.ui.Wallet.l0.x(i11).m(j10, true)));
                 org.telegram.messenger.t.p(R.string.WalletOK, alertDialog$Builder, null);
                 break;
         }

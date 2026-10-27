@@ -20,7 +20,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import n4.s;
 import o6.l;
 import sb.j;
-import w7.j5;
+import w7.k5;
 import y7.ga;
 import y7.ha;
 import y7.ia;
@@ -29,7 +29,7 @@ import y7.ka;
 import y7.la;
 import y7.x;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
 public final class a implements b {
     public boolean a;
@@ -62,7 +62,7 @@ public final class a implements b {
         int i10 = aVar.e;
         int i11 = aVar.b;
         int i12 = aVar.c;
-        int a2 = j5.a(aVar.d);
+        int a2 = k5.a(aVar.d);
         long elapsedRealtime = SystemClock.elapsedRealtime();
         int i13 = aVar.e;
         if (i13 != -1) {

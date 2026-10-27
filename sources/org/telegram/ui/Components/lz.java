@@ -8,7 +8,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class lz implements gz {
     public String a;
@@ -43,7 +43,7 @@ public final class lz implements gz {
             return;
         }
         this.w.Q.G0.e(true);
-        Utilities.raceCallbacks(new bq(this, 17), new kz(this, 0));
+        Utilities.raceCallbacks(new cp(this, 18), new kz(this, 0));
     }
 
     @Override // java.lang.Runnable
@@ -75,9 +75,9 @@ public final class lz implements gz {
         this.v.clear();
         szVar.G0.e(true);
         if ("premium".equalsIgnoreCase(this.a)) {
-            Utilities.raceCallbacks(new bq(this, 17), new kz(this, i10));
+            Utilities.raceCallbacks(new cp(this, 18), new kz(this, i10));
         } else {
-            Utilities.raceCallbacks(new bq(this, 17), new kz(this, 2), new kz(this, 3), new kz(this, 4), new kz(this, 5), new kz(this, 6), new kz(this, 7));
+            Utilities.raceCallbacks(new cp(this, 18), new kz(this, 2), new kz(this, 3), new kz(this, 4), new kz(this, 5), new kz(this, 6), new kz(this, 7));
         }
     }
 }

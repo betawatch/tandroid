@@ -31,10 +31,10 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.Components.gb1;
-import org.telegram.ui.Components.q61;
+import org.telegram.ui.Components.kb1;
+import org.telegram.ui.Components.r61;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class n9 extends org.telegram.ui.ActionBar.k3 implements NotificationCenter.NotificationCenterDelegate {
     public static final /* synthetic */ int d0 = 0;
@@ -215,8 +215,8 @@ public final class n9 extends org.telegram.ui.ActionBar.k3 implements Notificati
         this.b.setAdapter(new j8(this, context, 0));
         MessagesStorage messagesStorage = MessagesStorage.getInstance(this.currentAccount);
         messagesStorage.getStorageQueue().postRunnable(new e2.q0(20, this, messagesStorage));
-        MessagesController.getInstance(this.currentAccount).getStoriesController().P();
-        MessagesController.getInstance(this.currentAccount).getStoriesController().R();
+        MessagesController.getInstance(this.currentAccount).getStoriesController().S();
+        MessagesController.getInstance(this.currentAccount).getStoriesController().U();
     }
 
     public static ArrayList K0(n9 n9Var) {
@@ -512,7 +512,7 @@ public final class n9 extends org.telegram.ui.ActionBar.k3 implements Notificati
                 spannableStringBuilder.append((CharSequence) ", ");
             }
             SpannableString spannableString = new SpannableString("@" + ((String) arrayList.get(i11)));
-            spannableString.setSpan(new q61(AndroidUtilities.bold()), 0, spannableString.length(), 33);
+            spannableString.setSpan(new r61(AndroidUtilities.bold()), 0, spannableString.length(), 33);
             spannableStringBuilder.append((CharSequence) spannableString);
         }
         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(getContext(), 0, this.resourcesProvider);
@@ -547,9 +547,9 @@ public final class n9 extends org.telegram.ui.ActionBar.k3 implements Notificati
 
     public final void k1(Context context) {
         org.telegram.ui.Components.qc.a(this.container, new k8(0));
-        NotificationCenter.getInstance(this.currentAccount).addObserver(this, NotificationCenter.contactsDidLoad);
-        NotificationCenter.getInstance(this.currentAccount).addObserver(this, NotificationCenter.storiesBlocklistUpdate);
-        NotificationCenter.getInstance(this.currentAccount).addObserver(this, NotificationCenter.storiesSendAsUpdate);
+        NotificationCenter.getInstance(this.currentAccount).addWeakObserver(this, NotificationCenter.contactsDidLoad);
+        NotificationCenter.getInstance(this.currentAccount).addWeakObserver(this, NotificationCenter.storiesBlocklistUpdate);
+        NotificationCenter.getInstance(this.currentAccount).addWeakObserver(this, NotificationCenter.storiesSendAsUpdate);
         int i10 = org.telegram.ui.ActionBar.y6.h5;
         this.R.setColor(org.telegram.ui.ActionBar.y6.w0(i10, this.resourcesProvider));
         fixNavigationBarKey(i10);
@@ -558,7 +558,7 @@ public final class n9 extends org.telegram.ui.ActionBar.k3 implements Notificati
         this.b = h1Var;
         int i11 = this.backgroundPaddingLeft;
         h1Var.setPadding(i11, 0, i11, 0);
-        this.containerView.addView(this.b, gb1.i(-1, -1, 119));
+        this.containerView.addView(this.b, kb1.i(-1, -1, 119));
     }
 
     public final void l1(boolean z10) {

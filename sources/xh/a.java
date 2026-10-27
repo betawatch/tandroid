@@ -9,10 +9,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.oj0;
+import org.telegram.ui.Components.pj0;
 import org.telegram.ui.Components.ut;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class a extends Path {
     public final /* synthetic */ View a;
@@ -46,8 +46,8 @@ public final class a extends Path {
                 if (i10 >= arrayList.size()) {
                     break;
                 }
-                oj0 oj0Var = (oj0) arrayList.get(i10);
-                if (f13 >= oj0Var.b && f13 <= oj0Var.c) {
+                pj0 pj0Var = (pj0) arrayList.get(i10);
+                if (f13 >= pj0Var.b && f13 <= pj0Var.c) {
                     gVar.y = true;
                     break;
                 }

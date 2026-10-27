@@ -28,15 +28,15 @@ import org.telegram.ui.ActionBar.r2;
 import org.telegram.ui.ActionBar.u6;
 import org.telegram.ui.ActionBar.y6;
 import org.telegram.ui.Components.ds;
-import org.telegram.ui.Components.mm0;
-import org.telegram.ui.Components.mn0;
-import org.telegram.ui.Components.ni0;
+import org.telegram.ui.Components.nm0;
+import org.telegram.ui.Components.nn0;
+import org.telegram.ui.Components.oi0;
 import org.telegram.ui.Components.y9;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.Wallet.c9;
-import org.telegram.ui.un;
+import org.telegram.ui.wn;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class j extends Dialog {
     public final /* synthetic */ k E;
@@ -46,7 +46,7 @@ public final class j extends Dialog {
     public final TextView d;
     public final TextView e;
     public final ActionBarPopupWindow$ActionBarPopupWindowLayout f;
-    public final ni0 h;
+    public final oi0 h;
     public final h n;
     public TLRPC.TL_chatInviteImporter r;
     public ValueAnimator s;
@@ -56,7 +56,7 @@ public final class j extends Dialog {
     public final i y;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public j(k kVar, Activity activity, mm0 mm0Var, u6 u6Var, boolean z10) {
+    public j(k kVar, Activity activity, nm0 nm0Var, u6 u6Var, boolean z10) {
         super(activity, R.style.TransparentDialog2);
         this.E = kVar;
         Drawable mutate = getContext().getResources().getDrawable(R.drawable.popup_fixed_alert2).mutate();
@@ -84,11 +84,11 @@ public final class j extends Dialog {
         iVar.addView(actionBarPopupWindow$ActionBarPopupWindowLayout);
         h hVar = new h(getContext());
         this.n = hVar;
-        ni0 ni0Var = new ni0(activity, r2Var.getActionBar(), mm0Var, hVar);
-        this.h = ni0Var;
-        ni0Var.setCreateThumbFromParent(true);
-        iVar.addView(ni0Var);
-        hVar.setProfileGalleryView(ni0Var);
+        oi0 oi0Var = new oi0(activity, r2Var.getActionBar(), nm0Var, hVar);
+        this.h = oi0Var;
+        oi0Var.setCreateThumbFromParent(true);
+        iVar.addView(oi0Var);
+        hVar.setProfileGalleryView(oi0Var);
         iVar.addView(hVar);
         textView.setMaxLines(1);
         f7.V(textView, y6.G6, r2Var.getResourceProvider());
@@ -238,7 +238,7 @@ public final class j extends Dialog {
             r2Var.dismissCurrentDialog();
             Bundle bundle = new Bundle();
             bundle.putLong("user_id", jVar.r.user_id);
-            r2Var.presentFragment(new un(bundle));
+            r2Var.presentFragment(new wn(bundle));
         }
     }
 
@@ -263,18 +263,18 @@ public final class j extends Dialog {
         }
         int[] iArr = new int[2];
         this.v.getLocationOnScreen(iArr);
-        ni0 ni0Var = this.h;
-        float width = (this.v.getWidth() * 1.0f) / ni0Var.getMeasuredWidth();
+        oi0 oi0Var = this.h;
+        float width = (this.v.getWidth() * 1.0f) / oi0Var.getMeasuredWidth();
         float width2 = (this.v.getWidth() / 2.0f) / width;
         float f7 = 1.0f - width;
-        float left = iArr[0] - (ni0Var.getLeft() + ((int) ((ni0Var.getMeasuredWidth() * f7) / 2.0f)));
+        float left = iArr[0] - (oi0Var.getLeft() + ((int) ((oi0Var.getMeasuredWidth() * f7) / 2.0f)));
         int i10 = 1;
-        float top = iArr[1] - (ni0Var.getTop() + ((int) ((d() * f7) / 2.0f)));
+        float top = iArr[1] - (oi0Var.getTop() + ((int) ((d() * f7) / 2.0f)));
         int i11 = (-this.f.getTop()) / 2;
         ValueAnimator ofFloat = ValueAnimator.ofFloat(z10 ? 0.0f : 1.0f, z10 ? 1.0f : 0.0f);
         this.s = ofFloat;
         ofFloat.addUpdateListener(new c9(this, width, left, top, width2, i11, 1));
-        this.s.addListener(new mn0(this, z10, width, i10));
+        this.s.addListener(new nn0(this, z10, width, i10));
         this.s.setDuration(220L);
         this.s.setInterpolator(ds.f);
         this.s.start();

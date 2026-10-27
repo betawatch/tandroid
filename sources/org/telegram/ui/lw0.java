@@ -1,37 +1,38 @@
 package org.telegram.ui;
 
-import android.app.Activity;
-import android.view.View;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stars;
+import java.util.Comparator;
+import org.telegram.messenger.MessagesController;
+import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public final class lw0 extends c61 {
-    public final /* synthetic */ bi.m5 e2;
-    public final /* synthetic */ t51[] f2;
-    public final /* synthetic */ PremiumPreviewFragment g2;
+public final /* synthetic */ class lw0 implements Comparator {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ MessagesController b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public lw0(PremiumPreviewFragment premiumPreviewFragment, PremiumPreviewFragment premiumPreviewFragment2, Activity activity, Integer num, int i10, org.telegram.ui.ActionBar.u6 u6Var, int i11, bi.m5 m5Var, t51[] t51VarArr) {
-        super(premiumPreviewFragment2, activity, true, num, i10, true, u6Var, i11);
-        this.g2 = premiumPreviewFragment;
-        this.e2 = m5Var;
-        this.f2 = t51VarArr;
+    public /* synthetic */ lw0(MessagesController messagesController, int i10) {
+        this.a = i10;
+        this.b = messagesController;
     }
 
-    @Override // org.telegram.ui.c61
-    public final float getScrimDrawableTranslationY() {
-        return 0.0f;
-    }
-
-    @Override // org.telegram.ui.c61
-    public final void p(View view, Long l4, TLRPC.Document document, TL_stars.TL_starGiftUnique tL_starGiftUnique, Integer num) {
-        this.e2.run(l4, num);
-        t51 t51Var = this.f2[0];
-        if (t51Var != null) {
-            this.g2.v0 = null;
-            t51Var.dismiss();
+    @Override // java.util.Comparator
+    public final int compare(Object obj, Object obj2) {
+        int i10;
+        int i11;
+        yw0 yw0Var = (yw0) obj;
+        yw0 yw0Var2 = (yw0) obj2;
+        switch (this.a) {
+            case 0:
+                MessagesController messagesController = this.b;
+                i10 = messagesController.businessFeaturesTypesToPosition.get(yw0Var.a, ConnectionsManager.DEFAULT_DATACENTER_ID);
+                i11 = messagesController.businessFeaturesTypesToPosition.get(yw0Var2.a, ConnectionsManager.DEFAULT_DATACENTER_ID);
+                break;
+            default:
+                MessagesController messagesController2 = this.b;
+                i10 = messagesController2.premiumFeaturesTypesToPosition.get(yw0Var.a, ConnectionsManager.DEFAULT_DATACENTER_ID);
+                i11 = messagesController2.premiumFeaturesTypesToPosition.get(yw0Var2.a, ConnectionsManager.DEFAULT_DATACENTER_ID);
+                break;
         }
+        return i10 - i11;
     }
 }

@@ -12,7 +12,7 @@ import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.DataAutoDownloadActivity;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class ob implements View.OnClickListener {
     public final /* synthetic */ int a = 2;
@@ -114,10 +114,10 @@ public final /* synthetic */ class ob implements View.OnClickListener {
                     zArr3[0] = true;
                     org.telegram.ui.Wallet.p pVar = new org.telegram.ui.Wallet.p(zArr3, j2VarArr, u6Var2, nVar, 9);
                     if (!wallettransaction.comment_encrypted_preparing) {
-                        org.telegram.ui.Wallet.l0 w10 = org.telegram.ui.Wallet.l0.w(i11);
+                        org.telegram.ui.Wallet.l0 x9 = org.telegram.ui.Wallet.l0.x(i11);
                         String str2 = wallettransaction.comment;
-                        org.telegram.ui.Wallet.l0.F("decrypting transaction comment");
-                        w10.y(new org.telegram.ui.Wallet.j(w10, pVar, str, str2), true, false);
+                        org.telegram.ui.Wallet.l0.H("decrypting transaction comment");
+                        x9.z(new org.telegram.ui.Wallet.j(x9, pVar, str, str2), true, false);
                         break;
                     } else {
                         pVar.run(wallettransaction.comment, null);

@@ -1,30 +1,28 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class hg implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ MessagesStorage b;
     public final /* synthetic */ long c;
-    public final /* synthetic */ long d;
-    public final /* synthetic */ String e;
+    public final /* synthetic */ boolean d;
 
-    public /* synthetic */ hg(MessagesStorage messagesStorage, long j10, long j11, String str, int i10) {
+    public /* synthetic */ hg(MessagesStorage messagesStorage, int i10, boolean z10, long j10) {
         this.a = i10;
         this.b = messagesStorage;
         this.c = j10;
-        this.d = j11;
-        this.e = str;
+        this.d = z10;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$updateRanksInLastMessages$48(this.c, this.d, this.e);
+                this.b.lambda$setDialogUnread$252(this.c, this.d);
                 break;
             default:
-                this.b.lambda$updateRanksInLastMessages$49(this.c, this.d, this.e);
+                this.b.lambda$setDialogViewThreadAsMessages$253(this.c, this.d);
                 break;
         }
     }

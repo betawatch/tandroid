@@ -19,10 +19,10 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.p6;
 import org.telegram.ui.ActionBar.u6;
 import org.telegram.ui.ActionBar.y6;
-import org.telegram.ui.Components.gb1;
+import org.telegram.ui.Components.kb1;
 import org.telegram.ui.Components.y9;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class i extends FrameLayout implements p6 {
     public final u6 a;
@@ -42,11 +42,11 @@ public final class i extends FrameLayout implements p6 {
         super(context);
         this.v = new Paint(1);
         this.a = u6Var;
-        gb1.c(this, 0.03f, 1.25f);
+        kb1.c(this, 0.03f, 1.25f);
         y9 y9Var = new y9(context);
         this.b = y9Var;
         y9Var.setRoundRadius(AndroidUtilities.dp(6.0f));
-        addView(y9Var, gb1.h(32, 32.0f, 19, 10.0f, 8.0f, 8.0f, 8.0f));
+        addView(y9Var, kb1.h(32, 32.0f, 19, 10.0f, 8.0f, 8.0f, 8.0f));
         LinearLayout linearLayout = new LinearLayout(context);
         this.c = linearLayout;
         linearLayout.setOrientation(1);
@@ -56,14 +56,14 @@ public final class i extends FrameLayout implements p6 {
         textView.setMaxLines(1);
         TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
         textView.setEllipsize(truncateAt);
-        linearLayout.addView(textView, gb1.u(-1, -2, 51));
+        linearLayout.addView(textView, kb1.u(-1, -2, 51));
         TextView textView2 = new TextView(context);
         this.f = textView2;
         textView2.setTextSize(1, 13.0f);
         textView2.setMaxLines(1);
         textView2.setEllipsize(truncateAt);
-        linearLayout.addView(textView2, gb1.x(-1, -2, 51, 0, 3, 0, 0));
-        FrameLayout.LayoutParams h = gb1.h(-1, -2.0f, 19, 64.0f, 0.0f, 70.0f, 0.0f);
+        linearLayout.addView(textView2, kb1.x(-1, -2, 51, 0, 3, 0, 0));
+        FrameLayout.LayoutParams h = kb1.h(-1, -2.0f, 19, 64.0f, 0.0f, 70.0f, 0.0f);
         this.d = h;
         addView(linearLayout, h);
         TextView textView3 = new TextView(context);
@@ -73,18 +73,18 @@ public final class i extends FrameLayout implements p6 {
         textView3.setEllipsize(truncateAt);
         textView3.setGravity(5);
         textView3.setTextAlignment(6);
-        addView(textView3, gb1.h(-2, -2.0f, 21, 64.0f, -10.0f, 12.0f, 0.0f));
+        addView(textView3, kb1.h(-2, -2.0f, 21, 64.0f, -10.0f, 12.0f, 0.0f));
         ImageView imageView = new ImageView(context);
         this.n = imageView;
         imageView.setScaleType(ImageView.ScaleType.CENTER);
         imageView.setImageResource(R.drawable.attach_arrow_right);
-        addView(imageView, gb1.h(32, 32.0f, 21, 8.0f, 8.0f, 8.0f, 8.0f));
+        addView(imageView, kb1.h(32, 32.0f, 21, 8.0f, 8.0f, 8.0f, 8.0f));
         i3 i3Var = new i3(this, getContext(), u6Var, 2);
         this.r = i3Var;
         i3Var.b(-1, y6.d6, y6.k7);
         i3Var.setDrawUnchecked(false);
         i3Var.setDrawBackgroundAsArc(3);
-        addView(i3Var, gb1.h(24, 24.0f, 19, 26.0f, 12.0f, 0.0f, 0.0f));
+        addView(i3Var, kb1.h(24, 24.0f, 19, 26.0f, 12.0f, 0.0f, 0.0f));
     }
 
     @Override // org.telegram.ui.ActionBar.p6

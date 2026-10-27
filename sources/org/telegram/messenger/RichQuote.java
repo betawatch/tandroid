@@ -13,14 +13,14 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
 public class RichQuote {
     public static final int MAX_FRAGMENTS = 32;
     public final ArrayList<TL_iv.RichText> fragments;
     public final int offset;
 
-    /* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+    /* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
     public static class Position {
         final int offset;
         final RichMessageLayout.QuoteRootSpan root;
@@ -35,7 +35,7 @@ public class RichQuote {
         }
     }
 
-    /* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+    /* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
     public static class Range {
         final Sliced first;
         final int fromIndex;
@@ -256,7 +256,7 @@ public class RichQuote {
     /* JADX INFO: Access modifiers changed from: private */
     public static TL_iv.RichText copy(TL_iv.RichText richText) {
         try {
-            return (TL_iv.RichText) TLObject.deepCopy(richText, new yg(2));
+            return (TL_iv.RichText) TLObject.deepCopy(richText, new zg(2));
         } catch (Exception e) {
             FileLog.e(e);
             return null;
@@ -654,7 +654,7 @@ public class RichQuote {
                 int max = z11 ? Math.max(i12, Math.min(text3.length(), i10 - intValue3)) : z10 ? i12 : text3.length();
                 RichMessageLayout.QuoteRootSpan[] quoteRootSpanArr = (RichMessageLayout.QuoteRootSpan[]) spanned.getSpans(i12, text3.length(), RichMessageLayout.QuoteRootSpan.class);
                 if (quoteRootSpanArr != null && quoteRootSpanArr.length != 0) {
-                    Arrays.sort(quoteRootSpanArr, new Comparator() { // from class: org.telegram.messenger.zh
+                    Arrays.sort(quoteRootSpanArr, new Comparator() { // from class: org.telegram.messenger.ai
                         @Override // java.util.Comparator
                         public final int compare(Object obj, Object obj2) {
                             int lambda$resolve$0;
@@ -822,7 +822,7 @@ public class RichQuote {
         add(pageBlock.text, arrayList);
     }
 
-    /* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+    /* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
     public static class Sliced {
         final int flags;
         final int length;

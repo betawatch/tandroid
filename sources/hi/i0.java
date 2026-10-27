@@ -18,27 +18,27 @@ import org.telegram.messenger.Emoji;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.messenger.vh;
+import org.telegram.messenger.wh;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.p6;
 import org.telegram.ui.ActionBar.y6;
 import org.telegram.ui.Components.ds;
-import org.telegram.ui.Components.px0;
-import org.telegram.ui.Components.xj0;
+import org.telegram.ui.Components.qx0;
+import org.telegram.ui.Components.yj0;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class i0 extends View implements p6 {
     public boolean E;
     public int F;
-    public xj0 G;
+    public yj0 G;
     public int H;
     public int I;
     public final RectF a;
     public final Paint b;
     public final TextPaint c;
     public final f0 d;
-    public final xj0 e;
+    public final yj0 e;
     public boolean f;
     public float h;
     public String n;
@@ -57,8 +57,8 @@ public final class i0 extends View implements p6 {
         this.c = textPaint;
         f0 f0Var = new f0(this);
         this.d = f0Var;
-        xj0 xj0Var = new xj0(R.raw.bot_webview_sheet_to_cross, AndroidUtilities.dp(20.0f), AndroidUtilities.dp(20.0f));
-        this.e = xj0Var;
+        yj0 yj0Var = new yj0(R.raw.bot_webview_sheet_to_cross, AndroidUtilities.dp(20.0f), AndroidUtilities.dp(20.0f));
+        this.e = yj0Var;
         this.n = LocaleController.getString(R.string.BotsMenuTitle);
         this.E = true;
         updateColors();
@@ -75,8 +75,8 @@ public final class i0 extends View implements p6 {
         org.telegram.ui.Cells.y j02 = y6.j0(dp, dp, dp, dp, 0, x02, x02);
         this.y = j02;
         j02.setCallback(this);
-        xj0Var.setCallback(this);
-        xj0Var.R(this);
+        yj0Var.setCallback(this);
+        yj0Var.R(this);
         setContentDescription(LocaleController.getString("AccDescrBotMenu", R.string.AccDescrBotMenu));
     }
 
@@ -118,7 +118,7 @@ public final class i0 extends View implements p6 {
                         this.c.setAlpha((int) (255.0f * interpolation));
                     }
                     if (this.E) {
-                        this.a.set(0.0f, 0.0f, vh.a(this.s, AndroidUtilities.dp(4.0f), interpolation, AndroidUtilities.dp(40.0f)), getMeasuredHeight());
+                        this.a.set(0.0f, 0.0f, wh.a(this.s, AndroidUtilities.dp(4.0f), interpolation, AndroidUtilities.dp(40.0f)), getMeasuredHeight());
                         canvas.drawRoundRect(this.a, AndroidUtilities.dp(16.0f), AndroidUtilities.dp(16.0f), this.b);
                         int x02 = y6.x0(null, y6.Qh, false);
                         if (x02 != this.F) {
@@ -134,11 +134,11 @@ public final class i0 extends View implements p6 {
                     if (this.w) {
                         canvas.save();
                         canvas.translate(AndroidUtilities.dp(9.5f), AndroidUtilities.dp(6.0f));
-                        xj0 xj0Var = this.e;
-                        xj0Var.setBounds(0, 0, xj0Var.b, xj0Var.c);
-                        xj0Var.draw(canvas);
+                        yj0 yj0Var = this.e;
+                        yj0Var.setBounds(0, 0, yj0Var.b, yj0Var.c);
+                        yj0Var.draw(canvas);
                         canvas.restore();
-                        if (xj0Var.k0) {
+                        if (yj0Var.k0) {
                             invalidate();
                         }
                     } else {
@@ -221,7 +221,7 @@ public final class i0 extends View implements p6 {
             textPaint.setTextSize(dp);
             this.I = size;
             int i12 = (int) (AndroidUtilities.displaySize.x * 0.6f);
-            StaticLayout c10 = px0.c(Emoji.replaceEmoji(this.n, textPaint.getFontMetricsInt(), false), textPaint, i12, Layout.Alignment.ALIGN_NORMAL, 0.0f, TextUtils.TruncateAt.END, i12, 1, true);
+            StaticLayout c10 = qx0.c(Emoji.replaceEmoji(this.n, textPaint.getFontMetricsInt(), false), textPaint, i12, Layout.Alignment.ALIGN_NORMAL, 0.0f, TextUtils.TruncateAt.END, i12, 1, true);
             this.r = c10;
             this.s = c10.getLineCount() > 0 ? this.r.getLineWidth(0) : 0.0f;
         }
@@ -247,11 +247,11 @@ public final class i0 extends View implements p6 {
             return;
         }
         if (this.x != z10) {
-            xj0 xj0Var = this.e;
-            xj0Var.stop();
-            xj0Var.h = true;
-            xj0Var.P(z10 ? xj0Var.e[0] : 1);
-            xj0Var.start();
+            yj0 yj0Var = this.e;
+            yj0Var.stop();
+            yj0Var.h = true;
+            yj0Var.P(z10 ? yj0Var.e[0] : 1);
+            yj0Var.start();
             this.x = z10;
         }
     }
@@ -270,15 +270,15 @@ public final class i0 extends View implements p6 {
             f0 f0Var = this.d;
             f0Var.k = x02;
             f0Var.j = x02;
-            xj0 xj0Var = this.e;
-            if (xj0Var != null) {
-                if (xj0Var == this.G) {
+            yj0 yj0Var = this.e;
+            if (yj0Var != null) {
+                if (yj0Var == this.G) {
                     if (x02 != this.H) {
                     }
                 }
-                this.G = xj0Var;
+                this.G = yj0Var;
                 this.H = x02;
-                xj0Var.setColorFilter(new PorterDuffColorFilter(x02, PorterDuff.Mode.SRC_IN));
+                yj0Var.setColorFilter(new PorterDuffColorFilter(x02, PorterDuff.Mode.SRC_IN));
             }
             int alpha = textPaint.getAlpha();
             textPaint.setColor(x02);

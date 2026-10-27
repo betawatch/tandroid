@@ -13,9 +13,9 @@ import org.telegram.ui.ActionBar.k3;
 import org.telegram.ui.ActionBar.o6;
 import org.telegram.ui.ActionBar.r2;
 import org.telegram.ui.ActionBar.y6;
-import org.telegram.ui.Components.gb1;
+import org.telegram.ui.Components.kb1;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class d1 extends k3 {
     public d1(r2 r2Var) {
@@ -26,12 +26,12 @@ public final class d1 extends k3 {
         textView.setGravity(8388611);
         int i10 = y6.j5;
         org.telegram.messenger.t.r(textView, i10, null, 1, 20.0f);
-        f7.addView(textView, gb1.h(-1, -2.0f, 0, 21.0f, 16.0f, 21.0f, 0.0f));
+        f7.addView(textView, kb1.h(-1, -2.0f, 0, 21.0f, 16.0f, 21.0f, 0.0f));
         TextView textView2 = new TextView(parentActivity);
         textView2.setGravity(8388611);
         textView2.setTextSize(1, 16.0f);
         f7.V(textView2, i10, null);
-        f7.addView(textView2, gb1.h(-1, -2.0f, 0, 21.0f, 15.0f, 21.0f, 16.0f));
+        f7.addView(textView2, kb1.h(-1, -2.0f, 0, 21.0f, 15.0f, 21.0f, 16.0f));
         TextView textView3 = new TextView(parentActivity);
         textView3.setPadding(AndroidUtilities.dp(34.0f), 0, AndroidUtilities.dp(34.0f), 0);
         textView3.setGravity(17);
@@ -40,9 +40,9 @@ public final class d1 extends k3 {
         textView3.setText(LocaleController.getString(R.string.InstallOfficialApp));
         textView3.setOnClickListener(new bh.f(26));
         FrameLayout frameLayout = new FrameLayout(parentActivity);
-        frameLayout.addView(textView3, gb1.h(-1, 48.0f, 16, 16.0f, 0.0f, 16.0f, 0.0f));
+        frameLayout.addView(textView3, kb1.h(-1, 48.0f, 16, 16.0f, 0.0f, 16.0f, 0.0f));
         f7.i(y6.h5, frameLayout, this.resourcesProvider);
-        f7.addView(frameLayout, gb1.u(-1, 68, 80));
+        f7.addView(frameLayout, kb1.u(-1, 68, 80));
         org.telegram.messenger.t.n(R.string.SubscribeToPremiumOfficialAppNeeded, textView);
         textView2.setText(AndroidUtilities.replaceTags(LocaleController.getString(R.string.SubscribeToPremiumOfficialAppNeededDescription)));
         ScrollView scrollView = new ScrollView(parentActivity);

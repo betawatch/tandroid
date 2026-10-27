@@ -9,7 +9,7 @@ import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class ld extends FrameLayout {
     public final LinearLayout a;
@@ -35,7 +35,7 @@ public final class ld extends FrameLayout {
         LinearLayout linearLayout = new LinearLayout(getContext());
         this.a = linearLayout;
         linearLayout.setOrientation(1);
-        addView(linearLayout, gb1.g(-2.0f, 232));
+        addView(linearLayout, kb1.g(-2.0f, 232));
         eh.d c10 = bVar.c(this, null, true);
         c10.v(gh.c.k(mdVar.d));
         this.h = c10;

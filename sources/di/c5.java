@@ -11,14 +11,14 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.bm0;
-import org.telegram.ui.Components.k80;
-import org.telegram.ui.Components.mb0;
+import org.telegram.ui.Components.cm0;
+import org.telegram.ui.Components.l80;
+import org.telegram.ui.Components.nb0;
 import org.telegram.ui.Components.wc;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
-public final class c5 implements bm0 {
+public final class c5 implements cm0 {
     public final /* synthetic */ y9 a;
     public final /* synthetic */ t5 b;
 
@@ -27,7 +27,7 @@ public final class c5 implements bm0 {
         this.a = y9Var;
     }
 
-    @Override // org.telegram.ui.Components.bm0
+    @Override // org.telegram.ui.Components.cm0
     public final boolean c(int i10, View view) {
         final TL_stories.StoryView storyView;
         final MessagesController messagesController;
@@ -44,7 +44,7 @@ public final class c5 implements bm0 {
                 boolean z11 = messagesController.blockePeers.indexOfKey(user.id) >= 0;
                 boolean z12 = user.contact || ContactsController.getInstance(i11).contactsDict.get(Long.valueOf(user.id)) != null;
                 boolean d = t5Var.d(storyView);
-                boolean L = messagesController.getStoriesController().L(storyView);
+                boolean N = messagesController.getStoriesController().N(storyView);
                 boolean isUserSelf = UserObject.isUserSelf(user);
                 String str = TextUtils.isEmpty(user.first_name) ? TextUtils.isEmpty(user.last_name) ? "" : user.last_name : user.first_name;
                 int indexOf = str.indexOf(" ");
@@ -54,12 +54,12 @@ public final class c5 implements bm0 {
                 if (isUserSelf) {
                     return false;
                 }
-                k80 F = k80.F(y9Var.v, bVar, view);
+                l80 F = l80.F(y9Var.v, bVar, view);
                 F.i = 3;
                 F.j = true;
                 F.W(new ColorDrawable(org.telegram.ui.ActionBar.y6.w0(org.telegram.ui.ActionBar.y6.h5, bVar)));
                 F.s = 133;
-                boolean z13 = (!d || L || z11 || isUserSelf) ? false : true;
+                boolean z13 = (!d || N || z11 || isUserSelf) ? false : true;
                 final int i12 = 0;
                 final String str2 = str;
                 F.l(R.drawable.msg_stories_myhide, LocaleController.formatString(R.string.StoryHideFrom, str), new Runnable(this) { // from class: di.a5
@@ -80,13 +80,13 @@ public final class c5 implements bm0 {
                         c5 c5Var = this.b;
                         switch (i13) {
                             case 0:
-                                messagesController2.getStoriesController().j0(user2.id, true, true);
+                                messagesController2.getStoriesController().m0(user2.id, true, true);
                                 t5 t5Var2 = c5Var.b;
                                 ic.a.s(R.string.StoryHidFromToast, new Object[]{str3}, new wc(t5Var2, t5Var2.s), R.raw.ic_ban, 36);
                                 s6Var2.a(t5Var2.d(storyView2) ? 1.0f : 0.5f, true);
                                 break;
                             default:
-                                messagesController2.getStoriesController().j0(user2.id, false, true);
+                                messagesController2.getStoriesController().m0(user2.id, false, true);
                                 t5 t5Var3 = c5Var.b;
                                 ic.a.s(R.string.StoryShownBackToToast, new Object[]{str3}, new wc(t5Var3, t5Var3.s), R.raw.contact_check, 36);
                                 s6Var2.a(t5Var3.d(storyView2) ? 1.0f : 0.5f, true);
@@ -115,20 +115,20 @@ public final class c5 implements bm0 {
                         c5 c5Var = this.b;
                         switch (i132) {
                             case 0:
-                                messagesController2.getStoriesController().j0(user2.id, true, true);
+                                messagesController2.getStoriesController().m0(user2.id, true, true);
                                 t5 t5Var2 = c5Var.b;
                                 ic.a.s(R.string.StoryHidFromToast, new Object[]{str3}, new wc(t5Var2, t5Var2.s), R.raw.ic_ban, 36);
                                 s6Var2.a(t5Var2.d(storyView2) ? 1.0f : 0.5f, true);
                                 break;
                             default:
-                                messagesController2.getStoriesController().j0(user2.id, false, true);
+                                messagesController2.getStoriesController().m0(user2.id, false, true);
                                 t5 t5Var3 = c5Var.b;
                                 ic.a.s(R.string.StoryShownBackToToast, new Object[]{str3}, new wc(t5Var3, t5Var3.s), R.raw.contact_check, 36);
                                 s6Var2.a(t5Var3.d(storyView2) ? 1.0f : 0.5f, true);
                                 break;
                         }
                     }
-                }, (!L || z11 || isUserSelf) ? false : true);
+                }, (!N || z11 || isUserSelf) ? false : true);
                 F.E();
                 F.t();
                 final int i14 = 0;
@@ -152,7 +152,7 @@ public final class c5 implements bm0 {
                                 MessagesController messagesController2 = messagesController;
                                 h7 storiesController = messagesController2.getStoriesController();
                                 TLRPC.User user2 = user;
-                                storiesController.j0(user2.id, false, true);
+                                storiesController.m0(user2.id, false, true);
                                 messagesController2.unblockPeer(user2.id);
                                 t5 t5Var3 = this.b.b;
                                 new wc(t5Var3, t5Var3.s).e(false).j();
@@ -182,7 +182,7 @@ public final class c5 implements bm0 {
                                 MessagesController messagesController2 = messagesController;
                                 h7 storiesController = messagesController2.getStoriesController();
                                 TLRPC.User user2 = user;
-                                storiesController.j0(user2.id, false, true);
+                                storiesController.m0(user2.id, false, true);
                                 messagesController2.unblockPeer(user2.id);
                                 t5 t5Var3 = this.b.b;
                                 new wc(t5Var3, t5Var3.s).e(false).j();
@@ -199,9 +199,9 @@ public final class c5 implements bm0 {
                     F.k();
                     ArrayList arrayList = new ArrayList();
                     arrayList.add(c10);
-                    mb0 mb0Var = new mb0(t5Var.v, 3, t5Var.getContext(), arrayList, bVar);
-                    mb0Var.setOnClickListener(new bi.w0(this, arrayList, F, 6));
-                    F.q(mb0Var);
+                    nb0 nb0Var = new nb0(t5Var.v, 3, t5Var.getContext(), arrayList, bVar);
+                    nb0Var.setOnClickListener(new bi.w0(this, arrayList, F, 6));
+                    F.q(nb0Var);
                     z10 = true;
                 }
                 if (F.x() <= 0 && !z10) {

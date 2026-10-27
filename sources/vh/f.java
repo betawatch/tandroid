@@ -39,20 +39,20 @@ import org.telegram.ui.ActionBar.y6;
 import org.telegram.ui.Cells.z3;
 import org.telegram.ui.Components.bb;
 import org.telegram.ui.Components.ds;
-import org.telegram.ui.Components.gb1;
 import org.telegram.ui.Components.j20;
-import org.telegram.ui.Components.j71;
-import org.telegram.ui.Components.lm0;
+import org.telegram.ui.Components.k71;
+import org.telegram.ui.Components.kb1;
 import org.telegram.ui.Components.m20;
 import org.telegram.ui.Components.ml;
 import org.telegram.ui.Components.mm0;
+import org.telegram.ui.Components.nm0;
 import org.telegram.ui.Components.q20;
 import org.telegram.ui.Components.x30;
 import r0.a0;
 import s4.l;
 import vg.u0;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class f extends bb implements oe.d {
     public static final /* synthetic */ int r0 = 0;
@@ -62,7 +62,7 @@ public final class f extends bb implements oe.d {
     public final ArrayList a0;
     public final ArrayList b0;
     public String c0;
-    public j71 d0;
+    public k71 d0;
     public final fi.d e0;
     public final n f0;
     public final j5 g0;
@@ -93,9 +93,9 @@ public final class f extends bb implements oe.d {
         this.w = false;
         this.m0 = MessagesController.getInstance(this.currentAccount).config.pollCountriesMax.get();
         AndroidUtilities.enableEdgeToEdge(getWindow());
-        mm0 mm0Var = this.d;
+        nm0 nm0Var = this.d;
         int i10 = this.backgroundPaddingLeft;
-        mm0Var.setPadding(i10, 0, i10, AndroidUtilities.dp(68.0f) + AndroidUtilities.navigationBarHeight);
+        nm0Var.setPadding(i10, 0, i10, AndroidUtilities.dp(68.0f) + AndroidUtilities.navigationBarHeight);
         this.d.setClipToPadding(false);
         this.d.j(new ml(this, 26));
         this.d.setOnItemClickListener(new c(context, u6Var, this));
@@ -114,8 +114,8 @@ public final class f extends bb implements oe.d {
         nVar.setGravity(17);
         nVar.setPadding(AndroidUtilities.dp(16.0f), 0, AndroidUtilities.dp(16.0f), 0);
         nVar.setVisibility(8);
-        gb1.b(nVar);
-        this.e.l().addView(nVar, gb1.x(-2, 48, 16, 12, 0, 12, 0));
+        kb1.b(nVar);
+        this.e.l().addView(nVar, kb1.x(-2, 48, 16, 12, 0, 12, 0));
         nVar.setOnClickListener(new a(this, 1));
         m20 m20Var = new m20(context, u6Var);
         String string = LocaleController.getString(R.string.PollV2SearchHint);
@@ -129,22 +129,22 @@ public final class f extends bb implements oe.d {
         this.g0 = j5Var;
         int i11 = this.backgroundPaddingLeft;
         j5Var.setPadding(i11, 0, i11, 0);
-        j5Var.addView(m20Var, gb1.h(-1, 40.0f, 48, 10.0f, 0.0f, 10.0f, 0.0f));
-        j5Var.addView(q20Var, gb1.h(-1, 144.0f, 48, -3.0f, 40.0f, -3.0f, 0.0f));
+        j5Var.addView(m20Var, kb1.h(-1, 40.0f, 48, 10.0f, 0.0f, 10.0f, 0.0f));
+        j5Var.addView(q20Var, kb1.h(-1, 144.0f, 48, -3.0f, 40.0f, -3.0f, 0.0f));
         z3 z3Var = new z3(context, 18, u6Var);
         this.i0 = z3Var;
         z3Var.setTranslationY(AndroidUtilities.dp(48.0f));
         z3Var.b(LocaleController.getString(R.string.SearchCountriesTitle), LocaleController.getString(R.string.DeselectAll), new a(this, 2));
-        j5Var.addView(z3Var, gb1.i(-1, 32, 48));
-        this.containerView.addView(j5Var, gb1.i(-1, 216, 48));
+        j5Var.addView(z3Var, kb1.i(-1, 32, 48));
+        this.containerView.addView(j5Var, kb1.i(-1, 216, 48));
         FrameLayout frameLayout = new FrameLayout(context);
         frameLayout.setPadding(AndroidUtilities.dp(10.0f) + this.backgroundPaddingLeft, AndroidUtilities.dp(10.0f), AndroidUtilities.dp(10.0f) + this.backgroundPaddingLeft, AndroidUtilities.dp(10.0f) + AndroidUtilities.navigationBarHeight);
-        frameLayout.addView(dVar, gb1.g(48.0f, -1));
-        this.containerView.addView(frameLayout, gb1.i(-1, -2, 80));
+        frameLayout.addView(dVar, kb1.g(48.0f, -1));
+        this.containerView.addView(frameLayout, kb1.i(-1, -2, 80));
         FrameLayout frameLayout2 = new FrameLayout(context);
         this.n0 = frameLayout2;
         frameLayout2.setTranslationY((-AndroidUtilities.navigationBarHeight) - AndroidUtilities.dp(68.0f));
-        this.containerView.addView(frameLayout2, gb1.i(-1, ImageReceiver.DEFAULT_CROSSFADE_DURATION, 80));
+        this.containerView.addView(frameLayout2, kb1.i(-1, ImageReceiver.DEFAULT_CROSSFADE_DURATION, 80));
         l lVar = new l();
         lVar.n(350L);
         lVar.o(dsVar);
@@ -218,23 +218,23 @@ public final class f extends bb implements oe.d {
         Rect rect = this.p0;
         boolean z10 = (rect.top == dp && rect.bottom == measuredHeight) ? false : true;
         rect.set(0, dp, this.containerView.getMeasuredWidth(), measuredHeight);
-        mm0 mm0Var = this.d;
-        mm0Var.setClipBounds(rect);
+        nm0 nm0Var = this.d;
+        nm0Var.setClipBounds(rect);
         if (z10) {
-            mm0Var.invalidate();
+            nm0Var.invalidate();
         }
     }
 
     public final void R() {
-        mm0 mm0Var;
+        nm0 nm0Var;
         float f7 = AndroidUtilities.displaySize.y;
         int i10 = 0;
         while (true) {
-            mm0Var = this.d;
-            if (i10 >= mm0Var.getChildCount()) {
+            nm0Var = this.d;
+            if (i10 >= nm0Var.getChildCount()) {
                 break;
             }
-            View childAt = mm0Var.getChildAt(i10);
+            View childAt = nm0Var.getChildAt(i10);
             if (RecyclerView.R(childAt) >= 1 && childAt.getY() < f7) {
                 f7 = childAt.getY();
             }
@@ -244,7 +244,7 @@ public final class f extends bb implements oe.d {
         j5 j5Var = this.g0;
         if (j5Var.getTranslationY() != max) {
             j5Var.setTranslationY(max);
-            mm0Var.invalidate();
+            nm0Var.invalidate();
         }
     }
 
@@ -276,11 +276,11 @@ public final class f extends bb implements oe.d {
     }
 
     @Override // org.telegram.ui.Components.bb
-    public final lm0 v(mm0 mm0Var) {
-        j71 j71Var = new j71(mm0Var, getContext(), this.currentAccount, 0, true, new e2(this, 22), this.resourcesProvider);
-        this.d0 = j71Var;
-        j71Var.r = false;
-        return j71Var;
+    public final mm0 v(nm0 nm0Var) {
+        k71 k71Var = new k71(nm0Var, getContext(), this.currentAccount, 0, true, new e2(this, 22), this.resourcesProvider);
+        this.d0 = k71Var;
+        k71Var.r = false;
+        return k71Var;
     }
 
     @Override // org.telegram.ui.Components.bb

@@ -21,7 +21,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public class gw extends ViewGroup implements org.telegram.ui.ActionBar.p6 {
     public Boolean E;
@@ -38,7 +38,7 @@ public class gw extends ViewGroup implements org.telegram.ui.ActionBar.p6 {
     public boolean b;
     public final boolean c;
     public final y9 d;
-    public final xj0 e;
+    public final yj0 e;
     public final tg.c1 f;
     public final boolean h;
     public final boolean n;
@@ -58,12 +58,12 @@ public class gw extends ViewGroup implements org.telegram.ui.ActionBar.p6 {
         this.h = true;
         this.n = false;
         setBackground(org.telegram.ui.ActionBar.y6.N(kwVar.k(), 0, 0));
-        xj0 xj0Var = new xj0(i10, AndroidUtilities.dp(24.0f), AndroidUtilities.dp(24.0f), false, null);
-        this.e = xj0Var;
-        xj0Var.setBounds(AndroidUtilities.dp(3.0f), AndroidUtilities.dp(3.0f), AndroidUtilities.dp(27.0f), AndroidUtilities.dp(27.0f));
-        xj0Var.R(this);
-        xj0Var.J(true);
-        xj0Var.start();
+        yj0 yj0Var = new yj0(i10, AndroidUtilities.dp(24.0f), AndroidUtilities.dp(24.0f), false, null);
+        this.e = yj0Var;
+        yj0Var.setBounds(AndroidUtilities.dp(3.0f), AndroidUtilities.dp(3.0f), AndroidUtilities.dp(27.0f), AndroidUtilities.dp(27.0f));
+        yj0Var.R(this);
+        yj0Var.J(true);
+        yj0Var.start();
         d();
     }
 
@@ -79,9 +79,9 @@ public class gw extends ViewGroup implements org.telegram.ui.ActionBar.p6 {
             y9Var.setColorFilter(porterDuffColorFilter);
             y9Var.invalidate();
         }
-        xj0 xj0Var = this.e;
-        if (xj0Var != null) {
-            xj0Var.setColorFilter(porterDuffColorFilter);
+        yj0 yj0Var = this.e;
+        if (yj0Var != null) {
+            yj0Var.setColorFilter(porterDuffColorFilter);
             invalidate();
         }
     }
@@ -192,11 +192,11 @@ public class gw extends ViewGroup implements org.telegram.ui.ActionBar.p6 {
     @Override // android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         super.dispatchDraw(canvas);
-        xj0 xj0Var = this.e;
-        if (xj0Var == null || !this.y) {
+        yj0 yj0Var = this.e;
+        if (yj0Var == null || !this.y) {
             return;
         }
-        xj0Var.draw(canvas);
+        yj0Var.draw(canvas);
     }
 
     @Override // android.view.ViewGroup
@@ -257,7 +257,7 @@ public class gw extends ViewGroup implements org.telegram.ui.ActionBar.p6 {
             ValueAnimator ofFloat = ValueAnimator.ofFloat(this.G, z10 ? 1.0f : 0.0f);
             this.I = ofFloat;
             ofFloat.addUpdateListener(new n6(this, 20));
-            this.I.addListener(new org.telegram.ui.jo(8, this, z10));
+            this.I.addListener(new org.telegram.ui.lo(8, this, z10));
             this.I.setDuration(bh.m0.d() ? 0L : 350L);
             this.I.setInterpolator(ds.h);
             this.I.start();

@@ -5,19 +5,19 @@ import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.widget.EditText;
 import fi.c2;
-import org.telegram.ui.px;
+import org.telegram.ui.sx;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
 public final class u0 implements TextWatcher {
-    public final px a;
+    public final sx a;
     public final EditText b;
     public String c;
     public boolean d;
     public boolean e;
 
-    public u0(c2 c2Var, px pxVar) {
-        this.a = pxVar;
+    public u0(c2 c2Var, sx sxVar) {
+        this.a = sxVar;
         this.b = c2Var;
     }
 
@@ -45,12 +45,12 @@ public final class u0 implements TextWatcher {
         if (this.d == z10) {
             return;
         }
-        px pxVar = this.a;
-        if (pxVar.c()) {
+        sx sxVar = this.a;
+        if (sxVar.c()) {
             if (z10) {
-                pxVar.i();
+                sxVar.i();
             } else {
-                pxVar.h();
+                sxVar.h();
             }
             this.d = z10;
         }

@@ -3,7 +3,7 @@ package di;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.ui.Components.ds;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class s3 implements Runnable {
     public final /* synthetic */ int a;
@@ -18,7 +18,7 @@ public final /* synthetic */ class s3 implements Runnable {
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.P();
+                this.b.Q();
                 break;
             case 1:
                 y9 y9Var = this.b;
@@ -43,14 +43,14 @@ public final /* synthetic */ class s3 implements Runnable {
             case 3:
                 y9 y9Var3 = this.b;
                 y9Var3.v0 = null;
-                y9Var3.P();
+                y9Var3.Q();
                 break;
             case 4:
-                this.b.L(true);
+                this.b.M(true);
                 break;
             case 5:
                 y9 y9Var4 = this.b;
-                y9Var4.Q();
+                y9Var4.R();
                 v9 v9Var = y9Var4.s0;
                 ImageReceiver imageReceiver = v9Var.b;
                 if (imageReceiver != null) {

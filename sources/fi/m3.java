@@ -8,15 +8,15 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_update;
 import org.telegram.ui.Components.kg;
-import org.telegram.ui.Components.te0;
+import org.telegram.ui.Components.ue0;
 import org.telegram.ui.WallpapersListActivity;
-import org.telegram.ui.d80;
-import org.telegram.ui.fn;
-import org.telegram.ui.go;
-import org.telegram.ui.mo;
-import org.telegram.ui.rq0;
+import org.telegram.ui.f80;
+import org.telegram.ui.hn;
+import org.telegram.ui.io;
+import org.telegram.ui.oo;
+import org.telegram.ui.tq0;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class m3 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -65,23 +65,23 @@ public final /* synthetic */ class m3 implements RequestDelegate {
                 }
                 break;
             case 4:
-                AndroidUtilities.runOnUIThread(new bi.u7((fn) obj, tLObject, z10, 15));
+                AndroidUtilities.runOnUIThread(new bi.u7((hn) obj, tLObject, z10, 15));
                 break;
             case 5:
-                mo moVar = (mo) obj;
+                oo ooVar = (oo) obj;
                 if (!(tLObject instanceof TLRPC.Updates)) {
-                    AndroidUtilities.runOnUIThread(new go(moVar, i11));
+                    AndroidUtilities.runOnUIThread(new io(ooVar, i11));
                     break;
                 } else {
-                    moVar.getMessagesController().lambda$processUpdates$379((TLRPC.Updates) tLObject, false);
-                    AndroidUtilities.runOnUIThread(new bh.n(25, moVar, z10));
+                    ooVar.getMessagesController().lambda$processUpdates$379((TLRPC.Updates) tLObject, false);
+                    AndroidUtilities.runOnUIThread(new bh.n(25, ooVar, z10));
                     break;
                 }
             case 6:
                 AndroidUtilities.runOnUIThread(new bi.s9(obj, (Object) tL_error, (Object) tLObject, this.b, 14));
                 break;
             case 7:
-                AndroidUtilities.runOnUIThread(new kg((te0) obj, tL_error, tLObject, z10));
+                AndroidUtilities.runOnUIThread(new kg((ue0) obj, tL_error, tLObject, z10));
                 break;
             case 8:
                 AndroidUtilities.runOnUIThread(new bi.s9(obj, (Object) tL_error, (Object) tLObject, this.b, 23));
@@ -93,9 +93,9 @@ public final /* synthetic */ class m3 implements RequestDelegate {
                 AndroidUtilities.runOnUIThread(new bi.s9(obj, (Object) tL_error, (Object) tLObject, this.b, 27));
                 break;
             case 11:
-                rq0 rq0Var = (rq0) obj;
+                tq0 tq0Var = (tq0) obj;
                 if (tLObject != null) {
-                    AndroidUtilities.runOnUIThread(new d80(rq0Var, tLObject, z10, 5));
+                    AndroidUtilities.runOnUIThread(new f80(tq0Var, tLObject, z10, 5));
                     break;
                 }
                 break;
@@ -104,7 +104,7 @@ public final /* synthetic */ class m3 implements RequestDelegate {
                 break;
             default:
                 int[][] iArr = WallpapersListActivity.g0;
-                AndroidUtilities.runOnUIThread(new d80((WallpapersListActivity) obj, tLObject, z10, 14));
+                AndroidUtilities.runOnUIThread(new f80((WallpapersListActivity) obj, tLObject, z10, 14));
                 break;
         }
     }

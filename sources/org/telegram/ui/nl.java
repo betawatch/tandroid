@@ -1,31 +1,37 @@
 package org.telegram.ui;
 
-import android.graphics.Bitmap;
+import android.content.Intent;
 import java.util.ArrayList;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.VideoEditedInfo;
+import org.telegram.messenger.FileLoader;
+import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public final class nl extends gu0 {
-    public final /* synthetic */ Bitmap a;
-    public final /* synthetic */ ArrayList b;
-    public final /* synthetic */ un c;
+public final class nl implements bq0 {
+    public final /* synthetic */ wn a;
 
-    public nl(un unVar, Bitmap bitmap, ArrayList arrayList) {
-        this.c = unVar;
-        this.a = bitmap;
-        this.b = arrayList;
+    public nl(wn wnVar) {
+        this.a = wnVar;
     }
 
-    @Override // org.telegram.ui.gu0, org.telegram.ui.ou0
-    public final ImageReceiver.BitmapHolder j(int i10) {
-        return new ImageReceiver.BitmapHolder(this.a, (String) null, 0);
+    @Override // org.telegram.ui.bq0
+    public final void b() {
+        try {
+            Intent intent = new Intent();
+            intent.setType("video/*");
+            intent.setAction("android.intent.action.GET_CONTENT");
+            intent.putExtra("android.intent.extra.sizeLimit", FileLoader.DEFAULT_MAX_FILE_SIZE);
+            Intent intent2 = new Intent("android.intent.action.PICK");
+            intent2.setType("image/*");
+            Intent createChooser = Intent.createChooser(intent2, null);
+            createChooser.putExtra("android.intent.extra.INITIAL_INTENTS", new Intent[]{intent});
+            this.a.startActivityForResult(createChooser, 1);
+        } catch (Exception e) {
+            FileLog.e(e);
+        }
     }
 
-    @Override // org.telegram.ui.gu0, org.telegram.ui.ou0
-    public final void o(int i10, VideoEditedInfo videoEditedInfo, boolean z10, int i11, int i12, boolean z11) {
-        this.c.r((MediaController.PhotoEntry) this.b.get(0), videoEditedInfo, z10, i11, 0, z11, 0L);
+    @Override // org.telegram.ui.bq0
+    public final void a(ArrayList arrayList) {
     }
 }

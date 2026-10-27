@@ -1,100 +1,49 @@
 package vi;
 
-import android.os.SystemClock;
-import java.io.File;
-import java.io.IOException;
-import org.telegram.ui.Components.b10;
-import org.telegram.ui.Components.ny0;
+import org.telegram.ui.Components.m11;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class h0 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ s0 b;
+    public final /* synthetic */ u0 b;
+    public final /* synthetic */ q0 c;
 
-    public /* synthetic */ h0(s0 s0Var, int i10) {
-        this.a = i10;
-        this.b = s0Var;
+    public /* synthetic */ h0(u0 u0Var, q0 q0Var, int i10, int i11) {
+        this.a = i11;
+        this.b = u0Var;
+        this.c = q0Var;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                s0 s0Var = this.b;
-                if (s0Var.W == 3) {
-                    s0Var.p();
-                    return;
-                }
+                u0 u0Var = this.b;
+                q0 q0Var = this.c;
+                ((m11) u0Var.e).c(q0Var.a);
                 return;
             case 1:
-                s0 s0Var2 = this.b;
-                v vVar = s0Var2.Q;
-                File file = s0Var2.R;
-                if (vVar != null) {
-                    try {
-                        synchronized (vVar) {
-                            vVar.v = true;
-                            try {
-                                vVar.g();
-                            } finally {
-                                vVar.v = false;
-                            }
-                        }
-                    } catch (IOException unused) {
-                    }
-                    w7.x.c(vVar.a);
-                }
-                if (file != null) {
-                    w7.x.c(file);
-                    return;
-                }
-                return;
-            case 2:
-                s0 s0Var3 = this.b;
-                int i10 = s0Var3.W;
-                if (i10 == 2 || i10 == 6) {
-                    s0Var3.F = SystemClock.elapsedRealtime();
-                    s0Var3.m.b("recording started: retainedDurationMs=" + s0Var3.E);
-                    s0Var3.v(3);
-                    long j10 = s0Var3.o - s0Var3.E;
-                    if (j10 <= 0) {
-                        s0Var3.p();
-                        return;
-                    } else {
-                        s0Var3.i.postDelayed(s0Var3.T, j10);
-                        return;
-                    }
+                u0 u0Var2 = this.b;
+                q0 q0Var2 = this.c;
+                r0 r0Var = u0Var2.e;
+                long j10 = q0Var2.a;
+                m11 m11Var = (m11) r0Var;
+                synchronized (m11Var) {
+                    m11Var.c(j10);
                 }
                 return;
             default:
-                s0 s0Var4 = this.b;
-                s0Var4.B = false;
-                s0Var4.m.b("recording segment stopped: state=" + b10.x(s0Var4.W) + ", retainedDurationMs=" + s0Var4.E);
-                if (s0Var4.A) {
-                    s0Var4.A = false;
-                    s0Var4.i();
-                    return;
-                }
-                if (s0Var4.y) {
-                    s0Var4.y = false;
-                    s0Var4.j.execute(new vg.c(s0Var4, s0Var4.Q, s0Var4.z, s0Var4.P));
-                    return;
-                }
-                if (s0Var4.W != 4) {
-                    return;
-                }
-                try {
-                    File d = s0Var4.d("round_video_preview_");
-                    s0Var4.R = d;
-                    s0Var4.J = System.nanoTime();
-                    s0Var4.m.b("preview snapshot started: file=" + d.getName());
-                    s0Var4.j.execute(new ny0(s0Var4, s0Var4.Q, d, 25));
-                    return;
-                } catch (IOException e) {
-                    s0Var4.h(e);
-                    return;
-                }
+                u0 u0Var3 = this.b;
+                q0 q0Var3 = this.c;
+                ((m11) u0Var3.e).c(q0Var3.a);
+                return;
         }
+    }
+
+    public /* synthetic */ h0(u0 u0Var, q0 q0Var, Exception exc) {
+        this.a = 1;
+        this.b = u0Var;
+        this.c = q0Var;
     }
 }

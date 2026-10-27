@@ -7,7 +7,7 @@ import e2.n0;
 import java.io.EOFException;
 import java.io.IOException;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
 public final class b implements g {
     public final f a;
@@ -144,7 +144,7 @@ public final class b implements g {
                     this.e = 4;
                     return -(this.v + j11);
                 }
-                pVar.q(fVar.d + fVar.e);
+                pVar.r(fVar.d + fVar.e);
                 this.r = pVar.getPosition();
                 this.v = fVar.b;
             }
@@ -160,11 +160,11 @@ public final class b implements g {
             throw new EOFException();
         }
         fVar.a(pVar, false);
-        pVar.q(fVar.d + fVar.e);
+        pVar.r(fVar.d + fVar.e);
         long j22 = fVar.b;
         while ((fVar.a & 4) != 4 && fVar.b(pVar, -1L) && pVar.getPosition() < j13 && fVar.a(pVar, true)) {
             try {
-                pVar.q(fVar.d + fVar.e);
+                pVar.r(fVar.d + fVar.e);
                 j22 = fVar.b;
             } catch (EOFException unused) {
             }

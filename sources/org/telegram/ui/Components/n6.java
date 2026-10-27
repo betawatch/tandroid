@@ -9,7 +9,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.camera.Camera2Session;
 import org.telegram.messenger.camera.CameraSession;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class n6 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -118,18 +118,18 @@ public final /* synthetic */ class n6 implements ValueAnimator.AnimatorUpdateLis
                 zmVar.O.z.invalidate();
                 break;
             case 14:
-                fp fpVar = (fp) this.b;
-                fpVar.getClass();
+                gp gpVar = (gp) this.b;
+                gpVar.getClass();
                 float floatValue3 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                fpVar.d = floatValue3;
-                fpVar.setShown(floatValue3);
-                fpVar.a(false);
+                gpVar.d = floatValue3;
+                gpVar.setShown(floatValue3);
+                gpVar.a(false);
                 break;
             case 15:
-                yp ypVar = (yp) this.b;
-                ypVar.getClass();
-                ypVar.f0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                ypVar.I.setTranslationY((-AndroidUtilities.dp(7.0f)) * ypVar.f0);
+                zp zpVar = (zp) this.b;
+                zpVar.getClass();
+                zpVar.f0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                zpVar.I.setTranslationY((-AndroidUtilities.dp(7.0f)) * zpVar.f0);
                 break;
             case 16:
                 gr grVar = (gr) this.b;
@@ -231,15 +231,15 @@ public final /* synthetic */ class n6 implements ValueAnimator.AnimatorUpdateLis
                 }
                 break;
             case 27:
-                o60 o60Var = (o60) this.b;
-                if (!o60Var.s0) {
-                    CameraSession cameraSession = o60Var.t0;
+                p60 p60Var = (p60) this.b;
+                if (!p60Var.r0) {
+                    CameraSession cameraSession = p60Var.s0;
                     if (cameraSession != null) {
                         cameraSession.setZoom(((Float) valueAnimator.getAnimatedValue()).floatValue());
                         break;
                     }
                 } else {
-                    Camera2Session camera2Session = o60Var.w0;
+                    Camera2Session camera2Session = p60Var.v0;
                     if (camera2Session != null) {
                         camera2Session.setZoom(((Float) valueAnimator.getAnimatedValue()).floatValue());
                         break;
@@ -247,12 +247,12 @@ public final /* synthetic */ class n6 implements ValueAnimator.AnimatorUpdateLis
                 }
                 break;
             case 28:
-                y70.P((y70) this.b, valueAnimator);
+                z70.P((z70) this.b, valueAnimator);
                 break;
             default:
-                y70 y70Var = ((x70) this.b).e;
-                y70Var.k0 = ((Integer) valueAnimator.getAnimatedValue()).intValue();
-                viewGroup = ((org.telegram.ui.ActionBar.k3) y70Var).containerView;
+                z70 z70Var = ((y70) this.b).e;
+                z70Var.k0 = ((Integer) valueAnimator.getAnimatedValue()).intValue();
+                viewGroup = ((org.telegram.ui.ActionBar.k3) z70Var).containerView;
                 viewGroup.invalidate();
                 break;
         }

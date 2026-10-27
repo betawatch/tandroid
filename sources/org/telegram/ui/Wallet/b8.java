@@ -3,19 +3,19 @@ package org.telegram.ui.Wallet;
 import android.text.TextUtils;
 import java.nio.charset.StandardCharsets;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.m71;
+import org.telegram.ui.Components.n71;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class b8 implements org.telegram.ui.ActionBar.b2 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ m71 b;
+    public final /* synthetic */ n71 b;
     public final /* synthetic */ Object c;
     public final /* synthetic */ Object d;
 
-    public /* synthetic */ b8(m71 m71Var, Object obj, Object obj2, int i10) {
+    public /* synthetic */ b8(n71 n71Var, Object obj, Object obj2, int i10) {
         this.a = i10;
-        this.b = m71Var;
+        this.b = n71Var;
         this.d = obj;
         this.c = obj2;
     }
@@ -39,8 +39,8 @@ public final /* synthetic */ class b8 implements org.telegram.ui.ActionBar.b2 {
                 qf.c h = e2Var.h(i10, true, true);
                 h.d();
                 d8 d8Var = new d8(h8Var2, h, 2);
-                l0.F("disable backup: getting phrase...");
-                l0Var2.y(new j((Object) l0Var2, (Object) d8Var, (Object) g0Var, 5), false, true);
+                l0.H("disable backup: getting phrase...");
+                l0Var2.z(new j((Object) l0Var2, (Object) d8Var, (Object) g0Var, 5), false, true);
                 break;
             default:
                 i9 i9Var = (i9) this.b;

@@ -13,9 +13,9 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UnconfirmedAuthController;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.gb1;
+import org.telegram.ui.Components.kb1;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class xa extends FrameLayout implements org.telegram.ui.ActionBar.p6 {
     public static final /* synthetic */ int n = 0;
@@ -39,35 +39,35 @@ public final class xa extends FrameLayout implements org.telegram.ui.ActionBar.p
         textView.setTextSize(1, 14.0f);
         textView.setTypeface(AndroidUtilities.bold());
         textView.setText(LocaleController.getString(R.string.UnconfirmedAuthTitle));
-        linearLayout.addView(textView, gb1.t(-1, -2, 0.0f, 55, 28, 8, 28, 0));
+        linearLayout.addView(textView, kb1.t(-1, -2, 0.0f, 55, 28, 8, 28, 0));
         TextView textView2 = new TextView(activity);
         this.c = textView2;
         textView2.setGravity(17);
         textView2.setTextSize(1, 13.0f);
         textView2.setLineSpacing(AndroidUtilities.dpf2(2.0f), 1.0f);
-        linearLayout.addView(textView2, gb1.t(-1, -2, 0.0f, 55, 28, 2, 28, 0));
+        linearLayout.addView(textView2, kb1.t(-1, -2, 0.0f, 55, 28, 2, 28, 0));
         LinearLayout linearLayout2 = new LinearLayout(activity);
         linearLayout2.setOrientation(0);
         linearLayout2.setGravity(17);
-        linearLayout2.addView(new Space(activity), gb1.s(-2, 1, 17.0f, 1));
+        linearLayout2.addView(new Space(activity), kb1.s(-2, 1, 17.0f, 1));
         wa waVar = new wa(activity);
         this.d = waVar;
         waVar.setPadding(AndroidUtilities.dp(10.0f), AndroidUtilities.dp(5.0f), AndroidUtilities.dp(10.0f), AndroidUtilities.dp(7.0f));
         waVar.setTypeface(AndroidUtilities.bold());
         waVar.setTextSize(1, 14.22f);
         waVar.setText(LocaleController.getString(R.string.UnconfirmedAuthConfirm));
-        linearLayout2.addView(waVar, gb1.r(-2, 30));
-        linearLayout2.addView(new Space(activity), gb1.s(-2, 1, 17.0f, 1));
+        linearLayout2.addView(waVar, kb1.r(-2, 30));
+        linearLayout2.addView(new Space(activity), kb1.s(-2, 1, 17.0f, 1));
         wa waVar2 = new wa(activity);
         this.e = waVar2;
         waVar2.setPadding(AndroidUtilities.dp(10.0f), AndroidUtilities.dp(5.0f), AndroidUtilities.dp(10.0f), AndroidUtilities.dp(7.0f));
         waVar2.setTypeface(AndroidUtilities.bold());
         waVar2.setTextSize(1, 14.22f);
         waVar2.setText(LocaleController.getString(R.string.UnconfirmedAuthDeny));
-        linearLayout2.addView(waVar2, gb1.r(-2, 30));
-        linearLayout2.addView(new Space(activity), gb1.s(-2, 1, 17.0f, 1));
-        linearLayout.addView(linearLayout2, gb1.o(28.0f, 4.0f, 28.0f, 8.0f, -1, -2));
-        addView(linearLayout, gb1.i(-1, -1, 119));
+        linearLayout2.addView(waVar2, kb1.r(-2, 30));
+        linearLayout2.addView(new Space(activity), kb1.s(-2, 1, 17.0f, 1));
+        linearLayout.addView(linearLayout2, kb1.o(28.0f, 4.0f, 28.0f, 8.0f, -1, -2));
+        addView(linearLayout, kb1.i(-1, -1, 119));
         updateColors();
     }
 

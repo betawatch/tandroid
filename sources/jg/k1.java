@@ -24,7 +24,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.vh;
+import org.telegram.messenger.wh;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
@@ -32,10 +32,10 @@ import org.telegram.ui.ActionBar.f7;
 import org.telegram.ui.ActionBar.u6;
 import org.telegram.ui.ActionBar.y6;
 import org.telegram.ui.Components.ds;
-import org.telegram.ui.Components.gb1;
+import org.telegram.ui.Components.kb1;
 import org.telegram.ui.Components.pq;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public abstract class k1 extends LinearLayout {
     public boolean E;
@@ -76,12 +76,12 @@ public abstract class k1 extends LinearLayout {
                 this.b = textView;
                 textView.setGravity(LocaleController.isRTL ? 5 : 3);
                 textView.setTextSize(1, 16.0f);
-                i4Var.addView(textView, gb1.m(-1.0f, -2.0f, 8388659, 0.0f, 9.33f, 0.0f, 0.0f));
+                i4Var.addView(textView, kb1.m(-1.0f, -2.0f, 8388659, 0.0f, 9.33f, 0.0f, 0.0f));
                 this.h[i10] = new TextView(context);
                 this.h[i10].setGravity(LocaleController.isRTL ? 5 : 3);
                 this.h[i10].setTextSize(1, 13.0f);
                 f7.V(this.h[i10], y6.z6, u6Var);
-                i4Var.addView(this.h[i10], gb1.m(-2.0f, -2.0f, 8388659, 0.0f, 33.0f, 0.0f, 10.0f));
+                i4Var.addView(this.h[i10], kb1.m(-2.0f, -2.0f, 8388659, 0.0f, 33.0f, 0.0f, 10.0f));
                 LinearLayout linearLayout = new LinearLayout(context);
                 this.v = linearLayout;
                 linearLayout.setOrientation(1);
@@ -92,14 +92,14 @@ public abstract class k1 extends LinearLayout {
                     this.n[i10][i12].setTextSize(1, 14.0f);
                     f7.V(this.n[i10][i12], y6.z6, u6Var);
                     this.n[i10][i12].setGravity(LocaleController.isRTL ? 3 : 5);
-                    this.s.addView(this.n[i10][i12], gb1.m(-1.0f, -1.0f, 119, 0.0f, 0.0f, 20.0f, 0.0f));
+                    this.s.addView(this.n[i10][i12], kb1.m(-1.0f, -1.0f, 119, 0.0f, 0.0f, 20.0f, 0.0f));
                 }
                 for (int i13 = 0; i13 < 2; i13++) {
                     this.c[i13] = new TextView(context);
                     this.c[i13].setTextSize(1, 14.0f);
                     f7.V(this.c[i13], y6.z6, u6Var);
                     this.c[i13].setGravity(LocaleController.isRTL ? 3 : 5);
-                    this.s.addView(this.c[i13], gb1.m(-1.0f, -1.0f, 119, 0.0f, 0.0f, 20.0f, 0.0f));
+                    this.s.addView(this.c[i13], kb1.m(-1.0f, -1.0f, 119, 0.0f, 0.0f, 20.0f, 0.0f));
                 }
                 ImageView imageView = new ImageView(context);
                 this.d = imageView;
@@ -108,8 +108,8 @@ public abstract class k1 extends LinearLayout {
                 imageView.setScaleY(0.6f);
                 imageView.setImageResource(R.drawable.arrow_more);
                 f7.t(imageView, y6.z6, u6Var, PorterDuff.Mode.SRC_IN);
-                this.s.addView(imageView, gb1.l(20.0f, 20.0f, 8388629));
-                this.v.addView(this.s, new LinearLayout.LayoutParams(gb1.I(-1.0f), gb1.I(-1.0f), Gravity.getAbsoluteGravity(119, LocaleController.isRTL ? 1 : 0)));
+                this.s.addView(imageView, kb1.l(20.0f, 20.0f, 8388629));
+                this.v.addView(this.s, new LinearLayout.LayoutParams(kb1.I(-1.0f), kb1.I(-1.0f), Gravity.getAbsoluteGravity(119, LocaleController.isRTL ? 1 : 0)));
                 pq pqVar = new pq(context);
                 this.r = pqVar;
                 pqVar.getDrawable().L = true;
@@ -130,15 +130,15 @@ public abstract class k1 extends LinearLayout {
                 pqVar.setTextColor(w04);
                 pqVar.getDrawable().A = 0.6f;
                 pqVar.setVisibility(8);
-                this.v.addView(pqVar, gb1.y(-1.0f, 17.0f, 8388613, 0.0f, 4.0f, 18.0f, 0.0f));
+                this.v.addView(pqVar, kb1.y(-1.0f, 17.0f, 8388613, 0.0f, 4.0f, 18.0f, 0.0f));
                 FrameLayout frameLayout = new FrameLayout(context);
                 this.e = frameLayout;
-                frameLayout.addView(this.v, gb1.m(-1.0f, -2.0f, 8388693, 0.0f, 0.0f, 0.0f, 0.0f));
-                i4Var.addView(frameLayout, gb1.m(-1.0f, -2.0f, 8388693, 0.0f, 0.0f, 0.0f, 12.0f));
+                frameLayout.addView(this.v, kb1.m(-1.0f, -2.0f, 8388693, 0.0f, 0.0f, 0.0f, 0.0f));
+                i4Var.addView(frameLayout, kb1.m(-1.0f, -2.0f, 8388693, 0.0f, 0.0f, 0.0f, 12.0f));
                 this.f[i10] = i4Var;
-                addView(i4Var, gb1.m(-1.0f, -2.0f, 51, 18.0f, 0.0f, 8.0f, 0.0f));
+                addView(i4Var, kb1.m(-1.0f, -2.0f, 51, 18.0f, 0.0f, 8.0f, 0.0f));
             } else {
-                ViewGroup d = vh.d(context, 0);
+                ViewGroup d = wh.d(context, 0);
                 this.h[i10] = new TextView(context);
                 this.h[i10].setTextSize(1, 14.0f);
                 f7.V(this.h[i10], y6.G6, u6Var);
@@ -150,17 +150,17 @@ public abstract class k1 extends LinearLayout {
                     this.n[i10][i15].setTextSize(1, 14.0f);
                     f7.V(this.n[i10][i15], y6.z6, u6Var);
                     this.n[i10][i15].setGravity(LocaleController.isRTL ? 3 : 5);
-                    frameLayout2.addView(this.n[i10][i15], gb1.i(-1, -1, 119));
+                    frameLayout2.addView(this.n[i10][i15], kb1.i(-1, -1, 119));
                 }
                 if (LocaleController.isRTL) {
-                    d.addView(frameLayout2, gb1.u(-2, -1, 51));
-                    d.addView(this.h[i10], gb1.u(-1, -1, 53));
+                    d.addView(frameLayout2, kb1.u(-2, -1, 51));
+                    d.addView(this.h[i10], kb1.u(-1, -1, 53));
                 } else {
-                    d.addView(this.h[i10], gb1.u(-2, -1, 51));
-                    d.addView(frameLayout2, gb1.u(-1, -1, 53));
+                    d.addView(this.h[i10], kb1.u(-2, -1, 51));
+                    d.addView(frameLayout2, kb1.u(-1, -1, 53));
                 }
                 this.f[i10] = d;
-                addView(d, gb1.y(-1.0f, -2.0f, 51, 18.0f, i10 == 1 ? 1.0f : 11.66f, 28.0f, i10 == 6 ? 16.66f : 0.0f));
+                addView(d, kb1.y(-1.0f, -2.0f, 51, 18.0f, i10 == 1 ? 1.0f : 11.66f, 28.0f, i10 == 6 ? 16.66f : 0.0f));
             }
             i10++;
         }

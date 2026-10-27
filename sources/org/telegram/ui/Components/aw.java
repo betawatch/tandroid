@@ -34,11 +34,11 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public class aw extends org.telegram.ui.ActionBar.k3 implements NotificationCenter.NotificationCenterDelegate {
     public static Pattern V;
-    public final pl0 E;
+    public final ql0 E;
     public final gq F;
     public org.telegram.ui.ActionBar.o1 G;
     public final boolean H;
@@ -118,21 +118,21 @@ public class aw extends org.telegram.ui.ActionBar.k3 implements NotificationCent
         vVar.j(new ml(this, 4));
         hn hnVar = new hn(this, arrayList, r2Var, resourceProvider);
         vVar.setOnItemClickListener(hnVar);
-        vVar.setOnItemLongClickListener((bm0) new p1(i13, this, context));
+        vVar.setOnItemLongClickListener((cm0) new p1(i13, this, context));
         vVar.setOnTouchListener(new fi.o1(3, this, hnVar));
         tVar.l1(false);
         tVar.O = new mv(this);
-        this.E = new pl0(vVar, tVar);
-        this.containerView.addView(vVar, gb1.i(-1, -1, 51));
+        this.E = new ql0(vVar, tVar);
+        this.containerView.addView(vVar, kb1.i(-1, -1, 51));
         View view = new View(context);
         this.r = view;
         org.telegram.ui.ActionBar.f7.i(org.telegram.ui.ActionBar.y6.V5, view, null);
-        this.containerView.addView(view, gb1.e(-1.0f, 1.0f / AndroidUtilities.density, 80));
+        this.containerView.addView(view, kb1.e(-1.0f, 1.0f / AndroidUtilities.density, 80));
         view.setTranslationY(-AndroidUtilities.dp(68.0f));
         FrameLayout frameLayout = new FrameLayout(context);
         this.s = frameLayout;
         org.telegram.ui.ActionBar.f7.i(org.telegram.ui.ActionBar.y6.h5, frameLayout, this.resourcesProvider);
-        this.containerView.addView(frameLayout, gb1.i(-1, 68, 87));
+        this.containerView.addView(frameLayout, kb1.i(-1, 68, 87));
         TextView textView = new TextView(context);
         this.v = textView;
         textView.setVisibility(8);
@@ -145,8 +145,8 @@ public class aw extends org.telegram.ui.ActionBar.k3 implements NotificationCent
         org.telegram.ui.ActionBar.f7.V(textView, org.telegram.ui.ActionBar.y6.Sh, this.resourcesProvider);
         textView.setTypeface(AndroidUtilities.bold());
         textView.setGravity(17);
-        gb1.c(textView, 0.02f, 1.2f);
-        TextView k10 = org.telegram.ui.d3.k(frameLayout, textView, gb1.h(-1, 48.0f, 80, 12.0f, 10.0f, 12.0f, 10.0f), context);
+        kb1.c(textView, 0.02f, 1.2f);
+        TextView k10 = org.telegram.ui.d3.k(frameLayout, textView, kb1.h(-1, 48.0f, 80, 12.0f, 10.0f, 12.0f, 10.0f), context);
         this.w = k10;
         k10.setVisibility(8);
         int i14 = org.telegram.ui.ActionBar.y6.q7;
@@ -159,13 +159,13 @@ public class aw extends org.telegram.ui.ActionBar.k3 implements NotificationCent
         k10.setTypeface(AndroidUtilities.bold());
         k10.setGravity(17);
         k10.setClickable(true);
-        frameLayout.addView(k10, gb1.h(-1, -1.0f, 80, 0.0f, 0.0f, 0.0f, 19.0f));
+        frameLayout.addView(k10, kb1.h(-1, -1.0f, 80, 0.0f, 0.0f, 0.0f, 19.0f));
         tg.p0 p0Var = new tg.p0(context, this.resourcesProvider, false);
         this.x = p0Var;
         p0Var.a(LocaleController.getString(R.string.UnlockPremiumEmoji), new f0(this, i11), false);
         p0Var.setIcon(R.raw.unlock_icon);
         p0Var.v.setClickable(true);
-        frameLayout.addView(p0Var, gb1.h(-1, 48.0f, 80, 12.0f, 10.0f, 12.0f, 10.0f));
+        frameLayout.addView(p0Var, kb1.h(-1, 48.0f, 80, 12.0f, 10.0f, 12.0f, 10.0f));
     }
 
     public static void Z(aw awVar, int i10) {
@@ -209,7 +209,7 @@ public class aw extends org.telegram.ui.ActionBar.k3 implements NotificationCent
         }
     }
 
-    public static void g0(final org.telegram.ui.ActionBar.r2 r2Var, TLObject tLObject, final boolean z10, final bi.ua uaVar, final bq bqVar) {
+    public static void g0(final org.telegram.ui.ActionBar.r2 r2Var, TLObject tLObject, final boolean z10, final bi.ua uaVar, final cp cpVar) {
         final int currentAccount = r2Var == null ? UserConfig.selectedAccount : r2Var.getCurrentAccount();
         TLRPC.StickerSet stickerSet = null;
         final View fragmentView = r2Var == null ? null : r2Var.getFragmentView();
@@ -246,7 +246,7 @@ public class aw extends org.telegram.ui.ActionBar.k3 implements NotificationCent
                     final TLRPC.TL_messages_stickerSet tL_messages_stickerSet2 = tL_messages_stickerSet;
                     final int i10 = currentAccount;
                     final Utilities.Callback callback = uaVar;
-                    final Runnable runnable = bqVar;
+                    final Runnable runnable = cpVar;
                     AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.hv
                         @Override // java.lang.Runnable
                         public final void run() {
@@ -263,7 +263,7 @@ public class aw extends org.telegram.ui.ActionBar.k3 implements NotificationCent
                                     if (z11 && view2 != null) {
                                         Context context = r2Var3.getFragmentView().getContext();
                                         TLObject tLObject4 = tL_messages_stickerSet2;
-                                        qc.g(r2Var3, new gy0(context, tLObject4 == null ? stickerSet4 : tLObject4, 1, 2, null, r2Var3.getResourceProvider()), 1500).j();
+                                        qc.g(r2Var3, new hy0(context, tLObject4 == null ? stickerSet4 : tLObject4, 1, 2, null, r2Var3.getResourceProvider()), 1500).j();
                                     }
                                     if (tLObject3 instanceof TLRPC.TL_messages_stickerSetInstallResultArchive) {
                                         MediaDataController.getInstance(i12).processStickerSetInstallResultArchive(r2Var3, true, i11, (TLRPC.TL_messages_stickerSetInstallResultArchive) tLObject3);
@@ -301,7 +301,7 @@ public class aw extends org.telegram.ui.ActionBar.k3 implements NotificationCent
                 awVar.G = null;
                 return;
             }
-            if ((r2Var instanceof org.telegram.ui.un) && ((org.telegram.ui.un) r2Var).Y.getVisibility() == 0 && (view instanceof rv)) {
+            if ((r2Var instanceof org.telegram.ui.wn) && ((org.telegram.ui.wn) r2Var).Y.getVisibility() == 0 && (view instanceof rv)) {
                 c6 c6Var = ((rv) view).c;
                 try {
                     TLRPC.Document document = c6Var.document;
@@ -310,7 +310,7 @@ public class aw extends org.telegram.ui.ActionBar.k3 implements NotificationCent
                     }
                     SpannableString spannableString = new SpannableString(MessageObject.findAnimatedEmojiEmoticon(document));
                     spannableString.setSpan(c6Var, 0, spannableString.length(), 33);
-                    ((org.telegram.ui.un) r2Var).Y.E0.getText().append((CharSequence) spannableString);
+                    ((org.telegram.ui.wn) r2Var).Y.E0.getText().append((CharSequence) spannableString);
                     awVar.i0();
                     awVar.dismiss();
                 } catch (Exception unused) {
@@ -370,7 +370,7 @@ public class aw extends org.telegram.ui.ActionBar.k3 implements NotificationCent
         SpannableString spannableString = new SpannableString(MessageObject.findAnimatedEmojiEmoticon(t5.f(awVar.currentAccount, c6Var.getDocumentId())));
         spannableString.setSpan(c6Var, 0, spannableString.length(), 33);
         if (AndroidUtilities.addToClipboard(spannableString)) {
-            org.telegram.messenger.vh.m(R.string.EmojiCopied, new wc((FrameLayout) awVar.containerView, awVar.resourcesProvider));
+            org.telegram.messenger.wh.m(R.string.EmojiCopied, new wc((FrameLayout) awVar.containerView, awVar.resourcesProvider));
         }
     }
 
@@ -543,9 +543,9 @@ public class aw extends org.telegram.ui.ActionBar.k3 implements NotificationCent
             int E = this.n.E(this.O);
             if (Math.abs(L0 - E) > 54) {
                 int i14 = L0 < E ? 0 : 1;
-                pl0 pl0Var = this.E;
-                pl0Var.b = i14;
-                pl0Var.c(E, (AndroidUtilities.displaySize.y / 2) - AndroidUtilities.dp(170.0f), false, false);
+                ql0 ql0Var = this.E;
+                ql0Var.b = i14;
+                ql0Var.c(E, (AndroidUtilities.displaySize.y / 2) - AndroidUtilities.dp(170.0f), false, false);
             } else {
                 vVar.y0(E);
             }
@@ -757,13 +757,13 @@ public class aw extends org.telegram.ui.ActionBar.k3 implements NotificationCent
     @Override // android.app.Dialog, android.view.Window.Callback
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
-        NotificationCenter.getInstance(this.currentAccount).addObserver(this, NotificationCenter.stickersDidLoad);
+        NotificationCenter.getInstance(this.currentAccount).addWeakObserver(this, NotificationCenter.stickersDidLoad);
     }
 
     @Override // org.telegram.ui.ActionBar.k3, android.app.Dialog
     public final void onBackPressed() {
-        if (org.telegram.ui.ft.o().E) {
-            org.telegram.ui.ft.o().m();
+        if (org.telegram.ui.ht.o().E) {
+            org.telegram.ui.ht.o().m();
         } else {
             super.onBackPressed();
         }
@@ -813,7 +813,7 @@ public class aw extends org.telegram.ui.ActionBar.k3 implements NotificationCent
             int i11 = kvVar.d;
             kvVar.b = new ArrayList(kvVar.a.size());
             kvVar.c = new ArrayList[kvVar.a.size()];
-            NotificationCenter.getInstance(i11).addObserver(kvVar, NotificationCenter.groupStickersDidLoad);
+            NotificationCenter.getInstance(i11).addWeakObserver(kvVar, NotificationCenter.groupStickersDidLoad);
             boolean[] zArr = new boolean[1];
             int i12 = 0;
             while (true) {
@@ -829,7 +829,7 @@ public class aw extends org.telegram.ui.ActionBar.k3 implements NotificationCent
                         org.telegram.ui.ActionBar.r2 r2Var = awVar.c;
                         TLRPC.InputStickerSet inputStickerSet = (TLRPC.InputStickerSet) kvVar.a.get(i12);
                         org.telegram.ui.ActionBar.r2 r2Var2 = awVar.c;
-                        new cz0(context, r2Var, inputStickerSet, null, r2Var2 instanceof org.telegram.ui.un ? ((org.telegram.ui.un) r2Var2).Y : null, awVar.resourcesProvider).show();
+                        new dz0(context, r2Var, inputStickerSet, null, r2Var2 instanceof org.telegram.ui.wn ? ((org.telegram.ui.wn) r2Var2).Y : null, awVar.resourcesProvider).show();
                     }
                 } else {
                     aw awVar2 = kvVar.h;

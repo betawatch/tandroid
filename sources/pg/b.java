@@ -1,31 +1,31 @@
 package pg;
 
-import org.telegram.ui.af1;
-import org.telegram.ui.un;
+import org.telegram.ui.cf1;
+import org.telegram.ui.wn;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class b implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ un b;
+    public final /* synthetic */ wn b;
 
-    public /* synthetic */ b(un unVar, int i10) {
+    public /* synthetic */ b(wn wnVar, int i10) {
         this.a = i10;
-        this.b = unVar;
+        this.b = wnVar;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                un unVar = this.b;
-                if (unVar.getParentLayout() != null) {
-                    af1.I0(unVar);
+                wn wnVar = this.b;
+                if (wnVar.getParentLayout() != null) {
+                    cf1.I0(wnVar);
                     break;
                 }
                 break;
             default:
-                this.b.kc();
+                this.b.oc();
                 break;
         }
     }

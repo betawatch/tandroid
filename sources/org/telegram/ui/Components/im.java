@@ -8,7 +8,7 @@ import android.widget.ImageView;
 import org.telegram.messenger.R;
 import org.telegram.messenger.camera.CameraView;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class im implements CameraView.CameraViewDelegate {
     public final /* synthetic */ ChatAttachAlertPhotoLayout a;
@@ -34,7 +34,7 @@ public final class im implements CameraView.CameraViewDelegate {
                 imageViewArr[i10].setTranslationY(0.0f);
             }
         } else {
-            ChatAttachAlertPhotoLayout.o0(imageViewArr[0], chatAttachAlertPhotoLayout.P.getCameraSession().getCurrentFlashMode());
+            ChatAttachAlertPhotoLayout.p0(imageViewArr[0], chatAttachAlertPhotoLayout.P.getCameraSession().getCurrentFlashMode());
             int i11 = 0;
             while (i11 < 2) {
                 imageViewArr[i11].setVisibility(i11 == 0 ? 0 : 4);
@@ -52,7 +52,7 @@ public final class im implements CameraView.CameraViewDelegate {
         chatAttachAlertPhotoLayout.O = animatorSet;
         animatorSet.playTogether(ObjectAnimator.ofFloat(chatAttachAlertPhotoLayout.P, (Property<pm, Float>) View.ALPHA, 0.0f, 1.0f));
         chatAttachAlertPhotoLayout.O.setDuration(180L);
-        chatAttachAlertPhotoLayout.O.addListener(new org.telegram.ui.qp(this, 15));
+        chatAttachAlertPhotoLayout.O.addListener(new org.telegram.ui.sp(this, 15));
         chatAttachAlertPhotoLayout.O.start();
     }
 }

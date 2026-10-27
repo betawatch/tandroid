@@ -1,151 +1,66 @@
 package org.telegram.ui;
 
-import android.text.Editable;
-import android.text.TextUtils;
-import android.text.TextWatcher;
+import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.EditTextBoldCursor;
+import org.telegram.messenger.R;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public final class rn0 implements TextWatcher {
-    public boolean a;
-    public String b;
-    public boolean c;
-    public int d;
-    public int e;
-    public boolean f;
-    public final char[] h = {',', '.', 1643, 12289, 11841, 65040, 65041, 65104, 65105, 65292, 65380, 699};
-    public final /* synthetic */ po0 n;
+public final /* synthetic */ class rn0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ro0 b;
+    public final /* synthetic */ TLRPC.TL_error c;
+    public final /* synthetic */ TLObject d;
 
-    public rn0(po0 po0Var) {
-        this.n = po0Var;
+    public /* synthetic */ rn0(ro0 ro0Var, TLRPC.TL_error tL_error, TLObject tLObject, int i10) {
+        this.a = i10;
+        this.b = ro0Var;
+        this.c = tL_error;
+        this.d = tLObject;
     }
 
-    public final int a(String str) {
-        int i10 = 0;
-        while (true) {
-            char[] cArr = this.h;
-            if (i10 >= cArr.length) {
-                return -1;
-            }
-            int indexOf = str.indexOf(cArr[i10]);
-            if (indexOf >= 0) {
-                return indexOf;
-            }
-            i10++;
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                ro0 ro0Var = this.b;
+                ro0Var.e0 = false;
+                if (this.c == null) {
+                    TL_account.Password password = (TL_account.Password) this.d;
+                    ro0Var.a0 = password;
+                    if (!TwoStepVerificationActivity.j0(password, false)) {
+                        org.telegram.ui.Components.g5.w0(ro0Var.getParentActivity(), LocaleController.getString(R.string.UpdateAppAlert), true);
+                        break;
+                    } else {
+                        TLRPC.PaymentForm paymentForm = ro0Var.C0;
+                        if (paymentForm != null && ro0Var.a0.has_password) {
+                            paymentForm.password_missing = false;
+                            paymentForm.can_save_credentials = true;
+                            ro0Var.L0();
+                        }
+                        TwoStepVerificationActivity.n0(ro0Var.a0);
+                        ro0 ro0Var2 = ro0Var.f0;
+                        if (ro0Var2 != null) {
+                            ro0Var2.D0(ro0Var.a0);
+                        }
+                        if (!ro0Var.a0.has_password && ro0Var.d0 == null) {
+                            pn0 pn0Var = new pn0(ro0Var, 3);
+                            ro0Var.d0 = pn0Var;
+                            AndroidUtilities.runOnUIThread(pn0Var, 5000L);
+                            break;
+                        }
+                    }
+                }
+                break;
+            case 1:
+                ro0.W(this.b, this.c, this.d);
+                break;
+            default:
+                ro0.Y(this.b, this.c, this.d);
+                break;
         }
-    }
-
-    @Override // android.text.TextWatcher
-    public final void afterTextChanged(Editable editable) {
-        po0 po0Var = this.n;
-        if (po0Var.m0) {
-            return;
-        }
-        Long l4 = po0Var.H0;
-        long longValue = l4 != null ? l4.longValue() : 0L;
-        String str = this.b;
-        if (str == null) {
-            str = LocaleController.fixNumbers(editable.toString());
-        }
-        int a2 = a(str);
-        boolean z10 = a2 >= 0;
-        int currencyExpDivider = LocaleController.getCurrencyExpDivider(po0Var.C0.invoice.currency);
-        String substring = a2 >= 0 ? str.substring(0, a2) : str;
-        String str2 = "";
-        String substring2 = a2 >= 0 ? str.substring(a2 + 1) : "";
-        long longValue2 = Utilities.parseLong(kf.b.d(substring, false)).longValue() * currencyExpDivider;
-        long longValue3 = Utilities.parseLong(kf.b.d(substring2, false)).longValue();
-        String o10 = a1.g.o(longValue3, "");
-        String str3 = "" + (currencyExpDivider - 1);
-        if (a2 > 0 && o10.length() > str3.length()) {
-            longValue3 = Utilities.parseLong(this.e - a2 < o10.length() ? o10.substring(0, str3.length()) : o10.substring(o10.length() - str3.length())).longValue();
-        }
-        Long valueOf = Long.valueOf(longValue2 + longValue3);
-        po0Var.H0 = valueOf;
-        if (po0Var.C0.invoice.max_tip_amount != 0) {
-            long longValue4 = valueOf.longValue();
-            long j10 = po0Var.C0.invoice.max_tip_amount;
-            if (longValue4 > j10) {
-                po0Var.H0 = Long.valueOf(j10);
-            }
-        }
-        int selectionStart = po0Var.f[0].getSelectionStart();
-        po0Var.m0 = true;
-        if (po0Var.H0.longValue() == 0) {
-            po0Var.f[0].setText("");
-        } else {
-            EditTextBoldCursor editTextBoldCursor = po0Var.f[0];
-            str2 = LocaleController.getInstance().formatCurrencyString(po0Var.H0.longValue(), false, z10, true, po0Var.C0.invoice.currency);
-            editTextBoldCursor.setText(str2);
-        }
-        if (longValue < po0Var.H0.longValue() && longValue != 0 && this.a && selectionStart >= 0) {
-            EditTextBoldCursor editTextBoldCursor2 = po0Var.f[0];
-            editTextBoldCursor2.setSelection(Math.min(selectionStart, editTextBoldCursor2.length()));
-        } else if (this.c && this.d != po0Var.f[0].length()) {
-            EditTextBoldCursor editTextBoldCursor3 = po0Var.f[0];
-            editTextBoldCursor3.setSelection(Math.max(0, Math.min(selectionStart, editTextBoldCursor3.length())));
-        } else if (this.f || !z10 || a2 < 0) {
-            EditTextBoldCursor editTextBoldCursor4 = po0Var.f[0];
-            editTextBoldCursor4.setSelection(editTextBoldCursor4.length());
-        } else {
-            int a10 = a(str2);
-            if (a10 > 0) {
-                po0Var.f[0].setSelection(a10 + 1);
-            } else {
-                EditTextBoldCursor editTextBoldCursor5 = po0Var.f[0];
-                editTextBoldCursor5.setSelection(editTextBoldCursor5.length());
-            }
-        }
-        this.f = z10;
-        po0Var.M0();
-        this.b = null;
-        po0Var.m0 = false;
-    }
-
-    @Override // android.text.TextWatcher
-    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
-        if (this.n.m0) {
-            return;
-        }
-        this.a = !TextUtils.isEmpty(charSequence);
-        this.b = null;
-        this.d = charSequence == null ? 0 : charSequence.length();
-        this.e = i10;
-        boolean z10 = i11 == 1 && i12 == 0;
-        this.c = z10;
-        if (!z10) {
-            return;
-        }
-        String fixNumbers = LocaleController.fixNumbers(charSequence);
-        char charAt = fixNumbers.charAt(i10);
-        int a2 = a(fixNumbers);
-        String substring = a2 >= 0 ? fixNumbers.substring(a2 + 1) : "";
-        long longValue = Utilities.parseLong(kf.b.d(substring, false)).longValue();
-        if ((charAt >= '0' && charAt <= '9') || (substring.length() != 0 && longValue == 0)) {
-            if (a2 <= 0 || i10 <= a2 || longValue != 0) {
-                return;
-            }
-            this.b = fixNumbers.substring(0, a2 - 1);
-            return;
-        }
-        while (true) {
-            int i13 = i10 - 1;
-            if (i13 < 0) {
-                return;
-            }
-            char charAt2 = fixNumbers.charAt(i13);
-            if (charAt2 >= '0' && charAt2 <= '9') {
-                this.b = fixNumbers.substring(0, i13) + fixNumbers.substring(i10);
-                return;
-            }
-            i10 = i13;
-        }
-    }
-
-    @Override // android.text.TextWatcher
-    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
     }
 }

@@ -21,9 +21,9 @@ import org.telegram.ui.ActionBar.y6;
 import org.telegram.ui.Cells.r9;
 import org.telegram.ui.Cells.s9;
 import org.telegram.ui.Components.AnimatedArrowDrawable;
-import org.telegram.ui.Components.gb1;
+import org.telegram.ui.Components.kb1;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class s0 extends FrameLayout implements p6, r9 {
     public final u6 a;
@@ -47,7 +47,7 @@ public final class s0 extends FrameLayout implements p6, r9 {
         cc ccVar = new cc(this, context, 7);
         this.b = ccVar;
         ccVar.setOnClickListener(new ig.d0(this, 10));
-        addView(ccVar, gb1.i(53, -1, 51));
+        addView(ccVar, kb1.i(53, -1, 51));
         g1 g1Var = new g1(context, u6Var);
         this.d = g1Var;
         g1Var.setAllowNewlines(false);
@@ -56,7 +56,7 @@ public final class s0 extends FrameLayout implements p6, r9 {
         g1Var.setPadding(0, AndroidUtilities.dp(14.0f), 0, AndroidUtilities.dp(12.66f));
         g1Var.setListener(new p0(this));
         g1Var.setDelegate(new jg.e1(this, 7));
-        addView(g1Var, gb1.h(-1, -2.0f, 51, 53.0f, 0.0f, 16.0f, 0.0f));
+        addView(g1Var, kb1.h(-1, -2.0f, 51, 53.0f, 0.0f, 16.0f, 0.0f));
         updateColors();
     }
 

@@ -32,9 +32,9 @@ import org.telegram.ui.ActionBar.b2;
 import org.telegram.ui.ActionBar.e2;
 import org.telegram.ui.ActionBar.r2;
 import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.Components.fz0;
+import org.telegram.ui.Components.gz0;
 import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.un;
+import org.telegram.ui.wn;
 import x2.d;
 import x2.f;
 import x2.j;
@@ -42,7 +42,7 @@ import x2.l;
 import x2.o;
 import y9.x;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class b implements g, MessagesStorage.LongCallback, b2, MessagesController.ErrorDelegate, l {
     public final /* synthetic */ int a;
@@ -152,14 +152,14 @@ public final /* synthetic */ class b implements g, MessagesStorage.LongCallback,
                 }
                 break;
             case 3:
-                un unVar = (un) this.c;
+                wn wnVar = (wn) this.c;
                 MessagesController messagesController = (MessagesController) this.d;
                 CharSequence charSequence = (CharSequence) this.e;
                 boolean z11 = this.b;
                 messagesController.secretWebpagePreview = 1;
-                MessagesController.getGlobalMainSettings().edit().putInt("secretWebpage2", unVar.getMessagesController().secretWebpagePreview).commit();
-                unVar.T5 = null;
-                unVar.hb(charSequence, z11);
+                MessagesController.getGlobalMainSettings().edit().putInt("secretWebpage2", wnVar.getMessagesController().secretWebpagePreview).commit();
+                wnVar.X5 = null;
+                wnVar.lb(charSequence, z11);
                 break;
             case 4:
                 boolean z12 = this.b;
@@ -182,22 +182,22 @@ public final /* synthetic */ class b implements g, MessagesStorage.LongCallback,
                     }
                 }
             default:
-                fz0 fz0Var = (fz0) this.c;
+                gz0 gz0Var = (gz0) this.c;
                 Utilities.Callback2 callback2 = (Utilities.Callback2) this.d;
                 Context context2 = (Context) this.e;
                 boolean z13 = this.b;
-                String trim2 = fz0Var.getText().toString().trim();
+                String trim2 = gz0Var.getText().toString().trim();
                 if (!TextUtils.isEmpty(trim2) && !TextUtils.isEmpty(AndroidUtilities.translitSafe(trim2.toString()))) {
-                    AndroidUtilities.hideKeyboard(fz0Var);
+                    AndroidUtilities.hideKeyboard(gz0Var);
                     e2 e2Var2 = new e2(context2, 3, z13 ? null : new di.b());
                     e2Var2.r(250L);
-                    callback2.run(trim2, new v3(e2Var2, e2Var, fz0Var, 9));
+                    callback2.run(trim2, new v3(e2Var2, e2Var, gz0Var, 9));
                     break;
                 } else {
-                    fz0Var.setErrorText(".");
-                    AndroidUtilities.shakeViewSpring(fz0Var, -6.0f);
+                    gz0Var.setErrorText(".");
+                    AndroidUtilities.shakeViewSpring(gz0Var, -6.0f);
                     BotWebViewVibrationEffect.APP_ERROR.vibrate();
-                    AndroidUtilities.showKeyboard(fz0Var);
+                    AndroidUtilities.showKeyboard(gz0Var);
                     break;
                 }
                 break;

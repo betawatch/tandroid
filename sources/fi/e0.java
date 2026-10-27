@@ -29,12 +29,12 @@ import org.telegram.messenger.Utilities;
 import org.telegram.messenger.camera.CameraView;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.ds;
-import org.telegram.ui.Components.gb1;
-import org.telegram.ui.Components.j80;
+import org.telegram.ui.Components.k80;
+import org.telegram.ui.Components.kb1;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
-public abstract class e0 extends FrameLayout implements j80 {
+public abstract class e0 extends FrameLayout implements k80 {
     public static final /* synthetic */ int x0 = 0;
     public final LinearGradient E;
     public final Matrix F;
@@ -197,7 +197,7 @@ public abstract class e0 extends FrameLayout implements j80 {
         canvas.restore();
     }
 
-    @Override // org.telegram.ui.Components.j80
+    @Override // org.telegram.ui.Components.k80
     public final void a(RectF rectF) {
         d0 d0Var = this.j0;
         if (d0Var == null) {
@@ -213,7 +213,7 @@ public abstract class e0 extends FrameLayout implements j80 {
         rectF.set((getMeasuredWidth() / d) * i10, (getMeasuredHeight() / f7) * i11, (getMeasuredWidth() / d) * (i10 + 1), (getMeasuredHeight() / f7) * (i11 + 1));
     }
 
-    @Override // org.telegram.ui.Components.j80
+    @Override // org.telegram.ui.Components.k80
     public final void b(Canvas canvas, float f7) {
         d0 d0Var = this.j0;
         if (d0Var != null) {
@@ -1268,7 +1268,7 @@ public abstract class e0 extends FrameLayout implements j80 {
         }
         this.d = cameraView;
         if (cameraView != null) {
-            addView(cameraView, gb1.i(-1, -1, 119));
+            addView(cameraView, kb1.i(-1, -1, 119));
         }
         CameraView cameraView3 = this.d;
         if (cameraView3 != null) {

@@ -1,44 +1,64 @@
 package w7;
 
-import android.os.Build;
-import android.os.Trace;
-import android.util.Log;
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import org.telegram.messenger.BuildConfig;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
 public abstract class a0 {
-    public static long a;
-    public static Method b;
-
-    public static void a(String str) {
-        if (str.length() > 127) {
-            str = str.substring(0, 127);
-        }
-        Trace.beginSection(str);
-    }
-
-    public static boolean b() {
-        if (Build.VERSION.SDK_INT >= 29) {
-            return x4.a.a();
-        }
-        try {
-            if (b == null) {
-                a = Trace.class.getField("TRACE_TAG_APP").getLong(null);
-                b = Trace.class.getMethod("isTagEnabled", Long.TYPE);
+    public static String a(String str, Object... objArr) {
+        int length;
+        int length2;
+        int indexOf;
+        String sb2;
+        int i10 = 0;
+        int i11 = 0;
+        while (true) {
+            length = objArr.length;
+            if (i11 >= length) {
+                break;
             }
-            return ((Boolean) b.invoke(null, Long.valueOf(a))).booleanValue();
-        } catch (Exception e) {
-            if (!(e instanceof InvocationTargetException)) {
-                Log.v("Trace", "Unable to call isTagEnabled via reflection", e);
-                return false;
+            Object obj = objArr[i11];
+            if (obj == null) {
+                sb2 = BuildConfig.BETA_URL;
+            } else {
+                try {
+                    sb2 = obj.toString();
+                } catch (Exception e) {
+                    String str2 = obj.getClass().getName() + '@' + Integer.toHexString(System.identityHashCode(obj));
+                    Logger.getLogger("com.google.common.base.Strings").logp(Level.WARNING, "com.google.common.base.Strings", "lenientToString", "Exception during lenientFormat for ".concat(str2), (Throwable) e);
+                    StringBuilder v = a1.g.v("<", str2, " threw ");
+                    v.append(e.getClass().getName());
+                    v.append(">");
+                    sb2 = v.toString();
+                }
             }
-            Throwable cause = e.getCause();
-            if (cause instanceof RuntimeException) {
-                throw ((RuntimeException) cause);
-            }
-            throw new RuntimeException(cause);
+            objArr[i11] = sb2;
+            i11++;
         }
+        StringBuilder sb3 = new StringBuilder((length * 16) + str.length());
+        int i12 = 0;
+        while (true) {
+            length2 = objArr.length;
+            if (i10 >= length2 || (indexOf = str.indexOf("%s", i12)) == -1) {
+                break;
+            }
+            sb3.append((CharSequence) str, i12, indexOf);
+            sb3.append(objArr[i10]);
+            i10++;
+            i12 = indexOf + 2;
+        }
+        sb3.append((CharSequence) str, i12, str.length());
+        if (i10 < length2) {
+            sb3.append(" [");
+            sb3.append(objArr[i10]);
+            for (int i13 = i10 + 1; i13 < objArr.length; i13++) {
+                sb3.append(", ");
+                sb3.append(objArr[i13]);
+            }
+            sb3.append(']');
+        }
+        return sb3.toString();
     }
 }

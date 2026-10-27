@@ -6,9 +6,9 @@ import android.view.SurfaceView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.SharedConfig;
-import org.telegram.ui.Components.bk0;
+import org.telegram.ui.Components.ck0;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class h9 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -21,8 +21,8 @@ public final class h9 extends AnimatorListenerAdapter {
 
     @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
     public final void onAnimationEnd(Animator animator) {
-        q4 t10;
-        bk0 bk0Var;
+        q4 u10;
+        ck0 ck0Var;
         switch (this.a) {
             case 0:
                 super.onAnimationEnd(animator);
@@ -50,14 +50,14 @@ public final class h9 extends AnimatorListenerAdapter {
                     imageReceiver2.setAlpha(1.0f);
                     v9Var.c.setVisible(true, true);
                 }
-                if (v9Var.d != null && (t10 = y9Var.t()) != null && (bk0Var = t10.d1.d) != null) {
-                    bk0 bk0Var2 = v9Var.d;
-                    bk0Var2.getClass();
-                    bk0Var2.c = bk0Var.c;
-                    bk0Var2.f = bk0Var.f;
-                    bk0Var2.b = bk0Var.b;
-                    bk0Var2.a = System.currentTimeMillis();
-                    bk0Var2.c();
+                if (v9Var.d != null && (u10 = y9Var.u()) != null && (ck0Var = u10.d1.d) != null) {
+                    ck0 ck0Var2 = v9Var.d;
+                    ck0Var2.getClass();
+                    ck0Var2.c = ck0Var.c;
+                    ck0Var2.f = ck0Var.f;
+                    ck0Var2.b = ck0Var.b;
+                    ck0Var2.a = System.currentTimeMillis();
+                    ck0Var2.c();
                 }
                 p4 p4Var = y9Var.G0;
                 if (p4Var != null) {
@@ -67,7 +67,7 @@ public final class h9 extends AnimatorListenerAdapter {
                 if (surfaceView != null) {
                     surfaceView.setVisibility(4);
                 }
-                y9Var.I();
+                y9Var.J();
                 try {
                     AndroidUtilities.runOnUIThread(new s8(this, 3));
                 } catch (Exception unused) {
@@ -118,9 +118,9 @@ public final class h9 extends AnimatorListenerAdapter {
                     v9Var2.c.setVisible(true, true);
                     v9Var2.c = null;
                 }
-                q4 t11 = y9Var3.t();
-                if (t11 != null) {
-                    t11.d1(false);
+                q4 u11 = y9Var3.u();
+                if (u11 != null) {
+                    u11.d1(false);
                 }
                 h1 h1Var = y9Var3.A0;
                 if (h1Var != null) {
@@ -144,7 +144,7 @@ public final class h9 extends AnimatorListenerAdapter {
                     }
                     SharedConfig.setStoriesIntroShown(true);
                 }
-                y9Var3.P();
+                y9Var3.Q();
                 y9Var3.J0.unlock();
                 break;
         }

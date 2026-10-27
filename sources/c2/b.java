@@ -45,9 +45,9 @@ import n2.w;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.MediaDataController;
+import org.telegram.ui.Components.as0;
 import org.telegram.ui.Components.ds;
 import org.telegram.ui.Components.tu;
-import org.telegram.ui.Components.zr0;
 import org.telegram.ui.Wallet.y0;
 import org.telegram.ui.Wallet.z0;
 import org.telegram.ui.a5;
@@ -56,7 +56,7 @@ import org.telegram.ui.v4;
 import org.telegram.ui.y4;
 import r0.a0;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
 public final class b implements c3.q {
     public static b e;
@@ -309,7 +309,7 @@ public final class b implements c3.q {
             try {
                 try {
                     uc.u uVar = (uc.u) this.b;
-                    AndroidUtilities.runOnUIThread(new zr0(y0Var.c, uVar, y0Var.a, "websocket error: " + z0.a(vVar), 18));
+                    AndroidUtilities.runOnUIThread(new as0(y0Var.c, uVar, y0Var.a, "websocket error: " + z0.a(vVar), 18));
                 } catch (Throwable unused) {
                 }
             } catch (Throwable unused2) {
@@ -469,7 +469,7 @@ public final class b implements c3.q {
             Boolean r6 = r();
             this.c = r6;
             if (r6 == null) {
-                ((s9.l) ((oa.b) this.b)).a(new i(6));
+                ((s9.m) ((oa.b) this.b)).a(new i(6));
             }
             this.a = true;
         } catch (Throwable th2) {

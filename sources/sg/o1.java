@@ -1,15 +1,64 @@
 package sg;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.graphics.drawable.Drawable;
+import android.text.TextUtils;
+import android.widget.TextView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.wh;
+import org.telegram.ui.ActionBar.o6;
+
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public interface o1 {
-    void C();
+public final class o1 extends TextView {
+    public boolean a;
+    public Drawable b;
 
-    void a();
+    public o1(Context context) {
+        super(context);
+        setTextColor(-1);
+        setTextSize(1, 14.0f);
+        setCurrent(false);
+        setEllipsize(TextUtils.TruncateAt.END);
+        setSingleLine();
+    }
 
-    void c();
+    @Override // android.widget.TextView, android.view.View
+    public final void onDraw(Canvas canvas) {
+        canvas.save();
+        canvas.translate(0.0f, AndroidUtilities.dp(-1.0f));
+        super.onDraw(canvas);
+        canvas.restore();
+        if (this.a) {
+            int B = wh.B(16.0f, getHeight(), 2);
+            if (LocaleController.isRTL) {
+                this.b.setBounds(AndroidUtilities.dp(7.0f), B, AndroidUtilities.dp(23.0f), AndroidUtilities.dp(16.0f) + B);
+            } else {
+                this.b.setBounds(getWidth() - AndroidUtilities.dp(23.0f), B, getWidth() - AndroidUtilities.dp(7.0f), AndroidUtilities.dp(16.0f) + B);
+            }
+            this.b.draw(canvas);
+        }
+    }
 
-    void d(int i10);
-
-    void u();
+    public void setCurrent(boolean z10) {
+        this.a = z10;
+        if (z10) {
+            setPadding(AndroidUtilities.dp(LocaleController.isRTL ? 27.0f : 12.0f), AndroidUtilities.dp(6.0f), AndroidUtilities.dp(LocaleController.isRTL ? 12.0f : 27.0f), AndroidUtilities.dp(6.0f));
+            setBackground(o6.d(new float[]{AndroidUtilities.dp(32.0f)}, 0, o6.b(1090519039)));
+        } else {
+            setPadding(AndroidUtilities.dp(24.0f), AndroidUtilities.dp(14.0f), AndroidUtilities.dp(24.0f), AndroidUtilities.dp(14.0f));
+            setBackground(o6.d(new float[]{0.0f}, 0, o6.b(-14145495)));
+        }
+        if (this.a && this.b == null) {
+            Drawable drawable = getContext().getDrawable(R.drawable.photo_expand);
+            this.b = drawable;
+            drawable.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
+        }
+        invalidate();
+    }
 }

@@ -8,12 +8,12 @@ import org.telegram.messenger.Emoji;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.MessagesController;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class ss {
     public int a;
     public int b;
-    public q11 c;
+    public r11 c;
     public int d;
     public boolean e;
     public int f;
@@ -28,15 +28,15 @@ public final class ss {
             str = "";
         }
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(str.toUpperCase());
-        q11 q11Var = new q11(spannableStringBuilder, 10.0f, AndroidUtilities.bold());
-        q11Var.s(p2Var);
-        ssVar.c = q11Var;
-        ssVar.c.r(MessageObject.replaceAnimatedEmoji(Emoji.replaceEmoji(spannableStringBuilder, q11Var.a.getFontMetricsInt(), false), dialogFilter.entities, ssVar.c.a.getFontMetricsInt()));
+        r11 r11Var = new r11(spannableStringBuilder, 10.0f, AndroidUtilities.bold());
+        r11Var.s(p2Var);
+        ssVar.c = r11Var;
+        ssVar.c.r(MessageObject.replaceAnimatedEmoji(Emoji.replaceEmoji(spannableStringBuilder, r11Var.a.getFontMetricsInt(), false), dialogFilter.entities, ssVar.c.a.getFontMetricsInt()));
         ssVar.c.p(26);
         int dp = AndroidUtilities.dp(9.32f);
-        q11 q11Var2 = ssVar.c;
-        ssVar.g = dp + ((int) q11Var2.c);
-        q11Var2.j();
+        r11 r11Var2 = ssVar.c;
+        ssVar.g = dp + ((int) r11Var2.c);
+        r11Var2.j();
         int[] iArr = org.telegram.ui.ActionBar.y6.r8;
         int i10 = iArr[dialogFilter.color % iArr.length];
         ssVar.f = i10;

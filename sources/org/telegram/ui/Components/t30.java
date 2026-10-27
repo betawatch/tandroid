@@ -9,17 +9,17 @@ import android.graphics.Shader;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class t30 extends TextView {
     public final Paint[] a;
-    public final /* synthetic */ org.telegram.ui.u40 b;
+    public final /* synthetic */ org.telegram.ui.w40 b;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public t30(org.telegram.ui.u40 u40Var, Context context) {
+    public t30(org.telegram.ui.w40 w40Var, Context context) {
         super(context);
-        this.b = u40Var;
-        this.a = new Paint[u40Var.e.length];
+        this.b = w40Var;
+        this.a = new Paint[w40Var.e.length];
         int i10 = 0;
         while (true) {
             Paint[] paintArr = this.a;
@@ -36,15 +36,15 @@ public final class t30 extends TextView {
         int i10;
         RectF rectF = AndroidUtilities.rectTmp;
         rectF.set(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight());
-        org.telegram.ui.u40 u40Var = this.b;
-        int i11 = u40Var.h;
+        org.telegram.ui.w40 w40Var = this.b;
+        int i11 = w40Var.h;
         Paint[] paintArr = this.a;
         paintArr[i11].setAlpha(255);
-        canvas.drawRoundRect(rectF, AndroidUtilities.dp(6.0f), AndroidUtilities.dp(6.0f), paintArr[u40Var.h]);
-        float f7 = u40Var.f;
-        if (f7 > 0.0f && (i10 = u40Var.h + 1) < paintArr.length) {
+        canvas.drawRoundRect(rectF, AndroidUtilities.dp(6.0f), AndroidUtilities.dp(6.0f), paintArr[w40Var.h]);
+        float f7 = w40Var.f;
+        if (f7 > 0.0f && (i10 = w40Var.h + 1) < paintArr.length) {
             paintArr[i10].setAlpha((int) (f7 * 255.0f));
-            canvas.drawRoundRect(rectF, AndroidUtilities.dp(6.0f), AndroidUtilities.dp(6.0f), paintArr[u40Var.h + 1]);
+            canvas.drawRoundRect(rectF, AndroidUtilities.dp(6.0f), AndroidUtilities.dp(6.0f), paintArr[w40Var.h + 1]);
         }
         super.onDraw(canvas);
     }

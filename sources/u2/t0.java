@@ -9,7 +9,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
 public final class t0 implements y2.i {
     public final Uri a;
@@ -91,7 +91,7 @@ public final class t0 implements y2.i {
                     this.v = x9;
                     x9.b(w0.j0);
                 }
-                this.c.q(hVar, this.a, this.b.a.getResponseHeaders(), j10, j11, this.d);
+                this.c.r(hVar, this.a, this.b.a.getResponseHeaders(), j10, j11, this.d);
                 if (this.x.J != null && (oVar = (c3.o) this.c.c) != null) {
                     c3.o b10 = oVar.b();
                     if (b10 instanceof v3.d) {

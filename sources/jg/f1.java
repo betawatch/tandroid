@@ -44,17 +44,17 @@ import org.telegram.ui.ActionBar.u6;
 import org.telegram.ui.ActionBar.x6;
 import org.telegram.ui.Cells.pa;
 import org.telegram.ui.Cells.ra;
-import org.telegram.ui.Components.aq0;
+import org.telegram.ui.Components.bq0;
 import org.telegram.ui.Components.ff;
 import org.telegram.ui.Components.g5;
-import org.telegram.ui.Components.k80;
+import org.telegram.ui.Components.l80;
 import org.telegram.ui.Components.m8;
-import org.telegram.ui.Components.mw0;
+import org.telegram.ui.Components.nw0;
 import org.telegram.ui.Components.qc;
 import org.telegram.ui.Wallet.m5;
-import org.telegram.ui.un;
+import org.telegram.ui.wn;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class f1 implements Runnable {
     public final /* synthetic */ int a;
@@ -151,9 +151,9 @@ public final /* synthetic */ class f1 implements Runnable {
                 }
             case 4:
                 v3 v3Var = (v3) this.c;
-                k80 k80Var = (k80) this.d;
+                l80 l80Var = (l80) this.d;
                 p5 p5Var = (p5) this.b;
-                if (v3Var.r4 != k80Var) {
+                if (v3Var.r4 != l80Var) {
                     return;
                 }
                 v3Var.r4 = null;
@@ -312,7 +312,7 @@ public final /* synthetic */ class f1 implements Runnable {
                 return;
             case 21:
                 s3 s3Var = (s3) this.c;
-                ((r2) this.d).presentFragment((un) this.b);
+                ((r2) this.d).presentFragment((wn) this.b);
                 s3Var.c = false;
                 return;
             case 22:
@@ -366,11 +366,11 @@ public final /* synthetic */ class f1 implements Runnable {
                 return;
             default:
                 ff ffVar = (ff) this.c;
-                mw0 mw0Var = (mw0) this.d;
-                aq0 aq0Var = (aq0) this.b;
+                nw0 nw0Var = (nw0) this.d;
+                bq0 bq0Var = (bq0) this.b;
                 ffVar.getClass();
-                mw0Var.getViewTreeObserver().removeOnDrawListener(ffVar);
-                aq0Var.a.setHideAvatar(true);
+                nw0Var.getViewTreeObserver().removeOnDrawListener(ffVar);
+                bq0Var.a.setHideAvatar(true);
                 return;
         }
     }

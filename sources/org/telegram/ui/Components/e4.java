@@ -7,20 +7,20 @@ import android.text.TextPaint;
 import android.widget.LinearLayout;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class e4 extends LinearLayout {
     public final /* synthetic */ int a = 1;
     public boolean b;
-    public final /* synthetic */ md0 c;
+    public final /* synthetic */ nd0 c;
     public final Object d;
-    public final /* synthetic */ md0 e;
-    public final /* synthetic */ md0 f;
+    public final /* synthetic */ nd0 e;
+    public final /* synthetic */ nd0 f;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public e4(Context context, d5 d5Var, md0 md0Var, vg.h hVar, vg.i iVar) {
+    public e4(Context context, d5 d5Var, nd0 nd0Var, vg.h hVar, vg.i iVar) {
         super(context);
-        this.c = md0Var;
+        this.c = nd0Var;
         this.e = hVar;
         this.f = iVar;
         this.b = false;
@@ -49,21 +49,21 @@ public final class e4 extends LinearLayout {
     public final void onMeasure(int i10, int i11) {
         switch (this.a) {
             case 0:
-                md0 md0Var = (md0) this.d;
+                nd0 nd0Var = (nd0) this.d;
                 this.b = true;
                 Point point = AndroidUtilities.displaySize;
                 int i12 = point.x > point.y ? 3 : 5;
-                md0 md0Var2 = this.c;
-                md0Var2.setItemCount(i12);
-                md0Var.setItemCount(i12);
-                md0 md0Var3 = this.e;
-                md0Var3.setItemCount(i12);
-                md0 md0Var4 = this.f;
-                md0Var4.setItemCount(i12);
-                md0Var2.getLayoutParams().height = AndroidUtilities.dp(42.0f) * i12;
-                md0Var.getLayoutParams().height = AndroidUtilities.dp(42.0f) * i12;
-                md0Var3.getLayoutParams().height = AndroidUtilities.dp(42.0f) * i12;
-                md0Var4.getLayoutParams().height = AndroidUtilities.dp(42.0f) * i12;
+                nd0 nd0Var2 = this.c;
+                nd0Var2.setItemCount(i12);
+                nd0Var.setItemCount(i12);
+                nd0 nd0Var3 = this.e;
+                nd0Var3.setItemCount(i12);
+                nd0 nd0Var4 = this.f;
+                nd0Var4.setItemCount(i12);
+                nd0Var2.getLayoutParams().height = AndroidUtilities.dp(42.0f) * i12;
+                nd0Var.getLayoutParams().height = AndroidUtilities.dp(42.0f) * i12;
+                nd0Var3.getLayoutParams().height = AndroidUtilities.dp(42.0f) * i12;
+                nd0Var4.getLayoutParams().height = AndroidUtilities.dp(42.0f) * i12;
                 this.b = false;
                 super.onMeasure(i10, i11);
                 break;
@@ -73,11 +73,11 @@ public final class e4 extends LinearLayout {
                 this.b = true;
                 Point point2 = AndroidUtilities.displaySize;
                 int i13 = point2.x > point2.y ? 3 : 5;
-                md0 md0Var5 = this.c;
-                md0Var5.setItemCount(i13);
+                nd0 nd0Var5 = this.c;
+                nd0Var5.setItemCount(i13);
                 hVar.setItemCount(i13);
                 iVar.setItemCount(i13);
-                md0Var5.getLayoutParams().height = AndroidUtilities.dp(42.0f) * i13;
+                nd0Var5.getLayoutParams().height = AndroidUtilities.dp(42.0f) * i13;
                 hVar.getLayoutParams().height = AndroidUtilities.dp(42.0f) * i13;
                 iVar.getLayoutParams().height = AndroidUtilities.dp(42.0f) * i13;
                 this.b = false;
@@ -105,12 +105,12 @@ public final class e4 extends LinearLayout {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public e4(Context context, md0 md0Var, md0 md0Var2, md0 md0Var3, md0 md0Var4) {
+    public e4(Context context, nd0 nd0Var, nd0 nd0Var2, nd0 nd0Var3, nd0 nd0Var4) {
         super(context);
-        this.c = md0Var;
-        this.d = md0Var2;
-        this.e = md0Var3;
-        this.f = md0Var4;
+        this.c = nd0Var;
+        this.d = nd0Var2;
+        this.e = nd0Var3;
+        this.f = nd0Var4;
         this.b = false;
     }
 }

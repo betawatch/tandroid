@@ -22,13 +22,13 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class g extends org.telegram.ui.ActionBar.r2 implements LocationController.LocationFetchCallback {
     public final int[] E;
     public int F;
     public boolean G;
-    public org.telegram.ui.Components.ak0 a;
+    public org.telegram.ui.Components.bk0 a;
     public GradientDrawable b;
     public ei.n c;
     public TextView d;
@@ -41,7 +41,7 @@ public final class g extends org.telegram.ui.ActionBar.r2 implements LocationCon
     public final int v;
     public boolean w;
     public org.telegram.ui.Components.voip.k1 x;
-    public hb0 y;
+    public jb0 y;
 
     public g(int i10) {
         super(null);
@@ -51,7 +51,7 @@ public final class g extends org.telegram.ui.ActionBar.r2 implements LocationCon
     }
 
     public final void a0(Runnable runnable) {
-        this.y = (hb0) runnable;
+        this.y = (jb0) runnable;
     }
 
     public final void b0(org.telegram.ui.Components.voip.k1 k1Var) {
@@ -96,12 +96,12 @@ public final class g extends org.telegram.ui.ActionBar.r2 implements LocationCon
         int[] iArr5 = this.s;
         iArr5[6] = 2170912;
         iArr5[7] = org.telegram.ui.ActionBar.y6.x0(null, i11, false);
-        org.telegram.ui.Components.ak0 ak0Var = this.a;
+        org.telegram.ui.Components.bk0 bk0Var = this.a;
         int[] iArr6 = this.s;
-        org.telegram.ui.Components.xj0 xj0Var = ak0Var.b;
-        if (xj0Var != null) {
-            xj0Var.n = iArr6;
-            xj0Var.G();
+        org.telegram.ui.Components.yj0 yj0Var = bk0Var.b;
+        if (yj0Var != null) {
+            yj0Var.n = iArr6;
+            yj0Var.G();
         }
     }
 
@@ -134,9 +134,9 @@ public final class g extends org.telegram.ui.ActionBar.r2 implements LocationCon
         if (kVar2 != null) {
             viewGroup.addView(kVar2);
         }
-        org.telegram.ui.Components.ak0 ak0Var = new org.telegram.ui.Components.ak0(context);
-        this.a = ak0Var;
-        viewGroup.addView(ak0Var);
+        org.telegram.ui.Components.bk0 bk0Var = new org.telegram.ui.Components.bk0(context);
+        this.a = bk0Var;
+        viewGroup.addView(bk0Var);
         TextView textView = new TextView(context);
         this.e = textView;
         int i16 = org.telegram.ui.ActionBar.y6.G6;
@@ -185,8 +185,8 @@ public final class g extends org.telegram.ui.ActionBar.r2 implements LocationCon
             viewGroup.addView(this.h);
             int i18 = 0;
             while (i18 < i12) {
-                LinearLayout d = org.telegram.messenger.vh.d(context, i14);
-                this.h.addView(d, org.telegram.ui.Components.gb1.o(0.0f, 0.0f, 0.0f, i18 != i15 ? 7.0f : 0.0f, -2, -2));
+                LinearLayout d = org.telegram.messenger.wh.d(context, i14);
+                this.h.addView(d, org.telegram.ui.Components.kb1.o(0.0f, 0.0f, 0.0f, i18 != i15 ? 7.0f : 0.0f, -2, -2));
                 int i19 = i18 * 2;
                 TextView textView4 = new TextView(context);
                 TextView[] textViewArr = this.n;
@@ -227,7 +227,7 @@ public final class g extends org.telegram.ui.ActionBar.r2 implements LocationCon
                         textViewArr[i22].setMovementMethod(new AndroidUtilities.LinkMovementMethodMy());
                         spannableStringBuilder.replace(lastIndexOf, lastIndexOf + 1, (CharSequence) "");
                         spannableStringBuilder.replace(indexOf, indexOf + 1, (CharSequence) "");
-                        spannableStringBuilder.setSpan(new org.telegram.ui.Components.x61(LocaleController.getString(R.string.AuthAnotherClientDownloadClientUrl), (org.telegram.ui.Components.y11) null), indexOf, lastIndexOf - 1, 33);
+                        spannableStringBuilder.setSpan(new org.telegram.ui.Components.y61(LocaleController.getString(R.string.AuthAnotherClientDownloadClientUrl), (org.telegram.ui.Components.z11) null), indexOf, lastIndexOf - 1, 33);
                     }
                     textViewArr[i22].setText(spannableStringBuilder);
                 } else if (i18 == 1) {
@@ -237,11 +237,11 @@ public final class g extends org.telegram.ui.ActionBar.r2 implements LocationCon
                 }
                 if (LocaleController.isRTL) {
                     d.setGravity(5);
-                    d.addView(textViewArr[i22], org.telegram.ui.Components.gb1.p(1.0f, i10, -2));
-                    d.addView(textViewArr[i19], org.telegram.ui.Components.gb1.o(4.0f, 0.0f, 0.0f, 0.0f, -2, -2));
+                    d.addView(textViewArr[i22], org.telegram.ui.Components.kb1.p(1.0f, i10, -2));
+                    d.addView(textViewArr[i19], org.telegram.ui.Components.kb1.o(4.0f, 0.0f, 0.0f, 0.0f, -2, -2));
                 } else {
-                    d.addView(textViewArr[i19], org.telegram.ui.Components.gb1.o(0.0f, 0.0f, 4.0f, 0.0f, -2, -2));
-                    d.addView(textViewArr[i22], org.telegram.ui.Components.gb1.r(-2, -2));
+                    d.addView(textViewArr[i19], org.telegram.ui.Components.kb1.o(0.0f, 0.0f, 4.0f, 0.0f, -2, -2));
+                    d.addView(textViewArr[i22], org.telegram.ui.Components.kb1.r(-2, -2));
                 }
                 i18 = i21;
                 i12 = 3;
@@ -263,7 +263,7 @@ public final class g extends org.telegram.ui.ActionBar.r2 implements LocationCon
         this.b = new GradientDrawable(GradientDrawable.Orientation.LEFT_RIGHT, null);
         ei.n nVar = new ei.n(this, context);
         this.c = nVar;
-        org.telegram.ui.Components.gb1.c(nVar, 0.02f, 1.2f);
+        org.telegram.ui.Components.kb1.c(nVar, 0.02f, 1.2f);
         this.c.setPadding(AndroidUtilities.dp(34.0f), 0, AndroidUtilities.dp(34.0f), 0);
         this.c.setGravity(17);
         org.telegram.ui.ActionBar.f7.V(this.c, org.telegram.ui.ActionBar.y6.Sh, null);
@@ -313,9 +313,9 @@ public final class g extends org.telegram.ui.ActionBar.r2 implements LocationCon
                                 }
                             } else if (i25 == 6) {
                                 gVar.presentFragment(new PasscodeActivity(1), true);
-                                hb0 hb0Var = gVar.y;
-                                if (hb0Var != null) {
-                                    AndroidUtilities.runOnUIThread(hb0Var);
+                                jb0 jb0Var = gVar.y;
+                                if (jb0Var != null) {
+                                    AndroidUtilities.runOnUIThread(jb0Var);
                                     gVar.y = null;
                                     break;
                                 }
@@ -394,9 +394,9 @@ public final class g extends org.telegram.ui.ActionBar.r2 implements LocationCon
                                     }
                                 } else if (i252 == 6) {
                                     gVar.presentFragment(new PasscodeActivity(1), true);
-                                    hb0 hb0Var = gVar.y;
-                                    if (hb0Var != null) {
-                                        AndroidUtilities.runOnUIThread(hb0Var);
+                                    jb0 jb0Var = gVar.y;
+                                    if (jb0Var != null) {
+                                        AndroidUtilities.runOnUIThread(jb0Var);
                                         gVar.y = null;
                                         break;
                                     }
@@ -431,7 +431,7 @@ public final class g extends org.telegram.ui.ActionBar.r2 implements LocationCon
                 user = userConfig.getCurrentUser();
             }
             if (user != null) {
-                this.d.setText(LocaleController.formatString("PhoneNumberKeepButton", R.string.PhoneNumberKeepButton, org.telegram.messenger.vh.g(new StringBuilder("+"), user.phone, kf.b.c())));
+                this.d.setText(LocaleController.formatString("PhoneNumberKeepButton", R.string.PhoneNumberKeepButton, org.telegram.messenger.wh.g(new StringBuilder("+"), user.phone, kf.b.c())));
             }
             final int i26 = 3;
             this.d.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.d
@@ -471,9 +471,9 @@ public final class g extends org.telegram.ui.ActionBar.r2 implements LocationCon
                                     }
                                 } else if (i252 == 6) {
                                     gVar.presentFragment(new PasscodeActivity(1), true);
-                                    hb0 hb0Var = gVar.y;
-                                    if (hb0Var != null) {
-                                        AndroidUtilities.runOnUIThread(hb0Var);
+                                    jb0 jb0Var = gVar.y;
+                                    if (jb0Var != null) {
+                                        AndroidUtilities.runOnUIThread(jb0Var);
                                         gVar.y = null;
                                         break;
                                     }
@@ -556,9 +556,9 @@ public final class g extends org.telegram.ui.ActionBar.r2 implements LocationCon
                                     }
                                 } else if (i252 == 6) {
                                     gVar.presentFragment(new PasscodeActivity(1), true);
-                                    hb0 hb0Var = gVar.y;
-                                    if (hb0Var != null) {
-                                        AndroidUtilities.runOnUIThread(hb0Var);
+                                    jb0 jb0Var = gVar.y;
+                                    if (jb0Var != null) {
+                                        AndroidUtilities.runOnUIThread(jb0Var);
                                         gVar.y = null;
                                         break;
                                     }

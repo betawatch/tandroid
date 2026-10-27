@@ -1,50 +1,127 @@
 package org.telegram.ui;
 
+import android.animation.ValueAnimator;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.RectF;
+import android.graphics.drawable.Drawable;
+import android.text.TextPaint;
 import android.view.View;
+import java.util.HashSet;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class bk0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ NotificationsCustomSettingsActivity b;
-    public final /* synthetic */ ok0 c;
-    public final /* synthetic */ View d;
+public final class bk0 extends View implements org.telegram.ui.ActionBar.p6 {
+    public final Paint a;
+    public final Paint b;
+    public final org.telegram.ui.Components.h6 c;
+    public final org.telegram.ui.Components.r6 d;
+    public int e;
+    public float f;
+    public ValueAnimator h;
 
-    public /* synthetic */ bk0(NotificationsCustomSettingsActivity notificationsCustomSettingsActivity, ok0 ok0Var, View view, int i10, int i11) {
-        this.a = i11;
-        this.b = notificationsCustomSettingsActivity;
-        this.c = ok0Var;
-        this.d = view;
+    public bk0(Context context) {
+        super(context);
+        Paint paint = new Paint(1);
+        this.a = paint;
+        Paint paint2 = new Paint(1);
+        this.b = paint2;
+        org.telegram.ui.Components.ds dsVar = org.telegram.ui.Components.ds.h;
+        this.c = new org.telegram.ui.Components.h6(this, 0L, 320L, dsVar);
+        org.telegram.ui.Components.r6 r6Var = new org.telegram.ui.Components.r6(false, true, true);
+        this.d = r6Var;
+        this.f = 1.0f;
+        paint.setColor(org.telegram.ui.ActionBar.y6.x0(null, org.telegram.ui.ActionBar.y6.Oh, false));
+        paint2.setColor(org.telegram.ui.ActionBar.y6.x0(null, org.telegram.ui.ActionBar.y6.h5, false));
+        paint2.setStyle(Paint.Style.STROKE);
+        paint2.setStrokeWidth(AndroidUtilities.dp(4.0f));
+        r6Var.setCallback(this);
+        r6Var.n(0.35f, 200L, dsVar);
+        Paint.Style style = Paint.Style.FILL_AND_STROKE;
+        TextPaint textPaint = r6Var.a;
+        textPaint.setStyle(style);
+        textPaint.setStrokeWidth(AndroidUtilities.dp(0.24f));
+        textPaint.setStrokeJoin(Paint.Join.ROUND);
+        r6Var.w(AndroidUtilities.dp(13.3f));
+        r6Var.u(org.telegram.ui.ActionBar.y6.x0(null, org.telegram.ui.ActionBar.y6.Sh, false));
+        r6Var.M = AndroidUtilities.dp(64.0f);
+        r6Var.b = 1;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                this.b.l0(this.c, this.d, false);
-                break;
-            case 1:
-                this.b.f0(this.c, this.d);
-                break;
-            case 2:
-                NotificationsCustomSettingsActivity.Y(this.b, this.c, this.d);
-                break;
-            case 3:
-                NotificationsCustomSettingsActivity.W(this.b, this.c, this.d);
-                break;
-            case 4:
-                this.b.f0(this.c, this.d);
-                break;
-            default:
-                this.b.l0(this.c, this.d, true);
-                break;
+    public final boolean a(int i10) {
+        int i11 = this.e;
+        if (i11 != i10) {
+            r1 = i11 < i10;
+            this.e = i10;
+            String str = "";
+            if (i10 > 0) {
+                str = "" + this.e;
+            }
+            this.d.t(str, true, true);
+            if (r1) {
+                ValueAnimator valueAnimator = this.h;
+                if (valueAnimator != null) {
+                    valueAnimator.cancel();
+                    this.h = null;
+                }
+                ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
+                this.h = ofFloat;
+                ofFloat.addUpdateListener(new b3(this, 17));
+                this.h.addListener(new k50(this, 6));
+                d3.m(2.0f, this.h);
+                this.h.setDuration(200L);
+                this.h.start();
+            }
+        }
+        return r1;
+    }
+
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        float d = this.c.d(this.e > 0 ? 1.0f : 0.0f, false);
+        canvas.save();
+        float f7 = this.f;
+        canvas.scale(f7 * d, f7 * d, getWidth() / 2.0f, getHeight() / 2.0f);
+        org.telegram.ui.Components.r6 r6Var = this.d;
+        float dpf2 = AndroidUtilities.dpf2(12.66f) + r6Var.c();
+        float dpf22 = AndroidUtilities.dpf2(20.3f);
+        RectF rectF = AndroidUtilities.rectTmp;
+        rectF.set((getWidth() - dpf2) / 2.0f, (getHeight() - dpf22) / 2.0f, (getWidth() + dpf2) / 2.0f, (getHeight() + dpf22) / 2.0f);
+        int i10 = (int) (d * 255.0f);
+        Paint paint = this.b;
+        paint.setAlpha(i10);
+        canvas.drawRoundRect(rectF, AndroidUtilities.dp(30.0f), AndroidUtilities.dp(30.0f), paint);
+        Paint paint2 = this.a;
+        paint2.setAlpha(i10);
+        canvas.drawRoundRect(rectF, AndroidUtilities.dp(30.0f), AndroidUtilities.dp(30.0f), paint2);
+        canvas.save();
+        canvas.translate(0.0f, -AndroidUtilities.dp(1.0f));
+        r6Var.setBounds(0, 0, getWidth(), getHeight());
+        r6Var.draw(canvas);
+        canvas.restore();
+        canvas.restore();
+    }
+
+    @Override // org.telegram.ui.ActionBar.p6
+    public final void updateColors() {
+        try {
+            this.a.setColor(org.telegram.ui.ActionBar.y6.x0(null, org.telegram.ui.ActionBar.y6.Oh, false));
+            this.b.setColor(org.telegram.ui.ActionBar.y6.x0(null, org.telegram.ui.ActionBar.y6.h5, false));
+            invalidate();
+        } catch (Exception e) {
+            FileLog.e(e);
         }
     }
 
-    public /* synthetic */ bk0(NotificationsCustomSettingsActivity notificationsCustomSettingsActivity, ok0 ok0Var, View view, boolean z10, int i10) {
-        this.a = i10;
-        this.b = notificationsCustomSettingsActivity;
-        this.c = ok0Var;
-        this.d = view;
+    @Override // android.view.View
+    public final boolean verifyDrawable(Drawable drawable) {
+        return drawable == this.d || super.verifyDrawable(drawable);
+    }
+
+    @Override // org.telegram.ui.ActionBar.p6
+    public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 }

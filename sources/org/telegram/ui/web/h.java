@@ -20,20 +20,20 @@ import org.telegram.ui.ActionBar.s3;
 import org.telegram.ui.ActionBar.u6;
 import org.telegram.ui.ActionBar.y6;
 import org.telegram.ui.Components.ar;
-import org.telegram.ui.Components.j71;
-import org.telegram.ui.Components.mm0;
-import org.telegram.ui.Components.r71;
-import org.telegram.ui.Components.s61;
+import org.telegram.ui.Components.k71;
+import org.telegram.ui.Components.nm0;
+import org.telegram.ui.Components.s71;
 import org.telegram.ui.Components.t61;
+import org.telegram.ui.Components.u61;
 import org.telegram.ui.Components.y9;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
-public final class h extends s61 {
+public final class h extends t61 {
     public static final /* synthetic */ int a = 0;
 
     static {
-        s61.setup(new h());
+        t61.setup(new h());
     }
 
     /* JADX WARN: Can't wrap try/catch for region: R(20:89|(1:91)(1:146)|92|(1:(15:136|137|138|139|140|(5:124|(1:126)(1:131)|127|(1:129)|130)(1:101)|102|103|104|105|106|107|(1:109)|110|111)(1:135))(1:96)|97|(1:99)|124|(0)(0)|127|(0)|130|102|103|104|105|106|107|(0)|110|111) */
@@ -99,11 +99,11 @@ public final class h extends s61 {
     /* JADX WARN: Removed duplicated region for block: B:59:0x016d  */
     /* JADX WARN: Removed duplicated region for block: B:61:0x0157  */
     /* JADX WARN: Removed duplicated region for block: B:99:0x02d8  */
-    @Override // org.telegram.ui.Components.s61
+    @Override // org.telegram.ui.Components.t61
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void bindView(View view, t61 t61Var, boolean z10, j71 j71Var, r71 r71Var) {
+    public final void bindView(View view, u61 u61Var, boolean z10, k71 k71Var, s71 s71Var) {
         FrameLayout.LayoutParams layoutParams;
         Bitmap bitmap;
         boolean z11;
@@ -112,11 +112,11 @@ public final class h extends s61 {
         Bitmap bitmap2;
         String str2;
         i iVar = (i) view;
-        Object obj = t61Var.H;
+        Object obj = u61Var.H;
         if (!(obj instanceof MessageObject)) {
             if (obj instanceof b1) {
                 b1 b1Var = (b1) obj;
-                CharSequence charSequence = t61Var.m;
+                CharSequence charSequence = u61Var.m;
                 String charSequence2 = charSequence == null ? null : charSequence.toString();
                 FrameLayout.LayoutParams layoutParams2 = iVar.d;
                 u6 u6Var = iVar.a;
@@ -242,10 +242,10 @@ public final class h extends s61 {
             return;
         }
         MessageObject messageObject = (MessageObject) obj;
-        boolean z12 = t61Var.q;
-        CharSequence charSequence4 = t61Var.m;
+        boolean z12 = u61Var.q;
+        CharSequence charSequence4 = u61Var.m;
         String charSequence5 = charSequence4 == null ? null : charSequence4.toString();
-        boolean z13 = t61Var.e;
+        boolean z13 = u61Var.e;
         FrameLayout.LayoutParams layoutParams4 = iVar.d;
         u6 u6Var2 = iVar.a;
         TextView textView3 = iVar.f;
@@ -382,18 +382,18 @@ public final class h extends s61 {
         iVar.setWillNotDraw(!z10);
     }
 
-    @Override // org.telegram.ui.Components.s61
-    public final boolean contentsEquals(t61 t61Var, t61 t61Var2) {
-        return t61Var.H == t61Var2.H && TextUtils.equals(t61Var.m, t61Var2.m);
+    @Override // org.telegram.ui.Components.t61
+    public final boolean contentsEquals(u61 u61Var, u61 u61Var2) {
+        return u61Var.H == u61Var2.H && TextUtils.equals(u61Var.m, u61Var2.m);
     }
 
-    @Override // org.telegram.ui.Components.s61
-    public final View createView(Context context, mm0 mm0Var, int i10, int i11, u6 u6Var) {
+    @Override // org.telegram.ui.Components.t61
+    public final View createView(Context context, nm0 nm0Var, int i10, int i11, u6 u6Var) {
         return new i(context, u6Var);
     }
 
-    @Override // org.telegram.ui.Components.s61
-    public final boolean equals(t61 t61Var, t61 t61Var2) {
-        return t61Var.H == t61Var2.H && TextUtils.isEmpty(t61Var.m) == TextUtils.isEmpty(t61Var2.m);
+    @Override // org.telegram.ui.Components.t61
+    public final boolean equals(u61 u61Var, u61 u61Var2) {
+        return u61Var.H == u61Var2.H && TextUtils.isEmpty(u61Var.m) == TextUtils.isEmpty(u61Var2.m);
     }
 }

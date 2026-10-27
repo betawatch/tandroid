@@ -22,13 +22,13 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.aw;
-import org.telegram.ui.Components.gy0;
+import org.telegram.ui.Components.hy0;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.sz;
+import org.telegram.ui.kz;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class ua implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -120,18 +120,18 @@ public final /* synthetic */ class ua implements Utilities.Callback {
                 }
                 if (iArr[0] == i12 && iArr[1] > 0) {
                     awVar.dismiss();
-                    org.telegram.ui.Components.qc.g(r2Var2, new gy0(r2Var2.getFragmentView().getContext(), (TLObject) arrayList.get(0), iArr[1], 2, null, r2Var2.getResourceProvider()), 1500).j();
+                    org.telegram.ui.Components.qc.g(r2Var2, new hy0(r2Var2.getFragmentView().getContext(), (TLObject) arrayList.get(0), iArr[1], 2, null, r2Var2.getResourceProvider()), 1500).j();
                     break;
                 }
                 break;
             case 4:
                 LaunchActivity launchActivity = (LaunchActivity) obj4;
-                sz szVar = (sz) obj3;
+                kz kzVar = (kz) obj3;
                 Long l4 = (Long) obj2;
                 TL_stories.TL_storyAlbum tL_storyAlbum = (TL_stories.TL_storyAlbum) obj;
                 Pattern pattern = LaunchActivity.D1;
                 try {
-                    szVar.run();
+                    kzVar.run();
                 } catch (Exception e) {
                     FileLog.e(e);
                 }
@@ -188,10 +188,10 @@ public final /* synthetic */ class ua implements Utilities.Callback {
         this.e = arrayList;
     }
 
-    public /* synthetic */ ua(LaunchActivity launchActivity, sz szVar, Long l4, int i10) {
+    public /* synthetic */ ua(LaunchActivity launchActivity, kz kzVar, Long l4, int i10) {
         this.a = 4;
         this.c = launchActivity;
-        this.d = szVar;
+        this.d = kzVar;
         this.e = l4;
         this.b = i10;
     }

@@ -17,20 +17,20 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class a1 extends View implements org.telegram.ui.Cells.r9, e3 {
-    public final h70 a;
+    public final j70 a;
     public final h4 b;
     public a3 c;
     public int d;
     public final int e;
     public TL_iv.pageBlockAuthorDate f;
 
-    public a1(Context context, h70 h70Var, h4 h4Var) {
+    public a1(Context context, j70 j70Var, h4 h4Var) {
         super(context);
         this.e = AndroidUtilities.dp(8.0f);
-        this.a = h70Var;
+        this.a = j70Var;
         this.b = h4Var;
     }
 

@@ -27,9 +27,9 @@ import org.telegram.messenger.SvgHelper;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.ds;
-import org.telegram.ui.Components.gb1;
+import org.telegram.ui.Components.kb1;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public class i8 extends FrameLayout implements NotificationCenter.NotificationCenterDelegate, qg.c {
     public static final AccelerateInterpolator N = new AccelerateInterpolator(0.5f);
@@ -78,7 +78,7 @@ public class i8 extends FrameLayout implements NotificationCenter.NotificationCe
         c1Var.setImageReceiver(h8Var);
         c1Var.setPadding(AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f));
         c1Var.setImageReceiver(h8Var);
-        addView(c1Var, gb1.h(24, 24.0f, 81, 0.0f, 0.0f, 0.0f, 0.0f));
+        addView(c1Var, kb1.h(24, 24.0f, 81, 0.0f, 0.0f, 0.0f, 0.0f));
         ImageView imageView = new ImageView(context);
         this.J = imageView;
         imageView.setImageResource(R.drawable.mini_more_dots);
@@ -90,7 +90,7 @@ public class i8 extends FrameLayout implements NotificationCenter.NotificationCe
         imageView.setBackground(c02);
         org.telegram.ui.ActionBar.f7.k(imageView, c02, N2, null, u6Var);
         imageView.setAlpha(0.0f);
-        addView(imageView, gb1.i(-2, -2, 5));
+        addView(imageView, kb1.i(-2, -2, 5));
         setFocusable(true);
     }
 
@@ -400,7 +400,7 @@ public class i8 extends FrameLayout implements NotificationCenter.NotificationCe
             h8Var.setParentView(this);
         }
         h8Var.onAttachedToWindow();
-        NotificationCenter.getInstance(this.E).addObserver(this, NotificationCenter.currentUserPremiumStatusChanged);
+        NotificationCenter.getInstance(this.E).addWeakObserver(this, NotificationCenter.currentUserPremiumStatusChanged);
     }
 
     @Override // android.view.ViewGroup, android.view.View

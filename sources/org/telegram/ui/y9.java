@@ -44,7 +44,7 @@ import org.telegram.messenger.camera.CameraView;
 import org.telegram.messenger.camera.Size;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public class y9 extends org.telegram.ui.ActionBar.r2 {
     public float E;
@@ -203,7 +203,7 @@ public class y9 extends org.telegram.ui.ActionBar.r2 {
         cameraView.setUseMaxPreview(true);
         this.d.setOptimizeForBarcode(true);
         this.d.setDelegate(new y0(this, 13));
-        ((ViewGroup) this.fragmentView).addView(this.d, 0, org.telegram.ui.Components.gb1.g(-1.0f, -1));
+        ((ViewGroup) this.fragmentView).addView(this.d, 0, org.telegram.ui.Components.kb1.g(-1.0f, -1));
         if (this.W != 0 || (textView = this.h) == null) {
             return;
         }
@@ -279,7 +279,7 @@ public class y9 extends org.telegram.ui.ActionBar.r2 {
             this.actionBar.setTitle(LocaleController.getString(R.string.AuthAnotherClientScan));
         }
         Paint paint2 = new Paint(1);
-        paint2.setPathEffect(org.telegram.ui.Components.s90.c());
+        paint2.setPathEffect(org.telegram.ui.Components.t90.c());
         paint2.setColor(i0.a.o(-1, 40));
         w9 w9Var = new w9(context, paint2);
         this.b = w9Var;
@@ -324,8 +324,8 @@ public class y9 extends org.telegram.ui.ActionBar.r2 {
                     this.b.setMovementMethod(new AndroidUtilities.LinkMovementMethodMy());
                     spannableStringBuilder.replace(indexOf2, indexOf2 + 1, (CharSequence) " ");
                     spannableStringBuilder.replace(indexOf, i14, (CharSequence) " ");
-                    spannableStringBuilder.setSpan(new org.telegram.ui.Components.x61(strArr[i12], 0), i14, indexOf2, 33);
-                    spannableStringBuilder.setSpan(new org.telegram.ui.Components.q61(AndroidUtilities.bold()), i14, indexOf2, 33);
+                    spannableStringBuilder.setSpan(new org.telegram.ui.Components.y61(strArr[i12], 0), i14, indexOf2, 33);
+                    spannableStringBuilder.setSpan(new org.telegram.ui.Components.r61(AndroidUtilities.bold()), i14, indexOf2, 33);
                     i12++;
                 }
                 this.b.setLinkTextColor(-1);
@@ -351,11 +351,11 @@ public class y9 extends org.telegram.ui.ActionBar.r2 {
             this.s.setOnClickListener(new a(this, 10));
         }
         Activity parentActivity = getParentActivity();
-        el0 el0Var = parentActivity instanceof LaunchActivity ? ((LaunchActivity) parentActivity).u1 : null;
-        if (el0Var != null && this.a == null) {
-            f fVar = new f(el0Var, 29);
-            el0Var.b.add(fVar);
-            el0Var.a();
+        gl0 gl0Var = parentActivity instanceof LaunchActivity ? ((LaunchActivity) parentActivity).u1 : null;
+        if (gl0Var != null && this.a == null) {
+            f fVar = new f(gl0Var, 29);
+            gl0Var.b.add(fVar);
+            gl0Var.a();
             this.a = fVar;
         }
         this.fragmentView.setKeepScreenOn(true);
@@ -794,9 +794,9 @@ public class y9 extends org.telegram.ui.ActionBar.r2 {
         this.e.quitSafely();
         f fVar = this.a;
         if (fVar != null) {
-            el0 el0Var = (el0) fVar.b;
-            if (el0Var.b.remove(fVar)) {
-                el0Var.a();
+            gl0 gl0Var = (gl0) fVar.b;
+            if (gl0Var.b.remove(fVar)) {
+                gl0Var.a();
             }
             this.a = null;
         }

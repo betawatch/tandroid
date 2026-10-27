@@ -17,7 +17,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
 public class NotificationCenter {
     private static final long EXPIRE_NOTIFICATIONS_TIME = 5017;
@@ -393,7 +393,7 @@ public class NotificationCenter {
     private final SparseArray<AllowedNotifications> allowedNotifications = new SparseArray<>();
     SparseArray<Runnable> alreadyPostedRunnubles = new SparseArray<>();
 
-    /* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+    /* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
     public static class AllowedNotifications {
         int[] allowedIds;
         final long time;
@@ -403,7 +403,7 @@ public class NotificationCenter {
         }
     }
 
-    /* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+    /* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
     public static class DelayedPost {
         private Object[] args;
         private int id;
@@ -414,12 +414,12 @@ public class NotificationCenter {
         }
     }
 
-    /* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+    /* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
     public interface NotificationCenterDelegate {
         void didReceivedNotification(int i10, int i11, Object... objArr);
     }
 
-    /* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+    /* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
     public interface ObserversGroup {
         ObserversGroup add(int i10);
 
@@ -428,7 +428,7 @@ public class NotificationCenter {
         void removeAllObservers();
     }
 
-    /* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+    /* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
     public static final class ObserversGroupImpl implements ObserversGroup {
         private NotificationCenterDelegate delegate;
         private ObserversGroupImpl globalGroup;
@@ -506,12 +506,47 @@ public class NotificationCenter {
         }
     }
 
-    /* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+    /* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
     public interface PostponeNotificationCallback {
         boolean needPostpone(int i10, int i11, Object[] objArr);
     }
 
-    /* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+    /* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+    public static final class WeakDelegate implements NotificationCenterDelegate {
+        private final NotificationCenter center;
+        private final int hash;
+        private final WeakReference<NotificationCenterDelegate> reference;
+
+        @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
+        public void didReceivedNotification(int i10, int i11, Object... objArr) {
+            NotificationCenterDelegate notificationCenterDelegate = this.reference.get();
+            if (notificationCenterDelegate != null) {
+                notificationCenterDelegate.didReceivedNotification(i10, i11, objArr);
+            } else {
+                this.center.removeObserverInternal(this, i10);
+            }
+        }
+
+        public boolean equals(Object obj) {
+            NotificationCenterDelegate notificationCenterDelegate;
+            if (this == obj) {
+                return true;
+            }
+            return (obj instanceof WeakDelegate) && (notificationCenterDelegate = this.reference.get()) != null && notificationCenterDelegate == ((WeakDelegate) obj).reference.get();
+        }
+
+        public int hashCode() {
+            return this.hash;
+        }
+
+        private WeakDelegate(NotificationCenter notificationCenter, NotificationCenterDelegate notificationCenterDelegate) {
+            this.center = notificationCenter;
+            this.reference = new WeakReference<>(notificationCenterDelegate);
+            this.hash = System.identityHashCode(notificationCenterDelegate);
+        }
+    }
+
+    /* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
     public static final class WeakObserversGroupImpl implements ObserversGroup, NotificationCenterDelegate {
         private final ObserversGroupImpl observersGroup;
         private final WeakReference<NotificationCenterDelegate> reference;
@@ -933,7 +968,7 @@ public class NotificationCenter {
             sparseArray.put(i10, createArrayForId);
             arrayList2 = createArrayForId;
         }
-        if (arrayList2.contains(notificationCenterDelegate)) {
+        if (containsObserver(arrayList2, notificationCenterDelegate)) {
             return;
         }
         arrayList2.add(notificationCenterDelegate);
@@ -970,8 +1005,27 @@ public class NotificationCenter {
             }
         }
         if (j10 != Long.MAX_VALUE) {
-            AndroidUtilities.runOnUIThread(new wg(this, 0), Math.max(17L, EXPIRE_NOTIFICATIONS_TIME - (elapsedRealtime - j10)));
+            AndroidUtilities.runOnUIThread(new xg(this, 0), Math.max(17L, EXPIRE_NOTIFICATIONS_TIME - (elapsedRealtime - j10)));
         }
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    private static boolean containsObserver(ArrayList<NotificationCenterDelegate> arrayList, NotificationCenterDelegate notificationCenterDelegate) {
+        NotificationCenterDelegate unwrap = unwrap(notificationCenterDelegate);
+        if (unwrap == null) {
+            return false;
+        }
+        if (arrayList instanceof UniqArrayList) {
+            return arrayList.contains(unwrap) || arrayList.contains(new WeakDelegate(unwrap));
+        }
+        int size = arrayList.size();
+        for (int i10 = 0; i10 < size; i10++) {
+            NotificationCenterDelegate notificationCenterDelegate2 = arrayList.get(i10);
+            if (unwrap.equals(notificationCenterDelegate2) || ((notificationCenterDelegate2 instanceof WeakDelegate) && ((WeakDelegate) notificationCenterDelegate2).reference.get() == unwrap)) {
+                return true;
+            }
+        }
+        return false;
     }
 
     private ArrayList<NotificationCenterDelegate> createArrayForId(int i10) {
@@ -1059,7 +1113,7 @@ public class NotificationCenter {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$checkForExpiredNotifications$0() {
-        this.checkForExpiredNotifications = new wg(this, 1);
+        this.checkForExpiredNotifications = new xg(this, 1);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -1090,9 +1144,48 @@ public class NotificationCenter {
         if (this.alreadyPostedRunnubles.indexOfKey(hashCode) >= 0) {
             return;
         }
-        e5 e5Var = new e5(this, i10, objArr, hashCode);
-        this.alreadyPostedRunnubles.put(hashCode, e5Var);
-        AndroidUtilities.runOnUIThread(e5Var, 250L);
+        f5 f5Var = new f5(this, i10, objArr, hashCode);
+        this.alreadyPostedRunnubles.put(hashCode, f5Var);
+        AndroidUtilities.runOnUIThread(f5Var, 250L);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX WARN: Multi-variable type inference failed */
+    public void removeObserverInternal(NotificationCenterDelegate notificationCenterDelegate, int i10) {
+        NotificationCenterDelegate notificationCenterDelegate2;
+        if (BuildVars.DEBUG_VERSION && Thread.currentThread() != ApplicationLoader.applicationHandler.getLooper().getThread()) {
+            throw new RuntimeException("removeObserver allowed only from MAIN thread");
+        }
+        if (this.broadcasting != 0) {
+            ArrayList<NotificationCenterDelegate> arrayList = this.removeAfterBroadcast.get(i10);
+            if (arrayList == null) {
+                arrayList = new ArrayList<>();
+                this.removeAfterBroadcast.put(i10, arrayList);
+            }
+            arrayList.add(notificationCenterDelegate);
+            return;
+        }
+        ArrayList<NotificationCenterDelegate> arrayList2 = this.observers.get(i10);
+        if (arrayList2 != null) {
+            NotificationCenterDelegate unwrap = unwrap(notificationCenterDelegate);
+            if (arrayList2 instanceof UniqArrayList) {
+                arrayList2.remove(notificationCenterDelegate);
+                if (unwrap != null) {
+                    arrayList2.remove(unwrap);
+                    arrayList2.remove(new WeakDelegate(unwrap));
+                    return;
+                }
+                return;
+            }
+            for (int size = arrayList2.size() - 1; size >= 0; size--) {
+                NotificationCenterDelegate notificationCenterDelegate3 = arrayList2.get(size);
+                if (notificationCenterDelegate.equals(notificationCenterDelegate3)) {
+                    arrayList2.remove(size);
+                } else if ((notificationCenterDelegate3 instanceof WeakDelegate) && ((notificationCenterDelegate2 = (NotificationCenterDelegate) ((WeakDelegate) notificationCenterDelegate3).reference.get()) == null || notificationCenterDelegate2 == unwrap)) {
+                    arrayList2.remove(size);
+                }
+            }
+        }
     }
 
     public static void sanitize() {
@@ -1111,7 +1204,11 @@ public class NotificationCenter {
             ArrayList<NotificationCenterDelegate> valueAt = notificationCenter.observers.valueAt(i10);
             for (int size = valueAt.size() - 1; size >= 0; size--) {
                 Object obj = (NotificationCenterDelegate) valueAt.get(size);
-                if (!(obj instanceof WeakObserversGroupImpl) && !(obj instanceof BaseController)) {
+                if (obj instanceof WeakDelegate) {
+                    if (((WeakDelegate) obj).reference.get() == null) {
+                        valueAt.remove(size);
+                    }
+                } else if (!(obj instanceof WeakObserversGroupImpl) && !(obj instanceof BaseController)) {
                     if (obj instanceof Context) {
                         if (isContextDestroyed((Context) obj)) {
                             FileLog.e("MEMORY_LEAK observer " + keyAt + " with destroyed Context");
@@ -1140,6 +1237,10 @@ public class NotificationCenter {
         return i10 == updateInterfaces;
     }
 
+    private static NotificationCenterDelegate unwrap(NotificationCenterDelegate notificationCenterDelegate) {
+        return notificationCenterDelegate instanceof WeakDelegate ? (NotificationCenterDelegate) ((WeakDelegate) notificationCenterDelegate).reference.get() : notificationCenterDelegate;
+    }
+
     @Deprecated(since = "use createWeakObserversGroup or createObserversGroup")
     public void addObserver(NotificationCenterDelegate notificationCenterDelegate, int i10) {
         addObserverInternal(notificationCenterDelegate, i10);
@@ -1153,6 +1254,13 @@ public class NotificationCenter {
             return;
         }
         this.postponeCallbackList.add(postponeNotificationCallback);
+    }
+
+    public void addWeakObserver(NotificationCenterDelegate notificationCenterDelegate, int i10) {
+        if (notificationCenterDelegate == null) {
+            return;
+        }
+        addObserverInternal(new WeakDelegate(notificationCenterDelegate), i10);
     }
 
     public ObserversGroup createObserversGroup(NotificationCenterDelegate notificationCenterDelegate) {
@@ -1186,7 +1294,18 @@ public class NotificationCenter {
     }
 
     public ArrayList<NotificationCenterDelegate> getObservers(int i10) {
-        return this.observers.get(i10);
+        ArrayList<NotificationCenterDelegate> arrayList = this.observers.get(i10);
+        if (arrayList == null) {
+            return null;
+        }
+        ArrayList<NotificationCenterDelegate> arrayList2 = new ArrayList<>(arrayList.size());
+        for (int i11 = 0; i11 < arrayList.size(); i11++) {
+            NotificationCenterDelegate unwrap = unwrap(arrayList.get(i11));
+            if (unwrap != null) {
+                arrayList2.add(unwrap);
+            }
+        }
+        return arrayList2;
     }
 
     public int getObserversSize() {
@@ -1212,7 +1331,7 @@ public class NotificationCenter {
         if (view == null || callback == null) {
             return new a2(19);
         }
-        final NotificationCenterDelegate notificationCenterDelegate = new NotificationCenterDelegate() { // from class: org.telegram.messenger.xg
+        final NotificationCenterDelegate notificationCenterDelegate = new NotificationCenterDelegate() { // from class: org.telegram.messenger.yg
             @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
             public final void didReceivedNotification(int i11, int i12, Object[] objArr) {
                 NotificationCenter.lambda$listen$4(i10, callback, i11, i12, objArr);
@@ -1356,7 +1475,7 @@ public class NotificationCenter {
     }
 
     public void postNotificationNameOnUIThread(int i10, Object... objArr) {
-        AndroidUtilities.runOnUIThread(new x4(this, i10, objArr, 19));
+        AndroidUtilities.runOnUIThread(new y4(this, i10, objArr, 19));
     }
 
     public void removeDelayed(Runnable runnable) {
@@ -1364,23 +1483,7 @@ public class NotificationCenter {
     }
 
     public void removeObserver(NotificationCenterDelegate notificationCenterDelegate, int i10) {
-        if (BuildVars.DEBUG_VERSION && Thread.currentThread() != ApplicationLoader.applicationHandler.getLooper().getThread()) {
-            throw new RuntimeException("removeObserver allowed only from MAIN thread");
-        }
-        if (this.broadcasting == 0) {
-            ArrayList<NotificationCenterDelegate> arrayList = this.observers.get(i10);
-            if (arrayList != null) {
-                arrayList.remove(notificationCenterDelegate);
-                return;
-            }
-            return;
-        }
-        ArrayList<NotificationCenterDelegate> arrayList2 = this.removeAfterBroadcast.get(i10);
-        if (arrayList2 == null) {
-            arrayList2 = new ArrayList<>();
-            this.removeAfterBroadcast.put(i10, arrayList2);
-        }
-        arrayList2.add(notificationCenterDelegate);
+        removeObserverInternal(notificationCenterDelegate, i10);
     }
 
     public void removePostponeNotificationsCallback(PostponeNotificationCallback postponeNotificationCallback) {
@@ -1434,7 +1537,7 @@ public class NotificationCenter {
         }
     }
 
-    /* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+    /* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
     public class UniqArrayList<T> extends ArrayList<T> {
         HashSet<T> set;
 
@@ -1524,9 +1627,9 @@ public class NotificationCenter {
         allowedNotifications.allowedIds = iArr;
         this.allowedNotifications.put(this.animationInProgressPointer, allowedNotifications);
         if (this.checkForExpiredNotifications == null) {
-            wg wgVar = new wg(this, i11);
-            this.checkForExpiredNotifications = wgVar;
-            AndroidUtilities.runOnUIThread(wgVar, EXPIRE_NOTIFICATIONS_TIME);
+            xg xgVar = new xg(this, i11);
+            this.checkForExpiredNotifications = xgVar;
+            AndroidUtilities.runOnUIThread(xgVar, EXPIRE_NOTIFICATIONS_TIME);
         }
         return this.animationInProgressPointer;
     }

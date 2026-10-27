@@ -15,11 +15,11 @@ import kotlin.jvm.internal.i;
 import v0.c;
 import v0.o;
 import w0.d;
-import w7.l5;
+import w7.m5;
 import w7.t;
 import w7.u;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
 public abstract class a {
     public static d a(Intent intent) {
@@ -29,7 +29,7 @@ public abstract class a {
         }
         String type = createCredentialException.getType();
         i.d(type, "getType(...)");
-        return l5.a(createCredentialException.getMessage(), type);
+        return m5.a(createCredentialException.getMessage(), type);
     }
 
     public static c b(String str, Intent intent) {
@@ -50,7 +50,7 @@ public abstract class a {
         }
         String type = getCredentialException.getType();
         i.d(type, "getType(...)");
-        return l5.b(getCredentialException.getMessage(), type);
+        return m5.b(getCredentialException.getMessage(), type);
     }
 
     public static o d(Intent intent) {

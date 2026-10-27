@@ -26,7 +26,7 @@ import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.SvgHelper;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public class t5 extends Drawable {
     public static SparseArray r;
@@ -168,7 +168,7 @@ public class t5 extends Drawable {
                         }
                         animation.start();
                     } else {
-                        xj0 lottieAnimation = f3Var.getLottieAnimation();
+                        yj0 lottieAnimation = f3Var.getLottieAnimation();
                         if (lottieAnimation != null) {
                             lottieAnimation.start();
                         }
@@ -208,7 +208,7 @@ public class t5 extends Drawable {
     }
 
     public final void a(View view) {
-        if (view instanceof org.telegram.ui.e51) {
+        if (view instanceof org.telegram.ui.h51) {
             throw new RuntimeException();
         }
         this.m = false;

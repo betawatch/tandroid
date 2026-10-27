@@ -9,10 +9,10 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class r00 extends s4.w {
-    public final bq d = new bq(this, 19);
+    public final cp d = new cp(this, 20);
     public final /* synthetic */ s00 e;
 
     public r00(s00 s00Var) {
@@ -77,18 +77,18 @@ public final class r00 extends s4.w {
             n00 n00Var = s00Var.J;
             int i14 = p00Var2.a;
             int i15 = p00Var.a;
-            org.telegram.ui.rx rxVar = (org.telegram.ui.rx) n00Var;
+            org.telegram.ui.ux uxVar = (org.telegram.ui.ux) n00Var;
             while (true) {
-                org.telegram.ui.ay[] ayVarArr = rxVar.b.e0;
-                if (i10 >= ayVarArr.length) {
+                org.telegram.ui.dy[] dyVarArr = uxVar.b.e0;
+                if (i10 >= dyVarArr.length) {
                     break;
                 }
-                org.telegram.ui.ay ayVar = ayVarArr[i10];
-                int i16 = ayVar.h;
+                org.telegram.ui.dy dyVar = dyVarArr[i10];
+                int i16 = dyVar.h;
                 if (i16 == i14) {
-                    ayVar.h = i15;
+                    dyVar.h = i15;
                 } else if (i16 == i15) {
-                    ayVar.h = i14;
+                    dyVar.h = i14;
                 }
                 i10++;
             }
@@ -126,9 +126,9 @@ public final class r00 extends s4.w {
             e1Var.a.setPressed(true);
             org.telegram.ui.ActionBar.f7.i(s00Var.b0, e1Var.a, s00Var.a);
         } else {
-            bq bqVar = this.d;
-            AndroidUtilities.cancelRunOnUIThread(bqVar);
-            AndroidUtilities.runOnUIThread(bqVar, 320L);
+            cp cpVar = this.d;
+            AndroidUtilities.cancelRunOnUIThread(cpVar);
+            AndroidUtilities.runOnUIThread(cpVar, 320L);
         }
         if (e1Var != null) {
             e1Var.a.setTag(R.id.dragging, i10 == 2 ? Boolean.TRUE : null);

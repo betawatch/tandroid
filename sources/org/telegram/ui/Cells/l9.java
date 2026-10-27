@@ -7,9 +7,9 @@ import android.graphics.PorterDuff;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.gb1;
+import org.telegram.ui.Components.kb1;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class l9 extends FrameLayout {
     public final ImageView a;
@@ -25,11 +25,11 @@ public final class l9 extends FrameLayout {
         org.telegram.ui.ActionBar.f7.Y(b6Var, org.telegram.ui.ActionBar.y6.j5, u6Var);
         b6Var.setTextSize(16);
         b6Var.setGravity(19);
-        addView(b6Var, gb1.h(-1, 48.0f, 16, 22.0f, 0.0f, 56.0f, 0.0f));
+        addView(b6Var, kb1.h(-1, 48.0f, 16, 22.0f, 0.0f, 56.0f, 0.0f));
         ImageView imageView = new ImageView(context);
         this.a = imageView;
         org.telegram.ui.ActionBar.f7.t(imageView, org.telegram.ui.ActionBar.y6.C6, u6Var, PorterDuff.Mode.SRC_IN);
-        addView(imageView, gb1.h(24, 24.0f, 8388629, 0.0f, 0.0f, 16.0f, 0.0f));
+        addView(imageView, kb1.h(24, 24.0f, 8388629, 0.0f, 0.0f, 16.0f, 0.0f));
         int i10 = org.telegram.ui.ActionBar.y6.h5;
         int i11 = org.telegram.ui.ActionBar.o6.a;
         int x02 = org.telegram.ui.ActionBar.y6.x0(null, i10, false);

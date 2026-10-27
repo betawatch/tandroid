@@ -1,41 +1,54 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class bx0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ dx0 b;
+import android.os.Bundle;
+import android.widget.LinearLayout;
 
-    public /* synthetic */ bx0(dx0 dx0Var, int i10) {
-        this.a = i10;
-        this.b = dx0Var;
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* loaded from: classes3.dex */
+public abstract class bx0 extends LinearLayout {
+    public boolean a() {
+        return this instanceof org.telegram.ui.qd0;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                dx0 dx0Var = this.b;
-                dx0Var.V0 = false;
-                if (!dx0Var.Y0 && dx0Var.W0) {
-                    dx0Var.C(true);
-                    break;
-                }
-                break;
-            case 1:
-                this.b.V0 = false;
-                break;
-            case 2:
-                dx0 dx0Var2 = this.b;
-                dx0Var2.Y0 = false;
-                if (!dx0Var2.V0 && dx0Var2.W0) {
-                    dx0Var2.C(true);
-                    break;
-                }
-                break;
-            default:
-                this.b.Y0 = false;
-                break;
-        }
+    public boolean b() {
+        return this instanceof org.telegram.ui.qd0;
+    }
+
+    public boolean c(boolean z10) {
+        return true;
+    }
+
+    public String getHeaderName() {
+        return "";
+    }
+
+    public void d() {
+    }
+
+    public void f() {
+    }
+
+    public void g() {
+    }
+
+    public void i() {
+    }
+
+    public void j() {
+    }
+
+    public void updateColors() {
+    }
+
+    public void h(String str) {
+    }
+
+    public void k(Bundle bundle) {
+    }
+
+    public void l(Bundle bundle) {
+    }
+
+    public void m(Bundle bundle, boolean z10) {
     }
 }

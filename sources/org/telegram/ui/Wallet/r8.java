@@ -4,9 +4,9 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.wc;
-import org.telegram.ui.un;
+import org.telegram.ui.wn;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class r8 implements Runnable {
     public final /* synthetic */ int a;
@@ -43,7 +43,7 @@ public final /* synthetic */ class r8 implements Runnable {
                     jVar.u = kVar;
                     i9Var2.a0.e(0.001f);
                     i9Var2.a0.b(new z2(i9Var2, 2));
-                    i9Var2.a0.a(new g6(i9Var2, 1));
+                    i9Var2.a0.a(new h6(i9Var2, 1));
                     i9Var2.a0.h();
                     break;
                 }
@@ -59,7 +59,7 @@ public final /* synthetic */ class r8 implements Runnable {
                 break;
             case 5:
                 i9 i9Var3 = this.b;
-                i9Var3.presentFragment(un.ba(i9Var3.f.id));
+                i9Var3.presentFragment(wn.ea(i9Var3.f.id));
                 break;
             default:
                 org.telegram.messenger.t.q(R.string.WalletAddressCopiedBulletin, wc.b0(this.b), R.raw.copy, 36);

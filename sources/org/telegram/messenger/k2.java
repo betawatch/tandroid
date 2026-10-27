@@ -10,7 +10,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class k2 implements Runnable {
     public final /* synthetic */ int a;
@@ -81,7 +81,7 @@ public final /* synthetic */ class k2 implements Runnable {
                 MediaDataController.lambda$loadReplyMessagesForMessages$172((AtomicInteger) this.b, (Runnable) this.c);
                 break;
             case 18:
-                MediaDataController.lambda$fillWithAnimatedEmoji$229((boolean[]) this.b, (c7) this.c);
+                MediaDataController.lambda$fillWithAnimatedEmoji$229((boolean[]) this.b, (d7) this.c);
                 break;
             case 19:
                 ((MediaDataController) this.b).lambda$loadGroupStickerSet$44((TLRPC.StickerSet) this.c);
@@ -93,25 +93,25 @@ public final /* synthetic */ class k2 implements Runnable {
                 ((MessageObject) this.b).lambda$loadAnimatedEmojiDocument$0((TLRPC.Document) this.c);
                 break;
             case 22:
-                MessagesController.lambda$setCustomChatReactions$473((Utilities.Callback) this.b, (TLRPC.TL_error) this.c);
+                MessagesController.lambda$setCustomChatReactions$474((Utilities.Callback) this.b, (TLRPC.TL_error) this.c);
                 break;
             case 23:
-                ((MessagesController) this.b).lambda$getSponsoredMessages$443((TLRPC.messages_SponsoredMessages) this.c);
+                ((MessagesController) this.b).lambda$processUpdateArray$418((TL_update.TL_updateChannel) this.c);
                 break;
             case 24:
                 ((MessagesController) this.b).lambda$createChat$256((TLRPC.TL_messages_invitedUsers) this.c);
                 break;
             case 25:
-                ((MessagesController) this.b).lambda$processMessageIDUpdate$378((TL_update.TL_updateMessageID) this.c);
+                ((MessagesController) this.b).lambda$requestContactToken$481((Utilities.Callback) this.c);
                 break;
             case 26:
-                ((MessagesController) this.b).lambda$createChat$259((TLRPC.Updates) this.c);
+                ((MessagesController) this.b).lambda$processMessageIDUpdate$378((TL_update.TL_updateMessageID) this.c);
                 break;
             case 27:
-                ((MessagesController) this.b).lambda$checkTosUpdate$161((TLRPC.TL_help_termsOfServiceUpdate) this.c);
+                ((MessagesController) this.b).lambda$createChat$259((TLRPC.Updates) this.c);
                 break;
             case 28:
-                ((MessagesController) this.b).lambda$getSendAsPeers$446((TLRPC.TL_channels_sendAsPeers) this.c);
+                ((MessagesController) this.b).lambda$checkTosUpdate$161((TLRPC.TL_help_termsOfServiceUpdate) this.c);
                 break;
             default:
                 ((MessagesController) this.b).lambda$processUpdateArray$397((TL_update.TL_updateServiceNotification) this.c);

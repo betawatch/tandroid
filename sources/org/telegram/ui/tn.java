@@ -1,33 +1,20 @@
 package org.telegram.ui;
 
-import android.app.Activity;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.NumberTextView;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public final class tn extends org.telegram.ui.ActionBar.b6 {
-    public boolean M0;
-    public final /* synthetic */ un N0;
+public final class tn extends AnimatorListenerAdapter {
+    public final /* synthetic */ org.telegram.ui.Components.vc0 a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public tn(un unVar, Activity activity) {
-        super(activity);
-        this.N0 = unVar;
-        this.M0 = true;
+    public tn(org.telegram.ui.Components.vc0 vc0Var) {
+        this.a = vc0Var;
     }
 
-    @Override // org.telegram.ui.ActionBar.b6
-    public final void d(int i10) {
-        super.d(i10);
-        if (this.M0 && getVisibility() == 0) {
-            int dp = AndroidUtilities.dp(4.0f) + getTextWidth();
-            un unVar = this.N0;
-            unVar.S2 = dp;
-            NumberTextView numberTextView = unVar.R2;
-            if (numberTextView != null) {
-                numberTextView.setTranslationX(dp);
-            }
-        }
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        super.onAnimationEnd(animator);
+        this.a.r(1.0f);
     }
 }

@@ -24,7 +24,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.VideoEditedInfo;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class qy implements MediaDataController.KeywordResultCallback, e5, org.telegram.ui.ActionBar.b2, ImageReceiver.ImageReceiverDelegate, MessagesStorage.BooleanCallback, u5.b, t5.e, e2.j, x2.l {
     public final /* synthetic */ int a;
@@ -44,14 +44,14 @@ public final /* synthetic */ class qy implements MediaDataController.KeywordResu
         h60 h60Var = (h60) this.c;
         c60 c60Var = (c60) this.d;
         VideoEditedInfo videoEditedInfo = (VideoEditedInfo) this.b;
-        o60 o60Var = h60Var.H0;
+        p60 p60Var = h60Var.H0;
         MediaController.PhotoEntry photoEntry = new MediaController.PhotoEntry(0, 0, 0L, h60Var.a.getAbsolutePath(), 0, true, 0, 0, 0L);
         if (c60Var != null) {
             photoEntry.ttl = c60Var.c;
             photoEntry.effectId = c60Var.d;
         }
-        o60Var.n.r(photoEntry, videoEditedInfo, z10 || c60Var == null || c60Var.a, i10 != 0 ? i10 : c60Var != null ? c60Var.b : 0, i11 != 0 ? i11 : 0, false, c60Var != null ? c60Var.e : 0L);
-        o60Var.r(false, false);
+        p60Var.h.r(photoEntry, videoEditedInfo, z10 || c60Var == null || c60Var.a, i10 != 0 ? i10 : c60Var != null ? c60Var.b : 0, i11 != 0 ? i11 : 0, false, c60Var != null ? c60Var.e : 0L);
+        p60Var.s(false, false);
     }
 
     @Override // x2.l
@@ -298,26 +298,26 @@ public final /* synthetic */ class qy implements MediaDataController.KeywordResu
     @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
     public void didSetImage(ImageReceiver imageReceiver, boolean z10, boolean z11, boolean z12) {
         Bitmap bitmap;
-        d31 d31Var = (d31) this.c;
-        xp xpVar = (xp) this.d;
+        e31 e31Var = (e31) this.c;
+        yp ypVar = (yp) this.d;
         TLRPC.WallPaper wallPaper = (TLRPC.WallPaper) this.b;
         ImageReceiver.BitmapHolder bitmapSafe = imageReceiver.getBitmapSafe();
         if (!z10 || bitmapSafe == null || (bitmap = bitmapSafe.bitmap) == null) {
             return;
         }
-        Drawable drawable = xpVar.b;
-        if (drawable instanceof uc0) {
-            uc0 uc0Var = (uc0) drawable;
+        Drawable drawable = ypVar.b;
+        if (drawable instanceof vc0) {
+            vc0 vc0Var = (vc0) drawable;
             TLRPC.WallPaperSettings wallPaperSettings = wallPaper.settings;
-            uc0Var.s(d31.e(bitmap), (wallPaperSettings == null || wallPaperSettings.intensity >= 0) ? 100 : -100);
-            uc0Var.t(d31Var.L);
-            d31Var.invalidate();
+            vc0Var.s(e31.e(bitmap), (wallPaperSettings == null || wallPaperSettings.intensity >= 0) ? 100 : -100);
+            vc0Var.t(e31Var.L);
+            e31Var.invalidate();
         }
     }
 
     @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
     public /* synthetic */ void didSetImageBitmap(int i10, String str, Drawable drawable) {
-        org.telegram.messenger.o5.a(this, i10, str, drawable);
+        org.telegram.messenger.p5.a(this, i10, str, drawable);
     }
 
     @Override // u5.b
@@ -335,7 +335,7 @@ public final /* synthetic */ class qy implements MediaDataController.KeywordResu
             Log.d(c10, "Storing event with priority=" + dVar + ", name=" + str + " for destination " + str2);
         }
         ((Long) gVar.c(new qy(gVar, hVar, iVar, 8))).getClass();
-        aVar.a.s(iVar, 1, false);
+        aVar.a.t(iVar, 1, false);
         return null;
     }
 
@@ -343,12 +343,12 @@ public final /* synthetic */ class qy implements MediaDataController.KeywordResu
     public void h(org.telegram.ui.ActionBar.e2 e2Var, int i10) {
         switch (this.a) {
             case 3:
-                aw0 aw0Var = (aw0) this.c;
+                bw0 bw0Var = (bw0) this.c;
                 di.s6 s6Var = (di.s6) this.d;
                 ArrayList arrayList = (ArrayList) this.b;
                 s6Var.F(arrayList);
-                wc.b0(aw0Var.x1).R(R.raw.ic_delete, 36, LocaleController.formatPluralString("BotPreviewsDeleted", arrayList.size(), new Object[0])).j();
-                aw0Var.S(false);
+                wc.b0(bw0Var.x1).R(R.raw.ic_delete, 36, LocaleController.formatPluralString("BotPreviewsDeleted", arrayList.size(), new Object[0])).j();
+                bw0Var.S(false);
                 break;
             case 6:
                 boolean[] zArr = (boolean[]) this.c;
@@ -368,7 +368,7 @@ public final /* synthetic */ class qy implements MediaDataController.KeywordResu
 
     @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
     public /* synthetic */ void onAnimationReady(ImageReceiver imageReceiver) {
-        org.telegram.messenger.o5.b(this, imageReceiver);
+        org.telegram.messenger.p5.b(this, imageReceiver);
     }
 
     @Override // org.telegram.messenger.MessagesStorage.BooleanCallback

@@ -15,13 +15,13 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.aw;
-import org.telegram.ui.Components.mm0;
-import org.telegram.ui.ft;
-import org.telegram.ui.w10;
+import org.telegram.ui.Components.nm0;
+import org.telegram.ui.ht;
+import org.telegram.ui.y10;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
-public final class v extends mm0 {
+public final class v extends nm0 {
     public final /* synthetic */ int f3 = 0;
     public final Object g3;
     public final /* synthetic */ KeyEvent.Callback h3;
@@ -30,7 +30,7 @@ public final class v extends mm0 {
     public v(y yVar, Context context) {
         super(context, null);
         this.h3 = yVar;
-        this.g3 = new w10();
+        this.g3 = new y10();
     }
 
     public void C1(boolean z10, int i10, int i11, int i12, int i13) {
@@ -46,7 +46,7 @@ public final class v extends mm0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.mm0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.nm0, android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         int i10 = this.f3;
         KeyEvent.Callback callback = this.h3;
@@ -65,10 +65,10 @@ public final class v extends mm0 {
                 canvas.save();
                 RectF rectF = AndroidUtilities.rectTmp;
                 rectF.set(paddingLeft, 0.0f, AndroidUtilities.dp(12.0f) + paddingLeft, getHeight());
-                w10 w10Var = (w10) obj;
-                w10Var.b(canvas, rectF, 0, yVar.d);
+                y10 y10Var = (y10) obj;
+                y10Var.b(canvas, rectF, 0, yVar.d);
                 rectF.set(width - AndroidUtilities.dp(12.0f), 0.0f, width, getHeight());
-                w10Var.b(canvas, rectF, 2, yVar.d);
+                y10Var.b(canvas, rectF, 2, yVar.d);
                 canvas.restore();
                 canvas.restore();
                 break;
@@ -106,7 +106,7 @@ public final class v extends mm0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.mm0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.nm0, android.view.ViewGroup, android.view.View
     public boolean dispatchTouchEvent(MotionEvent motionEvent) {
         switch (this.f3) {
             case 0:
@@ -118,7 +118,7 @@ public final class v extends mm0 {
         return super.dispatchTouchEvent(motionEvent);
     }
 
-    @Override // org.telegram.ui.Components.mm0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
+    @Override // org.telegram.ui.Components.nm0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
     public boolean drawChild(Canvas canvas, View view, long j10) {
         switch (this.f3) {
             case 2:
@@ -149,7 +149,7 @@ public final class v extends mm0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.mm0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.nm0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
     public void onDetachedFromWindow() {
         ViewGroup viewGroup;
         switch (this.f3) {
@@ -165,7 +165,7 @@ public final class v extends mm0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.mm0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
+    @Override // org.telegram.ui.Components.nm0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
     public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
         MotionEvent motionEvent2;
         org.telegram.ui.ActionBar.o1 o1Var;
@@ -190,13 +190,13 @@ public final class v extends mm0 {
                 motionEvent2 = motionEvent;
                 return super.onInterceptTouchEvent(motionEvent2);
             default:
-                ft o10 = ft.o();
+                ht o10 = ht.o();
                 aw awVar = (aw) this.h3;
                 return super.onInterceptTouchEvent(motionEvent) || o10.p(motionEvent, awVar.h, awVar.N, this.n2);
         }
     }
 
-    @Override // org.telegram.ui.Components.mm0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.nm0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
     public void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
         switch (this.f3) {
             case 1:
@@ -213,7 +213,7 @@ public final class v extends mm0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.mm0, androidx.recyclerview.widget.RecyclerView, android.view.View
+    @Override // org.telegram.ui.Components.nm0, androidx.recyclerview.widget.RecyclerView, android.view.View
     public void onMeasure(int i10, int i11) {
         switch (this.f3) {
             case 2:
@@ -227,7 +227,7 @@ public final class v extends mm0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.mm0, androidx.recyclerview.widget.RecyclerView, android.view.View
+    @Override // org.telegram.ui.Components.nm0, androidx.recyclerview.widget.RecyclerView, android.view.View
     public boolean onTouchEvent(MotionEvent motionEvent) {
         org.telegram.ui.ActionBar.o1 o1Var;
         switch (this.f3) {

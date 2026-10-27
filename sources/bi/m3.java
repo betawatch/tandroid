@@ -10,7 +10,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.MessagesStorage;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.vh;
+import org.telegram.messenger.wh;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.RequestDelegateTimestamp;
@@ -19,13 +19,13 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_chatlists;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.hn0;
-import org.telegram.ui.Components.k80;
-import org.telegram.ui.b00;
+import org.telegram.ui.Components.in0;
+import org.telegram.ui.Components.l80;
+import org.telegram.ui.d00;
 import org.telegram.ui.re;
-import org.telegram.ui.un;
+import org.telegram.ui.wn;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class m3 implements Runnable {
     public final /* synthetic */ int a;
@@ -88,7 +88,7 @@ public final /* synthetic */ class m3 implements Runnable {
                     MessagesController.getInstance(z7Var.a).putChats(tL_stories_peerStories.chats, false);
                     TL_stories.PeerStories peerStories = tL_stories_peerStories.stories;
                     if (!peerStories.stories.isEmpty()) {
-                        MessagesController.getInstance(z7Var.a).getStoriesController().a0(j11, peerStories);
+                        MessagesController.getInstance(z7Var.a).getStoriesController().d0(j11, peerStories);
                         j10 = j11;
                         di.a8.n(peerStories, new y2(z7Var, view, j11, w7Var, 11));
                         z10 = false;
@@ -104,7 +104,7 @@ public final /* synthetic */ class m3 implements Runnable {
                         }
                         if (!z10) {
                             view.invalidate();
-                            MessagesController.getInstance(z7Var.a).getStoriesController().e0(j10, false);
+                            MessagesController.getInstance(z7Var.a).getStoriesController().h0(j10, false);
                             break;
                         }
                     }
@@ -128,14 +128,14 @@ public final /* synthetic */ class m3 implements Runnable {
                 ((ConnectionsManager) obj5).lambda$sendRequestInternal$7((RequestDelegate) obj3, (TLObject) obj4, (TLRPC.TL_error) obj2, (RequestDelegateTimestamp) obj, this.b);
                 break;
             case 5:
-                un unVar = (un) obj5;
-                hn0 hn0Var = (hn0) obj2;
-                ((k80) obj4).n0 = true;
-                Activity parentActivity = unVar.getParentActivity();
+                wn wnVar = (wn) obj5;
+                in0 in0Var = (in0) obj2;
+                ((l80) obj4).n0 = true;
+                Activity parentActivity = wnVar.getParentActivity();
                 long j12 = ((TLRPC.TL_messageEntityFormattedDate) obj3).date;
                 long j13 = this.b;
-                ag.j0 j0Var = new ag.j0(unVar, (ArrayList) obj, j13, hn0Var, 3);
-                re reVar = new re(hn0Var, i11);
+                ag.j0 j0Var = new ag.j0(wnVar, (ArrayList) obj, j13, in0Var, 3);
+                re reVar = new re(in0Var, i11);
                 Pattern pattern = org.telegram.ui.Components.g5.a;
                 org.telegram.ui.Components.g5.J(parentActivity, j13, j12, 0, true, j0Var, reVar, new org.telegram.ui.Components.d5(null), null);
                 break;
@@ -150,11 +150,11 @@ public final /* synthetic */ class m3 implements Runnable {
                         TL_chatlists.TL_chatlists_exportedInvites tL_chatlists_exportedInvites = (TL_chatlists.TL_chatlists_exportedInvites) tLObject2;
                         r2Var.getMessagesController().putChats(tL_chatlists_exportedInvites.chats, false);
                         r2Var.getMessagesController().putUsers(tL_chatlists_exportedInvites.users, false);
-                        new b00(r2Var, dialogFilter, tL_chatlists_exportedInvites.invites).show();
+                        new d00(r2Var, dialogFilter, tL_chatlists_exportedInvites.invites).show();
                     } else if (tL_error == null || !"FILTER_ID_INVALID".equals(tL_error.text) || dialogFilter.isDefault()) {
-                        vh.n(R.string.UnknownError, org.telegram.ui.Components.wc.b0(r2Var), null);
+                        wh.n(R.string.UnknownError, org.telegram.ui.Components.wc.b0(r2Var), null);
                     } else {
-                        new b00(r2Var, dialogFilter, null).show();
+                        new d00(r2Var, dialogFilter, null).show();
                     }
                     if (runnable != null) {
                         AndroidUtilities.runOnUIThread(runnable, Math.max(0L, 200 - (System.currentTimeMillis() - this.b)));

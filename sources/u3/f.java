@@ -45,7 +45,7 @@ import org.telegram.messenger.MessagesStorage;
 import org.telegram.tgnet.TLObject;
 import z3.k;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
 public final class f implements o {
     public static final byte[] k0 = {49, 10, 48, 48, 58, 48, 48, 58, 48, 48, 44, 48, 48, 48, 32, 45, 45, 62, 32, 48, 48, 58, 48, 48, 58, 48, 48, 44, 48, 48, 48, 10};
@@ -215,7 +215,7 @@ public final class f implements o {
                                 }
                                 if (q9 != 0) {
                                     int i12 = (int) q9;
-                                    lVar.s(i12, false);
+                                    lVar.u(i12, false);
                                     zVar.b += i12;
                                 }
                             } else {
@@ -473,11 +473,11 @@ public final class f implements o {
                                     if (a2 == 357149030 || a2 == 524531317 || a2 == 475249515 || a2 == 374648427) {
                                     }
                                 }
-                                pVar3.q(1);
+                                pVar3.r(1);
                                 i19 = 4;
                                 i20 = 0;
                             }
-                            pVar3.q(i11);
+                            pVar3.r(i11);
                             b10 = a2;
                         }
                         z10 = true;
@@ -610,7 +610,7 @@ public final class f implements o {
                             break;
                     }
                     if (i10 == 0) {
-                        pVar3.q((int) bVar.g);
+                        pVar3.r((int) bVar.g);
                         bVar.e = 0;
                         z12 = false;
                         r42 = 1;

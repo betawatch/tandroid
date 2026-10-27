@@ -9,12 +9,12 @@ import org.telegram.tgnet.tl.TL_payments;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.DataSettingsActivity;
 import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.cy;
-import org.telegram.ui.ff;
-import org.telegram.ui.wt;
-import org.telegram.ui.yw;
+import org.telegram.ui.ax;
+import org.telegram.ui.ef;
+import org.telegram.ui.ey;
+import org.telegram.ui.yt;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class c2 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -50,7 +50,7 @@ public final /* synthetic */ class c2 implements Utilities.Callback {
             case 1:
                 DataSettingsActivity dataSettingsActivity = (DataSettingsActivity) this.c;
                 Long l4 = (Long) obj;
-                AndroidUtilities.cancelRunOnUIThread((wt) this.d);
+                AndroidUtilities.cancelRunOnUIThread((yt) this.d);
                 dataSettingsActivity.V = dataSettingsActivity.V || System.currentTimeMillis() - this.b > 120;
                 dataSettingsActivity.X = l4.longValue();
                 dataSettingsActivity.W = false;
@@ -60,13 +60,13 @@ public final /* synthetic */ class c2 implements Utilities.Callback {
                 }
                 break;
             case 2:
-                yw ywVar = (yw) this.c;
+                ax axVar = (ax) this.c;
                 Runnable runnable = (Runnable) obj;
                 ((org.telegram.ui.ActionBar.e2) this.d).r(150L);
-                cy cyVar = ywVar.b;
-                Boolean bool = cyVar.G.bot_participant;
+                ey eyVar = axVar.b;
+                Boolean bool = eyVar.G.bot_participant;
                 if (bool != null && bool.booleanValue()) {
-                    cyVar.getMessagesController().addUserToChat(this.b, cyVar.getMessagesController().getUser(Long.valueOf(cyVar.H)), 0, null, cyVar, false, runnable, new ff(6, runnable));
+                    eyVar.getMessagesController().addUserToChat(this.b, eyVar.getMessagesController().getUser(Long.valueOf(eyVar.H)), 0, null, eyVar, false, runnable, new ef(6, runnable));
                     break;
                 } else {
                     runnable.run();

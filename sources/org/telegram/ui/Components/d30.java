@@ -8,7 +8,7 @@ import android.view.WindowManager;
 import android.widget.FrameLayout;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class d30 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a = 0;
@@ -18,12 +18,12 @@ public final class d30 extends AnimatorListenerAdapter {
     public final /* synthetic */ Object e;
     public final /* synthetic */ Object f;
 
-    public d30(org.telegram.ui.ga1 ga1Var, si siVar, org.telegram.ui.Cells.s1 s1Var, org.telegram.ui.hk hkVar, org.telegram.ui.un unVar) {
-        this.f = ga1Var;
+    public d30(org.telegram.ui.ia1 ia1Var, si siVar, org.telegram.ui.Cells.s1 s1Var, org.telegram.ui.jk jkVar, org.telegram.ui.wn wnVar) {
+        this.f = ia1Var;
         this.b = siVar;
         this.c = s1Var;
-        this.d = hkVar;
-        this.e = unVar;
+        this.d = jkVar;
+        this.e = wnVar;
     }
 
     @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
@@ -46,10 +46,10 @@ public final class d30 extends AnimatorListenerAdapter {
                 }
                 break;
             default:
-                org.telegram.ui.ga1 ga1Var = (org.telegram.ui.ga1) this.f;
-                ga1Var.D.unlock();
+                org.telegram.ui.ia1 ia1Var = (org.telegram.ui.ia1) this.f;
+                ia1Var.D.unlock();
                 si siVar = (si) this.b;
-                ((ArrayList) siVar.c).remove(ga1Var);
+                ((ArrayList) siVar.c).remove(ia1Var);
                 siVar.a();
                 ((ViewGroup) siVar.d).invalidate();
                 org.telegram.ui.Cells.s1 s1Var = (org.telegram.ui.Cells.s1) this.c;
@@ -58,10 +58,10 @@ public final class d30 extends AnimatorListenerAdapter {
                 ChatActivityEnterView chatActivityEnterView = (ChatActivityEnterView) this.d;
                 chatActivityEnterView.setTextTransitionIsRunning(false);
                 chatActivityEnterView.getEditField().setAlpha(1.0f);
-                org.telegram.ui.un unVar = (org.telegram.ui.un) this.e;
-                ((cp[]) unVar.a0.b)[0].c.setAlpha(1.0f);
-                ((cp[]) unVar.a0.b)[0].d.setAlpha(1.0f);
-                c6.release((View) null, ga1Var.H);
+                org.telegram.ui.wn wnVar = (org.telegram.ui.wn) this.e;
+                ((dp[]) wnVar.a0.b)[0].c.setAlpha(1.0f);
+                ((dp[]) wnVar.a0.b)[0].d.setAlpha(1.0f);
+                c6.release((View) null, ia1Var.H);
                 break;
         }
     }

@@ -25,7 +25,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class bn extends ViewGroup {
     public an E;
@@ -289,7 +289,7 @@ public final class bn extends ViewGroup {
         ValueAnimator ofFloat = ValueAnimator.ofFloat(f7, 0.0f);
         cnVar.L = ofFloat;
         ofFloat.addUpdateListener(new wm(this, 1));
-        cnVar.L.addListener(new org.telegram.ui.qp(this, 16));
+        cnVar.L.addListener(new org.telegram.ui.sp(this, 16));
         cnVar.L.setDuration(200L);
         cnVar.L.start();
         invalidate();
@@ -312,8 +312,8 @@ public final class bn extends ViewGroup {
         arrayList2.addAll(arrayList);
         if (z10) {
             boolean z12 = false;
-            chatAttachAlertPhotoLayout.y0(false);
-            chatAttachAlertPhotoLayout.w0();
+            chatAttachAlertPhotoLayout.z0(false);
+            chatAttachAlertPhotoLayout.x0();
             int childCount = fmVar.getChildCount();
             int i10 = 0;
             while (i10 < childCount) {
@@ -332,15 +332,15 @@ public final class bn extends ViewGroup {
                     if (tiVar.T0 != 0 || tiVar.H) {
                         x5Var.getCheckBox().setVisibility(8);
                     }
-                    MediaController.PhotoEntry b02 = chatAttachAlertPhotoLayout.b0(R);
-                    if (b02 != null) {
-                        x5Var.d(b02, hashMap2.size() > 1, z14 && chatAttachAlertPhotoLayout.T0 == chatAttachAlertPhotoLayout.U0, R == tmVar.h() - 1, tiVar.i0);
-                        if ((tiVar.f0 instanceof org.telegram.ui.un) && tiVar.W1) {
+                    MediaController.PhotoEntry c02 = chatAttachAlertPhotoLayout.c0(R);
+                    if (c02 != null) {
+                        x5Var.d(c02, hashMap2.size() > 1, z14 && chatAttachAlertPhotoLayout.T0 == chatAttachAlertPhotoLayout.U0, R == tmVar.h() - 1, tiVar.i0);
+                        if ((tiVar.f0 instanceof org.telegram.ui.wn) && tiVar.W1) {
                             z11 = false;
-                            x5Var.b(arrayList2.indexOf(Integer.valueOf(b02.imageId)), hashMap2.containsKey(Integer.valueOf(b02.imageId)), false);
+                            x5Var.b(arrayList2.indexOf(Integer.valueOf(c02.imageId)), hashMap2.containsKey(Integer.valueOf(c02.imageId)), false);
                         } else {
                             z11 = false;
-                            x5Var.b(-1, hashMap2.containsKey(Integer.valueOf(b02.imageId)), false);
+                            x5Var.b(-1, hashMap2.containsKey(Integer.valueOf(c02.imageId)), false);
                         }
                     } else {
                         z11 = false;
@@ -353,7 +353,7 @@ public final class bn extends ViewGroup {
             }
         }
         if (size != this.h.size()) {
-            this.P.b.c2(1);
+            this.P.b.d2(1);
         }
     }
 
@@ -484,7 +484,7 @@ public final class bn extends ViewGroup {
             } else {
                 if (anVar.u == null || anVar.v != j10) {
                     anVar.v = j10;
-                    anVar.u = new q11(bi.dd.W0(false, LocaleController.formatPluralStringComma("UnlockPaidContent", (int) j10), 0.7f, null), 14.0f, AndroidUtilities.bold());
+                    anVar.u = new r11(bi.dd.W0(false, LocaleController.formatPluralStringComma("UnlockPaidContent", (int) j10), 0.7f, null), 14.0f, AndroidUtilities.bold());
                 }
                 float dp = AndroidUtilities.dp(28.0f) + anVar.u.c;
                 float dp2 = AndroidUtilities.dp(32.0f);
@@ -501,11 +501,11 @@ public final class bn extends ViewGroup {
                 paint.setColor(1610612736);
                 float f21 = dp2 / f18;
                 canvas.drawRoundRect(rectF, f21, f21, paint);
-                q11 q11Var = anVar.u;
+                r11 r11Var = anVar.u;
                 float dp3 = AndroidUtilities.dp(14.0f) + (((anVar.r / f18) + anVar.n) - (dp / f18));
                 float f22 = anVar.p + (anVar.s / f18);
                 f7 = b10;
-                q11Var.c(dp3, f22, 1.0f, -1, canvas);
+                r11Var.c(dp3, f22, 1.0f, -1, canvas);
             }
             if (z11) {
                 invalidate();
@@ -572,7 +572,7 @@ public final class bn extends ViewGroup {
         boolean z10;
         zm zmVar3;
         int i10;
-        org.telegram.ui.un unVar;
+        org.telegram.ui.wn wnVar;
         zm zmVar4;
         vm vmVar;
         ArrayList arrayList;
@@ -751,8 +751,8 @@ public final class bn extends ViewGroup {
                                     org.telegram.ui.ActionBar.r2 r2Var = tiVar.f0;
                                     if (i22 != 0) {
                                         i10 = 1;
-                                    } else if (r2Var instanceof org.telegram.ui.un) {
-                                        unVar = (org.telegram.ui.un) r2Var;
+                                    } else if (r2Var instanceof org.telegram.ui.wn) {
+                                        wnVar = (org.telegram.ui.wn) r2Var;
                                         i10 = 0;
                                         if (r2Var == null) {
                                             r2Var = LaunchActivity.R();
@@ -761,24 +761,24 @@ public final class bn extends ViewGroup {
                                             AndroidUtilities.hideKeyboard(r2Var.getFragmentView().findFocus());
                                             AndroidUtilities.hideKeyboard(tiVar.getContainer().findFocus());
                                         }
-                                        PhotoViewer.u1().M2(null, r2Var, cnVar.a);
-                                        PhotoViewer.u1().N2(tiVar);
-                                        PhotoViewer u12 = PhotoViewer.u1();
+                                        PhotoViewer.v1().N2(null, r2Var, cnVar.a);
+                                        PhotoViewer.v1().O2(tiVar);
+                                        PhotoViewer v12 = PhotoViewer.v1();
                                         int i23 = tiVar.V1;
                                         boolean z11 = tiVar.W1;
-                                        u12.h = i23;
-                                        u12.n = z11;
+                                        v12.h = i23;
+                                        v12.n = z11;
                                         this.N.a = arrayList6;
-                                        PhotoViewer.u1().i2(new ArrayList(arrayList6), indexOf, i10, false, this.N, unVar);
+                                        PhotoViewer.v1().j2(new ArrayList(arrayList6), indexOf, i10, false, this.N, wnVar);
                                         cnVar.P.getClass();
-                                        if (ChatAttachAlertPhotoLayout.T()) {
-                                            PhotoViewer u13 = PhotoViewer.u1();
-                                            Editable text = tiVar.r1().getText();
-                                            u13.p7 = true;
-                                            u13.q7 = text;
+                                        if (ChatAttachAlertPhotoLayout.U()) {
+                                            PhotoViewer v13 = PhotoViewer.v1();
+                                            Editable text = tiVar.s1().getText();
+                                            v13.p7 = true;
+                                            v13.q7 = text;
                                             zmVar4 = null;
-                                            u13.C2(null, text, false, false);
-                                            u13.v3(null);
+                                            v13.D2(null, text, false, false);
+                                            v13.w3(null);
                                             this.F = zmVar4;
                                             this.y = 0L;
                                             cnVar.J = zmVar4;
@@ -787,22 +787,22 @@ public final class bn extends ViewGroup {
                                     } else {
                                         i10 = 4;
                                     }
-                                    unVar = null;
+                                    wnVar = null;
                                     if (r2Var == null) {
                                     }
                                     if (!tiVar.c2.E()) {
                                     }
-                                    PhotoViewer.u1().M2(null, r2Var, cnVar.a);
-                                    PhotoViewer.u1().N2(tiVar);
-                                    PhotoViewer u122 = PhotoViewer.u1();
+                                    PhotoViewer.v1().N2(null, r2Var, cnVar.a);
+                                    PhotoViewer.v1().O2(tiVar);
+                                    PhotoViewer v122 = PhotoViewer.v1();
                                     int i232 = tiVar.V1;
                                     boolean z112 = tiVar.W1;
-                                    u122.h = i232;
-                                    u122.n = z112;
+                                    v122.h = i232;
+                                    v122.n = z112;
                                     this.N.a = arrayList6;
-                                    PhotoViewer.u1().i2(new ArrayList(arrayList6), indexOf, i10, false, this.N, unVar);
+                                    PhotoViewer.v1().j2(new ArrayList(arrayList6), indexOf, i10, false, this.N, wnVar);
                                     cnVar.P.getClass();
-                                    if (ChatAttachAlertPhotoLayout.T()) {
+                                    if (ChatAttachAlertPhotoLayout.U()) {
                                     }
                                 } else if (cnVar.getSelectedItemsCount() > 1) {
                                     MediaController.PhotoEntry photoEntry = this.F.b;

@@ -3,9 +3,9 @@ package rg;
 import android.graphics.SurfaceTexture;
 import android.view.TextureView;
 import org.telegram.ui.Components.la;
-import org.telegram.ui.Wallet.q6;
+import org.telegram.ui.Wallet.a6;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class y0 implements TextureView.SurfaceTextureListener {
     public final /* synthetic */ la a;
@@ -43,7 +43,7 @@ public final class y0 implements TextureView.SurfaceTextureListener {
         c1 c1Var = this.b;
         if (c1Var.d != null && !c1Var.y) {
             q0 q0Var = c1Var.c;
-            q0Var.f.f(new q6(25, q0Var, new x0(this, 2)));
+            q0Var.f.f(new a6(26, q0Var, new x0(this, 2)));
         }
         return true;
     }

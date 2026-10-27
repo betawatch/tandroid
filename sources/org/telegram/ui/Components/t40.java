@@ -24,7 +24,7 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public class t40 extends FrameLayout {
     public long E;
@@ -69,7 +69,7 @@ public class t40 extends FrameLayout {
         org.telegram.ui.ActionBar.f7.O(imageView2, 5, i10, -1, 1, f7, u6Var, Q, porterDuffColorFilter).h = mode;
         ImageView imageView3 = this.b;
         boolean z10 = this.r;
-        addView(imageView3, gb1.h(34, 34.0f, 21, 0.0f, z10 ? 3.0f : 0.0f, 0.0f, z10 ? 0.0f : 3.0f));
+        addView(imageView3, kb1.h(34, 34.0f, 21, 0.0f, z10 ? 3.0f : 0.0f, 0.0f, z10 ? 0.0f : 3.0f));
         setOnClickListener(new f0(this, 25));
     }
 
@@ -609,7 +609,7 @@ public class t40 extends FrameLayout {
             mdVar.setBackground(c02);
             org.telegram.ui.ActionBar.f7.k(mdVar, c02, N, null, u6Var);
             mdVar.setPadding(AndroidUtilities.dp(10.0f), 0, AndroidUtilities.dp(10.0f), 0);
-            addView(mdVar, gb1.h(-2, 30.0f, 51, 0.0f, z10 ? 6.0f : 0.0f, 0.0f, z10 ? 0.0f : 6.0f));
+            addView(mdVar, kb1.h(-2, 30.0f, 51, 0.0f, z10 ? 6.0f : 0.0f, 0.0f, z10 ? 0.0f : 6.0f));
         } else {
             mdVar.setGravity(51);
             int dp2 = AndroidUtilities.dp(10.0f);
@@ -619,7 +619,7 @@ public class t40 extends FrameLayout {
             mdVar.setBackground(c03);
             org.telegram.ui.ActionBar.f7.k(mdVar, c03, N2, null, u6Var);
             mdVar.setPadding(AndroidUtilities.dp(i10 == 0 ? 54.0f : 12.0f), AndroidUtilities.dp(9.0f), AndroidUtilities.dp(12.0f), AndroidUtilities.dp(10.0f));
-            addView(mdVar, gb1.h(-2, -2.0f, 51, 0.0f, z10 ? 6.0f : 0.0f, 0.0f, z10 ? 0.0f : 6.0f));
+            addView(mdVar, kb1.h(-2, -2.0f, 51, 0.0f, z10 ? 6.0f : 0.0f, 0.0f, z10 ? 0.0f : 6.0f));
         }
         if (i10 == 0) {
             mdVar.setText(LocaleController.getString(R.string.AutoplayVideoInfo));
@@ -628,13 +628,13 @@ public class t40 extends FrameLayout {
             imageView.setImageResource(R.drawable.tooltip_sound);
             this.b.setScaleType(ImageView.ScaleType.CENTER);
             org.telegram.ui.ActionBar.f7.t(this.b, i11, u6Var, PorterDuff.Mode.MULTIPLY);
-            addView(this.b, gb1.h(38, 34.0f, 51, 7.0f, 7.0f, 0.0f, 0.0f));
+            addView(this.b, kb1.h(38, 34.0f, 51, 7.0f, 7.0f, 0.0f, 0.0f));
         }
         ImageView imageView2 = new ImageView(context);
         this.c = imageView2;
         imageView2.setImageResource(z10 ? R.drawable.tooltip_arrow_up : R.drawable.tooltip_arrow);
         org.telegram.ui.ActionBar.f7.t(imageView2, org.telegram.ui.ActionBar.y6.qf, u6Var, PorterDuff.Mode.MULTIPLY);
-        addView(imageView2, gb1.h(14, 6.0f, (z10 ? 48 : 80) | 3, 0.0f, 0.0f, 0.0f, 0.0f));
+        addView(imageView2, kb1.h(14, 6.0f, (z10 ? 48 : 80) | 3, 0.0f, 0.0f, 0.0f, 0.0f));
     }
 
     public void setVisibleListener(s40 s40Var) {

@@ -73,20 +73,20 @@ import org.telegram.ui.ActionBar.e2;
 import org.telegram.ui.ActionBar.k3;
 import org.telegram.ui.ActionBar.r2;
 import org.telegram.ui.ActionBar.u6;
-import org.telegram.ui.Components.ak0;
-import org.telegram.ui.Components.gb1;
-import org.telegram.ui.Components.k80;
+import org.telegram.ui.Components.bk0;
+import org.telegram.ui.Components.kb1;
+import org.telegram.ui.Components.l80;
 import org.telegram.ui.Components.la;
-import org.telegram.ui.Components.m71;
+import org.telegram.ui.Components.n71;
 import org.telegram.ui.Components.s6;
 import org.telegram.ui.Components.wc;
 import org.telegram.ui.Components.y9;
 import org.telegram.ui.Components.yc;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.aq0;
-import org.telegram.ui.un;
+import org.telegram.ui.cq0;
+import org.telegram.ui.wn;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class e0 implements Runnable {
     public final /* synthetic */ int a;
@@ -481,18 +481,18 @@ public final /* synthetic */ class e0 implements Runnable {
         CharSequence charSequence6;
         switch (this.a) {
             case 0:
-                m71 m71Var = (m71) this.d;
+                n71 n71Var = (n71) this.d;
                 o0 o0Var = (o0) this.e;
                 Utilities.CallbackReturn callbackReturn = (Utilities.CallbackReturn) this.b;
                 Utilities.Callback callback = (Utilities.Callback) this.c;
-                if (o0.d(m71Var.getParentActivity())) {
+                if (o0.d(n71Var.getParentActivity())) {
                     o0Var.e();
-                    aq0 aq0Var = new aq0(10, false, false, null);
-                    aq0Var.G = 1;
-                    aq0Var.H = false;
-                    aq0Var.x = false;
-                    aq0Var.V = new k0(callbackReturn, m71Var, callback);
-                    m71Var.presentFragment(aq0Var);
+                    cq0 cq0Var = new cq0(10, false, false, null);
+                    cq0Var.G = 1;
+                    cq0Var.H = false;
+                    cq0Var.x = false;
+                    cq0Var.V = new k0(callbackReturn, n71Var, callback);
+                    n71Var.presentFragment(cq0Var);
                     return;
                 }
                 return;
@@ -577,8 +577,8 @@ public final /* synthetic */ class e0 implements Runnable {
                 if (r2Var2 != null && tL_error2 != null) {
                     wc.b0(r2Var2).g0(tL_error2, false);
                 }
-                if ((r2Var2 instanceof un) && tL_error2 == null) {
-                    ((un) r2Var2).kc();
+                if ((r2Var2 instanceof wn) && tL_error2 == null) {
+                    ((wn) r2Var2).oc();
                 }
                 cVar.b();
                 e2Var.dismiss();
@@ -617,9 +617,9 @@ public final /* synthetic */ class e0 implements Runnable {
                     AndroidUtilities.runOnUIThread(runnable);
                     return;
                 }
-                ak0 ak0Var = z5Var.l0;
-                if (ak0Var != null) {
-                    ak0Var.d();
+                bk0 bk0Var = z5Var.l0;
+                if (bk0Var != null) {
+                    bk0Var.d();
                     AndroidUtilities.runOnUIThread(new ag.c(4), 750L);
                 }
                 z5Var.Q.animate().alpha(0.0f).start();
@@ -652,14 +652,14 @@ public final /* synthetic */ class e0 implements Runnable {
                     g1Var.x.setVisibility(8);
                     g1Var.setRibbonColor(-3065286);
                     y9 y9Var = g1Var.y;
-                    FrameLayout.LayoutParams i14 = gb1.i(42, 42, 17);
+                    FrameLayout.LayoutParams i14 = kb1.i(42, 42, 17);
                     g1Var.E = i14;
                     y9Var.setLayoutParams(i14);
                     int i15 = i13 + 1;
                     boolean z11 = i15 >= arrayList2.size();
                     LinearLayout linearLayout = z5Var.N;
                     z5Var.O[i13] = g1Var;
-                    linearLayout.addView(g1Var, gb1.t(74, 74, 0.0f, 51, 0, 0, z11 ? 0 : 6, 0));
+                    linearLayout.addView(g1Var, kb1.t(74, 74, 0.0f, 51, 0, 0, z11 ? 0 : 6, 0));
                     i13 = i15;
                 }
                 return;
@@ -1094,9 +1094,9 @@ public final /* synthetic */ class e0 implements Runnable {
                 li.q qVar = (li.q) this.d;
                 li.a aVar = (li.a) this.e;
                 TL_iv.PageBlock pageBlock = (TL_iv.PageBlock) this.b;
-                k80 k80Var = (k80) this.c;
+                l80 l80Var = (l80) this.c;
                 qVar.r.b5(aVar, pageBlock);
-                k80Var.u();
+                l80Var.u();
                 return;
             case 28:
                 b();

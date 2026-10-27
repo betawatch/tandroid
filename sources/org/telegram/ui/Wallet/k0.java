@@ -10,9 +10,9 @@ import org.json.JSONObject;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.bv;
+import org.telegram.ui.dv;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class k0 {
     public boolean h;
@@ -91,7 +91,7 @@ public final class k0 {
         Iterator it = this.d.iterator();
         while (it.hasNext()) {
             TL_wallet.walletTransaction wallettransaction3 = (TL_wallet.walletTransaction) hashMap.get((String) it.next());
-            if (wallettransaction3 != null && b(wallettransaction3) && l0.f0(wallettransaction3, wallettransaction)) {
+            if (wallettransaction3 != null && b(wallettransaction3) && l0.i0(wallettransaction3, wallettransaction)) {
                 return wallettransaction3;
             }
         }
@@ -114,7 +114,7 @@ public final class k0 {
             i10++;
             String str3 = (String) obj;
             TL_wallet.walletTransaction wallettransaction3 = (TL_wallet.walletTransaction) hashMap2.get(str3);
-            if (TextUtils.equals(str3, wallettransaction.id) || (wallettransaction3 != null && (wallettransaction3 == wallettransaction2 || l0.f0(wallettransaction3, wallettransaction)))) {
+            if (TextUtils.equals(str3, wallettransaction.id) || (wallettransaction3 != null && (wallettransaction3 == wallettransaction2 || l0.i0(wallettransaction3, wallettransaction)))) {
                 hashSet.remove(str3);
                 hashMap.remove(str3);
             }
@@ -187,7 +187,7 @@ public final class k0 {
                     Object obj = arrayList.get(i10);
                     i10++;
                     TL_wallet.walletTransaction wallettransaction2 = (TL_wallet.walletTransaction) obj;
-                    if ((!TextUtils.isEmpty(wallettransaction.id) && TextUtils.equals(wallettransaction.id, wallettransaction2.id)) || (wallettransaction.incoming == wallettransaction2.incoming && (l0.a0(wallettransaction.tx_hash, wallettransaction2.tx_hash) || l0.a0(wallettransaction.messageHash, wallettransaction2.messageHash)))) {
+                    if ((!TextUtils.isEmpty(wallettransaction.id) && TextUtils.equals(wallettransaction.id, wallettransaction2.id)) || (wallettransaction.incoming == wallettransaction2.incoming && (l0.c0(wallettransaction.tx_hash, wallettransaction2.tx_hash) || l0.c0(wallettransaction.messageHash, wallettransaction2.messageHash)))) {
                         if (TextUtils.isEmpty(wallettransaction2.gaslessMessageBodyHash)) {
                             wallettransaction2.gaslessMessageBodyHash = wallettransaction.gaslessMessageBodyHash;
                         }
@@ -217,7 +217,7 @@ public final class k0 {
         arrayList3.clear();
         arrayList3.addAll(arrayList2);
         arrayList3.addAll(arrayList);
-        List.-EL.sort(arrayList3, new bv(14));
+        List.-EL.sort(arrayList3, new dv(14));
         e3 e3Var = this.a;
         HashSet hashSet2 = e3Var.a;
         HashSet hashSet3 = e3Var.a;

@@ -17,14 +17,14 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.messenger.vh;
+import org.telegram.messenger.wh;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.ds;
 import org.telegram.ui.Components.xc;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class d9 extends View {
     public int a;
@@ -206,7 +206,7 @@ public final class d9 extends View {
             } else {
                 float dpf24 = this.s ? AndroidUtilities.dpf2(14.66f) + rectF.left : rectF.centerX();
                 Drawable drawable2 = drawableArr[1];
-                int w10 = (int) vh.w(fArr[1], 2.0f, abs, dpf24);
+                int w10 = (int) wh.w(fArr[1], 2.0f, abs, dpf24);
                 float centerY = rectF.centerY();
                 float f11 = (fArr[1] / 2.0f) * abs;
                 f7 = 0.5f;
@@ -218,7 +218,7 @@ public final class d9 extends View {
             if (drawableArr[c10] != null && d <= f7) {
                 float dpf25 = this.s ? AndroidUtilities.dpf2(14.66f) + rectF.left : rectF.centerX();
                 Drawable drawable3 = drawableArr[c10];
-                int w11 = (int) vh.w(fArr[c10], 2.0f, abs, dpf25);
+                int w11 = (int) wh.w(fArr[c10], 2.0f, abs, dpf25);
                 float centerY2 = rectF.centerY();
                 float f12 = (fArr[c10] / 2.0f) * abs;
                 drawable3.setBounds(w11, (int) (centerY2 - f12), (int) (f12 + dpf25), (int) a1.g.c(fArr[c10], 2.0f, abs, rectF.centerY()));

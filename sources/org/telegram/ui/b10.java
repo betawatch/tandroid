@@ -1,42 +1,30 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.MessageObject;
-
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public final class b10 extends org.telegram.ui.Cells.n7 {
-    public final /* synthetic */ c10 l0;
+public final class b10 {
+    public long a;
+    public int b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public b10(c10 c10Var, Context context) {
-        super(context, 1, null);
-        this.l0 = c10Var;
+    public b10(int i10, long j10) {
+        this.a = j10;
+        this.b = i10;
     }
 
-    @Override // org.telegram.ui.Cells.n7
-    public final boolean d(MessageObject messageObject) {
-        boolean isVoice = messageObject.isVoice();
-        c10 c10Var = this.l0;
-        if (isVoice || messageObject.isRoundVideo()) {
-            boolean playMessage = MediaController.getInstance().playMessage(messageObject);
-            MediaController.getInstance().setVoiceMessagesPlaylist(playMessage ? c10Var.v.f : null, false);
-            return playMessage;
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
         }
-        if (!messageObject.isMusic()) {
-            return false;
+        if (obj != null && b10.class == obj.getClass()) {
+            b10 b10Var = (b10) obj;
+            if (this.a == b10Var.a && this.b == b10Var.b) {
+                return true;
+            }
         }
-        h10 h10Var = c10Var.v;
-        String str = h10Var.Q;
-        long j10 = h10Var.E;
-        long j11 = h10Var.H;
-        MediaController.PlaylistGlobalSearchParams playlistGlobalSearchParams = new MediaController.PlaylistGlobalSearchParams(str, j10, j11, j11, h10Var.y);
-        h10 h10Var2 = c10Var.v;
-        playlistGlobalSearchParams.endReached = h10Var2.N;
-        playlistGlobalSearchParams.nextSearchRate = h10Var2.v;
-        playlistGlobalSearchParams.totalCount = h10Var2.O;
-        playlistGlobalSearchParams.folderId = h10Var2.J ? 1 : 0;
-        return MediaController.getInstance().setPlaylist(c10Var.v.f, messageObject, 0L, playlistGlobalSearchParams);
+        return false;
+    }
+
+    public final int hashCode() {
+        return this.b;
     }
 }

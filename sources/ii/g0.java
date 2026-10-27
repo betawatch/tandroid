@@ -6,18 +6,18 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.ActionBar.y6;
 import org.telegram.ui.Components.ds;
-import org.telegram.ui.Components.gb1;
-import org.telegram.ui.Components.r71;
-import org.telegram.ui.Components.t61;
+import org.telegram.ui.Components.kb1;
+import org.telegram.ui.Components.s71;
+import org.telegram.ui.Components.u61;
 import s4.e1;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public abstract class g0 extends FrameLayout {
     public org.telegram.ui.ActionBar.k a;
     public final lh.f b;
     public final FrameLayout c;
-    public r71 d;
+    public s71 d;
     public boolean e;
     public final /* synthetic */ j0 f;
 
@@ -29,7 +29,7 @@ public abstract class g0 extends FrameLayout {
         this.c = frameLayout;
         frameLayout.setPadding(0, 0, 0, 0);
         frameLayout.setClipToPadding(true);
-        addView(frameLayout, gb1.i(-1, -1, 119));
+        addView(frameLayout, kb1.i(-1, -1, 119));
         lh.f fVar = new lh.f(getContext());
         this.b = fVar;
         fVar.setupColorKey(y6.a7);
@@ -37,7 +37,7 @@ public abstract class g0 extends FrameLayout {
         fVar.setFadeHeightBottom(AndroidUtilities.dp(24.0f));
         fVar.setFadeZoneTop(AndroidUtilities.dp(64.0f) + AndroidUtilities.statusBarHeight);
         fVar.a.b(-AndroidUtilities.dp(20.0f), false);
-        frameLayout.addView(fVar, gb1.k());
+        frameLayout.addView(fVar, kb1.k());
     }
 
     public final void a() {
@@ -56,7 +56,7 @@ public abstract class g0 extends FrameLayout {
             View childAt = this.d.getChildAt(i10);
             e1 T = this.d.T(childAt);
             if (T != null) {
-                t61 G = this.d.g3.G(T.b());
+                u61 G = this.d.g3.G(T.b());
                 if (G != null && G.d != 99) {
                     f7 = Math.min(childAt.getY() + this.c.getPaddingTop(), f7);
                 }

@@ -6,33 +6,33 @@ import java.util.ArrayList;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.ActionBar.u6;
 import org.telegram.ui.ActionBar.y6;
-import org.telegram.ui.Components.j71;
-import org.telegram.ui.Components.mm0;
-import org.telegram.ui.Components.r71;
-import org.telegram.ui.Components.s61;
+import org.telegram.ui.Components.k71;
+import org.telegram.ui.Components.nm0;
+import org.telegram.ui.Components.s71;
 import org.telegram.ui.Components.t61;
+import org.telegram.ui.Components.u61;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
-public final class t4 extends s61 {
+public final class t4 extends t61 {
     public static final /* synthetic */ int a = 0;
 
     static {
-        s61.setup(new t4());
+        t61.setup(new t4());
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:8:0x0021, code lost:
     
         if ((r3 instanceof org.telegram.tgnet.tl.TL_iv.pageBlockSlideshow) == false) goto L11;
      */
-    @Override // org.telegram.ui.Components.s61
+    @Override // org.telegram.ui.Components.t61
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void bindView(View view, t61 t61Var, boolean z10, j71 j71Var, r71 r71Var) {
+    public final void bindView(View view, u61 u61Var, boolean z10, k71 k71Var, s71 s71Var) {
         u4 u4Var = (u4) view;
-        a aVar = (a) t61Var.G;
-        o3 o3Var = (o3) t61Var.H;
+        a aVar = (a) u61Var.G;
+        o3 o3Var = (o3) u61Var.H;
         ArrayList arrayList = u4Var.y;
         u4Var.a = aVar;
         u4Var.N = o3Var;
@@ -60,24 +60,24 @@ public final class t4 extends s61 {
         u4Var.invalidate();
     }
 
-    @Override // org.telegram.ui.Components.s61
-    public final boolean contentsEquals(t61 t61Var, t61 t61Var2) {
-        return t61Var.d == t61Var2.d;
+    @Override // org.telegram.ui.Components.t61
+    public final boolean contentsEquals(u61 u61Var, u61 u61Var2) {
+        return u61Var.d == u61Var2.d;
     }
 
-    @Override // org.telegram.ui.Components.s61
-    public final View createView(Context context, mm0 mm0Var, int i10, int i11, u6 u6Var) {
+    @Override // org.telegram.ui.Components.t61
+    public final View createView(Context context, nm0 nm0Var, int i10, int i11, u6 u6Var) {
         u4 u4Var = new u4(context, u6Var);
         u4Var.setBackground(new y1(y6.w0(y6.d6, u6Var)));
         return u4Var;
     }
 
-    @Override // org.telegram.ui.Components.s61
-    public final boolean equals(t61 t61Var, t61 t61Var2) {
-        return t61Var.d == t61Var2.d;
+    @Override // org.telegram.ui.Components.t61
+    public final boolean equals(u61 u61Var, u61 u61Var2) {
+        return u61Var.d == u61Var2.d;
     }
 
-    @Override // org.telegram.ui.Components.s61
+    @Override // org.telegram.ui.Components.t61
     public final boolean isClickable() {
         return false;
     }

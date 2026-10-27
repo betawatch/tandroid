@@ -1,70 +1,100 @@
 package org.telegram.ui;
 
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public final class si extends qf.c {
-    public final /* synthetic */ int d;
-    public final /* synthetic */ int e;
-    public final /* synthetic */ org.telegram.ui.Cells.s1 f;
-    public final /* synthetic */ un g;
+public final class si extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ wn b;
 
-    public /* synthetic */ si(un unVar, int i10, org.telegram.ui.Cells.s1 s1Var, int i11) {
-        this.d = i11;
-        this.g = unVar;
-        this.e = i10;
-        this.f = s1Var;
+    public /* synthetic */ si(wn wnVar, int i10) {
+        this.a = i10;
+        this.b = wnVar;
     }
 
-    @Override // qf.c
-    public final void c(boolean z10) {
-        switch (this.d) {
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        rj rjVar;
+        switch (this.a) {
             case 0:
-                if (!z10) {
-                    AndroidUtilities.runOnUIThread(new ag.r0(this, this.e, 23), 240L);
+                wn wnVar = this.b;
+                org.telegram.ui.Components.u60 u60Var = wnVar.n3;
+                if (u60Var != null) {
+                    u60Var.setIsMessageTransition(false);
+                    wnVar.n3.c(true);
+                    wnVar.n3.setVisibility(4);
                     break;
                 }
                 break;
             case 1:
-                if (!z10) {
-                    AndroidUtilities.runOnUIThread(new ag.r0(this, this.e, 26), 240L);
+                float dp = AndroidUtilities.dp(30.0f);
+                wn wnVar2 = this.b;
+                wnVar2.Q9 = dp;
+                wnVar2.A9();
+                break;
+            case 2:
+                wn wnVar3 = this.b;
+                if (wnVar3.fragmentView != null && (rjVar = wnVar3.x0) != null) {
+                    rjVar.invalidate();
+                    wnVar3.fragmentView.invalidate();
                     break;
                 }
                 break;
-            default:
-                if (!z10) {
-                    AndroidUtilities.runOnUIThread(new ag.r0(this, this.e, 27), 240L);
+            case 3:
+                this.b.P.setVisibility(4);
+                break;
+            case 4:
+                AndroidUtilities.runOnUIThread(new xi(this, 4), 2000L);
+                break;
+            case 5:
+                wn wnVar4 = this.b;
+                if (animator.equals(wnVar4.s3)) {
+                    wnVar4.s3 = null;
                     break;
                 }
                 break;
-        }
-    }
-
-    @Override // qf.c
-    public final void d() {
-        switch (this.d) {
-            case 0:
-                int i10 = this.e;
-                un unVar = this.g;
-                unVar.Sb = i10;
-                unVar.Tb = 6;
-                this.f.invalidate();
+            case 6:
+                wn wnVar5 = this.b;
+                if (animator.equals(wnVar5.s3)) {
+                    wnVar5.s3 = null;
+                    break;
+                }
                 break;
-            case 1:
-                int i11 = this.e;
-                un unVar2 = this.g;
-                unVar2.Sb = i11;
-                unVar2.Tb = 5;
-                unVar2.Vb = null;
-                this.f.invalidate();
+            case 7:
+                wn wnVar6 = this.b;
+                if (animator.equals(wnVar6.t3)) {
+                    wnVar6.u3 = 1.0f;
+                    wnVar6.Cc();
+                    wnVar6.t3 = null;
+                    break;
+                }
+                break;
+            case 8:
+                wn wnVar7 = this.b;
+                if (animator.equals(wnVar7.t3)) {
+                    wnVar7.u3 = 0.0f;
+                    wnVar7.Cc();
+                    wnVar7.t3 = null;
+                    break;
+                }
+                break;
+            case 9:
+                this.b.f5 = null;
+                break;
+            case 10:
+                wn wnVar8 = this.b;
+                wnVar8.Ua = 1.0f;
+                wnVar8.Y.setVisibility(4);
+                wnVar8.a1.setVisibility(4);
+                wnVar8.A9();
                 break;
             default:
-                int i12 = this.e;
-                un unVar3 = this.g;
-                unVar3.Sb = i12;
-                unVar3.Tb = 7;
-                this.f.invalidate();
+                wn wnVar9 = this.b;
+                wnVar9.Ua = 0.0f;
+                wnVar9.A9();
                 break;
         }
     }

@@ -4,7 +4,7 @@ import android.graphics.SurfaceTexture;
 import android.util.Size;
 import java.util.concurrent.CountDownLatch;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class p implements Runnable {
     public final /* synthetic */ int a;
@@ -98,14 +98,14 @@ public final /* synthetic */ class p implements Runnable {
                         if (i13 != 0) {
                             sVar2.k(i13, sVar2.l);
                         }
-                        c0 c0Var = sVar2.N;
-                        if (c0Var != null) {
-                            c0Var.c = size2;
-                            c0Var.d = i12;
-                            c0Var.q = c0.j(size2, i12, false);
-                            c0Var.r = c0.j(size2, i12, true);
-                            c0Var.A = false;
-                            c0Var.z = 0L;
+                        d0 d0Var = sVar2.N;
+                        if (d0Var != null) {
+                            d0Var.c = size2;
+                            d0Var.d = i12;
+                            d0Var.q = d0.j(size2, i12, false);
+                            d0Var.r = d0.j(size2, i12, true);
+                            d0Var.A = false;
+                            d0Var.z = 0L;
                         }
                         n nVar2 = sVar2.i;
                         StringBuilder sb3 = new StringBuilder("GL input updated: input=");

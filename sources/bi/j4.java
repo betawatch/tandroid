@@ -3,9 +3,9 @@ package bi;
 import android.os.Bundle;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.un;
+import org.telegram.ui.wn;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class j4 implements Runnable {
     public final /* synthetic */ int a;
@@ -33,21 +33,21 @@ public final /* synthetic */ class j4 implements Runnable {
             case 1:
                 org.telegram.ui.ActionBar.r2 U2 = LaunchActivity.U();
                 if (U2 != null) {
-                    U2.presentFragment(un.ba(this.b));
+                    U2.presentFragment(wn.ea(this.b));
                     break;
                 }
                 break;
             case 2:
                 org.telegram.ui.ActionBar.r2 U3 = LaunchActivity.U();
                 if (U3 != null) {
-                    U3.presentFragment(un.ba(this.b));
+                    U3.presentFragment(wn.ea(this.b));
                     break;
                 }
                 break;
             default:
                 org.telegram.ui.ActionBar.r2 U4 = LaunchActivity.U();
                 if (U4 != null) {
-                    U4.presentFragment(un.ba(this.b));
+                    U4.presentFragment(wn.ea(this.b));
                     break;
                 }
                 break;

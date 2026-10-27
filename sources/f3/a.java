@@ -12,7 +12,7 @@ import f9.i0;
 import f9.s1;
 import java.util.List;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
 public final class a implements o {
     public final /* synthetic */ int a;
@@ -38,7 +38,7 @@ public final class a implements o {
         switch (this.a) {
             case 0:
                 l lVar = (l) pVar;
-                lVar.s(4, false);
+                lVar.u(4, false);
                 x xVar = this.b;
                 xVar.K(4);
                 lVar.h(xVar.a, 0, 4, false);
@@ -55,7 +55,7 @@ public final class a implements o {
                 l lVar2 = (l) pVar;
                 lVar2.h(xVar2.a, 0, 4, false);
                 if (xVar2.C() == 1380533830) {
-                    lVar2.s(4, false);
+                    lVar2.u(4, false);
                     xVar2.K(4);
                     lVar2.h(xVar2.a, 0, 4, false);
                     if (xVar2.C() == 1464156752) {

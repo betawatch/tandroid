@@ -6,20 +6,20 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.ui.Components.h31;
-import org.telegram.ui.Components.kp0;
-import org.telegram.ui.ut;
+import org.telegram.ui.Components.i31;
+import org.telegram.ui.Components.lp0;
+import org.telegram.ui.wt;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public final class g5 implements kp0 {
-    public final /* synthetic */ ut a;
+public final class g5 implements lp0 {
+    public final /* synthetic */ wt a;
 
-    public g5(ut utVar) {
-        this.a = utVar;
+    public g5(wt wtVar) {
+        this.a = wtVar;
     }
 
-    @Override // org.telegram.ui.Components.kp0
+    @Override // org.telegram.ui.Components.lp0
     public final void U(float f7, boolean z10) {
         float c10;
         int i10;
@@ -35,16 +35,16 @@ public final class g5 implements kp0 {
             }
         }
         int i11 = (int) c10;
-        ut utVar = this.a;
+        wt wtVar = this.a;
         long j10 = i11;
-        utVar.b.setText(LocaleController.formatString("AutodownloadSizeLimitUpTo", R.string.AutodownloadSizeLimitUpTo, AndroidUtilities.formatFileSize(j10)));
-        utVar.d = j10;
-        a9[] a9VarArr = utVar.h;
-        AnimatorSet[] animatorSetArr = utVar.n;
-        int i12 = utVar.e;
-        i10 = utVar.r.videosRow;
+        wtVar.b.setText(LocaleController.formatString("AutodownloadSizeLimitUpTo", R.string.AutodownloadSizeLimitUpTo, AndroidUtilities.formatFileSize(j10)));
+        wtVar.d = j10;
+        a9[] a9VarArr = wtVar.h;
+        AnimatorSet[] animatorSetArr = wtVar.n;
+        int i12 = wtVar.e;
+        i10 = wtVar.r.videosRow;
         if (i12 == i10) {
-            utVar.f.setText(LocaleController.formatString("AutoDownloadPreloadVideoInfo", R.string.AutoDownloadPreloadVideoInfo, AndroidUtilities.formatFileSize(j10)));
+            wtVar.f.setText(LocaleController.formatString("AutoDownloadPreloadVideoInfo", R.string.AutoDownloadPreloadVideoInfo, AndroidUtilities.formatFileSize(j10)));
             boolean z11 = i11 > 2097152;
             if (z11 != a9VarArr[0].isEnabled()) {
                 ArrayList arrayList = new ArrayList();
@@ -57,29 +57,29 @@ public final class g5 implements kp0 {
                 AnimatorSet animatorSet2 = new AnimatorSet();
                 animatorSetArr[0] = animatorSet2;
                 animatorSet2.playTogether(arrayList);
-                animatorSetArr[0].addListener(new h31(utVar, 22));
+                animatorSetArr[0].addListener(new i31(wtVar, 22));
                 animatorSetArr[0].setDuration(150L);
                 animatorSetArr[0].start();
             }
         }
     }
 
-    @Override // org.telegram.ui.Components.kp0
+    @Override // org.telegram.ui.Components.lp0
     public final CharSequence getContentDescription() {
         StringBuilder sb2 = new StringBuilder();
-        ut utVar = this.a;
-        sb2.append((Object) utVar.a.getText());
+        wt wtVar = this.a;
+        sb2.append((Object) wtVar.a.getText());
         sb2.append(" ");
-        sb2.append((Object) utVar.b.getText());
+        sb2.append((Object) wtVar.b.getText());
         return sb2.toString();
     }
 
-    @Override // org.telegram.ui.Components.kp0
+    @Override // org.telegram.ui.Components.lp0
     public final /* synthetic */ int k0() {
         return 0;
     }
 
-    @Override // org.telegram.ui.Components.kp0
+    @Override // org.telegram.ui.Components.lp0
     public final void y() {
     }
 }

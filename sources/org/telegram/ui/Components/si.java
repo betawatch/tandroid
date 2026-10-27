@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.NotificationCenter;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class si extends View {
     public final /* synthetic */ int a = 0;
@@ -20,24 +20,24 @@ public final class si extends View {
     public si(ViewGroup viewGroup, int i10) {
         super(viewGroup.getContext());
         this.c = new ArrayList();
-        this.e = new org.telegram.ui.p00(this, 29);
+        this.e = new org.telegram.ui.r00(this, 29);
         this.d = viewGroup;
         this.b = i10;
     }
 
     public void a() {
-        org.telegram.ui.p00 p00Var = (org.telegram.ui.p00) this.e;
+        org.telegram.ui.r00 r00Var = (org.telegram.ui.r00) this.e;
         ArrayList arrayList = (ArrayList) this.c;
         boolean isEmpty = arrayList.isEmpty();
         int i10 = this.b;
         if (isEmpty && getVisibility() != 8) {
-            NotificationCenter.getInstance(i10).removeDelayed(p00Var);
-            NotificationCenter.getInstance(i10).doOnIdle(p00Var);
+            NotificationCenter.getInstance(i10).removeDelayed(r00Var);
+            NotificationCenter.getInstance(i10).doOnIdle(r00Var);
         } else {
             if (arrayList.isEmpty() || getVisibility() == 0) {
                 return;
             }
-            NotificationCenter.getInstance(i10).removeDelayed(p00Var);
+            NotificationCenter.getInstance(i10).removeDelayed(r00Var);
             setVisibility(0);
         }
     }
@@ -59,7 +59,7 @@ public final class si extends View {
                 ArrayList arrayList = (ArrayList) this.c;
                 if (!arrayList.isEmpty()) {
                     for (int i11 = 0; i11 < arrayList.size(); i11++) {
-                        ((org.telegram.ui.nh0) arrayList.get(i11)).a(canvas);
+                        ((org.telegram.ui.ph0) arrayList.get(i11)).a(canvas);
                     }
                     break;
                 }

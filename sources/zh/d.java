@@ -18,13 +18,13 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.f7;
 import org.telegram.ui.ActionBar.p6;
 import org.telegram.ui.ActionBar.y6;
-import org.telegram.ui.Components.ak0;
-import org.telegram.ui.Components.gb1;
+import org.telegram.ui.Components.bk0;
+import org.telegram.ui.Components.kb1;
 import org.telegram.ui.Components.r6;
 import org.telegram.ui.Components.s6;
 import org.telegram.ui.Components.zq;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class d extends FrameLayout implements p6 {
     public final fi.d a;
@@ -55,7 +55,7 @@ public final class d extends FrameLayout implements p6 {
         r6Var.F = true;
         r6Var.G = true;
         r6Var.H = false;
-        ak0 ak0Var = new ak0(context);
+        bk0 bk0Var = new bk0(context);
         s6 s6Var = new s6(context, false, false, false);
         this.b = s6Var;
         s6Var.setTextSize(AndroidUtilities.dp(14.0f));
@@ -66,12 +66,12 @@ public final class d extends FrameLayout implements p6 {
         s6Var2.setTextSize(AndroidUtilities.dp(12.0f));
         TLRPC.Document document = auction.gift.sticker;
         if (document != null) {
-            ak0Var.g(44, 44, document);
+            bk0Var.g(44, 44, document);
         }
-        addView(s6Var, gb1.h(-1, 18.0f, 51, 64.0f, 15.0f, 15.0f, 0.0f));
-        addView(s6Var2, gb1.h(-1, 17.0f, 51, 64.0f, 34.0f, 15.0f, 0.0f));
-        addView(ak0Var, gb1.h(44, 44.0f, 51, 14.0f, 11.0f, 0.0f, 0.0f));
-        addView(dVar, gb1.h(-1, 44.0f, 80, 15.0f, 0.0f, 15.0f, 15.0f));
+        addView(s6Var, kb1.h(-1, 18.0f, 51, 64.0f, 15.0f, 15.0f, 0.0f));
+        addView(s6Var2, kb1.h(-1, 17.0f, 51, 64.0f, 34.0f, 15.0f, 0.0f));
+        addView(bk0Var, kb1.h(44, 44.0f, 51, 14.0f, 11.0f, 0.0f, 0.0f));
+        addView(dVar, kb1.h(-1, 44.0f, 80, 15.0f, 0.0f, 15.0f, 15.0f));
         b(false);
     }
 

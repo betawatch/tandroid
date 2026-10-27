@@ -12,11 +12,11 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.mm0;
+import org.telegram.ui.Components.nm0;
 import org.telegram.ui.Components.xc;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public class w7 {
     public int A;
@@ -93,7 +93,7 @@ public class w7 {
                 } else if (this.r) {
                     z10 = !storiesController.h.isEmpty();
                 } else {
-                    if (this.x <= 0 ? MessagesController.getInstance(UserConfig.selectedAccount).getStoriesController().I(this.x) || (chat != null && !chat.stories_unavailable && (tL_recentStory3 = chat.stories_max_id) != null && tL_recentStory3.max_id > 0) : MessagesController.getInstance(UserConfig.selectedAccount).getStoriesController().I(this.x) || (user != null && !user.stories_unavailable && (tL_recentStory4 = user.stories_max_id) != null && tL_recentStory4.max_id > 0)) {
+                    if (this.x <= 0 ? MessagesController.getInstance(UserConfig.selectedAccount).getStoriesController().K(this.x) || (chat != null && !chat.stories_unavailable && (tL_recentStory3 = chat.stories_max_id) != null && tL_recentStory3.max_id > 0) : MessagesController.getInstance(UserConfig.selectedAccount).getStoriesController().K(this.x) || (user != null && !user.stories_unavailable && (tL_recentStory4 = user.stories_max_id) != null && tL_recentStory4.max_id > 0)) {
                         z11 = true;
                     }
                     z10 = z11;
@@ -149,7 +149,7 @@ public class w7 {
                 if (this.r) {
                     f(0L);
                 } else if (this.x != UserConfig.getInstance(UserConfig.selectedAccount).getClientUserId()) {
-                    if (storiesController2.I(this.x)) {
+                    if (storiesController2.K(this.x)) {
                         f(this.x);
                     } else {
                         long j10 = this.x;
@@ -203,7 +203,7 @@ public class w7 {
         }
         R.getOrCreateStoryViewer().getClass();
         ViewParent parent = this.R.getParent();
-        R.getOrCreateStoryViewer().D(R.getContext(), j10, parent instanceof RecyclerView ? q7.a((mm0) parent) : null);
+        R.getOrCreateStoryViewer().E(R.getContext(), j10, parent instanceof RecyclerView ? q7.a((nm0) parent) : null);
     }
 
     public final void g() {

@@ -6,7 +6,7 @@ import android.view.View;
 import org.telegram.ui.ActionBar.c7;
 import org.telegram.ui.Components.ar;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class g implements c7, e2.o {
     public final /* synthetic */ int a;
@@ -124,9 +124,5 @@ public final /* synthetic */ class g implements c7, e2.o {
 
     public /* synthetic */ g(j2.a aVar, int i10, int i11, char c10) {
         this.a = i11;
-    }
-
-    public /* synthetic */ g(j2.a aVar, String str, long j10, long j11, int i10) {
-        this.a = i10;
     }
 }

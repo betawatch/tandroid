@@ -3,10 +3,10 @@ package org.telegram.ui.Wallet;
 import a8.af;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.l71;
-import org.telegram.ui.Components.r71;
+import org.telegram.ui.Components.m71;
+import org.telegram.ui.Components.s71;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class m implements Runnable {
     public final /* synthetic */ int a;
@@ -79,11 +79,11 @@ public final /* synthetic */ class m implements Runnable {
                 return;
             case 8:
                 i5 i5Var = (i5) this.b;
-                l71 l71Var = i5Var.c;
-                if (l71Var == null || l71Var.getScrollState() != 0) {
+                m71 m71Var = i5Var.c;
+                if (m71Var == null || m71Var.getScrollState() != 0) {
                     return;
                 }
-                r71 u02 = i5Var.j.u0();
+                s71 u02 = i5Var.j.u0();
                 if ((u02 == null || u02.getScrollState() == 0) && (d = i5Var.d(i5Var.c.f3)) != null) {
                     s4.c0 c0Var = i5Var.c.f3;
                     c0Var.getClass();

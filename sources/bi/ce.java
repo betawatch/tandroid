@@ -19,24 +19,24 @@ import org.telegram.ui.Components.ChatActivityEnterView;
 import org.telegram.ui.Components.Crop.CropAreaView;
 import org.telegram.ui.Components.bf;
 import org.telegram.ui.Components.kg;
-import org.telegram.ui.Components.mm0;
+import org.telegram.ui.Components.nm0;
 import org.telegram.ui.Components.p20;
 import org.telegram.ui.Components.pg;
-import org.telegram.ui.Components.q60;
-import org.telegram.ui.Components.qg0;
+import org.telegram.ui.Components.r60;
+import org.telegram.ui.Components.rg0;
 import org.telegram.ui.Components.sz;
 import org.telegram.ui.Components.ti;
 import org.telegram.ui.Components.x30;
-import org.telegram.ui.Components.x70;
+import org.telegram.ui.Components.y70;
 import org.telegram.ui.Components.zu;
 import org.telegram.ui.Stories.ProfileStoriesView;
-import org.telegram.ui.nn;
-import org.telegram.ui.rp;
-import org.telegram.ui.ui;
-import org.telegram.ui.un;
-import org.telegram.ui.zl;
+import org.telegram.ui.bm;
+import org.telegram.ui.pn;
+import org.telegram.ui.tp;
+import org.telegram.ui.wn;
+import org.telegram.ui.xi;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class ce extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -75,9 +75,9 @@ public final class ce extends AnimatorListenerAdapter {
                     actionBarLayout.i0 = null;
                     actionBarLayout.g0 = null;
                     actionBarLayout.q0 = null;
-                    nn nnVar = ((org.telegram.ui.ActionBar.i5) this.b).j;
-                    if (nnVar != null) {
-                        nnVar.run();
+                    pn pnVar = ((org.telegram.ui.ActionBar.i5) this.b).j;
+                    if (pnVar != null) {
+                        pnVar.run();
                         break;
                     }
                 }
@@ -168,7 +168,7 @@ public final class ce extends AnimatorListenerAdapter {
                 break;
             case 5:
                 fi.p pVar = (fi.p) obj2;
-                ((sg.d2) obj).setDraw(true);
+                ((sg.c2) obj).setDraw(true);
                 if (pVar.getParent() instanceof ViewGroup) {
                     ((ViewGroup) pVar.getParent()).removeView(pVar);
                     break;
@@ -266,9 +266,9 @@ public final class ce extends AnimatorListenerAdapter {
                     actionBarLayout.i0 = null;
                     actionBarLayout.g0 = null;
                     actionBarLayout.q0 = null;
-                    nn nnVar = ((org.telegram.ui.ActionBar.i5) obj).j;
-                    if (nnVar != null) {
-                        nnVar.run();
+                    pn pnVar = ((org.telegram.ui.ActionBar.i5) obj).j;
+                    if (pnVar != null) {
+                        pnVar.run();
                         break;
                     }
                 }
@@ -279,40 +279,40 @@ public final class ce extends AnimatorListenerAdapter {
                 break;
             case 14:
                 View view3 = (View) obj;
-                un unVar = (un) obj2;
-                unVar.M9 = 0.0f;
-                if (animator == unVar.Cb) {
+                wn wnVar = (wn) obj2;
+                wnVar.Q9 = 0.0f;
+                if (animator == wnVar.Gb) {
                     ViewGroup viewGroup = (ViewGroup) view3.getParent();
                     if (viewGroup != null) {
                         viewGroup.removeView(view3);
                     }
-                    unVar.l3 = null;
-                    unVar.Cb = null;
+                    wnVar.l3 = null;
+                    wnVar.Gb = null;
                     break;
                 }
                 break;
             case 15:
-                org.telegram.ui.Cells.s1 s1Var = (org.telegram.ui.Cells.s1) ((zl) obj2).b;
+                org.telegram.ui.Cells.s1 s1Var = (org.telegram.ui.Cells.s1) ((bm) obj2).b;
                 s1Var.setAlpha(1.0f);
                 s1Var.getTransitionParams().x0 = false;
                 org.telegram.ui.s0 s0Var = new org.telegram.ui.s0("alpha", 2);
                 AnimatorSet animatorSet4 = new AnimatorSet();
-                animatorSet4.playTogether(ObjectAnimator.ofFloat((q60) obj, (Property<q60, Float>) View.ALPHA, 0.0f), ObjectAnimator.ofFloat(s1Var, s0Var, 1.0f));
+                animatorSet4.playTogether(ObjectAnimator.ofFloat((r60) obj, (Property<r60, Float>) View.ALPHA, 0.0f), ObjectAnimator.ofFloat(s1Var, s0Var, 1.0f));
                 animatorSet4.setDuration(100L);
                 animatorSet4.setInterpolator(new DecelerateInterpolator());
                 animatorSet4.addListener(new kg.e(this, 28));
                 animatorSet4.start();
                 break;
             case 16:
-                rp rpVar = (rp) obj2;
-                rpVar.L = 0.0f;
-                rpVar.K = 1.0f;
+                tp tpVar = (tp) obj2;
+                tpVar.L = 0.0f;
+                tpVar.K = 1.0f;
                 ((View) obj).invalidate();
-                rpVar.T.invalidate();
-                ui uiVar = rpVar.Y;
-                if (uiVar != null) {
-                    uiVar.run();
-                    rpVar.Y = null;
+                tpVar.T.invalidate();
+                xi xiVar = tpVar.Y;
+                if (xiVar != null) {
+                    xiVar.run();
+                    tpVar.Y = null;
                     break;
                 }
                 break;
@@ -378,16 +378,16 @@ public final class ce extends AnimatorListenerAdapter {
                 ((Runnable) obj).run();
                 break;
             case 25:
-                mm0 mm0Var = (mm0) obj;
+                nm0 nm0Var = (nm0) obj;
                 sz szVar = (sz) obj2;
                 if (animator.equals(szVar.M0)) {
-                    mm0Var.setTranslationY(0.0f);
-                    if (mm0Var == szVar.D0) {
-                        mm0Var.setPadding(0, 0, 0, szVar.q2);
-                    } else if (mm0Var == szVar.P) {
-                        mm0Var.setPadding(AndroidUtilities.dp(5.0f), 0, AndroidUtilities.dp(5.0f), szVar.q2);
-                    } else if (mm0Var == szVar.h0) {
-                        mm0Var.setPadding(0, szVar.b1, 0, szVar.q2);
+                    nm0Var.setTranslationY(0.0f);
+                    if (nm0Var == szVar.D0) {
+                        nm0Var.setPadding(0, 0, 0, szVar.q2);
+                    } else if (nm0Var == szVar.P) {
+                        nm0Var.setPadding(AndroidUtilities.dp(5.0f), 0, AndroidUtilities.dp(5.0f), szVar.q2);
+                    } else if (nm0Var == szVar.h0) {
+                        nm0Var.setPadding(0, szVar.b1, 0, szVar.q2);
                     }
                     szVar.M0 = null;
                     break;
@@ -411,14 +411,14 @@ public final class ce extends AnimatorListenerAdapter {
                 p20Var2.b = false;
                 break;
             case 28:
-                x70 x70Var = (x70) obj2;
-                x70Var.removeView((x30) obj);
-                x70Var.c = null;
-                x70Var.e.d0 = null;
-                x70Var.a = false;
+                y70 y70Var = (y70) obj2;
+                y70Var.removeView((x30) obj);
+                y70Var.c = null;
+                y70Var.e.d0 = null;
+                y70Var.a = false;
                 break;
             default:
-                ((qg0) obj2).h = null;
+                ((rg0) obj2).h = null;
                 Runnable runnable2 = (Runnable) obj;
                 if (runnable2 != null) {
                     runnable2.run();

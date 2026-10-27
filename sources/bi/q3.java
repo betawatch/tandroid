@@ -7,9 +7,9 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.Components.n70;
+import org.telegram.ui.Components.o70;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class q3 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -37,7 +37,7 @@ public final /* synthetic */ class q3 implements Utilities.Callback {
                 h7.Q0((h7) this.c, (qf.c) this.d, (vg.n1) this.e, this.b, (TL_stars.TL_starGiftUnique) this.f, (TL_wallet.nftItem) this.g, (TL_stars.starGiftDepositPayload) obj);
                 break;
             default:
-                AndroidUtilities.runOnUIThread(new ag.m0((n70) this.c, (org.telegram.ui.ActionBar.e2) this.d, (Context) this.e, this.b, (TLRPC.TL_chatInviteExported) this.f, (TLRPC.TL_chatInviteImporter) this.g, (TLRPC.ChannelParticipant) obj));
+                AndroidUtilities.runOnUIThread(new ag.m0((o70) this.c, (org.telegram.ui.ActionBar.e2) this.d, (Context) this.e, this.b, (TLRPC.TL_chatInviteExported) this.f, (TLRPC.TL_chatInviteImporter) this.g, (TLRPC.ChannelParticipant) obj));
                 break;
         }
     }

@@ -1,24 +1,35 @@
 package org.telegram.ui.Components;
 
 import android.app.Activity;
-import android.view.ViewGroup;
+import android.graphics.Rect;
+import android.view.View;
+import androidx.core.widget.NestedScrollView;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public final class cf0 extends org.telegram.ui.ActionBar.k {
-    public final /* synthetic */ jf0 x1;
+public final class cf0 extends NestedScrollView {
+    public View W;
+    public final /* synthetic */ kf0 a0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public cf0(jf0 jf0Var, Activity activity) {
-        super(activity, null);
-        this.x1 = jf0Var;
+    public cf0(kf0 kf0Var, Activity activity) {
+        super(activity);
+        this.a0 = kf0Var;
     }
 
-    @Override // android.view.View
-    public final void setAlpha(float f7) {
-        ViewGroup viewGroup;
-        super.setAlpha(f7);
-        viewGroup = ((org.telegram.ui.ActionBar.k3) this.x1).containerView;
-        viewGroup.invalidate();
+    @Override // androidx.core.widget.NestedScrollView
+    public final int e(Rect rect) {
+        if (this.W == null || this.a0.d.getTop() != getPaddingTop()) {
+            return 0;
+        }
+        int e = super.e(rect);
+        int currentActionBarHeight = org.telegram.ui.ActionBar.k.getCurrentActionBarHeight() - (((this.W.getTop() - getScrollY()) + rect.top) + e);
+        return currentActionBarHeight > 0 ? org.telegram.messenger.wh.z(10.0f, currentActionBarHeight, e) : e;
+    }
+
+    @Override // androidx.core.widget.NestedScrollView, android.view.ViewGroup, android.view.ViewParent
+    public final void requestChildFocus(View view, View view2) {
+        this.W = view2;
+        super.requestChildFocus(view, view2);
     }
 }

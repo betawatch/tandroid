@@ -14,7 +14,7 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserObject;
-import org.telegram.messenger.vh;
+import org.telegram.messenger.wh;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.f7;
@@ -23,14 +23,14 @@ import org.telegram.ui.Cells.m6;
 import org.telegram.ui.Cells.v8;
 import org.telegram.ui.Cells.z3;
 import org.telegram.ui.Components.c10;
-import org.telegram.ui.Components.lm0;
+import org.telegram.ui.Components.mm0;
 import org.telegram.ui.Components.p10;
-import org.telegram.ui.Components.vl0;
 import org.telegram.ui.Components.vn;
+import org.telegram.ui.Components.wl0;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public abstract class t1 extends lm0 {
+public abstract class t1 extends mm0 {
     public int E;
     public int F;
     public ArrayList G;
@@ -50,7 +50,7 @@ public abstract class t1 extends lm0 {
     public long x;
     public boolean y;
 
-    @Override // org.telegram.ui.Components.lm0
+    @Override // org.telegram.ui.Components.mm0
     public final boolean D(s4.e1 e1Var) {
         int i10 = e1Var.f;
         return i10 == 0 || i10 == 2 || i10 == 3;
@@ -172,7 +172,7 @@ public abstract class t1 extends lm0 {
                     return;
                 }
                 ContactsController.Contact contact = (ContactsController.Contact) E(i10);
-                ((m6) view).s(contact, null, ContactsController.formatName(contact.first_name, contact.last_name), vh.g(new StringBuilder("+"), contact.shortPhones.get(0), kf.b.c()), false, false);
+                ((m6) view).s(contact, null, ContactsController.formatName(contact.first_name, contact.last_name), wh.g(new StringBuilder("+"), contact.shortPhones.get(0), kf.b.c()), false, false);
                 return;
             }
             String str2 = (String) E(i10);
@@ -297,6 +297,6 @@ public abstract class t1 extends lm0 {
             f7.i(y6.d6, c10Var, null);
             view = c10Var;
         }
-        return new vl0(view);
+        return new wl0(view);
     }
 }

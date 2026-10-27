@@ -2,10 +2,10 @@ package bh;
 
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
-import org.telegram.ui.Components.gb1;
-import org.telegram.ui.un;
+import org.telegram.ui.Components.kb1;
+import org.telegram.ui.wn;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class v implements Runnable {
     public final /* synthetic */ int a;
@@ -27,9 +27,9 @@ public final /* synthetic */ class v implements Runnable {
                 xVar.e = xVar.b();
                 int i10 = xVar.f;
                 int i11 = xVar.h;
-                un unVar = xVar.a;
+                wn wnVar = xVar.a;
                 if (xVar.b == null) {
-                    w wVar = new w((unVar.getUserConfig().getClientUserId() > unVar.a() ? 1 : (unVar.getUserConfig().getClientUserId() == unVar.a() ? 0 : -1)) == 0 ? 3 : 0, unVar.getCurrentAccount(), xVar.getContext(), xVar.a, unVar.getResourceProvider());
+                    w wVar = new w((wnVar.getUserConfig().getClientUserId() > wnVar.a() ? 1 : (wnVar.getUserConfig().getClientUserId() == wnVar.a() ? 0 : -1)) == 0 ? 3 : 0, wnVar.getCurrentAccount(), xVar.getContext(), xVar.a, wnVar.getResourceProvider());
                     wVar.m1 = 1.0f;
                     wVar.setWillNotDraw(false);
                     xVar.b = wVar;
@@ -43,7 +43,7 @@ public final /* synthetic */ class v implements Runnable {
                     xVar.b.setDelegate(new rb.c(xVar, 9));
                     xVar.b.setClipChildren(false);
                     xVar.b.setClipToPadding(false);
-                    xVar.addView(xVar.b, gb1.i(-2, i10 + 70, 5));
+                    xVar.addView(xVar.b, kb1.i(-2, i10 + 70, 5));
                 }
                 xVar.c(false);
                 if (!xVar.b.isEnabled()) {
@@ -52,7 +52,7 @@ public final /* synthetic */ class v implements Runnable {
                     break;
                 } else {
                     xVar.x = true;
-                    xVar.b.p(xVar.e, unVar.l8, true);
+                    xVar.b.p(xVar.e, wnVar.p8, true);
                     xVar.b.r(false);
                     break;
                 }

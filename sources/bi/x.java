@@ -7,15 +7,15 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessagesController;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.gb1;
-import org.telegram.ui.Components.r71;
+import org.telegram.ui.Components.kb1;
+import org.telegram.ui.Components.s71;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class x extends FrameLayout {
     public final int a;
     public final ArrayList b;
-    public final r71 c;
+    public final s71 c;
     public String d;
     public boolean e;
     public boolean f;
@@ -41,17 +41,17 @@ public final class x extends FrameLayout {
         ai.e eVar = new ai.e(this, 3);
         a1.c cVar = new a1.c(this, 4);
         u6Var = ((org.telegram.ui.ActionBar.r2) yVar).resourceProvider;
-        r71 r71Var = new r71(context, i11, classGuid, true, eVar, cVar, null, u6Var);
-        this.c = r71Var;
-        r71Var.v1(AndroidUtilities.dp(12.0f), AndroidUtilities.dp(16.0f), false);
-        r71Var.g3.r = false;
-        r71Var.setCaptureSectionsDecoratorAllowed(true);
-        r71Var.setClipToPadding(false);
-        r71Var.setOverScrollMode(0);
-        addView(r71Var, gb1.g(-1.0f, -1));
+        s71 s71Var = new s71(context, i11, classGuid, true, eVar, cVar, null, u6Var);
+        this.c = s71Var;
+        s71Var.v1(AndroidUtilities.dp(12.0f), AndroidUtilities.dp(16.0f), false);
+        s71Var.g3.r = false;
+        s71Var.setCaptureSectionsDecoratorAllowed(true);
+        s71Var.setClipToPadding(false);
+        s71Var.setOverScrollMode(0);
+        addView(s71Var, kb1.g(-1.0f, -1));
         qVar = ((org.telegram.ui.ActionBar.r2) yVar).glassEngine;
-        qVar.b(r71Var);
-        r71Var.j(new ai.b(this, 3));
+        qVar.b(s71Var);
+        s71Var.j(new ai.b(this, 3));
     }
 
     public final void a() {

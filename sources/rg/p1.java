@@ -5,10 +5,10 @@ import android.graphics.Matrix;
 import android.graphics.Paint;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.qw0;
-import org.telegram.ui.yx;
+import org.telegram.ui.Components.rw0;
+import org.telegram.ui.fx;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class p1 {
     public c1 a;
@@ -37,13 +37,13 @@ public final class p1 {
         return (float) Math.sqrt((f18 * f18) + (f17 * f17));
     }
 
-    public final void b(Canvas canvas, qw0 qw0Var, o1 o1Var) {
-        float width = (o1Var.d / qw0Var.a) * canvas.getWidth();
-        float height = (o1Var.e / qw0Var.b) * canvas.getHeight();
+    public final void b(Canvas canvas, rw0 rw0Var, o1 o1Var) {
+        float width = (o1Var.d / rw0Var.a) * canvas.getWidth();
+        float height = (o1Var.e / rw0Var.b) * canvas.getHeight();
         float dp = AndroidUtilities.dp(5.0f);
         boolean z10 = o1Var.a;
         canvas.drawCircle(width, height, dp, z10 ? this.d : this.f);
-        canvas.drawCircle((o1Var.d / qw0Var.a) * canvas.getWidth(), (o1Var.e / qw0Var.b) * canvas.getHeight(), AndroidUtilities.dp(5.0f), z10 ? this.e : this.g);
+        canvas.drawCircle((o1Var.d / rw0Var.a) * canvas.getWidth(), (o1Var.e / rw0Var.b) * canvas.getHeight(), AndroidUtilities.dp(5.0f), z10 ? this.e : this.g);
     }
 
     public final void c(float f7, float f10, boolean z10) {
@@ -85,7 +85,7 @@ public final class p1 {
         if (f1Var2 == null) {
             painting.getClass();
         } else if (painting.r != null) {
-            painting.f.f(new yx(painting, f1Var2, currentColor, 23));
+            painting.f.f(new fx(painting, f1Var2, currentColor, 24));
         }
         this.m.clear();
         this.n.clear();

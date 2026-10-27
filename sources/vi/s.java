@@ -16,10 +16,10 @@ import android.view.Surface;
 import java.util.concurrent.CountDownLatch;
 import li.e3;
 import org.telegram.ui.Components.b10;
-import org.telegram.ui.Components.ny0;
+import org.telegram.ui.Components.oy0;
 import org.webrtc.EglBase;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class s {
     public EGLSurface B;
@@ -34,7 +34,7 @@ public final class s {
     public final int[] K;
     public final float[] L;
     public final float[] M;
-    public c0 N;
+    public d0 N;
     public int O;
     public long P;
     public long Q;
@@ -54,9 +54,9 @@ public final class s {
     public Size c;
     public float c0;
     public final Surface d;
-    public l0 d0;
+    public n0 d0;
     public final Surface e;
-    public l0 e0;
+    public n0 e0;
     public final boolean f;
     public int f0;
     public final int g;
@@ -243,7 +243,7 @@ public final class s {
                 if (!z11) {
                     long elapsedRealtimeNanos2 = SystemClock.elapsedRealtimeNanos();
                     float f7 = (elapsedRealtimeNanos2 - this.Y) / 1000000.0f;
-                    int d = t0.d(this.d0, this.e0, Math.round(f7));
+                    int d = v0.d(this.d0, this.e0, Math.round(f7));
                     this.i.b("camera switch first new frame: waitMs=" + f7 + ", rollingAverageMs=" + d);
                     this.W = 3;
                     this.X = elapsedRealtimeNanos2;
@@ -261,8 +261,8 @@ public final class s {
             this.i.a("GL error", e);
             c cVar = this.s;
             if (cVar != null) {
-                e3 e3Var = cVar.a;
-                ((s0) e3Var.b).i.post(new i0(0, e3Var, e));
+                e3 e3Var = cVar.b;
+                ((u0) e3Var.b).i.post(new j0(e3Var, e, 1));
             }
         }
     }
@@ -325,18 +325,18 @@ public final class s {
                         if (this.W == 4 || j10 < j12) {
                             z11 = z10;
                         } else {
-                            c0 c0Var = this.N;
-                            if (c0Var.B) {
-                                if (c0Var.e) {
-                                    c0Var.v = c0Var.y;
-                                    c0Var.w = c0Var.x;
+                            d0 d0Var = this.N;
+                            if (d0Var.B) {
+                                if (d0Var.e) {
+                                    d0Var.v = d0Var.y;
+                                    d0Var.w = d0Var.x;
                                     z11 = z10;
-                                    c0Var.A = z11;
-                                    c0Var.z = elapsedRealtimeNanos;
+                                    d0Var.A = z11;
+                                    d0Var.z = elapsedRealtimeNanos;
                                 } else {
                                     z11 = z10;
                                 }
-                                c0Var.B = false;
+                                d0Var.B = false;
                             } else {
                                 z11 = z10;
                             }
@@ -378,8 +378,8 @@ public final class s {
                 this.i.a("GL error", e);
                 c cVar = this.s;
                 if (cVar != null) {
-                    e3 e3Var = cVar.a;
-                    ((s0) e3Var.b).i.post(new i0(0, e3Var, e));
+                    e3 e3Var = cVar.b;
+                    ((u0) e3Var.b).i.post(new j0(e3Var, e, 1));
                 }
             }
         } catch (RuntimeException e10) {
@@ -404,14 +404,12 @@ public final class s {
     }
 
     public final void f() {
-        final int i10 = 0;
         EGLDisplay eglGetDisplay = EGL14.eglGetDisplay(0);
         this.z = eglGetDisplay;
         if (eglGetDisplay == EGL14.EGL_NO_DISPLAY) {
             throw new IllegalStateException("Unable to get EGL display");
         }
         int[] iArr = new int[2];
-        final int i11 = 1;
         if (!EGL14.eglInitialize(eglGetDisplay, iArr, 0, iArr, 1)) {
             throw new IllegalStateException("Unable to initialize EGL");
         }
@@ -438,75 +436,39 @@ public final class s {
         g();
         this.i.b("GL initialized: egl=" + iArr[0] + "." + iArr[1] + ", vendor=" + GLES20.glGetString(7936) + ", renderer=" + GLES20.glGetString(7937) + ", version=" + GLES20.glGetString(7938) + ", elapsedMs=" + ((System.nanoTime() - this.q0) / 1000000));
         boolean z10 = this.f;
-        int i12 = z10 ? 2 : 1;
-        int[] iArr4 = new int[i12];
-        GLES20.glGenTextures(i12, iArr4, 0);
-        int i13 = iArr4[0];
-        this.D = i13;
-        GLES20.glBindTexture(36197, i13);
-        k(i13, this.j);
+        int i10 = z10 ? 2 : 1;
+        int[] iArr4 = new int[i10];
+        GLES20.glGenTextures(i10, iArr4, 0);
+        int i11 = iArr4[0];
+        this.D = i11;
+        GLES20.glBindTexture(36197, i11);
+        k(i11, this.j);
         GLES20.glTexParameteri(36197, 10242, 33071);
         GLES20.glTexParameteri(36197, 10243, 33071);
         SurfaceTexture surfaceTexture = new SurfaceTexture(this.D);
         this.v = surfaceTexture;
         surfaceTexture.setDefaultBufferSize(this.a.getWidth(), this.a.getHeight());
-        this.v.setOnFrameAvailableListener(new SurfaceTexture.OnFrameAvailableListener(this) { // from class: vi.q
-            public final /* synthetic */ s b;
-
-            {
-                this.b = this;
-            }
-
-            @Override // android.graphics.SurfaceTexture.OnFrameAvailableListener
-            public final void onFrameAvailable(SurfaceTexture surfaceTexture2) {
-                switch (i10) {
-                    case 0:
-                        this.b.b(false);
-                        break;
-                    default:
-                        this.b.b(true);
-                        break;
-                }
-            }
-        }, this.u);
+        this.v.setOnFrameAvailableListener(new q(this, 0), this.u);
         this.w = new Surface(this.v);
         if (z10) {
-            int i14 = iArr4[1];
-            this.E = i14;
-            GLES20.glBindTexture(36197, i14);
-            k(i14, this.j);
+            int i12 = iArr4[1];
+            this.E = i12;
+            GLES20.glBindTexture(36197, i12);
+            k(i12, this.j);
             GLES20.glTexParameteri(36197, 10242, 33071);
             GLES20.glTexParameteri(36197, 10243, 33071);
             SurfaceTexture surfaceTexture2 = new SurfaceTexture(this.E);
             this.x = surfaceTexture2;
             surfaceTexture2.setDefaultBufferSize(this.a.getWidth(), this.a.getHeight());
-            this.x.setOnFrameAvailableListener(new SurfaceTexture.OnFrameAvailableListener(this) { // from class: vi.q
-                public final /* synthetic */ s b;
-
-                {
-                    this.b = this;
-                }
-
-                @Override // android.graphics.SurfaceTexture.OnFrameAvailableListener
-                public final void onFrameAvailable(SurfaceTexture surfaceTexture22) {
-                    switch (i11) {
-                        case 0:
-                            this.b.b(false);
-                            break;
-                        default:
-                            this.b.b(true);
-                            break;
-                    }
-                }
-            }, this.u);
+            this.x.setOnFrameAvailableListener(new q(this, 1), this.u);
             this.y = new Surface(this.x);
         }
         Size size = this.a;
-        int i15 = this.j;
+        int i13 = this.j;
         boolean z11 = this.h;
-        int i16 = this.g;
-        this.N = new c0(i16, size, i15, z11);
-        GLES20.glViewport(0, 0, i16, i16);
+        int i14 = this.g;
+        this.N = new d0(i14, size, i13, z11);
+        GLES20.glViewport(0, 0, i14, i14);
     }
 
     public final void g() {
@@ -592,28 +554,28 @@ public final class s {
             surfaceTexture4.release();
             this.x = null;
         }
-        c0 c0Var = this.N;
-        if (c0Var != null) {
-            c0Var.g.b();
-            c0Var.h.b();
-            z zVar = c0Var.i;
-            if (zVar != null) {
-                zVar.b();
+        d0 d0Var = this.N;
+        if (d0Var != null) {
+            d0Var.g.b();
+            d0Var.h.b();
+            a0 a0Var = d0Var.i;
+            if (a0Var != null) {
+                a0Var.b();
             }
-            x xVar = c0Var.j;
-            if (xVar != null) {
-                xVar.b();
-            }
-            c0Var.k.b();
-            c0Var.l.b();
-            c0Var.m.b();
-            y yVar = c0Var.n;
+            y yVar = d0Var.j;
             if (yVar != null) {
                 yVar.b();
             }
-            int[] iArr = c0Var.t;
+            d0Var.k.b();
+            d0Var.l.b();
+            d0Var.m.b();
+            z zVar = d0Var.n;
+            if (zVar != null) {
+                zVar.b();
+            }
+            int[] iArr = d0Var.t;
             GLES20.glDeleteTextures(iArr.length, iArr, 0);
-            int[] iArr2 = c0Var.s;
+            int[] iArr2 = d0Var.s;
             GLES20.glDeleteFramebuffers(iArr2.length, iArr2, 0);
             this.N = null;
         }
@@ -659,15 +621,15 @@ public final class s {
             if (!EGL14.eglMakeCurrent(this.z, eGLSurface, eGLSurface, this.A)) {
                 throw new IllegalStateException("Unable to make preview EGL surface current: 0x" + Integer.toHexString(EGL14.eglGetError()));
             }
-            c0 c0Var = this.N;
+            d0 d0Var = this.N;
             int i11 = this.I;
             int i12 = this.J;
-            c0Var.getClass();
+            d0Var.getClass();
             GLES20.glDisable(3042);
             GLES20.glBindFramebuffer(36160, 0);
             GLES20.glViewport(0, 0, i11, i12);
-            c0Var.c(c0Var.g, fArr);
-            c0.d(i10);
+            d0Var.c(d0Var.g, fArr);
+            d0.d(i10);
             GLES20.glDrawArrays(5, 0, 4);
             if (!EGL14.eglSwapBuffers(this.z, this.C)) {
                 throw new IllegalStateException("Unable to swap preview EGL buffers: 0x" + Integer.toHexString(EGL14.eglGetError()));
@@ -701,7 +663,7 @@ public final class s {
             return;
         }
         CountDownLatch countDownLatch = new CountDownLatch(1);
-        handler.post(new ny0(this, handlerThread, countDownLatch, 24));
+        handler.post(new oy0(this, handlerThread, countDownLatch, 24));
         try {
             countDownLatch.await();
         } catch (InterruptedException unused) {
@@ -728,15 +690,15 @@ public final class s {
         r rVar = this.r;
         if (rVar != null) {
             m mVar = (m) rVar;
-            long j12 = mVar.x;
+            long j12 = mVar.C;
             int i10 = (int) (j12 % 256);
-            mVar.k[i10] = j10 / 1000;
-            mVar.l[i10] = nanoTime2;
-            mVar.x = j12 + 1;
+            mVar.l[i10] = j10 / 1000;
+            mVar.m[i10] = nanoTime2;
+            mVar.C = j12 + 1;
             synchronized (mVar) {
-                if (mVar.t != null && !mVar.u) {
-                    d dVar = mVar.t;
-                    mVar.t = null;
+                if (mVar.u != null && !mVar.v) {
+                    d dVar = mVar.u;
+                    mVar.u = null;
                     mVar.f.b("first synchronized video frame submitted");
                     dVar.run();
                 }

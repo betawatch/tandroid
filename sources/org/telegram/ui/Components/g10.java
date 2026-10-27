@@ -10,16 +10,16 @@ import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_chatlists;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public final class g10 extends lm0 {
+public final class g10 extends mm0 {
     public final /* synthetic */ n10 c;
 
     public g10(n10 n10Var) {
         this.c = n10Var;
     }
 
-    @Override // org.telegram.ui.Components.lm0
+    @Override // org.telegram.ui.Components.mm0
     public final boolean D(s4.e1 e1Var) {
         if (e1Var.f != 2) {
             return false;
@@ -199,6 +199,6 @@ public final class g10 extends lm0 {
             }
             m10Var = m10Var2;
         }
-        return new vl0(m10Var);
+        return new wl0(m10Var);
     }
 }

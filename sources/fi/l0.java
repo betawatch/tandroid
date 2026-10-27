@@ -12,7 +12,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MediaController;
 import org.telegram.ui.BubbleActivity;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class l0 extends View {
     public final Paint a;
@@ -129,8 +129,8 @@ public final class l0 extends View {
         }
         canvas.translate(gVar.d * 1.0f, gVar.e * 1.0f);
         float f17 = (gVar.f / z11) * containerWidth;
-        sg.z1 z1Var = m0Var.b;
-        float lerp6 = (z1Var == null || (cropState = z1Var.G0) == null) ? AndroidUtilities.lerp(1.0f, f17, f11) : AndroidUtilities.lerp(cropState.cropScale, f17, f11);
+        sg.y1 y1Var = m0Var.b;
+        float lerp6 = (y1Var == null || (cropState = y1Var.G0) == null) ? AndroidUtilities.lerp(1.0f, f17, f11) : AndroidUtilities.lerp(cropState.cropScale, f17, f11);
         canvas.scale(lerp6, lerp6);
         canvas.translate(gVar.b * f15 * 1.0f, gVar.c * f16 * 1.0f);
         float d = m0Var.d.d(i10, false) + m0Var.b.getOrientation() + gVar.g;
@@ -153,9 +153,9 @@ public final class l0 extends View {
         }
         canvas.scale(AndroidUtilities.lerp(1.0f, -1.0f, h6Var.e(z10)), 1.0f);
         canvas.translate((-m0Var.b.getContentWidth()) / 2.0f, (-m0Var.b.getContentHeight()) / 2.0f);
-        sg.z1 z1Var2 = m0Var.b;
-        Paint paint2 = z1Var2.F0;
-        Bitmap bitmap = z1Var2.A0;
+        sg.y1 y1Var2 = m0Var.b;
+        Paint paint2 = y1Var2.F0;
+        Bitmap bitmap = y1Var2.A0;
         if (bitmap != null) {
             paint2.setAlpha(255);
             canvas.drawBitmap(bitmap, 0.0f, 0.0f, paint2);

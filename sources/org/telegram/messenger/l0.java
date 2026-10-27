@@ -14,7 +14,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_bots;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class l0 implements Runnable {
     public final /* synthetic */ int a;
@@ -38,7 +38,7 @@ public final /* synthetic */ class l0 implements Runnable {
                 ((BirthdayController) this.c).lambda$new$1(this.b, (ArrayList) this.d, (BirthdayController.TL_birthdays) this.e);
                 break;
             case 1:
-                ((MessagesController) this.c).lambda$checkChatlistFolderUpdate$482((TLObject) this.d, this.b, (MessagesController.ChatlistUpdatesStat) this.e);
+                ((MessagesController) this.c).lambda$checkChatlistFolderUpdate$483((TLObject) this.d, this.b, (MessagesController.ChatlistUpdatesStat) this.e);
                 break;
             case 2:
                 ((ContactsController) this.c).lambda$loadPrivacySettings$64((TLRPC.TL_error) this.d, (TLObject) this.e, this.b);
@@ -80,10 +80,10 @@ public final /* synthetic */ class l0 implements Runnable {
                 ((MessagesController) this.c).lambda$loadMessagesInternal$183(this.b, (TLRPC.TL_messages_getHistory) this.d, (TLRPC.TL_error) this.e);
                 break;
             case 15:
-                ((MessagesStorage) this.c).lambda$hasAuthMessage$179(this.b, (boolean[]) this.d, (CountDownLatch) this.e);
+                ((MessagesStorage) this.c).lambda$hasAuthMessage$180(this.b, (boolean[]) this.d, (CountDownLatch) this.e);
                 break;
             case 16:
-                ((MessagesStorage) this.c).lambda$getBotCache$130(this.b, (String) this.d, (RequestDelegate) this.e);
+                ((MessagesStorage) this.c).lambda$getBotCache$131(this.b, (String) this.d, (RequestDelegate) this.e);
                 break;
             case 17:
                 PasskeysController.lambda$create$6((Context) this.c, this.b, (TL_account.registerPasskey) this.d, (Utilities.Callback2) this.e);

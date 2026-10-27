@@ -14,9 +14,9 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.gb1;
+import org.telegram.ui.Components.kb1;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class v6 extends LinearLayout {
     public static final /* synthetic */ int c = 0;
@@ -132,11 +132,11 @@ public final class v6 extends LinearLayout {
             q4Var.setText(LocaleController.getString(R.string.PeerRequirements));
             int i13 = org.telegram.ui.ActionBar.y6.d6;
             org.telegram.ui.ActionBar.f7.i(i13, q4Var, null);
-            addView(q4Var, gb1.r(-1, -2));
+            addView(q4Var, kb1.r(-1, -2));
             View x3Var = new x3(getContext(), 9, 1);
             x3Var.setBackground(null);
             org.telegram.ui.ActionBar.f7.i(i13, x3Var, null);
-            addView(x3Var, gb1.r(-1, -2));
+            addView(x3Var, kb1.r(-1, -2));
             int size = arrayList.size();
             int i14 = 0;
             while (i14 < size) {
@@ -151,24 +151,24 @@ public final class v6 extends LinearLayout {
                 imageView.setScaleType(ImageView.ScaleType.CENTER);
                 imageView.setImageResource(w6Var.a <= 0 ? R.drawable.list_check : R.drawable.list_circle);
                 org.telegram.ui.ActionBar.f7.t(imageView, org.telegram.ui.ActionBar.y6.L6, null, PorterDuff.Mode.MULTIPLY);
-                u6Var.addView(imageView, gb1.t(20, 20, 0.0f, 51, (w6Var.a * 16) + 17, -1, 0, 0));
+                u6Var.addView(imageView, kb1.t(20, 20, 0.0f, 51, (w6Var.a * 16) + 17, -1, 0, 0));
                 TextView textView = new TextView(context);
                 textView.setTextSize(1, 14.0f);
                 org.telegram.ui.ActionBar.f7.V(textView, org.telegram.ui.ActionBar.y6.z6, null);
                 textView.setSingleLine(false);
                 textView.setText(w6Var.b);
-                u6Var.addView(textView, gb1.x(-1, -2, 1, 6, 4, 24, 4));
-                addView(u6Var, gb1.r(-1, -2));
+                u6Var.addView(textView, kb1.x(-1, -2, 1, 6, 4, 24, 4));
+                addView(u6Var, kb1.r(-1, -2));
             }
             int i15 = org.telegram.ui.ActionBar.y6.d6;
             View x3Var2 = new x3(getContext(), 12, 1);
             x3Var2.setBackground(null);
             org.telegram.ui.ActionBar.f7.i(i15, x3Var2, null);
-            addView(x3Var2, gb1.r(-1, -2));
+            addView(x3Var2, kb1.r(-1, -2));
             Drawable X0 = org.telegram.ui.ActionBar.y6.X0(getContext(), R.drawable.greydivider_bottom, org.telegram.ui.ActionBar.y6.b7);
             View x3Var3 = new x3(getContext(), 12, 1);
             x3Var3.setBackground(X0);
-            addView(x3Var3, gb1.r(-1, -2));
+            addView(x3Var3, kb1.r(-1, -2));
         }
     }
 }

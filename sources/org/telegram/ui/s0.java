@@ -2,7 +2,7 @@ package org.telegram.ui;
 
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class s0 extends org.telegram.ui.Components.u6 {
     public final /* synthetic */ int b;
@@ -20,13 +20,13 @@ public final class s0 extends org.telegram.ui.Components.u6 {
                 ((ArticleViewer$WindowView) obj).setInnerTranslationX(f7);
                 break;
             case 1:
-                un.bd = (int) f7;
+                wn.fd = (int) f7;
                 break;
             case 2:
                 ((org.telegram.ui.Cells.s1) obj).setTimeAlpha(f7);
                 break;
             case 3:
-                ((wz0) obj).setCrossfadeProgress(f7);
+                ((yz0) obj).setCrossfadeProgress(f7);
                 break;
             case 4:
                 ((SecretMediaViewer) obj).setVideoCrossfadeAlpha(f7);
@@ -35,14 +35,14 @@ public final class s0 extends org.telegram.ui.Components.u6 {
                 ((SecretMediaViewer) obj).setAnimationValue(f7);
                 break;
             default:
-                w31 w31Var = (w31) obj;
-                if (w31Var.a != f7) {
-                    w31Var.a = f7;
-                    SecretMediaViewer secretMediaViewer = w31Var.r;
+                z31 z31Var = (z31) obj;
+                if (z31Var.a != f7) {
+                    z31Var.a = f7;
+                    SecretMediaViewer secretMediaViewer = z31Var.r;
                     secretMediaViewer.S.setAlpha(f7);
-                    if (!w31Var.b) {
-                        if (w31Var.c) {
-                            w31Var.setTranslationY((1.0f - f7) * AndroidUtilities.dpf2(24.0f));
+                    if (!z31Var.b) {
+                        if (z31Var.c) {
+                            z31Var.setTranslationY((1.0f - f7) * AndroidUtilities.dpf2(24.0f));
                         }
                         secretMediaViewer.R.setAlpha(f7);
                         break;
@@ -53,10 +53,10 @@ public final class s0 extends org.telegram.ui.Components.u6 {
                         float f11 = 1.0f - (0.1f * f10);
                         secretMediaViewer.S.setScaleX(f11);
                         secretMediaViewer.S.setScaleY(f11);
-                        org.telegram.ui.Components.u81 u81Var = secretMediaViewer.Q;
-                        if (u81Var.y != f10) {
-                            u81Var.y = f10;
-                            u81Var.v.invalidate();
+                        org.telegram.ui.Components.v81 v81Var = secretMediaViewer.Q;
+                        if (v81Var.y != f10) {
+                            v81Var.y = f10;
+                            v81Var.v.invalidate();
                             break;
                         }
                     }
@@ -71,17 +71,17 @@ public final class s0 extends org.telegram.ui.Components.u6 {
             case 0:
                 return Float.valueOf(((ArticleViewer$WindowView) obj).getInnerTranslationX());
             case 1:
-                return Float.valueOf(un.bd);
+                return Float.valueOf(wn.fd);
             case 2:
                 return Float.valueOf(((org.telegram.ui.Cells.s1) obj).getTimeAlpha());
             case 3:
-                return Float.valueOf(((wz0) obj).S);
+                return Float.valueOf(((yz0) obj).S);
             case 4:
                 return Float.valueOf(((SecretMediaViewer) obj).getVideoCrossfadeAlpha());
             case 5:
                 return Float.valueOf(((SecretMediaViewer) obj).getAnimationValue());
             default:
-                return Float.valueOf(((w31) obj).a);
+                return Float.valueOf(((z31) obj).a);
         }
     }
 }

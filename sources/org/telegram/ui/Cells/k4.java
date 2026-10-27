@@ -27,12 +27,12 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
+import org.telegram.ui.Components.aq;
 import org.telegram.ui.Components.ar;
 import org.telegram.ui.Components.ds;
-import org.telegram.ui.Components.gb1;
-import org.telegram.ui.Components.zp;
+import org.telegram.ui.Components.kb1;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class k4 extends FrameLayout implements org.telegram.ui.ActionBar.p6 {
     public boolean E;
@@ -56,7 +56,7 @@ public final class k4 extends FrameLayout implements org.telegram.ui.ActionBar.p
     public final org.telegram.ui.Components.y9 a;
     public final di.l4 b;
     public final org.telegram.ui.ActionBar.b6 c;
-    public final zp d;
+    public final aq d;
     public final org.telegram.ui.Components.j9 e;
     public Object f;
     public CharSequence h;
@@ -92,9 +92,9 @@ public final class k4 extends FrameLayout implements org.telegram.ui.ActionBar.p
     }
 
     public final void c(boolean z10, boolean z11) {
-        zp zpVar = this.d;
-        if (zpVar != null) {
-            zpVar.a(z10, z11);
+        aq aqVar = this.d;
+        if (aqVar != null) {
+            aqVar.a(z10, z11);
             return;
         }
         if (this.v != 2 || this.H == z10) {
@@ -199,7 +199,7 @@ public final class k4 extends FrameLayout implements org.telegram.ui.ActionBar.p
         boolean z10 = obj instanceof String;
         org.telegram.ui.ActionBar.u6 u6Var = this.M;
         boolean z11 = this.K;
-        zp zpVar = this.d;
+        aq aqVar = this.d;
         org.telegram.ui.Components.y9 y9Var = this.a;
         di.l4 l4Var = this.b;
         org.telegram.ui.Components.j9 j9Var = this.e;
@@ -211,12 +211,12 @@ public final class k4 extends FrameLayout implements org.telegram.ui.ActionBar.p
             int dp = AndroidUtilities.dp(38.0f);
             layoutParams2.height = dp;
             layoutParams.width = dp;
-            if (zpVar != null) {
-                ((FrameLayout.LayoutParams) zpVar.getLayoutParams()).topMargin = AndroidUtilities.dp(25.0f);
+            if (aqVar != null) {
+                ((FrameLayout.LayoutParams) aqVar.getLayoutParams()).topMargin = AndroidUtilities.dp(25.0f);
                 if (LocaleController.isRTL) {
-                    ((FrameLayout.LayoutParams) zpVar.getLayoutParams()).rightMargin = AndroidUtilities.dp(31.0f);
+                    ((FrameLayout.LayoutParams) aqVar.getLayoutParams()).rightMargin = AndroidUtilities.dp(31.0f);
                 } else {
-                    ((FrameLayout.LayoutParams) zpVar.getLayoutParams()).leftMargin = AndroidUtilities.dp(32.0f);
+                    ((FrameLayout.LayoutParams) aqVar.getLayoutParams()).leftMargin = AndroidUtilities.dp(32.0f);
                 }
             }
             String str4 = (String) this.f;
@@ -334,15 +334,15 @@ public final class k4 extends FrameLayout implements org.telegram.ui.ActionBar.p
             int dp2 = AndroidUtilities.dp(46.0f);
             layoutParams4.height = dp2;
             layoutParams3.width = dp2;
-            if (zpVar != null) {
-                FrameLayout.LayoutParams layoutParams5 = (FrameLayout.LayoutParams) zpVar.getLayoutParams();
+            if (aqVar != null) {
+                FrameLayout.LayoutParams layoutParams5 = (FrameLayout.LayoutParams) aqVar.getLayoutParams();
                 int dp3 = AndroidUtilities.dp(29.0f);
                 int i11 = this.F;
                 layoutParams5.topMargin = dp3 + i11;
                 if (LocaleController.isRTL) {
-                    ((FrameLayout.LayoutParams) zpVar.getLayoutParams()).rightMargin = AndroidUtilities.dp(40.0f) + i11;
+                    ((FrameLayout.LayoutParams) aqVar.getLayoutParams()).rightMargin = AndroidUtilities.dp(40.0f) + i11;
                 } else {
-                    ((FrameLayout.LayoutParams) zpVar.getLayoutParams()).leftMargin = AndroidUtilities.dp(40.0f) + i11;
+                    ((FrameLayout.LayoutParams) aqVar.getLayoutParams()).leftMargin = AndroidUtilities.dp(40.0f) + i11;
                 }
             }
             Object obj2 = this.f;
@@ -528,7 +528,7 @@ public final class k4 extends FrameLayout implements org.telegram.ui.ActionBar.p
         invalidate();
     }
 
-    public zp getCheckBox() {
+    public aq getCheckBox() {
         return this.d;
     }
 
@@ -574,8 +574,8 @@ public final class k4 extends FrameLayout implements org.telegram.ui.ActionBar.p
     @Override // android.view.View
     public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
         super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-        zp zpVar = this.d;
-        if (zpVar != null ? zpVar.a.q : this.H) {
+        aq aqVar = this.d;
+        if (aqVar != null ? aqVar.a.q : this.H) {
             accessibilityNodeInfo.setCheckable(true);
             accessibilityNodeInfo.setChecked(true);
         }
@@ -589,9 +589,9 @@ public final class k4 extends FrameLayout implements org.telegram.ui.ActionBar.p
     }
 
     public void setCheckBoxEnabled(boolean z10) {
-        zp zpVar = this.d;
-        if (zpVar != null) {
-            zpVar.setEnabled(z10);
+        aq aqVar = this.d;
+        if (aqVar != null) {
+            aqVar.setEnabled(z10);
         }
     }
 
@@ -651,7 +651,7 @@ public final class k4 extends FrameLayout implements org.telegram.ui.ActionBar.p
         this.a = y9Var;
         y9Var.setRoundRadius(AndroidUtilities.dp(24.0f));
         boolean z12 = LocaleController.isRTL;
-        addView(y9Var, gb1.h(46, 46.0f, (z12 ? 5 : 3) | 48, z12 ? 0.0f : i11 + 13, 6.0f, z12 ? i11 + 13 : 0.0f, 0.0f));
+        addView(y9Var, kb1.h(46, 46.0f, (z12 ? 5 : 3) | 48, z12 ? 0.0f : i11 + 13, 6.0f, z12 ? i11 + 13 : 0.0f, 0.0f));
         di.l4 l4Var = new di.l4(context, 1);
         this.b = l4Var;
         NotificationCenter.listenEmojiLoading(l4Var);
@@ -660,21 +660,21 @@ public final class k4 extends FrameLayout implements org.telegram.ui.ActionBar.p
         l4Var.setTextSize(16);
         l4Var.setGravity((LocaleController.isRTL ? 5 : 3) | 48);
         boolean z13 = LocaleController.isRTL;
-        addView(l4Var, gb1.h(-1, 20.0f, (z13 ? 5 : 3) | 48, (z13 ? 28 : 72) + i11, 10.0f, (z13 ? 72 : 28) + i11, 0.0f));
+        addView(l4Var, kb1.h(-1, 20.0f, (z13 ? 5 : 3) | 48, (z13 ? 28 : 72) + i11, 10.0f, (z13 ? 72 : 28) + i11, 0.0f));
         org.telegram.ui.ActionBar.b6 b6Var = new org.telegram.ui.ActionBar.b6(context);
         this.c = b6Var;
         b6Var.setTextSize(14);
         b6Var.setGravity((LocaleController.isRTL ? 5 : 3) | 48);
         boolean z14 = LocaleController.isRTL;
-        addView(b6Var, gb1.h(-1, 20.0f, (z14 ? 5 : 3) | 48, (z14 ? 28 : 72) + i11, 32.0f, (z14 ? 72 : 28) + i11, 0.0f));
+        addView(b6Var, kb1.h(-1, 20.0f, (z14 ? 5 : 3) | 48, (z14 ? 28 : 72) + i11, 32.0f, (z14 ? 72 : 28) + i11, 0.0f));
         if (i10 == 1) {
-            zp zpVar = new zp(context, 21, u6Var);
-            this.d = zpVar;
-            zpVar.b(-1, org.telegram.ui.ActionBar.y6.d6, org.telegram.ui.ActionBar.y6.k7);
-            zpVar.setDrawUnchecked(false);
-            zpVar.setDrawBackgroundAsArc(3);
+            aq aqVar = new aq(context, 21, u6Var);
+            this.d = aqVar;
+            aqVar.b(-1, org.telegram.ui.ActionBar.y6.d6, org.telegram.ui.ActionBar.y6.k7);
+            aqVar.setDrawUnchecked(false);
+            aqVar.setDrawBackgroundAsArc(3);
             boolean z15 = LocaleController.isRTL;
-            addView(zpVar, gb1.h(24, 24.0f, (z15 ? 5 : 3) | 48, z15 ? 0.0f : i11 + 40, 33.0f, z15 ? i11 + 39 : 0.0f, 0.0f));
+            addView(aqVar, kb1.h(24, 24.0f, (z15 ? 5 : 3) | 48, z15 ? 0.0f : i11 + 40, 33.0f, z15 ? i11 + 39 : 0.0f, 0.0f));
         } else if (i10 == 2) {
             Paint paint = new Paint(1);
             this.J = paint;

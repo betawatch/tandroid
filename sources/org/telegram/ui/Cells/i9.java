@@ -19,15 +19,15 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.gb1;
-import org.telegram.ui.Components.w90;
-import org.telegram.ui.Components.z90;
+import org.telegram.ui.Components.aa0;
+import org.telegram.ui.Components.kb1;
+import org.telegram.ui.Components.x90;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public class i9 extends FrameLayout implements org.telegram.ui.ActionBar.p6 {
     public final w1 a;
-    public final w90 b;
+    public final x90 b;
     public int c;
     public Integer d;
     public int e;
@@ -59,18 +59,18 @@ public class i9 extends FrameLayout implements org.telegram.ui.ActionBar.p6 {
         return this.a.getText();
     }
 
-    public z90 getTextView() {
+    public aa0 getTextView() {
         return this.a;
     }
 
     @Override // android.view.View
     public final void onDraw(Canvas canvas) {
-        w90 w90Var = this.b;
-        if (w90Var != null) {
+        x90 x90Var = this.b;
+        if (x90Var != null) {
             canvas.save();
             w1 w1Var = this.a;
             canvas.translate(w1Var.getLeft(), w1Var.getTop());
-            if (w90Var.f(canvas)) {
+            if (x90Var.f(canvas)) {
                 invalidate();
             }
             canvas.restore();
@@ -196,9 +196,9 @@ public class i9 extends FrameLayout implements org.telegram.ui.ActionBar.p6 {
         this.e = 10;
         this.f = 17;
         this.s = u6Var;
-        w90 w90Var = new w90(this);
-        this.b = w90Var;
-        w1 w1Var = new w1(this, context, w90Var, u6Var);
+        x90 x90Var = new x90(this);
+        this.b = x90Var;
+        w1 w1Var = new w1(this, context, x90Var, u6Var);
         this.a = w1Var;
         w1Var.setTextSize(1, 14.0f);
         w1Var.setGravity(LocaleController.isRTL ? 5 : 3);
@@ -212,7 +212,7 @@ public class i9 extends FrameLayout implements org.telegram.ui.ActionBar.p6 {
         org.telegram.ui.ActionBar.f7.H(w1Var, this.c, u6Var);
         w1Var.setImportantForAccessibility(2);
         float f7 = i10;
-        addView(w1Var, gb1.h(-1, -2.0f, (LocaleController.isRTL ? 5 : 3) | 48, f7, 0.0f, f7, 0.0f));
+        addView(w1Var, kb1.h(-1, -2.0f, (LocaleController.isRTL ? 5 : 3) | 48, f7, 0.0f, f7, 0.0f));
         this.n = LocaleController.isRTL;
         setWillNotDraw(false);
     }

@@ -9,16 +9,16 @@ import b2.e1;
 import b2.f1;
 import b2.g1;
 import b2.p1;
-import b2.u0;
+import b2.s0;
 import b2.u1;
 import b2.w1;
 import b2.z0;
 import java.util.List;
-import org.telegram.ui.Components.n60;
-import org.telegram.ui.Components.s81;
-import vi.s0;
+import org.telegram.ui.Components.o60;
+import org.telegram.ui.Components.t81;
+import vi.u0;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
 public final class z implements e1 {
     public final /* synthetic */ int a;
@@ -90,9 +90,9 @@ public final class z implements e1 {
                 }
                 break;
             default:
-                s0 s0Var = (s0) this.b;
-                if (s0Var.W == 5) {
-                    s0Var.x(z10);
+                u0 u0Var = (u0) this.b;
+                if (u0Var.Z == 5) {
+                    u0Var.y(z10);
                     break;
                 }
                 break;
@@ -110,12 +110,12 @@ public final class z implements e1 {
     }
 
     @Override // b2.e1
-    public final /* synthetic */ void onMediaMetadataChanged(b2.s0 s0Var) {
+    public final /* synthetic */ void onMediaMetadataChanged(s0 s0Var) {
         int i10 = this.a;
     }
 
     @Override // b2.e1
-    public final /* synthetic */ void onMetadata(u0 u0Var) {
+    public final /* synthetic */ void onMetadata(b2.u0 u0Var) {
         int i10 = this.a;
     }
 
@@ -146,11 +146,11 @@ public final class z implements e1 {
                 }
                 break;
             default:
-                s0 s0Var = (s0) this.b;
-                s0Var.m.b("preview playback state=" + i10);
-                if (s0Var.W == 5 && i10 == 4 && (j0Var2 = s0Var.S) != null) {
-                    j0Var2.Z0(5, s0Var.G);
-                    s0Var.S.i();
+                u0 u0Var = (u0) this.b;
+                u0Var.m.b("preview playback state=" + i10);
+                if (u0Var.Z == 5 && i10 == 4 && (j0Var2 = u0Var.V) != null) {
+                    j0Var2.Z0(5, u0Var.J);
+                    u0Var.V.i();
                     break;
                 }
                 break;
@@ -172,9 +172,9 @@ public final class z implements e1 {
                 ((ui.o) this.b).g(z0Var);
                 break;
             default:
-                s0 s0Var = (s0) this.b;
-                s0Var.m.b("preview player error: code=" + z0Var.a);
-                s0Var.h(z0Var);
+                u0 u0Var = (u0) this.b;
+                u0Var.m.b("preview player error: code=" + z0Var.a);
+                u0Var.h(z0Var);
                 break;
         }
     }
@@ -188,11 +188,11 @@ public final class z implements e1 {
     public final void onPlayerStateChanged(boolean z10, int i10) {
         switch (this.a) {
             case 1:
-                s81 s81Var = (s81) this.b;
-                if (!s81Var.H && i10 == 3) {
-                    s81Var.H = true;
-                    if (s81Var.G && s81Var.I) {
-                        s81Var.C();
+                t81 t81Var = (t81) this.b;
+                if (!t81Var.H && i10 == 3) {
+                    t81Var.H = true;
+                    if (t81Var.G && t81Var.I) {
+                        t81Var.C();
                         break;
                     }
                 }
@@ -201,7 +201,7 @@ public final class z implements e1 {
     }
 
     @Override // b2.e1
-    public final /* synthetic */ void onPlaylistMetadataChanged(b2.s0 s0Var) {
+    public final /* synthetic */ void onPlaylistMetadataChanged(s0 s0Var) {
         int i10 = this.a;
     }
 
@@ -218,9 +218,9 @@ public final class z implements e1 {
             case 2:
                 break;
             default:
-                s0 s0Var = (s0) this.b;
-                if (s0Var.W == 5) {
-                    n60.m((n60) s0Var.d.b);
+                u0 u0Var = (u0) this.b;
+                if (u0Var.Z == 5) {
+                    o60.n((o60) u0Var.d.b);
                     break;
                 }
                 break;
@@ -333,46 +333,46 @@ public final class z implements e1 {
     private final /* synthetic */ void K0(boolean z10) {
     }
 
-    private final /* synthetic */ void L(b2.s0 s0Var) {
+    private final /* synthetic */ void L(s0 s0Var) {
     }
 
     private final /* synthetic */ void L0(boolean z10) {
     }
 
-    private final /* synthetic */ void M(b2.s0 s0Var) {
+    private final /* synthetic */ void M(s0 s0Var) {
     }
 
     private final /* synthetic */ void M0(boolean z10) {
     }
 
-    private final /* synthetic */ void N(b2.s0 s0Var) {
+    private final /* synthetic */ void N(s0 s0Var) {
     }
 
     private final /* synthetic */ void N0(boolean z10) {
     }
 
-    private final /* synthetic */ void O(b2.s0 s0Var) {
+    private final /* synthetic */ void O(s0 s0Var) {
     }
 
     private final /* synthetic */ void O0(boolean z10) {
     }
 
-    private final /* synthetic */ void P(u0 u0Var) {
+    private final /* synthetic */ void P(b2.u0 u0Var) {
     }
 
     private final /* synthetic */ void P0(boolean z10) {
     }
 
-    private final /* synthetic */ void Q(u0 u0Var) {
+    private final /* synthetic */ void Q(b2.u0 u0Var) {
     }
 
     private final /* synthetic */ void Q0(boolean z10) {
     }
 
-    private final /* synthetic */ void R(u0 u0Var) {
+    private final /* synthetic */ void R(b2.u0 u0Var) {
     }
 
-    private final /* synthetic */ void S(u0 u0Var) {
+    private final /* synthetic */ void S(b2.u0 u0Var) {
     }
 
     private final /* synthetic */ void X(a1 a1Var) {
@@ -522,25 +522,25 @@ public final class z implements e1 {
     private final /* synthetic */ void q(d2.c cVar) {
     }
 
-    private final /* synthetic */ void q0(b2.s0 s0Var) {
+    private final /* synthetic */ void q0(s0 s0Var) {
     }
 
     private final /* synthetic */ void r(List list) {
     }
 
-    private final /* synthetic */ void r0(b2.s0 s0Var) {
+    private final /* synthetic */ void r0(s0 s0Var) {
     }
 
     private final /* synthetic */ void s(d2.c cVar) {
     }
 
-    private final /* synthetic */ void s0(b2.s0 s0Var) {
+    private final /* synthetic */ void s0(s0 s0Var) {
     }
 
     private final /* synthetic */ void t(List list) {
     }
 
-    private final /* synthetic */ void t0(b2.s0 s0Var) {
+    private final /* synthetic */ void t0(s0 s0Var) {
     }
 
     private final /* synthetic */ void u0(int i10) {

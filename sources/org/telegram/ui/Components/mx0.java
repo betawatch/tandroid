@@ -1,34 +1,38 @@
 package org.telegram.ui.Components;
 
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MessagesController;
+import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public final class mx0 {
-    public MessagesController.PeerColor a;
-    public org.telegram.ui.ActionBar.u6 b;
-    public int c;
-    public int d;
-    public float e;
+public final /* synthetic */ class mx0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ px0 b;
 
-    public final void a(MessagesController.PeerColor peerColor) {
-        this.a = peerColor;
-        if (peerColor == null) {
-            this.c = org.telegram.ui.ActionBar.y6.w0(org.telegram.ui.ActionBar.y6.A8, this.b);
-            this.d = org.telegram.ui.ActionBar.y6.w0(org.telegram.ui.ActionBar.y6.s8, this.b);
-            this.c = i0.a.f(this.e, this.c, 603979776);
-            this.d = i0.a.f(this.e, this.d, -1);
-            return;
+    public /* synthetic */ mx0(px0 px0Var, int i10) {
+        this.a = i10;
+        this.b = px0Var;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                px0 px0Var = this.b;
+                px0Var.invalidate();
+                AndroidUtilities.runOnUIThread(new mx0(px0Var, 1));
+                break;
+            default:
+                px0 px0Var2 = this.b;
+                ox0 ox0Var = px0Var2.e;
+                if (ox0Var != null) {
+                    px0Var2.getVisibilityFactor();
+                    ProfileActivity profileActivity = ((org.telegram.ui.yx0) ox0Var).b;
+                    profileActivity.r.setTranslationX(profileActivity.e4(profileActivity.l6, profileActivity.n6));
+                    profileActivity.r.setTranslationY(profileActivity.f4(profileActivity.o6));
+                    break;
+                }
+                break;
         }
-        int bgColor1 = peerColor.getBgColor1(org.telegram.ui.ActionBar.y6.I.q());
-        int bgColor2 = peerColor.getBgColor2(org.telegram.ui.ActionBar.y6.I.q());
-        org.telegram.ui.ActionBar.u6 u6Var = this.b;
-        int f7 = i0.a.f(0.75f, bgColor2, bgColor1);
-        int w02 = AndroidUtilities.computePerceivedBrightness(f7) > 0.721f ? org.telegram.ui.ActionBar.y6.w0(org.telegram.ui.ActionBar.y6.v6, u6Var) : org.telegram.ui.ActionBar.y6.b(0.08f, -0.08f, f7);
-        this.c = w02;
-        this.d = AndroidUtilities.computePerceivedBrightness(w02) > 0.721f ? -16777216 : -1;
-        this.c = i0.a.f(this.e, this.c, 603979776);
-        this.d = i0.a.f(this.e, this.d, -1);
     }
 }

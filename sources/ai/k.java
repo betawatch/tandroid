@@ -34,28 +34,28 @@ import org.telegram.ui.ActionBar.k3;
 import org.telegram.ui.ActionBar.r2;
 import org.telegram.ui.Cells.r4;
 import org.telegram.ui.Cells.w7;
+import org.telegram.ui.Components.am0;
 import org.telegram.ui.Components.g5;
-import org.telegram.ui.Components.j71;
+import org.telegram.ui.Components.k71;
 import org.telegram.ui.Components.t5;
-import org.telegram.ui.Components.t61;
 import org.telegram.ui.Components.ti;
-import org.telegram.ui.Components.ua0;
-import org.telegram.ui.Components.us0;
-import org.telegram.ui.Components.zl0;
+import org.telegram.ui.Components.u61;
+import org.telegram.ui.Components.va0;
+import org.telegram.ui.Components.vs0;
 import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.ay;
-import org.telegram.ui.cy;
-import org.telegram.ui.gw;
-import org.telegram.ui.lx;
-import org.telegram.ui.nt0;
-import org.telegram.ui.qw;
-import org.telegram.ui.un;
-import sg.x2;
+import org.telegram.ui.dy;
+import org.telegram.ui.ey;
+import org.telegram.ui.iw;
+import org.telegram.ui.ox;
+import org.telegram.ui.pt0;
+import org.telegram.ui.sw;
+import org.telegram.ui.wn;
+import sg.w2;
 import zh.l4;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class k implements zl0 {
+public final /* synthetic */ class k implements am0 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
@@ -64,7 +64,7 @@ public final /* synthetic */ class k implements zl0 {
         this.b = obj;
     }
 
-    @Override // org.telegram.ui.Components.zl0
+    @Override // org.telegram.ui.Components.am0
     public final void c(int i10, View view) {
         TLRPC.Document document;
         x0 x0Var;
@@ -74,7 +74,7 @@ public final /* synthetic */ class k implements zl0 {
         t5 t5Var;
         org.telegram.ui.ActionBar.k kVar;
         Object O;
-        t61 G;
+        u61 G;
         switch (this.a) {
             case 0:
                 w0 w0Var = (w0) this.b;
@@ -151,20 +151,20 @@ public final /* synthetic */ class k implements zl0 {
                 uc.P((uc) this.b, i10);
                 break;
             case 5:
-                ((qw) this.b).i((di.q) view, false);
+                ((sw) this.b).i((di.q) view, false);
                 break;
             case 6:
                 ei.r rVar = (ei.r) this.b;
-                us0 us0Var = rVar.W;
-                r2 r2Var = us0Var.a;
+                vs0 vs0Var = rVar.W;
+                r2 r2Var = vs0Var.a;
                 if (view instanceof w7) {
                     MessageObject messageObject = ((w7) view).getMessageObject();
-                    if (us0Var.G.E1) {
-                        if (us0Var.c(messageObject)) {
-                            us0Var.g(messageObject);
+                    if (vs0Var.G.E1) {
+                        if (vs0Var.c(messageObject)) {
+                            vs0Var.g(messageObject);
                             break;
                         } else {
-                            us0Var.e(messageObject);
+                            vs0Var.e(messageObject);
                             break;
                         }
                     } else {
@@ -174,7 +174,7 @@ public final /* synthetic */ class k implements zl0 {
                         s6 s6Var = rVar.a;
                         q7 a10 = q7.a(rVar.f);
                         a10.s += ((r2Var instanceof ProfileActivity) && ((ProfileActivity) r2Var).s1) ? AndroidUtilities.dp(68.0f) : 0;
-                        orCreateStoryViewer.C(context, id2, s6Var, a10);
+                        orCreateStoryViewer.D(context, id2, s6Var, a10);
                         break;
                     }
                 }
@@ -250,8 +250,8 @@ public final /* synthetic */ class k implements zl0 {
                 e.j = str;
                 e.a.edit().putString("typeface", str).apply();
                 sg.j jVar = taVar.y0;
-                if (jVar instanceof x2) {
-                    ((x2) jVar).setTypeface(j0Var);
+                if (jVar instanceof w2) {
+                    ((w2) jVar).setTypeface(j0Var);
                 }
                 taVar.M0(false);
                 break;
@@ -259,9 +259,9 @@ public final /* synthetic */ class k implements zl0 {
                 gi.h.w0((gi.h) this.b, i10);
                 break;
             case 12:
-                j71 j71Var = ((gi.g) this.b).c0;
-                if (j71Var != null) {
-                    j71Var.G(i10 - 1);
+                k71 k71Var = ((gi.g) this.b).c0;
+                if (k71Var != null) {
+                    k71Var.G(i10 - 1);
                     break;
                 }
                 break;
@@ -273,57 +273,57 @@ public final /* synthetic */ class k implements zl0 {
                 if (view instanceof r4) {
                     r4 r4Var = (r4) view;
                     if (r4Var.E) {
-                        lx lxVar = i0Var.U;
-                        if (lxVar != null) {
-                            lxVar.a.V4(r4Var.getDialogId(), view);
+                        ox oxVar = i0Var.U;
+                        if (oxVar != null) {
+                            oxVar.a.V4(r4Var.getDialogId(), view);
                             break;
                         }
                     }
                 }
-                lx lxVar2 = i0Var.U;
-                if (lxVar2 != null) {
-                    cy cyVar = lxVar2.a;
+                ox oxVar2 = i0Var.U;
+                if (oxVar2 != null) {
+                    ey eyVar = oxVar2.a;
                     long longValue2 = ((Long) view.getTag()).longValue();
-                    if (!cyVar.l2) {
+                    if (!eyVar.l2) {
                         Bundle bundle = new Bundle();
                         if (DialogObject.isUserDialog(longValue2)) {
                             bundle.putLong("user_id", longValue2);
                         } else {
                             bundle.putLong("chat_id", -longValue2);
                         }
-                        cyVar.R3();
-                        if (AndroidUtilities.isTablet() && cyVar.e0 != null) {
+                        eyVar.R3();
+                        if (AndroidUtilities.isTablet() && eyVar.e0 != null) {
                             int i14 = 0;
                             while (true) {
-                                ay[] ayVarArr = cyVar.e0;
-                                if (i14 < ayVarArr.length) {
-                                    gw gwVar = ayVarArr[i14].d;
-                                    cyVar.p2.dialogId = longValue2;
-                                    gwVar.s = longValue2;
+                                dy[] dyVarArr = eyVar.e0;
+                                if (i14 < dyVarArr.length) {
+                                    iw iwVar = dyVarArr[i14].d;
+                                    eyVar.p2.dialogId = longValue2;
+                                    iwVar.s = longValue2;
                                     i14++;
                                 } else {
-                                    cyVar.q5(MessagesController.UPDATE_MASK_SELECT_DIALOG, true);
+                                    eyVar.q5(MessagesController.UPDATE_MASK_SELECT_DIALOG, true);
                                 }
                             }
                         }
-                        if (cyVar.n2 != null) {
-                            if (cyVar.getMessagesController().checkCanOpenChat(bundle, cyVar)) {
-                                cyVar.getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.closeChats, new Object[0]);
-                                cyVar.presentFragment(new un(bundle));
+                        if (eyVar.n2 != null) {
+                            if (eyVar.getMessagesController().checkCanOpenChat(bundle, eyVar)) {
+                                eyVar.getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.closeChats, new Object[0]);
+                                eyVar.presentFragment(new wn(bundle));
                                 break;
                             }
-                        } else if (cyVar.getMessagesController().checkCanOpenChat(bundle, cyVar)) {
-                            cyVar.presentFragment(new un(bundle));
+                        } else if (eyVar.getMessagesController().checkCanOpenChat(bundle, eyVar)) {
+                            eyVar.presentFragment(new wn(bundle));
                             break;
                         }
-                    } else if (cyVar.r5(longValue2)) {
-                        if (cyVar.I2.isEmpty()) {
-                            cyVar.W3(longValue2, 0L, true, null);
+                    } else if (eyVar.r5(longValue2)) {
+                        if (eyVar.I2.isEmpty()) {
+                            eyVar.W3(longValue2, 0L, true, null);
                             break;
                         } else {
-                            cyVar.X3(longValue2, cyVar.p3(longValue2, null));
-                            cyVar.k5();
-                            kVar = ((r2) cyVar).actionBar;
+                            eyVar.X3(longValue2, eyVar.p3(longValue2, null));
+                            eyVar.k5();
+                            kVar = ((r2) eyVar).actionBar;
                             kVar.g(true);
                             break;
                         }
@@ -350,7 +350,7 @@ public final /* synthetic */ class k implements zl0 {
                 if (O instanceof b2) {
                     if (UserConfig.getInstance(tiVar.M1).isPremium()) {
                         b2 b2Var = (b2) O;
-                        g5.Z(tiVar.M1, b2Var.a(), tiVar.s1(), new n1(25, i0Var2, b2Var));
+                        g5.Z(tiVar.M1, b2Var.a(), tiVar.t1(), new n1(25, i0Var2, b2Var));
                         break;
                     } else if (tiVar.f0 != null) {
                         new tg.y0(tiVar.f0, i0Var2.getContext(), tiVar.M1, true, 31, false, null).show();
@@ -360,7 +360,7 @@ public final /* synthetic */ class k implements zl0 {
                 break;
             case 16:
                 jg.k0 k0Var = (jg.k0) this.b;
-                t61 G2 = k0Var.e0.G(i10 - 1);
+                u61 G2 = k0Var.e0.G(i10 - 1);
                 if (G2 != null) {
                     jg.b0 b0Var = k0Var.Z;
                     if (!b0Var.h(G2)) {
@@ -406,23 +406,23 @@ public final /* synthetic */ class k implements zl0 {
                 }
                 break;
             case 19:
-                nt0 nt0Var = (nt0) this.b;
+                pt0 pt0Var = (pt0) this.b;
                 rg.j0 j0Var2 = (rg.j0) rg.j0.c().get(i10);
-                nt0Var.j1.setTypeface(j0Var2.a);
-                rg.s0 e10 = rg.s0.e(nt0Var.E1);
+                pt0Var.j1.setTypeface(j0Var2.a);
+                rg.s0 e10 = rg.s0.e(pt0Var.E1);
                 String str2 = j0Var2.a;
                 e10.j = str2;
                 e10.a.edit().putString("typeface", str2).apply();
-                sg.j jVar2 = nt0Var.H0;
-                if (jVar2 instanceof x2) {
-                    ((x2) jVar2).setTypeface(j0Var2);
+                sg.j jVar2 = pt0Var.H0;
+                if (jVar2 instanceof w2) {
+                    ((w2) jVar2).setTypeface(j0Var2);
                 }
-                nt0Var.y0(false);
+                pt0Var.y0(false);
                 break;
             case 20:
-                sg.k1 k1Var = (sg.k1) this.b;
-                k1Var.j3.accept(Integer.valueOf(k1Var.i3.b(i10)));
-                rg.s0 s0Var = k1Var.i3;
+                sg.j1 j1Var = (sg.j1) this.b;
+                j1Var.j3.accept(Integer.valueOf(j1Var.i3.b(i10)));
+                rg.s0 s0Var = j1Var.i3;
                 s0Var.c.put(Integer.valueOf(s0Var.f), Integer.valueOf(s0Var.b(i10)));
                 s0Var.e = true;
                 break;
@@ -439,7 +439,7 @@ public final /* synthetic */ class k implements zl0 {
                 }
                 break;
             case 23:
-                ((ua0) this.b).h(view);
+                ((va0) this.b).h(view);
                 break;
             case 24:
                 ((yh.k) this.b).h(view);
@@ -448,8 +448,8 @@ public final /* synthetic */ class k implements zl0 {
                 l4 l4Var = (l4) this.b;
                 fi.d dVar = l4Var.c0;
                 HashSet hashSet = l4Var.Z;
-                j71 j71Var2 = l4Var.g0;
-                if (j71Var2 != null && (G = j71Var2.G(i10 - 1)) != null) {
+                k71 k71Var2 = l4Var.g0;
+                if (k71Var2 != null && (G = k71Var2.G(i10 - 1)) != null) {
                     Object obj = G.G;
                     if (obj instanceof TL_stars.SavedStarGift) {
                         TL_stars.SavedStarGift savedStarGift = (TL_stars.SavedStarGift) obj;

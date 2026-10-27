@@ -7,9 +7,9 @@ import android.graphics.drawable.GradientDrawable;
 import android.view.View;
 import java.util.HashSet;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.ak0;
+import org.telegram.ui.Components.bk0;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class d2 extends Drawable implements p6 {
     public final View a;
@@ -18,8 +18,8 @@ public final class d2 extends Drawable implements p6 {
     public final int d;
     public final u6 e;
 
-    public d2(ak0 ak0Var, int i10, int i11, int i12, u6 u6Var) {
-        this.a = ak0Var;
+    public d2(bk0 bk0Var, int i10, int i11, int i12, u6 u6Var) {
+        this.a = bk0Var;
         this.c = i11;
         this.d = i12;
         this.e = u6Var;

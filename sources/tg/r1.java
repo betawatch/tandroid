@@ -19,17 +19,17 @@ import org.telegram.messenger.GenericProvider;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.R;
-import org.telegram.messenger.vh;
+import org.telegram.messenger.wh;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.f7;
 import org.telegram.ui.ActionBar.y6;
 import org.telegram.ui.Components.aq;
-import org.telegram.ui.Components.gb1;
-import org.telegram.ui.Components.zp;
-import org.telegram.ui.xw0;
+import org.telegram.ui.Components.bq;
+import org.telegram.ui.Components.kb1;
+import org.telegram.ui.zw0;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public class r1 extends ViewGroup {
     public r1 E;
@@ -41,14 +41,14 @@ public class r1 extends ViewGroup {
     public float K;
     public boolean L;
     public boolean M;
-    public final zp a;
+    public final aq a;
     public final TextView b;
     public final TextView c;
     public final TextView d;
     public final TextView e;
     public final int f;
     public final int h;
-    public xw0 n;
+    public zw0 n;
     public final TextView r;
     public final int s;
     public final int v;
@@ -64,26 +64,26 @@ public class r1 extends ViewGroup {
         this.v = y6.a7;
         this.y = new Paint();
         this.H = new Matrix();
-        zp zpVar = new zp(context, 24, null);
-        this.a = zpVar;
-        zpVar.setDrawBackgroundAsArc(10);
+        aq aqVar = new aq(context, 24, null);
+        this.a = aqVar;
+        aqVar.setDrawBackgroundAsArc(10);
         int i10 = y6.g7;
-        zpVar.b(i10, i10, y6.k7);
-        addView(zpVar);
+        aqVar.b(i10, i10, y6.k7);
+        addView(aqVar);
         TextView textView = new TextView(context);
         this.b = textView;
         textView.setTextSize(1, 16.0f);
         f7.V(textView, y6.G6, null);
         textView.setTypeface(AndroidUtilities.bold());
         textView.setSingleLine();
-        addView(textView, gb1.h(-2, -2.0f, (LocaleController.isRTL ? 5 : 3) | 48, 0.0f, 8.0f, 0.0f, 0.0f));
+        addView(textView, kb1.h(-2, -2.0f, (LocaleController.isRTL ? 5 : 3) | 48, 0.0f, 8.0f, 0.0f, 0.0f));
         TextView textView2 = new TextView(context);
         this.r = textView2;
         textView2.setTextSize(1, 14.0f);
         textView2.setTextColor(-1);
         textView2.setPadding(AndroidUtilities.dp(3.0f), 0, AndroidUtilities.dp(3.0f), 0);
         textView2.setTypeface(AndroidUtilities.bold());
-        addView(textView2, gb1.h(-2, -2.0f, (LocaleController.isRTL ? 5 : 3) | 80, 0.0f, 0.0f, 0.0f, 8.0f));
+        addView(textView2, kb1.h(-2, -2.0f, (LocaleController.isRTL ? 5 : 3) | 80, 0.0f, 0.0f, 0.0f, 8.0f));
         TextView textView3 = new TextView(context);
         this.d = textView3;
         textView3.setTextSize(1, 14.0f);
@@ -91,19 +91,19 @@ public class r1 extends ViewGroup {
         f7.V(textView3, i11, null);
         textView3.getPaint().setStrikeThruText(true);
         textView3.setSingleLine();
-        addView(textView3, gb1.h(-2, -2.0f, (LocaleController.isRTL ? 5 : 3) | 80, 0.0f, 0.0f, 0.0f, 8.0f));
+        addView(textView3, kb1.h(-2, -2.0f, (LocaleController.isRTL ? 5 : 3) | 80, 0.0f, 0.0f, 0.0f, 8.0f));
         TextView textView4 = new TextView(context);
         this.e = textView4;
         textView4.setTextSize(1, 14.0f);
         f7.V(textView4, i11, null);
         textView4.setSingleLine();
-        addView(textView4, gb1.h(-2, -2.0f, (LocaleController.isRTL ? 5 : 3) | 80, 0.0f, 0.0f, 0.0f, 8.0f));
+        addView(textView4, kb1.h(-2, -2.0f, (LocaleController.isRTL ? 5 : 3) | 80, 0.0f, 0.0f, 0.0f, 8.0f));
         TextView textView5 = new TextView(context);
         this.c = textView5;
         textView5.setTextSize(1, 15.0f);
         f7.V(textView5, i11, null);
         textView5.setSingleLine();
-        addView(textView5, gb1.i(-2, -2, 8388613));
+        addView(textView5, kb1.i(-2, -2, 8388613));
         setPadding(AndroidUtilities.dp(4.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(8.0f));
         setClipToPadding(false);
         setWillNotDraw(false);
@@ -118,12 +118,12 @@ public class r1 extends ViewGroup {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void a(xw0 xw0Var, boolean z10) {
+    public final void a(zw0 zw0Var, boolean z10) {
         boolean z11;
-        this.n = xw0Var;
+        this.n = zw0Var;
         this.M = z10;
-        TLRPC.TL_premiumSubscriptionOption tL_premiumSubscriptionOption = xw0Var.a;
-        TLRPC.TL_premiumSubscriptionOption tL_premiumSubscriptionOption2 = xw0Var.a;
+        TLRPC.TL_premiumSubscriptionOption tL_premiumSubscriptionOption = zw0Var.a;
+        TLRPC.TL_premiumSubscriptionOption tL_premiumSubscriptionOption2 = zw0Var.a;
         int i10 = tL_premiumSubscriptionOption.months;
         TextView textView = this.b;
         if (i10 == 1) {
@@ -137,7 +137,7 @@ public class r1 extends ViewGroup {
         }
         if (!BuildVars.useInvoiceBilling()) {
             if (BillingController.getInstance().isReady()) {
-                xw0Var.a();
+                zw0Var.a();
             }
             z11 = true;
             this.L = z11;
@@ -146,19 +146,19 @@ public class r1 extends ViewGroup {
             TextView textView4 = this.r;
             TextView textView5 = this.e;
             if (z11) {
-                if (xw0Var.c() <= 0) {
+                if (zw0Var.c() <= 0) {
                     textView4.setVisibility(8);
                     textView3.setVisibility(8);
                     textView5.setVisibility(8);
                 } else {
-                    textView4.setText(LocaleController.formatString(R.string.GiftPremiumOptionDiscount, Integer.valueOf(xw0Var.c())));
+                    textView4.setText(LocaleController.formatString(R.string.GiftPremiumOptionDiscount, Integer.valueOf(zw0Var.c())));
                     textView4.setVisibility(0);
                     textView3.setVisibility(0);
                     textView5.setVisibility(0);
                 }
-                textView3.setText((BuildVars.useInvoiceBilling() || tL_premiumSubscriptionOption2.store_product == null) ? BillingController.getInstance().formatCurrency(xw0Var.e, xw0Var.b()) : xw0Var.f == null ? "" : BillingController.getInstance().formatCurrency(xw0Var.e, xw0Var.b(), 6));
-                textView5.setText(LocaleController.formatString(R.string.PricePerYear, xw0Var.f()));
-                textView2.setText(LocaleController.formatString(R.string.PricePerMonthMe, xw0Var.e()));
+                textView3.setText((BuildVars.useInvoiceBilling() || tL_premiumSubscriptionOption2.store_product == null) ? BillingController.getInstance().formatCurrency(zw0Var.e, zw0Var.b()) : zw0Var.f == null ? "" : BillingController.getInstance().formatCurrency(zw0Var.e, zw0Var.b(), 6));
+                textView5.setText(LocaleController.formatString(R.string.PricePerYear, zw0Var.f()));
+                textView2.setText(LocaleController.formatString(R.string.PricePerMonthMe, zw0Var.e()));
                 if (tL_premiumSubscriptionOption2.current) {
                     textView5.setVisibility(0);
                     textView5.setText(LocaleController.getString(R.string.YourCurrentPlan));
@@ -275,7 +275,7 @@ public class r1 extends ViewGroup {
         }
     }
 
-    public xw0 getTier() {
+    public zw0 getTier() {
         return this.n;
     }
 
@@ -299,14 +299,14 @@ public class r1 extends ViewGroup {
         int i14 = this.h;
         int paddingLeft = getPaddingLeft() + AndroidUtilities.dp(i14);
         int measuredHeight = getMeasuredHeight();
-        zp zpVar = this.a;
-        rect.set(paddingLeft, (int) ((measuredHeight - zpVar.getMeasuredHeight()) / 2.0f), 0, 0);
-        b(zpVar);
+        aq aqVar = this.a;
+        rect.set(paddingLeft, (int) ((measuredHeight - aqVar.getMeasuredHeight()) / 2.0f), 0, 0);
+        b(aqVar);
         int measuredHeight2 = getMeasuredHeight();
         TextView textView = this.c;
         int measuredHeight3 = (int) ((measuredHeight2 - textView.getMeasuredHeight()) / 2.0f);
         int i15 = i14 + this.f;
-        int measuredWidth = zpVar.getMeasuredWidth() + AndroidUtilities.dp(i15 + 24);
+        int measuredWidth = aqVar.getMeasuredWidth() + AndroidUtilities.dp(i15 + 24);
         TextView textView2 = this.d;
         int measuredWidth2 = measuredWidth + (textView2.getVisibility() == 0 ? textView2.getMeasuredWidth() : 0);
         TextView textView3 = this.e;
@@ -319,18 +319,18 @@ public class r1 extends ViewGroup {
         rect.set(((getMeasuredWidth() - textView.getMeasuredWidth()) - AndroidUtilities.dp(16.0f)) - getPaddingRight(), measuredHeight3, 0, 0);
         b(textView);
         float f7 = i15;
-        int paddingLeft3 = getPaddingLeft() + zpVar.getMeasuredWidth() + AndroidUtilities.dp(f7);
+        int paddingLeft3 = getPaddingLeft() + aqVar.getMeasuredWidth() + AndroidUtilities.dp(f7);
         int visibility = textView3.getVisibility();
         TextView textView5 = this.b;
         rect.set(paddingLeft3, visibility == 8 ? (int) ((getMeasuredHeight() - textView5.getMeasuredHeight()) / 2.0f) : getPaddingTop(), 0, 0);
         b(textView5);
         if (textView4.getVisibility() == 0) {
-            rect.set(textView5.getMeasuredWidth() + getPaddingLeft() + zpVar.getMeasuredWidth() + AndroidUtilities.dp(i15 + 6), AndroidUtilities.dp(2.0f) + getPaddingTop(), 0, 0);
+            rect.set(textView5.getMeasuredWidth() + getPaddingLeft() + aqVar.getMeasuredWidth() + AndroidUtilities.dp(i15 + 6), AndroidUtilities.dp(2.0f) + getPaddingTop(), 0, 0);
             b(textView4);
         }
-        rect.set(getPaddingLeft() + zpVar.getMeasuredWidth() + AndroidUtilities.dp(f7), (getMeasuredHeight() - textView2.getMeasuredHeight()) - getPaddingBottom(), 0, 0);
+        rect.set(getPaddingLeft() + aqVar.getMeasuredWidth() + AndroidUtilities.dp(f7), (getMeasuredHeight() - textView2.getMeasuredHeight()) - getPaddingBottom(), 0, 0);
         b(textView2);
-        rect.set(getPaddingLeft() + zpVar.getMeasuredWidth() + AndroidUtilities.dp(f7) + (textView2.getVisibility() == 0 ? AndroidUtilities.dp(6.0f) + textView2.getMeasuredWidth() : 0), (getMeasuredHeight() - textView3.getMeasuredHeight()) - getPaddingBottom(), 0, 0);
+        rect.set(getPaddingLeft() + aqVar.getMeasuredWidth() + AndroidUtilities.dp(f7) + (textView2.getVisibility() == 0 ? AndroidUtilities.dp(6.0f) + textView2.getMeasuredWidth() : 0), (getMeasuredHeight() - textView3.getMeasuredHeight()) - getPaddingBottom(), 0, 0);
         b(textView3);
     }
 
@@ -339,24 +339,24 @@ public class r1 extends ViewGroup {
         int size = View.MeasureSpec.getSize(i10);
         int dp = AndroidUtilities.dp(58.0f);
         int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(28.0f), TLObject.FLAG_30);
-        zp zpVar = this.a;
-        zpVar.measure(makeMeasureSpec, makeMeasureSpec);
-        int makeMeasureSpec2 = View.MeasureSpec.makeMeasureSpec(size - zpVar.getMeasuredWidth(), TLObject.FLAG_31);
+        aq aqVar = this.a;
+        aqVar.measure(makeMeasureSpec, makeMeasureSpec);
+        int makeMeasureSpec2 = View.MeasureSpec.makeMeasureSpec(size - aqVar.getMeasuredWidth(), TLObject.FLAG_31);
         int makeMeasureSpec3 = View.MeasureSpec.makeMeasureSpec(dp, TLObject.FLAG_31);
         TextView textView = this.c;
         textView.measure(makeMeasureSpec2, makeMeasureSpec3);
-        this.b.measure(View.MeasureSpec.makeMeasureSpec((size - zpVar.getMeasuredWidth()) - textView.getMeasuredWidth(), TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(dp, TLObject.FLAG_31));
+        this.b.measure(View.MeasureSpec.makeMeasureSpec((size - aqVar.getMeasuredWidth()) - textView.getMeasuredWidth(), TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(dp, TLObject.FLAG_31));
         TextView textView2 = this.r;
         if (textView2.getVisibility() == 0) {
-            textView2.measure(View.MeasureSpec.makeMeasureSpec((size - zpVar.getMeasuredWidth()) - textView.getMeasuredWidth(), TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(dp, TLObject.FLAG_31));
+            textView2.measure(View.MeasureSpec.makeMeasureSpec((size - aqVar.getMeasuredWidth()) - textView.getMeasuredWidth(), TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(dp, TLObject.FLAG_31));
         } else {
             textView2.measure(View.MeasureSpec.makeMeasureSpec(0, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(0, TLObject.FLAG_30));
         }
-        int makeMeasureSpec4 = View.MeasureSpec.makeMeasureSpec(size - zpVar.getMeasuredWidth(), TLObject.FLAG_31);
+        int makeMeasureSpec4 = View.MeasureSpec.makeMeasureSpec(size - aqVar.getMeasuredWidth(), TLObject.FLAG_31);
         int makeMeasureSpec5 = View.MeasureSpec.makeMeasureSpec(dp, TLObject.FLAG_31);
         TextView textView3 = this.d;
         textView3.measure(makeMeasureSpec4, makeMeasureSpec5);
-        int x9 = vh.x(6.0f, (size - zpVar.getMeasuredWidth()) - (textView3.getVisibility() == 0 ? textView3.getMeasuredWidth() : 0), TLObject.FLAG_31);
+        int x9 = wh.x(6.0f, (size - aqVar.getMeasuredWidth()) - (textView3.getVisibility() == 0 ? textView3.getMeasuredWidth() : 0), TLObject.FLAG_31);
         int makeMeasureSpec6 = View.MeasureSpec.makeMeasureSpec(dp, TLObject.FLAG_31);
         TextView textView4 = this.e;
         textView4.measure(x9, makeMeasureSpec6);
@@ -386,7 +386,7 @@ public class r1 extends ViewGroup {
         this.K = f7;
     }
 
-    public void setProgressDelegate(aq aqVar) {
-        this.a.setProgressDelegate(aqVar);
+    public void setProgressDelegate(bq bqVar) {
+        this.a.setProgressDelegate(bqVar);
     }
 }

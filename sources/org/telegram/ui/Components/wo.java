@@ -4,22 +4,22 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.NotificationsController;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class wo implements Utilities.Callback {
-    public final /* synthetic */ k80 a;
+    public final /* synthetic */ l80 a;
     public final /* synthetic */ int b;
     public final /* synthetic */ long c;
     public final /* synthetic */ long d;
     public final /* synthetic */ org.telegram.ui.ActionBar.r2 e;
     public final /* synthetic */ org.telegram.ui.ActionBar.u6 f;
 
-    public /* synthetic */ wo(k80 k80Var, int i10, long j10, long j11, org.telegram.ui.un unVar, org.telegram.ui.ActionBar.u6 u6Var) {
-        this.a = k80Var;
+    public /* synthetic */ wo(l80 l80Var, int i10, long j10, long j11, org.telegram.ui.wn wnVar, org.telegram.ui.ActionBar.u6 u6Var) {
+        this.a = l80Var;
         this.b = i10;
         this.c = j10;
         this.d = j11;
-        this.e = unVar;
+        this.e = wnVar;
         this.f = u6Var;
     }
 

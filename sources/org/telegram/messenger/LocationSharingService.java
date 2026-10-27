@@ -15,7 +15,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
 public class LocationSharingService extends Service implements NotificationCenter.NotificationCenterDelegate {
     private static final String PAUSED_NOTIFICATION_TAG = "live_location_paused";
@@ -165,7 +165,7 @@ public class LocationSharingService extends Service implements NotificationCente
         if (i10 != NotificationCenter.liveLocationsChanged || (handler = this.handler) == null) {
             return;
         }
-        handler.post(new b6(this, 1));
+        handler.post(new c6(this, 1));
     }
 
     @Override // android.app.Service
@@ -178,9 +178,9 @@ public class LocationSharingService extends Service implements NotificationCente
         super.onCreate();
         Handler handler = new Handler();
         this.handler = handler;
-        b6 b6Var = new b6(this, 0);
-        this.runnable = b6Var;
-        handler.postDelayed(b6Var, 1000L);
+        c6 c6Var = new c6(this, 0);
+        this.runnable = c6Var;
+        handler.postDelayed(c6Var, 1000L);
     }
 
     @Override // android.app.Service

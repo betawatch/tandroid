@@ -1,62 +1,104 @@
 package org.telegram.ui;
 
+import android.os.Bundle;
 import android.view.View;
-import android.widget.FrameLayout;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public final class u81 extends org.telegram.ui.Components.m91 {
-    public final /* synthetic */ boolean a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ boolean c;
-    public final /* synthetic */ FrameLayout d;
-    public final /* synthetic */ w91 e;
+public final /* synthetic */ class u81 implements org.telegram.ui.Components.cm0, oe.d {
+    public final /* synthetic */ y91 a;
 
-    public u81(w91 w91Var, boolean z10, boolean z11, boolean z12, FrameLayout frameLayout) {
-        this.e = w91Var;
-        this.a = z10;
-        this.b = z11;
-        this.c = z12;
-        this.d = frameLayout;
+    public /* synthetic */ u81(y91 y91Var) {
+        this.a = y91Var;
     }
 
-    @Override // org.telegram.ui.Components.m91
-    public final View d(int i10) {
-        w91 w91Var = this.e;
-        if (w91Var.n0) {
-            return w91Var.i0;
-        }
-        boolean z10 = this.a;
-        FrameLayout frameLayout = this.d;
-        if (z10) {
-            if (i10 == 0) {
-                return frameLayout;
+    @Override // oe.d
+    public void E(int i10, float f7, float f10, oe.e eVar) {
+        this.a.p0();
+    }
+
+    @Override // org.telegram.ui.Components.cm0
+    public boolean c(int i10, View view) {
+        final y91 y91Var = this.a;
+        org.telegram.ui.ActionBar.e2[] e2VarArr = y91Var.g0;
+        d91 d91Var = y91Var.W;
+        int i11 = d91Var.I;
+        if (i10 < i11 || i10 > d91Var.J) {
+            int i12 = d91Var.U;
+            if (i10 >= i12 && i10 <= d91Var.V) {
+                ((r91) y91Var.Q.get(i10 - i12)).c(y91Var.a, y91Var, e2VarArr, true);
+                return true;
             }
-            i10--;
-        }
-        if (this.b) {
-            if (i10 == 0) {
-                return w91Var.i0;
+            int i13 = d91Var.R;
+            if (i10 >= i13 && i10 <= d91Var.S) {
+                ((r91) y91Var.O.get(i10 - i13)).c(y91Var.a, y91Var, e2VarArr, true);
+                return true;
             }
-            i10--;
+            int i14 = d91Var.X;
+            if (i10 >= i14 && i10 <= d91Var.Y) {
+                ((r91) y91Var.P.get(i10 - i14)).c(y91Var.a, y91Var, e2VarArr, true);
+                return true;
+            }
+        } else {
+            final MessageObject messageObject = ((v91) y91Var.y0.get(i10 - i11)).b;
+            if (!messageObject.isStory()) {
+                org.telegram.ui.Components.l80 H = org.telegram.ui.Components.l80.H(y91Var, view);
+                final int i15 = 0;
+                H.c(R.drawable.msg_stats, LocaleController.getString(R.string.ViewMessageStatistic), new Runnable() { // from class: org.telegram.ui.t81
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        switch (i15) {
+                            case 0:
+                                y91 y91Var2 = y91Var;
+                                y91Var2.getClass();
+                                y91Var2.presentFragment(new xi0(messageObject));
+                                break;
+                            default:
+                                y91 y91Var3 = y91Var;
+                                y91Var3.getClass();
+                                Bundle bundle = new Bundle();
+                                bundle.putLong("chat_id", y91Var3.b);
+                                bundle.putInt("message_id", messageObject.getId());
+                                bundle.putBoolean("need_remove_previous_same_chat_activity", false);
+                                y91Var3.presentFragment(new wn(bundle), false);
+                                break;
+                        }
+                    }
+                }, false);
+                final int i16 = 1;
+                H.c(R.drawable.msg_msgbubble3, LocaleController.getString(R.string.ViewMessage), new Runnable() { // from class: org.telegram.ui.t81
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        switch (i16) {
+                            case 0:
+                                y91 y91Var2 = y91Var;
+                                y91Var2.getClass();
+                                y91Var2.presentFragment(new xi0(messageObject));
+                                break;
+                            default:
+                                y91 y91Var3 = y91Var;
+                                y91Var3.getClass();
+                                Bundle bundle = new Bundle();
+                                bundle.putLong("chat_id", y91Var3.b);
+                                bundle.putInt("message_id", messageObject.getId());
+                                bundle.putBoolean("need_remove_previous_same_chat_activity", false);
+                                y91Var3.presentFragment(new wn(bundle), false);
+                                break;
+                        }
+                    }
+                }, false);
+                H.W(y91Var.S.V0(view, false));
+                H.Z();
+                return true;
+            }
         }
-        return (this.c && i10 == 0) ? w91Var.j0 : frameLayout;
+        return false;
     }
 
-    @Override // org.telegram.ui.Components.m91
-    public final int e() {
-        if (this.e.n0) {
-            return 1;
-        }
-        return (this.a ? 1 : 0) + (this.b ? 1 : 0) + (this.c ? 1 : 0);
-    }
-
-    @Override // org.telegram.ui.Components.m91
-    public final int h(int i10) {
-        return i10;
-    }
-
-    @Override // org.telegram.ui.Components.m91
-    public final void b(View view, int i10, int i11) {
+    @Override // oe.d
+    public /* synthetic */ void z(float f7, int i10) {
     }
 }

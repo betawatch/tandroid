@@ -2,9 +2,9 @@ package org.telegram.ui.ActionBar;
 
 import android.animation.ValueAnimator;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.my0;
+import org.telegram.ui.oy0;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class a implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -26,16 +26,16 @@ public final /* synthetic */ class a implements ValueAnimator.AnimatorUpdateList
                 kVar.b();
                 break;
             case 1:
-                my0 my0Var = this.b.W0;
-                if (my0Var != null) {
-                    my0Var.run();
+                oy0 oy0Var = this.b.W0;
+                if (oy0Var != null) {
+                    oy0Var.run();
                     break;
                 }
                 break;
             case 2:
-                my0 my0Var2 = this.b.W0;
-                if (my0Var2 != null) {
-                    my0Var2.run();
+                oy0 oy0Var2 = this.b.W0;
+                if (oy0Var2 != null) {
+                    oy0Var2.run();
                     break;
                 }
                 break;
@@ -52,9 +52,9 @@ public final /* synthetic */ class a implements ValueAnimator.AnimatorUpdateList
                 if (kVar2.P0 && (zVar = kVar2.E) != null) {
                     zVar.setTranslationX(-AndroidUtilities.lerp(AndroidUtilities.dp(10.0f), AndroidUtilities.dp(5.0f), kVar2.o0));
                 }
-                my0 my0Var3 = kVar2.W0;
-                if (my0Var3 != null) {
-                    my0Var3.run();
+                oy0 oy0Var3 = kVar2.W0;
+                if (oy0Var3 != null) {
+                    oy0Var3.run();
                     break;
                 }
                 break;

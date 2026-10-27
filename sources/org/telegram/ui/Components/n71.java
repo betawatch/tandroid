@@ -1,20 +1,53 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.AndroidUtilities;
+import android.content.Context;
+import android.view.View;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public final class n71 extends s4.c0 {
-    public final /* synthetic */ r71 I;
+public abstract class n71 extends org.telegram.ui.ActionBar.r2 {
+    public m71 a;
+    public jg.r1 b;
+    public int c;
+    public int d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public n71(r71 r71Var, int i10) {
-        super(i10, false);
-        this.I = r71Var;
+    public n71() {
+        super(null);
+        this.c = -1;
     }
 
-    @Override // s4.c0
-    public final int W0(s4.b1 b1Var) {
-        return this.I.i3 ? AndroidUtilities.displaySize.y : super.W0(b1Var);
+    public abstract void V(ArrayList arrayList, k71 k71Var);
+
+    public abstract CharSequence W();
+
+    public abstract void X(u61 u61Var, View view);
+
+    public abstract boolean Y(u61 u61Var, View view);
+
+    @Override // org.telegram.ui.ActionBar.r2
+    public View createView(Context context) {
+        org.telegram.ui.ga gaVar = new org.telegram.ui.ga(this, 17);
+        org.telegram.ui.ActionBar.r5 r5Var = this.simpleActionBar;
+        if (r5Var != null) {
+            r5Var.setBackButtonDrawable(new org.telegram.ui.ActionBar.j2(false));
+            this.simpleActionBar.setTitle(W());
+            this.simpleActionBar.setActionBarMenuOnItemClick(gaVar);
+        } else {
+            this.actionBar.setBackButtonDrawable(new org.telegram.ui.ActionBar.j2(false));
+            this.actionBar.setAllowOverlayTitle(true);
+            this.actionBar.setTitle(W());
+            this.actionBar.setActionBarMenuOnItemClick(gaVar);
+        }
+        this.b = new jg.r1(context, null, 1);
+        if (!useSimpleActionBar()) {
+            org.telegram.ui.ActionBar.f7.i(org.telegram.ui.ActionBar.y6.a7, this.b, null);
+        }
+        m71 m71Var = new m71(this, this, new d(this, 22), new l71(this), new l71(this));
+        this.a = m71Var;
+        this.b.addView(m71Var, kb1.g(-1.0f, -1));
+        jg.r1 r1Var = this.b;
+        this.fragmentView = r1Var;
+        return r1Var;
     }
 }

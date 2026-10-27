@@ -1,51 +1,29 @@
 package org.telegram.messenger;
 
-import j$.util.function.Function$-CC;
-import java.util.function.Function;
-import org.telegram.messenger.TranslateController;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class ja implements Function {
+public final /* synthetic */ class ja implements Runnable {
     public final /* synthetic */ int a;
+    public final /* synthetic */ MessagesController b;
+    public final /* synthetic */ TLRPC.User c;
 
-    public /* synthetic */ ja(int i10) {
+    public /* synthetic */ ja(MessagesController messagesController, TLRPC.User user, int i10) {
         this.a = i10;
+        this.b = messagesController;
+        this.c = user;
     }
 
-    public /* synthetic */ Function andThen(Function function) {
-        int i10 = this.a;
-        return Function$-CC.$default$andThen(this, function);
-    }
-
-    @Override // java.util.function.Function
-    public final Object apply(Object obj) {
-        String valueOf;
-        String lambda$applyAppConfig$34;
-        Long lambda$new$14;
-        int[] lambda$new$15;
-        String str;
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                valueOf = String.valueOf((Long) obj);
-                return valueOf;
-            case 1:
-                lambda$applyAppConfig$34 = MessagesController.lambda$applyAppConfig$34((int[]) obj);
-                return lambda$applyAppConfig$34;
-            case 2:
-                lambda$new$14 = MessagesController.lambda$new$14((String) obj);
-                return lambda$new$14;
-            case 3:
-                lambda$new$15 = MessagesController.lambda$new$15((String) obj);
-                return lambda$new$15;
+                this.b.lambda$processUpdateArray$414(this.c);
+                break;
             default:
-                str = ((TranslateController.Language) obj).displayName;
-                return str;
+                this.b.lambda$loadFullUser$70(this.c);
+                break;
         }
-    }
-
-    public /* synthetic */ Function compose(Function function) {
-        int i10 = this.a;
-        return Function$-CC.$default$compose(this, function);
     }
 }

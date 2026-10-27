@@ -1,32 +1,33 @@
 package org.telegram.messenger;
 
-import java.util.Comparator;
-import org.telegram.messenger.support.LongSparseIntArray;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class ue implements Comparator {
+public final /* synthetic */ class ue implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ LongSparseIntArray b;
+    public final /* synthetic */ MessagesStorage b;
+    public final /* synthetic */ Utilities.Callback c;
+    public final /* synthetic */ long d;
+    public final /* synthetic */ long e;
 
-    public /* synthetic */ ue(LongSparseIntArray longSparseIntArray, int i10) {
+    public /* synthetic */ ue(MessagesStorage messagesStorage, Utilities.Callback callback, long j10, long j11, int i10) {
         this.a = i10;
-        this.b = longSparseIntArray;
+        this.b = messagesStorage;
+        this.c = callback;
+        this.d = j10;
+        this.e = j11;
     }
 
-    @Override // java.util.Comparator
-    public final int compare(Object obj, Object obj2) {
-        int lambda$checkLoadedRemoteFilters$71;
-        int lambda$resetDialogs$97;
-        Long l4 = (Long) obj;
-        Long l10 = (Long) obj2;
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                lambda$checkLoadedRemoteFilters$71 = MessagesStorage.lambda$checkLoadedRemoteFilters$71(this.b, l4, l10);
-                return lambda$checkLoadedRemoteFilters$71;
+                this.b.lambda$getEphemeralMessages$212(this.c, this.d, this.e);
+                break;
             default:
-                lambda$resetDialogs$97 = MessagesStorage.lambda$resetDialogs$97(this.b, l4, l10);
-                return lambda$resetDialogs$97;
+                this.b.lambda$getEphemeralMessages$211(this.c, this.d, this.e);
+                break;
         }
     }
 }

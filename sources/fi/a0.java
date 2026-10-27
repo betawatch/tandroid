@@ -10,10 +10,10 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.gb1;
-import org.telegram.ui.Components.k80;
+import org.telegram.ui.Components.kb1;
+import org.telegram.ui.Components.l80;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class a0 implements Runnable {
     public final /* synthetic */ int a;
@@ -68,13 +68,13 @@ public final /* synthetic */ class a0 implements Runnable {
                         imageView.setImageResource(R.drawable.menu_lightbulb);
                         imageView.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
                         imageView.setScaleType(ImageView.ScaleType.CENTER);
-                        frameLayout.addView(imageView, gb1.h(24, 24.0f, 19, 12.0f, 12.0f, 12.0f, 12.0f));
+                        frameLayout.addView(imageView, kb1.h(24, 24.0f, 19, 12.0f, 12.0f, 12.0f, 12.0f));
                         TextView textView = new TextView(e0Var.getContext());
                         textView.setText(LocaleController.getString(R.string.StoryCollageMenuHint));
                         textView.setTextSize(1, 13.0f);
                         textView.setTextColor(-1);
-                        frameLayout.addView(textView, gb1.h(-1, -2.0f, 23, 47.0f, 8.0f, 24.0f, 8.0f));
-                        k80 F = k80.F(e0Var.a, e0Var.b, e0Var);
+                        frameLayout.addView(textView, kb1.h(-1, -2.0f, 23, 47.0f, 8.0f, 24.0f, 8.0f));
+                        l80 F = l80.F(e0Var.a, e0Var.b, e0Var);
                         if (e0Var.j0.n.K) {
                             q7 q7Var = new q7(e0Var.getContext(), 0);
                             q7Var.b = 0.0f;
@@ -89,7 +89,7 @@ public final /* synthetic */ class a0 implements Runnable {
                         F.c(R.drawable.menu_camera_retake, LocaleController.getString(R.string.StoreCollageRetake), new a0(e0Var, 4), false);
                         F.c(R.drawable.msg_delete, LocaleController.getString(R.string.Delete), new a0(e0Var, 5), true);
                         F.o();
-                        F.r(frameLayout, gb1.r(220, -2));
+                        F.r(frameLayout, kb1.r(220, -2));
                         F.p = new ag.c(13);
                         F.i = 1;
                         F.V = true;

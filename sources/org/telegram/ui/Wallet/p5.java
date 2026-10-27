@@ -14,9 +14,9 @@ import bi.qd;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.MediaController;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.qw0;
+import org.telegram.ui.Components.rw0;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class p5 extends FrameLayout {
     public final /* synthetic */ int a;
@@ -34,17 +34,17 @@ public final class p5 extends FrameLayout {
         Canvas canvas2;
         switch (this.a) {
             case 4:
-                sg.v2 v2Var = (sg.v2) this.b;
-                if (v2Var.y <= 0.0f || v2Var.s == null) {
+                sg.u2 u2Var = (sg.u2) this.b;
+                if (u2Var.y <= 0.0f || u2Var.s == null) {
                     canvas2 = canvas;
                 } else {
-                    v2Var.v.reset();
-                    float width = getWidth() / v2Var.n.getWidth();
-                    v2Var.v.postScale(width, width);
-                    v2Var.r.setLocalMatrix(v2Var.v);
-                    v2Var.s.setAlpha((int) (v2Var.y * 255.0f));
+                    u2Var.v.reset();
+                    float width = getWidth() / u2Var.n.getWidth();
+                    u2Var.v.postScale(width, width);
+                    u2Var.r.setLocalMatrix(u2Var.v);
+                    u2Var.s.setAlpha((int) (u2Var.y * 255.0f));
                     canvas2 = canvas;
-                    canvas2.drawRect(0.0f, 0.0f, getWidth(), getHeight(), v2Var.s);
+                    canvas2.drawRect(0.0f, 0.0f, getWidth(), getHeight(), u2Var.s);
                 }
                 super.dispatchDraw(canvas2);
                 break;
@@ -61,7 +61,7 @@ public final class p5 extends FrameLayout {
                 if (keyEvent == null || keyEvent.getKeyCode() != 4 || keyEvent.getAction() != 1) {
                     return super.dispatchKeyEventPreIme(keyEvent);
                 }
-                ((sg.v2) this.b).onBackPressed();
+                ((sg.u2) this.b).onBackPressed();
                 return true;
             default:
                 return super.dispatchKeyEventPreIme(keyEvent);
@@ -85,49 +85,49 @@ public final class p5 extends FrameLayout {
     public void onDraw(Canvas canvas) {
         switch (this.a) {
             case 2:
-                sg.z1 z1Var = (sg.z1) this.b;
-                Rect rect = z1Var.E0;
-                Rect rect2 = z1Var.D0;
-                Paint paint = z1Var.F0;
-                qw0 qw0Var = z1Var.v0;
-                Bitmap bitmap = z1Var.A0;
-                if (z1Var.z0 != null) {
+                sg.y1 y1Var = (sg.y1) this.b;
+                Rect rect = y1Var.E0;
+                Rect rect2 = y1Var.D0;
+                Paint paint = y1Var.F0;
+                rw0 rw0Var = y1Var.v0;
+                Bitmap bitmap = y1Var.A0;
+                if (y1Var.z0 != null) {
                     canvas.save();
-                    float e = z1Var.u0.e(z1Var.t0);
-                    canvas.scale(1.0f - (e * 2.0f), 1.0f, qw0Var.a / 2.0f, 0.0f);
+                    float e = y1Var.u0.e(y1Var.t0);
+                    canvas.scale(1.0f - (e * 2.0f), 1.0f, rw0Var.a / 2.0f, 0.0f);
                     canvas.skew(0.0f, org.telegram.messenger.t.A(1.0f, e, 4.0f * e, 0.25f));
-                    float e10 = z1Var.y0.e(z1Var.x0);
-                    if (!z1Var.x0) {
+                    float e10 = y1Var.y0.e(y1Var.x0);
+                    if (!y1Var.x0) {
                         canvas.save();
                         paint.setAlpha((int) ((1.0f - e10) * 255.0f));
                         if (bitmap != null) {
                             canvas.translate(r6.getWidth() / 2.0f, r6.getHeight() / 2.0f);
-                            canvas.rotate(z1Var.w0);
-                            float max = Math.max(qw0Var.a / bitmap.getWidth(), qw0Var.b / bitmap.getHeight());
+                            canvas.rotate(y1Var.w0);
+                            float max = Math.max(rw0Var.a / bitmap.getWidth(), rw0Var.b / bitmap.getHeight());
                             canvas.scale(max, max);
-                            if (z1Var.G0 != null) {
-                                canvas.rotate(-z1Var.getOrientation());
-                                int contentWidth = z1Var.getContentWidth();
-                                int contentHeight = z1Var.getContentHeight();
-                                if (((z1Var.getOrientation() + z1Var.G0.transformRotation) / 90) % 2 == 1) {
-                                    contentWidth = z1Var.getContentHeight();
-                                    contentHeight = z1Var.getContentWidth();
+                            if (y1Var.G0 != null) {
+                                canvas.rotate(-y1Var.getOrientation());
+                                int contentWidth = y1Var.getContentWidth();
+                                int contentHeight = y1Var.getContentHeight();
+                                if (((y1Var.getOrientation() + y1Var.G0.transformRotation) / 90) % 2 == 1) {
+                                    contentWidth = y1Var.getContentHeight();
+                                    contentHeight = y1Var.getContentWidth();
                                 }
-                                MediaController.CropState cropState = z1Var.G0;
+                                MediaController.CropState cropState = y1Var.G0;
                                 float f7 = cropState.cropPw;
                                 float f10 = cropState.cropPh;
                                 float f11 = contentWidth;
                                 float f12 = contentHeight;
                                 canvas.clipRect(((-contentWidth) * f7) / 2.0f, ((-contentHeight) * f10) / 2.0f, (f7 * f11) / 2.0f, (f10 * f12) / 2.0f);
-                                float f13 = z1Var.G0.cropScale;
+                                float f13 = y1Var.G0.cropScale;
                                 canvas.scale(f13, f13);
-                                MediaController.CropState cropState2 = z1Var.G0;
+                                MediaController.CropState cropState2 = y1Var.G0;
                                 canvas.translate(cropState2.cropPx * f11, cropState2.cropPy * f12);
-                                canvas.rotate(z1Var.G0.cropRotate + r4.transformRotation);
-                                if (z1Var.G0.mirrored) {
+                                canvas.rotate(y1Var.G0.cropRotate + r4.transformRotation);
+                                if (y1Var.G0.mirrored) {
                                     canvas.scale(-1.0f, 1.0f);
                                 }
-                                canvas.rotate(z1Var.getOrientation());
+                                canvas.rotate(y1Var.getOrientation());
                             }
                             canvas.translate((-bitmap.getWidth()) / 2.0f, (-bitmap.getHeight()) / 2.0f);
                             rect2.set(0, 0, bitmap.getWidth(), bitmap.getHeight());
@@ -141,15 +141,15 @@ public final class p5 extends FrameLayout {
                 }
                 break;
             case 3:
-                sg.q2 q2Var = (sg.q2) this.b;
-                ImageReceiver imageReceiver = q2Var.x0;
-                qw0 qw0Var2 = q2Var.v0;
-                if (q2Var.w0 != null) {
+                sg.p2 p2Var = (sg.p2) this.b;
+                ImageReceiver imageReceiver = p2Var.x0;
+                rw0 rw0Var2 = p2Var.v0;
+                if (p2Var.w0 != null) {
                     canvas.save();
-                    float e11 = q2Var.u0.e(q2Var.t0);
-                    canvas.scale(1.0f - (e11 * 2.0f), 1.0f, qw0Var2.a / 2.0f, 0.0f);
+                    float e11 = p2Var.u0.e(p2Var.t0);
+                    canvas.scale(1.0f - (e11 * 2.0f), 1.0f, rw0Var2.a / 2.0f, 0.0f);
                     canvas.skew(0.0f, org.telegram.messenger.t.A(1.0f, e11, 4.0f * e11, 0.25f));
-                    imageReceiver.setImageCoords(0.0f, 0.0f, (int) qw0Var2.a, (int) qw0Var2.b);
+                    imageReceiver.setImageCoords(0.0f, 0.0f, (int) rw0Var2.a, (int) rw0Var2.b);
                     imageReceiver.draw(canvas);
                     canvas.restore();
                     break;
@@ -262,18 +262,18 @@ public final class p5 extends FrameLayout {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public p5(sg.q2 q2Var, Context context) {
+    public p5(sg.p2 p2Var, Context context) {
         super(context);
         this.a = 3;
-        this.b = q2Var;
+        this.b = p2Var;
         setWillNotDraw(false);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public p5(sg.z1 z1Var, Context context) {
+    public p5(sg.y1 y1Var, Context context) {
         super(context);
         this.a = 2;
-        this.b = z1Var;
+        this.b = y1Var;
         setWillNotDraw(false);
     }
 }

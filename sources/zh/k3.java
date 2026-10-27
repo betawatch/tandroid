@@ -10,11 +10,11 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.f7;
 import org.telegram.ui.ActionBar.u6;
 import org.telegram.ui.ActionBar.y6;
-import org.telegram.ui.Components.gb1;
-import org.telegram.ui.Components.xj0;
+import org.telegram.ui.Components.kb1;
 import org.telegram.ui.Components.y9;
+import org.telegram.ui.Components.yj0;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class k3 extends LinearLayout {
     public final TextView a;
@@ -23,14 +23,14 @@ public final class k3 extends LinearLayout {
         super(context);
         setOrientation(1);
         y9 y9Var = new y9(context);
-        y9Var.setImageDrawable(new xj0(R.raw.utyan_empty, AndroidUtilities.dp(130.0f), AndroidUtilities.dp(130.0f)));
-        addView(y9Var, gb1.x(64, 64, 17, 0, 32, 0, 0));
+        y9Var.setImageDrawable(new yj0(R.raw.utyan_empty, AndroidUtilities.dp(130.0f), AndroidUtilities.dp(130.0f)));
+        addView(y9Var, kb1.x(64, 64, 17, 0, 32, 0, 0));
         TextView textView = new TextView(context);
         this.a = textView;
         f7.V(textView, y6.A6, u6Var);
         textView.setTextSize(1, 14.0f);
         textView.setGravity(17);
-        addView(textView, gb1.x(-1, -2, 7, 12, 12, 12, 24));
+        addView(textView, kb1.x(-1, -2, 7, 12, 12, 12, 24));
     }
 
     @Override // android.widget.LinearLayout, android.view.View

@@ -6,7 +6,7 @@ import org.telegram.messenger.kh;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_wallet;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class s1 implements Utilities.Callback2 {
     public final /* synthetic */ int a;
@@ -55,16 +55,16 @@ public final /* synthetic */ class s1 implements Utilities.Callback2 {
                         }
                     }
                     if (tonconnectrequest != null && (tonconnectsession = tonconnectpending.session) != null && tonconnectsession.id == j10 && tonconnectrequest.expires > e2Var.f.getCurrentTime()) {
-                        final String s10 = l0Var.s();
-                        final byte[] bArr = l0Var.x() != null ? (byte[]) l0Var.x().clone() : null;
-                        l0Var.y(new Utilities.Callback2() { // from class: org.telegram.ui.Wallet.t1
+                        final String t10 = l0Var.t();
+                        final byte[] bArr = l0Var.y() != null ? (byte[]) l0Var.y().clone() : null;
+                        l0Var.z(new Utilities.Callback2() { // from class: org.telegram.ui.Wallet.t1
                             @Override // org.telegram.messenger.Utilities.Callback2
                             public final void run(Object obj3, Object obj4) {
                                 e2 e2Var2 = e2.this;
                                 kh khVar2 = khVar;
                                 TL_wallet.tonConnectPending tonconnectpending2 = tonconnectpending;
                                 TL_wallet.tonConnectRequest tonconnectrequest4 = tonconnectrequest;
-                                String str = s10;
+                                String str = t10;
                                 byte[] bArr2 = bArr;
                                 long j11 = j10;
                                 int i12 = i10;

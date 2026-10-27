@@ -1,31 +1,37 @@
 package org.telegram.ui;
 
-import android.app.Activity;
-import android.text.style.CharacterStyle;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.UndoView;
-
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public final class dl extends UndoView {
-    public final /* synthetic */ un j0;
+public final /* synthetic */ class dl implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ el b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public dl(un unVar, Activity activity, un unVar2, org.telegram.ui.ActionBar.u6 u6Var) {
-        super(activity, unVar2, true, u6Var);
-        this.j0 = unVar;
+    public /* synthetic */ dl(el elVar, int i10) {
+        this.a = i10;
+        this.b = elVar;
     }
 
-    @Override // org.telegram.ui.Components.UndoView
-    public final void b(CharacterStyle characterStyle) {
-        this.j0.b8(characterStyle, false, null, null);
-    }
-
-    @Override // org.telegram.ui.Components.UndoView
-    public final void k(long j10, int i10, Object obj, Object obj2, Runnable runnable, Runnable runnable2) {
-        int i11;
-        bk bkVar = this.j0.j2;
-        setAdditionalTranslationY((bkVar == null || !(((i11 = bkVar.U) == 1 || i11 == 3) && bkVar.T)) ? 0.0f : AndroidUtilities.dp(bkVar.getStyleHeight()));
-        super.k(j10, i10, obj, obj2, runnable, runnable2);
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                jk jkVar = this.b.H.Y;
+                if (jkVar != null) {
+                    jkVar.T0 = false;
+                    org.telegram.ui.Components.dg dgVar = jkVar.U0;
+                    if (dgVar != null) {
+                        dgVar.u(false);
+                        break;
+                    }
+                }
+                break;
+            default:
+                jk jkVar2 = this.b.H.Y;
+                if (jkVar2 != null) {
+                    jkVar2.E0();
+                    break;
+                }
+                break;
+        }
     }
 }

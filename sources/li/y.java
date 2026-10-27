@@ -31,11 +31,11 @@ import org.telegram.ui.ActionBar.y6;
 import org.telegram.ui.Cells.r9;
 import org.telegram.ui.Cells.s9;
 import org.telegram.ui.Components.RadialProgress2;
-import org.telegram.ui.Components.gb1;
-import org.telegram.ui.Components.ip0;
-import org.telegram.ui.Components.q61;
+import org.telegram.ui.Components.jp0;
+import org.telegram.ui.Components.kb1;
+import org.telegram.ui.Components.r61;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class y extends z implements p6, r9, k0, NotificationCenter.NotificationCenterDelegate, DownloadController.FileDownloadProgressListener {
     public int E;
@@ -61,7 +61,7 @@ public final class y extends z implements p6, r9, k0, NotificationCenter.Notific
     public final Paint s;
     public final TextPaint v;
     public final RadialProgress2 w;
-    public final ip0 x;
+    public final jp0 x;
     public final int y;
 
     public y(Context context, int i10, u6 u6Var) {
@@ -82,13 +82,13 @@ public final class y extends z implements p6, r9, k0, NotificationCenter.Notific
         radialProgress2.setCircleRadius(AndroidUtilities.dp(24.0f));
         int i11 = this.E;
         radialProgress2.r(i11, dp, i11 + dp2, dp2 + dp);
-        ip0 ip0Var = new ip0(this);
-        this.x = ip0Var;
-        ip0Var.h = new jg.i(this);
+        jp0 jp0Var = new jp0(this);
+        this.x = jp0Var;
+        jp0Var.h = new jg.i(this);
         setMinimumHeight(AndroidUtilities.dp(66.0f));
         j0 j0Var = new j0(context, u6Var, new jg.s0(this, 5));
         this.U = j0Var;
-        addView(j0Var.a, gb1.i(-2, -2, 51));
+        addView(j0Var.a, kb1.i(-2, -2, 51));
         updateColors();
     }
 
@@ -287,7 +287,7 @@ public final class y extends z implements p6, r9, k0, NotificationCenter.Notific
         } else {
             SpannableStringBuilder spannableStringBuilder = (TextUtils.isEmpty(musicTitle) || TextUtils.isEmpty(musicAuthor)) ? !TextUtils.isEmpty(musicTitle) ? new SpannableStringBuilder(musicTitle) : new SpannableStringBuilder(musicAuthor) : new SpannableStringBuilder(a1.g.D(musicAuthor, " - ", musicTitle));
             if (!TextUtils.isEmpty(musicAuthor)) {
-                spannableStringBuilder.setSpan(new q61(AndroidUtilities.bold()), 0, musicAuthor.length(), 18);
+                spannableStringBuilder.setSpan(new r61(AndroidUtilities.bold()), 0, musicAuthor.length(), 18);
             }
             float dp2 = AndroidUtilities.dp(16.0f);
             TextPaint textPaint = this.v;
@@ -351,9 +351,9 @@ public final class y extends z implements p6, r9, k0, NotificationCenter.Notific
         double d;
         MessageObject messageObject;
         if (!j() && (messageObject = this.P) != null) {
-            ip0 ip0Var = this.x;
-            if (!ip0Var.e) {
-                ip0Var.i(messageObject.audioProgress);
+            jp0 jp0Var = this.x;
+            if (!jp0Var.e) {
+                jp0Var.i(messageObject.audioProgress);
             }
         }
         int i10 = 0;
@@ -391,10 +391,10 @@ public final class y extends z implements p6, r9, k0, NotificationCenter.Notific
         this.x.s = this;
         l(false);
         int i10 = this.n;
-        NotificationCenter.getInstance(i10).addObserver(this, NotificationCenter.messagePlayingDidStart);
-        NotificationCenter.getInstance(i10).addObserver(this, NotificationCenter.messagePlayingDidReset);
-        NotificationCenter.getInstance(i10).addObserver(this, NotificationCenter.messagePlayingPlayStateChanged);
-        NotificationCenter.getInstance(i10).addObserver(this, NotificationCenter.messagePlayingProgressDidChanged);
+        NotificationCenter.getInstance(i10).addWeakObserver(this, NotificationCenter.messagePlayingDidStart);
+        NotificationCenter.getInstance(i10).addWeakObserver(this, NotificationCenter.messagePlayingDidReset);
+        NotificationCenter.getInstance(i10).addWeakObserver(this, NotificationCenter.messagePlayingPlayStateChanged);
+        NotificationCenter.getInstance(i10).addWeakObserver(this, NotificationCenter.messagePlayingProgressDidChanged);
     }
 
     @Override // android.view.ViewGroup, android.view.View
@@ -424,12 +424,12 @@ public final class y extends z implements p6, r9, k0, NotificationCenter.Notific
         int w04 = y6.w0(i11, u6Var);
         int w05 = y6.w0(i11, u6Var);
         int w06 = y6.w0(y6.wd, u6Var);
-        ip0 ip0Var = this.x;
-        ip0Var.h(w02, w03, w04, w05, w06);
+        jp0 jp0Var = this.x;
+        jp0Var.h(w02, w03, w04, w05, w06);
         if (!j()) {
             canvas.save();
             canvas.translate(this.I, this.J);
-            ip0Var.b(canvas);
+            jp0Var.b(canvas);
             canvas.restore();
         }
         int w07 = y6.w0(y6.nd, u6Var);

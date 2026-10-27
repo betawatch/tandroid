@@ -27,7 +27,7 @@ import java.util.PriorityQueue;
 import java.util.UUID;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
 public final class h implements c3.o {
     public static final byte[] O = {-94, 57, 79, 82, 90, -101, 79, 20, -94, 68, 108, 66, 124, 100, -115, -12};
@@ -336,7 +336,7 @@ public final class h implements c3.o {
      */
     /* JADX WARN: Code restructure failed: missing block: B:375:0x0123, code lost:
     
-        r33.q(r32.D);
+        r33.r(r32.D);
         r1 = r2.b();
      */
     /* JADX WARN: Code restructure failed: missing block: B:376:0x012c, code lost:
@@ -395,7 +395,7 @@ public final class h implements c3.o {
     /* JADX WARN: Code restructure failed: missing block: B:392:0x0163, code lost:
     
         r32.D -= 8;
-        r33.q(r22);
+        r33.r(r22);
      */
     /* JADX WARN: Code restructure failed: missing block: B:394:0x017c, code lost:
     
@@ -913,7 +913,7 @@ public final class h implements c3.o {
                             if (position < 0) {
                                 throw x0.a(null, "Offset to end of mdat was negative.");
                             }
-                            pVar.q(position);
+                            pVar.r(position);
                             h();
                         } else {
                             int position2 = (int) ((!gVar2.m ? gVar2.d.c[gVar2.f] : gVar2.b.f[gVar2.h]) - pVar.getPosition());
@@ -921,7 +921,7 @@ public final class h implements c3.o {
                                 e2.a.l("FragmentedMp4Extractor", "Ignoring negative offset to sample data.");
                                 position2 = 0;
                             }
-                            pVar.q(position2);
+                            pVar.r(position2);
                             this.C = gVar2;
                             gVar = gVar2;
                         }
@@ -945,7 +945,7 @@ public final class h implements c3.o {
                             if (position3 < 0) {
                                 throw x0.a(null, "Offset to encryption data was negative.");
                             }
-                            pVar.q(position3);
+                            pVar.r(position3);
                             s sVar4 = gVar4.b;
                             e2.x xVar2 = sVar4.n;
                             pVar.readFully(xVar2.a, 0, xVar2.c);
@@ -1049,7 +1049,7 @@ public final class h implements c3.o {
                             }
                         }
                     } else {
-                        pVar.q(i17);
+                        pVar.r(i17);
                     }
                     l(pVar.getPosition());
                 }
@@ -1136,7 +1136,7 @@ public final class h implements c3.o {
                             xVar.K(8);
                             pVar.b(0, 8, xVar.a);
                             c.a(xVar);
-                            pVar.q(xVar.b);
+                            pVar.r(xVar.b);
                             pVar.p();
                         }
                         arrayDeque.push(new f2.d(this.t, j24));

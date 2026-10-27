@@ -7,9 +7,8 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.NotificationsController;
 import org.telegram.messenger.TopicsController;
 import org.telegram.tgnet.tl.TL_communities;
-import org.telegram.ui.un;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class kd implements Runnable {
     public final /* synthetic */ int a;
@@ -88,11 +87,8 @@ public final /* synthetic */ class kd implements Runnable {
             case 4:
                 ((NotificationsController) this.d).lambda$setOpenedInBubble$5(this.b, this.c);
                 break;
-            case 5:
-                ((TopicsController) this.d).lambda$reloadTopics$24(this.c, this.b);
-                break;
             default:
-                un.s0((un) this.d, this.c, this.b);
+                ((TopicsController) this.d).lambda$reloadTopics$24(this.c, this.b);
                 break;
         }
     }

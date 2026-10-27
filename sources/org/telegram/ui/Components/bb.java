@@ -16,7 +16,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public abstract class bb extends org.telegram.ui.ActionBar.k3 {
     public boolean E;
@@ -40,7 +40,7 @@ public abstract class bb extends org.telegram.ui.ActionBar.k3 {
     public int W;
     public final Drawable b;
     public final ig.a0 c;
-    public final mm0 d;
+    public final nm0 d;
     public final xa e;
     public boolean f;
     public int h;
@@ -130,19 +130,19 @@ public abstract class bb extends org.telegram.ui.ActionBar.k3 {
             return;
         }
         boolean z10 = this.P;
-        mm0 mm0Var = this.d;
+        nm0 nm0Var = this.d;
         if (z10) {
-            int height = mm0Var.getHeight();
-            for (int i11 = 0; i11 < mm0Var.getChildCount(); i11++) {
-                View childAt = mm0Var.getChildAt(i11);
+            int height = nm0Var.getHeight();
+            for (int i11 = 0; i11 < nm0Var.getChildCount(); i11++) {
+                View childAt = nm0Var.getChildAt(i11);
                 int R = RecyclerView.R(childAt);
-                if (R != -1 && R != mm0Var.getAdapter().h() - 1) {
+                if (R != -1 && R != nm0Var.getAdapter().h() - 1) {
                     height = Math.min(height, childAt.getTop() + (this.O ? (int) childAt.getTranslationY() : 0));
                 }
             }
             i10 = height - AndroidUtilities.dp(16.0f);
         } else {
-            s4.e1 K = mm0Var.K(0);
+            s4.e1 K = nm0Var.K(0);
             int i12 = -AndroidUtilities.dp(16.0f);
             if (K != null) {
                 View view2 = K.a;
@@ -228,15 +228,15 @@ public abstract class bb extends org.telegram.ui.ActionBar.k3 {
     }
 
     public final void J() {
-        mm0 mm0Var = this.d;
-        if (mm0Var == null || this.c == null || mm0Var.getChildCount() <= 0) {
+        nm0 nm0Var = this.d;
+        if (nm0Var == null || this.c == null || nm0Var.getChildCount() <= 0) {
             return;
         }
         View view = null;
         int i10 = -1;
         int i11 = ConnectionsManager.DEFAULT_DATACENTER_ID;
-        for (int i12 = 0; i12 < mm0Var.getChildCount(); i12++) {
-            View childAt = mm0Var.getChildAt(i12);
+        for (int i12 = 0; i12 < nm0Var.getChildCount(); i12++) {
+            View childAt = nm0Var.getChildAt(i12);
             int R = RecyclerView.R(childAt);
             if (R >= 0 && childAt.getTop() < i11) {
                 i11 = childAt.getTop();
@@ -323,13 +323,13 @@ public abstract class bb extends org.telegram.ui.ActionBar.k3 {
     }
 
     public final void s() {
-        mm0 mm0Var = this.d;
-        if (mm0Var == null || mm0Var.getLayoutManager() == null || this.U < 0) {
+        nm0 nm0Var = this.d;
+        if (nm0Var == null || nm0Var.getLayoutManager() == null || this.U < 0) {
             return;
         }
-        int top = (this.V - this.containerView.getTop()) - mm0Var.getPaddingTop();
-        if (mm0Var.getLayoutManager() instanceof s4.c0) {
-            ((s4.c0) mm0Var.getLayoutManager()).h1(this.U, top);
+        int top = (this.V - this.containerView.getTop()) - nm0Var.getPaddingTop();
+        if (nm0Var.getLayoutManager() instanceof s4.c0) {
+            ((s4.c0) nm0Var.getLayoutManager()).h1(this.U, top);
         }
         this.U = -1;
     }
@@ -350,9 +350,9 @@ public abstract class bb extends org.telegram.ui.ActionBar.k3 {
         }
     }
 
-    public abstract lm0 v(mm0 mm0Var);
+    public abstract mm0 v(nm0 nm0Var);
 
-    public mm0 w(Context context) {
+    public nm0 w(Context context) {
         return new bi.r1(this, context, this.resourcesProvider, 11);
     }
 
@@ -409,7 +409,7 @@ public abstract class bb extends org.telegram.ui.ActionBar.k3 {
     public void F(float f7) {
     }
 
-    public void G(vw0 vw0Var) {
+    public void G(ww0 ww0Var) {
     }
 
     /* JADX WARN: Illegal instructions before constructor call */
@@ -451,7 +451,7 @@ public abstract class bb extends org.telegram.ui.ActionBar.k3 {
 
     public bb(Context context, org.telegram.ui.ActionBar.r2 r2Var, ab abVar) {
         super(abVar.b, context, abVar.g, abVar.a);
-        vw0 vw0Var;
+        ww0 ww0Var;
         this.v = 0.4f;
         this.w = true;
         this.x = 1.0f;
@@ -477,11 +477,11 @@ public abstract class bb extends org.telegram.ui.ActionBar.k3 {
         if (z11) {
             va vaVar = new va(this, context, z12, z10);
             this.s = vaVar;
-            vw0Var = vaVar;
+            ww0Var = vaVar;
         } else {
-            vw0Var = new wa(this, context, z12, z10);
+            ww0Var = new wa(this, context, z12, z10);
         }
-        mm0 w10 = w(context);
+        nm0 w10 = w(context);
         this.d = w10;
         ig.a0 a0Var = new ig.a0(6);
         this.c = a0Var;
@@ -497,12 +497,12 @@ public abstract class bb extends org.telegram.ui.ActionBar.k3 {
         if (z10) {
             w10.setHasFixedSize(true);
             w10.setAdapter(v(w10));
-            setCustomView(vw0Var);
-            vw0Var.addView(w10, gb1.g(-2.0f, -1));
+            setCustomView(ww0Var);
+            ww0Var.addView(w10, kb1.g(-2.0f, -1));
         } else {
             w10.setAdapter(new za(this, v(w10), context));
-            this.containerView = vw0Var;
-            xa xaVar = new xa(this, context, vw0Var);
+            this.containerView = ww0Var;
+            xa xaVar = new xa(this, context, ww0Var);
             this.e = xaVar;
             org.telegram.ui.ActionBar.f7.i(org.telegram.ui.ActionBar.y6.h5, xaVar, this.resourcesProvider);
             org.telegram.ui.ActionBar.f7.m(xaVar, 5, org.telegram.ui.ActionBar.y6.G6, this.resourcesProvider);
@@ -512,14 +512,14 @@ public abstract class bb extends org.telegram.ui.ActionBar.k3 {
             xaVar.setCastShadows(true);
             xaVar.setTitle(y());
             xaVar.setActionBarMenuOnItemClick(new org.telegram.ui.ga(this, 10));
-            vw0Var.addView(w10);
-            vw0Var.addView(xaVar, gb1.h(-1, -2.0f, 0, 6.0f, 0.0f, 6.0f, 0.0f));
-            w10.j(new ai.b(vw0Var, 24));
+            ww0Var.addView(w10);
+            ww0Var.addView(xaVar, kb1.h(-1, -2.0f, 0, 6.0f, 0.0f, 6.0f, 0.0f));
+            w10.j(new ai.b(ww0Var, 24));
         }
         if (i10 == 2) {
             K();
         }
-        G(vw0Var);
+        G(ww0Var);
         M();
     }
 }

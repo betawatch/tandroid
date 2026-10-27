@@ -20,12 +20,12 @@ import org.telegram.ui.ActionBar.u6;
 import org.telegram.ui.ActionBar.y6;
 import org.telegram.ui.Components.ar;
 import org.telegram.ui.Components.b10;
-import org.telegram.ui.Components.gb1;
 import org.telegram.ui.Components.j9;
+import org.telegram.ui.Components.kb1;
 import org.telegram.ui.Components.y9;
-import org.telegram.ui.m00;
+import org.telegram.ui.o00;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class h1 extends LinearLayout implements p6 {
     public ShapeDrawable a;
@@ -43,21 +43,21 @@ public final class h1 extends LinearLayout implements p6 {
         y9 y9Var = new y9(context);
         this.c = y9Var;
         y9Var.setRoundRadius(AndroidUtilities.dp(28.0f));
-        addView(y9Var, gb1.x(28, 28, 19, 12, 0, 12, 0));
+        addView(y9Var, kb1.x(28, 28, 19, 12, 0, 12, 0));
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setOrientation(1);
-        addView(linearLayout, gb1.x(-1, -2, 55, 0, 4, 12, 4));
+        addView(linearLayout, kb1.x(-1, -2, 55, 0, 4, 12, 4));
         TextView textView = new TextView(context);
         this.e = textView;
         textView.setTextSize(1, 15.0f);
         int i10 = y6.G6;
         f7.V(textView, i10, u6Var);
-        linearLayout.addView(textView, gb1.r(-1, -2));
+        linearLayout.addView(textView, kb1.r(-1, -2));
         TextView textView2 = new TextView(context);
         this.f = textView2;
         textView2.setTextSize(1, 13.0f);
         f7.W(textView2, z10 ? f7.L(0.5f, i10) : f7.N(y6.z6), u6Var);
-        linearLayout.addView(textView2, gb1.r(-1, -2));
+        linearLayout.addView(textView2, kb1.r(-1, -2));
     }
 
     public final void a(int i10, String str, TLRPC.Chat chat) {
@@ -90,10 +90,10 @@ public final class h1 extends LinearLayout implements p6 {
         l4.append(ChatObject.getPublicUsername(chat));
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(LocaleController.formatString(i11, l4.toString()));
         spannableStringBuilder.append((CharSequence) "  d");
-        m00 m00Var = new m00(8);
-        m00Var.f = y6.x0(null, y6.Lj, false);
-        m00Var.n = false;
-        spannableStringBuilder.setSpan(m00Var, spannableStringBuilder.length() - 1, spannableStringBuilder.length(), 0);
+        o00 o00Var = new o00(8);
+        o00Var.f = y6.x0(null, y6.Lj, false);
+        o00Var.n = false;
+        spannableStringBuilder.setSpan(o00Var, spannableStringBuilder.length() - 1, spannableStringBuilder.length(), 0);
         textView2.setText(spannableStringBuilder);
         textView.setText(LocaleController.getString(R.string.HashtagSuggestion2Text));
     }

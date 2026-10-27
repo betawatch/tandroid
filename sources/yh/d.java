@@ -17,11 +17,11 @@ import org.telegram.ui.ActionBar.f7;
 import org.telegram.ui.ActionBar.r2;
 import org.telegram.ui.ActionBar.y6;
 import org.telegram.ui.Cells.y;
-import org.telegram.ui.Components.gb1;
+import org.telegram.ui.Components.kb1;
 import org.telegram.ui.Components.l9;
-import org.telegram.ui.pe;
+import org.telegram.ui.qe;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class d {
     public final r2 a;
@@ -107,7 +107,7 @@ public final class d {
             LinearLayout linearLayout = new LinearLayout(r2Var.getParentActivity());
             this.f = linearLayout;
             linearLayout.setOrientation(0);
-            this.d.addView(this.f, gb1.h(-1, -1.0f, 48, 0.0f, 0.0f, 100.0f, 0.0f));
+            this.d.addView(this.f, kb1.h(-1, -1.0f, 48, 0.0f, 0.0f, 100.0f, 0.0f));
             v vVar = new v(1, r2Var.getParentActivity(), false);
             this.e = vVar;
             vVar.setAvatarsTextSize(AndroidUtilities.dp(18.0f));
@@ -115,7 +115,7 @@ public final class d {
             for (int i11 = 0; i11 < l9Var.c.length; i11++) {
                 l9Var.l(0, null, 0);
             }
-            this.f.addView(this.e, gb1.h(-2, -1.0f, 48, 8.0f, 0.0f, 10.0f, 0.0f));
+            this.f.addView(this.e, kb1.h(-2, -1.0f, 48, 8.0f, 0.0f, 10.0f, 0.0f));
             TextView textView = new TextView(r2Var.getParentActivity());
             this.g = textView;
             textView.setEllipsize(TextUtils.TruncateAt.END);
@@ -124,7 +124,7 @@ public final class d {
             this.g.setText((CharSequence) null);
             f7.V(this.g, y6.fe, r2Var.getResourceProvider());
             this.g.setTypeface(AndroidUtilities.bold());
-            this.f.addView(this.g, gb1.h(-1, -1.0f, 48, 0.0f, 0.0f, 0.0f, 0.0f));
+            this.f.addView(this.g, kb1.h(-1, -1.0f, 48, 0.0f, 0.0f, 0.0f, 0.0f));
             this.h = new ImageView(r2Var.getParentActivity());
             int i12 = y6.x7;
             int themedColor = r2Var.getThemedColor(i12);
@@ -166,7 +166,7 @@ public final class d {
                     }
                 }
             });
-            this.d.addView(this.h, gb1.h(36, -1.0f, 53, 0.0f, 0.0f, 4.0f, 0.0f));
+            this.d.addView(this.h, kb1.h(36, -1.0f, 53, 0.0f, 0.0f, 4.0f, 0.0f));
             TLRPC.ChatFull chatFull = this.j;
             if (chatFull != null) {
                 d(chatFull.requests_pending, chatFull.recent_requesters, false);
@@ -175,8 +175,8 @@ public final class d {
         return this.d;
     }
 
-    public final void c(pe peVar) {
-        this.m = peVar;
+    public final void c(qe qeVar) {
+        this.m = qeVar;
     }
 
     public final void d(int i10, List list, boolean z10) {

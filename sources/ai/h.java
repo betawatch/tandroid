@@ -16,11 +16,11 @@ import java.util.Random;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.TelegramQRCodeWriter;
-import org.telegram.messenger.vh;
+import org.telegram.messenger.wh;
 import org.telegram.ui.Components.b10;
 import org.telegram.ui.d3;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class h {
     public static final float S;
@@ -153,7 +153,7 @@ public final class h {
                     float f11 = i14 + 0.5f;
                     float f12 = gVar.f;
                     int i15 = (int) ((f11 * f12) + f10);
-                    int a2 = (int) vh.a(i13, 0.5f, f12, f10);
+                    int a2 = (int) wh.a(i13, 0.5f, f12, f10);
                     boolean z10 = false;
                     for (int i16 = -1; i16 <= 1 && !z10; i16++) {
                         z10 = Color.alpha(encode.getPixel(Math.max(0, Math.min(gVar.b - 1, ((int) ((((float) i16) * gVar.f) * 0.3f)) + i15)), a2)) > 40;
@@ -193,7 +193,7 @@ public final class h {
 
     public static float h(g gVar, float f7) {
         float f10 = 1.0f - f7;
-        return vh.a(gVar.e, 6.0f, 1.0f - (((f10 * 0.45f) + 0.55f) * (f10 * f10)), -1.5f);
+        return wh.a(gVar.e, 6.0f, 1.0f - (((f10 * 0.45f) + 0.55f) * (f10 * f10)), -1.5f);
     }
 
     public static boolean i(g gVar, int i10, int i11) {
@@ -304,7 +304,7 @@ public final class h {
                         float f11 = gVar.g;
                         float f12 = gVar.f;
                         fArr[i16] = ((i18 + 0.5f) * f12) + f11;
-                        gVar.o[i16] = vh.a(i17, 0.5f, f12, f11);
+                        gVar.o[i16] = wh.a(i17, 0.5f, f12, f11);
                         float f13 = hypot * 0.5f;
                         gVar.p[i16] = i22 ? f13 * 0.85f : f13 + (floor * 0.06f);
                         gVar.q[i16] = gVar.h[i21];

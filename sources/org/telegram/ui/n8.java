@@ -26,7 +26,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class n8 extends org.telegram.ui.ActionBar.r2 implements NotificationCenter.NotificationCenterDelegate {
     public boolean E;
@@ -38,7 +38,7 @@ public final class n8 extends org.telegram.ui.ActionBar.r2 implements Notificati
     public int K;
     public c8 L;
     public li.h5 M;
-    public un N;
+    public wn N;
     public org.telegram.ui.Components.t40 O;
     public int P;
     public int Q;
@@ -238,7 +238,7 @@ public final class n8 extends org.telegram.ui.ActionBar.r2 implements Notificati
         r1Var2.setAdapter(c8Var);
         this.b.j(new i3(this, 4));
         boolean z10 = this.e0 == 0 && this.d0;
-        this.a.addView(this.b, org.telegram.ui.Components.gb1.h(-1, -1.0f, 0, 0.0f, 36.0f, 0.0f, z10 ? 48.0f : 0.0f));
+        this.a.addView(this.b, org.telegram.ui.Components.kb1.h(-1, -1.0f, 0, 0.0f, 36.0f, 0.0f, z10 ? 48.0f : 0.0f));
         fi.f6 f6Var = new fi.f6(this, context, new String[]{LocaleController.getString(R.string.CalendarWeekNameShortMonday), LocaleController.getString(R.string.CalendarWeekNameShortTuesday), LocaleController.getString(R.string.CalendarWeekNameShortWednesday), LocaleController.getString(R.string.CalendarWeekNameShortThursday), LocaleController.getString(R.string.CalendarWeekNameShortFriday), LocaleController.getString(R.string.CalendarWeekNameShortSaturday), LocaleController.getString(R.string.CalendarWeekNameShortSunday)}, 2);
         this.j0 = f6Var;
         f6Var.setPadding(AndroidUtilities.dp(4.0f), 0, AndroidUtilities.dp(4.0f), 0);
@@ -307,7 +307,7 @@ public final class n8 extends org.telegram.ui.ActionBar.r2 implements Notificati
                                     org.telegram.ui.Components.t40 t40Var = new org.telegram.ui.Components.t40(n8Var2.a.getContext(), 8);
                                     n8Var2.O = t40Var;
                                     t40Var.setExtraTranslationY(AndroidUtilities.dp(24.0f));
-                                    n8Var2.a.addView(n8Var2.O, org.telegram.ui.Components.gb1.h(-2, -2.0f, 51, 19.0f, 0.0f, 19.0f, 0.0f));
+                                    n8Var2.a.addView(n8Var2.O, org.telegram.ui.Components.kb1.h(-2, -2.0f, 51, 19.0f, 0.0f, 19.0f, 0.0f));
                                     n8Var2.O.setText(LocaleController.getString(R.string.SelectDaysTooltip));
                                 }
                                 n8Var2.O.f(n8Var2.b0, true);
@@ -317,7 +317,7 @@ public final class n8 extends org.telegram.ui.ActionBar.r2 implements Notificati
                 }
             });
             this.h.setText(LocaleController.getString(R.string.SelectDays));
-            this.b0.addView(this.h, org.telegram.ui.Components.gb1.i(-2, 38, 17));
+            this.b0.addView(this.h, org.telegram.ui.Components.kb1.i(-2, 38, 17));
             TextView textView2 = new TextView(context);
             this.n = textView2;
             textView2.setGravity(17);
@@ -352,7 +352,7 @@ public final class n8 extends org.telegram.ui.ActionBar.r2 implements Notificati
                                     org.telegram.ui.Components.t40 t40Var = new org.telegram.ui.Components.t40(n8Var2.a.getContext(), 8);
                                     n8Var2.O = t40Var;
                                     t40Var.setExtraTranslationY(AndroidUtilities.dp(24.0f));
-                                    n8Var2.a.addView(n8Var2.O, org.telegram.ui.Components.gb1.h(-2, -2.0f, 51, 19.0f, 0.0f, 19.0f, 0.0f));
+                                    n8Var2.a.addView(n8Var2.O, org.telegram.ui.Components.kb1.h(-2, -2.0f, 51, 19.0f, 0.0f, 19.0f, 0.0f));
                                     n8Var2.O.setText(LocaleController.getString(R.string.SelectDaysTooltip));
                                 }
                                 n8Var2.O.f(n8Var2.b0, true);
@@ -362,8 +362,8 @@ public final class n8 extends org.telegram.ui.ActionBar.r2 implements Notificati
                 }
             });
             this.n.setVisibility(8);
-            this.b0.addView(this.n, org.telegram.ui.Components.gb1.i(-2, 38, 17));
-            this.a.addView(this.b0, org.telegram.ui.Components.gb1.i(-1, 50, 80));
+            this.b0.addView(this.n, org.telegram.ui.Components.kb1.i(-2, 38, 17));
+            this.a.addView(this.b0, org.telegram.ui.Components.kb1.i(-1, 50, 80));
             this.b0.a(this.h, false);
             int dp4 = AndroidUtilities.dp(19.0f);
             TextView textView3 = this.h;
@@ -377,9 +377,9 @@ public final class n8 extends org.telegram.ui.ActionBar.r2 implements Notificati
         }
         View view = new View(context);
         this.k0 = view;
-        this.a.addView(view, org.telegram.ui.Components.gb1.i(-1, 0, 48));
+        this.a.addView(view, org.telegram.ui.Components.kb1.i(-1, 0, 48));
         this.k0.getLayoutParams().height = AndroidUtilities.dp(44.0f) + org.telegram.ui.ActionBar.k.getCurrentActionBarHeight() + this.mSystemInsets.b;
-        this.a.addView(this.j0, org.telegram.ui.Components.gb1.h(-1, 56.0f, 0, -4.0f, 0.0f, -4.0f, 0.0f));
+        this.a.addView(this.j0, org.telegram.ui.Components.kb1.h(-1, 56.0f, 0, -4.0f, 0.0f, -4.0f, 0.0f));
         return this.fragmentView;
     }
 
@@ -391,7 +391,7 @@ public final class n8 extends org.telegram.ui.ActionBar.r2 implements Notificati
     }
 
     @Override // org.telegram.ui.ActionBar.r2
-    public final org.telegram.ui.Components.mm0 getListViewForSimpleGlass() {
+    public final org.telegram.ui.Components.nm0 getListViewForSimpleGlass() {
         return this.b;
     }
 
@@ -455,7 +455,7 @@ public final class n8 extends org.telegram.ui.ActionBar.r2 implements Notificati
             this.d0 = false;
         }
         if (z6Var != null) {
-            NotificationCenter.getInstance(this.currentAccount).addObserver(this, NotificationCenter.storiesListUpdated);
+            NotificationCenter.getInstance(this.currentAccount).addWeakObserver(this, NotificationCenter.storiesListUpdated);
         }
         return super.onFragmentCreate();
     }
@@ -808,7 +808,7 @@ public final class n8 extends org.telegram.ui.ActionBar.r2 implements Notificati
             this.n.setVisibility(0);
             this.h.animate().setListener(null).cancel();
             this.n.animate().setListener(null).cancel();
-            this.h.animate().alpha(0.0f).translationY(AndroidUtilities.dp(20.0f)).setDuration(150L).setListener(new jo(this.h)).start();
+            this.h.animate().alpha(0.0f).translationY(AndroidUtilities.dp(20.0f)).setDuration(150L).setListener(new lo(this.h)).start();
             this.n.animate().alpha(abs == 0 ? 0.5f : 1.0f).translationY(0.0f).start();
             this.h.setEnabled(false);
             this.n.setEnabled(true);
@@ -822,7 +822,7 @@ public final class n8 extends org.telegram.ui.ActionBar.r2 implements Notificati
         this.h.animate().setListener(null).cancel();
         this.n.animate().setListener(null).cancel();
         this.h.animate().alpha(1.0f).translationY(0.0f).start();
-        this.n.animate().alpha(0.0f).translationY(-AndroidUtilities.dp(20.0f)).setDuration(150L).setListener(new jo(this.n)).start();
+        this.n.animate().alpha(0.0f).translationY(-AndroidUtilities.dp(20.0f)).setDuration(150L).setListener(new lo(this.n)).start();
         this.h.setEnabled(true);
         this.n.setEnabled(false);
     }

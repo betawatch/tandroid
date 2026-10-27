@@ -11,12 +11,12 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ContactsController;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.messenger.vh;
+import org.telegram.messenger.wh;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.gb1;
+import org.telegram.ui.Components.kb1;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class k extends FrameLayout {
     public final org.telegram.ui.ActionBar.b6 a;
@@ -35,7 +35,7 @@ public final class k extends FrameLayout {
         org.telegram.ui.Components.y9 y9Var = new org.telegram.ui.Components.y9(activity);
         this.c = y9Var;
         y9Var.setRoundRadius(AndroidUtilities.dp(18.0f));
-        addView(y9Var, gb1.h(36, 36.0f, 51, 10.0f, 10.0f, 0.0f, 0.0f));
+        addView(y9Var, kb1.h(36, 36.0f, 51, 10.0f, 10.0f, 0.0f, 0.0f));
         org.telegram.ui.ActionBar.b6 b6Var = new org.telegram.ui.ActionBar.b6(activity);
         this.a = b6Var;
         b6Var.setTextSize(15);
@@ -44,28 +44,28 @@ public final class k extends FrameLayout {
         b6Var.setMaxLines(1);
         b6Var.setGravity(19);
         if (!z10) {
-            addView(b6Var, gb1.h(-1, -1.0f, 51, 61.0f, 0.0f, 52.0f, 0.0f));
+            addView(b6Var, kb1.h(-1, -1.0f, 51, 61.0f, 0.0f, 52.0f, 0.0f));
             org.telegram.ui.ActionBar.f7.Y(b6Var, org.telegram.ui.ActionBar.y6.E8, null);
             ImageView imageView = new ImageView(activity);
             this.d = imageView;
             imageView.setImageResource(R.drawable.account_check);
             imageView.setScaleType(ImageView.ScaleType.CENTER);
             org.telegram.ui.ActionBar.f7.t(imageView, org.telegram.ui.ActionBar.y6.H9, null, PorterDuff.Mode.MULTIPLY);
-            addView(imageView, gb1.h(40, -1.0f, 53, 0.0f, 0.0f, 6.0f, 0.0f));
+            addView(imageView, kb1.h(40, -1.0f, 53, 0.0f, 0.0f, 6.0f, 0.0f));
             return;
         }
-        addView(b6Var, gb1.h(-2, -2.0f, 51, 61.0f, 7.0f, 8.0f, 0.0f));
+        addView(b6Var, kb1.h(-2, -2.0f, 51, 61.0f, 7.0f, 8.0f, 0.0f));
         org.telegram.ui.ActionBar.f7.Y(b6Var, org.telegram.ui.ActionBar.y6.ng, null);
         b6Var.l(LocaleController.getString(R.string.VoipGroupDisplayAs), false);
         TextView textView = new TextView(activity);
         this.b = textView;
         org.telegram.ui.ActionBar.f7.V(textView, org.telegram.ui.ActionBar.y6.og, null);
-        vh.r(textView, 1, 15.0f, 1, 1);
+        wh.r(textView, 1, 15.0f, 1, 1);
         textView.setSingleLine(true);
         textView.setMaxWidth(AndroidUtilities.dp(320.0f));
         textView.setGravity(51);
         textView.setEllipsize(TextUtils.TruncateAt.END);
-        addView(textView, gb1.h(-2, -2.0f, 51, 61.0f, 27.0f, 8.0f, 0.0f));
+        addView(textView, kb1.h(-2, -2.0f, 51, 61.0f, 27.0f, 8.0f, 0.0f));
     }
 
     public int getAccountNumber() {

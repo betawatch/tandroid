@@ -15,7 +15,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class j10 extends FrameLayout implements org.telegram.ui.ActionBar.p6 {
     public boolean E;
@@ -50,7 +50,7 @@ public final class j10 extends FrameLayout implements org.telegram.ui.ActionBar.
             ValueAnimator ofFloat = ValueAnimator.ofFloat(f7, z10 ? 1.0f : 0.0f);
             this.s = ofFloat;
             ofFloat.addUpdateListener(new h10(this, 2));
-            this.s.addListener(new org.telegram.ui.jo(10, this, z10));
+            this.s.addListener(new org.telegram.ui.lo(10, this, z10));
             this.s.setDuration(320L);
             this.s.setInterpolator(ds.h);
             this.s.start();

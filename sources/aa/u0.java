@@ -1,6 +1,6 @@
 package aa;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
 public final class u0 extends s1 {
     public final long a;
@@ -9,7 +9,7 @@ public final class u0 extends s1 {
     public final long d;
     public final int e;
 
-    public u0(String str, int i10, String str2, long j10, long j11) {
+    public u0(int i10, long j10, String str, long j11, String str2) {
         this.a = j10;
         this.b = str;
         this.c = str2;

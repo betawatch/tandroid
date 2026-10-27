@@ -10,11 +10,11 @@ import java.util.HashSet;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.vh;
+import org.telegram.messenger.wh;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.zp;
+import org.telegram.ui.Components.aq;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class x7 extends FrameLayout implements org.telegram.ui.ActionBar.p6 {
     public t7[] a;
@@ -38,11 +38,11 @@ public final class x7 extends FrameLayout implements org.telegram.ui.ActionBar.p
     public final void b(int i10, boolean z10, boolean z11) {
         t7 t7Var = this.a[i10];
         FrameLayout frameLayout = t7Var.f;
-        zp zpVar = t7Var.e;
-        if (zpVar.getVisibility() != 0) {
-            zpVar.setVisibility(0);
+        aq aqVar = t7Var.e;
+        if (aqVar.getVisibility() != 0) {
+            aqVar.setVisibility(0);
         }
-        zpVar.a(z10, true);
+        aqVar.a(z10, true);
         AnimatorSet animatorSet = t7Var.h;
         if (animatorSet != null) {
             animatorSet.cancel();
@@ -96,7 +96,7 @@ public final class x7 extends FrameLayout implements org.telegram.ui.ActionBar.p
     @Override // android.widget.FrameLayout, android.view.View
     public final void onMeasure(int i10, int i11) {
         View[] viewArr = this.a;
-        int C = this.r == 1 ? vh.C(2.0f, this.e - 1, View.MeasureSpec.getSize(i10)) / this.e : a(this.e);
+        int C = this.r == 1 ? wh.C(2.0f, this.e - 1, View.MeasureSpec.getSize(i10)) / this.e : a(this.e);
         this.h = true;
         for (int i12 = 0; i12 < this.e; i12++) {
             FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) viewArr[i12].getLayoutParams();

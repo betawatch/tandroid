@@ -20,13 +20,13 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.s90;
+import org.telegram.ui.Components.t90;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class g5 extends View {
     public final TextPaint a;
-    public final s90 b;
+    public final t90 b;
     public final Paint c;
     public final Paint d;
     public StaticLayout e;
@@ -52,7 +52,7 @@ public final class g5 extends View {
         Paint paint2 = new Paint(1);
         this.d = paint2;
         paint2.setPathEffect(new CornerPathEffect(AndroidUtilities.dp(9.66f)));
-        this.b = new s90(0);
+        this.b = new t90(0);
     }
 
     public final void a(int i10, CharSequence charSequence) {
@@ -61,14 +61,14 @@ public final class g5 extends View {
             return;
         }
         this.e = new StaticLayout(charSequence, this.a, i10 - AndroidUtilities.dp(18.0f), Layout.Alignment.ALIGN_CENTER, 1.0f, 0.0f, false);
-        s90 s90Var = this.b;
-        s90Var.rewind();
+        t90 t90Var = this.b;
+        t90Var.rewind();
         int i11 = this.h;
         int i12 = this.n;
-        s90Var.e = i11;
-        s90Var.f = i12;
+        t90Var.e = i11;
+        t90Var.f = i12;
         if (this.f) {
-            s90Var.e(null, 0, 0.0f, 0.0f);
+            t90Var.e(null, 0, 0.0f, 0.0f);
             float f7 = Float.MAX_VALUE;
             float width = this.e.getWidth();
             float f10 = Float.MIN_VALUE;
@@ -81,10 +81,10 @@ public final class g5 extends View {
             }
             this.b.addRect(width, f10, f11, this.e.getHeight(), Path.Direction.CW);
         } else {
-            s90Var.e(this.e, 0, 0.0f, 0.0f);
+            t90Var.e(this.e, 0, 0.0f, 0.0f);
             StaticLayout staticLayout = this.e;
-            staticLayout.getSelectionPath(0, staticLayout.getText().length(), s90Var);
-            s90Var.a();
+            staticLayout.getSelectionPath(0, staticLayout.getText().length(), t90Var);
+            t90Var.a();
         }
         invalidate();
     }
@@ -128,12 +128,12 @@ public final class g5 extends View {
                 this.r.setLocalMatrix(this.s);
             }
             Paint paint = this.c;
-            s90 s90Var = this.b;
-            canvas.drawPath(s90Var, paint);
+            t90 t90Var = this.b;
+            canvas.drawPath(t90Var, paint);
             int o12 = org.telegram.ui.ActionBar.y6.o1(0.35f, -16777216);
             Paint paint2 = this.d;
             paint2.setColor(o12);
-            canvas.drawPath(s90Var, paint2);
+            canvas.drawPath(t90Var, paint2);
             this.e.draw(canvas);
             canvas.restore();
         }

@@ -1,24 +1,11 @@
 package org.telegram.ui;
 
-import android.view.ViewGroup;
-
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public final class x20 extends s4.l {
-    public final /* synthetic */ v50 F;
+public final class x20 {
+    public final /* synthetic */ x50 a;
 
-    public x20(v50 v50Var) {
-        this.F = v50Var;
-    }
-
-    @Override // s4.l
-    public final void P(s4.e1 e1Var) {
-        ViewGroup viewGroup;
-        v50 v50Var = this.F;
-        v50Var.Q.invalidate();
-        v50Var.a2.invalidate();
-        viewGroup = ((org.telegram.ui.ActionBar.k3) v50Var).containerView;
-        viewGroup.invalidate();
-        v50.J0(v50Var);
+    public x20(x50 x50Var) {
+        this.a = x50Var;
     }
 }

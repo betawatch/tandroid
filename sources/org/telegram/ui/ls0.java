@@ -1,50 +1,22 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Path;
-import android.graphics.RectF;
-import org.telegram.messenger.SharedConfig;
-
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public final class ls0 extends org.telegram.ui.Components.d91 {
-    public final org.telegram.ui.Components.pa g0;
-    public final /* synthetic */ PhotoViewer h0;
+public final class ls0 extends org.telegram.ui.Cells.ca {
+    public final /* synthetic */ int q0 = 0;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ls0(Context context, PhotoViewer photoViewer) {
-        super(context);
-        this.h0 = photoViewer;
-        new Path();
-        this.g0 = new org.telegram.ui.Components.pa(photoViewer.b0, this, 0, false);
+    public /* synthetic */ ls0(di.o8 o8Var, org.telegram.ui.ActionBar.u6 u6Var) {
+        super(o8Var, u6Var);
     }
 
-    @Override // org.telegram.ui.Components.d91
-    public final void b(Canvas canvas, RectF rectF) {
-        canvas.save();
-        canvas.clipRect(rectF);
-        float f7 = -getX();
-        PhotoViewer photoViewer = this.h0;
-        canvas.translate(f7 - photoViewer.R7.getX(), (-getY()) - photoViewer.R7.getY());
-        photoViewer.U0(canvas, this.g0, -14803426, 855638016, false, true, false);
-        canvas.restore();
-    }
-
-    @Override // android.view.View
-    public final void invalidate() {
-        int i10;
-        if (SharedConfig.photoViewerBlur && ((i10 = this.h0.n4) == 1 || i10 == 2 || i10 == 3)) {
-            return;
+    @Override // org.telegram.ui.Cells.fa
+    public final int o() {
+        switch (this.q0) {
         }
-        super.invalidate();
+        return 0;
     }
 
-    @Override // android.view.View
-    public final void setTranslationY(float f7) {
-        if (getTranslationY() != f7) {
-            super.setTranslationY(f7);
-            this.h0.e0.invalidate();
-        }
+    public ls0(di.b bVar) {
+        super(null, bVar);
     }
 }

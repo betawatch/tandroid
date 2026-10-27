@@ -1,118 +1,23 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.animation.AnimatorSet;
-import android.animation.ObjectAnimator;
-import android.util.Property;
-import android.view.View;
+import android.media.MediaFormat;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public final class gt0 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ PhotoViewer c;
+public final class gt0 implements a3.y {
+    public final /* synthetic */ PhotoViewer a;
 
-    public /* synthetic */ gt0(PhotoViewer photoViewer, boolean z10, int i10) {
-        this.a = i10;
-        this.c = photoViewer;
-        this.b = z10;
+    public gt0(PhotoViewer photoViewer) {
+        this.a = photoViewer;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public void onAnimationCancel(Animator animator) {
-        switch (this.a) {
-            case 1:
-                PhotoViewer photoViewer = this.c;
-                if (animator.equals(photoViewer.w)) {
-                    photoViewer.w = null;
-                    break;
-                }
-                break;
-            case 2:
-                PhotoViewer photoViewer2 = this.c;
-                if (animator.equals(photoViewer2.L)) {
-                    photoViewer2.L = null;
-                    break;
-                }
-                break;
-            case 3:
-                this.c.U7 = null;
-                break;
-            default:
-                super.onAnimationCancel(animator);
-                break;
-        }
-    }
-
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        int i10 = this.a;
-        boolean z10 = this.b;
-        PhotoViewer photoViewer = this.c;
-        switch (i10) {
-            case 0:
-                if (!z10) {
-                    photoViewer.i3.setVisibility(8);
-                    break;
-                }
-                break;
-            case 1:
-                if (animator.equals(photoViewer.w)) {
-                    if (!z10) {
-                        photoViewer.X0.setVisibility(4);
-                    }
-                    photoViewer.w = null;
-                    break;
-                }
-                break;
-            case 2:
-                if (animator.equals(photoViewer.L)) {
-                    if (!z10) {
-                        photoViewer.F.setVisibility(4);
-                        if (photoViewer.i0.getTag() != null) {
-                            photoViewer.i0.setVisibility(4);
-                        }
-                        if (photoViewer.Q1.getTag() != null) {
-                            photoViewer.Q1.setVisibility(4);
-                        }
-                    }
-                    photoViewer.L = null;
-                    break;
-                }
-                break;
-            default:
-                if (animator.equals(photoViewer.U7)) {
-                    photoViewer.U7 = new AnimatorSet();
-                    if (z10) {
-                        photoViewer.O7.setVisibility(0);
-                        photoViewer.P7.setVisibility(0);
-                        AnimatorSet animatorSet = photoViewer.U7;
-                        su0 su0Var = photoViewer.O7;
-                        Property property = View.TRANSLATION_Y;
-                        animatorSet.playTogether(ObjectAnimator.ofFloat(su0Var, (Property<su0, Float>) property, 0.0f), ObjectAnimator.ofFloat(photoViewer.P7, (Property<org.telegram.ui.Components.og0, Float>) property, 0.0f));
-                    } else {
-                        if (photoViewer.S4) {
-                            photoViewer.j0.setVisibility(8);
-                            photoViewer.j0.setAlpha(0.0f);
-                            photoViewer.j0.setBackgroundColor(photoViewer.c2 == 11 ? -16777216 : 2130706432);
-                        }
-                        photoViewer.O7.setVisibility(4);
-                        photoViewer.P7.setVisibility(4);
-                        AnimatorSet animatorSet2 = photoViewer.U7;
-                        bi.j5 j5Var = photoViewer.P0;
-                        Property property2 = View.TRANSLATION_Y;
-                        animatorSet2.playTogether(ObjectAnimator.ofFloat(j5Var, (Property<bi.j5, Float>) property2, 0.0f), ObjectAnimator.ofFloat(photoViewer.P0, (Property<bi.j5, Float>) View.ALPHA, 1.0f), ObjectAnimator.ofFloat(photoViewer.S0, (Property<li.w1, Float>) property2, 0.0f));
-                    }
-                    photoViewer.U7.addListener(new i50(this, 17));
-                    photoViewer.U7.setDuration(200L);
-                    photoViewer.U7.setInterpolator(AndroidUtilities.decelerateInterpolator);
-                    photoViewer.U7.start();
-                    break;
-                }
-                break;
+    @Override // a3.y
+    public final void a(long j10, long j11, b2.x xVar, MediaFormat mediaFormat) {
+        org.telegram.ui.Components.t81 t81Var;
+        PhotoViewer photoViewer = this.a;
+        if (photoViewer.J4 && (t81Var = photoViewer.F2) != null) {
+            AndroidUtilities.runOnUIThread(new am0(14, this, t81Var));
         }
     }
 }

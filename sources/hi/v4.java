@@ -17,16 +17,16 @@ import org.telegram.messenger.MediaController;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserObject;
-import org.telegram.messenger.vh;
+import org.telegram.messenger.wh;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Cells.s9;
 import org.telegram.ui.Wallet.n5;
 import org.telegram.ui.Wallet.o5;
 import org.telegram.ui.Wallet.r5;
-import org.telegram.ui.un;
+import org.telegram.ui.wn;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class v4 implements Runnable {
     public final /* synthetic */ int a;
@@ -150,7 +150,7 @@ public final /* synthetic */ class v4 implements Runnable {
                                         i11 = i28;
                                         for (int i29 = i19; i29 < 3; i29++) {
                                             String str3 = strArr2[i29];
-                                            if (str3 != null && (str3.startsWith(str2) || vh.u(" ", str2, str3))) {
+                                            if (str3 != null && (str3.startsWith(str2) || wh.u(" ", str2, str3))) {
                                                 i27 = i24;
                                                 String publicUsername = UserObject.getPublicUsername(user2);
                                                 i13 = (i27 == 0 || publicUsername == null || !publicUsername.startsWith(str2)) ? i27 : 2;
@@ -295,12 +295,12 @@ public final /* synthetic */ class v4 implements Runnable {
                 ((MediaController) this.d).lambda$loadMoreMusic$11(this.b, (TLRPC.TL_error) this.e, (TLObject) this.f, this.c);
                 break;
             case 8:
-                un unVar = (un) this.d;
+                wn wnVar = (wn) this.d;
                 CharacterStyle characterStyle = (CharacterStyle) this.e;
                 org.telegram.ui.Cells.s1 s1Var3 = (org.telegram.ui.Cells.s1) this.f;
-                unVar.Sb = this.b;
-                unVar.Tb = this.c;
-                unVar.Ub = characterStyle;
+                wnVar.Wb = this.b;
+                wnVar.Xb = this.c;
+                wnVar.Yb = characterStyle;
                 s1Var3.invalidate();
                 break;
             default:
@@ -330,9 +330,9 @@ public final /* synthetic */ class v4 implements Runnable {
         this.c = i11;
     }
 
-    public /* synthetic */ v4(un unVar, int i10, int i11, CharacterStyle characterStyle, org.telegram.ui.Cells.s1 s1Var) {
+    public /* synthetic */ v4(wn wnVar, int i10, int i11, CharacterStyle characterStyle, org.telegram.ui.Cells.s1 s1Var) {
         this.a = 8;
-        this.d = unVar;
+        this.d = wnVar;
         this.b = i10;
         this.c = i11;
         this.e = characterStyle;

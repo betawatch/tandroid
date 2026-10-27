@@ -1,64 +1,26 @@
 package org.telegram.ui.Components;
 
-import android.graphics.ColorFilter;
-import android.graphics.Paint;
-import android.graphics.drawable.Drawable;
+import android.graphics.Canvas;
+import android.graphics.drawable.ColorDrawable;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public final class i71 implements org.telegram.ui.ActionBar.u6 {
-    public final /* synthetic */ j71 a;
+public final class i71 extends ColorDrawable {
+    public final int a;
+    public final org.telegram.ui.ActionBar.u6 b;
 
-    public i71(j71 j71Var) {
-        this.a = j71Var;
+    public i71(int i10, org.telegram.ui.ActionBar.u6 u6Var) {
+        super(org.telegram.ui.ActionBar.y6.w0(i10, u6Var));
+        this.a = i10;
+        this.b = u6Var;
     }
 
-    @Override // org.telegram.ui.ActionBar.u6
-    public final boolean a() {
-        return org.telegram.ui.ActionBar.y6.I.q();
-    }
-
-    @Override // org.telegram.ui.ActionBar.u6
-    public final void b(float f7, float f10, int i10, int i11) {
-        org.telegram.ui.ActionBar.y6.q(f7, f10, i10, i11);
-    }
-
-    @Override // org.telegram.ui.ActionBar.u6
-    public final ColorFilter c() {
-        return org.telegram.ui.ActionBar.y6.v3;
-    }
-
-    @Override // org.telegram.ui.ActionBar.u6
-    public final Paint d(String str) {
-        return org.telegram.ui.ActionBar.y6.U0(str);
-    }
-
-    @Override // org.telegram.ui.ActionBar.u6
-    public final int e(int i10) {
-        return g(i10);
-    }
-
-    @Override // org.telegram.ui.ActionBar.u6
-    public final /* synthetic */ boolean f() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.ActionBar.u6
-    public final int g(int i10) {
-        return this.a.I(i10);
-    }
-
-    @Override // org.telegram.ui.ActionBar.u6
-    public final /* synthetic */ Drawable getDrawable(String str) {
-        return null;
-    }
-
-    @Override // org.telegram.ui.ActionBar.u6
-    public final int i(int i10) {
-        return g(i10);
-    }
-
-    @Override // org.telegram.ui.ActionBar.u6
-    public final /* synthetic */ void h(int i10, int i11) {
+    @Override // android.graphics.drawable.ColorDrawable, android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        int w02 = org.telegram.ui.ActionBar.y6.w0(this.a, this.b);
+        if (getColor() != w02) {
+            setColor(w02);
+        }
+        super.draw(canvas);
     }
 }

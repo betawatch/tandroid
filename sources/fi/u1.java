@@ -5,9 +5,9 @@ import android.text.TextUtils;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.NotificationCenter;
-import org.telegram.ui.Components.gb1;
+import org.telegram.ui.Components.kb1;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class u1 extends v1 implements NotificationCenter.NotificationCenterDelegate {
     public final bi.r1 b;
@@ -42,13 +42,13 @@ public final class u1 extends v1 implements NotificationCenter.NotificationCente
         r1Var.setOnTouchListener(new o1(0, this, kVar));
         r1Var.setOnItemClickListener(kVar);
         r1Var.setOnScrollListener(new ai.b(this, 9));
-        addView(r1Var, gb1.h(-1, -1.0f, 119, 0.0f, 58.0f, 0.0f, 40.0f));
+        addView(r1Var, kb1.h(-1, -1.0f, 119, 0.0f, 58.0f, 0.0f, 40.0f));
         u6Var = ((org.telegram.ui.ActionBar.k3) l2Var).resourcesProvider;
         f2 f2Var = new f2(context, u6Var);
         this.d = f2Var;
         f2Var.w = new ai.e(this, 16);
         f2Var.a(2, false);
-        addView(f2Var, gb1.i(-1, -2, 48));
+        addView(f2Var, kb1.i(-1, -2, 48));
     }
 
     @Override // fi.v1
@@ -94,7 +94,7 @@ public final class u1 extends v1 implements NotificationCenter.NotificationCente
         int i10;
         super.onAttachedToWindow();
         i10 = ((org.telegram.ui.ActionBar.k3) this.r).currentAccount;
-        NotificationCenter.getInstance(i10).addObserver(this, NotificationCenter.recentDocumentsDidLoad);
+        NotificationCenter.getInstance(i10).addWeakObserver(this, NotificationCenter.recentDocumentsDidLoad);
     }
 
     @Override // android.view.ViewGroup, android.view.View

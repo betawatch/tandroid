@@ -33,10 +33,10 @@ import org.telegram.ui.Components.qc;
 import org.telegram.ui.Components.wc;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PremiumPreviewFragment;
-import org.telegram.ui.ug1;
-import org.telegram.ui.un;
+import org.telegram.ui.wg1;
+import org.telegram.ui.wn;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class c implements Runnable {
     public final /* synthetic */ int a;
@@ -83,7 +83,7 @@ public final /* synthetic */ class c implements Runnable {
                 break;
             case 3:
                 r2 U = LaunchActivity.U();
-                if ((U instanceof ug1) && (X = ((ug1) U).X()) != null) {
+                if ((U instanceof wg1) && (X = ((wg1) U).X()) != null) {
                     U = X;
                 }
                 qc R = (U != null ? wc.b0(U) : wc.Y()).R(R.raw.ic_delete, 36, LocaleController.getString(R.string.Gift2Deleted));
@@ -187,7 +187,7 @@ public final /* synthetic */ class c implements Runnable {
                 y6.E(false);
                 break;
             case 24:
-                int i14 = un.bd;
+                int i14 = wn.fd;
                 break;
             case 25:
                 break;

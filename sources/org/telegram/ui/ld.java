@@ -4,7 +4,7 @@ import android.content.Context;
 import android.view.ContextThemeWrapper;
 import org.telegram.ui.Components.RadialProgressView;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class ld extends RadialProgressView {
     public final /* synthetic */ int N;
@@ -22,9 +22,9 @@ public final class ld extends RadialProgressView {
         switch (this.N) {
             case 3:
                 super.invalidate();
-                iu0 iu0Var = ((PhotoViewer) this.O).e0;
-                if (iu0Var != null) {
-                    iu0Var.invalidate();
+                ku0 ku0Var = ((PhotoViewer) this.O).e0;
+                if (ku0Var != null) {
+                    ku0Var.invalidate();
                     break;
                 }
                 break;
@@ -43,17 +43,17 @@ public final class ld extends RadialProgressView {
                 break;
             case 1:
                 super.setAlpha(f7);
-                ((x60) this.O).e.invalidate();
+                ((z60) this.O).e.invalidate();
                 break;
             case 2:
                 super.setAlpha(f7);
-                ((re0) this.O).h.invalidate();
+                ((te0) this.O).h.invalidate();
                 break;
             default:
                 super.setAlpha(f7);
-                iu0 iu0Var = ((PhotoViewer) this.O).e0;
-                if (iu0Var != null) {
-                    iu0Var.invalidate();
+                ku0 ku0Var = ((PhotoViewer) this.O).e0;
+                if (ku0Var != null) {
+                    ku0Var.invalidate();
                     break;
                 }
                 break;

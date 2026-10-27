@@ -23,9 +23,9 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.gb1;
+import org.telegram.ui.Components.kb1;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class f5 extends FrameLayout implements org.telegram.ui.ActionBar.p6 {
     public boolean E;
@@ -68,7 +68,7 @@ public final class f5 extends FrameLayout implements org.telegram.ui.ActionBar.p
         this.a = d5Var;
         d5Var.setRoundRadius(AndroidUtilities.dp(23.0f));
         boolean z11 = LocaleController.isRTL;
-        addView(d5Var, gb1.h(46, 46.0f, (z11 ? 5 : 3) | 48, z11 ? 0.0f : i10 + 7, 8.0f, z11 ? i10 + 7 : 0.0f, 0.0f));
+        addView(d5Var, kb1.h(46, 46.0f, (z11 ? 5 : 3) | 48, z11 ? 0.0f : i10 + 7, 8.0f, z11 ? i10 + 7 : 0.0f, 0.0f));
         org.telegram.ui.ActionBar.b6 b6Var = new org.telegram.ui.ActionBar.b6(context);
         this.b = b6Var;
         org.telegram.ui.ActionBar.f7.Y(b6Var, org.telegram.ui.ActionBar.y6.G6, u6Var);
@@ -76,14 +76,14 @@ public final class f5 extends FrameLayout implements org.telegram.ui.ActionBar.p
         b6Var.setTypeface(AndroidUtilities.bold());
         b6Var.setGravity((LocaleController.isRTL ? 5 : 3) | 48);
         boolean z12 = LocaleController.isRTL;
-        addView(b6Var, gb1.h(-1, 20.0f, (z12 ? 5 : 3) | 48, z12 ? 46.0f : i11 + 68, 11.5f, z12 ? i11 + 68 : 46.0f, 0.0f));
+        addView(b6Var, kb1.h(-1, 20.0f, (z12 ? 5 : 3) | 48, z12 ? 46.0f : i11 + 68, 11.5f, z12 ? i11 + 68 : 46.0f, 0.0f));
         NotificationCenter.listenEmojiLoading(b6Var);
         org.telegram.ui.ActionBar.b6 b6Var2 = new org.telegram.ui.ActionBar.b6(context);
         this.c = b6Var2;
         b6Var2.setTextSize(14);
         b6Var2.setGravity((LocaleController.isRTL ? 5 : 3) | 48);
         boolean z13 = LocaleController.isRTL;
-        addView(b6Var2, gb1.h(-1, 20.0f, (z13 ? 5 : 3) | 48, z13 ? 28.0f : i11 + 68, 34.5f, z13 ? i11 + 68 : 28.0f, 0.0f));
+        addView(b6Var2, kb1.h(-1, 20.0f, (z13 ? 5 : 3) | 48, z13 ? 28.0f : i11 + 68, 34.5f, z13 ? i11 + 68 : 28.0f, 0.0f));
         if (z10) {
             ImageView imageView = new ImageView(context);
             this.f = imageView;
@@ -96,7 +96,7 @@ public final class f5 extends FrameLayout implements org.telegram.ui.ActionBar.p
             imageView.setImageResource(R.drawable.ic_ab_other);
             org.telegram.ui.ActionBar.f7.t(imageView, org.telegram.ui.ActionBar.y6.Uh, u6Var, PorterDuff.Mode.MULTIPLY);
             imageView.setScaleType(ImageView.ScaleType.CENTER);
-            addView(imageView, gb1.i(60, 64, (LocaleController.isRTL ? 3 : 5) | 48));
+            addView(imageView, kb1.i(60, 64, (LocaleController.isRTL ? 3 : 5) | 48));
             imageView.setOnClickListener(new a(this, 7));
             imageView.setContentDescription(LocaleController.getString(R.string.AccDescrUserOptions));
         }
@@ -153,7 +153,7 @@ public final class f5 extends FrameLayout implements org.telegram.ui.ActionBar.p
             boolean b10 = this.L.b(this, false);
             imageView.setVisibility(b10 ? 0 : 4);
             boolean z11 = LocaleController.isRTL;
-            b6Var2.setLayoutParams(gb1.h(-1, 20.0f, (z11 ? 5 : 3) | 48, z11 ? b10 ? 46 : 28 : i10 + 68, (charSequence2 == null || charSequence2.length() > 0) ? 11.5f : 20.5f, LocaleController.isRTL ? i10 + 68 : b10 ? 46 : 28, 0.0f));
+            b6Var2.setLayoutParams(kb1.h(-1, 20.0f, (z11 ? 5 : 3) | 48, z11 ? b10 ? 46 : 28 : i10 + 68, (charSequence2 == null || charSequence2.length() > 0) ? 11.5f : 20.5f, LocaleController.isRTL ? i10 + 68 : b10 ? 46 : 28, 0.0f));
             boolean z12 = LocaleController.isRTL;
             int i11 = (z12 ? 5 : 3) | 48;
             float f11 = z12 ? b10 ? 46 : 28 : i10 + 68;
@@ -162,13 +162,13 @@ public final class f5 extends FrameLayout implements org.telegram.ui.ActionBar.p
             } else {
                 f10 = b10 ? 46 : 28;
             }
-            b6Var.setLayoutParams(gb1.h(-1, 20.0f, i11, f11, 34.5f, f10, 0.0f));
+            b6Var.setLayoutParams(kb1.h(-1, 20.0f, i11, f11, 34.5f, f10, 0.0f));
         } else {
             ImageView imageView2 = this.h;
             if (imageView2 != null) {
                 boolean z13 = imageView2.getVisibility() == 0;
                 boolean z14 = LocaleController.isRTL;
-                b6Var2.setLayoutParams(gb1.h(-1, 20.0f, (z14 ? 5 : 3) | 48, z14 ? z13 ? 54 : 28 : i10 + 68, (charSequence2 == null || charSequence2.length() > 0) ? 11.5f : 20.5f, LocaleController.isRTL ? i10 + 68 : z13 ? 54 : 28, 0.0f));
+                b6Var2.setLayoutParams(kb1.h(-1, 20.0f, (z14 ? 5 : 3) | 48, z14 ? z13 ? 54 : 28 : i10 + 68, (charSequence2 == null || charSequence2.length() > 0) ? 11.5f : 20.5f, LocaleController.isRTL ? i10 + 68 : z13 ? 54 : 28, 0.0f));
                 boolean z15 = LocaleController.isRTL;
                 int i12 = (z15 ? 5 : 3) | 48;
                 float f12 = z15 ? z13 ? 54 : 28 : i10 + 68;
@@ -177,7 +177,7 @@ public final class f5 extends FrameLayout implements org.telegram.ui.ActionBar.p
                 } else {
                     f7 = z13 ? 54 : 28;
                 }
-                b6Var.setLayoutParams(gb1.h(-1, 20.0f, i12, f12, 34.5f, f7, 0.0f));
+                b6Var.setLayoutParams(kb1.h(-1, 20.0f, i12, f12, 34.5f, f7, 0.0f));
             }
         }
         this.F = z10;
@@ -406,7 +406,7 @@ public final class f5 extends FrameLayout implements org.telegram.ui.ActionBar.p
         imageView.setImageResource(i10);
         this.h.setScaleType(ImageView.ScaleType.CENTER);
         org.telegram.ui.ActionBar.f7.t(this.h, org.telegram.ui.ActionBar.y6.mg, this.d, PorterDuff.Mode.MULTIPLY);
-        addView(this.h, gb1.i(52, 64, (LocaleController.isRTL ? 3 : 5) | 48));
+        addView(this.h, kb1.i(52, 64, (LocaleController.isRTL ? 3 : 5) | 48));
     }
 
     public void setDelegate(e5 e5Var) {

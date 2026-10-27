@@ -13,9 +13,9 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.b10;
 import org.telegram.ui.Components.ds;
-import org.telegram.ui.Components.wa0;
+import org.telegram.ui.Components.xa0;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class u extends Drawable {
     public final /* synthetic */ int a = 1;
@@ -35,7 +35,7 @@ public final class u extends Drawable {
         this.d = paint2;
         Paint paint3 = new Paint(1);
         this.e = paint3;
-        this.g = new org.telegram.ui.Components.h6(new wa0(this, 3), 320L, ds.h, 0);
+        this.g = new org.telegram.ui.Components.h6(new xa0(this, 3), 320L, ds.h, 0);
         Paint.Style style = Paint.Style.STROKE;
         paint.setStyle(style);
         paint.setColor(-1);

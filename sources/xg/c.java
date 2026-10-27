@@ -20,12 +20,12 @@ import org.telegram.ui.ActionBar.f7;
 import org.telegram.ui.ActionBar.u6;
 import org.telegram.ui.ActionBar.y6;
 import org.telegram.ui.Components.RadioButton;
-import org.telegram.ui.Components.gb1;
 import org.telegram.ui.Components.j9;
+import org.telegram.ui.Components.kb1;
 import org.telegram.ui.Components.y9;
 import org.telegram.ui.Components.zq;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public abstract class c extends FrameLayout {
     public final u6 a;
@@ -46,7 +46,7 @@ public abstract class c extends FrameLayout {
         this.a = u6Var;
         View view = new View(context);
         this.r = view;
-        addView(view, gb1.r(-1, -1));
+        addView(view, kb1.r(-1, -1));
         f7.i(y6.h5, view, u6Var);
         j9Var.r = AndroidUtilities.dp(40.0f);
         y9 y9Var = new y9(context);
@@ -98,7 +98,7 @@ public abstract class c extends FrameLayout {
         float f10;
         float f11;
         float f12;
-        this.c.setLayoutParams(gb1.h(40, 40.0f, (LocaleController.isRTL ? 5 : 3) | 16, b() ? 53.0f : 16.0f, 0.0f, b() ? 53.0f : 16.0f, 0.0f));
+        this.c.setLayoutParams(kb1.h(40, 40.0f, (LocaleController.isRTL ? 5 : 3) | 16, b() ? 53.0f : 16.0f, 0.0f, b() ? 53.0f : 16.0f, 0.0f));
         boolean z10 = LocaleController.isRTL;
         int i10 = (z10 ? 5 : 3) | 16;
         if (z10) {
@@ -111,7 +111,7 @@ public abstract class c extends FrameLayout {
         } else {
             f10 = 20.0f;
         }
-        this.d.setLayoutParams(gb1.h(-1, -2.0f, i10, f7, 0.0f, f10, 0.0f));
+        this.d.setLayoutParams(kb1.h(-1, -2.0f, i10, f7, 0.0f, f10, 0.0f));
         boolean z11 = LocaleController.isRTL;
         int i11 = (z11 ? 5 : 3) | 16;
         if (z11) {
@@ -124,9 +124,9 @@ public abstract class c extends FrameLayout {
         } else {
             f12 = 20.0f;
         }
-        this.e.setLayoutParams(gb1.h(-1, -2.0f, i11, f11, 0.0f, f12, 0.0f));
+        this.e.setLayoutParams(kb1.h(-1, -2.0f, i11, f11, 0.0f, f12, 0.0f));
         boolean z12 = LocaleController.isRTL;
-        this.f.setLayoutParams(gb1.h(22, 22.0f, (z12 ? 5 : 3) | 16, z12 ? 15.0f : 20.0f, 0.0f, z12 ? 20.0f : 15.0f, 0.0f));
+        this.f.setLayoutParams(kb1.h(22, 22.0f, (z12 ? 5 : 3) | 16, z12 ? 15.0f : 20.0f, 0.0f, z12 ? 20.0f : 15.0f, 0.0f));
     }
 
     @Override // android.view.ViewGroup, android.view.View

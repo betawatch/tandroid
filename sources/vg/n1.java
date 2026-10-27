@@ -53,32 +53,32 @@ import org.telegram.ui.ActionBar.r2;
 import org.telegram.ui.ActionBar.u6;
 import org.telegram.ui.ActionBar.y6;
 import org.telegram.ui.Cells.v8;
+import org.telegram.ui.Components.aq;
 import org.telegram.ui.Components.ar;
 import org.telegram.ui.Components.bb;
-import org.telegram.ui.Components.cm0;
-import org.telegram.ui.Components.cy0;
+import org.telegram.ui.Components.dm0;
 import org.telegram.ui.Components.ds;
+import org.telegram.ui.Components.dy0;
 import org.telegram.ui.Components.g5;
-import org.telegram.ui.Components.gb1;
-import org.telegram.ui.Components.k80;
-import org.telegram.ui.Components.kb0;
-import org.telegram.ui.Components.lm0;
+import org.telegram.ui.Components.kb1;
+import org.telegram.ui.Components.l80;
+import org.telegram.ui.Components.lb0;
 import org.telegram.ui.Components.mm0;
+import org.telegram.ui.Components.nm0;
 import org.telegram.ui.Components.qc;
 import org.telegram.ui.Components.wc;
 import org.telegram.ui.Components.xa;
-import org.telegram.ui.Components.zp;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.h20;
-import org.telegram.ui.un;
+import org.telegram.ui.j20;
+import org.telegram.ui.wn;
 import zh.p1;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public class n1 extends bb implements NotificationCenter.NotificationCenterDelegate {
     public static f1 J0;
-    public h20 A0;
+    public j20 A0;
     public Utilities.Callback B0;
     public final HashSet C0;
     public Utilities.Callback2 D0;
@@ -92,7 +92,7 @@ public class n1 extends bb implements NotificationCenter.NotificationCenterDeleg
     public final h1 Z;
     public final i1 a0;
     public final g1 b0;
-    public final zp c0;
+    public final aq c0;
     public final sc d0;
     public final FrameLayout e0;
     public final ArrayList f0;
@@ -110,9 +110,9 @@ public class n1 extends bb implements NotificationCenter.NotificationCenterDeleg
     public final ArrayList r0;
     public boolean s0;
     public float t0;
-    public kb0 u0;
+    public lb0 u0;
     public final BirthdayController.BirthdayState v0;
-    public final cy0 w0;
+    public final dy0 w0;
     public int x0;
     public ar y0;
     public String z0;
@@ -133,7 +133,7 @@ public class n1 extends bb implements NotificationCenter.NotificationCenterDeleg
         this.q0 = AndroidUtilities.dp(120.0f);
         this.r0 = new ArrayList();
         this.s0 = false;
-        this.w0 = new cy0(this, 17);
+        this.w0 = new dy0(this, 17);
         this.x0 = -1;
         this.C0 = new HashSet();
         this.currentAccount = i10;
@@ -152,7 +152,7 @@ public class n1 extends bb implements NotificationCenter.NotificationCenterDeleg
         g1Var.setText(y());
         g1Var.setCloseImageVisible(false);
         g1Var.f.c(0.0f, false);
-        this.u0 = new kb0(this, 2);
+        this.u0 = new lb0(this, 2);
         h1 h1Var = new h1(this, getContext(), u6Var);
         this.Z = h1Var;
         f7.i(i12, h1Var, u6Var);
@@ -162,14 +162,14 @@ public class n1 extends bb implements NotificationCenter.NotificationCenterDeleg
         this.a0 = i1Var;
         ViewGroup viewGroup = this.containerView;
         int i13 = this.backgroundPaddingLeft;
-        viewGroup.addView(g1Var, 0, gb1.j(-2.0f, 55, i13, 0, i13, 0));
+        viewGroup.addView(g1Var, 0, kb1.j(-2.0f, 55, i13, 0, i13, 0));
         ViewGroup viewGroup2 = this.containerView;
         int i14 = this.backgroundPaddingLeft;
-        viewGroup2.addView(h1Var, gb1.j(-2.0f, 55, i14, 0, i14, 0));
+        viewGroup2.addView(h1Var, kb1.j(-2.0f, 55, i14, 0, i14, 0));
         ViewGroup viewGroup3 = this.containerView;
         int i15 = this.backgroundPaddingLeft;
-        viewGroup3.addView(i1Var, gb1.j(1.0f, 55, i15, 0, i15, 0));
-        sc scVar = new sc(getContext(), u6Var, (mm0) null);
+        viewGroup3.addView(i1Var, kb1.j(1.0f, 55, i15, 0, i15, 0));
+        sc scVar = new sc(getContext(), u6Var, (nm0) null);
         this.d0 = scVar;
         scVar.setClickable(true);
         scVar.setOrientation(1);
@@ -185,19 +185,19 @@ public class n1 extends bb implements NotificationCenter.NotificationCenterDeleg
             b7 N = f7.N(i16);
             linearLayout.setBackground(Z);
             f7.k(linearLayout, Z, null, N, u6Var);
-            zp zpVar = new zp(context, 24, u6Var);
-            this.c0 = zpVar;
-            zpVar.b(y6.Oh, y6.j7, y6.k7);
-            zpVar.setDrawUnchecked(true);
-            zpVar.a(false, false);
-            zpVar.setDrawBackgroundAsArc(10);
-            linearLayout.addView(zpVar, gb1.x(26, 26, 16, 0, 0, 0, 0));
+            aq aqVar = new aq(context, 24, u6Var);
+            this.c0 = aqVar;
+            aqVar.b(y6.Oh, y6.j7, y6.k7);
+            aqVar.setDrawUnchecked(true);
+            aqVar.a(false, false);
+            aqVar.setDrawBackgroundAsArc(10);
+            linearLayout.addView(aqVar, kb1.x(26, 26, 16, 0, 0, 0, 0));
             TextView textView = new TextView(context);
             f7.V(textView, y6.j5, u6Var);
             textView.setTextSize(1, 14.0f);
             textView.setText(LocaleController.getString(R.string.ConferenceCallWithVideo));
-            linearLayout.addView(textView, gb1.x(-2, -2, 16, 9, 0, 0, 0));
-            gb1.c(linearLayout, 0.025f, 1.5f);
+            linearLayout.addView(textView, kb1.x(-2, -2, 16, 9, 0, 0, 0));
+            kb1.c(linearLayout, 0.025f, 1.5f);
             final int i17 = 0;
             linearLayout.setOnClickListener(new View.OnClickListener(this) { // from class: vg.e1
                 public final /* synthetic */ n1 b;
@@ -218,7 +218,7 @@ public class n1 extends bb implements NotificationCenter.NotificationCenterDeleg
                     }
                 }
             });
-            scVar.addView(linearLayout, gb1.x(-2, -2, 17, 0, 0, 0, 8));
+            scVar.addView(linearLayout, kb1.x(-2, -2, 17, 0, 0, 0, 8));
         }
         j1 j1Var = new j1(this, getContext(), u6Var);
         this.Y = j1Var;
@@ -246,27 +246,27 @@ public class n1 extends bb implements NotificationCenter.NotificationCenterDeleg
                 }
             }
         });
-        scVar.addView(j1Var, gb1.u(-1, 48, 87));
+        scVar.addView(j1Var, kb1.u(-1, 48, 87));
         if (i11 == 4) {
             ViewGroup viewGroup4 = this.containerView;
             int i19 = this.backgroundPaddingLeft;
-            viewGroup4.addView(scVar, gb1.j(-2.0f, 87, i19, 0, i19, 0));
+            viewGroup4.addView(scVar, kb1.j(-2.0f, 87, i19, 0, i19, 0));
         }
         FrameLayout frameLayout = new FrameLayout(getContext());
         this.e0 = frameLayout;
         ViewGroup viewGroup5 = this.containerView;
         int i20 = this.backgroundPaddingLeft;
-        viewGroup5.addView(frameLayout, gb1.j(300.0f, 87, i20, 0, i20, AndroidUtilities.dp(68.0f)));
+        viewGroup5.addView(frameLayout, kb1.j(300.0f, 87, i20, 0, i20, AndroidUtilities.dp(68.0f)));
         wg.h hVar2 = this.p0;
-        mm0 mm0Var = this.d;
+        nm0 nm0Var = this.d;
         hVar2.n = arrayList;
-        hVar2.f = mm0Var;
+        hVar2.f = nm0Var;
         int i21 = this.backgroundPaddingLeft;
-        mm0Var.setPadding(i21, 0, i21, AndroidUtilities.dp(i11 != 1 ? 60.0f : 0.0f));
+        nm0Var.setPadding(i21, 0, i21, AndroidUtilities.dp(i11 != 1 ? 60.0f : 0.0f));
         this.d.j(new k1(this));
         this.d.setOnItemClickListener(new m4.t0(this, i11, u6Var, i10));
         if (i11 == 4) {
-            this.d.setOnItemLongClickListener((cm0) new i2.r(this, i11, 19));
+            this.d.setOnItemLongClickListener((dm0) new i2.r(this, i11, 19));
         }
         s4.l lVar = new s4.l();
         lVar.n(350L);
@@ -346,9 +346,9 @@ public class n1 extends bb implements NotificationCenter.NotificationCenterDeleg
                 g5.l(n1Var.getContext(), LocaleController.getString(R.string.EditProfileBirthdayTitle), LocaleController.getString(R.string.EditProfileBirthdayButton), null, new b1(n1Var, i13), new a1(n1Var, 9), false, false, n1Var.resourcesProvider).a.show();
                 return;
             }
-            h20 h20Var = n1Var.A0;
-            if (h20Var != null) {
-                h20Var.run();
+            j20 j20Var = n1Var.A0;
+            if (j20Var != null) {
+                j20Var.run();
                 n1Var.dismiss();
                 return;
             }
@@ -418,8 +418,8 @@ public class n1 extends bb implements NotificationCenter.NotificationCenterDeleg
                 hashSet.add(Long.valueOf(j10));
                 Utilities.Callback2 callback22 = n1Var.D0;
                 if (callback22 != null) {
-                    zp zpVar = n1Var.c0;
-                    callback22.run(Boolean.valueOf(zpVar != null && zpVar.a.q), hashSet);
+                    aq aqVar = n1Var.c0;
+                    callback22.run(Boolean.valueOf(aqVar != null && aqVar.a.q), hashSet);
                     n1Var.D0 = null;
                 }
                 n1Var.dismiss();
@@ -484,7 +484,7 @@ public class n1 extends bb implements NotificationCenter.NotificationCenterDeleg
     }
 
     public static void S(final n1 n1Var, final TLRPC.User user, View view) {
-        k80 F = k80.F(n1Var.container, n1Var.resourcesProvider, (View) view.getParent());
+        l80 F = l80.F(n1Var.container, n1Var.resourcesProvider, (View) view.getParent());
         final int i10 = 0;
         F.c(R.drawable.profile_discuss, LocaleController.getString(R.string.SendMessage), new Runnable(n1Var) { // from class: vg.d1
             public final /* synthetic */ n1 b;
@@ -503,7 +503,7 @@ public class n1 extends bb implements NotificationCenter.NotificationCenterDeleg
                             if (r2Var != null) {
                                 Bundle bundle = new Bundle();
                                 bundle.putLong("user_id", user2.id);
-                                r2Var.presentFragment(new un(bundle));
+                                r2Var.presentFragment(new wn(bundle));
                                 break;
                             } else {
                                 r2 U = LaunchActivity.U();
@@ -512,7 +512,7 @@ public class n1 extends bb implements NotificationCenter.NotificationCenterDeleg
                                 if (U != null) {
                                     Bundle bundle2 = new Bundle();
                                     bundle2.putLong("user_id", user2.id);
-                                    U.showAsSheet(new un(bundle2), p2Var);
+                                    U.showAsSheet(new wn(bundle2), p2Var);
                                     break;
                                 }
                             }
@@ -561,7 +561,7 @@ public class n1 extends bb implements NotificationCenter.NotificationCenterDeleg
                             if (r2Var != null) {
                                 Bundle bundle = new Bundle();
                                 bundle.putLong("user_id", user2.id);
-                                r2Var.presentFragment(new un(bundle));
+                                r2Var.presentFragment(new wn(bundle));
                                 break;
                             } else {
                                 r2 U = LaunchActivity.U();
@@ -570,7 +570,7 @@ public class n1 extends bb implements NotificationCenter.NotificationCenterDeleg
                                 if (U != null) {
                                     Bundle bundle2 = new Bundle();
                                     bundle2.putLong("user_id", user2.id);
-                                    U.showAsSheet(new un(bundle2), p2Var);
+                                    U.showAsSheet(new wn(bundle2), p2Var);
                                     break;
                                 }
                             }
@@ -883,8 +883,8 @@ public class n1 extends bb implements NotificationCenter.NotificationCenterDeleg
                 if (i10 == 4) {
                     Utilities.Callback2 callback2 = this.D0;
                     if (callback2 != null) {
-                        zp zpVar = this.c0;
-                        callback2.run(Boolean.valueOf(zpVar != null && zpVar.a.q), hashSet);
+                        aq aqVar = this.c0;
+                        callback2.run(Boolean.valueOf(aqVar != null && aqVar.a.q), hashSet);
                         this.D0 = null;
                     }
                     dismiss();
@@ -1043,24 +1043,24 @@ public class n1 extends bb implements NotificationCenter.NotificationCenterDeleg
                 } else {
                     f10 = 24.0f;
                 }
-                String s10 = org.telegram.ui.Wallet.l0.w(this.currentAccount).s();
+                String t10 = org.telegram.ui.Wallet.l0.x(this.currentAccount).t();
                 int i16 = this.I0;
                 if (i16 > 0) {
                     str = LocaleController.formatPluralString("Gift2ExportTONUnlocksIn", i16, new Object[0]);
-                } else if (s10 == null || s10.length() < 20) {
+                } else if (t10 == null || t10.length() < 20) {
                     str = "";
                 } else {
                     int w02 = y6.w0(y6.r5, this.resourcesProvider);
-                    int length = s10.length();
-                    String substring = s10.substring(0, 4);
-                    String substring2 = s10.substring(4, 8);
+                    int length = t10.length();
+                    String substring = t10.substring(0, 4);
+                    String substring2 = t10.substring(4, 8);
                     StringBuilder sb2 = new StringBuilder();
-                    sb2.append(s10.substring(8, 10));
+                    sb2.append(t10.substring(8, 10));
                     int i17 = length - 8;
-                    sb2.append(s10.substring(length - 10, i17));
+                    sb2.append(t10.substring(length - 10, i17));
                     String sb3 = sb2.toString();
                     int i18 = length - 4;
-                    String[] strArr = {substring, substring2, sb3, s10.substring(i17, i18), s10.substring(i18, length)};
+                    String[] strArr = {substring, substring2, sb3, t10.substring(i17, i18), t10.substring(i18, length)};
                     SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
                     int i19 = 0;
                     while (i19 < 5) {
@@ -1351,7 +1351,7 @@ public class n1 extends bb implements NotificationCenter.NotificationCenterDeleg
             r1 = r0
             r3 = r1
         L8:
-            org.telegram.ui.Components.mm0 r4 = r9.d
+            org.telegram.ui.Components.nm0 r4 = r9.d
             int r5 = r4.getChildCount()
             if (r1 >= r5) goto L57
             android.view.View r4 = r4.getChildAt(r1)
@@ -1409,10 +1409,10 @@ public class n1 extends bb implements NotificationCenter.NotificationCenterDeleg
     @Override // android.app.Dialog, android.view.Window.Callback
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
-        NotificationCenter.getInstance(this.currentAccount).addObserver(this, NotificationCenter.giftsToUserSent);
-        NotificationCenter.getInstance(this.currentAccount).addObserver(this, NotificationCenter.userInfoDidLoad);
-        NotificationCenter.getInstance(this.currentAccount).addObserver(this, NotificationCenter.contactsDidLoad);
-        NotificationCenter.getInstance(this.currentAccount).addObserver(this, NotificationCenter.reloadHints);
+        NotificationCenter.getInstance(this.currentAccount).addWeakObserver(this, NotificationCenter.giftsToUserSent);
+        NotificationCenter.getInstance(this.currentAccount).addWeakObserver(this, NotificationCenter.userInfoDidLoad);
+        NotificationCenter.getInstance(this.currentAccount).addWeakObserver(this, NotificationCenter.contactsDidLoad);
+        NotificationCenter.getInstance(this.currentAccount).addWeakObserver(this, NotificationCenter.reloadHints);
     }
 
     @Override // org.telegram.ui.ActionBar.k3
@@ -1447,10 +1447,10 @@ public class n1 extends bb implements NotificationCenter.NotificationCenterDeleg
             if (z10) {
                 y6.z1(w02, arVar2.a);
             }
-            mm0 mm0Var = this.d;
-            if (mm0Var != null) {
-                for (int i10 = 0; i10 < mm0Var.getChildCount(); i10++) {
-                    mm0Var.getChildAt(i10).invalidate();
+            nm0 nm0Var = this.d;
+            if (nm0Var != null) {
+                for (int i10 = 0; i10 < nm0Var.getChildCount(); i10++) {
+                    nm0Var.getChildAt(i10).invalidate();
                 }
             }
         } catch (Exception e) {
@@ -1459,7 +1459,7 @@ public class n1 extends bb implements NotificationCenter.NotificationCenterDeleg
     }
 
     @Override // org.telegram.ui.Components.bb
-    public final lm0 v(mm0 mm0Var) {
+    public final mm0 v(nm0 nm0Var) {
         wg.h hVar = new wg.h(getContext(), this.resourcesProvider, false);
         this.p0 = hVar;
         hVar.s = true;

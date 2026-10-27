@@ -1,57 +1,37 @@
 package org.telegram.ui;
 
-import android.app.Activity;
-import android.view.View;
+import android.graphics.Bitmap;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class us implements View.OnClickListener {
+public final /* synthetic */ class us implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ ft b;
+    public final /* synthetic */ ht b;
 
-    public /* synthetic */ us(ft ftVar, int i10) {
+    public /* synthetic */ us(ht htVar, int i10) {
         this.a = i10;
-        this.b = ftVar;
+        this.b = htVar;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                ft ftVar = this.b;
-                ftVar.K = false;
-                ftVar.z.invalidate();
-                ftVar.l();
+                this.b.c0 = null;
                 break;
             case 1:
-                ft ftVar2 = this.b;
-                Activity activity = ftVar2.w;
-                if (activity instanceof LaunchActivity) {
-                    LaunchActivity launchActivity = (LaunchActivity) activity;
-                    if (launchActivity.O() != null && launchActivity.O().getLastFragment() != null) {
-                        launchActivity.O().getLastFragment().dismissCurrentDialog();
-                    }
-                    launchActivity.u0(new PremiumPreviewFragment(0, PremiumPreviewFragment.m0(5)));
+                ht htVar = this.b;
+                htVar.A.setImageBitmap((Bitmap) null);
+                org.telegram.ui.Components.zd0 zd0Var = htVar.C;
+                if (zd0Var != null) {
+                    zd0Var.a();
+                    htVar.z.removeView(htVar.C);
+                    htVar.C = null;
+                    break;
                 }
-                ftVar2.K = false;
-                ftVar2.z.invalidate();
-                ftVar2.l();
-                break;
-            case 2:
-                ft ftVar3 = this.b;
-                dt dtVar = ftVar3.l;
-                if (dtVar != null) {
-                    dtVar.J();
-                }
-                ftVar3.n();
                 break;
             default:
-                ft ftVar4 = this.b;
-                dt dtVar2 = ftVar4.l;
-                if (dtVar2 != null) {
-                    dtVar2.r();
-                }
-                ftVar4.n();
+                this.b.Q.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f).setDuration(420L).setInterpolator(org.telegram.ui.Components.ds.h).start();
                 break;
         }
     }

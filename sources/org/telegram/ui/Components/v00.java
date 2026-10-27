@@ -21,7 +21,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class v00 extends org.telegram.ui.ActionBar.k3 implements NotificationCenter.NotificationCenterDelegate {
     public static final /* synthetic */ int x = 0;
@@ -33,15 +33,15 @@ public final class v00 extends org.telegram.ui.ActionBar.k3 implements Notificat
     public final View h;
     public int n;
     public boolean r;
-    public org.telegram.ui.qt s;
+    public org.telegram.ui.st s;
     public final ArrayList v;
     public final ArrayList w;
 
-    public v00(org.telegram.ui.cy cyVar, ArrayList arrayList) {
-        super(cyVar.getParentActivity(), false);
+    public v00(org.telegram.ui.ey eyVar, ArrayList arrayList) {
+        super(eyVar.getParentActivity(), false);
         fixNavigationBar();
         this.w = arrayList;
-        this.v = new ArrayList(cyVar.getMessagesController().dialogFilters);
+        this.v = new ArrayList(eyVar.getMessagesController().dialogFilters);
         int i10 = 0;
         while (i10 < this.v.size()) {
             if (((MessagesController.DialogFilter) this.v.get(i10)).isDefault()) {
@@ -50,7 +50,7 @@ public final class v00 extends org.telegram.ui.ActionBar.k3 implements Notificat
             }
             i10++;
         }
-        Activity parentActivity = cyVar.getParentActivity();
+        Activity parentActivity = eyVar.getParentActivity();
         t00 t00Var = new t00(this, parentActivity);
         this.containerView = t00Var;
         t00Var.setWillNotDraw(false);
@@ -80,7 +80,7 @@ public final class v00 extends org.telegram.ui.ActionBar.k3 implements Notificat
         org.telegram.ui.ActionBar.f7.m(r1Var, 21, org.telegram.ui.ActionBar.y6.A5, null);
         r1Var.setOnScrollListener(new ml(this, 6));
         r1Var.setOnItemClickListener(new j(this, 7));
-        this.containerView.addView(r1Var, gb1.h(-1, -1.0f, 51, 0.0f, 48.0f, 0.0f, 0.0f));
+        this.containerView.addView(r1Var, kb1.h(-1, -1.0f, 51, 0.0f, 48.0f, 0.0f, 0.0f));
         TextView textView = new TextView(parentActivity);
         this.e = textView;
         textView.setLines(1);
@@ -94,8 +94,8 @@ public final class v00 extends org.telegram.ui.ActionBar.k3 implements Notificat
         textView.setGravity(16);
         textView.setText(LocaleController.getString(R.string.FilterChoose));
         textView.setTypeface(AndroidUtilities.bold());
-        this.containerView.addView(textView, gb1.h(-1, 50.0f, 51, 0.0f, 0.0f, 40.0f, 0.0f));
-        NotificationCenter.getGlobalInstance().addObserver(this, NotificationCenter.emojiLoaded);
+        this.containerView.addView(textView, kb1.h(-1, 50.0f, 51, 0.0f, 0.0f, 40.0f, 0.0f));
+        NotificationCenter.getGlobalInstance().addWeakObserver(this, NotificationCenter.emojiLoaded);
     }
 
     public static void G(v00 v00Var) {
@@ -113,9 +113,9 @@ public final class v00 extends org.telegram.ui.ActionBar.k3 implements Notificat
         }
         int i10 = 0;
         View childAt = r1Var.getChildAt(0);
-        vl0 vl0Var = (vl0) r1Var.G(childAt);
+        wl0 wl0Var = (wl0) r1Var.G(childAt);
         int top = childAt.getTop();
-        if (top < 0 || vl0Var == null || vl0Var.b() != 0) {
+        if (top < 0 || wl0Var == null || wl0Var.b() != 0) {
             v00Var.J(true);
         } else {
             v00Var.J(false);
@@ -173,7 +173,7 @@ public final class v00 extends org.telegram.ui.ActionBar.k3 implements Notificat
         this.f = animatorSet2;
         animatorSet2.playTogether(ObjectAnimator.ofFloat(view, (Property<View, Float>) View.ALPHA, z10 ? 1.0f : 0.0f));
         this.f.setDuration(150L);
-        this.f.addListener(new org.telegram.ui.jo(9, this, z10));
+        this.f.addListener(new org.telegram.ui.lo(9, this, z10));
         this.f.start();
     }
 

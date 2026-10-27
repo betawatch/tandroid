@@ -5,10 +5,10 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.e41;
-import org.telegram.ui.Components.k80;
+import org.telegram.ui.Components.f41;
+import org.telegram.ui.Components.l80;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class x3 implements org.telegram.ui.ActionBar.b2, MessagesController.IsInChatCheckedCallback {
     public final /* synthetic */ long a;
@@ -34,13 +34,13 @@ public final /* synthetic */ class x3 implements org.telegram.ui.ActionBar.b2, M
 
     @Override // org.telegram.messenger.MessagesController.IsInChatCheckedCallback
     public void run(boolean z10, TLRPC.TL_chatAdminRights tL_chatAdminRights, String str) {
-        AndroidUtilities.runOnUIThread(new l((e41) this.b, z10, (org.telegram.ui.ActionBar.g1) this.c, (k80) this.d, this.a, (TLRPC.User) this.e, (TLRPC.Chat) this.f));
+        AndroidUtilities.runOnUIThread(new l((f41) this.b, z10, (org.telegram.ui.ActionBar.g1) this.c, (l80) this.d, this.a, (TLRPC.User) this.e, (TLRPC.Chat) this.f));
     }
 
-    public /* synthetic */ x3(e41 e41Var, org.telegram.ui.ActionBar.g1 g1Var, k80 k80Var, long j10, TLRPC.User user, TLRPC.Chat chat) {
-        this.b = e41Var;
+    public /* synthetic */ x3(f41 f41Var, org.telegram.ui.ActionBar.g1 g1Var, l80 l80Var, long j10, TLRPC.User user, TLRPC.Chat chat) {
+        this.b = f41Var;
         this.c = g1Var;
-        this.d = k80Var;
+        this.d = l80Var;
         this.a = j10;
         this.e = user;
         this.f = chat;

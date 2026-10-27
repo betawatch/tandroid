@@ -3,7 +3,7 @@ package org.telegram.ui.Components;
 import androidx.recyclerview.widget.RecyclerView;
 import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class ax extends s4.t {
     public final /* synthetic */ sz Q;
@@ -20,7 +20,7 @@ public final class ax extends s4.t {
         sz szVar = this.Q;
         if (o02 != 0 && szVar.D0.getScrollState() == 1) {
             szVar.X1 = false;
-            szVar.Y();
+            szVar.Z();
         }
         if (szVar.T0 == null) {
             ig.f1 f1Var = new ig.f1(szVar, szVar.c1, szVar.t1.a(), szVar.t1.f(), 1);

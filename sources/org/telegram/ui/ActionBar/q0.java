@@ -9,13 +9,13 @@ import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.vh;
+import org.telegram.messenger.wh;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.nb1;
-import org.telegram.ui.tc1;
-import org.telegram.ui.un;
+import org.telegram.ui.pb1;
+import org.telegram.ui.vc1;
+import org.telegram.ui.wn;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class q0 extends FrameLayout {
     public final /* synthetic */ int a;
@@ -37,13 +37,13 @@ public final class q0 extends FrameLayout {
         switch (this.a) {
             case 2:
                 boolean drawChild = super.drawChild(canvas, view, j10);
-                tc1 tc1Var = (tc1) this.c;
-                if (view == tc1Var.t0) {
-                    j5Var = tc1Var.parentLayout;
+                vc1 vc1Var = (vc1) this.c;
+                if (view == vc1Var.t0) {
+                    j5Var = vc1Var.parentLayout;
                     if (j5Var != null) {
-                        j5Var2 = tc1Var.parentLayout;
-                        if (tc1Var.t0.getVisibility() == 0) {
-                            i10 = (int) (tc1Var.t0.getTranslationY() + tc1Var.t0.getMeasuredHeight());
+                        j5Var2 = vc1Var.parentLayout;
+                        if (vc1Var.t0.getVisibility() == 0) {
+                            i10 = (int) (vc1Var.t0.getTranslationY() + vc1Var.t0.getMeasuredHeight());
                         } else {
                             i10 = 0;
                         }
@@ -122,48 +122,48 @@ public final class q0 extends FrameLayout {
                     this.b = true;
                     measureChildWithMargins(w0Var.f, i10, i12, i11, 0);
                     int measuredWidth2 = w0Var.f.getVisibility() == 0 ? w0Var.f.getMeasuredWidth() : 0;
-                    measureChildWithMargins(w0Var.e, vh.x(12.0f, size2, 0), i12 + measuredWidth2, i11, 0);
+                    measureChildWithMargins(w0Var.e, wh.x(12.0f, size2, 0), i12 + measuredWidth2, i11, 0);
                     this.b = false;
                     setMeasuredDimension(Math.max(w0Var.e.getMeasuredWidth() + measuredWidth2, size2), View.MeasureSpec.getSize(i11));
                     break;
                 }
             case 1:
                 int size3 = View.MeasureSpec.getSize(i10);
-                un unVar = (un) this.c;
-                if (unVar.L9()) {
+                wn wnVar = (wn) this.c;
+                if (wnVar.O9()) {
                     size3 -= AndroidUtilities.dp(71.0f);
                     i14 = AndroidUtilities.dp(32.0f);
                 } else {
                     i14 = 0;
                 }
-                TextView textView2 = unVar.X1;
-                if (textView2 != null && textView2.getVisibility() == 0 && (textView = unVar.Z1) != null && textView.getVisibility() == 0) {
-                    size3 = vh.B(31.0f, size3, 2);
+                TextView textView2 = wnVar.X1;
+                if (textView2 != null && textView2.getVisibility() == 0 && (textView = wnVar.Z1) != null && textView.getVisibility() == 0) {
+                    size3 = wh.B(31.0f, size3, 2);
                 }
                 this.b = true;
-                TextView textView3 = unVar.Z1;
+                TextView textView3 = wnVar.Z1;
                 if (textView3 != null && textView3.getVisibility() == 0) {
-                    FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) unVar.Z1.getLayoutParams();
+                    FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) wnVar.Z1.getLayoutParams();
                     layoutParams.width = size3;
-                    TextView textView4 = unVar.X1;
+                    TextView textView4 = wnVar.X1;
                     if (textView4 == null || textView4.getVisibility() != 0) {
-                        unVar.Z1.setPadding(AndroidUtilities.dp(48.0f), 0, AndroidUtilities.dp(48.0f), 0);
+                        wnVar.Z1.setPadding(AndroidUtilities.dp(48.0f), 0, AndroidUtilities.dp(48.0f), 0);
                         layoutParams.leftMargin = i14;
                     } else {
-                        unVar.Z1.setPadding(AndroidUtilities.dp(4.0f), 0, AndroidUtilities.dp(4.0f), 0);
+                        wnVar.Z1.setPadding(AndroidUtilities.dp(4.0f), 0, AndroidUtilities.dp(4.0f), 0);
                         layoutParams.leftMargin = i14 + size3;
                         layoutParams.width -= AndroidUtilities.dp(15.0f);
                     }
                 }
-                TextView textView5 = unVar.X1;
+                TextView textView5 = wnVar.X1;
                 if (textView5 != null && textView5.getVisibility() == 0) {
-                    FrameLayout.LayoutParams layoutParams2 = (FrameLayout.LayoutParams) unVar.X1.getLayoutParams();
+                    FrameLayout.LayoutParams layoutParams2 = (FrameLayout.LayoutParams) wnVar.X1.getLayoutParams();
                     layoutParams2.width = size3;
-                    TextView textView6 = unVar.Z1;
+                    TextView textView6 = wnVar.Z1;
                     if (textView6 == null || textView6.getVisibility() != 0) {
-                        unVar.X1.setPadding(AndroidUtilities.dp(48.0f), 0, AndroidUtilities.dp(48.0f), 0);
+                        wnVar.X1.setPadding(AndroidUtilities.dp(48.0f), 0, AndroidUtilities.dp(48.0f), 0);
                     } else {
-                        unVar.X1.setPadding(AndroidUtilities.dp(11.0f), 0, AndroidUtilities.dp(4.0f), 0);
+                        wnVar.X1.setPadding(AndroidUtilities.dp(11.0f), 0, AndroidUtilities.dp(4.0f), 0);
                     }
                     layoutParams2.leftMargin = i14;
                 }
@@ -174,57 +174,57 @@ public final class q0 extends FrameLayout {
                 int size4 = View.MeasureSpec.getSize(i10);
                 int size5 = View.MeasureSpec.getSize(i11);
                 setMeasuredDimension(size4, size5);
-                if (((tc1) this.c).e != null) {
+                if (((vc1) this.c).e != null) {
                     this.b = true;
                     if (!AndroidUtilities.isTablet()) {
-                        FrameLayout.LayoutParams layoutParams3 = (FrameLayout.LayoutParams) ((tc1) this.c).e.getLayoutParams();
+                        FrameLayout.LayoutParams layoutParams3 = (FrameLayout.LayoutParams) ((vc1) this.c).e.getLayoutParams();
                         layoutParams3.topMargin = AndroidUtilities.statusBarHeight;
-                        ((tc1) this.c).e.setLayoutParams(layoutParams3);
+                        ((vc1) this.c).e.setLayoutParams(layoutParams3);
                     }
                     if (AndroidUtilities.isTablet() || ApplicationLoader.applicationContext.getResources().getConfiguration().orientation != 2) {
-                        ((tc1) this.c).h.setTextSize(1, 20.0f);
+                        ((vc1) this.c).h.setTextSize(1, 20.0f);
                     } else {
-                        ((tc1) this.c).h.setTextSize(1, 18.0f);
+                        ((vc1) this.c).h.setTextSize(1, 18.0f);
                     }
                     this.b = false;
                 }
-                measureChildWithMargins(((tc1) this.c).t0, i10, 0, i11, 0);
-                int measuredHeight = ((tc1) this.c).t0.getMeasuredHeight();
-                if (((tc1) this.c).t0.getVisibility() == 0) {
+                measureChildWithMargins(((vc1) this.c).t0, i10, 0, i11, 0);
+                int measuredHeight = ((vc1) this.c).t0.getMeasuredHeight();
+                if (((vc1) this.c).t0.getVisibility() == 0) {
                     size5 -= measuredHeight;
                 }
-                FrameLayout.LayoutParams layoutParams4 = (FrameLayout.LayoutParams) ((tc1) this.c).v0.getLayoutParams();
+                FrameLayout.LayoutParams layoutParams4 = (FrameLayout.LayoutParams) ((vc1) this.c).v0.getLayoutParams();
                 layoutParams4.topMargin = measuredHeight;
-                tc1 tc1Var = (tc1) this.c;
-                if (tc1Var.b == 2) {
-                    nb1 nb1Var = tc1Var.v0;
+                vc1 vc1Var = (vc1) this.c;
+                if (vc1Var.b == 2) {
+                    pb1 pb1Var = vc1Var.v0;
                     int dp = AndroidUtilities.dp(4.0f);
-                    tc1 tc1Var2 = (tc1) this.c;
-                    nb1Var.setPadding(0, dp, 0, (AndroidUtilities.dp(((tc1Var2.L1 || tc1Var2.K1 <= 0) ? 0 : 58) + 72) - 12) + (((tc1) this.c).V0() ? AndroidUtilities.navigationBarHeight : 0));
+                    vc1 vc1Var2 = (vc1) this.c;
+                    pb1Var.setPadding(0, dp, 0, (AndroidUtilities.dp(((vc1Var2.L1 || vc1Var2.K1 <= 0) ? 0 : 58) + 72) - 12) + (((vc1) this.c).V0() ? AndroidUtilities.navigationBarHeight : 0));
                 }
-                ((tc1) this.c).v0.measure(View.MeasureSpec.makeMeasureSpec(size4, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(size5 - layoutParams4.bottomMargin, TLObject.FLAG_30));
-                ((FrameLayout.LayoutParams) ((tc1) this.c).y0.getLayoutParams()).topMargin = measuredHeight;
-                ((tc1) this.c).y0.measure(View.MeasureSpec.makeMeasureSpec(size4, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(size5, TLObject.FLAG_30));
-                bi.j5 j5Var = ((tc1) this.c).R1;
+                ((vc1) this.c).v0.measure(View.MeasureSpec.makeMeasureSpec(size4, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(size5 - layoutParams4.bottomMargin, TLObject.FLAG_30));
+                ((FrameLayout.LayoutParams) ((vc1) this.c).y0.getLayoutParams()).topMargin = measuredHeight;
+                ((vc1) this.c).y0.measure(View.MeasureSpec.makeMeasureSpec(size4, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(size5, TLObject.FLAG_30));
+                bi.j5 j5Var = ((vc1) this.c).R1;
                 if (j5Var != null) {
                     ((FrameLayout.LayoutParams) j5Var.getLayoutParams()).topMargin = measuredHeight;
-                    ((tc1) this.c).R1.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(222.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(76.0f), TLObject.FLAG_30));
+                    ((vc1) this.c).R1.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(222.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(76.0f), TLObject.FLAG_30));
                 }
-                org.telegram.ui.x4 x4Var = ((tc1) this.c).D0;
+                org.telegram.ui.x4 x4Var = ((vc1) this.c).D0;
                 if (x4Var != null) {
-                    x4Var.setPadding(AndroidUtilities.dp(12.0f), AndroidUtilities.dp(12.0f), AndroidUtilities.dp(12.0f), AndroidUtilities.dp(12.0f) + (((tc1) this.c).V0() ? AndroidUtilities.navigationBarHeight : 0));
-                    FrameLayout.LayoutParams layoutParams5 = (FrameLayout.LayoutParams) ((tc1) this.c).D0.getLayoutParams();
-                    tc1 tc1Var3 = (tc1) this.c;
-                    layoutParams5.height = AndroidUtilities.dp(72 + ((tc1Var3.L1 || tc1Var3.K1 <= 0) ? 0 : 58)) + (((tc1) this.c).V0() ? AndroidUtilities.navigationBarHeight : 0);
-                    measureChildWithMargins(((tc1) this.c).D0, i10, 0, i11, 0);
+                    x4Var.setPadding(AndroidUtilities.dp(12.0f), AndroidUtilities.dp(12.0f), AndroidUtilities.dp(12.0f), AndroidUtilities.dp(12.0f) + (((vc1) this.c).V0() ? AndroidUtilities.navigationBarHeight : 0));
+                    FrameLayout.LayoutParams layoutParams5 = (FrameLayout.LayoutParams) ((vc1) this.c).D0.getLayoutParams();
+                    vc1 vc1Var3 = (vc1) this.c;
+                    layoutParams5.height = AndroidUtilities.dp(72 + ((vc1Var3.L1 || vc1Var3.K1 <= 0) ? 0 : 58)) + (((vc1) this.c).V0() ? AndroidUtilities.navigationBarHeight : 0);
+                    measureChildWithMargins(((vc1) this.c).D0, i10, 0, i11, 0);
                 }
-                Drawable drawable = ((tc1) this.c).r;
+                Drawable drawable = ((vc1) this.c).r;
                 if (drawable != null) {
                     drawable.getPadding(AndroidUtilities.rectTmp2);
                 }
                 int i16 = 0;
                 while (true) {
-                    FrameLayout[] frameLayoutArr = ((tc1) this.c).M0;
+                    FrameLayout[] frameLayoutArr = ((vc1) this.c).M0;
                     if (i16 >= frameLayoutArr.length) {
                         break;
                     } else {
@@ -232,19 +232,19 @@ public final class q0 extends FrameLayout {
                         if (frameLayout != null) {
                             FrameLayout.LayoutParams layoutParams6 = (FrameLayout.LayoutParams) frameLayout.getLayoutParams();
                             if (i16 == 0) {
-                                f7 = ((tc1) this.c).b == 2 ? 321 : 273;
+                                f7 = ((vc1) this.c).b == 2 ? 321 : 273;
                             } else {
                                 f7 = 316.0f;
                             }
                             layoutParams6.height = AndroidUtilities.dp(f7);
-                            if (((tc1) this.c).V0()) {
+                            if (((vc1) this.c).V0()) {
                                 layoutParams6.height += AndroidUtilities.navigationBarHeight;
                             }
                             if (i16 == 0) {
                                 layoutParams6.height = AndroidUtilities.dp(12.0f) + AndroidUtilities.rectTmp2.top + layoutParams6.height;
                             }
-                            ((tc1) this.c).M0[i16].setPadding(0, i16 == 0 ? AndroidUtilities.dp(12.0f) + AndroidUtilities.rectTmp2.top : 0, 0, ((tc1) this.c).V0() ? AndroidUtilities.navigationBarHeight : 0);
-                            measureChildWithMargins(((tc1) this.c).M0[i16], i10, 0, i11, 0);
+                            ((vc1) this.c).M0[i16].setPadding(0, i16 == 0 ? AndroidUtilities.dp(12.0f) + AndroidUtilities.rectTmp2.top : 0, 0, ((vc1) this.c).V0() ? AndroidUtilities.navigationBarHeight : 0);
+                            measureChildWithMargins(((vc1) this.c).M0[i16], i10, 0, i11, 0);
                         }
                         i16++;
                     }

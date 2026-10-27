@@ -1,53 +1,57 @@
 package org.telegram.ui.Components;
 
-import android.net.Uri;
+import android.graphics.Typeface;
 import android.text.TextPaint;
-import android.text.style.URLSpan;
-import android.view.View;
-import org.telegram.tgnet.TLObject;
+import android.text.style.MetricAffectingSpan;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.SharedConfig;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public class x61 extends URLSpan {
-    public final boolean a;
-    public final y11 b;
-    public TLObject c;
-    public String d;
+public final class x61 extends MetricAffectingSpan {
+    public final CharSequence a;
+    public final int b;
+    public final int c;
+    public final byte d;
+    public final z11 e;
 
-    public x61(String str) {
-        this(str, (y11) null);
+    public x61(CharSequence charSequence, int i10, int i11, byte b10, z11 z11Var) {
+        this.a = charSequence;
+        this.b = i10;
+        this.c = i11;
+        this.d = b10;
+        this.e = z11Var;
     }
 
-    @Override // android.text.style.URLSpan, android.text.style.ClickableSpan
-    public void onClick(View view) {
-        String url = getURL();
-        if (!url.startsWith("@")) {
-            qf.d.r(view.getContext(), url);
-            return;
+    @Override // android.text.style.CharacterStyle
+    public final void updateDrawState(TextPaint textPaint) {
+        textPaint.setTextSize(AndroidUtilities.dp(SharedConfig.fontSize - 1));
+        byte b10 = this.d;
+        if (b10 == 2) {
+            textPaint.setColor(-1);
+        } else if (b10 == 1) {
+            textPaint.setColor(org.telegram.ui.ActionBar.y6.x0(null, org.telegram.ui.ActionBar.y6.fc, false));
+        } else {
+            textPaint.setColor(org.telegram.ui.ActionBar.y6.x0(null, org.telegram.ui.ActionBar.y6.ec, false));
         }
-        qf.d.o(view.getContext(), Uri.parse("https://t.me/" + url.substring(1)), true, true);
-    }
-
-    @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
-    public void updateDrawState(TextPaint textPaint) {
-        int i10 = textPaint.linkColor;
-        int color = textPaint.getColor();
-        super.updateDrawState(textPaint);
-        y11 y11Var = this.b;
-        if (y11Var != null) {
-            y11Var.a(textPaint);
+        z11 z11Var = this.e;
+        if (z11Var != null) {
+            z11Var.a(textPaint);
+        } else {
+            textPaint.setTypeface(Typeface.MONOSPACE);
+            textPaint.setUnderlineText(false);
         }
-        textPaint.setUnderlineText(i10 == color && !this.a);
     }
 
-    public x61(String str, int i10) {
-        this(str, (y11) null);
-        this.a = true;
-    }
-
-    public x61(String str, y11 y11Var) {
-        super(str != null ? str.replace((char) 8238, ' ') : str);
-        this.a = false;
-        this.b = y11Var;
+    @Override // android.text.style.MetricAffectingSpan
+    public final void updateMeasureState(TextPaint textPaint) {
+        textPaint.setTextSize(AndroidUtilities.dp(SharedConfig.fontSize - 1));
+        textPaint.setFlags(textPaint.getFlags() | 128);
+        z11 z11Var = this.e;
+        if (z11Var != null) {
+            z11Var.a(textPaint);
+        } else {
+            textPaint.setTypeface(Typeface.MONOSPACE);
+        }
     }
 }

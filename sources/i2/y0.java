@@ -16,9 +16,9 @@ import java.util.Locale;
 import java.util.Map;
 import java.util.TreeMap;
 import org.telegram.ui.Components.qy;
-import org.telegram.ui.bv;
+import org.telegram.ui.dv;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
 public final class y0 {
     public final Object a;
@@ -376,7 +376,7 @@ public final class y0 {
             ea.b bVar4 = new ea.b(oVar2, jVar, z12, iArr8, 7);
             oVar = oVar2;
             jVar2 = jVar;
-            h = x2.o.p(1, sVar, iArr7, bVar4, new bv(25));
+            h = x2.o.p(1, sVar, iArr7, bVar4, new dv(25));
             if (h != null) {
                 pVarArr[((Integer) h.second).intValue()] = (x2.p) h.first;
             }
@@ -400,9 +400,9 @@ public final class y0 {
             } else {
                 a1.d dVar = new a1.d(jVar2, str, iArr8, (!jVar2.k || context2 == null) ? null : e2.n0.y(context2), 22);
                 str2 = str;
-                p11 = x2.o.p(2, sVar, iArr7, dVar, new bv(i36));
+                p11 = x2.o.p(2, sVar, iArr7, dVar, new dv(i36));
             }
-            Pair p12 = ((jVar2.E || p11 == null) && jVar2.w.a != 2) ? x2.o.p(4, sVar, iArr7, new x2.e(jVar2, i30), new bv(23)) : null;
+            Pair p12 = ((jVar2.E || p11 == null) && jVar2.w.a != 2) ? x2.o.p(4, sVar, iArr7, new x2.e(jVar2, i30), new dv(23)) : null;
             if (p12 != null) {
                 pVarArr[((Integer) p12.second).intValue()] = (x2.p) p12.first;
             } else if (p11 != null) {
@@ -421,7 +421,7 @@ public final class y0 {
                     String str4 = e2.n0.a;
                     str3 = locale.toLanguageTag();
                 }
-                p10 = x2.o.p(3, sVar, iArr7, new qy(jVar2, str2, str3, 13), new bv(26));
+                p10 = x2.o.p(3, sVar, iArr7, new qy(jVar2, str2, str3, 13), new dv(26));
             }
             if (p10 != null) {
                 pVarArr[((Integer) p10.second).intValue()] = (x2.p) p10.first;

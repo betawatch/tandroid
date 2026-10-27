@@ -1,34 +1,63 @@
 package org.telegram.ui;
 
-import org.json.JSONObject;
-import org.scilab.forge.jlatexmath.TeXSymbolParser;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public final class co0 extends JSONObject {
-    public co0(po0 po0Var, int i10) {
-        switch (i10) {
-            case 3:
-                put(TeXSymbolParser.TYPE_ATTR, "PAYMENT_GATEWAY");
-                Object obj = po0Var.M0;
-                if (obj == null) {
-                    co0 co0Var = new co0();
-                    co0Var.put("gateway", "stripe");
-                    co0Var.put("stripe:publishableKey", po0Var.j0);
-                    co0Var.put("stripe:version", "3.5.0");
-                    put("parameters", co0Var);
-                    break;
-                } else {
-                    put("parameters", obj);
+public final class co0 extends org.telegram.ui.ActionBar.j {
+    public final /* synthetic */ ro0 a;
+
+    public co0(ro0 ro0Var) {
+        this.a = ro0Var;
+    }
+
+    @Override // org.telegram.ui.ActionBar.j
+    public final void b(int i10) {
+        ro0 ro0Var = this.a;
+        if (i10 == -1) {
+            if (ro0Var.P0) {
+                return;
+            }
+            ro0Var.finishFragment();
+            return;
+        }
+        if (i10 != 1 || ro0Var.P0) {
+            return;
+        }
+        if (ro0Var.u0 != 3) {
+            AndroidUtilities.hideKeyboard(ro0Var.getParentActivity().getCurrentFocus());
+        }
+        int i11 = ro0Var.u0;
+        if (i11 == 0) {
+            ro0Var.E0(true);
+            ro0.n0(ro0Var);
+            return;
+        }
+        int i12 = 0;
+        if (i11 == 1) {
+            while (true) {
+                org.telegram.ui.Cells.o6[] o6VarArr = ro0Var.h;
+                if (i12 >= o6VarArr.length) {
                     break;
                 }
-            default:
-                put(TeXSymbolParser.TYPE_ATTR, "DIRECT");
-                co0 co0Var2 = new co0();
-                co0Var2.put("protocolVersion", "ECv2");
-                co0Var2.put("publicKey", po0Var.K0);
-                put("parameters", co0Var2);
-                break;
+                if (o6VarArr[i12].b.f) {
+                    ro0Var.G0 = ro0Var.E0.shipping_options.get(i12);
+                    break;
+                }
+                i12++;
+            }
+            ro0Var.u0();
+            return;
+        }
+        if (i11 == 2) {
+            ro0.k0(ro0Var);
+        } else if (i11 == 3) {
+            ro0.l0(ro0Var);
+        } else {
+            if (i11 != 6) {
+                return;
+            }
+            ro0Var.B0(false);
         }
     }
 }

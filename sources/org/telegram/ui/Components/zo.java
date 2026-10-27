@@ -8,7 +8,7 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class zo extends ActionBarPopupWindow$ActionBarPopupWindowLayout {
     public final /* synthetic */ int T;
@@ -55,8 +55,8 @@ public final class zo extends ActionBarPopupWindow$ActionBarPopupWindowLayout {
         int i12;
         switch (this.T) {
             case 2:
-                k80 k80Var = (k80) this.U;
-                if (this == k80Var.A && (i12 = k80Var.X) > 0) {
+                l80 l80Var = (l80) this.U;
+                if (this == l80Var.A && (i12 = l80Var.X) > 0) {
                     i11 = View.MeasureSpec.makeMeasureSpec(Math.min(i12, View.MeasureSpec.getSize(i11)), View.MeasureSpec.getMode(i11));
                 }
                 super.onMeasure(i10, i11);
@@ -68,9 +68,9 @@ public final class zo extends ActionBarPopupWindow$ActionBarPopupWindowLayout {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zo(k80 k80Var, Context context, int i10, org.telegram.ui.ActionBar.u6 u6Var, int i11) {
+    public zo(l80 l80Var, Context context, int i10, org.telegram.ui.ActionBar.u6 u6Var, int i11) {
         super(i10, i11, context, u6Var);
         this.T = 2;
-        this.U = k80Var;
+        this.U = l80Var;
     }
 }

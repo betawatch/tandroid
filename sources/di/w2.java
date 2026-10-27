@@ -6,11 +6,11 @@ import android.graphics.Paint;
 import android.graphics.Rect;
 import android.graphics.RectF;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.gb0;
+import org.telegram.ui.Components.hb0;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
-public final class w2 extends gb0 {
+public final class w2 extends hb0 {
     public final /* synthetic */ q4 V;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -19,7 +19,7 @@ public final class w2 extends gb0 {
         this.V = q4Var;
     }
 
-    @Override // org.telegram.ui.Components.gb0
+    @Override // org.telegram.ui.Components.hb0
     public final void f(Canvas canvas, Rect rect, float f7) {
         q4 q4Var = this.V;
         aa.m0 m0Var = q4Var.E1;

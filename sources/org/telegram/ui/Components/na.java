@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.WeakHashMap;
 import org.telegram.messenger.NotificationCenter;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class na implements View.OnAttachStateChangeListener {
     public final /* synthetic */ int a;
@@ -33,8 +33,8 @@ public final class na implements View.OnAttachStateChangeListener {
                 }
                 break;
             case 1:
-                q11 q11Var = (q11) obj2;
-                q11Var.k = c6.update(q11Var.l, (View) obj, q11Var.k, q11Var.b);
+                r11 r11Var = (r11) obj2;
+                r11Var.k = c6.update(r11Var.l, (View) obj, r11Var.k, r11Var.b);
                 break;
             default:
                 org.telegram.ui.Wallet.m3 m3Var = (org.telegram.ui.Wallet.m3) obj2;
@@ -74,7 +74,7 @@ public final class na implements View.OnAttachStateChangeListener {
                 paint.setShader(null);
                 break;
             case 1:
-                c6.release((View) this.b, ((q11) this.c).k);
+                c6.release((View) this.b, ((r11) this.c).k);
                 break;
             default:
                 org.telegram.ui.Wallet.m3 m3Var = (org.telegram.ui.Wallet.m3) this.c;

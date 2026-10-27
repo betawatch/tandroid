@@ -1,55 +1,63 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class gp implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ yp b;
+import android.animation.ValueAnimator;
+import android.widget.FrameLayout;
+import org.telegram.messenger.AndroidUtilities;
 
-    public /* synthetic */ gp(yp ypVar, int i10) {
-        this.a = i10;
-        this.b = ypVar;
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* loaded from: classes3.dex */
+public abstract class gp extends FrameLayout {
+    public u91 a;
+    public float b;
+    public boolean c;
+    public float d;
+    public ValueAnimator e;
+
+    public abstract void a(boolean z10);
+
+    public final void b(boolean z10) {
+        this.c = z10;
+        ValueAnimator valueAnimator = this.e;
+        if (valueAnimator != null) {
+            this.e = null;
+            valueAnimator.cancel();
+        }
+        if (z10) {
+            setVisibility(0);
+        }
+        ValueAnimator ofFloat = ValueAnimator.ofFloat(this.d, z10 ? 1.0f : 0.0f);
+        this.e = ofFloat;
+        ofFloat.addUpdateListener(new n6(this, 14));
+        this.e.setInterpolator(ds.h);
+        this.e.setDuration(320L);
+        this.e.addListener(new org.telegram.ui.lo(5, this, z10));
+        this.e.start();
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                this.b.h.l();
-                break;
-            case 1:
-                this.b.u(true);
-                break;
-            case 2:
-                yp ypVar = this.b;
-                org.telegram.ui.un unVar = ypVar.v;
-                org.telegram.ui.ActionBar.r2 c02 = org.telegram.ui.w91.c0(unVar.getMessagesController().getChat(Long.valueOf(-unVar.a())), true);
-                org.telegram.ui.ActionBar.p2 p2Var = new org.telegram.ui.ActionBar.p2();
-                p2Var.a = true;
-                c02.setResourceProvider(unVar.getResourceProvider());
-                p2Var.c = new k5(9);
-                p2Var.d = new gp(ypVar, 3);
-                p2Var.b = new gp(ypVar, 4);
-                p2Var.e = true;
-                ypVar.W = c02;
-                unVar.showAsSheet(c02, p2Var);
-                break;
-            case 3:
-                this.b.y();
-                break;
-            case 4:
-                this.b.W = null;
-                break;
-            case 5:
-                this.b.y();
-                break;
-            case 6:
-                this.b.W = null;
-                break;
-            default:
-                yp ypVar2 = this.b;
-                ypVar2.T.f(ypVar2.F, true);
-                break;
+    public int getCurrentHeight() {
+        return (int) (getMeasuredHeight() * this.b);
+    }
+
+    @Override // android.view.View
+    public final boolean isShown() {
+        return this.c;
+    }
+
+    public void setShown(float f7) {
+        this.b = f7;
+        u91 u91Var = this.a;
+        if (u91Var != null) {
+            u91Var.setPivotX(u91Var.getWidth() / 2.0f);
+            this.a.setPivotY(0.0f);
+            this.a.setScaleX(AndroidUtilities.lerp(0.8f, 1.0f, f7));
+            this.a.setScaleY(AndroidUtilities.lerp(0.8f, 1.0f, f7));
         }
+        setAlpha(f7);
+        invalidate();
+    }
+
+    public void setTabs(u91 u91Var) {
+        this.a = u91Var;
+        addView(u91Var, kb1.g(-1.0f, -1));
     }
 }

@@ -31,13 +31,13 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.ds;
-import org.telegram.ui.Components.gb1;
+import org.telegram.ui.Components.kb1;
 import org.telegram.ui.Components.qc;
-import org.telegram.ui.Components.ql0;
-import org.telegram.ui.Components.um0;
+import org.telegram.ui.Components.rl0;
+import org.telegram.ui.Components.vm0;
 import org.telegram.ui.Components.yz;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public abstract class t5 extends FrameLayout implements org.telegram.ui.ActionBar.p6, NotificationCenter.NotificationCenterDelegate {
     public s5 E;
@@ -45,7 +45,7 @@ public abstract class t5 extends FrameLayout implements org.telegram.ui.ActionBa
     public c7 G;
     public int H;
     public boolean I;
-    public final ql0 J;
+    public final rl0 J;
     public final y9 K;
     public final d5 L;
     public final e5 M;
@@ -96,7 +96,7 @@ public abstract class t5 extends FrameLayout implements org.telegram.ui.ActionBa
         y4 y4Var = new y4(this, context, bVar);
         this.r = y4Var;
         y4Var.setClipToPadding(false);
-        this.J = new ql0(y4Var, true);
+        this.J = new rl0(y4Var, true);
         yz yzVar = new yz(y4Var, 0);
         this.x = yzVar;
         y4Var.setLayoutManager(yzVar);
@@ -121,17 +121,17 @@ public abstract class t5 extends FrameLayout implements org.telegram.ui.ActionBa
         int w02 = org.telegram.ui.ActionBar.y6.w0(i10, bVar);
         this.a0 = w02;
         view.setBackground(new GradientDrawable(orientation, new int[]{w02, 0}));
-        frameLayout.addView(view, gb1.h(-1, 8.0f, 0, 0.0f, this.e - 8, 0.0f, 0.0f));
+        frameLayout.addView(view, kb1.h(-1, 8.0f, 0, 0.0f, this.e - 8, 0.0f, 0.0f));
         View view2 = new View(getContext());
         this.b = view2;
         org.telegram.ui.ActionBar.f7.i(i10, view2, bVar);
-        frameLayout.addView(view2, gb1.h(-1, 10.0f, 0, 0.0f, this.e - 17, 0.0f, 0.0f));
+        frameLayout.addView(view2, kb1.h(-1, 10.0f, 0, 0.0f, this.e - 17, 0.0f, 0.0f));
         frameLayout.addView(i5Var);
         frameLayout.addView(textView);
         d5 d5Var = new d5(this, getContext(), bVar);
         this.L = d5Var;
         d5Var.setHint(LocaleController.getString(R.string.Search));
-        frameLayout.addView(d5Var, gb1.h(-1, -1.0f, 51, 0.0f, 36.0f, 0.0f, 0.0f));
+        frameLayout.addView(d5Var, kb1.h(-1, -1.0f, 51, 0.0f, 36.0f, 0.0f, 0.0f));
         addView(frameLayout);
     }
 
@@ -196,7 +196,7 @@ public abstract class t5 extends FrameLayout implements org.telegram.ui.ActionBa
             return true;
         }
         int i10 = this.v;
-        if (MessagesController.getInstance(i10).getStoriesController().L(storyView) || MessagesController.getInstance(i10).blockePeers.indexOfKey(storyView.user_id) >= 0) {
+        if (MessagesController.getInstance(i10).getStoriesController().N(storyView) || MessagesController.getInstance(i10).blockePeers.indexOfKey(storyView.user_id) >= 0) {
             return false;
         }
         TLRPC.User user = MessagesController.getInstance(i10).getUser(Long.valueOf(storyView.user_id));
@@ -405,14 +405,14 @@ public abstract class t5 extends FrameLayout implements org.telegram.ui.ActionBa
             }
         }
         boolean z12 = e5Var.a;
-        um0 um0Var = i5Var.v;
+        vm0 vm0Var = i5Var.v;
         if (z12) {
             s5 s5Var = this.E;
             i10 = (s5Var == null || !s5Var.f) ? R.drawable.menu_views_reactions3 : R.drawable.menu_views_reposts3;
         } else {
             i10 = R.drawable.menu_views_recent3;
         }
-        um0Var.a(i10, z10);
+        vm0Var.a(i10, z10);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:121:0x01e3  */
@@ -554,8 +554,8 @@ public abstract class t5 extends FrameLayout implements org.telegram.ui.ActionBa
         }
         this.w.E();
         int i10 = this.v;
-        NotificationCenter.getInstance(i10).addObserver(this, NotificationCenter.storiesUpdated);
-        NotificationCenter.getInstance(i10).addObserver(this, NotificationCenter.storiesBlocklistUpdate);
+        NotificationCenter.getInstance(i10).addWeakObserver(this, NotificationCenter.storiesUpdated);
+        NotificationCenter.getInstance(i10).addWeakObserver(this, NotificationCenter.storiesBlocklistUpdate);
         qc.a(this, new bh.c0(this, 2));
     }
 

@@ -14,11 +14,11 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.k80;
-import org.telegram.ui.Components.vs0;
+import org.telegram.ui.Components.l80;
 import org.telegram.ui.Components.wc;
+import org.telegram.ui.Components.ws0;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class s1 implements Runnable {
     public final /* synthetic */ int a;
@@ -45,7 +45,7 @@ public final /* synthetic */ class s1 implements Runnable {
             case 0:
                 TLRPC.TL_error tL_error = (TLRPC.TL_error) tLObject;
                 org.telegram.ui.ActionBar.r2 r2Var = (org.telegram.ui.ActionBar.r2) obj;
-                ((vs0) obj2).H = -1;
+                ((ws0) obj2).H = -1;
                 if (tL_error != null) {
                     wc.b0(r2Var).g0(tL_error, false);
                     break;
@@ -54,13 +54,13 @@ public final /* synthetic */ class s1 implements Runnable {
             case 1:
                 m2 m2Var = (m2) obj2;
                 TL_stars.SavedStarGift savedStarGift = (TL_stars.SavedStarGift) tLObject;
-                vs0 vs0Var = m2Var.a;
-                vs0Var.e.k(m2Var.e.d, savedStarGift);
-                ((k80) obj).u();
-                vs0Var.o();
-                TL_stars.TL_starGiftCollection c10 = vs0Var.e.c(m2Var.e.d);
+                ws0 ws0Var = m2Var.a;
+                ws0Var.e.k(m2Var.e.d, savedStarGift);
+                ((l80) obj).u();
+                ws0Var.o();
+                TL_stars.TL_starGiftCollection c10 = ws0Var.e.c(m2Var.e.d);
                 if (c10 != null) {
-                    wc.b0(vs0Var.a).S(savedStarGift.gift.getDocument(), AndroidUtilities.replaceTags(LocaleController.formatString(R.string.Gift2RemovedFromCollection, h7.X1(savedStarGift.gift), c10.title))).j();
+                    wc.b0(ws0Var.a).S(savedStarGift.gift.getDocument(), AndroidUtilities.replaceTags(LocaleController.formatString(R.string.Gift2RemovedFromCollection, h7.X1(savedStarGift.gift), c10.title))).j();
                     break;
                 }
                 break;

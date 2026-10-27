@@ -25,9 +25,9 @@ import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.Components.Premium.LimitPreviewView;
 import org.telegram.ui.Components.ScrollSlidingTextTabStrip;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public final class x5 extends d20 implements NotificationCenter.NotificationCenterDelegate {
+public final class x5 extends f20 implements NotificationCenter.NotificationCenterDelegate {
     public final long R;
     public final int S;
     public TL_stories.TL_premium_boostsStatus T;
@@ -178,7 +178,7 @@ public final class x5 extends d20 implements NotificationCenter.NotificationCent
         String string = LocaleController.getString(ChatObject.isChannelAndNotMegaGroup(chat) ? R.string.BoostingBoostForChannels : R.string.BoostingBoostForGroups);
         SpannableStringBuilder replaceTags = AndroidUtilities.replaceTags(LocaleController.getString(ChatObject.isChannelAndNotMegaGroup(chat) ? R.string.BoostingBoostForChannelsInfo : R.string.BoostingBoostForGroupsInfo));
         s5 s5Var = new s5(getParentActivity());
-        s5Var.addView(this.T != null ? this.e0 : new View(s5Var.getContext()), org.telegram.ui.Components.gb1.h(-1, this.T != null ? -2.0f : 110.0f, 0, 8.0f, 46.0f, 8.0f, 33.0f));
+        s5Var.addView(this.T != null ? this.e0 : new View(s5Var.getContext()), org.telegram.ui.Components.kb1.h(-1, this.T != null ? -2.0f : 110.0f, 0, 8.0f, 46.0f, 8.0f, 33.0f));
         f0(string, replaceTags, s5Var, new v5(this, getParentActivity()));
     }
 
@@ -264,7 +264,7 @@ public final class x5 extends d20 implements NotificationCenter.NotificationCent
         }
     }
 
-    @Override // org.telegram.ui.d20, org.telegram.ui.ActionBar.r2
+    @Override // org.telegram.ui.f20, org.telegram.ui.ActionBar.r2
     public final View createView(Context context) {
         View createView = super.createView(context);
         E0(false);
@@ -277,8 +277,8 @@ public final class x5 extends d20 implements NotificationCenter.NotificationCent
         LinearLayout linearLayout = new LinearLayout(parentActivity);
         this.h0 = linearLayout;
         linearLayout.setOrientation(1);
-        this.h0.addView(new di.s1(parentActivity), org.telegram.ui.Components.gb1.x(100, 100, 17, 0, 120, 0, 0));
-        ((ViewGroup) this.fragmentView).addView(this.h0, org.telegram.ui.Components.gb1.i(-1, -2, 17));
+        this.h0.addView(new di.s1(parentActivity), org.telegram.ui.Components.kb1.x(100, 100, 17, 0, 120, 0, 0));
+        ((ViewGroup) this.fragmentView).addView(this.h0, org.telegram.ui.Components.kb1.i(-1, -2, 17));
         this.h0.setAlpha(0.0f);
         if (this.T == null) {
             this.h0.animate().alpha(1.0f).setDuration(200L).setStartDelay(500L).start();
@@ -308,14 +308,14 @@ public final class x5 extends d20 implements NotificationCenter.NotificationCent
         boolean booleanValue = ((Boolean) objArr[1]).booleanValue();
         List fragmentStack = getParentLayout().getFragmentStack();
         org.telegram.ui.ActionBar.r2 r2Var = fragmentStack.size() >= 2 ? (org.telegram.ui.ActionBar.r2) org.telegram.ui.Components.b10.h(2, fragmentStack) : null;
-        if (r2Var instanceof mo) {
+        if (r2Var instanceof oo) {
             ((ActionBarLayout) getParentLayout()).c0(r2Var, false);
         }
         List fragmentStack2 = getParentLayout().getFragmentStack();
         org.telegram.ui.ActionBar.r2 r2Var2 = fragmentStack2.size() >= 2 ? (org.telegram.ui.ActionBar.r2) org.telegram.ui.Components.b10.h(2, fragmentStack2) : null;
         if (!booleanValue) {
             finishFragment();
-            if ((r2Var2 instanceof ProfileActivity) || (r2Var2 instanceof un)) {
+            if ((r2Var2 instanceof ProfileActivity) || (r2Var2 instanceof wn)) {
                 vg.j.f(r2Var2, chat, false);
                 return;
             }
@@ -326,23 +326,23 @@ public final class x5 extends d20 implements NotificationCenter.NotificationCent
             ((ActionBarLayout) getParentLayout()).c0(r2Var2, false);
         }
         finishFragment();
-        if (r2Var3 instanceof un) {
+        if (r2Var3 instanceof wn) {
             vg.j.f(r2Var3, chat, true);
         }
-        if (r2Var2 instanceof un) {
+        if (r2Var2 instanceof wn) {
             vg.j.f(r2Var2, chat, true);
         }
     }
 
-    @Override // org.telegram.ui.d20
+    @Override // org.telegram.ui.f20
     public final s4.h0 g0() {
         return this.f0;
     }
 
     @Override // org.telegram.ui.ActionBar.r2
     public final boolean onFragmentCreate() {
-        getNotificationCenter().addObserver(this, NotificationCenter.boostByChannelCreated);
-        getNotificationCenter().addObserver(this, NotificationCenter.chatWasBoostedByUser);
+        getNotificationCenter().addWeakObserver(this, NotificationCenter.boostByChannelCreated);
+        getNotificationCenter().addWeakObserver(this, NotificationCenter.chatWasBoostedByUser);
         return super.onFragmentCreate();
     }
 

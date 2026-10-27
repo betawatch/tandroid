@@ -10,7 +10,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class ux extends kw {
     public final /* synthetic */ sz g0;
@@ -97,8 +97,8 @@ public final class ux extends kw {
                 i11 = AndroidUtilities.dp(-9.0f);
                 if (num != null) {
                     szVar.P.C0();
-                    szVar.U(num.intValue());
-                    szVar.G(num.intValue(), i11);
+                    szVar.V(num.intValue());
+                    szVar.H(num.intValue(), i11);
                     szVar.n(0, null);
                 }
                 return true;

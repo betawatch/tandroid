@@ -12,11 +12,11 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.Components.gb1;
-import org.telegram.ui.Components.z90;
-import org.telegram.ui.zg1;
+import org.telegram.ui.Components.aa0;
+import org.telegram.ui.Components.kb1;
+import org.telegram.ui.bh1;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class a8 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -49,7 +49,7 @@ public final /* synthetic */ class a8 implements View.OnClickListener {
                 e2Var.R = string;
                 e2Var.T = LocaleController.getString(R.string.WalletDeleteWalletInfo);
                 alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
-                alertDialog$Builder.k(LocaleController.getString(R.string.Delete), new zg1(3, (Runnable) obj2, (org.telegram.ui.ActionBar.k3) obj));
+                alertDialog$Builder.k(LocaleController.getString(R.string.Delete), new bh1(3, (Runnable) obj2, (org.telegram.ui.ActionBar.k3) obj));
                 alertDialog$Builder.d(-1);
                 alertDialog$Builder.p();
                 break;
@@ -75,7 +75,7 @@ public final /* synthetic */ class a8 implements View.OnClickListener {
                         org.telegram.ui.Components.j9 j9Var = new org.telegram.ui.Components.j9((org.telegram.ui.ActionBar.u6) null);
                         j9Var.r(k8Var.r);
                         y9Var.f(k8Var.r, j9Var);
-                        linearLayout2.addView(y9Var, gb1.u(30, 30, 16));
+                        linearLayout2.addView(y9Var, kb1.u(30, 30, 16));
                         TextView textView = new TextView(k8Var.getContext());
                         int i11 = org.telegram.ui.ActionBar.y6.G6;
                         org.telegram.ui.ActionBar.f7.V(textView, i11, u6Var);
@@ -83,15 +83,15 @@ public final /* synthetic */ class a8 implements View.OnClickListener {
                         textView.setText(LocaleController.formatString(R.string.WalletUserWallet, forcedFirstName));
                         textView.setTypeface(AndroidUtilities.bold());
                         textView.setPadding(AndroidUtilities.dp(4.0f), 0, AndroidUtilities.dp(4.0f), 0);
-                        linearLayout2.addView(textView, gb1.x(-1, -2, 16, 9, 0, 0, 0));
-                        linearLayout.addView(linearLayout2, gb1.u(-1, -2, 55));
-                        z90 z90Var = new z90(k8Var.getContext(), null);
-                        org.telegram.ui.ActionBar.f7.V(z90Var, i11, u6Var);
-                        org.telegram.ui.ActionBar.f7.H(z90Var, org.telegram.ui.ActionBar.y6.gc, u6Var);
-                        z90Var.setTextSize(1, 16.0f);
-                        z90Var.setPadding(AndroidUtilities.dp(4.0f), 0, AndroidUtilities.dp(4.0f), 0);
-                        z90Var.setText(AndroidUtilities.replaceSingleTag(LocaleController.formatString(R.string.WalletAddressLinkedToUser, UserObject.getUserName(k8Var.r)), new q6(5, e2VarArr, runnable)));
-                        linearLayout.addView(z90Var, gb1.x(-1, -2, 55, 0, 14, 0, 0));
+                        linearLayout2.addView(textView, kb1.x(-1, -2, 16, 9, 0, 0, 0));
+                        linearLayout.addView(linearLayout2, kb1.u(-1, -2, 55));
+                        aa0 aa0Var = new aa0(k8Var.getContext(), null);
+                        org.telegram.ui.ActionBar.f7.V(aa0Var, i11, u6Var);
+                        org.telegram.ui.ActionBar.f7.H(aa0Var, org.telegram.ui.ActionBar.y6.gc, u6Var);
+                        aa0Var.setTextSize(1, 16.0f);
+                        aa0Var.setPadding(AndroidUtilities.dp(4.0f), 0, AndroidUtilities.dp(4.0f), 0);
+                        aa0Var.setText(AndroidUtilities.replaceSingleTag(LocaleController.formatString(R.string.WalletAddressLinkedToUser, UserObject.getUserName(k8Var.r)), new a6(6, e2VarArr, runnable)));
+                        linearLayout.addView(aa0Var, kb1.x(-1, -2, 55, 0, 14, 0, 0));
                     } else {
                         f7 = 4.0f;
                     }
@@ -113,9 +113,9 @@ public final /* synthetic */ class a8 implements View.OnClickListener {
                     textView2.setBackground(a02);
                     org.telegram.ui.ActionBar.f7.k(textView2, a02, N, q5, u6Var);
                     textView2.setGravity(17);
-                    frameLayout.addView(textView2, gb1.h(-1, -2.0f, 7, 0.0f, 0.0f, 0.0f, 0.0f));
-                    linearLayout.addView(frameLayout, gb1.x(-1, -2, 55, 0, 14, 0, 0));
-                    gb1.c(textView2, 0.02f, 1.2f);
+                    frameLayout.addView(textView2, kb1.h(-1, -2.0f, 7, 0.0f, 0.0f, 0.0f, 0.0f));
+                    linearLayout.addView(frameLayout, kb1.x(-1, -2, 55, 0, 14, 0, 0));
+                    kb1.c(textView2, 0.02f, 1.2f);
                     textView2.setOnClickListener(new m1(k8Var, e2VarArr, runnable2, 3));
                     AlertDialog$Builder alertDialog$Builder2 = new AlertDialog$Builder(k8Var.getContext(), 0, u6Var);
                     alertDialog$Builder2.o(linearLayout);

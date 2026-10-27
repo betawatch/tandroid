@@ -22,16 +22,16 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.ca0;
 import org.telegram.ui.Components.da0;
 import org.telegram.ui.Components.ds;
-import org.telegram.ui.Components.gb1;
+import org.telegram.ui.Components.ea0;
 import org.telegram.ui.Components.gq;
+import org.telegram.ui.Components.kb1;
 import org.telegram.ui.ae;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
-public class d extends FrameLayout implements ca0, org.telegram.ui.ActionBar.p6 {
+public class d extends FrameLayout implements da0, org.telegram.ui.ActionBar.p6 {
     public boolean E;
     public int F;
     public int G;
@@ -41,7 +41,7 @@ public class d extends FrameLayout implements ca0, org.telegram.ui.ActionBar.p6 
     public float K;
     public ValueAnimator L;
     public boolean M;
-    public da0 N;
+    public ea0 N;
     public boolean O;
     public float P;
     public boolean Q;
@@ -129,7 +129,7 @@ public class d extends FrameLayout implements ca0, org.telegram.ui.ActionBar.p6 
         invalidate();
     }
 
-    @Override // org.telegram.ui.Components.ca0
+    @Override // org.telegram.ui.Components.da0
     public final boolean c() {
         return this.Q;
     }
@@ -254,24 +254,24 @@ public class d extends FrameLayout implements ca0, org.telegram.ui.ActionBar.p6 
         if (this.O) {
             if (this.Q) {
                 if (this.N == null) {
-                    da0 da0Var = new da0(this.a);
-                    this.N = da0Var;
-                    da0Var.setCallback(this);
-                    da0 da0Var2 = this.N;
-                    da0Var2.t = 2.0f;
-                    da0Var2.D = true;
-                    da0Var2.x.setStrokeWidth(0.0f);
+                    ea0 ea0Var = new ea0(this.a);
+                    this.N = ea0Var;
+                    ea0Var.setCallback(this);
+                    ea0 ea0Var2 = this.N;
+                    ea0Var2.t = 2.0f;
+                    ea0Var2.D = true;
+                    ea0Var2.x.setStrokeWidth(0.0f);
                     this.N.f(org.telegram.ui.ActionBar.y6.o1(0.02f, -1), org.telegram.ui.ActionBar.y6.o1(0.375f, -1));
                 }
-                da0 da0Var3 = this.N;
-                da0Var3.c = -1L;
-                da0Var3.setBounds(0, 0, getMeasuredWidth(), getMeasuredHeight());
+                ea0 ea0Var3 = this.N;
+                ea0Var3.c = -1L;
+                ea0Var3.setBounds(0, 0, getMeasuredWidth(), getMeasuredHeight());
                 this.N.k(this.b);
                 this.N.draw(canvas);
             } else {
-                da0 da0Var4 = this.N;
-                if (da0Var4 != null) {
-                    da0Var4.a();
+                ea0 ea0Var4 = this.N;
+                if (ea0Var4 != null) {
+                    ea0Var4.a();
                     this.N.draw(canvas);
                     if (this.N.c()) {
                         this.N.b = -1L;
@@ -479,7 +479,7 @@ public class d extends FrameLayout implements ca0, org.telegram.ui.ActionBar.p6 
         this.f0 = (int) (f7 * 255.0f);
     }
 
-    @Override // org.telegram.ui.Components.ca0
+    @Override // org.telegram.ui.Components.da0
     public void setLoading(boolean z10) {
         if (this.Q != z10) {
             if (this.O) {
@@ -601,10 +601,10 @@ public class d extends FrameLayout implements ca0, org.telegram.ui.ActionBar.p6 
         this.f0 = 255;
         this.s = z10;
         this.a = u6Var;
-        gb1.c(this, 0.02f, 1.2f);
+        kb1.c(this, 0.02f, 1.2f);
         View view = new View(context);
         this.r = view;
-        addView(view, gb1.g(-1.0f, -1));
+        addView(view, kb1.g(-1.0f, -1));
         if (z10) {
             int dp = AndroidUtilities.dp(8.0f);
             int i10 = org.telegram.ui.ActionBar.y6.Oh;

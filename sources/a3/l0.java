@@ -70,7 +70,7 @@ import org.telegram.ui.ActionBar.r2;
 import org.telegram.ui.ActionBar.u6;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.g5;
-import org.telegram.ui.Components.gb1;
+import org.telegram.ui.Components.kb1;
 import org.telegram.ui.Components.qc;
 import org.telegram.ui.Components.t5;
 import org.telegram.ui.Components.wc;
@@ -79,7 +79,7 @@ import org.telegram.ui.TwoStepVerificationActivity;
 import vg.n1;
 import zh.b2;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class l0 implements Runnable {
     public final /* synthetic */ int a;
@@ -542,7 +542,7 @@ public final /* synthetic */ class l0 implements Runnable {
                 m7 m7Var2 = new m7(q4Var.getContext(), q4Var.m1);
                 q4Var.t0 = m7Var2;
                 m7Var2.setPadding(dp, dp, dp, dp);
-                q4Var.s0.addView(q4Var.t0, gb1.i(40, 40, 3));
+                q4Var.s0.addView(q4Var.t0, kb1.i(40, 40, 3));
                 t5 t5Var2 = q4Var.d3;
                 if (t5Var2 != null) {
                     t5Var2.o(q4Var);
@@ -588,7 +588,7 @@ public final /* synthetic */ class l0 implements Runnable {
                     q4Var.b3 = a10;
                     a10.f(q4Var);
                 }
-                q4Var.H1.g0(q4Var.q1, o4Var.a, x0Var);
+                q4Var.H1.j0(q4Var.q1, o4Var.a, x0Var);
                 int[] iArr = new int[2];
                 view.getLocationInWindow(iArr);
                 int[] iArr2 = new int[2];

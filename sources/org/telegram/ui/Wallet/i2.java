@@ -9,10 +9,10 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.gb1;
-import org.telegram.ui.vo0;
+import org.telegram.ui.Components.kb1;
+import org.telegram.ui.xo0;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class i2 extends org.telegram.ui.ActionBar.k3 {
     public final fi.h1 b;
@@ -36,7 +36,7 @@ public final class i2 extends org.telegram.ui.ActionBar.k3 {
         this.b = h1Var;
         int i10 = this.backgroundPaddingLeft;
         h1Var.setPadding(i10, 0, i10, AndroidUtilities.navigationBarHeight);
-        f2Var.addView(h1Var, gb1.i(-1, -1, 119));
+        f2Var.addView(h1Var, kb1.i(-1, -1, 119));
     }
 
     @Override // org.telegram.ui.ActionBar.k3
@@ -84,7 +84,7 @@ public final class i2 extends org.telegram.ui.ActionBar.k3 {
     public final void show() {
         if (!this.d) {
             this.d = true;
-            this.b.setAdapter(new vo0(this, 1));
+            this.b.setAdapter(new xo0(this, 1));
         }
         super.show();
         Integer num = this.f;
@@ -100,11 +100,11 @@ public final class i2 extends org.telegram.ui.ActionBar.k3 {
             this.e = frameLayout2;
             frameLayout2.setClipChildren(false);
             this.e.setClipToPadding(false);
-            this.containerView.addView(this.e, gb1.i(-1, -2, 80));
+            this.containerView.addView(this.e, kb1.i(-1, -2, 80));
         } else {
             frameLayout.removeAllViews();
         }
-        this.e.addView(linearLayout, gb1.i(-1, -2, 80));
+        this.e.addView(linearLayout, kb1.i(-1, -2, 80));
         fi.h1 h1Var = this.b;
         int i10 = this.backgroundPaddingLeft;
         h1Var.setPadding(i10, 0, i10, 0);

@@ -9,19 +9,19 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.vh;
+import org.telegram.messenger.wh;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.f7;
 import org.telegram.ui.ActionBar.r2;
 import org.telegram.ui.ActionBar.u6;
 import org.telegram.ui.ActionBar.y6;
-import org.telegram.ui.Components.gb1;
-import org.telegram.ui.Components.mm0;
+import org.telegram.ui.Components.kb1;
+import org.telegram.ui.Components.nm0;
 import org.telegram.ui.Components.qc;
-import org.telegram.ui.cy;
-import org.telegram.ui.zg1;
+import org.telegram.ui.bh1;
+import org.telegram.ui.ey;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class g0 extends tg.m1 {
     public static g0 S0;
@@ -33,9 +33,9 @@ public final class g0 extends tg.m1 {
         this.R0 = str;
         qc.a((FrameLayout) this.containerView, new k8(14));
         if (!z10) {
-            mm0 mm0Var = this.d;
+            nm0 nm0Var = this.d;
             int i11 = this.backgroundPaddingLeft;
-            mm0Var.setPadding(i11, 0, i11, AndroidUtilities.dp(68.0f));
+            nm0Var.setPadding(i11, 0, i11, AndroidUtilities.dp(68.0f));
             xg.a aVar = new xg.a(getContext(), this.resourcesProvider);
             this.Q0 = aVar;
             aVar.setOnClickListener(new ig.d0(this, 23));
@@ -45,7 +45,7 @@ public final class g0 extends tg.m1 {
             dVar.setEnabled(true);
             dVar.i(LocaleController.getString(R.string.GiftPremiumActivateForFree), false, true);
             f7.i(y6.h5, aVar2.b, aVar2.c);
-            this.containerView.addView(this.Q0, gb1.h(-1, 68.0f, 80, 0.0f, 0.0f, 0.0f, 0.0f));
+            this.containerView.addView(this.Q0, kb1.h(-1, 68.0f, 80, 0.0f, 0.0f, 0.0f, 0.0f));
         }
         fixNavigationBar();
     }
@@ -65,9 +65,9 @@ public final class g0 extends tg.m1 {
 
     public static void k0(g0 g0Var) {
         String str = "https://t.me/giftcode/" + g0Var.R0;
-        cy cyVar = new cy(vh.c(3, "onlySelect", "dialogsType", true));
-        cyVar.C2 = new zg1(23, g0Var, str);
-        g0Var.n.presentFragment(cyVar);
+        ey eyVar = new ey(wh.c(3, "onlySelect", "dialogsType", true));
+        eyVar.C2 = new bh1(23, g0Var, str);
+        g0Var.n.presentFragment(eyVar);
         g0Var.dismiss();
     }
 

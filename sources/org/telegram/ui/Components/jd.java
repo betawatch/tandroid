@@ -23,7 +23,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public abstract class jd extends fi.m {
     public boolean S0;
@@ -31,7 +31,7 @@ public abstract class jd extends fi.m {
     public boolean U0;
     public final ImageView V0;
     public final fi.l W0;
-    public k80 X0;
+    public l80 X0;
     public final i0 Y0;
     public final ImageView Z0;
     public fi.v3 a1;
@@ -54,8 +54,8 @@ public abstract class jd extends fi.m {
     public Utilities.Callback r1;
     public boolean s1;
 
-    public jd(Context context, FrameLayout frameLayout, vw0 vw0Var, FrameLayout frameLayout2, org.telegram.ui.ActionBar.u6 u6Var, la laVar, Runnable runnable) {
-        super(context, frameLayout, vw0Var, frameLayout2, u6Var, laVar);
+    public jd(Context context, FrameLayout frameLayout, ww0 ww0Var, FrameLayout frameLayout2, org.telegram.ui.ActionBar.u6 u6Var, la laVar, Runnable runnable) {
+        super(context, frameLayout, ww0Var, frameLayout2, u6Var, laVar);
         float f7;
         float f10;
         this.b1 = 0;
@@ -73,7 +73,7 @@ public abstract class jd extends fi.m {
         r6Var.w(AndroidUtilities.dp(14.0f));
         r6Var.M = AndroidUtilities.displaySize.x;
         r6Var.u(-1);
-        boolean z10 = this instanceof org.telegram.ui.ps0;
+        boolean z10 = this instanceof org.telegram.ui.rs0;
         if (z10) {
             r6Var.t(LocaleController.getString(R.string.MoveCaptionDown), true, true);
             this.g1 = context.getResources().getDrawable(R.drawable.menu_link_below);
@@ -99,7 +99,7 @@ public abstract class jd extends fi.m {
             f10 = 0.0f;
         }
         float f12 = f10;
-        addView(imageView, gb1.h(44, 44.0f, i10, 14.0f, f11, 0.0f, f7));
+        addView(imageView, kb1.h(44, 44.0f, i10, 14.0f, f11, 0.0f, f7));
         ImageView imageView2 = new ImageView(context);
         this.V0 = imageView2;
         fi.l lVar = new fi.l(5);
@@ -108,14 +108,14 @@ public abstract class jd extends fi.m {
         imageView2.setBackground(org.telegram.ui.ActionBar.y6.g0(1090519039, 1, AndroidUtilities.dp(18.0f)));
         imageView2.setScaleType(scaleType);
         E(false, false);
-        addView(imageView2, gb1.h(44, 44.0f, (z10 ? 48 : 80) | 5, 0.0f, z10 ? 6.0f : f12, 10.0f, z10 ? f12 : 6.0f));
+        addView(imageView2, kb1.h(44, 44.0f, (z10 ? 48 : 80) | 5, 0.0f, z10 ? 6.0f : f12, 10.0f, z10 ? f12 : 6.0f));
         fi.v3 v3Var = new fi.v3(context, z10 ? 1 : 3);
         this.d1 = v3Var;
         v3Var.q(12.0f);
         v3Var.setPadding(AndroidUtilities.dp(12.0f), AndroidUtilities.dp(z10 ? 8.0f : f12), AndroidUtilities.dp(12.0f), AndroidUtilities.dp(z10 ? f12 : 8.0f));
         v3Var.l(1.0f, -21.0f);
         v3Var.p(true);
-        addView(v3Var, gb1.i(-1, 80, (z10 ? 48 : 80) | 5));
+        addView(v3Var, kb1.i(-1, 80, (z10 ? 48 : 80) | 5));
         ImageView imageView3 = new ImageView(context);
         this.Z0 = imageView3;
         i0 i0Var = new i0(context);
@@ -124,9 +124,9 @@ public abstract class jd extends fi.m {
         imageView3.setScaleType(scaleType);
         imageView3.setColorFilter(new PorterDuffColorFilter(-1140850689, PorterDuff.Mode.MULTIPLY));
         imageView3.setBackground(org.telegram.ui.ActionBar.y6.g0(1090519039, 1, AndroidUtilities.dp(16.0f)));
-        addView(imageView3, gb1.h(44, 44.0f, 53, 8.0f, 0.0f, 8.0f, 0.0f));
+        addView(imageView3, kb1.h(44, 44.0f, 53, 8.0f, 0.0f, 8.0f, 0.0f));
         imageView3.setContentDescription(LocaleController.getString(R.string.AIEditor));
-        gb1.b(imageView3);
+        kb1.b(imageView3);
         this.f.getEditText().addTextChangedListener(new bi.u(this, 6));
         imageView3.setVisibility(8);
         imageView3.setAlpha(f12);
@@ -225,9 +225,9 @@ public abstract class jd extends fi.m {
             v3Var3.p(true);
             this.a1.s(LocaleController.getString(R.string.AIEditorHint));
             this.a1.m(1.0f, ((-imageView.getWidth()) / 2.0f) + AndroidUtilities.dp(4.0f));
-            addView(this.a1, gb1.h(-1, 200.0f, 48, 0.0f, -196.0f, 0.0f, 0.0f));
+            addView(this.a1, kb1.h(-1, 200.0f, 48, 0.0f, -196.0f, 0.0f, 0.0f));
             fi.v3 v3Var4 = this.a1;
-            v3Var4.l0 = new org.telegram.ui.ip(9, this, v3Var3);
+            v3Var4.l0 = new org.telegram.ui.kp(9, this, v3Var3);
             v3Var4.d = 4000L;
             v3Var4.u();
             MessagesController.getGlobalMainSettings().edit().putInt("aihintshown", MessagesController.getGlobalMainSettings().getInt("aihintshown", 0) + 1).apply();
@@ -287,7 +287,7 @@ public abstract class jd extends fi.m {
         ImageView imageView = this.Z0;
         if (imageView != null) {
             imageView.setTranslationX(-AndroidUtilities.dp((1.0f - this.o0) * 4.0f));
-            boolean z10 = this instanceof org.telegram.ui.ps0;
+            boolean z10 = this instanceof org.telegram.ui.rs0;
             imageView.setTranslationY((Utilities.clamp01((-this.k1.d(this.f.getEditText().getLineCount(), false)) + 4.0f) * AndroidUtilities.dp(3.0f) * (z10 ? 1 : -1)) + (z10 ? rectF.bottom - AndroidUtilities.dp(44.0f) : rectF.top));
         }
         float f10 = this.l1.f(this.n1, true ^ G());
@@ -295,15 +295,15 @@ public abstract class jd extends fi.m {
         if (f10 > 0.0f) {
             float a2 = this.i1.a(0.03f);
             int dp = AndroidUtilities.dp((1.0f - this.o0) * 4.0f);
-            boolean z11 = this instanceof org.telegram.ui.ps0;
+            boolean z11 = this instanceof org.telegram.ui.rs0;
             r6 r6Var = this.h1;
             RectF rectF2 = this.f1;
             if (z11) {
                 f7 = 1.0f;
-                rectF2.set(AndroidUtilities.dp(7.0f) + dp, rectF.bottom + AndroidUtilities.dp(10.0f), org.telegram.messenger.vh.a(r6Var.c(), AndroidUtilities.dp(11.0f), e, AndroidUtilities.dp(44.0f) + dp), rectF.bottom + AndroidUtilities.dp(42.0f));
+                rectF2.set(AndroidUtilities.dp(7.0f) + dp, rectF.bottom + AndroidUtilities.dp(10.0f), org.telegram.messenger.wh.a(r6Var.c(), AndroidUtilities.dp(11.0f), e, AndroidUtilities.dp(44.0f) + dp), rectF.bottom + AndroidUtilities.dp(42.0f));
             } else {
                 f7 = 1.0f;
-                rectF2.set(AndroidUtilities.dp(7.0f) + dp, rectF.top - AndroidUtilities.dp(42.0f), org.telegram.messenger.vh.a(r6Var.c(), AndroidUtilities.dp(11.0f), e, AndroidUtilities.dp(44.0f) + dp), rectF.top - AndroidUtilities.dp(10.0f));
+                rectF2.set(AndroidUtilities.dp(7.0f) + dp, rectF.top - AndroidUtilities.dp(42.0f), org.telegram.messenger.wh.a(r6Var.c(), AndroidUtilities.dp(11.0f), e, AndroidUtilities.dp(44.0f) + dp), rectF.top - AndroidUtilities.dp(10.0f));
             }
             if (f10 < f7) {
                 canvas.saveLayerAlpha(rectF2, (int) (f10 * 255.0f), 31);
@@ -357,7 +357,7 @@ public abstract class jd extends fi.m {
         } else if ((motionEvent.getAction() == 1 || motionEvent.getAction() == 3) && xcVar.i) {
             if (motionEvent.getAction() == 1) {
                 A();
-                this.h1.t(LocaleController.getString(this instanceof org.telegram.ui.ps0 ? R.string.MoveCaptionDown : R.string.MoveCaptionUp), true, true);
+                this.h1.t(LocaleController.getString(this instanceof org.telegram.ui.rs0 ? R.string.MoveCaptionDown : R.string.MoveCaptionUp), true, true);
             }
             xcVar.c(false);
             return true;
@@ -405,7 +405,7 @@ public abstract class jd extends fi.m {
 
     @Override // fi.m
     public final void r(int i10) {
-        this.d1.setTranslationY(((-Math.min(AndroidUtilities.dp(34.0f), i10)) - AndroidUtilities.dp(10.0f)) * (this instanceof org.telegram.ui.ps0 ? -1.0f : 1.0f));
+        this.d1.setTranslationY(((-Math.min(AndroidUtilities.dp(34.0f), i10)) - AndroidUtilities.dp(10.0f)) * (this instanceof org.telegram.ui.rs0 ? -1.0f : 1.0f));
     }
 
     @Override // fi.m

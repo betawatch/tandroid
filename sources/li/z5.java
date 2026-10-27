@@ -4,11 +4,11 @@ import android.text.TextPaint;
 import android.text.style.CharacterStyle;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.ActionBar.y6;
-import org.telegram.ui.Components.mb0;
-import org.telegram.ui.Components.sj0;
+import org.telegram.ui.Components.nb0;
+import org.telegram.ui.Components.tj0;
 import org.telegram.ui.Wallet.h7;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class z5 extends CharacterStyle {
     public final /* synthetic */ int a;
@@ -29,12 +29,12 @@ public final class z5 extends CharacterStyle {
                 textPaint.setTypeface(AndroidUtilities.bold());
                 int alpha = textPaint.getAlpha();
                 int i10 = y6.n6;
-                ((mb0) this.b).getClass();
+                ((nb0) this.b).getClass();
                 textPaint.setColor(y6.x0(null, i10, false));
                 textPaint.setAlpha(alpha);
                 break;
             case 2:
-                textPaint.setColor(y6.v(y6.o1(0.55f, textPaint.getColor()), y6.o1(0.4f, ((sj0) this.b).I)));
+                textPaint.setColor(y6.v(y6.o1(0.55f, textPaint.getColor()), y6.o1(0.4f, ((tj0) this.b).I)));
                 break;
             case 3:
                 textPaint.setColor(((org.telegram.ui.Wallet.m3) this.b).t0);
@@ -50,8 +50,8 @@ public final class z5 extends CharacterStyle {
         }
     }
 
-    public z5(sj0 sj0Var) {
+    public z5(tj0 tj0Var) {
         this.a = 2;
-        this.b = sj0Var;
+        this.b = tj0Var;
     }
 }

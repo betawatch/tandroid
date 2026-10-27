@@ -1,49 +1,45 @@
 package org.telegram.ui;
 
-import android.view.ViewGroup;
-import android.view.ViewTreeObserver;
-import android.widget.FrameLayout;
+import android.view.View;
+import android.widget.RelativeLayout;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public final class dw0 implements ViewTreeObserver.OnPreDrawListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ PopupNotificationActivity b;
+public final class dw0 extends RelativeLayout {
+    public final /* synthetic */ PopupNotificationActivity a;
 
-    public /* synthetic */ dw0(PopupNotificationActivity popupNotificationActivity, int i10) {
-        this.a = i10;
-        this.b = popupNotificationActivity;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public dw0(PopupNotificationActivity popupNotificationActivity, PopupNotificationActivity popupNotificationActivity2) {
+        super(popupNotificationActivity2);
+        this.a = popupNotificationActivity;
     }
 
-    @Override // android.view.ViewTreeObserver.OnPreDrawListener
-    public final boolean onPreDraw() {
-        switch (this.a) {
-            case 0:
-                PopupNotificationActivity popupNotificationActivity = this.b;
-                FrameLayout frameLayout = popupNotificationActivity.f;
-                if (frameLayout != null) {
-                    frameLayout.getViewTreeObserver().removeOnPreDrawListener(this);
-                }
-                int B = org.telegram.messenger.vh.B(48.0f, org.telegram.ui.ActionBar.k.getCurrentActionBarHeight(), 2);
-                FrameLayout frameLayout2 = popupNotificationActivity.f;
-                frameLayout2.setPadding(frameLayout2.getPaddingLeft(), B, popupNotificationActivity.f.getPaddingRight(), B);
-                break;
-            default:
-                PopupNotificationActivity popupNotificationActivity2 = this.b;
-                popupNotificationActivity2.n.getViewTreeObserver().removeOnPreDrawListener(this);
-                if (!popupNotificationActivity2.c() && !popupNotificationActivity2.X) {
-                    ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) popupNotificationActivity2.n.getLayoutParams();
-                    marginLayoutParams.topMargin = org.telegram.ui.ActionBar.k.getCurrentActionBarHeight();
-                    marginLayoutParams.bottomMargin = AndroidUtilities.dp(48.0f);
-                    marginLayoutParams.width = -1;
-                    marginLayoutParams.height = -1;
-                    popupNotificationActivity2.n.setLayoutParams(marginLayoutParams);
-                    popupNotificationActivity2.a(0);
-                    break;
-                }
-                break;
+    @Override // android.widget.RelativeLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        super.onLayout(z10, i10, i11, i12, i13);
+        for (int i14 = 0; i14 < getChildCount(); i14++) {
+            View childAt = getChildAt(i14);
+            if (childAt.getTag() instanceof String) {
+                int left = childAt.getLeft();
+                PopupNotificationActivity popupNotificationActivity = this.a;
+                childAt.layout(left, AndroidUtilities.dp(3.0f) + popupNotificationActivity.b.getTop(), childAt.getRight(), popupNotificationActivity.b.getBottom());
+            }
         }
-        return true;
+    }
+
+    @Override // android.widget.RelativeLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(i10, i11);
+        PopupNotificationActivity popupNotificationActivity = this.a;
+        int measuredWidth = popupNotificationActivity.b.getMeasuredWidth();
+        int measuredHeight = popupNotificationActivity.b.getMeasuredHeight();
+        for (int i12 = 0; i12 < getChildCount(); i12++) {
+            View childAt = getChildAt(i12);
+            if (childAt.getTag() instanceof String) {
+                childAt.measure(View.MeasureSpec.makeMeasureSpec(measuredWidth, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(measuredHeight - AndroidUtilities.dp(3.0f), TLObject.FLAG_30));
+            }
+        }
     }
 }

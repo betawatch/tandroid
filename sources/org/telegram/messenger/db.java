@@ -1,54 +1,51 @@
 package org.telegram.messenger;
 
-import android.content.Context;
-import org.telegram.messenger.voip.VoIPGroupNotification;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.ui.Components.ChatActivityEnterView;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class db implements Runnable {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ int b;
+    public final /* synthetic */ int a;
+    public final /* synthetic */ NotificationCenter.NotificationCenterDelegate b;
     public final /* synthetic */ long c;
-    public final /* synthetic */ long d;
+    public final /* synthetic */ int d;
     public final /* synthetic */ int e;
     public final /* synthetic */ boolean f;
-    public final /* synthetic */ Object h;
-    public final /* synthetic */ Object n;
-    public final /* synthetic */ Object r;
 
-    public /* synthetic */ db(MessagesController messagesController, long j10, int i10, int i11, long j11, TLRPC.TL_messages_affectedHistory tL_messages_affectedHistory, boolean z10, Runnable runnable) {
-        this.h = messagesController;
+    public /* synthetic */ db(int i10, int i11, int i12, long j10, MessagesController messagesController, boolean z10) {
+        this.a = i12;
+        this.b = messagesController;
         this.c = j10;
-        this.b = i10;
+        this.d = i10;
         this.e = i11;
-        this.d = j11;
-        this.n = tL_messages_affectedHistory;
         this.f = z10;
-        this.r = runnable;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        switch (this.a) {
+        int i10 = this.a;
+        NotificationCenter.NotificationCenterDelegate notificationCenterDelegate = this.b;
+        switch (i10) {
             case 0:
-                ((MessagesController) this.h).lambda$deleteMessagesRange$469(this.c, this.b, this.e, this.d, (TLRPC.TL_messages_affectedHistory) this.n, this.f, (Runnable) this.r);
+                ((MessagesController) notificationCenterDelegate).lambda$markDialogAsRead$240(this.c, this.d, this.e, this.f);
+                break;
+            case 1:
+                ((MessagesController) notificationCenterDelegate).lambda$markDialogAsRead$241(this.c, this.d, this.e, this.f);
                 break;
             default:
-                VoIPGroupNotification.lambda$request$0((TLObject) this.h, this.b, this.c, this.d, this.e, this.f, (Context) this.n, (String) this.r);
+                int i11 = ChatActivityEnterView.r5;
+                ((ChatActivityEnterView) notificationCenterDelegate).Q0(this.d, this.f, this.e, false, this.c);
                 break;
         }
     }
 
-    public /* synthetic */ db(TLObject tLObject, int i10, long j10, long j11, int i11, boolean z10, Context context, String str) {
-        this.h = tLObject;
-        this.b = i10;
-        this.c = j10;
-        this.d = j11;
-        this.e = i11;
+    public /* synthetic */ db(ChatActivityEnterView chatActivityEnterView, boolean z10, int i10, int i11, long j10) {
+        this.a = 2;
+        this.b = chatActivityEnterView;
         this.f = z10;
-        this.n = context;
-        this.r = str;
+        this.d = i10;
+        this.e = i11;
+        this.c = j10;
     }
 }

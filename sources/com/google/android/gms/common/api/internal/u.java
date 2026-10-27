@@ -5,16 +5,16 @@ import java.util.ArrayList;
 import m4.t1;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.SharedConfig;
-import org.telegram.ui.Components.c91;
 import org.telegram.ui.Components.d91;
-import org.telegram.ui.Components.s81;
+import org.telegram.ui.Components.e91;
+import org.telegram.ui.Components.t81;
 import org.telegram.ui.PhotoViewer;
-import org.telegram.ui.lj0;
-import org.telegram.ui.vt0;
+import org.telegram.ui.nj0;
+import org.telegram.ui.xt0;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
-public final class u implements c91 {
+public final class u implements d91 {
     public int a;
     public boolean b;
     public Object c;
@@ -49,7 +49,7 @@ public final class u implements c91 {
 
     public void c(int i10) {
         PhotoViewer photoViewer = (PhotoViewer) this.d;
-        Object obj = d91.f0;
+        Object obj = e91.f0;
         if (i10 == 2) {
             Drawable[] drawableArr = PhotoViewer.U8;
             photoViewer.v0();
@@ -58,19 +58,19 @@ public final class u implements c91 {
                 photoViewer.t0();
                 photoViewer.V7 = -1L;
             }
-            vt0 vt0Var = photoViewer.f0;
-            if (vt0Var == null || !vt0Var.x) {
-                s81 s81Var = photoViewer.F2;
-                if (s81Var == null || !s81Var.y()) {
+            xt0 xt0Var = photoViewer.f0;
+            if (xt0Var == null || !xt0Var.x) {
+                t81 t81Var = photoViewer.F2;
+                if (t81Var == null || !t81Var.y()) {
                     z10 = false;
                 }
             } else {
-                z10 = vt0Var.G;
+                z10 = xt0Var.G;
             }
             this.b = z10;
             if (z10) {
                 photoViewer.H2 = false;
-                photoViewer.j2();
+                photoViewer.k2();
                 photoViewer.e0.invalidate();
             }
         }
@@ -78,16 +78,16 @@ public final class u implements c91 {
 
     public void d(int i10) {
         PhotoViewer photoViewer = (PhotoViewer) this.d;
-        lj0 lj0Var = (lj0) this.c;
-        if (lj0Var != null) {
-            AndroidUtilities.cancelRunOnUIThread(lj0Var);
-            ((lj0) this.c).run();
+        nj0 nj0Var = (nj0) this.c;
+        if (nj0Var != null) {
+            AndroidUtilities.cancelRunOnUIThread(nj0Var);
+            ((nj0) this.c).run();
         }
         Drawable[] drawableArr = PhotoViewer.U8;
         photoViewer.v0();
         int i11 = photoViewer.c2;
         if (i11 == 1 && photoViewer.z2 != null) {
-            Object obj = d91.f0;
+            Object obj = e91.f0;
             if (i10 == 2) {
                 photoViewer.t0();
                 photoViewer.V7 = photoViewer.v8;
@@ -100,7 +100,7 @@ public final class u implements c91 {
         }
         if (i11 == 1 || this.b) {
             photoViewer.H2 = false;
-            photoViewer.l2();
+            photoViewer.m2();
         }
     }
 
@@ -115,11 +115,11 @@ public final class u implements c91 {
 
     public void f(float f7) {
         PhotoViewer photoViewer = (PhotoViewer) this.d;
-        s81 s81Var = photoViewer.F2;
-        if (s81Var == null) {
+        t81 t81Var = photoViewer.F2;
+        if (t81Var == null) {
             return;
         }
-        if (s81Var.y()) {
+        if (t81Var.y()) {
             photoViewer.H2 = false;
             photoViewer.F2.B();
             photoViewer.e0.invalidate();
@@ -128,7 +128,7 @@ public final class u implements c91 {
         h(f7);
         photoViewer.q3.h(1.0f, false);
         photoViewer.S7.setProgress(f7);
-        photoViewer.D3();
+        photoViewer.E3();
     }
 
     public void g() {
@@ -151,15 +151,15 @@ public final class u implements c91 {
         PhotoViewer photoViewer = (PhotoViewer) this.d;
         this.a = (int) (photoViewer.i8 * f7);
         if (SharedConfig.getDevicePerformanceClass() != 2) {
-            if (((lj0) this.c) == null) {
-                lj0 lj0Var = new lj0(this, 17);
-                this.c = lj0Var;
-                AndroidUtilities.runOnUIThread(lj0Var, 100L);
+            if (((nj0) this.c) == null) {
+                nj0 nj0Var = new nj0(this, 17);
+                this.c = nj0Var;
+                AndroidUtilities.runOnUIThread(nj0Var, 100L);
                 return;
             }
             return;
         }
-        photoViewer.v2(this.a);
+        photoViewer.w2(this.a);
         if (photoViewer.c2 == 1) {
             long j10 = this.a;
             photoViewer.X7 = j10;

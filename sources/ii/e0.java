@@ -12,13 +12,13 @@ import org.telegram.ui.ActionBar.f7;
 import org.telegram.ui.ActionBar.k3;
 import org.telegram.ui.ActionBar.u6;
 import org.telegram.ui.ActionBar.y6;
-import org.telegram.ui.Components.gb1;
 import org.telegram.ui.Components.j9;
-import org.telegram.ui.Components.r71;
+import org.telegram.ui.Components.kb1;
+import org.telegram.ui.Components.s71;
 import org.telegram.ui.Components.y9;
 import org.telegram.ui.Components.zq;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class e0 extends g0 {
     public final y9 h;
@@ -41,17 +41,17 @@ public final class e0 extends g0 {
         t tVar = new t(j0Var, 3);
         t tVar2 = new t(j0Var, 4);
         u6Var = ((k3) j0Var).resourcesProvider;
-        r71 r71Var = new r71(context, i10, 0, false, sVar, tVar, tVar2, u6Var);
-        this.d = r71Var;
-        r71Var.u1();
-        r71 r71Var2 = this.d;
-        r71Var2.g3.r = false;
-        r71Var2.setClipToPadding(false);
+        s71 s71Var = new s71(context, i10, 0, false, sVar, tVar, tVar2, u6Var);
+        this.d = s71Var;
+        s71Var.u1();
+        s71 s71Var2 = this.d;
+        s71Var2.g3.r = false;
+        s71Var2.setClipToPadding(false);
         this.d.setPadding(0, 0, 0, AndroidUtilities.dp(60.0f) + AndroidUtilities.navigationBarHeight);
         AndroidUtilities.removeFromParent(this.b);
-        this.c.addView(j0Var.F, gb1.k());
-        this.c.addView(this.d, gb1.k());
-        this.c.addView(j0Var.H, gb1.k());
+        this.c.addView(j0Var.F, kb1.k());
+        this.c.addView(this.d, kb1.k());
+        this.c.addView(j0Var.H, kb1.k());
         u6Var2 = ((k3) j0Var).resourcesProvider;
         org.telegram.ui.ActionBar.k kVar = new org.telegram.ui.ActionBar.k(context, u6Var2);
         this.a = kVar;
@@ -78,9 +78,9 @@ public final class e0 extends g0 {
         this.h = y9Var;
         y9Var.setRoundRadius(AndroidUtilities.dp(9.0f));
         y9Var.f(j0Var.f, j9Var);
-        this.a.addView(y9Var, gb1.f(27.33f, 27.33f, 83, 14.33f, 0.0f, 0.0f, 14.33f));
-        this.c.addView(this.a, gb1.i(-1, 56, 48));
-        this.c.addView(j0Var.y, gb1.h(-1, 40.0f, 48, 11.0f, 0.0f, 11.0f, 0.0f));
+        this.a.addView(y9Var, kb1.f(27.33f, 27.33f, 83, 14.33f, 0.0f, 0.0f, 14.33f));
+        this.c.addView(this.a, kb1.i(-1, 56, 48));
+        this.c.addView(j0Var.y, kb1.h(-1, 40.0f, 48, 11.0f, 0.0f, 11.0f, 0.0f));
         org.telegram.ui.ActionBar.z l4 = this.a.l();
         l4.setGlassMode(true);
         l4.setTranslationX(-AndroidUtilities.dp(7.0f));
@@ -103,7 +103,7 @@ public final class e0 extends g0 {
         }
         j0Var.n = dVar;
         dVar.setOnClickListener(new ig.d0(this, 5));
-        this.c.addView(dVar, gb1.j(48.0f, 80, AndroidUtilities.dp(12.0f), 0, AndroidUtilities.dp(12.0f), AndroidUtilities.dp(12.0f) + AndroidUtilities.navigationBarHeight));
+        this.c.addView(dVar, kb1.j(48.0f, 80, AndroidUtilities.dp(12.0f), 0, AndroidUtilities.dp(12.0f), AndroidUtilities.dp(12.0f) + AndroidUtilities.navigationBarHeight));
         a();
     }
 

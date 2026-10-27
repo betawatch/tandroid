@@ -19,7 +19,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public class z00 extends View {
     public static final int[] E;
@@ -305,7 +305,7 @@ public class z00 extends View {
                     arrayList.add(a(true));
                 }
             }
-            float w10 = org.telegram.messenger.vh.w(i10, 16.0f, 0.15f, this.e);
+            float w10 = org.telegram.messenger.wh.w(i10, 16.0f, 0.15f, this.e);
             this.e = w10;
             if (w10 < 0.2f) {
                 this.e = 0.2f;
@@ -316,7 +316,7 @@ public class z00 extends View {
             return;
         }
         this.c = false;
-        AndroidUtilities.runOnUIThread(new bq(this, 20));
+        AndroidUtilities.runOnUIThread(new cp(this, 21));
         b();
     }
 

@@ -5,9 +5,9 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.q80;
+import org.telegram.ui.r80;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class k implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -21,7 +21,6 @@ public final /* synthetic */ class k implements Utilities.Callback {
     @Override // org.telegram.messenger.Utilities.Callback
     public final void run(Object obj) {
         int i10 = this.a;
-        int i11 = 1;
         Object obj2 = this.b;
         switch (i10) {
             case 0:
@@ -34,7 +33,7 @@ public final /* synthetic */ class k implements Utilities.Callback {
             case 2:
                 String str = (String) obj;
                 e2.k("approve session", str);
-                ((q80) obj2).run(str);
+                ((r80) obj2).run(str);
                 break;
             case 3:
                 String str2 = (String) obj;
@@ -42,17 +41,17 @@ public final /* synthetic */ class k implements Utilities.Callback {
                 ((Utilities.Callback) obj2).run(str2);
                 break;
             case 4:
-                AndroidUtilities.runOnUIThread(new q6(i11, (t7) obj2, (TLRPC.UserFull) obj));
+                AndroidUtilities.runOnUIThread(new a6(2, (t7) obj2, (TLRPC.UserFull) obj));
                 break;
             default:
                 w7 w7Var = (w7) obj2;
                 w7Var.getClass();
-                int i12 = ((Integer) obj).intValue() == 0 ? 12 : 24;
-                if (w7Var.a != i12) {
-                    w7Var.a = i12;
+                int i11 = ((Integer) obj).intValue() == 0 ? 12 : 24;
+                if (w7Var.a != i11) {
+                    w7Var.a = i11;
                     w7Var.X(w7Var.getParentActivity());
                     w7Var.Z();
-                    w7Var.h.setText(w7Var.s != null ? LocaleController.formatSpannable(R.string.WalletImportCurrentPhraseInfo, Integer.valueOf(i12)) : LocaleController.formatSpannable(R.string.WalletImportPhraseInfo, Integer.valueOf(i12)));
+                    w7Var.h.setText(w7Var.s != null ? LocaleController.formatSpannable(R.string.WalletImportCurrentPhraseInfo, Integer.valueOf(i11)) : LocaleController.formatSpannable(R.string.WalletImportPhraseInfo, Integer.valueOf(i11)));
                     break;
                 }
                 break;

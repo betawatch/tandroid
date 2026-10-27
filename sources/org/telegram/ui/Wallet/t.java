@@ -5,7 +5,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_wallet;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class t implements Utilities.Callback3 {
     public final /* synthetic */ int a = 0;
@@ -34,9 +34,9 @@ public final /* synthetic */ class t implements Utilities.Callback3 {
                 int i10 = l0Var.a;
                 if (tL_error == null || !"WALLET_PROOF_EXPIRED".equalsIgnoreCase(tL_error.text)) {
                     if (tL_error == null) {
-                        l0Var.i0(walletState);
-                        new p0(l0.v(), l0Var.s(), i10).p(UserConfig.getInstance(i10).getClientUserId(), bArr, i0Var, callback);
-                        l0Var.P();
+                        l0Var.l0(walletState);
+                        new p0(l0.w(), l0Var.t(), i10).p(UserConfig.getInstance(i10).getClientUserId(), bArr, i0Var, callback);
+                        l0Var.R();
                         break;
                     } else {
                         String str = tL_error.text;
@@ -56,11 +56,11 @@ public final /* synthetic */ class t implements Utilities.Callback3 {
                 Utilities.Callback callback2 = (Utilities.Callback) obj3;
                 String str4 = r9Var.f;
                 l0 l0Var2 = this.b;
-                if (!l0.a(str4, l0Var2.s())) {
+                if (!l0.b(str4, l0Var2.t())) {
                     callback2.run("WALLET_CHANGED");
                     break;
                 } else {
-                    l0Var2.b0(user, str2, 0L, str3, null, r9Var.e, null, new s(13, r9Var, callback2), null, null);
+                    l0Var2.d0(user, str2, 0L, str3, null, r9Var.e, null, new s(13, r9Var, callback2), null, null);
                     break;
                 }
         }

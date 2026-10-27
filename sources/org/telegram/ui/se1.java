@@ -1,12 +1,37 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
-/* loaded from: classes3.dex */
-public final class se1 {
-    public final int a;
-    public int b;
+import android.graphics.Canvas;
+import android.widget.FrameLayout;
+import android.widget.TextView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
 
-    public se1(int i10) {
-        this.a = i10;
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* loaded from: classes3.dex */
+public final class se1 extends FrameLayout {
+    public TextView a;
+    public float b;
+    public boolean c;
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        super.dispatchDraw(canvas);
+        if (this.c) {
+            float f7 = this.b + 0.013333334f;
+            this.b = f7;
+            if (f7 > 1.0f) {
+                this.c = false;
+                this.b = 1.0f;
+            }
+        } else {
+            float f10 = this.b - 0.013333334f;
+            this.b = f10;
+            if (f10 < 0.0f) {
+                this.c = true;
+                this.b = 0.0f;
+            }
+        }
+        this.a.setTranslationX(org.telegram.ui.Components.ds.f.getInterpolation(this.b) * AndroidUtilities.dp(8.0f) * (LocaleController.isRTL ? -1 : 1));
+        invalidate();
     }
 }

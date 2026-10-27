@@ -17,7 +17,7 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public class y9 extends View {
     public Path E;
@@ -35,7 +35,7 @@ public class y9 extends View {
     public boolean v;
     public boolean w;
     public ValueAnimator x;
-    public q11 y;
+    public r11 y;
 
     public y9(Context context) {
         super(context);
@@ -135,9 +135,9 @@ public class y9 extends View {
         m(imageLocation, str, null, null, drawable, null, 0, obj);
     }
 
-    public final void o(d81 d81Var, ImageLocation imageLocation, String str, ImageLocation imageLocation2, ImageLocation imageLocation3, String str2, int i10, String str3) {
-        if (d81Var != null) {
-            this.a.setImageBitmap(d81Var);
+    public final void o(e81 e81Var, ImageLocation imageLocation, String str, ImageLocation imageLocation2, ImageLocation imageLocation3, String str2, int i10, String str3) {
+        if (e81Var != null) {
+            this.a.setImageBitmap(e81Var);
         } else {
             this.a.setImage(imageLocation, str, imageLocation2, null, imageLocation3, str2, null, i10, null, str3, 1);
         }
@@ -272,7 +272,7 @@ public class y9 extends View {
             this.y = null;
             return;
         }
-        this.y = new q11(charSequence, 16.5f, AndroidUtilities.bold());
+        this.y = new r11(charSequence, 16.5f, AndroidUtilities.bold());
         if (this.F == null) {
             ColorMatrix colorMatrix = new ColorMatrix();
             colorMatrix.setSaturation(1.2f);

@@ -21,9 +21,9 @@ import org.telegram.ui.ActionBar.b7;
 import org.telegram.ui.ActionBar.f7;
 import org.telegram.ui.ActionBar.u6;
 import org.telegram.ui.ActionBar.y6;
-import org.telegram.ui.Components.gb1;
+import org.telegram.ui.Components.kb1;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class u extends FrameLayout {
     public final b6 a;
@@ -49,20 +49,20 @@ public final class u extends FrameLayout {
         imageView.setBackground(K);
         f7.k(imageView, K, N, null, null);
         imageView.setOnClickListener(new ig.d0(this, 7));
-        addView(imageView, gb1.m(36.0f, 36.0f, 8388627, 14.0f, 0.0f, 14.0f, 0.0f));
+        addView(imageView, kb1.m(36.0f, 36.0f, 8388627, 14.0f, 0.0f, 14.0f, 0.0f));
         b6 b6Var = new b6(context);
         this.a = b6Var;
         b6Var.setTextSize(15);
         f7.Y(b6Var, y6.G6, null);
         b6Var.setGravity(LocaleController.isRTL ? 5 : 3);
-        addView(b6Var, gb1.m(-1.0f, 20.0f, 55, 64.0f, 10.0f, 14.0f, 0.0f));
+        addView(b6Var, kb1.m(-1.0f, 20.0f, 55, 64.0f, 10.0f, 14.0f, 0.0f));
         b6 b6Var2 = new b6(context);
         this.c = b6Var2;
         b6Var2.setTextSize(14);
         int i11 = y6.z6;
         f7.Y(b6Var2, i11, null);
         b6Var2.setGravity(LocaleController.isRTL ? 3 : 5);
-        addView(b6Var2, gb1.m(-1.0f, 18.0f, 55, 64.0f, 10.66f, 14.0f, 0.0f));
+        addView(b6Var2, kb1.m(-1.0f, 18.0f, 55, 64.0f, 10.66f, 14.0f, 0.0f));
         xh.n nVar = new xh.n(context);
         this.b = nVar;
         nVar.setTextSize(1, 13.0f);
@@ -73,7 +73,7 @@ public final class u extends FrameLayout {
         nVar.r = false;
         nVar.setUseAlphaForEmoji(false);
         NotificationCenter.listenEmojiLoading(nVar);
-        addView(nVar, gb1.m(-1.0f, 20.0f, 87, 64.0f, 0.0f, 14.0f, 6.0f));
+        addView(nVar, kb1.m(-1.0f, 20.0f, 87, 64.0f, 0.0f, 14.0f, 6.0f));
     }
 
     @Override // android.view.View

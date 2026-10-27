@@ -1,112 +1,138 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
+import android.text.TextUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import java.util.ArrayList;
-import org.telegram.messenger.DialogObject;
+import org.telegram.messenger.ChatObject;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public final class lu0 extends lm0 {
+public final class lu0 extends mm0 {
     public final Context c;
-    public final ArrayList d = new ArrayList();
-    public boolean e;
-    public boolean f;
-    public boolean h;
-    public final /* synthetic */ aw0 n;
+    public TLRPC.ChatFull d;
+    public ArrayList e;
+    public final /* synthetic */ bw0 f;
 
-    public lu0(aw0 aw0Var, Context context) {
-        this.n = aw0Var;
+    public lu0(bw0 bw0Var, Context context) {
+        this.f = bw0Var;
         this.c = context;
     }
 
-    public static void E(lu0 lu0Var, long j10) {
-        aw0 aw0Var = lu0Var.n;
-        if (lu0Var.e) {
-            return;
-        }
-        TLRPC.TL_messages_getCommonChats tL_messages_getCommonChats = new TLRPC.TL_messages_getCommonChats();
-        long j11 = aw0Var.l1;
-        org.telegram.ui.ActionBar.r2 r2Var = aw0Var.x1;
-        if (DialogObject.isEncryptedDialog(j11)) {
-            j11 = org.telegram.messenger.t.m(r2Var.getMessagesController(), j11).user_id;
-        }
-        TLRPC.InputUser inputUser = r2Var.getMessagesController().getInputUser(j11);
-        tL_messages_getCommonChats.user_id = inputUser;
-        if (inputUser instanceof TLRPC.TL_inputUserEmpty) {
-            return;
-        }
-        tL_messages_getCommonChats.limit = 100;
-        tL_messages_getCommonChats.max_id = j10;
-        lu0Var.e = true;
-        lu0Var.l();
-        r2Var.getConnectionsManager().bindRequestToGuid(r2Var.getConnectionsManager().sendRequest(tL_messages_getCommonChats, new b2(lu0Var, 12)), r2Var.getClassGuid());
-    }
-
-    @Override // org.telegram.ui.Components.lm0
+    @Override // org.telegram.ui.Components.mm0
     public final boolean D(s4.e1 e1Var) {
-        return e1Var.b() != this.d.size();
+        return true;
     }
 
     @Override // s4.h0
     public final int h() {
-        ArrayList arrayList = this.d;
-        if (arrayList.isEmpty() && !this.e) {
+        TLRPC.ChatFull chatFull = this.d;
+        if (chatFull != null && chatFull.participants.participants.isEmpty()) {
             return 1;
         }
-        int size = arrayList.size();
-        return (arrayList.isEmpty() || this.h) ? size : size + 1;
+        TLRPC.ChatFull chatFull2 = this.d;
+        if (chatFull2 != null) {
+            return chatFull2.participants.participants.size();
+        }
+        return 0;
     }
 
     @Override // s4.h0
     public final int j(int i10) {
-        ArrayList arrayList = this.d;
-        if (!arrayList.isEmpty() || this.e) {
-            return i10 < arrayList.size() ? 14 : 16;
-        }
-        return 15;
+        TLRPC.ChatFull chatFull = this.d;
+        return (chatFull == null || !chatFull.participants.participants.isEmpty()) ? 21 : 20;
     }
 
     @Override // s4.h0
     public final void v(s4.e1 e1Var, int i10) {
-        if (e1Var.f == 14) {
-            View view = e1Var.a;
-            if (view instanceof org.telegram.ui.Cells.m6) {
-                org.telegram.ui.Cells.m6 m6Var = (org.telegram.ui.Cells.m6) view;
-                ArrayList arrayList = this.d;
-                m6Var.s((TLRPC.Chat) arrayList.get(i10), null, null, null, false, false);
-                boolean z10 = true;
-                if (i10 == arrayList.size() - 1 && this.h) {
-                    z10 = false;
+        String str;
+        boolean z10;
+        boolean z11;
+        boolean z12;
+        boolean z13;
+        boolean z14;
+        boolean z15;
+        bw0 bw0Var = this.f;
+        org.telegram.ui.ActionBar.r2 r2Var = bw0Var.x1;
+        View view = e1Var.a;
+        if (view instanceof org.telegram.ui.Cells.ab) {
+            org.telegram.ui.Cells.ab abVar = (org.telegram.ui.Cells.ab) view;
+            TLRPC.ChatParticipant chatParticipant = !this.e.isEmpty() ? this.d.participants.participants.get(((Integer) this.e.get(i10)).intValue()) : this.d.participants.participants.get(i10);
+            if (chatParticipant != null) {
+                if (chatParticipant instanceof TLRPC.TL_chatChannelParticipant) {
+                    TLRPC.ChannelParticipant channelParticipant = ((TLRPC.TL_chatChannelParticipant) chatParticipant).channelParticipant;
+                    String str2 = channelParticipant.rank;
+                    if (channelParticipant instanceof TLRPC.TL_channelParticipantCreator) {
+                        if (TextUtils.isEmpty(str2)) {
+                            str2 = LocaleController.getString("ChannelCreator", R.string.ChannelCreator);
+                        }
+                        z14 = true;
+                        z15 = true;
+                        z13 = false;
+                    } else if (channelParticipant instanceof TLRPC.TL_channelParticipantAdmin) {
+                        if (TextUtils.isEmpty(str2)) {
+                            str2 = LocaleController.getString("ChannelAdmin", R.string.ChannelAdmin);
+                        }
+                        z13 = channelParticipant.promoted_by == r2Var.getUserConfig().getClientUserId();
+                        z14 = true;
+                        z15 = false;
+                    } else {
+                        z13 = false;
+                        z14 = false;
+                        z15 = false;
+                    }
+                    boolean z16 = z15;
+                    z12 = z13;
+                    z10 = z14;
+                    z11 = z16;
+                    str = str2;
+                } else {
+                    String str3 = chatParticipant.rank;
+                    if (chatParticipant instanceof TLRPC.TL_chatParticipantCreator) {
+                        if (TextUtils.isEmpty(str3)) {
+                            str3 = LocaleController.getString("ChannelCreator", R.string.ChannelCreator);
+                        }
+                        str = str3;
+                        z10 = true;
+                        z11 = true;
+                        z12 = false;
+                    } else if (chatParticipant instanceof TLRPC.TL_chatParticipantAdmin) {
+                        if (TextUtils.isEmpty(str3)) {
+                            str3 = LocaleController.getString("ChannelAdmin", R.string.ChannelAdmin);
+                        }
+                        z12 = chatParticipant.inviter_id == r2Var.getUserConfig().getClientUserId();
+                        str = str3;
+                        z10 = true;
+                        z11 = false;
+                    } else {
+                        str = str3;
+                        z10 = false;
+                        z11 = false;
+                        z12 = false;
+                    }
                 }
-                m6Var.M = z10;
+                TLRPC.User user = r2Var.getMessagesController().getUser(Long.valueOf(chatParticipant.user_id));
+                abVar.a(str, z10, z11, UserObject.isUserSelf(user) && ChatObject.canManageMyTag(r2Var.getMessagesController().getChat(Long.valueOf(-bw0Var.l1))), new e70(this, user, str, z10, z11, z12, 1));
+                abVar.d(user, null, null, i10 != this.d.participants.participants.size() - 1);
             }
         }
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
     @Override // s4.h0
     public final s4.e1 x(ViewGroup viewGroup, int i10) {
-        org.telegram.ui.Cells.m6 m6Var;
-        aw0 aw0Var = this.n;
-        org.telegram.ui.ActionBar.u6 u6Var = aw0Var.H1;
-        Context context = this.c;
-        if (i10 == 14) {
-            m6Var = new org.telegram.ui.Cells.m6(context, u6Var);
-        } else {
-            if (i10 == 15) {
-                nu0 U = aw0.U(6, aw0Var.l1, context, u6Var);
-                U.setLayoutParams(new s4.q0(-1, -1));
-                return new vl0(U);
-            }
-            c10 c10Var = new c10(context, u6Var);
-            c10Var.setIsSingleCell(true);
-            c10Var.w = false;
-            c10Var.setViewType(1);
-            m6Var = c10Var;
+        bw0 bw0Var = this.f;
+        if (i10 != 20) {
+            org.telegram.ui.Cells.ab abVar = new org.telegram.ui.Cells.ab(9, 0, this.c, bw0Var.H1, true, false);
+            abVar.setLayoutParams(new s4.q0(-1, -2));
+            return new wl0(abVar);
         }
-        return ic.a.n(m6Var, m6Var, -1, -2);
+        ou0 U = bw0.U(7, bw0Var.l1, this.c, bw0Var.H1);
+        U.setLayoutParams(new s4.q0(-1, -1));
+        return new wl0(U);
     }
 }

@@ -18,9 +18,9 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.ar0;
+import org.telegram.ui.Components.br0;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public class a2 {
     public z1 a;
@@ -118,8 +118,8 @@ public class a2 {
                 if (obj instanceof h0) {
                     obj = ((h0) obj).a;
                 }
-                if (obj instanceof ar0) {
-                    obj = ((ar0) obj).b;
+                if (obj instanceof br0) {
+                    obj = ((br0) obj).b;
                 }
                 boolean z10 = obj instanceof TLRPC.User;
                 ArrayList arrayList3 = this.d;

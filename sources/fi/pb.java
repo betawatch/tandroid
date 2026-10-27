@@ -3,10 +3,10 @@ package fi;
 import android.animation.ValueAnimator;
 import android.view.MotionEvent;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.fc1;
+import org.telegram.ui.Components.kc1;
 import org.telegram.ui.Components.w20;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class pb extends w20 {
     public final /* synthetic */ rb a;
@@ -67,12 +67,12 @@ public final class pb extends w20 {
     public final boolean onFling(MotionEvent motionEvent, MotionEvent motionEvent2, float f7, float f10) {
         g7 g7Var;
         va vaVar;
-        fc1 fc1Var;
+        kc1 kc1Var;
         fb fbVar;
         rb rbVar = this.a;
         sb sbVar = rbVar.t0;
         ValueAnimator valueAnimator = sbVar.E;
-        if ((valueAnimator != null && valueAnimator.isRunning()) || (((g7Var = sbVar.D0) != null && (g7Var.x.i || g7Var.L)) || sbVar.O0.x0 || (((vaVar = sbVar.B0) != null && vaVar.s) || rbVar.p0 || (((fc1Var = sbVar.V0) != null && (fc1Var.F || fc1Var.G)) || sbVar.H())))) {
+        if ((valueAnimator != null && valueAnimator.isRunning()) || (((g7Var = sbVar.D0) != null && (g7Var.x.i || g7Var.L)) || sbVar.O0.x0 || (((vaVar = sbVar.B0) != null && vaVar.s) || rbVar.p0 || (((kc1Var = sbVar.V0) != null && (kc1Var.F || kc1Var.G)) || sbVar.H())))) {
             return false;
         }
         boolean z10 = true;
@@ -119,13 +119,13 @@ public final class pb extends w20 {
     public final boolean onScroll(MotionEvent motionEvent, MotionEvent motionEvent2, float f7, float f10) {
         g7 g7Var;
         va vaVar;
-        fc1 fc1Var;
+        kc1 kc1Var;
         qa qaVar;
         float f11;
         rb rbVar = this.a;
         sb sbVar = rbVar.t0;
         ValueAnimator valueAnimator = sbVar.E;
-        if ((valueAnimator != null && valueAnimator.isRunning()) || sbVar.o2 != null || sbVar.n2 != null || (((g7Var = sbVar.D0) != null && (g7Var.x.i || g7Var.L)) || sbVar.O0.x0 || (((vaVar = sbVar.B0) != null && vaVar.s) || rbVar.p0 || (((fc1Var = sbVar.V0) != null && (fc1Var.F || fc1Var.G)) || sbVar.H() || sbVar.Q1 || sbVar.P1 || sbVar.f0 != 0)))) {
+        if ((valueAnimator != null && valueAnimator.isRunning()) || sbVar.o2 != null || sbVar.n2 != null || (((g7Var = sbVar.D0) != null && (g7Var.x.i || g7Var.L)) || sbVar.O0.x0 || (((vaVar = sbVar.B0) != null && vaVar.s) || rbVar.p0 || (((kc1Var = sbVar.V0) != null && (kc1Var.F || kc1Var.G)) || sbVar.H() || sbVar.Q1 || sbVar.P1 || sbVar.f0 != 0)))) {
             return false;
         }
         if (!sbVar.X) {

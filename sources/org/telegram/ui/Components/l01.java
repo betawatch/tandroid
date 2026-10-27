@@ -1,23 +1,18 @@
 package org.telegram.ui.Components;
 
-import android.view.ViewGroup;
-import org.telegram.tgnet.TLObject;
-
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public final class l01 extends ViewGroup.MarginLayoutParams {
-    public n01 a;
-    public n01 b;
+public final class l01 {
+    public final int a;
+    public final int b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public l01() {
-        super(-2, -2);
-        n01 n01Var = n01.e;
-        this.a = n01Var;
-        this.b = n01Var;
-        setMargins(TLObject.FLAG_31, TLObject.FLAG_31, TLObject.FLAG_31, TLObject.FLAG_31);
-        this.a = n01Var;
-        this.b = n01Var;
+    public l01(int i10, int i11) {
+        this.a = i10;
+        this.b = i11;
+    }
+
+    public final int a() {
+        return this.b - this.a;
     }
 
     public final boolean equals(Object obj) {
@@ -28,10 +23,10 @@ public final class l01 extends ViewGroup.MarginLayoutParams {
             return false;
         }
         l01 l01Var = (l01) obj;
-        return this.b.equals(l01Var.b) && this.a.equals(l01Var.a);
+        return this.b == l01Var.b && this.a == l01Var.a;
     }
 
     public final int hashCode() {
-        return this.b.hashCode() + (this.a.hashCode() * 31);
+        return (this.a * 31) + this.b;
     }
 }

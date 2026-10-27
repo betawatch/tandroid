@@ -1,106 +1,157 @@
 package org.telegram.ui;
 
 import android.content.Context;
-import android.view.View;
+import android.text.SpannableString;
+import android.text.TextUtils;
+import android.view.ViewGroup;
 import java.util.ArrayList;
+import java.util.Locale;
+import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public final class g70 extends org.telegram.ui.Components.m71 {
-    public boolean e;
+public final class g70 extends org.telegram.ui.Components.mm0 {
+    public final Context c;
+    public ArrayList d = new ArrayList();
+    public ArrayList e = new ArrayList();
+    public kz f;
+    public String h;
+    public int n;
+    public final /* synthetic */ h70 r;
 
-    @Override // org.telegram.ui.Components.m71
-    public final void V(ArrayList arrayList, org.telegram.ui.Components.j71 j71Var) {
-        org.telegram.ui.ActionBar.t5 t5Var = (org.telegram.ui.ActionBar.t5) wi.e.k.a();
-        org.telegram.ui.ActionBar.s5 s5Var = (org.telegram.ui.ActionBar.s5) wi.e.l.a();
-        ic.a.p(R.string.HeaderDoneButtonColor, arrayList);
-        org.telegram.ui.Components.t61 x9 = org.telegram.ui.Components.t61.x(11, LocaleController.getString(R.string.HeaderDoneButtonColorAccent));
-        x9.L(t5Var == org.telegram.ui.ActionBar.t5.b);
-        arrayList.add(x9);
-        org.telegram.ui.Components.t61 x10 = org.telegram.ui.Components.t61.x(10, LocaleController.getString(R.string.HeaderDoneButtonColorGlass));
-        x10.L(t5Var == org.telegram.ui.ActionBar.t5.a);
-        arrayList.add(x10);
-        ic.a.z(R.string.HeaderDoneButtonColorInfo, arrayList);
-        ic.a.p(R.string.HeaderDoneButtonShape, arrayList);
-        org.telegram.ui.Components.t61 x11 = org.telegram.ui.Components.t61.x(20, LocaleController.getString(R.string.HeaderDoneButtonShapeIcon));
-        x11.L(s5Var == org.telegram.ui.ActionBar.s5.a);
-        arrayList.add(x11);
-        org.telegram.ui.Components.t61 x12 = org.telegram.ui.Components.t61.x(21, LocaleController.getString(R.string.HeaderDoneButtonShapeText));
-        x12.L(s5Var == org.telegram.ui.ActionBar.s5.b);
-        arrayList.add(x12);
-        arrayList.add(org.telegram.ui.Components.t61.C(null));
-        ic.a.p(R.string.HeaderDoneButtonPreview, arrayList);
-        org.telegram.ui.Components.t61 i10 = org.telegram.ui.Components.t61.i(30, LocaleController.getString(R.string.HeaderDoneButtonPreviewChanges));
-        i10.L(this.e);
-        arrayList.add(i10);
-        ic.a.z(R.string.HeaderDoneButtonPreviewInfo, arrayList);
+    public g70(h70 h70Var, Context context) {
+        this.r = h70Var;
+        this.c = context;
+        C(true);
     }
 
-    @Override // org.telegram.ui.Components.m71
-    public final CharSequence W() {
-        return LocaleController.getString(R.string.HeaderSettings);
-    }
-
-    @Override // org.telegram.ui.Components.m71
-    public final void X(org.telegram.ui.Components.t61 t61Var, View view) {
-        int i10 = t61Var.d;
-        if (i10 == 10 || i10 == 11) {
-            wi.e.k.b(i10 == 10 ? org.telegram.ui.ActionBar.t5.a : org.telegram.ui.ActionBar.t5.b);
-            Z();
-        } else if (i10 == 20 || i10 == 21) {
-            wi.e.l.b(i10 == 21 ? org.telegram.ui.ActionBar.s5.b : org.telegram.ui.ActionBar.s5.a);
-            Z();
-        } else {
-            if (i10 != 30) {
-                return;
+    public static void E(g70 g70Var, String str) {
+        h70 h70Var = g70Var.r;
+        if (h70Var.N) {
+            if (TextUtils.isEmpty(str)) {
+                h70Var.d.setBackground(null);
+            } else {
+                org.telegram.ui.ActionBar.f7.i(org.telegram.ui.ActionBar.y6.d6, h70Var.d, h70Var.getResourceProvider());
             }
-            this.e = !this.e;
-            this.simpleActionBar.getDoneButton().a(this.e, true);
         }
-        this.a.g3.O(true);
-    }
-
-    @Override // org.telegram.ui.Components.m71
-    public final boolean Y(org.telegram.ui.Components.t61 t61Var, View view) {
-        return false;
-    }
-
-    public final void Z() {
-        org.telegram.ui.ActionBar.r5 r5Var = this.simpleActionBar;
-        org.telegram.ui.ActionBar.u5 u5Var = r5Var.n;
-        if (u5Var != null) {
-            r5Var.removeView(u5Var);
-            r5Var.n = null;
-            r5Var.c();
-            r5Var.requestLayout();
+        if (g70Var.n != 0) {
+            h70Var.getConnectionsManager().cancelRequest(g70Var.n, true);
+            g70Var.n = 0;
         }
-        this.simpleActionBar.i(LocaleController.getString(R.string.Save)).a(this.e, false);
+        kz kzVar = g70Var.f;
+        if (kzVar != null) {
+            AndroidUtilities.cancelRunOnUIThread(kzVar);
+            g70Var.f = null;
+        }
+        g70Var.h = null;
+        int h = g70Var.h();
+        if (h > 0) {
+            g70Var.d.clear();
+            g70Var.e.clear();
+            g70Var.t(0, h);
+        }
+        if (TextUtils.isEmpty(str)) {
+            h70Var.b.setVisibility(8);
+            h70Var.b.e(false, true);
+            return;
+        }
+        if (h70Var.b.getVisibility() != 0) {
+            h70Var.b.setVisibility(0);
+            h70Var.b.e(true, false);
+        } else {
+            h70Var.b.e(true, true);
+        }
+        kz kzVar2 = new kz(15, g70Var, str);
+        g70Var.f = kzVar2;
+        AndroidUtilities.runOnUIThread(kzVar2, 300L);
     }
 
-    @Override // org.telegram.ui.Components.m71, org.telegram.ui.ActionBar.r2
-    public final View createView(Context context) {
-        setHasOwnBackground(true);
-        this.fragmentView = super.createView(context);
-        this.a.u1();
-        this.a.setSectionsDrawBackground(true);
-        Z();
-        return this.fragmentView;
+    @Override // org.telegram.ui.Components.mm0
+    public final boolean D(s4.e1 e1Var) {
+        return j(e1Var.b()) == 0;
     }
 
-    @Override // org.telegram.ui.ActionBar.r2
-    public final org.telegram.ui.Components.mm0 getListViewForSimpleGlass() {
-        return this.a;
+    @Override // s4.h0
+    public final int h() {
+        return this.e.size() + this.d.size() + (!this.e.isEmpty() ? 1 : 0);
     }
 
-    @Override // org.telegram.ui.ActionBar.r2
-    public final boolean isSupportEdgeToEdge() {
-        return true;
+    @Override // s4.h0
+    public final long i(int i10) {
+        if (j(i10) != 0) {
+            return -1L;
+        }
+        ArrayList arrayList = i10 > this.d.size() ? this.e : this.d;
+        if (i10 > this.d.size()) {
+            i10 = (i10 - this.d.size()) - 1;
+        }
+        return ((TLRPC.TL_messages_stickerSet) arrayList.get(i10)).set.id;
     }
 
-    @Override // org.telegram.ui.ActionBar.r2
-    public final boolean useSimpleActionBar() {
-        return true;
+    @Override // s4.h0
+    public final int j(int i10) {
+        return this.d.size() == i10 ? 1 : 0;
+    }
+
+    @Override // s4.h0
+    public final void v(s4.e1 e1Var, int i10) {
+        if (j(i10) != 0) {
+            return;
+        }
+        boolean z10 = i10 > this.d.size();
+        ArrayList arrayList = z10 ? this.e : this.d;
+        if (z10) {
+            i10 = (i10 - this.d.size()) - 1;
+        }
+        org.telegram.ui.Cells.p8 p8Var = (org.telegram.ui.Cells.p8) e1Var.a;
+        TLRPC.TL_messages_stickerSet tL_messages_stickerSet = (TLRPC.TL_messages_stickerSet) arrayList.get(i10);
+        p8Var.d(tL_messages_stickerSet, i10 != arrayList.size() - 1, !z10);
+        String str = this.h;
+        String lowerCase = str != null ? str.toLowerCase(Locale.ROOT) : "";
+        h70 h70Var = this.r;
+        org.telegram.ui.ActionBar.u6 resourceProvider = h70Var.getResourceProvider();
+        TLRPC.StickerSet stickerSet = tL_messages_stickerSet.set;
+        String str2 = stickerSet.title;
+        Locale locale = Locale.ROOT;
+        int indexOf = str2.toLowerCase(locale).indexOf(lowerCase);
+        if (indexOf != -1) {
+            SpannableString spannableString = new SpannableString(stickerSet.title);
+            spannableString.setSpan(new org.telegram.ui.Components.p10(org.telegram.ui.ActionBar.y6.q6, resourceProvider), indexOf, lowerCase.length() + indexOf, 0);
+            p8Var.b.setText(spannableString);
+        }
+        int indexOf2 = stickerSet.short_name.toLowerCase(locale).indexOf(lowerCase);
+        if (indexOf2 != -1) {
+            String str3 = stickerSet.emojis ? "t.me/addemoji/" : "t.me/addstickers/";
+            int length = str3.length() + indexOf2;
+            StringBuilder u10 = a1.g.u(str3);
+            u10.append(stickerSet.short_name);
+            SpannableString spannableString2 = new SpannableString(u10.toString());
+            spannableString2.setSpan(new org.telegram.ui.Components.p10(org.telegram.ui.ActionBar.y6.q6, resourceProvider), length, lowerCase.length() + length, 0);
+            p8Var.c.setText(spannableString2);
+        }
+        TLRPC.TL_messages_stickerSet tL_messages_stickerSet2 = h70Var.r;
+        p8Var.b(tL_messages_stickerSet.set.id == (tL_messages_stickerSet2 != null ? tL_messages_stickerSet2.set.id : h70Var.c0(h70Var.v) != null ? h70Var.c0(h70Var.v).id : 0L), false);
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    @Override // s4.h0
+    public final s4.e1 x(ViewGroup viewGroup, int i10) {
+        org.telegram.ui.Cells.p8 p8Var;
+        if (i10 != 0) {
+            int i11 = org.telegram.ui.ActionBar.y6.B6;
+            h70 h70Var = this.r;
+            org.telegram.ui.Cells.q4 q4Var = new org.telegram.ui.Cells.q4(this.c, i11, 21, 0, 0, false, false, h70Var.getResourceProvider());
+            q4Var.setText(LocaleController.getString(h70Var.N ? R.string.ChooseStickerMyEmojiPacks : R.string.ChooseStickerMyStickerSets));
+            p8Var = q4Var;
+        } else {
+            org.telegram.ui.Cells.p8 p8Var2 = new org.telegram.ui.Cells.p8(this.c, 3);
+            org.telegram.ui.ActionBar.f7.i(org.telegram.ui.ActionBar.y6.d6, p8Var2, null);
+            p8Var = p8Var2;
+        }
+        p8Var.setLayoutParams(new s4.q0(-1, -2));
+        return new org.telegram.ui.Components.wl0(p8Var);
     }
 }

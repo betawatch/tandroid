@@ -20,18 +20,18 @@ import org.telegram.messenger.ImageLocation;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.vh;
 import org.telegram.messenger.voip.VideoCapturerDevice;
+import org.telegram.messenger.wh;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.b10;
 import org.telegram.ui.Components.ds;
-import org.telegram.ui.Components.gb1;
+import org.telegram.ui.Components.kb1;
 import org.webrtc.RendererCommon;
 import org.webrtc.SurfaceViewRenderer;
 import org.webrtc.TextureViewRenderer;
 import org.webrtc.VideoSink;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class b4 extends FrameLayout implements RendererCommon.RendererEvents, NotificationCenter.NotificationCenterDelegate {
     public int a;
@@ -55,10 +55,10 @@ public final class b4 extends FrameLayout implements RendererCommon.RendererEven
         org.telegram.ui.Components.y9 y9Var = new org.telegram.ui.Components.y9(context);
         this.e = y9Var;
         y9Var.setAlpha(0.75f);
-        addView(y9Var, gb1.i(-1, -1, 119));
+        addView(y9Var, kb1.i(-1, -1, 119));
         TextureView textureView = new TextureView(context);
         this.f = textureView;
-        addView(textureView, gb1.i(-1, -1, 119));
+        addView(textureView, kb1.i(-1, -1, 119));
         TextureViewRenderer textureViewRenderer = new TextureViewRenderer(context);
         this.d = textureViewRenderer;
         textureViewRenderer.setOpaque(false);
@@ -66,14 +66,14 @@ public final class b4 extends FrameLayout implements RendererCommon.RendererEven
         textureViewRenderer.setIsCamera(true);
         textureViewRenderer.setRotateTextureWithScreen(true);
         textureViewRenderer.setScalingType(RendererCommon.ScalingType.SCALE_ASPECT_FIT);
-        addView(textureViewRenderer, gb1.i(-1, -1, 119));
+        addView(textureViewRenderer, kb1.i(-1, -1, 119));
         textureViewRenderer.setAlpha(1.0f);
         this.c = null;
         a4 a4Var = new a4(context);
         this.b = a4Var;
         a4Var.setAlpha(0.0f);
         a4Var.setVisibility(8);
-        addView(a4Var, gb1.i(-1, -1, 119));
+        addView(a4Var, kb1.i(-1, -1, 119));
     }
 
     public final boolean a() {
@@ -257,7 +257,7 @@ public final class b4 extends FrameLayout implements RendererCommon.RendererEven
     public final void e(boolean z10, boolean z11) {
         if (z10 || !z11) {
             if (z11) {
-                vh.q(getTextureView().animate().alpha(z10 ? 1.0f : 0.0f), ds.h, 320L);
+                wh.q(getTextureView().animate().alpha(z10 ? 1.0f : 0.0f), ds.h, 320L);
             } else {
                 getTextureView().animate().cancel();
                 getTextureView().setAlpha(z10 ? 1.0f : 0.0f);
@@ -310,7 +310,7 @@ public final class b4 extends FrameLayout implements RendererCommon.RendererEven
         if (this.h == null) {
             View view = new View(getContext());
             this.h = view;
-            addView(view, gb1.k());
+            addView(view, kb1.k());
         }
         return this.h;
     }
@@ -351,7 +351,7 @@ public final class b4 extends FrameLayout implements RendererCommon.RendererEven
             textureViewRenderer.init(VideoCapturerDevice.getEglBase().getEglBaseContext(), this);
             textureViewRenderer.setBackgroundRenderer(this.f);
         }
-        NotificationCenter.getInstance(this.a).addObserver(this, NotificationCenter.liveStoryUpdated);
+        NotificationCenter.getInstance(this.a).addWeakObserver(this, NotificationCenter.liveStoryUpdated);
     }
 
     @Override // android.view.ViewGroup, android.view.View
@@ -453,7 +453,7 @@ public final class b4 extends FrameLayout implements RendererCommon.RendererEven
         int i11 = NotificationCenter.liveStoryUpdated;
         notificationCenter.removeObserver(this, i11);
         this.a = i10;
-        NotificationCenter.getInstance(i10).addObserver(this, i11);
+        NotificationCenter.getInstance(i10).addWeakObserver(this, i11);
     }
 
     public void setKeyboardOffset(float f7) {

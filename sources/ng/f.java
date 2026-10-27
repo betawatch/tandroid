@@ -16,12 +16,12 @@ import fi.b5;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.messenger.vh;
+import org.telegram.messenger.wh;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.y6;
-import org.telegram.ui.Components.gb1;
+import org.telegram.ui.Components.kb1;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class f extends FrameLayout {
     public final Paint a;
@@ -97,7 +97,7 @@ public final class f extends FrameLayout {
         });
         imageView.setOnLongClickListener(new b5(this, 5));
         imageView.setContentDescription(LocaleController.getString(R.string.AccDescrMirror));
-        addView(imageView, gb1.i(70, 64, 19));
+        addView(imageView, kb1.i(70, 64, 19));
         ImageView imageView2 = new ImageView(context);
         this.c = imageView2;
         imageView2.setImageResource(R.drawable.msg_photo_cropfix);
@@ -142,7 +142,7 @@ public final class f extends FrameLayout {
         });
         imageView2.setVisibility(8);
         imageView2.setContentDescription(LocaleController.getString(R.string.AccDescrAspectRatio));
-        addView(imageView2, gb1.i(70, 64, 19));
+        addView(imageView2, kb1.i(70, 64, 19));
         ImageView imageView3 = new ImageView(context);
         this.d = imageView3;
         imageView3.setImageResource(R.drawable.msg_photo_rotate);
@@ -186,7 +186,7 @@ public final class f extends FrameLayout {
             }
         });
         imageView3.setContentDescription(LocaleController.getString(R.string.AccDescrRotate));
-        addView(imageView3, gb1.i(70, 64, 21));
+        addView(imageView3, kb1.i(70, 64, 21));
         TextPaint textPaint = new TextPaint(1);
         this.h = textPaint;
         textPaint.setColor(-1);
@@ -241,7 +241,7 @@ public final class f extends FrameLayout {
                 float dp = (width - AndroidUtilities.dp(2.5f)) / 2;
                 RectF rectF = this.r;
                 rectF.left = dp;
-                rectF.top = vh.B(22.0f, height, 2);
+                rectF.top = wh.B(22.0f, height, 2);
                 rectF.right = (AndroidUtilities.dp(2.5f) + width) / 2;
                 rectF.bottom = (AndroidUtilities.dp(22.0f) + height) / 2;
                 canvas2.drawRoundRect(rectF, AndroidUtilities.dp(2.0f), AndroidUtilities.dp(2.0f), paint);
@@ -289,7 +289,7 @@ public final class f extends FrameLayout {
                 return true;
             }
             if (actionMasked == 2) {
-                float A = vh.A(this.n, (float) ((((this.s - x9) / AndroidUtilities.density) / 3.141592653589793d) / 1.649999976158142d), 45.0f, -45.0f);
+                float A = wh.A(this.n, (float) ((((this.s - x9) / AndroidUtilities.density) / 3.141592653589793d) / 1.649999976158142d), 45.0f, -45.0f);
                 if (Build.VERSION.SDK_INT >= 27) {
                     try {
                         if ((Math.abs(A - 45.0f) < 0.001f && Math.abs(this.n - 45.0f) >= 0.001f) || (Math.abs(A - (-45.0f)) < 0.001f && Math.abs(this.n - (-45.0f)) >= 0.001f)) {

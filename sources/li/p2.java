@@ -31,18 +31,18 @@ import org.telegram.tgnet.tl.TL_feed;
 import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.Components.RLottieNative;
 import org.telegram.ui.Components.b10;
-import org.telegram.ui.Components.bx0;
 import org.telegram.ui.Components.cx0;
 import org.telegram.ui.Components.dx0;
-import org.telegram.ui.Components.r71;
+import org.telegram.ui.Components.ex0;
+import org.telegram.ui.Components.s71;
 import org.telegram.ui.Components.wz;
 import org.telegram.ui.Wallet.WalletEngine2;
-import org.telegram.ui.rj0;
-import org.telegram.ui.rq0;
-import org.telegram.ui.vj0;
+import org.telegram.ui.tj0;
+import org.telegram.ui.tq0;
 import org.telegram.ui.xj0;
+import org.telegram.ui.zj0;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class p2 implements Runnable {
     public final /* synthetic */ int a;
@@ -114,9 +114,9 @@ public final /* synthetic */ class p2 implements Runnable {
         int i24;
         int i25;
         int i26;
-        r71 r71Var;
+        s71 s71Var;
         wz wzVar;
-        r71 r71Var2;
+        s71 s71Var2;
         boolean z11;
         int i27;
         TLRPC.Message message;
@@ -464,15 +464,15 @@ public final /* synthetic */ class p2 implements Runnable {
                 ((SendMessagesHelper) this.d).lambda$performSendMessageRequestMulti$68((TLObject) this.e, this.b, (SendMessagesHelper.DelayedMessage) this.f, (ArrayList) this.h, this.c);
                 return;
             case 3:
-                dx0 dx0Var = (dx0) this.d;
+                ex0 ex0Var = (ex0) this.d;
                 TLRPC.TL_messages_stickerSet tL_messages_stickerSet = (TLRPC.TL_messages_stickerSet) this.e;
                 MessageObject messageObject = (MessageObject) this.f;
                 org.telegram.ui.Cells.s1 s1Var = (org.telegram.ui.Cells.s1) this.h;
-                RLottieNative[] rLottieNativeArr = dx0Var.f1;
-                RLottieNative[] rLottieNativeArr2 = dx0Var.i1;
-                int[] iArr = dx0Var.e;
-                if (dx0Var.W0) {
-                    AndroidUtilities.runOnUIThread(new bx0(dx0Var, 0));
+                RLottieNative[] rLottieNativeArr = ex0Var.f1;
+                RLottieNative[] rLottieNativeArr2 = ex0Var.i1;
+                int[] iArr = ex0Var.e;
+                if (ex0Var.W0) {
+                    AndroidUtilities.runOnUIThread(new cx0(ex0Var, 0));
                     return;
                 }
                 boolean z14 = false;
@@ -482,23 +482,23 @@ public final /* synthetic */ class p2 implements Runnable {
                     int i31 = this.b;
                     if (i30 >= length) {
                         if (z14) {
-                            AndroidUtilities.runOnUIThread(new bx0(dx0Var, 1));
+                            AndroidUtilities.runOnUIThread(new cx0(ex0Var, 1));
                             return;
                         } else {
-                            AndroidUtilities.runOnUIThread(new org.telegram.messenger.voip.j0(dx0Var, this.c, i31, s1Var));
+                            AndroidUtilities.runOnUIThread(new org.telegram.messenger.voip.j0(ex0Var, this.c, i31, s1Var));
                             return;
                         }
                     }
                     if (i30 <= 2) {
                         if (rLottieNativeArr2[i30] == null) {
                             if (i30 == 0) {
-                                int i32 = dx0Var.b1;
+                                int i32 = ex0Var.b1;
                                 i21 = i32 == 1 ? 5 : i32 == 2 ? 6 : i32 == 3 ? 7 : i32 == 4 ? 4 : 3;
                             } else if (i30 == 1) {
-                                int i33 = dx0Var.c1;
+                                int i33 = ex0Var.c1;
                                 i21 = i33 == 1 ? 11 : i33 == 2 ? 12 : i33 == 3 ? 13 : i33 == 4 ? 10 : 9;
                             } else {
-                                int i34 = dx0Var.d1;
+                                int i34 = ex0Var.d1;
                                 i21 = i34 == 1 ? 17 : i34 == 2 ? 18 : i34 == 3 ? 19 : i34 == 4 ? 16 : 15;
                             }
                             TLRPC.Document document = tL_messages_stickerSet.documents.get(i21);
@@ -507,13 +507,13 @@ public final /* synthetic */ class p2 implements Runnable {
                                 RLottieNative b10 = RLottieNative.b(readRes, iArr, null, null);
                                 if (i30 <= 2) {
                                     rLottieNativeArr2[i30] = b10;
-                                    dx0Var.j1[i30] = iArr[0];
+                                    ex0Var.j1[i30] = iArr[0];
                                 } else {
                                     rLottieNativeArr[i30 == 3 ? (char) 0 : (char) 4] = b10;
-                                    dx0Var.g1[i30 == 3 ? (char) 0 : (char) 4] = iArr[0];
+                                    ex0Var.g1[i30 == 3 ? (char) 0 : (char) 4] = iArr[0];
                                 }
                             } else {
-                                AndroidUtilities.runOnUIThread(new cx0(document, i31, messageObject, s1Var, tL_messages_stickerSet, 0));
+                                AndroidUtilities.runOnUIThread(new dx0(document, i31, messageObject, s1Var, tL_messages_stickerSet, 0));
                                 z14 = true;
                             }
                         }
@@ -535,53 +535,53 @@ public final /* synthetic */ class p2 implements Runnable {
                 org.telegram.ui.Components.voip.g2.g(activity, this.b, inputGroupCall, this.c, groupCall, hashSet);
                 return;
             case 5:
-                xj0 xj0Var = (xj0) this.d;
-                vj0 vj0Var = (vj0) this.e;
+                zj0 zj0Var = (zj0) this.d;
+                xj0 xj0Var = (xj0) this.e;
                 String str5 = (String) this.f;
                 TLObject tLObject = (TLObject) this.h;
-                if (xj0Var.h) {
+                if (zj0Var.h) {
                     return;
                 }
                 int i35 = 0;
-                vj0Var.h = false;
-                ArrayList arrayList = vj0Var.a;
-                boolean z15 = vj0Var.l;
+                xj0Var.h = false;
+                ArrayList arrayList = xj0Var.a;
+                boolean z15 = xj0Var.l;
                 int i36 = this.b;
                 if (z15) {
-                    vj0Var.l = false;
-                    xj0Var.l0(i36, true);
+                    xj0Var.l = false;
+                    zj0Var.l0(i36, true);
                     return;
                 }
-                if (i36 == 2 && !str5.equals(xj0Var.N)) {
-                    if (TextUtils.isEmpty(xj0Var.N) || xj0Var.O != null) {
-                        xj0.o0(vj0Var);
+                if (i36 == 2 && !str5.equals(zj0Var.N)) {
+                    if (TextUtils.isEmpty(zj0Var.N) || zj0Var.O != null) {
+                        zj0.o0(xj0Var);
                         return;
                     } else {
-                        xj0Var.l0(i36, true);
+                        zj0Var.l0(i36, true);
                         return;
                     }
                 }
                 boolean z16 = this.c;
-                boolean z17 = z16 || !vj0Var.i;
-                vj0Var.i = true;
-                vj0Var.m = false;
+                boolean z17 = z16 || !xj0Var.i;
+                xj0Var.i = true;
+                xj0Var.m = false;
                 if (z16 && ((tLObject instanceof TL_feed.ForYouFeed) || (tLObject instanceof TL_feed.TL_feedMessages))) {
                     arrayList.clear();
-                    vj0Var.b.clear();
-                    vj0Var.c.clear();
-                    vj0Var.f = null;
-                    vj0Var.g = Utilities.random.nextInt(3);
-                    vj0Var.o = null;
-                    vj0Var.j = false;
+                    xj0Var.b.clear();
+                    xj0Var.c.clear();
+                    xj0Var.f = null;
+                    xj0Var.g = Utilities.random.nextInt(3);
+                    xj0Var.o = null;
+                    xj0Var.j = false;
                 }
                 int i37 = -1;
                 if (tLObject instanceof TL_feed.ForYouFeed) {
                     TL_feed.ForYouFeed forYouFeed = (TL_feed.ForYouFeed) tLObject;
                     ArrayList<TLRPC.User> arrayList2 = forYouFeed.users;
                     ArrayList<TLRPC.Chat> arrayList3 = forYouFeed.chats;
-                    xj0Var.getMessagesController().putUsers(arrayList2, false);
-                    xj0Var.getMessagesController().putChats(arrayList3, false);
-                    xj0Var.getMessagesStorage().putUsersAndChats(arrayList2, arrayList3, true, true);
+                    zj0Var.getMessagesController().putUsers(arrayList2, false);
+                    zj0Var.getMessagesController().putChats(arrayList3, false);
+                    zj0Var.getMessagesStorage().putUsersAndChats(arrayList2, arrayList3, true, true);
                     i22 = forYouFeed.items.size();
                     ArrayList<TL_feed.FeedItem> arrayList4 = forYouFeed.items;
                     int size = arrayList4.size();
@@ -592,7 +592,7 @@ public final /* synthetic */ class p2 implements Runnable {
                         i38++;
                         TL_feed.FeedItem feedItem2 = feedItem;
                         if (feedItem2 instanceof TL_feed.TL_feedItemMessage) {
-                            if (xj0Var.c0(vj0Var, ((TL_feed.TL_feedItemMessage) feedItem2).message, i37)) {
+                            if (zj0Var.c0(xj0Var, ((TL_feed.TL_feedItemMessage) feedItem2).message, i37)) {
                                 i23++;
                             }
                             z11 = z16;
@@ -622,7 +622,7 @@ public final /* synthetic */ class p2 implements Runnable {
                                 }
                                 i27 = -1;
                             }
-                            if (xj0Var.c0(vj0Var, message, i27)) {
+                            if (zj0Var.c0(xj0Var, message, i27)) {
                                 i23++;
                             }
                             if (arrayList5 != null) {
@@ -634,14 +634,14 @@ public final /* synthetic */ class p2 implements Runnable {
                                     TLRPC.Message message4 = message3;
                                     int i41 = size3;
                                     if (message4 != message) {
-                                        xj0Var.c0(vj0Var, message4, -1);
+                                        zj0Var.c0(xj0Var, message4, -1);
                                     }
                                     size3 = i41;
                                 }
                             }
                         } else {
                             z11 = z16;
-                            if ((feedItem2 instanceof TL_feed.TL_feedItemInterestCategories) && i36 == 0 && !xj0Var.s) {
+                            if ((feedItem2 instanceof TL_feed.TL_feedItemInterestCategories) && i36 == 0 && !zj0Var.s) {
                                 int size4 = arrayList.size();
                                 int i42 = 0;
                                 while (true) {
@@ -668,12 +668,12 @@ public final /* synthetic */ class p2 implements Runnable {
                         TL_feed.TL_feedMessages tL_feedMessages = (TL_feed.TL_feedMessages) tLObject;
                         ArrayList<TLRPC.User> arrayList6 = tL_feedMessages.users;
                         ArrayList<TLRPC.Chat> arrayList7 = tL_feedMessages.chats;
-                        xj0Var.getMessagesController().putUsers(arrayList6, false);
-                        xj0Var.getMessagesController().putChats(arrayList7, false);
-                        xj0Var.getMessagesStorage().putUsersAndChats(arrayList6, arrayList7, true, true);
+                        zj0Var.getMessagesController().putUsers(arrayList6, false);
+                        zj0Var.getMessagesController().putChats(arrayList7, false);
+                        zj0Var.getMessagesStorage().putUsersAndChats(arrayList6, arrayList7, true, true);
                         TL_feed.FeedPosition feedPosition2 = tL_feedMessages.read_max_position;
-                        if (feedPosition2 != null && ((feedPosition = vj0Var.p) == null || (i24 = feedPosition2.date) > (i25 = feedPosition.date) || (i24 == i25 && feedPosition2.id > feedPosition.id))) {
-                            vj0Var.p = feedPosition2;
+                        if (feedPosition2 != null && ((feedPosition = xj0Var.p) == null || (i24 = feedPosition2.date) > (i25 = feedPosition.date) || (i24 == i25 && feedPosition2.id > feedPosition.id))) {
+                            xj0Var.p = feedPosition2;
                         }
                         i22 = tL_feedMessages.messages.size();
                         ArrayList<TLRPC.Message> arrayList8 = tL_feedMessages.messages;
@@ -683,67 +683,67 @@ public final /* synthetic */ class p2 implements Runnable {
                         while (i43 < size5) {
                             TLRPC.Message message5 = arrayList8.get(i43);
                             i43++;
-                            if (xj0Var.c0(vj0Var, message5, -1)) {
+                            if (zj0Var.c0(xj0Var, message5, -1)) {
                                 i23++;
                             }
                         }
                         TL_feed.FeedPosition feedPosition3 = tL_feedMessages.min_position;
                         if (feedPosition3 != null) {
-                            vj0Var.o = feedPosition3;
+                            xj0Var.o = feedPosition3;
                         } else if (!tL_feedMessages.messages.isEmpty()) {
                             TLRPC.Message message6 = (TLRPC.Message) ic.a.g(1, tL_feedMessages.messages);
                             TL_feed.FeedPosition feedPosition4 = new TL_feed.FeedPosition();
-                            vj0Var.o = feedPosition4;
+                            xj0Var.o = feedPosition4;
                             feedPosition4.date = message6.date;
                             feedPosition4.peer = message6.peer_id;
                             feedPosition4.id = message6.id;
                         }
                     } else {
                         if (!(tLObject instanceof TL_feed.TL_feedMessagesNotModified)) {
-                            vj0Var.k = true;
+                            xj0Var.k = true;
                         }
                         i22 = 0;
                         i23 = 0;
                     }
                 }
-                boolean z18 = vj0Var.k;
+                boolean z18 = xj0Var.k;
                 if (!z18) {
                     if (i36 != 0) {
                         break;
                     }
                     boolean z19 = false;
-                    vj0Var.j = z19;
+                    xj0Var.j = z19;
                 }
-                boolean z20 = ((z18 || vj0Var.d == null) ? false : true) & z17;
+                boolean z20 = ((z18 || xj0Var.d == null) ? false : true) & z17;
                 if (z20) {
                     i26 = 0;
-                    vj0Var.d.g3.O(false);
+                    xj0Var.d.g3.O(false);
                 } else {
                     i26 = 0;
-                    xj0.o0(vj0Var);
+                    zj0.o0(xj0Var);
                 }
-                if (z10 && !vj0Var.k && (r71Var2 = vj0Var.d) != null) {
-                    r71Var2.v0(i26);
+                if (z10 && !xj0Var.k && (s71Var2 = xj0Var.d) != null) {
+                    s71Var2.v0(i26);
                 }
                 if (z20) {
-                    xj0.e0(vj0Var.d);
+                    zj0.e0(xj0Var.d);
                 }
-                if (z10 && (wzVar = vj0Var.e) != null) {
+                if (z10 && (wzVar = xj0Var.e) != null) {
                     wzVar.setRefreshing(false);
                 }
-                if (i36 != 1 || (r71Var = vj0Var.d) == null) {
+                if (i36 != 1 || (s71Var = xj0Var.d) == null) {
                     return;
                 }
-                r71Var.post(new rj0(xj0Var, vj0Var, 0));
+                s71Var.post(new tj0(zj0Var, xj0Var, 0));
                 return;
             case 6:
-                rq0 rq0Var = (rq0) this.d;
+                tq0 tq0Var = (tq0) this.d;
                 String str6 = (String) this.f;
                 TLObject tLObject2 = (TLObject) this.e;
                 TLRPC.User user = (TLRPC.User) this.h;
-                HashMap hashMap = rq0Var.h;
-                ArrayList arrayList9 = rq0Var.f;
-                ArrayList arrayList10 = rq0Var.n;
+                HashMap hashMap = tq0Var.h;
+                ArrayList arrayList9 = tq0Var.f;
+                ArrayList arrayList10 = tq0Var.n;
                 int size6 = arrayList10.size();
                 int i44 = 0;
                 int i45 = 0;
@@ -760,14 +760,14 @@ public final /* synthetic */ class p2 implements Runnable {
                 while (arrayList10.size() > 20) {
                     a1.g.A(1, arrayList10);
                 }
-                rq0Var.d0();
-                if (this.b != rq0Var.y) {
+                tq0Var.d0();
+                if (this.b != tq0Var.y) {
                     return;
                 }
                 int size7 = arrayList9.size();
                 if (tLObject2 != null) {
                     TLRPC.messages_BotResults messages_botresults = (TLRPC.messages_BotResults) tLObject2;
-                    rq0Var.w = messages_botresults.next_offset;
+                    tq0Var.w = messages_botresults.next_offset;
                     int size8 = messages_botresults.results.size();
                     int i46 = 0;
                     i28 = 0;
@@ -785,7 +785,7 @@ public final /* synthetic */ class p2 implements Runnable {
                                         searchImage.document = botInlineResult.document;
                                         searchImage.size = 0;
                                         photo2 = botInlineResult.photo;
-                                        if (photo2 != null && (closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(photo2.sizes, rq0Var.R, true)) != null) {
+                                        if (photo2 != null && (closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(photo2.sizes, tq0Var.R, true)) != null) {
                                             botInlineResult.document.thumbs.add(closestPhotoSizeWithSize);
                                             botInlineResult.document.flags |= 1;
                                         }
@@ -847,18 +847,18 @@ public final /* synthetic */ class p2 implements Runnable {
                         i46++;
                         i44 = 0;
                     }
-                    rq0Var.s = size7 == arrayList9.size() || rq0Var.w == null;
+                    tq0Var.s = size7 == arrayList9.size() || tq0Var.w == null;
                 } else {
                     i28 = 0;
                 }
-                rq0Var.r = false;
+                tq0Var.r = false;
                 if (i28 != 0) {
-                    rq0Var.L.s(size7, i28);
-                } else if (rq0Var.s) {
+                    tq0Var.L.s(size7, i28);
+                } else if (tq0Var.s) {
                     z12 = true;
-                    rq0Var.L.u(arrayList9.size() - 1);
+                    tq0Var.L.u(arrayList9.size() - 1);
                     if (arrayList9.size() > 0) {
-                        rq0Var.N.e(false, z12);
+                        tq0Var.N.e(false, z12);
                         return;
                     }
                     return;
@@ -883,7 +883,7 @@ public final /* synthetic */ class p2 implements Runnable {
                         e = null;
                     } catch (Exception e20) {
                         e = e20;
-                        org.telegram.ui.Wallet.l0.j("createImportProof", e);
+                        org.telegram.ui.Wallet.l0.k("createImportProof", e);
                         i0Var.close();
                     }
                     AndroidUtilities.runOnUIThread(new org.telegram.ui.Wallet.h(l0Var, importedWalletProof, e, callback2));
@@ -925,19 +925,19 @@ public final /* synthetic */ class p2 implements Runnable {
         this.c = z10;
     }
 
-    public /* synthetic */ p2(xj0 xj0Var, vj0 vj0Var, int i10, String str, boolean z10, TLObject tLObject) {
+    public /* synthetic */ p2(zj0 zj0Var, xj0 xj0Var, int i10, String str, boolean z10, TLObject tLObject) {
         this.a = 5;
-        this.d = xj0Var;
-        this.e = vj0Var;
+        this.d = zj0Var;
+        this.e = xj0Var;
         this.b = i10;
         this.f = str;
         this.c = z10;
         this.h = tLObject;
     }
 
-    public /* synthetic */ p2(rq0 rq0Var, String str, int i10, TLObject tLObject, boolean z10, TLRPC.User user) {
+    public /* synthetic */ p2(tq0 tq0Var, String str, int i10, TLObject tLObject, boolean z10, TLRPC.User user) {
         this.a = 6;
-        this.d = rq0Var;
+        this.d = tq0Var;
         this.f = str;
         this.b = i10;
         this.e = tLObject;

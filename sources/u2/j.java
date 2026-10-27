@@ -4,11 +4,11 @@ import a8.ng;
 import j$.util.Objects;
 import java.io.IOException;
 import java.util.concurrent.CopyOnWriteArrayList;
-import org.telegram.messenger.nk;
+import org.telegram.messenger.ok;
 import org.telegram.ui.Components.qy;
-import org.telegram.ui.zg1;
+import org.telegram.ui.bh1;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
 public final class j implements k0, n2.k {
     public final Object a;
@@ -54,7 +54,7 @@ public final class j implements k0, n2.k {
             ng ngVar = this.b;
             c0 m10 = m(c0Var, g0Var);
             ngVar.getClass();
-            ngVar.k(new zg1(17, ngVar, m10));
+            ngVar.k(new bh1(17, ngVar, m10));
         }
     }
 
@@ -74,7 +74,7 @@ public final class j implements k0, n2.k {
             ng ngVar = this.b;
             c0 m10 = m(c0Var, g0Var);
             ngVar.getClass();
-            ngVar.k(new nk(ngVar, uVar, m10, iOException, z10));
+            ngVar.k(new ok(ngVar, uVar, m10, iOException, z10));
         }
     }
 

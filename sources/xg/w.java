@@ -18,12 +18,12 @@ import org.telegram.ui.ActionBar.u6;
 import org.telegram.ui.ActionBar.y6;
 import org.telegram.ui.Components.RadioButton;
 import org.telegram.ui.Components.ds;
-import org.telegram.ui.Components.ea0;
-import org.telegram.ui.Components.gb1;
+import org.telegram.ui.Components.fa0;
 import org.telegram.ui.Components.h6;
+import org.telegram.ui.Components.kb1;
 import org.telegram.ui.Components.s6;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class w extends FrameLayout {
     public final RadioButton a;
@@ -51,30 +51,30 @@ public final class w extends FrameLayout {
         f7.Z(s6Var, y6.G6, u6Var);
         s6Var.setTypeface(AndroidUtilities.bold());
         s6Var.setTextSize(AndroidUtilities.dp(16.0f));
-        addView(s6Var, gb1.h(-1, 20.0f, 51, 64.0f, 8.0f, 80.0f, 0.0f));
+        addView(s6Var, kb1.h(-1, 20.0f, 51, 64.0f, 8.0f, 80.0f, 0.0f));
         SpannableString spannableString = new SpannableString("x");
         this.h = spannableString;
-        spannableString.setSpan(new ea0(AndroidUtilities.dp(90.0f), s6Var), 0, 1, 33);
+        spannableString.setSpan(new fa0(AndroidUtilities.dp(90.0f), s6Var), 0, 1, 33);
         s6 s6Var2 = new s6(context, false, true, true);
         this.e = s6Var2;
         int i10 = y6.z6;
         f7.Z(s6Var2, i10, u6Var);
         s6Var2.setTextSize(AndroidUtilities.dp(13.0f));
-        addView(s6Var2, gb1.h(-1, 14.0f, 51, 64.0f, 31.0f, 80.0f, 0.0f));
+        addView(s6Var2, kb1.h(-1, 14.0f, 51, 64.0f, 31.0f, 80.0f, 0.0f));
         SpannableString spannableString2 = new SpannableString("x");
         this.n = spannableString2;
-        spannableString2.setSpan(new ea0(AndroidUtilities.dp(70.0f), s6Var2), 0, 1, 33);
+        spannableString2.setSpan(new fa0(AndroidUtilities.dp(70.0f), s6Var2), 0, 1, 33);
         TextView textView = new TextView(context);
         this.f = textView;
         f7.V(textView, i10, u6Var);
         textView.setTextSize(1, 16.0f);
         textView.setGravity(5);
-        addView(textView, gb1.h(-2, -2.0f, 21, 0.0f, 0.0f, 19.0f, 0.0f));
+        addView(textView, kb1.h(-2, -2.0f, 21, 0.0f, 0.0f, 19.0f, 0.0f));
         RadioButton radioButton = new RadioButton(context);
         this.a = radioButton;
         radioButton.setSize(AndroidUtilities.dp(20.0f));
         f7.P(radioButton, y6.j7, y6.E5, u6Var);
-        addView(radioButton, gb1.h(20, 20.0f, 19, 22.0f, 0.0f, 0.0f, 0.0f));
+        addView(radioButton, kb1.h(20, 20.0f, 19, 22.0f, 0.0f, 0.0f, 0.0f));
     }
 
     public TL_stars.TL_starsGiveawayOption getOption() {

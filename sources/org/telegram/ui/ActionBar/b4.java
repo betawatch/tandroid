@@ -36,11 +36,11 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.b10;
 import org.telegram.ui.Components.ds;
-import org.telegram.ui.Components.q11;
+import org.telegram.ui.Components.r11;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.w10;
+import org.telegram.ui.y10;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class b4 extends View {
     public float E;
@@ -74,11 +74,11 @@ public final class b4 extends View {
     public final RectF e0;
     public final org.telegram.ui.Components.h6 f;
     public final Path f0;
-    public q11 g0;
+    public r11 g0;
     public final OverScroller h;
     public boolean h0;
     public org.telegram.ui.Cells.y i0;
-    public w10 j0;
+    public y10 j0;
     public final int n;
     public final int r;
     public int s;
@@ -115,7 +115,7 @@ public final class b4 extends View {
             s2Var.run(null);
             return;
         }
-        final SurfaceTexture b10 = org.telegram.messenger.b4.b();
+        final SurfaceTexture b10 = org.telegram.messenger.c4.b();
         b10.setDefaultBufferSize(viewGroup.getWidth(), viewGroup.getHeight());
         final Surface surface = new Surface(b10);
         final Bitmap createBitmap = Bitmap.createBitmap(viewGroup.getWidth(), viewGroup.getHeight(), Bitmap.Config.ARGB_8888);
@@ -551,7 +551,7 @@ public final class b4 extends View {
         float f33 = f17;
         canvas.save();
         if (this.j0 == null) {
-            this.j0 = new w10();
+            this.j0 = new y10();
         }
         RectF rectF8 = AndroidUtilities.rectTmp;
         rectF8.set(0.0f, 0.0f, f33, f32);
@@ -559,7 +559,7 @@ public final class b4 extends View {
         canvas.restore();
         canvas.restore();
         if (this.g0 == null) {
-            this.g0 = new q11(LocaleController.getString(R.string.BotCloseAllTabs), 14.0f, AndroidUtilities.bold());
+            this.g0 = new r11(LocaleController.getString(R.string.BotCloseAllTabs), 14.0f, AndroidUtilities.bold());
         }
         if (this.i0 == null || this.h0 != y6.I.q()) {
             boolean q5 = y6.I.q();

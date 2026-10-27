@@ -4,14 +4,14 @@ import android.view.View;
 import androidx.recyclerview.widget.RecyclerView;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.Components.b10;
-import org.telegram.ui.Components.hw0;
-import org.telegram.ui.Components.jw0;
-import org.telegram.ui.Components.t61;
-import org.telegram.ui.dg1;
+import org.telegram.ui.Components.iw0;
+import org.telegram.ui.Components.kw0;
+import org.telegram.ui.Components.u61;
+import org.telegram.ui.fg1;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class e implements oe.d, hw0, jw0, org.telegram.ui.ActionBar.b2, Utilities.Callback5, Utilities.Callback5Return {
+public final /* synthetic */ class e implements oe.d, iw0, kw0, org.telegram.ui.ActionBar.b2, Utilities.Callback5, Utilities.Callback5Return {
     public final /* synthetic */ y a;
 
     public /* synthetic */ e(y yVar) {
@@ -23,12 +23,12 @@ public final /* synthetic */ class e implements oe.d, hw0, jw0, org.telegram.ui.
         this.a.t0();
     }
 
-    @Override // org.telegram.ui.Components.jw0
+    @Override // org.telegram.ui.Components.kw0
     public /* synthetic */ float b(RecyclerView recyclerView) {
         return b10.c(recyclerView);
     }
 
-    @Override // org.telegram.ui.Components.hw0
+    @Override // org.telegram.ui.Components.iw0
     public int c() {
         return this.a.n;
     }
@@ -37,10 +37,10 @@ public final /* synthetic */ class e implements oe.d, hw0, jw0, org.telegram.ui.
     public void h(org.telegram.ui.ActionBar.e2 e2Var, int i10) {
         y yVar = this.a;
         yVar.getClass();
-        yVar.presentFragment(new dg1(6, null));
+        yVar.presentFragment(new fg1(6, null));
     }
 
-    @Override // org.telegram.ui.Components.jw0
+    @Override // org.telegram.ui.Components.kw0
     public RecyclerView i(View view) {
         y yVar = this.a;
         if (yVar.a == 1) {
@@ -50,7 +50,7 @@ public final /* synthetic */ class e implements oe.d, hw0, jw0, org.telegram.ui.
         return ((ad) view).a;
     }
 
-    @Override // org.telegram.ui.Components.jw0
+    @Override // org.telegram.ui.Components.kw0
     public /* synthetic */ void n(RecyclerView recyclerView) {
         b10.b(recyclerView);
     }
@@ -69,7 +69,7 @@ public final /* synthetic */ class e implements oe.d, hw0, jw0, org.telegram.ui.
         ((Integer) obj3).getClass();
         ((Float) obj4).getClass();
         ((Float) obj5).getClass();
-        y.W(this.a, (t61) obj);
+        y.W(this.a, (u61) obj);
     }
 
     @Override // oe.d

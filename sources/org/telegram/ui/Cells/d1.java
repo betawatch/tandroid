@@ -1,11 +1,11 @@
 package org.telegram.ui.Cells;
 
-import org.telegram.ui.Components.ip0;
-import org.telegram.ui.Components.x61;
+import org.telegram.ui.Components.jp0;
+import org.telegram.ui.Components.y61;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public final class d1 extends ip0 {
+public final class d1 extends jp0 {
     public final /* synthetic */ s1 H;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -14,8 +14,8 @@ public final class d1 extends ip0 {
         this.H = s1Var;
     }
 
-    @Override // org.telegram.ui.Components.ip0
-    public final void e(x61 x61Var) {
-        this.H.S3(x61Var);
+    @Override // org.telegram.ui.Components.jp0
+    public final void e(y61 y61Var) {
+        this.H.S3(y61Var);
     }
 }

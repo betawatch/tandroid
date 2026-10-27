@@ -1,13 +1,13 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class hq implements a5.i {
     public int a;
-    public final /* synthetic */ ni0 b;
+    public final /* synthetic */ oi0 b;
 
-    public hq(ni0 ni0Var) {
-        this.b = ni0Var;
+    public hq(oi0 oi0Var) {
+        this.b = oi0Var;
     }
 
     @Override // a5.i
@@ -26,12 +26,12 @@ public final class hq implements a5.i {
     }
 
     public final void d() {
-        ni0 ni0Var = this.b;
-        if (ni0Var.w0 != null) {
-            int currentItem = ni0Var.getCurrentItem();
-            int k10 = ni0Var.w0.k(currentItem) + ni0Var.w0.j();
+        oi0 oi0Var = this.b;
+        if (oi0Var.w0 != null) {
+            int currentItem = oi0Var.getCurrentItem();
+            int k10 = oi0Var.w0.k(currentItem) + oi0Var.w0.j();
             if (currentItem != k10) {
-                ni0Var.x(k10, false);
+                oi0Var.x(k10, false);
             }
         }
     }

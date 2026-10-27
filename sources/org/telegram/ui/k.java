@@ -11,10 +11,10 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class k extends org.telegram.ui.ActionBar.r2 implements NotificationCenter.NotificationCenterDelegate {
-    public org.telegram.ui.Components.mm0 a;
+    public org.telegram.ui.Components.nm0 a;
     public j b;
     public boolean c;
     public TLRPC.GlobalPrivacySettings d;
@@ -66,24 +66,24 @@ public final class k extends org.telegram.ui.ActionBar.r2 implements Notificatio
         this.simpleActionBar.setActionBarMenuOnItemClick(new bh.m(this, 20));
         FrameLayout frameLayout = new FrameLayout(context);
         this.fragmentView = frameLayout;
-        org.telegram.ui.Components.mm0 mm0Var = new org.telegram.ui.Components.mm0(context, null);
-        this.a = mm0Var;
-        mm0Var.u1();
+        org.telegram.ui.Components.nm0 nm0Var = new org.telegram.ui.Components.nm0(context, null);
+        this.a = nm0Var;
+        nm0Var.u1();
         this.a.setLayoutManager(new ig.a0(1, false, 2));
         this.a.setVerticalScrollBarEnabled(false);
         this.a.setSectionsDrawBackground(true);
         this.a.setLayoutAnimation(null);
-        org.telegram.ui.Components.mm0 mm0Var2 = this.a;
+        org.telegram.ui.Components.nm0 nm0Var2 = this.a;
         j jVar = new j(this);
         this.b = jVar;
-        mm0Var2.setAdapter(jVar);
+        nm0Var2.setAdapter(jVar);
         s4.l lVar = new s4.l();
         lVar.n(350L);
         lVar.o(org.telegram.ui.Components.ds.h);
         lVar.C = false;
         lVar.m = false;
         this.a.setItemAnimator(lVar);
-        frameLayout.addView(this.a, org.telegram.ui.Components.gb1.g(-1.0f, -1));
+        frameLayout.addView(this.a, org.telegram.ui.Components.kb1.g(-1.0f, -1));
         this.a.setOnItemClickListener(new h(this, 0));
         getContactsController().loadGlobalPrivacySetting();
         TLRPC.GlobalPrivacySettings globalPrivacySettings = getContactsController().getGlobalPrivacySettings();
@@ -133,7 +133,7 @@ public final class k extends org.telegram.ui.ActionBar.r2 implements Notificatio
     }
 
     @Override // org.telegram.ui.ActionBar.r2
-    public final org.telegram.ui.Components.mm0 getListViewForSimpleGlass() {
+    public final org.telegram.ui.Components.nm0 getListViewForSimpleGlass() {
         return this.a;
     }
 
@@ -144,7 +144,7 @@ public final class k extends org.telegram.ui.ActionBar.r2 implements Notificatio
 
     @Override // org.telegram.ui.ActionBar.r2
     public final boolean onFragmentCreate() {
-        getNotificationCenter().addObserver(this, NotificationCenter.privacyRulesUpdated);
+        getNotificationCenter().addWeakObserver(this, NotificationCenter.privacyRulesUpdated);
         return super.onFragmentCreate();
     }
 

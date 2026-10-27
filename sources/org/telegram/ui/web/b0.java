@@ -38,13 +38,13 @@ import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.ActionBar.b7;
 import org.telegram.ui.ActionBar.f7;
 import org.telegram.ui.ActionBar.y6;
-import org.telegram.ui.Components.ea0;
-import org.telegram.ui.Components.gb1;
+import org.telegram.ui.Components.fa0;
+import org.telegram.ui.Components.kb1;
 import org.telegram.ui.Components.s6;
 import org.telegram.ui.Components.wc;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class b0 implements Runnable {
     public final /* synthetic */ int a;
@@ -137,21 +137,21 @@ public final /* synthetic */ class b0 implements Runnable {
                     imageView.setBackground(K);
                     f7.k(imageView, K, N, null, null);
                     imageView.setImageResource(R.drawable.msg_round_file_s);
-                    linearLayout.addView(imageView, gb1.x(44, 44, 19, 0, 0, 10, 0));
+                    linearLayout.addView(imageView, kb1.x(44, 44, 19, 0, 0, 10, 0));
                     ?? linearLayout2 = new LinearLayout(context);
                     linearLayout2.setOrientation(1);
                     TextView g7 = org.telegram.messenger.t.g(context, 1, 15.0f);
                     g7.setTypeface(AndroidUtilities.bold());
                     g7.setText(str6);
                     f7.V(g7, y6.n5, null);
-                    linearLayout2.addView(g7, gb1.o(0.0f, 0.0f, 0.0f, 3.0f, -1, -2));
+                    linearLayout2.addView(g7, kb1.o(0.0f, 0.0f, 0.0f, 3.0f, -1, -2));
                     ?? s6Var = new s6(context, true, true, true);
                     s6Var.setTextSize(AndroidUtilities.dp(12.0f));
                     SpannableString spannableString = new SpannableString("l");
-                    ea0 ea0Var = new ea0(AndroidUtilities.dp(55.0f), s6Var);
+                    fa0 fa0Var = new fa0(AndroidUtilities.dp(55.0f), s6Var);
                     int i14 = y6.Ed;
-                    ea0Var.a(y6.o1(0.35f, y6.x0(null, i14, false)), y6.o1(0.075f, y6.x0(null, i14, false)));
-                    spannableString.setSpan(ea0Var, 0, 1, 33);
+                    fa0Var.a(y6.o1(0.35f, y6.x0(null, i14, false)), y6.o1(0.075f, y6.x0(null, i14, false)));
+                    spannableString.setSpan(fa0Var, 0, 1, 33);
                     s6Var.setText(spannableString);
                     ai.e eVar = new ai.e(s6Var, 28);
                     HashMap hashMap2 = hi.q0.h;
@@ -162,8 +162,8 @@ public final /* synthetic */ class b0 implements Runnable {
                         new hi.k0(str5, eVar).execute(str5);
                     }
                     f7.Z(s6Var, i14, null);
-                    linearLayout2.addView(s6Var, gb1.r(-1, 15));
-                    linearLayout.addView(linearLayout2, gb1.x(-1, -2, 23, 0, 0, 0, 2));
+                    linearLayout2.addView(s6Var, kb1.r(-1, 15));
+                    linearLayout.addView(linearLayout2, kb1.x(-1, -2, 23, 0, 0, 0, 2));
                     alertDialog$Builder.o(linearLayout);
                     final boolean[] zArr = new boolean[1];
                     alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), new org.telegram.ui.ActionBar.b2() { // from class: hi.j0

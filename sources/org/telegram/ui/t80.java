@@ -1,107 +1,106 @@
 package org.telegram.ui;
 
-import android.os.Bundle;
-import java.util.ArrayList;
 import java.util.regex.Pattern;
-import org.telegram.messenger.DialogObject;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.MessagesStorage;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.SendMessagesHelper;
-import org.telegram.messenger.UserObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.ActionBarLayout;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.R;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class t80 implements ux {
-    public final /* synthetic */ int a = 0;
+public final /* synthetic */ class t80 implements Utilities.Callback {
+    public final /* synthetic */ int a;
     public final /* synthetic */ LaunchActivity b;
-    public final /* synthetic */ TLRPC.User c;
-    public final /* synthetic */ String d;
-    public final /* synthetic */ int e;
+    public final /* synthetic */ kz c;
+    public final /* synthetic */ Long d;
 
-    public /* synthetic */ t80(LaunchActivity launchActivity, String str, int i10, TLRPC.User user) {
+    public /* synthetic */ t80(LaunchActivity launchActivity, kz kzVar, Long l4, int i10) {
+        this.a = i10;
         this.b = launchActivity;
-        this.d = str;
-        this.e = i10;
-        this.c = user;
+        this.c = kzVar;
+        this.d = l4;
     }
 
-    @Override // org.telegram.ui.ux
-    public final /* synthetic */ boolean C() {
-        switch (this.a) {
-        }
-        return false;
-    }
-
-    @Override // org.telegram.ui.ux
-    public final /* synthetic */ boolean K(cy cyVar) {
-        switch (this.a) {
-        }
-        return false;
-    }
-
-    @Override // org.telegram.ui.ux
-    public final boolean v(cy cyVar, ArrayList arrayList, CharSequence charSequence, boolean z10, boolean z11, int i10, int i11, af1 af1Var) {
-        int i12 = this.a;
-        int i13 = this.e;
-        String str = this.d;
-        TLRPC.User user = this.c;
+    @Override // org.telegram.messenger.Utilities.Callback
+    public final void run(Object obj) {
+        org.telegram.ui.Components.wc Y;
+        int i10;
+        int i11;
+        org.telegram.ui.Components.wc Y2;
+        int i12;
+        int i13;
+        int i14 = this.a;
+        Long l4 = this.d;
+        kz kzVar = this.c;
         LaunchActivity launchActivity = this.b;
-        switch (i12) {
+        TL_stories.StoryItem storyItem = (TL_stories.StoryItem) obj;
+        switch (i14) {
             case 0:
                 Pattern pattern = LaunchActivity.D1;
-                long j10 = ((MessagesStorage.TopicKey) arrayList.get(0)).dialogId;
-                TLRPC.TL_inputMediaGame tL_inputMediaGame = new TLRPC.TL_inputMediaGame();
-                TLRPC.TL_inputGameShortName tL_inputGameShortName = new TLRPC.TL_inputGameShortName();
-                tL_inputMediaGame.id = tL_inputGameShortName;
-                tL_inputGameShortName.short_name = str;
-                tL_inputGameShortName.bot_id = MessagesController.getInstance(i13).getInputUser(user);
-                SendMessagesHelper.getInstance(i13).sendGame(MessagesController.getInstance(i13).getInputPeer(j10), tL_inputMediaGame, 0L, 0L);
-                Bundle i14 = a1.g.i("scrollToTopOnResume", true);
-                if (DialogObject.isEncryptedDialog(j10)) {
-                    i14.putInt("enc_id", DialogObject.getEncryptedChatId(j10));
-                } else if (DialogObject.isUserDialog(j10)) {
-                    i14.putLong("user_id", j10);
+                try {
+                    kzVar.run();
+                } catch (Exception e) {
+                    FileLog.e(e);
+                }
+                org.telegram.ui.ActionBar.r2 R = LaunchActivity.R();
+                if (storyItem != null) {
+                    if (!(storyItem instanceof TL_stories.TL_storyItemDeleted)) {
+                        if (R != null) {
+                            storyItem.dialogId = l4.longValue();
+                            di.y9 createOverlayStoryViewer = R.createOverlayStoryViewer();
+                            createOverlayStoryViewer.w();
+                            createOverlayStoryViewer.G(launchActivity, storyItem, null);
+                            break;
+                        }
+                    } else {
+                        Y = org.telegram.ui.Components.wc.Y();
+                        if (Y != null) {
+                            i10 = R.raw.story_bomb1;
+                            i11 = R.string.StoryNotFound;
+                        }
+                    }
                 } else {
-                    i14.putLong("chat_id", -j10);
+                    Y = org.telegram.ui.Components.wc.Y();
+                    if (Y != null) {
+                        i10 = R.raw.story_bomb2;
+                        i11 = R.string.StoryNotFound;
+                    }
                 }
-                if (MessagesController.getInstance(i13).checkCanOpenChat(i14, cyVar)) {
-                    NotificationCenter.getInstance(i13).lambda$postNotificationNameOnUIThread$1(NotificationCenter.closeChats, new Object[0]);
-                    ((ActionBarLayout) launchActivity.O()).U(new un(i14), true, false);
-                    break;
-                }
+                org.telegram.messenger.t.q(i11, Y, i10, 36);
                 break;
             default:
                 Pattern pattern2 = LaunchActivity.D1;
-                long j11 = ((MessagesStorage.TopicKey) arrayList.get(0)).dialogId;
-                Bundle i15 = a1.g.i("scrollToTopOnResume", true);
-                if (DialogObject.isEncryptedDialog(j11)) {
-                    i15.putInt("enc_id", DialogObject.getEncryptedChatId(j11));
-                } else if (DialogObject.isUserDialog(j11)) {
-                    i15.putLong("user_id", j11);
+                try {
+                    kzVar.run();
+                } catch (Exception e10) {
+                    FileLog.e(e10);
+                }
+                org.telegram.ui.ActionBar.r2 R2 = LaunchActivity.R();
+                if (storyItem != null) {
+                    if (!(storyItem instanceof TL_stories.TL_storyItemDeleted)) {
+                        if (R2 != null) {
+                            storyItem.dialogId = l4.longValue();
+                            di.y9 createOverlayStoryViewer2 = R2.createOverlayStoryViewer();
+                            createOverlayStoryViewer2.w();
+                            createOverlayStoryViewer2.G(launchActivity, storyItem, null);
+                            break;
+                        }
+                    } else {
+                        Y2 = org.telegram.ui.Components.wc.Y();
+                        if (Y2 != null) {
+                            i12 = R.raw.story_bomb1;
+                            i13 = R.string.StoryNotFound;
+                        }
+                    }
                 } else {
-                    i15.putLong("chat_id", -j11);
+                    Y2 = org.telegram.ui.Components.wc.Y();
+                    if (Y2 != null) {
+                        i12 = R.raw.story_bomb2;
+                        i13 = R.string.StoryNotFound;
+                    }
                 }
-                i15.putString("attach_bot", UserObject.getPublicUsername(user));
-                if (str != null) {
-                    i15.putString("attach_bot_start_command", str);
-                }
-                if (MessagesController.getInstance(i13).checkCanOpenChat(i15, cyVar)) {
-                    NotificationCenter.getInstance(i13).lambda$postNotificationNameOnUIThread$1(NotificationCenter.closeChats, new Object[0]);
-                    ((ActionBarLayout) launchActivity.O()).U(new un(i15), true, false);
-                    break;
-                }
+                org.telegram.messenger.t.q(i13, Y2, i12, 36);
                 break;
         }
-        return true;
-    }
-
-    public /* synthetic */ t80(LaunchActivity launchActivity, TLRPC.User user, String str, int i10) {
-        this.b = launchActivity;
-        this.c = user;
-        this.d = str;
-        this.e = i10;
     }
 }

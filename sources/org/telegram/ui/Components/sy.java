@@ -16,9 +16,9 @@ import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public final class sy extends lm0 {
+public final class sy extends mm0 {
     public boolean E;
     public final /* synthetic */ sz F;
     public final ly c;
@@ -57,7 +57,7 @@ public final class sy extends lm0 {
         MediaDataController.getInstance(szVar.c1).searchStickers(true, str, str2, new di.y2((Object) syVar, str2, arrayList, (Object) runnable, 9), z10);
     }
 
-    @Override // org.telegram.ui.Components.lm0
+    @Override // org.telegram.ui.Components.mm0
     public final boolean D(s4.e1 e1Var) {
         int i10 = e1Var.f;
         return i10 == 0 || i10 == 4;
@@ -339,12 +339,12 @@ public final class sy extends lm0 {
             org.telegram.ui.d3.o(R.string.NoEmojiFound, textView, 1, 16.0f);
             int i11 = org.telegram.ui.ActionBar.y6.Le;
             org.telegram.ui.ActionBar.f7.V(textView, i11, u6Var);
-            rVar.addView(textView, gb1.h(-2, -2.0f, 49, 0.0f, 10.0f, 0.0f, 0.0f));
+            rVar.addView(textView, kb1.h(-2, -2.0f, 49, 0.0f, 10.0f, 0.0f, 0.0f));
             ImageView imageView = new ImageView(szVar.getContext());
             imageView.setScaleType(ImageView.ScaleType.CENTER);
             imageView.setImageResource(R.drawable.msg_emoji_question);
             org.telegram.ui.ActionBar.f7.t(imageView, i11, u6Var, PorterDuff.Mode.MULTIPLY);
-            rVar.addView(imageView, gb1.i(48, 48, 85));
+            rVar.addView(imageView, kb1.i(48, 48, 85));
             imageView.setOnClickListener(new ny(this));
             rVar.setLayoutParams(new s4.q0(-1, -2));
             view = rVar;
@@ -353,6 +353,6 @@ public final class sy extends lm0 {
             view4.setLayoutParams(new s4.q0(-1, AndroidUtilities.dp(68.0f)));
             view = view4;
         }
-        return new vl0(view);
+        return new wl0(view);
     }
 }

@@ -18,10 +18,10 @@ import java.util.HashSet;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.t;
 import org.telegram.ui.ActionBar.p6;
-import org.telegram.ui.Components.gb1;
+import org.telegram.ui.Components.kb1;
 import r0.k1;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class f extends FrameLayout implements p6 {
     public float E;
@@ -55,10 +55,10 @@ public final class f extends FrameLayout implements p6 {
         this.H = new RectF();
         FrameLayout frameLayout = new FrameLayout(context);
         this.c = frameLayout;
-        addView(frameLayout, gb1.i(-1, -2, 80));
+        addView(frameLayout, kb1.i(-1, -2, 80));
         r rVar = new r(this, context, 8);
         this.d = rVar;
-        addView(rVar, gb1.i(-1, -2, 80));
+        addView(rVar, kb1.i(-1, -2, 80));
         this.b = new cc(this, context, 6);
     }
 

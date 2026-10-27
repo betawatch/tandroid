@@ -9,7 +9,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.UserConfig;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class ai implements TextWatcher {
     public boolean a;
@@ -53,7 +53,7 @@ public final class ai implements TextWatcher {
         tiVar.e.a(codePointCount > 0, true);
         int i12 = tiVar.K;
         if (i12 <= 0 || (i10 = i12 - tiVar.L) > 100) {
-            s6Var2.animate().alpha(0.0f).scaleX(0.5f).scaleY(0.5f).setDuration(100L).setListener(new org.telegram.ui.qp(this, 11));
+            s6Var2.animate().alpha(0.0f).scaleX(0.5f).scaleY(0.5f).setDuration(100L).setListener(new org.telegram.ui.sp(this, 11));
             s6Var.setAlpha(0.0f);
             z10 = true;
         } else {
@@ -90,15 +90,15 @@ public final class ai implements TextWatcher {
         }
         if (!tiVar.l2 && !MessagesController.getInstance(i11).premiumFeaturesBlocked() && !UserConfig.getInstance(i11).isPremium() && tiVar.L > MessagesController.getInstance(i11).captionLengthLimitDefault && tiVar.L < MessagesController.getInstance(i11).captionLengthLimitPremium) {
             tiVar.l2 = true;
-            tiVar.V1(this.c);
+            tiVar.W1(this.c);
         }
         if (tiVar.c0) {
             if (yhVar.getEditText().getLineCount() > 2 && !TextUtils.isEmpty(yhVar.getText().toString().trim())) {
                 z11 = true;
             }
-            tiVar.T1(z11);
+            tiVar.U1(z11);
         }
-        tiVar.i1(true);
+        tiVar.j1(true);
     }
 
     @Override // android.text.TextWatcher
@@ -113,7 +113,7 @@ public final class ai implements TextWatcher {
         if (tiVar.H2.getAdapter() != null) {
             tiVar.H2.setReversed(true);
             tiVar.H2.getAdapter().U(charSequence, tiVar.S0.getEditText().getSelectionStart(), null, false, false);
-            tiVar.b2();
+            tiVar.c2();
         }
     }
 

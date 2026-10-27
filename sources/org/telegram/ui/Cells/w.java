@@ -28,11 +28,11 @@ import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.RadialProgress2;
-import org.telegram.ui.Components.gb1;
+import org.telegram.ui.Components.kb1;
 import org.telegram.ui.Components.nt;
-import org.telegram.ui.h10;
+import org.telegram.ui.j10;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class w extends FrameLayout implements DownloadController.FileDownloadProgressListener, org.telegram.ui.ActionBar.p6 {
     public static final /* synthetic */ int L = 0;
@@ -77,7 +77,7 @@ public final class w extends FrameLayout implements DownloadController.FileDownl
         org.telegram.ui.ActionBar.b7 N = org.telegram.ui.ActionBar.f7.N(i12);
         imageView.setBackground(g02);
         org.telegram.ui.ActionBar.f7.k(imageView, g02, null, N, u6Var);
-        addView(imageView, gb1.h(42, 42.0f, (LocaleController.isRTL ? 3 : 5) | 16, 5.0f, 0.0f, 5.0f, 0.0f));
+        addView(imageView, kb1.h(42, 42.0f, (LocaleController.isRTL ? 3 : 5) | 16, 5.0f, 0.0f, 5.0f, 0.0f));
         imageView.setOnClickListener(new bh.f(8));
         RadialProgress2 radialProgress2 = new RadialProgress2(this, u6Var);
         this.H = radialProgress2;
@@ -346,7 +346,7 @@ public final class w extends FrameLayout implements DownloadController.FileDownl
         try {
             CharSequence replace = this.w.getMusicAuthor().replace('\n', ' ');
             if (this.I == 1) {
-                replace = new SpannableStringBuilder(replace).append(' ').append((CharSequence) this.J).append(' ').append(h10.d(this.w, true, 2, null));
+                replace = new SpannableStringBuilder(replace).append(' ').append((CharSequence) this.J).append(' ').append(j10.d(this.w, true, 2, null));
             }
             CharSequence ellipsize2 = TextUtils.ellipsize(replace, org.telegram.ui.ActionBar.y6.g3, size, TextUtils.TruncateAt.END);
             CharSequence highlightText2 = AndroidUtilities.highlightText(ellipsize2, this.w.highlightedWords, u6Var);

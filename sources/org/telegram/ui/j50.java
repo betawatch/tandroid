@@ -1,55 +1,206 @@
 package org.telegram.ui;
 
-import android.animation.ValueAnimator;
+import android.graphics.Canvas;
+import android.graphics.RectF;
+import android.graphics.drawable.Drawable;
+import android.text.TextUtils;
+import java.util.ArrayList;
 import java.util.HashSet;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.Emoji;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.MediaDataController;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.UserConfig;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public final class j50 extends s4.l {
-    public float F;
-    public ValueAnimator G;
-    public final HashSet H = new HashSet();
-    public final HashSet I = new HashSet();
-    public float J;
-    public float K;
-    public final /* synthetic */ v50 L;
+public final class j50 {
+    public final int a;
+    public Emoji.EmojiDrawable c;
+    public org.telegram.ui.Components.t5 d;
+    public boolean e;
+    public boolean f;
+    public long g;
+    public String l;
+    public final Drawable[] b = new Drawable[6];
+    public final y10 h = new y10();
+    public final HashSet i = new HashSet();
+    public boolean j = false;
+    public final i50 k = new i50(this, 0);
+    public final RectF m = new RectF();
 
-    public j50(v50 v50Var) {
-        this.L = v50Var;
+    public j50(int i10) {
+        int i11 = 0;
+        this.a = i10;
+        while (true) {
+            Drawable[] drawableArr = this.b;
+            if (i11 >= drawableArr.length) {
+                this.g = System.currentTimeMillis();
+                return;
+            } else {
+                drawableArr[i11] = Emoji.getEmojiDrawable(x50.A0());
+                i11++;
+            }
+        }
     }
 
-    @Override // s4.l, s4.m0
-    public final void g() {
-        super.g();
-        this.I.clear();
-        this.H.clear();
-        this.K = Float.MAX_VALUE;
-        this.L.Q.invalidate();
+    public final void a() {
+        boolean isEmpty = this.i.isEmpty();
+        boolean z10 = !isEmpty;
+        if (this.j != z10) {
+            this.j = z10;
+            i50 i50Var = this.k;
+            if (isEmpty) {
+                org.telegram.ui.Components.t5 t5Var = this.d;
+                if (t5Var != null) {
+                    t5Var.p(i50Var);
+                    return;
+                }
+                return;
+            }
+            org.telegram.ui.Components.t5 t5Var2 = this.d;
+            if (t5Var2 != null) {
+                t5Var2.b(i50Var);
+            }
+        }
     }
 
-    @Override // s4.l, s4.m0
-    public final void m() {
-        boolean isEmpty = this.p.isEmpty();
-        boolean isEmpty2 = this.r.isEmpty();
-        boolean isEmpty3 = this.q.isEmpty();
-        ValueAnimator valueAnimator = this.G;
-        if (valueAnimator != null) {
-            valueAnimator.cancel();
-            this.G = null;
+    public final boolean b(Canvas canvas, RectF rectF, float f7) {
+        long j10;
+        float f10;
+        float dp = AndroidUtilities.dp(6.0f);
+        RectF rectF2 = this.m;
+        rectF2.set(rectF);
+        float f11 = -dp;
+        rectF2.inset(f11, f11);
+        canvas.saveLayerAlpha(rectF2.left, rectF2.top, rectF2.right, rectF2.bottom, 255, 31);
+        long currentTimeMillis = (this.a * 45) + System.currentTimeMillis();
+        long j11 = currentTimeMillis - this.g;
+        float f12 = j11 / 180.0f;
+        float min = Math.min(1.0f, f12);
+        boolean z10 = this.f;
+        Drawable[] drawableArr = this.b;
+        boolean z11 = false;
+        if (!z10 || this.d == null || this.c == null || !this.e) {
+            j10 = j11;
+            canvas.save();
+            rectF2.set(rectF);
+            rectF2.offset(0.0f, (rectF.height() + dp) * (min - 1.0f));
+            canvas.translate(rectF2.left, rectF2.top);
+            drawableArr[1].setBounds(0, 0, (int) rectF2.width(), (int) rectF2.height());
+            drawableArr[1].setAlpha(127);
+            drawableArr[1].draw(canvas);
+            drawableArr[1].setAlpha(255);
+            canvas.restore();
+        } else {
+            rectF2.set(rectF);
+            rectF2.offset(0.0f, (min - 1.0f) * (rectF.height() + dp));
+            if (f7 < 1.0f) {
+                canvas.save();
+                f10 = 0.0f;
+                j10 = j11;
+                this.c.setBounds(0, 0, (int) rectF2.width(), (int) rectF2.height());
+                canvas.translate(rectF2.left, rectF2.top);
+                this.c.setAlpha((int) ((1.0f - f7) * 255.0f));
+                this.c.draw(canvas);
+                this.c.setAlpha(255);
+                canvas.restore();
+            } else {
+                j10 = j11;
+                f10 = 0.0f;
+            }
+            if (f7 > f10) {
+                canvas.save();
+                rectF2.inset(AndroidUtilities.dp(-4.0f), AndroidUtilities.dp(-4.0f));
+                this.d.setBounds(0, 0, (int) rectF2.width(), (int) rectF2.height());
+                canvas.translate(rectF2.left, rectF2.top);
+                this.d.setAlpha((int) (f7 * 255.0f));
+                this.d.draw(canvas);
+                this.d.setAlpha(255);
+                canvas.restore();
+            }
         }
-        if (!isEmpty || !isEmpty2 || !isEmpty3) {
-            this.F = 0.0f;
-            ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
-            this.G = ofFloat;
-            ofFloat.addUpdateListener(new b3(this, 15));
-            this.G.addListener(new i50(this, 0));
-            this.G.setDuration(350L);
-            this.G.setInterpolator(org.telegram.ui.Components.ds.f);
-            this.G.start();
-            v50 v50Var = this.L;
-            v50Var.Q.invalidate();
-            v50Var.a2.invalidate();
+        rectF2.set(rectF);
+        rectF2.offset(0.0f, (rectF.height() + dp) * min);
+        canvas.save();
+        canvas.translate(rectF2.left, rectF2.top);
+        drawableArr[0].setBounds(0, 0, (int) rectF2.width(), (int) rectF2.height());
+        drawableArr[0].setAlpha(127);
+        drawableArr[0].draw(canvas);
+        drawableArr[0].setAlpha(255);
+        canvas.restore();
+        if (f12 >= 1.0f) {
+            if (this.f && this.e) {
+                z11 = true;
+            } else {
+                this.g = currentTimeMillis - (j10 % 180);
+                int i10 = 0;
+                while (i10 < drawableArr.length - 1) {
+                    int i11 = i10 + 1;
+                    drawableArr[i10] = drawableArr[i11];
+                    i10 = i11;
+                }
+                drawableArr[drawableArr.length - 1] = Emoji.getEmojiDrawable(x50.A0());
+                if (this.f) {
+                    this.e = true;
+                }
+            }
         }
-        super.m();
+        rectF2.set(rectF);
+        float f13 = (int) f11;
+        rectF2.inset(f13, f13);
+        float f14 = rectF2.left;
+        float f15 = rectF2.top;
+        rectF2.set(f14, f15, rectF2.right, f15 + dp);
+        y10 y10Var = this.h;
+        y10Var.b(canvas, rectF2, 1, 1.0f);
+        rectF2.set(rectF);
+        rectF2.inset(f13, f13);
+        float f16 = rectF2.left;
+        float f17 = rectF2.bottom;
+        rectF2.set(f16, f17 - dp, rectF2.right, f17);
+        y10Var.b(canvas, rectF2, 3, 1.0f);
+        canvas.restore();
+        return !z11;
+    }
+
+    public final void c() {
+        TLRPC.Document document;
+        if (this.d == null || this.l == null) {
+            return;
+        }
+        int productionAccount = UserConfig.getProductionAccount();
+        TLRPC.TL_inputStickerSetShortName tL_inputStickerSetShortName = new TLRPC.TL_inputStickerSetShortName();
+        tL_inputStickerSetShortName.short_name = "StaticEmoji";
+        TLRPC.TL_messages_stickerSet stickerSet = MediaDataController.getInstance(productionAccount).getStickerSet(tL_inputStickerSetShortName, 0, false, true, new t3(this, 7));
+        if (stickerSet == null) {
+            return;
+        }
+        String replace = this.l.replace("️", "");
+        ArrayList<TLRPC.Document> arrayList = stickerSet.documents;
+        int size = arrayList.size();
+        int i10 = 0;
+        while (true) {
+            document = null;
+            if (i10 >= size) {
+                break;
+            }
+            TLRPC.Document document2 = arrayList.get(i10);
+            i10++;
+            TLRPC.Document document3 = document2;
+            if (TextUtils.equals(MessageObject.findAnimatedEmojiEmoticon(document3, null).replace("️", ""), replace)) {
+                document = document3;
+                break;
+            }
+        }
+        if (document != null) {
+            org.telegram.ui.Components.t5 t5Var = this.d;
+            t5Var.e = document;
+            t5Var.j(false);
+        } else {
+            FileLog.e("emoji \"" + this.l + "\" not found in addemoji/" + tL_inputStickerSetShortName.short_name);
+        }
     }
 }

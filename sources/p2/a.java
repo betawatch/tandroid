@@ -7,9 +7,8 @@ import f9.g0;
 import f9.g2;
 import f9.t0;
 import java.util.HashMap;
-import vi.y;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
 public final class a implements u {
     public final /* synthetic */ d a;
@@ -55,9 +54,9 @@ public final class a implements u {
                     i11++;
                 }
             }
-            y yVar = new y(size, i10, size2, i11);
+            vi.z zVar2 = new vi.z(size, i10, size2, i11);
             dVar.c.getClass();
-            k4.d z02 = u7.s.z0(yVar, zVar);
+            k4.d z02 = u7.s.z0(zVar2, zVar);
             if (z02 != null && (cVar = (c) hashMap.get(uri)) != null) {
                 return c.c(cVar, uri, z02.b);
             }

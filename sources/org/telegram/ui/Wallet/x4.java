@@ -4,9 +4,9 @@ import android.view.View;
 import android.view.ViewTreeObserver;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.ds;
-import org.telegram.ui.Components.l71;
+import org.telegram.ui.Components.m71;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class x4 implements ViewTreeObserver.OnPreDrawListener {
     public final /* synthetic */ int a;
@@ -19,7 +19,7 @@ public final /* synthetic */ class x4 implements ViewTreeObserver.OnPreDrawListe
 
     @Override // android.view.ViewTreeObserver.OnPreDrawListener
     public final boolean onPreDraw() {
-        l71 l71Var;
+        m71 m71Var;
         switch (this.a) {
             case 0:
                 m5 m5Var = (m5) ((bh.p) this.b).c;
@@ -31,8 +31,8 @@ public final /* synthetic */ class x4 implements ViewTreeObserver.OnPreDrawListe
             case 1:
                 z4 z4Var = (z4) this.b;
                 m5 m5Var2 = z4Var.e;
-                if (m5Var2.Z != null && (l71Var = m5Var2.a) != null) {
-                    boolean z10 = m5Var2.o0 && !l71Var.canScrollVertically(1);
+                if (m5Var2.Z != null && (m71Var = m5Var2.a) != null) {
+                    boolean z10 = m5Var2.o0 && !m71Var.canScrollVertically(1);
                     if (m5Var2.b0 != z10) {
                         m5Var2.b0 = z10;
                         m5Var2.Z.animate().cancel();

@@ -10,20 +10,20 @@ import android.widget.TextView;
 import java.util.HashSet;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.vh;
+import org.telegram.messenger.wh;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.f7;
 import org.telegram.ui.ActionBar.p6;
 import org.telegram.ui.ActionBar.u6;
 import org.telegram.ui.ActionBar.y6;
-import org.telegram.ui.Components.gb1;
-import org.telegram.ui.Components.ic0;
+import org.telegram.ui.Components.jc0;
+import org.telegram.ui.Components.kb1;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class j extends LinearLayout implements p6 {
     public final u6 a;
-    public final ic0 b;
+    public final jc0 b;
     public final FrameLayout c;
     public final ImageView d;
     public final TextView e;
@@ -38,31 +38,31 @@ public final class j extends LinearLayout implements p6 {
         setOrientation(0);
         FrameLayout frameLayout = new FrameLayout(context);
         this.c = frameLayout;
-        ic0 ic0Var = new ic0(1);
-        this.b = ic0Var;
-        frameLayout.setBackground(ic0Var);
+        jc0 jc0Var = new jc0(1);
+        this.b = jc0Var;
+        frameLayout.setBackground(jc0Var);
         ImageView imageView = new ImageView(context);
         this.d = imageView;
         imageView.setScaleType(ImageView.ScaleType.FIT_CENTER);
-        frameLayout.addView(imageView, gb1.i(24, 24, 17));
-        LinearLayout d = vh.d(context, 1);
+        frameLayout.addView(imageView, kb1.i(24, 24, 17));
+        LinearLayout d = wh.d(context, 1);
         TextView textView = new TextView(context);
         this.e = textView;
         textView.setTextSize(1, 16.0f);
-        TextView e = vh.e(d, textView, gb1.o(0.0f, 0.0f, 0.0f, 0.0f, -1, -2), context);
+        TextView e = wh.e(d, textView, kb1.o(0.0f, 0.0f, 0.0f, 0.0f, -1, -2), context);
         this.f = e;
         e.setGravity(17);
         e.setMinWidth(AndroidUtilities.dp(20.66f));
         e.setPadding(AndroidUtilities.dp(6.33f), 0, AndroidUtilities.dp(6.33f), 0);
         e.setTextSize(1, 16.0f);
         if (LocaleController.isRTL) {
-            addView(e, gb1.n(13.33f, 0.0f));
-            addView(d, gb1.t(0, -2, 1.0f, 23, 20, 0, z10 ? 12 : 16, 0));
-            addView(frameLayout, gb1.x(28, 28, 21, 0, 0, z10 ? 9 : 14, 0));
+            addView(e, kb1.n(13.33f, 0.0f));
+            addView(d, kb1.t(0, -2, 1.0f, 23, 20, 0, z10 ? 12 : 16, 0));
+            addView(frameLayout, kb1.x(28, 28, 21, 0, 0, z10 ? 9 : 14, 0));
         } else {
-            addView(frameLayout, gb1.x(28, 28, 19, z10 ? 9 : 14, 0, 0, 0));
-            addView(d, gb1.t(0, -2, 1.0f, 23, z10 ? 12 : 16, 0, 20, 0));
-            addView(e, gb1.n(0.0f, 13.33f));
+            addView(frameLayout, kb1.x(28, 28, 19, z10 ? 9 : 14, 0, 0, 0));
+            addView(d, kb1.t(0, -2, 1.0f, 23, z10 ? 12 : 16, 0, 20, 0));
+            addView(e, kb1.n(0.0f, 13.33f));
         }
         updateColors();
         setUnreadMode(true);

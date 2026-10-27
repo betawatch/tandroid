@@ -11,10 +11,10 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class uc extends FrameLayout implements org.telegram.ui.ActionBar.p6 {
-    public final xo0 a;
+    public final zo0 a;
     public final tc b;
     public final org.telegram.ui.ActionBar.b6 c;
     public final TextView d;
@@ -31,11 +31,11 @@ public final class uc extends FrameLayout implements org.telegram.ui.ActionBar.p
         this.h = bdVar;
         Context context = getContext();
         u6Var = ((org.telegram.ui.ActionBar.r2) bdVar).resourceProvider;
-        xo0 xo0Var = new xo0(context, u6Var);
-        this.a = xo0Var;
-        xo0Var.setProgressToGradient(1.0f);
-        xo0Var.F = true;
-        addView(xo0Var, org.telegram.ui.Components.gb1.i(-1, -1, 119));
+        zo0 zo0Var = new zo0(context, u6Var);
+        this.a = zo0Var;
+        zo0Var.setProgressToGradient(1.0f);
+        zo0Var.F = true;
+        addView(zo0Var, org.telegram.ui.Components.kb1.i(-1, -1, 119));
         Context context2 = getContext();
         i10 = ((org.telegram.ui.ActionBar.r2) bdVar).currentAccount;
         long j10 = bdVar.a;
@@ -43,8 +43,8 @@ public final class uc extends FrameLayout implements org.telegram.ui.ActionBar.p
         tc tcVar = new tc(this, context2, i10, j10, u6Var2);
         this.b = tcVar;
         boolean z10 = bdVar.d;
-        addView(tcVar, org.telegram.ui.Components.gb1.h(-1, z10 ? 230.0f : 190.0f, 80, 0.0f, 0.0f, 0.0f, z10 ? 24.0f : 0.0f));
-        if (bdVar instanceof e60) {
+        addView(tcVar, org.telegram.ui.Components.kb1.h(-1, z10 ? 230.0f : 190.0f, 80, 0.0f, 0.0f, 0.0f, z10 ? 24.0f : 0.0f));
+        if (bdVar instanceof g60) {
             org.telegram.ui.ActionBar.b6 b6Var = new org.telegram.ui.ActionBar.b6(getContext());
             this.c = b6Var;
             b6Var.setGravity(19);
@@ -54,7 +54,7 @@ public final class uc extends FrameLayout implements org.telegram.ui.ActionBar.p
             b6Var.l(LocaleController.getString(R.string.ChangeChannelNameColor2), false);
             b6Var.setAlpha(0.0f);
             a();
-            addView(b6Var, org.telegram.ui.Components.gb1.h(-1, -2.0f, 80, 72.0f, 0.0f, 0.0f, 16.0f));
+            addView(b6Var, org.telegram.ui.Components.kb1.h(-1, -2.0f, 80, 72.0f, 0.0f, 0.0f, 16.0f));
             LinearLayout linearLayout = new LinearLayout(activity);
             this.f = linearLayout;
             linearLayout.setOrientation(0);
@@ -73,8 +73,8 @@ public final class uc extends FrameLayout implements org.telegram.ui.ActionBar.p
             textView.setText(AndroidUtilities.replaceTags(LocaleController.formatPluralString("BoostingGroupBoostCount", tL_premium_boostsStatus != null ? tL_premium_boostsStatus.boosts : 0, new Object[0])));
             textView2.setText(LocaleController.getString(R.string.BoostingGroupBoostWhatAreBoosts));
             linearLayout.addView(textView);
-            linearLayout.addView(textView2, org.telegram.ui.Components.gb1.o(3.0f, 0.0f, 0.0f, 0.0f, -2, -2));
-            addView(linearLayout, org.telegram.ui.Components.gb1.i(-1, -2, 80));
+            linearLayout.addView(textView2, org.telegram.ui.Components.kb1.o(3.0f, 0.0f, 0.0f, 0.0f, -2, -2));
+            addView(linearLayout, org.telegram.ui.Components.kb1.i(-1, -2, 80));
         }
     }
 

@@ -81,7 +81,7 @@ import s4.w0;
 import s4.x0;
 import s4.y0;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
 public class RecyclerView extends ViewGroup {
     public static final int[] Q0 = {R.attr.clipToPadding};
@@ -1210,7 +1210,7 @@ public class RecyclerView extends ViewGroup {
         d dVar = this.e;
         int indexOfChild = ((RecyclerView) ((jg.s0) dVar.b).b).indexOfChild(view);
         if (indexOfChild >= 0) {
-            ((lg) dVar.c).D(indexOfChild);
+            ((lg) dVar.c).F(indexOfChild);
             dVar.p(view);
         } else {
             throw new IllegalArgumentException("view is not a child, cannot hide " + view);
@@ -2710,7 +2710,7 @@ public class RecyclerView extends ViewGroup {
             ((ArrayList) eVar.c).clear();
             eVar.e();
         }
-        this.e.r();
+        this.e.s();
         this.x = p0Var;
         if (p0Var != null) {
             if (p0Var.b != null) {

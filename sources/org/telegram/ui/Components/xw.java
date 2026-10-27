@@ -6,7 +6,7 @@ import android.view.View;
 import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class xw extends FrameLayout {
     public final /* synthetic */ boolean a;
@@ -44,7 +44,7 @@ public final class xw extends FrameLayout {
         super.onAttachedToWindow();
         sz szVar = this.b;
         szVar.K0 = true;
-        szVar.Y();
+        szVar.Z();
         ig.f1 f1Var = szVar.T0;
         if (f1Var != null) {
             f1Var.a();
@@ -56,7 +56,7 @@ public final class xw extends FrameLayout {
         super.onDetachedFromWindow();
         sz szVar = this.b;
         szVar.K0 = false;
-        szVar.Y();
+        szVar.Z();
         ig.f1 f1Var = szVar.T0;
         if (f1Var != null) {
             f1Var.a();

@@ -1,85 +1,86 @@
 package org.telegram.ui;
 
-import android.animation.AnimatorSet;
-import android.app.Activity;
-import android.graphics.Canvas;
-import android.view.MotionEvent;
-import android.view.View;
-import android.widget.FrameLayout;
-import org.telegram.messenger.AndroidUtilities;
+import android.content.Context;
+import android.os.Bundle;
+import org.telegram.messenger.DialogObject;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.MessagePreviewParams;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public final class el extends FrameLayout {
-    public float a;
-    public float b;
-    public final /* synthetic */ un c;
+public final class el extends org.telegram.ui.Components.oc0 {
+    public final /* synthetic */ wn H;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public el(un unVar, Activity activity) {
-        super(activity);
-        this.c = unVar;
-        setOnLongClickListener(new t(this, 2));
+    public el(wn wnVar, Context context, wn wnVar2, ch.b bVar, MessagePreviewParams messagePreviewParams, TLRPC.User user, TLRPC.Chat chat, int i10, org.telegram.ui.Components.kc0 kc0Var, int i11, boolean z10) {
+        super(context, wnVar2, bVar, messagePreviewParams, user, chat, i10, kc0Var, i11, z10);
+        this.H = wnVar;
     }
 
-    @Override // android.view.ViewGroup
-    public final boolean drawChild(Canvas canvas, View view, long j10) {
-        un unVar = this.c;
-        if (view == unVar.L2) {
-            canvas.save();
-            canvas.clipRect(0, 0, getMeasuredWidth(), AndroidUtilities.dp(48.0f));
-        }
-        org.telegram.ui.ActionBar.b6[] b6VarArr = unVar.P2;
-        if (view != b6VarArr[0] && view != b6VarArr[1]) {
-            boolean drawChild = super.drawChild(canvas, view, j10);
-            if (view == unVar.L2) {
-                canvas.restore();
-            }
-            return drawChild;
-        }
-        canvas.save();
-        canvas.clipRect(0, 0, getMeasuredWidth() - AndroidUtilities.dp(38.0f), getMeasuredHeight());
-        boolean drawChild2 = super.drawChild(canvas, view, j10);
-        canvas.restore();
-        return drawChild2;
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(i10, i11);
-        un unVar = this.c;
-        if (!unVar.M2) {
-            return;
-        }
-        int i12 = 0;
-        while (true) {
-            AnimatorSet[] animatorSetArr = unVar.T2;
-            if (i12 >= animatorSetArr.length) {
-                unVar.M2 = false;
-                return;
-            }
-            AnimatorSet animatorSet = animatorSetArr[i12];
-            if (animatorSet != null) {
-                animatorSet.start();
-            }
-            i12++;
+    @Override // org.telegram.ui.Components.oc0
+    public final void b() {
+        MessageObject messageObject;
+        mn mnVar;
+        wn wnVar = this.H;
+        mn mnVar2 = wnVar.B5;
+        if (mnVar2 == null || (messageObject = mnVar2.a) == null || !((mnVar = wnVar.v5.quote) == null || mnVar.a == null || messageObject.getId() == wnVar.v5.quote.a.getId())) {
+            wnVar.B5 = wnVar.v5.quote;
         }
     }
 
-    @Override // android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        this.a = motionEvent.getY();
-        int action = motionEvent.getAction();
-        un unVar = this.c;
-        if (action == 1) {
-            unVar.finishPreviewFragment();
-        } else if (motionEvent.getAction() == 2) {
-            float f7 = this.b - this.a;
-            unVar.movePreviewFragment(f7);
-            if (f7 < 0.0f) {
-                this.b = this.a;
+    @Override // org.telegram.ui.Components.oc0
+    public final void c(boolean z10) {
+        int i10;
+        boolean z11;
+        MessagePreviewParams.Messages messages;
+        a(false);
+        wn wnVar = this.H;
+        MessagePreviewParams messagePreviewParams = wnVar.v5;
+        if (messagePreviewParams != null) {
+            if (!z10) {
+                wnVar.C5 = true;
             }
+            MessagePreviewParams.Messages messages2 = messagePreviewParams.forwardMessages;
+            if (messages2 != null) {
+                int size = messages2.messages.size();
+                i10 = 0;
+                z11 = false;
+                for (int i11 = 0; i11 < size; i11++) {
+                    MessageObject messageObject = wnVar.v5.forwardMessages.messages.get(i11);
+                    if (messageObject.isTodo()) {
+                        i10 = 3;
+                    } else if (messageObject.isPoll()) {
+                        if (i10 != 2) {
+                            i10 = messageObject.isPublicPoll() ? 2 : 1;
+                        }
+                    } else if (messageObject.isInvoice()) {
+                        z11 = true;
+                    }
+                    wnVar.m6[0].put(messageObject.getId(), messageObject);
+                }
+            } else {
+                i10 = 0;
+                z11 = false;
+            }
+            Bundle c10 = org.telegram.messenger.wh.c(3, "onlySelect", "dialogsType", true);
+            c10.putBoolean("quote", !z10);
+            boolean z12 = (z10 || (messages = wnVar.v5.replyMessage) == null || messages.messages.isEmpty() || wnVar.v5.quote != null) ? false : true;
+            c10.putBoolean("reply_to", z12);
+            if (z12) {
+                long peerDialogId = DialogObject.getPeerDialogId(wnVar.v5.replyMessage.messages.get(0).getFromPeer());
+                if (peerDialogId != 0 && peerDialogId != wnVar.a() && peerDialogId != wnVar.getUserConfig().getClientUserId() && peerDialogId > 0) {
+                    c10.putLong("reply_to_author", peerDialogId);
+                }
+            }
+            c10.putInt("hasPoll", i10);
+            c10.putBoolean("hasInvoice", z11);
+            MessagePreviewParams.Messages messages3 = wnVar.v5.forwardMessages;
+            c10.putInt("messagesCount", messages3 != null ? messages3.messages.size() : 0);
+            c10.putBoolean("canSelectTopics", true);
+            ey eyVar = new ey(c10);
+            eyVar.C2 = wnVar;
+            wnVar.presentFragment(eyVar);
         }
-        return super.onTouchEvent(motionEvent);
     }
 }

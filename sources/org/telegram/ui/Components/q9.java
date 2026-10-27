@@ -24,15 +24,15 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.af1;
+import org.telegram.ui.cf1;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public abstract class q9 {
-    public static void a(org.telegram.ui.un unVar, int i10, TLRPC.Chat chat, TLRPC.User user, TLRPC.TL_forumTopic tL_forumTopic, long j10, int i11, int i12) {
+    public static void a(org.telegram.ui.wn wnVar, int i10, TLRPC.Chat chat, TLRPC.User user, TLRPC.TL_forumTopic tL_forumTopic, long j10, int i11, int i12) {
         org.telegram.ui.ActionBar.j5 parentLayout;
         TLRPC.TL_forumTopic tL_forumTopic2;
-        if ((chat == null && user == null) || (parentLayout = unVar.getParentLayout()) == null) {
+        if ((chat == null && user == null) || (parentLayout = wnVar.getParentLayout()) == null) {
             return;
         }
         if (parentLayout.getPulledDialogs() == null) {
@@ -47,7 +47,7 @@ public abstract class q9 {
             }
         }
         p9 p9Var2 = new p9();
-        p9Var2.a = org.telegram.ui.un.class;
+        p9Var2.a = org.telegram.ui.wn.class;
         p9Var2.b = i10;
         p9Var2.f = j10;
         p9Var2.h = i12;
@@ -122,16 +122,16 @@ public abstract class q9 {
                     int i16 = 0;
                     while (i16 < size) {
                         org.telegram.ui.ActionBar.r2 r2Var2 = (org.telegram.ui.ActionBar.r2) fragmentStack.get(i16);
-                        if (r2Var2 instanceof org.telegram.ui.un) {
-                            org.telegram.ui.un unVar = (org.telegram.ui.un) r2Var2;
-                            if (unVar.d4 == 0 && !unVar.J9()) {
-                                chat = unVar.e;
-                                user = unVar.i();
-                                j13 = unVar.a();
+                        if (r2Var2 instanceof org.telegram.ui.wn) {
+                            org.telegram.ui.wn wnVar = (org.telegram.ui.wn) r2Var2;
+                            if (wnVar.d4 == 0 && !wnVar.M9()) {
+                                chat = wnVar.e;
+                                user = wnVar.i();
+                                j13 = wnVar.a();
                                 z11 = z15;
-                                i12 = unVar.Ga;
-                                i11 = unVar.Ha;
-                                cls = org.telegram.ui.un.class;
+                                i12 = wnVar.Ka;
+                                i11 = wnVar.La;
+                                cls = org.telegram.ui.wn.class;
                                 if (j13 != j10 || (j10 == 0 && UserObject.isUserSelf(user))) {
                                     list = fragmentStack;
                                     i13 = size;
@@ -246,7 +246,7 @@ public abstract class q9 {
                         f7 = 16.0f;
                         y9Var.setRoundRadius((chat2 == null || !chat2.forum) ? AndroidUtilities.dp(16.0f) : AndroidUtilities.dp(8.0f));
                     }
-                    frameLayout.addView(y9Var, gb1.m(32.0f, 32.0f, 8388627, 8.0f, 0.0f, 0.0f, 0.0f));
+                    frameLayout.addView(y9Var, kb1.m(32.0f, 32.0f, 8388627, 8.0f, 0.0f, 0.0f, 0.0f));
                     TextView textView = new TextView(parentActivity);
                     AtomicReference atomicReference2 = atomicReference;
                     boolean z20 = z10;
@@ -255,7 +255,7 @@ public abstract class q9 {
                     textView.setTextSize(z20 ? 1 : 0, f7);
                     org.telegram.ui.ActionBar.f7.V(textView, org.telegram.ui.ActionBar.y6.E8, u6Var);
                     textView.setEllipsize(TextUtils.TruncateAt.END);
-                    frameLayout.addView(textView, gb1.m(-1.0f, -2.0f, 8388627, 52.0f, 0.0f, 8.0f, 0.0f));
+                    frameLayout.addView(textView, kb1.m(-1.0f, -2.0f, 8388627, 52.0f, 0.0f, 8.0f, 0.0f));
                     j9 j9Var = new j9((org.telegram.ui.ActionBar.u6) null);
                     j9Var.p = 0.8f;
                     if (tL_forumTopic != null) {
@@ -286,7 +286,7 @@ public abstract class q9 {
                                 if (userProfilePhoto == null || (drawable = userProfilePhoto.strippedBitmap) == null) {
                                     drawable = j9Var;
                                 }
-                                if (p9Var4.a == org.telegram.ui.un.class && UserObject.isUserSelf(user2)) {
+                                if (p9Var4.a == org.telegram.ui.wn.class && UserObject.isUserSelf(user2)) {
                                     str = LocaleController.getString(R.string.SavedMessages);
                                     j9Var.g(1);
                                     y9Var.setImageDrawable(j9Var);
@@ -332,12 +332,12 @@ public abstract class q9 {
                             boolean z21 = z12;
                             atomicReference = atomicReference2;
                             frameLayout.setOnClickListener(new di.e0(atomicReference, p9Var, j5Var, tL_forumTopic, r2Var, 10));
-                            actionBarPopupWindow$ActionBarPopupWindowLayout.a(frameLayout, gb1.t(-1, 44, 0.0f, 0, 0, !z17 ? 3 : 0, 0, !z18 ? 3 : 0));
+                            actionBarPopupWindow$ActionBarPopupWindowLayout.a(frameLayout, kb1.t(-1, 44, 0.0f, 0, 0, !z17 ? 3 : 0, 0, !z18 ? 3 : 0));
                             if (!z14) {
                                 FrameLayout frameLayout2 = new FrameLayout(parentActivity);
                                 org.telegram.ui.ActionBar.f7.i(org.telegram.ui.ActionBar.y6.H8, frameLayout2, u6Var);
                                 frameLayout2.setTag(R.id.fit_width_tag, Integer.valueOf(z21 ? 1 : 0));
-                                actionBarPopupWindow$ActionBarPopupWindowLayout.a(frameLayout2, gb1.r(-1, 8));
+                                actionBarPopupWindow$ActionBarPopupWindowLayout.a(frameLayout2, kb1.r(-1, 8));
                             }
                             i20 = i14 + 1;
                             arrayList2 = arrayList3;
@@ -355,7 +355,7 @@ public abstract class q9 {
                     boolean z212 = z12;
                     atomicReference = atomicReference2;
                     frameLayout.setOnClickListener(new di.e0(atomicReference, p9Var, j5Var, tL_forumTopic, r2Var, 10));
-                    actionBarPopupWindow$ActionBarPopupWindowLayout.a(frameLayout, gb1.t(-1, 44, 0.0f, 0, 0, !z17 ? 3 : 0, 0, !z18 ? 3 : 0));
+                    actionBarPopupWindow$ActionBarPopupWindowLayout.a(frameLayout, kb1.t(-1, 44, 0.0f, 0, 0, !z17 ? 3 : 0, 0, !z18 ? 3 : 0));
                     if (!z14) {
                     }
                     i20 = i14 + 1;
@@ -427,21 +427,21 @@ public abstract class q9 {
                     i15 = -1;
                 }
                 j5Var = parentLayout;
-                if (parentLayout3.getFragmentStack().size() <= 1 || !(parentLayout3.getFragmentStack().get(parentLayout3.getFragmentStack().size() - 2) instanceof af1)) {
+                if (parentLayout3.getFragmentStack().size() <= 1 || !(parentLayout3.getFragmentStack().get(parentLayout3.getFragmentStack().size() - 2) instanceof cf1)) {
                     p9 p9Var6 = new p9();
                     arrayList.add(p9Var6);
                     p9Var6.b = -1;
-                    p9Var6.a = af1.class;
+                    p9Var6.a = cf1.class;
                     p9Var6.c = MessagesController.getInstance(r2Var.getCurrentAccount()).getChat(Long.valueOf(-j10));
                 } else {
                     p9 p9Var7 = new p9();
                     arrayList.add(p9Var7);
                     p9Var7.b = i15 + 1;
-                    p9Var7.a = org.telegram.ui.cy.class;
+                    p9Var7.a = org.telegram.ui.ey.class;
                     p9 p9Var8 = new p9();
                     arrayList.add(p9Var8);
                     p9Var8.b = -1;
-                    p9Var8.a = af1.class;
+                    p9Var8.a = cf1.class;
                     p9Var8.c = MessagesController.getInstance(r2Var.getCurrentAccount()).getChat(Long.valueOf(-j10));
                 }
                 Collections.sort(arrayList, new org.telegram.ui.ActionBar.n4(14));

@@ -4,28 +4,28 @@ import android.view.KeyEvent;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class q implements org.telegram.ui.ActionBar.m1, Utilities.Callback3Return {
-    public final /* synthetic */ n0 a;
+    public final /* synthetic */ m0 a;
 
-    public /* synthetic */ q(n0 n0Var) {
-        this.a = n0Var;
+    public /* synthetic */ q(m0 m0Var) {
+        this.a = m0Var;
     }
 
     @Override // org.telegram.ui.ActionBar.m1
     public void n(KeyEvent keyEvent) {
         org.telegram.ui.ActionBar.o1 o1Var;
-        n0 n0Var = this.a;
-        n0Var.getClass();
-        if (keyEvent.getKeyCode() == 4 && keyEvent.getRepeatCount() == 0 && (o1Var = n0Var.G1) != null && o1Var.isShowing()) {
-            n0Var.G1.d(true);
+        m0 m0Var = this.a;
+        m0Var.getClass();
+        if (keyEvent.getKeyCode() == 4 && keyEvent.getRepeatCount() == 0 && (o1Var = m0Var.G1) != null && o1Var.isShowing()) {
+            m0Var.G1.d(true);
         }
     }
 
     @Override // org.telegram.messenger.Utilities.Callback3Return
     public Object run(Object obj, Object obj2, Object obj3) {
-        a0 g02 = this.a.g0(obj, (TLRPC.Document) obj2, true);
+        z g02 = this.a.g0(obj, (TLRPC.Document) obj2, true);
         if (((Boolean) obj3).booleanValue()) {
             g02.setScale(1.5f);
         }

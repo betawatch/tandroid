@@ -80,18 +80,18 @@ import org.telegram.ui.ActionBar.r2;
 import org.telegram.ui.Cells.r9;
 import org.telegram.ui.Cells.s9;
 import org.telegram.ui.Components.b10;
-import org.telegram.ui.Components.iw0;
-import org.telegram.ui.Components.p81;
-import org.telegram.ui.Components.s81;
-import org.telegram.ui.Components.wo0;
-import org.telegram.ui.c20;
-import org.telegram.ui.lx;
-import org.telegram.ui.yu0;
-import sg.d2;
+import org.telegram.ui.Components.jw0;
+import org.telegram.ui.Components.q81;
+import org.telegram.ui.Components.t81;
+import org.telegram.ui.Components.xo0;
+import org.telegram.ui.av0;
+import org.telegram.ui.e20;
+import org.telegram.ui.ox;
+import sg.c2;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
-public final class i implements n0, a0, androidx.activity.result.b, iw0, j0, u0, yu0, OnSuccessListener, g1, o, p81, w, r, z1, y, i0 {
+public final class i implements n0, a0, androidx.activity.result.b, jw0, j0, u0, av0, OnSuccessListener, g1, o, q81, w, r, z1, y, i0 {
     public static i c;
     public final /* synthetic */ int a;
     public Object b;
@@ -136,7 +136,7 @@ public final class i implements n0, a0, androidx.activity.result.b, iw0, j0, u0,
         }
     }
 
-    @Override // org.telegram.ui.Components.iw0
+    @Override // org.telegram.ui.Components.jw0
     public void B(boolean z10) {
         switch (this.a) {
             case 7:
@@ -152,16 +152,16 @@ public final class i implements n0, a0, androidx.activity.result.b, iw0, j0, u0,
                 if (bVar2 != null) {
                     bVar2.a(z10, true);
                 }
-                c20 c20Var = hVar.s;
-                if (c20Var != null) {
-                    c20Var.invalidate();
+                e20 e20Var = hVar.s;
+                if (e20Var != null) {
+                    e20Var.invalidate();
                     break;
                 }
                 break;
         }
     }
 
-    @Override // org.telegram.ui.yu0
+    @Override // org.telegram.ui.av0
     public void B0(MessageObject messageObject) {
         ((p9) ((q4) this.b).F1).f(true);
     }
@@ -184,7 +184,7 @@ public final class i implements n0, a0, androidx.activity.result.b, iw0, j0, u0,
         }
     }
 
-    @Override // org.telegram.ui.yu0
+    @Override // org.telegram.ui.av0
     public void E(MessageObject messageObject) {
         ((p9) ((q4) this.b).F1).f(false);
     }
@@ -319,7 +319,7 @@ public final class i implements n0, a0, androidx.activity.result.b, iw0, j0, u0,
         }
     }
 
-    @Override // org.telegram.ui.Components.iw0
+    @Override // org.telegram.ui.Components.jw0
     public float V0() {
         i0.b bVar;
         int i10;
@@ -468,7 +468,7 @@ public final class i implements n0, a0, androidx.activity.result.b, iw0, j0, u0,
         return aVar.E((sb.b) this.b, jSONObject);
     }
 
-    @Override // org.telegram.ui.Components.iw0
+    @Override // org.telegram.ui.Components.jw0
     public int b1() {
         i0.b bVar;
         switch (this.a) {
@@ -590,28 +590,28 @@ public final class i implements n0, a0, androidx.activity.result.b, iw0, j0, u0,
 
     @Override // ig.z1
     public void f(int i10) {
-        wo0 wo0Var = (wo0) this.b;
-        wo0Var.D0--;
-        wo0Var.e0 = i10;
-        if (wo0Var.f0 != i10) {
-            wo0Var.s.clear();
+        xo0 xo0Var = (xo0) this.b;
+        xo0Var.D0--;
+        xo0Var.e0 = i10;
+        if (xo0Var.f0 != i10) {
+            xo0Var.s.clear();
         }
-        if (wo0Var.g0 != i10) {
-            wo0Var.I.clear();
+        if (xo0Var.g0 != i10) {
+            xo0Var.I.clear();
         }
-        wo0Var.N = true;
-        lx lxVar = wo0Var.U;
-        if (lxVar != null) {
-            lxVar.d(wo0Var.D0 > 0, true);
+        xo0Var.N = true;
+        ox oxVar = xo0Var.U;
+        if (oxVar != null) {
+            oxVar.d(xo0Var.D0 > 0, true);
         }
-        wo0Var.l();
-        lx lxVar2 = wo0Var.U;
-        if (lxVar2 != null) {
-            lxVar2.c();
+        xo0Var.l();
+        ox oxVar2 = xo0Var.U;
+        if (oxVar2 != null) {
+            oxVar2.c();
         }
     }
 
-    @Override // org.telegram.ui.yu0
+    @Override // org.telegram.ui.av0
     public /* synthetic */ TextureView f0() {
         return null;
     }
@@ -697,7 +697,7 @@ public final class i implements n0, a0, androidx.activity.result.b, iw0, j0, u0,
 
     @Override // ig.z1
     public boolean k0(int i10) {
-        return i10 == ((wo0) this.b).d0;
+        return i10 == ((xo0) this.b).d0;
     }
 
     @Override // f9.g1
@@ -745,7 +745,7 @@ public final class i implements n0, a0, androidx.activity.result.b, iw0, j0, u0,
         }
     }
 
-    @Override // org.telegram.ui.Components.p81
+    @Override // org.telegram.ui.Components.q81
     public /* synthetic */ void onRenderedFirstFrame(j2.a aVar) {
     }
 
@@ -758,15 +758,15 @@ public final class i implements n0, a0, androidx.activity.result.b, iw0, j0, u0,
         }
     }
 
-    @Override // org.telegram.ui.Components.p81
+    @Override // org.telegram.ui.Components.q81
     public void onStateChanged(boolean z10, int i10) {
         o6 o6Var = (o6) this.b;
         m6 m6Var = o6Var.M;
-        s81 s81Var = o6Var.x;
-        if (s81Var == null) {
+        t81 t81Var = o6Var.x;
+        if (t81Var == null) {
             return;
         }
-        if (s81Var.y()) {
+        if (t81Var.y()) {
             AndroidUtilities.runOnUIThread(m6Var);
         } else {
             AndroidUtilities.cancelRunOnUIThread(m6Var);
@@ -879,7 +879,7 @@ public final class i implements n0, a0, androidx.activity.result.b, iw0, j0, u0,
         }
     }
 
-    @Override // org.telegram.ui.Components.p81
+    @Override // org.telegram.ui.Components.q81
     public /* synthetic */ boolean onSurfaceDestroyed(SurfaceTexture surfaceTexture) {
         return false;
     }
@@ -910,15 +910,15 @@ public final class i implements n0, a0, androidx.activity.result.b, iw0, j0, u0,
 
     @Override // ig.z1
     public void p0(ArrayList arrayList) {
-        wo0 wo0Var = (wo0) this.b;
+        xo0 xo0Var = (xo0) this.b;
         for (int i10 = 0; i10 < arrayList.size(); i10++) {
-            wo0Var.J.add(((y1) arrayList.get(i10)).a);
+            xo0Var.J.add(((y1) arrayList.get(i10)).a);
         }
-        lx lxVar = wo0Var.U;
-        if (lxVar != null) {
-            lxVar.d(wo0Var.D0 > 0, false);
+        ox oxVar = xo0Var.U;
+        if (oxVar != null) {
+            oxVar.d(xo0Var.D0 > 0, false);
         }
-        wo0Var.l();
+        xo0Var.l();
     }
 
     @Override // ng.o
@@ -1004,18 +1004,18 @@ public final class i implements n0, a0, androidx.activity.result.b, iw0, j0, u0,
         this.b = eVar;
     }
 
-    @Override // org.telegram.ui.Components.p81
+    @Override // org.telegram.ui.Components.q81
     public void onRenderedFirstFrame() {
     }
 
-    @Override // org.telegram.ui.Components.p81
+    @Override // org.telegram.ui.Components.q81
     public void onVideoSizeChanged(int i10, int i11, int i12, float f7) {
-        d2 d2Var = ((o6) this.b).w;
-        if (d2Var != null) {
+        c2 c2Var = ((o6) this.b).w;
+        if (c2Var != null) {
             float f10 = i10 / i11;
-            if (Math.abs(d2Var.y0 - f10) >= 1.0E-4f) {
-                d2Var.y0 = f10;
-                d2Var.requestLayout();
+            if (Math.abs(c2Var.y0 - f10) >= 1.0E-4f) {
+                c2Var.y0 = f10;
+                c2Var.requestLayout();
             }
         }
     }
@@ -1090,15 +1090,15 @@ public final class i implements n0, a0, androidx.activity.result.b, iw0, j0, u0,
     public void o(int i10) {
     }
 
-    @Override // org.telegram.ui.Components.p81
+    @Override // org.telegram.ui.Components.q81
     public /* synthetic */ void onSeekFinished(j2.a aVar) {
     }
 
-    @Override // org.telegram.ui.Components.p81
+    @Override // org.telegram.ui.Components.q81
     public /* synthetic */ void onSeekStarted(j2.a aVar) {
     }
 
-    @Override // org.telegram.ui.Components.p81
+    @Override // org.telegram.ui.Components.q81
     public /* synthetic */ void onSurfaceTextureUpdated(SurfaceTexture surfaceTexture) {
     }
 
@@ -1106,8 +1106,8 @@ public final class i implements n0, a0, androidx.activity.result.b, iw0, j0, u0,
     public void x(boolean z10) {
     }
 
-    @Override // org.telegram.ui.Components.p81
-    public void onError(s81 s81Var, Exception exc) {
+    @Override // org.telegram.ui.Components.q81
+    public void onError(t81 t81Var, Exception exc) {
     }
 
     @Override // com.google.android.gms.common.api.internal.j0

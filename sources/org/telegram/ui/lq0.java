@@ -1,25 +1,204 @@
 package org.telegram.ui;
 
-import android.text.TextUtils;
+import android.content.Context;
+import android.graphics.Point;
+import android.view.View;
+import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public final class lq0 extends g.o {
-    public final /* synthetic */ rq0 c;
+public final class lq0 extends org.telegram.ui.Components.ww0 {
+    public int l0;
+    public boolean m0;
+    public int n0;
+    public final /* synthetic */ tq0 o0;
 
-    public lq0(rq0 rq0Var) {
-        this.c = rq0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public lq0(tq0 tq0Var, Context context) {
+        super(context, null);
+        this.o0 = tq0Var;
     }
 
-    @Override // g.o
-    public final int i(int i10) {
-        rq0 rq0Var = this.c;
-        if (rq0Var.L.j(i10) == 1 || rq0Var.Y || (rq0Var.J == null && TextUtils.isEmpty(rq0Var.v))) {
-            return rq0Var.M.J;
+    /* JADX WARN: Removed duplicated region for block: B:36:0x009e  */
+    /* JADX WARN: Removed duplicated region for block: B:43:0x00ca  */
+    /* JADX WARN: Removed duplicated region for block: B:47:0x00d6  */
+    /* JADX WARN: Removed duplicated region for block: B:49:0x00e0  */
+    /* JADX WARN: Removed duplicated region for block: B:56:0x00ba  */
+    @Override // org.telegram.ui.Components.ww0, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        int i14;
+        int i15;
+        int i16;
+        int i17;
+        int i18;
+        int i19;
+        org.telegram.ui.Components.ru ruVar;
+        int measuredHeight;
+        int measuredHeight2;
+        int i20 = this.l0;
+        int i21 = i12 - i10;
+        tq0 tq0Var = this.o0;
+        if (i20 != i21) {
+            this.l0 = i21;
+            rq0 rq0Var = tq0Var.L;
+            if (rq0Var != null) {
+                rq0Var.l();
+            }
+            org.telegram.ui.ActionBar.o1 o1Var = tq0Var.m0;
+            if (o1Var != null && o1Var.isShowing()) {
+                tq0Var.m0.d(true);
+            }
         }
-        int i11 = rq0Var.R;
-        int i12 = rq0Var.g0;
-        return i11 + (i10 % i12 != i12 - 1 ? AndroidUtilities.dp(2.0f) : 0);
+        int childCount = getChildCount();
+        int emojiPadding = (tq0Var.d0 == null || tq0Var.Z.getParent() != this || AndroidUtilities.dp(20.0f) < 0 || AndroidUtilities.isInMultiwindow || AndroidUtilities.isTablet()) ? 0 : tq0Var.d0.getEmojiPadding();
+        setBottomClip(emojiPadding);
+        for (int i22 = 0; i22 < childCount; i22++) {
+            View childAt = getChildAt(i22);
+            if (childAt.getVisibility() != 8) {
+                FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) childAt.getLayoutParams();
+                int measuredWidth = childAt.getMeasuredWidth();
+                int measuredHeight3 = childAt.getMeasuredHeight();
+                int i23 = layoutParams.gravity;
+                if (i23 == -1) {
+                    i23 = 51;
+                }
+                int i24 = i23 & 112;
+                int i25 = i23 & 7;
+                if (i25 == 1) {
+                    i14 = ((i21 - measuredWidth) / 2) + layoutParams.leftMargin;
+                    i15 = layoutParams.rightMargin;
+                } else if (i25 != 5) {
+                    i16 = getPaddingLeft() + layoutParams.leftMargin;
+                    if (i24 == 16) {
+                        if (i24 == 48) {
+                            i19 = layoutParams.topMargin + getPaddingTop();
+                        } else if (i24 != 80) {
+                            i19 = layoutParams.topMargin;
+                        } else {
+                            i17 = ((i13 - emojiPadding) - i11) - measuredHeight3;
+                            i18 = layoutParams.bottomMargin;
+                        }
+                        ruVar = tq0Var.d0;
+                        if (ruVar != null && ruVar.l(childAt)) {
+                            if (AndroidUtilities.isTablet()) {
+                                measuredHeight = getMeasuredHeight();
+                                measuredHeight2 = childAt.getMeasuredHeight();
+                            } else {
+                                measuredHeight = getMeasuredHeight();
+                                measuredHeight2 = childAt.getMeasuredHeight();
+                            }
+                            i19 = measuredHeight - measuredHeight2;
+                        }
+                        childAt.layout(i16, i19, measuredWidth + i16, measuredHeight3 + i19);
+                    } else {
+                        i17 = ((((i13 - emojiPadding) - i11) - measuredHeight3) / 2) + layoutParams.topMargin;
+                        i18 = layoutParams.bottomMargin;
+                    }
+                    i19 = i17 - i18;
+                    ruVar = tq0Var.d0;
+                    if (ruVar != null) {
+                        if (AndroidUtilities.isTablet()) {
+                        }
+                        i19 = measuredHeight - measuredHeight2;
+                    }
+                    childAt.layout(i16, i19, measuredWidth + i16, measuredHeight3 + i19);
+                } else {
+                    i14 = (i21 - measuredWidth) - layoutParams.rightMargin;
+                    i15 = getPaddingRight();
+                }
+                i16 = i14 - i15;
+                if (i24 == 16) {
+                }
+                i19 = i17 - i18;
+                ruVar = tq0Var.d0;
+                if (ruVar != null) {
+                }
+                childAt.layout(i16, i19, measuredWidth + i16, measuredHeight3 + i19);
+            }
+        }
+        R();
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        org.telegram.ui.Components.ru ruVar;
+        int size = View.MeasureSpec.getSize(i11);
+        int size2 = View.MeasureSpec.getSize(i10);
+        boolean isTablet = AndroidUtilities.isTablet();
+        tq0 tq0Var = this.o0;
+        if (isTablet) {
+            tq0Var.g0 = 4;
+        } else {
+            Point point = AndroidUtilities.displaySize;
+            if (point.x > point.y) {
+                tq0Var.g0 = 4;
+            } else {
+                tq0Var.g0 = 3;
+            }
+        }
+        this.m0 = true;
+        int dp = ((size2 - AndroidUtilities.dp(4.0f)) - AndroidUtilities.dp(4.0f)) / tq0Var.g0;
+        tq0Var.R = dp;
+        if (this.n0 != dp) {
+            this.n0 = dp;
+            AndroidUtilities.runOnUIThread(new nj0(this, 15));
+        }
+        if (tq0Var.Y) {
+            tq0Var.M.z1(1);
+        } else {
+            tq0Var.M.z1(Math.max(1, ((tq0Var.g0 - 1) * AndroidUtilities.dp(2.0f)) + (tq0Var.R * tq0Var.g0)));
+        }
+        this.m0 = false;
+        int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30);
+        int size3 = View.MeasureSpec.getSize(i10);
+        int size4 = View.MeasureSpec.getSize(makeMeasureSpec);
+        setMeasuredDimension(size3, size4);
+        int Q = Q();
+        if (AndroidUtilities.dp(20.0f) >= 0 && !AndroidUtilities.isInMultiwindow && tq0Var.d0 != null && tq0Var.Z.getParent() == this) {
+            size4 -= tq0Var.d0.getEmojiPadding();
+            makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(size4, TLObject.FLAG_30);
+        }
+        int i12 = size4;
+        int i13 = makeMeasureSpec;
+        if (Q > AndroidUtilities.dp(20.0f) && (ruVar = tq0Var.d0) != null) {
+            this.m0 = true;
+            ruVar.j();
+            this.m0 = false;
+        }
+        org.telegram.ui.Components.ru ruVar2 = tq0Var.d0;
+        if (ruVar2 != null && ruVar2.e) {
+            tq0Var.fragmentView.setTranslationY(0.0f);
+            tq0Var.K.setTranslationY(0.0f);
+            tq0Var.N.setTranslationY(0.0f);
+        }
+        int childCount = getChildCount();
+        for (int i14 = 0; i14 < childCount; i14++) {
+            View childAt = getChildAt(i14);
+            if (childAt != null && childAt.getVisibility() != 8) {
+                org.telegram.ui.Components.ru ruVar3 = tq0Var.d0;
+                if (ruVar3 == null || !ruVar3.l(childAt)) {
+                    measureChildWithMargins(childAt, i10, 0, i13, 0);
+                } else if (!AndroidUtilities.isInMultiwindow && !AndroidUtilities.isTablet()) {
+                    childAt.measure(View.MeasureSpec.makeMeasureSpec(size3, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(childAt.getLayoutParams().height, TLObject.FLAG_30));
+                } else if (AndroidUtilities.isTablet()) {
+                    childAt.measure(View.MeasureSpec.makeMeasureSpec(size3, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(Math.min(AndroidUtilities.dp(AndroidUtilities.isTablet() ? 200.0f : 320.0f), getPaddingTop() + (i12 - AndroidUtilities.statusBarHeight)), TLObject.FLAG_30));
+                } else {
+                    childAt.measure(View.MeasureSpec.makeMeasureSpec(size3, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(getPaddingTop() + (i12 - AndroidUtilities.statusBarHeight), TLObject.FLAG_30));
+                }
+            }
+        }
+    }
+
+    @Override // android.view.View, android.view.ViewParent
+    public final void requestLayout() {
+        if (this.m0) {
+            return;
+        }
+        super.requestLayout();
     }
 }

@@ -16,14 +16,14 @@ import org.telegram.ui.Components.ab;
 import org.telegram.ui.Components.bb;
 import org.telegram.ui.Components.c10;
 import org.telegram.ui.Components.ds;
-import org.telegram.ui.Components.gb1;
-import org.telegram.ui.Components.j71;
-import org.telegram.ui.Components.k80;
-import org.telegram.ui.Components.lm0;
+import org.telegram.ui.Components.k71;
+import org.telegram.ui.Components.kb1;
+import org.telegram.ui.Components.l80;
 import org.telegram.ui.Components.mm0;
+import org.telegram.ui.Components.nm0;
 import org.telegram.ui.Components.vz;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class l4 extends bb implements NotificationCenter.NotificationCenterDelegate {
     public final int X;
@@ -32,10 +32,10 @@ public final class l4 extends bb implements NotificationCenter.NotificationCente
     public final vz a0;
     public final FrameLayout b0;
     public final fi.d c0;
-    public k80 d0;
+    public l80 d0;
     public final hh.c e0;
     public final hh.c f0;
-    public j71 g0;
+    public k71 g0;
     public i0.b h0;
     public boolean i0;
     public int j0;
@@ -82,20 +82,20 @@ public final class l4 extends bb implements NotificationCenter.NotificationCente
         frameLayout.setPadding(i12, 0, i12, 0);
         FrameLayout frameLayout2 = new FrameLayout(context);
         frameLayout2.setPadding(AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f));
-        frameLayout2.addView(dVar, gb1.g(-1.0f, -1));
+        frameLayout2.addView(dVar, kb1.g(-1.0f, -1));
         frameLayout2.setOnClickListener(new org.telegram.ui.web.c(15, this, p4Var));
         eh.d c10 = bVar.c(frameLayout2, null, false);
         c10.v(gh.c.j(this.resourcesProvider));
         c10.x(AndroidUtilities.dp(28.0f));
         c10.w(AndroidUtilities.dp(5.0f));
         frameLayout2.setBackground(c10);
-        gb1.c(frameLayout2, 0.02f, 1.5f);
-        frameLayout.addView(frameLayout2, gb1.h(-1, 64.0f, 80, 4.0f, 0.0f, 4.0f, 0.0f));
+        kb1.c(frameLayout2, 0.02f, 1.5f);
+        frameLayout.addView(frameLayout2, kb1.h(-1, 64.0f, 80, 4.0f, 0.0f, 4.0f, 0.0f));
         ch.c cVar3 = new ch.c(bVar2.c(frameLayout, null, false));
         cVar3.b(AndroidUtilities.dp(40.0f), true);
         cVar3.G = 220;
         frameLayout.setBackground(cVar3);
-        this.containerView.addView(frameLayout, gb1.i(-1, -2, 80));
+        this.containerView.addView(frameLayout, kb1.i(-1, -2, 80));
         getContext();
         vz vzVar = new vz(3, false);
         this.a0 = vzVar;
@@ -114,7 +114,7 @@ public final class l4 extends bb implements NotificationCenter.NotificationCente
         lVar.n(350L);
         this.d.setItemAnimator(lVar);
         this.g0.O(true);
-        NotificationCenter.getInstance(this.currentAccount).addObserver(this, NotificationCenter.starUserGiftsLoaded);
+        NotificationCenter.getInstance(this.currentAccount).addWeakObserver(this, NotificationCenter.starUserGiftsLoaded);
         S();
     }
 
@@ -127,10 +127,10 @@ public final class l4 extends bb implements NotificationCenter.NotificationCente
     }
 
     public final boolean T() {
-        mm0 mm0Var = this.d;
-        if (mm0Var != null && mm0Var.G) {
-            for (int i10 = 0; i10 < mm0Var.getChildCount(); i10++) {
-                if (mm0Var.getChildAt(i10) instanceof c10) {
+        nm0 nm0Var = this.d;
+        if (nm0Var != null && nm0Var.G) {
+            for (int i10 = 0; i10 < nm0Var.getChildCount(); i10++) {
+                if (nm0Var.getChildAt(i10) instanceof c10) {
                     return true;
                 }
             }
@@ -140,11 +140,11 @@ public final class l4 extends bb implements NotificationCenter.NotificationCente
 
     @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
     public final void didReceivedNotification(int i10, int i11, Object... objArr) {
-        j71 j71Var;
-        if (i10 != NotificationCenter.starUserGiftsLoaded || (j71Var = this.g0) == null) {
+        k71 k71Var;
+        if (i10 != NotificationCenter.starUserGiftsLoaded || (k71Var = this.g0) == null) {
             return;
         }
-        j71Var.O(true);
+        k71Var.O(true);
         if (T()) {
             this.Y.b();
         }
@@ -188,11 +188,11 @@ public final class l4 extends bb implements NotificationCenter.NotificationCente
     }
 
     @Override // org.telegram.ui.Components.bb
-    public final lm0 v(mm0 mm0Var) {
-        j71 j71Var = new j71(mm0Var, getContext(), this.currentAccount, 0, false, new q0(this, 4), this.resourcesProvider);
-        this.g0 = j71Var;
-        j71Var.r = false;
-        return j71Var;
+    public final mm0 v(nm0 nm0Var) {
+        k71 k71Var = new k71(nm0Var, getContext(), this.currentAccount, 0, false, new q0(this, 4), this.resourcesProvider);
+        this.g0 = k71Var;
+        k71Var.r = false;
+        return k71Var;
     }
 
     @Override // org.telegram.ui.Components.bb

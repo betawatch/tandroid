@@ -8,10 +8,10 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.ui.ActionBar.u6;
 import org.telegram.ui.Components.ds;
-import org.telegram.ui.Components.gb1;
 import org.telegram.ui.Components.hr;
+import org.telegram.ui.Components.kb1;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class h extends FrameLayout implements oe.d {
     public static final int[] s;
@@ -136,9 +136,9 @@ public final class h extends FrameLayout implements oe.d {
                 kh.b bVar3 = new kh.b(context, u6Var);
                 kh.a d = kh.a.d(context, this.d, this.c, u6Var, i15, i14);
                 bVar3.b = d;
-                bVar3.addView(d, gb1.i(i11, i11, 80));
+                bVar3.addView(d, kb1.i(i11, i11, 80));
                 d.setIconPadding(AndroidUtilities.dp(2.0f));
-                gb1.c(bVar3, 0.13f, 2.0f);
+                kb1.c(bVar3, 0.13f, 2.0f);
                 float f7 = i11 / 2.0f;
                 bVar3.setPivotX(AndroidUtilities.dp(f7));
                 bVar3.setPivotY(AndroidUtilities.dp(f7 + 8.0f));
@@ -158,7 +158,7 @@ public final class h extends FrameLayout implements oe.d {
                         hrVar.setReverse(true);
                     }
                 }
-                addView(bVar3, gb1.i(i11, i11 + 8, this.r));
+                addView(bVar3, kb1.i(i11, i11 + 8, this.r));
                 cVarArr[i10] = new k6.c(bVar3, bVar, bVar2, 2);
                 ag.g gVar = this.f[i10];
                 if (gVar != null) {

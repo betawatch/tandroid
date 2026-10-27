@@ -17,10 +17,10 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.ui.Components.gb1;
-import org.telegram.ui.Components.xj0;
+import org.telegram.ui.Components.kb1;
+import org.telegram.ui.Components.yj0;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class l7 extends FrameLayout {
     public final ArrayList a;
@@ -49,13 +49,13 @@ public final class l7 extends FrameLayout {
         textView.setTextColor(-1);
         textView.setTypeface(AndroidUtilities.bold());
         org.telegram.ui.d3.o(R.string.StoriesIntroHeader, textView, 1, 20.0f);
-        linearLayout.addView(textView, gb1.r(-2, -2));
+        linearLayout.addView(textView, kb1.r(-2, -2));
         TextView textView2 = new TextView(context);
         textView2.setTextColor(-1761607681);
         textView2.setText(LocaleController.getString(R.string.StoriesIntroSubHeader));
         textView2.setTextSize(1, 14.0f);
         textView2.setGravity(1);
-        linearLayout.addView(textView2, gb1.o(68.0f, 8.0f, 68.0f, 36.0f, -2, -2));
+        linearLayout.addView(textView2, kb1.o(68.0f, 8.0f, 68.0f, 36.0f, -2, -2));
         ArrayList arrayList = new ArrayList(4);
         this.a = arrayList;
         arrayList.add(new k7(context, R.raw.stories_intro_go_forward, LocaleController.getString(R.string.StoriesIntroGoForwardHeader), LocaleController.getString(R.string.StoriesIntroGoForwardSubHeader)));
@@ -96,8 +96,8 @@ public final class l7 extends FrameLayout {
         textView3.setTextColor(-1);
         textView3.setTypeface(AndroidUtilities.bold());
         org.telegram.ui.d3.o(R.string.StoriesIntroDismiss, textView3, 1, 14.0f);
-        linearLayout.addView(textView3, gb1.o(0.0f, 73.0f, 0.0f, 0.0f, -2, -2));
-        addView(linearLayout, gb1.i(-1, -2, 17));
+        linearLayout.addView(textView3, kb1.o(0.0f, 73.0f, 0.0f, 0.0f, -2, -2));
+        addView(linearLayout, kb1.i(-1, -2, 17));
         BitmapDrawable bitmapDrawable = new BitmapDrawable(getContext().getResources(), AndroidUtilities.makeBlurBitmap(m9Var, 12.0f, 10));
         bitmapDrawable.setColorFilter(new PorterDuffColorFilter(-587202560, PorterDuff.Mode.DST_OVER));
         imageView.setImageDrawable(bitmapDrawable);
@@ -134,16 +134,16 @@ public final class l7 extends FrameLayout {
         ArrayList arrayList = this.a;
         if (i10 != -1) {
             k7 k7Var = (k7) arrayList.get(i10);
-            xj0 xj0Var = k7Var.c;
-            xj0Var.M(0);
-            xj0Var.stop();
+            yj0 yj0Var = k7Var.c;
+            yj0Var.M(0);
+            yj0Var.stop();
             k7Var.n = 0.0f;
             k7Var.invalidate();
         }
         k7 k7Var2 = (k7) arrayList.get(this.d);
-        xj0 xj0Var2 = k7Var2.c;
-        xj0Var2.M(0);
-        xj0Var2.stop();
+        yj0 yj0Var2 = k7Var2.c;
+        yj0Var2.M(0);
+        yj0Var2.stop();
         k7Var2.n = 0.0f;
         k7Var2.invalidate();
         c();

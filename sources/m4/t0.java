@@ -3,13 +3,13 @@ package m4;
 import android.view.Surface;
 import android.view.View;
 import org.telegram.ui.ActionBar.u6;
-import org.telegram.ui.Components.am0;
+import org.telegram.ui.Components.bm0;
 import org.telegram.ui.Components.iu;
 import org.telegram.ui.Components.ju;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class t0 implements e2.j, iu, am0 {
+public final /* synthetic */ class t0 implements e2.j, iu, bm0 {
     public final /* synthetic */ int a;
     public final /* synthetic */ int b;
     public final /* synthetic */ Object c;
@@ -38,12 +38,12 @@ public final /* synthetic */ class t0 implements e2.j, iu, am0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.am0
+    @Override // org.telegram.ui.Components.bm0
     public /* synthetic */ boolean c1(View view) {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.am0
+    @Override // org.telegram.ui.Components.bm0
     public void e(float f7, float f10, int i10, View view) {
         vg.n1.Q((vg.n1) this.c, this.a, (u6) this.d, this.b, view, i10);
     }
@@ -67,7 +67,7 @@ public final /* synthetic */ class t0 implements e2.j, iu, am0 {
         this.b = i11;
     }
 
-    @Override // org.telegram.ui.Components.am0
+    @Override // org.telegram.ui.Components.bm0
     public /* synthetic */ void l0(View view, float f7, float f10) {
     }
 }

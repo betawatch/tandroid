@@ -2,11 +2,11 @@ package org.telegram.ui.Cells;
 
 import android.util.Property;
 import android.view.View;
-import org.telegram.ui.Components.b31;
-import org.telegram.ui.Components.fl0;
-import org.telegram.ui.xu0;
+import org.telegram.ui.Components.c31;
+import org.telegram.ui.Components.gl0;
+import org.telegram.ui.zu0;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class b1 extends Property {
     public final /* synthetic */ int a;
@@ -25,11 +25,11 @@ public final class b1 extends Property {
             case 1:
                 return Integer.valueOf(Math.round(((View) obj).getTranslationY()));
             case 2:
-                return Float.valueOf(((fl0) obj).v);
+                return Float.valueOf(((gl0) obj).v);
             case 3:
-                return Float.valueOf(((b31) obj).h);
+                return Float.valueOf(((c31) obj).h);
             default:
-                return Float.valueOf(((xu0) obj).a);
+                return Float.valueOf(((zu0) obj).a);
         }
     }
 
@@ -43,15 +43,15 @@ public final class b1 extends Property {
                 ((View) obj).setTranslationY(((Integer) obj2).intValue());
                 break;
             case 2:
-                ((fl0) obj).setTransitionProgress(((Float) obj2).floatValue());
+                ((gl0) obj).setTransitionProgress(((Float) obj2).floatValue());
                 break;
             case 3:
-                b31 b31Var = (b31) obj;
-                b31Var.h = ((Float) obj2).floatValue();
-                b31Var.invalidate();
+                c31 c31Var = (c31) obj;
+                c31Var.h = ((Float) obj2).floatValue();
+                c31Var.invalidate();
                 break;
             default:
-                ((xu0) obj).b(((Float) obj2).floatValue());
+                ((zu0) obj).b(((Float) obj2).floatValue());
                 break;
         }
     }

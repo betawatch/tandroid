@@ -2,17 +2,17 @@ package org.telegram.ui.Components.voip;
 
 import android.content.Context;
 import org.telegram.ui.Components.UndoView;
-import org.telegram.ui.m30;
+import org.telegram.ui.o30;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class h0 extends UndoView {
-    public final /* synthetic */ m30 j0;
+    public final /* synthetic */ o30 j0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public h0(m30 m30Var, Context context) {
+    public h0(o30 o30Var, Context context) {
         super(context);
-        this.j0 = m30Var;
+        this.j0 = o30Var;
     }
 
     @Override // org.telegram.ui.Components.UndoView, android.view.View

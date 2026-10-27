@@ -1,12 +1,13 @@
 package di;
 
+import android.content.Context;
 import android.os.Build;
 import android.view.MotionEvent;
 import android.widget.FrameLayout;
 import java.util.ArrayList;
 import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public abstract class f8 extends a5.m {
     public ArrayList A0;
@@ -16,19 +17,48 @@ public abstract class f8 extends a5.m {
     public int E0;
     public int F0;
     public Runnable G0;
-    public n4 H0;
+    public final n4 H0;
     public int I0;
     public int J0;
     public float K0;
     public boolean L0;
-    public a5.d M0;
-    public y9 N0;
+    public final a5.d M0;
+    public final y9 N0;
     public int O0;
-    public float P0;
+    public final ArrayList P0;
+    public float Q0;
     public long w0;
     public ArrayList x0;
     public int y0;
-    public c8 z0;
+    public final c8 z0;
+
+    public f8(int i10, Context context, y9 y9Var, org.telegram.ui.ActionBar.u6 u6Var) {
+        super(context);
+        this.A0 = new ArrayList();
+        this.D0 = true;
+        x xVar = (x) this;
+        this.M0 = new a5.d(xVar, 20);
+        this.O0 = -1;
+        this.P0 = new ArrayList();
+        this.y0 = i10;
+        this.H0 = new n4(context);
+        this.N0 = y9Var;
+        c8 c8Var = new c8(xVar, context, y9Var, u6Var);
+        this.z0 = c8Var;
+        setAdapter(c8Var);
+        a1.c cVar = new a1.c(xVar, 27);
+        boolean z10 = this.m0 == null;
+        this.m0 = cVar;
+        setChildrenDrawingOrderEnabled(true);
+        this.o0 = 1;
+        this.n0 = 2;
+        if (z10) {
+            s();
+        }
+        setOffscreenPageLimit(0);
+        b(new d8(xVar, y9Var));
+        setOverScrollMode(2);
+    }
 
     public static boolean C(ArrayList arrayList, ArrayList arrayList2) {
         if (arrayList == null && arrayList2 == null) {
@@ -93,9 +123,10 @@ public abstract class f8 extends a5.m {
     */
     public final void D(int i10, long j10, ArrayList arrayList) {
         boolean z10;
+        c8 c8Var;
+        int size;
+        y9 y9Var;
         ArrayList arrayList2;
-        y9 y9Var = this.N0;
-        c8 c8Var = this.z0;
         int i11 = 0;
         if (this.w0 == j10) {
             ArrayList arrayList3 = this.x0;
@@ -121,6 +152,7 @@ public abstract class f8 extends a5.m {
             this.w0 = j10;
             this.x0 = arrayList;
             this.y0 = i10;
+            c8Var = this.z0;
             if (!z10 && c8Var != null) {
                 c8Var.g();
                 this.C0 = true;
@@ -128,8 +160,14 @@ public abstract class f8 extends a5.m {
             }
             setAdapter(null);
             setAdapter(c8Var);
-            while (i11 < arrayList.size() && !((ArrayList) arrayList.get(i11)).contains(Integer.valueOf(y9Var.P0))) {
-                i11++;
+            while (true) {
+                size = arrayList.size();
+                y9Var = this.N0;
+                if (i11 < size || ((ArrayList) arrayList.get(i11)).contains(Integer.valueOf(y9Var.P0))) {
+                    break;
+                } else {
+                    i11++;
+                }
             }
             if (y9Var.R0) {
                 i11 = (arrayList.size() - 1) - i11;
@@ -141,11 +179,19 @@ public abstract class f8 extends a5.m {
         this.w0 = j10;
         this.x0 = arrayList;
         this.y0 = i10;
+        c8Var = this.z0;
         if (!z10) {
         }
         setAdapter(null);
         setAdapter(c8Var);
-        while (i11 < arrayList.size()) {
+        while (true) {
+            size = arrayList.size();
+            y9Var = this.N0;
+            if (i11 < size) {
+                break;
+            } else {
+                break;
+            }
             i11++;
         }
         if (y9Var.R0) {
@@ -257,10 +303,10 @@ public abstract class f8 extends a5.m {
     }
 
     public void setHorizontalProgressToDismiss(float f7) {
-        if (Math.abs(f7) > 1.0f || this.P0 == f7) {
+        if (Math.abs(f7) > 1.0f || this.Q0 == f7) {
             return;
         }
-        this.P0 = f7;
+        this.Q0 = f7;
         setCameraDistance(getWidth() * 15);
         setPivotX(f7 < 0.0f ? getWidth() : 0.0f);
         setPivotY(getHeight() * 0.5f);

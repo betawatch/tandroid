@@ -12,11 +12,11 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.Components.ny0;
-import org.telegram.ui.Components.vs0;
+import org.telegram.ui.Components.oy0;
 import org.telegram.ui.Components.wc;
+import org.telegram.ui.Components.ws0;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class s implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -46,11 +46,11 @@ public final /* synthetic */ class s implements Utilities.Callback {
                 String str = (String) obj;
                 if (str != null) {
                     g0Var.close();
-                    l0.i("prepare disable backup, failed to save secret phrase to local storage: ".concat(str));
+                    l0.j("prepare disable backup, failed to save secret phrase to local storage: ".concat(str));
                     z7Var.run(null, str);
                     break;
                 } else {
-                    l0.F("prepare disable backup: done!");
+                    l0.H("prepare disable backup: done!");
                     z7Var.run(g0Var, null);
                     break;
                 }
@@ -80,7 +80,7 @@ public final /* synthetic */ class s implements Utilities.Callback {
                 m5Var.C0.setLoading(false);
                 if ("NO_LOCAL_BACKUP".equalsIgnoreCase(str2)) {
                     w7 w7Var = new w7();
-                    w7Var.s = l0Var2.x();
+                    w7Var.s = l0Var2.y();
                     m5Var.presentFragment(w7Var);
                     break;
                 } else if (str2 != null) {
@@ -100,7 +100,7 @@ public final /* synthetic */ class s implements Utilities.Callback {
                     break;
                 } else {
                     w7Var2.finishFragment();
-                    l0Var3.J();
+                    l0Var3.L();
                     break;
                 }
             case 10:
@@ -170,7 +170,7 @@ public final /* synthetic */ class s implements Utilities.Callback {
             case 16:
                 org.telegram.ui.web.h2 h2Var = (org.telegram.ui.web.h2) this.b;
                 h2Var.getClass();
-                AndroidUtilities.runOnUIThread(new ny0(h2Var, (org.telegram.ui.web.g2) this.c, (Bitmap) obj, 11));
+                AndroidUtilities.runOnUIThread(new oy0(h2Var, (org.telegram.ui.web.g2) this.c, (Bitmap) obj, 11));
                 break;
             case 17:
                 zh.p1 p1Var = (zh.p1) this.b;
@@ -194,10 +194,10 @@ public final /* synthetic */ class s implements Utilities.Callback {
                 }
                 break;
             case 19:
-                vs0 vs0Var = (vs0) this.b;
+                ws0 ws0Var = (ws0) this.b;
                 TL_stars.TL_starGiftCollection tL_starGiftCollection = (TL_stars.TL_starGiftCollection) this.c;
                 String str7 = (String) obj;
-                bi.q9 q9Var = vs0Var.e;
+                bi.q9 q9Var = ws0Var.e;
                 int i10 = tL_starGiftCollection.collection_id;
                 q9Var.getClass();
                 TL_stars.updateStarGiftCollection updatestargiftcollection = new TL_stars.updateStarGiftCollection();
@@ -208,7 +208,7 @@ public final /* synthetic */ class s implements Utilities.Callback {
                 updatestargiftcollection.title = str7;
                 ConnectionsManager.getInstance(i11).sendRequest(updatestargiftcollection, null);
                 tL_starGiftCollection.title = str7;
-                vs0Var.f(true);
+                ws0Var.f(true);
                 break;
             default:
                 zh.y4 y4Var = (zh.y4) this.b;

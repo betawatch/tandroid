@@ -2,21 +2,21 @@ package org.telegram.ui.Components;
 
 import android.content.Context;
 import org.telegram.ui.WallpapersListActivity;
-import org.telegram.ui.di1;
-import org.telegram.ui.ei1;
-import org.telegram.ui.tc1;
+import org.telegram.ui.fi1;
+import org.telegram.ui.gi1;
+import org.telegram.ui.vc1;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class hj extends org.telegram.ui.Cells.fb {
     public final /* synthetic */ int w;
-    public final /* synthetic */ lm0 x;
+    public final /* synthetic */ mm0 x;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ hj(lm0 lm0Var, Context context, int i10) {
+    public /* synthetic */ hj(mm0 mm0Var, Context context, int i10) {
         super(context, 5);
         this.w = i10;
-        this.x = lm0Var;
+        this.x = mm0Var;
     }
 
     @Override // org.telegram.ui.Cells.fb
@@ -30,10 +30,10 @@ public final class hj extends org.telegram.ui.Cells.fb {
                 }
                 break;
             case 1:
-                WallpapersListActivity.s0(((di1) this.x).d, this, obj, i10);
+                WallpapersListActivity.s0(((fi1) this.x).d, this, obj, i10);
                 break;
             default:
-                ((ei1) this.x).E.presentFragment(new tc1(obj, null, true));
+                ((gi1) this.x).E.presentFragment(new vc1(obj, null, true));
                 break;
         }
     }
@@ -42,7 +42,7 @@ public final class hj extends org.telegram.ui.Cells.fb {
     public boolean b(Object obj, int i10) {
         switch (this.w) {
             case 1:
-                return WallpapersListActivity.t0(((di1) this.x).d, this, obj, i10);
+                return WallpapersListActivity.t0(((fi1) this.x).d, this, obj, i10);
             default:
                 return super.b(obj, i10);
         }

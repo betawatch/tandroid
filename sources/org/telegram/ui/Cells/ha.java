@@ -6,14 +6,14 @@ import android.view.ViewTreeObserver;
 import android.widget.ImageView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.k30;
-import org.telegram.ui.Components.ma1;
+import org.telegram.ui.Components.na1;
 import org.telegram.ui.Components.o30;
 import org.telegram.ui.Components.q30;
-import org.telegram.ui.Components.s51;
+import org.telegram.ui.Components.t51;
 import org.telegram.ui.Components.v50;
 import org.telegram.ui.Components.wu;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class ha implements ViewTreeObserver.OnPreDrawListener {
     public final /* synthetic */ int a;
@@ -90,20 +90,20 @@ public final class ha implements ViewTreeObserver.OnPreDrawListener {
                 ((fi.f6) obj).invalidate();
                 break;
             default:
-                ma1 ma1Var = (ma1) ((v50) obj).b;
-                ma1Var.n.getViewTreeObserver().removeOnPreDrawListener(this);
-                ImageView imageView = ma1Var.e;
+                na1 na1Var = (na1) ((v50) obj).b;
+                na1Var.n.getViewTreeObserver().removeOnPreDrawListener(this);
+                ImageView imageView = na1Var.e;
                 if (imageView != null) {
                     imageView.setVisibility(4);
-                    ma1Var.e.setImageDrawable(null);
-                    Bitmap bitmap = ma1Var.h;
+                    na1Var.e.setImageDrawable(null);
+                    Bitmap bitmap = na1Var.h;
                     if (bitmap != null) {
                         bitmap.recycle();
-                        ma1Var.h = null;
+                        na1Var.h = null;
                     }
                 }
-                AndroidUtilities.runOnUIThread(new s51(this, 9));
-                ma1Var.r = 0;
+                AndroidUtilities.runOnUIThread(new t51(this, 9));
+                na1Var.r = 0;
                 break;
         }
         return true;

@@ -9,15 +9,15 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.Components.k80;
+import org.telegram.ui.Components.l80;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.Wallet.WalletEngine2;
-import org.telegram.ui.bx;
-import org.telegram.ui.q80;
-import org.telegram.ui.un;
-import org.telegram.ui.zg1;
+import org.telegram.ui.bh1;
+import org.telegram.ui.dx;
+import org.telegram.ui.r80;
+import org.telegram.ui.wn;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class h implements Runnable {
     public final /* synthetic */ int a;
@@ -40,14 +40,14 @@ public final /* synthetic */ class h implements Runnable {
                 Exception exc = (Exception) this.c;
                 Utilities.Callback2 callback2 = (Utilities.Callback2) this.d;
                 if (importedWalletProof != null) {
-                    l0.F("proof done");
+                    l0.H("proof done");
                     callback2.run(importedWalletProof, null);
                     break;
                 } else {
                     StringBuilder sb2 = new StringBuilder("failed to prove: ");
                     String str = "PROOF_ERROR";
                     sb2.append((exc == null || exc.getMessage() == null) ? "PROOF_ERROR" : exc.getMessage());
-                    l0.j(sb2.toString(), exc);
+                    l0.k(sb2.toString(), exc);
                     if (exc != null && exc.getMessage() != null) {
                         str = exc.getMessage();
                     }
@@ -61,7 +61,7 @@ public final /* synthetic */ class h implements Runnable {
                 if (l0Var.N.get(str2) == c0Var) {
                     c0Var.e = true;
                     ArrayList arrayList = c0Var.f;
-                    l0Var.h0(c0Var);
+                    l0Var.k0(c0Var);
                     int size = arrayList.size();
                     int i10 = 0;
                     while (i10 < size) {
@@ -70,15 +70,15 @@ public final /* synthetic */ class h implements Runnable {
                         ((Utilities.Callback) obj).run(c0Var);
                     }
                     arrayList.clear();
-                    l0Var.J();
+                    l0Var.L();
                     break;
                 }
                 break;
             case 2:
-                bx bxVar = (bx) this.b;
+                dx dxVar = (dx) this.b;
                 a2 a2Var = (a2) this.c;
                 fi.d dVar = (fi.d) this.d;
-                if (!bxVar.canScrollVertically(1)) {
+                if (!dxVar.canScrollVertically(1)) {
                     a2Var.p = true;
                 }
                 dVar.setEnabled((!a2Var.p || a2Var.m || a2Var.n) ? false : true);
@@ -86,14 +86,14 @@ public final /* synthetic */ class h implements Runnable {
             case 3:
                 e2 e2Var = (e2) this.b;
                 z1 z1Var = (z1) this.c;
-                q80 q80Var = (q80) this.d;
+                r80 r80Var = (r80) this.d;
                 e2Var.getClass();
-                k kVar = new k(q80Var, 2);
+                k kVar = new k(r80Var, 2);
                 TL_wallet.tonConnectSession tonconnectsession = z1Var.e;
                 if (!tonconnectsession.closed && !tonconnectsession.closing && tonconnectsession.manifest_error == null && tonconnectsession.manifest != null) {
                     if (!z1Var.f) {
                         z1Var.f = true;
-                        e2Var.b.j0(new w6(e2Var, z1Var, kVar, tonconnectsession, 6));
+                        e2Var.b.m0(new w6(e2Var, z1Var, kVar, tonconnectsession, 6));
                         break;
                     } else {
                         kVar.run("A TON Connect operation is already in progress");
@@ -117,7 +117,7 @@ public final /* synthetic */ class h implements Runnable {
                     } else {
                         o oVar = new o(e2Var2, tonconnectsession2, kVar2, 3);
                         if (!tonconnectsession2.closed) {
-                            e2Var2.b.j0(new h(e2Var2, oVar, tonconnectsession2, 6));
+                            e2Var2.b.m0(new h(e2Var2, oVar, tonconnectsession2, 6));
                             break;
                         } else {
                             oVar.run(null);
@@ -136,11 +136,11 @@ public final /* synthetic */ class h implements Runnable {
                 o oVar2 = (o) this.c;
                 TL_wallet.tonConnectSession tonconnectsession3 = (TL_wallet.tonConnectSession) this.d;
                 l0 l0Var2 = e2Var3.b;
-                String s10 = l0Var2.s();
-                byte[] x9 = l0Var2.x();
-                byte[] bArr = x9 == null ? null : (byte[]) x9.clone();
-                if (s10 != null && bArr != null) {
-                    l0Var2.y(new bi.t3(e2Var3, oVar2, tonconnectsession3, s10, bArr, 7), true, false);
+                String t10 = l0Var2.t();
+                byte[] y3 = l0Var2.y();
+                byte[] bArr = y3 == null ? null : (byte[]) y3.clone();
+                if (t10 != null && bArr != null) {
+                    l0Var2.z(new bi.t3(e2Var3, oVar2, tonconnectsession3, t10, bArr, 7), true, false);
                     break;
                 } else {
                     oVar2.run("Wallet is not ready");
@@ -155,10 +155,10 @@ public final /* synthetic */ class h implements Runnable {
                 break;
             case 8:
                 w6 w6Var = (w6) this.b;
-                k80 k80Var = (k80) this.c;
-                k80 k80Var2 = (k80) this.d;
+                l80 l80Var = (l80) this.c;
+                l80 l80Var2 = (l80) this.d;
                 w6Var.run();
-                k80Var.K(k80Var2);
+                l80Var.K(l80Var2);
                 break;
             case 9:
                 Utilities.Callback3 callback3 = (Utilities.Callback3) this.b;
@@ -171,7 +171,7 @@ public final /* synthetic */ class h implements Runnable {
                     }
                     org.telegram.ui.ActionBar.r2 U = LaunchActivity.U();
                     if (U != null) {
-                        U.presentFragment(un.ba(wallettransactionpeeruser.user_id));
+                        U.presentFragment(wn.ea(wallettransactionpeeruser.user_id));
                         break;
                     }
                 }
@@ -192,7 +192,7 @@ public final /* synthetic */ class h implements Runnable {
                     }
                     org.telegram.ui.ActionBar.r2 U2 = LaunchActivity.U();
                     if (U2 != null) {
-                        U2.presentFragment(un.ba(-walletTransactionPeer.channel_id));
+                        U2.presentFragment(wn.ea(-walletTransactionPeer.channel_id));
                         break;
                     }
                 }
@@ -276,7 +276,7 @@ public final /* synthetic */ class h implements Runnable {
                 AlertDialog$Builder alertDialog$Builder2 = new AlertDialog$Builder(h8Var2.getParentActivity(), 0, h8Var2.getResourceProvider());
                 alertDialog$Builder2.a.R = LocaleController.getString(R.string.WalletReplaceWalletTitle);
                 alertDialog$Builder2.k(LocaleController.getString(R.string.WalletCreateNew), new b8(h8Var2, bool, l0Var4, 0));
-                alertDialog$Builder2.h(LocaleController.getString(R.string.WalletImportExisting), new zg1(2, h8Var2, bool));
+                alertDialog$Builder2.h(LocaleController.getString(R.string.WalletImportExisting), new bh1(2, h8Var2, bool));
                 alertDialog$Builder2.p();
                 break;
         }

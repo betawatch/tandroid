@@ -6,7 +6,7 @@ import android.view.MotionEvent;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class fs extends ImageView {
     public final /* synthetic */ int a = 1;
@@ -39,8 +39,8 @@ public final class fs extends ImageView {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public fs(fl0 fl0Var, Context context) {
+    public fs(gl0 gl0Var, Context context) {
         super(context);
-        this.c = fl0Var;
+        this.c = gl0Var;
     }
 }

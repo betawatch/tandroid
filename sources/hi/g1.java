@@ -13,12 +13,12 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.u6;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.h21;
-import org.telegram.ui.sh;
-import org.telegram.ui.un;
-import org.telegram.ui.v50;
+import org.telegram.ui.j21;
+import org.telegram.ui.th;
+import org.telegram.ui.wn;
+import org.telegram.ui.x50;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class g1 implements RequestDelegate {
     public final /* synthetic */ int a = 0;
@@ -54,7 +54,7 @@ public final /* synthetic */ class g1 implements RequestDelegate {
                 AndroidUtilities.runOnUIThread(new i1(tLObject, this.c, (org.telegram.ui.ActionBar.e2) obj5, (Context) obj3, this.b, (u6) obj4, (org.telegram.ui.web.t) obj2, t0Var));
                 break;
             case 1:
-                v50.v((v50) obj5, this.b, (HashSet) obj3, (AtomicInteger) obj4, this.c, (ChatObject.Call) obj2, (String) obj, tLObject, tL_error);
+                x50.v((x50) obj5, this.b, (HashSet) obj3, (AtomicInteger) obj4, this.c, (ChatObject.Call) obj2, (String) obj, tLObject, tL_error);
                 break;
             case 2:
                 Pattern pattern = LaunchActivity.D1;
@@ -64,43 +64,43 @@ public final /* synthetic */ class g1 implements RequestDelegate {
                 Activity activity = (Activity) obj5;
                 u6 u6Var = (u6) obj4;
                 byte[] bArr = (byte[]) obj3;
-                un unVar = (un) obj2;
+                wn wnVar = (wn) obj2;
                 MessageObject messageObject = (MessageObject) obj;
                 if (tLObject == null) {
                     if (tL_error != null && "AD_EXPIRED".equalsIgnoreCase(tL_error.text)) {
-                        AndroidUtilities.runOnUIThread(new h21(unVar, activity, u6Var, messageObject, 1), 200L);
+                        AndroidUtilities.runOnUIThread(new j21(wnVar, activity, u6Var, messageObject, 1), 200L);
                         break;
                     }
                 } else if (!(tLObject instanceof TLRPC.TL_channels_sponsoredMessageReportResultChooseOption)) {
                     if (!(tLObject instanceof TLRPC.TL_channels_sponsoredMessageReportResultReported)) {
                         if (tLObject instanceof TLRPC.TL_channels_sponsoredMessageReportResultAdsHidden) {
-                            AndroidUtilities.runOnUIThread(new sh(unVar, this.c, messageObject), 200L);
+                            AndroidUtilities.runOnUIThread(new th(wnVar, this.c, messageObject), 200L);
                             break;
                         }
                     } else {
-                        AndroidUtilities.runOnUIThread(new h21(unVar, activity, u6Var, messageObject, 0), 200L);
+                        AndroidUtilities.runOnUIThread(new j21(wnVar, activity, u6Var, messageObject, 0), 200L);
                         break;
                     }
                 } else {
-                    AndroidUtilities.runOnUIThread(new ag.m0(tLObject, activity, u6Var, this.b, bArr, unVar, messageObject));
+                    AndroidUtilities.runOnUIThread(new ag.m0(tLObject, activity, u6Var, this.b, bArr, wnVar, messageObject));
                     break;
                 }
                 break;
         }
     }
 
-    public /* synthetic */ g1(Activity activity, u6 u6Var, long j10, byte[] bArr, un unVar, MessageObject messageObject, int i10) {
+    public /* synthetic */ g1(Activity activity, u6 u6Var, long j10, byte[] bArr, wn wnVar, MessageObject messageObject, int i10) {
         this.d = activity;
         this.f = u6Var;
         this.b = j10;
         this.e = bArr;
-        this.g = unVar;
+        this.g = wnVar;
         this.h = messageObject;
         this.c = i10;
     }
 
-    public /* synthetic */ g1(v50 v50Var, long j10, HashSet hashSet, AtomicInteger atomicInteger, int i10, ChatObject.Call call, String str) {
-        this.d = v50Var;
+    public /* synthetic */ g1(x50 x50Var, long j10, HashSet hashSet, AtomicInteger atomicInteger, int i10, ChatObject.Call call, String str) {
+        this.d = x50Var;
         this.b = j10;
         this.e = hashSet;
         this.f = atomicInteger;

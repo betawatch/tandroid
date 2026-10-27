@@ -12,10 +12,10 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.eg0;
-import org.telegram.ui.Components.i80;
+import org.telegram.ui.Components.fg0;
+import org.telegram.ui.Components.j80;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class kb extends FrameLayout {
     public float a;
@@ -104,9 +104,9 @@ public final class kb extends FrameLayout {
             iVar.layout(0, 0, sbVar.S, sbVar.T);
             sbVar.c1.y();
         }
-        eg0 eg0Var = sbVar.B1;
-        if (eg0Var != null) {
-            eg0Var.layout(0, 0, eg0Var.getMeasuredWidth(), sbVar.B1.getMeasuredHeight());
+        fg0 fg0Var = sbVar.B1;
+        if (fg0Var != null) {
+            fg0Var.layout(0, 0, fg0Var.getMeasuredWidth(), sbVar.B1.getMeasuredHeight());
         }
         ta taVar = sbVar.v1;
         if (taVar != null) {
@@ -114,7 +114,7 @@ public final class kb extends FrameLayout {
         }
         for (int i16 = 0; i16 < getChildCount(); i16++) {
             View childAt = getChildAt(i16);
-            if (childAt instanceof i80) {
+            if (childAt instanceof j80) {
                 childAt.layout(0, 0, measuredWidth, measuredHeight);
             }
         }
@@ -142,9 +142,9 @@ public final class kb extends FrameLayout {
         if (iVar != null) {
             a(iVar, sbVar.S, sbVar.T);
         }
-        eg0 eg0Var = sbVar.B1;
-        if (eg0Var != null) {
-            a(eg0Var, size, size2);
+        fg0 fg0Var = sbVar.B1;
+        if (fg0Var != null) {
+            a(fg0Var, size, size2);
         }
         ta taVar = sbVar.v1;
         if (taVar != null) {
@@ -152,7 +152,7 @@ public final class kb extends FrameLayout {
         }
         for (int i12 = 0; i12 < getChildCount(); i12++) {
             View childAt = getChildAt(i12);
-            if (childAt instanceof i80) {
+            if (childAt instanceof j80) {
                 a(childAt, size, size2);
             }
         }

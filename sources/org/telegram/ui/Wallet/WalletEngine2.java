@@ -34,11 +34,11 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_toncenter;
 import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.Components.s41;
+import org.telegram.ui.Components.t41;
 import org.telegram.ui.Wallet.WalletEngine2;
-import org.telegram.ui.o01;
+import org.telegram.ui.q01;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public class WalletEngine2 implements AutoCloseable {
     private static final long NFT_ATTACHED_NANOGRAMS = 100000000;
@@ -59,13 +59,13 @@ public class WalletEngine2 implements AutoCloseable {
     private final ScheduledExecutorService worker = Executors.newSingleThreadScheduledExecutor(new e2.l0(6));
     private long nextAuxiliaryRequestId = -1;
 
-    /* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+    /* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
     public static class HttpTransport {
         private boolean closed;
         public final int currentAccount;
         private final HashMap<Long, b7> pending = new HashMap<>();
 
-        /* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+        /* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
         public static class HostException extends RuntimeException {
             final int kind;
 
@@ -226,7 +226,7 @@ public class WalletEngine2 implements AutoCloseable {
         }
     }
 
-    /* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+    /* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
     public static final class ImportedWalletProof {
         public final byte[] publicKey;
         public final byte[] signature;
@@ -239,7 +239,7 @@ public class WalletEngine2 implements AutoCloseable {
         }
     }
 
-    /* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+    /* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
     public static class PreparedRotation {
         final byte[] newPublicKey;
         final i0 newSecretPhrase;
@@ -266,7 +266,7 @@ public class WalletEngine2 implements AutoCloseable {
         }
     }
 
-    /* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+    /* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
     public static class PreparedSend {
         final String encryptedCommentBody;
         final TL_wallet.sendTransfer transfer;
@@ -295,7 +295,7 @@ public class WalletEngine2 implements AutoCloseable {
         }
     }
 
-    /* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+    /* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
     public static class RotationCallbacks extends SendCallbacks {
         private final Utilities.Callback2<i0, byte[]> onReplacement;
 
@@ -372,7 +372,7 @@ public class WalletEngine2 implements AutoCloseable {
         }
     }
 
-    /* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+    /* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
     public static class SendCallbacks {
         final Utilities.Callback3<SendPhase, String, String> callback;
         String error;
@@ -412,7 +412,7 @@ public class WalletEngine2 implements AutoCloseable {
         }
     }
 
-    /* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+    /* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
     public enum SendPhase {
         IDLE(1),
         VALIDATING(2),
@@ -449,7 +449,7 @@ public class WalletEngine2 implements AutoCloseable {
         }
     }
 
-    /* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+    /* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
     public static class SendResolution {
         final String error;
         final String operationId;
@@ -1001,10 +1001,10 @@ public class WalletEngine2 implements AutoCloseable {
         } catch (RuntimeException e10) {
             e = e10;
             errorMessage = errorMessage(e);
-            AndroidUtilities.runOnUIThread(new o01((Object) this, (Object) atomicBoolean, (Object) callback2, (Object) wallettransaction, errorMessage, 7));
+            AndroidUtilities.runOnUIThread(new q01((Object) this, (Object) atomicBoolean, (Object) callback2, (Object) wallettransaction, errorMessage, 7));
             return null;
         }
-        AndroidUtilities.runOnUIThread(new o01((Object) this, (Object) atomicBoolean, (Object) callback2, (Object) wallettransaction, errorMessage, 7));
+        AndroidUtilities.runOnUIThread(new q01((Object) this, (Object) atomicBoolean, (Object) callback2, (Object) wallettransaction, errorMessage, 7));
         return null;
     }
 
@@ -1043,7 +1043,7 @@ public class WalletEngine2 implements AutoCloseable {
             FileLog.e(e);
             wallettransaction = null;
         }
-        AndroidUtilities.runOnUIThread(new q6(0, callback, wallettransaction));
+        AndroidUtilities.runOnUIThread(new a6(1, callback, wallettransaction));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -1157,7 +1157,7 @@ public class WalletEngine2 implements AutoCloseable {
                     str3 = encryptedCommentPayload;
                     sendtransfer = null;
                     errorMessage = errorMessage(e);
-                    AndroidUtilities.runOnUIThread(new o01((Object) this, (Object) callback3, (Object) sendtransfer, sendtransfer != null ? str3 : null, (Object) errorMessage, 8));
+                    AndroidUtilities.runOnUIThread(new q01((Object) this, (Object) callback3, (Object) sendtransfer, sendtransfer != null ? str3 : null, (Object) errorMessage, 8));
                 }
             } else {
                 sendtransfer = null;
@@ -1173,9 +1173,9 @@ public class WalletEngine2 implements AutoCloseable {
             } catch (RuntimeException e11) {
                 e = e11;
                 errorMessage = errorMessage(e);
-                AndroidUtilities.runOnUIThread(new o01((Object) this, (Object) callback3, (Object) sendtransfer, sendtransfer != null ? str3 : null, (Object) errorMessage, 8));
+                AndroidUtilities.runOnUIThread(new q01((Object) this, (Object) callback3, (Object) sendtransfer, sendtransfer != null ? str3 : null, (Object) errorMessage, 8));
             }
-            AndroidUtilities.runOnUIThread(new o01((Object) this, (Object) callback3, (Object) sendtransfer, sendtransfer != null ? str3 : null, (Object) errorMessage, 8));
+            AndroidUtilities.runOnUIThread(new q01((Object) this, (Object) callback3, (Object) sendtransfer, sendtransfer != null ? str3 : null, (Object) errorMessage, 8));
         } finally {
             Arrays.fill(bArr, (byte) 0);
         }
@@ -1247,9 +1247,9 @@ public class WalletEngine2 implements AutoCloseable {
             Arrays.fill(bArr2, (byte) 0);
             str4 = errorMessage;
             sendtransfer = sendtransfer2;
-            AndroidUtilities.runOnUIThread(new m6(this, callback2, sendtransfer, str4, 1));
+            AndroidUtilities.runOnUIThread(new n6(this, callback2, sendtransfer, str4, 1));
         }
-        AndroidUtilities.runOnUIThread(new m6(this, callback2, sendtransfer, str4, 1));
+        AndroidUtilities.runOnUIThread(new n6(this, callback2, sendtransfer, str4, 1));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -1276,7 +1276,7 @@ public class WalletEngine2 implements AutoCloseable {
                     Arrays.fill(bArr, (byte) 0);
                     str2 = h;
                     sendtransfer = null;
-                    AndroidUtilities.runOnUIThread(new m6(this, callback2, sendtransfer, str2, 0));
+                    AndroidUtilities.runOnUIThread(new n6(this, callback2, sendtransfer, str2, 0));
                 }
             } catch (Throwable th2) {
                 th = th2;
@@ -1303,7 +1303,7 @@ public class WalletEngine2 implements AutoCloseable {
         Arrays.fill(bArr, (byte) 0);
         sendtransfer = sendtransfer2;
         str2 = null;
-        AndroidUtilities.runOnUIThread(new m6(this, callback2, sendtransfer, str2, 0));
+        AndroidUtilities.runOnUIThread(new n6(this, callback2, sendtransfer, str2, 0));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -1884,15 +1884,15 @@ public class WalletEngine2 implements AutoCloseable {
             throw new IllegalArgumentException("Result callback is required");
         }
         if (i0Var == null || i0Var.e()) {
-            AndroidUtilities.runOnUIThread(new p6(3, callback2));
+            AndroidUtilities.runOnUIThread(new q6(3, callback2));
             return;
         }
         if (str == null || str.isEmpty()) {
-            AndroidUtilities.runOnUIThread(new p6(4, callback2));
+            AndroidUtilities.runOnUIThread(new q6(4, callback2));
             return;
         }
         if (this.closed) {
-            AndroidUtilities.runOnUIThread(new p6(5, callback2));
+            AndroidUtilities.runOnUIThread(new q6(5, callback2));
             return;
         }
         byte[] c10 = i0Var.c();
@@ -1900,7 +1900,7 @@ public class WalletEngine2 implements AutoCloseable {
             this.worker.execute(new w6(this, str, c10, callback2));
         } catch (RejectedExecutionException unused) {
             Arrays.fill(c10, (byte) 0);
-            AndroidUtilities.runOnUIThread(new p6(6, callback2));
+            AndroidUtilities.runOnUIThread(new q6(6, callback2));
         }
     }
 
@@ -1909,13 +1909,13 @@ public class WalletEngine2 implements AutoCloseable {
             throw new IllegalArgumentException("Result callback is required");
         }
         if (this.closed) {
-            AndroidUtilities.runOnUIThread(new p6(1, callback2));
+            AndroidUtilities.runOnUIThread(new q6(1, callback2));
             return;
         }
         try {
             this.worker.execute(new r6(this, callback2, 0));
         } catch (RejectedExecutionException unused) {
-            AndroidUtilities.runOnUIThread(new p6(2, callback2));
+            AndroidUtilities.runOnUIThread(new q6(2, callback2));
         }
     }
 
@@ -2032,7 +2032,7 @@ public class WalletEngine2 implements AutoCloseable {
         }
         if (this.closed) {
             final int i10 = 0;
-            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Wallet.n6
+            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Wallet.o6
                 @Override // java.lang.Runnable
                 public final void run() {
                     switch (i10) {
@@ -2052,7 +2052,7 @@ public class WalletEngine2 implements AutoCloseable {
         }
         if (i0Var == null || i0Var.e()) {
             final int i11 = 1;
-            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Wallet.n6
+            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Wallet.o6
                 @Override // java.lang.Runnable
                 public final void run() {
                     switch (i11) {
@@ -2077,7 +2077,7 @@ public class WalletEngine2 implements AutoCloseable {
         } catch (RejectedExecutionException unused) {
             Arrays.fill(c10, (byte) 0);
             final int i12 = 2;
-            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Wallet.n6
+            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Wallet.o6
                 @Override // java.lang.Runnable
                 public final void run() {
                     switch (i12) {
@@ -2110,12 +2110,12 @@ public class WalletEngine2 implements AutoCloseable {
             callback22 = callback2;
         }
         try {
-            this.worker.execute(new o6(this, c10, d2Var, str, callback22, 1));
+            this.worker.execute(new p6(this, c10, d2Var, str, callback22, 1));
         } catch (RejectedExecutionException e10) {
             e = e10;
             RejectedExecutionException rejectedExecutionException = e;
             Arrays.fill(c10, (byte) 0);
-            AndroidUtilities.runOnUIThread(new s41(e2.h("schedule transaction signing", rejectedExecutionException), 1, callback22));
+            AndroidUtilities.runOnUIThread(new t41(e2.h("schedule transaction signing", rejectedExecutionException), 1, callback22));
         }
     }
 
@@ -2131,7 +2131,7 @@ public class WalletEngine2 implements AutoCloseable {
         try {
             this.worker.execute(new h(this, d2Var, callback2, 17));
         } catch (RejectedExecutionException e) {
-            AndroidUtilities.runOnUIThread(new s41(e2.h("schedule transaction preview", e), 2, callback2));
+            AndroidUtilities.runOnUIThread(new t41(e2.h("schedule transaction preview", e), 2, callback2));
         }
     }
 
@@ -2159,10 +2159,10 @@ public class WalletEngine2 implements AutoCloseable {
             callback22 = callback2;
         }
         try {
-            this.worker.execute(new o6(this, c10, d2Var, str, callback22, 0));
+            this.worker.execute(new p6(this, c10, d2Var, str, callback22, 0));
         } catch (RejectedExecutionException unused2) {
             Arrays.fill(c10, (byte) 0);
-            AndroidUtilities.runOnUIThread(new p6(0, callback22));
+            AndroidUtilities.runOnUIThread(new q6(0, callback22));
         }
     }
 
@@ -2210,7 +2210,7 @@ public class WalletEngine2 implements AutoCloseable {
                             this.worker.execute(new bi.c3(this, str, str2, str3, c10, callback22, 24));
                         } catch (RejectedExecutionException unused) {
                             Arrays.fill(c10, (byte) 0);
-                            AndroidUtilities.runOnUIThread(new p6(7, callback22));
+                            AndroidUtilities.runOnUIThread(new q6(7, callback22));
                             return;
                         }
                     } catch (RejectedExecutionException unused2) {

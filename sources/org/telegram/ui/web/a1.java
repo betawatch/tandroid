@@ -81,7 +81,7 @@ import org.telegram.messenger.SvgHelper;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.UserObject;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.vh;
+import org.telegram.messenger.wh;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
@@ -100,22 +100,22 @@ import org.telegram.ui.ActionBar.y6;
 import org.telegram.ui.Cells.i9;
 import org.telegram.ui.Cells.q4;
 import org.telegram.ui.Components.ar;
-import org.telegram.ui.Components.gb1;
+import org.telegram.ui.Components.as0;
 import org.telegram.ui.Components.j9;
-import org.telegram.ui.Components.ny0;
+import org.telegram.ui.Components.kb1;
+import org.telegram.ui.Components.oy0;
 import org.telegram.ui.Components.qc;
 import org.telegram.ui.Components.wc;
-import org.telegram.ui.Components.zr0;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.Wallet.q6;
-import org.telegram.ui.ag0;
-import org.telegram.ui.fc1;
-import org.telegram.ui.ji1;
+import org.telegram.ui.Wallet.a6;
+import org.telegram.ui.cg0;
+import org.telegram.ui.hc1;
+import org.telegram.ui.li1;
 import org.telegram.ui.u9;
 import org.telegram.ui.y9;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public abstract class a1 extends FrameLayout implements NotificationCenter.NotificationCenterDelegate, p6 {
     public static boolean Q0 = true;
@@ -154,7 +154,7 @@ public abstract class a1 extends FrameLayout implements NotificationCenter.Notif
     public boolean S;
     public boolean T;
     public TLRPC.User U;
-    public ny0 V;
+    public oy0 V;
     public Activity W;
     public x0 a;
     public boolean a0;
@@ -234,7 +234,7 @@ public abstract class a1 extends FrameLayout implements NotificationCenter.Notif
         this.p0 = j10;
         k4Var.setColorFilter(new PorterDuffColorFilter(j10, PorterDuff.Mode.SRC_IN));
         k4Var.getImageReceiver().setAspectFit(true);
-        addView(k4Var, gb1.i(-1, -2, 48));
+        addView(k4Var, kb1.i(-1, -2, 48));
         TextView textView = new TextView(context);
         this.f = textView;
         textView.setText(LocaleController.getString(R.string.BotWebViewNotAvailablePlaceholder));
@@ -244,7 +244,7 @@ public abstract class a1 extends FrameLayout implements NotificationCenter.Notif
         textView.setVisibility(8);
         int dp = AndroidUtilities.dp(16.0f);
         textView.setPadding(dp, dp, dp, dp);
-        addView(textView, gb1.i(-1, -2, 17));
+        addView(textView, kb1.i(-1, -2, 17));
         setFocusable(false);
     }
 
@@ -309,7 +309,7 @@ public abstract class a1 extends FrameLayout implements NotificationCenter.Notif
         a1Var.getClass();
         for (String str : strArr) {
             if (a1Var.getContext().checkSelfPermission(str) != 0) {
-                a1Var.V = new ny0(a1Var, aVar, strArr, 7);
+                a1Var.V = new oy0(a1Var, aVar, strArr, 7);
                 Activity activity = a1Var.W;
                 if (activity != null) {
                     activity.requestPermissions(strArr, 4000);
@@ -414,7 +414,7 @@ public abstract class a1 extends FrameLayout implements NotificationCenter.Notif
         if (x0Var == null) {
             return;
         }
-        NotificationCenter.getInstance(i10).doOnIdle(new ag0((Object) x0Var, (Object) x7Var, str, (Object) jSONObject, 28));
+        NotificationCenter.getInstance(i10).doOnIdle(new cg0((Object) x0Var, (Object) x7Var, str, (Object) jSONObject, 28));
     }
 
     public final boolean C() {
@@ -1479,7 +1479,7 @@ public abstract class a1 extends FrameLayout implements NotificationCenter.Notif
                             x0 x0Var3 = x0Var2;
                             x7 x7Var3 = x7Var;
                             if (z21) {
-                                MessagesController.getInstance(a1Var3.M).unblockPeer(a1Var3.U.id, new zr0(a1Var3, i22, x0Var3, x7Var3, 20));
+                                MessagesController.getInstance(a1Var3.M).unblockPeer(a1Var3.U.id, new as0(a1Var3, i22, x0Var3, x7Var3, 20));
                                 return;
                             }
                             SendMessagesHelper.getInstance(a1Var3.M).sendMessage(SendMessagesHelper.SendMessageParams.of(UserConfig.getInstance(a1Var3.M).getCurrentUser(), a1Var3.U.id, (MessageObject) null, (MessageObject) null, (TLRPC.ReplyMarkup) null, (HashMap<String, String>) null, true, 0, 0));
@@ -1492,7 +1492,7 @@ public abstract class a1 extends FrameLayout implements NotificationCenter.Notif
                             }
                         }
                     });
-                    alertDialog$Builder2.h(LocaleController.getString(R.string.Cancel), new ji1(1));
+                    alertDialog$Builder2.h(LocaleController.getString(R.string.Cancel), new li1(1));
                     X(4, alertDialog$Builder2.a(), new x(strArr, i20, x0Var2, x7Var, 0));
                     return;
                 case '\f':
@@ -2048,7 +2048,7 @@ public abstract class a1 extends FrameLayout implements NotificationCenter.Notif
                         v(x7Var);
                         return;
                     }
-                    final Runnable[] runnableArr = {new q6(11, this, x7Var)};
+                    final Runnable[] runnableArr = {new a6(12, this, x7Var)};
                     AlertDialog$Builder alertDialog$Builder3 = new AlertDialog$Builder(getContext(), u6Var);
                     if (TextUtils.isEmpty(str12)) {
                         alertDialog$Builder3.l(LocaleController.getString(R.string.BotAllowBiometryTitle));
@@ -2578,33 +2578,33 @@ public abstract class a1 extends FrameLayout implements NotificationCenter.Notif
                     boolean z10 = true;
                     String[] strArr = new String[1];
                     boolean[] zArr = new boolean[1];
-                    k3 i10 = vh.i(1, context, resourceProvider, false);
-                    LinearLayout d = vh.d(context, 1);
+                    k3 i10 = wh.i(1, context, resourceProvider, false);
+                    LinearLayout d = wh.d(context, 1);
                     org.telegram.ui.Components.y9 y9Var = new org.telegram.ui.Components.y9(context);
                     ArrayList arrayList = h;
                     TLRPC.User user = MessagesController.getInstance(w1Var.a).getUser(Long.valueOf(w1Var.b));
                     j9 j9Var = new j9((u6) null);
                     j9Var.r(user);
                     y9Var.f(user, j9Var);
-                    d.addView(y9Var, gb1.x(80, 80, 49, 0, 21, 0, 13));
+                    d.addView(y9Var, kb1.x(80, 80, 49, 0, 21, 0, 13));
                     int i11 = y6.G6;
-                    TextView L = gb1.L(context, 20.0f, i11, true, null);
-                    vh.k(R.string.BotRestoreStorageTitle, L, 17);
-                    d.addView(L, gb1.x(-1, -2, 7, 32, 0, 32, 10));
-                    TextView L2 = gb1.L(context, 14.0f, i11, false, null);
+                    TextView L = kb1.L(context, 20.0f, i11, true, null);
+                    wh.k(R.string.BotRestoreStorageTitle, L, 17);
+                    d.addView(L, kb1.x(-1, -2, 7, 32, 0, 32, 10));
+                    TextView L2 = kb1.L(context, 14.0f, i11, false, null);
                     L2.setText(AndroidUtilities.replaceTags(LocaleController.formatString(R.string.BotRestoreStorageText, DialogObject.getDialogTitle(user))));
                     L2.setGravity(17);
-                    d.addView(L2, gb1.x(-1, -2, 7, 32, 0, 32, 19));
+                    d.addView(L2, kb1.x(-1, -2, 7, 32, 0, 32, 19));
                     i9 i9Var = new i9(context, resourceProvider);
                     int i12 = -1;
                     ColorDrawable colorDrawable = new ColorDrawable(-1);
                     i9Var.setBackground(new ar(colorDrawable, y6.W0(context, R.drawable.greydivider, y6.w0(y6.b7, resourceProvider))));
                     f7.y(i9Var, colorDrawable, y6.a7, resourceProvider, PorterDuff.Mode.SRC_IN);
                     i9Var.setFixedSize(12);
-                    d.addView(i9Var, gb1.x(-1, 12, 7, 0, 0, 0, 0));
+                    d.addView(i9Var, kb1.x(-1, 12, 7, 0, 0, 0, 0));
                     q4 q4Var = new q4(context, resourceProvider);
                     q4Var.setText(LocaleController.getString(R.string.BotRestoreStorageHeader));
-                    d.addView(q4Var, gb1.x(-1, -2, 7, 0, 0, 0, 0));
+                    d.addView(q4Var, kb1.x(-1, -2, 7, 0, 0, 0, 0));
                     fi.d dVar = new fi.d(context, resourceProvider, true);
                     ArrayList arrayList2 = new ArrayList();
                     int i13 = 0;
@@ -2621,7 +2621,7 @@ public abstract class a1 extends FrameLayout implements NotificationCenter.Notif
                         f7.k(u1Var, g02, null, N, resourceProvider);
                         LinearLayout linearLayout = d;
                         u1Var.setOnClickListener(new c4(strArr, v1Var, arrayList2, dVar, 2));
-                        linearLayout.addView(u1Var, gb1.r(-1, 56));
+                        linearLayout.addView(u1Var, kb1.r(-1, 56));
                         arrayList2.add(u1Var);
                         i13++;
                         d = linearLayout;
@@ -2639,7 +2639,7 @@ public abstract class a1 extends FrameLayout implements NotificationCenter.Notif
                         z10 = false;
                     }
                     dVar.setEnabled(z10);
-                    linearLayout2.addView(dVar, gb1.x(-1, 48, 7, 8, 8, 8, 4));
+                    linearLayout2.addView(dVar, kb1.x(-1, 48, 7, 8, 8, 8, 4));
                     k3Var.customView = linearLayout2;
                     k3Var.fixNavigationBarKey(y6.h5);
                     dVar.setOnClickListener(new c4(zArr, a0Var3, strArr, k3Var, 3));
@@ -2689,7 +2689,7 @@ public abstract class a1 extends FrameLayout implements NotificationCenter.Notif
             AnimatorSet animatorSet = new AnimatorSet();
             Property property = View.ALPHA;
             animatorSet.playTogether(ObjectAnimator.ofFloat(this.a, (Property<x0, Float>) property, 1.0f), ObjectAnimator.ofFloat(k4Var, (Property<k4, Float>) property, 0.0f));
-            animatorSet.addListener(new fc1(this, 14));
+            animatorSet.addListener(new hc1(this, 14));
             animatorSet.start();
         }
         this.b = str;
@@ -2977,7 +2977,7 @@ public abstract class a1 extends FrameLayout implements NotificationCenter.Notif
 
     @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
     public final void didReceivedNotification(int i10, int i11, Object... objArr) {
-        ny0 ny0Var;
+        oy0 oy0Var;
         Uri[] uriArr;
         if (i10 == NotificationCenter.didSetNewTheme) {
             x0 x0Var = this.a;
@@ -3004,10 +3004,10 @@ public abstract class a1 extends FrameLayout implements NotificationCenter.Notif
         if (i10 != NotificationCenter.onActivityResultReceived) {
             if (i10 == NotificationCenter.onRequestPermissionResultReceived) {
                 int intValue = ((Integer) objArr[0]).intValue();
-                if (intValue != 4000 || (ny0Var = this.V) == null) {
+                if (intValue != 4000 || (oy0Var = this.V) == null) {
                     return;
                 }
-                ny0Var.run();
+                oy0Var.run();
                 this.V = null;
                 return;
             }
@@ -3283,9 +3283,9 @@ public abstract class a1 extends FrameLayout implements NotificationCenter.Notif
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
         g("attached");
-        NotificationCenter.getGlobalInstance().addObserver(this, NotificationCenter.didSetNewTheme);
-        NotificationCenter.getGlobalInstance().addObserver(this, NotificationCenter.onActivityResultReceived);
-        NotificationCenter.getGlobalInstance().addObserver(this, NotificationCenter.onRequestPermissionResultReceived);
+        NotificationCenter.getGlobalInstance().addWeakObserver(this, NotificationCenter.didSetNewTheme);
+        NotificationCenter.getGlobalInstance().addWeakObserver(this, NotificationCenter.onActivityResultReceived);
+        NotificationCenter.getGlobalInstance().addWeakObserver(this, NotificationCenter.onRequestPermissionResultReceived);
         qc.a(this, new bh.c0(this, 11));
     }
 

@@ -1,56 +1,36 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public final class cj extends fh.b {
-    public final /* synthetic */ int r;
-    public final /* synthetic */ un s;
+public final class cj extends org.telegram.ui.ActionBar.o1 {
+    public final /* synthetic */ wn o;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ cj(un unVar, org.telegram.ui.ActionBar.u6 u6Var, int i10, int i11) {
-        super(i10, u6Var);
-        this.r = i11;
-        this.s = unVar;
+    public cj(wn wnVar, aj ajVar) {
+        super(ajVar, -2, -2);
+        this.o = wnVar;
     }
 
-    @Override // fh.b, fh.a
-    public final int v0() {
-        int i10;
-        int i11;
-        switch (this.r) {
-            case 0:
-                un unVar = this.s;
-                i10 = ((org.telegram.ui.ActionBar.r2) unVar).currentAccount;
-                if (!gh.c.c(i10, unVar.qa)) {
-                    break;
-                } else {
-                    sn snVar = unVar.qa;
-                    if (snVar != null && !snVar.a()) {
-                        a();
-                        break;
-                    } else {
-                        a();
-                        break;
-                    }
-                }
-                break;
-            default:
-                un unVar2 = this.s;
-                i11 = ((org.telegram.ui.ActionBar.r2) unVar2).currentAccount;
-                if (!gh.c.c(i11, unVar2.qa)) {
-                    break;
-                } else {
-                    sn snVar2 = unVar2.qa;
-                    if (snVar2 != null && !snVar2.a()) {
-                        a();
-                        break;
-                    } else {
-                        a();
-                        break;
-                    }
-                }
-                break;
+    @Override // org.telegram.ui.ActionBar.o1, android.widget.PopupWindow
+    public final void dismiss() {
+        d(true);
+        wn wnVar = this.o;
+        if (wnVar.g9 != this) {
+            return;
         }
-        return this.d;
+        wnVar.g9 = null;
+        wnVar.j9 = null;
+        wnVar.i9 = null;
+        wnVar.z0.R = true;
+        if (wnVar.h9) {
+            wnVar.p8(false, true, 0.0f);
+        } else {
+            wnVar.h9 = true;
+        }
+        jk jkVar = wnVar.Y;
+        if (jkVar == null || jkVar.getEditField() == null) {
+            return;
+        }
+        wnVar.Y.getEditField().setAllowDrawCursor(true);
     }
 }

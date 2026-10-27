@@ -24,12 +24,12 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.voip.VideoCapturerDevice;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.ui.Components.ds;
-import org.telegram.ui.Components.gb1;
 import org.telegram.ui.Components.k5;
-import org.telegram.ui.Components.k51;
+import org.telegram.ui.Components.kb1;
+import org.telegram.ui.Components.l51;
 import org.webrtc.RendererCommon;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class n2 implements VoIPService.StateListener, uf.a, NotificationCenter.NotificationCenterDelegate {
     public static boolean U = false;
@@ -103,14 +103,14 @@ public final class n2 implements VoIPService.StateListener, uf.a, NotificationCe
             imageView.setImageResource(R.drawable.pip_close);
             imageView.setPadding(AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f));
             imageView.setContentDescription(LocaleController.getString(R.string.Close));
-            m2Var.addView(imageView, gb1.h(40, 40.0f, 53, 4.0f, 4.0f, 4.0f, 0.0f));
+            m2Var.addView(imageView, kb1.h(40, 40.0f, 53, 4.0f, 4.0f, 4.0f, 0.0f));
             ImageView imageView2 = new ImageView(context);
             imageView2.setImageResource(R.drawable.pip_enlarge);
             imageView2.setPadding(AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f));
             imageView2.setContentDescription(LocaleController.getString(R.string.Open));
-            m2Var.addView(imageView2, gb1.h(40, 40.0f, 51, 4.0f, 4.0f, 4.0f, 0.0f));
+            m2Var.addView(imageView2, kb1.h(40, 40.0f, 51, 4.0f, 4.0f, 4.0f, 0.0f));
             imageView.setOnClickListener(new bh.f(17));
-            imageView2.setOnClickListener(new k51(7, this, context));
+            imageView2.setOnClickListener(new l51(7, this, context));
         }
         VoIPService sharedInstance = VoIPService.getSharedInstance();
         if (sharedInstance != null) {

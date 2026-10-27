@@ -10,7 +10,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class s2 implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -31,7 +31,7 @@ public final /* synthetic */ class s2 implements Runnable {
     @Override // java.lang.Runnable
     public final void run() {
         org.telegram.ui.Wallet.i0 i0Var;
-        iz0 r6;
+        jz0 r6;
         switch (this.a) {
             case 0:
                 qf.d.p((Context) this.d, Uri.parse((String) this.e), this.b == 0, this.c, (qf.c) this.f);
@@ -66,7 +66,7 @@ public final /* synthetic */ class s2 implements Runnable {
                                             if (!p0Var.q().edit().putInt("lastUsageDate", r6.b).commit()) {
                                                 throw new IOException("usage write");
                                             }
-                                            AndroidUtilities.runOnUIThread(new org.telegram.ui.u90(12));
+                                            AndroidUtilities.runOnUIThread(new org.telegram.ui.w90(13));
                                         }
                                     }
                                 } catch (Exception e) {

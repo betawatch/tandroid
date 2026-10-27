@@ -45,10 +45,10 @@ import org.telegram.ui.ActionBar.y6;
 import org.telegram.ui.Cells.s1;
 import org.telegram.ui.Cells.y;
 import org.telegram.ui.Components.j9;
-import org.telegram.ui.Components.px0;
+import org.telegram.ui.Components.qx0;
 import vg.s;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class a {
     public static final HashMap Y;
@@ -638,9 +638,9 @@ public final class a {
             Layout.Alignment alignment = Layout.Alignment.ALIGN_CENTER;
             float dp2 = AndroidUtilities.dp(2.0f);
             TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
-            this.w = px0.c(spannableStringBuilder, textPaint2, minTabletSide, alignment, dp2, truncateAt, minTabletSide, 10, true);
-            this.y = px0.c(spannableStringBuilder3, this.E, minTabletSide, alignment, AndroidUtilities.dp(2.0f), truncateAt, minTabletSide, 10, true);
-            this.z = px0.c(spannableStringBuilder4, this.E, minTabletSide, alignment, AndroidUtilities.dp(3.0f), truncateAt, minTabletSide, 10, true);
+            this.w = qx0.c(spannableStringBuilder, textPaint2, minTabletSide, alignment, dp2, truncateAt, minTabletSide, 10, true);
+            this.y = qx0.c(spannableStringBuilder3, this.E, minTabletSide, alignment, AndroidUtilities.dp(2.0f), truncateAt, minTabletSide, 10, true);
+            this.z = qx0.c(spannableStringBuilder4, this.E, minTabletSide, alignment, AndroidUtilities.dp(3.0f), truncateAt, minTabletSide, 10, true);
             int i18 = 0;
             for (int i19 = 0; i19 < this.w.getLineCount(); i19++) {
                 i18 = (int) Math.max(i18, Math.ceil(this.w.getLineWidth(i19)));
@@ -657,7 +657,7 @@ public final class a {
             int i22 = i18;
             String str4 = tL_messageMediaGiveaway2.prize_description;
             if (str4 != null && !str4.isEmpty()) {
-                StaticLayout c10 = px0.c(Emoji.replaceEmoji(AndroidUtilities.replaceTags(LocaleController.formatPluralString("BoostingGiveawayMsgPrizes", tL_messageMediaGiveaway2.quantity, tL_messageMediaGiveaway2.prize_description)), this.H.getFontMetricsInt(), false), this.E, i22, Layout.Alignment.ALIGN_CENTER, AndroidUtilities.dp(2.0f), TextUtils.TruncateAt.END, i22, 20, true);
+                StaticLayout c10 = qx0.c(Emoji.replaceEmoji(AndroidUtilities.replaceTags(LocaleController.formatPluralString("BoostingGiveawayMsgPrizes", tL_messageMediaGiveaway2.quantity, tL_messageMediaGiveaway2.prize_description)), this.H.getFontMetricsInt(), false), this.E, i22, Layout.Alignment.ALIGN_CENTER, AndroidUtilities.dp(2.0f), TextUtils.TruncateAt.END, i22, 20, true);
                 this.x = c10;
                 this.m = AndroidUtilities.dp(22.0f) + c10.getLineBottom(c10.getLineCount() - 1);
                 String string = LocaleController.getString(org.telegram.messenger.R.string.BoostingGiveawayMsgWithDivider);
@@ -683,7 +683,7 @@ public final class a {
                     arrayList5.add(spannableStringBuilder5);
                 }
                 if (!arrayList5.isEmpty()) {
-                    this.A = px0.c(Emoji.replaceEmoji(AndroidUtilities.replaceTags(LocaleController.formatString("BoostingGiveAwayFromCountries", org.telegram.messenger.R.string.BoostingGiveAwayFromCountries, TextUtils.join(", ", arrayList5))), this.H.getFontMetricsInt(), false), this.H, i22, Layout.Alignment.ALIGN_CENTER, 0.0f, TextUtils.TruncateAt.END, i22, 10, true);
+                    this.A = qx0.c(Emoji.replaceEmoji(AndroidUtilities.replaceTags(LocaleController.formatString("BoostingGiveAwayFromCountries", org.telegram.messenger.R.string.BoostingGiveAwayFromCountries, TextUtils.join(", ", arrayList5))), this.H.getFontMetricsInt(), false), this.H, i22, Layout.Alignment.ALIGN_CENTER, 0.0f, TextUtils.TruncateAt.END, i22, 10, true);
                 }
             }
             int max = Math.max(i11, Math.min(AndroidUtilities.dp(38.0f) + i22, minTabletSide));

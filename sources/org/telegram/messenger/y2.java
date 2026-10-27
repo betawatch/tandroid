@@ -11,10 +11,10 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.k80;
-import org.telegram.ui.h11;
+import org.telegram.ui.Components.l80;
+import org.telegram.ui.j11;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class y2 implements Runnable {
     public final /* synthetic */ int a;
@@ -57,10 +57,10 @@ public final /* synthetic */ class y2 implements Runnable {
                 ((MediaController) obj3).lambda$trimCurrentRecording$28((File) obj2, this.b, this.c, (Runnable) obj);
                 break;
             case 3:
-                ((MessagesStorage) obj3).lambda$getMessage$145(this.b, this.c, (AtomicReference) obj2, (CountDownLatch) obj);
+                ((MessagesStorage) obj3).lambda$getMessage$146(this.b, this.c, (AtomicReference) obj2, (CountDownLatch) obj);
                 break;
             case 4:
-                ((MessagesStorage) obj3).lambda$updateDialogsWithDeletedMessages$231(this.b, this.c, (ArrayList) obj2, (ArrayList) obj);
+                ((MessagesStorage) obj3).lambda$updateDialogsWithDeletedMessages$232(this.b, this.c, (ArrayList) obj2, (ArrayList) obj);
                 break;
             case 5:
                 ((TopicsController) obj3).lambda$getTopicRepliesCount$29((TLObject) obj2, (TLRPC.TL_forumTopic) obj, this.b, this.c);
@@ -69,11 +69,11 @@ public final /* synthetic */ class y2 implements Runnable {
                 ((TopicsController) obj3).lambda$loadTopic$27(this.b, (ArrayList) obj2, this.c, (Runnable) obj);
                 break;
             case 7:
-                ((k80) obj3).u();
+                ((l80) obj3).u();
                 Bundle bundle = new Bundle();
                 bundle.putLong("dialog_id", this.b);
                 bundle.putLong("topic_id", this.c);
-                ((org.telegram.ui.ActionBar.r2) obj2).presentFragment(new h11(bundle, (org.telegram.ui.ActionBar.u6) obj));
+                ((org.telegram.ui.ActionBar.r2) obj2).presentFragment(new j11(bundle, (org.telegram.ui.ActionBar.u6) obj));
                 break;
             default:
                 vg.a0 a0Var = (vg.a0) obj3;

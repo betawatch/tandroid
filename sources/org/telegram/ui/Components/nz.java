@@ -19,9 +19,9 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public final class nz extends lm0 {
+public final class nz extends mm0 {
     public int L;
     public int M;
     public String N;
@@ -61,7 +61,7 @@ public final class nz extends lm0 {
         mzVar.setOnTouchListener(new m.c2(this, 3));
     }
 
-    @Override // org.telegram.ui.Components.lm0
+    @Override // org.telegram.ui.Components.mm0
     public final boolean D(s4.e1 e1Var) {
         return e1Var.f == 7;
     }
@@ -332,7 +332,7 @@ public final class nz extends lm0 {
                 i3Var.setHeight(AndroidUtilities.dp(8.0f));
                 return;
             } else {
-                int C = org.telegram.messenger.vh.C(82.0f, (int) Math.ceil(num.intValue() / szVar.y0.d), szVar.h.getHeight());
+                int C = org.telegram.messenger.wh.C(82.0f, (int) Math.ceil(num.intValue() / szVar.y0.d), szVar.h.getHeight());
                 i3Var.setHeight(C > 0 ? C : 1);
                 return;
             }
@@ -438,11 +438,11 @@ public final class nz extends lm0 {
                 int i11 = org.telegram.ui.ActionBar.y6.Le;
                 org.telegram.ui.ActionBar.f7.t(imageView, i11, u6Var, PorterDuff.Mode.MULTIPLY);
                 imageView.setTranslationY(-AndroidUtilities.dp(24.0f));
-                c2Var.addView(imageView, gb1.h(-2, -2.0f, 17, 0.0f, 42.0f, 0.0f, 28.0f));
+                c2Var.addView(imageView, kb1.h(-2, -2.0f, 17, 0.0f, 42.0f, 0.0f, 28.0f));
                 TextView textView = new TextView(context);
                 org.telegram.ui.d3.o(R.string.NoStickersFound, textView, 1, 16.0f);
                 org.telegram.ui.ActionBar.f7.V(textView, i11, u6Var);
-                c2Var.addView(textView, gb1.h(-2, -2.0f, 17, 0.0f, 42.0f, 0.0f, 9.0f));
+                c2Var.addView(textView, kb1.h(-2, -2.0f, 17, 0.0f, 42.0f, 0.0f, 9.0f));
                 c2Var.setLayoutParams(new s4.q0(-1, -2));
                 break;
             case 6:
@@ -463,6 +463,6 @@ public final class nz extends lm0 {
                 c2Var = view;
                 break;
         }
-        return new vl0(c2Var);
+        return new wl0(c2Var);
     }
 }

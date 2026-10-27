@@ -9,10 +9,10 @@ import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import org.telegram.messenger.R;
-import org.telegram.messenger.vh;
-import org.telegram.ui.Components.gb1;
+import org.telegram.messenger.wh;
+import org.telegram.ui.Components.kb1;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class a6 extends FrameLayout {
     public final org.telegram.ui.Components.y9 a;
@@ -27,11 +27,11 @@ public final class a6 extends FrameLayout {
         this.e = c6Var;
         org.telegram.ui.Components.y9 y9Var = new org.telegram.ui.Components.y9(context);
         this.a = y9Var;
-        addView(y9Var, gb1.g(-1.0f, -1));
+        addView(y9Var, kb1.g(-1.0f, -1));
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setOrientation(0);
         linearLayout.setBackgroundResource(R.drawable.album_shadow);
-        addView(linearLayout, gb1.i(-1, 60, 83));
+        addView(linearLayout, kb1.i(-1, 60, 83));
         TextView textView = new TextView(context);
         this.b = textView;
         textView.setTextSize(1, 13.0f);
@@ -41,7 +41,7 @@ public final class a6 extends FrameLayout {
         textView.setEllipsize(truncateAt);
         textView.setMaxLines(1);
         textView.setGravity(80);
-        TextView e = vh.e(linearLayout, textView, gb1.q(1.0f, 0, -1, 8, 0, 5), context);
+        TextView e = wh.e(linearLayout, textView, kb1.q(1.0f, 0, -1, 8, 0, 5), context);
         this.c = e;
         e.setTextSize(1, 13.0f);
         e.setTextColor(-1);
@@ -49,11 +49,11 @@ public final class a6 extends FrameLayout {
         e.setEllipsize(truncateAt);
         e.setMaxLines(1);
         e.setGravity(80);
-        linearLayout.addView(e, gb1.o(4.0f, 0.0f, 7.0f, 5.0f, -2, -1));
+        linearLayout.addView(e, kb1.o(4.0f, 0.0f, 7.0f, 5.0f, -2, -1));
         View view = new View(context);
         this.d = view;
         view.setBackgroundDrawable(org.telegram.ui.ActionBar.y6.M0(false));
-        addView(view, gb1.g(-1.0f, -1));
+        addView(view, kb1.g(-1.0f, -1));
     }
 
     @Override // android.view.View

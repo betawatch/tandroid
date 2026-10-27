@@ -20,7 +20,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class da extends org.telegram.ui.ActionBar.r2 {
     public ca a;
@@ -109,7 +109,7 @@ public final class da extends org.telegram.ui.ActionBar.r2 {
         org.telegram.ui.ActionBar.f7.w(this.a, i11, u6Var);
         this.a.setCursorSize(AndroidUtilities.dp(20.0f));
         this.a.setCursorWidth(1.5f);
-        linearLayout.addView(this.a, org.telegram.ui.Components.gb1.o(24.0f, 24.0f, 24.0f, 0.0f, -1, 36));
+        linearLayout.addView(this.a, org.telegram.ui.Components.kb1.o(24.0f, 24.0f, 24.0f, 0.0f, -1, 36));
         final int i15 = 0;
         this.a.setOnEditorActionListener(new TextView.OnEditorActionListener(this) { // from class: org.telegram.ui.ba
             public final /* synthetic */ da b;
@@ -157,7 +157,7 @@ public final class da extends org.telegram.ui.ActionBar.r2 {
         org.telegram.ui.ActionBar.f7.w(this.b, i11, u6Var);
         this.b.setCursorSize(AndroidUtilities.dp(20.0f));
         this.b.setCursorWidth(1.5f);
-        linearLayout.addView(this.b, org.telegram.ui.Components.gb1.o(24.0f, 16.0f, 24.0f, 0.0f, -1, 36));
+        linearLayout.addView(this.b, org.telegram.ui.Components.kb1.o(24.0f, 16.0f, 24.0f, 0.0f, -1, 36));
         final int i16 = 1;
         this.b.setOnEditorActionListener(new TextView.OnEditorActionListener(this) { // from class: org.telegram.ui.ba
             public final /* synthetic */ da b;
@@ -229,7 +229,7 @@ public final class da extends org.telegram.ui.ActionBar.r2 {
     @Override // org.telegram.ui.ActionBar.r2
     public final void onTransitionAnimationEnd(boolean z10, boolean z11) {
         if (z10) {
-            AndroidUtilities.runOnUIThread(new zt0(this, 18), 100L);
+            AndroidUtilities.runOnUIThread(new bu0(this, 18), 100L);
         }
     }
 }

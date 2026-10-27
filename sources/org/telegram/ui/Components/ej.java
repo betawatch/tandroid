@@ -10,7 +10,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class ej extends FrameLayout implements org.telegram.ui.ActionBar.p6 {
     public final org.telegram.ui.ActionBar.u6 a;
@@ -24,20 +24,20 @@ public final class ej extends FrameLayout implements org.telegram.ui.ActionBar.p
         setTag(-33024);
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setOrientation(1);
-        addView(linearLayout, gb1.u(-1, -2, 17));
+        addView(linearLayout, kb1.u(-1, -2, 17));
         y9 y9Var = new y9(context);
-        y9Var.setImageDrawable(new xj0(R.raw.utyan_empty, AndroidUtilities.dp(120.0f), AndroidUtilities.dp(120.0f)));
-        linearLayout.addView(y9Var, gb1.x(120, 120, 17, 0, 0, 0, 0));
+        y9Var.setImageDrawable(new yj0(R.raw.utyan_empty, AndroidUtilities.dp(120.0f), AndroidUtilities.dp(120.0f)));
+        linearLayout.addView(y9Var, kb1.x(120, 120, 17, 0, 0, 0, 0));
         TextView textView = new TextView(context);
         this.b = textView;
         textView.setTextSize(1, 20.0f);
         textView.setTypeface(AndroidUtilities.bold());
         textView.setGravity(17);
-        TextView e = org.telegram.messenger.vh.e(linearLayout, textView, gb1.x(-1, -2, 17, 32, 12, 32, 8), context);
+        TextView e = org.telegram.messenger.wh.e(linearLayout, textView, kb1.x(-1, -2, 17, 32, 12, 32, 8), context);
         this.c = e;
         e.setTextSize(1, 14.0f);
         e.setGravity(17);
-        linearLayout.addView(e, gb1.x(-1, -2, 17, 32, 0, 32, 0));
+        linearLayout.addView(e, kb1.x(-1, -2, 17, 32, 0, 32, 0));
         updateColors();
     }
 

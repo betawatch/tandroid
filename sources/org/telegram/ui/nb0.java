@@ -1,53 +1,35 @@
 package org.telegram.ui;
 
-import android.text.TextUtils;
+import android.os.Bundle;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.UserObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public final class nb0 extends qg.a {
-    public final CharSequence c;
-    public final int d;
-    public final int e;
-    public final int f;
+public final class nb0 extends wn {
+    public boolean od;
+    public final /* synthetic */ TLRPC.User pd;
+    public final /* synthetic */ TLRPC.User[] qd;
+    public final /* synthetic */ long rd;
 
-    public nb0(int i10, int i11, CharSequence charSequence, int i12, int i13) {
-        super(i10, false);
-        this.c = charSequence;
-        this.d = i11;
-        this.e = i12;
-        this.f = i13;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public nb0(Bundle bundle, TLRPC.User user, TLRPC.User[] userArr, long j10) {
+        super(bundle);
+        this.pd = user;
+        this.qd = userArr;
+        this.rd = j10;
     }
 
-    public static nb0 b(int i10, String str) {
-        return new nb0(4, 0, str, i10, 0);
-    }
-
-    public static nb0 c(int i10, int i11, String str) {
-        return new nb0(3, i10, str, i11, 0);
-    }
-
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
+    @Override // org.telegram.ui.wn, org.telegram.ui.ActionBar.r2
+    public final void onBecomeFullyVisible() {
+        super.onBecomeFullyVisible();
+        if (this.od) {
+            return;
         }
-        if (!(obj instanceof nb0)) {
-            return false;
-        }
-        nb0 nb0Var = (nb0) obj;
-        int i10 = nb0Var.a;
-        int i11 = this.a;
-        if (i10 != i11) {
-            return false;
-        }
-        if (i11 == 3 && nb0Var.d != this.d) {
-            return false;
-        }
-        if (i11 == 5 && nb0Var.f != this.f) {
-            return false;
-        }
-        if ((i11 == 3 || i11 == 4) && nb0Var.e != this.e) {
-            return false;
-        }
-        return !(i11 == 0 || i11 == 2 || i11 == 3 || i11 == 4 || i11 == 5) || TextUtils.equals(nb0Var.c, this.c);
+        this.od = true;
+        org.telegram.ui.Components.wc.b0(this).M(LocaleController.formatString(R.string.CreateManagedBotCreatedTitle, UserObject.getUserName(this.pd)), AndroidUtilities.replaceSingleTag(LocaleController.formatString(R.string.CreateManagedBotCreatedText, UserObject.getUserName(this.qd[0])), new bi.r3(this, this.rd, 29)), R.raw.contact_check).j();
     }
 }

@@ -3,7 +3,7 @@ package org.telegram.ui.Components;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class zf extends AnimatorListenerAdapter {
     public final /* synthetic */ boolean a;
@@ -29,11 +29,11 @@ public final class zf extends AnimatorListenerAdapter {
         boolean z10 = this.a;
         if (z10) {
             int i10 = ChatActivityEnterView.r5;
-            chatActivityEnterView.Y();
+            chatActivityEnterView.X();
         }
-        cq0 cq0Var = chatActivityEnterView.p0;
-        if (cq0Var != null) {
-            cq0Var.setVisibility(z10 ? 0 : 8);
+        dq0 dq0Var = chatActivityEnterView.p0;
+        if (dq0Var != null) {
+            dq0Var.setVisibility(z10 ? 0 : 8);
             chatActivityEnterView.p0.setAlpha(this.d);
             chatActivityEnterView.p0.setTranslationX(this.e);
             f7 = chatActivityEnterView.p0.getTranslationX();
@@ -52,9 +52,9 @@ public final class zf extends AnimatorListenerAdapter {
             return;
         }
         ChatActivityEnterView chatActivityEnterView = this.f;
-        cq0 cq0Var = chatActivityEnterView.p0;
-        if (cq0Var != null) {
-            cq0Var.setVisibility(8);
+        dq0 dq0Var = chatActivityEnterView.p0;
+        if (dq0Var != null) {
+            dq0Var.setVisibility(8);
         }
         chatActivityEnterView.Q0.setTranslationX(0.0f);
         chatActivityEnterView.G = 0.0f;
@@ -68,12 +68,12 @@ public final class zf extends AnimatorListenerAdapter {
         ChatActivityEnterView chatActivityEnterView = this.f;
         if (z10) {
             int i10 = ChatActivityEnterView.r5;
-            chatActivityEnterView.Y();
+            chatActivityEnterView.X();
             chatActivityEnterView.p0.setVisibility(0);
         }
-        cq0 cq0Var = chatActivityEnterView.p0;
-        if (cq0Var != null) {
-            cq0Var.setAlpha(this.b);
+        dq0 dq0Var = chatActivityEnterView.p0;
+        if (dq0Var != null) {
+            dq0Var.setAlpha(this.b);
             chatActivityEnterView.p0.setTranslationX(this.c);
             f7 = chatActivityEnterView.p0.getTranslationX();
         } else {

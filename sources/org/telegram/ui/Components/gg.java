@@ -24,7 +24,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.StickersActivity;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class gg implements ty {
     public final /* synthetic */ ChatActivityEnterView a;
@@ -41,14 +41,14 @@ public final class gg implements ty {
     public final void B(View view, Object obj, String str, Object obj2, boolean z10, int i10, int i11, MediaController.PhotoEntry photoEntry, boolean z11) {
         ChatActivityEnterView chatActivityEnterView = this.a;
         wg wgVar = chatActivityEnterView.F0;
-        org.telegram.ui.un unVar = chatActivityEnterView.P2;
-        org.telegram.ui.kn knVar = chatActivityEnterView.V2;
-        if (knVar != null && unVar != null && knVar.f) {
-            unVar.dc();
+        org.telegram.ui.wn wnVar = chatActivityEnterView.P2;
+        org.telegram.ui.mn mnVar = chatActivityEnterView.V2;
+        if (mnVar != null && wnVar != null && mnVar.f) {
+            wnVar.hc();
             return;
         }
         if (c() && i10 == 0) {
-            g5.L(chatActivityEnterView.O2, unVar.a(), new org.telegram.ui.lq(this, view, obj, str, obj2, photoEntry, z11), chatActivityEnterView.W3);
+            g5.L(chatActivityEnterView.O2, wnVar.a(), new org.telegram.ui.nq(this, view, obj, str, obj2, photoEntry, z11), chatActivityEnterView.W3);
             return;
         }
         if (chatActivityEnterView.G0 <= 0 || c()) {
@@ -68,14 +68,14 @@ public final class gg implements ty {
 
     @Override // org.telegram.ui.Components.ty
     public final boolean b() {
-        org.telegram.ui.un unVar = this.a.P2;
-        return unVar != null && unVar.I6();
+        org.telegram.ui.wn wnVar = this.a.P2;
+        return wnVar != null && wnVar.K6();
     }
 
     @Override // org.telegram.ui.Components.ty
     public final boolean c() {
-        org.telegram.ui.un unVar = this.a.P2;
-        return unVar != null && unVar.c();
+        org.telegram.ui.wn wnVar = this.a.P2;
+        return wnVar != null && wnVar.c();
     }
 
     @Override // org.telegram.ui.Components.ty
@@ -99,21 +99,21 @@ public final class gg implements ty {
             inputStickerSet.access_hash = stickerSet.access_hash;
             inputStickerSet.id = stickerSet.id;
         }
-        cz0 cz0Var = new cz0(chatActivityEnterView.O2, r2Var2, inputStickerSet, null, chatActivityEnterView, chatActivityEnterView.W3);
-        r2Var2.showDialog(cz0Var);
+        dz0 dz0Var = new dz0(chatActivityEnterView.O2, r2Var2, inputStickerSet, null, chatActivityEnterView, chatActivityEnterView.W3);
+        r2Var2.showDialog(dz0Var);
         if (z10) {
-            cz0Var.r0();
+            dz0Var.r0();
         }
     }
 
     @Override // org.telegram.ui.Components.ty
     public final void e(Object obj, Object obj2) {
         ChatActivityEnterView chatActivityEnterView = this.a;
-        org.telegram.ui.un unVar = chatActivityEnterView.P2;
-        if (unVar == null) {
+        org.telegram.ui.wn wnVar = chatActivityEnterView.P2;
+        if (wnVar == null) {
             return;
         }
-        PhotoViewer.u1().M2(null, unVar, unVar.qa);
+        PhotoViewer.v1().N2(null, wnVar, wnVar.ua);
         File pathToAttach = obj instanceof TLRPC.Document ? FileLoader.getInstance(chatActivityEnterView.Q).getPathToAttach((TLRPC.Document) obj) : null;
         if (pathToAttach == null) {
             return;
@@ -131,7 +131,7 @@ public final class gg implements ty {
         photoEntry.caption = null;
         photoEntry.isVideo = true;
         arrayList.add(photoEntry);
-        PhotoViewer.u1().i2(arrayList, 0, 12, false, new eg(this, obj, obj2, photoEntry), chatActivityEnterView.P2);
+        PhotoViewer.v1().j2(arrayList, 0, 12, false, new eg(this, obj, obj2, photoEntry), chatActivityEnterView.P2);
     }
 
     @Override // org.telegram.ui.Components.ty
@@ -157,12 +157,12 @@ public final class gg implements ty {
     public final void i(int i10) {
         int i11 = ChatActivityEnterView.r5;
         ChatActivityEnterView chatActivityEnterView = this.a;
-        chatActivityEnterView.j1(i10, true);
+        chatActivityEnterView.i1(i10, true);
         if (i10 != 0) {
-            chatActivityEnterView.k1(true, true, false, i10 == 1);
+            chatActivityEnterView.j1(true, true, false, i10 == 1);
         }
         if (chatActivityEnterView.y3 && chatActivityEnterView.R1 == 2) {
-            chatActivityEnterView.H();
+            chatActivityEnterView.G();
         }
     }
 
@@ -237,11 +237,11 @@ public final class gg implements ty {
         }
         if (chatActivityEnterView.z3) {
             if (chatActivityEnterView.R1 != 0) {
-                chatActivityEnterView.j1(0, true);
+                chatActivityEnterView.i1(0, true);
                 chatActivityEnterView.U0.s(MessageObject.getStickerSetId(document), true);
                 chatActivityEnterView.U0.B();
             }
-            chatActivityEnterView.k1(false, true, false, true);
+            chatActivityEnterView.j1(false, true, false, true);
         }
         chatActivityEnterView.a(document, str, obj, sendAnimationData, false, z10, i10, 0);
         if (DialogObject.isEncryptedDialog(chatActivityEnterView.Q2) && MessageObject.isGifDocument(document)) {
@@ -253,8 +253,8 @@ public final class gg implements ty {
     public final void n() {
         Activity activity;
         ChatActivityEnterView chatActivityEnterView = this.a;
-        org.telegram.ui.un unVar = chatActivityEnterView.P2;
-        if (unVar == null || (activity = chatActivityEnterView.O2) == null) {
+        org.telegram.ui.wn wnVar = chatActivityEnterView.P2;
+        if (wnVar == null || (activity = chatActivityEnterView.O2) == null) {
             return;
         }
         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(activity, 0, chatActivityEnterView.W3);
@@ -262,11 +262,11 @@ public final class gg implements ty {
         alertDialog$Builder.a.T = LocaleController.getString(R.string.ClearRecentEmojiText);
         alertDialog$Builder.k(LocaleController.getString(R.string.ClearButton), new s(this, 17));
         alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
-        unVar.showDialog(alertDialog$Builder.a);
+        wnVar.showDialog(alertDialog$Builder.a);
     }
 
     @Override // org.telegram.ui.Components.ty
-    public final void o(p61 p61Var) {
+    public final void o(q61 q61Var) {
         ChatActivityEnterView chatActivityEnterView = this.a;
         org.telegram.ui.ActionBar.r2 r2Var = chatActivityEnterView.P2;
         if (r2Var == null) {
@@ -274,7 +274,7 @@ public final class gg implements ty {
         }
         org.telegram.ui.ActionBar.r2 r2Var2 = r2Var;
         if (r2Var2 != null) {
-            chatActivityEnterView.a3 = new fg(this, chatActivityEnterView.getContext(), r2Var2, p61Var, chatActivityEnterView.W3);
+            chatActivityEnterView.a3 = new fg(this, chatActivityEnterView.getContext(), r2Var2, q61Var, chatActivityEnterView.W3);
             og ogVar = chatActivityEnterView.Z2;
             if (ogVar != null) {
                 ogVar.w(true);
@@ -313,9 +313,9 @@ public final class gg implements ty {
 
     @Override // org.telegram.ui.Components.ty
     public final void t(ArrayList arrayList) {
-        org.telegram.ui.un unVar = this.a.P2;
-        if (unVar != null) {
-            unVar.presentFragment(new StickersActivity(5, arrayList));
+        org.telegram.ui.wn wnVar = this.a.P2;
+        if (wnVar != null) {
+            wnVar.presentFragment(new StickersActivity(5, arrayList));
         }
     }
 
@@ -331,9 +331,9 @@ public final class gg implements ty {
 
     @Override // org.telegram.ui.Components.ty
     public final void w() {
-        org.telegram.ui.un unVar = this.a.P2;
-        if (unVar != null) {
-            unVar.presentFragment(new StickersActivity(0, null));
+        org.telegram.ui.wn wnVar = this.a.P2;
+        if (wnVar != null) {
+            wnVar.presentFragment(new StickersActivity(0, null));
         }
     }
 
@@ -350,14 +350,14 @@ public final class gg implements ty {
     @Override // org.telegram.ui.Components.ty
     public final void y(long j10) {
         ChatActivityEnterView chatActivityEnterView = this.a;
-        org.telegram.ui.un unVar = chatActivityEnterView.P2;
-        if (unVar != null) {
+        org.telegram.ui.wn wnVar = chatActivityEnterView.P2;
+        if (wnVar != null) {
             if (AndroidUtilities.isTablet()) {
-                chatActivityEnterView.j0(false);
+                chatActivityEnterView.i0(false);
             }
-            org.telegram.ui.f70 f70Var = new org.telegram.ui.f70(j10);
-            f70Var.f0(chatActivityEnterView.d2);
-            unVar.presentFragment(f70Var);
+            org.telegram.ui.h70 h70Var = new org.telegram.ui.h70(j10);
+            h70Var.f0(chatActivityEnterView.d2);
+            wnVar.presentFragment(h70Var);
         }
     }
 

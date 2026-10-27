@@ -1,556 +1,646 @@
 package org.telegram.ui.Components;
 
 import android.graphics.Bitmap;
+import android.graphics.Canvas;
 import android.graphics.Matrix;
-import android.graphics.SurfaceTexture;
 import android.opengl.GLES20;
-import android.opengl.GLES30;
-import android.opengl.GLUtils;
-import android.os.Handler;
-import android.os.Looper;
-import android.os.Message;
 import android.view.View;
 import java.util.ArrayList;
-import java.util.concurrent.atomic.AtomicBoolean;
-import javax.microedition.khronos.egl.EGL10;
-import javax.microedition.khronos.egl.EGLConfig;
-import javax.microedition.khronos.egl.EGLContext;
-import javax.microedition.khronos.egl.EGLDisplay;
-import javax.microedition.khronos.egl.EGLSurface;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.DispatchQueue;
 import org.telegram.messenger.FileLog;
-import org.telegram.messenger.R;
-import org.telegram.messenger.SharedConfig;
-import org.telegram.messenger.Utilities;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.MessageObject;
+import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public final class e21 extends DispatchQueue {
-    public int E;
-    public int F;
-    public int G;
-    public int H;
-    public int I;
-    public int J;
-    public int K;
-    public int L;
-    public int M;
-    public int N;
-    public int O;
-    public int P;
-    public int Q;
-    public int R;
-    public volatile boolean S;
-    public final ArrayList T;
-    public final ArrayList U;
-    public boolean V;
-    public final ArrayList W;
-    public boolean a;
-    public final AtomicBoolean b;
-    public final SurfaceTexture c;
-    public b21 d;
-    public int e;
-    public int f;
-    public EGL10 h;
-    public EGLDisplay n;
-    public EGLConfig r;
-    public EGLSurface s;
-    public EGLContext v;
+public final class e21 {
+    public final int[] A;
+    public final int[] B;
+    public Bitmap C;
+    public final boolean D;
+    public final /* synthetic */ f21 E;
+    public final ArrayList a;
+    public long b;
+    public float c;
+    public boolean d;
+    public final Runnable e;
+    public Runnable f;
+    public float g;
+    public float h;
+    public final float i;
+    public final float j;
+    public final float k;
+    public final float l;
+    public final float m;
+    public boolean n;
+    public final boolean o;
+    public final float[] p;
+    public final float[] q;
+    public final Matrix r;
+    public int s;
+    public final int t;
+    public final int u;
+    public int v;
     public int w;
-    public int x;
-    public int y;
+    public float x;
+    public final float y;
+    public int z;
 
-    public e21(SurfaceTexture surfaceTexture, b21 b21Var, b21 b21Var2, int i10, int i11) {
-        super("ThanosEffect.DrawingThread", false);
-        this.b = new AtomicBoolean(true);
-        this.T = new ArrayList();
-        this.U = new ArrayList();
-        this.V = false;
-        this.W = new ArrayList();
-        this.c = surfaceTexture;
-        this.d = b21Var2;
-        this.e = i10;
-        this.f = i11;
-        start();
+    public e21(f21 f21Var, Matrix matrix, Bitmap bitmap, Runnable runnable, Runnable runnable2) {
+        this.E = f21Var;
+        this.a = new ArrayList();
+        this.b = -1L;
+        this.c = 0.0f;
+        this.d = true;
+        this.g = 0.0f;
+        this.h = 0.0f;
+        this.i = 0.0f;
+        this.j = 0.0f;
+        this.k = AndroidUtilities.density;
+        this.l = 1.5f;
+        this.m = 1.15f;
+        this.n = true;
+        this.o = false;
+        this.p = new float[9];
+        this.q = new float[9];
+        Matrix matrix2 = new Matrix();
+        this.r = matrix2;
+        this.y = (float) (Math.random() * 2.0d);
+        this.A = new int[1];
+        this.B = new int[2];
+        this.D = true;
+        float[] fArr = {0.0f, 0.0f, 0.0f, 1.0f, 1.0f, 0.0f, 1.0f, 1.0f};
+        matrix.mapPoints(fArr);
+        this.i = fArr[0];
+        this.j = fArr[1];
+        this.t = (int) a8.ic.a(fArr[2], fArr[3], fArr[6], fArr[7]);
+        this.u = (int) a8.ic.a(fArr[4], fArr[5], fArr[6], fArr[7]);
+        this.o = true;
+        matrix2.set(matrix);
+        c();
+        this.e = runnable;
+        this.f = runnable2;
+        this.l = 4.0f;
+        this.c = -0.1f;
+        this.C = bitmap;
     }
 
-    public final void b(d21 d21Var) {
-        int i10 = 0;
-        GLES20.glGenTextures(1, d21Var.A, 0);
-        GLES20.glBindTexture(3553, d21Var.A[0]);
-        GLES20.glTexParameteri(3553, 10241, 9729);
-        GLES20.glTexParameteri(3553, 10240, 9729);
-        GLES20.glTexParameteri(3553, 10242, 33071);
-        GLES20.glTexParameteri(3553, 10243, 33071);
-        GLUtils.texImage2D(3553, 0, d21Var.C, 0);
-        GLES20.glBindTexture(3553, 0);
-        d21Var.C.recycle();
-        d21Var.C = null;
-        if (d21Var.D) {
-            ArrayList arrayList = this.T;
-            int size = arrayList.size();
-            while (i10 < size) {
-                Object obj = arrayList.get(i10);
-                i10++;
-                ((d21) obj).a();
-            }
-            this.T.clear();
-        }
-        this.T.add(d21Var);
-        this.S = true;
-    }
-
-    public final void c(Matrix matrix, Bitmap bitmap, Runnable runnable, Runnable runnable2) {
-        if (!this.b.get()) {
-            AndroidUtilities.runOnUIThread(new bi.fb(runnable, runnable2, 1));
-            g21.b(this.d);
-            this.d = null;
-        } else {
-            d21 d21Var = new d21(this, matrix, bitmap, runnable, runnable2);
-            getHandler();
-            this.S = true;
-            postRunnable(new c21(this, d21Var, 1));
-        }
-    }
-
-    public final void d(View view, float f7, Runnable runnable) {
-        if (this.b.get()) {
-            d21 d21Var = new d21(this, view, f7, runnable);
-            getHandler();
-            this.S = true;
-            postRunnable(new c21(this, d21Var, 2));
-            return;
-        }
-        if (view != null) {
-            view.setVisibility(8);
-        }
-        if (runnable != null) {
-            AndroidUtilities.runOnUIThread(runnable);
-        }
-        b21 b21Var = this.d;
-        if (b21Var != null) {
-            AndroidUtilities.runOnUIThread(b21Var);
-            this.d = null;
-        }
-    }
-
-    public final void f(ArrayList arrayList, Runnable runnable) {
-        if (this.b.get()) {
-            d21 d21Var = new d21(this, arrayList, runnable);
-            this.S = true;
-            postRunnable(new c21(this, d21Var, 0));
-            return;
-        }
-        for (int i10 = 0; i10 < arrayList.size(); i10++) {
-            ((View) arrayList.get(i10)).setVisibility(8);
-        }
-        if (runnable != null) {
-            AndroidUtilities.runOnUIThread(runnable);
-        }
-        b21 b21Var = this.d;
-        if (b21Var != null) {
-            AndroidUtilities.runOnUIThread(b21Var);
-            this.d = null;
-        }
-    }
-
-    public final void g() {
-        int i10;
-        int i11;
-        int i12;
-        if (this.b.get()) {
-            GLES20.glClear(16384);
-            int i13 = 0;
-            int i14 = 0;
-            while (i14 < this.T.size()) {
-                d21 d21Var = (d21) this.T.get(i14);
-                if (d21Var.d) {
-                    ArrayList arrayList = this.T;
-                    int i15 = i13;
-                    int i16 = i15;
-                    while (i15 < arrayList.size()) {
-                        i16 += ((d21) arrayList.get(i15)).u;
-                        i15++;
-                    }
-                    float f7 = d21Var.u;
-                    float f10 = f7 / i16;
-                    int[] iArr = d21Var.B;
-                    int i17 = d21Var.t;
-                    int devicePerformanceClass = SharedConfig.getDevicePerformanceClass();
-                    int i18 = d21Var.E.a ? 120000 : devicePerformanceClass != 1 ? devicePerformanceClass != 2 ? 30000 : 120000 : 60000;
-                    if (d21Var.D) {
-                        i18 /= 2;
-                    }
-                    float max = Math.max(AndroidUtilities.dpf2(0.4f), 1.0f);
-                    d21Var.s = Utilities.clamp((int) ((r4 * i17) / (max * max)), (int) (i18 * f10), 10);
-                    float f11 = i17;
-                    float f12 = f11 / f7;
-                    int round = (int) Math.round(Math.sqrt(r4 / f12));
-                    d21Var.w = round;
-                    d21Var.v = Math.round(d21Var.s / round);
-                    while (true) {
-                        i10 = d21Var.v;
-                        i11 = d21Var.w;
-                        i12 = i10 * i11;
-                        if (i12 >= d21Var.s) {
-                            break;
-                        } else if (i10 / i11 < f12) {
-                            d21Var.v = i10 + 1;
-                        } else {
-                            d21Var.w = i11 + 1;
-                        }
-                    }
-                    d21Var.s = i12;
-                    d21Var.x = Math.max(f11 / i10, f7 / i11);
-                    GLES20.glGenBuffers(2, iArr, i13);
-                    for (int i19 = i13; i19 < 2; i19++) {
-                        GLES20.glBindBuffer(34962, iArr[i19]);
-                        GLES20.glBufferData(34962, d21Var.s * 28, null, 35048);
-                    }
-                    if (d21Var.e != null) {
-                        this.U.add(d21Var);
-                    }
-                }
-                this.V = true;
-                int[] iArr2 = d21Var.B;
-                boolean z10 = d21Var.D;
-                float f13 = d21Var.m;
-                int i20 = d21Var.u;
-                int i21 = d21Var.t;
-                Matrix matrix = d21Var.r;
-                e21 e21Var = d21Var.E;
-                long nanoTime = System.nanoTime();
-                double d = d21Var.b < 0 ? 0.0d : (nanoTime - r7) / 1.0E9d;
-                d21Var.b = nanoTime;
-                if (d21Var.n && !d21Var.o) {
-                    matrix.reset();
-                    matrix.postScale(i21, i20);
-                    matrix.postTranslate(d21Var.i, d21Var.j);
-                    d21Var.c();
-                }
-                d21Var.c = (float) ((f13 * d) + d21Var.c);
-                GLES20.glUniformMatrix3fv(e21Var.x, 1, false, d21Var.p, 0);
-                GLES20.glUniform1f(e21Var.y, d21Var.d ? 1.0f : 0.0f);
-                GLES20.glUniform1f(e21Var.E, d21Var.c);
-                GLES20.glUniform1f(e21Var.F, ((float) d) * f13);
-                GLES20.glUniform1f(e21Var.G, d21Var.s);
-                GLES20.glUniform3f(e21Var.I, d21Var.v, d21Var.w, d21Var.x);
-                GLES20.glUniform2f(e21Var.P, d21Var.g, d21Var.h);
-                GLES20.glUniform1f(e21Var.Q, z10 ? 0.8f : 1.0f);
-                GLES20.glUniform1f(e21Var.R, z10 ? 1.0f : 0.6f);
-                GLES20.glUniform2f(e21Var.J, i21, i20);
-                GLES20.glUniform1f(e21Var.K, d21Var.y);
-                GLES20.glUniform2f(e21Var.L, 0.0f, 0.0f);
-                GLES20.glUniform1f(e21Var.N, d21Var.k);
-                GLES20.glUniform1f(e21Var.O, d21Var.l);
-                GLES20.glActiveTexture(33984);
-                GLES20.glBindTexture(3553, d21Var.A[0]);
-                GLES20.glUniform1i(e21Var.M, 0);
-                GLES20.glBindBuffer(34962, iArr2[d21Var.z]);
-                GLES20.glVertexAttribPointer(0, 2, 5126, false, 28, 0);
-                GLES20.glEnableVertexAttribArray(0);
-                GLES20.glVertexAttribPointer(1, 2, 5126, false, 28, 8);
-                GLES20.glEnableVertexAttribArray(1);
-                GLES20.glVertexAttribPointer(2, 2, 5126, false, 28, 16);
-                GLES20.glEnableVertexAttribArray(2);
-                GLES20.glVertexAttribPointer(3, 1, 5126, false, 28, 24);
-                GLES20.glEnableVertexAttribArray(3);
-                GLES30.glBindBufferBase(35982, 0, iArr2[1 - d21Var.z]);
-                GLES20.glVertexAttribPointer(0, 2, 5126, false, 28, 0);
-                GLES20.glEnableVertexAttribArray(0);
-                GLES20.glVertexAttribPointer(1, 2, 5126, false, 28, 8);
-                GLES20.glEnableVertexAttribArray(1);
-                GLES20.glVertexAttribPointer(2, 2, 5126, false, 28, 16);
-                GLES20.glEnableVertexAttribArray(2);
-                GLES20.glVertexAttribPointer(3, 1, 5126, false, 28, 24);
-                GLES20.glEnableVertexAttribArray(3);
-                GLES30.glBeginTransformFeedback(0);
-                GLES20.glDrawArrays(0, 0, d21Var.s);
-                GLES30.glEndTransformFeedback();
-                GLES20.glBindBuffer(34962, 0);
-                GLES20.glBindBuffer(35982, 0);
-                d21Var.d = false;
-                d21Var.z = 1 - d21Var.z;
-                if (d21Var.c > d21Var.l + (d21Var.D ? 2.0f : 0.9f)) {
-                    d21Var.a();
-                    this.T.remove(i14);
-                    this.S = !this.T.isEmpty();
-                    i14--;
-                }
-                i14++;
-                i13 = 0;
-            }
-            int i22 = i13;
-            while (true) {
-                int glGetError = GLES20.glGetError();
-                if (glGetError == 0) {
-                    try {
-                        break;
-                    } catch (Exception e) {
-                        FileLog.e(e);
-                        for (int i23 = i22; i23 < this.U.size(); i23++) {
-                            AndroidUtilities.runOnUIThread(((d21) this.U.get(i23)).e);
-                        }
-                        this.U.clear();
-                        for (int i24 = i22; i24 < this.T.size(); i24++) {
-                            ((d21) this.T.get(i24)).a();
-                        }
-                        this.T.clear();
-                        AndroidUtilities.runOnUIThread(new k5(19));
-                        j();
-                        return;
-                    }
-                }
-                FileLog.e("thanos gles error " + glGetError);
-            }
-            this.h.eglSwapBuffers(this.n, this.s);
-            for (int i25 = i22; i25 < this.U.size(); i25++) {
-                AndroidUtilities.runOnUIThread(((d21) this.U.get(i25)).e);
-            }
-            this.U.clear();
-            if (this.T.isEmpty() && this.V) {
-                j();
-            }
-        }
-    }
-
-    public final void h() {
-        EGL10 egl10 = (EGL10) EGLContext.getEGL();
-        this.h = egl10;
-        EGLDisplay eglGetDisplay = egl10.eglGetDisplay(0);
-        this.n = eglGetDisplay;
-        EGL10 egl102 = this.h;
-        if (eglGetDisplay == EGL10.EGL_NO_DISPLAY) {
-            FileLog.e("ThanosEffect: eglDisplay == egl.EGL_NO_DISPLAY");
-            j();
-            return;
-        }
-        if (!egl102.eglInitialize(eglGetDisplay, new int[2])) {
-            FileLog.e("ThanosEffect: failed eglInitialize");
-            j();
-            return;
-        }
-        EGLConfig[] eGLConfigArr = new EGLConfig[1];
-        if (!this.h.eglChooseConfig(this.n, new int[]{12324, 8, 12323, 8, 12322, 8, 12321, 8, 12352, 64, 12344}, eGLConfigArr, 1, new int[1])) {
-            FileLog.e("ThanosEffect: failed eglChooseConfig");
-            i();
-            return;
-        }
-        EGLConfig eGLConfig = eGLConfigArr[0];
-        this.r = eGLConfig;
-        EGLContext eglCreateContext = this.h.eglCreateContext(this.n, eGLConfig, EGL10.EGL_NO_CONTEXT, new int[]{12440, 3, 12344});
-        this.v = eglCreateContext;
-        if (eglCreateContext == null) {
-            FileLog.e("ThanosEffect: eglContext == null");
-            j();
-            return;
-        }
-        EGLSurface eglCreateWindowSurface = this.h.eglCreateWindowSurface(this.n, this.r, this.c, null);
-        this.s = eglCreateWindowSurface;
-        if (eglCreateWindowSurface == null) {
-            FileLog.e("ThanosEffect: eglSurface == null");
-            j();
-            return;
-        }
-        if (!this.h.eglMakeCurrent(this.n, eglCreateWindowSurface, eglCreateWindowSurface, this.v)) {
-            FileLog.e("ThanosEffect: failed eglMakeCurrent");
-            j();
-            return;
-        }
-        int glCreateShader = GLES20.glCreateShader(35633);
-        int glCreateShader2 = GLES20.glCreateShader(35632);
-        if (glCreateShader == 0 || glCreateShader2 == 0) {
-            FileLog.e("ThanosEffect: vertexShader == 0 || fragmentShader == 0");
-            j();
-            return;
-        }
-        GLES20.glShaderSource(glCreateShader, AndroidUtilities.readRes(R.raw.thanos_vertex));
-        GLES20.glCompileShader(glCreateShader);
-        int[] iArr = new int[1];
-        GLES20.glGetShaderiv(glCreateShader, 35713, iArr, 0);
-        if (iArr[0] != 1) {
-            FileLog.e("ThanosEffect, compile vertex shader error: " + GLES20.glGetShaderInfoLog(glCreateShader));
-            GLES20.glDeleteShader(glCreateShader);
-            j();
-            return;
-        }
-        GLES20.glShaderSource(glCreateShader2, AndroidUtilities.readRes(R.raw.thanos_fragment));
-        GLES20.glCompileShader(glCreateShader2);
-        GLES20.glGetShaderiv(glCreateShader2, 35713, iArr, 0);
-        if (iArr[0] != 1) {
-            FileLog.e("ThanosEffect, compile fragment shader error: " + GLES20.glGetShaderInfoLog(glCreateShader2));
-            GLES20.glDeleteShader(glCreateShader2);
-            j();
-            return;
-        }
-        int glCreateProgram = GLES20.glCreateProgram();
-        this.w = glCreateProgram;
-        if (glCreateProgram == 0) {
-            FileLog.e("ThanosEffect: drawProgram == 0");
-            j();
-            return;
-        }
-        GLES20.glAttachShader(glCreateProgram, glCreateShader);
-        GLES20.glAttachShader(this.w, glCreateShader2);
-        GLES30.glTransformFeedbackVaryings(this.w, new String[]{"outUV", "outPosition", "outVelocity", "outTime"}, 35980);
-        GLES20.glLinkProgram(this.w);
-        GLES20.glGetProgramiv(this.w, 35714, iArr, 0);
-        if (iArr[0] != 1) {
-            FileLog.e("ThanosEffect, link program error: " + GLES20.glGetProgramInfoLog(this.w));
-            j();
-            return;
-        }
-        this.x = GLES20.glGetUniformLocation(this.w, "matrix");
-        this.J = GLES20.glGetUniformLocation(this.w, "rectSize");
-        this.L = GLES20.glGetUniformLocation(this.w, "rectPos");
-        this.y = GLES20.glGetUniformLocation(this.w, "reset");
-        this.E = GLES20.glGetUniformLocation(this.w, "time");
-        this.F = GLES20.glGetUniformLocation(this.w, "deltaTime");
-        this.G = GLES20.glGetUniformLocation(this.w, "particlesCount");
-        this.H = GLES20.glGetUniformLocation(this.w, "size");
-        this.I = GLES20.glGetUniformLocation(this.w, "gridSize");
-        this.M = GLES20.glGetUniformLocation(this.w, "tex");
-        this.K = GLES20.glGetUniformLocation(this.w, "seed");
-        this.N = GLES20.glGetUniformLocation(this.w, "dp");
-        this.O = GLES20.glGetUniformLocation(this.w, "longevity");
-        this.P = GLES20.glGetUniformLocation(this.w, "offset");
-        this.Q = GLES20.glGetUniformLocation(this.w, "scale");
-        this.R = GLES20.glGetUniformLocation(this.w, "uvOffset");
-        GLES20.glViewport(0, 0, this.e, this.f);
-        GLES20.glDisable(3042);
-        GLES20.glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
-        GLES20.glUseProgram(this.w);
-        GLES20.glUniform2f(this.H, this.e, this.f);
-    }
-
-    @Override // org.telegram.messenger.DispatchQueue
-    public final void handleMessage(Message message) {
-        int i10 = message.what;
+    public static void b(Canvas canvas, org.telegram.ui.Cells.s1 s1Var, int i10, float f7, float f10) {
+        canvas.save();
+        float alpha = s1Var.a() ? s1Var.getAlpha() : 1.0f;
+        canvas.translate(f7, f10);
+        s1Var.setInvalidatesParent(true);
         if (i10 == 0) {
-            g();
-            return;
+            s1Var.m2(alpha, canvas, true);
+        } else if (i10 == 1) {
+            s1Var.W1(canvas, alpha);
+        } else if (i10 == 2) {
+            s1Var.I1(alpha, canvas, s1Var.getCurrentPosition() != null && (s1Var.getCurrentPosition().flags & 1) == 0);
+        } else if (s1Var.getCurrentPosition() == null || (s1Var.getCurrentPosition().flags & 1) != 0) {
+            s1Var.d2(canvas, alpha, null);
+            s1Var.N1(canvas, alpha);
         }
-        int i11 = 0;
-        if (i10 == 1) {
-            int i12 = message.arg1;
-            int i13 = message.arg2;
-            if (this.b.get()) {
-                this.e = i12;
-                this.f = i13;
-                GLES20.glViewport(0, 0, i12, i13);
-                GLES20.glUniform2f(this.H, i12, i13);
-            }
-            g();
-            return;
-        }
-        if (i10 == 2) {
-            j();
-            return;
-        }
-        if (i10 == 3) {
-            b((d21) message.obj);
-            return;
-        }
-        ArrayList arrayList = this.T;
-        if (i10 == 4) {
-            while (i11 < arrayList.size()) {
-                d21 d21Var = (d21) arrayList.get(i11);
-                d21Var.g += message.arg1;
-                d21Var.h += message.arg2;
-                i11++;
-            }
-            return;
-        }
-        if (i10 != 5) {
-            return;
-        }
-        View view = (View) message.obj;
-        while (i11 < arrayList.size()) {
-            d21 d21Var2 = (d21) arrayList.get(i11);
-            if (d21Var2.a.contains(view)) {
-                d21Var2.a();
-                arrayList.remove(i11);
-                i11--;
-            }
-            i11++;
-        }
+        s1Var.setInvalidatesParent(false);
+        canvas.restore();
     }
 
-    public final void i() {
-        if (!this.b.get()) {
-            FileLog.d("ThanosEffect: kill failed, already dead");
-            return;
-        }
-        FileLog.d("ThanosEffect: kill");
+    public final void a() {
         try {
-            Handler handler = getHandler();
-            if (handler != null) {
-                handler.sendMessage(handler.obtainMessage(2));
-            }
-        } catch (Exception unused) {
-        }
-    }
-
-    public final void j() {
-        ArrayList arrayList;
-        AtomicBoolean atomicBoolean = this.b;
-        if (!atomicBoolean.get()) {
-            FileLog.d("ThanosEffect: killInternal failed, already dead");
-            return;
-        }
-        FileLog.d("ThanosEffect: killInternal");
-        int i10 = 0;
-        atomicBoolean.set(false);
-        while (true) {
-            arrayList = this.T;
-            if (i10 >= arrayList.size()) {
-                break;
-            }
-            ((d21) arrayList.get(i10)).a();
-            i10++;
-        }
-        arrayList.clear();
-        SurfaceTexture surfaceTexture = this.c;
-        if (surfaceTexture != null) {
-            surfaceTexture.release();
-        }
-        g21.b(this.d);
-        this.d = null;
-        Looper myLooper = Looper.myLooper();
-        if (myLooper != null) {
-            myLooper.quit();
-        }
-    }
-
-    @Override // org.telegram.messenger.DispatchQueue, java.lang.Thread, java.lang.Runnable
-    public final void run() {
-        ArrayList arrayList = this.W;
-        int i10 = 0;
-        try {
-            h();
-            if (!arrayList.isEmpty()) {
-                while (i10 < arrayList.size()) {
-                    b((d21) arrayList.get(i10));
-                    i10++;
-                }
-                arrayList.clear();
-            }
-            super.run();
+            GLES20.glDeleteBuffers(2, this.B, 0);
         } catch (Exception e) {
             FileLog.e(e);
-            while (i10 < arrayList.size()) {
-                d21 d21Var = (d21) arrayList.get(i10);
-                Runnable runnable = d21Var.e;
-                if (runnable != null) {
-                    AndroidUtilities.runOnUIThread(runnable);
-                }
-                d21Var.a();
-                i10++;
-            }
-            arrayList.clear();
-            AndroidUtilities.runOnUIThread(new k5(18));
-            j();
         }
+        f21 f21Var = this.E;
+        int i10 = f21Var.w;
+        if (i10 != 0) {
+            try {
+                GLES20.glDeleteProgram(i10);
+            } catch (Exception e10) {
+                FileLog.e(e10);
+            }
+            f21Var.w = 0;
+        }
+        try {
+            GLES20.glDeleteTextures(1, this.A, 0);
+        } catch (Exception e11) {
+            FileLog.e(e11);
+        }
+        Runnable runnable = this.f;
+        if (runnable != null) {
+            h21.b(runnable);
+            this.f = null;
+        }
+    }
+
+    public final void c() {
+        Matrix matrix = this.r;
+        float[] fArr = this.q;
+        matrix.getValues(fArr);
+        float f7 = fArr[0];
+        float[] fArr2 = this.p;
+        fArr2[0] = f7;
+        fArr2[1] = fArr[3];
+        fArr2[2] = fArr[6];
+        fArr2[3] = fArr[1];
+        fArr2[4] = fArr[4];
+        fArr2[5] = fArr[7];
+        fArr2[6] = fArr[2];
+        fArr2[7] = fArr[5];
+        fArr2[8] = fArr[8];
+        this.n = false;
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:74:0x022f, code lost:
+    
+        if ((r6 & 1) != 0) goto L92;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:92:0x023f, code lost:
+    
+        if (r0.messages.size() != 1) goto L100;
+     */
+    /* JADX WARN: Type inference failed for: r1v0, types: [java.lang.Object, org.telegram.ui.Components.e21] */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public e21(f21 f21Var, ArrayList arrayList, Runnable runnable) {
+        nm0 nm0Var;
+        org.telegram.ui.om omVar;
+        int i10;
+        float f7;
+        float f10;
+        ArrayList arrayList2;
+        boolean z10;
+        ArrayList arrayList3;
+        ArrayList arrayList4;
+        int i11;
+        int i12;
+        float f11;
+        float f12;
+        ArrayList arrayList5;
+        ?? obj = new Object();
+        obj.E = f21Var;
+        ArrayList arrayList6 = new ArrayList();
+        obj.a = arrayList6;
+        obj.b = -1L;
+        obj.c = 0.0f;
+        obj.d = true;
+        obj.g = 0.0f;
+        obj.h = 0.0f;
+        obj.i = 0.0f;
+        obj.j = 0.0f;
+        obj.k = AndroidUtilities.density;
+        obj.l = 1.5f;
+        obj.m = 1.15f;
+        obj.n = true;
+        obj.o = false;
+        obj.p = new float[9];
+        obj.q = new float[9];
+        obj.r = new Matrix();
+        obj.y = (float) (Math.random() * 2.0d);
+        obj.A = new int[1];
+        obj.B = new int[2];
+        arrayList6.addAll(arrayList);
+        int i13 = ConnectionsManager.DEFAULT_DATACENTER_ID;
+        int i14 = Integer.MIN_VALUE;
+        int i15 = Integer.MIN_VALUE;
+        int i16 = Integer.MAX_VALUE;
+        for (int i17 = 0; i17 < arrayList.size(); i17++) {
+            View view = (View) arrayList.get(i17);
+            i16 = Math.min(i16, (int) view.getX());
+            i14 = Math.max(i14, view.getWidth() + ((int) view.getX()));
+            i13 = Math.min(i13, (int) view.getY());
+            i15 = Math.max(i15, view.getHeight() + ((int) view.getY()));
+        }
+        float f13 = i13;
+        obj.j = f13;
+        float f14 = i16;
+        obj.i = f14;
+        obj.t = i14 - i16;
+        obj.u = i15 - i13;
+        obj.f = runnable;
+        obj.e = new m1(arrayList, 1);
+        for (int i18 = 0; i18 < arrayList.size(); i18++) {
+            if (arrayList.get(i18) instanceof org.telegram.ui.Cells.s1) {
+                ((org.telegram.ui.Cells.s1) arrayList.get(i18)).qe = true;
+            }
+        }
+        obj.C = Bitmap.createBitmap(obj.t, obj.u, Bitmap.Config.ARGB_8888);
+        Canvas canvas = new Canvas(obj.C);
+        if (arrayList.size() > 0 && (((View) arrayList.get(0)).getParent() instanceof nm0)) {
+            nm0 nm0Var2 = (nm0) ((View) arrayList.get(0)).getParent();
+            if (nm0Var2.getParent() instanceof org.telegram.ui.om) {
+                org.telegram.ui.om omVar2 = (org.telegram.ui.om) nm0Var2.getParent();
+                org.telegram.ui.wn chatActivity = omVar2.getChatActivity();
+                ArrayList arrayList7 = new ArrayList(10);
+                ArrayList arrayList8 = new ArrayList();
+                ArrayList arrayList9 = new ArrayList();
+                ArrayList arrayList10 = new ArrayList();
+                ArrayList arrayList11 = new ArrayList();
+                int save = canvas.save();
+                int i19 = 0;
+                e21 e21Var = obj;
+                while (i19 < 3) {
+                    arrayList7.clear();
+                    if (i19 != 2 || nm0Var2.V1) {
+                        nm0Var = nm0Var2;
+                        int i20 = 0;
+                        while (true) {
+                            omVar = omVar2;
+                            if (i20 >= arrayList.size()) {
+                                break;
+                            }
+                            View view2 = (View) arrayList.get(i20);
+                            if (view2 instanceof org.telegram.ui.Cells.s1) {
+                                org.telegram.ui.Cells.s1 s1Var = (org.telegram.ui.Cells.s1) view2;
+                                if (view2.getY() <= nm0Var.getHeight() && view2.getY() + view2.getHeight() >= 0.0f) {
+                                    i12 = i20;
+                                    if (s1Var.getVisibility() == 4 || s1Var.getVisibility() == 8) {
+                                        i11 = i19;
+                                        f11 = f13;
+                                        f12 = f14;
+                                        arrayList5 = arrayList8;
+                                        i20 = i12 + 1;
+                                        arrayList8 = arrayList5;
+                                        omVar2 = omVar;
+                                        f13 = f11;
+                                        i19 = i11;
+                                        f14 = f12;
+                                    } else {
+                                        MessageObject.GroupedMessages currentMessagesGroup = s1Var.getCurrentMessagesGroup();
+                                        MessageObject.GroupedMessagePosition position = (currentMessagesGroup == null || currentMessagesGroup.positions == null) ? null : currentMessagesGroup.getPosition(s1Var.getMessageObject());
+                                        f11 = f13;
+                                        if (i19 == 0 && (position != null || s1Var.getTransitionParams().w0)) {
+                                            if (position == null || position.last || (position.minX == 0 && position.minY == 0)) {
+                                                if (position == null || position.last) {
+                                                    arrayList8.add(s1Var);
+                                                }
+                                                if ((position == null || (position.minX == 0 && position.minY == 0)) && s1Var.T2()) {
+                                                    arrayList9.add(s1Var);
+                                                }
+                                            }
+                                            if (position != null || s1Var.getTransitionParams().C0 || s1Var.getTransitionParams().w0) {
+                                                if (position == null || (position.flags & s1Var.s0()) != 0) {
+                                                    arrayList10.add(s1Var);
+                                                }
+                                                if (position != null) {
+                                                    int i21 = position.flags;
+                                                    if ((i21 & 8) != 0) {
+                                                    }
+                                                }
+                                                arrayList11.add(s1Var);
+                                            }
+                                        }
+                                        if (currentMessagesGroup != null) {
+                                            int i22 = i19 == 0 ? 1 : 1;
+                                            if ((i19 != i22 || currentMessagesGroup.transitionParams.drawBackgroundForDeletedItems) && ((i19 != 0 || !s1Var.getMessageObject().deleted) && ((i19 != 1 || s1Var.getMessageObject().deleted) && ((i19 != 2 || s1Var.oc) && (i19 == 2 || !s1Var.oc))))) {
+                                                if (!arrayList7.contains(currentMessagesGroup)) {
+                                                    MessageObject.GroupedMessages.TransitionParams transitionParams = currentMessagesGroup.transitionParams;
+                                                    transitionParams.left = 0;
+                                                    transitionParams.top = 0;
+                                                    transitionParams.right = 0;
+                                                    transitionParams.bottom = 0;
+                                                    transitionParams.pinnedBotton = false;
+                                                    transitionParams.pinnedTop = false;
+                                                    transitionParams.cell = s1Var;
+                                                    arrayList7.add(currentMessagesGroup);
+                                                }
+                                                currentMessagesGroup.transitionParams.pinnedTop = s1Var.n3();
+                                                currentMessagesGroup.transitionParams.pinnedBotton = s1Var.m3();
+                                                int backgroundDrawableLeft = s1Var.getBackgroundDrawableLeft() + s1Var.getLeft();
+                                                int backgroundDrawableRight = s1Var.getBackgroundDrawableRight() + s1Var.getLeft();
+                                                int backgroundDrawableTop = s1Var.getBackgroundDrawableTop() + s1Var.getPaddingTop() + s1Var.getTop();
+                                                int backgroundDrawableBottom = s1Var.getBackgroundDrawableBottom() + s1Var.getPaddingTop() + s1Var.getTop();
+                                                i11 = i19;
+                                                f12 = f14;
+                                                int dp = (s1Var.getCurrentPosition().flags & 4) == 0 ? backgroundDrawableTop - AndroidUtilities.dp(10.0f) : backgroundDrawableTop;
+                                                arrayList5 = arrayList8;
+                                                int dp2 = (s1Var.getCurrentPosition().flags & 8) == 0 ? AndroidUtilities.dp(10.0f) + backgroundDrawableBottom : backgroundDrawableBottom;
+                                                if (s1Var.oc) {
+                                                    currentMessagesGroup.transitionParams.cell = s1Var;
+                                                }
+                                                MessageObject.GroupedMessages.TransitionParams transitionParams2 = currentMessagesGroup.transitionParams;
+                                                int i23 = transitionParams2.top;
+                                                if (i23 == 0 || dp < i23) {
+                                                    transitionParams2.top = dp;
+                                                }
+                                                int i24 = transitionParams2.bottom;
+                                                if (i24 == 0 || dp2 > i24) {
+                                                    transitionParams2.bottom = dp2;
+                                                }
+                                                int i25 = transitionParams2.left;
+                                                if (i25 == 0 || backgroundDrawableLeft < i25) {
+                                                    transitionParams2.left = backgroundDrawableLeft;
+                                                }
+                                                int i26 = transitionParams2.right;
+                                                if (i26 == 0 || backgroundDrawableRight > i26) {
+                                                    transitionParams2.right = backgroundDrawableRight;
+                                                }
+                                                i20 = i12 + 1;
+                                                arrayList8 = arrayList5;
+                                                omVar2 = omVar;
+                                                f13 = f11;
+                                                i19 = i11;
+                                                f14 = f12;
+                                            }
+                                        }
+                                        i11 = i19;
+                                        f12 = f14;
+                                        arrayList5 = arrayList8;
+                                        i20 = i12 + 1;
+                                        arrayList8 = arrayList5;
+                                        omVar2 = omVar;
+                                        f13 = f11;
+                                        i19 = i11;
+                                        f14 = f12;
+                                    }
+                                }
+                            }
+                            i11 = i19;
+                            i12 = i20;
+                            f11 = f13;
+                            f12 = f14;
+                            arrayList5 = arrayList8;
+                            i20 = i12 + 1;
+                            arrayList8 = arrayList5;
+                            omVar2 = omVar;
+                            f13 = f11;
+                            i19 = i11;
+                            f14 = f12;
+                        }
+                        i10 = i19;
+                        f7 = f13;
+                        f10 = f14;
+                        ArrayList arrayList12 = arrayList8;
+                        int i27 = 0;
+                        e21 e21Var2 = e21Var;
+                        while (i27 < arrayList7.size()) {
+                            MessageObject.GroupedMessages groupedMessages = (MessageObject.GroupedMessages) arrayList7.get(i27);
+                            float E2 = groupedMessages.transitionParams.cell.E2(true);
+                            MessageObject.GroupedMessages.TransitionParams transitionParams3 = groupedMessages.transitionParams;
+                            float f15 = transitionParams3.left + E2 + transitionParams3.offsetLeft;
+                            float f16 = transitionParams3.top + transitionParams3.offsetTop;
+                            float f17 = transitionParams3.right + E2 + transitionParams3.offsetRight;
+                            int i28 = i27;
+                            float f18 = transitionParams3.bottom + transitionParams3.offsetBottom;
+                            if (!transitionParams3.backgroundChangeBounds) {
+                                f16 += transitionParams3.cell.getTranslationY();
+                                f18 += groupedMessages.transitionParams.cell.getTranslationY();
+                            }
+                            f16 = f16 < (chatActivity.I9 - ((float) chatActivity.K9)) - ((float) AndroidUtilities.dp(20.0f)) ? (chatActivity.I9 - chatActivity.K9) - AndroidUtilities.dp(20.0f) : f16;
+                            f18 = f18 > ((float) (AndroidUtilities.dp(20.0f) + nm0Var.getMeasuredHeight())) ? AndroidUtilities.dp(20.0f) + nm0Var.getMeasuredHeight() : f18;
+                            float f19 = e21Var2.j;
+                            float f20 = f16 - f19;
+                            float f21 = f18 - f19;
+                            float f22 = e21Var2.i;
+                            float f23 = f15 - f22;
+                            float f24 = f17 - f22;
+                            boolean z11 = (groupedMessages.transitionParams.cell.getScaleX() == 1.0f && groupedMessages.transitionParams.cell.getScaleY() == 1.0f) ? false : true;
+                            if (z11) {
+                                canvas.save();
+                                z10 = z11;
+                                arrayList3 = arrayList7;
+                                arrayList4 = arrayList9;
+                                canvas.scale(groupedMessages.transitionParams.cell.getScaleX(), groupedMessages.transitionParams.cell.getScaleY(), c3.h0.B(f24, f23, 2.0f, f23), c3.h0.B(f21, f20, 2.0f, f20));
+                            } else {
+                                z10 = z11;
+                                arrayList3 = arrayList7;
+                                arrayList4 = arrayList9;
+                            }
+                            MessageObject.GroupedMessages.TransitionParams transitionParams4 = groupedMessages.transitionParams;
+                            ArrayList arrayList13 = arrayList10;
+                            ArrayList arrayList14 = arrayList12;
+                            ArrayList arrayList15 = arrayList4;
+                            float f25 = 2.0f;
+                            transitionParams4.cell.B1(canvas, (int) f23, (int) f20, (int) f24, (int) f21, transitionParams4.pinnedTop, transitionParams4.pinnedBotton, false, omVar.getKeyboardHeight());
+                            MessageObject.GroupedMessages.TransitionParams transitionParams5 = groupedMessages.transitionParams;
+                            transitionParams5.cell = null;
+                            transitionParams5.drawCaptionLayout = groupedMessages.hasCaption;
+                            if (z10) {
+                                canvas.restore();
+                                int i29 = 0;
+                                while (i29 < arrayList.size()) {
+                                    View view3 = (View) arrayList.get(i29);
+                                    float f26 = f25;
+                                    if (view3 instanceof org.telegram.ui.Cells.s1) {
+                                        org.telegram.ui.Cells.s1 s1Var2 = (org.telegram.ui.Cells.s1) view3;
+                                        if (s1Var2.getCurrentMessagesGroup() == groupedMessages) {
+                                            int left = s1Var2.getLeft();
+                                            int top = s1Var2.getTop();
+                                            view3.setPivotX(((f24 - f23) / f26) + (f23 - left));
+                                            view3.setPivotY(((f21 - f20) / f26) + (f20 - top));
+                                        }
+                                    }
+                                    i29++;
+                                    f25 = f26;
+                                }
+                            }
+                            arrayList12 = arrayList14;
+                            arrayList9 = arrayList15;
+                            i27 = i28 + 1;
+                            arrayList10 = arrayList13;
+                            arrayList7 = arrayList3;
+                            e21Var2 = this;
+                        }
+                        arrayList2 = arrayList12;
+                    } else {
+                        nm0Var = nm0Var2;
+                        i10 = i19;
+                        omVar = omVar2;
+                        f7 = f13;
+                        f10 = f14;
+                        arrayList2 = arrayList8;
+                    }
+                    i19 = i10 + 1;
+                    arrayList8 = arrayList2;
+                    arrayList9 = arrayList9;
+                    arrayList10 = arrayList10;
+                    omVar2 = omVar;
+                    f13 = f7;
+                    f14 = f10;
+                    arrayList7 = arrayList7;
+                    e21Var = this;
+                    nm0Var2 = nm0Var;
+                }
+                nm0 nm0Var3 = nm0Var2;
+                float f27 = f13;
+                float f28 = f14;
+                ArrayList arrayList16 = arrayList8;
+                ArrayList arrayList17 = arrayList9;
+                ArrayList arrayList18 = arrayList10;
+                for (int i30 = 0; i30 < arrayList.size(); i30++) {
+                    View view4 = (View) arrayList.get(i30);
+                    canvas.save();
+                    canvas.translate(view4.getX() - f28, view4.getY() - f27);
+                    view4.draw(canvas);
+                    if (view4 instanceof org.telegram.ui.Cells.s1) {
+                        ((org.telegram.ui.Cells.s1) view4).X1(canvas);
+                    } else if (view4 instanceof org.telegram.ui.Cells.v0) {
+                        ((org.telegram.ui.Cells.v0) view4).A(canvas);
+                    }
+                    canvas.restore();
+                }
+                nm0Var3.getY();
+                float f29 = chatActivity.I9;
+                AndroidUtilities.dp(4.0f);
+                int size = arrayList16.size();
+                if (size > 0) {
+                    for (int i31 = 0; i31 < size; i31++) {
+                        org.telegram.ui.Cells.s1 s1Var3 = (org.telegram.ui.Cells.s1) arrayList16.get(i31);
+                        b(canvas, s1Var3, 0, s1Var3.getX() - f28, s1Var3.getY() - f27);
+                    }
+                    arrayList16.clear();
+                }
+                int size2 = arrayList17.size();
+                if (size2 > 0) {
+                    for (int i32 = 0; i32 < size2; i32++) {
+                        org.telegram.ui.Cells.s1 s1Var4 = (org.telegram.ui.Cells.s1) arrayList17.get(i32);
+                        b(canvas, s1Var4, 1, s1Var4.getX() - f28, s1Var4.getY() - f27);
+                    }
+                    arrayList17.clear();
+                }
+                int size3 = arrayList18.size();
+                if (size3 > 0) {
+                    for (int i33 = 0; i33 < size3; i33++) {
+                        org.telegram.ui.Cells.s1 s1Var5 = (org.telegram.ui.Cells.s1) arrayList18.get(i33);
+                        if (s1Var5.getCurrentPosition() != null || s1Var5.getTransitionParams().w0) {
+                            b(canvas, s1Var5, 2, s1Var5.getX() - f28, s1Var5.getY() - f27);
+                        }
+                    }
+                    arrayList18.clear();
+                }
+                int size4 = arrayList11.size();
+                if (size4 > 0) {
+                    for (int i34 = 0; i34 < size4; i34++) {
+                        org.telegram.ui.Cells.s1 s1Var6 = (org.telegram.ui.Cells.s1) arrayList11.get(i34);
+                        if (s1Var6.getCurrentPosition() != null || s1Var6.getTransitionParams().w0) {
+                            b(canvas, s1Var6, 3, s1Var6.getX() - f28, s1Var6.getY() - f27);
+                        }
+                    }
+                    arrayList11.clear();
+                }
+                try {
+                    canvas.restoreToCount(save);
+                } catch (Exception e) {
+                    FileLog.e(e);
+                }
+                for (int i35 = 0; i35 < arrayList.size(); i35++) {
+                    if (arrayList.get(i35) instanceof org.telegram.ui.Cells.s1) {
+                        ((org.telegram.ui.Cells.s1) arrayList.get(i35)).qe = false;
+                    }
+                }
+            }
+        }
+    }
+
+    /* JADX WARN: Can't wrap try/catch for region: R(15:0|1|(1:3)|4|(1:6)|7|(2:9|(8:11|12|(3:14|(1:18)|19)|(1:21)(1:(1:31))|22|23|24|25))|(2:33|(1:35))|12|(0)|(0)(0)|22|23|24|25) */
+    /* JADX WARN: Code restructure failed: missing block: B:28:0x0153, code lost:
+    
+        r10 = move-exception;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:29:0x0154, code lost:
+    
+        org.telegram.messenger.FileLog.e(r10);
+     */
+    /* JADX WARN: Removed duplicated region for block: B:14:0x010e  */
+    /* JADX WARN: Removed duplicated region for block: B:21:0x0132  */
+    /* JADX WARN: Removed duplicated region for block: B:30:0x0147  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public e21(f21 f21Var, View view, float f7, Runnable runnable) {
+        this.E = f21Var;
+        ArrayList arrayList = new ArrayList();
+        this.a = arrayList;
+        this.b = -1L;
+        this.c = 0.0f;
+        this.d = true;
+        this.g = 0.0f;
+        this.h = 0.0f;
+        this.i = 0.0f;
+        this.j = 0.0f;
+        this.k = AndroidUtilities.density;
+        this.l = 1.5f;
+        this.m = 1.15f;
+        this.n = true;
+        this.o = false;
+        this.p = new float[9];
+        this.q = new float[9];
+        this.r = new Matrix();
+        this.y = (float) (Math.random() * 2.0d);
+        this.A = new int[1];
+        this.B = new int[2];
+        arrayList.add(view);
+        this.t = view.getWidth();
+        int height = view.getHeight();
+        this.u = height;
+        this.j = view.getY();
+        this.i = 0.0f;
+        if (view instanceof org.telegram.ui.Cells.z) {
+            org.telegram.ui.Cells.z zVar = (org.telegram.ui.Cells.z) view;
+            this.t = Math.max(1, zVar.getBoundsRight() - zVar.getBoundsLeft());
+            this.i = zVar.getBoundsLeft() + 0.0f;
+        }
+        this.f = runnable;
+        this.e = new np0(this, 21);
+        this.l = 1.5f * f7;
+        this.m = 1.15f / (((f7 - 1.0f) / 3.0f) + 1.0f);
+        this.C = Bitmap.createBitmap(this.t, height, Bitmap.Config.ARGB_8888);
+        Canvas canvas = new Canvas(this.C);
+        int save = canvas.save();
+        canvas.translate(-this.i, 0.0f);
+        boolean z10 = view instanceof org.telegram.ui.Cells.s1;
+        if (z10) {
+            ((org.telegram.ui.Cells.s1) view).qe = true;
+        }
+        boolean z11 = view instanceof org.telegram.ui.Cells.v0;
+        if (z11) {
+            org.telegram.ui.Cells.v0 v0Var = (org.telegram.ui.Cells.v0) view;
+            if (v0Var.J()) {
+                canvas.save();
+                canvas.translate(v0Var.j0 / 2.0f, view.getPaddingTop());
+                v0Var.y(canvas, true);
+                v0Var.B(canvas, true);
+                canvas.restore();
+                view.draw(canvas);
+                if (z10) {
+                    org.telegram.ui.Cells.s1 s1Var = (org.telegram.ui.Cells.s1) view;
+                    ImageReceiver avatarImage = s1Var.getAvatarImage();
+                    if (avatarImage != null && avatarImage.getVisible()) {
+                        canvas.save();
+                        canvas.translate(0.0f, -view.getY());
+                        avatarImage.draw(canvas);
+                        canvas.restore();
+                    }
+                    s1Var.qe = false;
+                }
+                if (!z10) {
+                    canvas.save();
+                    canvas.translate(0.0f, view.getPaddingTop());
+                    ((org.telegram.ui.Cells.s1) view).X1(canvas);
+                    canvas.restore();
+                } else if (z11) {
+                    ((org.telegram.ui.Cells.v0) view).A(canvas);
+                }
+                canvas.restoreToCount(save);
+                this.i = view.getX() + this.i;
+            }
+        }
+        if (z10) {
+            org.telegram.ui.Cells.s1 s1Var2 = (org.telegram.ui.Cells.s1) view;
+            if (s1Var2.C1()) {
+                canvas.save();
+                canvas.translate(0.0f, view.getPaddingTop());
+                s1Var2.D1(canvas, true, false);
+                canvas.restore();
+            }
+        }
+        view.draw(canvas);
+        if (z10) {
+        }
+        if (!z10) {
+        }
+        canvas.restoreToCount(save);
+        this.i = view.getX() + this.i;
     }
 }

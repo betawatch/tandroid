@@ -15,9 +15,9 @@ import org.telegram.messenger.R;
 import org.telegram.ui.ActionBar.p6;
 import org.telegram.ui.ActionBar.u6;
 import org.telegram.ui.ActionBar.y6;
-import org.telegram.ui.Components.gb1;
+import org.telegram.ui.Components.kb1;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class d extends FrameLayout implements p6 {
     public final u6 a;
@@ -33,7 +33,7 @@ public final class d extends FrameLayout implements p6 {
         this.b = imageView;
         imageView.setScaleType(ImageView.ScaleType.CENTER);
         imageView.setImageResource(R.drawable.msg_arrow_back);
-        addView(imageView, gb1.h(48, 48.0f, 8388627, 6.0f, 0.0f, 0.0f, 0.0f));
+        addView(imageView, kb1.h(48, 48.0f, 8388627, 6.0f, 0.0f, 0.0f, 0.0f));
         TextView textView = new TextView(context);
         this.c = textView;
         textView.setText(LocaleController.getString(R.string.EmojiSearchBackToSearch));
@@ -41,7 +41,7 @@ public final class d extends FrameLayout implements p6 {
         textView.setTypeface(AndroidUtilities.bold());
         textView.setSingleLine(true);
         textView.setEllipsize(TextUtils.TruncateAt.END);
-        addView(textView, gb1.h(-2, -2.0f, 8388627, 50.0f, 0.0f, 16.0f, 0.0f));
+        addView(textView, kb1.h(-2, -2.0f, 8388627, 50.0f, 0.0f, 16.0f, 0.0f));
         updateColors();
     }
 

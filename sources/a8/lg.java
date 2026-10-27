@@ -1,9 +1,12 @@
 package a8;
 
 import android.content.SharedPreferences;
+import android.media.MediaCodec;
+import android.media.MediaFormat;
 import android.os.Bundle;
 import com.google.android.gms.tasks.OnFailureListener;
 import j$.util.DesugarCollections;
+import java.nio.ByteBuffer;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Iterator;
@@ -12,12 +15,12 @@ import java.util.concurrent.atomic.AtomicLong;
 import org.telegram.messenger.MessagesController;
 import org.telegram.ui.Components.ap;
 import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.gf1;
-import org.telegram.ui.h11;
+import org.telegram.ui.if1;
+import org.telegram.ui.j11;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class lg implements OnFailureListener, c3.p, c3.q, l2.h, ap {
+public final /* synthetic */ class lg implements OnFailureListener, c3.p, c3.q, l2.h, ap, vi.x0 {
     public final /* synthetic */ int a;
     public long b;
     public Object c;
@@ -28,10 +31,27 @@ public final /* synthetic */ class lg implements OnFailureListener, c3.p, c3.q, 
         this.c = obj;
     }
 
-    public void A(int i10, boolean z10) {
+    public void A(bd.a aVar) {
+        this.b++;
+        Thread thread = new Thread(aVar);
+        thread.setDaemon(true);
+        thread.setName("NanoHttpd Request Processor (#" + this.b + ")");
+        ((List) this.c).add(aVar);
+        thread.start();
+    }
+
+    public boolean B(int i10) {
+        if (i10 < 64) {
+            return (this.b & (1 << i10)) != 0;
+        }
+        z();
+        return ((lg) this.c).B(i10 - 64);
+    }
+
+    public void C(int i10, boolean z10) {
         if (i10 >= 64) {
-            x();
-            ((lg) this.c).A(i10 - 64, z10);
+            z();
+            ((lg) this.c).C(i10 - 64, z10);
             return;
         }
         long j10 = this.b;
@@ -39,20 +59,20 @@ public final /* synthetic */ class lg implements OnFailureListener, c3.p, c3.q, 
         long j11 = (1 << i10) - 1;
         this.b = ((j10 & (~j11)) << 1) | (j10 & j11);
         if (z10) {
-            D(i10);
+            F(i10);
         } else {
-            v(i10);
+            x(i10);
         }
         if (z11 || ((lg) this.c) != null) {
-            x();
-            ((lg) this.c).A(0, z11);
+            z();
+            ((lg) this.c).C(0, z11);
         }
     }
 
-    public boolean B(int i10) {
+    public boolean D(int i10) {
         if (i10 >= 64) {
-            x();
-            return ((lg) this.c).B(i10 - 64);
+            z();
+            return ((lg) this.c).D(i10 - 64);
         }
         long j10 = 1 << i10;
         long j11 = this.b;
@@ -63,34 +83,34 @@ public final /* synthetic */ class lg implements OnFailureListener, c3.p, c3.q, 
         this.b = (j12 & j13) | Long.rotateRight((~j13) & j12, 1);
         lg lgVar = (lg) this.c;
         if (lgVar != null) {
-            if (lgVar.z(0)) {
-                D(63);
+            if (lgVar.B(0)) {
+                F(63);
             }
-            ((lg) this.c).B(0);
+            ((lg) this.c).D(0);
         }
         return z10;
-    }
-
-    public void C() {
-        this.b = 0L;
-        lg lgVar = (lg) this.c;
-        if (lgVar != null) {
-            lgVar.C();
-        }
-    }
-
-    public void D(int i10) {
-        if (i10 < 64) {
-            this.b |= 1 << i10;
-        } else {
-            x();
-            ((lg) this.c).D(i10 - 64);
-        }
     }
 
     @Override // c3.q
     public void D1(c3.b0 b0Var) {
         ((c3.q) this.c).D1(new c3.g0(this, b0Var, b0Var));
+    }
+
+    public void E() {
+        this.b = 0L;
+        lg lgVar = (lg) this.c;
+        if (lgVar != null) {
+            lgVar.E();
+        }
+    }
+
+    public void F(int i10) {
+        if (i10 < 64) {
+            this.b |= 1 << i10;
+        } else {
+            z();
+            ((lg) this.c).F(i10 - 64);
+        }
     }
 
     @Override // c3.q
@@ -197,12 +217,12 @@ public final /* synthetic */ class lg implements OnFailureListener, c3.p, c3.q, 
     public void m() {
         Bundle bundle = new Bundle();
         bundle.putLong("dialog_id", this.b);
-        gf1 gf1Var = new gf1(bundle);
-        gf1Var.d = new ArrayList();
-        gf1Var.e = new HashSet();
+        if1 if1Var = new if1(bundle);
+        if1Var.d = new ArrayList();
+        if1Var.e = new HashSet();
         ProfileActivity profileActivity = (ProfileActivity) this.c;
-        gf1Var.e = profileActivity.n5;
-        profileActivity.presentFragment(gf1Var);
+        if1Var.e = profileActivity.n5;
+        profileActivity.presentFragment(if1Var);
     }
 
     @Override // org.telegram.ui.Components.ap
@@ -225,7 +245,7 @@ public final /* synthetic */ class lg implements OnFailureListener, c3.p, c3.q, 
             Bundle bundle = new Bundle();
             bundle.putLong("dialog_id", j10);
             bundle.putLong("topic_id", profileActivity.g1);
-            profileActivity.presentFragment(new h11(bundle, profileActivity.z0));
+            profileActivity.presentFragment(new j11(bundle, profileActivity.z0));
         }
     }
 
@@ -243,7 +263,7 @@ public final /* synthetic */ class lg implements OnFailureListener, c3.p, c3.q, 
                     ((h6.o) it.next()).b(j10, statusCode, null);
                 }
                 break;
-            case 9:
+            case 10:
                 ((AtomicLong) ((m4.w1) this.c).c).set(this.b);
                 break;
             default:
@@ -257,25 +277,14 @@ public final /* synthetic */ class lg implements OnFailureListener, c3.p, c3.q, 
         ((c3.p) this.c).p();
     }
 
-    @Override // c3.p
-    public void q(int i10) {
-        ((c3.p) this.c).q(i10);
+    @Override // vi.x0
+    public void q(ByteBuffer byteBuffer, MediaCodec.BufferInfo bufferInfo) {
+        ((vi.w) this.c).q(true, byteBuffer, bufferInfo, -this.b);
     }
 
-    @Override // org.telegram.ui.Components.ap
-    public void r() {
-        int i10;
-        ProfileActivity profileActivity = (ProfileActivity) this.c;
-        i10 = ((org.telegram.ui.ActionBar.r2) profileActivity).currentAccount;
-        SharedPreferences notificationsSettings = MessagesController.getNotificationsSettings(i10);
-        StringBuilder sb2 = new StringBuilder("sound_enabled_");
-        long j10 = this.b;
-        boolean z10 = notificationsSettings.getBoolean(org.telegram.messenger.t.j(j10, profileActivity.g1, sb2), true);
-        boolean z11 = !z10;
-        notificationsSettings.edit().putBoolean(org.telegram.messenger.t.j(j10, profileActivity.g1, new StringBuilder("sound_enabled_")), z11).apply();
-        if (org.telegram.ui.Components.wc.a(profileActivity)) {
-            org.telegram.ui.Components.wc.T(z10 ? 1 : 0, profileActivity, profileActivity.z0).j();
-        }
+    @Override // c3.p
+    public void r(int i10) {
+        ((c3.p) this.c).r(i10);
     }
 
     @Override // b2.p
@@ -288,9 +297,20 @@ public final /* synthetic */ class lg implements OnFailureListener, c3.p, c3.q, 
         ((c3.p) this.c).readFully(bArr, i10, i11);
     }
 
-    @Override // c3.p
-    public boolean s(int i10, boolean z10) {
-        return ((c3.p) this.c).s(i10, true);
+    @Override // org.telegram.ui.Components.ap
+    public void s() {
+        int i10;
+        ProfileActivity profileActivity = (ProfileActivity) this.c;
+        i10 = ((org.telegram.ui.ActionBar.r2) profileActivity).currentAccount;
+        SharedPreferences notificationsSettings = MessagesController.getNotificationsSettings(i10);
+        StringBuilder sb2 = new StringBuilder("sound_enabled_");
+        long j10 = this.b;
+        boolean z10 = notificationsSettings.getBoolean(org.telegram.messenger.t.j(j10, profileActivity.g1, sb2), true);
+        boolean z11 = !z10;
+        notificationsSettings.edit().putBoolean(org.telegram.messenger.t.j(j10, profileActivity.g1, new StringBuilder("sound_enabled_")), z11).apply();
+        if (org.telegram.ui.Components.wc.a(profileActivity)) {
+            org.telegram.ui.Components.wc.T(z10 ? 1 : 0, profileActivity, profileActivity.z0).j();
+        }
     }
 
     @Override // c3.p
@@ -316,8 +336,18 @@ public final /* synthetic */ class lg implements OnFailureListener, c3.p, c3.q, 
         }
     }
 
+    @Override // c3.p
+    public boolean u(int i10, boolean z10) {
+        return ((c3.p) this.c).u(i10, true);
+    }
+
+    @Override // vi.x0
+    public void v(MediaFormat mediaFormat) {
+        ((vi.w) this.c).n(mediaFormat, true);
+    }
+
     @Override // org.telegram.ui.Components.ap
-    public void u(int i10) {
+    public void w(int i10) {
         ProfileActivity profileActivity = (ProfileActivity) this.c;
         if (i10 == 0) {
             if (profileActivity.getMessagesController().isDialogMuted(this.b, profileActivity.g1)) {
@@ -338,18 +368,18 @@ public final /* synthetic */ class lg implements OnFailureListener, c3.p, c3.q, 
         profileActivity.r5(true);
     }
 
-    public void v(int i10) {
+    public void x(int i10) {
         if (i10 < 64) {
             this.b &= ~(1 << i10);
             return;
         }
         lg lgVar = (lg) this.c;
         if (lgVar != null) {
-            lgVar.v(i10 - 64);
+            lgVar.x(i10 - 64);
         }
     }
 
-    public int w(int i10) {
+    public int y(int i10) {
         lg lgVar = (lg) this.c;
         if (lgVar == null) {
             return i10 >= 64 ? Long.bitCount(this.b) : Long.bitCount(this.b & ((1 << i10) - 1));
@@ -357,30 +387,13 @@ public final /* synthetic */ class lg implements OnFailureListener, c3.p, c3.q, 
         if (i10 < 64) {
             return Long.bitCount(this.b & ((1 << i10) - 1));
         }
-        return Long.bitCount(this.b) + lgVar.w(i10 - 64);
+        return Long.bitCount(this.b) + lgVar.y(i10 - 64);
     }
 
-    public void x() {
+    public void z() {
         if (((lg) this.c) == null) {
             this.c = new lg(8);
         }
-    }
-
-    public void y(bd.a aVar) {
-        this.b++;
-        Thread thread = new Thread(aVar);
-        thread.setDaemon(true);
-        thread.setName("NanoHttpd Request Processor (#" + this.b + ")");
-        ((List) this.c).add(aVar);
-        thread.start();
-    }
-
-    public boolean z(int i10) {
-        if (i10 < 64) {
-            return (this.b & (1 << i10)) != 0;
-        }
-        x();
-        return ((lg) this.c).z(i10 - 64);
     }
 
     public /* synthetic */ lg(Object obj, long j10, int i10) {

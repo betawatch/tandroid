@@ -71,15 +71,15 @@ import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.StatsController;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.u6;
+import org.telegram.messenger.v6;
 import org.telegram.messenger.voip.j0;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.b10;
-import org.telegram.ui.Components.s81;
-import org.telegram.ui.gg0;
-import sg.h2;
+import org.telegram.ui.Components.t81;
+import org.telegram.ui.ig0;
+import sg.g2;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public class ConnectionsManager extends BaseController {
     private static final int CORE_POOL_SIZE;
@@ -138,7 +138,7 @@ public class ConnectionsManager extends BaseController {
     private AtomicInteger lastRequestToken;
     private final ConcurrentHashMap<Integer, RequestCallbacks> requestCallbacks;
 
-    /* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+    /* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
     public static class GoogleDnsLoadTask extends AsyncTask<Void, Void, NativeByteBuffer> {
         private int currentAccount;
         private int responseDate;
@@ -293,12 +293,12 @@ public class ConnectionsManager extends BaseController {
         }
     }
 
-    /* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+    /* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
     public interface INativeTlTest {
         boolean test(long j10);
     }
 
-    /* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+    /* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
     public static class MozillaDnsLoadTask extends AsyncTask<Void, Void, NativeByteBuffer> {
         private int currentAccount;
         private int responseDate;
@@ -427,7 +427,7 @@ public class ConnectionsManager extends BaseController {
         }
     }
 
-    /* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+    /* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
     public static class RequestCallbacks {
         public Runnable onCancelled;
         public RequestDelegateInternal onComplete;
@@ -441,7 +441,7 @@ public class ConnectionsManager extends BaseController {
         }
     }
 
-    /* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+    /* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
     public static class ResolveHostByNameTask extends AsyncTask<Void, Void, ResolvedDomain> {
         private ArrayList<Long> addresses = new ArrayList<>();
         private String currentHostName;
@@ -570,7 +570,7 @@ public class ConnectionsManager extends BaseController {
         }
     }
 
-    /* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+    /* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
     public static class ResolvedDomain {
         public ArrayList<String> addresses;
         long ttl;
@@ -817,7 +817,7 @@ public class ConnectionsManager extends BaseController {
         k10.append(System.currentTimeMillis() - j10);
         k10.append("ms");
         FileLog.e(k10.toString(), exc);
-        native_receivedIntegrityCheckClassic(i10, i11, str, "PLAYINTEGRITY_FAILED_EXCEPTION_" + gg0.k1(exc));
+        native_receivedIntegrityCheckClassic(i10, i11, str, "PLAYINTEGRITY_FAILED_EXCEPTION_" + ig0.k1(exc));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -988,8 +988,8 @@ public class ConnectionsManager extends BaseController {
                 i17 = 0;
                 tLObject2 = null;
             }
-            if ((i10 & 2) != 0 && s81.k0.isEmpty()) {
-                y2.f.b(ApplicationLoader.applicationContext).d(i17, Math.max(0L, (System.currentTimeMillis() - j10) - native_getCurrentPingTime(this.currentAccount)));
+            if ((i10 & 2) != 0 && t81.k0.isEmpty()) {
+                y2.f.c(ApplicationLoader.applicationContext).e(i17, Math.max(0L, (System.currentTimeMillis() - j10) - native_getCurrentPingTime(this.currentAccount)));
             }
             if (BuildVars.DEBUG_PRIVATE_VERSION) {
                 try {
@@ -1179,7 +1179,7 @@ public class ConnectionsManager extends BaseController {
     }
 
     public static void onConnectionStateChanged(int i10, int i11) {
-        AndroidUtilities.runOnUIThread(new u6(i11, i10, 3));
+        AndroidUtilities.runOnUIThread(new v6(i11, i10, 3));
     }
 
     public static void onIntegrityCheckClassic(int i10, int i11, String str, String str2) {
@@ -1236,7 +1236,7 @@ public class ConnectionsManager extends BaseController {
     }
 
     public static void onRequestNewServerIpAndPort(int i10, int i11) {
-        Utilities.globalQueue.postRunnable(new u6(i10, i11, 2));
+        Utilities.globalQueue.postRunnable(new v6(i10, i11, 2));
     }
 
     public static void onRequestQuickAck(int i10, int i11) {
@@ -1534,7 +1534,7 @@ public class ConnectionsManager extends BaseController {
             ti.e eVar2 = eVar;
             e1 e1Var = new e1(this, 26);
             if (aVar.a == 3 && aVar.f() && requestTimeDelegate != null) {
-                AndroidUtilities.runOnUIThread(new h2(eVar2, e1Var, aVar, requestTimeDelegate, 2));
+                AndroidUtilities.runOnUIThread(new g2(eVar2, e1Var, aVar, requestTimeDelegate, 2));
                 return 0L;
             }
             if (requestTimeDelegate != null) {

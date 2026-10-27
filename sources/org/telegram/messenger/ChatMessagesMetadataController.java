@@ -5,21 +5,21 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.tgnet.tl.TL_update;
-import org.telegram.ui.fm;
-import org.telegram.ui.un;
+import org.telegram.ui.hm;
+import org.telegram.ui.wn;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
 public class ChatMessagesMetadataController {
-    final un chatActivity;
+    final wn chatActivity;
     private final ArrayList<MessageObject> reactionsToCheck = new ArrayList<>(10);
     private final ArrayList<MessageObject> extendedMediaToCheck = new ArrayList<>(10);
     private final ArrayList<MessageObject> storiesToCheck = new ArrayList<>(10);
     ArrayList<Integer> reactionsRequests = new ArrayList<>();
     ArrayList<Integer> extendedMediaRequests = new ArrayList<>();
 
-    public ChatMessagesMetadataController(un unVar) {
-        this.chatActivity = unVar;
+    public ChatMessagesMetadataController(wn wnVar) {
+        this.chatActivity = wnVar;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -56,9 +56,9 @@ public class ChatMessagesMetadataController {
         arrayList.add(messageObject);
         this.chatActivity.getMessagesStorage().getStorageQueue().postRunnable(new j3(13, this, arrayList));
         if (!isExpiredStory && messageObject.isExpiredStory() && messageObject.type == 24) {
-            this.chatActivity.Gc(arrayList, true);
+            this.chatActivity.Kc(arrayList, true);
         } else {
-            this.chatActivity.Gc(arrayList, false);
+            this.chatActivity.Kc(arrayList, false);
         }
     }
 
@@ -110,12 +110,12 @@ public class ChatMessagesMetadataController {
         }
     }
 
-    public void checkMessages(fm fmVar, int i10, int i11, long j10) {
-        ArrayList L = fmVar.L();
+    public void checkMessages(hm hmVar, int i10, int i11, long j10) {
+        ArrayList L = hmVar.L();
         if (this.chatActivity.c() || i10 < 0 || i11 < 0) {
             return;
         }
-        int i12 = fmVar.J;
+        int i12 = hmVar.J;
         int i13 = (i11 - i12) - 10;
         int i14 = (i10 - i12) + 10;
         if (i13 < 0) {

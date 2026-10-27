@@ -1,28 +1,84 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class c80 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ LanguageSelectActivity b;
+import android.content.Context;
+import android.view.View;
+import android.widget.FrameLayout;
+import java.util.HashSet;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.FileLog;
+import org.telegram.tgnet.TLObject;
 
-    public /* synthetic */ c80(LanguageSelectActivity languageSelectActivity, int i10) {
-        this.a = i10;
-        this.b = languageSelectActivity;
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* loaded from: classes3.dex */
+public final class c80 extends FrameLayout implements org.telegram.ui.ActionBar.p6 {
+    public final org.telegram.ui.ActionBar.b6 a;
+    public final org.telegram.ui.Components.m9 b;
+    public boolean c;
+    public int d;
+    public final /* synthetic */ d80 e;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public c80(d80 d80Var, Context context) {
+        super(context);
+        this.e = d80Var;
+        int i10 = org.telegram.ui.ActionBar.y6.i6;
+        this.d = org.telegram.ui.ActionBar.y6.x0(null, i10, false);
+        org.telegram.ui.ActionBar.b6 b6Var = new org.telegram.ui.ActionBar.b6(context);
+        this.a = b6Var;
+        b6Var.setTextSize(16);
+        b6Var.setEllipsizeByGradient(true);
+        b6Var.setRightPadding(AndroidUtilities.dp(68.0f));
+        org.telegram.ui.ActionBar.f7.Y(b6Var, org.telegram.ui.ActionBar.y6.j5, null);
+        addView(b6Var, org.telegram.ui.Components.kb1.h(0, -2.0f, 19, 19.0f, 0.0f, 19.0f, 0.0f));
+        org.telegram.ui.Components.m9 m9Var = new org.telegram.ui.Components.m9(context, false);
+        this.b = m9Var;
+        m9Var.a.a = true;
+        m9Var.setStyle(11);
+        m9Var.setAvatarsTextSize(AndroidUtilities.dp(22.0f));
+        addView(m9Var, org.telegram.ui.Components.kb1.h(56, -1.0f, 21, 0.0f, 0.0f, 4.0f, 0.0f));
+        setBackground(org.telegram.ui.ActionBar.y6.Z(org.telegram.ui.ActionBar.y6.x0(null, i10, false), 0, 4));
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                LanguageSelectActivity.Z(this.b);
-                break;
-            case 1:
-                LanguageSelectActivity.X(this.b);
-                break;
-            default:
-                this.b.a.l();
-                break;
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        View view = (View) getParent();
+        if (view != null && view.getWidth() > 0) {
+            i10 = View.MeasureSpec.makeMeasureSpec(view.getWidth(), TLObject.FLAG_30);
         }
+        this.c = true;
+        org.telegram.ui.ActionBar.b6 b6Var = this.a;
+        b6Var.setVisibility(8);
+        super.onMeasure(i10, i11);
+        b6Var.setVisibility(0);
+        b6Var.getLayoutParams().width = getMeasuredWidth();
+        this.c = false;
+        this.e.g();
+        super.onMeasure(i10, i11);
+    }
+
+    @Override // android.view.View, android.view.ViewParent
+    public final void requestLayout() {
+        if (this.c) {
+            return;
+        }
+        super.requestLayout();
+    }
+
+    @Override // org.telegram.ui.ActionBar.p6
+    public final void updateColors() {
+        try {
+            int x02 = org.telegram.ui.ActionBar.y6.x0(null, org.telegram.ui.ActionBar.y6.i6, false);
+            if (x02 != this.d) {
+                this.d = x02;
+                org.telegram.ui.ActionBar.y6.E1(getBackground(), x02, true);
+                invalidate();
+            }
+        } catch (Exception e) {
+            FileLog.e(e);
+        }
+    }
+
+    @Override // org.telegram.ui.ActionBar.p6
+    public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 }

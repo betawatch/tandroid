@@ -17,7 +17,7 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class ha extends FrameLayout implements NotificationCenter.NotificationCenterDelegate, org.telegram.ui.ActionBar.p6 {
     public int E;
@@ -26,7 +26,7 @@ public final class ha extends FrameLayout implements NotificationCenter.Notifica
     public TextView b;
     public bh.r c;
     public bh.r d;
-    public bk0 e;
+    public ck0 e;
     public ScrollView f;
     public AnimatorSet h;
     public TLRPC.TL_help_appUpdate n;
@@ -59,7 +59,7 @@ public final class ha extends FrameLayout implements NotificationCenter.Notifica
             rVar.setEnabled(true);
             this.h.playTogether(ObjectAnimator.ofFloat(rVar2, (Property<bh.r, Float>) property3, 0.1f), ObjectAnimator.ofFloat(rVar2, (Property<bh.r, Float>) property2, 0.1f), ObjectAnimator.ofFloat(rVar2, (Property<bh.r, Float>) property, 0.0f), ObjectAnimator.ofFloat(textView, (Property<TextView, Float>) property3, 1.0f), ObjectAnimator.ofFloat(textView, (Property<TextView, Float>) property2, 1.0f), ObjectAnimator.ofFloat(textView, (Property<TextView, Float>) property, 1.0f));
         }
-        this.h.addListener(new org.telegram.ui.jo(i10, this, z10));
+        this.h.addListener(new org.telegram.ui.lo(i10, this, z10));
         this.h.setDuration(150L);
         this.h.start();
     }

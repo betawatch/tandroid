@@ -32,9 +32,9 @@ import com.google.android.gms.common.api.internal.o0;
 import com.google.android.gms.common.api.internal.w;
 import com.google.android.gms.tasks.TaskCompletionSource;
 import di.g8;
-import di.o9;
 import di.p9;
 import di.q4;
+import di.x;
 import di.y9;
 import fi.ta;
 import h6.o;
@@ -52,9 +52,9 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.ui.ActionBar.y6;
-import sg.x2;
+import sg.w2;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
 public final class d implements Runnable {
     public final /* synthetic */ int a;
@@ -285,12 +285,12 @@ public final class d implements Runnable {
                 if (q4Var.z1 && q4Var.Q0) {
                     y9 y9Var = ((p9) q4Var.F1).d;
                     y9Var.l1 = false;
-                    y9Var.P();
+                    y9Var.Q();
                     return;
                 }
                 return;
             case 20:
-                ((o9) this.b).L0 = false;
+                ((x) this.b).L0 = false;
                 return;
             case 21:
                 g8 g8Var = (g8) this.b;
@@ -299,8 +299,8 @@ public final class d implements Runnable {
                 return;
             case 22:
                 sg.j jVar = ((ta) this.b).y0;
-                if (jVar instanceof x2) {
-                    ((x2) jVar).getEditText();
+                if (jVar instanceof w2) {
+                    ((w2) jVar).getEditText();
                     return;
                 }
                 return;

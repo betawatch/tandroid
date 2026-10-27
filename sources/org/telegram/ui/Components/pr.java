@@ -22,7 +22,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public abstract class pr {
     public static boolean a(String str, String str2) {
@@ -117,7 +117,7 @@ public abstract class pr {
             }
         }
         treeSet.remove("bot");
-        org.telegram.ui.ActionBar.k3 i11 = org.telegram.messenger.vh.i(1, context, u6Var, true);
+        org.telegram.ui.ActionBar.k3 i11 = org.telegram.messenger.wh.i(1, context, u6Var, true);
         or orVar = new or(context);
         orVar.setClipChildren(false);
         orVar.setClipToPadding(false);
@@ -128,14 +128,14 @@ public abstract class pr {
         j9Var.r(user);
         y9Var.f(user, j9Var);
         y9Var.setRoundRadius(AndroidUtilities.dp(40.0f));
-        orVar.addView(y9Var, gb1.x(80, 80, 49, 0, 22, 0, 16));
+        orVar.addView(y9Var, kb1.x(80, 80, 49, 0, 22, 0, 16));
         TextView textView = new TextView(context);
         textView.setTypeface(AndroidUtilities.bold());
         int i12 = org.telegram.ui.ActionBar.y6.G6;
         org.telegram.ui.ActionBar.f7.V(textView, i12, u6Var);
         textView.setTextSize(1, 20.0f);
-        org.telegram.messenger.vh.k(R.string.CreateManagedBotTitle, textView, 17);
-        orVar.addView(textView, gb1.x(-1, -2, 55, 16, 0, 16, 5));
+        org.telegram.messenger.wh.k(R.string.CreateManagedBotTitle, textView, 17);
+        orVar.addView(textView, kb1.x(-1, -2, 55, 16, 0, 16, 5));
         TextView textView2 = new TextView(context);
         org.telegram.ui.ActionBar.f7.V(textView2, i12, u6Var);
         textView2.setTextSize(1, 14.0f);
@@ -143,7 +143,7 @@ public abstract class pr {
         int i13 = org.telegram.ui.ActionBar.y6.gc;
         textView2.setText(AndroidUtilities.replaceSingleLinkBoldKey(formatString, i13, u6Var, null));
         textView2.setGravity(17);
-        orVar.addView(textView2, gb1.x(-1, -2, 55, 16, 0, 16, 22));
+        orVar.addView(textView2, kb1.x(-1, -2, 55, 16, 0, 16, 22));
         org.telegram.ui.Cells.g3 g3Var = new org.telegram.ui.Cells.g3(context, LocaleController.getString(R.string.CreateManagedBotName), false, false, -1, u6Var);
         org.telegram.ui.Cells.e3 e3Var = g3Var.d;
         e3Var.setImeOptions(5);
@@ -154,10 +154,10 @@ public abstract class pr {
         g3Var.setBackground(c02);
         org.telegram.ui.ActionBar.f7.k(g3Var, c02, N, null, u6Var);
         g3Var.setText(tL_requestPeerTypeCreateBot.suggested_name);
-        orVar.addView(g3Var, gb1.x(-1, -2, 55, 12, 0, 12, 0));
+        orVar.addView(g3Var, kb1.x(-1, -2, 55, 12, 0, 12, 0));
         org.telegram.ui.Cells.i9 i9Var = new org.telegram.ui.Cells.i9(context, u6Var);
         i9Var.setText(LocaleController.getString(R.string.CreateManagedBotNameInfo));
-        orVar.addView(i9Var, gb1.x(-1, -2, 55, 9, 0, 9, 0));
+        orVar.addView(i9Var, kb1.x(-1, -2, 55, 9, 0, 9, 0));
         org.telegram.ui.Cells.g3 g3Var2 = new org.telegram.ui.Cells.g3(context, LocaleController.getString(R.string.CreateManagedBotUsername), false, false, 32, u6Var);
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setOrientation(0);
@@ -171,9 +171,9 @@ public abstract class pr {
         org.telegram.ui.ActionBar.f7.V(textView3, i12, u6Var);
         textView3.setGravity(17);
         textView3.setPadding(0, AndroidUtilities.dp(15.0f), 0, AndroidUtilities.dp(15.0f));
-        linearLayout.addView(textView3, gb1.o(21.0f, -1.0f, 0.0f, 0.0f, -2, -1));
-        linearLayout.addView(e3Var2, gb1.t(0, -1, 119.0f, 1, 0, 0, 0, 0));
-        g3Var2.addView(linearLayout, gb1.g(-1.0f, -1));
+        linearLayout.addView(textView3, kb1.o(21.0f, -1.0f, 0.0f, 0.0f, -2, -1));
+        linearLayout.addView(e3Var2, kb1.t(0, -1, 119.0f, 1, 0, 0, 0, 0));
+        g3Var2.addView(linearLayout, kb1.g(-1.0f, -1));
         Drawable c03 = org.telegram.ui.ActionBar.y6.c0(AndroidUtilities.dp(16.0f), org.telegram.ui.ActionBar.y6.w0(i14, u6Var));
         org.telegram.ui.ActionBar.b7 N2 = org.telegram.ui.ActionBar.f7.N(i14);
         g3Var2.setBackground(c03);
@@ -186,15 +186,15 @@ public abstract class pr {
             str2 = str2.trim();
         }
         g3Var2.setText(str2);
-        orVar.addView(g3Var2, gb1.x(-1, -2, 55, 12, 0, 12, 0));
+        orVar.addView(g3Var2, kb1.x(-1, -2, 55, 12, 0, 12, 0));
         e3Var.setOnEditorActionListener(new d1(g3Var2, 2));
         org.telegram.ui.Cells.i9 i9Var2 = new org.telegram.ui.Cells.i9(context, u6Var);
-        orVar.addView(i9Var2, gb1.x(-1, -2, 55, 9, 0, 9, 0));
+        orVar.addView(i9Var2, kb1.x(-1, -2, 55, 9, 0, 9, 0));
         LinearLayout linearLayout2 = new LinearLayout(context);
         linearLayout2.setOrientation(0);
         linearLayout2.setPadding(AndroidUtilities.dp(12.0f), AndroidUtilities.dp(12.0f), AndroidUtilities.dp(12.0f), AndroidUtilities.dp(12.0f));
         linearLayout2.setClipToPadding(false);
-        orVar.addView(linearLayout2, gb1.r(-1, -2));
+        orVar.addView(linearLayout2, kb1.r(-1, -2));
         fi.d dVar = new fi.d(context, u6Var, true);
         dVar.setRoundRadius(24);
         dVar.e();
@@ -206,10 +206,10 @@ public abstract class pr {
             org.telegram.ui.ActionBar.f7.k(dVar, background, L, null, u6Var);
         }
         dVar.setText(LocaleController.getString(R.string.Cancel));
-        linearLayout2.addView(dVar, gb1.t(0, 48, 119.0f, 1, 0, 0, 5, 0));
-        fi.d f7 = org.telegram.messenger.vh.f(24, context, u6Var, true);
+        linearLayout2.addView(dVar, kb1.t(0, 48, 119.0f, 1, 0, 0, 5, 0));
+        fi.d f7 = org.telegram.messenger.wh.f(24, context, u6Var, true);
         f7.setText(LocaleController.getString(R.string.CreateManagedBotButton));
-        linearLayout2.addView(f7, gb1.t(0, 48, 119.0f, 1, 5, 0, 0, 0));
+        linearLayout2.addView(f7, kb1.t(0, 48, 119.0f, 1, 5, 0, 0, 0));
         i11.useBackgroundTopPadding = false;
         i11.smoothKeyboardAnimationEnabled = true;
         i11.doNotOverlayNavigationBar = true;

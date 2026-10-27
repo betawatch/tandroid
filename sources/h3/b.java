@@ -26,7 +26,7 @@ import java.util.Arrays;
 import java.util.List;
 import q3.h;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
 public final class b implements o {
     public q e;
@@ -107,7 +107,7 @@ public final class b implements o {
             if (c02 != null && c02.a.length != 0) {
                 u0Var = c02;
             }
-            pVar.q((int) (pVar.i() - i12));
+            pVar.r((int) (pVar.i() - i12));
             this.h = u0Var;
             this.g = 1;
             return 0;
@@ -177,7 +177,7 @@ public final class b implements o {
                             }
                             uVar = new u(uVar2.a, uVar2.b, uVar2.c, uVar2.d, uVar2.e, uVar2.g, uVar2.h, uVar2.j, uVar2.k, u0Var3);
                         } else {
-                            pVar.q(g10);
+                            pVar.r(g10);
                         }
                         uVar2 = uVar;
                     }

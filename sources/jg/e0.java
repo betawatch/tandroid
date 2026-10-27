@@ -7,20 +7,20 @@ import org.telegram.ui.Components.dk;
 import org.telegram.ui.Components.jl;
 import org.telegram.ui.Components.li;
 import org.telegram.ui.Components.mj;
-import org.telegram.ui.Components.mm0;
+import org.telegram.ui.Components.nm0;
 import org.telegram.ui.Components.sl;
 import org.telegram.ui.Components.tn;
 import org.telegram.ui.Components.yz;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class e0 extends yz {
     public final /* synthetic */ int U;
     public final /* synthetic */ li V;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ e0(li liVar, int i10, mm0 mm0Var, int i11) {
-        super(i10, 0, mm0Var);
+    public /* synthetic */ e0(li liVar, int i10, nm0 nm0Var, int i11) {
+        super(i10, 0, nm0Var);
         this.U = i11;
         this.V = liVar;
     }

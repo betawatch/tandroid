@@ -27,12 +27,12 @@ import org.telegram.ui.ActionBar.b2;
 import org.telegram.ui.ActionBar.e2;
 import org.telegram.ui.ActionBar.u6;
 import org.telegram.ui.ActionBar.y6;
-import org.telegram.ui.Components.nw0;
 import org.telegram.ui.Components.ow0;
+import org.telegram.ui.Components.pw0;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class i implements Continuation, s9.d, j5.e, e9.k, NativeInstance.AudioLevelsCallback, nw0, ow0, b2, GenericProvider, Utilities.Callback2Return, fh.d {
+public final /* synthetic */ class i implements Continuation, s9.d, j5.e, e9.k, NativeInstance.AudioLevelsCallback, ow0, pw0, b2, GenericProvider, Utilities.Callback2Return, fh.d {
     public final /* synthetic */ int a;
 
     public /* synthetic */ i(int i10) {
@@ -85,7 +85,7 @@ public final /* synthetic */ class i implements Continuation, s9.d, j5.e, e9.k, 
         }
     }
 
-    @Override // org.telegram.ui.Components.ow0
+    @Override // org.telegram.ui.Components.pw0
     public void b(Object obj, float f7) {
         o1 o1Var = (o1) obj;
         switch (this.a) {
@@ -111,7 +111,7 @@ public final /* synthetic */ class i implements Continuation, s9.d, j5.e, e9.k, 
         return lambda$getComponents$0;
     }
 
-    @Override // org.telegram.ui.Components.nw0
+    @Override // org.telegram.ui.Components.ow0
     public float get(Object obj) {
         o1 o1Var = (o1) obj;
         switch (this.a) {

@@ -12,13 +12,13 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.ui.Components.k80;
+import org.telegram.ui.Components.l80;
 import org.telegram.ui.Components.ti;
 import org.telegram.ui.Components.vg;
-import org.telegram.ui.ni0;
-import org.telegram.ui.un;
+import org.telegram.ui.pi0;
+import org.telegram.ui.wn;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class b5 implements View.OnLongClickListener {
     public final /* synthetic */ int a;
@@ -59,7 +59,7 @@ public final /* synthetic */ class b5 implements View.OnLongClickListener {
                     sbVar.o();
                     sbVar.E0.setSelected(true);
                     sbVar.s.e(0.85f, 240L, null);
-                    k80 F = k80.F(sbVar.r, sbVar.a, sbVar.E0);
+                    l80 F = l80.F(sbVar.r, sbVar.a, sbVar.E0);
                     q7 q7Var = new q7(activity, 1);
                     q7Var.d(sbVar.s.o);
                     q7Var.h = new q9(sbVar, 21);
@@ -99,21 +99,21 @@ public final /* synthetic */ class b5 implements View.OnLongClickListener {
                             ArrayList<TL_iv.PageBlock> f32 = v3Var.f3();
                             if (!f32.isEmpty()) {
                                 org.telegram.ui.ActionBar.r2 r2Var = tiVar.f0;
-                                un unVar = r2Var instanceof un ? (un) r2Var : null;
-                                ni0 ni0Var = qVar.O;
-                                if (ni0Var != null) {
-                                    ni0Var.g(false);
+                                wn wnVar = r2Var instanceof wn ? (wn) r2Var : null;
+                                pi0 pi0Var = qVar.O;
+                                if (pi0Var != null) {
+                                    pi0Var.g(false);
                                     qVar.O = null;
                                 }
-                                ni0 ni0Var2 = new ni0(qVar.getContext(), u6Var);
-                                qVar.O = ni0Var2;
-                                ni0Var2.setOnDismissListener(new bi.cb(qVar, 7));
-                                long s12 = tiVar.s1();
-                                MessageObject messageObject = unVar != null ? unVar.z5 : null;
+                                pi0 pi0Var2 = new pi0(qVar.getContext(), u6Var);
+                                qVar.O = pi0Var2;
+                                pi0Var2.setOnDismissListener(new bi.cb(qVar, 7));
+                                long t12 = tiVar.t1();
+                                MessageObject messageObject = wnVar != null ? wnVar.D5 : null;
                                 TLRPC.TL_message tL_message = new TLRPC.TL_message();
                                 tL_message.id = 0;
                                 tL_message.out = true;
-                                tL_message.peer_id = MessagesController.getInstance(i12).getPeer(s12);
+                                tL_message.peer_id = MessagesController.getInstance(i12).getPeer(t12);
                                 tL_message.from_id = MessagesController.getInstance(i12).getPeer(UserConfig.getInstance(i12).getClientUserId());
                                 tL_message.flags2 |= 8192;
                                 TL_iv.RichMessage richMessage = new TL_iv.RichMessage();
@@ -142,19 +142,19 @@ public final /* synthetic */ class b5 implements View.OnLongClickListener {
                                 vg q5 = qVar.O.q(sendButton, true, new ig.d0(qVar, 9));
                                 if (q5 != null) {
                                     q5.setBackground(new li.a2(org.telegram.ui.ActionBar.y6.c0(AndroidUtilities.dp(22.0f), org.telegram.ui.ActionBar.y6.w0(org.telegram.ui.ActionBar.y6.Oh, u6Var))));
-                                    ni0 ni0Var3 = qVar.O;
+                                    pi0 pi0Var3 = qVar.O;
                                     int dp = AndroidUtilities.dp(44.0f);
                                     z10 = true;
-                                    ni0Var3.l0 = true;
-                                    ni0Var3.X = dp;
+                                    pi0Var3.l0 = true;
+                                    pi0Var3.X = dp;
                                 } else {
                                     z10 = true;
                                 }
-                                k80 F2 = k80.F(qVar, u6Var, sendButton);
-                                boolean z12 = (unVar == null || !UserObject.isUserSelf(unVar.i())) ? false : z10;
-                                if (unVar != null && unVar.I6()) {
-                                    F2.c(R.drawable.msg_calendar2, LocaleController.getString(z12 ? R.string.SetReminder : R.string.ScheduleMessage), new bi.r3(qVar, s12, 14), false);
-                                    if (!z12 && s12 > 0) {
+                                l80 F2 = l80.F(qVar, u6Var, sendButton);
+                                boolean z12 = (wnVar == null || !UserObject.isUserSelf(wnVar.i())) ? false : z10;
+                                if (wnVar != null && wnVar.K6()) {
+                                    F2.c(R.drawable.msg_calendar2, LocaleController.getString(z12 ? R.string.SetReminder : R.string.ScheduleMessage), new bi.r3(qVar, t12, 14), false);
+                                    if (!z12 && t12 > 0) {
                                         F2.c(R.drawable.msg_online, LocaleController.getString(R.string.SendWhenOnline), new li.d(qVar, 0), false);
                                     }
                                 }
@@ -184,18 +184,18 @@ public final /* synthetic */ class b5 implements View.OnLongClickListener {
                 ((ng.f) this.b).c.callOnClick();
                 break;
             default:
-                sg.n0 n0Var = (sg.n0) this.b;
-                int i13 = n0Var.E1;
-                if (n0Var.H1 != null) {
+                sg.m0 m0Var = (sg.m0) this.b;
+                int i13 = m0Var.E1;
+                if (m0Var.H1 != null) {
                     rg.s0 e10 = rg.s0.e(i13);
                     e10.k = !e10.k;
                     e10.a.edit().putBoolean("fill_shapes", e10.k).apply();
                     boolean z13 = rg.s0.e(i13).k;
-                    for (int i14 = 0; i14 < n0Var.H1.getItemsCount(); i14++) {
-                        View childAt2 = n0Var.H1.L.getChildAt(i14);
-                        if (childAt2 instanceof sg.m0) {
+                    for (int i14 = 0; i14 < m0Var.H1.getItemsCount(); i14++) {
+                        View childAt2 = m0Var.H1.L.getChildAt(i14);
+                        if (childAt2 instanceof sg.l0) {
                             rg.l lVar2 = (rg.l) rg.l.b.get(i14);
-                            ((sg.m0) childAt2).a(z13 ? lVar2.m() : lVar2.e(), z13, true);
+                            ((sg.l0) childAt2).a(z13 ? lVar2.m() : lVar2.e(), z13, true);
                         }
                     }
                     break;

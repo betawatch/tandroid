@@ -1,26 +1,26 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class h8 implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ MediaDataController b;
-    public final /* synthetic */ int c;
+    public final /* synthetic */ boolean c;
 
-    public /* synthetic */ h8(MediaDataController mediaDataController, int i10, int i11) {
-        this.a = i11;
+    public /* synthetic */ h8(MediaDataController mediaDataController, boolean z10, int i10) {
+        this.a = i10;
         this.b = mediaDataController;
-        this.c = i10;
+        this.c = z10;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$fetchEmojiStatuses$232(this.c);
+                this.b.lambda$loadFeaturedStickers$55(this.c);
                 break;
             default:
-                this.b.lambda$processLoadedStickers$103(this.c);
+                this.b.lambda$processLoadedFeaturedStickers$59(this.c);
                 break;
         }
     }

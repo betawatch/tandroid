@@ -27,13 +27,13 @@ import org.telegram.messenger.DispatchQueue;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.R;
-import org.telegram.messenger.vh;
+import org.telegram.messenger.wh;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.CheckBoxBase;
 import org.telegram.ui.Components.ds;
-import org.telegram.ui.Components.gb1;
+import org.telegram.ui.Components.kb1;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class k3 extends FrameLayout {
     public static int d0;
@@ -120,8 +120,8 @@ public final class k3 extends FrameLayout {
         }
         FrameLayout frameLayout = new FrameLayout(context);
         this.I = frameLayout;
-        frameLayout.addView(i3Var, gb1.i(26, 26, 17));
-        addView(frameLayout, gb1.h(36, 36.0f, 53, 0.0f, 0.0f, 0.0f, 0.0f));
+        frameLayout.addView(i3Var, kb1.i(26, 26, 17));
+        addView(frameLayout, kb1.h(36, 36.0f, 53, 0.0f, 0.0f, 0.0f, 0.0f));
         frameLayout.setVisibility(0);
         frameLayout.setImportantForAccessibility(2);
         i3Var.setImportantForAccessibility(2);
@@ -370,7 +370,7 @@ public final class k3 extends FrameLayout {
         i3 i3Var = this.J;
         if (z11) {
             frameLayout.setVisibility(0);
-            vh.q(i3Var.animate().alpha(z10 ? 1.0f : 0.0f).scaleX(z10 ? 1.0f : 0.7f).scaleY(z10 ? 1.0f : 0.7f).withEndAction(new bh.n(5, this, z10)), ds.h, 320L);
+            wh.q(i3Var.animate().alpha(z10 ? 1.0f : 0.0f).scaleX(z10 ? 1.0f : 0.7f).scaleY(z10 ? 1.0f : 0.7f).withEndAction(new bh.n(5, this, z10)), ds.h, 320L);
         } else {
             frameLayout.setVisibility(z10 ? 0 : 8);
         }

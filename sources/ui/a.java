@@ -5,9 +5,9 @@ import android.os.Handler;
 import android.os.SystemClock;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
-import org.telegram.ui.lh0;
+import org.telegram.ui.nh0;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class a implements Runnable {
     public final /* synthetic */ int a;
@@ -45,7 +45,7 @@ public final /* synthetic */ class a implements Runnable {
                     dVar.f.b("AudioRecord started: minBufferBytes=" + minBufferSize + ", bufferBytes=" + max + ", sessionId=" + dVar.p.getAudioSessionId());
                     dVar.r = SystemClock.elapsedRealtime();
                     dc.e eVar = dVar.g;
-                    ((o) eVar.c).i.post(new lh0(eVar, eVar.a, 3));
+                    ((o) eVar.c).i.post(new nh0(eVar, eVar.a, 3));
                     dVar.i.post(new a(dVar, 2));
                     return;
                 } catch (Throwable th2) {

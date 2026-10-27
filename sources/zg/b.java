@@ -10,13 +10,13 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.u6;
 import org.telegram.ui.ActionBar.y6;
-import org.telegram.ui.Components.gb1;
-import org.telegram.ui.Components.zp;
+import org.telegram.ui.Components.aq;
+import org.telegram.ui.Components.kb1;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class b extends xg.c {
-    public final zp s;
+    public final aq s;
     public TLRPC.TL_help_country v;
     public final TextPaint w;
     public final ti.g x;
@@ -29,14 +29,14 @@ public final class b extends xg.c {
         textPaint.setTextSize(AndroidUtilities.dp(20.0f));
         this.f.setVisibility(8);
         this.c.setVisibility(8);
-        zp zpVar = new zp(context, 21, u6Var);
-        this.s = zpVar;
-        zpVar.b(y6.B5, y6.j7, y6.C5);
-        zpVar.setDrawUnchecked(true);
-        zpVar.setDrawBackgroundAsArc(10);
-        addView(zpVar);
-        zpVar.a(false, false);
-        zpVar.setLayoutParams(gb1.h(24, 24.0f, (LocaleController.isRTL ? 5 : 3) | 16, 13.0f, 0.0f, 14.0f, 0.0f));
+        aq aqVar = new aq(context, 21, u6Var);
+        this.s = aqVar;
+        aqVar.b(y6.B5, y6.j7, y6.C5);
+        aqVar.setDrawUnchecked(true);
+        aqVar.setDrawBackgroundAsArc(10);
+        addView(aqVar);
+        aqVar.a(false, false);
+        aqVar.setLayoutParams(kb1.h(24, 24.0f, (LocaleController.isRTL ? 5 : 3) | 16, 13.0f, 0.0f, 14.0f, 0.0f));
     }
 
     @Override // xg.c
@@ -51,20 +51,20 @@ public final class b extends xg.c {
 
     @Override // xg.c
     public final void c(boolean z10, boolean z11) {
-        zp zpVar = this.s;
-        if (zpVar.getVisibility() == 0) {
-            zpVar.a(z10, z11);
+        aq aqVar = this.s;
+        if (aqVar.getVisibility() == 0) {
+            aqVar.a(z10, z11);
         }
     }
 
     @Override // xg.c
     public final void d() {
         boolean z10 = LocaleController.isRTL;
-        this.d.setLayoutParams(gb1.h(-1, -2.0f, (z10 ? 5 : 3) | 16, z10 ? 20.0f : 52.0f, 0.0f, z10 ? 52.0f : 20.0f, 0.0f));
+        this.d.setLayoutParams(kb1.h(-1, -2.0f, (z10 ? 5 : 3) | 16, z10 ? 20.0f : 52.0f, 0.0f, z10 ? 52.0f : 20.0f, 0.0f));
         boolean z11 = LocaleController.isRTL;
-        this.e.setLayoutParams(gb1.h(-1, -2.0f, (z11 ? 5 : 3) | 16, z11 ? 20.0f : 52.0f, 0.0f, z11 ? 52.0f : 20.0f, 0.0f));
+        this.e.setLayoutParams(kb1.h(-1, -2.0f, (z11 ? 5 : 3) | 16, z11 ? 20.0f : 52.0f, 0.0f, z11 ? 52.0f : 20.0f, 0.0f));
         boolean z12 = LocaleController.isRTL;
-        this.f.setLayoutParams(gb1.h(22, 22.0f, (z12 ? 5 : 3) | 16, z12 ? 15.0f : 20.0f, 0.0f, z12 ? 20.0f : 15.0f, 0.0f));
+        this.f.setLayoutParams(kb1.h(22, 22.0f, (z12 ? 5 : 3) | 16, z12 ? 15.0f : 20.0f, 0.0f, z12 ? 20.0f : 15.0f, 0.0f));
     }
 
     public final void f() {

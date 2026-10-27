@@ -4,11 +4,11 @@ import java.util.ArrayList;
 import org.telegram.messenger.SendMessagesHelper;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.ActionBar.r2;
-import org.telegram.ui.zp0;
+import org.telegram.ui.bq0;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
-public final class k0 implements zp0 {
+public final class k0 implements bq0 {
     public final /* synthetic */ Utilities.CallbackReturn a;
     public final /* synthetic */ r2 b;
     public final /* synthetic */ Utilities.Callback c;
@@ -19,7 +19,7 @@ public final class k0 implements zp0 {
         this.c = callback;
     }
 
-    @Override // org.telegram.ui.zp0
+    @Override // org.telegram.ui.bq0
     public final void a(ArrayList arrayList) {
         String str = !arrayList.isEmpty() ? ((SendMessagesHelper.SendingMediaInfo) arrayList.get(0)).path : null;
         if (str == null) {
@@ -28,7 +28,7 @@ public final class k0 implements zp0 {
         Utilities.globalQueue.postRunnable(new e0(str, this.a, this.b, this.c));
     }
 
-    @Override // org.telegram.ui.zp0
+    @Override // org.telegram.ui.bq0
     public final void b() {
     }
 }

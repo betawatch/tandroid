@@ -14,7 +14,7 @@ import org.telegram.SQLite.SQLiteException;
 import org.telegram.SQLite.SQLitePreparedStatement;
 import org.telegram.messenger.CacheByChatsController;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
 public class FilePathDatabase {
     private static final String DATABASE_BACKUP_NAME = "file_to_path_backup";
@@ -32,7 +32,7 @@ public class FilePathDatabase {
     private final ConcurrentHashMap<String, String> cache = new ConcurrentHashMap<>();
     private final FileMeta metaTmp = new FileMeta();
 
-    /* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+    /* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
     public static class FileMeta {
         public long dialogId;
         public int messageId;
@@ -40,7 +40,7 @@ public class FilePathDatabase {
         public int messageType;
     }
 
-    /* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+    /* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
     public static class PathData {
         public final int dc;
         public final long id;
@@ -418,7 +418,7 @@ public class FilePathDatabase {
         CountDownLatch countDownLatch = new CountDownLatch(1);
         long currentTimeMillis = System.currentTimeMillis();
         long[] jArr = new long[1];
-        postToFrontRunnable(new qk(this, arrayList2, jArr, countDownLatch, 6));
+        postToFrontRunnable(new rk(this, arrayList2, jArr, countDownLatch, 6));
         try {
             countDownLatch.await();
         } catch (InterruptedException e) {
@@ -437,7 +437,7 @@ public class FilePathDatabase {
 
     public void clear() {
         this.cache.clear();
-        postRunnable(new j1(this, 19));
+        postRunnable(new j1(this, 18));
     }
 
     public void createDatabase(int i10, boolean z10) {
@@ -594,7 +594,7 @@ public class FilePathDatabase {
         if ((this.dispatchQueue == null || Thread.currentThread() != this.dispatchQueue) ? z10 : false) {
             final CountDownLatch countDownLatch = new CountDownLatch(1);
             final String[] strArr = new String[1];
-            postRunnable(new Runnable() { // from class: org.telegram.messenger.p3
+            postRunnable(new Runnable() { // from class: org.telegram.messenger.q3
                 @Override // java.lang.Runnable
                 public final void run() {
                     FilePathDatabase.this.lambda$getPath$0(j10, i10, i11, strArr, currentTimeMillis, countDownLatch);
@@ -702,7 +702,7 @@ public class FilePathDatabase {
     public boolean hasAnotherRefOnFile(String str) {
         CountDownLatch countDownLatch = new CountDownLatch(1);
         boolean[] zArr = {false};
-        postRunnable(new n3(this, str, zArr, countDownLatch, 1));
+        postRunnable(new o3(this, str, zArr, countDownLatch, 1));
         try {
             countDownLatch.await();
         } catch (InterruptedException e) {
@@ -714,7 +714,7 @@ public class FilePathDatabase {
     public boolean isLocallyCreated(String str) {
         CountDownLatch countDownLatch = new CountDownLatch(1);
         boolean[] zArr = {false};
-        postRunnable(new n3(this, str, zArr, countDownLatch, 0));
+        postRunnable(new o3(this, str, zArr, countDownLatch, 0));
         try {
             countDownLatch.await();
         } catch (InterruptedException e) {
@@ -726,7 +726,7 @@ public class FilePathDatabase {
     public LongSparseArray<ArrayList<CacheByChatsController.KeepMediaFile>> lookupFiles(ArrayList<? extends CacheByChatsController.KeepMediaFile> arrayList) {
         CountDownLatch countDownLatch = new CountDownLatch(1);
         LongSparseArray<ArrayList<CacheByChatsController.KeepMediaFile>> longSparseArray = new LongSparseArray<>();
-        postRunnable(new qk(this, arrayList, longSparseArray, countDownLatch, 5));
+        postRunnable(new rk(this, arrayList, longSparseArray, countDownLatch, 5));
         try {
             countDownLatch.await();
             return longSparseArray;
@@ -737,7 +737,7 @@ public class FilePathDatabase {
     }
 
     public void putPath(long j10, int i10, int i11, int i12, String str) {
-        postRunnable(new o3(this, j10, i10, i11, str, i12));
+        postRunnable(new p3(this, j10, i10, i11, str, i12));
     }
 
     public void removeFiles(List<ci.a> list) {

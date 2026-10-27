@@ -11,9 +11,9 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.ds;
-import org.telegram.ui.Components.gb1;
+import org.telegram.ui.Components.kb1;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class z3 extends FrameLayout implements org.telegram.ui.ActionBar.p6 {
     public static final /* synthetic */ int h = 0;
@@ -119,7 +119,7 @@ public final class z3 extends FrameLayout implements org.telegram.ui.ActionBar.p
         org.telegram.ui.ActionBar.f7.V(b6Var, i11, u6Var);
         b6Var.setGravity((LocaleController.isRTL ? 5 : 3) | 16);
         float f7 = i10;
-        addView(b6Var, gb1.h(-1, -1.0f, (LocaleController.isRTL ? 5 : 3) | 48, f7, 0.0f, f7, 0.0f));
+        addView(b6Var, kb1.h(-1, -1.0f, (LocaleController.isRTL ? 5 : 3) | 48, f7, 0.0f, f7, 0.0f));
         y3 y3Var = new y3(getContext(), z10, z10, z10, 0);
         this.b = y3Var;
         y3Var.setPadding(AndroidUtilities.dp(2.0f), 0, AndroidUtilities.dp(2.0f), 0);
@@ -127,7 +127,7 @@ public final class z3 extends FrameLayout implements org.telegram.ui.ActionBar.p
         y3Var.setTextSize(AndroidUtilities.dp(14.0f));
         org.telegram.ui.ActionBar.f7.Z(y3Var, i11, u6Var);
         y3Var.setGravity(LocaleController.isRTL ? 3 : 5);
-        FrameLayout.LayoutParams h10 = gb1.h(-2, -1.0f, (LocaleController.isRTL ? 3 : 5) | 48, f7, 0.0f, f7, 0.0f);
+        FrameLayout.LayoutParams h10 = kb1.h(-2, -1.0f, (LocaleController.isRTL ? 3 : 5) | 48, f7, 0.0f, f7, 0.0f);
         this.c = h10;
         addView(y3Var, h10);
         WeakHashMap weakHashMap = r0.i0.a;

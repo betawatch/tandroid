@@ -1,59 +1,33 @@
 package org.telegram.ui;
 
-import android.app.Activity;
 import android.content.Context;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
+import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class av implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Context b;
+public final class av extends FrameLayout {
+    public org.telegram.ui.ActionBar.r2 a;
+    public FrameLayout b;
+    public org.telegram.ui.ActionBar.k c;
+    public org.telegram.ui.Components.nm0 d;
+    public bi.r1 e;
+    public int f;
+    public final /* synthetic */ bv h;
 
-    public /* synthetic */ av(Context context, int i10) {
-        this.a = i10;
-        this.b = context;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public av(bv bvVar, Context context) {
+        super(context);
+        this.h = bvVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                org.telegram.ui.ActionBar.y6.J(this.b, false);
-                break;
-            case 1:
-                Activity findActivity = AndroidUtilities.findActivity(this.b);
-                if (findActivity == null) {
-                    findActivity = LaunchActivity.I1;
-                }
-                if (findActivity != null && !findActivity.isFinishing()) {
-                    findActivity.moveTaskToBack(true);
-                    break;
-                }
-                break;
-            case 2:
-                qf.d.r(this.b, "https://promote.telegram.org/guidelines");
-                break;
-            case 3:
-                qf.d.r(this.b, "https://promote.telegram.org/guidelines");
-                break;
-            case 4:
-                qf.d.r(this.b, "https://promote.telegram.org/guidelines");
-                break;
-            case 5:
-                qf.d.r(this.b, "https://promote.telegram.org/guidelines");
-                break;
-            case 6:
-                qf.d.r(this.b, "https://promote.telegram.org/guidelines");
-                break;
-            case 7:
-                qf.d.r(this.b, "https://promote.telegram.org/guidelines");
-                break;
-            default:
-                qf.d.r(this.b, LocaleController.getString(R.string.WebAppDisclaimerUrl));
-                break;
+    @Override // android.view.View
+    public final void setTranslationX(float f7) {
+        av avVar;
+        super.setTranslationX(f7);
+        bv bvVar = this.h;
+        av[] avVarArr = bvVar.f;
+        if (bvVar.n && (avVar = avVarArr[0]) == this) {
+            bvVar.e.i(Math.abs(avVar.getTranslationX()) / avVarArr[0].getMeasuredWidth(), avVarArr[1].f);
         }
     }
 }

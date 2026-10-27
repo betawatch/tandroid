@@ -1,30 +1,36 @@
 package org.telegram.ui;
 
-import android.view.ViewGroup;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.IdentityHashMap;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.tl.TL_feed;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.LinearGradient;
+import android.graphics.Paint;
+import android.graphics.Shader;
+import android.view.View;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public final class vj0 {
-    public org.telegram.ui.Components.r71 d;
-    public org.telegram.ui.Components.wz e;
-    public ViewGroup f;
-    public boolean h;
-    public boolean i;
-    public boolean j;
-    public boolean k;
-    public boolean l;
-    public boolean m;
-    public boolean n;
-    public TL_feed.FeedPosition o;
-    public TL_feed.FeedPosition p;
-    public rj0 q;
-    public final ArrayList a = new ArrayList();
-    public final HashSet b = new HashSet();
-    public final IdentityHashMap c = new IdentityHashMap();
-    public int g = Utilities.random.nextInt(3);
+public final class vj0 extends View {
+    public final Paint a;
+    public int b;
+    public int c;
+    public final /* synthetic */ zj0 d;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public vj0(zj0 zj0Var, Context context) {
+        super(context);
+        this.d = zj0Var;
+        this.a = new Paint();
+    }
+
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        int themedColor = this.d.getThemedColor(org.telegram.ui.ActionBar.y6.d6);
+        Paint paint = this.a;
+        if (paint.getShader() == null || this.b != themedColor || this.c != getHeight()) {
+            this.b = themedColor;
+            this.c = getHeight();
+            paint.setShader(new LinearGradient(0.0f, 0.0f, 0.0f, getHeight(), themedColor, themedColor & 16777215, Shader.TileMode.CLAMP));
+        }
+        canvas.drawRect(0.0f, 0.0f, getWidth(), getHeight(), paint);
+    }
 }

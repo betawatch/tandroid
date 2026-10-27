@@ -16,12 +16,12 @@ import org.telegram.ui.Cells.i9;
 import org.telegram.ui.Cells.z1;
 import org.telegram.ui.Cells.z3;
 import org.telegram.ui.Components.ds;
-import org.telegram.ui.Components.j71;
+import org.telegram.ui.Components.k71;
 import org.telegram.ui.Wallet.m5;
 import org.telegram.ui.Wallet.r9;
-import org.telegram.ui.m10;
+import org.telegram.ui.o10;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class d0 implements Utilities.CallbackReturn {
     public final /* synthetic */ int a;
@@ -60,9 +60,9 @@ public final /* synthetic */ class d0 implements Utilities.CallbackReturn {
                 return LocaleController.formatPluralString("Minutes", ((Integer) obj).intValue(), new Object[0]);
             case 7:
                 View view = (View) obj;
-                return Boolean.valueOf(((view instanceof i9) || (view instanceof f7) || (view instanceof m10) || (view instanceof z3) || (view instanceof z1) || Objects.equals(view.getTag(), -33024)) ? false : true);
+                return Boolean.valueOf(((view instanceof i9) || (view instanceof f7) || (view instanceof o10) || (view instanceof z3) || (view instanceof z1) || Objects.equals(view.getTag(), -33024)) ? false : true);
             case 8:
-                return Boolean.valueOf(j71.K(((Integer) obj).intValue()));
+                return Boolean.valueOf(k71.K(((Integer) obj).intValue()));
             case 9:
                 return Boolean.valueOf(!"running".equals(((JSONObject) obj).optString("status")));
             case 10:

@@ -20,12 +20,12 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.tl.TL_account;
-import org.telegram.ui.Components.j71;
-import org.telegram.ui.Components.lw0;
+import org.telegram.ui.Components.k71;
+import org.telegram.ui.Components.mw0;
 import org.telegram.ui.Components.wc;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class ua implements Runnable {
     public final /* synthetic */ int a;
@@ -259,11 +259,11 @@ public final /* synthetic */ class ua implements Runnable {
                 return;
             case 5:
                 gi.h hVar = (gi.h) this.b;
-                lw0 lw0Var = hVar.U;
-                if (lw0Var == null || hVar.a0 == -1) {
+                mw0 mw0Var = hVar.U;
+                if (mw0Var == null || hVar.a0 == -1) {
                     return;
                 }
-                lw0Var.a();
+                mw0Var.a();
                 return;
             case 6:
                 ((e2.j0) this.b).getClass();
@@ -366,9 +366,9 @@ public final /* synthetic */ class ua implements Runnable {
                 return;
             case 24:
                 jg.k0 k0Var = (jg.k0) this.b;
-                j71 j71Var = k0Var.e0;
-                if (j71Var != null) {
-                    j71Var.O(true);
+                k71 k71Var = k0Var.e0;
+                if (k71Var != null) {
+                    k71Var.O(true);
                 }
                 k0Var.T(true);
                 return;

@@ -12,11 +12,11 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.ds;
-import org.telegram.ui.Components.gb1;
 import org.telegram.ui.Components.ju;
-import org.telegram.ui.Components.vw0;
+import org.telegram.ui.Components.kb1;
+import org.telegram.ui.Components.ww0;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public abstract class d3 extends FrameLayout implements org.telegram.ui.ActionBar.p6 {
     public boolean a;
@@ -33,7 +33,7 @@ public abstract class d3 extends FrameLayout implements org.telegram.ui.ActionBa
     public final org.telegram.ui.Components.r6 w;
     public boolean x;
 
-    public d3(Context context, vw0 vw0Var, String str, boolean z10, int i10, org.telegram.ui.ActionBar.u6 u6Var) {
+    public d3(Context context, ww0 ww0Var, String str, boolean z10, int i10, org.telegram.ui.ActionBar.u6 u6Var) {
         super(context);
         this.f = -1;
         this.r = true;
@@ -43,7 +43,7 @@ public abstract class d3 extends FrameLayout implements org.telegram.ui.ActionBa
         r6Var.w(AndroidUtilities.dp(15.33f));
         r6Var.b = 5;
         this.d = i10;
-        b3 b3Var = new b3(this, context, vw0Var, u6Var, z10);
+        b3 b3Var = new b3(this, context, ww0Var, u6Var, z10);
         this.b = b3Var;
         ju editText = b3Var.getEditText();
         editText.setDelegate(new m4.w1(this, editText, false, 10));
@@ -73,7 +73,7 @@ public abstract class d3 extends FrameLayout implements org.telegram.ui.ActionBa
         editText.setCursorWidth(1.5f);
         editText.addTextChangedListener(new c3(this, i10, editText, z10));
         editText.setOnFocusChangeListener(new m.r2(this, 1));
-        addView(b3Var, gb1.i(-1, -1, 48));
+        addView(b3Var, kb1.i(-1, -1, 48));
         c();
     }
 

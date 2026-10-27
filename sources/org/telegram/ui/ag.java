@@ -2,16 +2,16 @@ package org.telegram.ui;
 
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ag implements Utilities.Callback2 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ un b;
+    public final /* synthetic */ wn b;
     public final /* synthetic */ String c;
 
-    public /* synthetic */ ag(un unVar, String str, int i10) {
+    public /* synthetic */ ag(wn wnVar, String str, int i10) {
         this.a = i10;
-        this.b = unVar;
+        this.b = wnVar;
         this.c = str;
     }
 
@@ -21,28 +21,28 @@ public final /* synthetic */ class ag implements Utilities.Callback2 {
         Boolean bool2 = (Boolean) obj2;
         switch (this.a) {
             case 0:
+                wn wnVar = this.b;
+                wnVar.getClass();
                 if (bool.booleanValue()) {
                     boolean booleanValue = bool2.booleanValue();
-                    un unVar = this.b;
                     String str = this.c;
                     if (booleanValue) {
-                        unVar.getMessagesController().addWebBrowserException(str, false);
+                        wnVar.getMessagesController().addWebBrowserException(str, true);
                     }
-                    unVar.getParentActivity();
-                    qf.d.m(str);
+                    qf.d.l(wnVar.getParentActivity(), str, false, null);
                     break;
                 }
                 break;
             default:
-                un unVar2 = this.b;
-                unVar2.getClass();
                 if (bool.booleanValue()) {
                     boolean booleanValue2 = bool2.booleanValue();
+                    wn wnVar2 = this.b;
                     String str2 = this.c;
                     if (booleanValue2) {
-                        unVar2.getMessagesController().addWebBrowserException(str2, true);
+                        wnVar2.getMessagesController().addWebBrowserException(str2, false);
                     }
-                    qf.d.l(unVar2.getParentActivity(), str2, false, null);
+                    wnVar2.getParentActivity();
+                    qf.d.m(str2);
                     break;
                 }
                 break;

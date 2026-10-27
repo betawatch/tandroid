@@ -17,7 +17,7 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class p2 extends FrameLayout implements org.telegram.ui.Cells.r9, org.telegram.ui.ActionBar.p6 {
     public int a;
@@ -190,7 +190,7 @@ public final class p2 extends FrameLayout implements org.telegram.ui.Cells.r9, o
             TL_iv.pageBlockSlideshow pageblockslideshow2 = this.e;
             TL_iv.RichText richText2 = pageblockslideshow2.caption.credit;
             if (this.x.G) {
-                alignment = org.telegram.ui.Components.px0.a();
+                alignment = org.telegram.ui.Components.qx0.a();
             }
             a3 p11 = j4.p(j4Var, this, null, richText2, dp2, 0, pageblockslideshow2, alignment, 0, this.x);
             this.h = p11;

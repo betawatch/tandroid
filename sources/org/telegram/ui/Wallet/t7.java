@@ -45,12 +45,12 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.Components.gb1;
-import org.telegram.ui.Components.k80;
-import org.telegram.ui.Components.xj0;
-import org.telegram.ui.lg;
+import org.telegram.ui.Components.kb1;
+import org.telegram.ui.Components.l80;
+import org.telegram.ui.Components.yj0;
+import org.telegram.ui.dg;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class t7 extends View {
     public static final /* synthetic */ int G1 = 0;
@@ -118,7 +118,7 @@ public final class t7 extends View {
     public final Paint d0;
     public boolean d1;
     public final SharedPreferences e;
-    public final xj0 e0;
+    public final yj0 e0;
     public boolean e1;
     public final LinkedHashMap f;
     public boolean f0;
@@ -241,9 +241,9 @@ public final class t7 extends View {
         int i12 = 0;
         boolean z10 = cardVar != null;
         this.b = z10;
-        xj0 xj0Var = new xj0(R.raw.wallet_gift_trash, AndroidUtilities.dp(42.0f), AndroidUtilities.dp(42.0f), true, null);
-        this.e0 = xj0Var;
-        xj0Var.R(this);
+        yj0 yj0Var = new yj0(R.raw.wallet_gift_trash, AndroidUtilities.dp(42.0f), AndroidUtilities.dp(42.0f), true, null);
+        this.e0 = yj0Var;
+        yj0Var.R(this);
         this.c = w5Var;
         this.d = cVar;
         paint3.setShader(linearGradient);
@@ -251,7 +251,7 @@ public final class t7 extends View {
         if (z10) {
             sharedPreferences = null;
         } else {
-            sharedPreferences = getContext().getSharedPreferences("wallet_card_stickers_" + r2Var.getCurrentAccount() + "_" + l0.w(r2Var.getCurrentAccount()).s(), 0);
+            sharedPreferences = getContext().getSharedPreferences("wallet_card_stickers_" + r2Var.getCurrentAccount() + "_" + l0.x(r2Var.getCurrentAccount()).t(), 0);
         }
         this.e = sharedPreferences;
         this.P0 = z10 ? null : sharedPreferences.getString("style", null);
@@ -272,8 +272,8 @@ public final class t7 extends View {
         n7 n7Var = new n7(this, getContext());
         this.L = n7Var;
         m7Var.setTag(r5.n0);
-        w5Var.getFrontFace().addView(m7Var, 0, gb1.g(-1.0f, -1));
-        w5Var.getFrontFace().addView(n7Var, w5Var.getStickerLayerIndex(), gb1.g(-1.0f, -1));
+        w5Var.getFrontFace().addView(m7Var, 0, kb1.g(-1.0f, -1));
+        w5Var.getFrontFace().addView(n7Var, w5Var.getStickerLayerIndex(), kb1.g(-1.0f, -1));
         if (z10) {
             n7Var.addOnLayoutChangeListener(new i7(this, i12));
             d(cardVar);
@@ -547,7 +547,7 @@ public final class t7 extends View {
         v3Var.s(string);
         v3Var.setPadding(AndroidUtilities.dp(16.0f), 0, AndroidUtilities.dp(16.0f), 0);
         v3Var.setTranslationZ(getTranslationZ() + 1.0f);
-        ((ViewGroup) getParent()).addView(v3Var, gb1.i(-1, ImageReceiver.DEFAULT_CROSSFADE_DURATION, 48));
+        ((ViewGroup) getParent()).addView(v3Var, kb1.i(-1, ImageReceiver.DEFAULT_CROSSFADE_DURATION, 48));
         return v3Var;
     }
 
@@ -903,7 +903,7 @@ public final class t7 extends View {
                 }
             }
             e0(currentAccount, cardVar2);
-            this.f1 = ConnectionsManager.getInstance(currentAccount).sendRequestTyped(setcardstickers, new org.telegram.messenger.a(), new lg(this, currentAccount, cardVar, 3));
+            this.f1 = ConnectionsManager.getInstance(currentAccount).sendRequestTyped(setcardstickers, new org.telegram.messenger.a(), new dg(this, currentAccount, cardVar, 3));
         }
     }
 
@@ -947,7 +947,7 @@ public final class t7 extends View {
             this.s0 = false;
             return;
         }
-        k80 I = k80.I(this.a, g7Var);
+        l80 I = l80.I(this.a, g7Var);
         I.s = 51;
         if (m(v) || str.equals(this.P0)) {
             final int i10 = 0;
@@ -1127,7 +1127,7 @@ public final class t7 extends View {
                         Object obj2 = arrayList2.get(i12);
                         i12++;
                         TL_wallet.walletTransaction wallettransaction = (TL_wallet.walletTransaction) obj2;
-                        if (!wallettransaction.failed && (nftitem = wallettransaction.nft) != null && l0.a(nftitem.address, str)) {
+                        if (!wallettransaction.failed && (nftitem = wallettransaction.nft) != null && l0.b(nftitem.address, str)) {
                             if (str.equals(this.P0) || str.equals(this.Q0)) {
                                 this.Q0 = null;
                                 this.P0 = null;
@@ -1548,21 +1548,21 @@ public final class t7 extends View {
                 float dp4 = AndroidUtilities.dp(21.0f);
                 int round = Math.round(t7Var.c0.a);
                 f11 = 2.0f;
-                xj0 xj0Var = t7Var.e0;
-                xj0Var.N(round, false, false);
+                yj0 yj0Var = t7Var.e0;
+                yj0Var.N(round, false, false);
                 float f20 = dp3 - dp4;
                 i10 = 0;
                 f12 = 0.6f;
                 float f21 = -dp4;
                 float f22 = dp3 + dp4;
-                xj0Var.setBounds((int) f20, (int) f21, (int) f22, (int) dp4);
+                yj0Var.setBounds((int) f20, (int) f21, (int) f22, (int) dp4);
                 PorterDuffColorFilter porterDuffColorFilter = new PorterDuffColorFilter(i0.a.f(clamp01, org.telegram.ui.ActionBar.y6.w0(org.telegram.ui.ActionBar.y6.G6, r2Var.getResourceProvider()), -1), PorterDuff.Mode.SRC_IN);
                 Paint paint3 = t7Var.d0;
                 paint3.setColorFilter(porterDuffColorFilter);
                 paint3.setAlpha((int) (Utilities.clamp01(f16) * 255.0f));
                 canvas2 = canvas;
                 int saveLayer = canvas2.saveLayer(f20, f21, f22, dp4, paint3);
-                xj0Var.draw(canvas2);
+                yj0Var.draw(canvas2);
                 canvas2.restoreToCount(saveLayer);
                 if (clamp01 > 0.02f) {
                     paint2.setColor(-1);

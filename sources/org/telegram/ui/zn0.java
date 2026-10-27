@@ -1,89 +1,34 @@
 package org.telegram.ui;
 
-import android.content.ActivityNotFoundException;
-import android.content.Context;
-import android.content.Intent;
-import android.net.Uri;
-import android.webkit.RenderProcessGoneDetail;
-import android.webkit.WebView;
-import android.webkit.WebViewClient;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public final class zn0 extends WebViewClient {
-    public final /* synthetic */ Context a;
-    public final /* synthetic */ po0 b;
+public final class zn0 implements po0 {
+    public final /* synthetic */ ro0 a;
 
-    public zn0(po0 po0Var, Context context) {
-        this.b = po0Var;
-        this.a = context;
+    public zn0(ro0 ro0Var) {
+        this.a = ro0Var;
     }
 
-    @Override // android.webkit.WebViewClient
-    public final void onPageFinished(WebView webView, String str) {
-        super.onPageFinished(webView, str);
-        po0 po0Var = this.b;
-        po0Var.z0 = false;
-        po0Var.I0(true, false);
-        po0Var.L0();
+    @Override // org.telegram.ui.po0
+    public final /* synthetic */ boolean c(String str, String str2, boolean z10, TLRPC.TL_inputPaymentCredentialsGooglePay tL_inputPaymentCredentialsGooglePay, TLRPC.TL_paymentSavedCredentialsCard tL_paymentSavedCredentialsCard) {
+        return false;
     }
 
-    @Override // android.webkit.WebViewClient
-    public final boolean onRenderProcessGone(WebView webView, RenderProcessGoneDetail renderProcessGoneDetail) {
-        po0 po0Var = this.b;
-        try {
-            if (!AndroidUtilities.isSafeToShow(po0Var.getParentActivity())) {
-                return true;
-            }
-            AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(po0Var.getParentActivity(), 0, po0Var.Y0);
-            alertDialog$Builder.a.R = LocaleController.getString(R.string.ChromeCrashTitle);
-            alertDialog$Builder.a.T = AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.ChromeCrashMessage), new lj0(this, 9));
-            alertDialog$Builder.k(LocaleController.getString(R.string.OK), null);
-            alertDialog$Builder.p();
-            return true;
-        } catch (Exception e) {
-            FileLog.e(e);
-            return false;
-        }
+    @Override // org.telegram.ui.po0
+    public final void d(TLRPC.TL_payments_validateRequestedInfo tL_payments_validateRequestedInfo) {
+        ro0 ro0Var = this.a;
+        ro0Var.I0 = tL_payments_validateRequestedInfo;
+        ro0Var.C0(tL_payments_validateRequestedInfo.info);
     }
 
-    @Override // android.webkit.WebViewClient
-    public final boolean shouldOverrideUrlLoading(WebView webView, String str) {
-        Uri parse;
-        boolean equals;
-        po0 po0Var;
-        try {
-            parse = Uri.parse(str);
-            equals = "t.me".equals(parse.getHost());
-            po0Var = this.b;
-        } catch (Exception unused) {
-        }
-        if (equals) {
-            po0Var.u0();
-            return true;
-        }
-        if (!po0.h1.contains(parse.getScheme())) {
-            if (!po0.g1.contains(parse.getScheme())) {
-                try {
-                    if (po0Var.getParentActivity() != null) {
-                        po0Var.getParentActivity().startActivityForResult(new Intent("android.intent.action.VIEW", parse), 210);
-                        return true;
-                    }
-                } catch (ActivityNotFoundException unused2) {
-                    AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(this.a);
-                    alertDialog$Builder.a.R = po0Var.p0;
-                    alertDialog$Builder.a.T = LocaleController.getString(R.string.PaymentAppNotFoundForDeeplink);
-                    alertDialog$Builder.k(LocaleController.getString(R.string.OK), null);
-                    alertDialog$Builder.p();
-                }
-            }
-            return false;
-        }
-        return true;
+    @Override // org.telegram.ui.po0
+    public final /* synthetic */ void b() {
+    }
+
+    @Override // org.telegram.ui.po0
+    public final /* synthetic */ void a(TL_account.Password password) {
     }
 }

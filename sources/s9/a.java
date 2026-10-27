@@ -9,7 +9,7 @@ import java.util.HashSet;
 import java.util.Set;
 import org.telegram.ui.Components.voip.j1;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
 public final class a {
     public final String a;
@@ -34,8 +34,8 @@ public final class a {
         return new n0(cls, new Class[0]);
     }
 
-    public static n0 b(r rVar) {
-        r[] rVarArr = new r[0];
+    public static n0 b(s sVar) {
+        s[] sVarArr = new s[0];
         n0 n0Var = new n0();
         n0Var.d = null;
         HashSet hashSet = new HashSet();
@@ -44,11 +44,11 @@ public final class a {
         n0Var.a = 0;
         n0Var.b = 0;
         n0Var.g = new HashSet();
-        hashSet.add(rVar);
-        for (r rVar2 : rVarArr) {
-            s1.a(rVar2, "Null interface");
+        hashSet.add(sVar);
+        for (s sVar2 : sVarArr) {
+            s1.a(sVar2, "Null interface");
         }
-        Collections.addAll((HashSet) n0Var.c, rVarArr);
+        Collections.addAll((HashSet) n0Var.c, sVarArr);
         return n0Var;
     }
 
@@ -56,10 +56,10 @@ public final class a {
         HashSet hashSet = new HashSet();
         HashSet hashSet2 = new HashSet();
         HashSet hashSet3 = new HashSet();
-        hashSet.add(r.a(cls));
+        hashSet.add(s.a(cls));
         for (Class cls2 : clsArr) {
             s1.a(cls2, "Null interface");
-            hashSet.add(r.a(cls2));
+            hashSet.add(s.a(cls2));
         }
         return new a(null, new HashSet(hashSet), new HashSet(hashSet2), 0, 0, new j1(obj, 10), hashSet3);
     }

@@ -2,7 +2,7 @@ package vi;
 
 import android.os.Handler;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class d implements Runnable {
     public final /* synthetic */ int a;
@@ -42,9 +42,12 @@ public final /* synthetic */ class d implements Runnable {
                 m mVar = this.c;
                 if (jVar3.V && !jVar3.b0 && jVar3.x == mVar) {
                     jVar3.k();
-                    jVar3.j.b("common A/V start completed: segmentElapsedMs=" + j.z(jVar3.E0));
-                    s0 s0Var = (s0) jVar3.k.b;
-                    s0Var.i.post(new h0(s0Var, 2));
+                    if (jVar3.i0 == 0) {
+                        jVar3.i0 = mVar.e;
+                    }
+                    jVar3.j.b("common A/V start completed: segmentElapsedMs=" + j.z(jVar3.F0));
+                    u0 u0Var = (u0) jVar3.k.b;
+                    u0Var.i.post(new i0(u0Var, 2));
                     return;
                 }
                 return;
@@ -55,7 +58,7 @@ public final /* synthetic */ class d implements Runnable {
                     return;
                 }
                 try {
-                    long j10 = mVar2.A;
+                    long j10 = mVar2.F;
                     if (j10 <= 0) {
                         throw new IllegalArgumentException("Invalid recording time origin");
                     }
@@ -65,7 +68,7 @@ public final /* synthetic */ class d implements Runnable {
                     sVar.S = -1L;
                     sVar.q = Long.MAX_VALUE;
                     sVar.s0 = true;
-                    jVar4.j.b("common A/V start armed; waiting for next camera frame: segmentElapsedMs=" + j.z(jVar4.E0));
+                    jVar4.j.b("common A/V start armed; waiting for next camera frame: segmentElapsedMs=" + j.z(jVar4.F0));
                     return;
                 } catch (RuntimeException e) {
                     jVar4.k();

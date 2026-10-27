@@ -1,147 +1,31 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.view.accessibility.AccessibilityNodeInfo;
-import java.util.concurrent.atomic.AtomicReference;
+import android.app.Activity;
+import android.text.style.CharacterStyle;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public final class fl extends org.telegram.ui.ActionBar.b6 {
-    public final /* synthetic */ int M0;
-    public final Object N0;
+public final class fl extends UndoView {
+    public final /* synthetic */ wn j0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ fl(Object obj, Context context, int i10) {
-        super(context);
-        this.M0 = i10;
-        this.N0 = obj;
+    public fl(wn wnVar, Activity activity, wn wnVar2, org.telegram.ui.ActionBar.u6 u6Var) {
+        super(activity, wnVar2, true, u6Var);
+        this.j0 = wnVar;
     }
 
-    @Override // org.telegram.ui.ActionBar.b6
-    public boolean k(CharSequence charSequence) {
-        org.telegram.ui.ActionBar.b6 b6Var;
-        switch (this.M0) {
-            case 1:
-                AtomicReference atomicReference = (AtomicReference) this.N0;
-                if (atomicReference != null && (b6Var = (org.telegram.ui.ActionBar.b6) atomicReference.get()) != null) {
-                    b6Var.k(charSequence);
-                }
-                return l(charSequence, false);
-            default:
-                return super.k(charSequence);
-        }
+    @Override // org.telegram.ui.Components.UndoView
+    public final void b(CharacterStyle characterStyle) {
+        this.j0.d8(characterStyle, false, null, null);
     }
 
-    @Override // org.telegram.ui.ActionBar.b6, android.view.View
-    public void onAttachedToWindow() {
-        switch (this.M0) {
-            case 2:
-                super.onAttachedToWindow();
-                ((pp0) this.N0).s.a();
-                break;
-            default:
-                super.onAttachedToWindow();
-                break;
-        }
-    }
-
-    @Override // org.telegram.ui.ActionBar.b6, android.view.View
-    public void onDetachedFromWindow() {
-        switch (this.M0) {
-            case 2:
-                super.onDetachedFromWindow();
-                ((pp0) this.N0).s.b();
-                break;
-            default:
-                super.onDetachedFromWindow();
-                break;
-        }
-    }
-
-    @Override // org.telegram.ui.ActionBar.b6, android.view.View
-    public void onDraw(Canvas canvas) {
-        switch (this.M0) {
-            case 3:
-                int rightDrawableX = getRightDrawableX();
-                super.onDraw(canvas);
-                if (rightDrawableX != getRightDrawableX()) {
-                    ((ProfileActivity) this.N0).h5();
-                    break;
-                }
-                break;
-            default:
-                super.onDraw(canvas);
-                break;
-        }
-    }
-
-    @Override // org.telegram.ui.ActionBar.b6, android.view.View
-    public void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
-        switch (this.M0) {
-            case 3:
-                ProfileActivity profileActivity = (ProfileActivity) this.N0;
-                super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-                if (isFocusable()) {
-                    if (profileActivity.h != null || profileActivity.n != null) {
-                        StringBuilder sb2 = new StringBuilder(getText());
-                        if (profileActivity.n != null) {
-                            if (sb2.length() > 0) {
-                                sb2.append(", ");
-                            }
-                            sb2.append(profileActivity.n);
-                        }
-                        if (profileActivity.h != null) {
-                            if (sb2.length() > 0) {
-                                sb2.append(", ");
-                            }
-                            sb2.append(profileActivity.h);
-                        }
-                        accessibilityNodeInfo.setText(sb2);
-                        break;
-                    }
-                }
-                break;
-            default:
-                super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-                break;
-        }
-    }
-
-    @Override // android.view.View
-    public void setTranslationY(float f7) {
-        org.telegram.ui.ActionBar.b6 b6Var;
-        switch (this.M0) {
-            case 0:
-                super.setTranslationY(f7);
-                un unVar = (un) this.N0;
-                if (this == unVar.P2[0] && unVar.T2[1] != null) {
-                    if (unVar.a5 && f7 < 0.0f) {
-                        unVar.L2.setTranslationY(f7 / 2.0f);
-                        break;
-                    } else {
-                        unVar.L2.setTranslationY(0.0f);
-                        break;
-                    }
-                }
-                break;
-            case 1:
-                AtomicReference atomicReference = (AtomicReference) this.N0;
-                if (atomicReference != null && (b6Var = (org.telegram.ui.ActionBar.b6) atomicReference.get()) != null) {
-                    b6Var.setTranslationY(f7);
-                }
-                super.setTranslationY(f7);
-                break;
-            default:
-                super.setTranslationY(f7);
-                break;
-        }
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public fl(Context context, AtomicReference atomicReference) {
-        super(context);
-        this.M0 = 1;
-        this.N0 = atomicReference;
+    @Override // org.telegram.ui.Components.UndoView
+    public final void k(long j10, int i10, Object obj, Object obj2, Runnable runnable, Runnable runnable2) {
+        int i11;
+        dk dkVar = this.j0.j2;
+        setAdditionalTranslationY((dkVar == null || !(((i11 = dkVar.U) == 1 || i11 == 3) && dkVar.T)) ? 0.0f : AndroidUtilities.dp(dkVar.getStyleHeight()));
+        super.k(j10, i10, obj, obj2, runnable, runnable2);
     }
 }

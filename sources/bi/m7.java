@@ -18,11 +18,11 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.b10;
 import org.telegram.ui.Components.ds;
-import org.telegram.ui.Components.xj0;
+import org.telegram.ui.Components.yj0;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.un;
+import org.telegram.ui.wn;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class m7 extends View {
     public ValueAnimator E;
@@ -32,7 +32,7 @@ public final class m7 extends View {
     public boolean I;
     public final ArrayList J;
     public final int[] K;
-    public final un a;
+    public final wn a;
     public org.telegram.ui.Cells.z b;
     public int c;
     public final int[] d;
@@ -47,8 +47,8 @@ public final class m7 extends View {
     public final f2 x;
     public float y;
 
-    public m7(un unVar) {
-        super(unVar.getParentActivity());
+    public m7(wn wnVar) {
+        super(wnVar.getParentActivity());
         this.d = new int[2];
         this.e = new int[2];
         this.f = new RectF();
@@ -61,7 +61,7 @@ public final class m7 extends View {
         new Matrix();
         this.J = new ArrayList();
         this.K = new int[]{R.raw.star_reaction_effect1, R.raw.star_reaction_effect2, R.raw.star_reaction_effect3, R.raw.star_reaction_effect4, R.raw.star_reaction_effect5};
-        this.a = unVar;
+        this.a = wnVar;
         r6Var.setCallback(this);
         r6Var.r(false, true);
         r6Var.w(AndroidUtilities.dp(40.0f));
@@ -71,7 +71,7 @@ public final class m7 extends View {
         r6Var.u(-1);
         r6Var.b = 17;
         this.H = new k7(this, 0);
-        this.x = new f2(9, this, unVar);
+        this.x = new f2(9, this, wnVar);
     }
 
     private MessageObject getMessageObject() {
@@ -89,24 +89,24 @@ public final class m7 extends View {
         String str;
         if (getMessageObject() != null) {
             MessageObject messageObject = getMessageObject();
-            un unVar = this.a;
-            ca y3 = ca.y(unVar.getCurrentAccount(), false);
+            wn wnVar = this.a;
+            ca y3 = ca.y(wnVar.getCurrentAccount(), false);
             long E = y3.E(messageObject);
             if (!y3.e || y3.q(false, false, null).amount >= E) {
                 return;
             }
-            aa aaVar = ca.y(unVar.getCurrentAccount(), false).B;
+            aa aaVar = ca.y(wnVar.getCurrentAccount(), false).B;
             if (aaVar != null) {
                 aaVar.a();
             }
-            long a2 = unVar.a();
+            long a2 = wnVar.a();
             if (a2 >= 0) {
-                str = UserObject.getForcedFirstName(unVar.getMessagesController().getUser(Long.valueOf(a2)));
+                str = UserObject.getForcedFirstName(wnVar.getMessagesController().getUser(Long.valueOf(a2)));
             } else {
-                TLRPC.Chat chat = unVar.getMessagesController().getChat(Long.valueOf(-a2));
+                TLRPC.Chat chat = wnVar.getMessagesController().getChat(Long.valueOf(-a2));
                 str = chat == null ? "" : chat.title;
             }
-            new tc(unVar.getParentActivity(), unVar.getResourceProvider(), E, 5, str, new y2(this, y3, messageObject, E, 3), 0L).show();
+            new tc(wnVar.getParentActivity(), wnVar.getResourceProvider(), E, 5, str, new y2(this, y3, messageObject, E, 3), 0L).show();
         }
     }
 
@@ -144,24 +144,24 @@ public final class m7 extends View {
         if (messageObject == null || reactionsLayoutInBubble == null) {
             return;
         }
-        un unVar = this.a;
-        ca y3 = ca.y(unVar.getCurrentAccount(), false);
+        wn wnVar = this.a;
+        ca y3 = ca.y(wnVar.getCurrentAccount(), false);
         while (true) {
             arrayList = this.J;
             if (arrayList.size() <= 4) {
                 break;
             } else {
-                ((xj0) arrayList.remove(0)).C(true);
+                ((yj0) arrayList.remove(0)).C(true);
             }
         }
         Random random = Utilities.fastRandom;
         int[] iArr = this.K;
-        xj0 xj0Var = new xj0(iArr[random.nextInt(iArr.length)], AndroidUtilities.dp(70.0f), AndroidUtilities.dp(70.0f));
-        xj0Var.R(this);
-        xj0Var.J(true);
-        xj0Var.K(0);
-        xj0Var.start();
-        arrayList.add(xj0Var);
+        yj0 yj0Var = new yj0(iArr[random.nextInt(iArr.length)], AndroidUtilities.dp(70.0f), AndroidUtilities.dp(70.0f));
+        yj0Var.R(this);
+        yj0Var.J(true);
+        yj0Var.K(0);
+        yj0Var.start();
+        arrayList.add(yj0Var);
         invalidate();
         bh.v0 m10 = reactionsLayoutInBubble.m("stars");
         if (m10 != null) {
@@ -172,7 +172,7 @@ public final class m7 extends View {
                 performHapticFeedback(3, 1);
             } catch (Exception unused) {
             }
-            ca.y(unVar.getCurrentAccount(), false).d0(messageObject, this.a, 1L, true, false, null);
+            ca.y(wnVar.getCurrentAccount(), false).d0(messageObject, this.a, 1L, true, false, null);
         }
         org.telegram.ui.Components.r6 r6Var = this.v;
         r6Var.a();
@@ -189,10 +189,10 @@ public final class m7 extends View {
         this.G = Utilities.clamp(1.0f - ((r2 - 100) / 200.0f), 1.0f, 0.0f) * this.G;
         int measuredWidth = getMeasuredWidth();
         int[] iArr2 = this.e;
-        if (measuredWidth != 0 || unVar.getLayoutContainer() == null) {
+        if (measuredWidth != 0 || wnVar.getLayoutContainer() == null) {
             getLocationInWindow(iArr2);
         } else {
-            unVar.getLayoutContainer().getLocationInWindow(iArr2);
+            wnVar.getLayoutContainer().getLocationInWindow(iArr2);
         }
         LaunchActivity.c0(iArr2[0] + f7, iArr2[1] + f10, Utilities.clamp(this.G, 0.9f, 0.3f));
         this.G = 0.0f;
@@ -237,9 +237,9 @@ public final class m7 extends View {
             return;
         }
         float lerp = AndroidUtilities.lerp(1.0f, 1.8f, this.y);
-        un unVar = this.a;
-        float y3 = unVar.x0.getY() + (((unVar.ha == null || (unVar.da && !unVar.ea)) && !unVar.bb) ? (unVar.E9 - unVar.G9) - AndroidUtilities.dp(4.0f) : 0.0f);
-        float bottom = (unVar.fragmentView.getBottom() - unVar.x0.getBottom()) + (((unVar.ha == null || (unVar.da && !unVar.ea)) && !unVar.bb) ? unVar.Na : 0);
+        wn wnVar = this.a;
+        float y3 = wnVar.x0.getY() + (((wnVar.la == null || (wnVar.ha && !wnVar.ia)) && !wnVar.fb) ? (wnVar.I9 - wnVar.K9) - AndroidUtilities.dp(4.0f) : 0.0f);
+        float bottom = (wnVar.fragmentView.getBottom() - wnVar.x0.getBottom()) + (((wnVar.la == null || (wnVar.ha && !wnVar.ia)) && !wnVar.fb) ? wnVar.Ra : 0);
         canvas.save();
         canvas.clipRect(0.0f, (1.0f - this.y) * y3, getWidth(), ic.a.d(1.0f, this.y, bottom, getHeight()));
         int[] iArr = this.e;
@@ -247,7 +247,7 @@ public final class m7 extends View {
         org.telegram.ui.Cells.z zVar2 = this.b;
         int[] iArr2 = this.d;
         zVar2.getLocationInWindow(iArr2);
-        iArr2[1] = iArr2[1] + ((int) unVar.La);
+        iArr2[1] = iArr2[1] + ((int) wnVar.Pa);
         canvas.save();
         bh.v0 m10 = reactionsLayoutInBubble.m("stars");
         RectF rectF2 = this.f;
@@ -326,15 +326,15 @@ public final class m7 extends View {
                     if (i13 >= arrayList.size()) {
                         break;
                     }
-                    xj0 xj0Var = (xj0) arrayList.get(i13);
-                    if (xj0Var.a0 >= xj0Var.e[i10]) {
+                    yj0 yj0Var = (yj0) arrayList.get(i13);
+                    if (yj0Var.a0 >= yj0Var.e[i10]) {
                         arrayList.remove(i13);
                         i13--;
                     } else {
                         float f15 = dp / 2.0f;
-                        xj0Var.setBounds((int) (((AndroidUtilities.dp(15.0f) * lerp) + rectF.left) - f15), (int) (rectF.centerY() - f15), (int) b10.e(AndroidUtilities.dp(15.0f), lerp, rectF.left, f15), (int) (rectF.centerY() + f15));
-                        xj0Var.setAlpha((int) (this.y * f10));
-                        xj0Var.draw(canvas);
+                        yj0Var.setBounds((int) (((AndroidUtilities.dp(15.0f) * lerp) + rectF.left) - f15), (int) (rectF.centerY() - f15), (int) b10.e(AndroidUtilities.dp(15.0f), lerp, rectF.left, f15), (int) (rectF.centerY() + f15));
+                        yj0Var.setAlpha((int) (this.y * f10));
+                        yj0Var.draw(canvas);
                     }
                     i13++;
                 }

@@ -7,7 +7,7 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class me extends FrameLayout {
     public final /* synthetic */ ChatActivityEnterView a;
@@ -22,7 +22,7 @@ public final class me extends FrameLayout {
     public final boolean drawChild(final Canvas canvas, final View view, final long j10) {
         ChatActivityEnterView chatActivityEnterView = this.a;
         if (view != null && view == chatActivityEnterView.E0) {
-            return chatActivityEnterView.c0(canvas, new Utilities.Callback0Return() { // from class: org.telegram.ui.Components.le
+            return chatActivityEnterView.b0(canvas, new Utilities.Callback0Return() { // from class: org.telegram.ui.Components.le
                 @Override // org.telegram.messenger.Utilities.Callback0Return
                 public final Object run() {
                     Boolean valueOf;
@@ -66,6 +66,6 @@ public final class me extends FrameLayout {
         } else {
             eVar.c(max);
         }
-        chatActivityEnterView.K();
+        chatActivityEnterView.J();
     }
 }

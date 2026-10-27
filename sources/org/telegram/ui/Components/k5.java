@@ -17,7 +17,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class k5 implements Runnable {
     public final /* synthetic */ int a;
@@ -84,10 +84,10 @@ public final /* synthetic */ class k5 implements Runnable {
                 int i12 = go.r1;
                 break;
             case 9:
-                PhotoViewer.u1().H0(false, false);
+                PhotoViewer.v1().H0(false, false);
                 break;
             case 10:
-                PhotoViewer.u1().H0(false, false);
+                PhotoViewer.v1().H0(false, false);
                 break;
             case 11:
                 int i13 = ju.b;
@@ -117,26 +117,26 @@ public final /* synthetic */ class k5 implements Runnable {
                 }
                 break;
             case 17:
-                int i14 = r11.f;
+                int i14 = s11.f;
                 break;
             case 18:
                 SharedPreferences.Editor edit = MessagesController.getGlobalMainSettings().edit();
-                g21.f = Boolean.TRUE;
+                h21.f = Boolean.TRUE;
                 edit.putBoolean("nothanos", true).apply();
                 break;
             case 19:
                 SharedPreferences.Editor edit2 = MessagesController.getGlobalMainSettings().edit();
-                g21.f = Boolean.TRUE;
+                h21.f = Boolean.TRUE;
                 edit2.putBoolean("nothanos", true).apply();
                 break;
             case 20:
-                int i15 = e41.i0;
+                int i15 = f41.i0;
                 break;
             case 21:
                 SavedMessagesController.openSavedMessages();
                 break;
             case 22:
-                fb1.f();
+                jb1.j();
                 break;
             case 23:
                 NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.groupCallVisibilityChanged, new Object[0]);
@@ -148,9 +148,9 @@ public final /* synthetic */ class k5 implements Runnable {
                 di.f6.p();
                 break;
             case 26:
-                org.telegram.ui.v50 v50Var = org.telegram.ui.v50.D3;
-                if (v50Var != null) {
-                    v50Var.show();
+                org.telegram.ui.x50 x50Var = org.telegram.ui.x50.D3;
+                if (x50Var != null) {
+                    x50Var.show();
                     break;
                 }
                 break;

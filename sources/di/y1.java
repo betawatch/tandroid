@@ -9,7 +9,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class y1 implements org.telegram.ui.ActionBar.b2, lh.a {
     public final /* synthetic */ int a;
@@ -51,7 +51,7 @@ public final /* synthetic */ class y1 implements org.telegram.ui.ActionBar.b2, l
             case 0:
                 u2 u2Var = q4Var.Q1;
                 if (u2Var != null) {
-                    u2Var.x();
+                    u2Var.w();
                     break;
                 }
                 break;
@@ -129,7 +129,7 @@ public final /* synthetic */ class y1 implements org.telegram.ui.ActionBar.b2, l
                                         if (r92.stories.get(i15).id == storyItem2.id) {
                                             r92.stories.remove(i15);
                                             if (r92.stories.size() == 0) {
-                                                if (!h7Var.K(j11)) {
+                                                if (!h7Var.M(j11)) {
                                                     hVar.l(j11);
                                                     h7Var.g.remove(r92);
                                                     h7Var.h.remove(r92);
@@ -175,7 +175,7 @@ public final /* synthetic */ class y1 implements org.telegram.ui.ActionBar.b2, l
                         u7Var.b.getStorageQueue().postRunnable(new r7(u7Var, j11, storyItem2.id, 1));
                         NotificationCenter.getInstance(i13).lambda$postNotificationNameOnUIThread$1(NotificationCenter.storiesUpdated, new Object[0]);
                         MessagesController.getInstance(i13).checkArchiveFolder();
-                        h7Var.k0(j11, Arrays.asList(storyItem2));
+                        h7Var.n0(j11, Arrays.asList(storyItem2));
                     }
                 } else {
                     g7 g7Var = o4Var.b;

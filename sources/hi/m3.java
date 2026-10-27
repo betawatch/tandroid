@@ -57,21 +57,21 @@ import org.telegram.ui.ActionBar.f7;
 import org.telegram.ui.ActionBar.u6;
 import org.telegram.ui.ActionBar.y6;
 import org.telegram.ui.Components.ds;
-import org.telegram.ui.Components.gb1;
-import org.telegram.ui.Components.k80;
-import org.telegram.ui.Components.le0;
-import org.telegram.ui.Components.pw0;
+import org.telegram.ui.Components.kb1;
+import org.telegram.ui.Components.l80;
+import org.telegram.ui.Components.me0;
 import org.telegram.ui.Components.qc;
+import org.telegram.ui.Components.qw0;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.na1;
-import org.telegram.ui.un;
-import org.telegram.ui.zt0;
+import org.telegram.ui.bu0;
+import org.telegram.ui.pa1;
+import org.telegram.ui.wn;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class m3 extends Dialog implements NotificationCenter.NotificationCenterDelegate, org.telegram.ui.ActionBar.y3 {
     public static final HashSet a1 = new HashSet();
-    public static final pw0 b1;
+    public static final qw0 b1;
     public static int c1;
     public Boolean A0;
     public boolean B0;
@@ -92,13 +92,13 @@ public final class m3 extends Dialog implements NotificationCenter.NotificationC
     public long K;
     public int K0;
     public int L;
-    public na1 L0;
+    public pa1 L0;
     public long M;
     public Drawable M0;
     public String N;
     public final HashMap N0;
     public final Paint O;
-    public k80 O0;
+    public l80 O0;
     public final Paint P;
     public p0 P0;
     public final Paint Q;
@@ -150,7 +150,7 @@ public final class m3 extends Dialog implements NotificationCenter.NotificationC
     public final FrameLayout.LayoutParams r0;
     public final org.telegram.ui.ActionBar.s3 s;
     public boolean s0;
-    public final le0 t0;
+    public final me0 t0;
     public final g2 u0;
     public final me v;
     public int v0;
@@ -163,9 +163,9 @@ public final class m3 extends Dialog implements NotificationCenter.NotificationC
     public boolean z0;
 
     static {
-        pw0 pw0Var = new pw0(new gh.a(12), new gh.a(13));
-        pw0Var.c = 100.0f;
-        b1 = pw0Var;
+        qw0 qw0Var = new qw0(new gh.a(12), new gh.a(13));
+        qw0Var.c = 100.0f;
+        b1 = qw0Var;
         c1 = 0;
     }
 
@@ -214,14 +214,14 @@ public final class m3 extends Dialog implements NotificationCenter.NotificationC
         l3 l3Var = new l3(this, context);
         this.f = l3Var;
         l3Var.setDelegate(new i2(this, 0));
-        FrameLayout.LayoutParams i11 = gb1.i(-1, -1, 49);
+        FrameLayout.LayoutParams i11 = kb1.i(-1, -1, 49);
         this.x = i11;
         l3Var.addView(d3Var, i11);
         i3 i3Var = new i3(this, getContext(), u6Var);
         this.m0 = i3Var;
         i3Var.setOnButtonClickListener(new j2(this, 0));
         i3Var.setOnResizeListener(new g2(this, 3));
-        l3Var.addView(i3Var, gb1.i(-1, -2, 81));
+        l3Var.addView(i3Var, kb1.i(-1, -2, 81));
         BotFullscreenButtons botFullscreenButtons = new BotFullscreenButtons(getContext());
         this.n0 = botFullscreenButtons;
         botFullscreenButtons.setAlpha(0.0f);
@@ -229,13 +229,13 @@ public final class m3 extends Dialog implements NotificationCenter.NotificationC
         boolean z10 = !MessagesController.getInstance(this.H).disableBotFullscreenBlur && SharedConfig.getDevicePerformanceClass() >= 2;
         this.f0 = z10;
         botFullscreenButtons.setParentRenderNode(z10 ? d3Var.getRenderNode() : null);
-        l3Var.addView(botFullscreenButtons, gb1.i(-1, -1, 119));
+        l3Var.addView(botFullscreenButtons, kb1.i(-1, -1, 119));
         botFullscreenButtons.setOnCloseClickListener(new g2(this, 4));
         botFullscreenButtons.setOnCollapseClickListener(new g2(this, 5));
         botFullscreenButtons.setOnMenuClickListener(new g2(this, 6));
         FrameLayout frameLayout = new FrameLayout(context);
         this.q0 = frameLayout;
-        FrameLayout.LayoutParams i12 = gb1.i(-1, 200, 55);
+        FrameLayout.LayoutParams i12 = kb1.i(-1, 200, 55);
         this.r0 = i12;
         l3Var.addView(frameLayout, i12);
         this.Z = getContext().getDrawable(R.drawable.header_shadow).mutate();
@@ -246,21 +246,21 @@ public final class m3 extends Dialog implements NotificationCenter.NotificationC
         B();
         j3Var.setActionBarMenuOnItemClick(new bh.m(this, 3));
         j3Var.setAlpha(0.0f);
-        FrameLayout.LayoutParams i13 = gb1.i(-1, -2, 49);
+        FrameLayout.LayoutParams i13 = kb1.i(-1, -2, 49);
         this.Y = i13;
         l3Var.addView(j3Var, i13);
         k3 k3Var = new k3(context, u6Var);
         this.E = k3Var;
-        l3Var.addView(k3Var, gb1.h(-1, -2.0f, 81, 0.0f, 0.0f, 0.0f, 0.0f));
+        l3Var.addView(k3Var, kb1.h(-1, -2.0f, 81, 0.0f, 0.0f, 0.0f, 0.0f));
         e3Var.setWebViewProgressListener(new n7(this, 2));
-        d3Var.addView(e3Var, gb1.g(-1.0f, -1));
+        d3Var.addView(e3Var, kb1.g(-1.0f, -1));
         d3Var.setScrollListener(new g2(this, 7));
         d3Var.setScrollEndListener(new g2(this, 8));
         d3Var.setDelegate(new h2(this));
         d3Var.setIsKeyboardVisible(new h2(this));
-        le0 le0Var = new le0(context);
-        this.t0 = le0Var;
-        l3Var.addView(le0Var, gb1.g(-1.0f, -1));
+        me0 me0Var = new me0(context);
+        this.t0 = me0Var;
+        l3Var.addView(me0Var, kb1.g(-1.0f, -1));
         setContentView(l3Var, new ViewGroup.LayoutParams(-1, -1));
         E();
         LaunchActivity launchActivity = LaunchActivity.I1;
@@ -754,7 +754,7 @@ public final class m3 extends Dialog implements NotificationCenter.NotificationC
         if (this.Y0 == null) {
             org.telegram.ui.c3 c3Var = new org.telegram.ui.c3(getContext());
             this.Y0 = c3Var;
-            this.w.addView(c3Var, gb1.g(-1.0f, -1));
+            this.w.addView(c3Var, kb1.g(-1.0f, -1));
             this.Y0.setTranslationY(-1.0f);
             this.Y0.h.setOnClickListener(new p2(this, 0));
             this.Y0.setBackgroundColor(this.Q.getColor());
@@ -937,8 +937,8 @@ public final class m3 extends Dialog implements NotificationCenter.NotificationC
         if (i10 >= 26) {
             AndroidUtilities.setLightNavigationBar(this, i0.a.h(this.S) >= 0.7210000157356262d);
         }
-        NotificationCenter.getGlobalInstance().addObserver(this, NotificationCenter.didSetNewTheme);
-        NotificationCenter.getInstance(this.H).addObserver(this, NotificationCenter.botDownloadsUpdate);
+        NotificationCenter.getGlobalInstance().addWeakObserver(this, NotificationCenter.didSetNewTheme);
+        NotificationCenter.getInstance(this.H).addWeakObserver(this, NotificationCenter.botDownloadsUpdate);
     }
 
     @Override // android.app.Dialog, android.view.Window.Callback
@@ -1048,11 +1048,11 @@ public final class m3 extends Dialog implements NotificationCenter.NotificationC
                 break;
             }
         }
-        k80 k80Var = this.O0;
-        if (k80Var != null) {
-            k80Var.u();
+        l80 l80Var = this.O0;
+        if (l80Var != null) {
+            l80Var.u();
         }
-        k80 G = k80.G(this.f, this.F, this.e0 ? this.n0 : this.a0, true);
+        l80 G = l80.G(this.f, this.F, this.e0 ? this.n0 : this.a0, true);
         this.O0 = G;
         ArrayList arrayList3 = q0.c(getContext(), this.H, this.I).e;
         HashMap hashMap = this.N0;
@@ -1060,8 +1060,8 @@ public final class m3 extends Dialog implements NotificationCenter.NotificationC
         if (arrayList3.isEmpty()) {
             i10 = -1;
         } else {
-            k80 J = G.J();
-            J.c(R.drawable.msg_arrow_back, LocaleController.getString(R.string.Back), new zt0(G, 26), false);
+            l80 J = G.J();
+            J.c(R.drawable.msg_arrow_back, LocaleController.getString(R.string.Back), new bu0(G, 26), false);
             J.k();
             int size2 = arrayList3.size();
             int i13 = 0;
@@ -1100,9 +1100,9 @@ public final class m3 extends Dialog implements NotificationCenter.NotificationC
                     int i14 = J.S;
                     if (i14 > 0) {
                         g1Var.setMinimumWidth(AndroidUtilities.dp(i14));
-                        J.r(g1Var, gb1.r(J.S, -2));
+                        J.r(g1Var, kb1.r(J.S, -2));
                     } else {
-                        J.r(g1Var, gb1.r(-1, -2));
+                        J.r(g1Var, kb1.r(-1, -2));
                         hashMap.put(p0Var, J.y());
                         size2 = i11;
                         arrayList3 = arrayList;
@@ -1304,7 +1304,7 @@ public final class m3 extends Dialog implements NotificationCenter.NotificationC
                     tL_messages_requestWebView.flags |= 4;
                 }
                 ConnectionsManager.getInstance(this.H).sendRequest(tL_messages_requestWebView, new r2(this, 3));
-                NotificationCenter.getInstance(this.H).addObserver(this, NotificationCenter.webViewResultSent);
+                NotificationCenter.getInstance(this.H).addWeakObserver(this, NotificationCenter.webViewResultSent);
                 break;
             case 1:
                 TLRPC.TL_messages_requestSimpleWebView tL_messages_requestSimpleWebView = new TLRPC.TL_messages_requestSimpleWebView();
@@ -1346,7 +1346,7 @@ public final class m3 extends Dialog implements NotificationCenter.NotificationC
                     tL_messages_requestWebView2.flags |= 4;
                 }
                 ConnectionsManager.getInstance(this.H).sendRequest(tL_messages_requestWebView2, new r2(this, 1));
-                NotificationCenter.getInstance(this.H).addObserver(this, NotificationCenter.webViewResultSent);
+                NotificationCenter.getInstance(this.H).addWeakObserver(this, NotificationCenter.webViewResultSent);
                 break;
             case 3:
                 TLRPC.TL_messages_requestAppWebView tL_messages_requestAppWebView = new TLRPC.TL_messages_requestAppWebView();
@@ -1357,9 +1357,9 @@ public final class m3 extends Dialog implements NotificationCenter.NotificationC
                 tL_messages_requestAppWebView.app = tL_inputBotAppID;
                 tL_messages_requestAppWebView.write_allowed = c5Var.k;
                 tL_messages_requestAppWebView.platform = "android";
-                if (r2Var instanceof un) {
-                    un unVar = (un) r2Var;
-                    inputPeer = unVar.i() != null ? MessagesController.getInputPeer(unVar.i()) : MessagesController.getInputPeer(unVar.e);
+                if (r2Var instanceof wn) {
+                    wn wnVar = (wn) r2Var;
+                    inputPeer = wnVar.i() != null ? MessagesController.getInputPeer(wnVar.i()) : MessagesController.getInputPeer(wnVar.e);
                 } else {
                     inputPeer = MessagesController.getInputPeer(c5Var.m);
                 }
@@ -1382,9 +1382,9 @@ public final class m3 extends Dialog implements NotificationCenter.NotificationC
                 TLRPC.TL_messages_requestMainWebView tL_messages_requestMainWebView = new TLRPC.TL_messages_requestMainWebView();
                 tL_messages_requestMainWebView.bot = MessagesController.getInstance(this.H).getInputUser(c5Var.c);
                 tL_messages_requestMainWebView.platform = "android";
-                if (r2Var instanceof un) {
-                    un unVar2 = (un) r2Var;
-                    inputPeer2 = unVar2.i() != null ? MessagesController.getInputPeer(unVar2.i()) : MessagesController.getInputPeer(unVar2.e);
+                if (r2Var instanceof wn) {
+                    wn wnVar2 = (wn) r2Var;
+                    inputPeer2 = wnVar2.i() != null ? MessagesController.getInputPeer(wnVar2.i()) : MessagesController.getInputPeer(wnVar2.e);
                 } else {
                     inputPeer2 = MessagesController.getInstance(this.H).getInputPeer(c5Var.b);
                 }

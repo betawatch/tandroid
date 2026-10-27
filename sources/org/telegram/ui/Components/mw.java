@@ -11,9 +11,9 @@ import org.telegram.messenger.Emoji;
 import org.telegram.messenger.EmojiData;
 import org.telegram.messenger.MessagesController;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class mw implements oi.m, bm0, nn0, oe.d {
+public final /* synthetic */ class mw implements oi.m, cm0, on0, oe.d {
     public final /* synthetic */ int a;
     public final /* synthetic */ sz b;
 
@@ -24,10 +24,10 @@ public final /* synthetic */ class mw implements oi.m, bm0, nn0, oe.d {
 
     @Override // oe.d
     public void E(int i10, float f7, float f10, oe.e eVar) {
-        this.b.R();
+        this.b.S();
     }
 
-    @Override // org.telegram.ui.Components.nn0
+    @Override // org.telegram.ui.Components.on0
     public void a(int i10) {
         int i11;
         ez ezVar;
@@ -66,7 +66,7 @@ public final /* synthetic */ class mw implements oi.m, bm0, nn0, oe.d {
                             azVar.a(arrayList2.get((i10 - szVar.t0) + 1), true);
                         }
                     }
-                    szVar.F(2);
+                    szVar.G(2);
                     break;
                 }
                 break;
@@ -93,8 +93,8 @@ public final /* synthetic */ class mw implements oi.m, bm0, nn0, oe.d {
                                         }
                                         szVar2.I0 = false;
                                         zwVar.C0();
-                                        szVar2.H(jzVar.E(arrayList3.get(i14)), 0);
-                                        szVar2.F(0);
+                                        szVar2.I(jzVar.E(arrayList3.get(i14)), 0);
+                                        szVar2.G(0);
                                         szVar2.p(0);
                                         int i15 = szVar2.G1;
                                         if (i15 <= 0 && (i15 = szVar2.F1) <= 0) {
@@ -102,35 +102,35 @@ public final /* synthetic */ class mw implements oi.m, bm0, nn0, oe.d {
                                         }
                                         dxVar.k(i10, i15);
                                         szVar2.X1 = false;
-                                        szVar2.Y();
+                                        szVar2.Z();
                                         break;
                                     }
                                 } else {
                                     zwVar.C0();
-                                    szVar2.H(jzVar.E("premium"), 0);
-                                    szVar2.F(0);
+                                    szVar2.I(jzVar.E("premium"), 0);
+                                    szVar2.G(0);
                                     int i16 = szVar2.I1;
                                     dxVar.k(i16, i16 > 0 ? i16 : szVar2.E1);
                                     break;
                                 }
                             } else {
                                 zwVar.C0();
-                                szVar2.H(jzVar.E("fav"), 0);
-                                szVar2.F(0);
+                                szVar2.I(jzVar.E("fav"), 0);
+                                szVar2.G(0);
                                 int i17 = szVar2.G1;
                                 dxVar.k(i17, i17 > 0 ? i17 : szVar2.E1);
                                 break;
                             }
                         } else {
                             zwVar.C0();
-                            szVar2.H(jzVar.E("recent"), 0);
-                            szVar2.F(0);
+                            szVar2.I(jzVar.E("recent"), 0);
+                            szVar2.G(0);
                             int i18 = szVar2.F1;
                             dxVar.k(i18, i18 > 0 ? i18 : szVar2.E1);
                             break;
                         }
                     } else {
-                        szVar2.t1.o(new p61(szVar2.getContext(), new kx(szVar2), szVar2.x1, szVar2.y1, szVar2.z1, null, szVar2.Z1));
+                        szVar2.t1.o(new q61(szVar2.getContext(), new kx(szVar2), szVar2.x1, szVar2.y1, szVar2.z1, null, szVar2.Z1));
                         break;
                     }
                 }
@@ -138,7 +138,7 @@ public final /* synthetic */ class mw implements oi.m, bm0, nn0, oe.d {
         }
     }
 
-    @Override // org.telegram.ui.Components.bm0
+    @Override // org.telegram.ui.Components.cm0
     public boolean c(int i10, View view) {
         String str;
         int i11;

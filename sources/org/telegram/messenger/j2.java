@@ -5,7 +5,7 @@ import java.util.HashMap;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class j2 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -29,7 +29,7 @@ public final /* synthetic */ class j2 implements Utilities.Callback {
                 ((FactCheckController) this.c).lambda$loadMissing$3(this.b, (ArrayList) this.d, (HashMap) this.e, (ArrayList) obj);
                 break;
             case 1:
-                ((MessagesController) this.c).lambda$checkSensitive$453(this.b, (boolean[]) this.d, (Runnable) this.e, (Boolean) obj);
+                ((MessagesController) this.c).lambda$checkSensitive$454(this.b, (boolean[]) this.d, (Runnable) this.e, (Boolean) obj);
                 break;
             default:
                 ((TranslateController) this.c).lambda$checkTranslation$6((MessageObject) this.d, (String) this.e, this.b, (TLRPC.TL_textWithEntities) obj);

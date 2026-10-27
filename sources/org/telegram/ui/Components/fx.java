@@ -6,7 +6,7 @@ import android.util.Property;
 import android.view.MotionEvent;
 import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class fx extends a5.m {
     public final /* synthetic */ sz w0;
@@ -55,7 +55,7 @@ public final class fx extends a5.m {
         ofFloat.setDuration(150L);
         ofFloat.setInterpolator(ds.h);
         ofFloat.start();
-        szVar.G(1, 0);
+        szVar.H(1, 0);
         if (uxVar != null) {
             uxVar.j(0, true);
         }

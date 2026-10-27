@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    android:versionCode="72569"
+    android:versionCode="72609"
     android:versionName="13.2.0"
     android:installLocation="auto"
     android:compileSdkVersion="36"
@@ -464,7 +464,7 @@
         </activity-alias>
         <activity
             android:name="org.telegram.ui.BubbleActivity"
-            android:configChanges="screenSize|uiMode|orientation|keyboardHidden|keyboard"
+            android:configChanges="smallestScreenSize|screenSize|uiMode|screenLayout|orientation|keyboardHidden|keyboard"
             android:windowSoftInputMode="adjustResize"
             android:hardwareAccelerated="true"
             android:allowEmbedded="true"

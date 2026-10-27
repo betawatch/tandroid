@@ -8,12 +8,12 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.ui.ActionBar.u6;
 import org.telegram.ui.ActionBar.y6;
-import org.telegram.ui.Components.mr0;
+import org.telegram.ui.Components.nr0;
 import org.telegram.ui.Components.vg;
 import org.telegram.ui.PhotoViewer;
-import org.telegram.ui.cy;
+import org.telegram.ui.ey;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class w1 extends vg {
     public final /* synthetic */ int n0;
@@ -63,14 +63,14 @@ public final class w1 extends vg {
         Object obj = this.o0;
         switch (i10) {
             case 2:
-                return ((mr0) obj).getThemedColor(y6.S5);
+                return ((nr0) obj).getThemedColor(y6.S5);
             case 3:
             default:
                 return super.getFillColor();
             case 4:
                 int i11 = y6.zf;
                 Drawable[] drawableArr = PhotoViewer.U8;
-                return ((PhotoViewer) obj).A1(i11);
+                return ((PhotoViewer) obj).B1(i11);
         }
     }
 
@@ -93,7 +93,7 @@ public final class w1 extends vg {
         switch (this.n0) {
             case 3:
                 super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-                accessibilityNodeInfo.setText(LocaleController.formatPluralString("AccDescrShareInChats", ((cy) this.o0).I2.size(), new Object[0]));
+                accessibilityNodeInfo.setText(LocaleController.formatPluralString("AccDescrShareInChats", ((ey) this.o0).I2.size(), new Object[0]));
                 accessibilityNodeInfo.setClassName(Button.class.getName());
                 accessibilityNodeInfo.setLongClickable(true);
                 accessibilityNodeInfo.setClickable(true);

@@ -1,53 +1,19 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.view.View;
-import java.util.ArrayList;
-
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public abstract class m71 extends org.telegram.ui.ActionBar.r2 {
-    public l71 a;
-    public jg.r1 b;
-    public int c;
-    public int d;
+public final class m71 extends s71 {
+    public final /* synthetic */ n71 n3;
 
-    public m71() {
-        super(null);
-        this.c = -1;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public m71(n71 n71Var, n71 n71Var2, d dVar, l71 l71Var, l71 l71Var2) {
+        super(n71Var2, dVar, l71Var, l71Var2);
+        this.n3 = n71Var;
     }
 
-    public abstract void V(ArrayList arrayList, j71 j71Var);
-
-    public abstract CharSequence W();
-
-    public abstract void X(t61 t61Var, View view);
-
-    public abstract boolean Y(t61 t61Var, View view);
-
-    @Override // org.telegram.ui.ActionBar.r2
-    public View createView(Context context) {
-        org.telegram.ui.ga gaVar = new org.telegram.ui.ga(this, 17);
-        org.telegram.ui.ActionBar.r5 r5Var = this.simpleActionBar;
-        if (r5Var != null) {
-            r5Var.setBackButtonDrawable(new org.telegram.ui.ActionBar.j2(false));
-            this.simpleActionBar.setTitle(W());
-            this.simpleActionBar.setActionBarMenuOnItemClick(gaVar);
-        } else {
-            this.actionBar.setBackButtonDrawable(new org.telegram.ui.ActionBar.j2(false));
-            this.actionBar.setAllowOverlayTitle(true);
-            this.actionBar.setTitle(W());
-            this.actionBar.setActionBarMenuOnItemClick(gaVar);
-        }
-        this.b = new jg.r1(context, null, 1);
-        if (!useSimpleActionBar()) {
-            org.telegram.ui.ActionBar.f7.i(org.telegram.ui.ActionBar.y6.a7, this.b, null);
-        }
-        l71 l71Var = new l71(this, this, new d(this, 22), new k71(this), new k71(this));
-        this.a = l71Var;
-        this.b.addView(l71Var, gb1.g(-1.0f, -1));
-        jg.r1 r1Var = this.b;
-        this.fragmentView = r1Var;
-        return r1Var;
+    @Override // org.telegram.ui.Components.nm0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        super.onLayout(z10, i10, i11, i12, i13);
+        this.n3.c = -1;
     }
 }

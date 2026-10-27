@@ -22,25 +22,25 @@ import org.telegram.ui.ActionBar.j2;
 import org.telegram.ui.ActionBar.r2;
 import org.telegram.ui.ActionBar.y6;
 import org.telegram.ui.Components.ds;
-import org.telegram.ui.Components.ey0;
-import org.telegram.ui.Components.gb1;
-import org.telegram.ui.Components.r71;
-import org.telegram.ui.Components.t61;
+import org.telegram.ui.Components.fy0;
+import org.telegram.ui.Components.kb1;
+import org.telegram.ui.Components.s71;
+import org.telegram.ui.Components.u61;
 import org.telegram.ui.Components.wc;
-import org.telegram.ui.un;
+import org.telegram.ui.wn;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class r extends r2 implements oe.d {
     public final oe.b a;
     public long b;
     public FrameLayout c;
-    public r71 d;
+    public s71 d;
     public lh.f e;
     public LinearLayout f;
     public fi.d h;
     public fi.d n;
-    public ey0 r;
+    public fy0 r;
     public TLRPC.ChatFull s;
     public r0 v;
     public int w;
@@ -50,17 +50,17 @@ public final class r extends r2 implements oe.d {
         this.a = new oe.b(0, this, ds.h, 320L, false);
     }
 
-    public static void V(r rVar, t61 t61Var) {
-        Object obj = t61Var.G;
+    public static void V(r rVar, u61 u61Var) {
+        Object obj = u61Var.G;
         if (obj instanceof ji.f) {
             ji.f fVar = (ji.f) obj;
             long j10 = fVar.a;
             TLRPC.Chat chat = MessagesController.getInstance(rVar.currentAccount).getChat(Long.valueOf(-j10));
             TLRPC.User user = MessagesController.getInstance(rVar.currentAccount).getUser(Long.valueOf(j10));
             if (user != null) {
-                rVar.presentFragment(un.ba(user.id));
+                rVar.presentFragment(wn.ea(user.id));
             } else if (ChatObject.isPublic(chat) || ChatObject.isInChat(chat)) {
-                rVar.presentFragment(un.ba(-chat.id));
+                rVar.presentFragment(wn.ea(-chat.id));
             } else {
                 new ki.b(rVar.getParentActivity(), chat, new u2(13, rVar, fVar)).show();
             }
@@ -102,22 +102,22 @@ public final class r extends r2 implements oe.d {
         this.c = frameLayout;
         int i11 = y6.a7;
         f7.i(i11, frameLayout, null);
-        r71 r71Var = new r71(this, new e2(this, 4), new p(this), new p(this));
-        this.d = r71Var;
-        r71Var.setClipToPadding(false);
-        r71 r71Var2 = this.d;
-        r71Var2.g3.r = false;
-        r71Var2.u1();
+        s71 s71Var = new s71(this, new e2(this, 4), new p(this), new p(this));
+        this.d = s71Var;
+        s71Var.setClipToPadding(false);
+        s71 s71Var2 = this.d;
+        s71Var2.g3.r = false;
+        s71Var2.u1();
         this.d.j(new ai.b(this, 14));
         this.actionBar.setAdaptiveBackground(this.d);
-        this.c.addView(this.d, gb1.g(-1.0f, -1));
+        this.c.addView(this.d, kb1.g(-1.0f, -1));
         lh.f fVar = new lh.f(context);
         this.e = fVar;
         fVar.setupColorKey(i11);
         this.e.setFadeZoneBottom(AndroidUtilities.dp(72.0f));
         this.e.setFadeHeightBottom(AndroidUtilities.dp(24.0f));
-        this.c.addView(this.e, gb1.k());
-        this.c.addView(this.actionBar, gb1.i(-1, -2, 48));
+        this.c.addView(this.e, kb1.k());
+        this.c.addView(this.actionBar, kb1.i(-1, -2, 48));
         LinearLayout linearLayout = new LinearLayout(context);
         this.f = linearLayout;
         linearLayout.setOrientation(0);
@@ -150,7 +150,7 @@ public final class r extends r2 implements oe.d {
                 }
             }
         });
-        this.f.addView(this.n, gb1.t(0, 48, 1.0f, 0, 4, 0, 4, 0));
+        this.f.addView(this.n, kb1.t(0, 48, 1.0f, 0, 4, 0, 4, 0));
         fi.d dVar3 = new fi.d(context, this.resourceProvider, true);
         this.h = dVar3;
         dVar3.setText(LocaleController.getString(R.string.CommunityPendingRequestAddAll));
@@ -176,15 +176,15 @@ public final class r extends r2 implements oe.d {
                 }
             }
         });
-        this.f.addView(this.h, gb1.t(0, 48, 1.0f, 0, 4, 0, 4, 0));
-        this.c.addView(this.f, gb1.i(-1, -2, 80));
-        ey0 ey0Var = new ey0(getParentActivity(), null, 16, this.resourceProvider);
-        this.r = ey0Var;
-        ey0Var.d.setText(LocaleController.getString(R.string.NoCommunityJoinRequests));
+        this.f.addView(this.h, kb1.t(0, 48, 1.0f, 0, 4, 0, 4, 0));
+        this.c.addView(this.f, kb1.i(-1, -2, 80));
+        fy0 fy0Var = new fy0(getParentActivity(), null, 16, this.resourceProvider);
+        this.r = fy0Var;
+        fy0Var.d.setText(LocaleController.getString(R.string.NoCommunityJoinRequests));
         this.r.e.setText(LocaleController.getString(R.string.NoCommunityJoinRequestsDescription));
         this.r.setAnimateLayoutChange(true);
         this.r.setVisibility(8);
-        this.c.addView(this.r, gb1.i(-2, -2, 17));
+        this.c.addView(this.r, kb1.i(-2, -2, 17));
         TLRPC.ChatFull chatFull = this.s;
         if (chatFull != null && chatFull.requests_pending != 0) {
             z10 = false;

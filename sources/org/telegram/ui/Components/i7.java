@@ -2,19 +2,19 @@ package org.telegram.ui.Components;
 
 import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class i7 implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ m8 b;
-    public final /* synthetic */ k80 c;
+    public final /* synthetic */ l80 c;
     public final /* synthetic */ MessageObject d;
 
-    public /* synthetic */ i7(m8 m8Var, MessageObject messageObject, k80 k80Var, int i10) {
+    public /* synthetic */ i7(m8 m8Var, MessageObject messageObject, l80 l80Var, int i10) {
         this.a = i10;
         this.b = m8Var;
         this.d = messageObject;
-        this.c = k80Var;
+        this.c = l80Var;
     }
 
     @Override // java.lang.Runnable
@@ -66,10 +66,10 @@ public final /* synthetic */ class i7 implements Runnable {
         }
     }
 
-    public /* synthetic */ i7(m8 m8Var, k80 k80Var, MessageObject messageObject, int i10) {
+    public /* synthetic */ i7(m8 m8Var, l80 l80Var, MessageObject messageObject, int i10) {
         this.a = i10;
         this.b = m8Var;
-        this.c = k80Var;
+        this.c = l80Var;
         this.d = messageObject;
     }
 }

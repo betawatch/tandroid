@@ -29,15 +29,15 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.SvgHelper;
 import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.vh;
+import org.telegram.messenger.wh;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.Components.aq;
 import org.telegram.ui.Components.ds;
-import org.telegram.ui.Components.gb1;
+import org.telegram.ui.Components.kb1;
 import org.telegram.ui.Components.ut;
-import org.telegram.ui.Components.zp;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class p8 extends FrameLayout implements org.telegram.ui.ActionBar.p6 {
     public final TextView E;
@@ -48,7 +48,7 @@ public final class p8 extends FrameLayout implements org.telegram.ui.ActionBar.p
     public final md b;
     public final TextView c;
     public final org.telegram.ui.Components.y9 d;
-    public final zp e;
+    public final aq e;
     public boolean f;
     public final ImageView h;
     public final ImageView n;
@@ -68,7 +68,7 @@ public final class p8 extends FrameLayout implements org.telegram.ui.ActionBar.p
         y9Var.setAspectFit(true);
         y9Var.setLayerNum(1);
         boolean z10 = LocaleController.isRTL;
-        addView(y9Var, gb1.h(40, 40.0f, (z10 ? 5 : 3) | 48, z10 ? 0.0f : 13.0f, 9.0f, z10 ? 13.0f : 0.0f, 0.0f));
+        addView(y9Var, kb1.h(40, 40.0f, (z10 ? 5 : 3) | 48, z10 ? 0.0f : 13.0f, 9.0f, z10 ? 13.0f : 0.0f, 0.0f));
         if (i10 != 0) {
             ImageView imageView = new ImageView(context);
             this.h = imageView;
@@ -88,7 +88,7 @@ public final class p8 extends FrameLayout implements org.telegram.ui.ActionBar.p
                 org.telegram.ui.ActionBar.f7.t(imageView, i12, null, mode);
                 imageView.setImageResource(R.drawable.msg_actions);
                 imageView.setContentDescription(LocaleController.getString(R.string.AccDescrMoreOptions));
-                addView(imageView, gb1.i(40, 40, (LocaleController.isRTL ? 3 : 5) | 16));
+                addView(imageView, kb1.i(40, 40, (LocaleController.isRTL ? 3 : 5) | 16));
                 ImageView imageView2 = new ImageView(context);
                 this.n = imageView2;
                 imageView2.setAlpha(0.0f);
@@ -96,18 +96,18 @@ public final class p8 extends FrameLayout implements org.telegram.ui.ActionBar.p
                 imageView2.setScaleType(scaleType);
                 imageView2.setImageResource(R.drawable.list_reorder);
                 org.telegram.ui.ActionBar.f7.t(imageView2, i12, null, mode);
-                addView(imageView2, gb1.l(58.0f, 58.0f, 8388613));
-                zp zpVar = new zp(context, 21, null);
-                this.e = zpVar;
-                zpVar.b(-1, org.telegram.ui.ActionBar.y6.d6, org.telegram.ui.ActionBar.y6.k7);
-                zpVar.setDrawUnchecked(false);
-                zpVar.setDrawBackgroundAsArc(3);
-                addView(zpVar, gb1.m(24.0f, 24.0f, 8388611, 34.0f, 30.0f, 0.0f, 0.0f));
+                addView(imageView2, kb1.l(58.0f, 58.0f, 8388613));
+                aq aqVar = new aq(context, 21, null);
+                this.e = aqVar;
+                aqVar.b(-1, org.telegram.ui.ActionBar.y6.d6, org.telegram.ui.ActionBar.y6.k7);
+                aqVar.setDrawUnchecked(false);
+                aqVar.setDrawBackgroundAsArc(3);
+                addView(aqVar, kb1.m(24.0f, 24.0f, 8388611, 34.0f, 30.0f, 0.0f, 0.0f));
             } else if (i10 == 3) {
                 org.telegram.ui.ActionBar.f7.t(imageView, org.telegram.ui.ActionBar.y6.Mh, null, PorterDuff.Mode.MULTIPLY);
                 imageView.setImageResource(R.drawable.floating_check);
                 boolean z11 = LocaleController.isRTL;
-                addView(imageView, gb1.h(40, 40.0f, (z11 ? 3 : 5) | 48, z11 ? 10 : 0, 9.0f, z11 ? 0 : 10, 0.0f));
+                addView(imageView, kb1.h(40, 40.0f, (z11 ? 3 : 5) | 48, z11 ? 10 : 0, 9.0f, z11 ? 0 : 10, 0.0f));
             }
         }
         FrameLayout frameLayout = new FrameLayout(getContext());
@@ -128,8 +128,8 @@ public final class p8 extends FrameLayout implements org.telegram.ui.ActionBar.p
         textView.setPadding(AndroidUtilities.dp(14.0f), 0, AndroidUtilities.dp(14.0f), 0);
         textView.setGravity(17);
         textView.setOnClickListener(new j8(this, 0));
-        frameLayout.addView(textView, gb1.l(-2.0f, 28.0f, (LocaleController.isRTL ? 3 : 5) | 16));
-        gb1.b(textView);
+        frameLayout.addView(textView, kb1.l(-2.0f, 28.0f, (LocaleController.isRTL ? 3 : 5) | 16));
+        kb1.b(textView);
         TextView textView2 = new TextView(context);
         this.E = textView2;
         ic.a.o(14.0f, 1, textView2);
@@ -142,8 +142,8 @@ public final class p8 extends FrameLayout implements org.telegram.ui.ActionBar.p
         textView2.setPadding(AndroidUtilities.dp(12.0f), 0, AndroidUtilities.dp(12.0f), 0);
         textView2.setGravity(17);
         textView2.setOnClickListener(new j8(this, 0));
-        frameLayout.addView(textView2, gb1.m(-2.0f, 32.0f, (LocaleController.isRTL ? 3 : 5) | 16, 0.0f, -2.0f, 0.0f, 0.0f));
-        gb1.b(textView2);
+        frameLayout.addView(textView2, kb1.m(-2.0f, 32.0f, (LocaleController.isRTL ? 3 : 5) | 16, 0.0f, -2.0f, 0.0f, 0.0f));
+        kb1.b(textView2);
         tg.p0 p0Var = new tg.p0(AndroidUtilities.dp(4.0f), context, null, false);
         this.F = p0Var;
         p0Var.setIcon(R.raw.unlock_icon);
@@ -159,10 +159,10 @@ public final class p8 extends FrameLayout implements org.telegram.ui.ActionBar.p
             p0Var.getChildAt(0).setPadding(AndroidUtilities.dp(8.0f), 0, AndroidUtilities.dp(8.0f), 0);
         } catch (Exception unused) {
         }
-        this.x.addView(this.F, gb1.l(-2.0f, 28.0f, (LocaleController.isRTL ? 3 : 5) | 16));
-        gb1.b(this.F);
+        this.x.addView(this.F, kb1.l(-2.0f, 28.0f, (LocaleController.isRTL ? 3 : 5) | 16));
+        kb1.b(this.F);
         this.x.setPadding(AndroidUtilities.dp(10.0f), 0, AndroidUtilities.dp(10.0f), 0);
-        addView(this.x, gb1.h(-2, -1.0f, LocaleController.isRTL ? 3 : 5, 0.0f, 0.0f, 0.0f, 0.0f));
+        addView(this.x, kb1.h(-2, -1.0f, LocaleController.isRTL ? 3 : 5, 0.0f, 0.0f, 0.0f, 0.0f));
         this.x.setOnClickListener(new j8(this, 1));
         md mdVar = new md(context, 9);
         this.b = mdVar;
@@ -174,15 +174,15 @@ public final class p8 extends FrameLayout implements org.telegram.ui.ActionBar.p
         mdVar.setMaxLines(1);
         mdVar.setSingleLine(true);
         mdVar.setEllipsize(TextUtils.TruncateAt.END);
-        mdVar.setGravity(gb1.E());
-        addView(mdVar, gb1.m(-2.0f, -2.0f, 8388611, 71.0f, 9.0f, 70.0f, 0.0f));
+        mdVar.setGravity(kb1.E());
+        addView(mdVar, kb1.m(-2.0f, -2.0f, 8388611, 71.0f, 9.0f, 70.0f, 0.0f));
         TextView textView3 = new TextView(context);
         this.c = textView3;
         org.telegram.ui.ActionBar.f7.V(textView3, org.telegram.ui.ActionBar.y6.z6, null);
-        vh.r(textView3, 1, 13.0f, 1, 1);
+        wh.r(textView3, 1, 13.0f, 1, 1);
         textView3.setSingleLine(true);
-        textView3.setGravity(gb1.E());
-        addView(textView3, gb1.m(-2.0f, -2.0f, 8388611, 71.0f, 32.0f, 70.0f, 0.0f));
+        textView3.setGravity(kb1.E());
+        addView(textView3, kb1.m(-2.0f, -2.0f, 8388611, 71.0f, 32.0f, 70.0f, 0.0f));
         if (i10 == 3) {
             ImageView imageView3 = new ImageView(context);
             this.G = imageView3;
@@ -196,7 +196,7 @@ public final class p8 extends FrameLayout implements org.telegram.ui.ActionBar.p
             org.telegram.ui.ActionBar.f7.k(imageView3, g03, null, N4, null);
             imageView3.setVisibility(8);
             boolean z12 = LocaleController.isRTL;
-            addView(imageView3, gb1.h(-2, -2.0f, (z12 ? 3 : 5) | 16, z12 ? 4.0f : 0.0f, 0.0f, z12 ? 0.0f : 4.0f, 0.0f));
+            addView(imageView3, kb1.h(-2, -2.0f, (z12 ? 3 : 5) | 16, z12 ? 4.0f : 0.0f, 0.0f, z12 ? 0.0f : 4.0f, 0.0f));
         }
         e(0);
     }
@@ -574,8 +574,8 @@ public final class p8 extends FrameLayout implements org.telegram.ui.ActionBar.p
     @Override // android.view.View
     public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
         super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-        zp zpVar = this.e;
-        if (zpVar == null || !zpVar.a.q) {
+        aq aqVar = this.e;
+        if (aqVar == null || !aqVar.a.q) {
             return;
         }
         accessibilityNodeInfo.setCheckable(true);

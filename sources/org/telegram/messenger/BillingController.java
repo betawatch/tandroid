@@ -30,9 +30,9 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_update;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.gg0;
+import org.telegram.ui.ig0;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
 public class BillingController implements d5.q, d5.d {
     public static final r PREMIUM_PRODUCT;
@@ -53,7 +53,7 @@ public class BillingController implements d5.q, d5.d {
     private ArrayList<Runnable> setupListeners = new ArrayList<>();
     private int triesLeft = 0;
 
-    /* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+    /* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
     public interface ProductDetailsResponseListenerLegacy {
         void onProductDetailsResponse(d5.i iVar, List<d5.o> list);
     }
@@ -335,15 +335,15 @@ public class BillingController implements d5.q, d5.d {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static /* synthetic */ void lambda$onPurchasesUpdatedInternal$7(AccountInstance accountInstance, TLRPC.TL_payments_assignPlayMarketTransaction tL_payments_assignPlayMarketTransaction, TL_update.TL_updateSentPhoneCode tL_updateSentPhoneCode) {
-        gg0 gg0Var = (gg0) LaunchActivity.N();
-        if (gg0Var == null) {
-            gg0Var = new gg0(accountInstance.getCurrentAccount());
+        ig0 ig0Var = (ig0) LaunchActivity.N();
+        if (ig0Var == null) {
+            ig0Var = new ig0(accountInstance.getCurrentAccount());
             org.telegram.ui.ActionBar.r2 U = LaunchActivity.U();
             if (U != null) {
-                U.presentFragment(gg0Var);
+                U.presentFragment(ig0Var);
             }
         }
-        gg0Var.v1(((TLRPC.TL_inputStorePaymentAuthCode) tL_payments_assignPlayMarketTransaction.purpose).phone_number, tL_updateSentPhoneCode.sent_code);
+        ig0Var.v1(((TLRPC.TL_inputStorePaymentAuthCode) tL_payments_assignPlayMarketTransaction.purpose).phone_number, tL_updateSentPhoneCode.sent_code);
     }
 
     /* JADX INFO: Access modifiers changed from: private */

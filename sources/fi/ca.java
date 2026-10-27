@@ -9,9 +9,9 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.cy;
+import org.telegram.ui.ey;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class ca implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -61,35 +61,35 @@ public final /* synthetic */ class ca implements Runnable {
                 org.telegram.ui.ActionBar.r2 U = LaunchActivity.U();
                 storyItem.dialogId = j10;
                 storyItem.justUploaded = true;
-                U.getOrCreateStoryViewer().F(sbVar.b, storyItem, null);
+                U.getOrCreateStoryViewer().G(sbVar.b, storyItem, null);
                 NotificationCenter.getInstance(sbVar.c).lambda$postNotificationNameOnUIThread$1(NotificationCenter.liveStoryUpdated, Long.valueOf(inputGroupCall.id));
                 break;
             default:
-                cy cyVar = (cy) notificationCenterDelegate;
+                ey eyVar = (ey) notificationCenterDelegate;
                 TLRPC.Chat chat = (TLRPC.Chat) tLObject2;
                 TLRPC.User user = (TLRPC.User) tLObject;
                 long j11 = this.b;
                 boolean z11 = this.c;
                 if (chat != null) {
-                    cyVar.getClass();
+                    eyVar.getClass();
                     if (ChatObject.isNotInChat(chat)) {
-                        cyVar.getMessagesController().deleteDialog(j11, 0, z11);
+                        eyVar.getMessagesController().deleteDialog(j11, 0, z11);
                     } else {
-                        cyVar.getMessagesController().deleteParticipantFromChat(-j11, cyVar.getMessagesController().getUser(Long.valueOf(cyVar.getUserConfig().getClientUserId())), (TLRPC.Chat) null, z11, z11);
+                        eyVar.getMessagesController().deleteParticipantFromChat(-j11, eyVar.getMessagesController().getUser(Long.valueOf(eyVar.getUserConfig().getClientUserId())), (TLRPC.Chat) null, z11, z11);
                     }
                 } else {
-                    cyVar.getMessagesController().deleteDialog(j11, 0, z11);
+                    eyVar.getMessagesController().deleteDialog(j11, 0, z11);
                     if (user != null && user.bot && this.d) {
-                        cyVar.getMessagesController().blockPeer(user.id);
+                        eyVar.getMessagesController().blockPeer(user.id);
                     }
                 }
-                cyVar.getMessagesController().checkIfFolderEmpty(cyVar.W2);
+                eyVar.getMessagesController().checkIfFolderEmpty(eyVar.W2);
                 break;
         }
     }
 
-    public /* synthetic */ ca(cy cyVar, TLRPC.Chat chat, long j10, boolean z10, TLRPC.User user, boolean z11) {
-        this.e = cyVar;
+    public /* synthetic */ ca(ey eyVar, TLRPC.Chat chat, long j10, boolean z10, TLRPC.User user, boolean z11) {
+        this.e = eyVar;
         this.f = chat;
         this.b = j10;
         this.c = z10;

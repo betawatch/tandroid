@@ -111,9 +111,9 @@ import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public class ChatActivityEnterView extends FrameLayout implements NotificationCenter.NotificationCenterDelegate, uw0, zy0, rz0, oe.d, org.telegram.ui.ActionBar.p6 {
+public class ChatActivityEnterView extends FrameLayout implements NotificationCenter.NotificationCenterDelegate, vw0, az0, sz0, oe.d, org.telegram.ui.ActionBar.p6 {
     public static final /* synthetic */ int r5 = 0;
     public boolean A0;
     public final ke A1;
@@ -204,7 +204,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
     public boolean P;
     public final ImageView P0;
     public final we P1;
-    public final org.telegram.ui.un P2;
+    public final org.telegram.ui.wn P2;
     public Drawable P3;
     public int P4;
     public int Q;
@@ -233,17 +233,17 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
     public BotForumHelper.SteamingSendButtonState T4;
     public org.telegram.ui.ActionBar.q1 U;
     public dg U0;
-    public um0 U1;
+    public vm0 U1;
     public MessageObject U2;
     public final Rect U3;
     public int U4;
     public sd V;
     public AnimatorSet V0;
     public Editable V1;
-    public org.telegram.ui.kn V2;
+    public org.telegram.ui.mn V2;
     public Drawable V3;
     public int V4;
-    public org.telegram.ui.ip W;
+    public org.telegram.ui.kp W;
     public boolean W0;
     public boolean W1;
     public MessageObject W2;
@@ -301,20 +301,20 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
     public final Matrix e5;
     public String f;
     public Runnable f0;
-    public h91 f1;
+    public i91 f1;
     public int f2;
     public boolean f3;
     public long f4;
     public final h6 f5;
     public boolean g0;
-    public ak0 g1;
+    public bk0 g1;
     public boolean g2;
     public boolean g3;
     public float g4;
     public final h6 g5;
     public float h;
     public boolean h0;
-    public gl0 h1;
+    public hl0 h1;
     public boolean h2;
     public boolean h3;
     public float h4;
@@ -344,7 +344,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
     public float l4;
     public final oe.b l5;
     public nf m0;
-    public final vw0 m1;
+    public final ww0 m1;
     public MessageObject m2;
     public boolean m3;
     public float m4;
@@ -362,7 +362,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
     public int o3;
     public float o4;
     public float o5;
-    public cq0 p0;
+    public dq0 p0;
     public final bi.r p1;
     public boolean p2;
     public boolean p3;
@@ -426,7 +426,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
     public boolean z3;
     public boolean z4;
 
-    /* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+    /* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
     public class RecordCircle extends View {
         public final float E;
         public float F;
@@ -548,7 +548,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
             }
             invalidate();
             chatActivityEnterView.p4 = 0.0f;
-            chatActivityEnterView.u0();
+            chatActivityEnterView.t0();
             chatActivityEnterView.m4 = 0.0f;
             chatActivityEnterView.h4 = 0.0f;
             chatActivityEnterView.g4 = 0.0f;
@@ -580,9 +580,9 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
             ChatActivityEnterView chatActivityEnterView = ChatActivityEnterView.this;
             Paint paint = chatActivityEnterView.M3;
             int i10 = org.telegram.ui.ActionBar.y6.cf;
-            paint.setColor(chatActivityEnterView.f0(i10));
-            this.h.d.setColor(i0.a.o(chatActivityEnterView.f0(i10), 38));
-            this.n.d.setColor(i0.a.o(chatActivityEnterView.f0(i10), 76));
+            paint.setColor(chatActivityEnterView.e0(i10));
+            this.h.d.setColor(i0.a.o(chatActivityEnterView.e0(i10), 38));
+            this.n.d.setColor(i0.a.o(chatActivityEnterView.e0(i10), 76));
             this.y = chatActivityEnterView.M3.getAlpha();
         }
 
@@ -652,7 +652,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
             float f20;
             Drawable drawable4;
             Drawable drawable5;
-            gl0 gl0Var;
+            hl0 hl0Var;
             float f21;
             float f22;
             ChatActivityEnterView chatActivityEnterView = ChatActivityEnterView.this;
@@ -757,11 +757,11 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                         if (this.e > 0.0f) {
                             f15 = 0.7f;
                             f14 = 0.0f;
-                            paint3.setColor(i0.a.f(this.e, chatActivityEnterView.f0(org.telegram.ui.ActionBar.y6.cf), chatActivityEnterView.f0(org.telegram.ui.ActionBar.y6.kf)));
+                            paint3.setColor(i0.a.f(this.e, chatActivityEnterView.e0(org.telegram.ui.ActionBar.y6.cf), chatActivityEnterView.e0(org.telegram.ui.ActionBar.y6.kf)));
                         } else {
                             f14 = 0.0f;
                             f15 = 0.7f;
-                            paint3.setColor(chatActivityEnterView.f0(org.telegram.ui.ActionBar.y6.cf));
+                            paint3.setColor(chatActivityEnterView.e0(org.telegram.ui.ActionBar.y6.cf));
                         }
                         a();
                         Drawable drawable62 = null;
@@ -872,7 +872,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                                     drawable5 = drawable;
                                     f20 = 1.0f;
                                     canvas.drawCircle(i10 + chatActivityEnterView.t4, f23, max22, paint2);
-                                } else if (chatActivityEnterView.c1 || this.e <= 0.0f || (gl0Var = chatActivityEnterView.h1) == null) {
+                                } else if (chatActivityEnterView.c1 || this.e <= 0.0f || (hl0Var = chatActivityEnterView.h1) == null) {
                                     drawable4 = drawable2;
                                     i10 = measuredWidth;
                                     drawable5 = drawable;
@@ -887,18 +887,18 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                                     drawable4 = drawable2;
                                     int i11 = 0;
                                     int i12 = 0;
-                                    for (View view = (View) gl0Var.getParent(); view != getParent(); view = (View) view.getParent()) {
+                                    for (View view = (View) hl0Var.getParent(); view != getParent(); view = (View) view.getParent()) {
                                         i12 = (int) (view.getY() + i12);
                                         i11 = (int) (view.getX() + i11);
                                     }
                                     float f49 = i12;
-                                    float y3 = (gl0Var.getY() + f49) - getY();
-                                    float y10 = ((gl0Var.getY() + gl0Var.getMeasuredHeight()) + f49) - getY();
+                                    float y3 = (hl0Var.getY() + f49) - getY();
+                                    float y10 = ((hl0Var.getY() + hl0Var.getMeasuredHeight()) + f49) - getY();
                                     float f50 = i11;
-                                    float x9 = (((gl0Var.getX() + gl0Var.getMeasuredWidth()) + f50) - getX()) - chatActivityEnterView.I;
-                                    float x10 = ((gl0Var.getX() + f50) - getX()) + chatActivityEnterView.I;
+                                    float x9 = (((hl0Var.getX() + hl0Var.getMeasuredWidth()) + f50) - getX()) - chatActivityEnterView.I;
+                                    float x10 = ((hl0Var.getX() + f50) - getX()) + chatActivityEnterView.I;
                                     i10 = measuredWidth;
-                                    float measuredHeight = chatActivityEnterView.c1 ? 0.0f : gl0Var.getMeasuredHeight() / 2.0f;
+                                    float measuredHeight = chatActivityEnterView.c1 ? 0.0f : hl0Var.getMeasuredHeight() / 2.0f;
                                     drawable5 = drawable;
                                     float lerp = AndroidUtilities.lerp(f45, y3, this.e);
                                     float lerp2 = AndroidUtilities.lerp(f44, y10, this.e);
@@ -1030,7 +1030,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
         }
     }
 
-    /* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+    /* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
     public class SlideTextView extends View {
         public final int E;
         public final Path F;
@@ -1075,7 +1075,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
             textPaint2.setTypeface(AndroidUtilities.bold());
             int i10 = org.telegram.ui.ActionBar.y6.Wk;
             int i11 = ChatActivityEnterView.r5;
-            paint.setColor(ChatActivityEnterView.this.f0(i10));
+            paint.setColor(ChatActivityEnterView.this.e0(i10));
             paint.setStyle(Paint.Style.STROKE);
             paint.setStrokeWidth(AndroidUtilities.dpf2(z10 ? 1.0f : 1.6f));
             paint.setStrokeCap(Paint.Cap.ROUND);
@@ -1092,14 +1092,14 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
             int i10 = org.telegram.ui.ActionBar.y6.nf;
             int i11 = ChatActivityEnterView.r5;
             ChatActivityEnterView chatActivityEnterView = ChatActivityEnterView.this;
-            int f02 = chatActivityEnterView.f0(i10);
-            this.a.setColor(f02);
+            int e02 = chatActivityEnterView.e0(i10);
+            this.a.setColor(e02);
             int i12 = org.telegram.ui.ActionBar.y6.mf;
-            int f03 = chatActivityEnterView.f0(i12);
-            this.b.setColor(f03);
+            int e03 = chatActivityEnterView.e0(i12);
+            this.b.setColor(e03);
             this.s = r2.getAlpha();
             this.v = r4.getAlpha();
-            org.telegram.ui.Cells.y i02 = org.telegram.ui.ActionBar.y6.i0(AndroidUtilities.dp(60.0f), 0, i0.a.o(chatActivityEnterView.f0(i12), 26));
+            org.telegram.ui.Cells.y i02 = org.telegram.ui.ActionBar.y6.i0(AndroidUtilities.dp(60.0f), 0, i0.a.o(chatActivityEnterView.e0(i12), 26));
             this.L = i02;
             i02.setCallback(this);
         }
@@ -1138,9 +1138,9 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                 return;
             }
             int dp = AndroidUtilities.dp(16.0f) + staticLayout.getWidth();
-            int f02 = chatActivityEnterView.f0(org.telegram.ui.ActionBar.y6.nf);
+            int e02 = chatActivityEnterView.e0(org.telegram.ui.ActionBar.y6.nf);
             TextPaint textPaint = this.a;
-            textPaint.setColor(f02);
+            textPaint.setColor(e02);
             textPaint.setAlpha((int) ((1.0f - this.n) * this.s * this.r));
             this.b.setAlpha((int) (this.v * this.n));
             int color = textPaint.getColor();
@@ -1315,13 +1315,13 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                 chatActivityEnterView.F2 = false;
                 MediaDataController mediaDataController = MediaDataController.getInstance(chatActivityEnterView.Q);
                 long j11 = chatActivityEnterView.Q2;
-                org.telegram.ui.un unVar = chatActivityEnterView.P2;
-                if (unVar != null && unVar.t4) {
-                    j10 = unVar.b();
+                org.telegram.ui.wn wnVar = chatActivityEnterView.P2;
+                if (wnVar != null && wnVar.t4) {
+                    j10 = wnVar.b();
                 }
                 mediaDataController.pushDraftVoiceMessage(j11, j10, null);
                 chatActivityEnterView.I1(2, true);
-                chatActivityEnterView.G(true);
+                chatActivityEnterView.F(true);
             }
             return true;
         }
@@ -1336,7 +1336,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
         }
     }
 
-    public ChatActivityEnterView(Activity activity, vw0 vw0Var, org.telegram.ui.un unVar, boolean z10, final org.telegram.ui.ActionBar.u6 u6Var) {
+    public ChatActivityEnterView(Activity activity, ww0 ww0Var, org.telegram.ui.wn wnVar, boolean z10, final org.telegram.ui.ActionBar.u6 u6Var) {
         super(activity);
         int i10;
         String str;
@@ -1419,51 +1419,51 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
         this.m5 = new oe.b(3, this, dsVar, 320L, false);
         this.W3 = u6Var;
         this.X3 = z10;
-        this.i2 = z10 && !AndroidUtilities.isInMultiwindow && (unVar == null || !unVar.isInBubbleMode());
+        this.i2 = z10 && !AndroidUtilities.isInMultiwindow && (wnVar == null || !wnVar.isInBubbleMode());
         Paint paint2 = new Paint(1);
         this.Q1 = paint2;
-        paint2.setColor(f0(org.telegram.ui.ActionBar.y6.af));
+        paint2.setColor(e0(org.telegram.ui.ActionBar.y6.af));
         setFocusable(true);
         setFocusableInTouchMode(true);
         setWillNotDraw(false);
         setClipChildren(false);
-        NotificationCenter.getInstance(this.Q).addObserver(this, NotificationCenter.recordStarted);
-        NotificationCenter.getInstance(this.Q).addObserver(this, NotificationCenter.recordPaused);
-        NotificationCenter.getInstance(this.Q).addObserver(this, NotificationCenter.recordResumed);
-        NotificationCenter.getInstance(this.Q).addObserver(this, NotificationCenter.recordStartError);
-        NotificationCenter.getInstance(this.Q).addObserver(this, NotificationCenter.recordStopped);
-        NotificationCenter.getInstance(this.Q).addObserver(this, NotificationCenter.recordProgressChanged);
-        NotificationCenter.getInstance(this.Q).addObserver(this, NotificationCenter.closeChats);
-        NotificationCenter.getInstance(this.Q).addObserver(this, NotificationCenter.audioDidSent);
-        NotificationCenter.getInstance(this.Q).addObserver(this, NotificationCenter.audioRouteChanged);
-        NotificationCenter.getInstance(this.Q).addObserver(this, NotificationCenter.messagePlayingProgressDidChanged);
-        NotificationCenter.getInstance(this.Q).addObserver(this, NotificationCenter.featuredStickersDidLoad);
-        NotificationCenter.getInstance(this.Q).addObserver(this, NotificationCenter.messageReceivedByServer2);
-        NotificationCenter.getInstance(this.Q).addObserver(this, NotificationCenter.sendingMessagesChanged);
-        NotificationCenter.getInstance(this.Q).addObserver(this, NotificationCenter.audioRecordTooShort);
-        NotificationCenter.getInstance(this.Q).addObserver(this, NotificationCenter.updateBotMenuButton);
-        NotificationCenter.getInstance(this.Q).addObserver(this, NotificationCenter.didUpdatePremiumGiftFieldIcon);
-        NotificationCenter.getInstance(this.Q).addObserver(this, NotificationCenter.currentUserPremiumStatusChanged);
-        NotificationCenter.getGlobalInstance().addObserver(this, NotificationCenter.emojiLoaded);
+        NotificationCenter.getInstance(this.Q).addWeakObserver(this, NotificationCenter.recordStarted);
+        NotificationCenter.getInstance(this.Q).addWeakObserver(this, NotificationCenter.recordPaused);
+        NotificationCenter.getInstance(this.Q).addWeakObserver(this, NotificationCenter.recordResumed);
+        NotificationCenter.getInstance(this.Q).addWeakObserver(this, NotificationCenter.recordStartError);
+        NotificationCenter.getInstance(this.Q).addWeakObserver(this, NotificationCenter.recordStopped);
+        NotificationCenter.getInstance(this.Q).addWeakObserver(this, NotificationCenter.recordProgressChanged);
+        NotificationCenter.getInstance(this.Q).addWeakObserver(this, NotificationCenter.closeChats);
+        NotificationCenter.getInstance(this.Q).addWeakObserver(this, NotificationCenter.audioDidSent);
+        NotificationCenter.getInstance(this.Q).addWeakObserver(this, NotificationCenter.audioRouteChanged);
+        NotificationCenter.getInstance(this.Q).addWeakObserver(this, NotificationCenter.messagePlayingProgressDidChanged);
+        NotificationCenter.getInstance(this.Q).addWeakObserver(this, NotificationCenter.featuredStickersDidLoad);
+        NotificationCenter.getInstance(this.Q).addWeakObserver(this, NotificationCenter.messageReceivedByServer2);
+        NotificationCenter.getInstance(this.Q).addWeakObserver(this, NotificationCenter.sendingMessagesChanged);
+        NotificationCenter.getInstance(this.Q).addWeakObserver(this, NotificationCenter.audioRecordTooShort);
+        NotificationCenter.getInstance(this.Q).addWeakObserver(this, NotificationCenter.updateBotMenuButton);
+        NotificationCenter.getInstance(this.Q).addWeakObserver(this, NotificationCenter.didUpdatePremiumGiftFieldIcon);
+        NotificationCenter.getInstance(this.Q).addWeakObserver(this, NotificationCenter.currentUserPremiumStatusChanged);
+        NotificationCenter.getGlobalInstance().addWeakObserver(this, NotificationCenter.emojiLoaded);
         this.O2 = activity;
-        this.P2 = unVar;
-        if (unVar != null) {
-            this.G2 = unVar.getClassGuid();
+        this.P2 = wnVar;
+        if (wnVar != null) {
+            this.G2 = wnVar.getClassGuid();
         }
-        this.m1 = vw0Var;
-        this.n1 = vw0Var;
-        vw0Var.setDelegate(this);
+        this.m1 = ww0Var;
+        this.n1 = ww0Var;
+        ww0Var.setDelegate(this);
         this.B2 = MessagesController.getGlobalMainSettings().getBoolean("send_by_enter", false);
         ke keVar = new ke(this, activity, i13);
         this.z1 = keVar;
         keVar.setClipChildren(false);
         keVar.setClipToPadding(false);
         keVar.setPadding(0, AndroidUtilities.dp(1.0f), 0, 0);
-        addView(keVar, gb1.h(-1, -2.0f, 83, 0.0f, 1.0f, 0.0f, 0.0f));
+        addView(keVar, kb1.h(-1, -2.0f, 83, 0.0f, 1.0f, 0.0f, 0.0f));
         me meVar = new me(this, activity);
         this.y1 = meVar;
         meVar.setClipChildren(false);
-        keVar.addView(meVar, gb1.h(-1, -2.0f, 80, 0.0f, 0.0f, 44.0f, 0.0f));
+        keVar.addView(meVar, kb1.h(-1, -2.0f, 80, 0.0f, 0.0f, 44.0f, 0.0f));
         ne neVar = new ne(this, activity);
         this.Q0 = neVar;
         neVar.setContentDescription(LocaleController.getString(R.string.AccDescrEmojiButton));
@@ -1474,25 +1474,25 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
         PorterDuff.Mode mode = PorterDuff.Mode.SRC_IN;
         org.telegram.ui.ActionBar.f7.t(neVar, i14, u6Var, mode);
         int i15 = org.telegram.ui.ActionBar.y6.i6;
-        int f02 = f0(i15);
+        int e02 = e0(i15);
         float dp2 = AndroidUtilities.dp(19.0f);
         int dp3 = AndroidUtilities.dp(1.0f);
         int dp4 = AndroidUtilities.dp(3.0f);
-        neVar.setBackground(org.telegram.ui.ActionBar.y6.X(dp2, f02, dp3, dp4, dp3, dp4));
-        neVar.setOnClickListener(new ud(this, 14));
-        meVar.addView(neVar, gb1.h(44, 44.0f, 83, 2.0f, 0.0f, 0.0f, 0.0f));
-        a1(false, false);
+        neVar.setBackground(org.telegram.ui.ActionBar.y6.X(dp2, e02, dp3, dp4, dp3, dp4));
+        neVar.setOnClickListener(new td(this, 14));
+        meVar.addView(neVar, kb1.h(44, 44.0f, 83, 2.0f, 0.0f, 0.0f, 0.0f));
+        Z0(false, false);
         ImageView imageView = new ImageView(activity);
         this.R0 = imageView;
         ImageView.ScaleType scaleType = ImageView.ScaleType.CENTER;
         imageView.setScaleType(scaleType);
         imageView.setImageResource(R.drawable.menu_delete_old);
         org.telegram.ui.ActionBar.f7.t(imageView, i14, u6Var, mode);
-        int f03 = f0(i15);
+        int e03 = e0(i15);
         float dp5 = AndroidUtilities.dp(19.0f);
         int dp6 = AndroidUtilities.dp(1.0f);
         int dp7 = AndroidUtilities.dp(3.0f);
-        imageView.setBackground(org.telegram.ui.ActionBar.y6.X(dp5, f03, dp6, dp7, dp6, dp7));
+        imageView.setBackground(org.telegram.ui.ActionBar.y6.X(dp5, e03, dp6, dp7, dp6, dp7));
         imageView.setVisibility(8);
         imageView.setContentDescription(LocaleController.getString(R.string.ArticleDeleteDraft));
         imageView.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.ee
@@ -1522,8 +1522,8 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                         int i17 = ChatActivityEnterView.r5;
                         MessagesController.getGlobalMainSettings().edit().putInt("aihintshown", 3).apply();
                         ChatActivityEnterView chatActivityEnterView2 = this.b;
-                        org.telegram.ui.un unVar2 = chatActivityEnterView2.P2;
-                        long a2 = unVar2 != null ? unVar2.a() : chatActivityEnterView2.Q2;
+                        org.telegram.ui.wn wnVar2 = chatActivityEnterView2.P2;
+                        long a2 = wnVar2 != null ? wnVar2.a() : chatActivityEnterView2.Q2;
                         boolean z11 = chatActivityEnterView2.D1;
                         org.telegram.ui.ActionBar.u6 u6Var2 = u6Var;
                         if (!z11) {
@@ -1553,15 +1553,15 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                 }
             }
         });
-        meVar.addView(imageView, gb1.h(44, 44.0f, 83, 2.0f, 0.0f, 0.0f, 0.0f));
+        meVar.addView(imageView, kb1.h(44, 44.0f, 83, 2.0f, 0.0f, 0.0f, 0.0f));
         if (z10) {
-            int i16 = unVar != null ? unVar.d4 : -1;
+            int i16 = wnVar != null ? wnVar.d4 : -1;
             bi.r rVar = new bi.r(activity, 4);
             this.p1 = rVar;
             rVar.setOrientation(0);
             rVar.setEnabled(false);
             rVar.setClipChildren(false);
-            meVar.addView(rVar, gb1.h(-2, 44.0f, 85, 0.0f, 0.0f, 44.0f, 0.0f));
+            meVar.addView(rVar, kb1.h(-2, 44.0f, 85, 0.0f, 0.0f, 44.0f, 0.0f));
             if (i16 != 9) {
                 ImageView imageView2 = new ImageView(activity);
                 this.I1 = imageView2;
@@ -1579,25 +1579,25 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                 imageView2.setContentDescription(LocaleController.getString(str, i10));
                 org.telegram.ui.ActionBar.f7.t(imageView2, i14, u6Var, PorterDuff.Mode.MULTIPLY);
                 imageView2.setScaleType(scaleType);
-                org.telegram.ui.Cells.y g02 = org.telegram.ui.ActionBar.y6.g0(f0(i15), 1, -1);
+                org.telegram.ui.Cells.y g02 = org.telegram.ui.ActionBar.y6.g0(e0(i15), 1, -1);
                 org.telegram.ui.ActionBar.b7 N = org.telegram.ui.ActionBar.f7.N(i15);
                 imageView2.setBackground(g02);
                 org.telegram.ui.ActionBar.f7.k(imageView2, g02, null, N, u6Var);
                 imageView2.setVisibility((!this.h2 || ((ogVar = this.Z2) != null && ogVar.p0())) ? 8 : 0);
-                rVar.addView(imageView2, gb1.r(44, 44));
-                imageView2.setOnClickListener(new oe(this, unVar, activity));
+                rVar.addView(imageView2, kb1.r(44, 44));
+                imageView2.setOnClickListener(new oe(this, wnVar, activity));
             }
             jg.l lVar = new jg.l(activity, i11);
             this.r1 = lVar;
             lVar.setScaleType(scaleType);
             org.telegram.ui.ActionBar.f7.t(lVar, i14, u6Var, PorterDuff.Mode.MULTIPLY);
             lVar.setImageResource(R.drawable.msg_input_attach2);
-            org.telegram.ui.Cells.y g03 = org.telegram.ui.ActionBar.y6.g0(f0(i15), 1, -1);
+            org.telegram.ui.Cells.y g03 = org.telegram.ui.ActionBar.y6.g0(e0(i15), 1, -1);
             org.telegram.ui.ActionBar.b7 N2 = org.telegram.ui.ActionBar.f7.N(i15);
             lVar.setBackground(g03);
             org.telegram.ui.ActionBar.f7.k(lVar, g03, null, N2, u6Var);
-            meVar.addView(lVar, gb1.i(44, 44, 85));
-            lVar.setOnClickListener(new ud(this, 18));
+            meVar.addView(lVar, kb1.i(44, 44, 85));
+            lVar.setOnClickListener(new td(this, 18));
             lVar.setContentDescription(LocaleController.getString(R.string.AccDescrAttachButton));
             E1(1);
         }
@@ -1609,13 +1609,13 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
         imageView3.setScaleType(scaleType);
         PorterDuff.Mode mode2 = PorterDuff.Mode.MULTIPLY;
         org.telegram.ui.ActionBar.f7.t(imageView3, i14, u6Var, mode2);
-        org.telegram.ui.Cells.y g04 = org.telegram.ui.ActionBar.y6.g0(f0(i15), 1, AndroidUtilities.dp(16.0f));
+        org.telegram.ui.Cells.y g04 = org.telegram.ui.ActionBar.y6.g0(e0(i15), 1, AndroidUtilities.dp(16.0f));
         org.telegram.ui.ActionBar.b7 N3 = org.telegram.ui.ActionBar.f7.N(i15);
         imageView3.setBackground(g04);
         org.telegram.ui.ActionBar.f7.k(imageView3, g04, null, N3, u6Var);
-        keVar.addView(imageView3, gb1.h(44, 44.0f, 51, 0.0f, 1.0f, 0.0f, 0.0f));
+        keVar.addView(imageView3, kb1.h(44, 44.0f, 51, 0.0f, 1.0f, 0.0f, 0.0f));
         imageView3.setContentDescription(LocaleController.getString(R.string.AIEditor));
-        gb1.b(imageView3);
+        kb1.b(imageView3);
         imageView3.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.ee
             public final /* synthetic */ ChatActivityEnterView b;
 
@@ -1643,8 +1643,8 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                         int i17 = ChatActivityEnterView.r5;
                         MessagesController.getGlobalMainSettings().edit().putInt("aihintshown", 3).apply();
                         ChatActivityEnterView chatActivityEnterView2 = this.b;
-                        org.telegram.ui.un unVar2 = chatActivityEnterView2.P2;
-                        long a2 = unVar2 != null ? unVar2.a() : chatActivityEnterView2.Q2;
+                        org.telegram.ui.wn wnVar2 = chatActivityEnterView2.P2;
+                        long a2 = wnVar2 != null ? wnVar2.a() : chatActivityEnterView2.Q2;
                         boolean z11 = chatActivityEnterView2.D1;
                         org.telegram.ui.ActionBar.u6 u6Var2 = u6Var;
                         if (!z11) {
@@ -1683,20 +1683,20 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
         imageView4.setImageResource(R.drawable.iv_fullscreen);
         imageView4.setScaleType(scaleType);
         org.telegram.ui.ActionBar.f7.t(imageView4, i14, u6Var, mode2);
-        org.telegram.ui.Cells.y g05 = org.telegram.ui.ActionBar.y6.g0(f0(i15), 1, AndroidUtilities.dp(16.0f));
+        org.telegram.ui.Cells.y g05 = org.telegram.ui.ActionBar.y6.g0(e0(i15), 1, AndroidUtilities.dp(16.0f));
         org.telegram.ui.ActionBar.b7 N4 = org.telegram.ui.ActionBar.f7.N(i15);
         imageView4.setBackground(g05);
         org.telegram.ui.ActionBar.f7.k(imageView4, g05, null, N4, u6Var);
-        keVar.addView(imageView4, gb1.h(44, 44.0f, 53, 0.0f, 1.0f, 0.0f, 0.0f));
+        keVar.addView(imageView4, kb1.h(44, 44.0f, 53, 0.0f, 1.0f, 0.0f, 0.0f));
         imageView4.setContentDescription(LocaleController.getString(R.string.ArticleEditor));
-        gb1.b(imageView4);
-        imageView4.setOnClickListener(new ud(this, 20));
+        kb1.b(imageView4);
+        imageView4.setOnClickListener(new td(this, 20));
         imageView4.setVisibility(8);
         imageView4.setAlpha(0.0f);
         imageView4.setScaleX(0.6f);
         imageView4.setScaleY(0.6f);
         if (this.b3 != null) {
-            U();
+            T();
         }
         ImageView imageView5 = new ImageView(activity);
         this.B1 = imageView5;
@@ -1704,16 +1704,16 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
         imageView5.setScaleType(scaleType);
         imageView5.setVisibility(8);
         org.telegram.ui.ActionBar.f7.t(imageView5, org.telegram.ui.ActionBar.y6.hl, u6Var, mode);
-        keVar.addView(imageView5, gb1.i(44, 44, 85));
+        keVar.addView(imageView5, kb1.i(44, 44, 85));
         ke keVar2 = new ke(this, activity, i11);
         this.A1 = keVar2;
         keVar2.setClipChildren(false);
         keVar2.setClipToPadding(false);
-        keVar.addView(keVar2, gb1.i(100, 44, 85));
+        keVar.addView(keVar2, kb1.i(100, 44, 85));
         ue ueVar = new ue(this, activity, u6Var);
         this.Z0 = ueVar;
         ueVar.setSoundEffectsEnabled(false);
-        keVar2.addView(ueVar, gb1.i(44, 44, 85));
+        keVar2.addView(ueVar, kb1.i(44, 44, 85));
         ueVar.setFocusable(true);
         ueVar.setImportantForAccessibility(1);
         Drawable mutate = getResources().getDrawable(R.drawable.input_mic).mutate();
@@ -1727,7 +1727,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
         veVar.setImportantForAccessibility(2);
         int dp8 = AndroidUtilities.dp(10.0f);
         veVar.setPadding(dp8, dp8, dp8, dp8);
-        ueVar.addView(veVar, gb1.g(44.0f, 44));
+        ueVar.addView(veVar, kb1.g(44.0f, 44));
         ImageView imageView6 = new ImageView(activity);
         this.P0 = imageView6;
         imageView6.setVisibility(4);
@@ -1740,12 +1740,12 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
         imageView6.setScaleX(0.1f);
         imageView6.setScaleY(0.1f);
         imageView6.setAlpha(0.0f);
-        org.telegram.ui.Cells.y g06 = org.telegram.ui.ActionBar.y6.g0(f0(i15), 1, -1);
+        org.telegram.ui.Cells.y g06 = org.telegram.ui.ActionBar.y6.g0(e0(i15), 1, -1);
         org.telegram.ui.ActionBar.b7 N5 = org.telegram.ui.ActionBar.f7.N(i15);
         imageView6.setBackground(g06);
         org.telegram.ui.ActionBar.f7.k(imageView6, g06, null, N5, u6Var);
-        keVar2.addView(imageView6, gb1.i(44, 44, 85));
-        imageView6.setOnClickListener(new ud(this, 0));
+        keVar2.addView(imageView6, kb1.i(44, 44, 85));
+        imageView6.setOnClickListener(new td(this, 0));
         xe xeVar = new xe(this, activity, c() ? R.drawable.input_schedule : R.drawable.send_plane_24, u6Var, 0);
         this.J0 = xeVar;
         xeVar.setVisibility(4);
@@ -1755,8 +1755,8 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
         xeVar.setScaleX(0.1f);
         xeVar.setScaleY(0.1f);
         xeVar.setAlpha(0.0f);
-        keVar2.addView(xeVar, gb1.i(100, 44, 85));
-        xeVar.setOnClickListener(new ud(this, i11));
+        keVar2.addView(xeVar, kb1.i(100, 44, 85));
+        xeVar.setOnClickListener(new td(this, i11));
         xeVar.setOnLongClickListener(new xd(this, i17));
         if (AndroidUtilities.isAccessibilityScreenReaderEnabled()) {
             keVar2.setOnLongClickListener(new xd(this, i17));
@@ -1764,8 +1764,8 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
         jh.h hVar = new jh.h(activity, u6Var);
         this.I0 = hVar;
         hVar.setVisibility(4);
-        hVar.setOnClickListener(new ud(this, 4));
-        keVar2.addView(hVar, gb1.i(44, 44, 85));
+        hVar.setOnClickListener(new td(this, 4));
+        keVar2.addView(hVar, kb1.i(44, 44, 85));
         wg wgVar = new wg(activity);
         this.F0 = wgVar;
         org.telegram.ui.ActionBar.b6 b6Var = wgVar.a;
@@ -1779,18 +1779,18 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
         wgVar.setPadding(AndroidUtilities.dp(14.0f), 0, AndroidUtilities.dp(14.0f), 0);
         b6Var.setGravity(21);
         wgVar.invalidate();
-        b6Var.setTextColor(f0(i14));
+        b6Var.setTextColor(e0(i14));
         wgVar.invalidate();
-        keVar2.addView(wgVar, gb1.i(74, 44, 85));
-        wgVar.setOnClickListener(new ud(this, 8));
+        keVar2.addView(wgVar, kb1.i(74, 44, 85));
+        wgVar.setOnClickListener(new td(this, 8));
         wgVar.setOnLongClickListener(new xd(this, i11));
         SharedPreferences globalEmojiSettings = MessagesController.getGlobalEmojiSettings();
         this.x2 = globalEmojiSettings.getInt("kbd_height", AndroidUtilities.dp(200.0f));
         this.y2 = globalEmojiSettings.getInt("kbd_height_land3", AndroidUtilities.dp(200.0f));
-        h1(false, false);
-        G(false);
-        B();
-        T();
+        g1(false, false);
+        F(false);
+        A();
+        S();
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:81:0x0136, code lost:
@@ -1819,7 +1819,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static boolean D(int i10, long j10, org.telegram.ui.ActionBar.r2 r2Var, CharSequence charSequence) {
+    public static boolean C(int i10, long j10, org.telegram.ui.ActionBar.r2 r2Var, CharSequence charSequence) {
         c6[] c6VarArr;
         boolean z10;
         int i11;
@@ -1971,7 +1971,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                         }
                     }
                     if (document == null || !MessageObject.isFreeEmoji(document)) {
-                        wc.b0(r2Var).r(document, AndroidUtilities.replaceTags(LocaleController.getString("UnlockPremiumEmojiHint", R.string.UnlockPremiumEmojiHint)), LocaleController.getString("PremiumMore", R.string.PremiumMore), new td(0, r2Var)).j();
+                        wc.b0(r2Var).r(document, AndroidUtilities.replaceTags(LocaleController.getString("UnlockPremiumEmojiHint", R.string.UnlockPremiumEmojiHint)), LocaleController.getString("PremiumMore", R.string.PremiumMore), new ud(0, r2Var)).j();
                         return true;
                     }
                 } else {
@@ -1985,7 +1985,36 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
         return z11;
     }
 
-    public static void e(ChatActivityEnterView chatActivityEnterView, TLRPC.Document document, String str, MessageObject.SendAnimationData sendAnimationData, boolean z10, int i10, int i11, Object obj, Long l4, boolean z11) {
+    public static void e(ChatActivityEnterView chatActivityEnterView, TL_keyboard.KeyboardButton keyboardButton) {
+        org.telegram.ui.wn wnVar;
+        boolean z10 = chatActivityEnterView.T2 != null && (wnVar = chatActivityEnterView.P2) != null && wnVar.t4 && wnVar.b() == ((long) chatActivityEnterView.T2.getId());
+        MessageObject messageObject = ((chatActivityEnterView.T2 == null || z10) && !BotForumHelper.isBotForum(chatActivityEnterView.Q, chatActivityEnterView.Q2)) ? DialogObject.isChatDialog(chatActivityEnterView.Q2) ? chatActivityEnterView.m2 : null : chatActivityEnterView.T2;
+        MessageObject messageObject2 = chatActivityEnterView.T2;
+        if (messageObject2 == null || z10) {
+            messageObject2 = chatActivityEnterView.m2;
+        }
+        boolean Y = chatActivityEnterView.Y(keyboardButton, messageObject, messageObject2, null);
+        if (chatActivityEnterView.T2 == null || z10) {
+            MessageObject messageObject3 = chatActivityEnterView.m2;
+            if (messageObject3 != null && messageObject3.messageOwner.reply_markup.single_use) {
+                if (Y) {
+                    chatActivityEnterView.F0();
+                } else {
+                    chatActivityEnterView.p1(0, 0, true, true);
+                }
+                MessagesController.getMainSettings(chatActivityEnterView.Q).edit().putInt("answered_" + chatActivityEnterView.getTopicKeyString(), chatActivityEnterView.m2.getId()).commit();
+            }
+        } else {
+            chatActivityEnterView.F0();
+            chatActivityEnterView.V0(chatActivityEnterView.W2, true, false);
+        }
+        og ogVar = chatActivityEnterView.Z2;
+        if (ogVar != null) {
+            ogVar.A(null, true, 0, 0, 0L);
+        }
+    }
+
+    public static void f(ChatActivityEnterView chatActivityEnterView, TLRPC.Document document, String str, MessageObject.SendAnimationData sendAnimationData, boolean z10, int i10, int i11, Object obj, Long l4, boolean z11) {
         if (chatActivityEnterView.G0 > 0 && !chatActivityEnterView.c()) {
             og ogVar = chatActivityEnterView.Z2;
             if (ogVar != null) {
@@ -1996,21 +2025,21 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
             return;
         }
         if (chatActivityEnterView.R1 != 0) {
-            chatActivityEnterView.j1(0, true);
+            chatActivityEnterView.i1(0, true);
             chatActivityEnterView.U0.t(true);
             chatActivityEnterView.U0.B();
         }
-        chatActivityEnterView.k1(false, true, false, true);
+        chatActivityEnterView.j1(false, true, false, true);
         og ogVar2 = chatActivityEnterView.Z2;
         TL_stories.StoryItem P0 = ogVar2 != null ? ogVar2.P0() : null;
         SendMessagesHelper sendMessagesHelper = SendMessagesHelper.getInstance(chatActivityEnterView.Q);
         long j10 = chatActivityEnterView.Q2;
         MessageObject messageObject = chatActivityEnterView.T2;
         MessageObject threadMessage = chatActivityEnterView.getThreadMessage();
-        org.telegram.ui.kn knVar = chatActivityEnterView.V2;
+        org.telegram.ui.mn mnVar = chatActivityEnterView.V2;
         boolean z12 = obj instanceof TLRPC.TL_messages_stickerSet;
-        org.telegram.ui.un unVar = chatActivityEnterView.P2;
-        sendMessagesHelper.sendSticker(document, str, j10, messageObject, threadMessage, P0, knVar, sendAnimationData, z10, i10, i11, z12, obj, unVar != null ? unVar.L8() : null, l4.longValue(), chatActivityEnterView.getSendMonoForumPeerId(), chatActivityEnterView.getSendMessageSuggestionParams());
+        org.telegram.ui.wn wnVar = chatActivityEnterView.P2;
+        sendMessagesHelper.sendSticker(document, str, j10, messageObject, threadMessage, P0, mnVar, sendAnimationData, z10, i10, i11, z12, obj, wnVar != null ? wnVar.O8() : null, l4.longValue(), chatActivityEnterView.getSendMonoForumPeerId(), chatActivityEnterView.getSendMessageSuggestionParams());
         og ogVar3 = chatActivityEnterView.Z2;
         if (ogVar3 != null) {
             ogVar3.A(null, true, i10, 0, 0L);
@@ -2021,40 +2050,11 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
         MediaDataController.getInstance(chatActivityEnterView.Q).addRecentSticker(0, obj, document, (int) (System.currentTimeMillis() / 1000), false);
     }
 
-    public static void f(ChatActivityEnterView chatActivityEnterView, TL_keyboard.KeyboardButton keyboardButton) {
-        org.telegram.ui.un unVar;
-        boolean z10 = chatActivityEnterView.T2 != null && (unVar = chatActivityEnterView.P2) != null && unVar.t4 && unVar.b() == ((long) chatActivityEnterView.T2.getId());
-        MessageObject messageObject = ((chatActivityEnterView.T2 == null || z10) && !BotForumHelper.isBotForum(chatActivityEnterView.Q, chatActivityEnterView.Q2)) ? DialogObject.isChatDialog(chatActivityEnterView.Q2) ? chatActivityEnterView.m2 : null : chatActivityEnterView.T2;
-        MessageObject messageObject2 = chatActivityEnterView.T2;
-        if (messageObject2 == null || z10) {
-            messageObject2 = chatActivityEnterView.m2;
-        }
-        boolean Z = chatActivityEnterView.Z(keyboardButton, messageObject, messageObject2, null);
-        if (chatActivityEnterView.T2 == null || z10) {
-            MessageObject messageObject3 = chatActivityEnterView.m2;
-            if (messageObject3 != null && messageObject3.messageOwner.reply_markup.single_use) {
-                if (Z) {
-                    chatActivityEnterView.G0();
-                } else {
-                    chatActivityEnterView.q1(0, 0, true, true);
-                }
-                MessagesController.getMainSettings(chatActivityEnterView.Q).edit().putInt("answered_" + chatActivityEnterView.getTopicKeyString(), chatActivityEnterView.m2.getId()).commit();
-            }
-        } else {
-            chatActivityEnterView.G0();
-            chatActivityEnterView.W0(chatActivityEnterView.W2, true, false);
-        }
-        og ogVar = chatActivityEnterView.Z2;
-        if (ogVar != null) {
-            ogVar.A(null, true, 0, 0, 0L);
-        }
-    }
-
     /* JADX INFO: Access modifiers changed from: private */
     public MessageObject getThreadMessage() {
-        org.telegram.ui.un unVar = this.P2;
-        if (unVar != null) {
-            return unVar.j4;
+        org.telegram.ui.wn wnVar = this.P2;
+        if (wnVar != null) {
+            return wnVar.j4;
         }
         return null;
     }
@@ -2062,39 +2062,22 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
     /* JADX INFO: Access modifiers changed from: private */
     public int getThreadMessageId() {
         MessageObject messageObject;
-        org.telegram.ui.un unVar = this.P2;
-        if (unVar == null || (messageObject = unVar.j4) == null) {
+        org.telegram.ui.wn wnVar = this.P2;
+        if (wnVar == null || (messageObject = wnVar.j4) == null) {
             return 0;
         }
         return messageObject.getId();
     }
 
     private String getTopicKeyString() {
-        org.telegram.ui.un unVar = this.P2;
-        if (unVar == null || !unVar.t4) {
+        org.telegram.ui.wn wnVar = this.P2;
+        if (wnVar == null || !wnVar.t4) {
             return "" + this.Q2;
         }
-        return this.Q2 + "_" + unVar.b();
+        return this.Q2 + "_" + wnVar.b();
     }
 
-    public static void j(ChatActivityEnterView chatActivityEnterView) {
-        AnimatorSet animatorSet = new AnimatorSet();
-        try {
-            chatActivityEnterView.performHapticFeedback(3, 2);
-        } catch (Exception unused) {
-        }
-        ObjectAnimator ofFloat = ObjectAnimator.ofFloat(chatActivityEnterView, "lockAnimatedTranslation", chatActivityEnterView.k4);
-        ofFloat.setStartDelay(100L);
-        ofFloat.setDuration(350L);
-        ObjectAnimator ofFloat2 = ObjectAnimator.ofFloat(chatActivityEnterView, "snapAnimationProgress", 1.0f);
-        ofFloat2.setInterpolator(ds.h);
-        ofFloat2.setDuration(250L);
-        SharedConfig.removeLockRecordAudioVideoHint();
-        animatorSet.playTogether(ofFloat2, ofFloat, ObjectAnimator.ofFloat(chatActivityEnterView, "slideToCancelProgress", 1.0f).setDuration(200L), ObjectAnimator.ofFloat(chatActivityEnterView.k1, "cancelToProgress", 1.0f));
-        animatorSet.start();
-    }
-
-    public static CharSequence o(ArrayList arrayList, CharSequence charSequence, Paint.FontMetricsInt fontMetricsInt) {
+    public static CharSequence n(ArrayList arrayList, CharSequence charSequence, Paint.FontMetricsInt fontMetricsInt) {
         boolean z10;
         MediaDataController.sortEntities(arrayList);
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(s10.a(charSequence, false));
@@ -2114,68 +2097,68 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                             if (messageEntity.offset + messageEntity.length < spannableStringBuilder.length() && spannableStringBuilder.charAt(messageEntity.offset + messageEntity.length) == ' ') {
                                 messageEntity.length++;
                             }
-                            a71 a71Var = new a71("" + ((TLRPC.TL_inputMessageEntityMentionName) messageEntity).user_id.user_id, 3, null);
+                            b71 b71Var = new b71("" + ((TLRPC.TL_inputMessageEntityMentionName) messageEntity).user_id.user_id, 3, null);
                             int i11 = messageEntity.offset;
-                            spannableStringBuilder.setSpan(a71Var, i11, messageEntity.length + i11, 33);
+                            spannableStringBuilder.setSpan(b71Var, i11, messageEntity.length + i11, 33);
                         } else if (messageEntity instanceof TLRPC.TL_messageEntityMentionName) {
                             if (messageEntity.offset + messageEntity.length < spannableStringBuilder.length() && spannableStringBuilder.charAt(messageEntity.offset + messageEntity.length) == ' ') {
                                 messageEntity.length++;
                             }
-                            a71 a71Var2 = new a71("" + ((TLRPC.TL_messageEntityMentionName) messageEntity).user_id, 3, null);
+                            b71 b71Var2 = new b71("" + ((TLRPC.TL_messageEntityMentionName) messageEntity).user_id, 3, null);
                             int i12 = messageEntity.offset;
-                            spannableStringBuilder.setSpan(a71Var2, i12, messageEntity.length + i12, 33);
+                            spannableStringBuilder.setSpan(b71Var2, i12, messageEntity.length + i12, 33);
                         } else if (messageEntity instanceof TLRPC.TL_messageEntityCode) {
-                            y11 y11Var = new y11();
-                            y11Var.a |= 4;
-                            z11 z11Var = new z11(y11Var, 0);
+                            z11 z11Var = new z11();
+                            z11Var.a |= 4;
+                            a21 a21Var = new a21(z11Var, 0);
                             int i13 = messageEntity.offset;
-                            MediaDataController.addStyleToText(z11Var, i13, messageEntity.length + i13, spannableStringBuilder, true);
+                            MediaDataController.addStyleToText(a21Var, i13, messageEntity.length + i13, spannableStringBuilder, true);
                         } else if (!(messageEntity instanceof TLRPC.TL_messageEntityPre)) {
                             if (messageEntity instanceof TLRPC.TL_messageEntityBold) {
-                                y11 y11Var2 = new y11();
-                                y11Var2.a |= 1;
-                                z11 z11Var2 = new z11(y11Var2, 0);
+                                z11 z11Var2 = new z11();
+                                z11Var2.a |= 1;
+                                a21 a21Var2 = new a21(z11Var2, 0);
                                 int i14 = messageEntity.offset;
-                                MediaDataController.addStyleToText(z11Var2, i14, messageEntity.length + i14, spannableStringBuilder, true);
+                                MediaDataController.addStyleToText(a21Var2, i14, messageEntity.length + i14, spannableStringBuilder, true);
                             } else if (messageEntity instanceof TLRPC.TL_messageEntityItalic) {
-                                y11 y11Var3 = new y11();
-                                y11Var3.a |= 2;
-                                z11 z11Var3 = new z11(y11Var3, 0);
+                                z11 z11Var3 = new z11();
+                                z11Var3.a |= 2;
+                                a21 a21Var3 = new a21(z11Var3, 0);
                                 int i15 = messageEntity.offset;
-                                MediaDataController.addStyleToText(z11Var3, i15, messageEntity.length + i15, spannableStringBuilder, true);
+                                MediaDataController.addStyleToText(a21Var3, i15, messageEntity.length + i15, spannableStringBuilder, true);
                             } else if (messageEntity instanceof TLRPC.TL_messageEntityStrike) {
-                                y11 y11Var4 = new y11();
-                                y11Var4.a |= 8;
-                                z11 z11Var4 = new z11(y11Var4, 0);
+                                z11 z11Var4 = new z11();
+                                z11Var4.a |= 8;
+                                a21 a21Var4 = new a21(z11Var4, 0);
                                 int i16 = messageEntity.offset;
-                                MediaDataController.addStyleToText(z11Var4, i16, messageEntity.length + i16, spannableStringBuilder, true);
+                                MediaDataController.addStyleToText(a21Var4, i16, messageEntity.length + i16, spannableStringBuilder, true);
                             } else if (messageEntity instanceof TLRPC.TL_messageEntityUnderline) {
-                                y11 y11Var5 = new y11();
-                                y11Var5.a |= 16;
-                                z11 z11Var5 = new z11(y11Var5, 0);
+                                z11 z11Var5 = new z11();
+                                z11Var5.a |= 16;
+                                a21 a21Var5 = new a21(z11Var5, 0);
                                 int i17 = messageEntity.offset;
-                                MediaDataController.addStyleToText(z11Var5, i17, messageEntity.length + i17, spannableStringBuilder, true);
+                                MediaDataController.addStyleToText(a21Var5, i17, messageEntity.length + i17, spannableStringBuilder, true);
                             } else if (messageEntity instanceof TLRPC.TL_messageEntityTextUrl) {
-                                z61 z61Var = new z61(messageEntity.url, null);
+                                a71 a71Var = new a71(messageEntity.url, null);
                                 int i18 = messageEntity.offset;
-                                spannableStringBuilder.setSpan(z61Var, i18, messageEntity.length + i18, 33);
+                                spannableStringBuilder.setSpan(a71Var, i18, messageEntity.length + i18, 33);
                             } else if (messageEntity instanceof TLRPC.TL_messageEntityFormattedDate) {
-                                y11 y11Var6 = new y11();
-                                y11Var6.a |= 128;
+                                z11 z11Var6 = new z11();
+                                z11Var6.a |= 128;
                                 int i19 = messageEntity.offset;
-                                y11Var6.b = i19;
-                                y11Var6.c = i19 + messageEntity.length;
-                                y11Var6.d = messageEntity;
+                                z11Var6.b = i19;
+                                z11Var6.c = i19 + messageEntity.length;
+                                z11Var6.d = messageEntity;
                                 int i20 = messageEntity.offset;
-                                s10 s10Var = new s10(spannableStringBuilder.subSequence(i20, messageEntity.length + i20).toString(), y11Var6, (TLRPC.TL_messageEntityFormattedDate) messageEntity);
+                                s10 s10Var = new s10(spannableStringBuilder.subSequence(i20, messageEntity.length + i20).toString(), z11Var6, (TLRPC.TL_messageEntityFormattedDate) messageEntity);
                                 int i21 = messageEntity.offset;
                                 spannableStringBuilder.setSpan(s10Var, i21, messageEntity.length + i21, 33);
                             } else if (messageEntity instanceof TLRPC.TL_messageEntitySpoiler) {
-                                y11 y11Var7 = new y11();
-                                y11Var7.a |= 256;
-                                z11 z11Var6 = new z11(y11Var7, 0);
+                                z11 z11Var7 = new z11();
+                                z11Var7.a |= 256;
+                                a21 a21Var6 = new a21(z11Var7, 0);
                                 int i22 = messageEntity.offset;
-                                MediaDataController.addStyleToText(z11Var6, i22, messageEntity.length + i22, spannableStringBuilder, true);
+                                MediaDataController.addStyleToText(a21Var6, i22, messageEntity.length + i22, spannableStringBuilder, true);
                             } else if (messageEntity instanceof TLRPC.TL_messageEntityCustomEmoji) {
                                 TLRPC.TL_messageEntityCustomEmoji tL_messageEntityCustomEmoji = (TLRPC.TL_messageEntityCustomEmoji) messageEntity;
                                 c6 c6Var = tL_messageEntityCustomEmoji.document != null ? new c6(tL_messageEntityCustomEmoji.document, fontMetricsInt) : new c6(tL_messageEntityCustomEmoji.document_id, fontMetricsInt);
@@ -2218,7 +2201,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                     z10 = z11;
                     int i30 = (i29 < 0 || i29 >= spannableStringBuilder.length() || spannableStringBuilder.charAt(i29) != '\n') ? intValue : intValue - 1;
                     if (i28 > 0) {
-                        sj0.c(spannableStringBuilder, i27, i30, z12);
+                        tj0.c(spannableStringBuilder, i27, i30, z12);
                     }
                     i27 = intValue + 1;
                     if (i27 >= spannableStringBuilder.length() || spannableStringBuilder.charAt(intValue) != '\n') {
@@ -2237,7 +2220,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                 z11 = z10;
             }
             if (i27 < spannableStringBuilder.length() && i28 > 0) {
-                sj0.c(spannableStringBuilder, i27, spannableStringBuilder.length(), z12);
+                tj0.c(spannableStringBuilder, i27, spannableStringBuilder.length(), z12);
             }
         }
         CharSequence replaceEmoji = Emoji.replaceEmoji((CharSequence) new SpannableStringBuilder(spannableStringBuilder), fontMetricsInt, false, (int[]) null);
@@ -2289,52 +2272,14 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
     }
 
     public final void A() {
-        pf pfVar = this.E0;
-        boolean z10 = ((pfVar != null && !TextUtils.isEmpty(pfVar.getText())) || this.z2 || this.k3 || q0()) ? false : true;
-        if (z10) {
-            O();
-        }
-        hi.i0 i0Var = this.l0;
-        if (i0Var != null) {
-            boolean z11 = i0Var.f;
-            if (z11 != z10) {
-                i0Var.f = z10;
-                i0Var.requestLayout();
-                i0Var.invalidate();
-            }
-            if (z11 != this.l0.f) {
-                ne neVar = this.Q0;
-                Float valueOf = Float.valueOf(neVar.getX());
-                HashMap hashMap = this.B0;
-                hashMap.put(neVar, valueOf);
-                pf pfVar2 = this.E0;
-                if (pfVar2 != null) {
-                    hashMap.put(pfVar2, Float.valueOf(pfVar2.getX()));
-                }
-            }
-        }
-    }
-
-    public final void A1(boolean z10) {
-        if (this.q5 != 1 && this.Q2 > 0) {
-            O();
-        }
-        hi.i0 i0Var = this.l0;
-        if (i0Var != null) {
-            i0Var.setWebView(g0());
-        }
-        y1(z10);
-    }
-
-    public final void B() {
-        org.telegram.ui.un unVar = this.P2;
-        if (unVar == null) {
+        org.telegram.ui.wn wnVar = this.P2;
+        if (wnVar == null) {
             return;
         }
-        H1(unVar.e, unVar.m8);
+        H1(wnVar.e, wnVar.q8);
     }
 
-    public final void B0() {
+    public final void A0() {
         this.j2 = true;
         ef efVar = this.q0;
         if (efVar != null) {
@@ -2349,18 +2294,18 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
         AndroidUtilities.runOnUIThread(sdVar, 500L);
     }
 
-    public final void B1() {
-        pf pfVar = this.E0;
-        boolean z10 = false;
-        m1((pfVar == null || pfVar.getLineCount() <= 2 || this.E0.getText() == null || TextUtils.isEmpty(this.E0.getText().toString().trim())) ? false : true);
-        pf pfVar2 = this.E0;
-        if (pfVar2 != null && pfVar2.getLineCount() > 2 && this.E0.getText() != null && !TextUtils.isEmpty(this.E0.getText().toString().trim())) {
-            z10 = true;
+    public final void A1(boolean z10) {
+        if (this.q5 != 1 && this.Q2 > 0) {
+            N();
         }
-        s1(z10);
+        hi.i0 i0Var = this.l0;
+        if (i0Var != null) {
+            i0Var.setWebView(f0());
+        }
+        y1(z10);
     }
 
-    public final void C(boolean z10) {
+    public final void B(boolean z10) {
         MessageObject messageObject;
         boolean z11 = this.Q2 < 0 && this.X3 && this.Z1 == null && (ag.b0.g(this.Q).e(getEditText() != null ? getEditText().toString() : null, this.b5) > 0 || ((messageObject = this.T2) != null && messageObject.isEphemeral()));
         oe.b bVar = this.m5;
@@ -2372,11 +2317,11 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
             xeVar.invalidate();
         }
         if (z12) {
-            G(z10);
+            F(z10);
         }
     }
 
-    public final void C0() {
+    public final void B0() {
         pf pfVar;
         this.j2 = false;
         sd sdVar = this.N4;
@@ -2384,7 +2329,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
             AndroidUtilities.cancelRunOnUIThread(sdVar);
             this.N4 = null;
         }
-        if (g0() && s()) {
+        if (f0() && r()) {
             return;
         }
         getVisibility();
@@ -2409,12 +2354,15 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
         AndroidUtilities.runOnUIThread(afVar, 100L);
     }
 
-    public final void C1() {
-        float f7 = this.r * this.h;
-        ne neVar = this.Q0;
-        neVar.setScaleX(f7);
-        neVar.setScaleY(this.r * this.h);
-        neVar.setAlpha(this.s * this.n);
+    public final void B1() {
+        pf pfVar = this.E0;
+        boolean z10 = false;
+        l1((pfVar == null || pfVar.getLineCount() <= 2 || this.E0.getText() == null || TextUtils.isEmpty(this.E0.getText().toString().trim())) ? false : true);
+        pf pfVar2 = this.E0;
+        if (pfVar2 != null && pfVar2.getLineCount() > 2 && this.E0.getText() != null && !TextUtils.isEmpty(this.E0.getText().toString().trim())) {
+            z10 = true;
+        }
+        r1(z10);
     }
 
     /* JADX WARN: Can't wrap try/catch for region: R(15:164|(1:248)(1:168)|169|(8:171|(1:246)(1:175)|(1:245)(1:181)|182|(4:184|(1:186)(1:243)|187|(1:191))(1:244)|(1:193)(1:242)|194|(1:196))(1:247)|197|(3:199|(1:201)(1:203)|202)|204|(3:(1:207)(1:223)|(2:211|(1:221))|222)|224|(4:226|(1:240)(1:230)|231|(5:233|234|235|236|237))|241|234|235|236|237) */
@@ -2425,8 +2373,8 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final boolean D0(View view) {
-        org.telegram.ui.un unVar;
+    public final boolean C0(View view) {
+        org.telegram.ui.wn wnVar;
         TLRPC.User user;
         int measuredHeight;
         float f7;
@@ -2436,16 +2384,16 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
         ArrayList<MessageObject> arrayList;
         long j10;
         xe xeVar;
-        t60 t60Var;
+        u60 u60Var;
         boolean z10;
         MessagePreviewParams messagePreviewParams2;
         int i10;
-        k80 F;
+        l80 F;
         boolean z11;
         boolean z12;
         pf pfVar2;
         int i11 = 0;
-        if (c() || (((unVar = this.P2) != null && unVar.d4 == 5) || this.m5.f)) {
+        if (c() || (((wnVar = this.P2) != null && wnVar.d4 == 5) || this.m5.f)) {
             return false;
         }
         boolean z13 = this.A4;
@@ -2454,8 +2402,8 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
         org.telegram.ui.ActionBar.u6 u6Var = this.W3;
         int i13 = 2;
         boolean z14 = true;
-        if (z13 || !(((pfVar = this.E0) != null && !TextUtils.isEmpty(pfVar.getText())) || unVar == null || (messagePreviewParams = unVar.r5) == null || (messages = messagePreviewParams.forwardMessages) == null || (arrayList = messages.messages) == null || arrayList.isEmpty())) {
-            boolean z15 = unVar != null && UserObject.isUserSelf(unVar.i());
+        if (z13 || !(((pfVar = this.E0) != null && !TextUtils.isEmpty(pfVar.getText())) || wnVar == null || (messagePreviewParams = wnVar.v5) == null || (messages = messagePreviewParams.forwardMessages) == null || (arrayList = messages.messages) == null || arrayList.isEmpty())) {
+            boolean z15 = wnVar != null && UserObject.isUserSelf(wnVar.i());
             if (this.O0 == null) {
                 ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = new ActionBarPopupWindow$ActionBarPopupWindowLayout(this.O2, u6Var);
                 this.O0 = actionBarPopupWindow$ActionBarPopupWindowLayout;
@@ -2463,7 +2411,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                 this.O0.setOnTouchListener(new kf(this));
                 this.O0.setDispatchKeyEventListener(new ae(this));
                 this.O0.setShownFromBottom(false);
-                boolean z16 = unVar != null && unVar.I6();
+                boolean z16 = wnVar != null && wnVar.K6();
                 boolean z17 = !z15 && (this.G0 <= 0 || c());
                 if (z16) {
                     boolean z18 = !z17;
@@ -2477,16 +2425,16 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                         g1Var.j(LocaleController.getString(R.string.ScheduleMessage), R.drawable.msg_calendar2, null);
                     }
                     this.G4.setMinimumWidth(AndroidUtilities.dp(f7));
-                    this.G4.setOnClickListener(new ud(this, 11));
-                    this.O0.a(this.G4, gb1.r(-1, 44));
+                    this.G4.setOnClickListener(new td(this, 11));
+                    this.O0.a(this.G4, kb1.r(-1, 44));
                     SharedConfig.removeScheduledHint();
                     if (!z15 && this.Q2 > 0) {
                         org.telegram.ui.ActionBar.g1 g1Var2 = new org.telegram.ui.ActionBar.g1(0, getContext(), this.W3, true, z18);
                         this.c = g1Var2;
                         g1Var2.j(LocaleController.getString(R.string.SendWhenOnline), R.drawable.msg_online, null);
                         this.c.setMinimumWidth(AndroidUtilities.dp(f7));
-                        this.c.setOnClickListener(new ud(this, 12));
-                        this.O0.a(this.c, gb1.r(-1, 44));
+                        this.c.setOnClickListener(new td(this, 12));
+                        this.O0.a(this.c, kb1.r(-1, 44));
                     }
                 } else {
                     f7 = 196.0f;
@@ -2496,8 +2444,8 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                     user = null;
                     g1Var3.j(LocaleController.getString(R.string.SendWithoutSound), R.drawable.input_notify_off, null);
                     g1Var3.setMinimumWidth(AndroidUtilities.dp(f7));
-                    g1Var3.setOnClickListener(new ud(this, 13));
-                    this.O0.a(g1Var3, gb1.r(-1, 44));
+                    g1Var3.setOnClickListener(new td(this, 13));
+                    this.O0.a(g1Var3, kb1.r(-1, 44));
                 } else {
                     user = null;
                 }
@@ -2523,7 +2471,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                 g1Var4.setVisibility(this.O ? 8 : 0);
             }
             if (this.c != null) {
-                TLRPC.User i14 = unVar == null ? user : unVar.i();
+                TLRPC.User i14 = wnVar == null ? user : wnVar.i();
                 if (i14 != null && !i14.bot) {
                     TLRPC.UserStatus userStatus = i14.status;
                     if (!(userStatus instanceof TLRPC.TL_userStatusEmpty) && !(userStatus instanceof TLRPC.TL_userStatusOnline) && !(userStatus instanceof TLRPC.TL_userStatusRecently) && !(userStatus instanceof TLRPC.TL_userStatusLastMonth) && !(userStatus instanceof TLRPC.TL_userStatusLastWeek)) {
@@ -2532,7 +2480,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                 }
                 this.c.setVisibility(8);
             }
-            this.O0.setupRadialSelectors(f0(org.telegram.ui.ActionBar.y6.I5));
+            this.O0.setupRadialSelectors(e0(org.telegram.ui.ActionBar.y6.I5));
             this.O0.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), TLObject.FLAG_31));
             this.N0.setFocusable(true);
             int[] iArr = this.N2;
@@ -2638,7 +2586,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                     if (this.X2 != null) {
                         TLRPC.TL_messageMediaWebPage tL_messageMediaWebPage = new TLRPC.TL_messageMediaWebPage();
                         tL_messageMediaWebPage.webpage = this.X2;
-                        if (unVar != null && (messagePreviewParams2 = unVar.r5) != null && messagePreviewParams2.hasMedia) {
+                        if (wnVar != null && (messagePreviewParams2 = wnVar.v5) != null && messagePreviewParams2.hasMedia) {
                             boolean z20 = messagePreviewParams2.webpageSmall;
                             tL_messageMediaWebPage.force_small_media = z20;
                             tL_messageMediaWebPage.force_large_media = !z20;
@@ -2657,9 +2605,9 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                     messageObject7.generateLayout(null);
                     messageObject7.notime = true;
                     arrayList2.add(messageObject7);
-                } else if (unVar != null && (t60Var = unVar.n3) != null && t60Var.getTextureView() != null) {
+                } else if (wnVar != null && (u60Var = wnVar.n3) != null && u60Var.getTextureView() != null) {
                     mf mfVar3 = this.L0;
-                    TextureView textureView = unVar.n3.getTextureView();
+                    TextureView textureView = wnVar.n3.getTextureView();
                     mfVar3.getClass();
                     if (textureView != null) {
                         mfVar3.k0 = new RectF();
@@ -2681,12 +2629,12 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                     }
                     this.L0.q(xeVar, true, new di.g2(i10, this, z19));
                     if ((!z19 || z10) && this.Q2 >= j10) {
-                        this.L0.c(unVar);
+                        this.L0.c(wnVar);
                         this.L0.n(this.S4);
                     }
-                    F = k80.F(this, u6Var, xeVar);
-                    z11 = unVar == null && UserObject.isUserSelf(unVar.i());
-                    z12 = unVar == null && unVar.I6();
+                    F = l80.F(this, u6Var, xeVar);
+                    z11 = wnVar == null && UserObject.isUserSelf(wnVar.i());
+                    z12 = wnVar == null && wnVar.K6();
                     if (!z11 || (this.G0 > 0 && !c())) {
                         z14 = false;
                     }
@@ -2697,7 +2645,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                             this.c = F.y();
                         }
                     }
-                    if (unVar != null && this.Z2 != null && ChatObject.isMonoForum(unVar.e)) {
+                    if (wnVar != null && this.Z2 != null && ChatObject.isMonoForum(wnVar.e)) {
                         F.c(R.drawable.input_suggest_paid_24, LocaleController.getString(R.string.PostSuggestionsSendWithOffer), new sd(this, 17), false);
                     }
                     if (z14) {
@@ -2705,7 +2653,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                     }
                     F.Y();
                     if (this.c != null) {
-                        TLRPC.User i15 = unVar == null ? null : unVar.i();
+                        TLRPC.User i15 = wnVar == null ? null : wnVar.i();
                         if (i15 != null && !i15.bot) {
                             TLRPC.UserStatus userStatus2 = i15.status;
                             if (!(userStatus2 instanceof TLRPC.TL_userStatusEmpty) && !(userStatus2 instanceof TLRPC.TL_userStatusOnline) && !(userStatus2 instanceof TLRPC.TL_userStatusRecently) && !(userStatus2 instanceof TLRPC.TL_userStatusLastMonth) && !(userStatus2 instanceof TLRPC.TL_userStatusLastWeek)) {
@@ -2736,19 +2684,19 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
         this.L0.q(xeVar, true, new di.g2(i10, this, z19));
         if (!z19) {
         }
-        this.L0.c(unVar);
+        this.L0.c(wnVar);
         this.L0.n(this.S4);
-        F = k80.F(this, u6Var, xeVar);
-        if (unVar == null) {
+        F = l80.F(this, u6Var, xeVar);
+        if (wnVar == null) {
         }
-        if (unVar == null) {
+        if (wnVar == null) {
         }
         if (!z11) {
         }
         z14 = false;
         if (z12) {
         }
-        if (unVar != null) {
+        if (wnVar != null) {
             F.c(R.drawable.input_suggest_paid_24, LocaleController.getString(R.string.PostSuggestionsSendWithOffer), new sd(this, 17), false);
         }
         if (z14) {
@@ -2760,6 +2708,96 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
         this.L0.show();
         view.performHapticFeedback(3, 2);
         return false;
+    }
+
+    public final void C1() {
+        float f7 = this.r * this.h;
+        ne neVar = this.Q0;
+        neVar.setScaleX(f7);
+        neVar.setScaleY(this.r * this.h);
+        neVar.setAlpha(this.s * this.n);
+    }
+
+    public final void D() {
+        boolean z10;
+        boolean z11;
+        TLRPC.TL_chatAdminRights tL_chatAdminRights;
+        if (this.e2) {
+            return;
+        }
+        if (this.p1 == null) {
+            this.e2 = false;
+            g1(false, false);
+            return;
+        }
+        boolean z12 = true;
+        this.e2 = true;
+        this.x0 = true;
+        this.y0 = true;
+        if (DialogObject.isChatDialog(this.Q2)) {
+            TLRPC.Chat chat = this.R.getMessagesController().getChat(Long.valueOf(-this.Q2));
+            z10 = ChatObject.isChannel(chat) && !chat.megagroup;
+            if (z10 && !chat.creator && ((tL_chatAdminRights = chat.admin_rights) == null || !tL_chatAdminRights.post_messages)) {
+                this.e2 = false;
+            }
+            this.x0 = ChatObject.canSendRoundVideo(chat);
+            this.y0 = ChatObject.canSendVoice(chat);
+        } else {
+            z10 = false;
+        }
+        if (!SharedConfig.inappCamera) {
+            this.e2 = false;
+        }
+        if (this.e2) {
+            if (SharedConfig.hasCameraCache) {
+                CameraController.getInstance().initCamera(null);
+            }
+            z11 = MessagesController.getGlobalMainSettings().getBoolean(z10 ? "currentModeVideoChannel" : "currentModeVideo", z10);
+        } else {
+            z11 = false;
+        }
+        if (!this.x0 && z11) {
+            z11 = false;
+        }
+        if (this.y0 || z11) {
+            z12 = z11;
+        } else if (!this.e2) {
+            z12 = false;
+        }
+        g1(z12, false);
+    }
+
+    public final void D0() {
+        int height = this.m1.getHeight();
+        if (!this.z2) {
+            height -= this.A2;
+        }
+        og ogVar = this.Z2;
+        if (ogVar != null) {
+            ogVar.L1(height);
+        }
+        if (this.G1 != null) {
+            int currentActionBarHeight = org.telegram.ui.ActionBar.k.getCurrentActionBarHeight() + AndroidUtilities.dp(72.0f);
+            oe.b bVar = this.k5;
+            if (height < currentActionBarHeight) {
+                if (this.h3) {
+                    this.h3 = false;
+                    if (this.g3) {
+                        bVar.a(false, false);
+                        return;
+                    }
+                    return;
+                }
+                return;
+            }
+            if (this.h3) {
+                return;
+            }
+            this.h3 = true;
+            if (this.g3) {
+                bVar.a(true, false);
+            }
+        }
     }
 
     public final void D1(boolean z10) {
@@ -2781,7 +2819,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
             return;
         }
         boolean z12 = false;
-        if (!this.z0 && !o0()) {
+        if (!this.z0 && !n0()) {
             SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(" d " + LocaleController.getString("PlainTextRestrictedHint", R.string.PlainTextRestrictedHint));
             spannableStringBuilder.setSpan(new zq(R.drawable.msg_mini_lock3, 0), 1, 2, 0);
             this.E0.setHintText(spannableStringBuilder, z10);
@@ -2797,22 +2835,22 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
             this.E0.setInputType(i10);
         }
         O1();
-        org.telegram.ui.un unVar = this.P2;
-        boolean z13 = unVar != null && unVar.d4 == 8 && unVar.f4;
-        long sendPaidMessagesStars = unVar != null ? unVar.getMessagesController().getSendPaidMessagesStars(unVar.a()) : 0L;
+        org.telegram.ui.wn wnVar = this.P2;
+        boolean z13 = wnVar != null && wnVar.d4 == 8 && wnVar.f4;
+        long sendPaidMessagesStars = wnVar != null ? wnVar.getMessagesController().getSendPaidMessagesStars(wnVar.a()) : 0L;
         if (sendPaidMessagesStars > 0) {
             sendPaidMessagesStars *= getMessagesCount();
         }
-        int i11 = unVar != null ? unVar.d4 : -1;
+        int i11 = wnVar != null ? wnVar.d4 : -1;
         if (i11 == 9) {
             this.E0.setHintText(LocaleController.getString(R.string.WelcomeMessageEnter));
             return;
         }
         if (i11 == 5) {
-            if ("hello".equalsIgnoreCase(unVar.c4)) {
+            if ("hello".equalsIgnoreCase(wnVar.c4)) {
                 this.E0.setHintText(LocaleController.getString(R.string.BusinessGreetingEnter));
                 return;
-            } else if ("away".equalsIgnoreCase(unVar.c4)) {
+            } else if ("away".equalsIgnoreCase(wnVar.c4)) {
                 this.E0.setHintText(LocaleController.getString(R.string.BusinessAwayEnter));
                 return;
             } else {
@@ -2856,13 +2894,13 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
             this.E0.setHintText(this.m2.messageOwner.reply_markup.placeholder, z10);
             return;
         }
-        if (unVar != null && unVar.D9()) {
+        if (wnVar != null && wnVar.G9()) {
             MessageObject messageObject3 = this.U2;
             if (messageObject3 != null && (tL_forumTopic = messageObject3.replyToForumTopic) != null && (str2 = tL_forumTopic.title) != null) {
                 this.E0.setHintText(LocaleController.formatString(R.string.TypeMessageIn, str2), z10);
                 return;
             }
-            TLRPC.TL_forumTopic findTopic = MessagesController.getInstance(this.Q).getTopicsController().findTopic(unVar.e.id, 1L);
+            TLRPC.TL_forumTopic findTopic = MessagesController.getInstance(this.Q).getTopicsController().findTopic(wnVar.e.id, 1L);
             if (findTopic == null || (str = findTopic.title) == null) {
                 this.E0.setHintText(LocaleController.getString(R.string.TypeMessage), z10);
                 return;
@@ -2884,12 +2922,12 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
             return;
         }
         TLRPC.User user = this.R.getMessagesController().getUser(Long.valueOf(this.Q2));
-        if (user != null && user.bot_forum_view && !user.bot_forum_can_manage_topics && unVar != null && !unVar.t4) {
+        if (user != null && user.bot_forum_view && !user.bot_forum_can_manage_topics && wnVar != null && !wnVar.t4) {
             this.E0.setHintText(LocaleController.getString(R.string.SendBotNoThread));
             return;
         }
-        if (unVar != null && unVar.O9() && !unVar.t4) {
-            if (unVar.j4 == null || !unVar.s4) {
+        if (wnVar != null && wnVar.R9() && !wnVar.t4) {
+            if (wnVar.j4 == null || !wnVar.s4) {
                 this.E0.setHintText(LocaleController.getString("Reply", R.string.Reply));
                 return;
             } else {
@@ -2909,11 +2947,11 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
     @Override // oe.d
     public final void E(int i10, float f7, float f10, oe.e eVar) {
         if (i10 == 0) {
+            H();
             J();
-            K();
         } else if (i10 == 1) {
+            H();
             J();
-            K();
         } else {
             if (i10 == 2) {
                 jh.h hVar = this.I0;
@@ -2941,37 +2979,20 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
         invalidate();
     }
 
-    public final void E0() {
-        int height = this.m1.getHeight();
-        if (!this.z2) {
-            height -= this.A2;
+    public void E0() {
+        if ((f0() && r()) || org.telegram.ui.ActionBar.r2.hasSheets(this.P2)) {
+            return;
         }
         og ogVar = this.Z2;
         if (ogVar != null) {
-            ogVar.L1(height);
+            ogVar.b1();
         }
-        if (this.G1 != null) {
-            int currentActionBarHeight = org.telegram.ui.ActionBar.k.getCurrentActionBarHeight() + AndroidUtilities.dp(72.0f);
-            oe.b bVar = this.k5;
-            if (height < currentActionBarHeight) {
-                if (this.h3) {
-                    this.h3 = false;
-                    if (this.g3) {
-                        bVar.a(false, false);
-                        return;
-                    }
-                    return;
-                }
-                return;
-            }
-            if (this.h3) {
-                return;
-            }
-            this.h3 = true;
-            if (this.g3) {
-                bVar.a(true, false);
-            }
+        pf pfVar = this.E0;
+        if (pfVar == null || AndroidUtilities.showKeyboard(pfVar)) {
+            return;
         }
+        this.E0.clearFocus();
+        this.E0.requestFocus();
     }
 
     public final void E1(int i10) {
@@ -3027,181 +3048,6 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
         }
     }
 
-    public final void F() {
-        boolean z10;
-        boolean z11;
-        TLRPC.TL_chatAdminRights tL_chatAdminRights;
-        if (this.e2) {
-            return;
-        }
-        if (this.p1 == null) {
-            this.e2 = false;
-            h1(false, false);
-            return;
-        }
-        boolean z12 = true;
-        this.e2 = true;
-        this.x0 = true;
-        this.y0 = true;
-        if (DialogObject.isChatDialog(this.Q2)) {
-            TLRPC.Chat chat = this.R.getMessagesController().getChat(Long.valueOf(-this.Q2));
-            z10 = ChatObject.isChannel(chat) && !chat.megagroup;
-            if (z10 && !chat.creator && ((tL_chatAdminRights = chat.admin_rights) == null || !tL_chatAdminRights.post_messages)) {
-                this.e2 = false;
-            }
-            this.x0 = ChatObject.canSendRoundVideo(chat);
-            this.y0 = ChatObject.canSendVoice(chat);
-        } else {
-            z10 = false;
-        }
-        if (!SharedConfig.inappCamera) {
-            this.e2 = false;
-        }
-        if (this.e2) {
-            if (SharedConfig.hasCameraCache) {
-                CameraController.getInstance().initCamera(null);
-            }
-            z11 = MessagesController.getGlobalMainSettings().getBoolean(z10 ? "currentModeVideoChannel" : "currentModeVideo", z10);
-        } else {
-            z11 = false;
-        }
-        if (!this.x0 && z11) {
-            z11 = false;
-        }
-        if (this.y0 || z11) {
-            z12 = z11;
-        } else if (!this.e2) {
-            z12 = false;
-        }
-        h1(z12, false);
-    }
-
-    public void F0() {
-        if ((g0() && s()) || org.telegram.ui.ActionBar.r2.hasSheets(this.P2)) {
-            return;
-        }
-        og ogVar = this.Z2;
-        if (ogVar != null) {
-            ogVar.b1();
-        }
-        pf pfVar = this.E0;
-        if (pfVar == null || AndroidUtilities.showKeyboard(pfVar)) {
-            return;
-        }
-        this.E0.clearFocus();
-        this.E0.requestFocus();
-    }
-
-    /* JADX WARN: Code restructure failed: missing block: B:31:0x00a3, code lost:
-    
-        if (org.telegram.messenger.MessagesController.getInstance(r16.Q).getMainSettings().getBoolean("show_gift_for_" + r7.a(), true) == false) goto L35;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:57:0x00d9, code lost:
-    
-        if (org.telegram.messenger.MessagesController.getInstance(r16.Q).getMainSettings().getBoolean(java.util.Calendar.getInstance().get(1) + "show_gift_for_" + r7.a(), true) == false) goto L39;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:62:0x00e3, code lost:
-    
-        if (r3.display_gifts_button == false) goto L58;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:72:0x00f7, code lost:
-    
-        if (r1.disallow_unique_stargifts != false) goto L58;
-     */
-    /* JADX WARN: Removed duplicated region for block: B:51:0x0192  */
-    /* JADX WARN: Removed duplicated region for block: B:53:? A[RETURN, SYNTHETIC] */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void F1(boolean z10) {
-        boolean z11;
-        fi.v3 v3Var;
-        TLRPC.UserFull userFull = getParentFragment() == null ? null : getParentFragment().m8;
-        TLRPC.UserFull userFull2 = MessagesController.getInstance(this.Q).getUserFull(UserConfig.getInstance(this.Q).getClientUserId());
-        TLRPC.User i10 = getParentFragment() == null ? null : getParentFragment().i();
-        boolean premiumPurchaseBlocked = MessagesController.getInstance(this.Q).premiumPurchaseBlocked();
-        org.telegram.ui.un unVar = this.P2;
-        if (!premiumPurchaseBlocked && getParentFragment() != null && i10 != null && !BuildVars.IS_BILLING_UNAVAILABLE && ((!UserObject.isUserSelf(i10) || (userFull2 != null && userFull2.display_gifts_button)) && !UserObject.isBot(i10) && !MessagesController.isSupportUser(i10) && userFull != null)) {
-            if (!i10.premium && MessagesController.getInstance(this.Q).giftAttachMenuIcon && MessagesController.getInstance(this.Q).giftTextFieldIcon) {
-            }
-            if (BirthdayController.isToday(userFull.birthday)) {
-            }
-            if (!userFull.display_gifts_button) {
-                if (userFull2 != null) {
-                }
-            }
-            TLRPC.DisallowedGiftsSettings disallowedGiftsSettings = userFull.disallowed_stargifts;
-            if (disallowedGiftsSettings != null) {
-                if (disallowedGiftsSettings.disallow_premium_gifts) {
-                    if (disallowedGiftsSettings.disallow_limited_stargifts) {
-                        if (disallowedGiftsSettings.disallow_unlimited_stargifts) {
-                        }
-                    }
-                }
-            }
-            if (unVar != null && unVar.d4 == 0) {
-                z11 = true;
-                if (!z11 && (v3Var = this.L) != null) {
-                    v3Var.e(true);
-                }
-                if (z11 && this.K1 == null) {
-                    return;
-                }
-                if (this.K1 == null && unVar != null) {
-                    bf bfVar = new bf(this, getContext(), 0);
-                    this.K1 = bfVar;
-                    bfVar.setImageResource(R.drawable.msg_input_gift);
-                    bf bfVar2 = this.K1;
-                    int i11 = org.telegram.ui.ActionBar.y6.Wk;
-                    PorterDuff.Mode mode = PorterDuff.Mode.MULTIPLY;
-                    org.telegram.ui.ActionBar.u6 u6Var = this.W3;
-                    org.telegram.ui.ActionBar.f7.t(bfVar2, i11, u6Var, mode);
-                    this.K1.setVisibility(8);
-                    this.K1.setContentDescription(LocaleController.getString(R.string.GiftPremium));
-                    this.K1.setScaleType(ImageView.ScaleType.CENTER);
-                    bf bfVar3 = this.K1;
-                    int i12 = org.telegram.ui.ActionBar.y6.i6;
-                    org.telegram.ui.ActionBar.f7.R(bfVar3, org.telegram.ui.ActionBar.y6.g0(f0(i12), 1, -1), null, org.telegram.ui.ActionBar.f7.N(i12), u6Var);
-                    this.p1.addView(this.K1, 0, gb1.i(44, 44, 21));
-                    this.K1.setOnClickListener(new ud(this, 9));
-                }
-                AndroidUtilities.updateViewVisibilityAnimated(this.K1, z11, 1.0f, true, 1.0f, z10, new qd(this, 0));
-                if (z11) {
-                    return;
-                }
-                y();
-                return;
-            }
-        }
-        z11 = false;
-        if (!z11) {
-            v3Var.e(true);
-        }
-        if (z11) {
-        }
-        if (this.K1 == null) {
-            bf bfVar4 = new bf(this, getContext(), 0);
-            this.K1 = bfVar4;
-            bfVar4.setImageResource(R.drawable.msg_input_gift);
-            bf bfVar22 = this.K1;
-            int i112 = org.telegram.ui.ActionBar.y6.Wk;
-            PorterDuff.Mode mode2 = PorterDuff.Mode.MULTIPLY;
-            org.telegram.ui.ActionBar.u6 u6Var2 = this.W3;
-            org.telegram.ui.ActionBar.f7.t(bfVar22, i112, u6Var2, mode2);
-            this.K1.setVisibility(8);
-            this.K1.setContentDescription(LocaleController.getString(R.string.GiftPremium));
-            this.K1.setScaleType(ImageView.ScaleType.CENTER);
-            bf bfVar32 = this.K1;
-            int i122 = org.telegram.ui.ActionBar.y6.i6;
-            org.telegram.ui.ActionBar.f7.R(bfVar32, org.telegram.ui.ActionBar.y6.g0(f0(i122), 1, -1), null, org.telegram.ui.ActionBar.f7.N(i122), u6Var2);
-            this.p1.addView(this.K1, 0, gb1.i(44, 44, 21));
-            this.K1.setOnClickListener(new ud(this, 9));
-        }
-        AndroidUtilities.updateViewVisibilityAnimated(this.K1, z11, 1.0f, true, 1.0f, z10, new qd(this, 0));
-        if (z11) {
-        }
-    }
-
     /* JADX WARN: Code restructure failed: missing block: B:295:0x0814, code lost:
     
         if (org.telegram.messenger.ChatObject.canSendRoundVideo(r4) == false) goto L283;
@@ -3244,7 +3090,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void G(boolean z10) {
+    public final void F(boolean z10) {
         xe xeVar;
         boolean z11;
         String str;
@@ -3290,15 +3136,15 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
         jg.l lVar = this.r1;
         ImageView imageView4 = this.P0;
         boolean z16 = z15;
-        if (i15 <= 0 || i15 == Integer.MAX_VALUE || v0()) {
+        if (i15 <= 0 || i15 == Integer.MAX_VALUE || u0()) {
             int length = trimmedString.length();
             oe.b bVar = this.l5;
-            if (length > 0 || this.H2 || this.D1 || this.b3 != null || this.e3 != null || ((this.G0 == Integer.MAX_VALUE && !v0()) || ((this.p5 && getStarsPrice() > 0) || bVar.f))) {
+            if (length > 0 || this.H2 || this.D1 || this.b3 != null || this.e3 != null || ((this.G0 == Integer.MAX_VALUE && !u0()) || ((this.p5 && getStarsPrice() > 0) || bVar.f))) {
                 pf pfVar2 = this.E0;
                 String caption = pfVar2 == null ? null : pfVar2.getCaption();
                 boolean z17 = caption != null && (getSendButtonInternal().getVisibility() == 0 || ((bfVar2 = this.S0) != null && bfVar2.getVisibility() == 0));
                 boolean z18 = caption == null && (imageView4.getVisibility() == 0 || ((bfVar = this.S0) != null && bfVar.getVisibility() == 0));
-                int f02 = (this.G0 != Integer.MAX_VALUE || v0()) ? f0(org.telegram.ui.ActionBar.y6.Yd) : f0(org.telegram.ui.ActionBar.y6.Wk);
+                int e02 = (this.G0 != Integer.MAX_VALUE || u0()) ? e0(org.telegram.ui.ActionBar.y6.Yd) : e0(org.telegram.ui.ActionBar.y6.Wk);
                 pf pfVar3 = this.E0;
                 if (pfVar3 != null) {
                     if (TextUtils.isEmpty(pfVar3.getCaption())) {
@@ -3307,10 +3153,10 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                         xeVar = xeVar2;
                     }
                     z11 = true;
-                    if (f02 != this.K0) {
-                        this.K0 = f02;
+                    if (e02 != this.K0) {
+                        this.K0 = e02;
                         Drawable background = xeVar.getBackground();
-                        int i16 = f02;
+                        int i16 = e02;
                         int red = Color.red(i16);
                         ueVar = ueVar2;
                         int green = Color.green(i16);
@@ -3488,7 +3334,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                                     this.J1.setTag(null);
                                     arrayList.add(ObjectAnimator.ofFloat(this.J1, (Property<ze, Float>) property3, 0.0f));
                                     arrayList.add(ObjectAnimator.ofFloat(this.J1, (Property<ze, Float>) property, 0.0f));
-                                    arrayList.add(m(0.0f));
+                                    arrayList.add(l(0.0f));
                                 } else {
                                     this.J1.setAlpha(0.0f);
                                     this.J1.setScaleX(0.0f);
@@ -3543,7 +3389,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                             arrayList2.add(ObjectAnimator.ofFloat(wgVar, (Property<wg, Float>) property3, fArr6));
                         }
                         if (z17) {
-                            arrayList2.add(n(r42));
+                            arrayList2.add(m(r42));
                         } else if (z18) {
                             float[] fArr7 = new float[i11];
                             fArr7[r42] = 0.1f;
@@ -3570,7 +3416,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                                 imageView2.setVisibility(r42);
                             } else {
                                 this.v2 = i11;
-                                arrayList2.add(n(i11));
+                                arrayList2.add(m(i11));
                                 getSendButtonInternal().setVisibility(r42);
                             }
                             this.r2.playTogether(arrayList2);
@@ -3599,7 +3445,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                 xeVar = xeVar2;
                 if (!LocaleController.isRTL) {
                     z11 = false;
-                    if (f02 != this.K0) {
+                    if (e02 != this.K0) {
                     }
                     if (ueVar.getVisibility() == 0) {
                     }
@@ -3607,7 +3453,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                     }
                 }
                 z11 = true;
-                if (f02 != this.K0) {
+                if (e02 != this.K0) {
                 }
                 if (ueVar.getVisibility() == 0) {
                 }
@@ -3663,7 +3509,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                         this.L1 = false;
                         og ogVar3 = this.Z2;
                         if (ogVar3 != null && ogVar3.p0()) {
-                            X();
+                            W();
                         }
                         if (this.J1 != null) {
                             og ogVar4 = this.Z2;
@@ -3723,7 +3569,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                             boolean z20 = ogVar5 != null && ogVar5.p0();
                             this.L1 = false;
                             if (z20) {
-                                X();
+                                W();
                             }
                             ze zeVar2 = this.J1;
                             if (zeVar2 != null) {
@@ -3733,7 +3579,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                                     this.J1.setPivotX(AndroidUtilities.dp(44.0f));
                                     arrayList3.add(ObjectAnimator.ofFloat(this.J1, (Property<ze, Float>) property3, 1.0f));
                                     arrayList3.add(ObjectAnimator.ofFloat(this.J1, (Property<ze, Float>) property, 1.0f));
-                                    arrayList3.add(m(0.0f));
+                                    arrayList3.add(l(0.0f));
                                     ImageView imageView7 = this.I1;
                                     if (imageView7 != null && imageView7.getVisibility() == 0) {
                                         imageView7.setVisibility(8);
@@ -3758,14 +3604,14 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                         this.r2 = new AnimatorSet();
                         this.v2 = 2;
                         ArrayList arrayList4 = new ArrayList();
-                        org.telegram.ui.un unVar = this.P2;
-                        TLRPC.Chat g7 = unVar == null ? null : unVar.g();
-                        TLRPC.UserFull E8 = unVar == null ? this.K : unVar.E8();
+                        org.telegram.ui.wn wnVar = this.P2;
+                        TLRPC.Chat g7 = wnVar == null ? null : wnVar.g();
+                        TLRPC.UserFull H8 = wnVar == null ? this.K : wnVar.H8();
                         if (g7 != null) {
                             if (!ChatObject.canSendVoice(g7)) {
                             }
                             f7 = 1.0f;
-                        } else if (E8 == null) {
+                        } else if (H8 == null) {
                             i12 = 1;
                             f7 = 1.0f;
                             float[] fArr13 = new float[i12];
@@ -3867,7 +3713,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                 veVar.setScaleY(0.1f);
                 veVar.setAlpha(0.0f);
                 ueVar2.setVisibility(8);
-                S();
+                R();
                 this.S0.setScaleX(1.0f);
                 this.S0.setScaleY(1.0f);
                 this.S0.setAlpha(1.0f);
@@ -3883,7 +3729,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                 og ogVar6 = this.Z2;
                 boolean z21 = ogVar6 != null && ogVar6.p0();
                 if (z21) {
-                    X();
+                    W();
                 }
                 ze zeVar3 = this.J1;
                 if (zeVar3 != null) {
@@ -3938,7 +3784,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                     boolean z22 = ogVar7 != null && ogVar7.p0();
                     this.L1 = false;
                     if (z22) {
-                        X();
+                        W();
                     }
                     ze zeVar4 = this.J1;
                     if (zeVar4 != null) {
@@ -3949,7 +3795,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                             this.J1.setPivotX(AndroidUtilities.dp(44.0f));
                             arrayList5.add(ObjectAnimator.ofFloat(this.J1, (Property<ze, Float>) property3, 1.0f));
                             arrayList5.add(ObjectAnimator.ofFloat(this.J1, (Property<ze, Float>) property, 1.0f));
-                            arrayList5.add(m(0.0f));
+                            arrayList5.add(l(0.0f));
                         } else {
                             this.J1.setAlpha(1.0f);
                             this.J1.setScaleX(1.0f);
@@ -3965,7 +3811,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                         this.Z2.Y1();
                     }
                 }
-                S();
+                R();
                 this.S0.setVisibility(0);
                 this.r2 = new AnimatorSet();
                 this.v2 = 4;
@@ -4047,7 +3893,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                 og ogVar8 = this.Z2;
                 boolean z23 = ogVar8 != null && ogVar8.p0();
                 if (z23) {
-                    X();
+                    W();
                 }
                 ze zeVar5 = this.J1;
                 if (zeVar5 != null) {
@@ -4091,7 +3937,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                     og ogVar9 = this.Z2;
                     boolean z24 = ogVar9 != null && ogVar9.p0();
                     if (z24) {
-                        X();
+                        W();
                     }
                     lh.h hVar7 = this.i5;
                     if (hVar7 != null) {
@@ -4110,7 +3956,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                             this.J1.setVisibility(0);
                             this.J1.setTag(1);
                             this.J1.setPivotX(AndroidUtilities.dp(44.0f));
-                            arrayList7.add(m(0.0f));
+                            arrayList7.add(l(0.0f));
                             arrayList7.add(ObjectAnimator.ofFloat(this.J1, (Property<ze, Float>) property3, 1.0f));
                             arrayList7.add(ObjectAnimator.ofFloat(this.J1, (Property<ze, Float>) property, 1.0f));
                         } else {
@@ -4157,7 +4003,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                     arrayList8.add(ObjectAnimator.ofFloat(bfVar18, (Property<bf, Float>) property3, fArr30));
                 }
                 if (getSendButtonInternal().getVisibility() == 0) {
-                    arrayList8.add(n(r43));
+                    arrayList8.add(m(r43));
                 }
                 if (imageView4.getVisibility() == 0) {
                     float[] fArr31 = new float[1];
@@ -4193,15 +4039,15 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
         }
     }
 
-    public final void G0() {
-        if (g0() && s()) {
+    public final void F0() {
+        if (f0() && r()) {
             return;
         }
-        org.telegram.ui.un unVar = this.P2;
-        if (org.telegram.ui.ActionBar.r2.hasSheets(unVar)) {
+        org.telegram.ui.wn wnVar = this.P2;
+        if (org.telegram.ui.ActionBar.r2.hasSheets(wnVar)) {
             return;
         }
-        q1((AndroidUtilities.usingHardwareInput || AndroidUtilities.isInMultiwindow || (unVar != null && unVar.isInBubbleMode()) || this.j2) ? 0 : 2, 0, true, true);
+        p1((AndroidUtilities.usingHardwareInput || AndroidUtilities.isInMultiwindow || (wnVar != null && wnVar.isInBubbleMode()) || this.j2) ? 0 : 2, 0, true, true);
         og ogVar = this.Z2;
         if (ogVar != null) {
             ogVar.b1();
@@ -4218,7 +4064,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
         if (AndroidUtilities.usingHardwareInput || this.z2 || AndroidUtilities.isInMultiwindow) {
             return;
         }
-        if (unVar == null || !unVar.isInBubbleMode()) {
+        if (wnVar == null || !wnVar.isInBubbleMode()) {
             this.k3 = true;
             dg dgVar = this.U0;
             if (dgVar != null) {
@@ -4230,14 +4076,117 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
         }
     }
 
-    public final void G1() {
-        pf pfVar = this.E0;
-        if (pfVar != null) {
-            pfVar.setTranslationX(this.H + this.G);
+    /* JADX WARN: Code restructure failed: missing block: B:31:0x00a3, code lost:
+    
+        if (org.telegram.messenger.MessagesController.getInstance(r16.Q).getMainSettings().getBoolean("show_gift_for_" + r7.a(), true) == false) goto L35;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:57:0x00d9, code lost:
+    
+        if (org.telegram.messenger.MessagesController.getInstance(r16.Q).getMainSettings().getBoolean(java.util.Calendar.getInstance().get(1) + "show_gift_for_" + r7.a(), true) == false) goto L39;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:62:0x00e3, code lost:
+    
+        if (r3.display_gifts_button == false) goto L58;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:72:0x00f7, code lost:
+    
+        if (r1.disallow_unique_stargifts != false) goto L58;
+     */
+    /* JADX WARN: Removed duplicated region for block: B:51:0x0192  */
+    /* JADX WARN: Removed duplicated region for block: B:53:? A[RETURN, SYNTHETIC] */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void F1(boolean z10) {
+        boolean z11;
+        fi.v3 v3Var;
+        TLRPC.UserFull userFull = getParentFragment() == null ? null : getParentFragment().q8;
+        TLRPC.UserFull userFull2 = MessagesController.getInstance(this.Q).getUserFull(UserConfig.getInstance(this.Q).getClientUserId());
+        TLRPC.User i10 = getParentFragment() == null ? null : getParentFragment().i();
+        boolean premiumPurchaseBlocked = MessagesController.getInstance(this.Q).premiumPurchaseBlocked();
+        org.telegram.ui.wn wnVar = this.P2;
+        if (!premiumPurchaseBlocked && getParentFragment() != null && i10 != null && !BuildVars.IS_BILLING_UNAVAILABLE && ((!UserObject.isUserSelf(i10) || (userFull2 != null && userFull2.display_gifts_button)) && !UserObject.isBot(i10) && !MessagesController.isSupportUser(i10) && userFull != null)) {
+            if (!i10.premium && MessagesController.getInstance(this.Q).giftAttachMenuIcon && MessagesController.getInstance(this.Q).giftTextFieldIcon) {
+            }
+            if (BirthdayController.isToday(userFull.birthday)) {
+            }
+            if (!userFull.display_gifts_button) {
+                if (userFull2 != null) {
+                }
+            }
+            TLRPC.DisallowedGiftsSettings disallowedGiftsSettings = userFull.disallowed_stargifts;
+            if (disallowedGiftsSettings != null) {
+                if (disallowedGiftsSettings.disallow_premium_gifts) {
+                    if (disallowedGiftsSettings.disallow_limited_stargifts) {
+                        if (disallowedGiftsSettings.disallow_unlimited_stargifts) {
+                        }
+                    }
+                }
+            }
+            if (wnVar != null && wnVar.d4 == 0) {
+                z11 = true;
+                if (!z11 && (v3Var = this.L) != null) {
+                    v3Var.e(true);
+                }
+                if (z11 && this.K1 == null) {
+                    return;
+                }
+                if (this.K1 == null && wnVar != null) {
+                    bf bfVar = new bf(this, getContext(), 0);
+                    this.K1 = bfVar;
+                    bfVar.setImageResource(R.drawable.msg_input_gift);
+                    bf bfVar2 = this.K1;
+                    int i11 = org.telegram.ui.ActionBar.y6.Wk;
+                    PorterDuff.Mode mode = PorterDuff.Mode.MULTIPLY;
+                    org.telegram.ui.ActionBar.u6 u6Var = this.W3;
+                    org.telegram.ui.ActionBar.f7.t(bfVar2, i11, u6Var, mode);
+                    this.K1.setVisibility(8);
+                    this.K1.setContentDescription(LocaleController.getString(R.string.GiftPremium));
+                    this.K1.setScaleType(ImageView.ScaleType.CENTER);
+                    bf bfVar3 = this.K1;
+                    int i12 = org.telegram.ui.ActionBar.y6.i6;
+                    org.telegram.ui.ActionBar.f7.R(bfVar3, org.telegram.ui.ActionBar.y6.g0(e0(i12), 1, -1), null, org.telegram.ui.ActionBar.f7.N(i12), u6Var);
+                    this.p1.addView(this.K1, 0, kb1.i(44, 44, 21));
+                    this.K1.setOnClickListener(new td(this, 9));
+                }
+                AndroidUtilities.updateViewVisibilityAnimated(this.K1, z11, 1.0f, true, 1.0f, z10, new qd(this, 0));
+                if (z11) {
+                    return;
+                }
+                x();
+                return;
+            }
+        }
+        z11 = false;
+        if (!z11) {
+            v3Var.e(true);
+        }
+        if (z11) {
+        }
+        if (this.K1 == null) {
+            bf bfVar4 = new bf(this, getContext(), 0);
+            this.K1 = bfVar4;
+            bfVar4.setImageResource(R.drawable.msg_input_gift);
+            bf bfVar22 = this.K1;
+            int i112 = org.telegram.ui.ActionBar.y6.Wk;
+            PorterDuff.Mode mode2 = PorterDuff.Mode.MULTIPLY;
+            org.telegram.ui.ActionBar.u6 u6Var2 = this.W3;
+            org.telegram.ui.ActionBar.f7.t(bfVar22, i112, u6Var2, mode2);
+            this.K1.setVisibility(8);
+            this.K1.setContentDescription(LocaleController.getString(R.string.GiftPremium));
+            this.K1.setScaleType(ImageView.ScaleType.CENTER);
+            bf bfVar32 = this.K1;
+            int i122 = org.telegram.ui.ActionBar.y6.i6;
+            org.telegram.ui.ActionBar.f7.R(bfVar32, org.telegram.ui.ActionBar.y6.g0(e0(i122), 1, -1), null, org.telegram.ui.ActionBar.f7.N(i122), u6Var2);
+            this.p1.addView(this.K1, 0, kb1.i(44, 44, 21));
+            this.K1.setOnClickListener(new td(this, 9));
+        }
+        AndroidUtilities.updateViewVisibilityAnimated(this.K1, z11, 1.0f, true, 1.0f, z10, new qd(this, 0));
+        if (z11) {
         }
     }
 
-    public final void H() {
+    public final void G() {
         if (this.U0 == null) {
             return;
         }
@@ -4315,13 +4264,13 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void H0() {
-        org.telegram.ui.un unVar;
+    public final void G0() {
+        org.telegram.ui.wn wnVar;
         Editable editable;
         li.b2 b2Var;
         CharSequence[] charSequenceArr;
         ArrayList<TLRPC.MessageEntity> entities;
-        if (this.E0 == null || (unVar = this.P2) == null || !MessagesController.getInstance(this.Q).richEditorAvailable()) {
+        if (this.E0 == null || (wnVar = this.P2) == null || !MessagesController.getInstance(this.Q).richEditorAvailable()) {
             return;
         }
         TL_iv.RichMessage richMessage = this.E1;
@@ -4364,11 +4313,44 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
             b2Var = b2Var22;
         }
         b2Var.setResourceProvider(this.W3);
-        b2Var.J = unVar;
-        b2Var.s = unVar.S;
-        b2Var.v = unVar.Y;
+        b2Var.J = wnVar;
+        b2Var.s = wnVar.S;
+        b2Var.v = wnVar.Y;
         b2Var.K = new sd(this, 16);
-        unVar.presentFragment(b2Var);
+        wnVar.presentFragment(b2Var);
+    }
+
+    public final void G1() {
+        pf pfVar = this.E0;
+        if (pfVar != null) {
+            pfVar.setTranslationX(this.H + this.G);
+        }
+    }
+
+    public final void H() {
+        this.o5 = u(true);
+        float u10 = u(false);
+        if (this.n5 != u10) {
+            this.n5 = u10;
+            x0(u10);
+        }
+    }
+
+    public final void H0(CharSequence charSequence, String str, CharSequence charSequence2) {
+        org.telegram.ui.wn wnVar;
+        if (this.E0 == null || (wnVar = this.P2) == null || !MessagesController.getInstance(this.Q).richEditorAvailable()) {
+            return;
+        }
+        li.b2 b2Var = new li.b2(str);
+        b2Var.h = charSequence;
+        b2Var.n = charSequence2;
+        b2Var.setResourceProvider(this.W3);
+        b2Var.J = wnVar;
+        b2Var.s = wnVar.S;
+        b2Var.v = wnVar.Y;
+        b2Var.L = new ie(this, 1);
+        b2Var.K = new ie(this, 2);
+        wnVar.presentFragment(b2Var);
     }
 
     public final void H1(TLRPC.Chat chat, TLRPC.UserFull userFull) {
@@ -4389,7 +4371,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
             this.n = z11 ? 0.5f : 1.0f;
             C1();
             if (!this.A0 && (dgVar = this.U0) != null) {
-                dgVar.K(-this.Q2, !this.z0, !this.b);
+                dgVar.L(-this.Q2, !this.z0, !this.b);
             }
             this.x0 = ChatObject.canSendRoundVideo(chat);
             this.y0 = ChatObject.canSendVoice(chat);
@@ -4401,7 +4383,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
         ue ueVar = this.Z0;
         ueVar.setAlpha(f7);
         ueVar.invalidate();
-        PorterDuffColorFilter porterDuffColorFilter = new PorterDuffColorFilter(this.a1 ? f0(org.telegram.ui.ActionBar.y6.Wk) : -1, PorterDuff.Mode.SRC_IN);
+        PorterDuffColorFilter porterDuffColorFilter = new PorterDuffColorFilter(this.a1 ? e0(org.telegram.ui.ActionBar.y6.Wk) : -1, PorterDuff.Mode.SRC_IN);
         ve veVar = this.b1;
         veVar.setColorFilter(porterDuffColorFilter);
         veVar.invalidate();
@@ -4415,10 +4397,10 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
         } else if (!this.e2) {
             z10 = false;
         }
-        h1(z10, false);
+        g1(z10, false);
     }
 
-    @Override // org.telegram.ui.Components.uw0
+    @Override // org.telegram.ui.Components.vw0
     public final void I(int i10, boolean z10) {
         MessageObject messageObject;
         pf pfVar;
@@ -4431,7 +4413,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
             this.L2 = i10;
             this.M2 = z10;
             this.z2 = i10 > 0;
-            A();
+            y();
             return;
         }
         if (i10 > AndroidUtilities.dp(50.0f) && this.z2 && !AndroidUtilities.isInMultiwindow) {
@@ -4446,13 +4428,13 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
         if (this.z2 && this.W0 && this.U0 == null) {
             this.W0 = false;
         }
-        boolean q02 = q0();
-        vw0 vw0Var = this.m1;
-        org.telegram.ui.un unVar = this.P2;
-        if (q02) {
+        boolean p02 = p0();
+        ww0 ww0Var = this.m1;
+        org.telegram.ui.wn wnVar = this.P2;
+        if (p02) {
             int i13 = z10 ? this.y2 : this.x2;
-            if (unVar != null && unVar.getParentLayout() != null) {
-                i13 -= ((ActionBarLayout) unVar.getParentLayout()).v(false);
+            if (wnVar != null && wnVar.getParentLayout() != null) {
+                i13 -= ((ActionBarLayout) wnVar.getParentLayout()).v(false);
             }
             if (this.f2 == 1) {
                 ag agVar = this.H1;
@@ -4478,12 +4460,12 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                         layoutParams.height = i13;
                         viewGroup.setLayoutParams(layoutParams);
                     }
-                    if (vw0Var != null) {
+                    if (ww0Var != null) {
                         int i15 = this.A2;
                         this.A2 = layoutParams.height;
-                        vw0Var.requestLayout();
-                        E0();
-                        if (this.i2 && !this.z2 && i15 != this.A2 && L0()) {
+                        ww0Var.requestLayout();
+                        D0();
+                        if (this.i2 && !this.z2 && i15 != this.A2 && K0()) {
                             AnimatorSet animatorSet = new AnimatorSet();
                             this.V0 = animatorSet;
                             if (this.h5 != null) {
@@ -4503,28 +4485,28 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
             }
         }
         if (this.L2 == i10 && this.M2 == z10) {
-            E0();
+            D0();
             return;
         }
         this.L2 = i10;
         this.M2 = z10;
         boolean z12 = this.z2;
         this.z2 = i10 > 0;
-        A();
-        if (this.z2 && q0() && this.B3 == null) {
-            q1(0, this.f2, true, true);
-        } else if (!this.z2 && !q0() && (messageObject = this.m2) != null && this.T2 != messageObject && !g0() && !s() && !org.telegram.ui.ActionBar.r2.hasSheets(unVar) && (((pfVar = this.E0) == null || TextUtils.isEmpty(pfVar.getText())) && (tL_replyKeyboardMarkup = this.n2) != null && !tL_replyKeyboardMarkup.rows.isEmpty())) {
-            org.telegram.ui.ActionBar.q1 q1Var = vw0Var.H;
+        y();
+        if (this.z2 && p0() && this.B3 == null) {
+            p1(0, this.f2, true, true);
+        } else if (!this.z2 && !p0() && (messageObject = this.m2) != null && this.T2 != messageObject && !f0() && !r() && !org.telegram.ui.ActionBar.r2.hasSheets(wnVar) && (((pfVar = this.E0) == null || TextUtils.isEmpty(pfVar.getText())) && (tL_replyKeyboardMarkup = this.n2) != null && !tL_replyKeyboardMarkup.rows.isEmpty())) {
+            org.telegram.ui.ActionBar.q1 q1Var = ww0Var.H;
             if (q1Var.f) {
                 q1Var.j();
             } else {
                 q1Var.v = true;
             }
-            q1(1, 1, false, true);
+            p1(1, 1, false, true);
         }
-        if (this.A2 != 0 && !(z11 = this.z2) && z11 != z12 && !q0()) {
+        if (this.A2 != 0 && !(z11 = this.z2) && z11 != z12 && !p0()) {
             this.A2 = 0;
-            vw0Var.requestLayout();
+            ww0Var.requestLayout();
         }
         if (this.z2 && this.k3) {
             this.k3 = false;
@@ -4534,24 +4516,16 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
             }
             AndroidUtilities.cancelRunOnUIThread(this.r3);
         }
-        E0();
+        D0();
     }
 
-    public final void I0(CharSequence charSequence, String str, CharSequence charSequence2) {
-        org.telegram.ui.un unVar;
-        if (this.E0 == null || (unVar = this.P2) == null || !MessagesController.getInstance(this.Q).richEditorAvailable()) {
+    public final void I0() {
+        sd sdVar = new sd(this, 28);
+        if (SharedPrefsHelper.isWebViewConfirmShown(this.Q, this.Q2) || MessagesController.getInstance(this.Q).whitelistedBots.contains(Long.valueOf(this.Q2))) {
+            sdVar.run();
             return;
         }
-        li.b2 b2Var = new li.b2(str);
-        b2Var.h = charSequence;
-        b2Var.n = charSequence2;
-        b2Var.setResourceProvider(this.W3);
-        b2Var.J = unVar;
-        b2Var.s = unVar.S;
-        b2Var.v = unVar.Y;
-        b2Var.L = new ie(this, 1);
-        b2Var.K = new ie(this, 2);
-        unVar.presentFragment(b2Var);
+        g5.n(this.P2, MessagesController.getInstance(this.Q).getUser(Long.valueOf(this.Q2)), new org.telegram.ui.kp(12, this, sdVar), new sd(this, 29));
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -4627,12 +4601,12 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                 }
                 MediaDataController mediaDataController = MediaDataController.getInstance(this.Q);
                 long j11 = this.Q2;
-                org.telegram.ui.un unVar = this.P2;
+                org.telegram.ui.wn wnVar = this.P2;
                 property = property3;
-                mediaDataController.toggleDraftVoiceOnce(j11, (unVar == null || !unVar.t4) ? 0L : unVar.b(), this.O);
+                mediaDataController.toggleDraftVoiceOnce(j11, (wnVar == null || !wnVar.t4) ? 0L : wnVar.b(), this.O);
                 this.i1 = 0L;
             }
-            U();
+            T();
             this.w2 = 1;
             dg dgVar = this.U0;
             if (dgVar != null) {
@@ -4660,12 +4634,12 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
             if (animatorSet2 != null) {
                 animatorSet2.cancel();
             }
-            W();
+            V();
             di.i4 i4Var = this.d1;
             if (i4Var != null) {
                 i4Var.setVisibility(0);
             }
-            V();
+            U();
             RecordCircle recordCircle2 = this.N1;
             if (recordCircle2 != null) {
                 recordCircle2.M = false;
@@ -4707,7 +4681,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
             }
             this.N1.c(this.Q4 == 3);
             this.k2 = false;
-            u0();
+            t0();
             AnimatorSet animatorSet3 = new AnimatorSet();
             Property property6 = property;
             animatorSet3.playTogether(ObjectAnimator.ofFloat(this.Q0, this.Z3, 0.0f), ObjectAnimator.ofFloat(this.Q0, this.b4, 0.0f), ObjectAnimator.ofFloat(this.l1, (Property<ug, Float>) property4, 1.0f), ObjectAnimator.ofFloat(this.l1, (Property<ug, Float>) property6, 1.0f), ObjectAnimator.ofFloat(this.Y0, (Property<xg, Float>) property2, 0.0f), ObjectAnimator.ofFloat(this.Y0, (Property<xg, Float>) property5, 1.0f));
@@ -4727,14 +4701,14 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
             AnimatorSet animatorSet4 = new AnimatorSet();
             animatorSet4.playTogether(ObjectAnimator.ofFloat(this.E0, this.d4, AndroidUtilities.dp(20.0f)), ObjectAnimator.ofFloat(this.E0, (Property<pf, Float>) property5, 0.0f), ObjectAnimator.ofFloat(this.e1, (Property<ke, Float>) property5, 1.0f));
             if (z16) {
-                animatorSet4.playTogether(ObjectAnimator.ofFloat(this.h1, (Property<gl0, Float>) property5, 0.0f));
-                animatorSet4.playTogether(ObjectAnimator.ofFloat(this.g1, (Property<ak0, Float>) property5, 0.0f));
-                animatorSet4.playTogether(ObjectAnimator.ofFloat(this.g1, (Property<ak0, Float>) property6, 0.0f));
-                animatorSet4.playTogether(ObjectAnimator.ofFloat(this.g1, (Property<ak0, Float>) property4, 0.0f));
-                animatorSet4.playTogether(ObjectAnimator.ofFloat(this.f1, (Property<h91, Float>) property5, 0.0f));
+                animatorSet4.playTogether(ObjectAnimator.ofFloat(this.h1, (Property<hl0, Float>) property5, 0.0f));
+                animatorSet4.playTogether(ObjectAnimator.ofFloat(this.g1, (Property<bk0, Float>) property5, 0.0f));
+                animatorSet4.playTogether(ObjectAnimator.ofFloat(this.g1, (Property<bk0, Float>) property6, 0.0f));
+                animatorSet4.playTogether(ObjectAnimator.ofFloat(this.g1, (Property<bk0, Float>) property4, 0.0f));
+                animatorSet4.playTogether(ObjectAnimator.ofFloat(this.f1, (Property<i91, Float>) property5, 0.0f));
             }
             if (this.J1 != null) {
-                animatorSet4.playTogether(m(AndroidUtilities.dp(30.0f)), ObjectAnimator.ofFloat(this.J1, (Property<ze, Float>) property5, 0.0f));
+                animatorSet4.playTogether(l(AndroidUtilities.dp(30.0f)), ObjectAnimator.ofFloat(this.J1, (Property<ze, Float>) property5, 0.0f));
             }
             bi.r rVar = this.p1;
             if (rVar != null) {
@@ -4860,19 +4834,19 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                     this.b1.setScaleY(f7);
                     i12 = 1;
                     this.t2.playTogether(ObjectAnimator.ofFloat(this.Z0, (Property<ue, Float>) property5, f7));
-                    this.b1.j(p0() ? ygVar2 : ygVar, true);
+                    this.b1.j(o0() ? ygVar2 : ygVar, true);
                 } else {
                     i12 = 1;
                 }
                 if (this.J1 != null) {
                     AnimatorSet animatorSet9 = this.t2;
-                    ValueAnimator m10 = m(0.0f);
+                    ValueAnimator l4 = l(0.0f);
                     ze zeVar = this.J1;
                     float[] fArr4 = new float[i12];
                     fArr4[0] = 1.0f;
                     ObjectAnimator ofFloat5 = ObjectAnimator.ofFloat(zeVar, (Property<ze, Float>) property5, fArr4);
                     Animator[] animatorArr2 = new Animator[2];
-                    animatorArr2[0] = m10;
+                    animatorArr2[0] = l4;
                     animatorArr2[i12] = ofFloat5;
                     animatorSet9.playTogether(animatorArr2);
                 }
@@ -4898,39 +4872,39 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                     hVar2.e(r10, r10, z12);
                 }
                 this.k2 = z12;
-                u0();
+                t0();
                 this.t2.setDuration(150L);
             } else {
                 int i17 = 9;
                 if (i10 == 3) {
+                    T();
                     U();
-                    V();
                     SlideTextView slideTextView2 = this.k1;
                     if (slideTextView2 != null) {
                         slideTextView2.setEnabled(false);
                     }
                     if (this.c1) {
-                        gl0 gl0Var = this.h1;
-                        if (gl0Var != null) {
-                            gl0Var.setVisibility(8);
+                        hl0 hl0Var = this.h1;
+                        if (hl0Var != null) {
+                            hl0Var.setVisibility(8);
                         }
                         ke keVar = this.e1;
                         if (keVar != null) {
                             keVar.setAlpha(1.0f);
                             this.e1.setVisibility(0);
                         }
-                        ak0 ak0Var = this.g1;
-                        if (ak0Var != null) {
-                            ak0Var.setProgress(0.0f);
+                        bk0 bk0Var = this.g1;
+                        if (bk0Var != null) {
+                            bk0Var.setProgress(0.0f);
                             this.g1.i();
                         }
                         z14 = true;
                         f11 = 1.0f;
                     } else {
-                        h91 h91Var = this.f1;
-                        if (h91Var != null) {
-                            h91Var.setVisibility(8);
-                            u0();
+                        i91 i91Var = this.f1;
+                        if (i91Var != null) {
+                            i91Var.setVisibility(8);
+                            t0();
                         }
                         ke keVar2 = this.e1;
                         if (keVar2 != null) {
@@ -4940,9 +4914,9 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                         } else {
                             f11 = 1.0f;
                         }
-                        gl0 gl0Var2 = this.h1;
-                        if (gl0Var2 != null) {
-                            gl0Var2.setVisibility(0);
+                        hl0 hl0Var2 = this.h1;
+                        if (hl0Var2 != null) {
+                            hl0Var2.setVisibility(0);
                             this.h1.setAlpha(0.0f);
                         }
                         z14 = true;
@@ -4959,15 +4933,15 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                     if (sgVar5 != null) {
                         sgVar5.invalidate();
                     }
-                    ak0 ak0Var2 = this.g1;
-                    if (ak0Var2 != null) {
-                        ak0Var2.setAlpha(0.0f);
+                    bk0 bk0Var2 = this.g1;
+                    if (bk0Var2 != null) {
+                        bk0Var2.setAlpha(0.0f);
                         this.g1.setScaleX(0.0f);
                         this.g1.setScaleY(0.0f);
                         this.g1.setProgress(0.0f);
                         this.g1.i();
                     }
-                    if (p0() || this.z4) {
+                    if (o0() || this.z4) {
                         this.f1.setVisibility(0);
                         viewGroup = null;
                         layoutParams = null;
@@ -4982,26 +4956,26 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                         this.m1.addView(this.e1, layoutParams2);
                         this.f1.setVisibility(8);
                     }
-                    u0();
+                    t0();
                     AnimatorSet animatorSet11 = new AnimatorSet();
                     if (z10) {
                         this.h1.setAllowDraw(false);
                         ValueAnimator ofFloat6 = ValueAnimator.ofFloat(0.0f, 1.0f);
                         ofFloat6.addUpdateListener(new qd(this, 6));
                         ofFloat6.addListener(new vf(this));
-                        ofFloat6.setDuration(p0() ? 490L : 580L);
+                        ofFloat6.setDuration(o0() ? 490L : 580L);
                         AnimatorSet animatorSet12 = new AnimatorSet();
-                        animatorSet12.playTogether(ObjectAnimator.ofFloat(this.l1, (Property<ug, Float>) property4, 0.0f), ObjectAnimator.ofFloat(this.l1, (Property<ug, Float>) property3, 0.0f), ObjectAnimator.ofFloat(this.Y0, (Property<xg, Float>) property5, 0.0f), ObjectAnimator.ofFloat(this.Y0, (Property<xg, Float>) property2, -AndroidUtilities.dp(20.0f)), ObjectAnimator.ofFloat(this.k1, (Property<SlideTextView, Float>) property5, 0.0f), ObjectAnimator.ofFloat(this.g1, (Property<ak0, Float>) property5, 1.0f), ObjectAnimator.ofFloat(this.g1, (Property<ak0, Float>) property4, 1.0f), ObjectAnimator.ofFloat(this.g1, (Property<ak0, Float>) property3, 1.0f), ObjectAnimator.ofFloat(this.Q0, this.Z3, 0.0f), ObjectAnimator.ofFloat(this.Q0, this.b4, 0.0f), ObjectAnimator.ofFloat(this.E0, (Property<pf, Float>) property5, 0.0f));
-                        ak0 ak0Var3 = this.g1;
-                        if (ak0Var3 != null) {
-                            ak0Var3.setAlpha(0.0f);
+                        animatorSet12.playTogether(ObjectAnimator.ofFloat(this.l1, (Property<ug, Float>) property4, 0.0f), ObjectAnimator.ofFloat(this.l1, (Property<ug, Float>) property3, 0.0f), ObjectAnimator.ofFloat(this.Y0, (Property<xg, Float>) property5, 0.0f), ObjectAnimator.ofFloat(this.Y0, (Property<xg, Float>) property2, -AndroidUtilities.dp(20.0f)), ObjectAnimator.ofFloat(this.k1, (Property<SlideTextView, Float>) property5, 0.0f), ObjectAnimator.ofFloat(this.g1, (Property<bk0, Float>) property5, 1.0f), ObjectAnimator.ofFloat(this.g1, (Property<bk0, Float>) property4, 1.0f), ObjectAnimator.ofFloat(this.g1, (Property<bk0, Float>) property3, 1.0f), ObjectAnimator.ofFloat(this.Q0, this.Z3, 0.0f), ObjectAnimator.ofFloat(this.Q0, this.b4, 0.0f), ObjectAnimator.ofFloat(this.E0, (Property<pf, Float>) property5, 0.0f));
+                        bk0 bk0Var3 = this.g1;
+                        if (bk0Var3 != null) {
+                            bk0Var3.setAlpha(0.0f);
                             this.g1.setScaleX(0.0f);
                             this.g1.setScaleY(0.0f);
                         }
                         if (this.b1 != null) {
                             i16 = 1;
                             animatorSet12.playTogether(ObjectAnimator.ofFloat(this.Z0, (Property<ue, Float>) property5, 1.0f), ObjectAnimator.ofFloat(this.Z0, (Property<ue, Float>) property3, 1.0f), ObjectAnimator.ofFloat(this.Z0, (Property<ue, Float>) property4, 1.0f));
-                            this.b1.j(p0() ? ygVar2 : ygVar, true);
+                            this.b1.j(o0() ? ygVar2 : ygVar, true);
                         } else {
                             i16 = 1;
                         }
@@ -5027,11 +5001,11 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                         animatorSet12.addListener(new ye(this, 8));
                         animatorSet12.setDuration(150L);
                         animatorSet12.setStartDelay(150L);
-                        if (p0()) {
+                        if (o0()) {
                             this.f1.setAlpha(0.0f);
                             c11 = 1;
                             c12 = 0;
-                            animatorSet11.playTogether(ObjectAnimator.ofFloat(this.f1, (Property<h91, Float>) property5, 1.0f));
+                            animatorSet11.playTogether(ObjectAnimator.ofFloat(this.f1, (Property<i91, Float>) property5, 1.0f));
                             animatorSet11.setDuration(150L);
                             animatorSet11.setStartDelay(430L);
                         } else {
@@ -5046,10 +5020,10 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                         animatorSet13.playTogether(animatorArr4);
                         this.t2.addListener(new di.o3(this, viewGroup, layoutParams, 2));
                     } else {
-                        W();
+                        V();
                         this.u3.set(this.N1, Float.valueOf(1.0f));
                         this.N1.setTransformToSeekbar(1.0f);
-                        if (!p0()) {
+                        if (!o0()) {
                             float f13 = this.p4;
                             if (f13 != 0.0f && this.h1 != null) {
                                 this.h1.setAlpha(ds.j.getInterpolation(Math.max(0.0f, ((f13 - 0.38f) - 0.25f) / 0.37f)));
@@ -5069,7 +5043,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                         this.E0.setAlpha(0.0f);
                         ve veVar4 = this.b1;
                         if (veVar4 != null) {
-                            if (p0()) {
+                            if (o0()) {
                                 ygVar = ygVar2;
                             }
                             veVar4.j(ygVar, z10);
@@ -5083,7 +5057,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                             this.l0.setScaleX(0.0f);
                             this.l0.setScaleY(0.0f);
                         }
-                        if (p0()) {
+                        if (o0()) {
                             this.f1.setAlpha(1.0f);
                         }
                         if (viewGroup != null) {
@@ -5095,7 +5069,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                         this.h = 0.0f;
                         this.n = 0.0f;
                         C1();
-                        u0();
+                        t0();
                     }
                 } else if (i10 == 2 || i10 == 5) {
                     ve veVar5 = this.b1;
@@ -5103,7 +5077,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                         veVar5.setVisibility(0);
                     }
                     this.k2 = true;
-                    u0();
+                    t0();
                     AnimatorSet animatorSet14 = new AnimatorSet();
                     animatorSet14.playTogether(ObjectAnimator.ofFloat(this.Q0, this.Z3, 1.0f), ObjectAnimator.ofFloat(this.Q0, this.b4, this.A0 ? 0.5f : 1.0f), ObjectAnimator.ofFloat(this.l1, (Property<ug, Float>) property4, 0.0f), ObjectAnimator.ofFloat(this.l1, (Property<ug, Float>) property3, 0.0f));
                     sg sgVar6 = this.O1;
@@ -5187,17 +5161,17 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                             Animator[] animatorArr8 = new Animator[i14];
                             animatorArr8[r102] = ofFloat14;
                             animatorSet14.playTogether(animatorArr8);
-                            this.b1.j(p0() ? ygVar2 : ygVar, i14);
+                            this.b1.j(o0() ? ygVar2 : ygVar, i14);
                         }
                         ze zeVar2 = this.J1;
                         if (zeVar2 != null) {
                             float[] fArr13 = new float[i14];
                             fArr13[0] = 1.0f;
                             ObjectAnimator ofFloat15 = ObjectAnimator.ofFloat(zeVar2, (Property<ze, Float>) property5, fArr13);
-                            ValueAnimator m11 = m(0.0f);
+                            ValueAnimator l10 = l(0.0f);
                             Animator[] animatorArr9 = new Animator[2];
                             animatorArr9[0] = ofFloat15;
-                            animatorArr9[i14] = m11;
+                            animatorArr9[i14] = l10;
                             animatorSet14.playTogether(animatorArr9);
                         }
                         j10 = 150;
@@ -5230,10 +5204,10 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                             float[] fArr14 = new float[i13];
                             fArr14[z17 ? 1 : 0] = 1.0f;
                             ObjectAnimator ofFloat16 = ObjectAnimator.ofFloat(zeVar3, (Property<ze, Float>) property5, fArr14);
-                            ValueAnimator m12 = m(0.0f);
+                            ValueAnimator l11 = l(0.0f);
                             Animator[] animatorArr10 = new Animator[2];
                             animatorArr10[z17 ? 1 : 0] = ofFloat16;
-                            animatorArr10[i13] = m12;
+                            animatorArr10[i13] = l11;
                             animatorSet16.playTogether(animatorArr10);
                         }
                         j10 = 150;
@@ -5269,10 +5243,10 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                     ug ugVar2 = this.l1;
                     if (ugVar2 != null) {
                         ugVar2.e = true;
-                        xj0 xj0Var = ugVar2.f;
-                        xj0Var.T(0.0f, true);
+                        yj0 yj0Var = ugVar2.f;
+                        yj0Var.T(0.0f, true);
                         if (ugVar2.d) {
-                            xj0Var.start();
+                            yj0Var.start();
                         }
                     }
                 } else {
@@ -5299,7 +5273,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                         veVar7.setScaleX(f10);
                         this.b1.setScaleY(f10);
                         animatorSet18.playTogether(ObjectAnimator.ofFloat(this.Z0, (Property<ue, Float>) property5, f10));
-                        this.b1.j(p0() ? ygVar2 : ygVar, true);
+                        this.b1.j(o0() ? ygVar2 : ygVar, true);
                     }
                     if (this.p1 != null) {
                         ViewPropertyAnimator viewPropertyAnimator5 = this.q1;
@@ -5328,10 +5302,10 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                         float[] fArr15 = new float[i15];
                         fArr15[r103] = 1.0f;
                         ObjectAnimator ofFloat19 = ObjectAnimator.ofFloat(zeVar4, (Property<ze, Float>) property5, fArr15);
-                        ValueAnimator m13 = m(0.0f);
+                        ValueAnimator l12 = l(0.0f);
                         Animator[] animatorArr12 = new Animator[2];
                         animatorArr12[r103] = ofFloat19;
-                        animatorArr12[i15] = m13;
+                        animatorArr12[i15] = l12;
                         animatorSet18.playTogether(animatorArr12);
                     }
                     animatorSet18.setDuration(150L);
@@ -5385,44 +5359,6 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
     }
 
     public final void J() {
-        this.o5 = v(true);
-        float v = v(false);
-        if (this.n5 != v) {
-            this.n5 = v;
-            y0(v);
-        }
-    }
-
-    public final void J0() {
-        sd sdVar = new sd(this, 28);
-        if (SharedPrefsHelper.isWebViewConfirmShown(this.Q, this.Q2) || MessagesController.getInstance(this.Q).whitelistedBots.contains(Long.valueOf(this.Q2))) {
-            sdVar.run();
-            return;
-        }
-        g5.n(this.P2, MessagesController.getInstance(this.Q).getUser(Long.valueOf(this.Q2)), new org.telegram.ui.ip(12, this, sdVar), new sd(this, 29));
-    }
-
-    public final void J1() {
-        int f02 = f0(org.telegram.ui.ActionBar.y6.jf);
-        int f03 = f0(org.telegram.ui.ActionBar.y6.Sd);
-        int f04 = f0(org.telegram.ui.ActionBar.y6.df);
-        ak0 ak0Var = this.g1;
-        if (ak0Var != null) {
-            ak0Var.h(f02, "Cup Red");
-            this.g1.h(f02, "Box Red");
-            this.g1.h(f04, "Cup Grey");
-            this.g1.h(f04, "Box Grey");
-            this.g1.h(f04, "Box_Grey 2");
-            this.g1.h(f04, "Line 1");
-            this.g1.h(f04, "Line 2");
-            this.g1.h(f04, "Line 3");
-            this.g1.h(f03, "Line 1 Dup");
-            this.g1.h(f03, "Line 2 Dup");
-            this.g1.h(f03, "Line 3 Dup");
-        }
-    }
-
-    public final void K() {
         float f7 = this.k5.e;
         if (this.G1 != null) {
             float measuredHeight = getMeasuredHeight() - this.j5.f;
@@ -5443,15 +5379,47 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
         setMinimumHeight(AndroidUtilities.dp(44.0f) + (z10 ? this.G1.getLayoutParams().height : 0));
         if (this.z3) {
             if (this.R1 == 0) {
-                k1(false, true, false, true);
+                j1(false, true, false, true);
             } else {
-                H();
+                G();
             }
         }
     }
 
-    public final boolean K0() {
+    public final boolean J0() {
         return this.V0 != null;
+    }
+
+    public final void J1() {
+        int e02 = e0(org.telegram.ui.ActionBar.y6.jf);
+        int e03 = e0(org.telegram.ui.ActionBar.y6.Sd);
+        int e04 = e0(org.telegram.ui.ActionBar.y6.df);
+        bk0 bk0Var = this.g1;
+        if (bk0Var != null) {
+            bk0Var.h(e02, "Cup Red");
+            this.g1.h(e02, "Box Red");
+            this.g1.h(e04, "Cup Grey");
+            this.g1.h(e04, "Box Grey");
+            this.g1.h(e04, "Box_Grey 2");
+            this.g1.h(e04, "Line 1");
+            this.g1.h(e04, "Line 2");
+            this.g1.h(e04, "Line 3");
+            this.g1.h(e03, "Line 1 Dup");
+            this.g1.h(e03, "Line 2 Dup");
+            this.g1.h(e03, "Line 3 Dup");
+        }
+    }
+
+    public final void K() {
+        org.telegram.ui.wn wnVar = this.P2;
+        if (wnVar != null) {
+            MediaDataController.getInstance(this.Q).saveDraft(wnVar.a(), wnVar.K7(wnVar.D5), "", null, null, null, null, 0L, false, true, null);
+        }
+        setRichDraftPreview(null);
+    }
+
+    public boolean K0() {
+        return true;
     }
 
     public final void K1() {
@@ -5488,20 +5456,29 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
         }
         B1();
         if (z10 != this.D1) {
-            G(true);
+            F(true);
         }
     }
 
     public final void L() {
-        org.telegram.ui.un unVar = this.P2;
-        if (unVar != null) {
-            MediaDataController.getInstance(this.Q).saveDraft(unVar.a(), unVar.I7(unVar.z5), "", null, null, null, null, 0L, false, true, null);
-        }
-        setRichDraftPreview(null);
+        AndroidUtilities.hideKeyboard(this.E0);
     }
 
-    public boolean L0() {
-        return true;
+    public final void L0(int i10, int i11, CharSequence charSequence, boolean z10) {
+        if (this.E0 == null) {
+            return;
+        }
+        try {
+            SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(this.E0.getText());
+            spannableStringBuilder.replace(i10, i11 + i10, charSequence);
+            if (z10) {
+                Emoji.replaceEmoji((CharSequence) spannableStringBuilder, this.E0.getPaint().getFontMetricsInt(), false, (int[]) null);
+            }
+            this.E0.setText(spannableStringBuilder);
+            this.E0.setSelection(i10 + charSequence.length());
+        } catch (Exception e) {
+            FileLog.e(e);
+        }
     }
 
     public final void L1(boolean z10) {
@@ -5533,7 +5510,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
         boolean z12 = (this.Z2 == null || c() || !this.Z2.p0()) ? false : true;
         boolean z13 = (!z12 || this.L1 || this.F2) ? false : true;
         if (z13) {
-            X();
+            W();
         }
         ze zeVar = this.J1;
         if (zeVar != null) {
@@ -5596,58 +5573,33 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
     }
 
     public final void M() {
-        AndroidUtilities.hideKeyboard(this.E0);
-    }
-
-    public final void M0(int i10, int i11, CharSequence charSequence, boolean z10) {
-        if (this.E0 == null) {
-            return;
-        }
-        try {
-            SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(this.E0.getText());
-            spannableStringBuilder.replace(i10, i11 + i10, charSequence);
-            if (z10) {
-                Emoji.replaceEmoji((CharSequence) spannableStringBuilder, this.E0.getPaint().getFontMetricsInt(), false, (int[]) null);
-            }
-            this.E0.setText(spannableStringBuilder);
-            this.E0.setSelection(i10 + charSequence.length());
-        } catch (Exception e) {
-            FileLog.e(e);
-        }
-    }
-
-    public void M1(boolean z10) {
-        N1(false, z10);
-    }
-
-    public final void N() {
         if (this.x1 != null) {
             return;
         }
         bf bfVar = new bf(this, getContext(), 1);
         this.x1 = bfVar;
-        um0 um0Var = new um0(getContext());
-        this.U1 = um0Var;
-        bfVar.setImageDrawable(um0Var);
-        um0 um0Var2 = this.U1;
+        vm0 vm0Var = new vm0(getContext());
+        this.U1 = vm0Var;
+        bfVar.setImageDrawable(vm0Var);
+        vm0 vm0Var2 = this.U1;
         int i10 = org.telegram.ui.ActionBar.y6.Wk;
         PorterDuff.Mode mode = PorterDuff.Mode.MULTIPLY;
         org.telegram.ui.ActionBar.u6 u6Var = this.W3;
-        org.telegram.ui.ActionBar.f7.y(this, um0Var2, i10, u6Var, mode);
+        org.telegram.ui.ActionBar.f7.y(this, vm0Var2, i10, u6Var, mode);
         this.U1.a(R.drawable.input_bot2, false);
         this.x1.setScaleType(ImageView.ScaleType.CENTER);
         bf bfVar2 = this.x1;
         int i11 = org.telegram.ui.ActionBar.y6.i6;
-        org.telegram.ui.ActionBar.f7.R(bfVar2, org.telegram.ui.ActionBar.y6.g0(f0(i11), 1, -1), null, org.telegram.ui.ActionBar.f7.N(i11), u6Var);
+        org.telegram.ui.ActionBar.f7.R(bfVar2, org.telegram.ui.ActionBar.y6.g0(e0(i11), 1, -1), null, org.telegram.ui.ActionBar.f7.N(i11), u6Var);
         this.x1.setVisibility(8);
         AndroidUtilities.updateViewVisibilityAnimated(this.x1, false, 0.1f, false);
-        this.p1.addView(this.x1, 0, gb1.r(44, 44));
-        this.x1.setOnClickListener(new ud(this, 15));
+        this.p1.addView(this.x1, 0, kb1.r(44, 44));
+        this.x1.setOnClickListener(new td(this, 15));
     }
 
-    public final void N0() {
-        k1(false, true, false, true);
-        q1(0, 0, false, true);
+    public final void M0() {
+        j1(false, true, false, true);
+        p1(0, 0, false, true);
         if (getEditField() != null && !TextUtils.isEmpty(getEditField().getText())) {
             getEditField().setText("");
         }
@@ -5657,9 +5609,9 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
             veVar.setVisibility(0);
         }
         this.k2 = true;
-        u0();
-        w();
-        m0();
+        t0();
+        v();
+        l0();
         sg sgVar = this.O1;
         if (sgVar != null) {
             sgVar.setVisibility(8);
@@ -5670,18 +5622,48 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
         }
     }
 
+    public void M1(boolean z10) {
+        N1(false, z10);
+    }
+
+    public final void N() {
+        if (this.l0 != null) {
+            return;
+        }
+        hi.i0 i0Var = new hi.i0(getContext());
+        this.l0 = i0Var;
+        i0Var.setOnClickListener(new td(this, 7));
+        this.y1.addView(this.l0, kb1.h(-2, 32.0f, 83, 8.0f, 6.0f, 8.0f, 6.0f));
+        AndroidUtilities.updateViewVisibilityAnimated(this.l0, false, 1.0f, false);
+        hi.i0 i0Var2 = this.l0;
+        if (!i0Var2.f) {
+            i0Var2.f = true;
+            i0Var2.h = 1.0f;
+            i0Var2.requestLayout();
+            i0Var2.invalidate();
+        }
+    }
+
+    public final void N0(TL_iv.RichMessage richMessage) {
+        org.telegram.ui.wn wnVar = this.P2;
+        if (wnVar != null) {
+            MediaDataController.getInstance(this.Q).saveDraft(wnVar.a(), wnVar.K7(wnVar.D5), "", null, null, null, null, 0L, false, false, richMessage);
+        }
+        setRichDraftPreview(richMessage);
+    }
+
     public final void N1(boolean z10, boolean z11) {
         TLRPC.Chat chat;
         TLRPC.Peer peer;
         float f7;
         float f10;
-        cq0 cq0Var;
-        cq0 cq0Var2;
+        dq0 dq0Var;
+        dq0 dq0Var2;
         ke keVar;
         if (this.Z2 == null) {
             return;
         }
-        T();
+        S();
         if (this.p5) {
             peer = this.Z2.k();
             chat = null;
@@ -5695,34 +5677,34 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
         if (peer == null && this.Z2.B() != null && !this.Z2.B().peers.isEmpty()) {
             peer = this.Z2.B().peers.get(0).peer;
         }
-        org.telegram.ui.un unVar = this.P2;
-        boolean z12 = (z10 || peer == null || (this.Z2.B() != null && this.Z2.B().peers.size() <= 1) || o0() || t0() || (((keVar = this.e1) != null && keVar.getVisibility() == 0) || ((!this.p5 && ((ChatObject.isChannelAndNotMegaGroup(chat) && !ChatObject.canSendAsPeers(chat)) || ChatObject.isMonoForum(chat))) || (unVar != null && unVar.d4 == 9)))) ? false : true;
+        org.telegram.ui.wn wnVar = this.P2;
+        boolean z12 = (z10 || peer == null || (this.Z2.B() != null && this.Z2.B().peers.size() <= 1) || n0() || s0() || (((keVar = this.e1) != null && keVar.getVisibility() == 0) || ((!this.p5 && ((ChatObject.isChannelAndNotMegaGroup(chat) && !ChatObject.canSendAsPeers(chat)) || ChatObject.isMonoForum(chat))) || (wnVar != null && wnVar.d4 == 9)))) ? false : true;
         if (z12) {
-            Y();
+            X();
         }
         if (peer != null) {
             if (peer.channel_id != 0) {
                 TLRPC.Chat chat3 = MessagesController.getInstance(this.Q).getChat(Long.valueOf(peer.channel_id));
-                if (chat3 != null && (cq0Var2 = this.p0) != null) {
-                    cq0Var2.setAvatar(chat3);
+                if (chat3 != null && (dq0Var2 = this.p0) != null) {
+                    dq0Var2.setAvatar(chat3);
                     this.p0.setContentDescription(LocaleController.formatString(R.string.AccDescrSendAs, chat3.title));
                 }
             } else {
                 TLRPC.User user = MessagesController.getInstance(this.Q).getUser(Long.valueOf(peer.user_id));
-                if (user != null && (cq0Var = this.p0) != null) {
-                    cq0Var.setAvatar(user);
+                if (user != null && (dq0Var = this.p0) != null) {
+                    dq0Var.setAvatar(user);
                     this.p0.setContentDescription(LocaleController.formatString(R.string.AccDescrSendAs, ContactsController.formatName(user.first_name, user.last_name)));
                 }
             }
         }
-        cq0 cq0Var3 = this.p0;
-        boolean z13 = cq0Var3 != null && cq0Var3.getVisibility() == 0;
+        dq0 dq0Var3 = this.p0;
+        boolean z13 = dq0Var3 != null && dq0Var3.getVisibility() == 0;
         int dp = AndroidUtilities.dp(2.0f);
         float f11 = z12 ? 0.0f : 1.0f;
         float f12 = z12 ? 1.0f : 0.0f;
-        cq0 cq0Var4 = this.p0;
-        if (cq0Var4 != null) {
-            ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) cq0Var4.getLayoutParams();
+        dq0 dq0Var4 = this.p0;
+        if (dq0Var4 != null) {
+            ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) dq0Var4.getLayoutParams();
             f10 = z12 ? ((-this.p0.getLayoutParams().width) - marginLayoutParams.leftMargin) - dp : 0.0f;
             f7 = z12 ? 0.0f : ((-this.p0.getLayoutParams().width) - marginLayoutParams.leftMargin) - dp;
         } else {
@@ -5732,17 +5714,17 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
         if (z13 == z12) {
             return;
         }
-        cq0 cq0Var5 = this.p0;
-        ValueAnimator valueAnimator = cq0Var5 == null ? null : (ValueAnimator) cq0Var5.getTag();
+        dq0 dq0Var5 = this.p0;
+        ValueAnimator valueAnimator = dq0Var5 == null ? null : (ValueAnimator) dq0Var5.getTag();
         if (valueAnimator != null) {
             valueAnimator.cancel();
             this.p0.setTag(null);
         }
-        if ((this.p5 || (unVar != null && unVar.P8() == 0 && unVar.a6)) && z11) {
+        if ((this.p5 || (wnVar != null && wnVar.S8() == 0 && wnVar.e6)) && z11) {
             ValueAnimator duration = ValueAnimator.ofFloat(0.0f, 1.0f).setDuration(150L);
-            cq0 cq0Var6 = this.p0;
-            if (cq0Var6 != null) {
-                cq0Var6.setTranslationX(f10);
+            dq0 dq0Var6 = this.p0;
+            if (dq0Var6 != null) {
+                dq0Var6.setTranslationX(f10);
             }
             this.G = f10;
             G1();
@@ -5752,9 +5734,9 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
             duration.addUpdateListener(new v5(this, f15, f13, f11, f14, 1));
             duration.addListener(new zf(this, z12, f11, f15, f14, f13));
             duration.start();
-            cq0 cq0Var7 = this.p0;
-            if (cq0Var7 != null) {
-                cq0Var7.setTag(duration);
+            dq0 dq0Var7 = this.p0;
+            if (dq0Var7 != null) {
+                dq0Var7.setTag(duration);
                 return;
             }
             return;
@@ -5763,48 +5745,54 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
         float f17 = f12;
         boolean z14 = z12;
         if (z14) {
-            Y();
+            X();
         }
-        cq0 cq0Var8 = this.p0;
-        if (cq0Var8 != null) {
-            cq0Var8.setVisibility(z14 ? 0 : 8);
+        dq0 dq0Var8 = this.p0;
+        if (dq0Var8 != null) {
+            dq0Var8.setVisibility(z14 ? 0 : 8);
             this.p0.setTranslationX(f16);
         }
         float f18 = z14 ? f16 : 0.0f;
         this.Q0.setTranslationX(f18);
         this.G = f18;
         G1();
-        cq0 cq0Var9 = this.p0;
-        if (cq0Var9 != null) {
-            cq0Var9.setAlpha(f17);
+        dq0 dq0Var9 = this.p0;
+        if (dq0Var9 != null) {
+            dq0Var9.setAlpha(f17);
             this.p0.setTag(null);
         }
     }
 
     public final void O() {
-        if (this.l0 != null) {
+        if (this.b0 != null) {
             return;
         }
-        hi.i0 i0Var = new hi.i0(getContext());
-        this.l0 = i0Var;
-        i0Var.setOnClickListener(new ud(this, 7));
-        this.y1.addView(this.l0, gb1.h(-2, 32.0f, 83, 8.0f, 6.0f, 8.0f, 6.0f));
-        AndroidUtilities.updateViewVisibilityAnimated(this.l0, false, 1.0f, false);
-        hi.i0 i0Var2 = this.l0;
-        if (!i0Var2.f) {
-            i0Var2.f = true;
-            i0Var2.h = 1.0f;
-            i0Var2.requestLayout();
-            i0Var2.invalidate();
-        }
+        NumberTextView numberTextView = new NumberTextView(getContext());
+        this.b0 = numberTextView;
+        numberTextView.setVisibility(8);
+        this.b0.setTextSize(15);
+        this.b0.setTextColor(e0(org.telegram.ui.ActionBar.y6.y6));
+        this.b0.setTypeface(AndroidUtilities.bold());
+        this.b0.setCenterAlign(true);
+        addView(this.b0, Math.min(2, getChildCount()), kb1.h(44, 20.0f, 85, 3.0f, 0.0f, 0.0f, 44.0f));
     }
 
-    public final void O0(TL_iv.RichMessage richMessage) {
-        org.telegram.ui.un unVar = this.P2;
-        if (unVar != null) {
-            MediaDataController.getInstance(this.Q).saveDraft(unVar.a(), unVar.I7(unVar.z5), "", null, null, null, null, 0L, false, false, richMessage);
+    public final void O0(SpannableStringBuilder spannableStringBuilder, boolean z10, int i10, int i11) {
+        if (this.E0 == null) {
+            return;
         }
-        setRichDraftPreview(richMessage);
+        SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder(spannableStringBuilder);
+        Emoji.replaceEmoji((CharSequence) spannableStringBuilder2, this.E0.getPaint().getFontMetricsInt(), false, (int[]) null);
+        c6[] c6VarArr = (c6[]) spannableStringBuilder2.getSpans(0, spannableStringBuilder2.length(), c6.class);
+        if (c6VarArr != null) {
+            for (c6 c6Var : c6VarArr) {
+                c6Var.applyFontMetrics(this.E0.getPaint().getFontMetricsInt(), t5.g());
+            }
+        }
+        tj0.a(spannableStringBuilder2);
+        K();
+        setFieldText(spannableStringBuilder2);
+        Q0(i10, z10, i11, true, 0L);
     }
 
     public final void O1() {
@@ -5828,8 +5816,8 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
             E1(this.P4);
         }
         if (this.p5) {
-            P();
-            if (q()) {
+            O();
+            if (p()) {
                 int[] iArr = MessagesController.getInstance(this.Q).starsGroupcallMessageLimits;
                 b10 = (iArr == null || iArr.length <= 2) ? 400 : iArr[2];
             } else {
@@ -5843,7 +5831,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                         if (i10 < -9999) {
                             i10 = -9999;
                         }
-                        P();
+                        O();
                         NumberTextView numberTextView = this.b0;
                         numberTextView.a(i10, numberTextView.getVisibility() == 0);
                         if (this.b0.getVisibility() != 0) {
@@ -5854,7 +5842,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                         }
                         this.b0.animate().setListener(null).cancel();
                         this.b0.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f).setDuration(100L).start();
-                        this.b0.setTextColor(f0(i10 < 0 ? org.telegram.ui.ActionBar.y6.p7 : org.telegram.ui.ActionBar.y6.y6));
+                        this.b0.setTextColor(e0(i10 < 0 ? org.telegram.ui.ActionBar.y6.p7 : org.telegram.ui.ActionBar.y6.y6));
                         return;
                     }
                 }
@@ -5866,36 +5854,31 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
         }
     }
 
-    public final void P() {
-        if (this.b0 != null) {
+    public final void P(boolean z10) {
+        if (this.F1 != null) {
             return;
         }
-        NumberTextView numberTextView = new NumberTextView(getContext());
-        this.b0 = numberTextView;
-        numberTextView.setVisibility(8);
-        this.b0.setTextSize(15);
-        this.b0.setTextColor(f0(org.telegram.ui.ActionBar.y6.y6));
-        this.b0.setTypeface(AndroidUtilities.bold());
-        this.b0.setCenterAlign(true);
-        addView(this.b0, Math.min(2, getChildCount()), gb1.h(44, 20.0f, 85, 3.0f, 0.0f, 0.0f, 44.0f));
+        xe xeVar = new xe(this, getContext(), R.drawable.input_done, this.W3, 1);
+        this.F1 = xeVar;
+        xeVar.setContentDescription(LocaleController.getString(R.string.EditMessage));
+        if (z10) {
+            kb1.b(this.F1);
+        }
+        this.z1.addView(this.F1, kb1.i(44, 44, 85));
     }
 
-    public final void P0(SpannableStringBuilder spannableStringBuilder, boolean z10, int i10, int i11) {
-        if (this.E0 == null) {
-            return;
+    public boolean P0() {
+        boolean z10 = this.D1;
+        org.telegram.ui.ActionBar.u6 u6Var = this.W3;
+        if (z10 && !UserConfig.getInstance(this.Q).isPremium()) {
+            li.b2.q0(getContext(), new sd(this, 20), new sd(this, 21), u6Var);
+            return true;
         }
-        SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder(spannableStringBuilder);
-        Emoji.replaceEmoji((CharSequence) spannableStringBuilder2, this.E0.getPaint().getFontMetricsInt(), false, (int[]) null);
-        c6[] c6VarArr = (c6[]) spannableStringBuilder2.getSpans(0, spannableStringBuilder2.length(), c6.class);
-        if (c6VarArr != null) {
-            for (c6 c6Var : c6VarArr) {
-                c6Var.applyFontMetrics(this.E0.getPaint().getFontMetricsInt(), t5.g());
-            }
+        if (!c()) {
+            return Q0(0, true, 0, true, 0L);
         }
-        sj0.a(spannableStringBuilder2);
-        L();
-        setFieldText(spannableStringBuilder2);
-        R0(i10, z10, i11, true, 0L);
+        g5.L(this.O2, this.P2.a(), new df(this), u6Var);
+        return true;
     }
 
     public final void P1() {
@@ -5940,37 +5923,10 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
         if (c()) {
             return;
         }
-        G(true);
+        F(true);
     }
 
-    public final void Q(boolean z10) {
-        if (this.F1 != null) {
-            return;
-        }
-        xe xeVar = new xe(this, getContext(), R.drawable.input_done, this.W3, 1);
-        this.F1 = xeVar;
-        xeVar.setContentDescription(LocaleController.getString(R.string.EditMessage));
-        if (z10) {
-            gb1.b(this.F1);
-        }
-        this.z1.addView(this.F1, gb1.i(44, 44, 85));
-    }
-
-    public boolean Q0() {
-        boolean z10 = this.D1;
-        org.telegram.ui.ActionBar.u6 u6Var = this.W3;
-        if (z10 && !UserConfig.getInstance(this.Q).isPremium()) {
-            li.b2.q0(getContext(), new sd(this, 20), new sd(this, 21), u6Var);
-            return true;
-        }
-        if (!c()) {
-            return R0(0, true, 0, true, 0L);
-        }
-        g5.L(this.O2, this.P2.a(), new df(this), u6Var);
-        return true;
-    }
-
-    public final void R() {
+    public final void Q() {
         dg dgVar = this.U0;
         if (dgVar != null && dgVar.c1 != UserConfig.selectedAccount) {
             this.n1.removeView(dgVar);
@@ -5985,7 +5941,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
         if (!this.y4) {
             dgVar2.updateColors();
         }
-        this.U0.I(true, this.J2, this.K2, true);
+        this.U0.J(true, this.J2, this.K2, true);
         this.U0.setVisibility(8);
         this.U0.setShowing(false);
         if (this.h5 != null) {
@@ -5998,10 +5954,10 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
         this.U0.setDragListener(new d5.f(this));
         dg dgVar4 = this.U0;
         if (dgVar4 != null) {
-            dgVar4.K(-this.Q2, !this.z0, !this.b);
+            dgVar4.L(-this.Q2, !this.z0, !this.b);
         }
-        r();
-        B();
+        q();
+        A();
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -6030,7 +5986,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
     /* JADX WARN: Type inference failed for: r7v6 */
     /* JADX WARN: Type inference failed for: r7v7 */
     /* JADX WARN: Type inference failed for: r7v8, types: [boolean] */
-    public boolean R0(final int i10, final boolean z10, final int i11, boolean z11, long j10) {
+    public boolean Q0(final int i10, final boolean z10, final int i11, boolean z11, long j10) {
         ChatActivityEnterView chatActivityEnterView;
         ChatActivityEnterView chatActivityEnterView2;
         boolean z12;
@@ -6057,15 +6013,16 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
         TL_iv.RichMessage richMessage;
         ChatActivityEnterView chatActivityEnterView4;
         dg dgVar;
+        int i17 = 0;
         ?? r02 = z11 && !this.m5.f;
         if (r02 == true) {
             boolean a02 = g5.a0(this.Q, this.Q2, getMessagesCount(), new Utilities.Callback() { // from class: org.telegram.ui.Components.ge
                 @Override // org.telegram.messenger.Utilities.Callback
                 public final void run(Object obj) {
-                    int i17 = ChatActivityEnterView.r5;
+                    int i18 = ChatActivityEnterView.r5;
                     ChatActivityEnterView chatActivityEnterView5 = ChatActivityEnterView.this;
                     chatActivityEnterView5.getClass();
-                    chatActivityEnterView5.R0(i10, z10, i11, false, ((Long) obj).longValue());
+                    chatActivityEnterView5.Q0(i10, z10, i11, false, ((Long) obj).longValue());
                 }
             }, j10);
             if (a02 && this.s4) {
@@ -6093,15 +6050,15 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
             return a02;
         }
         if (this.G0 != Integer.MAX_VALUE || c()) {
-            org.telegram.ui.un unVar = this.P2;
-            if (unVar != null) {
-                TLRPC.Chat chat3 = unVar.e;
-                if (unVar.i() != null || ((ChatObject.isChannel(chat3) && chat3.megagroup) || !ChatObject.isChannel(chat3))) {
+            org.telegram.ui.wn wnVar = this.P2;
+            if (wnVar != null) {
+                TLRPC.Chat chat3 = wnVar.e;
+                if (wnVar.i() != null || ((ChatObject.isChannel(chat3) && chat3.megagroup) || !ChatObject.isChannel(chat3))) {
                     MessagesController.getNotificationsSettings(this.Q).edit().putBoolean(NotificationsSettingsFacade.PROPERTY_SILENT + this.Q2, !z10).commit();
                 }
             }
             if (this.z3) {
-                k1(false, true, false, true);
+                j1(false, true, false, true);
                 if (this.R1 != 0 && (dgVar = this.U0) != null) {
                     dgVar.t(false);
                     this.U0.B();
@@ -6109,7 +6066,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
             }
             if (r02 == true) {
                 chatActivityEnterView = this;
-                if (chatActivityEnterView.o1(new org.telegram.messenger.xa(this, z10, i10, i11, j10))) {
+                if (chatActivityEnterView.n1(new org.telegram.messenger.db(this, z10, i10, i11, j10))) {
                     chatActivityEnterView2 = chatActivityEnterView;
                 }
             } else {
@@ -6122,9 +6079,9 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                 chatActivityEnterView.Z2.P1(4, i10, chatActivityEnterView.O ? Integer.MAX_VALUE : 0, chatActivityEnterView.S4, j10, z10);
                 chatActivityEnterView.S4 = 0L;
                 xeVar.setEffect(0L);
-                chatActivityEnterView.l0(true);
-                chatActivityEnterView.G(true);
-                AndroidUtilities.runOnUIThread(new sd(chatActivityEnterView, 2), 100L);
+                chatActivityEnterView.k0(true);
+                chatActivityEnterView.F(true);
+                AndroidUtilities.runOnUIThread(new sd(chatActivityEnterView, i17), 100L);
                 chatActivityEnterView.i1 = 0L;
                 return false;
             }
@@ -6134,10 +6091,10 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                     MediaController.getInstance().cleanupPlayer(true, true);
                 }
                 MediaController.getInstance().cleanRecording(false);
-                MediaDataController.getInstance(chatActivityEnterView.Q).pushDraftVoiceMessage(chatActivityEnterView.Q2, (unVar == null || !unVar.t4) ? 0L : unVar.b(), null);
-                gl0 gl0Var = chatActivityEnterView.h1;
-                if (gl0Var != null && (gl0Var.s > 0.0f || gl0Var.v < 1.0f)) {
-                    gl0Var.setPlaying(false);
+                MediaDataController.getInstance(chatActivityEnterView.Q).pushDraftVoiceMessage(chatActivityEnterView.Q2, (wnVar == null || !wnVar.t4) ? 0L : wnVar.b(), null);
+                hl0 hl0Var = chatActivityEnterView.h1;
+                if (hl0Var != null && (hl0Var.s > 0.0f || hl0Var.v < 1.0f)) {
+                    hl0Var.setPlaying(false);
                     String s10 = a1.g.s(new StringBuilder(), chatActivityEnterView.c3, ".ogg");
                     if (MediaController.cropOpusFile(chatActivityEnterView.c3, s10, chatActivityEnterView.h1.getAudioLeftMs(), chatActivityEnterView.h1.getAudioRightMs())) {
                         try {
@@ -6150,23 +6107,23 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                         } catch (Exception e10) {
                             FileLog.e(e10);
                         }
-                        int i17 = 0;
+                        int i18 = 0;
                         while (true) {
-                            if (i17 >= chatActivityEnterView.b3.attributes.size()) {
+                            if (i18 >= chatActivityEnterView.b3.attributes.size()) {
                                 break;
                             }
-                            TLRPC.DocumentAttribute documentAttribute = chatActivityEnterView.b3.attributes.get(i17);
+                            TLRPC.DocumentAttribute documentAttribute = chatActivityEnterView.b3.attributes.get(i18);
                             if (documentAttribute instanceof TLRPC.TL_documentAttributeAudio) {
                                 documentAttribute.waveform = MediaController.getWaveform(chatActivityEnterView.c3);
                                 documentAttribute.duration = chatActivityEnterView.h1.getNewDuration();
                                 break;
                             }
-                            i17++;
+                            i18++;
                         }
                     }
                 }
                 SendMessagesHelper.SendMessageParams of2 = SendMessagesHelper.SendMessageParams.of(chatActivityEnterView.b3, null, chatActivityEnterView.c3, chatActivityEnterView.Q2, chatActivityEnterView.T2, chatActivityEnterView.getThreadMessage(), null, null, null, null, z10, i10, 0, chatActivityEnterView.O ? Integer.MAX_VALUE : 0, null, null, false);
-                of2.sendMessageChatArguments = unVar != null ? unVar.L8() : null;
+                of2.sendMessageChatArguments = wnVar != null ? wnVar.O8() : null;
                 of2.effect_id = this.S4;
                 of2.payStars = j10;
                 of2.monoForumPeer = getSendMonoForumPeerId();
@@ -6178,7 +6135,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                     sendAnimationData2.fromPreview = System.currentTimeMillis() - this.M0 < 200;
                     of2.sendAnimationData = sendAnimationData2;
                 }
-                p(of2);
+                o(of2);
                 SendMessagesHelper.getInstance(this.Q).sendMessage(of2);
                 og ogVar2 = this.Z2;
                 if (ogVar2 != null) {
@@ -6187,9 +6144,10 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                 } else {
                     chatActivityEnterView4 = this;
                 }
-                chatActivityEnterView4.l0(true);
-                chatActivityEnterView4.G(true);
-                AndroidUtilities.runOnUIThread(new sd(chatActivityEnterView4, 3), 100L);
+                int i19 = 1;
+                chatActivityEnterView4.k0(true);
+                chatActivityEnterView4.F(true);
+                AndroidUtilities.runOnUIThread(new sd(chatActivityEnterView4, i19), 100L);
                 chatActivityEnterView4.i1 = 0L;
                 return false;
             }
@@ -6197,25 +6155,25 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
             long j11 = 200;
             String str2 = "";
             if (!chatActivityEnterView5.D1 || (richMessage = chatActivityEnterView5.E1) == null) {
-                org.telegram.ui.un unVar2 = unVar;
-                int i18 = 1;
+                org.telegram.ui.wn wnVar2 = wnVar;
+                int i20 = 1;
                 xe xeVar2 = xeVar;
                 chatActivityEnterView2 = chatActivityEnterView5;
                 pf pfVar = chatActivityEnterView2.E0;
                 CharSequence textToUse = pfVar == null ? "" : pfVar.getTextToUse();
-                if (unVar2 != null && (chat2 = unVar2.e) != null && chat2.slowmode_enabled && !ChatObject.hasAdminRights(chat2)) {
+                if (wnVar2 != null && (chat2 = wnVar2.e) != null && chat2.slowmode_enabled && !ChatObject.hasAdminRights(chat2)) {
                     int length = textToUse.length();
                     int maxMessageLength = chatActivityEnterView2.R.getMessagesController().getMaxMessageLength();
                     org.telegram.ui.ActionBar.u6 u6Var = chatActivityEnterView2.W3;
                     if (length > maxMessageLength) {
-                        g5.t0(unVar2, LocaleController.getString("Slowmode", R.string.Slowmode), LocaleController.getString("SlowmodeSendErrorTooLong", R.string.SlowmodeSendErrorTooLong), u6Var);
+                        g5.t0(wnVar2, LocaleController.getString("Slowmode", R.string.Slowmode), LocaleController.getString("SlowmodeSendErrorTooLong", R.string.SlowmodeSendErrorTooLong), u6Var);
                     } else if (chatActivityEnterView2.H2 && textToUse.length() > 0) {
-                        g5.t0(unVar2, LocaleController.getString("Slowmode", R.string.Slowmode), LocaleController.getString("SlowmodeSendError", R.string.SlowmodeSendError), u6Var);
+                        g5.t0(wnVar2, LocaleController.getString("Slowmode", R.string.Slowmode), LocaleController.getString("SlowmodeSendError", R.string.SlowmodeSendError), u6Var);
                     }
                 }
-                if (!D(chatActivityEnterView2.Q, chatActivityEnterView2.Q2, unVar2, textToUse)) {
-                    org.telegram.ui.kn knVar = chatActivityEnterView2.V2;
-                    if (knVar == null || unVar2 == null || !knVar.f) {
+                if (!C(chatActivityEnterView2.Q, chatActivityEnterView2.Q2, wnVar2, textToUse)) {
+                    org.telegram.ui.mn mnVar = chatActivityEnterView2.V2;
+                    if (mnVar == null || wnVar2 == null || !mnVar.f) {
                         int[] iArr = new int[1];
                         Emoji.parseEmojis(textToUse, iArr);
                         ?? r28 = 0;
@@ -6224,34 +6182,34 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                         boolean v12 = chatActivityEnterView2.v1();
                         int maxMessageLength2 = chatActivityEnterView2.R.getMessagesController().getMaxMessageLength();
                         if (trimmedString.length() != 0) {
-                            if (chatActivityEnterView2.Z2 != null && unVar2 != null) {
-                                if ((i10 != 0) == unVar2.c()) {
+                            if (chatActivityEnterView2.Z2 != null && wnVar2 != null) {
+                                if ((i10 != 0) == wnVar2.c()) {
                                     chatActivityEnterView2.Z2.x0();
                                 }
                             }
-                            int i19 = 0;
+                            int i21 = 0;
                             while (true) {
-                                int i20 = i19 + maxMessageLength2;
-                                if (trimmedString.length() > i20) {
-                                    int i21 = i20 - 1;
+                                int i22 = i21 + maxMessageLength2;
+                                if (trimmedString.length() > i22) {
+                                    int i23 = i22 - 1;
                                     i13 = -1;
                                     i14 = -1;
                                     i15 = -1;
-                                    for (int i22 = r28; i21 > i19 && i22 < 300; i22++) {
-                                        char charAt = trimmedString.charAt(i21);
-                                        char charAt2 = i21 > 0 ? trimmedString.charAt(i21 - 1) : ' ';
+                                    for (int i24 = r28; i23 > i21 && i24 < 300; i24++) {
+                                        char charAt = trimmedString.charAt(i23);
+                                        char charAt2 = i23 > 0 ? trimmedString.charAt(i23 - 1) : ' ';
                                         if (charAt == '\n' && charAt2 == '\n') {
-                                            i12 = i21;
+                                            i12 = i23;
                                             break;
                                         }
                                         if (charAt == '\n') {
-                                            i15 = i21;
+                                            i15 = i23;
                                         } else if (i13 < 0 && Character.isWhitespace(charAt) && charAt2 == '.') {
-                                            i13 = i21;
+                                            i13 = i23;
                                         } else if (i14 < 0 && Character.isWhitespace(charAt)) {
-                                            i14 = i21;
+                                            i14 = i23;
                                         }
-                                        i21--;
+                                        i23--;
                                     }
                                     i12 = -1;
                                 } else {
@@ -6260,7 +6218,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                                     i14 = -1;
                                     i15 = -1;
                                 }
-                                int min = Math.min(i20, trimmedString.length());
+                                int min = Math.min(i22, trimmedString.length());
                                 if (i12 > 0) {
                                     min = i12;
                                 } else if (i15 > 0) {
@@ -6270,21 +6228,21 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                                 } else if (i14 > 0) {
                                     min = i14;
                                 }
-                                CharSequence subSequence = trimmedString.subSequence(i19, min);
+                                CharSequence subSequence = trimmedString.subSequence(i21, min);
                                 if (r17 == false) {
                                     subSequence = AndroidUtilities.getTrimmedString(subSequence);
                                 }
-                                CharSequence[] charSequenceArr = new CharSequence[i18];
+                                CharSequence[] charSequenceArr = new CharSequence[i20];
                                 charSequenceArr[r28] = subSequence;
                                 ArrayList<TLRPC.MessageEntity> entities = MediaDataController.getInstance(chatActivityEnterView2.Q).getEntities(charSequenceArr, v12);
                                 if (chatActivityEnterView2.Z2.h1()) {
-                                    int i23 = i18;
+                                    int i25 = i20;
                                     charSequence = trimmedString;
                                     if (chatActivityEnterView2.L0 != null) {
                                         MessageObject.SendAnimationData sendAnimationData3 = new MessageObject.SendAnimationData();
                                         charSequence2 = textToUse;
                                         i16 = min;
-                                        sendAnimationData3.fromPreview = System.currentTimeMillis() - chatActivityEnterView2.M0 < j11 ? i23 : r28;
+                                        sendAnimationData3.fromPreview = System.currentTimeMillis() - chatActivityEnterView2.M0 < j11 ? i25 : r28;
                                         sendAnimationData = sendAnimationData3;
                                     } else {
                                         charSequence2 = textToUse;
@@ -6294,7 +6252,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                                 } else {
                                     MessageObject.SendAnimationData sendAnimationData4 = new MessageObject.SendAnimationData();
                                     charSequence = trimmedString;
-                                    sendAnimationData4.fromPreview = System.currentTimeMillis() - chatActivityEnterView2.M0 < j11 ? i18 : r28;
+                                    sendAnimationData4.fromPreview = System.currentTimeMillis() - chatActivityEnterView2.M0 < j11 ? i20 : r28;
                                     float dp = AndroidUtilities.dp(22.0f);
                                     sendAnimationData4.height = dp;
                                     sendAnimationData4.width = dp;
@@ -6320,20 +6278,20 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                                 xe xeVar3 = xeVar2;
                                 charSequence3 = charSequence2;
                                 boolean z13 = v12;
-                                int i24 = i16;
+                                int i26 = i16;
                                 CharSequence charSequence4 = charSequence;
-                                org.telegram.ui.un unVar3 = unVar2;
+                                org.telegram.ui.wn wnVar3 = wnVar2;
                                 SendMessagesHelper.SendMessageParams of3 = SendMessagesHelper.SendMessageParams.of(charSequenceArr[r28].toString(), chatActivityEnterView2.Q2, chatActivityEnterView2.T2, threadMessage, chatActivityEnterView2.X2, chatActivityEnterView2.Y2, entities, null, null, z10, i10, i11, sendAnimationData, checkUpdateStickersOrder);
-                                of3.sendMessageChatArguments = unVar3 != null ? unVar3.L8() : null;
+                                of3.sendMessageChatArguments = wnVar3 != null ? wnVar3.O8() : null;
                                 of3.effect_id = this.S4;
                                 of3.payStars = j10;
                                 of3.monoForumPeer = getSendMonoForumPeerId();
                                 of3.suggestionParams = getSendMessageSuggestionParams();
                                 this.S4 = 0L;
                                 xeVar3.setEffect(0L);
-                                p(of3);
-                                of3.invert_media = (unVar3 == null || (messagePreviewParams3 = unVar3.r5) == null || !messagePreviewParams3.webpageTop) ? false : true;
-                                if (unVar3 == null || (chat = unVar3.e) == null || ChatObject.canSendEmbed(chat)) {
+                                o(of3);
+                                of3.invert_media = (wnVar3 == null || (messagePreviewParams3 = wnVar3.v5) == null || !messagePreviewParams3.webpageTop) ? false : true;
+                                if (wnVar3 == null || (chat = wnVar3.e) == null || ChatObject.canSendEmbed(chat)) {
                                     r32 = 0;
                                     r32 = 0;
                                     r32 = 0;
@@ -6350,8 +6308,8 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                                             TLRPC.TL_messageMediaWebPage tL_messageMediaWebPage = new TLRPC.TL_messageMediaWebPage();
                                             of3.mediaWebPage = tL_messageMediaWebPage;
                                             tL_messageMediaWebPage.webpage = this.X2;
-                                            tL_messageMediaWebPage.force_large_media = (unVar3 == null || (messagePreviewParams2 = unVar3.r5) == null || messagePreviewParams2.webpageSmall) ? false : true;
-                                            tL_messageMediaWebPage.force_small_media = (unVar3 == null || (messagePreviewParams = unVar3.r5) == null || !messagePreviewParams.webpageSmall) ? false : true;
+                                            tL_messageMediaWebPage.force_large_media = (wnVar3 == null || (messagePreviewParams2 = wnVar3.v5) == null || messagePreviewParams2.webpageSmall) ? false : true;
+                                            tL_messageMediaWebPage.force_small_media = (wnVar3 == null || (messagePreviewParams = wnVar3.v5) == null || !messagePreviewParams.webpageSmall) ? false : true;
                                         }
                                     }
                                 } else {
@@ -6361,28 +6319,28 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                                     of3.mediaWebPage = null;
                                     r72 = 1;
                                 }
-                                if (unVar3 != null) {
-                                    unVar3.B5 = r32;
-                                    unVar3.S5 = r32;
-                                    MessagePreviewParams messagePreviewParams4 = unVar3.r5;
+                                if (wnVar3 != null) {
+                                    wnVar3.F5 = r32;
+                                    wnVar3.W5 = r32;
+                                    MessagePreviewParams messagePreviewParams4 = wnVar3.v5;
                                     if (messagePreviewParams4 != null) {
                                         messagePreviewParams4.updateLink(this.Q, null, "", null, null, null);
                                     }
                                     this.X2 = r32;
                                     this.Y2 = r72;
-                                    unVar3.q8();
+                                    wnVar3.s8();
                                 }
                                 SendMessagesHelper.getInstance(this.Q).sendMessage(of3);
-                                int i25 = i24 + 1;
-                                if (i24 == charSequence4.length()) {
+                                int i27 = i26 + 1;
+                                if (i26 == charSequence4.length()) {
                                     break;
                                 }
-                                i19 = i25;
+                                i21 = i27;
                                 xeVar2 = xeVar3;
-                                i18 = r72;
+                                i20 = r72;
                                 r28 = z12;
                                 chatActivityEnterView2 = this;
-                                unVar2 = unVar3;
+                                wnVar2 = wnVar3;
                                 trimmedString = charSequence4;
                                 textToUse = charSequence3;
                                 v12 = z13;
@@ -6412,7 +6370,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                         }
                         z12 = false;
                     } else {
-                        unVar2.dc();
+                        wnVar2.hc();
                         z12 = false;
                     }
                     chatActivityEnterView3 = chatActivityEnterView2;
@@ -6423,17 +6381,17 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                     return z12;
                 }
             } else {
-                SendMessagesHelper.prepareSendingArticle(chatActivityEnterView5.R, richMessage.blocks, richMessage.photos, richMessage.documents, null, false, chatActivityEnterView5.Q2, chatActivityEnterView5.T2, chatActivityEnterView5.getThreadMessage(), chatActivityEnterView5.V2, z10, i10, i11, unVar != null ? unVar.L8() : null, chatActivityEnterView5.S4, chatActivityEnterView5.getSendMonoForumPeerId(), j10);
+                SendMessagesHelper.prepareSendingArticle(chatActivityEnterView5.R, richMessage.blocks, richMessage.photos, richMessage.documents, null, false, chatActivityEnterView5.Q2, chatActivityEnterView5.T2, chatActivityEnterView5.getThreadMessage(), chatActivityEnterView5.V2, z10, i10, i11, wnVar != null ? wnVar.O8() : null, chatActivityEnterView5.S4, chatActivityEnterView5.getSendMonoForumPeerId(), j10);
                 chatActivityEnterView2 = this;
                 chatActivityEnterView2.S4 = 0L;
                 xeVar.setEffect(0L);
                 chatActivityEnterView2.E0.setText("");
-                chatActivityEnterView2.L();
+                chatActivityEnterView2.K();
                 og ogVar4 = chatActivityEnterView2.Z2;
                 if (ogVar4 != null) {
                     ogVar4.A(null, z10, i10, i11, j10);
                 }
-                chatActivityEnterView2.G(true);
+                chatActivityEnterView2.F(true);
             }
         } else {
             og ogVar5 = this.Z2;
@@ -6446,7 +6404,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
         return false;
     }
 
-    public final void S() {
+    public final void R() {
         if (this.S0 != null) {
             return;
         }
@@ -6454,7 +6412,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
         this.S0 = bfVar;
         bfVar.setScaleType(ImageView.ScaleType.CENTER);
         bf bfVar2 = this.S0;
-        AnimatedArrowDrawable animatedArrowDrawable = new AnimatedArrowDrawable(f0(org.telegram.ui.ActionBar.y6.Wk), false);
+        AnimatedArrowDrawable animatedArrowDrawable = new AnimatedArrowDrawable(e0(org.telegram.ui.ActionBar.y6.Wk), false);
         this.F3 = animatedArrowDrawable;
         bfVar2.setImageDrawable(animatedArrowDrawable);
         this.S0.setVisibility(8);
@@ -6463,19 +6421,19 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
         this.S0.setAlpha(0.0f);
         bf bfVar3 = this.S0;
         int i10 = org.telegram.ui.ActionBar.y6.i6;
-        org.telegram.ui.ActionBar.f7.R(bfVar3, org.telegram.ui.ActionBar.y6.g0(f0(i10), 1, -1), null, org.telegram.ui.ActionBar.f7.N(i10), this.W3);
-        this.A1.addView(this.S0, gb1.i(44, 44, 85));
-        this.S0.setOnClickListener(new ud(this, 5));
+        org.telegram.ui.ActionBar.f7.R(bfVar3, org.telegram.ui.ActionBar.y6.g0(e0(i10), 1, -1), null, org.telegram.ui.ActionBar.f7.N(i10), this.W3);
+        this.A1.addView(this.S0, kb1.i(44, 44, 85));
+        this.S0.setOnClickListener(new td(this, 5));
         this.S0.setContentDescription(LocaleController.getString("AccDescrExpandPanel", R.string.AccDescrExpandPanel));
     }
 
-    public final void S0(boolean z10, boolean z11, boolean z12) {
+    public final void R0(boolean z10, boolean z11, boolean z12) {
         if ((this.J2 != z10 || this.K2 != z11) && this.U0 != null) {
             if (this.W0 && !z12) {
                 this.G3 = true;
-                j0(false);
+                i0(false);
             } else if (z12) {
-                G0();
+                F0();
             }
         }
         this.I2 = true;
@@ -6483,12 +6441,12 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
         this.K2 = z11;
         dg dgVar = this.U0;
         if (dgVar != null) {
-            dgVar.I(true, z10, z11, true);
+            dgVar.J(true, z10, z11, true);
         }
-        a1(false, !this.j2);
+        Z0(false, !this.j2);
     }
 
-    public final void T() {
+    public final void S() {
         if (this.E0 != null) {
             return;
         }
@@ -6504,13 +6462,13 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
             this.E0.setLocalePreferredLineHeightForMinimumUsed(false);
         }
         this.E0.setDelegate(new ae(this));
-        org.telegram.ui.un unVar = this.P2;
-        if (unVar == null || unVar.getParentLayout() == null || !((ActionBarLayout) unVar.getParentLayout()).b) {
+        org.telegram.ui.wn wnVar = this.P2;
+        if (wnVar == null || wnVar.getParentLayout() == null || !((ActionBarLayout) wnVar.getParentLayout()).b) {
             this.E0.setWindowView(this.O2.getWindow().getDecorView());
         } else {
-            this.E0.setWindowView(unVar.getParentLayout().getWindow().getDecorView());
+            this.E0.setWindowView(wnVar.getParentLayout().getWindow().getDecorView());
         }
-        TLRPC.EncryptedChat encryptedChat = unVar != null ? unVar.h : null;
+        TLRPC.EncryptedChat encryptedChat = wnVar != null ? wnVar.h : null;
         this.E0.setAllowTextEntitiesIntersection(v1());
         String string = Settings.Secure.getString(getContext().getContentResolver(), "default_input_method");
         int i11 = ((string == null || !string.startsWith("com.samsung")) && encryptedChat != null) ? 285212672 : TLObject.FLAG_28;
@@ -6538,7 +6496,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
         org.telegram.ui.ActionBar.f7.z(this.E0, org.telegram.ui.ActionBar.y6.vf, u6Var);
         pf pfVar4 = this.E0;
         boolean z10 = this.X3;
-        FrameLayout.LayoutParams h = gb1.h(-1, -2.0f, 80, 52.0f, 0.0f, z10 ? 50.0f : 2.0f, 1.5f);
+        FrameLayout.LayoutParams h = kb1.h(-1, -2.0f, 80, 52.0f, 0.0f, z10 ? 50.0f : 2.0f, 1.5f);
         me meVar = this.y1;
         meVar.addView(pfVar4, 1, h);
         RichMessageLayout.PreviewView previewView = new RichMessageLayout.PreviewView(getContext(), this.Q, u6Var);
@@ -6548,8 +6506,8 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
         this.C1.setMinHeight(AndroidUtilities.dp(88.0f));
         this.C1.setVisibility(8);
         this.C1.setPadding(AndroidUtilities.dp(8.0f), AndroidUtilities.dp(9.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(10.0f));
-        this.C1.setOnClickListener(new ud(this, 10));
-        meVar.addView(this.C1, 2, gb1.h(-1, -2.0f, 80, 44.0f, 0.0f, (z10 ? 50 : 2) - 8, 1.5f));
+        this.C1.setOnClickListener(new td(this, 10));
+        meVar.addView(this.C1, 2, kb1.h(-1, -2.0f, 80, 44.0f, 0.0f, (z10 ? 50 : 2) - 8, 1.5f));
         this.E0.setOnKeyListener(new qf(this));
         this.E0.setOnEditorActionListener(new m.s2(this, 3));
         this.E0.addTextChangedListener(new rf(this));
@@ -6567,14 +6525,14 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
             this.H4.clear();
         }
         D1(false);
-        M1(unVar != null && unVar.getFragmentBeginToShow());
-        if (unVar != null) {
-            unVar.F6(false, false);
+        M1(wnVar != null && wnVar.getFragmentBeginToShow());
+        if (wnVar != null) {
+            wnVar.G6(false, false);
         }
         E1(this.P4);
     }
 
-    public final void T0() {
+    public final void S0() {
         fi.v3 v3Var = this.L;
         if (v3Var == null) {
             return;
@@ -6584,7 +6542,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
         v3Var2.h = fi.v3.a(v3Var2.getText(), this.L.getTextPaint());
     }
 
-    public final void U() {
+    public final void T() {
         if (this.e1 != null) {
             return;
         }
@@ -6594,49 +6552,49 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
         this.e1.setFocusable(true);
         this.e1.setFocusableInTouchMode(true);
         this.e1.setClickable(true);
-        this.y1.addView(this.e1, gb1.i(-1, 44, 80));
-        ak0 ak0Var = new ak0(getContext());
-        this.g1 = ak0Var;
-        ak0Var.setScaleType(ImageView.ScaleType.CENTER);
+        this.y1.addView(this.e1, kb1.i(-1, 44, 80));
+        bk0 bk0Var = new bk0(getContext());
+        this.g1 = bk0Var;
+        bk0Var.setScaleType(ImageView.ScaleType.CENTER);
         this.g1.f(R.raw.chat_audio_record_delete_2, 28, 28, null);
         this.g1.getAnimatedDrawable().o0 = true;
         J1();
         this.g1.setContentDescription(LocaleController.getString("Delete", R.string.Delete));
-        ak0 ak0Var2 = this.g1;
+        bk0 bk0Var2 = this.g1;
         int i10 = org.telegram.ui.ActionBar.y6.i6;
-        org.telegram.ui.Cells.y g02 = org.telegram.ui.ActionBar.y6.g0(f0(i10), 1, -1);
+        org.telegram.ui.Cells.y g02 = org.telegram.ui.ActionBar.y6.g0(e0(i10), 1, -1);
         org.telegram.ui.ActionBar.b7 N = org.telegram.ui.ActionBar.f7.N(i10);
         org.telegram.ui.ActionBar.u6 u6Var = this.W3;
-        org.telegram.ui.ActionBar.f7.R(ak0Var2, g02, null, N, u6Var);
-        this.e1.addView(this.g1, gb1.g(44.0f, 44));
-        this.g1.setOnClickListener(new ud(this, 6));
-        h91 h91Var = new h91(getContext());
-        this.f1 = h91Var;
-        h91Var.setVisibility(4);
-        h91 h91Var2 = this.f1;
-        h91Var2.S = !this.y4;
-        h91Var2.setRoundFrames(true);
+        org.telegram.ui.ActionBar.f7.R(bk0Var2, g02, null, N, u6Var);
+        this.e1.addView(this.g1, kb1.g(44.0f, 44));
+        this.g1.setOnClickListener(new td(this, 6));
+        i91 i91Var = new i91(getContext());
+        this.f1 = i91Var;
+        i91Var.setVisibility(4);
+        i91 i91Var2 = this.f1;
+        i91Var2.S = !this.y4;
+        i91Var2.setRoundFrames(true);
         this.f1.setDelegate(new df(this));
-        this.e1.addView(this.f1, gb1.h(-1, -1.0f, 19, 56.0f, 0.0f, 8.0f, 0.0f));
+        this.e1.addView(this.f1, kb1.h(-1, -1.0f, 19, 56.0f, 0.0f, 8.0f, 0.0f));
         Context context = getContext();
-        f91 f91Var = new f91(context);
+        g91 g91Var = new g91(context);
         TextPaint textPaint = new TextPaint(1);
-        f91Var.d = textPaint;
-        f91Var.e = -1L;
+        g91Var.d = textPaint;
+        g91Var.e = -1L;
         textPaint.setTextSize(AndroidUtilities.dp(14.0f));
-        f91Var.b = context.getDrawable(R.drawable.tooltip_arrow);
-        f91Var.a = org.telegram.ui.ActionBar.y6.c0(AndroidUtilities.dp(5.0f), org.telegram.ui.ActionBar.y6.x0(null, org.telegram.ui.ActionBar.y6.qf, false));
-        f91Var.b();
-        f91Var.setTime(0);
-        this.f1.setTimeHintView(f91Var);
-        this.m1.addView(f91Var, gb1.h(-1, -2.0f, 80, 0.0f, 0.0f, 0.0f, 52.0f));
-        gl0 gl0Var = new gl0(getContext(), u6Var);
-        this.h1 = gl0Var;
-        this.e1.addView(gl0Var, gb1.h(-1, 32.0f, 19, 44.0f, 0.0f, 4.0f, 0.0f));
+        g91Var.b = context.getDrawable(R.drawable.tooltip_arrow);
+        g91Var.a = org.telegram.ui.ActionBar.y6.c0(AndroidUtilities.dp(5.0f), org.telegram.ui.ActionBar.y6.x0(null, org.telegram.ui.ActionBar.y6.qf, false));
+        g91Var.b();
+        g91Var.setTime(0);
+        this.f1.setTimeHintView(g91Var);
+        this.m1.addView(g91Var, kb1.h(-1, -2.0f, 80, 0.0f, 0.0f, 0.0f, 52.0f));
+        hl0 hl0Var = new hl0(getContext(), u6Var);
+        this.h1 = hl0Var;
+        this.e1.addView(hl0Var, kb1.h(-1, 32.0f, 19, 44.0f, 0.0f, 4.0f, 0.0f));
         E1(this.P4);
     }
 
-    public final void U0(a0.h hVar, boolean z10) {
+    public final void T0(a0.h hVar, boolean z10) {
         this.b5 = hVar;
         if (hVar.m() == 1 && ((TL_bots.BotInfo) hVar.n(0)).user_id == this.Q2) {
             TL_bots.BotInfo botInfo = (TL_bots.BotInfo) hVar.n(0);
@@ -6659,17 +6617,17 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
             h0Var.E(hVar);
         }
         y1(z10);
-        C(z10);
+        B(z10);
     }
 
-    public final void V() {
+    public final void U() {
         sg sgVar = this.O1;
-        vw0 vw0Var = this.m1;
+        ww0 ww0Var = this.m1;
         if (sgVar == null) {
             sg sgVar2 = new sg(this, getContext());
             this.O1 = sgVar2;
             sgVar2.setVisibility(8);
-            vw0Var.addView(this.O1, gb1.i(-1, -2, 80));
+            ww0Var.addView(this.O1, kb1.i(-1, -2, 80));
         }
         if (this.N1 != null) {
             return;
@@ -6677,10 +6635,10 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
         RecordCircle recordCircle = new RecordCircle(getContext());
         this.N1 = recordCircle;
         recordCircle.setVisibility(8);
-        vw0Var.addView(this.N1, gb1.i(-1, -2, 80));
+        ww0Var.addView(this.N1, kb1.i(-1, -2, 80));
     }
 
-    public final void V0(int i10, boolean z10, boolean z11) {
+    public final void U0(int i10, boolean z10, boolean z11) {
         this.o2 = i10;
         if (this.p2 == z10) {
             return;
@@ -6689,7 +6647,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
         y1(z11);
     }
 
-    public final void W() {
+    public final void V() {
         if (this.d1 != null || getContext() == null) {
             return;
         }
@@ -6697,12 +6655,12 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
         this.d1 = i4Var;
         i4Var.setClipChildren(false);
         this.d1.setVisibility(8);
-        this.y1.addView(this.d1, gb1.g(44.0f, -1));
+        this.y1.addView(this.d1, kb1.g(44.0f, -1));
         this.d1.setOnTouchListener(new ei.d(12));
         di.i4 i4Var2 = this.d1;
         SlideTextView slideTextView = new SlideTextView(getContext());
         this.k1 = slideTextView;
-        i4Var2.addView(slideTextView, gb1.h(-1, -1.0f, 0, 45.0f, 0.0f, 0.0f, 0.0f));
+        i4Var2.addView(slideTextView, kb1.h(-1, -1.0f, 0, 45.0f, 0.0f, 0.0f, 0.0f));
         LinearLayout linearLayout = new LinearLayout(getContext());
         this.d = linearLayout;
         linearLayout.setOrientation(0);
@@ -6711,12 +6669,12 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
         LinearLayout linearLayout2 = this.d;
         ug ugVar = new ug(this, getContext());
         this.l1 = ugVar;
-        linearLayout2.addView(ugVar, gb1.x(28, 28, 16, 0, 0, 0, 0));
+        linearLayout2.addView(ugVar, kb1.x(28, 28, 16, 0, 0, 0, 0));
         LinearLayout linearLayout3 = this.d;
         xg xgVar = new xg(this, getContext());
         this.Y0 = xgVar;
-        linearLayout3.addView(xgVar, gb1.x(-1, -1, 16, 6, 0, 0, 0));
-        this.d1.addView(this.d, gb1.i(-1, -1, 16));
+        linearLayout3.addView(xgVar, kb1.x(-1, -1, 16, 6, 0, 0, 0));
+        this.d1.addView(this.d, kb1.i(-1, -1, 16));
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:35:0x0097, code lost:
@@ -6738,7 +6696,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void W0(MessageObject messageObject, boolean z10, boolean z11) {
+    public final void V0(MessageObject messageObject, boolean z10, boolean z11) {
         TLRPC.TL_replyKeyboardMarkup tL_replyKeyboardMarkup;
         pf pfVar;
         MessageObject messageObject2 = this.T2;
@@ -6779,15 +6737,15 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                         boolean z12 = true;
                         boolean z13 = z10 ? z12 : false;
                         this.H1.setButtons(this.n2);
-                        if (z13 && (((pfVar = this.E0) == null || pfVar.length() == 0) && !q0())) {
-                            q1(1, 1, true, true);
+                        if (z13 && (((pfVar = this.E0) == null || pfVar.length() == 0) && !p0())) {
+                            p1(1, 1, true, true);
                         }
-                    } else if (q0() && this.f2 == 1) {
+                    } else if (p0() && this.f2 == 1) {
                         if (z11) {
                             this.p3 = true;
-                            G0();
+                            F0();
                         } else {
-                            q1(0, 1, true, true);
+                            p1(0, 1, true, true);
                         }
                     }
                     y1(true);
@@ -6804,7 +6762,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
         }
     }
 
-    public final void X() {
+    public final void W() {
         if (this.J1 != null || this.P2 == null) {
             return;
         }
@@ -6824,13 +6782,13 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
         this.J1.setScaleType(ImageView.ScaleType.CENTER);
         ze zeVar2 = this.J1;
         int i11 = org.telegram.ui.ActionBar.y6.i6;
-        org.telegram.ui.ActionBar.f7.R(zeVar2, org.telegram.ui.ActionBar.y6.g0(f0(i11), 1, -1), null, org.telegram.ui.ActionBar.f7.N(i11), u6Var);
-        this.y1.addView(this.J1, 2, gb1.i(44, 44, 85));
-        this.J1.setOnClickListener(new ud(this, 2));
+        org.telegram.ui.ActionBar.f7.R(zeVar2, org.telegram.ui.ActionBar.y6.g0(e0(i11), 1, -1), null, org.telegram.ui.ActionBar.f7.N(i11), u6Var);
+        this.y1.addView(this.J1, 2, kb1.i(44, 44, 85));
+        this.J1.setOnClickListener(new td(this, 2));
         this.J1.setTranslationX(0.0f);
     }
 
-    public final void X0(MessageObject messageObject, String str, boolean z10, boolean z11) {
+    public final void W0(MessageObject messageObject, String str, boolean z10, boolean z11) {
         pf pfVar;
         SendMessagesHelper.SendMessageParams of2;
         String sb2;
@@ -6856,12 +6814,12 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
             } else {
                 of2 = SendMessagesHelper.SendMessageParams.of(str, this.Q2, this.T2, getThreadMessage(), null, false, null, null, null, true, 0, 0, null, false);
             }
-            org.telegram.ui.un unVar = this.P2;
-            of2.sendMessageChatArguments = unVar != null ? unVar.L8() : null;
+            org.telegram.ui.wn wnVar = this.P2;
+            of2.sendMessageChatArguments = wnVar != null ? wnVar.O8() : null;
             of2.effect_id = this.S4;
             this.S4 = 0L;
             this.J0.setEffect(0L);
-            p(of2);
+            o(of2);
             SendMessagesHelper.getInstance(this.Q).sendMessage(of2);
             return;
         }
@@ -6894,33 +6852,33 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
         if (this.z2 || this.f2 != -1) {
             return;
         }
-        F0();
+        E0();
     }
 
-    public final void Y() {
+    public final void X() {
         if (this.p0 != null || getContext() == null) {
             return;
         }
-        cq0 cq0Var = new cq0(getContext());
-        ImageReceiver imageReceiver = new ImageReceiver(cq0Var);
-        cq0Var.a = imageReceiver;
-        cq0Var.b = new j9((org.telegram.ui.ActionBar.u6) null);
-        cq0Var.d = new Paint(1);
+        dq0 dq0Var = new dq0(getContext());
+        ImageReceiver imageReceiver = new ImageReceiver(dq0Var);
+        dq0Var.a = imageReceiver;
+        dq0Var.b = new j9((org.telegram.ui.ActionBar.u6) null);
+        dq0Var.d = new Paint(1);
         Paint paint = new Paint(1);
-        cq0Var.e = paint;
+        dq0Var.e = paint;
         imageReceiver.setRoundRadius(AndroidUtilities.dp(28.0f));
         paint.setStrokeWidth(AndroidUtilities.dp(2.0f));
         paint.setStrokeCap(Paint.Cap.ROUND);
         paint.setStyle(Paint.Style.STROKE);
-        cq0Var.updateColors();
-        cq0Var.setContentDescription(LocaleController.formatString("AccDescrSendAsPeer", R.string.AccDescrSendAsPeer, ""));
-        this.p0 = cq0Var;
-        cq0Var.setOnClickListener(new ud(this, 16));
+        dq0Var.updateColors();
+        dq0Var.setContentDescription(LocaleController.formatString("AccDescrSendAsPeer", R.string.AccDescrSendAsPeer, ""));
+        this.p0 = dq0Var;
+        dq0Var.setOnClickListener(new td(this, 16));
         this.p0.setVisibility(8);
-        this.y1.addView(this.p0, gb1.h(36, 36.0f, 83, 4.66f, 4.0f, 4.66f, 4.0f));
+        this.y1.addView(this.p0, kb1.h(36, 36.0f, 83, 4.66f, 4.0f, 4.66f, 4.0f));
     }
 
-    public final void Y0(int i10, long j10) {
+    public final void X0(int i10, long j10) {
         this.Q2 = j10;
         if (this.Q != i10) {
             this.L3.unlock();
@@ -6963,21 +6921,37 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
             NotificationCenter notificationCenter13 = NotificationCenter.getInstance(this.Q);
             int i23 = NotificationCenter.sendingMessagesChanged;
             notificationCenter13.removeObserver(this, i23);
+            NotificationCenter notificationCenter14 = NotificationCenter.getInstance(this.Q);
+            int i24 = NotificationCenter.audioRecordTooShort;
+            notificationCenter14.removeObserver(this, i24);
+            NotificationCenter notificationCenter15 = NotificationCenter.getInstance(this.Q);
+            int i25 = NotificationCenter.updateBotMenuButton;
+            notificationCenter15.removeObserver(this, i25);
+            NotificationCenter notificationCenter16 = NotificationCenter.getInstance(this.Q);
+            int i26 = NotificationCenter.didUpdatePremiumGiftFieldIcon;
+            notificationCenter16.removeObserver(this, i26);
+            NotificationCenter notificationCenter17 = NotificationCenter.getInstance(this.Q);
+            int i27 = NotificationCenter.currentUserPremiumStatusChanged;
+            notificationCenter17.removeObserver(this, i27);
             this.Q = i10;
             this.R = AccountInstance.getInstance(i10);
-            NotificationCenter.getInstance(this.Q).addObserver(this, i11);
-            NotificationCenter.getInstance(this.Q).addObserver(this, i12);
-            NotificationCenter.getInstance(this.Q).addObserver(this, i13);
-            NotificationCenter.getInstance(this.Q).addObserver(this, i14);
-            NotificationCenter.getInstance(this.Q).addObserver(this, i15);
-            NotificationCenter.getInstance(this.Q).addObserver(this, i16);
-            NotificationCenter.getInstance(this.Q).addObserver(this, i17);
-            NotificationCenter.getInstance(this.Q).addObserver(this, i18);
-            NotificationCenter.getInstance(this.Q).addObserver(this, i19);
-            NotificationCenter.getInstance(this.Q).addObserver(this, i20);
-            NotificationCenter.getInstance(this.Q).addObserver(this, i21);
-            NotificationCenter.getInstance(this.Q).addObserver(this, i22);
-            NotificationCenter.getInstance(this.Q).addObserver(this, i23);
+            NotificationCenter.getInstance(this.Q).addWeakObserver(this, i11);
+            NotificationCenter.getInstance(this.Q).addWeakObserver(this, i12);
+            NotificationCenter.getInstance(this.Q).addWeakObserver(this, i13);
+            NotificationCenter.getInstance(this.Q).addWeakObserver(this, i14);
+            NotificationCenter.getInstance(this.Q).addWeakObserver(this, i15);
+            NotificationCenter.getInstance(this.Q).addWeakObserver(this, i16);
+            NotificationCenter.getInstance(this.Q).addWeakObserver(this, i17);
+            NotificationCenter.getInstance(this.Q).addWeakObserver(this, i18);
+            NotificationCenter.getInstance(this.Q).addWeakObserver(this, i19);
+            NotificationCenter.getInstance(this.Q).addWeakObserver(this, i20);
+            NotificationCenter.getInstance(this.Q).addWeakObserver(this, i21);
+            NotificationCenter.getInstance(this.Q).addWeakObserver(this, i22);
+            NotificationCenter.getInstance(this.Q).addWeakObserver(this, i23);
+            NotificationCenter.getInstance(this.Q).addWeakObserver(this, i24);
+            NotificationCenter.getInstance(this.Q).addWeakObserver(this, i25);
+            NotificationCenter.getInstance(this.Q).addWeakObserver(this, i26);
+            NotificationCenter.getInstance(this.Q).addWeakObserver(this, i27);
         }
         this.z0 = true;
         if (DialogObject.isChatDialog(this.Q2)) {
@@ -6985,20 +6959,20 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
         }
         L1(false);
         F1(false);
-        F();
-        B();
+        D();
+        A();
         D1(false);
         if (this.E0 != null) {
-            org.telegram.ui.un unVar = this.P2;
-            M1(unVar != null && unVar.getFragmentBeginToShow());
+            org.telegram.ui.wn wnVar = this.P2;
+            M1(wnVar != null && wnVar.getFragmentBeginToShow());
         }
     }
 
-    public final boolean Z(TL_keyboard.KeyboardButtonProto keyboardButtonProto, MessageObject messageObject, MessageObject messageObject2, org.telegram.ui.ri riVar) {
-        org.telegram.ui.un unVar;
+    public final boolean Y(TL_keyboard.KeyboardButtonProto keyboardButtonProto, MessageObject messageObject, MessageObject messageObject2, org.telegram.ui.ui uiVar) {
+        org.telegram.ui.wn wnVar;
         int i10;
         int i11 = 0;
-        if (keyboardButtonProto != null && messageObject2 != null && ((unVar = this.P2) == null || unVar.d4 != 5)) {
+        if (keyboardButtonProto != null && messageObject2 != null && ((wnVar = this.P2) == null || wnVar.d4 != 5)) {
             TL_keyboard.TL_inlineButtonTypeCopy tL_inlineButtonTypeCopy = (TL_keyboard.TL_inlineButtonTypeCopy) bg.c.a(keyboardButtonProto, TL_keyboard.TL_inlineButtonTypeCopy.class);
             TL_keyboard.TL_inlineButtonTypeUserProfile tL_inlineButtonTypeUserProfile = (TL_keyboard.TL_inlineButtonTypeUserProfile) bg.c.a(keyboardButtonProto, TL_keyboard.TL_inlineButtonTypeUserProfile.class);
             TL_keyboard.TL_buttonTypeRequestPeer tL_buttonTypeRequestPeer = (TL_keyboard.TL_buttonTypeRequestPeer) bg.c.a(keyboardButtonProto, TL_keyboard.TL_buttonTypeRequestPeer.class);
@@ -7006,14 +6980,14 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
             TL_keyboard.TL_inlineButtonTypeUrl tL_inlineButtonTypeUrl = (TL_keyboard.TL_inlineButtonTypeUrl) bg.c.a(keyboardButtonProto, TL_keyboard.TL_inlineButtonTypeUrl.class);
             if (tL_inlineButtonTypeCopy != null) {
                 AndroidUtilities.addToClipboard(tL_inlineButtonTypeCopy.copy_text);
-                wc.b0(unVar).i(LocaleController.formatString(R.string.ExactTextCopied, tL_inlineButtonTypeCopy.copy_text)).k(true);
+                wc.b0(wnVar).i(LocaleController.formatString(R.string.ExactTextCopied, tL_inlineButtonTypeCopy.copy_text)).k(true);
                 return true;
             }
             if (keyboardButtonProto instanceof TL_keyboard.TL_keyboardButton) {
                 TL_keyboard.TL_keyboardButton tL_keyboardButton = (TL_keyboard.TL_keyboardButton) keyboardButtonProto;
                 if (tL_keyboardButton.type instanceof TL_keyboard.TL_buttonTypeDefault) {
                     SendMessagesHelper.SendMessageParams of2 = SendMessagesHelper.SendMessageParams.of(tL_keyboardButton.text, this.Q2, messageObject, getThreadMessage(), null, false, null, null, null, true, 0, 0, null, false);
-                    of2.sendMessageChatArguments = unVar != null ? unVar.L8() : null;
+                    of2.sendMessageChatArguments = wnVar != null ? wnVar.O8() : null;
                     of2.effect_id = this.S4;
                     this.S4 = 0L;
                     this.J0.setEffect(0L);
@@ -7024,14 +6998,14 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
             Activity activity = this.O2;
             if (tL_inlineButtonTypeUrl != null) {
                 if (qf.d.x(tL_inlineButtonTypeUrl.url)) {
-                    qf.d.p(activity, Uri.parse(tL_inlineButtonTypeUrl.url), true, true, riVar);
+                    qf.d.p(activity, Uri.parse(tL_inlineButtonTypeUrl.url), true, true, uiVar);
                     return true;
                 }
-                g5.q0(this.P2, tL_inlineButtonTypeUrl.url, false, true, true, false, riVar, null, this.W3);
+                g5.q0(this.P2, tL_inlineButtonTypeUrl.url, false, true, true, false, uiVar, null, this.W3);
                 return true;
             }
             if (bg.c.c(keyboardButtonProto, TL_keyboard.TL_buttonTypeRequestPhone.class)) {
-                unVar.Cb(messageObject2, 2);
+                wnVar.Gb(messageObject2, 2);
                 return true;
             }
             if (!bg.c.c(keyboardButtonProto, TL_keyboard.TL_buttonTypeRequestPoll.class)) {
@@ -7046,7 +7020,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                         bgVar.run();
                         return true;
                     }
-                    g5.n(unVar, MessagesController.getInstance(this.Q).getUser(Long.valueOf(this.Q2)), new a3.i0(this, bgVar, j10, 20), null);
+                    g5.n(wnVar, MessagesController.getInstance(this.Q).getUser(Long.valueOf(this.Q2)), new a3.i0(this, bgVar, j10, 20), null);
                     return true;
                 }
                 if (bg.c.c(keyboardButtonProto, TL_keyboard.TL_buttonTypeRequestGeoLocation.class)) {
@@ -7055,19 +7029,19 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                     org.telegram.ui.ActionBar.e2 e2Var = alertDialog$Builder.a;
                     e2Var.R = string;
                     e2Var.T = LocaleController.getString("ShareYouLocationInfo", R.string.ShareYouLocationInfo);
-                    alertDialog$Builder.k(LocaleController.getString("OK", R.string.OK), new androidx.car.app.utils.a(this, messageObject2, keyboardButtonProto, 21));
+                    alertDialog$Builder.k(LocaleController.getString("OK", R.string.OK), new androidx.car.app.utils.a(this, messageObject2, keyboardButtonProto, 22));
                     alertDialog$Builder.h(LocaleController.getString("Cancel", R.string.Cancel), null);
-                    unVar.showDialog(e2Var);
+                    wnVar.showDialog(e2Var);
                     return true;
                 }
                 if (bg.c.c(keyboardButtonProto, TL_keyboard.TL_inlineButtonTypeCallback.class) || bg.c.c(keyboardButtonProto, TL_keyboard.TL_inlineButtonTypeGame.class) || bg.c.c(keyboardButtonProto, TL_keyboard.TL_inlineButtonTypeBuy.class) || bg.c.c(keyboardButtonProto, TL_keyboard.TL_inlineButtonTypeUrlAuth.class)) {
-                    SendMessagesHelper.getInstance(this.Q).sendCallback(true, messageObject2, keyboardButtonProto, unVar);
+                    SendMessagesHelper.getInstance(this.Q).sendCallback(true, messageObject2, keyboardButtonProto, wnVar);
                     return true;
                 }
                 if (tL_inlineButtonTypeSwitchInline != null) {
-                    if (!unVar.La(tL_inlineButtonTypeSwitchInline)) {
+                    if (!wnVar.Oa(tL_inlineButtonTypeSwitchInline)) {
                         if (!tL_inlineButtonTypeSwitchInline.same_peer) {
-                            Bundle c10 = org.telegram.messenger.vh.c(1, "onlySelect", "dialogsType", true);
+                            Bundle c10 = org.telegram.messenger.wh.c(1, "onlySelect", "dialogsType", true);
                             if ((tL_inlineButtonTypeSwitchInline.flags & 2) != 0) {
                                 c10.putBoolean("allowGroups", false);
                                 c10.putBoolean("allowMegagroups", false);
@@ -7094,9 +7068,9 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                                     }
                                 }
                             }
-                            org.telegram.ui.cy cyVar = new org.telegram.ui.cy(c10);
-                            cyVar.C2 = new androidx.car.app.utils.a(this, messageObject2, tL_inlineButtonTypeSwitchInline, 22);
-                            unVar.presentFragment(cyVar);
+                            org.telegram.ui.ey eyVar = new org.telegram.ui.ey(c10);
+                            eyVar.C2 = new androidx.car.app.utils.a(this, messageObject2, tL_inlineButtonTypeSwitchInline, 23);
+                            wnVar.presentFragment(eyVar);
                             return true;
                         }
                         TLRPC.Message message2 = messageObject2.messageOwner;
@@ -7115,7 +7089,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                     if (MessagesController.getInstance(this.Q).getUser(Long.valueOf(tL_inlineButtonTypeUserProfile.user_id)) != null) {
                         Bundle bundle = new Bundle();
                         bundle.putLong("user_id", tL_inlineButtonTypeUserProfile.user_id);
-                        unVar.presentFragment(new ProfileActivity(bundle, null));
+                        wnVar.presentFragment(new ProfileActivity(bundle, null));
                         return true;
                     }
                 } else if (tL_buttonTypeRequestPeer != null) {
@@ -7129,17 +7103,17 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                                 Boolean bool = tL_requestPeerTypeUser.bot;
                                 Boolean bool2 = tL_requestPeerTypeUser.premium;
                                 he heVar = new he(this, messageObject2, tL_buttonTypeRequestPeer);
-                                org.telegram.ui.cj0 cj0Var = org.telegram.ui.cj0.u0;
+                                org.telegram.ui.ej0 ej0Var = org.telegram.ui.ej0.u0;
                                 org.telegram.ui.ActionBar.r2 R = LaunchActivity.R();
-                                if (R == null || org.telegram.ui.cj0.u0 != null) {
+                                if (R == null || org.telegram.ui.ej0.u0 != null) {
                                     return false;
                                 }
-                                org.telegram.ui.cj0 cj0Var2 = new org.telegram.ui.cj0(R, i10, bool, bool2, heVar);
-                                cj0Var2.show();
-                                org.telegram.ui.cj0.u0 = cj0Var2;
+                                org.telegram.ui.ej0 ej0Var2 = new org.telegram.ui.ej0(R, i10, bool, bool2, heVar);
+                                ej0Var2.show();
+                                org.telegram.ui.ej0.u0 = ej0Var2;
                                 return false;
                             }
-                            Bundle c11 = org.telegram.messenger.vh.c(15, "onlySelect", "dialogsType", true);
+                            Bundle c11 = org.telegram.messenger.wh.c(15, "onlySelect", "dialogsType", true);
                             TLRPC.Message message3 = messageObject2.messageOwner;
                             if (message3 != null) {
                                 TLRPC.Peer peer = message3.from_id;
@@ -7155,9 +7129,9 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                             } catch (Exception e) {
                                 FileLog.e(e);
                             }
-                            org.telegram.ui.cy cyVar2 = new org.telegram.ui.cy(c11);
-                            cyVar2.C2 = new he(this, messageObject2, tL_buttonTypeRequestPeer);
-                            unVar.presentFragment(cyVar2);
+                            org.telegram.ui.ey eyVar2 = new org.telegram.ui.ey(c11);
+                            eyVar2.C2 = new he(this, messageObject2, tL_buttonTypeRequestPeer);
+                            wnVar.presentFragment(eyVar2);
                             return false;
                         }
                         TLRPC.User i12 = getParentFragment() != null ? getParentFragment().i() : MessagesController.getInstance(this.Q).getUser(Long.valueOf(this.Q2));
@@ -7171,12 +7145,12 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
             }
             TL_keyboard.TL_buttonTypeRequestPoll tL_buttonTypeRequestPoll = (TL_keyboard.TL_buttonTypeRequestPoll) bg.c.a(keyboardButtonProto, TL_keyboard.TL_buttonTypeRequestPoll.class);
             Boolean valueOf = (tL_buttonTypeRequestPoll.flags & 1) != 0 ? Boolean.valueOf(tL_buttonTypeRequestPoll.quiz) : null;
-            unVar.ha();
-            di.a3 a3Var = unVar.V1;
+            wnVar.ka();
+            di.a3 a3Var = wnVar.V1;
             if (a3Var != null) {
                 a3Var.V0 = false;
                 a3Var.A1.setVisibility(8);
-                a3Var.Z1(false, valueOf);
+                a3Var.a2(false, valueOf);
                 return false;
             }
         }
@@ -7198,7 +7172,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void Z0(MessageObject messageObject, MessageObject.GroupedMessages groupedMessages, boolean z10) {
+    public final void Y0(MessageObject messageObject, MessageObject.GroupedMessages groupedMessages, boolean z10) {
         float f7;
         float f10;
         int i10;
@@ -7212,7 +7186,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
         boolean z11;
         ze zeVar;
         if (this.b3 == null && this.e3 == null && this.Z1 != messageObject) {
-            T();
+            S();
             boolean z12 = this.Z1 != null;
             this.Z1 = messageObject;
             this.a2 = z10;
@@ -7223,13 +7197,13 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
             ue ueVar = this.Z0;
             if (messageObject != null) {
                 this.R4 = groupedMessages != null ? groupedMessages.captionAbove : messageObject.messageOwner.invert_media;
-                Q(false);
-                this.F1.setOnClickListener(new ud(this, 17));
+                P(false);
+                this.F1.setOnClickListener(new td(this, 17));
                 if (this.Z1.needResendWhenEdit()) {
                     long j10 = this.u4;
                     if (j10 > 0) {
                         this.F1.i(1, j10, true);
-                        this.F1.setLayoutParams(gb1.i(44, 44, 85));
+                        this.F1.setLayoutParams(kb1.i(44, 44, 85));
                         this.F1.requestLayout();
                         keVar = keVar3;
                         this.F1.setOnLongClickListener(new i(this, messageObject, groupedMessages, 1));
@@ -7252,7 +7226,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                                 paint = new TextPaint();
                                 paint.setTextSize(AndroidUtilities.dp(18.0f));
                             }
-                            charSequence2 = o(this.Z1.messageOwner.entities, charSequence, paint.getFontMetricsInt());
+                            charSequence2 = n(this.Z1.messageOwner.entities, charSequence, paint.getFontMetricsInt());
                         } else {
                             charSequence2 = "";
                         }
@@ -7265,13 +7239,13 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                         TLRPC.MessageMedia messageMedia = messageObject2.messageOwner.media;
                         this.Y2 = ((messageMedia instanceof TLRPC.TL_messageMediaWebPage) || !messageMedia.manual) && ((i11 = messageObject2.type) == 0 || i11 == 19);
                         if (this.z2) {
-                            org.telegram.ui.ip ipVar = new org.telegram.ui.ip(11, this, charSequence2);
-                            this.W = ipVar;
-                            AndroidUtilities.runOnUIThread(ipVar, 200L);
+                            org.telegram.ui.kp kpVar = new org.telegram.ui.kp(11, this, charSequence2);
+                            this.W = kpVar;
+                            AndroidUtilities.runOnUIThread(kpVar, 200L);
                         } else {
-                            org.telegram.ui.ip ipVar2 = this.W;
-                            if (ipVar2 != null) {
-                                AndroidUtilities.cancelRunOnUIThread(ipVar2);
+                            org.telegram.ui.kp kpVar2 = this.W;
+                            if (kpVar2 != null) {
+                                AndroidUtilities.cancelRunOnUIThread(kpVar2);
                                 this.W = null;
                             }
                             setFieldText(charSequence2);
@@ -7280,7 +7254,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                         if (pfVar != null) {
                             pfVar.requestFocus();
                         }
-                        F0();
+                        E0();
                         pfVar2 = this.E0;
                         if (pfVar2 != null) {
                             FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) pfVar2.getLayoutParams();
@@ -7316,7 +7290,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                 }
                 keVar = keVar3;
                 this.F1.i(1, 0L, true);
-                this.F1.setLayoutParams(gb1.i(44, 44, 85));
+                this.F1.setLayoutParams(kb1.i(44, 44, 85));
                 this.F1.requestLayout();
                 this.F1.setOnLongClickListener(new i(this, messageObject, groupedMessages, 1));
                 this.F1.setVisibility(0);
@@ -7341,7 +7315,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                 pfVar = this.E0;
                 if (pfVar != null) {
                 }
-                F0();
+                E0();
                 pfVar2 = this.E0;
                 if (pfVar2 != null) {
                 }
@@ -7360,9 +7334,9 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                 if (zeVar != null) {
                 }
             } else {
-                org.telegram.ui.ip ipVar3 = this.W;
-                if (ipVar3 != null) {
-                    AndroidUtilities.cancelRunOnUIThread(ipVar3);
+                org.telegram.ui.kp kpVar3 = this.W;
+                if (kpVar3 != null) {
+                    AndroidUtilities.cancelRunOnUIThread(kpVar3);
                     this.W = null;
                 }
                 xe xeVar = this.F1;
@@ -7442,7 +7416,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                     ueVar.setVisibility(i10);
                     f7 = 1.0f;
                 }
-                X();
+                W();
                 ze zeVar2 = this.J1;
                 if (zeVar2 != null && zeVar2.getTag() != null) {
                     this.J1.setScaleX(f7);
@@ -7450,19 +7424,19 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                     this.J1.setAlpha(f7);
                     this.J1.setVisibility(0);
                 }
-                org.telegram.ui.un unVar = this.P2;
-                if (unVar != null) {
-                    unVar.B5 = null;
-                    unVar.S5 = null;
-                    MessagePreviewParams messagePreviewParams = unVar.r5;
+                org.telegram.ui.wn wnVar = this.P2;
+                if (wnVar != null) {
+                    wnVar.F5 = null;
+                    wnVar.W5 = null;
+                    MessagePreviewParams messagePreviewParams = wnVar.v5;
                     if (messagePreviewParams != null) {
                         messagePreviewParams.updateLink(this.Q, null, "", null, null, null);
                     }
                     this.X2 = null;
                     this.Y2 = true;
-                    unVar.q8();
+                    wnVar.s8();
                 }
-                T();
+                S();
                 pf pfVar5 = this.E0;
                 if (pfVar5 != null) {
                     pfVar5.setText(this.V1);
@@ -7483,25 +7457,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
         }
     }
 
-    @Override // org.telegram.ui.Components.zy0
-    public final void a(TLRPC.Document document, String str, Object obj, MessageObject.SendAnimationData sendAnimationData, boolean z10, boolean z11, int i10, int i11) {
-        if (this.p5) {
-            return;
-        }
-        org.telegram.ui.kn knVar = this.V2;
-        org.telegram.ui.un unVar = this.P2;
-        if (knVar != null && unVar != null && knVar.f) {
-            unVar.dc();
-            return;
-        }
-        if (!c() || i10 != 0) {
-            g5.Z(this.Q, 1, this.Q2, new fe(this, document, str, sendAnimationData, z11, i10, i11, obj, z10));
-            return;
-        }
-        g5.L(this.O2, unVar.a(), new org.telegram.messenger.ik(this, document, str, obj, sendAnimationData, z10), this.W3);
-    }
-
-    public final void a0() {
+    public final void Z() {
         MessagePreviewParams messagePreviewParams;
         MessageSuggestionParams of2;
         TLRPC.Chat chat;
@@ -7512,14 +7468,14 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
             return;
         }
         boolean needResendWhenEdit = messageObject.needResendWhenEdit();
-        org.telegram.ui.un unVar = this.P2;
+        org.telegram.ui.wn wnVar = this.P2;
         if (needResendWhenEdit && !ChatObject.canManageMonoForum(this.Q, this.Z1.getDialogId())) {
-            if (unVar == null || (of3 = unVar.s5) == null) {
+            if (wnVar == null || (of3 = wnVar.w5) == null) {
                 of3 = MessageSuggestionParams.of(this.Z1.messageOwner.suggested_post);
             }
             if (!bi.ca.U(this.Q, of3.amount)) {
-                if (unVar != null) {
-                    unVar.fc(of3);
+                if (wnVar != null) {
+                    wnVar.jc(of3);
                     return;
                 }
                 return;
@@ -7537,14 +7493,14 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
             if (MessagesController.getInstance(this.Q).premiumFeaturesBlocked() || MessagesController.getInstance(this.Q).captionLengthLimitPremium <= this.d0) {
                 return;
             }
-            n1();
+            m1();
             return;
         }
         if (this.R1 != 0) {
-            j1(0, true);
+            i1(0, true);
             this.U0.t(false);
             if (this.z3) {
-                k1(false, true, false, true);
+                j1(false, true, false, true);
                 this.l3 = true;
                 AndroidUtilities.runOnUIThread(new sd(this, 27), 200L);
             }
@@ -7570,13 +7526,13 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
             messageObject3.editingMessage = charSequenceArr[0];
             messageObject3.editingMessageEntities = entities;
             messageObject3.editingMessageSearchWebPage = this.Y2;
-            if (unVar != null && (chat = unVar.e) != null && (((i10 = messageObject3.type) == 0 || i10 == 19) && !ChatObject.canSendEmbed(chat))) {
+            if (wnVar != null && (chat = wnVar.e) != null && (((i10 = messageObject3.type) == 0 || i10 == 19) && !ChatObject.canSendEmbed(chat))) {
                 MessageObject messageObject4 = this.Z1;
                 messageObject4.editingMessageSearchWebPage = false;
                 TLRPC.Message message = messageObject4.messageOwner;
                 message.flags &= -513;
                 message.media = null;
-            } else if (unVar == null || (messagePreviewParams = unVar.r5) == null) {
+            } else if (wnVar == null || (messagePreviewParams = wnVar.v5) == null) {
                 MessageObject messageObject5 = this.Z1;
                 messageObject5.editingMessageSearchWebPage = false;
                 int i11 = messageObject5.type;
@@ -7586,7 +7542,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                     message2.media = new TLRPC.TL_messageMediaEmpty();
                 }
             } else {
-                if (unVar.S5 instanceof TLRPC.TL_webPagePending) {
+                if (wnVar.W5 instanceof TLRPC.TL_webPagePending) {
                     MessageObject messageObject6 = this.Z1;
                     messageObject6.editingMessageSearchWebPage = false;
                     int i12 = messageObject6.type;
@@ -7600,7 +7556,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                     TLRPC.Message message3 = messageObject7.messageOwner;
                     message3.flags |= 512;
                     message3.media = new TLRPC.TL_messageMediaWebPage();
-                    this.Z1.messageOwner.media.webpage = unVar.r5.webpage;
+                    this.Z1.messageOwner.media.webpage = wnVar.v5.webpage;
                 } else {
                     MessageObject messageObject8 = this.Z1;
                     messageObject8.editingMessageSearchWebPage = false;
@@ -7612,7 +7568,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                     }
                 }
                 TLRPC.Message message5 = this.Z1.messageOwner;
-                MessagePreviewParams messagePreviewParams2 = unVar.r5;
+                MessagePreviewParams messagePreviewParams2 = wnVar.v5;
                 message5.invert_media = messagePreviewParams2.webpageTop;
                 if (messagePreviewParams2.hasMedia) {
                     TLRPC.MessageMedia messageMedia2 = message5.media;
@@ -7625,7 +7581,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
             }
             if (this.Z1.needResendWhenEdit()) {
                 SendMessagesHelper.SendMessageParams of4 = SendMessagesHelper.SendMessageParams.of(this.Z1.editingMessage.toString(), this.Z1.getDialogId());
-                if (unVar == null || (of2 = unVar.s5) == null) {
+                if (wnVar == null || (of2 = wnVar.w5) == null) {
                     of2 = MessageSuggestionParams.of(this.Z1.messageOwner.suggested_post);
                 }
                 of4.suggestionParams = of2;
@@ -7658,10 +7614,10 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                 sendMessagesHelper.editMessage(messageObject10, null, null, null, null, null, null, false, messageObject10.hasMediaSpoilers(), null);
             }
         }
-        Z0(null, null, false);
+        Y0(null, null, false);
     }
 
-    public final void a1(boolean z10, boolean z11) {
+    public final void Z0(boolean z10, boolean z11) {
         yg ygVar;
         pf pfVar;
         ke keVar;
@@ -7702,24 +7658,25 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.p6
-    public final void addColorKeys(HashSet hashSet) {
-        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.y6.Sd));
-        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.y6.df));
-        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.y6.p7));
-        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.y6.y6));
-        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.y6.bf));
-        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.y6.af));
-        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.y6.Yd));
+    @Override // org.telegram.ui.Components.az0
+    public final void a(TLRPC.Document document, String str, Object obj, MessageObject.SendAnimationData sendAnimationData, boolean z10, boolean z11, int i10, int i11) {
+        if (this.p5) {
+            return;
+        }
+        org.telegram.ui.mn mnVar = this.V2;
+        org.telegram.ui.wn wnVar = this.P2;
+        if (mnVar != null && wnVar != null && mnVar.f) {
+            wnVar.hc();
+            return;
+        }
+        if (!c() || i10 != 0) {
+            g5.Z(this.Q, 1, this.Q2, new fe(this, document, str, sendAnimationData, z11, i10, i11, obj, z10));
+            return;
+        }
+        g5.L(this.O2, wnVar.a(), new org.telegram.messenger.jk(this, document, str, obj, sendAnimationData, z10), this.W3);
     }
 
-    @Override // org.telegram.ui.Components.zy0
-    public final boolean b() {
-        org.telegram.ui.un unVar = this.P2;
-        return unVar != null && unVar.I6();
-    }
-
-    public final void b0(Canvas canvas, boolean z10) {
+    public final void a0(Canvas canvas, boolean z10) {
         if (this.y4) {
             int z11 = (int) c3.h0.z(1.0f, this.C4, org.telegram.ui.ActionBar.y6.i3.getIntrinsicHeight(), this.T1);
             View view = this.G1;
@@ -7744,9 +7701,9 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                 canvas.drawRect(0.0f, f7, width, height, d);
                 return;
             }
-            int f02 = f0(org.telegram.ui.ActionBar.y6.Sd);
+            int e02 = e0(org.telegram.ui.ActionBar.y6.Sd);
             Paint paint = this.B4;
-            paint.setColor(f02);
+            paint.setColor(e02);
             if (!SharedConfig.chatBlurEnabled() || this.m1 == null) {
                 canvas.drawRect(0.0f, intrinsicHeight, getWidth(), getHeight(), paint);
             } else {
@@ -7756,7 +7713,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
         }
     }
 
-    public final void b1() {
+    public final void a1() {
         AccessibilityManager accessibilityManager = (AccessibilityManager) this.O2.getSystemService("accessibility");
         if (this.E0 == null || accessibilityManager.isTouchExplorationEnabled()) {
             return;
@@ -7768,13 +7725,24 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
         }
     }
 
-    @Override // org.telegram.ui.Components.zy0
-    public final boolean c() {
-        org.telegram.ui.un unVar = this.P2;
-        return unVar != null && unVar.c();
+    @Override // org.telegram.ui.ActionBar.p6
+    public final void addColorKeys(HashSet hashSet) {
+        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.y6.Sd));
+        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.y6.df));
+        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.y6.p7));
+        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.y6.y6));
+        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.y6.bf));
+        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.y6.af));
+        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.y6.Yd));
     }
 
-    public final boolean c0(Canvas canvas, Utilities.Callback0Return callback0Return) {
+    @Override // org.telegram.ui.Components.az0
+    public final boolean b() {
+        org.telegram.ui.wn wnVar = this.P2;
+        return wnVar != null && wnVar.K6();
+    }
+
+    public final boolean b0(Canvas canvas, Utilities.Callback0Return callback0Return) {
         float f7;
         float f10;
         float f11;
@@ -7825,7 +7793,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
         return booleanValue;
     }
 
-    public final void c1(CharSequence charSequence, boolean z10) {
+    public final void b1(CharSequence charSequence, boolean z10) {
         pf pfVar = this.E0;
         if (pfVar == null) {
             return;
@@ -7842,20 +7810,13 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
         }
     }
 
-    @Override // org.telegram.ui.Components.rz0
-    public final void d(TextWatcher textWatcher) {
-        pf pfVar = this.E0;
-        if (pfVar != null) {
-            pfVar.addTextChangedListener(textWatcher);
-            return;
-        }
-        if (this.H4 == null) {
-            this.H4 = new ArrayList();
-        }
-        this.H4.add(textWatcher);
+    @Override // org.telegram.ui.Components.az0
+    public final boolean c() {
+        org.telegram.ui.wn wnVar = this.P2;
+        return wnVar != null && wnVar.c();
     }
 
-    public final yf d0(MessageObject messageObject, boolean z10) {
+    public final yf c0(MessageObject messageObject, boolean z10) {
         yf yfVar = new yf(messageObject.currentAccount, messageObject.messageOwner, true, true);
         if (z10) {
             pf pfVar = this.E0;
@@ -7868,9 +7829,91 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
         return yfVar;
     }
 
-    public final void d1(boolean z10, boolean z11) {
+    public final void c1(boolean z10, boolean z11) {
         this.H2 = z10;
-        G(z11);
+        F(z11);
+    }
+
+    @Override // org.telegram.ui.Components.sz0
+    public final void d(TextWatcher textWatcher) {
+        pf pfVar = this.E0;
+        if (pfVar != null) {
+            pfVar.addTextChangedListener(textWatcher);
+            return;
+        }
+        if (this.H4 == null) {
+            this.H4 = new ArrayList();
+        }
+        this.H4.add(textWatcher);
+    }
+
+    public void d1(float f7, float f10, float f11, boolean z10) {
+        int dp;
+        float f12 = 1.0f - f11;
+        float f13 = f7 * f12;
+        float f14 = f10 * f12;
+        this.r = (f11 * 0.5f) + 0.5f;
+        this.s = f11;
+        C1();
+        float f15 = -f13;
+        this.Q0.setTranslationX(f15);
+        if (this.E0 == null) {
+            dp = 0;
+        } else {
+            int dp2 = AndroidUtilities.dp(40.0f);
+            dq0 dq0Var = this.p0;
+            dp = dp2 + ((dq0Var == null || dq0Var.getVisibility() != 0) ? 0 : AndroidUtilities.dp(18.0f));
+        }
+        this.H = f15 - (dp * f12);
+        bk0 bk0Var = this.g1;
+        if (bk0Var != null) {
+            bk0Var.setTranslationX(f15);
+        }
+        RecordCircle recordCircle = this.N1;
+        if (recordCircle != null) {
+            recordCircle.setTranslationX(f14);
+        }
+        sg sgVar = this.O1;
+        if (sgVar != null) {
+            sgVar.setTranslationX(f14);
+        }
+        LinearLayout linearLayout = this.d;
+        if (linearLayout != null) {
+            linearLayout.setTranslationX(f15);
+        }
+        ke keVar = this.A1;
+        keVar.setTranslationX(f14);
+        keVar.setAlpha(f11);
+        ImageView imageView = this.w1;
+        if (imageView != null) {
+            imageView.setAlpha(imageView.getScaleX() > 0.7f ? f11 : 0.0f);
+        }
+        boolean z11 = true;
+        if (z10 && f11 != 1.0f) {
+            z11 = false;
+        }
+        this.J = z11;
+        this.y = f14;
+        this.F = f11;
+        x1();
+        G1();
+        float f16 = f13 * f12;
+        if (this.I != f16) {
+            this.I = f16;
+            hl0 hl0Var = this.h1;
+            if (hl0Var != null) {
+                hl0Var.setTranslationX(f16);
+                this.h1.invalidate();
+            }
+        }
+        if (this.E0 != null) {
+            float lerp = AndroidUtilities.lerp(0.88f, 1.0f, f11);
+            this.E0.setPivotX(0.0f);
+            this.E0.setPivotY(r9.getMeasuredHeight() / 2.0f);
+            this.E0.setScaleX(lerp);
+            this.E0.setScaleY(lerp);
+            this.E0.setHintRightOffset(AndroidUtilities.lerp(AndroidUtilities.dp(60.0f), 0, f11));
+        }
     }
 
     @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
@@ -7992,7 +8035,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
             if (xgVar2 != null) {
                 xgVar2.a(this.i1);
             }
-            G(true);
+            F(true);
             this.F2 = true;
             I1(0, true);
             return;
@@ -8096,16 +8139,16 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
             this.c3 = str;
             ArrayList<Bitmap> arrayList2 = (ArrayList) objArr[3];
             this.i1 = videoEditedInfo.estimatedDuration;
-            h91 h91Var = this.f1;
-            if (h91Var != null) {
-                h91Var.setVideoPath(str);
+            i91 i91Var = this.f1;
+            if (i91Var != null) {
+                i91Var.setVideoPath(str);
                 this.f1.setKeyframes(arrayList2);
                 this.f1.setVisibility(0);
                 this.f1.setMinProgressDiff(1000.0f / this.e3.estimatedDuration);
-                u0();
+                t0();
             }
             I1(3, true);
-            G(false);
+            F(false);
             return;
         }
         this.b3 = (TLRPC.TL_document) obj;
@@ -8121,7 +8164,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
             }
             return;
         }
-        U();
+        T();
         if (this.e1 == null) {
             return;
         }
@@ -8186,30 +8229,30 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
             lVar.setScaleY(0.0f);
         }
         this.i1 = (long) (1000.0d * d);
-        gl0 gl0Var = this.h1;
+        hl0 hl0Var = this.h1;
         String str2 = this.c3;
-        if (!gl0Var.Q) {
-            gl0Var.r = (float) d;
-            gl0Var.s = floatValue;
-            gl0Var.v = floatValue2;
-            gl0Var.w = false;
-            gl0Var.h.t(AndroidUtilities.formatDuration((int) Math.round(Math.max(1.0d, d)), false), false, true);
-            gl0Var.f.a(false, false);
-            if (gl0Var.n == null) {
-                s81 s81Var = new s81();
-                gl0Var.n = s81Var;
-                s81Var.J = new jg.i(gl0Var);
+        if (!hl0Var.Q) {
+            hl0Var.r = (float) d;
+            hl0Var.s = floatValue;
+            hl0Var.v = floatValue2;
+            hl0Var.w = false;
+            hl0Var.h.t(AndroidUtilities.formatDuration((int) Math.round(Math.max(1.0d, d)), false), false, true);
+            hl0Var.f.a(false, false);
+            if (hl0Var.n == null) {
+                t81 t81Var = new t81();
+                hl0Var.n = t81Var;
+                t81Var.J = new jg.i(hl0Var);
             }
-            gl0Var.n.D(Uri.fromFile(new File(str2)), "other");
-            gl0Var.K = 0;
-            gl0Var.L = bArr;
-            gl0Var.invalidate();
+            hl0Var.n.D(Uri.fromFile(new File(str2)), "other");
+            hl0Var.K = 0;
+            hl0Var.L = bArr;
+            hl0Var.invalidate();
         }
-        G(false);
+        F(false);
         if (z10) {
-            V();
-            W();
             U();
+            V();
+            T();
             this.w2 = 1;
             this.N1.c(false);
             this.v3.set(this.N1, Float.valueOf(1.0f));
@@ -8258,81 +8301,12 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
         return drawChild;
     }
 
-    public void e1(float f7, float f10, float f11, boolean z10) {
-        int dp;
-        float f12 = 1.0f - f11;
-        float f13 = f7 * f12;
-        float f14 = f10 * f12;
-        this.r = (f11 * 0.5f) + 0.5f;
-        this.s = f11;
-        C1();
-        float f15 = -f13;
-        this.Q0.setTranslationX(f15);
-        if (this.E0 == null) {
-            dp = 0;
-        } else {
-            int dp2 = AndroidUtilities.dp(40.0f);
-            cq0 cq0Var = this.p0;
-            dp = dp2 + ((cq0Var == null || cq0Var.getVisibility() != 0) ? 0 : AndroidUtilities.dp(18.0f));
-        }
-        this.H = f15 - (dp * f12);
-        ak0 ak0Var = this.g1;
-        if (ak0Var != null) {
-            ak0Var.setTranslationX(f15);
-        }
-        RecordCircle recordCircle = this.N1;
-        if (recordCircle != null) {
-            recordCircle.setTranslationX(f14);
-        }
-        sg sgVar = this.O1;
-        if (sgVar != null) {
-            sgVar.setTranslationX(f14);
-        }
-        LinearLayout linearLayout = this.d;
-        if (linearLayout != null) {
-            linearLayout.setTranslationX(f15);
-        }
-        ke keVar = this.A1;
-        keVar.setTranslationX(f14);
-        keVar.setAlpha(f11);
-        ImageView imageView = this.w1;
-        if (imageView != null) {
-            imageView.setAlpha(imageView.getScaleX() > 0.7f ? f11 : 0.0f);
-        }
-        boolean z11 = true;
-        if (z10 && f11 != 1.0f) {
-            z11 = false;
-        }
-        this.J = z11;
-        this.y = f14;
-        this.F = f11;
-        x1();
-        G1();
-        float f16 = f13 * f12;
-        if (this.I != f16) {
-            this.I = f16;
-            gl0 gl0Var = this.h1;
-            if (gl0Var != null) {
-                gl0Var.setTranslationX(f16);
-                this.h1.invalidate();
-            }
-        }
-        if (this.E0 != null) {
-            float lerp = AndroidUtilities.lerp(0.88f, 1.0f, f11);
-            this.E0.setPivotX(0.0f);
-            this.E0.setPivotY(r9.getMeasuredHeight() / 2.0f);
-            this.E0.setScaleX(lerp);
-            this.E0.setScaleY(lerp);
-            this.E0.setHintRightOffset(AndroidUtilities.lerp(AndroidUtilities.dp(60.0f), 0, f11));
-        }
-    }
-
-    public final int f0(int i10) {
+    public final int e0(int i10) {
         org.telegram.ui.ActionBar.u6 u6Var = this.W3;
         return u6Var != null ? u6Var.g(i10) : org.telegram.ui.ActionBar.y6.x0(null, i10, false);
     }
 
-    public final void f1(boolean z10) {
+    public final void e1(boolean z10) {
         if (this.p5 == z10) {
             return;
         }
@@ -8344,7 +8318,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
         if (z10) {
             this.b1.setVisibility(8);
         } else {
-            N0();
+            M0();
         }
         if (!z10) {
             this.c0 = -1;
@@ -8354,17 +8328,45 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
             }
         }
         E1(this.P4);
-        G(false);
+        F(false);
     }
 
-    public final boolean g0() {
+    public final boolean f0() {
         return this.q5 == 3;
     }
 
-    public final void g1(CharSequence charSequence, boolean z10) {
+    public final void f1(CharSequence charSequence, boolean z10) {
         this.e = charSequence;
         this.f = null;
         D1(z10);
+    }
+
+    public final boolean g0() {
+        pf pfVar = this.E0;
+        return pfVar != null && pfVar.length() > 0;
+    }
+
+    public final void g1(boolean z10, boolean z11) {
+        ve veVar = this.b1;
+        if (veVar == null) {
+            return;
+        }
+        this.c1 = z10;
+        if (z11) {
+            SharedPreferences globalMainSettings = MessagesController.getGlobalMainSettings();
+            boolean z12 = false;
+            if (DialogObject.isChatDialog(this.Q2)) {
+                TLRPC.Chat chat = this.R.getMessagesController().getChat(Long.valueOf(-this.Q2));
+                if (ChatObject.isChannel(chat) && !chat.megagroup) {
+                    z12 = true;
+                }
+            }
+            globalMainSettings.edit().putBoolean(z12 ? "currentModeVideoChannel" : "currentModeVideo", z10).apply();
+        }
+        veVar.j(this.c1 ? yg.b : yg.a, z11);
+        veVar.setContentDescription(LocaleController.getString(this.c1 ? R.string.AccDescrVideoMessage : R.string.AccDescrVoiceMessage));
+        this.Z0.setContentDescription(LocaleController.getString(this.c1 ? R.string.AccDescrVideoMessage : R.string.AccDescrVoiceMessage));
+        veVar.sendAccessibilityEvent(8);
     }
 
     public org.telegram.ui.ActionBar.q1 getAdjustPanLayoutHelper() {
@@ -8402,13 +8404,13 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
             textView.setAlpha(0.0f);
             textView.setGravity(17);
             textView.setTypeface(AndroidUtilities.bold());
-            e4Var.addView(textView, gb1.h(-1, -1.0f, 3, 0.0f, 0.0f, 0.0f, 0.0f));
+            e4Var.addView(textView, kb1.h(-1, -1.0f, 3, 0.0f, 0.0f, 0.0f, 0.0f));
             RadialProgressView radialProgressView = new RadialProgressView(context, null);
             radialProgressView.setSize(AndroidUtilities.dp(18.0f));
             radialProgressView.setAlpha(0.0f);
             radialProgressView.setScaleX(0.0f);
             radialProgressView.setScaleY(0.0f);
-            e4Var.addView(radialProgressView, gb1.h(28, 28.0f, 21, 0.0f, 0.0f, 12.0f, 0.0f));
+            e4Var.addView(radialProgressView, kb1.h(28, 28.0f, 21, 0.0f, 0.0f, 12.0f, 0.0f));
             View view = new View(context);
             e4Var.h = view;
             int i10 = org.telegram.ui.ActionBar.y6.Qh;
@@ -8416,13 +8418,13 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
             org.telegram.ui.ActionBar.b7 N = org.telegram.ui.ActionBar.f7.N(i10);
             view.setBackground(g02);
             org.telegram.ui.ActionBar.f7.k(view, g02, null, N, null);
-            e4Var.addView(view, gb1.h(-1, -1.0f, 3, 0.0f, 0.0f, 0.0f, 0.0f));
+            e4Var.addView(view, kb1.h(-1, -1.0f, 3, 0.0f, 0.0f, 0.0f, 0.0f));
             e4Var.setWillNotDraw(false);
             this.k0 = e4Var;
             e4Var.setVisibility(8);
-            O();
+            N();
             this.k0.setBotMenuButton(this.l0);
-            this.y1.addView(this.k0, gb1.i(-1, -1, 80));
+            this.y1.addView(this.k0, kb1.i(-1, -1, 80));
         }
         return this.k0;
     }
@@ -8442,13 +8444,13 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
             }
             return this.V1;
         }
-        if (this.E0 == null || !h0()) {
+        if (this.E0 == null || !g0()) {
             return null;
         }
         return this.E0.getText();
     }
 
-    @Override // org.telegram.ui.Components.rz0
+    @Override // org.telegram.ui.Components.sz0
     public Editable getEditText() {
         pf pfVar = this.E0;
         if (pfVar == null) {
@@ -8481,9 +8483,9 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
         return this.m4;
     }
 
-    @Override // org.telegram.ui.Components.rz0
+    @Override // org.telegram.ui.Components.sz0
     public CharSequence getFieldText() {
-        if (this.E0 == null || !h0()) {
+        if (this.E0 == null || !g0()) {
             return null;
         }
         return this.E0.getText();
@@ -8508,8 +8510,8 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
     */
     public int getMessagesCount() {
         MessagePreviewParams messagePreviewParams;
-        org.telegram.ui.un unVar = this.P2;
-        int forwardedMessagesCount = (unVar == null || (messagePreviewParams = unVar.r5) == null) ? 0 : messagePreviewParams.getForwardedMessagesCount();
+        org.telegram.ui.wn wnVar = this.P2;
+        int forwardedMessagesCount = (wnVar == null || (messagePreviewParams = wnVar.v5) == null) ? 0 : messagePreviewParams.getForwardedMessagesCount();
         pf pfVar = this.E0;
         if (pfVar == null || TextUtils.isEmpty(pfVar.getText())) {
             if (this.d3 == null) {
@@ -8528,6 +8530,14 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
 
     public RecordCircle getRecordCircle() {
         return this.N1;
+    }
+
+    public long getRecordTimerStartTime() {
+        xg xgVar = this.Y0;
+        if (xgVar == null || !xgVar.a) {
+            return 0L;
+        }
+        return xgVar.d;
     }
 
     public MessageObject getReplyingMessageObject() {
@@ -8556,26 +8566,26 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
     }
 
     public MessageSuggestionParams getSendMessageSuggestionParams() {
-        org.telegram.ui.un unVar = this.P2;
-        if (unVar != null) {
-            return unVar.s5;
+        org.telegram.ui.wn wnVar = this.P2;
+        if (wnVar != null) {
+            return wnVar.w5;
         }
         return null;
     }
 
     public long getSendMonoForumPeerId() {
-        org.telegram.ui.un unVar = this.P2;
-        if (unVar != null) {
-            return unVar.X8();
+        org.telegram.ui.wn wnVar = this.P2;
+        if (wnVar != null) {
+            return wnVar.a9();
         }
         return 0L;
     }
 
-    public cq0 getSenderSelectView() {
+    public dq0 getSenderSelectView() {
         return this.p0;
     }
 
-    public vw0 getSizeNotifierLayout() {
+    public ww0 getSizeNotifierLayout() {
         return this.m1;
     }
 
@@ -8591,8 +8601,8 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
     }
 
     public long getStarsPrice() {
-        org.telegram.ui.un unVar = this.P2;
-        return unVar != null ? unVar.getMessagesController().getSendPaidMessagesStars(unVar.a()) : MessagesController.getInstance(this.Q).getSendPaidMessagesStars(this.Q2);
+        org.telegram.ui.wn wnVar = this.P2;
+        return wnVar != null ? wnVar.getMessagesController().getSendPaidMessagesStars(wnVar.a()) : MessagesController.getInstance(this.Q).getSendPaidMessagesStars(this.Q2);
     }
 
     public Drawable getStickersArrowDrawable() {
@@ -8635,7 +8645,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
         return this.G1.getTranslationY();
     }
 
-    public b61 getTrendingStickersAlert() {
+    public c61 getTrendingStickersAlert() {
         return this.a3;
     }
 
@@ -8655,40 +8665,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
         return getMeasuredHeight() - f7;
     }
 
-    public final boolean h0() {
-        pf pfVar = this.E0;
-        return pfVar != null && pfVar.length() > 0;
-    }
-
-    public final void h1(boolean z10, boolean z11) {
-        ve veVar = this.b1;
-        if (veVar == null) {
-            return;
-        }
-        this.c1 = z10;
-        if (z11) {
-            SharedPreferences globalMainSettings = MessagesController.getGlobalMainSettings();
-            boolean z12 = false;
-            if (DialogObject.isChatDialog(this.Q2)) {
-                TLRPC.Chat chat = this.R.getMessagesController().getChat(Long.valueOf(-this.Q2));
-                if (ChatObject.isChannel(chat) && !chat.megagroup) {
-                    z12 = true;
-                }
-            }
-            globalMainSettings.edit().putBoolean(z12 ? "currentModeVideoChannel" : "currentModeVideo", z10).apply();
-        }
-        veVar.j(this.c1 ? yg.b : yg.a, z11);
-        veVar.setContentDescription(LocaleController.getString(this.c1 ? R.string.AccDescrVideoMessage : R.string.AccDescrVoiceMessage));
-        this.Z0.setContentDescription(LocaleController.getString(this.c1 ? R.string.AccDescrVideoMessage : R.string.AccDescrVoiceMessage));
-        veVar.sendAccessibilityEvent(8);
-    }
-
-    @Override // android.view.View
-    public final boolean hasOverlappingRendering() {
-        return false;
-    }
-
-    public final void i0() {
+    public final void h0() {
         fi.v3 v3Var = this.N;
         if (v3Var != null) {
             v3Var.e(true);
@@ -8699,42 +8676,47 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
         }
     }
 
-    public final void i1(MessageObject messageObject, org.telegram.ui.kn knVar, MessageObject messageObject2) {
+    public final void h1(MessageObject messageObject, org.telegram.ui.mn mnVar, MessageObject messageObject2) {
         MessageObject messageObject3;
-        org.telegram.ui.un unVar = this.P2;
-        boolean z10 = (unVar == null || !unVar.D9() || this.U2 == messageObject2) ? false : true;
+        org.telegram.ui.wn wnVar = this.P2;
+        boolean z10 = (wnVar == null || !wnVar.G9() || this.U2 == messageObject2) ? false : true;
         if (messageObject != null) {
             if (this.W2 == null && (messageObject3 = this.m2) != this.T2) {
                 this.W2 = messageObject3;
             }
             this.T2 = messageObject;
-            this.V2 = knVar;
+            this.V2 = mnVar;
             this.U2 = messageObject2;
-            if (unVar == null || !unVar.t4 || unVar.j4 != messageObject) {
-                W0(messageObject, true, true);
+            if (wnVar == null || !wnVar.t4 || wnVar.j4 != messageObject) {
+                V0(messageObject, true, true);
             }
         } else if (this.T2 == this.m2) {
             this.T2 = null;
             this.U2 = null;
             this.V2 = null;
-            W0(this.W2, true, false);
+            V0(this.W2, true, false);
             this.W2 = null;
         } else {
             this.T2 = null;
             this.V2 = null;
             this.U2 = null;
         }
-        C(true);
+        B(true);
         og ogVar = this.Z2;
         MediaController.getInstance().setReplyingMessage(messageObject, getThreadMessage(), ogVar != null ? ogVar.P0() : null);
         D1(z10);
     }
 
-    public final void j0(boolean z10) {
-        k0(z10, false, true);
+    @Override // android.view.View
+    public final boolean hasOverlappingRendering() {
+        return false;
     }
 
-    public final void j1(int i10, boolean z10) {
+    public final void i0(boolean z10) {
+        j0(z10, false, true);
+    }
+
+    public final void i1(int i10, boolean z10) {
         boolean z11 = i10 != 0;
         if (z11 != (this.R1 != 0)) {
             ValueAnimator valueAnimator = this.v0;
@@ -8754,36 +8736,36 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                 this.w0 = z11 ? 1.0f : 0.0f;
                 dg dgVar = this.U0;
                 if (dgVar != null) {
-                    dgVar.Y();
+                    dgVar.Z();
                 }
             }
         }
         this.R1 = i10;
     }
 
-    public final void k(TLRPC.Document document) {
+    public final void j(TLRPC.Document document) {
         MediaDataController.getInstance(this.Q).addRecentGif(document, (int) (System.currentTimeMillis() / 1000), true);
         dg dgVar = this.U0;
         if (dgVar == null || document == null) {
             return;
         }
         boolean isEmpty = dgVar.i1.isEmpty();
-        dgVar.W();
+        dgVar.X();
         if (isEmpty) {
-            dgVar.X(false);
+            dgVar.Y(false);
         }
     }
 
-    public final boolean k0(boolean z10, boolean z11, boolean z12) {
+    public final boolean j0(boolean z10, boolean z11, boolean z12) {
         TLRPC.TL_replyKeyboardMarkup tL_replyKeyboardMarkup;
-        if (q0()) {
+        if (p0()) {
             if (this.f2 == 1 && (tL_replyKeyboardMarkup = this.n2) != null && z10 && this.m2 != null) {
                 if (!tL_replyKeyboardMarkup.is_persistent) {
                     MessagesController.getMainSettings(this.Q).edit().putInt("closed_botkeyboard_" + getTopicKeyString(), this.m2.getId()).apply();
                 }
             }
             if ((z10 && this.R1 != 0) || z11) {
-                j1(0, true);
+                i1(0, true);
                 dg dgVar = this.U0;
                 if (dgVar != null) {
                     dgVar.t(true);
@@ -8792,21 +8774,21 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                 if (pfVar != null) {
                     pfVar.requestFocus();
                 }
-                k1(false, true, false, true);
+                j1(false, true, false, true);
                 if (this.y3) {
-                    G(true);
+                    F(true);
                     return true;
                 }
             } else {
                 if (this.R1 == 0) {
                     if (this.z3) {
-                        k1(false, true, false, true);
+                        j1(false, true, false, true);
                         return true;
                     }
-                    q1(0, 0, true, z12 && !z10);
+                    p1(0, 0, true, z12 && !z10);
                     return true;
                 }
-                j1(0, false);
+                i1(0, false);
                 this.U0.t(false);
                 pf pfVar2 = this.E0;
                 if (pfVar2 != null) {
@@ -8818,7 +8800,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
         return false;
     }
 
-    public final void k1(boolean z10, boolean z11, boolean z12, boolean z13) {
+    public final void j1(boolean z10, boolean z11, boolean z12, boolean z13) {
         final int i10 = 1;
         org.telegram.ui.ActionBar.q1 q1Var = this.U;
         if ((q1Var != null && q1Var.f) || this.l3 || this.U0 == null) {
@@ -8841,12 +8823,12 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
             AnimationNotificationsLocker animationNotificationsLocker = this.L3;
             org.telegram.ui.Cells.b1 b1Var = this.t3;
             final int i12 = 0;
-            vw0 vw0Var = this.m1;
+            ww0 ww0Var = this.m1;
             if (z14) {
                 if (z13) {
                     NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.stopAllHeavyOperations, 1);
                 }
-                int height = vw0Var.getHeight();
+                int height = ww0Var.getHeight();
                 this.o1 = height;
                 int dp = ((((height - AndroidUtilities.statusBarHeight) - AndroidUtilities.navigationBarHeight) - AndroidUtilities.dp(6.0f)) - org.telegram.ui.ActionBar.k.getCurrentActionBarHeight()) - getHeight();
                 this.D3 = dp;
@@ -8856,9 +8838,9 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                 if (this.h5 == null) {
                     this.U0.getLayoutParams().height = this.D3;
                 }
-                vw0Var.requestLayout();
+                ww0Var.requestLayout();
                 if (this.y4) {
-                    vw0Var.setForeground(new dd(this));
+                    ww0Var.setForeground(new dd(this));
                 }
                 pf pfVar = this.E0;
                 if (pfVar != null) {
@@ -8910,7 +8892,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                     this.U0.setLayerType(2, null);
                     animationNotificationsLocker.lock();
                     this.C3 = 0.0f;
-                    vw0Var.invalidate();
+                    ww0Var.invalidate();
                     animatorSet2.start();
                 } else {
                     this.C3 = 1.0f;
@@ -8971,7 +8953,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                     }
                     animatorSet3.addListener(new hg(this, i11, i10));
                     this.C3 = 1.0f;
-                    vw0Var.invalidate();
+                    ww0Var.invalidate();
                     this.B3 = animatorSet3;
                     this.U0.setLayerType(2, null);
                     animationNotificationsLocker.lock();
@@ -8983,9 +8965,9 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                         this.U0.setTranslationY(0.0f);
                         this.U0.getLayoutParams().height = i11;
                     }
-                    vw0Var.requestLayout();
-                    vw0Var.setForeground(null);
-                    vw0Var.setWillNotDraw(false);
+                    ww0Var.requestLayout();
+                    ww0Var.setForeground(null);
+                    ww0Var.setWillNotDraw(false);
                     AnimatedArrowDrawable animatedArrowDrawable2 = this.F3;
                     if (animatedArrowDrawable2 != null) {
                         animatedArrowDrawable2.setAnimationProgress(0.0f);
@@ -9007,8 +8989,8 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
         }
     }
 
-    public final void l(TLRPC.Document document) {
-        R();
+    public final void k(TLRPC.Document document) {
+        Q();
         dg dgVar = this.U0;
         int i10 = dgVar.c1;
         MediaDataController.getInstance(i10).addRecentSticker(0, null, document, (int) (System.currentTimeMillis() / 1000), false);
@@ -9019,11 +9001,11 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
             jzVar.l();
         }
         if (isEmpty) {
-            dgVar.X(false);
+            dgVar.Y(false);
         }
     }
 
-    public final void l0(boolean z10) {
+    public final void k0(boolean z10) {
         AnimatorSet animatorSet;
         AnimatorSet animatorSet2 = this.u2;
         if (animatorSet2 == null || !animatorSet2.isRunning()) {
@@ -9031,10 +9013,10 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
             this.b3 = null;
             this.d3 = null;
             this.e3 = null;
-            h91 h91Var = this.f1;
+            i91 i91Var = this.f1;
             int i10 = 1;
-            if (h91Var != null) {
-                h91Var.a(true);
+            if (i91Var != null) {
+                i91Var.a(true);
             }
             ve veVar = this.b1;
             if (veVar != null) {
@@ -9062,9 +9044,9 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                 ArrayList arrayList = new ArrayList();
                 arrayList.add(ObjectAnimator.ofFloat(neVar, jeVar3, this.A0 ? 0.5f : 1.0f));
                 arrayList.add(ObjectAnimator.ofFloat(neVar, jeVar2, 1.0f));
-                arrayList.add(ObjectAnimator.ofFloat(this.g1, (Property<ak0, Float>) property3, 0.0f));
-                arrayList.add(ObjectAnimator.ofFloat(this.g1, (Property<ak0, Float>) property2, 0.0f));
-                arrayList.add(ObjectAnimator.ofFloat(this.g1, (Property<ak0, Float>) property, 0.0f));
+                arrayList.add(ObjectAnimator.ofFloat(this.g1, (Property<bk0, Float>) property3, 0.0f));
+                arrayList.add(ObjectAnimator.ofFloat(this.g1, (Property<bk0, Float>) property2, 0.0f));
+                arrayList.add(ObjectAnimator.ofFloat(this.g1, (Property<bk0, Float>) property, 0.0f));
                 arrayList.add(ObjectAnimator.ofFloat(this.e1, (Property<ke, Float>) property3, 0.0f));
                 if (lVar != null) {
                     ViewPropertyAnimator viewPropertyAnimator = this.q1;
@@ -9095,17 +9077,17 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                 this.u2.setDuration(150L);
                 this.u2.addListener(new ye(this, i10));
             } else {
-                ak0 ak0Var = this.g1;
-                if (ak0Var != null) {
-                    ak0Var.d();
+                bk0 bk0Var = this.g1;
+                if (bk0Var != null) {
+                    bk0Var.d();
                 }
                 AnimatorSet animatorSet3 = new AnimatorSet();
                 ArrayList arrayList2 = new ArrayList();
                 boolean z11 = this.c1;
                 Property property4 = View.TRANSLATION_X;
                 if (z11) {
-                    arrayList2.add(ObjectAnimator.ofFloat(this.f1, (Property<h91, Float>) property3, 0.0f));
-                    arrayList2.add(ObjectAnimator.ofFloat(this.f1, (Property<h91, Float>) property4, -AndroidUtilities.dp(20.0f)));
+                    arrayList2.add(ObjectAnimator.ofFloat(this.f1, (Property<i91, Float>) property3, 0.0f));
+                    arrayList2.add(ObjectAnimator.ofFloat(this.f1, (Property<i91, Float>) property4, -AndroidUtilities.dp(20.0f)));
                     arrayList2.add(ObjectAnimator.ofFloat(this.E0, jeVar, 0.0f));
                     sg sgVar2 = this.O1;
                     if (sgVar2 != null) {
@@ -9135,8 +9117,8 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                         this.G = 0.0f;
                         G1();
                     }
-                    arrayList2.add(ObjectAnimator.ofFloat(this.h1, (Property<gl0, Float>) property3, 0.0f));
-                    arrayList2.add(ObjectAnimator.ofFloat(this.h1, (Property<gl0, Float>) property4, -AndroidUtilities.dp(20.0f)));
+                    arrayList2.add(ObjectAnimator.ofFloat(this.h1, (Property<hl0, Float>) property3, 0.0f));
+                    arrayList2.add(ObjectAnimator.ofFloat(this.h1, (Property<hl0, Float>) property4, -AndroidUtilities.dp(20.0f)));
                     sg sgVar3 = this.O1;
                     if (sgVar3 != null) {
                         arrayList2.add(ObjectAnimator.ofFloat(sgVar3, (Property<sg, Float>) property3, 0.0f));
@@ -9167,7 +9149,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                 this.n = 0.0f;
                 C1();
                 AnimatorSet animatorSet5 = new AnimatorSet();
-                animatorSet5.playTogether(ObjectAnimator.ofFloat(this.g1, (Property<ak0, Float>) property3, 0.0f), ObjectAnimator.ofFloat(this.g1, (Property<ak0, Float>) property2, 0.0f), ObjectAnimator.ofFloat(this.g1, (Property<ak0, Float>) property, 0.0f), ObjectAnimator.ofFloat(this.g1, (Property<ak0, Float>) property3, 0.0f), ObjectAnimator.ofFloat(neVar, jeVar3, this.A0 ? 0.5f : 1.0f), ObjectAnimator.ofFloat(neVar, jeVar2, 1.0f));
+                animatorSet5.playTogether(ObjectAnimator.ofFloat(this.g1, (Property<bk0, Float>) property3, 0.0f), ObjectAnimator.ofFloat(this.g1, (Property<bk0, Float>) property2, 0.0f), ObjectAnimator.ofFloat(this.g1, (Property<bk0, Float>) property, 0.0f), ObjectAnimator.ofFloat(this.g1, (Property<bk0, Float>) property3, 0.0f), ObjectAnimator.ofFloat(neVar, jeVar3, this.A0 ? 0.5f : 1.0f), ObjectAnimator.ofFloat(neVar, jeVar2, 1.0f));
                 hi.i0 i0Var2 = this.l0;
                 if (i0Var2 != null) {
                     i0Var2.setAlpha(0.0f);
@@ -9197,7 +9179,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
         }
     }
 
-    public final void l1(boolean z10, boolean z11) {
+    public final void k1(boolean z10, boolean z11) {
         if (this.v4 == z10 && z11) {
             return;
         }
@@ -9218,14 +9200,14 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                 this.w1.setImageResource(R.drawable.input_suggest_paid_24);
                 ImageView imageView4 = this.w1;
                 int i11 = org.telegram.ui.ActionBar.y6.i6;
-                org.telegram.ui.ActionBar.f7.R(imageView4, org.telegram.ui.ActionBar.y6.g0(f0(i11), 1, -1), null, org.telegram.ui.ActionBar.f7.N(i11), u6Var);
+                org.telegram.ui.ActionBar.f7.R(imageView4, org.telegram.ui.ActionBar.y6.g0(e0(i11), 1, -1), null, org.telegram.ui.ActionBar.f7.N(i11), u6Var);
                 if (this.p5) {
                     this.w1.setTranslationX(AndroidUtilities.dp(42.0f));
-                    this.z1.addView(this.w1, gb1.h(44, 44.0f, 85, 0.0f, 0.0f, 50.0f, 0.0f));
+                    this.z1.addView(this.w1, kb1.h(44, 44.0f, 85, 0.0f, 0.0f, 50.0f, 0.0f));
                 } else {
-                    this.p1.addView(this.w1, 0, gb1.r(44, 44));
+                    this.p1.addView(this.w1, 0, kb1.r(44, 44));
                 }
-                this.w1.setOnClickListener(new ud(this, 19));
+                this.w1.setOnClickListener(new td(this, 19));
                 this.w1.setContentDescription(LocaleController.getString(R.string.AccDescrAttachButton));
             }
         }
@@ -9261,33 +9243,33 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
         }
         E1(this.P4);
         if (z12) {
-            G(true);
+            F(true);
         }
     }
 
-    public final ValueAnimator m(float f7) {
+    public final ValueAnimator l(float f7) {
         ValueAnimator ofFloat = ValueAnimator.ofFloat(this.J1.a, f7);
         ofFloat.addUpdateListener(new qd(this, 5));
         return ofFloat;
     }
 
-    public final void m0() {
+    public final void l0() {
         this.c3 = null;
         this.b3 = null;
         this.d3 = null;
         this.e3 = null;
-        h91 h91Var = this.f1;
-        if (h91Var != null) {
-            h91Var.a(true);
+        i91 i91Var = this.f1;
+        if (i91Var != null) {
+            i91Var.a(true);
         }
-        gl0 gl0Var = this.h1;
-        if (gl0Var != null) {
-            gl0Var.setAlpha(1.0f);
+        hl0 hl0Var = this.h1;
+        if (hl0Var != null) {
+            hl0Var.setAlpha(1.0f);
             this.h1.setTranslationX(0.0f);
         }
-        h91 h91Var2 = this.f1;
-        if (h91Var2 != null) {
-            h91Var2.setAlpha(1.0f);
+        i91 i91Var2 = this.f1;
+        if (i91Var2 != null) {
+            i91Var2.setAlpha(1.0f);
             this.f1.setTranslationX(0.0f);
         }
         pf pfVar = this.E0;
@@ -9301,12 +9283,12 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
         if (keVar != null) {
             keVar.setVisibility(8);
         }
-        u0();
+        t0();
     }
 
-    public final void m1(boolean z10) {
-        org.telegram.ui.un unVar;
-        boolean z11 = ((!z10 && !this.D1) || (unVar = this.P2) == null || unVar.w()) ? false : true;
+    public final void l1(boolean z10) {
+        org.telegram.ui.wn wnVar;
+        boolean z11 = ((!z10 && !this.D1) || (wnVar = this.P2) == null || wnVar.w()) ? false : true;
         if (this.K4 == z11) {
             return;
         }
@@ -9340,16 +9322,16 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
             v3Var3.p(true);
             this.M.s(LocaleController.getString(R.string.AIEditorHint));
             this.M.m(0.0f, (imageView.getWidth() / 2.0f) + AndroidUtilities.dp(4.0f));
-            addView(this.M, gb1.h(-1, 200.0f, 48, 0.0f, -196.0f, 0.0f, 0.0f));
+            addView(this.M, kb1.h(-1, 200.0f, 48, 0.0f, -196.0f, 0.0f, 0.0f));
             fi.v3 v3Var4 = this.M;
-            v3Var4.l0 = new org.telegram.ui.ip(10, this, v3Var3);
+            v3Var4.l0 = new org.telegram.ui.kp(10, this, v3Var3);
             v3Var4.d = 4000L;
             v3Var4.u();
             MessagesController.getGlobalMainSettings().edit().putInt("aihintshown", MessagesController.getGlobalMainSettings().getInt("aihintshown", 0) + 1).apply();
         }
     }
 
-    public final ValueAnimator n(boolean z10) {
+    public final ValueAnimator m(boolean z10) {
         final float alpha = getSendButtonInternal().getAlpha();
         final float f7 = z10 ? 1.0f : 0.0f;
         final float scaleX = getSendButtonInternal().getScaleX();
@@ -9377,7 +9359,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
         return ofFloat;
     }
 
-    public void n0(boolean z10) {
+    public void m0(boolean z10) {
         if (this.G1 == null || !this.f3) {
             return;
         }
@@ -9392,20 +9374,36 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
         }
     }
 
-    public final void n1() {
-        org.telegram.ui.un unVar = this.P2;
-        if (unVar == null || !ChatObject.isChannelAndNotMegaGroup(unVar.e)) {
+    public final void m1() {
+        org.telegram.ui.wn wnVar = this.P2;
+        if (wnVar == null || !ChatObject.isChannelAndNotMegaGroup(wnVar.e)) {
             return;
         }
-        wc.b0(unVar).f(MessagesController.getInstance(this.Q).captionLengthLimitPremium, new sd(this, 0)).j();
+        wc.b0(wnVar).f(MessagesController.getInstance(this.Q).captionLengthLimitPremium, new sd(this, 2)).j();
     }
 
-    public final boolean o0() {
+    public final boolean n0() {
         return this.Z1 != null;
     }
 
-    public boolean o1(Runnable runnable) {
+    public boolean n1(Runnable runnable) {
         return false;
+    }
+
+    public final void o(SendMessagesHelper.SendMessageParams sendMessageParams) {
+        og ogVar = this.Z2;
+        if (ogVar != null) {
+            sendMessageParams.replyToStoryItem = ogVar.P0();
+            sendMessageParams.replyQuote = this.Z2.i0();
+        }
+    }
+
+    public final boolean o0() {
+        return this.c1;
+    }
+
+    public final void o1() {
+        p1(1, 0, true, true);
     }
 
     @Override // android.view.View
@@ -9420,7 +9418,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
 
     @Override // android.view.View
     public final void onDraw(Canvas canvas) {
-        b0(canvas, true);
+        a0(canvas, true);
     }
 
     @Override // android.view.ViewGroup
@@ -9430,7 +9428,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
             getParent().requestDisallowInterceptTouchEvent(true);
         }
         if (motionEvent.getAction() == 0 && (findChildViewUnder = AndroidUtilities.findChildViewUnder(this, motionEvent.getX(), motionEvent.getY())) != this.L && findChildViewUnder != this.M) {
-            i0();
+            h0();
         }
         return super.onInterceptTouchEvent(motionEvent);
     }
@@ -9458,8 +9456,8 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
         ne neVar = this.Q0;
         int i12 = 0;
         if (i0Var == null || i0Var.getTag() == null) {
-            cq0 cq0Var = this.p0;
-            if (cq0Var == null || cq0Var.getVisibility() != 0) {
+            dq0 dq0Var = this.p0;
+            if (dq0Var == null || dq0Var.getVisibility() != 0) {
                 ((ViewGroup.MarginLayoutParams) neVar.getLayoutParams()).leftMargin = AndroidUtilities.dp(3.0f);
                 if (imageView != null) {
                     ((ViewGroup.MarginLayoutParams) imageView.getLayoutParams()).leftMargin = AndroidUtilities.dp(3.0f);
@@ -9526,8 +9524,8 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
             this.k0.getLayoutParams().height = getMeasuredHeight() - AndroidUtilities.dp(2.0f);
             measureChild(this.k0, i10, i11);
         }
+        H();
         J();
-        K();
         if (measuredHeight <= 0 || keVar.getMeasuredHeight() == measuredHeight) {
             return;
         }
@@ -9540,7 +9538,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
         fi.v3 v3Var = this.M;
         if (v3Var != null) {
             v3Var.setTranslationY((v3Var.getTranslationY() + keVar.getMeasuredHeight()) - measuredHeight);
-            org.telegram.messenger.vh.q(this.M.animate().translationY(0.0f), ds.h, 420L);
+            org.telegram.messenger.wh.q(this.M.animate().translationY(0.0f), ds.h, 420L);
         }
     }
 
@@ -9548,14 +9546,14 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
     public final void onSizeChanged(int i10, int i11, int i12, int i13) {
         super.onSizeChanged(i10, i11, i12, i13);
         if (i10 != i12 && this.z3) {
-            j1(0, false);
+            i1(0, false);
             this.U0.t(false);
-            k1(false, false, false, true);
+            j1(false, false, false, true);
         }
-        h91 h91Var = this.f1;
-        if (h91Var != null) {
-            ArrayList arrayList = h91Var.v;
-            if (h91Var.N.isEmpty()) {
+        i91 i91Var = this.f1;
+        if (i91Var != null) {
+            ArrayList arrayList = i91Var.v;
+            if (i91Var.N.isEmpty()) {
                 for (int i14 = 0; i14 < arrayList.size(); i14++) {
                     Bitmap bitmap = (Bitmap) arrayList.get(i14);
                     if (bitmap != null) {
@@ -9564,40 +9562,24 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                 }
             }
             arrayList.clear();
-            e91 e91Var = h91Var.w;
-            if (e91Var != null) {
-                e91Var.cancel(true);
-                h91Var.w = null;
+            f91 f91Var = i91Var.w;
+            if (f91Var != null) {
+                f91Var.cancel(true);
+                i91Var.w = null;
             }
-            h91Var.invalidate();
+            i91Var.invalidate();
         }
     }
 
-    public final void p(SendMessagesHelper.SendMessageParams sendMessageParams) {
-        og ogVar = this.Z2;
-        if (ogVar != null) {
-            sendMessageParams.replyToStoryItem = ogVar.P0();
-            sendMessageParams.replyQuote = this.Z2.i0();
-        }
-    }
-
-    public final boolean p0() {
-        return this.c1;
-    }
-
-    public final void p1() {
-        q1(1, 0, true, true);
-    }
-
-    public boolean q() {
+    public boolean p() {
         return false;
     }
 
-    public final boolean q0() {
+    public final boolean p0() {
         return this.W0 || this.X0;
     }
 
-    public final void q1(int i10, int i11, boolean z10, boolean z11) {
+    public final void p1(int i10, int i11, boolean z10, boolean z11) {
         int i12;
         boolean z12;
         boolean z13;
@@ -9617,11 +9599,11 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                 if (this.O2 == null && this.U0 == null) {
                     return;
                 } else {
-                    R();
+                    Q();
                 }
             }
             if (i11 == 0) {
-                r();
+                q();
                 if (this.W0) {
                     this.U0.getVisibility();
                 }
@@ -9675,9 +9657,9 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
             }
             Point point = AndroidUtilities.displaySize;
             int i15 = point.x > point.y ? this.y2 : this.x2;
-            org.telegram.ui.un unVar = this.P2;
-            if (unVar != null && unVar.getParentLayout() != null) {
-                i15 -= ((ActionBarLayout) unVar.getParentLayout()).v(false);
+            org.telegram.ui.wn wnVar = this.P2;
+            if (wnVar != null && wnVar.getParentLayout() != null) {
+                i15 -= ((ActionBarLayout) wnVar.getParentLayout()).v(false);
             }
             if (i11 == 1) {
                 i15 = Math.min(this.H1.getKeyboardHeight(), i15);
@@ -9694,13 +9676,13 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
             if (!AndroidUtilities.isInMultiwindow) {
                 AndroidUtilities.hideKeyboard(this.E0);
             }
-            vw0 vw0Var = this.m1;
-            if (vw0Var != null) {
+            ww0 ww0Var = this.m1;
+            if (ww0Var != null) {
                 this.A2 = i15;
-                vw0Var.requestLayout();
-                a1(true, true);
+                ww0Var.requestLayout();
+                Z0(true, true);
                 y1(true);
-                E0();
+                D0();
                 if (this.i2 && !this.z2 && i15 != i13 && z10) {
                     sd sdVar = new sd(this, 10);
                     if (this.v) {
@@ -9730,7 +9712,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
             }
         } else {
             if (this.Q0 != null) {
-                a1(false, true);
+                Z0(false, true);
             }
             this.f2 = -1;
             dg dgVar2 = this.U0;
@@ -9820,51 +9802,51 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
             }
         }
         if (this.x3 || this.y3) {
-            G(true);
+            F(true);
         }
         if (!this.z3 || i10 == 1) {
             z13 = false;
         } else {
             z13 = false;
-            k1(false, false, false, true);
+            j1(false, false, false, true);
         }
         D1(z13);
-        A();
+        y();
     }
 
-    public final void r() {
+    public final void q() {
         if (this.U0.getParent() == null) {
             if (this.h5 == null) {
                 this.n1.addView(this.U0);
             } else {
-                this.n1.addView(this.U0, gb1.g(-1.0f, -1));
+                this.n1.addView(this.U0, kb1.g(-1.0f, -1));
             }
         }
     }
 
-    public final boolean r0(View view) {
+    public final boolean q0(View view) {
         return view == this.H1 || view == this.U0;
     }
 
-    public final void r1() {
+    public final void q1() {
         og ogVar = this.Z2;
         if ((ogVar == null || !ogVar.f()) && DialogObject.isChatDialog(this.Q2)) {
             wc.b0(this.P2).G(R.raw.passcode_lock_close, 3, LocaleController.formatString("SendPlainTextRestrictionHint", R.string.SendPlainTextRestrictionHint, ChatObject.getAllowedSendString(this.R.getMessagesController().getChat(Long.valueOf(-this.Q2))))).j();
         }
     }
 
-    public final boolean s() {
+    public final boolean r() {
         hi.i0 i0Var = this.l0;
         return i0Var != null && i0Var.v;
     }
 
-    public final boolean s0() {
+    public final boolean r0() {
         return this.F2 && ChatActivityEnterView.this.s4;
     }
 
-    public final void s1(boolean z10) {
-        org.telegram.ui.un unVar;
-        boolean z11 = (this.D1 || z10) && (unVar = this.P2) != null && !unVar.w() && this.Z1 == null && MessagesController.getInstance(this.Q).richEditorAvailable();
+    public final void r1(boolean z10) {
+        org.telegram.ui.wn wnVar;
+        boolean z11 = (this.D1 || z10) && (wnVar = this.P2) != null && !wnVar.w() && this.Z1 == null && MessagesController.getInstance(this.Q).richEditorAvailable();
         if (this.L4 == z11) {
             return;
         }
@@ -9872,6 +9854,23 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
         ImageView imageView = this.u1;
         imageView.setVisibility(0);
         imageView.animate().alpha(z11 ? 1.0f : 0.0f).scaleX(z11 ? 1.0f : 0.6f).scaleY(z11 ? 1.0f : 0.6f).setInterpolator(ds.h).setDuration(420L).withEndAction(new zd(this, z11, 1)).start();
+    }
+
+    public final boolean s() {
+        jg t10 = t();
+        return (TextUtils.equals(t10.a, this.c2.a) && MediaDataController.entitiesEqual((ArrayList<TLRPC.MessageEntity>) this.c2.b, (ArrayList<TLRPC.MessageEntity>) t10.b)) ? false : true;
+    }
+
+    public final boolean s0() {
+        if (this.F2) {
+            return true;
+        }
+        AnimatorSet animatorSet = this.t2;
+        return (animatorSet == null || !animatorSet.isRunning() || this.k2) ? false : true;
+    }
+
+    public final void s1() {
+        t1(true, false);
     }
 
     public void setAdjustPanLayoutHelper(org.telegram.ui.ActionBar.q1 q1Var) {
@@ -9883,7 +9882,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
     }
 
     public void setBotInfo(a0.h hVar) {
-        U0(hVar, true);
+        T0(hVar, true);
     }
 
     public void setBotWebViewButtonOffsetX(float f7) {
@@ -9901,14 +9900,14 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
     }
 
     public void setButtons(MessageObject messageObject) {
-        W0(messageObject, true, true);
+        V0(messageObject, true, true);
     }
 
     public void setCaption(String str) {
         pf pfVar = this.E0;
         if (pfVar != null) {
             pfVar.setCaption(str);
-            G(true);
+            F(true);
         }
     }
 
@@ -9948,8 +9947,8 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
         this.b2 = tL_businessChatLink;
         D1(false);
         if (this.b2 != null) {
-            Q(true);
-            this.F1.setOnClickListener(new ud(this, 3));
+            P(true);
+            this.F1.setOnClickListener(new td(this, 3));
             this.F1.setContentDescription(LocaleController.getString(R.string.Done));
             this.F1.setVisibility(0);
             this.F1.setScaleX(0.1f);
@@ -9971,10 +9970,10 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                     setFieldText(str2);
                 }
             } else {
-                setFieldText(o(arrayList, str, fontMetricsInt));
+                setFieldText(n(arrayList, str, fontMetricsInt));
             }
-            this.c2 = u();
-            S0(false, false, false);
+            this.c2 = t();
+            R0(false, false, false);
             getSendButtonInternal().setVisibility(8);
             setSlowModeButtonVisible(false);
             this.P0.setVisibility(8);
@@ -10040,9 +10039,9 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
         }
     }
 
-    @Override // org.telegram.ui.Components.rz0
+    @Override // org.telegram.ui.Components.sz0
     public void setFieldText(CharSequence charSequence) {
-        c1(charSequence, false);
+        b1(charSequence, false);
     }
 
     public void setInAppInsetsController(rh.f fVar) {
@@ -10065,7 +10064,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
     }
 
     public void setOverrideHint(CharSequence charSequence) {
-        g1(charSequence, false);
+        f1(charSequence, false);
     }
 
     public void setOverrideKeyboardAnimation(boolean z10) {
@@ -10181,31 +10180,14 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
         MessageObject threadMessage = getThreadMessage();
         SendMessageChatArguments sendMessageChatArguments = null;
         int i11 = this.G2;
-        org.telegram.ui.un unVar = this.P2;
-        if (unVar != null) {
-            sendMessageChatArguments = unVar.L8();
+        org.telegram.ui.wn wnVar = this.P2;
+        if (wnVar != null) {
+            sendMessageChatArguments = wnVar.O8();
         }
         mediaController.prepareResumedRecording(i10, draftVoice, j10, messageObject, threadMessage, P0, i11, sendMessageChatArguments, getSendMonoForumPeerId(), getSendMessageSuggestionParams());
     }
 
-    public final boolean t() {
-        jg u10 = u();
-        return (TextUtils.equals(u10.a, this.c2.a) && MediaDataController.entitiesEqual((ArrayList<TLRPC.MessageEntity>) this.c2.b, (ArrayList<TLRPC.MessageEntity>) u10.b)) ? false : true;
-    }
-
-    public final boolean t0() {
-        if (this.F2) {
-            return true;
-        }
-        AnimatorSet animatorSet = this.t2;
-        return (animatorSet == null || !animatorSet.isRunning() || this.k2) ? false : true;
-    }
-
-    public final void t1() {
-        u1(true, false);
-    }
-
-    public final jg u() {
+    public final jg t() {
         pf pfVar = this.E0;
         CharSequence[] charSequenceArr = {AndroidUtilities.getTrimmedString(pfVar == null ? "" : pfVar.getTextToUse())};
         ArrayList<TLRPC.MessageEntity> entities = MediaDataController.getInstance(this.Q).getEntities(charSequenceArr, true);
@@ -10223,19 +10205,19 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
         return jgVar;
     }
 
-    public final void u1(boolean z10, boolean z11) {
+    public final void t1(boolean z10, boolean z11) {
         if (this.G1 == null || this.f3 || getVisibility() != 0) {
             ke keVar = this.e1;
             if ((keVar == null || keVar.getVisibility() != 0) && !this.H2 && this.V2 == null && this.T2 == null) {
-                F0();
+                E0();
                 return;
             }
             return;
         }
         ke keVar2 = this.e1;
         boolean z12 = (keVar2 == null || keVar2.getVisibility() != 0) && !this.H2 && this.V2 == null && (this.n2 == null || this.Z1 != null);
-        if (!z11 && z10 && z12 && !this.z2 && !q0()) {
-            F0();
+        if (!z11 && z10 && z12 && !this.z2 && !p0()) {
+            E0();
             sd sdVar = this.V;
             if (sdVar != null) {
                 AndroidUtilities.cancelRunOnUIThread(sdVar);
@@ -10254,9 +10236,37 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                 if (pfVar != null) {
                     pfVar.requestFocus();
                 }
-                F0();
+                E0();
             }
         }
+    }
+
+    public final float u(boolean z10) {
+        oe.e eVar = this.j5;
+        float f7 = z10 ? eVar.h ? eVar.g : eVar.f : eVar.f;
+        oe.b bVar = this.k5;
+        return ((this.G1 != null ? r1.getMeasuredHeight() : 0) * (z10 ? bVar.f ? 1.0f : 0.0f : bVar.e)) + f7;
+    }
+
+    public final boolean u0() {
+        return c() || this.m5.f;
+    }
+
+    public final void u1() {
+        AnimatorSet animatorSet = new AnimatorSet();
+        try {
+            performHapticFeedback(3, 2);
+        } catch (Exception unused) {
+        }
+        ObjectAnimator ofFloat = ObjectAnimator.ofFloat(this, "lockAnimatedTranslation", this.k4);
+        ofFloat.setStartDelay(100L);
+        ofFloat.setDuration(350L);
+        ObjectAnimator ofFloat2 = ObjectAnimator.ofFloat(this, "snapAnimationProgress", 1.0f);
+        ofFloat2.setInterpolator(ds.h);
+        ofFloat2.setDuration(250L);
+        SharedConfig.removeLockRecordAudioVideoHint();
+        animatorSet.playTogether(ofFloat2, ofFloat, ObjectAnimator.ofFloat(this, "slideToCancelProgress", 1.0f).setDuration(200L), ObjectAnimator.ofFloat(this.k1, "cancelToProgress", 1.0f));
+        animatorSet.start();
     }
 
     @Override // org.telegram.ui.ActionBar.p6
@@ -10272,24 +10282,24 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
             }
             Paint paint = this.Q1;
             if (paint != null) {
-                paint.setColor(f0(org.telegram.ui.ActionBar.y6.af));
+                paint.setColor(e0(org.telegram.ui.ActionBar.y6.af));
             }
             wg wgVar = this.F0;
             if (wgVar != null) {
-                wgVar.a.setTextColor(f0(org.telegram.ui.ActionBar.y6.Wk));
+                wgVar.a.setTextColor(e0(org.telegram.ui.ActionBar.y6.Wk));
                 wgVar.invalidate();
             }
             AnimatedArrowDrawable animatedArrowDrawable = this.F3;
             if (animatedArrowDrawable != null) {
-                animatedArrowDrawable.a.setColor(f0(org.telegram.ui.ActionBar.y6.Wk));
+                animatedArrowDrawable.a.setColor(e0(org.telegram.ui.ActionBar.y6.Wk));
                 animatedArrowDrawable.invalidateSelf();
             }
             xe xeVar = this.J0;
             if (xeVar != null && this.K0 != 0 && xeVar.getBackground() != null) {
-                int f02 = f0((this.G0 != Integer.MAX_VALUE || v0()) ? org.telegram.ui.ActionBar.y6.Yd : org.telegram.ui.ActionBar.y6.Wk);
-                if (f02 != this.K0) {
-                    this.K0 = f02;
-                    org.telegram.ui.ActionBar.y6.E1(xeVar.getBackground(), Color.argb(24, Color.red(f02), Color.green(f02), Color.blue(f02)), true);
+                int e02 = e0((this.G0 != Integer.MAX_VALUE || u0()) ? org.telegram.ui.ActionBar.y6.Yd : org.telegram.ui.ActionBar.y6.Wk);
+                if (e02 != this.K0) {
+                    this.K0 = e02;
+                    org.telegram.ui.ActionBar.y6.E1(xeVar.getBackground(), Color.argb(24, Color.red(e02), Color.green(e02), Color.blue(e02)), true);
                 }
             }
         } catch (Exception e) {
@@ -10310,26 +10320,26 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
         }
         xg xgVar = this.Y0;
         if (xgVar != null && (textPaint = xgVar.F) != null) {
-            textPaint.setColor(xgVar.I.f0(org.telegram.ui.ActionBar.y6.nf));
+            textPaint.setColor(xgVar.I.e0(org.telegram.ui.ActionBar.y6.nf));
         }
-        h91 h91Var = this.f1;
-        if (h91Var != null) {
-            h91Var.e.setColor(org.telegram.ui.ActionBar.y6.x0(null, org.telegram.ui.ActionBar.y6.a7, false));
-            h91Var.L = 0;
-            f91 f91Var = h91Var.P;
-            if (f91Var != null) {
-                f91Var.b();
+        i91 i91Var = this.f1;
+        if (i91Var != null) {
+            i91Var.e.setColor(org.telegram.ui.ActionBar.y6.x0(null, org.telegram.ui.ActionBar.y6.a7, false));
+            i91Var.L = 0;
+            g91 g91Var = i91Var.P;
+            if (g91Var != null) {
+                g91Var.b();
             }
         }
         NumberTextView numberTextView = this.b0;
         if (numberTextView != null && this.E0 != null) {
             if (this.d0 - this.c0 < 0) {
-                numberTextView.setTextColor(f0(org.telegram.ui.ActionBar.y6.p7));
+                numberTextView.setTextColor(e0(org.telegram.ui.ActionBar.y6.p7));
             } else {
-                numberTextView.setTextColor(f0(org.telegram.ui.ActionBar.y6.y6));
+                numberTextView.setTextColor(e0(org.telegram.ui.ActionBar.y6.y6));
             }
         }
-        Color.alpha(f0(org.telegram.ui.ActionBar.y6.bf));
+        Color.alpha(e0(org.telegram.ui.ActionBar.y6.bf));
         nf nfVar = this.m0;
         if (nfVar != null) {
             nfVar.d.setColor(org.telegram.ui.ActionBar.y6.x0(null, org.telegram.ui.ActionBar.y6.Ii, false));
@@ -10343,50 +10353,33 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
         if (agVar != null) {
             agVar.e();
         }
-        int f03 = this.a1 ? f0(org.telegram.ui.ActionBar.y6.Wk) : -1;
+        int e03 = this.a1 ? e0(org.telegram.ui.ActionBar.y6.Wk) : -1;
         ve veVar = this.b1;
-        if (veVar != null && (!this.W4 || f03 != this.U4)) {
+        if (veVar != null && (!this.W4 || e03 != this.U4)) {
             this.W4 = true;
-            this.U4 = f03;
-            veVar.setColorFilter(new PorterDuffColorFilter(f03, PorterDuff.Mode.SRC_IN));
+            this.U4 = e03;
+            veVar.setColorFilter(new PorterDuffColorFilter(e03, PorterDuff.Mode.SRC_IN));
         }
-        int f04 = f0(org.telegram.ui.ActionBar.y6.i6);
-        if (this.X4 && f04 == this.V4) {
+        int e04 = e0(org.telegram.ui.ActionBar.y6.i6);
+        if (this.X4 && e04 == this.V4) {
             return;
         }
         this.X4 = true;
-        this.V4 = f04;
+        this.V4 = e04;
         ne neVar = this.Q0;
         if (neVar != null) {
-            neVar.setBackground(org.telegram.ui.ActionBar.y6.g0(f04, 1, -1));
+            neVar.setBackground(org.telegram.ui.ActionBar.y6.g0(e04, 1, -1));
         }
         ImageView imageView = this.R0;
         if (imageView != null) {
             float dp = AndroidUtilities.dp(19.0f);
             int dp2 = AndroidUtilities.dp(1.0f);
             int dp3 = AndroidUtilities.dp(3.0f);
-            imageView.setBackground(org.telegram.ui.ActionBar.y6.X(dp, f04, dp2, dp3, dp2, dp3));
+            imageView.setBackground(org.telegram.ui.ActionBar.y6.X(dp, e04, dp2, dp3, dp2, dp3));
         }
     }
 
-    public final float v(boolean z10) {
-        oe.e eVar = this.j5;
-        float f7 = z10 ? eVar.h ? eVar.g : eVar.f : eVar.f;
-        oe.b bVar = this.k5;
-        return ((this.G1 != null ? r1.getMeasuredHeight() : 0) * (z10 ? bVar.f ? 1.0f : 0.0f : bVar.e)) + f7;
-    }
-
-    public final boolean v0() {
-        return c() || this.m5.f;
-    }
-
-    public final boolean v1() {
-        org.telegram.ui.un unVar = this.P2;
-        TLRPC.EncryptedChat encryptedChat = unVar != null ? unVar.h : null;
-        return encryptedChat == null || AndroidUtilities.getPeerLayerVersion(encryptedChat.layer) >= 101;
-    }
-
-    public final void w() {
+    public final void v() {
         di.i4 i4Var = this.d1;
         if (i4Var != null) {
             i4Var.setVisibility(8);
@@ -10396,7 +10389,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
             recordCircle.setVisibility(8);
         }
         this.t2 = null;
-        u0();
+        t0();
         if (this.p1 != null) {
             this.x = 0.0f;
             x1();
@@ -10409,8 +10402,33 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
         M1(true);
     }
 
-    public final boolean w0() {
+    public final boolean v0() {
         return this.z3;
+    }
+
+    public final boolean v1() {
+        org.telegram.ui.wn wnVar = this.P2;
+        TLRPC.EncryptedChat encryptedChat = wnVar != null ? wnVar.h : null;
+        return encryptedChat == null || AndroidUtilities.getPeerLayerVersion(encryptedChat.layer) >= 101;
+    }
+
+    public final void w() {
+        if (this.e2 && this.c1) {
+            CameraController.getInstance().cancelOnInitRunnable(this.H3);
+            this.Z2.P1(5, 0, this.O ? Integer.MAX_VALUE : 0, this.S4, 0L, true);
+            this.S4 = 0L;
+            this.J0.setEffect(0L);
+        } else {
+            this.Z2.M0(0);
+            MediaController.getInstance().stopRecording(0, false, 0, false, 0L);
+        }
+        this.F2 = false;
+        I1(2, true);
+    }
+
+    public final boolean w0() {
+        View view = this.G1;
+        return view != null && view.getVisibility() == 0;
     }
 
     public final void w1() {
@@ -10430,22 +10448,26 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
     }
 
     public final void x() {
-        if (this.e2 && this.c1) {
-            CameraController.getInstance().cancelOnInitRunnable(this.H3);
-            this.Z2.P1(5, 0, this.O ? Integer.MAX_VALUE : 0, this.S4, 0L, true);
-            this.S4 = 0L;
-            this.J0.setEffect(0L);
-        } else {
-            this.Z2.M0(0);
-            MediaController.getInstance().stopRecording(0, false, 0, false, 0L);
+        bf bfVar;
+        org.telegram.ui.wn wnVar;
+        if (this.L != null || (bfVar = this.K1) == null || bfVar.getRight() == 0 || (wnVar = this.P2) == null || !BirthdayController.isToday(wnVar.q8)) {
+            return;
         }
-        this.F2 = false;
-        I1(2, true);
-    }
-
-    public final boolean x0() {
-        View view = this.G1;
-        return view != null && view.getVisibility() == 0;
+        if (MessagesController.getInstance(this.Q).getMainSettings().getBoolean(Calendar.getInstance().get(1) + "bdayhint_" + wnVar.a(), true)) {
+            MessagesController.getInstance(this.Q).getMainSettings().edit().putBoolean(Calendar.getInstance().get(1) + "bdayhint_" + wnVar.a(), false).apply();
+            fi.v3 v3Var = new fi.v3(getContext(), 3);
+            this.L = v3Var;
+            v3Var.q(13.0f);
+            this.L.p(true);
+            S0();
+            this.L.setPadding(AndroidUtilities.dp(12.0f), 0, AndroidUtilities.dp(12.0f), 0);
+            this.L.m(1.0f, -((getWidth() - AndroidUtilities.dp(12.0f)) - ((this.K1.getMeasuredWidth() / 2.0f) + (this.K1.getX() + (this.p1.getX() + this.y1.getX())))));
+            addView(this.L, kb1.h(-1, 200.0f, 48, 0.0f, -192.0f, 0.0f, 0.0f));
+            fi.v3 v3Var2 = this.L;
+            v3Var2.l0 = new sd(this, 12);
+            v3Var2.d = 8000L;
+            v3Var2.u();
+        }
     }
 
     public final void x1() {
@@ -10467,25 +10489,101 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
     }
 
     public final void y() {
-        bf bfVar;
-        org.telegram.ui.un unVar;
-        if (this.L != null || (bfVar = this.K1) == null || bfVar.getRight() == 0 || (unVar = this.P2) == null || !BirthdayController.isToday(unVar.m8)) {
-            return;
+        pf pfVar = this.E0;
+        boolean z10 = ((pfVar != null && !TextUtils.isEmpty(pfVar.getText())) || this.z2 || this.k3 || p0()) ? false : true;
+        if (z10) {
+            N();
         }
-        if (MessagesController.getInstance(this.Q).getMainSettings().getBoolean(Calendar.getInstance().get(1) + "bdayhint_" + unVar.a(), true)) {
-            MessagesController.getInstance(this.Q).getMainSettings().edit().putBoolean(Calendar.getInstance().get(1) + "bdayhint_" + unVar.a(), false).apply();
-            fi.v3 v3Var = new fi.v3(getContext(), 3);
-            this.L = v3Var;
-            v3Var.q(13.0f);
-            this.L.p(true);
-            T0();
-            this.L.setPadding(AndroidUtilities.dp(12.0f), 0, AndroidUtilities.dp(12.0f), 0);
-            this.L.m(1.0f, -((getWidth() - AndroidUtilities.dp(12.0f)) - ((this.K1.getMeasuredWidth() / 2.0f) + (this.K1.getX() + (this.p1.getX() + this.y1.getX())))));
-            addView(this.L, gb1.h(-1, 200.0f, 48, 0.0f, -192.0f, 0.0f, 0.0f));
-            fi.v3 v3Var2 = this.L;
-            v3Var2.l0 = new sd(this, 12);
-            v3Var2.d = 8000L;
-            v3Var2.u();
+        hi.i0 i0Var = this.l0;
+        if (i0Var != null) {
+            boolean z11 = i0Var.f;
+            if (z11 != z10) {
+                i0Var.f = z10;
+                i0Var.requestLayout();
+                i0Var.invalidate();
+            }
+            if (z11 != this.l0.f) {
+                ne neVar = this.Q0;
+                Float valueOf = Float.valueOf(neVar.getX());
+                HashMap hashMap = this.B0;
+                hashMap.put(neVar, valueOf);
+                pf pfVar2 = this.E0;
+                if (pfVar2 != null) {
+                    hashMap.put(pfVar2, Float.valueOf(pfVar2.getX()));
+                }
+            }
+        }
+    }
+
+    public final void y0() {
+        hl0 hl0Var = this.h1;
+        if (hl0Var != null) {
+            hl0Var.Q = true;
+            t81 t81Var = hl0Var.n;
+            if (t81Var != null) {
+                t81Var.P(false);
+                hl0Var.n.H();
+                hl0Var.n = null;
+            }
+        }
+        if (this.h1 != null && this.b3 != null) {
+            MediaDataController mediaDataController = MediaDataController.getInstance(this.Q);
+            long j10 = this.Q2;
+            org.telegram.ui.wn wnVar = this.P2;
+            long b10 = (wnVar == null || !wnVar.t4) ? 0L : wnVar.b();
+            hl0 hl0Var2 = this.h1;
+            float audioLeft = hl0Var2 == null ? 0.0f : hl0Var2.getAudioLeft();
+            hl0 hl0Var3 = this.h1;
+            mediaDataController.setDraftVoiceRegion(j10, b10, audioLeft, hl0Var3 == null ? 1.0f : hl0Var3.getAudioRight());
+        }
+        this.Y1 = true;
+        NotificationCenter.getInstance(this.Q).removeObserver(this, NotificationCenter.recordStarted);
+        NotificationCenter.getInstance(this.Q).removeObserver(this, NotificationCenter.recordPaused);
+        NotificationCenter.getInstance(this.Q).removeObserver(this, NotificationCenter.recordResumed);
+        NotificationCenter.getInstance(this.Q).removeObserver(this, NotificationCenter.recordStartError);
+        NotificationCenter.getInstance(this.Q).removeObserver(this, NotificationCenter.recordStopped);
+        NotificationCenter.getInstance(this.Q).removeObserver(this, NotificationCenter.recordProgressChanged);
+        NotificationCenter.getInstance(this.Q).removeObserver(this, NotificationCenter.closeChats);
+        NotificationCenter.getInstance(this.Q).removeObserver(this, NotificationCenter.audioDidSent);
+        NotificationCenter.getInstance(this.Q).removeObserver(this, NotificationCenter.audioRouteChanged);
+        NotificationCenter.getInstance(this.Q).removeObserver(this, NotificationCenter.messagePlayingProgressDidChanged);
+        NotificationCenter.getInstance(this.Q).removeObserver(this, NotificationCenter.featuredStickersDidLoad);
+        NotificationCenter.getInstance(this.Q).removeObserver(this, NotificationCenter.messageReceivedByServer2);
+        NotificationCenter.getInstance(this.Q).removeObserver(this, NotificationCenter.sendingMessagesChanged);
+        NotificationCenter.getInstance(this.Q).removeObserver(this, NotificationCenter.audioRecordTooShort);
+        NotificationCenter.getInstance(this.Q).removeObserver(this, NotificationCenter.updateBotMenuButton);
+        NotificationCenter.getInstance(this.Q).removeObserver(this, NotificationCenter.didUpdatePremiumGiftFieldIcon);
+        NotificationCenter.getInstance(this.Q).removeObserver(this, NotificationCenter.currentUserPremiumStatusChanged);
+        NotificationCenter.getGlobalInstance().removeObserver(this, NotificationCenter.emojiLoaded);
+        dg dgVar = this.U0;
+        if (dgVar != null) {
+            dgVar.C();
+        }
+        sd sdVar = this.H0;
+        if (sdVar != null) {
+            AndroidUtilities.cancelRunOnUIThread(sdVar);
+            this.H0 = null;
+        }
+        PowerManager.WakeLock wakeLock = this.q2;
+        if (wakeLock != null) {
+            try {
+                wakeLock.release();
+                this.q2 = null;
+            } catch (Exception e) {
+                FileLog.e(e);
+            }
+        }
+        if (this.w2 != 0 && !this.c1) {
+            AndroidUtilities.runOnUIThread(new pg(this.O2, 19));
+        }
+        ww0 ww0Var = this.m1;
+        if (ww0Var != null) {
+            ww0Var.setDelegate(null);
+        }
+        ef efVar = this.q0;
+        if (efVar != null) {
+            efVar.e = false;
+            efVar.dismiss();
         }
     }
 
@@ -10499,27 +10597,27 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
     public final void y1(boolean z10) {
         bf bfVar;
         if (this.X3) {
-            org.telegram.ui.un unVar = this.P2;
-            if (unVar != null && !unVar.Z5) {
+            org.telegram.ui.wn wnVar = this.P2;
+            if (wnVar != null && !wnVar.d6) {
                 z10 = false;
             }
-            boolean g02 = g0();
+            boolean f02 = f0();
             boolean z11 = this.q5 != 1 && this.Q2 > 0;
             bf bfVar2 = this.x1;
             boolean z12 = bfVar2 != null && bfVar2.getVisibility() == 0;
-            if (!g02 && !this.p2 && this.n2 == null) {
+            if (!f02 && !this.p2 && this.n2 == null) {
                 bf bfVar3 = this.x1;
                 if (bfVar3 != null) {
                     bfVar3.setVisibility(8);
                 }
             } else if (this.n2 != null) {
-                if (q0() && this.f2 == 1 && this.n2.is_persistent) {
+                if (p0() && this.f2 == 1 && this.n2.is_persistent) {
                     bf bfVar4 = this.x1;
                     if (bfVar4 != null && bfVar4.getVisibility() != 8) {
                         this.x1.setVisibility(8);
                     }
                 } else {
-                    N();
+                    M();
                     if (this.x1.getVisibility() != 0) {
                         this.x1.setVisibility(0);
                     }
@@ -10532,13 +10630,13 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                     bfVar5.setVisibility(8);
                 }
             } else {
-                N();
+                M();
                 this.U1.a(R.drawable.input_bot1, true);
                 this.x1.setContentDescription(LocaleController.getString("AccDescrBotCommands", R.string.AccDescrBotCommands));
                 this.x1.setVisibility(0);
             }
             if (z11) {
-                O();
+                N();
             }
             bf bfVar6 = this.x1;
             boolean z13 = (bfVar6 != null && bfVar6.getVisibility() == 0) != z12;
@@ -10595,77 +10693,6 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
         }
     }
 
-    public final void z0() {
-        NotificationCenter.ObserversGroup observersGroup;
-        gl0 gl0Var = this.h1;
-        if (gl0Var != null) {
-            gl0Var.Q = true;
-            s81 s81Var = gl0Var.n;
-            if (s81Var != null) {
-                s81Var.P(false);
-                gl0Var.n.H();
-                gl0Var.n = null;
-            }
-        }
-        if (this.h1 != null && this.b3 != null) {
-            MediaDataController mediaDataController = MediaDataController.getInstance(this.Q);
-            long j10 = this.Q2;
-            org.telegram.ui.un unVar = this.P2;
-            long b10 = (unVar == null || !unVar.t4) ? 0L : unVar.b();
-            gl0 gl0Var2 = this.h1;
-            float audioLeft = gl0Var2 == null ? 0.0f : gl0Var2.getAudioLeft();
-            gl0 gl0Var3 = this.h1;
-            mediaDataController.setDraftVoiceRegion(j10, b10, audioLeft, gl0Var3 == null ? 1.0f : gl0Var3.getAudioRight());
-        }
-        this.Y1 = true;
-        NotificationCenter.getInstance(this.Q).removeObserver(this, NotificationCenter.recordStarted);
-        NotificationCenter.getInstance(this.Q).removeObserver(this, NotificationCenter.recordPaused);
-        NotificationCenter.getInstance(this.Q).removeObserver(this, NotificationCenter.recordResumed);
-        NotificationCenter.getInstance(this.Q).removeObserver(this, NotificationCenter.recordStartError);
-        NotificationCenter.getInstance(this.Q).removeObserver(this, NotificationCenter.recordStopped);
-        NotificationCenter.getInstance(this.Q).removeObserver(this, NotificationCenter.recordProgressChanged);
-        NotificationCenter.getInstance(this.Q).removeObserver(this, NotificationCenter.closeChats);
-        NotificationCenter.getInstance(this.Q).removeObserver(this, NotificationCenter.audioDidSent);
-        NotificationCenter.getInstance(this.Q).removeObserver(this, NotificationCenter.audioRouteChanged);
-        NotificationCenter.getInstance(this.Q).removeObserver(this, NotificationCenter.messagePlayingProgressDidChanged);
-        NotificationCenter.getInstance(this.Q).removeObserver(this, NotificationCenter.featuredStickersDidLoad);
-        NotificationCenter.getInstance(this.Q).removeObserver(this, NotificationCenter.messageReceivedByServer2);
-        NotificationCenter.getInstance(this.Q).removeObserver(this, NotificationCenter.sendingMessagesChanged);
-        NotificationCenter.getInstance(this.Q).removeObserver(this, NotificationCenter.audioRecordTooShort);
-        NotificationCenter.getInstance(this.Q).removeObserver(this, NotificationCenter.updateBotMenuButton);
-        NotificationCenter.getInstance(this.Q).removeObserver(this, NotificationCenter.didUpdatePremiumGiftFieldIcon);
-        NotificationCenter.getInstance(this.Q).removeObserver(this, NotificationCenter.currentUserPremiumStatusChanged);
-        NotificationCenter.getGlobalInstance().removeObserver(this, NotificationCenter.emojiLoaded);
-        dg dgVar = this.U0;
-        if (dgVar != null && (observersGroup = dgVar.M2) != null) {
-            observersGroup.removeAllObservers();
-            dgVar.M2 = null;
-        }
-        sd sdVar = this.H0;
-        if (sdVar != null) {
-            AndroidUtilities.cancelRunOnUIThread(sdVar);
-            this.H0 = null;
-        }
-        PowerManager.WakeLock wakeLock = this.q2;
-        if (wakeLock != null) {
-            try {
-                wakeLock.release();
-                this.q2 = null;
-            } catch (Exception e) {
-                FileLog.e(e);
-            }
-        }
-        vw0 vw0Var = this.m1;
-        if (vw0Var != null) {
-            vw0Var.setDelegate(null);
-        }
-        ef efVar = this.q0;
-        if (efVar != null) {
-            efVar.e = false;
-            efVar.dismiss();
-        }
-    }
-
     public final void z1() {
         int c10;
         s4.c0 c0Var;
@@ -10683,11 +10710,11 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                 i10 += childAt.getMeasuredHeight();
             }
         }
-        vw0 vw0Var = this.m1;
+        ww0 ww0Var = this.m1;
         if (i10 > 0) {
-            c10 = org.telegram.messenger.t.c(childCount > 4 ? 12.0f : 0.0f, (vw0Var.getMeasuredHeight() - i10) - AndroidUtilities.dp(8.0f), 0);
+            c10 = org.telegram.messenger.t.c(childCount > 4 ? 12.0f : 0.0f, (ww0Var.getMeasuredHeight() - i10) - AndroidUtilities.dp(8.0f), 0);
         } else {
-            c10 = this.n0.c.size() > 4 ? org.telegram.messenger.t.c(162.8f, vw0Var.getMeasuredHeight(), 0) : org.telegram.messenger.t.c((Math.max(1, Math.min(4, this.n0.c.size())) * 36) + 8, vw0Var.getMeasuredHeight(), 0);
+            c10 = this.n0.c.size() > 4 ? org.telegram.messenger.t.c(162.8f, ww0Var.getMeasuredHeight(), 0) : org.telegram.messenger.t.c((Math.max(1, Math.min(4, this.n0.c.size())) * 36) + 8, ww0Var.getMeasuredHeight(), 0);
         }
         if (this.m0.c.getPaddingTop() != c10) {
             this.m0.c.setTopGlowOffset(c10);
@@ -10699,29 +10726,29 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
         }
     }
 
-    @Override // org.telegram.ui.Components.rz0
+    @Override // org.telegram.ui.Components.sz0
     public ju getEditField() {
         return this.E0;
     }
 
-    @Override // org.telegram.ui.Components.rz0
-    public org.telegram.ui.un getParentFragment() {
+    @Override // org.telegram.ui.Components.sz0
+    public org.telegram.ui.wn getParentFragment() {
         return this.P2;
     }
 
-    public void u0() {
+    public void t0() {
     }
 
-    public void e0(Menu menu) {
+    public void d0(Menu menu) {
     }
 
-    public void y0(float f7) {
-    }
-
-    public void A0(int i10, int i11) {
+    public void x0(float f7) {
     }
 
     @Override // oe.d
     public final /* synthetic */ void z(float f7, int i10) {
+    }
+
+    public void z0(int i10, int i11) {
     }
 }

@@ -17,26 +17,26 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.vh;
+import org.telegram.messenger.wh;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_agent;
 import org.telegram.ui.ActionBar.u6;
 import org.telegram.ui.ActionBar.y6;
-import org.telegram.ui.Components.gb1;
-import org.telegram.ui.Components.r71;
-import org.telegram.ui.Components.t61;
+import org.telegram.ui.Components.kb1;
+import org.telegram.ui.Components.s71;
+import org.telegram.ui.Components.u61;
 import org.telegram.ui.Components.wc;
-import org.telegram.ui.ay0;
+import org.telegram.ui.dy0;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class q extends org.telegram.ui.Wallet.j2 implements NotificationCenter.NotificationCenterDelegate {
     public final AgentController b0;
-    public final ay0 c0;
+    public final dy0 c0;
     public final boolean d0;
     public final p e0;
-    public final r71 f0;
-    public final r71 g0;
+    public final s71 f0;
+    public final s71 g0;
     public final FrameLayout h0;
     public final FrameLayout i0;
     public final FrameLayout j0;
@@ -54,7 +54,7 @@ public final class q extends org.telegram.ui.Wallet.j2 implements NotificationCe
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public q(Activity activity, int i10, ay0 ay0Var, u6 u6Var) {
+    public q(Activity activity, int i10, dy0 dy0Var, u6 u6Var) {
         super(activity, r8, u6Var);
         p pVar = new p(activity);
         View[] viewArr = new View[2];
@@ -65,7 +65,7 @@ public final class q extends org.telegram.ui.Wallet.j2 implements NotificationCe
         this.b0 = agentController;
         this.p0 = null;
         this.d0 = false;
-        this.c0 = ay0Var;
+        this.c0 = dy0Var;
         this.smoothKeyboardAnimationEnabled = true;
         this.smoothKeyboardByBottom = true;
         this.h0 = S(activity, LocaleController.getString(R.string.AgentConnectApiKey), null);
@@ -101,14 +101,14 @@ public final class q extends org.telegram.ui.Wallet.j2 implements NotificationCe
         textView.setTypeface(AndroidUtilities.bold());
         textView.setTextColor(getThemedColor(y6.L6));
         textView.setText(LocaleController.getString(R.string.AgentApiKeyHeader));
-        frameLayout.addView(textView, gb1.h(-2, -2.0f, (LocaleController.isRTL ? 5 : 3) | 80, 21.0f, 15.0f, 21.0f, 0.0f));
+        frameLayout.addView(textView, kb1.h(-2, -2.0f, (LocaleController.isRTL ? 5 : 3) | 80, 21.0f, 15.0f, 21.0f, 0.0f));
         TextView textView2 = new TextView(activity);
         this.k0 = textView2;
         textView2.setTextSize(1, 14.0f);
         textView2.setTextColor(getThemedColor(y6.p7));
         textView2.setText(LocaleController.getString(R.string.AgentApiKeyInvalid));
         textView2.setAlpha(0.0f);
-        frameLayout.addView(textView2, gb1.h(-2, -2.0f, (LocaleController.isRTL ? 3 : 5) | 80, 21.0f, 15.0f, 21.0f, 0.0f));
+        frameLayout.addView(textView2, kb1.h(-2, -2.0f, (LocaleController.isRTL ? 3 : 5) | 80, 21.0f, 15.0f, 21.0f, 0.0f));
         org.telegram.ui.Cells.g3 g3Var = new org.telegram.ui.Cells.g3(activity, "", true, false, -1, u6Var);
         this.l0 = g3Var;
         org.telegram.ui.Cells.e3 e3Var = g3Var.d;
@@ -125,7 +125,7 @@ public final class q extends org.telegram.ui.Wallet.j2 implements NotificationCe
         textView3.setPadding(AndroidUtilities.dp(21.0f), AndroidUtilities.dp(15.0f), AndroidUtilities.dp(21.0f), AndroidUtilities.dp(15.0f));
         textView3.setClickable(false);
         textView3.setFocusable(false);
-        g3Var.addView(textView3, gb1.i(-1, -2, 48));
+        g3Var.addView(textView3, kb1.i(-1, -2, 48));
         g3Var.d(new m(this, 0));
         e3Var.addTextChangedListener(new o(this));
         FrameLayout frameLayout2 = new FrameLayout(activity);
@@ -158,9 +158,9 @@ public final class q extends org.telegram.ui.Wallet.j2 implements NotificationCe
                 }
             }
         });
-        frameLayout2.addView(dVar, gb1.h(-1, 48.0f, 119, 12.0f, 12.0f, 12.0f, 12.0f));
+        frameLayout2.addView(dVar, kb1.h(-1, 48.0f, 119, 12.0f, 12.0f, 12.0f, 12.0f));
         final int i13 = 0;
-        r71 T = T(activity, new Utilities.Callback2(this) { // from class: hi.n
+        s71 T = T(activity, new Utilities.Callback2(this) { // from class: hi.n
             public final /* synthetic */ q b;
 
             {
@@ -176,45 +176,45 @@ public final class q extends org.telegram.ui.Wallet.j2 implements NotificationCe
                     case 0:
                         AgentController agentController2 = qVar.b0;
                         if (agentController2 != null) {
-                            arrayList.add(t61.m(qVar.h0));
+                            arrayList.add(u61.m(qVar.h0));
                             ic.a.p(R.string.AgentProviderHeader, arrayList);
                             for (int i15 = 0; i15 < agentController2.providers.size(); i15++) {
                                 TL_agent.agentProvider agentprovider = agentController2.providers.get(i15);
                                 int i16 = r.a;
-                                t61 K = t61.K(r.class);
+                                u61 K = u61.K(r.class);
                                 K.d = 1;
                                 K.G = agentprovider;
                                 K.z = 1;
                                 arrayList.add(K);
                             }
                             if (agentController2.providers.isEmpty()) {
-                                arrayList.add(t61.p(6));
+                                arrayList.add(u61.p(6));
                             }
-                            arrayList.add(t61.C(LocaleController.getString(R.string.AgentProviderInfo)));
-                            arrayList.add(t61.D(AndroidUtilities.dp(8.0f)));
+                            arrayList.add(u61.C(LocaleController.getString(R.string.AgentProviderInfo)));
+                            arrayList.add(u61.D(AndroidUtilities.dp(8.0f)));
                             break;
                         }
                         break;
                     default:
                         if (qVar.b0 != null && qVar.p0 != null) {
-                            arrayList.add(t61.m(qVar.i0));
+                            arrayList.add(u61.m(qVar.i0));
                             TL_agent.agentProvider agentprovider2 = qVar.p0;
                             int i17 = r.a;
-                            t61 K2 = t61.K(r.class);
+                            u61 K2 = u61.K(r.class);
                             K2.d = 0;
                             K2.G = agentprovider2;
                             K2.z = 0;
                             K2.g = false;
                             arrayList.add(K2);
-                            arrayList.add(t61.C(null));
-                            arrayList.add(t61.k(qVar.j0));
-                            arrayList.add(t61.k(qVar.l0));
+                            arrayList.add(u61.C(null));
+                            arrayList.add(u61.k(qVar.j0));
+                            arrayList.add(u61.k(qVar.l0));
                             if (TextUtils.isEmpty(qVar.p0.key_url)) {
-                                arrayList.add(t61.C(LocaleController.getString(R.string.AgentApiKeyHint).replace("**", "")));
+                                arrayList.add(u61.C(LocaleController.getString(R.string.AgentApiKeyHint).replace("**", "")));
                             } else {
-                                arrayList.add(t61.C(AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.AgentApiKeyHint), new e2.q0(27, qVar, qVar.p0.key_url))));
+                                arrayList.add(u61.C(AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.AgentApiKeyHint), new e2.q0(27, qVar, qVar.p0.key_url))));
                             }
-                            arrayList.add(t61.m(qVar.n0));
+                            arrayList.add(u61.m(qVar.n0));
                             break;
                         }
                         break;
@@ -223,7 +223,7 @@ public final class q extends org.telegram.ui.Wallet.j2 implements NotificationCe
         }, new e1.c(this, 16));
         this.f0 = T;
         final int i14 = 1;
-        r71 T2 = T(activity, new Utilities.Callback2(this) { // from class: hi.n
+        s71 T2 = T(activity, new Utilities.Callback2(this) { // from class: hi.n
             public final /* synthetic */ q b;
 
             {
@@ -239,45 +239,45 @@ public final class q extends org.telegram.ui.Wallet.j2 implements NotificationCe
                     case 0:
                         AgentController agentController2 = qVar.b0;
                         if (agentController2 != null) {
-                            arrayList.add(t61.m(qVar.h0));
+                            arrayList.add(u61.m(qVar.h0));
                             ic.a.p(R.string.AgentProviderHeader, arrayList);
                             for (int i15 = 0; i15 < agentController2.providers.size(); i15++) {
                                 TL_agent.agentProvider agentprovider = agentController2.providers.get(i15);
                                 int i16 = r.a;
-                                t61 K = t61.K(r.class);
+                                u61 K = u61.K(r.class);
                                 K.d = 1;
                                 K.G = agentprovider;
                                 K.z = 1;
                                 arrayList.add(K);
                             }
                             if (agentController2.providers.isEmpty()) {
-                                arrayList.add(t61.p(6));
+                                arrayList.add(u61.p(6));
                             }
-                            arrayList.add(t61.C(LocaleController.getString(R.string.AgentProviderInfo)));
-                            arrayList.add(t61.D(AndroidUtilities.dp(8.0f)));
+                            arrayList.add(u61.C(LocaleController.getString(R.string.AgentProviderInfo)));
+                            arrayList.add(u61.D(AndroidUtilities.dp(8.0f)));
                             break;
                         }
                         break;
                     default:
                         if (qVar.b0 != null && qVar.p0 != null) {
-                            arrayList.add(t61.m(qVar.i0));
+                            arrayList.add(u61.m(qVar.i0));
                             TL_agent.agentProvider agentprovider2 = qVar.p0;
                             int i17 = r.a;
-                            t61 K2 = t61.K(r.class);
+                            u61 K2 = u61.K(r.class);
                             K2.d = 0;
                             K2.G = agentprovider2;
                             K2.z = 0;
                             K2.g = false;
                             arrayList.add(K2);
-                            arrayList.add(t61.C(null));
-                            arrayList.add(t61.k(qVar.j0));
-                            arrayList.add(t61.k(qVar.l0));
+                            arrayList.add(u61.C(null));
+                            arrayList.add(u61.k(qVar.j0));
+                            arrayList.add(u61.k(qVar.l0));
                             if (TextUtils.isEmpty(qVar.p0.key_url)) {
-                                arrayList.add(t61.C(LocaleController.getString(R.string.AgentApiKeyHint).replace("**", "")));
+                                arrayList.add(u61.C(LocaleController.getString(R.string.AgentApiKeyHint).replace("**", "")));
                             } else {
-                                arrayList.add(t61.C(AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.AgentApiKeyHint), new e2.q0(27, qVar, qVar.p0.key_url))));
+                                arrayList.add(u61.C(AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.AgentApiKeyHint), new e2.q0(27, qVar, qVar.p0.key_url))));
                             }
-                            arrayList.add(t61.m(qVar.n0));
+                            arrayList.add(u61.m(qVar.n0));
                             break;
                         }
                         break;
@@ -287,8 +287,8 @@ public final class q extends org.telegram.ui.Wallet.j2 implements NotificationCe
         this.g0 = T2;
         viewArr[0] = T;
         viewArr[1] = T2;
-        pVar.addView(T, gb1.i(-1, -2, 48));
-        pVar.addView(T2, gb1.i(-1, -2, 48));
+        pVar.addView(T, kb1.i(-1, -2, 48));
+        pVar.addView(T2, kb1.i(-1, -2, 48));
         pVar.a();
         agentController.loadProviders();
         T.g3.O(false);
@@ -307,9 +307,9 @@ public final class q extends org.telegram.ui.Wallet.j2 implements NotificationCe
         if (tL_error == null) {
             AndroidUtilities.hideKeyboard(g3Var.d);
             qVar.dismiss();
-            ay0 ay0Var = qVar.c0;
-            if (ay0Var != null) {
-                ay0Var.run(str);
+            dy0 dy0Var = qVar.c0;
+            if (dy0Var != null) {
+                dy0Var.run(str);
                 return;
             }
             return;
@@ -318,9 +318,9 @@ public final class q extends org.telegram.ui.Wallet.j2 implements NotificationCe
             qVar.U(true);
             AndroidUtilities.shakeViewSpring(g3Var, -6.0f);
         } else if ("AGENT_PROVIDER_UNAVAILABLE".equals(tL_error.text)) {
-            vh.n(R.string.AgentProviderUnavailable, new wc(qVar.getContainer(), qVar.resourcesProvider), null);
+            wh.n(R.string.AgentProviderUnavailable, new wc(qVar.getContainer(), qVar.resourcesProvider), null);
         } else if ("AGENT_NOT_AVAILABLE".equals(tL_error.text)) {
-            vh.n(R.string.AgentNotAvailable, new wc(qVar.getContainer(), qVar.resourcesProvider), null);
+            wh.n(R.string.AgentNotAvailable, new wc(qVar.getContainer(), qVar.resourcesProvider), null);
         } else {
             new wc(qVar.getContainer(), qVar.resourcesProvider).g0(tL_error, false);
         }
@@ -353,8 +353,8 @@ public final class q extends org.telegram.ui.Wallet.j2 implements NotificationCe
             imageView.setColorFilter(new PorterDuffColorFilter(getThemedColor(y6.G6), PorterDuff.Mode.SRC_IN));
             imageView.setBackground(y6.g0(getThemedColor(y6.i6), 1, -1));
             imageView.setOnClickListener(lVar);
-            gb1.b(imageView);
-            frameLayout.addView(imageView, gb1.h(48, 48.0f, (LocaleController.isRTL ? 5 : 3) | 16, 6.0f, 0.0f, 6.0f, 0.0f));
+            kb1.b(imageView);
+            frameLayout.addView(imageView, kb1.h(48, 48.0f, (LocaleController.isRTL ? 5 : 3) | 16, 6.0f, 0.0f, 6.0f, 0.0f));
         }
         TextView g7 = org.telegram.messenger.t.g(context, 1, 20.0f);
         g7.setTypeface(AndroidUtilities.bold());
@@ -362,23 +362,23 @@ public final class q extends org.telegram.ui.Wallet.j2 implements NotificationCe
         g7.setSingleLine();
         g7.setEllipsize(TextUtils.TruncateAt.END);
         g7.setText(str);
-        frameLayout.addView(g7, gb1.h(-1, -2.0f, 23, lVar != null ? 60.0f : 22.0f, 0.0f, 22.0f, 0.0f));
+        frameLayout.addView(g7, kb1.h(-1, -2.0f, 23, lVar != null ? 60.0f : 22.0f, 0.0f, 22.0f, 0.0f));
         frameLayout.setMinimumHeight(AndroidUtilities.dp(56.0f));
         return frameLayout;
     }
 
-    public final r71 T(Context context, Utilities.Callback2 callback2, e1.c cVar) {
-        r71 r71Var = new r71(context, this.currentAccount, 0, true, callback2, cVar, null, this.resourcesProvider);
-        r71Var.g3.r = false;
-        r71Var.u1();
-        r71Var.setNestedScrollingEnabled(false);
-        r71Var.setOverScrollMode(2);
-        r71Var.setItemAnimator(null);
-        return r71Var;
+    public final s71 T(Context context, Utilities.Callback2 callback2, e1.c cVar) {
+        s71 s71Var = new s71(context, this.currentAccount, 0, true, callback2, cVar, null, this.resourcesProvider);
+        s71Var.g3.r = false;
+        s71Var.u1();
+        s71Var.setNestedScrollingEnabled(false);
+        s71Var.setOverScrollMode(2);
+        s71Var.setItemAnimator(null);
+        return s71Var;
     }
 
     public final void U(boolean z10) {
-        vh.p(this.k0.animate(), z10 ? 1.0f : 0.0f, 220L);
+        wh.p(this.k0.animate(), z10 ? 1.0f : 0.0f, 220L);
     }
 
     public final void V() {
@@ -416,6 +416,6 @@ public final class q extends org.telegram.ui.Wallet.j2 implements NotificationCe
     @Override // org.telegram.ui.Wallet.j2, org.telegram.ui.ActionBar.k3, android.app.Dialog
     public final void show() {
         super.show();
-        NotificationCenter.getInstance(this.currentAccount).addObserver(this, NotificationCenter.agentSettingsUpdated);
+        NotificationCenter.getInstance(this.currentAccount).addWeakObserver(this, NotificationCenter.agentSettingsUpdated);
     }
 }

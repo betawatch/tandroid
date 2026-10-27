@@ -7,10 +7,10 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_communities;
-import org.telegram.ui.Components.t61;
+import org.telegram.ui.Components.u61;
 import org.telegram.ui.Components.wc;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class b implements Utilities.Callback2 {
     public final /* synthetic */ int a;
@@ -28,14 +28,14 @@ public final /* synthetic */ class b implements Utilities.Callback2 {
             case 0:
                 ArrayList arrayList = (ArrayList) obj;
                 f fVar = this.b;
-                arrayList.add(t61.l(0, fVar.h));
-                t61 c10 = t61.c(1, R.drawable.msg_groups_create, LocaleController.getString(R.string.CommunityCreateCommunity));
+                arrayList.add(u61.l(0, fVar.h));
+                u61 c10 = u61.c(1, R.drawable.msg_groups_create, LocaleController.getString(R.string.CommunityCreateCommunity));
                 c10.q = true;
                 arrayList.add(c10);
-                arrayList.add(t61.E(2, AndroidUtilities.dp(14.0f)));
+                arrayList.add(u61.E(2, AndroidUtilities.dp(14.0f)));
                 ArrayList arrayList2 = fVar.n;
                 if (arrayList2 != null && !arrayList2.isEmpty()) {
-                    arrayList.add(t61.t(3, LocaleController.getString(R.string.CommunityAddToExistingCommunity)));
+                    arrayList.add(u61.t(3, LocaleController.getString(R.string.CommunityAddToExistingCommunity)));
                     ArrayList arrayList3 = fVar.n;
                     int size = arrayList3.size();
                     int i10 = 0;
@@ -44,7 +44,7 @@ public final /* synthetic */ class b implements Utilities.Callback2 {
                         i10++;
                         TLRPC.Chat chat = (TLRPC.Chat) obj3;
                         TLRPC.ChatFull chatFull = fVar.getMessagesController().getChatFull(chat.id);
-                        t61 w10 = t61.w(chat);
+                        u61 w10 = u61.w(chat);
                         long j10 = chat.id;
                         w10.d = (int) (j10 ^ (j10 >>> 32));
                         if (chatFull != null) {

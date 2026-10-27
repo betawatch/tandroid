@@ -5,10 +5,10 @@ import android.widget.EditText;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.messenger.vh;
-import org.telegram.ui.Components.l71;
+import org.telegram.messenger.wh;
+import org.telegram.ui.Components.m71;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class e1 extends org.telegram.ui.ActionBar.s0 {
     public final k2.c a = new k2.c(this, 29);
@@ -24,12 +24,12 @@ public final class e1 extends org.telegram.ui.ActionBar.s0 {
         }
         String lowerCase = str.toLowerCase();
         String lowerCase2 = str2.toLowerCase();
-        if (lowerCase.startsWith(lowerCase2) || vh.u(" ", lowerCase2, lowerCase) || vh.u(".", lowerCase2, lowerCase)) {
+        if (lowerCase.startsWith(lowerCase2) || wh.u(" ", lowerCase2, lowerCase) || wh.u(".", lowerCase2, lowerCase)) {
             return true;
         }
         String translitSafe = AndroidUtilities.translitSafe(lowerCase);
         String translitSafe2 = AndroidUtilities.translitSafe(lowerCase2);
-        return translitSafe.startsWith(translitSafe2) || vh.u(" ", translitSafe2, translitSafe) || vh.u(".", translitSafe2, translitSafe);
+        return translitSafe.startsWith(translitSafe2) || wh.u(" ", translitSafe2, translitSafe) || wh.u(".", translitSafe2, translitSafe);
     }
 
     @Override // org.telegram.ui.ActionBar.s0
@@ -38,9 +38,9 @@ public final class e1 extends org.telegram.ui.ActionBar.s0 {
         f1Var.r = null;
         f1Var.n = false;
         AndroidUtilities.cancelRunOnUIThread(this.a);
-        l71 l71Var = f1Var.a;
-        if (l71Var != null) {
-            l71Var.g3.O(true);
+        m71 m71Var = f1Var.a;
+        if (m71Var != null) {
+            m71Var.g3.O(true);
             f1Var.a.f3.h1(0, 0);
         }
         f1Var.x.d.setText(LocaleController.getString(TextUtils.isEmpty(f1Var.r) ? R.string.WebNoHistory : R.string.WebNoSearchedHistory));
@@ -59,9 +59,9 @@ public final class e1 extends org.telegram.ui.ActionBar.s0 {
             AndroidUtilities.runOnUIThread(cVar, 500L);
             f1Var.x.d.setText(LocaleController.getString(TextUtils.isEmpty(obj) ? R.string.WebNoHistory : R.string.WebNoSearchedHistory));
         }
-        l71 l71Var = f1Var.a;
-        if (l71Var != null) {
-            l71Var.g3.O(true);
+        m71 m71Var = f1Var.a;
+        if (m71Var != null) {
+            m71Var.g3.O(true);
             if (z10 != (!TextUtils.isEmpty(obj))) {
                 f1Var.a.f3.h1(0, 0);
             }

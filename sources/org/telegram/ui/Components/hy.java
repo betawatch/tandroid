@@ -9,7 +9,7 @@ import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class hy implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -106,10 +106,10 @@ public final /* synthetic */ class hy implements View.OnClickListener {
                             if (r2Var == null) {
                                 r2Var = new bi.v4(iyVar, 7);
                             }
-                            aw.g0(r2Var, stickerSet5, true, null, new bq(iyVar, 15));
+                            aw.g0(r2Var, stickerSet5, true, null, new cp(iyVar, 16));
                             break;
                         } else {
-                            NotificationCenter.getInstance(i12).addObserver(iyVar, NotificationCenter.groupStickersDidLoad);
+                            NotificationCenter.getInstance(i12).addWeakObserver(iyVar, NotificationCenter.groupStickersDidLoad);
                             MediaDataController mediaDataController = MediaDataController.getInstance(i12);
                             iyVar.s = tL_inputStickerSetID2;
                             mediaDataController.getStickerSet((TLRPC.InputStickerSet) tL_inputStickerSetID2, false);
@@ -131,7 +131,7 @@ public final /* synthetic */ class hy implements View.OnClickListener {
                     if (uxVar != null) {
                         uxVar.p(szVar3.getEmojipacks());
                     }
-                    szVar3.U(szVar3.Q.I0());
+                    szVar3.V(szVar3.Q.I0());
                     if (iyVar.v == null) {
                         TLRPC.TL_inputStickerSetID tL_inputStickerSetID3 = new TLRPC.TL_inputStickerSetID();
                         TLRPC.StickerSet stickerSet6 = iyVar.w.b;
@@ -151,7 +151,7 @@ public final /* synthetic */ class hy implements View.OnClickListener {
                                 break;
                             }
                         } else {
-                            NotificationCenter.getInstance(i14).addObserver(iyVar, NotificationCenter.groupStickersDidLoad);
+                            NotificationCenter.getInstance(i14).addWeakObserver(iyVar, NotificationCenter.groupStickersDidLoad);
                             MediaDataController mediaDataController2 = MediaDataController.getInstance(i14);
                             iyVar.v = tL_inputStickerSetID3;
                             mediaDataController2.getStickerSet((TLRPC.InputStickerSet) tL_inputStickerSetID3, false);

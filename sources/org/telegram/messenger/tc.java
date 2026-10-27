@@ -1,52 +1,27 @@
 package org.telegram.messenger;
 
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class tc implements RequestDelegate {
+public final /* synthetic */ class tc implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ MessagesController b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ long d;
-    public final /* synthetic */ long e;
+    public final /* synthetic */ boolean c;
 
-    public /* synthetic */ tc(int i10, long j10, long j11, MessagesController messagesController) {
-        this.a = 0;
+    public /* synthetic */ tc(int i10, MessagesController messagesController, boolean z10) {
+        this.a = i10;
         this.b = messagesController;
-        this.d = j10;
-        this.c = i10;
-        this.e = j11;
+        this.c = z10;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                int i10 = this.c;
-                long j10 = this.e;
-                this.b.lambda$getChannelDifference$350(this.d, i10, j10, tLObject, tL_error);
-                break;
-            case 1:
-                long j11 = this.d;
-                long j12 = this.e;
-                this.b.lambda$sendTyping$171(this.c, j11, j12, tLObject, tL_error);
+                this.b.lambda$checkPromoInfo$163(this.c);
                 break;
             default:
-                long j13 = this.d;
-                long j14 = this.e;
-                this.b.lambda$sendTyping$173(this.c, j13, j14, tLObject, tL_error);
+                this.b.lambda$removeFolderTemporarily$486(this.c);
                 break;
         }
-    }
-
-    public /* synthetic */ tc(MessagesController messagesController, int i10, long j10, long j11, int i11) {
-        this.a = i11;
-        this.b = messagesController;
-        this.c = i10;
-        this.d = j10;
-        this.e = j11;
     }
 }

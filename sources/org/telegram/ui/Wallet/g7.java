@@ -11,9 +11,9 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.Components.i80;
+import org.telegram.ui.Components.j80;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class g7 extends zh.g1 {
     public ValueAnimator A0;
@@ -23,15 +23,15 @@ public final class g7 extends zh.g1 {
     public boolean z0;
 
     @Override // zh.g1
-    public final void b(i80 i80Var, Canvas canvas, float f7, float f10, float f11) {
+    public final void b(j80 j80Var, Canvas canvas, float f7, float f10, float f11) {
         if (this.y0 == 1.0f) {
-            super.b(i80Var, canvas, f7, f10, f11);
+            super.b(j80Var, canvas, f7, f10, f11);
             return;
         }
         canvas.save();
         float f12 = this.y0;
         canvas.scale(f12, f12, f7 / 2.0f, f10 / 2.0f);
-        super.b(i80Var, canvas, f7, f10, f11);
+        super.b(j80Var, canvas, f7, f10, f11);
         canvas.restore();
     }
 

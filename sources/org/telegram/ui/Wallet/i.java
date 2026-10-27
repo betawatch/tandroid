@@ -4,9 +4,9 @@ import android.text.TextUtils;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.zc1;
+import org.telegram.ui.yc1;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class i implements Utilities.Callback2 {
     public final /* synthetic */ int a;
@@ -30,7 +30,7 @@ public final /* synthetic */ class i implements Utilities.Callback2 {
                 }
                 Boolean bool = l0Var.i;
                 if (bool != null && bool.booleanValue() && !TextUtils.isEmpty(l0Var.j)) {
-                    l0Var.J();
+                    l0Var.L();
                     break;
                 }
                 break;
@@ -42,7 +42,7 @@ public final /* synthetic */ class i implements Utilities.Callback2 {
                 if (walletState == null) {
                     StringBuilder sb2 = new StringBuilder("requesting gasless info: ");
                     sb2.append(tL_error != null ? tL_error.text : "NULL_ERROR");
-                    l0.i(sb2.toString());
+                    l0.j(sb2.toString());
                     break;
                 } else {
                     long currentTimeMillis = System.currentTimeMillis();
@@ -57,15 +57,15 @@ public final /* synthetic */ class i implements Utilities.Callback2 {
                                 l0Var2.l = false;
                             }
                             l0Var2.e = walletState;
+                            l0Var2.N();
                             l0Var2.L();
-                            l0Var2.J();
                             break;
                         }
                     }
                     l0Var2.l = false;
                     l0Var2.e = walletState;
+                    l0Var2.N();
                     l0Var2.L();
-                    l0Var2.J();
                 }
                 break;
             default:
@@ -74,12 +74,12 @@ public final /* synthetic */ class i implements Utilities.Callback2 {
                 TLRPC.TL_error tL_error2 = (TLRPC.TL_error) obj2;
                 l0Var3.B = -1;
                 if (updates != null) {
-                    Utilities.stageQueue.postRunnable(new zc1(13, l0Var3, updates));
+                    Utilities.stageQueue.postRunnable(new yc1(14, l0Var3, updates));
                     break;
                 } else {
                     StringBuilder sb3 = new StringBuilder("requesting gasless info: ");
                     sb3.append(tL_error2 != null ? tL_error2.text : "NULL_ERROR");
-                    l0.i(sb3.toString());
+                    l0.j(sb3.toString());
                     break;
                 }
         }

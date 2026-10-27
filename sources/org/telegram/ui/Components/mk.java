@@ -24,9 +24,9 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public final class mk extends hm0 {
+public final class mk extends im0 {
     public long E;
     public long F;
     public int G;
@@ -39,11 +39,11 @@ public final class mk extends hm0 {
     public final /* synthetic */ nk X;
     public final Context r;
     public ik v;
-    public org.telegram.ui.ip w;
+    public org.telegram.ui.kp w;
     public long x;
     public ig.p0 y;
     public ArrayList s = new ArrayList();
-    public final org.telegram.ui.z00 H = new org.telegram.ui.z00(0, 0);
+    public final org.telegram.ui.b10 H = new org.telegram.ui.b10(0, 0);
     public final ArrayList L = new ArrayList();
     public final ArrayList M = new ArrayList();
     public final ArrayList N = new ArrayList();
@@ -59,18 +59,18 @@ public final class mk extends hm0 {
         this.r = context;
     }
 
-    @Override // org.telegram.ui.Components.tl0
+    @Override // org.telegram.ui.Components.ul0
     public final String F(int i10) {
         return null;
     }
 
-    @Override // org.telegram.ui.Components.tl0
-    public final void G(mm0 mm0Var, float f7, int[] iArr) {
+    @Override // org.telegram.ui.Components.ul0
+    public final void G(nm0 nm0Var, float f7, int[] iArr) {
         iArr[0] = 0;
         iArr[1] = 0;
     }
 
-    @Override // org.telegram.ui.Components.hm0
+    @Override // org.telegram.ui.Components.im0
     public final int M(int i10) {
         if (i10 == 0) {
             return this.s.size();
@@ -92,7 +92,7 @@ public final class mk extends hm0 {
         return size + i12;
     }
 
-    @Override // org.telegram.ui.Components.hm0
+    @Override // org.telegram.ui.Components.im0
     public final Object O(int i10, int i11) {
         ArrayList arrayList;
         if (i10 == 0) {
@@ -113,7 +113,7 @@ public final class mk extends hm0 {
         return arrayList.get(i13);
     }
 
-    @Override // org.telegram.ui.Components.hm0
+    @Override // org.telegram.ui.Components.im0
     public final int P(int i10, int i11) {
         if (i10 == 0) {
             return 1;
@@ -128,7 +128,7 @@ public final class mk extends hm0 {
         return 2;
     }
 
-    @Override // org.telegram.ui.Components.hm0
+    @Override // org.telegram.ui.Components.im0
     public final int R() {
         ArrayList arrayList = this.P;
         if (arrayList.isEmpty()) {
@@ -137,7 +137,7 @@ public final class mk extends hm0 {
         return arrayList.size() + (!this.V ? 1 : 0) + 2;
     }
 
-    @Override // org.telegram.ui.Components.hm0
+    @Override // org.telegram.ui.Components.im0
     public final View T(int i10, View view) {
         org.telegram.ui.Cells.z3 z3Var = (org.telegram.ui.Cells.z3) view;
         if (z3Var == null) {
@@ -161,13 +161,13 @@ public final class mk extends hm0 {
         return view;
     }
 
-    @Override // org.telegram.ui.Components.hm0
+    @Override // org.telegram.ui.Components.im0
     public final boolean V(int i10, int i11, s4.e1 e1Var) {
         int i12 = e1Var.f;
         return i12 == 1 || i12 == 4;
     }
 
-    @Override // org.telegram.ui.Components.hm0
+    @Override // org.telegram.ui.Components.im0
     public final void W(int i10, int i11, s4.e1 e1Var) {
         int i12 = i11;
         int i13 = e1Var.f;
@@ -229,9 +229,9 @@ public final class mk extends hm0 {
         nk nkVar = this.X;
         gk gkVar = nkVar.v;
         ck ckVar = nkVar.r;
-        org.telegram.ui.ip ipVar = this.w;
-        if (ipVar != null) {
-            AndroidUtilities.cancelRunOnUIThread(ipVar);
+        org.telegram.ui.kp kpVar = this.w;
+        if (kpVar != null) {
+            AndroidUtilities.cancelRunOnUIThread(kpVar);
             this.w = null;
         }
         if (TextUtils.isEmpty(str)) {
@@ -243,9 +243,9 @@ public final class mk extends hm0 {
             }
             l();
         } else {
-            org.telegram.ui.ip ipVar2 = new org.telegram.ui.ip(22, this, str);
-            this.w = ipVar2;
-            AndroidUtilities.runOnUIThread(ipVar2, 300L);
+            org.telegram.ui.kp kpVar2 = new org.telegram.ui.kp(22, this, str);
+            this.w = kpVar2;
+            AndroidUtilities.runOnUIThread(kpVar2, 300L);
         }
         if (nkVar.W || !gkVar.d.isEmpty()) {
             return;
@@ -526,7 +526,7 @@ public final class mk extends hm0 {
                     ck ckVar = nkVar.r;
                     Property property = View.TRANSLATION_Y;
                     animatorSet2.playTogether(ObjectAnimator.ofFloat(ckVar, (Property<ck, Float>) property, !z11 ? AndroidUtilities.dp(44.0f) : 0.0f), ObjectAnimator.ofFloat(r0Var, (Property<ig.r0, Float>) property, !z11 ? 0.0f : -AndroidUtilities.dp(44.0f)), ObjectAnimator.ofFloat(nkVar.J, (Property<c10, Float>) property, !z11 ? AndroidUtilities.dp(44.0f) : 0.0f), ObjectAnimator.ofFloat(nkVar.L, (Property<di.n5, Float>) property, z11 ? AndroidUtilities.dp(44.0f) : 0.0f));
-                    nkVar.I.addListener(new org.telegram.ui.qp(this, 14));
+                    nkVar.I.addListener(new org.telegram.ui.sp(this, 14));
                     nkVar.I.setInterpolator(ds.g);
                     nkVar.I.setDuration(180L);
                     nkVar.I.start();
@@ -553,13 +553,13 @@ public final class mk extends hm0 {
         ck ckVar2 = nkVar.r;
         Property property2 = View.TRANSLATION_Y;
         animatorSet22.playTogether(ObjectAnimator.ofFloat(ckVar2, (Property<ck, Float>) property2, !z11 ? AndroidUtilities.dp(44.0f) : 0.0f), ObjectAnimator.ofFloat(r0Var, (Property<ig.r0, Float>) property2, !z11 ? 0.0f : -AndroidUtilities.dp(44.0f)), ObjectAnimator.ofFloat(nkVar.J, (Property<c10, Float>) property2, !z11 ? AndroidUtilities.dp(44.0f) : 0.0f), ObjectAnimator.ofFloat(nkVar.L, (Property<di.n5, Float>) property2, z11 ? AndroidUtilities.dp(44.0f) : 0.0f));
-        nkVar.I.addListener(new org.telegram.ui.qp(this, 14));
+        nkVar.I.addListener(new org.telegram.ui.sp(this, 14));
         nkVar.I.setInterpolator(ds.g);
         nkVar.I.setDuration(180L);
         nkVar.I.start();
     }
 
-    @Override // org.telegram.ui.Components.hm0, s4.h0
+    @Override // org.telegram.ui.Components.im0, s4.h0
     public final void l() {
         X(false);
         this.X.W();

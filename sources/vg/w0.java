@@ -5,9 +5,9 @@ import java.util.ArrayList;
 import java.util.List;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.cy0;
+import org.telegram.ui.Components.dy0;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class w0 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -25,20 +25,20 @@ public final /* synthetic */ class w0 implements Utilities.Callback {
                 String str = (String) obj;
                 z0 z0Var = this.b;
                 ArrayList arrayList = z0Var.g0;
-                cy0 cy0Var = z0Var.v0;
+                dy0 dy0Var = z0Var.v0;
                 z0Var.n0 = str;
                 int i10 = z0Var.r0;
                 if (i10 == 1) {
-                    AndroidUtilities.cancelRunOnUIThread(cy0Var);
-                    AndroidUtilities.runOnUIThread(cy0Var, 350L);
+                    AndroidUtilities.cancelRunOnUIThread(dy0Var);
+                    AndroidUtilities.runOnUIThread(dy0Var, 350L);
                     break;
                 } else if (i10 == 2) {
                     if (!TextUtils.isEmpty(str)) {
-                        AndroidUtilities.cancelRunOnUIThread(cy0Var);
-                        AndroidUtilities.runOnUIThread(cy0Var, 350L);
+                        AndroidUtilities.cancelRunOnUIThread(dy0Var);
+                        AndroidUtilities.runOnUIThread(dy0Var, 350L);
                         break;
                     } else {
-                        AndroidUtilities.cancelRunOnUIThread(cy0Var);
+                        AndroidUtilities.cancelRunOnUIThread(dy0Var);
                         arrayList.clear();
                         arrayList.addAll(s.e(z0Var.q0.id));
                         z0Var.a0(false, true);

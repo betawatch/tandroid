@@ -14,17 +14,17 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.bk0;
+import org.telegram.ui.Components.ck0;
 import org.telegram.ui.Components.ds;
-import org.telegram.ui.Components.gb1;
+import org.telegram.ui.Components.kb1;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class m4 extends FrameLayout {
     public final k4 a;
     public final l4 b;
     public final TextView[] c;
-    public bk0 d;
+    public ck0 d;
     public final o4 e;
     public Paint f;
     public float h;
@@ -39,7 +39,7 @@ public final class m4 extends FrameLayout {
         k4 k4Var = new k4(this, context, 0);
         this.a = k4Var;
         k4Var.setRoundRadius(AndroidUtilities.dp(16.0f));
-        addView(k4Var, gb1.h(32, 32.0f, 0, 12.0f, 2.0f, 0.0f, 0.0f));
+        addView(k4Var, kb1.h(32, 32.0f, 0, 12.0f, 2.0f, 0.0f, 0.0f));
         setClipChildren(false);
         l4 l4Var = new l4(context, 0);
         this.b = l4Var;
@@ -49,7 +49,7 @@ public final class m4 extends FrameLayout {
         l4Var.setEllipsizeByGradient(AndroidUtilities.dp(4.0f));
         l4Var.setPivotX(0.0f);
         NotificationCenter.listenEmojiLoading(l4Var);
-        addView(l4Var, gb1.h(-2, -2.0f, 0, 54.0f, 0.0f, 86.0f, 0.0f));
+        addView(l4Var, kb1.h(-2, -2.0f, 0, 54.0f, 0.0f, 86.0f, 0.0f));
         for (int i10 = 0; i10 < 2; i10++) {
             this.c[i10] = new TextView(context);
             this.c[i10].setTextSize(1, 12.0f);
@@ -58,7 +58,7 @@ public final class m4 extends FrameLayout {
             this.c[i10].setEllipsize(TextUtils.TruncateAt.MIDDLE);
             this.c[i10].setTextColor(-1);
             this.c[i10].setPadding(AndroidUtilities.dp(3.0f), 0, AndroidUtilities.dp(3.0f), AndroidUtilities.dp(1.0f));
-            addView(this.c[i10], gb1.h(-2, -2.0f, 0, 51.0f, 18.0f, 83.0f, 0.0f));
+            addView(this.c[i10], kb1.h(-2, -2.0f, 0, 51.0f, 18.0f, 83.0f, 0.0f));
         }
         this.b.setTextColor(-1);
     }
@@ -89,12 +89,12 @@ public final class m4 extends FrameLayout {
             }
             z11 = false;
         }
-        bk0 bk0Var = this.d;
+        ck0 ck0Var = this.d;
         k4 k4Var = this.a;
-        if (bk0Var == null) {
-            bk0 bk0Var2 = new bk0(k4Var);
-            this.d = bk0Var2;
-            bk0Var2.d(null, true, false);
+        if (ck0Var == null) {
+            ck0 ck0Var2 = new ck0(k4Var);
+            this.d = ck0Var2;
+            ck0Var2.d(null, true, false);
         }
         this.d.q = 0;
         ImageReceiver imageReceiver = k4Var.getImageReceiver();
@@ -108,9 +108,9 @@ public final class m4 extends FrameLayout {
             if (f7 != 1.0f) {
                 Paint t10 = a8.t(imageReceiver, false);
                 t10.setAlpha((int) (this.h * 255.0f));
-                bk0 bk0Var3 = this.d;
-                bk0Var3.t = t10;
-                bk0Var3.a(canvas);
+                ck0 ck0Var3 = this.d;
+                ck0Var3.t = t10;
+                ck0Var3.a(canvas);
             }
             if (this.f == null) {
                 Paint paint = new Paint(1);
@@ -121,9 +121,9 @@ public final class m4 extends FrameLayout {
                 this.f.setStrokeCap(Paint.Cap.ROUND);
             }
             this.f.setAlpha((int) (255.0f * f7 * this.h));
-            bk0 bk0Var4 = this.d;
-            bk0Var4.t = this.f;
-            bk0Var4.a(canvas);
+            ck0 ck0Var4 = this.d;
+            ck0Var4.t = this.f;
+            ck0Var4.a(canvas);
         }
     }
 

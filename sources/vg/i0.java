@@ -11,11 +11,11 @@ import org.telegram.messenger.FileLog;
 import org.telegram.ui.ActionBar.p6;
 import org.telegram.ui.ActionBar.u6;
 import org.telegram.ui.ActionBar.y6;
-import org.telegram.ui.Components.gb1;
 import org.telegram.ui.Components.j9;
+import org.telegram.ui.Components.kb1;
 import org.telegram.ui.Components.y9;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class i0 extends FrameLayout implements p6 {
     public static final /* synthetic */ int f = 0;
@@ -44,8 +44,8 @@ public final class i0 extends FrameLayout implements p6 {
         textPaint.setTypeface(AndroidUtilities.bold());
         this.b = h0Var;
         h0Var.setAlpha(0.0f);
-        addView(y9Var, gb1.h(-1, -1.0f, 0, 5.0f, 5.0f, 5.0f, 5.0f));
-        addView(h0Var, gb1.h(26, 26.0f, 85, 0.0f, 0.0f, 1.0f, 3.0f));
+        addView(y9Var, kb1.h(-1, -1.0f, 0, 5.0f, 5.0f, 5.0f, 5.0f));
+        addView(h0Var, kb1.h(26, 26.0f, 85, 0.0f, 0.0f, 1.0f, 3.0f));
         paint.setColor(y6.x0(null, i10, false));
     }
 

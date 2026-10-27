@@ -13,9 +13,9 @@ import android.graphics.drawable.Animatable;
 import android.graphics.drawable.Drawable;
 import android.view.animation.LinearInterpolator;
 import c3.h0;
-import org.telegram.ui.Components.iy0;
+import org.telegram.ui.Components.jy0;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
 public final class c extends Drawable implements Animatable {
     public static final LinearInterpolator h = new LinearInterpolator();
@@ -39,7 +39,7 @@ public final class c extends Drawable implements Animatable {
         bVar.b.setStrokeWidth(2.5f);
         invalidateSelf();
         ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
-        ofFloat.addUpdateListener(new iy0(2, this, bVar));
+        ofFloat.addUpdateListener(new jy0(2, this, bVar));
         ofFloat.setRepeatCount(-1);
         ofFloat.setRepeatMode(1);
         ofFloat.setInterpolator(h);

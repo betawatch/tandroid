@@ -1,86 +1,47 @@
 package org.telegram.messenger;
 
-import java.util.ArrayList;
-
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class ve implements Runnable {
-    public final /* synthetic */ int a;
+    public final /* synthetic */ int a = 2;
     public final /* synthetic */ MessagesStorage b;
-    public final /* synthetic */ ArrayList c;
+    public final /* synthetic */ boolean c;
+    public final /* synthetic */ int d;
+    public final /* synthetic */ long e;
 
-    public /* synthetic */ ve(int i10, ArrayList arrayList, MessagesStorage messagesStorage) {
-        this.a = i10;
+    public /* synthetic */ ve(MessagesStorage messagesStorage, int i10, boolean z10, long j10) {
         this.b = messagesStorage;
-        this.c = arrayList;
+        this.d = i10;
+        this.c = z10;
+        this.e = j10;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$markVoiceMessageContentAsRead$219(this.c);
+                this.b.lambda$markMessagesAsDeleted$235(this.e, this.d, this.c);
                 break;
             case 1:
-                this.b.lambda$deleteDialog$91(this.c);
-                break;
-            case 2:
-                this.b.lambda$loadUserInfo$131(this.c);
-                break;
-            case 3:
-                this.b.lambda$deleteFromDownloadQueue$186(this.c);
-                break;
-            case 4:
-                this.b.lambda$deleteContacts$150(this.c);
-                break;
-            case 5:
-                this.b.lambda$updateMessageVerifyFlags$198(this.c);
-                break;
-            case 6:
-                this.b.lambda$replaceMessageIfExists$236(this.c);
-                break;
-            case 7:
-                this.b.lambda$putWebPages$190(this.c);
-                break;
-            case 8:
-                this.b.lambda$emptyMessagesMedia$99(this.c);
-                break;
-            case 9:
-                this.b.lambda$emptyMessagesMedia$100(this.c);
-                break;
-            case 10:
-                this.b.lambda$putMessagesInternal$201(this.c);
-                break;
-            case 11:
-                this.b.lambda$putMessagesInternal$200(this.c);
-                break;
-            case 12:
-                this.b.lambda$markMessagesAsDeletedByRandoms$224(this.c);
-                break;
-            case 13:
-                this.b.lambda$markMessagesAsDeletedInternal$227(this.c);
-                break;
-            case 14:
-                this.b.lambda$markMessagesAsDeletedInternal$230(this.c);
-                break;
-            case 15:
-                this.b.lambda$markMessagesAsDeletedByRandoms$223(this.c);
-                break;
-            case 16:
-                this.b.lambda$onReactionsUpdate$108(this.c);
-                break;
-            case 17:
-                this.b.lambda$saveDialogFiltersOrder$78(this.c);
-                break;
-            case 18:
-                this.b.lambda$putMessages$239(this.c);
-                break;
-            case 19:
-                this.b.lambda$putMessages$240(this.c);
+                this.b.lambda$removeFromDownloadQueue$186(this.c, this.d, this.e);
                 break;
             default:
-                this.b.lambda$markMessagesAsDeletedInternal$233(this.c);
+                this.b.lambda$loadPendingTasks$31(this.d, this.c, this.e);
                 break;
         }
+    }
+
+    public /* synthetic */ ve(MessagesStorage messagesStorage, long j10, int i10, boolean z10) {
+        this.b = messagesStorage;
+        this.e = j10;
+        this.d = i10;
+        this.c = z10;
+    }
+
+    public /* synthetic */ ve(MessagesStorage messagesStorage, boolean z10, int i10, long j10) {
+        this.b = messagesStorage;
+        this.c = z10;
+        this.d = i10;
+        this.e = j10;
     }
 }

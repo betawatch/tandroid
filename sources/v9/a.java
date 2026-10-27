@@ -6,18 +6,18 @@ import bi.i;
 import java.util.concurrent.atomic.AtomicReference;
 import org.telegram.ui.Components.b10;
 import org.telegram.ui.Components.voip.j1;
-import s9.p;
+import s9.q;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
 public final class a {
     public static final b c = new b();
-    public final p a;
+    public final q a;
     public final AtomicReference b = new AtomicReference(null);
 
-    public a(p pVar) {
-        this.a = pVar;
-        pVar.a(new j1(this, 23));
+    public a(q qVar) {
+        this.a = qVar;
+        qVar.a(new j1(this, 23));
     }
 
     public final b a(String str) {

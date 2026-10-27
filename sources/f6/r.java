@@ -6,11 +6,11 @@ import java.net.Socket;
 import java.util.ArrayDeque;
 import java.util.TimerTask;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.bq;
-import org.telegram.ui.lj0;
-import org.telegram.ui.p00;
+import org.telegram.ui.Components.cp;
+import org.telegram.ui.nj0;
+import org.telegram.ui.r00;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
 public final class r extends TimerTask {
     public final /* synthetic */ int a;
@@ -50,13 +50,13 @@ public final class r extends TimerTask {
                 AndroidUtilities.runOnUIThread(new s8(this, 18));
                 break;
             case 2:
-                AndroidUtilities.runOnUIThread(new bq(this, 26));
+                AndroidUtilities.runOnUIThread(new cp(this, 27));
                 break;
             case 3:
-                AndroidUtilities.runOnUIThread(new p00(this, 25));
+                AndroidUtilities.runOnUIThread(new r00(this, 25));
                 break;
             case 4:
-                AndroidUtilities.runOnUIThread(new lj0(this, 7));
+                AndroidUtilities.runOnUIThread(new nj0(this, 7));
                 break;
             default:
                 try {

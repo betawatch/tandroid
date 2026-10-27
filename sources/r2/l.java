@@ -8,9 +8,9 @@ import android.view.Surface;
 import java.nio.ByteBuffer;
 import java.util.ArrayList;
 import li.h5;
-import org.telegram.ui.Wallet.q6;
+import org.telegram.ui.Wallet.a6;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
 public interface l {
     void d(long j10, int i10, int i11, int i12);
@@ -43,9 +43,9 @@ public interface l {
 
     void n(Surface surface);
 
-    void o(ArrayList arrayList);
+    void o(a6 a6Var);
 
-    void p(q6 q6Var);
+    void p(ArrayList arrayList);
 
     void q(ArrayList arrayList);
 

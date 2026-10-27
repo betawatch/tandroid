@@ -1,30 +1,41 @@
 package vi;
 
-import android.content.Context;
-import android.view.TextureView;
-import java.io.File;
 import li.e3;
-import org.telegram.ui.Components.k60;
-import org.telegram.ui.Components.tv;
+import org.telegram.ui.Components.b10;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
-public final class j0 {
-    public final Context a;
-    public final TextureView b;
-    public File c;
-    public l0 d;
-    public q0 e;
-    public m0 f;
-    public n0 g;
-    public int h;
-    public boolean i = true;
-    public e3 j;
-    public p0 k;
-    public tv l;
+public final /* synthetic */ class j0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ e3 b;
+    public final /* synthetic */ Exception c;
 
-    public j0(Context context, k60 k60Var) {
-        this.a = context;
-        this.b = k60Var;
+    public /* synthetic */ j0(e3 e3Var, Exception exc, int i10) {
+        this.a = i10;
+        this.b = e3Var;
+        this.c = exc;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                u0 u0Var = (u0) this.b.b;
+                u0Var.m.a("recording segment interrupted in state=".concat(b10.x(u0Var.Z)), this.c);
+                int i10 = u0Var.Z;
+                if (i10 != 3) {
+                    if (i10 == 2) {
+                        u0Var.D = true;
+                        break;
+                    }
+                } else {
+                    u0Var.q();
+                    break;
+                }
+                break;
+            default:
+                ((u0) this.b.b).h(this.c);
+                break;
+        }
     }
 }

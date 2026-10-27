@@ -10,12 +10,12 @@ import java.util.HashSet;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.ui.Components.u71;
+import org.telegram.ui.Components.v71;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class t1 extends View implements org.telegram.ui.ActionBar.p6 {
-    public final u71 a;
+    public final v71 a;
     public final org.telegram.ui.ActionBar.u6 b;
     public int c;
     public int d;
@@ -26,13 +26,13 @@ public final class t1 extends View implements org.telegram.ui.ActionBar.p6 {
     public t1(Context context, org.telegram.ui.ActionBar.u6 u6Var) {
         super(context);
         this.b = u6Var;
-        u71 u71Var = new u71();
-        this.a = u71Var;
-        u71Var.setCallback(this);
-        u71Var.n = LocaleController.getString(R.string.UnsupportedMessageTitle);
-        u71Var.o = LocaleController.getString(R.string.UnsupportedMessageMessage);
-        u71Var.p = LocaleController.getString(R.string.UnsupportedUpdate);
-        u71Var.j = new g(this, 1);
+        v71 v71Var = new v71();
+        this.a = v71Var;
+        v71Var.setCallback(this);
+        v71Var.n = LocaleController.getString(R.string.UnsupportedMessageTitle);
+        v71Var.o = LocaleController.getString(R.string.UnsupportedMessageMessage);
+        v71Var.p = LocaleController.getString(R.string.UnsupportedUpdate);
+        v71Var.j = new g(this, 1);
     }
 
     public final void a(Canvas canvas) {
@@ -69,9 +69,9 @@ public final class t1 extends View implements org.telegram.ui.ActionBar.p6 {
         int dp2 = AndroidUtilities.dp(6.0f);
         int dp3 = AndroidUtilities.dp(18.0f) + this.c;
         int dp4 = AndroidUtilities.dp(6.0f) + this.d;
-        u71 u71Var = this.a;
-        u71Var.setBounds(dp, dp2, dp3, dp4);
-        u71Var.draw(canvas);
+        v71 v71Var = this.a;
+        v71Var.setBounds(dp, dp2, dp3, dp4);
+        v71Var.draw(canvas);
     }
 
     @Override // android.view.View

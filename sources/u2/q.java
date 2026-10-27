@@ -7,9 +7,9 @@ import j$.util.Objects;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
-import org.telegram.ui.zg1;
+import org.telegram.ui.bh1;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
 public final class q implements f0 {
     public final p a;
@@ -198,9 +198,9 @@ public final class q implements f0 {
                         wVar.b = ((b2.o0) i0Var3.get(i10)).f;
                         wVar.a = ((b2.o0) i0Var3.get(i10)).g;
                         b2.x xVar = new b2.x(wVar);
-                        zg1 zg1Var = new zg1(16, this, xVar);
+                        bh1 bh1Var = new bh1(16, this, xVar);
                         rf.b bVar = this.b;
-                        org.telegram.ui.Components.voip.j1 j1Var = new org.telegram.ui.Components.voip.j1(zg1Var, 22);
+                        org.telegram.ui.Components.voip.j1 j1Var = new org.telegram.ui.Components.voip.j1(bh1Var, 22);
                         k6.c cVar = new k6.c(8);
                         u7.s sVar = new u7.s(26);
                         if (this.c.i1(xVar)) {

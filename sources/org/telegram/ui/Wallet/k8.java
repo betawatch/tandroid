@@ -15,9 +15,9 @@ import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.ar;
-import org.telegram.ui.Components.gb1;
+import org.telegram.ui.Components.kb1;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class k8 extends FrameLayout {
     public final org.telegram.ui.ActionBar.u6 a;
@@ -40,7 +40,7 @@ public final class k8 extends FrameLayout {
         frameLayout.setDuplicateParentStateEnabled(true);
         frameLayout.setPivotX(0.0f);
         frameLayout.setPivotY(0.0f);
-        addView(frameLayout, gb1.g(-1.0f, -1));
+        addView(frameLayout, kb1.g(-1.0f, -1));
         int i10 = org.telegram.ui.ActionBar.y6.a7;
         int w02 = org.telegram.ui.ActionBar.y6.w0(i10, u6Var);
         int w03 = org.telegram.ui.ActionBar.y6.w0(i10, u6Var);
@@ -50,11 +50,11 @@ public final class k8 extends FrameLayout {
         org.telegram.ui.ActionBar.b7 q5 = org.telegram.ui.ActionBar.f7.q(i10, i11);
         frameLayout.setBackground(a02);
         org.telegram.ui.ActionBar.f7.k(frameLayout, a02, N, q5, u6Var);
-        gb1.c(this, 0.02f, 1.2f);
+        kb1.c(this, 0.02f, 1.2f);
         org.telegram.ui.Components.y9 y9Var = new org.telegram.ui.Components.y9(context);
         this.d = y9Var;
         y9Var.setRoundRadius(AndroidUtilities.dp(18.0f));
-        frameLayout.addView(y9Var, gb1.h(34, 34.0f, 19, 15.0f, 0.0f, 0.0f, 0.0f));
+        frameLayout.addView(y9Var, kb1.h(34, 34.0f, 19, 15.0f, 0.0f, 0.0f, 0.0f));
         TextView textView = new TextView(context);
         this.f = textView;
         textView.setTextSize(1, 14.0f);
@@ -62,10 +62,10 @@ public final class k8 extends FrameLayout {
         textView.setSingleLine();
         textView.setEllipsize(TextUtils.TruncateAt.END);
         textView.setTypeface(AndroidUtilities.bold());
-        frameLayout.addView(textView, gb1.h(-1, -2.0f, 51, 60.0f, 7.0f, 52.0f, 0.0f));
+        frameLayout.addView(textView, kb1.h(-1, -2.0f, 51, 60.0f, 7.0f, 52.0f, 0.0f));
         j8 j8Var = new j8(this, context);
         this.h = j8Var;
-        frameLayout.addView(j8Var, gb1.h(-1, -2.0f, 51, 60.0f, 26.0f, 52.0f, 0.0f));
+        frameLayout.addView(j8Var, kb1.h(-1, -2.0f, 51, 60.0f, 26.0f, 52.0f, 0.0f));
         ImageView imageView = new ImageView(context);
         this.n = imageView;
         imageView.setImageResource(R.drawable.msg2_help);
@@ -73,7 +73,7 @@ public final class k8 extends FrameLayout {
         imageView.setScaleType(ImageView.ScaleType.CENTER);
         imageView.setScaleX(0.9f);
         imageView.setScaleY(0.9f);
-        frameLayout.addView(imageView, gb1.h(24, 24.0f, 21, 0.0f, 0.0f, 14.0f, 0.0f));
+        frameLayout.addView(imageView, kb1.h(24, 24.0f, 21, 0.0f, 0.0f, 14.0f, 0.0f));
         setOnClickListener(new a8(this, u6Var, runnable, runnable2, 1));
     }
 

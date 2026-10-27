@@ -11,10 +11,10 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class sa extends FrameLayout {
-    public final org.telegram.ui.Components.z90 a;
+    public final org.telegram.ui.Components.aa0 a;
     public final org.telegram.ui.Cells.w1 b;
     public Integer c;
     public ValueAnimator d;
@@ -27,17 +27,17 @@ public final class sa extends FrameLayout {
         taVar.F = this;
         setPadding(AndroidUtilities.dp(18.0f), AndroidUtilities.dp(10.0f), AndroidUtilities.dp(18.0f), AndroidUtilities.dp(17.0f));
         setClipChildren(false);
-        org.telegram.ui.Components.z90 z90Var = new org.telegram.ui.Components.z90(activity, null);
-        this.a = z90Var;
-        z90Var.setTextSize(1, 15.0f);
+        org.telegram.ui.Components.aa0 aa0Var = new org.telegram.ui.Components.aa0(activity, null);
+        this.a = aa0Var;
+        aa0Var.setTextSize(1, 15.0f);
         int i10 = org.telegram.ui.ActionBar.y6.F6;
-        org.telegram.ui.ActionBar.f7.V(z90Var, i10, null);
-        z90Var.setGravity(LocaleController.isRTL ? 5 : 3);
+        org.telegram.ui.ActionBar.f7.V(aa0Var, i10, null);
+        aa0Var.setGravity(LocaleController.isRTL ? 5 : 3);
         int i11 = org.telegram.ui.ActionBar.y6.J6;
-        org.telegram.ui.ActionBar.f7.H(z90Var, i11, null);
+        org.telegram.ui.ActionBar.f7.H(aa0Var, i11, null);
         int i12 = org.telegram.ui.ActionBar.y6.K6;
-        org.telegram.ui.ActionBar.f7.D(z90Var, i12, null);
-        z90Var.setPadding(AndroidUtilities.dp(3.0f), 0, AndroidUtilities.dp(3.0f), 0);
+        org.telegram.ui.ActionBar.f7.D(aa0Var, i12, null);
+        aa0Var.setPadding(AndroidUtilities.dp(3.0f), 0, AndroidUtilities.dp(3.0f), 0);
         org.telegram.ui.Cells.w1 w1Var = new org.telegram.ui.Cells.w1(this, activity, 2);
         taVar.G = w1Var;
         this.b = w1Var;
@@ -47,10 +47,10 @@ public final class sa extends FrameLayout {
         org.telegram.ui.ActionBar.f7.H(w1Var, i11, null);
         org.telegram.ui.ActionBar.f7.D(w1Var, i12, null);
         w1Var.setPadding(AndroidUtilities.dp(3.0f), 0, AndroidUtilities.dp(3.0f), 0);
-        addView(z90Var, org.telegram.ui.Components.gb1.i(-1, -2, 48));
-        addView(w1Var, org.telegram.ui.Components.gb1.i(-1, -2, 48));
+        addView(aa0Var, org.telegram.ui.Components.kb1.i(-1, -2, 48));
+        addView(w1Var, org.telegram.ui.Components.kb1.i(-1, -2, 48));
         if (taVar.x == 0) {
-            d3.s(R.string.UsernameHelp, z90Var);
+            d3.s(R.string.UsernameHelp, aa0Var);
             return;
         }
         String string = LocaleController.getString(R.string.BotUsernameHelp);
@@ -60,13 +60,13 @@ public final class sa extends FrameLayout {
         if (indexOf != -1 && lastIndexOf != -1 && indexOf != lastIndexOf) {
             spannableStringBuilder.replace(lastIndexOf, lastIndexOf + 1, (CharSequence) "");
             spannableStringBuilder.replace(indexOf, indexOf + 1, (CharSequence) "");
-            spannableStringBuilder.setSpan(new org.telegram.ui.Components.x61("https://fragment.com", (org.telegram.ui.Components.y11) null), indexOf, lastIndexOf - 1, 33);
+            spannableStringBuilder.setSpan(new org.telegram.ui.Components.y61("https://fragment.com", (org.telegram.ui.Components.z11) null), indexOf, lastIndexOf - 1, 33);
         }
-        z90Var.setText(spannableStringBuilder);
+        aa0Var.setText(spannableStringBuilder);
     }
 
     public static void a(final sa saVar) {
-        org.telegram.ui.Components.z90 z90Var = saVar.a;
+        org.telegram.ui.Components.aa0 aa0Var = saVar.a;
         org.telegram.ui.Cells.w1 w1Var = saVar.b;
         if (w1Var.getVisibility() == 0) {
             w1Var.measure(View.MeasureSpec.makeMeasureSpec((saVar.getMeasuredWidth() - saVar.getPaddingLeft()) - saVar.getPaddingRight(), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(9999999, TLObject.FLAG_31));
@@ -77,8 +77,8 @@ public final class sa extends FrameLayout {
         }
         Integer num = saVar.c;
         final int measuredHeight = num == null ? saVar.getMeasuredHeight() : num.intValue();
-        final int height = z90Var.getHeight() + AndroidUtilities.dp(27.0f) + ((w1Var.getVisibility() != 0 || TextUtils.isEmpty(w1Var.getText())) ? 0 : AndroidUtilities.dp(8.0f) + w1Var.getMeasuredHeight());
-        final float translationY = z90Var.getTranslationY();
+        final int height = aa0Var.getHeight() + AndroidUtilities.dp(27.0f) + ((w1Var.getVisibility() != 0 || TextUtils.isEmpty(w1Var.getText())) ? 0 : AndroidUtilities.dp(8.0f) + w1Var.getMeasuredHeight());
+        final float translationY = aa0Var.getTranslationY();
         final float dp = (w1Var.getVisibility() != 0 || TextUtils.isEmpty(w1Var.getText())) ? 0.0f : AndroidUtilities.dp(8.0f) + w1Var.getMeasuredHeight();
         ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
         saVar.d = ofFloat;

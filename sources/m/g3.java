@@ -24,7 +24,7 @@ import org.telegram.messenger.MediaController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.R;
 import org.telegram.messenger.camera.CameraController;
-import org.telegram.messenger.vh;
+import org.telegram.messenger.wh;
 import org.telegram.ui.Cells.h6;
 import org.telegram.ui.Cells.r7;
 import org.telegram.ui.Cells.x6;
@@ -35,42 +35,43 @@ import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.FragmentContextView;
 import org.telegram.ui.Components.ScrollSlidingTextTabStrip;
 import org.telegram.ui.Components.ShutterButton;
-import org.telegram.ui.Components.a70;
+import org.telegram.ui.Components.b70;
 import org.telegram.ui.Components.bn;
 import org.telegram.ui.Components.cn;
 import org.telegram.ui.Components.dm;
 import org.telegram.ui.Components.ds;
 import org.telegram.ui.Components.ed;
-import org.telegram.ui.Components.fw0;
 import org.telegram.ui.Components.go;
 import org.telegram.ui.Components.gw0;
 import org.telegram.ui.Components.h60;
-import org.telegram.ui.Components.hj0;
-import org.telegram.ui.Components.le0;
-import org.telegram.ui.Components.m70;
+import org.telegram.ui.Components.hw0;
+import org.telegram.ui.Components.ij0;
 import org.telegram.ui.Components.m8;
+import org.telegram.ui.Components.me0;
 import org.telegram.ui.Components.mk;
-import org.telegram.ui.Components.mm0;
 import org.telegram.ui.Components.mu;
 import org.telegram.ui.Components.n00;
 import org.telegram.ui.Components.n70;
-import org.telegram.ui.Components.nc0;
 import org.telegram.ui.Components.nm;
-import org.telegram.ui.Components.qm0;
+import org.telegram.ui.Components.nm0;
+import org.telegram.ui.Components.o70;
+import org.telegram.ui.Components.oc0;
+import org.telegram.ui.Components.rm0;
 import org.telegram.ui.Components.ru;
 import org.telegram.ui.Components.s00;
-import org.telegram.ui.Components.sl0;
-import org.telegram.ui.Components.sn0;
 import org.telegram.ui.Components.so;
 import org.telegram.ui.Components.sz;
+import org.telegram.ui.Components.ti;
+import org.telegram.ui.Components.tl0;
+import org.telegram.ui.Components.tn0;
 import org.telegram.ui.Components.v7;
 import org.telegram.ui.Components.wc;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.rx;
-import org.telegram.ui.ti;
-import org.telegram.ui.un;
+import org.telegram.ui.ux;
+import org.telegram.ui.wi;
+import org.telegram.ui.wn;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
 public final class g3 implements Runnable {
     public final /* synthetic */ int a;
@@ -311,7 +312,7 @@ public final class g3 implements Runnable {
                     return;
                 }
                 szVar.X1 = false;
-                szVar.Y();
+                szVar.Z();
                 return;
             case 17:
                 s00 s00Var = (s00) obj;
@@ -334,7 +335,7 @@ public final class g3 implements Runnable {
                     s00Var.setEnabled(true);
                     n00 n00Var = s00Var.J;
                     if (n00Var != null) {
-                        ((rx) n00Var).b(1.0f);
+                        ((ux) n00Var).b(1.0f);
                         return;
                     }
                     return;
@@ -347,7 +348,7 @@ public final class g3 implements Runnable {
                 AndroidUtilities.runOnUIThread(fragmentContextView.t0, 1000L);
                 return;
             case 19:
-                TextureView textureView = ((h60) obj).H0.q0;
+                TextureView textureView = ((h60) obj).H0.p0;
                 if (textureView != null) {
                     try {
                         AndroidUtilities.runOnUIThread(new so(25, this, textureView.getBitmap(AndroidUtilities.dp(56.0f), AndroidUtilities.dp(56.0f))));
@@ -359,89 +360,89 @@ public final class g3 implements Runnable {
                 }
                 return;
             case 20:
-                m70 m70Var = (m70) obj;
-                n70 n70Var = m70Var.y;
-                a70 a70Var = n70Var.V;
-                if (a70Var != null && a70Var.getAdapter() != null) {
-                    n70Var.V.getClass();
-                    int R = RecyclerView.R(m70Var);
+                n70 n70Var = (n70) obj;
+                o70 o70Var = n70Var.y;
+                b70 b70Var = o70Var.V;
+                if (b70Var != null && b70Var.getAdapter() != null) {
+                    o70Var.V.getClass();
+                    int R = RecyclerView.R(n70Var);
                     if (R >= 0) {
-                        n70Var.T.v(n70Var.V.T(m70Var), R);
+                        o70Var.T.v(o70Var.V.T(n70Var), R);
                     }
                 }
                 AndroidUtilities.runOnUIThread(this);
                 return;
             case 21:
-                nc0 nc0Var = (nc0) obj;
-                ValueAnimator valueAnimator = nc0Var.h;
+                oc0 oc0Var = (oc0) obj;
+                ValueAnimator valueAnimator = oc0Var.h;
                 if (valueAnimator == null || valueAnimator.isRunning()) {
                     return;
                 }
-                nc0Var.h.start();
+                oc0Var.h.start();
                 return;
             case 22:
-                ((le0) obj).e();
+                ((me0) obj).e();
                 return;
             case 23:
-                hj0 hj0Var = (hj0) obj;
-                hj0Var.y = true;
-                ValueAnimator valueAnimator2 = hj0Var.z;
+                ij0 ij0Var = (ij0) obj;
+                ij0Var.y = true;
+                ValueAnimator valueAnimator2 = ij0Var.z;
                 if (valueAnimator2 != null) {
                     valueAnimator2.cancel();
                 }
-                hj0Var.x = 0.0f;
+                ij0Var.x = 0.0f;
                 ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
-                hj0Var.z = ofFloat;
-                ofFloat.addUpdateListener(hj0Var.b0);
-                hj0Var.z.setInterpolator(new LinearInterpolator());
-                hj0Var.z.setDuration(150L);
-                hj0Var.z.start();
+                ij0Var.z = ofFloat;
+                ofFloat.addUpdateListener(ij0Var.b0);
+                ij0Var.z.setInterpolator(new LinearInterpolator());
+                ij0Var.z.setDuration(150L);
+                ij0Var.z.start();
                 return;
             case 24:
-                mm0 mm0Var = (mm0) obj;
-                ti tiVar = mm0Var.f2;
-                int[] iArr = mm0Var.k2;
-                un unVar = tiVar.d;
-                iArr[0] = (int) unVar.E9;
-                iArr[1] = unVar.Na;
-                if (mm0Var.h2) {
+                nm0 nm0Var = (nm0) obj;
+                wi wiVar = nm0Var.f2;
+                int[] iArr = nm0Var.k2;
+                wn wnVar = wiVar.d;
+                iArr[0] = (int) wnVar.I9;
+                iArr[1] = wnVar.Ra;
+                if (nm0Var.h2) {
                     dp = -AndroidUtilities.dp(12.0f);
-                    mm0Var.M0(0.0f, mm0Var.k2[0]);
+                    nm0Var.M0(0.0f, nm0Var.k2[0]);
                 } else {
                     dp = AndroidUtilities.dp(12.0f);
-                    mm0Var.M0(0.0f, mm0Var.getMeasuredHeight() - mm0Var.k2[1]);
+                    nm0Var.M0(0.0f, nm0Var.getMeasuredHeight() - nm0Var.k2[1]);
                 }
-                mm0Var.f2.d.x0.scrollBy(0, dp);
-                if (mm0Var.g2) {
-                    AndroidUtilities.runOnUIThread(mm0Var.C2);
+                nm0Var.f2.d.x0.scrollBy(0, dp);
+                if (nm0Var.g2) {
+                    AndroidUtilities.runOnUIThread(nm0Var.C2);
                     return;
                 }
                 return;
             case 25:
-                sl0 sl0Var = (sl0) obj;
-                g3 g3Var3 = sl0Var.i0;
-                if (sl0Var.n) {
+                tl0 tl0Var = (tl0) obj;
+                g3 g3Var3 = tl0Var.i0;
+                if (tl0Var.n) {
                     AndroidUtilities.cancelRunOnUIThread(g3Var3);
                     AndroidUtilities.runOnUIThread(g3Var3, 4000L);
                     return;
                 } else {
-                    sl0Var.U = false;
-                    sl0Var.invalidate();
+                    tl0Var.U = false;
+                    tl0Var.invalidate();
                     return;
                 }
             case 26:
-                qm0 qm0Var = (qm0) obj;
-                RecyclerView recyclerView = qm0Var.a;
+                rm0 rm0Var = (rm0) obj;
+                RecyclerView recyclerView = rm0Var.a;
                 if (recyclerView == null) {
                     return;
                 }
-                if (qm0Var.g) {
-                    recyclerView.scrollBy(0, -qm0Var.i);
+                if (rm0Var.g) {
+                    recyclerView.scrollBy(0, -rm0Var.i);
                     AndroidUtilities.runOnUIThread(this);
                     return;
                 } else {
-                    if (qm0Var.h) {
-                        recyclerView.scrollBy(0, qm0Var.i);
+                    if (rm0Var.h) {
+                        recyclerView.scrollBy(0, rm0Var.i);
                         AndroidUtilities.runOnUIThread(this);
                         return;
                     }
@@ -466,9 +467,9 @@ public final class g3 implements Runnable {
                     }
                     scrollSlidingTextTabStrip.H = false;
                     scrollSlidingTextTabStrip.setEnabled(true);
-                    sn0 sn0Var = scrollSlidingTextTabStrip.b;
-                    if (sn0Var != null) {
-                        sn0Var.z0(1.0f);
+                    tn0 tn0Var = scrollSlidingTextTabStrip.b;
+                    if (tn0Var != null) {
+                        tn0Var.z0(1.0f);
                         return;
                     }
                     return;
@@ -476,15 +477,15 @@ public final class g3 implements Runnable {
                 return;
             case 28:
                 ShutterButton shutterButton = (ShutterButton) obj;
-                fw0 fw0Var = shutterButton.e;
-                if (fw0Var != null) {
-                    final dm dmVar = (dm) fw0Var;
+                gw0 gw0Var = shutterButton.e;
+                if (gw0Var != null) {
+                    final dm dmVar = (dm) gw0Var;
                     ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = dmVar.e;
-                    org.telegram.ui.Components.ti tiVar2 = chatAttachAlertPhotoLayout.b;
+                    ti tiVar = chatAttachAlertPhotoLayout.b;
                     nm nmVar = chatAttachAlertPhotoLayout.R;
-                    int i18 = tiVar2.T0;
-                    org.telegram.ui.ActionBar.r2 r2Var = tiVar2.f0;
-                    if ((i18 == 2 || (r2Var instanceof un)) && !chatAttachAlertPhotoLayout.s0 && !tiVar2.V && chatAttachAlertPhotoLayout.P != null && !tiVar2.G) {
+                    int i18 = tiVar.T0;
+                    org.telegram.ui.ActionBar.r2 r2Var = tiVar.f0;
+                    if ((i18 == 2 || (r2Var instanceof wn)) && !chatAttachAlertPhotoLayout.s0 && !tiVar.V && chatAttachAlertPhotoLayout.P != null && !tiVar.G) {
                         if (r2Var == null) {
                             r2Var = LaunchActivity.R();
                         }
@@ -499,8 +500,8 @@ public final class g3 implements Runnable {
                                     ds dsVar = ds.f;
                                     duration2.setInterpolator(dsVar).start();
                                     chatAttachAlertPhotoLayout.q0.animate().alpha(0.0f).setDuration(150L).setInterpolator(dsVar).start();
-                                    org.telegram.ui.ActionBar.r2 r2Var2 = tiVar2.f0;
-                                    dmVar.a = AndroidUtilities.generateVideoPath((r2Var2 instanceof un) && ((un) r2Var2).w());
+                                    org.telegram.ui.ActionBar.r2 r2Var2 = tiVar.f0;
+                                    dmVar.a = AndroidUtilities.generateVideoPath((r2Var2 instanceof wn) && ((wn) r2Var2).w());
                                     AndroidUtilities.updateViewVisibilityAnimated(nmVar, true);
                                     nmVar.setText(AndroidUtilities.formatLongDuration(0));
                                     chatAttachAlertPhotoLayout.g0 = 0;
@@ -525,7 +526,7 @@ public final class g3 implements Runnable {
                                         }
                                     };
                                     AndroidUtilities.lockOrientation(r2Var.getParentActivity());
-                                    CameraController.getInstance().recordVideo(chatAttachAlertPhotoLayout.P.getCameraSessionObject(), dmVar.a, tiVar2.T0 != 0, new org.telegram.ui.Components.s(dmVar, i19), new Runnable() { // from class: org.telegram.ui.Components.cm
+                                    CameraController.getInstance().recordVideo(chatAttachAlertPhotoLayout.P.getCameraSessionObject(), dmVar.a, tiVar.T0 != 0, new org.telegram.ui.Components.s(dmVar, i19), new Runnable() { // from class: org.telegram.ui.Components.cm
                                         @Override // java.lang.Runnable
                                         public final void run() {
                                             switch (i11) {
@@ -545,14 +546,14 @@ public final class g3 implements Runnable {
                                             }
                                         }
                                     }, chatAttachAlertPhotoLayout.P);
-                                    chatAttachAlertPhotoLayout.k0.a(gw0.b);
+                                    chatAttachAlertPhotoLayout.k0.a(hw0.b);
                                     chatAttachAlertPhotoLayout.P.runHaptic();
                                     return;
                                 }
                                 chatAttachAlertPhotoLayout.Q0 = true;
                                 r2Var.getParentActivity().requestPermissions(new String[]{"android.permission.RECORD_AUDIO"}, 21);
                             } else {
-                                vh.n(R.string.GlobalAttachVideoRestricted, new wc(chatAttachAlertPhotoLayout.P, dmVar.c), null);
+                                wh.n(R.string.GlobalAttachVideoRestricted, new wc(chatAttachAlertPhotoLayout.P, dmVar.c), null);
                             }
                         }
                     }

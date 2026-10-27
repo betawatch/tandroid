@@ -23,11 +23,11 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.ar;
 import org.telegram.ui.Components.ey;
-import org.telegram.ui.Components.gb1;
-import org.telegram.ui.Components.vl0;
-import org.telegram.ui.c61;
+import org.telegram.ui.Components.kb1;
+import org.telegram.ui.Components.wl0;
+import org.telegram.ui.f61;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class y1 extends s4.h0 {
     public final TLRPC.TL_inputStickerSetShortName E;
@@ -439,7 +439,7 @@ public final class y1 extends s4.h0 {
                 int i13 = this.K;
                 if (w1Var.b != i13) {
                     w1Var.b = i13;
-                    c61.D(UserConfig.selectedAccount, w1Var.a);
+                    f61.D(UserConfig.selectedAccount, w1Var.a);
                     return;
                 }
                 return;
@@ -534,12 +534,12 @@ public final class y1 extends s4.h0 {
             w1Var.b = -1;
             org.telegram.ui.Components.y9 y9Var = new org.telegram.ui.Components.y9(context2);
             w1Var.a = y9Var;
-            w1Var.addView(y9Var, gb1.i(36, 36, 17));
+            w1Var.addView(y9Var, kb1.i(36, 36, 17));
             TextView textView = new TextView(context2);
             textView.setTextSize(1, 14.0f);
             textView.setTextColor(-8553090);
             textView.setText(LocaleController.getString(z10 ? R.string.NoEmojiFound : R.string.NoStickersFound));
-            w1Var.addView(textView, gb1.h(-2, -2.0f, 17, 0.0f, 34.0f, 0.0f, 0.0f));
+            w1Var.addView(textView, kb1.h(-2, -2.0f, 17, 0.0f, 34.0f, 0.0f, 0.0f));
             s8Var = w1Var;
         } else if (i10 == 4) {
             j2 j2Var = new j2(l2Var, z1Var.getContext());
@@ -548,6 +548,6 @@ public final class y1 extends s4.h0 {
         } else {
             s8Var = new m1(z1Var.getContext(), z1Var.b);
         }
-        return new vl0(s8Var);
+        return new wl0(s8Var);
     }
 }

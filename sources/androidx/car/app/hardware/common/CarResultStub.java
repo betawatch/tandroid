@@ -9,13 +9,13 @@ import j$.util.Objects;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.Executor;
-import org.telegram.ui.Wallet.q6;
-import org.telegram.ui.ji1;
+import org.telegram.ui.Wallet.a6;
+import org.telegram.ui.li1;
 import r.a;
 import r.c;
 import w.b;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
 public class CarResultStub<T> extends ICarHardwareResult.Stub {
     private final b mBundle;
@@ -54,7 +54,7 @@ public class CarResultStub<T> extends ICarHardwareResult.Stub {
     private void notifyResults(boolean z10, b bVar) {
         T convertAndRecast = z10 ? convertAndRecast(bVar) : this.mUnsupportedValue;
         for (Map.Entry<c, Executor> entry : this.mListeners.entrySet()) {
-            entry.getValue().execute(new q6(22, entry, convertAndRecast));
+            entry.getValue().execute(new a6(23, entry, convertAndRecast));
         }
         if (this.mIsSingleShot) {
             this.mListeners.clear();
@@ -86,7 +86,7 @@ public class CarResultStub<T> extends ICarHardwareResult.Stub {
         int i10 = this.mResultType;
         b bVar = this.mBundle;
         aVar.getClass();
-        h.d("unsubscribeCarHardwareResult", new ji1(aVar, i10, bVar));
+        h.d("unsubscribeCarHardwareResult", new li1(aVar, i10, bVar));
         return true;
     }
 }

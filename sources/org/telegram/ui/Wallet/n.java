@@ -3,7 +3,7 @@ package org.telegram.ui.Wallet;
 import java.util.ArrayList;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class n implements Utilities.Callback {
     public final /* synthetic */ int a = 2;
@@ -30,8 +30,8 @@ public final /* synthetic */ class n implements Utilities.Callback {
                 l0Var.getClass();
                 c0Var.c = (byte[]) obj;
                 if (l0Var.N.get(str) == c0Var) {
-                    l0Var.h0(c0Var);
-                    l0Var.J();
+                    l0Var.k0(c0Var);
+                    l0Var.L();
                 }
                 runnable.run();
                 return;
@@ -50,7 +50,7 @@ public final /* synthetic */ class n implements Utilities.Callback {
                 }
                 i0 d = i0.d(arrayList);
                 try {
-                    l0Var2.B(true, false, d, new s(12, h8Var, callback));
+                    l0Var2.C(true, false, d, new s(12, h8Var, callback));
                     d.close();
                     return;
                 } catch (Throwable th2) {
@@ -66,7 +66,7 @@ public final /* synthetic */ class n implements Utilities.Callback {
                 String str3 = (String) this.b;
                 p0 p0Var = (p0) this.e;
                 l0 l0Var3 = this.c;
-                l0Var3.t(str3, new c8(h8Var2, (Utilities.Callback) obj, p0Var, l0Var3));
+                l0Var3.u(str3, new c8(h8Var2, (Utilities.Callback) obj, p0Var, l0Var3));
                 return;
         }
     }

@@ -18,7 +18,7 @@ import org.telegram.ui.ActionBar.u6;
 import org.telegram.ui.ActionBar.y6;
 import org.telegram.ui.Components.wc;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class c implements Utilities.Callback2 {
     public final /* synthetic */ int a = 0;
@@ -97,9 +97,9 @@ public final /* synthetic */ class c implements Utilities.Callback2 {
                     dVar.setEnabled(z11);
                     boolean z12 = zArr2[0];
                     if (z12 && !z10) {
-                        SpannableStringBuilder m10 = org.telegram.ui.Wallet.l0.m(wallettransaction.fee, true);
-                        CharSequence l4 = l0Var.l(wallettransaction.fee, true);
-                        textView.setText(TextUtils.isEmpty(l4) ? LocaleController.formatSpannable(R.string.WalletFeeAmount, m10) : LocaleController.formatSpannable(R.string.WalletFeeAmountWithCurrency, m10, l4));
+                        SpannableStringBuilder n10 = org.telegram.ui.Wallet.l0.n(wallettransaction.fee, true);
+                        CharSequence m10 = l0Var.m(wallettransaction.fee, true);
+                        textView.setText(TextUtils.isEmpty(m10) ? LocaleController.formatSpannable(R.string.WalletFeeAmount, n10) : LocaleController.formatSpannable(R.string.WalletFeeAmountWithCurrency, n10, m10));
                         break;
                     } else if (!z12) {
                         String string = str != null ? str : LocaleController.getString(R.string.WalletTransactionSimulationFailed);

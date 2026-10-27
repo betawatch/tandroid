@@ -1,23 +1,23 @@
 package org.telegram.ui;
 
-import android.content.Context;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public final class ih1 extends org.telegram.ui.Components.voip.b1 {
-    public final /* synthetic */ ph1 V;
+public final class ih1 extends AnimatorListenerAdapter {
+    public final /* synthetic */ rh1 a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ih1(ph1 ph1Var, Context context, float f7, float f10) {
-        super(context, f7, f10);
-        this.V = ph1Var;
+    public ih1(rh1 rh1Var) {
+        this.a = rh1Var;
     }
 
-    @Override // org.telegram.ui.Components.voip.b1
-    public final int[] getFloatingViewLocation() {
-        int[] iArr = new int[2];
-        ph1 ph1Var = this.V;
-        ph1Var.Y.getLocationOnScreen(iArr);
-        return new int[]{iArr[0], iArr[1], ph1Var.Y.getMeasuredWidth()};
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        rh1 rh1Var = this.a;
+        rh1Var.E.setText(LocaleController.getString(R.string.VoipCallEnded));
+        rh1Var.E.animate().alpha(1.0f).setDuration(70L).setListener(null).start();
     }
 }

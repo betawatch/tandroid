@@ -37,22 +37,22 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.ActionBar.r2;
 import org.telegram.ui.ActionBar.y6;
-import org.telegram.ui.Components.j71;
 import org.telegram.ui.Components.ju;
-import org.telegram.ui.Components.l71;
+import org.telegram.ui.Components.k71;
+import org.telegram.ui.Components.m71;
 import org.telegram.ui.Components.oc;
 import org.telegram.ui.Components.qc;
-import org.telegram.ui.Components.r71;
-import org.telegram.ui.Components.wo0;
+import org.telegram.ui.Components.s71;
+import org.telegram.ui.Components.xo0;
 import org.telegram.ui.Components.yb;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.cy;
-import org.telegram.ui.jx;
-import org.telegram.ui.un;
+import org.telegram.ui.ey;
+import org.telegram.ui.mx;
 import org.telegram.ui.web.BotWebViewContainer$WebViewProxy;
-import sg.v2;
+import org.telegram.ui.wn;
+import sg.u2;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class o implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -65,22 +65,22 @@ public final /* synthetic */ class o implements Utilities.Callback {
 
     @Override // org.telegram.messenger.Utilities.Callback
     public final void run(Object obj) {
-        j71 j71Var;
-        j71 j71Var2;
+        k71 k71Var;
+        k71 k71Var2;
         int i10;
         TLRPC.TL_messageMediaGiveaway tL_messageMediaGiveaway;
         switch (this.a) {
             case 0:
                 TLRPC.User user = (TLRPC.User) obj;
-                wo0 wo0Var = (wo0) ((i0) this.b);
-                jx jxVar = wo0Var.K0;
+                xo0 xo0Var = (xo0) ((i0) this.b);
+                mx mxVar = xo0Var.K0;
                 if (user != null) {
-                    cy cyVar = jxVar.L0;
-                    if (cyVar != null) {
-                        cyVar.S3();
+                    ey eyVar = mxVar.L0;
+                    if (eyVar != null) {
+                        eyVar.S3();
                     }
-                    MessagesController.getInstance(jxVar.J0).openApp(user, 0);
-                    wo0Var.Q(user.id, user);
+                    MessagesController.getInstance(mxVar.J0).openApp(user, 0);
+                    xo0Var.Q(user.id, user);
                     break;
                 }
                 break;
@@ -90,9 +90,9 @@ public final /* synthetic */ class o implements Utilities.Callback {
                 ArrayList arrayList2 = fVar.n;
                 boolean z10 = arrayList2 == null || arrayList2.isEmpty();
                 fVar.n = arrayList;
-                r71 r71Var = fVar.f;
-                if (r71Var != null) {
-                    r71Var.g3.O(z10);
+                s71 s71Var = fVar.f;
+                if (s71Var != null) {
+                    s71Var.g3.O(z10);
                     break;
                 }
                 break;
@@ -125,9 +125,9 @@ public final /* synthetic */ class o implements Utilities.Callback {
                 if (b0Var != null) {
                     b0Var.i(tL_connectedBot3 != null ? tL_connectedBot3.recipients : null);
                 }
-                r71 r71Var2 = t0Var.c;
-                if (r71Var2 != null && (j71Var = r71Var2.g3) != null) {
-                    j71Var.O(true);
+                s71 s71Var2 = t0Var.c;
+                if (s71Var2 != null && (k71Var = s71Var2.g3) != null) {
+                    k71Var.O(true);
                 }
                 t0Var.Z(true);
                 t0Var.T = true;
@@ -144,9 +144,9 @@ public final /* synthetic */ class o implements Utilities.Callback {
                 bundle.putInt("chatMode", 5);
                 bundle.putLong("user_id", z1Var.getUserConfig().getClientUserId());
                 bundle.putString("quick_reply", (String) obj);
-                un unVar = new un(bundle);
-                unVar.O9 = true;
-                z1Var.presentFragment(unVar);
+                wn wnVar = new wn(bundle);
+                wnVar.S9 = true;
+                z1Var.presentFragment(wnVar);
                 break;
             case 7:
                 AndroidUtilities.hideKeyboard((jg.s1) this.b);
@@ -274,18 +274,18 @@ public final /* synthetic */ class o implements Utilities.Callback {
             case 14:
                 org.telegram.ui.web.f1 f1Var = (org.telegram.ui.web.f1) this.b;
                 f1Var.f = (ArrayList) obj;
-                l71 l71Var = f1Var.a;
-                if (l71Var.G) {
-                    l71Var.g3.O(true);
+                m71 m71Var = f1Var.a;
+                if (m71Var.G) {
+                    m71Var.g3.O(true);
                     break;
                 }
                 break;
             case 15:
                 org.telegram.ui.web.y1 y1Var = (org.telegram.ui.web.y1) this.b;
                 y1Var.r = ((ArrayList) obj).size();
-                l71 l71Var2 = y1Var.a;
-                if (l71Var2 != null && (j71Var2 = l71Var2.g3) != null && l71Var2.G) {
-                    j71Var2.O(true);
+                m71 m71Var2 = y1Var.a;
+                if (m71Var2 != null && (k71Var2 = m71Var2.g3) != null && m71Var2.G) {
+                    k71Var2.O(true);
                     break;
                 }
                 break;
@@ -327,20 +327,20 @@ public final /* synthetic */ class o implements Utilities.Callback {
                 }
                 break;
             case 19:
-                v2 v2Var = (v2) this.b;
-                v2Var.n = (Bitmap) obj;
+                u2 u2Var = (u2) this.b;
+                u2Var.n = (Bitmap) obj;
                 Paint paint = new Paint(1);
-                v2Var.s = paint;
-                Bitmap bitmap = v2Var.n;
+                u2Var.s = paint;
+                Bitmap bitmap = u2Var.n;
                 Shader.TileMode tileMode = Shader.TileMode.CLAMP;
                 BitmapShader bitmapShader = new BitmapShader(bitmap, tileMode, tileMode);
-                v2Var.r = bitmapShader;
+                u2Var.r = bitmapShader;
                 paint.setShader(bitmapShader);
                 ColorMatrix colorMatrix = new ColorMatrix();
                 AndroidUtilities.adjustSaturationColorMatrix(colorMatrix, y6.I.q() ? 0.08f : 0.25f);
                 AndroidUtilities.adjustBrightnessColorMatrix(colorMatrix, y6.I.q() ? -0.02f : -0.07f);
-                v2Var.s.setColorFilter(new ColorMatrixColorFilter(colorMatrix));
-                v2Var.v = new Matrix();
+                u2Var.s.setColorFilter(new ColorMatrixColorFilter(colorMatrix));
+                u2Var.v = new Matrix();
                 break;
             case 20:
                 sh.c cVar = (sh.c) this.b;

@@ -14,13 +14,13 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class zc extends FrameLayout implements org.telegram.ui.ActionBar.p6 {
     public final int a;
     public final org.telegram.ui.ActionBar.u6 b;
     public final ArrayList c;
-    public final za1 d;
+    public final bb1 d;
     public final org.telegram.ui.Components.c10 e;
     public boolean f;
     public final xc h;
@@ -42,21 +42,21 @@ public final class zc extends FrameLayout implements org.telegram.ui.ActionBar.p
         this.e = c10Var;
         c10Var.setViewType(14);
         c10Var.setVisibility(0);
-        addView(c10Var, org.telegram.ui.Components.gb1.h(-1, 104.0f, 8388611, 16.0f, 13.0f, 16.0f, 6.0f));
-        za1 za1Var = new za1(activity, 4, u6Var);
-        this.d = za1Var;
-        za1Var.setClipToPadding(false);
-        za1Var.setPadding(AndroidUtilities.dp(16.0f), AndroidUtilities.dp(13.0f), AndroidUtilities.dp(16.0f), AndroidUtilities.dp(6.0f));
+        addView(c10Var, org.telegram.ui.Components.kb1.h(-1, 104.0f, 8388611, 16.0f, 13.0f, 16.0f, 6.0f));
+        bb1 bb1Var = new bb1(activity, 4, u6Var);
+        this.d = bb1Var;
+        bb1Var.setClipToPadding(false);
+        bb1Var.setPadding(AndroidUtilities.dp(16.0f), AndroidUtilities.dp(13.0f), AndroidUtilities.dp(16.0f), AndroidUtilities.dp(6.0f));
         getContext();
         s4.c0 c0Var = new s4.c0();
         c0Var.k1(0);
-        za1Var.setLayoutManager(c0Var);
-        za1Var.setAlpha(0.0f);
+        bb1Var.setLayoutManager(c0Var);
+        bb1Var.setAlpha(0.0f);
         xc xcVar = new xc(this, i10, u6Var);
         this.h = xcVar;
-        za1Var.setAdapter(xcVar);
-        addView(za1Var, org.telegram.ui.Components.gb1.g(130.0f, -1));
-        za1Var.setOnItemClickListener(new h(this, 3));
+        bb1Var.setAdapter(xcVar);
+        addView(bb1Var, org.telegram.ui.Components.kb1.g(130.0f, -1));
+        bb1Var.setOnItemClickListener(new h(this, 3));
         ChatThemeController chatThemeController = ChatThemeController.getInstance(i10);
         chatThemeController.preloadAllWallpaperThumbs(true);
         chatThemeController.preloadAllWallpaperThumbs(false);
@@ -82,24 +82,24 @@ public final class zc extends FrameLayout implements org.telegram.ui.ActionBar.p
             if (i11 >= arrayList.size()) {
                 break;
             }
-            org.telegram.ui.Components.xp xpVar = (org.telegram.ui.Components.xp) arrayList.get(i11);
-            if (!TextUtils.equals(this.s, xpVar.a()) && (!TextUtils.isEmpty(str) || !xpVar.a.a)) {
+            org.telegram.ui.Components.yp ypVar = (org.telegram.ui.Components.yp) arrayList.get(i11);
+            if (!TextUtils.equals(this.s, ypVar.a()) && (!TextUtils.isEmpty(str) || !ypVar.a.a)) {
                 z11 = false;
             }
-            xpVar.d = z11;
+            ypVar.d = z11;
             if (z11) {
                 i10 = i11;
             }
             i11++;
         }
-        za1 za1Var = this.d;
-        if (i10 >= 0 && !z10 && (za1Var.getLayoutManager() instanceof s4.c0)) {
-            ((s4.c0) za1Var.getLayoutManager()).h1(i10, (AndroidUtilities.displaySize.x - AndroidUtilities.dp(83.0f)) / 2);
+        bb1 bb1Var = this.d;
+        if (i10 >= 0 && !z10 && (bb1Var.getLayoutManager() instanceof s4.c0)) {
+            ((s4.c0) bb1Var.getLayoutManager()).h1(i10, (AndroidUtilities.displaySize.x - AndroidUtilities.dp(83.0f)) / 2);
         }
-        for (int i12 = 0; i12 < za1Var.getChildCount(); i12++) {
-            View childAt = za1Var.getChildAt(i12);
-            if ((childAt instanceof org.telegram.ui.Components.d31) && (R = RecyclerView.R(childAt)) >= 0 && R < arrayList.size()) {
-                ((org.telegram.ui.Components.d31) childAt).g(((org.telegram.ui.Components.xp) arrayList.get(R)).d, true);
+        for (int i12 = 0; i12 < bb1Var.getChildCount(); i12++) {
+            View childAt = bb1Var.getChildAt(i12);
+            if ((childAt instanceof org.telegram.ui.Components.e31) && (R = RecyclerView.R(childAt)) >= 0 && R < arrayList.size()) {
+                ((org.telegram.ui.Components.e31) childAt).g(((org.telegram.ui.Components.yp) arrayList.get(R)).d, true);
             }
         }
     }
@@ -114,8 +114,8 @@ public final class zc extends FrameLayout implements org.telegram.ui.ActionBar.p
         AndroidUtilities.forEachViews((RecyclerView) this.d, (Utilities.Callback<View>) new vc(this, 1));
         if (this.v != null) {
             ArrayList arrayList = this.c;
-            if ((arrayList.isEmpty() || ((org.telegram.ui.Components.xp) arrayList.get(0)).a.a) && this.f) {
-                arrayList.add(0, new org.telegram.ui.Components.xp(org.telegram.ui.ActionBar.h4.a(this.a)));
+            if ((arrayList.isEmpty() || ((org.telegram.ui.Components.yp) arrayList.get(0)).a.a) && this.f) {
+                arrayList.add(0, new org.telegram.ui.Components.yp(org.telegram.ui.ActionBar.h4.a(this.a)));
                 this.h.l();
             }
         }
@@ -145,18 +145,18 @@ public final class zc extends FrameLayout implements org.telegram.ui.ActionBar.p
             if (i10 >= arrayList.size()) {
                 break;
             }
-            org.telegram.ui.Components.xp xpVar = (org.telegram.ui.Components.xp) arrayList.get(i10);
-            if (xpVar.c != a2) {
-                xpVar.c = a2;
+            org.telegram.ui.Components.yp ypVar = (org.telegram.ui.Components.yp) arrayList.get(i10);
+            if (ypVar.c != a2) {
+                ypVar.c = a2;
                 z10 = true;
             }
             i10++;
         }
-        za1 za1Var = this.d;
-        if (za1Var == null) {
+        bb1 bb1Var = this.d;
+        if (bb1Var == null) {
             return;
         }
-        AndroidUtilities.forEachViews((RecyclerView) za1Var, (Utilities.Callback<View>) new vc(this, 0));
+        AndroidUtilities.forEachViews((RecyclerView) bb1Var, (Utilities.Callback<View>) new vc(this, 0));
         if (!z10 || (xcVar = this.h) == null) {
             return;
         }

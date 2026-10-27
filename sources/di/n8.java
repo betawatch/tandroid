@@ -13,18 +13,18 @@ import java.util.concurrent.atomic.AtomicReference;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.ui.Components.aa0;
-import org.telegram.ui.Components.da0;
+import org.telegram.ui.Components.ba0;
 import org.telegram.ui.Components.ds;
-import org.telegram.ui.Components.w90;
-import org.telegram.ui.Components.wm0;
+import org.telegram.ui.Components.ea0;
+import org.telegram.ui.Components.x90;
+import org.telegram.ui.Components.xm0;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class n8 {
-    public aa0 a;
+    public ba0 a;
     public org.telegram.ui.Components.c6 b;
-    public final w90 c;
+    public final x90 c;
     public org.telegram.ui.Components.y5 d;
     public StaticLayout e;
     public org.telegram.ui.Components.y5 f;
@@ -40,14 +40,14 @@ public final class n8 {
     public k8 p;
     public boolean q;
     public final org.telegram.ui.Components.h6 r;
-    public final da0 s;
+    public final ea0 s;
     public final Path t;
     public final AtomicReference u;
     public final /* synthetic */ o8 v;
 
     public n8(o8 o8Var) {
         this.v = o8Var;
-        this.c = new w90(o8Var);
+        this.c = new x90(o8Var);
         ArrayList arrayList = new ArrayList();
         this.i = arrayList;
         this.j = new Stack();
@@ -57,12 +57,12 @@ public final class n8 {
         this.t = path;
         this.u = new AtomicReference();
         this.k = new xh.l(o8Var, arrayList, new a1.c(this, 28));
-        da0 da0Var = new da0();
-        this.s = da0Var;
-        da0Var.y = path;
-        da0Var.k(4.0f);
-        da0Var.g(org.telegram.ui.ActionBar.y6.o1(0.3f, -1), org.telegram.ui.ActionBar.y6.o1(0.1f, -1), org.telegram.ui.ActionBar.y6.o1(0.2f, -1), org.telegram.ui.ActionBar.y6.o1(0.7f, -1));
-        da0Var.setCallback(o8Var);
+        ea0 ea0Var = new ea0();
+        this.s = ea0Var;
+        ea0Var.y = path;
+        ea0Var.k(4.0f);
+        ea0Var.g(org.telegram.ui.ActionBar.y6.o1(0.3f, -1), org.telegram.ui.ActionBar.y6.o1(0.1f, -1), org.telegram.ui.ActionBar.y6.o1(0.2f, -1), org.telegram.ui.ActionBar.y6.o1(0.7f, -1));
+        ea0Var.setCallback(o8Var);
     }
 
     public final int a(int i10) {
@@ -111,9 +111,9 @@ public final class n8 {
         }
         if (e > 0.0f || this.q) {
             int i10 = (int) (e * 255.0f * lerp);
-            da0 da0Var = this.s;
-            da0Var.setAlpha(i10);
-            da0Var.draw(canvas2);
+            ea0 ea0Var = this.s;
+            ea0Var.setAlpha(i10);
+            ea0Var.draw(canvas2);
             o8Var.invalidate();
         }
     }
@@ -423,7 +423,7 @@ public final class n8 {
             m8 m8Var = new m8(this, 0);
             k8Var.r = o8Var;
             k8Var.s = m8Var;
-            new wm0(o8Var);
+            new xm0(o8Var);
             k8Var.j.setCallback(o8Var);
             k8Var.h.a = o8Var;
             k8Var.i.a = o8Var;
@@ -434,7 +434,7 @@ public final class n8 {
             m8 m8Var2 = new m8(this, 1);
             k8Var3.r = o8Var;
             k8Var3.s = m8Var2;
-            new wm0(o8Var);
+            new xm0(o8Var);
             k8Var3.j.setCallback(o8Var);
             k8Var3.h.a = o8Var;
             k8Var3.i.a = o8Var;

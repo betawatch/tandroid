@@ -23,11 +23,11 @@ import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.RadioButton;
-import org.telegram.ui.Components.gb1;
-import org.telegram.ui.Components.zp;
+import org.telegram.ui.Components.aq;
+import org.telegram.ui.Components.kb1;
 import org.telegram.ui.Components.zq;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class m9 extends FrameLayout implements org.telegram.ui.ActionBar.p6 {
     public Path E;
@@ -37,7 +37,7 @@ public final class m9 extends FrameLayout implements org.telegram.ui.ActionBar.p
     public final org.telegram.ui.Components.y9 c;
     public final org.telegram.ui.ActionBar.b6 d;
     public final org.telegram.ui.ActionBar.b6 e;
-    public final zp f;
+    public final aq f;
     public final RadioButton h;
     public final Paint n;
     public boolean r;
@@ -78,16 +78,16 @@ public final class m9 extends FrameLayout implements org.telegram.ui.ActionBar.p
         b6Var2.setGravity(LocaleController.isRTL ? 5 : 3);
         NotificationCenter.listenEmojiLoading(b6Var2);
         addView(b6Var2);
-        zp zpVar = new zp(context, 21, u6Var);
-        this.f = zpVar;
+        aq aqVar = new aq(context, 21, u6Var);
+        this.f = aqVar;
         int i11 = org.telegram.ui.ActionBar.y6.B5;
         int i12 = org.telegram.ui.ActionBar.y6.j7;
-        zpVar.b(i11, i12, org.telegram.ui.ActionBar.y6.C5);
-        zpVar.setDrawUnchecked(true);
-        zpVar.setDrawBackgroundAsArc(10);
-        addView(zpVar);
-        zpVar.a(false, false);
-        zpVar.setVisibility(8);
+        aqVar.b(i11, i12, org.telegram.ui.ActionBar.y6.C5);
+        aqVar.setDrawUnchecked(true);
+        aqVar.setDrawBackgroundAsArc(10);
+        addView(aqVar);
+        aqVar.a(false, false);
+        aqVar.setVisibility(8);
         RadioButton radioButton = new RadioButton(context);
         this.h = radioButton;
         radioButton.setSize(AndroidUtilities.dp(20.0f));
@@ -152,17 +152,17 @@ public final class m9 extends FrameLayout implements org.telegram.ui.ActionBar.p
 
     public final void b(float f7, boolean z10) {
         RadioButton radioButton = this.h;
-        zp zpVar = this.f;
+        aq aqVar = this.f;
         if (!z10) {
-            zpVar.animate().cancel();
-            zpVar.setAlpha(f7);
+            aqVar.animate().cancel();
+            aqVar.setAlpha(f7);
             radioButton.animate().cancel();
             radioButton.setAlpha(f7);
             return;
         }
-        if (Math.abs(zpVar.getAlpha() - f7) > 0.1d) {
-            zpVar.animate().cancel();
-            zpVar.animate().alpha(f7).start();
+        if (Math.abs(aqVar.getAlpha() - f7) > 0.1d) {
+            aqVar.animate().cancel();
+            aqVar.animate().alpha(f7).start();
         }
         if (Math.abs(radioButton.getAlpha() - f7) > 0.1d) {
             radioButton.animate().cancel();
@@ -171,9 +171,9 @@ public final class m9 extends FrameLayout implements org.telegram.ui.ActionBar.p
     }
 
     public final void c(boolean z10, boolean z11) {
-        zp zpVar = this.f;
-        if (zpVar.getVisibility() == 0) {
-            zpVar.a(z10, z11);
+        aq aqVar = this.f;
+        if (aqVar.getVisibility() == 0) {
+            aqVar.a(z10, z11);
         }
         RadioButton radioButton = this.h;
         if (radioButton.getVisibility() == 0) {
@@ -261,7 +261,7 @@ public final class m9 extends FrameLayout implements org.telegram.ui.ActionBar.p
         float f11;
         int i10 = (LocaleController.isRTL ? 5 : 3) | 16;
         boolean z10 = this.s;
-        this.c.setLayoutParams(gb1.h(40, 40.0f, i10, z10 ? 53.0f : 16.0f, 0.0f, z10 ? 53.0f : 16.0f, 0.0f));
+        this.c.setLayoutParams(kb1.h(40, 40.0f, i10, z10 ? 53.0f : 16.0f, 0.0f, z10 ? 53.0f : 16.0f, 0.0f));
         boolean z11 = LocaleController.isRTL;
         int i11 = (z11 ? 5 : 3) | 16;
         float f12 = 20.0f;
@@ -275,7 +275,7 @@ public final class m9 extends FrameLayout implements org.telegram.ui.ActionBar.p
         } else {
             f10 = 20.0f;
         }
-        this.d.setLayoutParams(gb1.h(-1, -2.0f, i11, f7, 0.0f, f10, 0.0f));
+        this.d.setLayoutParams(kb1.h(-1, -2.0f, i11, f7, 0.0f, f10, 0.0f));
         boolean z12 = LocaleController.isRTL;
         int i12 = (z12 ? 5 : 3) | 16;
         if (z12) {
@@ -286,9 +286,9 @@ public final class m9 extends FrameLayout implements org.telegram.ui.ActionBar.p
         if (z12) {
             f12 = this.s ? 105 : 68;
         }
-        this.e.setLayoutParams(gb1.h(-1, -2.0f, i12, f11, 0.0f, f12, 0.0f));
-        this.f.setLayoutParams(gb1.h(24, 24.0f, (LocaleController.isRTL ? 5 : 3) | 16, 13.0f, 0.0f, 14.0f, 0.0f));
-        this.h.setLayoutParams(gb1.h(22, 22.0f, (LocaleController.isRTL ? 5 : 3) | 16, 14.0f, 0.0f, 15.0f, 0.0f));
+        this.e.setLayoutParams(kb1.h(-1, -2.0f, i12, f11, 0.0f, f12, 0.0f));
+        this.f.setLayoutParams(kb1.h(24, 24.0f, (LocaleController.isRTL ? 5 : 3) | 16, 13.0f, 0.0f, 14.0f, 0.0f));
+        this.h.setLayoutParams(kb1.h(22, 22.0f, (LocaleController.isRTL ? 5 : 3) | 16, 14.0f, 0.0f, 15.0f, 0.0f));
     }
 
     public final SpannableStringBuilder g(CharSequence charSequence) {
@@ -341,10 +341,10 @@ public final class m9 extends FrameLayout implements org.telegram.ui.ActionBar.p
         RadioButton radioButton;
         super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
         boolean z11 = false;
-        zp zpVar = this.f;
-        if (zpVar != null) {
+        aq aqVar = this.f;
+        if (aqVar != null) {
             try {
-                if (zpVar.getVisibility() == 0) {
+                if (aqVar.getVisibility() == 0) {
                     z10 = true;
                     radioButton = this.h;
                     if (radioButton != null && radioButton.getVisibility() == 0) {
@@ -352,7 +352,7 @@ public final class m9 extends FrameLayout implements org.telegram.ui.ActionBar.p
                     }
                     if (!z10 || z11) {
                         accessibilityNodeInfo.setCheckable(true);
-                        accessibilityNodeInfo.setChecked(!z10 ? zpVar.a.q : radioButton.f);
+                        accessibilityNodeInfo.setChecked(!z10 ? aqVar.a.q : radioButton.f);
                         accessibilityNodeInfo.setClassName(!z10 ? "android.widget.CheckBox" : "android.widget.RadioButton");
                     }
                     return;
@@ -369,7 +369,7 @@ public final class m9 extends FrameLayout implements org.telegram.ui.ActionBar.p
         if (z10) {
         }
         accessibilityNodeInfo.setCheckable(true);
-        accessibilityNodeInfo.setChecked(!z10 ? zpVar.a.q : radioButton.f);
+        accessibilityNodeInfo.setChecked(!z10 ? aqVar.a.q : radioButton.f);
         accessibilityNodeInfo.setClassName(!z10 ? "android.widget.CheckBox" : "android.widget.RadioButton");
     }
 
@@ -452,9 +452,9 @@ public final class m9 extends FrameLayout implements org.telegram.ui.ActionBar.p
             org.telegram.ui.ActionBar.f7.Y(b6Var2, zArr[0] ? org.telegram.ui.ActionBar.y6.n5 : org.telegram.ui.ActionBar.y6.r5, u6Var);
         }
         int i10 = this.s ? 0 : 8;
-        zp zpVar = this.f;
-        zpVar.setVisibility(i10);
-        zpVar.setAlpha(1.0f);
+        aq aqVar = this.f;
+        aqVar.setVisibility(i10);
+        aqVar.setAlpha(1.0f);
         this.h.setVisibility(8);
     }
 

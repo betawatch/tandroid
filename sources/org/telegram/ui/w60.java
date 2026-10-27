@@ -1,7 +1,12 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public interface w60 {
-    void a(x60 x60Var, long j10);
+public final class w60 extends qg.a {
+    public final String c;
+
+    public w60(String str) {
+        super(5, true);
+        this.c = str;
+    }
 }

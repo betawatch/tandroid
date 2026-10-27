@@ -11,10 +11,10 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.r2;
-import org.telegram.ui.dg1;
-import org.telegram.ui.un;
+import org.telegram.ui.fg1;
+import org.telegram.ui.wn;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class n0 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -43,13 +43,13 @@ public final /* synthetic */ class n0 implements RequestDelegate {
                 ((ContactsController) this.d).lambda$deleteContact$57((ArrayList) this.b, (ArrayList) this.e, this.c, (String) this.f, tLObject, tL_error);
                 break;
             case 2:
-                ((SendMessagesHelper) this.d).lambda$requestUrlAuth$40((TLRPC.TL_messages_requestUrlAuth) this.e, (un) this.b, (String) this.f, this.c, tLObject, tL_error);
+                ((SendMessagesHelper) this.d).lambda$requestUrlAuth$40((TLRPC.TL_messages_requestUrlAuth) this.e, (wn) this.b, (String) this.f, this.c, tLObject, tL_error);
                 break;
             case 3:
                 ((SendMessagesHelper) this.d).lambda$sendEditRichMessageRequest$29(this.c, (MessageObject) this.e, (TLRPC.TL_messages_editMessage) this.b, (r2) this.f, tLObject, tL_error);
                 break;
             case 4:
-                AndroidUtilities.runOnUIThread(new q0((dg1) this.d, tL_error, this.c, tLObject, (byte[]) this.e, (String) this.b, (TL_account.passwordInputSettings) this.f));
+                AndroidUtilities.runOnUIThread(new q0((fg1) this.d, tL_error, this.c, tLObject, (byte[]) this.e, (String) this.b, (TL_account.passwordInputSettings) this.f));
                 break;
             default:
                 yh.k kVar = (yh.k) this.d;
@@ -82,11 +82,11 @@ public final /* synthetic */ class n0 implements RequestDelegate {
         this.f = str;
     }
 
-    public /* synthetic */ n0(SendMessagesHelper sendMessagesHelper, TLRPC.TL_messages_requestUrlAuth tL_messages_requestUrlAuth, un unVar, String str, boolean z10) {
+    public /* synthetic */ n0(SendMessagesHelper sendMessagesHelper, TLRPC.TL_messages_requestUrlAuth tL_messages_requestUrlAuth, wn wnVar, String str, boolean z10) {
         this.a = 2;
         this.d = sendMessagesHelper;
         this.e = tL_messages_requestUrlAuth;
-        this.b = unVar;
+        this.b = wnVar;
         this.f = str;
         this.c = z10;
     }

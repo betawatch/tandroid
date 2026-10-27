@@ -10,7 +10,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.ui.Components.wc;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class n5 extends l2 {
     public final /* synthetic */ int I;
@@ -29,7 +29,7 @@ public final class n5 extends l2 {
         if (num.intValue() == 3) {
             int i10 = 0;
             for (int i11 = 0; i11 < y5Var.getChildCount(); i11++) {
-                if (y5Var.getChildAt(i11) instanceof sg.c2) {
+                if (y5Var.getChildAt(i11) instanceof sg.b2) {
                     i10++;
                 }
             }
@@ -69,7 +69,7 @@ public final class n5 extends l2 {
                 if (i10 >= y5Var.getChildCount()) {
                     break;
                 }
-                if (y5Var.getChildAt(i10) instanceof sg.y2) {
+                if (y5Var.getChildAt(i10) instanceof sg.x2) {
                     z10 = true;
                     break;
                 }

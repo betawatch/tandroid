@@ -1,11 +1,11 @@
 package e2;
 
 import java.util.concurrent.ThreadFactory;
-import org.telegram.ui.Components.s51;
-import org.telegram.ui.Components.xj0;
+import org.telegram.ui.Components.t51;
+import org.telegram.ui.Components.yj0;
 import org.telegram.ui.Wallet.WalletEngine2;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class l0 implements ThreadFactory {
     public final /* synthetic */ int a;
@@ -25,11 +25,11 @@ public final /* synthetic */ class l0 implements ThreadFactory {
                 thread.setDaemon(true);
                 return thread;
             case 2:
-                return new Thread(runnable, "Lottie-" + xj0.P0.getAndIncrement());
+                return new Thread(runnable, "Lottie-" + yj0.P0.getAndIncrement());
             case 3:
-                return new Thread(runnable, "LottieLow-" + xj0.Q0.getAndIncrement());
+                return new Thread(runnable, "LottieLow-" + yj0.Q0.getAndIncrement());
             case 4:
-                Thread thread2 = new Thread(new s51(runnable, 12), "widget-sandbox-io");
+                Thread thread2 = new Thread(new t51(runnable, 13), "widget-sandbox-io");
                 thread2.setDaemon(true);
                 return thread2;
             case 5:

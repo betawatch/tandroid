@@ -1,31 +1,83 @@
 package org.telegram.ui;
 
-import android.view.View;
+import android.app.Activity;
+import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.graphics.RectF;
+import android.text.StaticLayout;
+import android.text.TextPaint;
+import android.widget.FrameLayout;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class y31 implements View.OnClickListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ c41 b;
+public final class y31 extends FrameLayout {
+    public final Paint a;
+    public final Paint b;
+    public final RectF c;
+    public final org.telegram.ui.Components.h31 d;
+    public boolean e;
+    public long f;
+    public long h;
+    public final org.telegram.ui.Components.yj0 n;
+    public final TextPaint r;
+    public StaticLayout s;
+    public float v;
+    public float w;
+    public final /* synthetic */ SecretMediaViewer x;
 
-    public /* synthetic */ y31(c41 c41Var, int i10) {
-        this.a = i10;
-        this.b = c41Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public y31(SecretMediaViewer secretMediaViewer, Activity activity) {
+        super(activity);
+        this.x = secretMediaViewer;
+        this.c = new RectF();
+        this.d = new org.telegram.ui.Components.h31();
+        this.r = new TextPaint(1);
+        setWillNotDraw(false);
+        Paint paint = new Paint(1);
+        this.b = paint;
+        paint.setStrokeWidth(AndroidUtilities.dp(1.5f));
+        paint.setColor(-1644826);
+        Paint.Cap cap = Paint.Cap.ROUND;
+        paint.setStrokeCap(cap);
+        Paint.Style style = Paint.Style.STROKE;
+        paint.setStyle(style);
+        Paint paint2 = new Paint(1);
+        this.a = paint2;
+        paint2.setStyle(style);
+        paint2.setStrokeCap(cap);
+        paint2.setColor(-1644826);
+        paint2.setStrokeWidth(AndroidUtilities.dp(2.0f));
+        new Paint(1).setColor(2130706432);
+        org.telegram.ui.Components.yj0 yj0Var = new org.telegram.ui.Components.yj0(R.raw.fire_on, AndroidUtilities.dp(16.0f), AndroidUtilities.dp(16.0f));
+        this.n = yj0Var;
+        yj0Var.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
+        yj0Var.R(this);
+        yj0Var.start();
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        switch (this.a) {
-            case 0:
-                c41 c41Var = this.b;
-                if (c41Var.Y == null) {
-                    c41Var.dismiss();
-                    break;
-                }
-                break;
-            default:
-                this.b.dismiss();
-                break;
-        }
+    /*  JADX ERROR: NullPointerException in pass: LoopRegionVisitor
+        java.lang.NullPointerException
+        */
+    @Override // android.view.View
+    public final void onDraw(android.graphics.Canvas r15) {
+        /*
+            Method dump skipped, instructions count: 217
+            To view this dump add '--comments-level debug' option
+        */
+        throw new UnsupportedOperationException("Method not decompiled: org.telegram.ui.y31.onDraw(android.graphics.Canvas):void");
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(i10, i11);
+        float measuredWidth = getMeasuredWidth() - AndroidUtilities.dp(35.0f);
+        float measuredHeight = getMeasuredHeight() / 2.0f;
+        float dpf2 = AndroidUtilities.dpf2(10.5f);
+        this.c.set(measuredWidth - dpf2, measuredHeight - dpf2, measuredWidth + dpf2, dpf2 + measuredHeight);
+        setPivotX(measuredWidth);
+        setPivotY(measuredHeight);
     }
 }

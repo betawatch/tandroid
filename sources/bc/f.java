@@ -18,7 +18,7 @@ import o6.l;
 import o6.o;
 import org.telegram.tgnet.ConnectionsManager;
 import sb.m;
-import w7.e5;
+import w7.f5;
 import w7.h6;
 import y7.b7;
 import y7.c7;
@@ -34,7 +34,7 @@ import y7.n;
 import y7.q0;
 import y7.r;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
 public final class f extends sb.e {
     public boolean d = true;
@@ -63,7 +63,7 @@ public final class f extends sb.e {
         w1Var.b = this.e;
         y7.l lVar = n.b;
         Object[] objArr = {l7.b};
-        e5.a(1, objArr);
+        f5.a(1, objArr);
         w1Var.c = new r(1, objArr);
         m0Var.d = new e8(w1Var);
         m.a.execute(new fg(caVar, new ng(m0Var, 0), m7.e, caVar.b(), 8));
@@ -108,7 +108,7 @@ public final class f extends sb.e {
             caVar.i.put(m7Var, Long.valueOf(elapsedRealtime2));
             m0 m0Var = new m0();
             m0Var.c = k7.b;
-            s4.d dVar = new s4.d(17, z10);
+            s4.d dVar = new s4.d(18, z10);
             me meVar = new me();
             meVar.a = Long.valueOf(Long.MAX_VALUE & elapsedRealtime);
             meVar.b = l7Var;
@@ -141,7 +141,7 @@ public final class f extends sb.e {
             m0Var.e = new d8(dVar);
             m.a.execute(new fg(caVar, new ng(m0Var, 0), m7Var, caVar.b(), 8));
         }
-        s4.d dVar2 = new s4.d(16, z10);
+        s4.d dVar2 = new s4.d(17, z10);
         dVar2.d = this.e;
         dVar2.b = l7Var;
         dVar2.c = Boolean.valueOf(this.d);
@@ -155,7 +155,7 @@ public final class f extends sb.e {
             if (mgVar.b.get() != -1 && elapsedRealtime3 - mgVar.b.get() <= TimeUnit.MINUTES.toMillis(30L)) {
                 return;
             }
-            mgVar.a.f(new o(0, Arrays.asList(new j(24305, i12, 0, j11, currentTimeMillis, null, null, 0, -1)))).addOnFailureListener(new lg(mgVar, elapsedRealtime3, 10));
+            mgVar.a.f(new o(0, Arrays.asList(new j(24305, i12, 0, j11, currentTimeMillis, null, null, 0, -1)))).addOnFailureListener(new lg(mgVar, elapsedRealtime3, 11));
         }
     }
 }

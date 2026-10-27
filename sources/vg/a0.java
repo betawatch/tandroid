@@ -53,18 +53,18 @@ import org.telegram.ui.Components.bb;
 import org.telegram.ui.Components.d5;
 import org.telegram.ui.Components.ds;
 import org.telegram.ui.Components.e4;
-import org.telegram.ui.Components.gb1;
-import org.telegram.ui.Components.lm0;
-import org.telegram.ui.Components.md0;
+import org.telegram.ui.Components.kb1;
 import org.telegram.ui.Components.mm0;
+import org.telegram.ui.Components.nd0;
+import org.telegram.ui.Components.nm0;
 import org.telegram.ui.Components.wr;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.Wallet.r1;
-import org.telegram.ui.bn0;
-import org.telegram.ui.j20;
-import org.telegram.ui.zg1;
+import org.telegram.ui.bh1;
+import org.telegram.ui.dn0;
+import org.telegram.ui.l20;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class a0 extends bb implements NotificationCenter.NotificationCenterDelegate {
     public final ArrayList X;
@@ -149,22 +149,22 @@ public final class a0 extends bb implements NotificationCenter.NotificationCente
         lVar.C = false;
         lVar.m = false;
         this.d.setItemAnimator(lVar);
-        mm0 mm0Var = this.d;
+        nm0 nm0Var = this.d;
         int i15 = this.backgroundPaddingLeft;
-        mm0Var.setPadding(i15, 0, i15, AndroidUtilities.dp(68.0f));
+        nm0Var.setPadding(i15, 0, i15, AndroidUtilities.dp(68.0f));
         this.d.setOnScrollListener(new z());
         this.d.setOnItemClickListener(new x4(23, this, r2Var));
         TLRPC.Chat chat = MessagesController.getInstance(this.currentAccount).getChat(Long.valueOf(-j10));
         this.b0 = chat;
         wg.b bVar = this.g0;
         ArrayList arrayList = this.X;
-        mm0 mm0Var2 = this.d;
+        nm0 nm0Var2 = this.d;
         u uVar = new u(this);
         u uVar2 = new u(this);
         u uVar3 = new u(this);
         bVar.e = arrayList;
         bVar.v = chat;
-        bVar.f = mm0Var2;
+        bVar.f = nm0Var2;
         bVar.h = uVar;
         bVar.n = uVar2;
         bVar.s = uVar3;
@@ -173,9 +173,9 @@ public final class a0 extends bb implements NotificationCenter.NotificationCente
         this.q0 = aVar;
         aVar.setOnClickListener(new wr(this, prepaidGiveaway, j10, r2Var));
         Z(false);
-        this.containerView.addView(aVar, gb1.h(-1, 68.0f, 80, 0.0f, 0.0f, 0.0f, 0.0f));
+        this.containerView.addView(aVar, kb1.h(-1, 68.0f, 80, 0.0f, 0.0f, 0.0f, 0.0f));
         s.j(this.currentAccount, chat, new v(this, i10));
-        NotificationCenter.getInstance(this.currentAccount).addObserver(this, NotificationCenter.starGiveawayOptionsLoaded);
+        NotificationCenter.getInstance(this.currentAccount).addWeakObserver(this, NotificationCenter.starGiveawayOptionsLoaded);
     }
 
     public static void P(a0 a0Var, TL_stories.PrepaidGiveaway prepaidGiveaway, long j10, r2 r2Var) {
@@ -389,7 +389,7 @@ public final class a0 extends bb implements NotificationCenter.NotificationCente
                         e2 e2Var3 = alertDialog$Builder3.a;
                         e2Var3.R = string3;
                         e2Var3.T = AndroidUtilities.replaceTags(LocaleController.formatPluralString("BoostingReduceQuantityTextPlural", i29, formatPluralString, Integer.valueOf(i30)));
-                        alertDialog$Builder3.k(LocaleController.getString("Reduce", R.string.Reduce), new zg1(20, vVar, tL_premiumGiftCodeOption5));
+                        alertDialog$Builder3.k(LocaleController.getString("Reduce", R.string.Reduce), new bh1(20, vVar, tL_premiumGiftCodeOption5));
                         alertDialog$Builder3.h(LocaleController.getString("Cancel", R.string.Cancel), new d(0));
                         alertDialog$Builder3.p();
                         return;
@@ -588,10 +588,10 @@ public final class a0 extends bb implements NotificationCenter.NotificationCente
                 }
             } else {
                 xg.c cVar = (xg.c) view;
-                mm0 mm0Var = a0Var.d;
+                nm0 nm0Var = a0Var.d;
                 if (cVar.b()) {
-                    for (int i15 = 0; i15 < mm0Var.getChildCount(); i15++) {
-                        View childAt = mm0Var.getChildAt(i15);
+                    for (int i15 = 0; i15 < nm0Var.getChildCount(); i15++) {
+                        View childAt = nm0Var.getChildAt(i15);
                         if (childAt.getClass().isInstance(cVar)) {
                             ((xg.c) childAt).c(childAt == cVar, true);
                         }
@@ -650,11 +650,11 @@ public final class a0 extends bb implements NotificationCenter.NotificationCente
         d5 d5Var = new d5(u6Var);
         e3 e3Var = new e3(context, u6Var);
         e3Var.a();
-        md0 md0Var = new md0(context, u6Var);
+        nd0 nd0Var = new nd0(context, u6Var);
         int i16 = d5Var.a;
-        md0Var.setTextColor(i16);
-        md0Var.setTextOffset(AndroidUtilities.dp(10.0f));
-        md0Var.setItemCount(5);
+        nd0Var.setTextColor(i16);
+        nd0Var.setTextOffset(AndroidUtilities.dp(10.0f));
+        nd0Var.setItemCount(5);
         h hVar = new h(context, u6Var);
         hVar.setWrapSelectorWheel(true);
         hVar.setAllItemsCount(24);
@@ -668,25 +668,25 @@ public final class a0 extends bb implements NotificationCenter.NotificationCente
         iVar.setItemCount(5);
         iVar.setTextColor(i16);
         iVar.setTextOffset(-AndroidUtilities.dp(34.0f));
-        e4 e4Var2 = new e4(context, d5Var, md0Var, hVar, iVar);
+        e4 e4Var2 = new e4(context, d5Var, nd0Var, hVar, iVar);
         e4Var2.setOrientation(1);
         FrameLayout frameLayout = new FrameLayout(context);
-        e4Var2.addView(frameLayout, gb1.x(-1, -2, 51, 22, 0, 0, 4));
+        e4Var2.addView(frameLayout, kb1.x(-1, -2, 51, 22, 0, 0, 4));
         TextView textView = new TextView(context);
         textView.setText(LocaleController.getString("BoostingSelectDateTime", R.string.BoostingSelectDateTime));
         textView.setTextColor(i16);
         ic.a.o(20.0f, 1, textView);
-        frameLayout.addView(textView, gb1.h(-2, -2.0f, 51, 0.0f, 12.0f, 0.0f, 0.0f));
+        frameLayout.addView(textView, kb1.h(-2, -2.0f, 51, 0.0f, 12.0f, 0.0f, 0.0f));
         textView.setOnTouchListener(new ei.d(2));
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setOrientation(0);
         linearLayout.setWeightSum(1.0f);
-        e4Var2.addView(linearLayout, gb1.t(-1, -2, 1.0f, 0, 0, 12, 0, 12));
+        e4Var2.addView(linearLayout, kb1.t(-1, -2, 1.0f, 0, 0, 12, 0, 12));
         long currentTimeMillis = System.currentTimeMillis();
         Calendar calendar = Calendar.getInstance();
         calendar.setTimeInMillis(currentTimeMillis);
         int i17 = calendar.get(1);
-        bn0 bn0Var = new bn0(context, 3);
+        dn0 dn0Var = new dn0(context, 3);
         long j11 = MessagesController.getInstance(UserConfig.selectedAccount).giveawayPeriodMax * 1000;
         Calendar calendar2 = Calendar.getInstance();
         calendar2.setTimeInMillis(j11);
@@ -695,24 +695,24 @@ public final class a0 extends bb implements NotificationCenter.NotificationCente
         calendar2.add(14, (int) j11);
         int i19 = calendar2.get(11);
         int i20 = calendar.get(12);
-        linearLayout.addView(md0Var, gb1.p(0.5f, 0, 270));
-        md0Var.setMinValue(0);
-        md0Var.setMaxValue(i18 - 1);
-        md0Var.setWrapSelectorWheel(false);
-        md0Var.setTag("DAY");
-        md0Var.setFormatter(new j20(currentTimeMillis, calendar, i17, 1));
-        s4 s4Var = new s4(e4Var2, hVar, iVar, i19, i20, md0Var);
-        md0Var.setOnValueChangedListener(s4Var);
+        linearLayout.addView(nd0Var, kb1.p(0.5f, 0, 270));
+        nd0Var.setMinValue(0);
+        nd0Var.setMaxValue(i18 - 1);
+        nd0Var.setWrapSelectorWheel(false);
+        nd0Var.setTag("DAY");
+        nd0Var.setFormatter(new l20(currentTimeMillis, calendar, i17, 1));
+        s4 s4Var = new s4(e4Var2, hVar, iVar, i19, i20, nd0Var);
+        nd0Var.setOnValueChangedListener(s4Var);
         hVar.setMinValue(0);
         hVar.setMaxValue(23);
-        linearLayout.addView(hVar, gb1.p(0.2f, 0, 270));
+        linearLayout.addView(hVar, kb1.p(0.2f, 0, 270));
         hVar.setFormatter(new d(1));
         hVar.setOnValueChangedListener(s4Var);
         iVar.setMinValue(0);
         iVar.setMaxValue(11);
         iVar.setValue(0);
         iVar.setFormatter(new d(2));
-        linearLayout.addView(iVar, gb1.p(0.3f, 0, 270));
+        linearLayout.addView(iVar, kb1.p(0.3f, 0, 270));
         iVar.setOnValueChangedListener(s4Var);
         if (j10 > 0) {
             e4Var = e4Var2;
@@ -725,23 +725,23 @@ public final class a0 extends bb implements NotificationCenter.NotificationCente
             calendar.setTimeInMillis(j10);
             iVar.setValue(calendar.get(12) / 5);
             hVar.setValue(calendar.get(11));
-            md0Var.setValue(timeInMillis);
-            md0Var.getValue();
-            s4Var.q(md0Var, md0Var.getValue());
+            nd0Var.setValue(timeInMillis);
+            nd0Var.getValue();
+            s4Var.q(nd0Var, nd0Var.getValue());
             hVar.getValue();
             s4Var.q(hVar, hVar.getValue());
         } else {
             e4Var = e4Var2;
         }
-        bn0Var.setPadding(AndroidUtilities.dp(34.0f), 0, AndroidUtilities.dp(34.0f), 0);
-        bn0Var.setGravity(17);
-        bn0Var.setTextColor(d5Var.g);
-        bn0Var.setTextSize(1, 14.0f);
-        bn0Var.setTypeface(AndroidUtilities.bold());
-        bn0Var.setBackground(o6.e(new float[]{8.0f}, d5Var.h));
-        bn0Var.setText(LocaleController.getString("BoostingConfirm", R.string.BoostingConfirm));
-        e4Var.addView(bn0Var, gb1.x(-1, 48, 83, 16, 15, 16, 16));
-        bn0Var.setOnClickListener(new org.telegram.ui.Components.m0(calendar, md0Var, hVar, iVar, uVar, e3Var));
+        dn0Var.setPadding(AndroidUtilities.dp(34.0f), 0, AndroidUtilities.dp(34.0f), 0);
+        dn0Var.setGravity(17);
+        dn0Var.setTextColor(d5Var.g);
+        dn0Var.setTextSize(1, 14.0f);
+        dn0Var.setTypeface(AndroidUtilities.bold());
+        dn0Var.setBackground(o6.e(new float[]{8.0f}, d5Var.h));
+        dn0Var.setText(LocaleController.getString("BoostingConfirm", R.string.BoostingConfirm));
+        e4Var.addView(dn0Var, kb1.x(-1, 48, 83, 16, 15, 16, 16));
+        dn0Var.setOnClickListener(new org.telegram.ui.Components.m0(calendar, nd0Var, hVar, iVar, uVar, e3Var));
         e3Var.b(e4Var);
         k3 k3Var = e3Var.a;
         k3Var.show();
@@ -1296,8 +1296,8 @@ public final class a0 extends bb implements NotificationCenter.NotificationCente
 
     @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
     public final void didReceivedNotification(int i10, int i11, Object... objArr) {
-        mm0 mm0Var;
-        if (i10 == NotificationCenter.starGiveawayOptionsLoaded && (mm0Var = this.d) != null && mm0Var.G) {
+        nm0 nm0Var;
+        if (i10 == NotificationCenter.starGiveawayOptionsLoaded && (nm0Var = this.d) != null && nm0Var.G) {
             a0(true, true);
         }
     }
@@ -1312,7 +1312,7 @@ public final class a0 extends bb implements NotificationCenter.NotificationCente
     }
 
     @Override // org.telegram.ui.Components.bb
-    public final lm0 v(mm0 mm0Var) {
+    public final mm0 v(nm0 nm0Var) {
         wg.b bVar = new wg.b(this.resourcesProvider);
         this.g0 = bVar;
         return bVar;

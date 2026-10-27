@@ -17,9 +17,9 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public final class xc extends org.telegram.ui.Components.lm0 {
+public final class xc extends org.telegram.ui.Components.mm0 {
     public final /* synthetic */ int c;
     public final /* synthetic */ org.telegram.ui.ActionBar.u6 d;
     public final /* synthetic */ zc e;
@@ -30,7 +30,7 @@ public final class xc extends org.telegram.ui.Components.lm0 {
         this.d = u6Var;
     }
 
-    @Override // org.telegram.ui.Components.lm0
+    @Override // org.telegram.ui.Components.mm0
     public final boolean D(s4.e1 e1Var) {
         return true;
     }
@@ -52,10 +52,10 @@ public final class xc extends org.telegram.ui.Components.lm0 {
         int i11;
         int intValue;
         String[] split;
-        org.telegram.ui.Components.d31 d31Var = (org.telegram.ui.Components.d31) e1Var.a;
+        org.telegram.ui.Components.e31 e31Var = (org.telegram.ui.Components.e31) e1Var.a;
         zc zcVar = this.e;
         ArrayList arrayList = zcVar.c;
-        org.telegram.ui.ActionBar.x6 i12 = ((org.telegram.ui.Components.xp) arrayList.get(i10)).a.i(((org.telegram.ui.Components.xp) arrayList.get(i10)).c);
+        org.telegram.ui.ActionBar.x6 i12 = ((org.telegram.ui.Components.yp) arrayList.get(i10)).a.i(((org.telegram.ui.Components.yp) arrayList.get(i10)).c);
         if (i12 != null && i12.b != null && !i12.T && new File(i12.b).exists()) {
             HashMap hashMap = zcVar.x;
             if (i12.b != null) {
@@ -214,12 +214,12 @@ public final class xc extends org.telegram.ui.Components.lm0 {
                 if (i12.c == null || i12.f || new File(i12.c).exists()) {
                     z10 = true;
                     i12.T = true;
-                    org.telegram.ui.Components.xp xpVar = (org.telegram.ui.Components.xp) arrayList.get(i10);
-                    d31Var.setEnabled(z10);
-                    org.telegram.ui.ActionBar.f7.i(org.telegram.ui.ActionBar.y6.i5, d31Var, null);
-                    d31Var.f(xpVar, 0L, false);
-                    d31Var.g(xpVar.d, false);
-                    d31Var.setFallbackWallpaper(xpVar.a.b ? null : zcVar.v);
+                    org.telegram.ui.Components.yp ypVar = (org.telegram.ui.Components.yp) arrayList.get(i10);
+                    e31Var.setEnabled(z10);
+                    org.telegram.ui.ActionBar.f7.i(org.telegram.ui.ActionBar.y6.i5, e31Var, null);
+                    e31Var.f(ypVar, 0L, false);
+                    e31Var.g(ypVar.d, false);
+                    e31Var.setFallbackWallpaper(ypVar.a.b ? null : zcVar.v);
                 }
                 if (!hashMap.containsKey(i12)) {
                     hashMap.put(i12, i12.e);
@@ -232,17 +232,17 @@ public final class xc extends org.telegram.ui.Components.lm0 {
             }
         }
         z10 = true;
-        org.telegram.ui.Components.xp xpVar2 = (org.telegram.ui.Components.xp) arrayList.get(i10);
-        d31Var.setEnabled(z10);
-        org.telegram.ui.ActionBar.f7.i(org.telegram.ui.ActionBar.y6.i5, d31Var, null);
-        d31Var.f(xpVar2, 0L, false);
-        d31Var.g(xpVar2.d, false);
-        d31Var.setFallbackWallpaper(xpVar2.a.b ? null : zcVar.v);
+        org.telegram.ui.Components.yp ypVar2 = (org.telegram.ui.Components.yp) arrayList.get(i10);
+        e31Var.setEnabled(z10);
+        org.telegram.ui.ActionBar.f7.i(org.telegram.ui.ActionBar.y6.i5, e31Var, null);
+        e31Var.f(ypVar2, 0L, false);
+        e31Var.g(ypVar2.d, false);
+        e31Var.setFallbackWallpaper(ypVar2.a.b ? null : zcVar.v);
     }
 
     @Override // s4.h0
     public final s4.e1 x(ViewGroup viewGroup, int i10) {
-        return new org.telegram.ui.Components.vl0(new wc(this.c, 3, viewGroup.getContext(), this.d));
+        return new org.telegram.ui.Components.wl0(new wc(this.c, 3, viewGroup.getContext(), this.d));
     }
 
     @Override // s4.h0
@@ -254,9 +254,9 @@ public final class xc extends org.telegram.ui.Components.lm0 {
         if (b10 < 0 || b10 >= arrayList.size()) {
             return;
         }
-        org.telegram.ui.Components.xp xpVar = (org.telegram.ui.Components.xp) arrayList.get(b10);
-        org.telegram.ui.Components.d31 d31Var = (org.telegram.ui.Components.d31) view;
-        d31Var.g(xpVar.d, false);
-        d31Var.setFallbackWallpaper(xpVar.a.b ? null : zcVar.v);
+        org.telegram.ui.Components.yp ypVar = (org.telegram.ui.Components.yp) arrayList.get(b10);
+        org.telegram.ui.Components.e31 e31Var = (org.telegram.ui.Components.e31) view;
+        e31Var.g(ypVar.d, false);
+        e31Var.setFallbackWallpaper(ypVar.a.b ? null : zcVar.v);
     }
 }

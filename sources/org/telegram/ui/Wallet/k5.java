@@ -19,10 +19,10 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.ui.Components.ds;
-import org.telegram.ui.Components.gb1;
-import org.telegram.ui.fc1;
+import org.telegram.ui.Components.kb1;
+import org.telegram.ui.hc1;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class k5 extends FrameLayout {
     public final TextView a;
@@ -37,19 +37,19 @@ public final class k5 extends FrameLayout {
     public k5(Context context, String str) {
         super(context);
         ActivityManager activityManager;
-        addView(new a5(context, str), gb1.i(-1, -1, 17));
+        addView(new a5(context, str), kb1.i(-1, -1, 17));
         FrameLayout frameLayout = new FrameLayout(context);
         this.b = frameLayout;
         frameLayout.setBackground(org.telegram.ui.ActionBar.y6.c0(AndroidUtilities.dp(20.0f), -1));
         frameLayout.setCameraDistance(AndroidUtilities.dp(8000.0f));
-        addView(frameLayout, gb1.h(212, 244.0f, 49, 0.0f, 22.0f, 0.0f, 0.0f));
+        addView(frameLayout, kb1.h(212, 244.0f, 49, 0.0f, 22.0f, 0.0f, 0.0f));
         FrameLayout frameLayout2 = new FrameLayout(context);
         this.c = frameLayout2;
-        frameLayout.addView(frameLayout2, gb1.g(-1.0f, -1));
+        frameLayout.addView(frameLayout2, kb1.g(-1.0f, -1));
         FrameLayout frameLayout3 = new FrameLayout(context);
-        frameLayout2.addView(frameLayout3, gb1.h(164, 164.0f, 49, 0.0f, 24.0f, 0.0f, 0.0f));
+        frameLayout2.addView(frameLayout3, kb1.h(164, 164.0f, 49, 0.0f, 24.0f, 0.0f, 0.0f));
         ai.g c10 = ai.h.c("ton://transfer/".concat(str), 768, jc.c.d, 1.0f, new ColorDrawable(0));
-        frameLayout3.addView(new di.h3(context, c10), gb1.g(-1.0f, -1));
+        frameLayout3.addView(new di.h3(context, c10), kb1.g(-1.0f, -1));
         float f7 = c10 == null ? 0.0f : c10.l / c10.b;
         if (f7 > 0.0f) {
             if (SharedConfig.getDevicePerformanceClass() == 0 || LiteMode.isPowerSaverApplied() || (activityManager = (ActivityManager) context.getSystemService("activity")) == null || activityManager.getDeviceConfigurationInfo().reqGlEsVersion < 196608) {
@@ -57,10 +57,10 @@ public final class k5 extends FrameLayout {
                 imageView.setScaleType(ImageView.ScaleType.FIT_XY);
                 imageView.setImageResource(R.drawable.mini_gram_72);
                 int round = Math.round(f7 * 164.0f);
-                frameLayout3.addView(imageView, gb1.i(round, round, 17));
+                frameLayout3.addView(imageView, kb1.i(round, round, 17));
             } else {
                 int round2 = Math.round(f7 * 164.0f * 1.35f);
-                frameLayout3.addView(new i8(context), gb1.i(round2, round2, 17));
+                frameLayout3.addView(new i8(context), kb1.i(round2, round2, 17));
             }
         }
         TextView textView = new TextView(context);
@@ -78,13 +78,13 @@ public final class k5 extends FrameLayout {
         mutate.setColorFilter(new PorterDuffColorFilter(-15556886, PorterDuff.Mode.SRC_IN));
         mutate.setBounds(0, 0, AndroidUtilities.dp(14.0f), AndroidUtilities.dp(14.0f));
         textView.setCompoundDrawables(mutate, null, null, null);
-        gb1.b(textView);
-        frameLayout2.addView(textView, gb1.h(-2, 28.0f, 49, 0.0f, 202.0f, 0.0f, 0.0f));
+        kb1.b(textView);
+        frameLayout2.addView(textView, kb1.h(-2, 28.0f, 49, 0.0f, 202.0f, 0.0f, 0.0f));
         FrameLayout frameLayout4 = new FrameLayout(context);
         this.d = frameLayout4;
         frameLayout4.setVisibility(4);
         frameLayout4.setRotationY(180.0f);
-        frameLayout.addView(frameLayout4, gb1.g(-1.0f, -1));
+        frameLayout.addView(frameLayout4, kb1.g(-1.0f, -1));
         TextView textView2 = new TextView(context);
         String replace = str.replace(" ", "");
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
@@ -111,7 +111,7 @@ public final class k5 extends FrameLayout {
         textView2.setIncludeFontPadding(false);
         textView2.setMaxLines(4);
         textView2.setLineSpacing(0.0f, 1.0f);
-        TextView k10 = org.telegram.ui.d3.k(this.d, textView2, gb1.h(-1, 112.0f, 55, 8.0f, 32.0f, 8.0f, 0.0f), context);
+        TextView k10 = org.telegram.ui.d3.k(this.d, textView2, kb1.h(-1, 112.0f, 55, 8.0f, 32.0f, 8.0f, 0.0f), context);
         k10.setText(LocaleController.getString(R.string.WalletAddressCopiedShort));
         k10.setTextColor(-15556886);
         k10.setTextSize(1, 14.0f);
@@ -122,7 +122,7 @@ public final class k5 extends FrameLayout {
         mutate2.setColorFilter(new PorterDuffColorFilter(-15556886, PorterDuff.Mode.SRC_IN));
         mutate2.setBounds(0, 0, AndroidUtilities.dp(16.0f), AndroidUtilities.dp(16.0f));
         k10.setCompoundDrawables(mutate2, null, null, null);
-        TextView k11 = org.telegram.ui.d3.k(this.d, k10, gb1.h(-2, 28.0f, 49, 0.0f, 149.0f, 0.0f, 0.0f), context);
+        TextView k11 = org.telegram.ui.d3.k(this.d, k10, kb1.h(-2, 28.0f, 49, 0.0f, 149.0f, 0.0f, 0.0f), context);
         k11.setText(LocaleController.getString(R.string.WalletShowMyQR));
         k11.setTextColor(-15556886);
         k11.setTextSize(1, 14.0f);
@@ -131,8 +131,8 @@ public final class k5 extends FrameLayout {
         k11.setPadding(AndroidUtilities.dp(12.0f), 0, AndroidUtilities.dp(12.0f), 0);
         int dp2 = AndroidUtilities.dp(18.0f);
         k11.setBackground(org.telegram.ui.ActionBar.y6.j0(dp2, dp2, dp2, dp2, -984578, -1903620, -1903620));
-        gb1.b(k11);
-        this.d.addView(k11, gb1.h(-2, 28.0f, 49, 0.0f, 202.0f, 0.0f, 0.0f));
+        kb1.b(k11);
+        this.d.addView(k11, kb1.h(-2, 28.0f, 49, 0.0f, 202.0f, 0.0f, 0.0f));
         final int i13 = 0;
         View.OnClickListener onClickListener = new View.OnClickListener(this) { // from class: org.telegram.ui.Wallet.j5
             public final /* synthetic */ k5 b;
@@ -207,7 +207,7 @@ public final class k5 extends FrameLayout {
         ofFloat.setDuration(420L);
         this.n.setInterpolator(ds.h);
         this.n.addUpdateListener(new a3(this, i10));
-        this.n.addListener(new fc1(this, 8));
+        this.n.addListener(new hc1(this, 8));
         this.n.start();
     }
 }

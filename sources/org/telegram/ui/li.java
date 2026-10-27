@@ -1,26 +1,24 @@
 package org.telegram.ui;
 
 import android.app.Activity;
-import org.telegram.tgnet.TLRPC;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public final class li extends org.telegram.ui.Components.vo {
-    public final /* synthetic */ un M;
+public final class li extends org.telegram.ui.Components.aw {
+    public final /* synthetic */ wn W;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public li(un unVar, Activity activity, int i10, TLRPC.Document document, org.telegram.ui.ActionBar.u6 u6Var) {
-        super(activity, i10, document, u6Var);
-        this.M = unVar;
+    public li(wn wnVar, org.telegram.ui.ActionBar.r2 r2Var, Activity activity, org.telegram.ui.ActionBar.u6 u6Var, ArrayList arrayList) {
+        super(r2Var, activity, u6Var, arrayList);
+        this.W = wnVar;
     }
 
-    @Override // android.widget.LinearLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        super.onLayout(z10, i10, i11, i12, i13);
-        float y3 = getY();
-        un unVar = this.M;
-        float y10 = unVar.d1.getY() + y3;
-        this.J = unVar.j1.getBackgroundSizeY();
-        this.I = y10;
+    @Override // org.telegram.ui.Components.aw, org.telegram.ui.ActionBar.k3, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.n2
+    public final void dismiss() {
+        super.dismiss();
+        wn wnVar = this.W;
+        wnVar.getClass();
+        wnVar.p8(false, true, 0.0f);
     }
 }

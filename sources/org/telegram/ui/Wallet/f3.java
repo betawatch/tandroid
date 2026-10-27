@@ -34,18 +34,18 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserObject;
 import org.telegram.messenger.WebFile;
-import org.telegram.messenger.vh;
+import org.telegram.messenger.wh;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.Components.ar;
-import org.telegram.ui.Components.gb1;
+import org.telegram.ui.Components.kb1;
 import org.telegram.ui.Components.x40;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.fc1;
+import org.telegram.ui.hc1;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class f3 extends FrameLayout implements org.telegram.ui.ActionBar.p6 {
     public final GradientDrawable E;
@@ -101,20 +101,20 @@ public final class f3 extends FrameLayout implements org.telegram.ui.ActionBar.p
         ImageView imageView = new ImageView(context);
         this.d = imageView;
         imageView.setScaleType(ImageView.ScaleType.CENTER);
-        addView(imageView, gb1.h(46, 46.0f, 51, 13.0f, 12.0f, 0.0f, 15.0f));
+        addView(imageView, kb1.h(46, 46.0f, 51, 13.0f, 12.0f, 0.0f, 15.0f));
         org.telegram.ui.Components.y9 y9Var = new org.telegram.ui.Components.y9(context);
         this.e = y9Var;
         y9Var.setRoundRadius(AndroidUtilities.dp(23.0f));
-        addView(y9Var, gb1.h(46, 46.0f, 51, 13.0f, 12.0f, 0.0f, 15.0f));
+        addView(y9Var, kb1.h(46, 46.0f, 51, 13.0f, 12.0f, 0.0f, 15.0f));
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setClipChildren(false);
         linearLayout.setClipToPadding(false);
         linearLayout.setOrientation(0);
-        addView(linearLayout, gb1.h(-1, -1.0f, 119, 71.0f, 0.0f, 20.0f, 0.0f));
+        addView(linearLayout, kb1.h(-1, -1.0f, 119, 71.0f, 0.0f, 20.0f, 0.0f));
         LinearLayout linearLayout2 = new LinearLayout(context);
         linearLayout2.setOrientation(1);
         linearLayout2.setGravity(16);
-        linearLayout.addView(linearLayout2, gb1.p(1.0f, 0, -2));
+        linearLayout.addView(linearLayout2, kb1.p(1.0f, 0, -2));
         TextView textView = new TextView(context);
         this.f = textView;
         textView.setSingleLine(true);
@@ -124,7 +124,7 @@ public final class f3 extends FrameLayout implements org.telegram.ui.ActionBar.p
         textView.setTextSize(1, 15.0f);
         textView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
         textView.setMaxWidth(AndroidUtilities.dp(120.0f));
-        TextView e = vh.e(linearLayout2, textView, gb1.o(0.0f, 9.0f, 0.0f, 0.0f, -1, 18), context);
+        TextView e = wh.e(linearLayout2, textView, kb1.o(0.0f, 9.0f, 0.0f, 0.0f, -1, 18), context);
         this.h = e;
         e.setSingleLine(true);
         TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
@@ -132,32 +132,32 @@ public final class f3 extends FrameLayout implements org.telegram.ui.ActionBar.p
         e.setIncludeFontPadding(false);
         e.setGravity(16);
         e.setTextSize(1, 13.0f);
-        TextView e10 = vh.e(linearLayout2, e, gb1.o(0.0f, 2.0f, 0.0f, 0.0f, -1, 16), context);
+        TextView e10 = wh.e(linearLayout2, e, kb1.o(0.0f, 2.0f, 0.0f, 0.0f, -1, 16), context);
         this.n = e10;
         e10.setSingleLine(true);
         e10.setEllipsize(truncateAt);
         e10.setIncludeFontPadding(false);
         e10.setGravity(16);
         e10.setTextSize(1, 13.0f);
-        linearLayout2.addView(e10, gb1.o(0.0f, 2.0f, 0.0f, 10.0f, -1, 16));
+        linearLayout2.addView(e10, kb1.o(0.0f, 2.0f, 0.0f, 10.0f, -1, 16));
         LinearLayout linearLayout3 = new LinearLayout(context);
         this.S = linearLayout3;
         linearLayout3.setOrientation(0);
-        linearLayout2.addView(linearLayout3, gb1.o(0.0f, -2.0f, 0.0f, 8.0f, -2, -2));
+        linearLayout2.addView(linearLayout3, kb1.o(0.0f, -2.0f, 0.0f, 8.0f, -2, -2));
         org.telegram.ui.Components.y9 y9Var2 = new org.telegram.ui.Components.y9(context);
         this.T = y9Var2;
         y9Var2.setRoundRadius(AndroidUtilities.dp(8.0f));
-        linearLayout3.addView(y9Var2, gb1.x(40, 40, 51, 2, 2, 6, 2));
+        linearLayout3.addView(y9Var2, kb1.x(40, 40, 51, 2, 2, 6, 2));
         LinearLayout linearLayout4 = new LinearLayout(context);
         linearLayout4.setOrientation(1);
-        linearLayout3.addView(linearLayout4, gb1.t(0, -1, 1.0f, 51, 0, 2, 10, 2));
+        linearLayout3.addView(linearLayout4, kb1.t(0, -1, 1.0f, 51, 0, 2, 10, 2));
         TextView textView2 = new TextView(context);
         this.V = textView2;
-        vh.j(14.0f, 1, textView2);
-        TextView e11 = vh.e(linearLayout4, textView2, gb1.x(-1, -2, 55, 0, 0, 0, 0), context);
+        wh.j(14.0f, 1, textView2);
+        TextView e11 = wh.e(linearLayout4, textView2, kb1.x(-1, -2, 55, 0, 0, 0, 0), context);
         this.W = e11;
         e11.setTextSize(1, 14.0f);
-        linearLayout4.addView(e11, gb1.x(-1, -2, 55, 0, 0, 0, 0));
+        linearLayout4.addView(e11, kb1.x(-1, -2, 55, 0, 0, 0, 0));
         da daVar = new da(context);
         this.w = daVar;
         this.r = daVar.a;
@@ -167,7 +167,7 @@ public final class f3 extends FrameLayout implements org.telegram.ui.ActionBar.p
         Drawable mutate2 = context.getResources().getDrawable(R.drawable.wallet_nft).mutate();
         this.v = mutate2;
         mutate2.setBounds(0, 0, AndroidUtilities.dp(16.0f), AndroidUtilities.dp(16.0f));
-        linearLayout.addView(daVar, gb1.t(-2, -1, 0.0f, 53, 8, 0, 0, 0));
+        linearLayout.addView(daVar, kb1.t(-2, -1, 0.0f, 53, 8, 0, 0, 0));
         setClipChildren(false);
         setClipToPadding(false);
         gradientDrawable.setCornerRadius(AndroidUtilities.dp(16.0f));
@@ -197,14 +197,14 @@ public final class f3 extends FrameLayout implements org.telegram.ui.ActionBar.p
         da daVar = this.w;
         daVar.d = f7;
         if (f7 > 0.0f && daVar.c == null) {
-            l6 l6Var = new l6(40, daVar.getContext(), true);
-            daVar.c = l6Var;
-            l6Var.setContinuousRotation(300.0f);
-            daVar.addView(daVar.c, gb1.g(40.0f, 40));
+            m6 m6Var = new m6(40, daVar.getContext(), true);
+            daVar.c = m6Var;
+            m6Var.setContinuousRotation(300.0f);
+            daVar.addView(daVar.c, kb1.g(40.0f, 40));
         }
-        l6 l6Var2 = daVar.c;
-        if (l6Var2 != null && f7 == 0.0f) {
-            l6Var2.setPaused(true);
+        m6 m6Var2 = daVar.c;
+        if (m6Var2 != null && f7 == 0.0f) {
+            m6Var2.setPaused(true);
             daVar.removeView(daVar.c);
             daVar.c = null;
         }
@@ -222,7 +222,7 @@ public final class f3 extends FrameLayout implements org.telegram.ui.ActionBar.p
 
     public final void b(float f7, boolean z10) {
         TL_wallet.walletTransaction wallettransaction;
-        l6 pendingDiamond;
+        m6 pendingDiamond;
         float e;
         float e10;
         if (z10 && this.K != null && this.L == f7) {
@@ -267,7 +267,7 @@ public final class f3 extends FrameLayout implements org.telegram.ui.ActionBar.p
                     ofFloat.setDuration(260L);
                     this.K.setInterpolator(new PathInterpolator(0.4f, 0.0f, 0.2f, 1.0f));
                     this.K.addUpdateListener(new a3(this, i10));
-                    this.K.addListener(new fc1(this, 5));
+                    this.K.addListener(new hc1(this, 5));
                     this.K.start();
                     return;
                 }
@@ -299,7 +299,7 @@ public final class f3 extends FrameLayout implements org.telegram.ui.ActionBar.p
 
     @Override // android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
-        l6 pendingDiamond;
+        m6 pendingDiamond;
         super.dispatchDraw(canvas);
         if (this.Q && isAttachedToWindow() && getWindowVisibility() == 0 && (getRootView() instanceof ViewGroup) && (pendingDiamond = getPendingDiamond()) != null && pendingDiamond.getWidth() > 0 && pendingDiamond.getHeight() > 0) {
             this.Q = false;
@@ -583,13 +583,13 @@ public final class f3 extends FrameLayout implements org.telegram.ui.ActionBar.p
             textView4.setCompoundDrawablesRelative(null, null, drawable2, null);
             boolean z19 = this.c0;
             long abs = Math.abs(wallettransaction.amount);
-            SpannableStringBuilder p10 = l0.p(l0.n(abs, false), 0.78571427f);
+            SpannableStringBuilder q5 = l0.q(l0.o(abs, false), 0.78571427f);
             if (abs != 0 && z19) {
-                p10.insert(0, (CharSequence) "+");
+                q5.insert(0, (CharSequence) "+");
             } else if (abs != 0 && !z19) {
-                p10.insert(0, (CharSequence) "–");
+                q5.insert(0, (CharSequence) "–");
             }
-            textView4.setText(p10);
+            textView4.setText(q5);
         }
         int visibility = textView4.getVisibility();
         da daVar = this.w;
@@ -610,7 +610,7 @@ public final class f3 extends FrameLayout implements org.telegram.ui.ActionBar.p
         invalidate();
     }
 
-    public l6 getPendingDiamond() {
+    public m6 getPendingDiamond() {
         return this.w.c;
     }
 

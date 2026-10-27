@@ -4,102 +4,102 @@ import android.content.Context;
 import android.text.TextUtils;
 import android.view.MotionEvent;
 import android.widget.FrameLayout;
-import org.telegram.ui.Components.aw0;
-import org.telegram.ui.Components.u91;
-import org.telegram.ui.Components.us0;
-import org.telegram.ui.Components.ys0;
+import org.telegram.ui.Components.at0;
+import org.telegram.ui.Components.bw0;
+import org.telegram.ui.Components.v91;
+import org.telegram.ui.Components.vs0;
 import org.telegram.ui.Components.zs0;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
-public final class a extends u91 {
-    public final /* synthetic */ int V = 0;
+public final class a extends v91 {
+    public final /* synthetic */ int V = 1;
     public Object W;
     public final /* synthetic */ FrameLayout a0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public a(zs0 zs0Var, Context context, ys0 ys0Var) {
+    public a(at0 at0Var, Context context, zs0 zs0Var) {
         super(context, null);
-        this.a0 = zs0Var;
-        this.W = ys0Var;
+        this.a0 = at0Var;
+        this.W = zs0Var;
     }
 
-    @Override // org.telegram.ui.Components.u91
+    @Override // org.telegram.ui.Components.v91
     public final void A(int i10) {
         switch (this.V) {
             case 0:
-                us0 us0Var = (us0) this.a0;
-                String currentLang = us0Var.getCurrentLang();
+                vs0 vs0Var = (vs0) this.a0;
+                String currentLang = vs0Var.getCurrentLang();
                 if (!TextUtils.equals((String) this.W, currentLang)) {
                     this.W = currentLang;
-                    us0Var.G.S0();
+                    vs0Var.G.S0();
                     break;
                 }
                 break;
             default:
-                ys0 ys0Var = (ys0) this.W;
-                ((zs0) this.a0).b.b0.get(i10, -1);
-                ys0Var.d.Q0(1.0f);
+                zs0 zs0Var = (zs0) this.W;
+                ((at0) this.a0).b.b0.get(i10, -1);
+                zs0Var.d.Q0(1.0f);
                 break;
         }
     }
 
-    @Override // org.telegram.ui.Components.u91
+    @Override // org.telegram.ui.Components.v91
     public boolean i(MotionEvent motionEvent) {
         switch (this.V) {
             case 0:
-                return !((us0) this.a0).G.E1;
+                return !((vs0) this.a0).G.E1;
             default:
                 return super.i(motionEvent);
         }
     }
 
-    @Override // org.telegram.ui.Components.u91
+    @Override // org.telegram.ui.Components.v91
     public final void w(boolean z10) {
         switch (this.V) {
             case 0:
-                us0 us0Var = (us0) this.a0;
-                String currentLang = us0Var.getCurrentLang();
+                vs0 vs0Var = (vs0) this.a0;
+                String currentLang = vs0Var.getCurrentLang();
                 if (!TextUtils.equals((String) this.W, currentLang)) {
                     this.W = currentLang;
-                    us0Var.G.S0();
+                    vs0Var.G.S0();
                     break;
                 }
                 break;
             default:
-                ys0 ys0Var = (ys0) this.W;
-                ys0Var.d.Q0(((zs0) this.a0).b.getAnimatingIndicatorProgress());
+                zs0 zs0Var = (zs0) this.W;
+                zs0Var.d.Q0(((at0) this.a0).b.getAnimatingIndicatorProgress());
                 break;
         }
     }
 
-    @Override // org.telegram.ui.Components.u91
+    @Override // org.telegram.ui.Components.v91
     public void y(int i10) {
         switch (this.V) {
             case 0:
-                us0 us0Var = (us0) this.a0;
-                String currentLang = us0Var.getCurrentLang();
+                vs0 vs0Var = (vs0) this.a0;
+                String currentLang = vs0Var.getCurrentLang();
                 if (!TextUtils.equals((String) this.W, currentLang)) {
                     this.W = currentLang;
-                    us0Var.G.S0();
+                    vs0Var.G.S0();
                     break;
                 }
                 break;
         }
     }
 
-    @Override // org.telegram.ui.Components.u91
+    @Override // org.telegram.ui.Components.v91
     public void z(int i10, boolean z10) {
         switch (this.V) {
             case 1:
-                ys0 ys0Var = (ys0) this.W;
-                int i11 = ((zs0) this.a0).b.b0.get(i10, -1);
-                aw0 aw0Var = ys0Var.d;
+                zs0 zs0Var = (zs0) this.W;
+                int i11 = ((at0) this.a0).b.b0.get(i10, -1);
+                bw0 bw0Var = zs0Var.d;
                 if (i11 > 0) {
-                    aw0.u(aw0Var, aw0Var.r1(i11).a, z10);
+                    bw0.u(bw0Var, bw0Var.r1(i11).a, z10);
                     break;
                 } else {
-                    aw0.u(aw0Var, 8, z10);
+                    bw0.u(bw0Var, 8, z10);
                     break;
                 }
             default:
@@ -109,8 +109,8 @@ public final class a extends u91 {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public a(us0 us0Var, Context context) {
+    public a(vs0 vs0Var, Context context) {
         super(context, null);
-        this.a0 = us0Var;
+        this.a0 = vs0Var;
     }
 }

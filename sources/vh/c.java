@@ -8,14 +8,14 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.u6;
+import org.telegram.ui.Components.am0;
 import org.telegram.ui.Components.q20;
 import org.telegram.ui.Components.wc;
 import org.telegram.ui.Components.x30;
-import org.telegram.ui.Components.zl0;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
-public final class c implements zl0 {
+public final class c implements am0 {
     public final /* synthetic */ u6 a;
     public final /* synthetic */ Context b;
     public final /* synthetic */ f c;
@@ -26,7 +26,7 @@ public final class c implements zl0 {
         this.b = context;
     }
 
-    @Override // org.telegram.ui.Components.zl0
+    @Override // org.telegram.ui.Components.am0
     public final void c(int i10, View view) {
         TLRPC.TL_help_country tL_help_country;
         f fVar = this.c;

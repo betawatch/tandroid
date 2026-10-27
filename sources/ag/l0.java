@@ -13,9 +13,9 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_phone;
-import org.telegram.ui.un;
+import org.telegram.ui.wn;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class l0 implements RequestDelegate {
     public final /* synthetic */ int a = 1;
@@ -37,7 +37,7 @@ public final /* synthetic */ class l0 implements RequestDelegate {
     public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
         switch (this.a) {
             case 0:
-                AndroidUtilities.runOnUIThread(new m0(tL_error, (un) this.c, tLObject, (TLRPC.FileLocation[]) this.d, (String) this.f, (TLRPC.FileLocation[]) this.e, this.b));
+                AndroidUtilities.runOnUIThread(new m0(tL_error, (wn) this.c, tLObject, (TLRPC.FileLocation[]) this.d, (String) this.f, (TLRPC.FileLocation[]) this.e, this.b));
                 break;
             case 1:
                 AndroidUtilities.runOnUIThread(new m3((z7) this.c, tLObject, this.b, (View) this.d, (w7) this.e, (MessagesController) this.f, 3));
@@ -56,8 +56,8 @@ public final /* synthetic */ class l0 implements RequestDelegate {
         this.f = atomicInteger;
     }
 
-    public /* synthetic */ l0(un unVar, TLRPC.FileLocation[] fileLocationArr, String str, TLRPC.FileLocation[] fileLocationArr2, long j10) {
-        this.c = unVar;
+    public /* synthetic */ l0(wn wnVar, TLRPC.FileLocation[] fileLocationArr, String str, TLRPC.FileLocation[] fileLocationArr2, long j10) {
+        this.c = wnVar;
         this.d = fileLocationArr;
         this.f = str;
         this.e = fileLocationArr2;

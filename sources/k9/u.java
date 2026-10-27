@@ -24,16 +24,16 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Cells.z8;
 import org.telegram.ui.Components.qc;
-import org.telegram.ui.er;
 import org.telegram.ui.gr;
-import org.telegram.ui.jm;
-import org.telegram.ui.kr;
-import org.telegram.ui.oy;
-import org.telegram.ui.un;
+import org.telegram.ui.ir;
+import org.telegram.ui.lm;
+import org.telegram.ui.mr;
+import org.telegram.ui.qy;
+import org.telegram.ui.wn;
 import s4.e1;
 import s4.m0;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
 public final class u implements Runnable {
     public final /* synthetic */ int a;
@@ -399,10 +399,10 @@ public final class u implements Runnable {
                 ((d5.x) this.b).accept(this.c);
                 return;
             case 22:
-                un unVar = ((jm) this.c).c;
-                if (this == unVar.V5) {
-                    unVar.hb((CharSequence) this.b, false);
-                    unVar.V5 = null;
+                wn wnVar = ((lm) this.c).c;
+                if (this == wnVar.Z5) {
+                    wnVar.lb((CharSequence) this.b, false);
+                    wnVar.Z5 = null;
                     return;
                 }
                 return;
@@ -410,8 +410,8 @@ public final class u implements Runnable {
                 z8 z8Var = (z8) this.b;
                 boolean z20 = z8Var.d.h;
                 z8Var.setChecked(!z20);
-                kr krVar = ((gr) this.c).d;
-                TLRPC.TL_chatBannedRights tL_chatBannedRights = krVar.y;
+                mr mrVar = ((ir) this.c).d;
+                TLRPC.TL_chatBannedRights tL_chatBannedRights = mrVar.y;
                 tL_chatBannedRights.send_media = z20;
                 tL_chatBannedRights.send_gifs = z20;
                 tL_chatBannedRights.send_inline = z20;
@@ -426,14 +426,14 @@ public final class u implements Runnable {
                 tL_chatBannedRights.embed_links = z20;
                 tL_chatBannedRights.send_polls = z20;
                 tL_chatBannedRights.send_reactions = z20;
-                AndroidUtilities.updateVisibleRows(krVar.c);
-                er x02 = krVar.x0();
-                krVar.C0();
-                krVar.B0(x02);
+                AndroidUtilities.updateVisibleRows(mrVar.c);
+                gr x02 = mrVar.x0();
+                mrVar.C0();
+                mrVar.B0(x02);
                 return;
             case 24:
                 ((qc) this.b).j();
-                ((oy) this.c).E = null;
+                ((qy) this.c).E = null;
                 return;
             case 25:
                 s4.v vVar4 = (s4.v) this.b;

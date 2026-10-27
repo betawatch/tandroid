@@ -25,7 +25,7 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_bots;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class ta extends org.telegram.ui.ActionBar.r2 {
     public static final Paint H = new Paint(1);
@@ -35,7 +35,7 @@ public final class ta extends org.telegram.ui.ActionBar.r2 {
     public sa F;
     public org.telegram.ui.Cells.w1 G;
     public org.telegram.ui.ActionBar.u5 a;
-    public org.telegram.ui.Components.mm0 b;
+    public org.telegram.ui.Components.nm0 b;
     public ka c;
     public boolean d;
     public int e;
@@ -222,21 +222,21 @@ public final class ta extends org.telegram.ui.ActionBar.r2 {
             }
         }
         this.fragmentView = new FrameLayout(context);
-        org.telegram.ui.Components.mm0 mm0Var = new org.telegram.ui.Components.mm0(context, null);
-        this.b = mm0Var;
-        mm0Var.u1();
+        org.telegram.ui.Components.nm0 nm0Var = new org.telegram.ui.Components.nm0(context, null);
+        this.b = nm0Var;
+        nm0Var.u1();
         this.b.setLayoutManager(new s4.c0());
-        org.telegram.ui.Components.mm0 mm0Var2 = this.b;
+        org.telegram.ui.Components.nm0 nm0Var2 = this.b;
         ka kaVar = new ka(this);
         this.c = kaVar;
-        mm0Var2.setAdapter(kaVar);
+        nm0Var2.setAdapter(kaVar);
         org.telegram.ui.ActionBar.f7.K(this.b, org.telegram.ui.ActionBar.y6.i6, getResourceProvider());
         this.b.setSectionsDrawBackground(true);
         new s4.z(new oa(this)).h(this.b);
-        ((FrameLayout) this.fragmentView).addView(this.b, org.telegram.ui.Components.gb1.g(-1.0f, -1));
+        ((FrameLayout) this.fragmentView).addView(this.b, org.telegram.ui.Components.kb1.g(-1.0f, -1));
         this.fragmentView.setOnTouchListener(new ei.d(6));
         this.b.setOnItemClickListener(new ia(this));
-        AndroidUtilities.runOnUIThread(new zt0(this, 19), 40L);
+        AndroidUtilities.runOnUIThread(new bu0(this, 19), 40L);
         return this.fragmentView;
     }
 
@@ -401,7 +401,7 @@ public final class ta extends org.telegram.ui.ActionBar.r2 {
     }
 
     @Override // org.telegram.ui.ActionBar.r2
-    public final org.telegram.ui.Components.mm0 getListViewForSimpleGlass() {
+    public final org.telegram.ui.Components.nm0 getListViewForSimpleGlass() {
         return this.b;
     }
 

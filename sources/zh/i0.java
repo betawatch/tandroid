@@ -28,17 +28,17 @@ import org.telegram.ui.ActionBar.f7;
 import org.telegram.ui.ActionBar.l6;
 import org.telegram.ui.ActionBar.u6;
 import org.telegram.ui.ActionBar.y6;
-import org.telegram.ui.Components.gb1;
+import org.telegram.ui.Components.aq;
+import org.telegram.ui.Components.kb1;
 import org.telegram.ui.Components.pf;
 import org.telegram.ui.Components.qc;
 import org.telegram.ui.Components.s6;
 import org.telegram.ui.Components.u40;
 import org.telegram.ui.Components.vd;
 import org.telegram.ui.Components.wc;
-import org.telegram.ui.Components.zp;
-import org.telegram.ui.un;
+import org.telegram.ui.wn;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class i0 extends org.telegram.ui.ActionBar.k3 {
     public final int E;
@@ -57,7 +57,7 @@ public final class i0 extends org.telegram.ui.ActionBar.k3 {
     public final rh.i h;
     public final f0 n;
     public final FrameLayout r;
-    public final zp s;
+    public final aq s;
     public final TextView v;
     public final s6 w;
     public final ImageView x;
@@ -66,7 +66,7 @@ public final class i0 extends org.telegram.ui.ActionBar.k3 {
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public i0(Context context, u6 u6Var, TL_stars.TL_starGiftUnique tL_starGiftUnique, long j10) {
         super(context, (u6) null, true, true);
-        un unVar;
+        wn wnVar;
         final int i10 = 1;
         this.c = new jh.m();
         rh.i iVar = new rh.i(new bi.a4(this, i10));
@@ -101,7 +101,7 @@ public final class i0 extends org.telegram.ui.ActionBar.k3 {
         z4Var.a(tL_starGiftUnique, UserConfig.getInstance(this.currentAccount).getClientUserId(), null, LocaleController.getString(R.string.GiftMessageSendNow), false);
         z4Var.setPadding(0, AndroidUtilities.dp(4.0f), 0, AndroidUtilities.dp(4.0f));
         z4Var.setLayoutBackground(new l6(z4Var, this.containerView, AndroidUtilities.dp(18.0f), r("paintChatActionBackground")));
-        e0Var.addView(z4Var, gb1.i(-2, -2, 48));
+        e0Var.addView(z4Var, kb1.i(-2, -2, 48));
         jh.f fVar = new jh.f(context);
         this.f = fVar;
         fVar.setClipChildren(false);
@@ -119,17 +119,17 @@ public final class i0 extends org.telegram.ui.ActionBar.k3 {
         this.containerView.setClipChildren(false);
         this.containerView.setClipToPadding(false);
         f0Var.x4 = false;
-        f0Var.i2 = !AndroidUtilities.isInMultiwindow && ((unVar = f0Var.P2) == null || !unVar.isInBubbleMode());
-        f0Var.S0(false, false, false);
-        f0Var.d1(true, false);
+        f0Var.i2 = !AndroidUtilities.isInMultiwindow && ((wnVar = f0Var.P2) == null || !wnVar.isInBubbleMode());
+        f0Var.R0(false, false, false);
+        f0Var.c1(true, false);
         f0Var.z1.setPadding(0, AndroidUtilities.dp(1.0f), AndroidUtilities.dp(20.0f), 0);
         f0Var.getSendButton().setAlpha(0.0f);
         f0Var.getEditField().setMaxLines(3);
         f0Var.setCustomWindowView(this.container);
         f0Var.setViewParentForEmoji(inAppKeyboardBubbleContainer);
-        inputIslandBubbleContainer.addView(f0Var, gb1.h(-1, -2.0f, 83, 7.0f, 0.0f, 7.0f, 0.0f));
-        this.containerView.addView(fVar.getFadeView(), gb1.g(-1.0f, -1));
-        this.containerView.addView(fVar, gb1.g(-1.0f, -1));
+        inputIslandBubbleContainer.addView(f0Var, kb1.h(-1, -2.0f, 83, 7.0f, 0.0f, 7.0f, 0.0f));
+        this.containerView.addView(fVar.getFadeView(), kb1.g(-1.0f, -1));
+        this.containerView.addView(fVar, kb1.g(-1.0f, -1));
         f0Var.setDelegate(new g0(this, tL_starGiftUnique));
         pf pfVar = f0Var.E0;
         vd vdVar = new vd();
@@ -150,7 +150,7 @@ public final class i0 extends org.telegram.ui.ActionBar.k3 {
         f7.Z(s6Var, y6.y6, u6Var);
         s6Var.setTypeface(AndroidUtilities.bold());
         s6Var.setGravity(17);
-        this.containerView.addView(s6Var, gb1.h(56, 20.0f, 85, 3.0f, 0.0f, 3.0f, 54.0f));
+        this.containerView.addView(s6Var, kb1.h(56, 20.0f, 85, 3.0f, 0.0f, 3.0f, 54.0f));
         h0 h0Var = new h0(R.drawable.send_plane_24, context, u6Var, false);
         this.H = h0Var;
         int dp = AndroidUtilities.dp(38.0f);
@@ -162,7 +162,7 @@ public final class i0 extends org.telegram.ui.ActionBar.k3 {
         h0Var.M = dp3;
         h0Var.N = dp4;
         h0Var.h0 = true;
-        this.containerView.addView(h0Var, gb1.i(110, 50, 85));
+        this.containerView.addView(h0Var, kb1.i(110, 50, 85));
         h0Var.setScrimViewBackgroundColor(getThemedColor(y6.d6));
         h0Var.setOnClickListener(new View.OnClickListener(this) { // from class: zh.d0
             public final /* synthetic */ i0 b;
@@ -217,7 +217,7 @@ public final class i0 extends org.telegram.ui.ActionBar.k3 {
         textView.setPadding(AndroidUtilities.dp(10.0f), 0, AndroidUtilities.dp(10.0f), 0);
         final int i14 = 2;
         textView.setBackground(new l6(textView, this.containerView, AndroidUtilities.dp(23.0f) / 2, r("paintChatActionBackground")));
-        this.containerView.addView(textView, gb1.i(-2, 23, 49));
+        this.containerView.addView(textView, kb1.i(-2, 23, 49));
         FrameLayout frameLayout = new FrameLayout(context);
         this.r = frameLayout;
         TextView textView2 = new TextView(context);
@@ -225,18 +225,18 @@ public final class i0 extends org.telegram.ui.ActionBar.k3 {
         textView2.setTextSize(1, 14.0f);
         textView2.setTypeface(AndroidUtilities.bold());
         textView2.setText(LocaleController.getString(R.string.GiftMessageMakeMessagePublic));
-        frameLayout.addView(textView2, gb1.h(-2, -2.0f, 16, 36.0f, 0.0f, 14.0f, 0.0f));
-        zp zpVar = new zp(context, 18, u6Var);
-        this.s = zpVar;
-        zpVar.getCheckBoxBase().j(true);
-        zpVar.getCheckBoxBase().e = 0.9f;
-        zpVar.b(i13, i13, y6.k7);
-        zpVar.setDrawUnchecked(true);
-        zpVar.a(!this.G, false);
+        frameLayout.addView(textView2, kb1.h(-2, -2.0f, 16, 36.0f, 0.0f, 14.0f, 0.0f));
+        aq aqVar = new aq(context, 18, u6Var);
+        this.s = aqVar;
+        aqVar.getCheckBoxBase().j(true);
+        aqVar.getCheckBoxBase().e = 0.9f;
+        aqVar.b(i13, i13, y6.k7);
+        aqVar.setDrawUnchecked(true);
+        aqVar.a(!this.G, false);
         z4Var.getLayout().V = new bi.a4(this, i14);
         z4Var.getLayout().U = new bi.a4(this, 3);
-        zpVar.setDrawBackgroundAsArc(10);
-        frameLayout.addView(zpVar, gb1.h(18, 18.0f, 19, 10.0f, 0.0f, 0.0f, 0.0f));
+        aqVar.setDrawBackgroundAsArc(10);
+        frameLayout.addView(aqVar, kb1.h(18, 18.0f, 19, 10.0f, 0.0f, 0.0f, 0.0f));
         frameLayout.setBackground(new l6(frameLayout, this.containerView, AndroidUtilities.dp(16.0f), r("paintChatActionBackground")));
         frameLayout.setOnClickListener(new View.OnClickListener(this) { // from class: zh.d0
             public final /* synthetic */ i0 b;
@@ -282,7 +282,7 @@ public final class i0 extends org.telegram.ui.ActionBar.k3 {
                 }
             }
         });
-        this.containerView.addView(frameLayout, gb1.i(-2, 32, 81));
+        this.containerView.addView(frameLayout, kb1.i(-2, 32, 81));
         ImageView imageView = new ImageView(context);
         this.x = imageView;
         imageView.setScaleType(ImageView.ScaleType.CENTER);
@@ -336,9 +336,9 @@ public final class i0 extends org.telegram.ui.ActionBar.k3 {
                 }
             }
         });
-        this.containerView.addView(imageView, gb1.i(56, 56, 53));
-        gb1.c(frameLayout, 0.05f, 1.2f);
-        gb1.b(imageView);
+        this.containerView.addView(imageView, kb1.i(56, 56, 53));
+        kb1.c(frameLayout, 0.05f, 1.2f);
+        kb1.b(imageView);
         ViewGroup viewGroup3 = this.containerView;
         x2.e eVar3 = new x2.e(this, 6);
         WeakHashMap weakHashMap = r0.i0.a;
@@ -350,13 +350,19 @@ public final class i0 extends org.telegram.ui.ActionBar.k3 {
         return false;
     }
 
+    @Override // org.telegram.ui.ActionBar.k3
+    public final void dismissInternal() {
+        super.dismissInternal();
+        this.n.y0();
+    }
+
     @Override // org.telegram.ui.ActionBar.k3, android.app.Dialog
     public final void onBackPressed() {
         f0 f0Var = this.n;
-        if (f0Var == null || !f0Var.q0()) {
+        if (f0Var == null || !f0Var.p0()) {
             super.onBackPressed();
         } else {
-            f0Var.j0(true);
+            f0Var.i0(true);
         }
     }
 

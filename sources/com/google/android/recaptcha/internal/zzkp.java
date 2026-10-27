@@ -6,11 +6,11 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import kd.g;
 import kd.i;
-import w7.d0;
+import w7.e0;
 import xd.b;
 import xd.e;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
 public final class zzkp implements zzjt {
     public static final zzkp zza = new zzkp();
@@ -160,7 +160,7 @@ public final class zzkp implements zzjt {
             int length7 = bArr3.length;
             byte[] bArr4 = (byte[]) obj2;
             zzjs.zza(this, length7, bArr4.length);
-            e a2 = d0.a(0, length7);
+            e a2 = e0.a(0, length7);
             ArrayList arrayList11 = new ArrayList(i.d(a2));
             Iterator it = a2.iterator();
             while (true) {
@@ -176,7 +176,7 @@ public final class zzkp implements zzjt {
             int length8 = sArr3.length;
             short[] sArr4 = (short[]) obj2;
             zzjs.zza(this, length8, sArr4.length);
-            e a10 = d0.a(0, length8);
+            e a10 = e0.a(0, length8);
             ArrayList arrayList12 = new ArrayList(i.d(a10));
             Iterator it2 = a10.iterator();
             while (true) {
@@ -192,7 +192,7 @@ public final class zzkp implements zzjt {
             int length9 = iArr3.length;
             int[] iArr4 = (int[]) obj2;
             zzjs.zza(this, length9, iArr4.length);
-            e a11 = d0.a(0, length9);
+            e a11 = e0.a(0, length9);
             ArrayList arrayList13 = new ArrayList(i.d(a11));
             Iterator it3 = a11.iterator();
             while (true) {
@@ -211,7 +211,7 @@ public final class zzkp implements zzjt {
             int length10 = jArr3.length;
             long[] jArr4 = (long[]) obj2;
             zzjs.zza(this, length10, jArr4.length);
-            e a12 = d0.a(0, length10);
+            e a12 = e0.a(0, length10);
             ArrayList arrayList14 = new ArrayList(i.d(a12));
             Iterator it4 = a12.iterator();
             while (true) {

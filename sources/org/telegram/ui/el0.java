@@ -1,42 +1,35 @@
 package org.telegram.ui;
 
-import android.os.Build;
-import java.util.ArrayList;
-import org.telegram.messenger.FileLog;
-import org.telegram.tgnet.TLObject;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.drawable.Drawable;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public final class el0 {
-    public final LaunchActivity a;
-    public final ArrayList b = new ArrayList();
-    public int c = TLObject.FLAG_31;
+public final class el0 extends Drawable {
+    public final /* synthetic */ org.telegram.ui.Components.r11 a;
+    public final /* synthetic */ org.telegram.ui.ActionBar.u6 b;
 
-    public el0(LaunchActivity launchActivity) {
-        this.a = launchActivity;
+    public el0(org.telegram.ui.Components.r11 r11Var, org.telegram.ui.ActionBar.u6 u6Var) {
+        this.a = r11Var;
+        this.b = u6Var;
     }
 
-    public final void a() {
-        boolean isEmpty = this.b.isEmpty();
-        LaunchActivity launchActivity = this.a;
-        try {
-            if (isEmpty || launchActivity.getResources().getConfiguration().smallestScreenWidthDp >= 600 || (Build.VERSION.SDK_INT >= 24 && launchActivity.isInMultiWindowMode())) {
-                int i10 = this.c;
-                if (i10 != Integer.MIN_VALUE) {
-                    launchActivity.setRequestedOrientation(i10);
-                    this.c = TLObject.FLAG_31;
-                    return;
-                }
-                return;
-            }
-            if (this.c == Integer.MIN_VALUE) {
-                this.c = launchActivity.getRequestedOrientation();
-            }
-            if (launchActivity.getRequestedOrientation() != 1) {
-                launchActivity.setRequestedOrientation(1);
-            }
-        } catch (Exception e) {
-            FileLog.e(e);
-        }
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        this.a.c(getBounds().centerX() - (this.a.c / 2.0f), getBounds().centerY(), 1.0f, org.telegram.ui.ActionBar.y6.w0(org.telegram.ui.ActionBar.y6.G6, this.b), canvas);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return -2;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i10) {
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
     }
 }

@@ -35,7 +35,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.RichMessageLayout;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.vh;
+import org.telegram.messenger.wh;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.ActionBar.f7;
@@ -46,9 +46,9 @@ import org.telegram.ui.Cells.r9;
 import org.telegram.ui.Cells.s9;
 import org.telegram.ui.Components.RadialProgress2;
 import org.telegram.ui.Components.ds;
-import org.telegram.ui.Components.gb1;
+import org.telegram.ui.Components.kb1;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class u4 extends z implements p6, r9, k0 {
     public static Paint m0;
@@ -114,7 +114,7 @@ public final class u4 extends z implements p6, r9, k0 {
         f(0, AndroidUtilities.dp(6.0f), 0, AndroidUtilities.dp(4.0f));
         j0 j0Var = new j0(context, u6Var, new jg.s0(this, 7));
         this.v = j0Var;
-        addView(j0Var.a, gb1.i(-2, -2, 51));
+        addView(j0Var.a, kb1.i(-2, -2, 51));
         setClipChildren(false);
         setClipToPadding(false);
         if (z10 && i10 >= 31) {
@@ -126,12 +126,12 @@ public final class u4 extends z implements p6, r9, k0 {
         ImageView g7 = g();
         this.w = g7;
         g7.setImageResource(R.drawable.iv_media_add);
-        addView(g7, gb1.h(32, 32.0f, 53, 12.0f, 12.0f, 12.0f, 12.0f));
+        addView(g7, kb1.h(32, 32.0f, 53, 12.0f, 12.0f, 12.0f, 12.0f));
         g7.setOnClickListener(new r4(this, 1));
         ImageView g10 = g();
         this.x = g10;
         g10.setVisibility(8);
-        addView(g10, gb1.h(32, 32.0f, 53, 12.0f, 12.0f, 66.0f, 12.0f));
+        addView(g10, kb1.h(32, 32.0f, 53, 12.0f, 12.0f, 66.0f, 12.0f));
         g10.setOnClickListener(new r4(this, 2));
         updateColors();
     }
@@ -282,7 +282,7 @@ public final class u4 extends z implements p6, r9, k0 {
             eVar.x(AndroidUtilities.dp(16.0f));
             this.L.put(imageView, eVar);
         }
-        gb1.b(imageView);
+        kb1.b(imageView);
         this.K.add(imageView);
         return imageView;
     }
@@ -498,7 +498,7 @@ public final class u4 extends z implements p6, r9, k0 {
             ImageView g7 = g();
             g7.setImageResource(R.drawable.iv_media_dots);
             g7.setOnClickListener(new r4(this, 0));
-            addView(g7, gb1.i(32, 32, 51));
+            addView(g7, kb1.i(32, 32, 51));
             arrayList2.add(g7);
         }
         this.w.bringToFront();
@@ -619,7 +619,7 @@ public final class u4 extends z implements p6, r9, k0 {
             }
             int size = arrayList.size();
             float dp = AndroidUtilities.dp(5.0f) + ((getPaddingTop() + this.P) - AndroidUtilities.dp(23.0f));
-            int dp2 = AndroidUtilities.dp(4.0f) + vh.b(6.0f, size - 1, AndroidUtilities.dp(7.0f) * size);
+            int dp2 = AndroidUtilities.dp(4.0f) + wh.b(6.0f, size - 1, AndroidUtilities.dp(7.0f) * size);
             int paddingLeft = getPaddingLeft();
             int max = Math.max(0, (getWidth() - paddingLeft) - getPaddingRight());
             float f13 = this.W + this.a0;

@@ -23,7 +23,7 @@ import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class b30 extends FrameLayout implements org.telegram.ui.ActionBar.p6, org.telegram.ui.Components.voip.n0 {
     public final TextPaint E;
@@ -71,7 +71,7 @@ public final class b30 extends FrameLayout implements org.telegram.ui.ActionBar.
         y9 y9Var = new y9(context);
         this.d = y9Var;
         y9Var.setRoundRadius(AndroidUtilities.dp(20.0f));
-        addView(y9Var, gb1.h(40, 40.0f, 1, 0.0f, 9.0f, 0.0f, 9.0f));
+        addView(y9Var, kb1.h(40, 40.0f, 1, 0.0f, 9.0f, 0.0f, 9.0f));
         setWillNotDraw(false);
         paint.setColor(org.telegram.ui.ActionBar.y6.x0(null, org.telegram.ui.ActionBar.y6.tg, false));
         paint2.setColor(org.telegram.ui.ActionBar.y6.x0(null, org.telegram.ui.ActionBar.y6.qg, false));
@@ -81,7 +81,7 @@ public final class b30 extends FrameLayout implements org.telegram.ui.ActionBar.
         org.telegram.ui.kd kdVar = new org.telegram.ui.kd(this, context, 1);
         this.F = kdVar;
         kdVar.setScaleType(ImageView.ScaleType.CENTER);
-        addView(kdVar, gb1.g(24.0f, 24));
+        addView(kdVar, kb1.g(24.0f, 24));
     }
 
     private void setSelectedProgress(float f7) {
@@ -119,7 +119,7 @@ public final class b30 extends FrameLayout implements org.telegram.ui.ActionBar.
     public final void c(Canvas canvas) {
         if (this.w != null) {
             canvas.save();
-            int B = org.telegram.messenger.vh.B(24.0f, getMeasuredWidth() - this.y, 2);
+            int B = org.telegram.messenger.wh.B(24.0f, getMeasuredWidth() - this.y, 2);
             int alpha = (int) (getAlpha() * this.s * 255.0f);
             TextPaint textPaint = this.E;
             textPaint.setAlpha(alpha);
@@ -366,13 +366,13 @@ public final class b30 extends FrameLayout implements org.telegram.ui.ActionBar.
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
         c30 c30Var = this.P;
-        org.telegram.ui.v50 v50Var = c30Var.r;
+        org.telegram.ui.x50 x50Var = c30Var.r;
         if (c30Var.s && this.f != null) {
             b(true);
         }
         this.K = true;
-        if (v50Var.t2.size() > 0) {
-            this.I = (org.telegram.ui.Components.voip.o0) ic.a.y(1, v50Var.t2);
+        if (x50Var.t2.size() > 0) {
+            this.I = (org.telegram.ui.Components.voip.o0) ic.a.y(1, x50Var.t2);
         } else {
             this.I = new org.telegram.ui.Components.voip.o0();
         }

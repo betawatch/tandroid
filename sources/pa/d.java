@@ -46,18 +46,18 @@ import org.telegram.ui.Cells.j1;
 import org.telegram.ui.Cells.s1;
 import org.telegram.ui.Cells.t9;
 import org.telegram.ui.Components.c6;
-import org.telegram.ui.Components.kp0;
-import org.telegram.ui.cv0;
+import org.telegram.ui.Components.lp0;
 import org.telegram.ui.d3;
+import org.telegram.ui.ev0;
 import p2.m;
 import p2.p;
 import p2.s;
 import p2.t;
 import sb.l;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
-public final class d implements n0, q, dg.a, s9.e, fa.b, ga.a, n, w, kp0, j1, t, s9.d, r4.c, v5.a, w9.a, Continuation, z6.d {
+public final class d implements n0, q, dg.a, s9.e, fa.b, ga.a, n, w, lp0, j1, t, s9.d, r4.c, v5.a, w9.a, Continuation, z6.d {
     public static final CharSequence B(Object obj) {
         Objects.requireNonNull(obj);
         return obj instanceof CharSequence ? (CharSequence) obj : obj.toString();
@@ -119,7 +119,7 @@ public final class d implements n0, q, dg.a, s9.e, fa.b, ga.a, n, w, kp0, j1, t,
     }
 
     @Override // org.telegram.ui.Cells.j1
-    public /* synthetic */ cv0 E1() {
+    public /* synthetic */ ev0 E1() {
         return null;
     }
 
@@ -206,7 +206,7 @@ public final class d implements n0, q, dg.a, s9.e, fa.b, ga.a, n, w, kp0, j1, t,
         return d3.a(messageObject);
     }
 
-    @Override // org.telegram.ui.Components.kp0
+    @Override // org.telegram.ui.Components.lp0
     public void U(float f7, boolean z10) {
         r.b = f7 * 2.0f;
     }
@@ -299,7 +299,7 @@ public final class d implements n0, q, dg.a, s9.e, fa.b, ga.a, n, w, kp0, j1, t,
         return false;
     }
 
-    @Override // org.telegram.ui.Components.kp0
+    @Override // org.telegram.ui.Components.lp0
     public /* synthetic */ CharSequence getContentDescription() {
         return null;
     }
@@ -314,7 +314,7 @@ public final class d implements n0, q, dg.a, s9.e, fa.b, ga.a, n, w, kp0, j1, t,
         return false;
     }
 
-    @Override // org.telegram.ui.Components.kp0
+    @Override // org.telegram.ui.Components.lp0
     public /* synthetic */ int k0() {
         return 0;
     }
@@ -484,7 +484,7 @@ public final class d implements n0, q, dg.a, s9.e, fa.b, ga.a, n, w, kp0, j1, t,
     public /* synthetic */ void s0() {
     }
 
-    @Override // org.telegram.ui.Components.kp0
+    @Override // org.telegram.ui.Components.lp0
     public void y() {
     }
 

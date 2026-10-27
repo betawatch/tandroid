@@ -15,12 +15,12 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Emoji;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.messenger.vh;
+import org.telegram.messenger.wh;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.gb1;
+import org.telegram.ui.Components.kb1;
 import org.telegram.ui.Components.p10;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class s8 extends FrameLayout {
     public final TextView a;
@@ -56,12 +56,12 @@ public final class s8 extends FrameLayout {
             textView.setTextAlignment(4);
         }
         if (z11) {
-            h = gb1.m(-2.0f, -2.0f, 8388659, z10 ? 5.0f : 15.0f, 5.0f, z10 ? 15.0f : 25.0f, 0.0f);
+            h = kb1.m(-2.0f, -2.0f, 8388659, z10 ? 5.0f : 15.0f, 5.0f, z10 ? 15.0f : 25.0f, 0.0f);
         } else {
-            h = gb1.h(-2, -2.0f, 51, z10 ? 5.0f : 15.0f, 5.0f, z10 ? 15.0f : 25.0f, 0.0f);
+            h = kb1.h(-2, -2.0f, 51, z10 ? 5.0f : 15.0f, 5.0f, z10 ? 15.0f : 25.0f, 0.0f);
         }
         addView(linearLayout, h);
-        TextView e = vh.e(linearLayout, textView, gb1.s(-2, -2, 1.0f, 16), context);
+        TextView e = wh.e(linearLayout, textView, kb1.s(-2, -2, 1.0f, 16), context);
         this.c = e;
         org.telegram.ui.ActionBar.f7.W(e, z12 ? org.telegram.ui.ActionBar.f7.h(org.telegram.ui.ActionBar.y6.Wk, 153) : org.telegram.ui.ActionBar.f7.N(org.telegram.ui.ActionBar.y6.Te), u6Var);
         e.setTextSize(1, 11.0f);
@@ -78,8 +78,8 @@ public final class s8 extends FrameLayout {
         org.telegram.ui.ActionBar.f7.k(e, j02, h11, h12, u6Var);
         e.setGravity(17);
         e.setSingleLine(true);
-        gb1.b(e);
-        linearLayout.addView(e, gb1.t(-2, -2, 0.0f, 16, 5, 1, 0, 0));
+        kb1.b(e);
+        linearLayout.addView(e, kb1.t(-2, -2, 0.0f, 16, 5, 1, 0, 0));
         e.setVisibility(8);
         TextView textView2 = new TextView(context);
         this.b = textView2;
@@ -88,7 +88,7 @@ public final class s8 extends FrameLayout {
         textView2.setEllipsize(truncateAt);
         textView2.setSingleLine(true);
         textView2.setVisibility(4);
-        addView(textView2, z11 ? gb1.m(-2.0f, -2.0f, 8388661, 12.0f, 6.0f, 17.0f, 0.0f) : gb1.h(-2, -2.0f, 53, 12.0f, 6.0f, 17.0f, 0.0f));
+        addView(textView2, z11 ? kb1.m(-2.0f, -2.0f, 8388661, 12.0f, 6.0f, 17.0f, 0.0f) : kb1.h(-2, -2.0f, 53, 12.0f, 6.0f, 17.0f, 0.0f));
         ImageView imageView = new ImageView(context);
         this.d = imageView;
         imageView.setScaleType(ImageView.ScaleType.CENTER);
@@ -108,9 +108,9 @@ public final class s8 extends FrameLayout {
         imageView.setBackground(g02);
         org.telegram.ui.ActionBar.f7.k(imageView, g02, null, N, u6Var);
         if (z11) {
-            h10 = gb1.m(24.0f, 24.0f, 8388661, 0.0f, 0.0f, z10 ? 0.0f : 10.0f, 0.0f);
+            h10 = kb1.m(24.0f, 24.0f, 8388661, 0.0f, 0.0f, z10 ? 0.0f : 10.0f, 0.0f);
         } else {
-            h10 = gb1.h(24, 24.0f, 53, 0.0f, 0.0f, z10 ? 0.0f : 10.0f, 0.0f);
+            h10 = kb1.h(24, 24.0f, 53, 0.0f, 0.0f, z10 ? 0.0f : 10.0f, 0.0f);
         }
         imageView.setTranslationY(AndroidUtilities.dp(4.0f));
         addView(imageView, h10);

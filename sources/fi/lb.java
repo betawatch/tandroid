@@ -1,8 +1,8 @@
 package fi;
 
-import org.telegram.ui.wz0;
+import org.telegram.ui.yz0;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class lb extends nb {
     public final /* synthetic */ int g;
@@ -17,14 +17,14 @@ public final class lb extends nb {
     public final void e() {
         switch (this.g) {
             case 0:
-                wz0 wz0Var = (wz0) this.h;
-                wz0Var.Q = false;
-                wz0Var.invalidate();
+                yz0 yz0Var = (yz0) this.h;
+                yz0Var.Q = false;
+                yz0Var.invalidate();
                 break;
             case 1:
-                di.q4 t10 = ((di.y9) this.h).t();
-                if (t10 != null) {
-                    t10.k0(true);
+                di.q4 u10 = ((di.y9) this.h).u();
+                if (u10 != null) {
+                    u10.k0(true);
                     break;
                 }
                 break;
@@ -39,14 +39,14 @@ public final class lb extends nb {
     public final void f(boolean z10) {
         switch (this.g) {
             case 0:
-                wz0 wz0Var = (wz0) this.h;
-                wz0Var.Q = true;
-                wz0Var.invalidate();
+                yz0 yz0Var = (yz0) this.h;
+                yz0Var.Q = true;
+                yz0Var.invalidate();
                 break;
             case 1:
-                di.q4 t10 = ((di.y9) this.h).t();
-                if (t10 != null) {
-                    t10.k0(false);
+                di.q4 u10 = ((di.y9) this.h).u();
+                if (u10 != null) {
+                    u10.k0(false);
                 }
                 di.q3 q3Var = this.f;
                 if (q3Var != null) {

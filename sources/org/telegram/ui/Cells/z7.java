@@ -33,11 +33,11 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.ar;
-import org.telegram.ui.Components.ea0;
-import org.telegram.ui.Components.gb1;
-import org.telegram.ui.jc0;
+import org.telegram.ui.Components.fa0;
+import org.telegram.ui.Components.kb1;
+import org.telegram.ui.lc0;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class z7 extends FrameLayout implements org.telegram.ui.ActionBar.p6 {
     public int E;
@@ -60,7 +60,7 @@ public final class z7 extends FrameLayout implements org.telegram.ui.ActionBar.p
     public final int r;
     public final RectF s;
     public LocationController.SharingLocationInfo v;
-    public jc0 w;
+    public lc0 w;
     public final Location x;
     public final org.telegram.ui.ActionBar.u6 y;
 
@@ -87,9 +87,9 @@ public final class z7 extends FrameLayout implements org.telegram.ui.ActionBar.p
         b6Var.setScrollNonFitText(true);
         if (z10) {
             boolean z11 = LocaleController.isRTL;
-            addView(y9Var, gb1.h(42, 42.0f, (z11 ? 5 : 3) | 48, z11 ? 0.0f : 15.0f, 12.0f, z11 ? 15.0f : 0.0f, 0.0f));
+            addView(y9Var, kb1.h(42, 42.0f, (z11 ? 5 : 3) | 48, z11 ? 0.0f : 15.0f, 12.0f, z11 ? 15.0f : 0.0f, 0.0f));
             boolean z12 = LocaleController.isRTL;
-            addView(b6Var, gb1.h(-1, 20.0f, (z12 ? 5 : 3) | 48, z12 ? i10 : 73.0f, 12.0f, z12 ? 73.0f : 16.0f, 0.0f));
+            addView(b6Var, kb1.h(-1, 20.0f, (z12 ? 5 : 3) | 48, z12 ? i10 : 73.0f, 12.0f, z12 ? 73.0f : 16.0f, 0.0f));
             TextView textView = new TextView(context);
             this.f = textView;
             textView.setSingleLine();
@@ -98,12 +98,12 @@ public final class z7 extends FrameLayout implements org.telegram.ui.ActionBar.p
             org.telegram.ui.ActionBar.f7.V(textView, org.telegram.ui.ActionBar.y6.A6, u6Var);
             textView.setGravity(LocaleController.isRTL ? 5 : 3);
             boolean z13 = LocaleController.isRTL;
-            addView(textView, gb1.h(-1, -2.0f, (z13 ? 5 : 3) | 48, z13 ? i10 : 73.0f, 33.0f, z13 ? 73.0f : i10, 0.0f));
+            addView(textView, kb1.h(-1, -2.0f, (z13 ? 5 : 3) | 48, z13 ? i10 : 73.0f, 33.0f, z13 ? 73.0f : i10, 0.0f));
         } else {
             boolean z14 = LocaleController.isRTL;
-            addView(y9Var, gb1.h(42, 42.0f, (z14 ? 5 : 3) | 48, z14 ? 0.0f : 15.0f, 6.0f, z14 ? 15.0f : 0.0f, 0.0f));
+            addView(y9Var, kb1.h(42, 42.0f, (z14 ? 5 : 3) | 48, z14 ? 0.0f : 15.0f, 6.0f, z14 ? 15.0f : 0.0f, 0.0f));
             boolean z15 = LocaleController.isRTL;
-            addView(b6Var, gb1.h(-2, -2.0f, (z15 ? 5 : 3) | 48, z15 ? i10 : 74.0f, 17.0f, z15 ? 74.0f : i10, 0.0f));
+            addView(b6Var, kb1.h(-2, -2.0f, (z15 ? 5 : 3) | 48, z15 ? i10 : 74.0f, 17.0f, z15 ? 74.0f : i10, 0.0f));
         }
         setWillNotDraw(false);
     }
@@ -201,7 +201,7 @@ public final class z7 extends FrameLayout implements org.telegram.ui.ActionBar.p
                 SpannableString spannableString = new SpannableString("dkaraush has been here");
                 this.J = spannableString;
                 f7 = 24.0f;
-                spannableString.setSpan(new ea0(b6Var, AndroidUtilities.dp(100.0f), 0, u6Var), 0, this.J.length(), 33);
+                spannableString.setSpan(new fa0(b6Var, AndroidUtilities.dp(100.0f), 0, u6Var), 0, this.J.length(), 33);
             } else {
                 f7 = 24.0f;
             }

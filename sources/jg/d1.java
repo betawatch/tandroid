@@ -23,18 +23,18 @@ import org.telegram.ui.ActionBar.f7;
 import org.telegram.ui.ActionBar.r2;
 import org.telegram.ui.ActionBar.u5;
 import org.telegram.ui.ActionBar.y6;
-import org.telegram.ui.Components.gb1;
-import org.telegram.ui.Components.j71;
-import org.telegram.ui.Components.mm0;
+import org.telegram.ui.Components.k71;
+import org.telegram.ui.Components.kb1;
+import org.telegram.ui.Components.nm0;
 import org.telegram.ui.Components.qq;
-import org.telegram.ui.Components.r71;
+import org.telegram.ui.Components.s71;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class d1 extends r2 implements NotificationCenter.NotificationCenterDelegate {
     public int E;
     public boolean F;
-    public r71 a;
+    public s71 a;
     public u5 b;
     public boolean c;
     public FrameLayout d;
@@ -59,8 +59,8 @@ public final class d1 extends r2 implements NotificationCenter.NotificationCente
             return;
         }
         this.b.a(W(), z10);
-        r71 r71Var = this.a;
-        if (r71Var == null || r71Var.g3 == null) {
+        s71 s71Var = this.a;
+        if (s71Var == null || s71Var.g3 == null) {
             return;
         }
         if (this.F != ((this.v == null || (this.w == null && TextUtils.isEmpty(this.x))) ? false : true)) {
@@ -148,7 +148,7 @@ public final class d1 extends r2 implements NotificationCenter.NotificationCente
     }
 
     public final void Y() {
-        j71 j71Var;
+        k71 k71Var;
         if (this.s) {
             return;
         }
@@ -175,9 +175,9 @@ public final class d1 extends r2 implements NotificationCenter.NotificationCente
             this.c = false;
         }
         Z();
-        r71 r71Var = this.a;
-        if (r71Var != null && (j71Var = r71Var.g3) != null) {
-            j71Var.O(true);
+        s71 s71Var = this.a;
+        if (s71Var != null && (k71Var = s71Var.g3) != null) {
+            k71Var.O(true);
         }
         this.s = true;
     }
@@ -235,7 +235,7 @@ public final class d1 extends r2 implements NotificationCenter.NotificationCente
         this.e.setFilters(new InputFilter[]{new b1()});
         FrameLayout frameLayout2 = new FrameLayout(context);
         this.d = frameLayout2;
-        frameLayout2.addView(this.e, gb1.h(-1, -1.0f, 48, 21.0f, 15.0f, 21.0f, 15.0f));
+        frameLayout2.addView(this.e, kb1.h(-1, -1.0f, 48, 21.0f, 15.0f, 21.0f, 15.0f));
         FrameLayout frameLayout3 = this.d;
         int i13 = y6.d6;
         f7.i(i13, frameLayout3, getResourceProvider());
@@ -259,16 +259,16 @@ public final class d1 extends r2 implements NotificationCenter.NotificationCente
         this.h = new c1(this, context);
         FrameLayout frameLayout4 = new FrameLayout(context);
         this.f = frameLayout4;
-        frameLayout4.addView(this.r, gb1.g(-1.0f, -1));
-        this.f.addView(this.h, gb1.h(-2, -2.0f, 17, 0.0f, -31.0f, 0.0f, 0.0f));
+        frameLayout4.addView(this.r, kb1.g(-1.0f, -1));
+        this.f.addView(this.h, kb1.h(-2, -2.0f, 17, 0.0f, -31.0f, 0.0f, 0.0f));
         Z();
-        r71 r71Var = new r71(this, new hi.e2(this, 10), new y0(this, i11), null);
-        this.a = r71Var;
-        r71Var.u1();
+        s71 s71Var = new s71(this, new hi.e2(this, 10), new y0(this, i11), null);
+        this.a = s71Var;
+        s71Var.u1();
         this.a.setSectionsDrawBackground(true);
-        r71 r71Var2 = this.a;
-        r71Var2.g3.r = false;
-        frameLayout.addView(r71Var2, gb1.g(-1.0f, -1));
+        s71 s71Var2 = this.a;
+        s71Var2.g3.r = false;
+        frameLayout.addView(s71Var2, kb1.g(-1.0f, -1));
         Y();
         this.fragmentView = frameLayout;
         return frameLayout;
@@ -282,7 +282,7 @@ public final class d1 extends r2 implements NotificationCenter.NotificationCente
     }
 
     @Override // org.telegram.ui.ActionBar.r2
-    public final mm0 getListViewForSimpleGlass() {
+    public final nm0 getListViewForSimpleGlass() {
         return this.a;
     }
 
@@ -315,7 +315,7 @@ public final class d1 extends r2 implements NotificationCenter.NotificationCente
 
     @Override // org.telegram.ui.ActionBar.r2
     public final boolean onFragmentCreate() {
-        getNotificationCenter().addObserver(this, NotificationCenter.userInfoDidLoad);
+        getNotificationCenter().addWeakObserver(this, NotificationCenter.userInfoDidLoad);
         return super.onFragmentCreate();
     }
 

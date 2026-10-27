@@ -18,15 +18,15 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public abstract class fz extends FrameLayout implements org.telegram.ui.ActionBar.p6, oe.d {
-    public bq E;
+    public cp E;
     public boolean F;
     public final /* synthetic */ sz G;
     public final oe.b a;
     public final int b;
-    public final eo0 c;
+    public final fo0 c;
     public final uq d;
     public final View e;
     public final View f;
@@ -75,21 +75,21 @@ public abstract class fz extends FrameLayout implements org.telegram.ui.ActionBa
         frameLayout.setOutlineProvider(new ag.x0(0, dp));
         int i14 = 2;
         if (i10 == 2) {
-            addView(frameLayout, gb1.h(-1, 36.0f, 119, 10.0f, 8.0f, 10.0f, 8.0f));
+            addView(frameLayout, kb1.h(-1, 36.0f, 119, 10.0f, 8.0f, 10.0f, 8.0f));
         } else {
-            addView(frameLayout, gb1.h(-1, 36.0f, 119, 10.0f, 6.0f, 10.0f, 8.0f));
+            addView(frameLayout, kb1.h(-1, 36.0f, 119, 10.0f, 6.0f, 10.0f, 8.0f));
         }
         bh.p pVar = new bh.p(this, context, 12);
         this.s = pVar;
-        frameLayout.addView(pVar, gb1.h(-1, 40.0f, 51, 38.0f, 0.0f, 0.0f, 0.0f));
+        frameLayout.addView(pVar, kb1.h(-1, 40.0f, 51, 38.0f, 0.0f, 0.0f, 0.0f));
         ImageView imageView = new ImageView(context);
-        eo0 eo0Var = new eo0();
-        this.c = eo0Var;
-        eo0Var.c(0, false, false);
-        eo0Var.a(z10 ? szVar.v(0.4f) : szVar.A(org.telegram.ui.ActionBar.y6.Je));
+        fo0 fo0Var = new fo0();
+        this.c = fo0Var;
+        fo0Var.c(0, false, false);
+        fo0Var.a(z10 ? szVar.v(0.4f) : szVar.A(org.telegram.ui.ActionBar.y6.Je));
         ImageView.ScaleType scaleType2 = ImageView.ScaleType.CENTER;
         imageView.setScaleType(scaleType2);
-        imageView.setImageDrawable(eo0Var);
+        imageView.setImageDrawable(fo0Var);
         imageView.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.cz
             public final /* synthetic */ fz b;
 
@@ -138,7 +138,7 @@ public abstract class fz extends FrameLayout implements org.telegram.ui.ActionBa
                 }
             }
         });
-        frameLayout.addView(imageView, gb1.i(36, 36, 51));
+        frameLayout.addView(imageView, kb1.i(36, 36, 51));
         uq uqVar2 = new uq(this, context, i10, i14);
         this.d = uqVar2;
         uqVar2.setTextSize(1, 16.0f);
@@ -155,7 +155,7 @@ public abstract class fz extends FrameLayout implements org.telegram.ui.ActionBa
         uqVar2.setCursorSize(AndroidUtilities.dp(20.0f));
         uqVar2.setCursorWidth(1.5f);
         uqVar2.setTranslationY(AndroidUtilities.dp(-2.0f));
-        pVar.addView(uqVar2, gb1.h(-1, 40.0f, 51, 0.0f, 0.0f, 28.0f, 0.0f));
+        pVar.addView(uqVar2, kb1.h(-1, 40.0f, 51, 0.0f, 0.0f, 28.0f, 0.0f));
         uqVar2.addTextChangedListener(new bi.u(this, 9));
         if (szVar.u0) {
             View view3 = new View(context);
@@ -169,7 +169,7 @@ public abstract class fz extends FrameLayout implements org.telegram.ui.ActionBa
             org.telegram.ui.ActionBar.f7.l(this, mutate, q5.a, q5.b, 4, 0.0f, u6Var, PorterDuff.Mode.MULTIPLY);
             view3.setBackground(mutate);
             view3.setAlpha(0.0f);
-            pVar.addView(view3, gb1.i(18, -1, 3));
+            pVar.addView(view3, kb1.i(18, -1, 3));
         } else {
             uqVar = uqVar2;
             scaleType = scaleType2;
@@ -235,7 +235,7 @@ public abstract class fz extends FrameLayout implements org.telegram.ui.ActionBa
                 }
             }
         });
-        frameLayout.addView(imageView2, gb1.i(36, 36, 53));
+        frameLayout.addView(imageView2, kb1.i(36, 36, 53));
         if (i10 != 1 || (szVar.c2 && UserConfig.getInstance(UserConfig.selectedAccount).isPremium())) {
             ez ezVar = new ez(this, context, i10 == 0 ? i11 : 0, szVar.Z1, i10);
             this.r = ezVar;
@@ -263,14 +263,14 @@ public abstract class fz extends FrameLayout implements org.telegram.ui.ActionBa
                             fzVar.g(false);
                             break;
                         default:
-                            xx0 xx0Var = (xx0) obj;
+                            yx0 yx0Var = (yx0) obj;
                             fz fzVar2 = this.b;
                             sz szVar2 = fzVar2.G;
                             ez ezVar2 = fzVar2.r;
-                            if (xx0Var != null) {
-                                if (ezVar2.getSelectedCategory() != xx0Var) {
-                                    fzVar2.c(xx0Var.a, false);
-                                    ezVar2.L1(xx0Var);
+                            if (yx0Var != null) {
+                                if (ezVar2.getSelectedCategory() != yx0Var) {
+                                    fzVar2.c(yx0Var.a, false);
+                                    ezVar2.L1(yx0Var);
                                     break;
                                 } else {
                                     fzVar2.c(null, false);
@@ -307,14 +307,14 @@ public abstract class fz extends FrameLayout implements org.telegram.ui.ActionBa
                             fzVar.g(false);
                             break;
                         default:
-                            xx0 xx0Var = (xx0) obj;
+                            yx0 yx0Var = (yx0) obj;
                             fz fzVar2 = this.b;
                             sz szVar2 = fzVar2.G;
                             ez ezVar2 = fzVar2.r;
-                            if (xx0Var != null) {
-                                if (ezVar2.getSelectedCategory() != xx0Var) {
-                                    fzVar2.c(xx0Var.a, false);
-                                    ezVar2.L1(xx0Var);
+                            if (yx0Var != null) {
+                                if (ezVar2.getSelectedCategory() != yx0Var) {
+                                    fzVar2.c(yx0Var.a, false);
+                                    ezVar2.L1(yx0Var);
                                     break;
                                 } else {
                                     fzVar2.c(null, false);
@@ -331,7 +331,7 @@ public abstract class fz extends FrameLayout implements org.telegram.ui.ActionBa
                     }
                 }
             });
-            frameLayout.addView(ezVar, gb1.h(-1, 36.0f, 51, 36.0f, 0.0f, 0.0f, 0.0f));
+            frameLayout.addView(ezVar, kb1.h(-1, 36.0f, 51, 36.0f, 0.0f, 0.0f, 0.0f));
         }
     }
 
@@ -427,16 +427,16 @@ public abstract class fz extends FrameLayout implements org.telegram.ui.ActionBa
     public final void f(boolean z10) {
         if (z10) {
             if (this.E == null) {
-                bq bqVar = new bq(this, 16);
-                this.E = bqVar;
-                AndroidUtilities.runOnUIThread(bqVar, 340L);
+                cp cpVar = new cp(this, 17);
+                this.E = cpVar;
+                AndroidUtilities.runOnUIThread(cpVar, 340L);
                 return;
             }
             return;
         }
-        bq bqVar2 = this.E;
-        if (bqVar2 != null) {
-            AndroidUtilities.cancelRunOnUIThread(bqVar2);
+        cp cpVar2 = this.E;
+        if (cpVar2 != null) {
+            AndroidUtilities.cancelRunOnUIThread(cpVar2);
             this.E = null;
         }
         AndroidUtilities.updateViewShow(this.h, false);

@@ -26,16 +26,16 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.Components.r91;
 import org.telegram.ui.Components.s91;
 import org.telegram.ui.Components.t91;
+import org.telegram.ui.Components.u91;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.d80;
-import org.telegram.ui.rz0;
-import org.telegram.ui.un;
+import org.telegram.ui.f80;
+import org.telegram.ui.tz0;
+import org.telegram.ui.wn;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class t8 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -56,7 +56,7 @@ public final /* synthetic */ class t8 implements Utilities.Callback {
     */
     public final void run(Object obj) {
         int[] iArr;
-        s91 s91Var;
+        t91 t91Var;
         e2.q0 q0Var = null;
         r4 = false;
         boolean z10 = false;
@@ -221,7 +221,7 @@ public final /* synthetic */ class t8 implements Utilities.Callback {
                 rcVar.invalidate();
                 break;
             case 5:
-                un unVar = (un) this.c;
+                wn wnVar = (wn) this.c;
                 boolean z15 = this.b;
                 View view2 = (View) obj;
                 if (view2 instanceof org.telegram.ui.Cells.s1) {
@@ -229,9 +229,9 @@ public final /* synthetic */ class t8 implements Utilities.Callback {
                     if (s1Var.E8 && s1Var.G8) {
                         z10 = true;
                     }
-                    if (z10 != z15 && unVar.K9()) {
+                    if (z10 != z15 && wnVar.N9()) {
                         s1Var.E8 = z15;
-                        s1Var.G8 = unVar.K9();
+                        s1Var.G8 = wnVar.N9();
                         s1Var.n8 = true;
                         s1Var.forceLayout();
                         break;
@@ -242,13 +242,13 @@ public final /* synthetic */ class t8 implements Utilities.Callback {
                 }
                 break;
             case 6:
-                t91 t91Var = (t91) this.c;
+                u91 u91Var = (u91) this.c;
                 boolean z16 = this.b;
                 View view3 = (View) obj;
-                t91Var.v.getClass();
+                u91Var.v.getClass();
                 int R = RecyclerView.R(view3);
-                if (view3 instanceof r91) {
-                    ((r91) view3).setReordering(z16 && (s91Var = t91Var.y) != null && ((jg.i) s91Var).b0(R));
+                if (view3 instanceof s91) {
+                    ((s91) view3).setReordering(z16 && (t91Var = u91Var.y) != null && ((jg.i) t91Var).b0(R));
                     break;
                 }
                 break;
@@ -261,16 +261,16 @@ public final /* synthetic */ class t8 implements Utilities.Callback {
                 }
                 break;
             case 8:
-                rz0 rz0Var = (rz0) this.c;
+                tz0 tz0Var = (tz0) this.c;
                 boolean z18 = this.b;
-                ProfileActivity profileActivity = rz0Var.b;
+                ProfileActivity profileActivity = tz0Var.b;
                 if (profileActivity.getParentActivity() != null) {
                     org.telegram.ui.Components.wc.b0(profileActivity).o(z18 ? org.telegram.ui.Components.vc.h : org.telegram.ui.Components.vc.e, null).j();
                     break;
                 }
                 break;
             case 9:
-                AndroidUtilities.runOnUIThread(new d80((org.telegram.ui.web.l) this.c, (String) obj, this.b, 15));
+                AndroidUtilities.runOnUIThread(new f80((org.telegram.ui.web.l) this.c, (String) obj, this.b, 15));
                 break;
             default:
                 org.telegram.ui.web.y1 y1Var = (org.telegram.ui.web.y1) this.c;

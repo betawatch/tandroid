@@ -10,9 +10,9 @@ import org.telegram.ui.Cells.c8;
 import org.telegram.ui.Components.ba;
 import org.telegram.ui.Components.ds;
 import org.telegram.ui.Components.md;
-import org.telegram.ui.Components.sh0;
+import org.telegram.ui.Components.th0;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class a1 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -81,16 +81,16 @@ public final class a1 extends AnimatorListenerAdapter {
                 }
                 break;
             case 6:
-                sh0 sh0Var = (sh0) obj;
-                sh0Var.H.unlock();
-                sh0Var.b = f7;
+                th0 th0Var = (th0) obj;
+                th0Var.H.unlock();
+                th0Var.b = f7;
                 if (f7 <= 0.0f) {
-                    sh0Var.G = -1;
+                    th0Var.G = -1;
                 }
-                sh0Var.c(true);
-                sh0Var.f = false;
-                if (sh0Var.O != null && Math.abs(f7 - 1.0f) < 0.01f) {
-                    sh0Var.O.run();
+                th0Var.c(true);
+                th0Var.f = false;
+                if (th0Var.O != null && Math.abs(f7 - 1.0f) < 0.01f) {
+                    th0Var.O.run();
                     break;
                 }
                 break;
@@ -134,9 +134,9 @@ public final class a1 extends AnimatorListenerAdapter {
     public void onAnimationStart(Animator animator) {
         switch (this.a) {
             case 6:
-                sh0 sh0Var = (sh0) this.c;
-                sh0Var.f = true;
-                sh0Var.c = this.b;
+                th0 th0Var = (th0) this.c;
+                th0Var.f = true;
+                th0Var.c = this.b;
                 break;
             default:
                 super.onAnimationStart(animator);

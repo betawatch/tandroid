@@ -29,19 +29,19 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.t;
-import org.telegram.messenger.vh;
 import org.telegram.messenger.voip.GroupCallMessage;
+import org.telegram.messenger.wh;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.u6;
 import org.telegram.ui.Components.ds;
 import org.telegram.ui.Components.j9;
-import org.telegram.ui.Components.q61;
+import org.telegram.ui.Components.r61;
 import org.telegram.ui.Components.t5;
-import org.telegram.ui.t30;
+import org.telegram.ui.v30;
 import xh.n;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class c extends ViewGroup implements pe.a, NotificationCenter.NotificationCenterDelegate, oe.d {
     public static final Rect L = new Rect();
@@ -249,7 +249,7 @@ public final class c extends ViewGroup implements pe.a, NotificationCenter.Notif
         if (t5Var != null) {
             t5Var.a(this);
         }
-        NotificationCenter.getGlobalInstance().addObserver(this, NotificationCenter.emojiLoaded);
+        NotificationCenter.getGlobalInstance().addWeakObserver(this, NotificationCenter.emojiLoaded);
         GroupCallMessage groupCallMessage = this.H;
         if (groupCallMessage != null) {
             groupCallMessage.subscribeToStateUpdates(this.y);
@@ -263,7 +263,7 @@ public final class c extends ViewGroup implements pe.a, NotificationCenter.Notif
         if (a(f7, f10) != 1 || (aVar = this.I) == null || (groupCallMessage = this.H) == null) {
             return;
         }
-        ((t30) aVar).a(groupCallMessage);
+        ((v30) aVar).a(groupCallMessage);
     }
 
     @Override // android.view.ViewGroup, android.view.View
@@ -310,7 +310,7 @@ public final class c extends ViewGroup implements pe.a, NotificationCenter.Notif
             int paddingLeft = getPaddingLeft();
             int paddingRight = getPaddingRight();
             x0 x0Var = this.s;
-            int x9 = vh.x(44.0f, (size - paddingLeft) - paddingRight, TLObject.FLAG_31);
+            int x9 = wh.x(44.0f, (size - paddingLeft) - paddingRight, TLObject.FLAG_31);
             int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(0, 0);
             n nVar = this.v;
             nVar.measure(x9, makeMeasureSpec);
@@ -411,7 +411,7 @@ public final class c extends ViewGroup implements pe.a, NotificationCenter.Notif
         }
         this.r = null;
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(name);
-        spannableStringBuilder.setSpan(new q61(AndroidUtilities.bold()), 0, spannableStringBuilder.length(), 33);
+        spannableStringBuilder.setSpan(new r61(AndroidUtilities.bold()), 0, spannableStringBuilder.length(), 33);
         spannableStringBuilder.setSpan(this.J, 0, spannableStringBuilder.length(), 33);
         x0 x0Var = groupCallMessage.visibleReaction;
         n nVar = this.v;

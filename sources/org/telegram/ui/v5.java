@@ -11,7 +11,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class v5 extends FrameLayout {
     public final /* synthetic */ x5 a;
@@ -173,11 +173,11 @@ public final class v5 extends FrameLayout {
         });
         LinearLayout linearLayout = new LinearLayout(getContext());
         linearLayout.setOrientation(0);
-        linearLayout.addView(j5Var, org.telegram.ui.Components.gb1.o(6.0f, 0.0f, 6.0f, 0.0f, -2, -2));
+        linearLayout.addView(j5Var, org.telegram.ui.Components.kb1.o(6.0f, 0.0f, 6.0f, 0.0f, -2, -2));
         if (MessagesController.getInstance(x5Var.S).giveawayGiftsPurchaseAvailable && ChatObject.hasAdminRights(x5Var.i0)) {
-            linearLayout.addView(j5Var2, org.telegram.ui.Components.gb1.o(6.0f, 0.0f, 6.0f, 0.0f, -2, -2));
+            linearLayout.addView(j5Var2, org.telegram.ui.Components.kb1.o(6.0f, 0.0f, 6.0f, 0.0f, -2, -2));
         }
-        linearLayout.addView(j5Var3, org.telegram.ui.Components.gb1.o(6.0f, 0.0f, 6.0f, 0.0f, -2, -2));
-        addView(linearLayout, org.telegram.ui.Components.gb1.h(-2, -2.0f, 1, 0.0f, 19.0f, 0.0f, 0.0f));
+        linearLayout.addView(j5Var3, org.telegram.ui.Components.kb1.o(6.0f, 0.0f, 6.0f, 0.0f, -2, -2));
+        addView(linearLayout, org.telegram.ui.Components.kb1.h(-2, -2.0f, 1, 0.0f, 19.0f, 0.0f, 0.0f));
     }
 }

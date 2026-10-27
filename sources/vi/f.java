@@ -7,9 +7,9 @@ import android.os.Handler;
 import android.util.Size;
 import android.view.Surface;
 import li.e3;
-import org.telegram.ui.d80;
+import org.telegram.ui.f80;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class f extends CameraCaptureSession.StateCallback {
     public final /* synthetic */ int a;
@@ -28,7 +28,7 @@ public final class f extends CameraCaptureSession.StateCallback {
                 if (jVar.B == cameraCaptureSession) {
                     jVar.B = null;
                     jVar.D = null;
-                    jVar.p0 = false;
+                    jVar.q0 = false;
                     break;
                 }
                 break;
@@ -51,7 +51,7 @@ public final class f extends CameraCaptureSession.StateCallback {
             case 0:
                 cameraCaptureSession.close();
                 j jVar = this.b;
-                if (jVar.m0 && jVar.s0 != null && cameraCaptureSession.getDevice() == jVar.s0) {
+                if (jVar.n0 && jVar.t0 != null && cameraCaptureSession.getDevice() == jVar.t0) {
                     jVar.A("standby session configuration failed", null, true);
                     break;
                 }
@@ -70,9 +70,9 @@ public final class f extends CameraCaptureSession.StateCallback {
                             j jVar3 = this.b;
                             if (jVar3.z != null && !jVar3.b0) {
                                 j jVar4 = this.b;
-                                if (!jVar4.m0) {
-                                    if (jVar4.s0 != null && !jVar4.l0) {
-                                        if (!jVar4.X || !jVar4.D0) {
+                                if (!jVar4.n0) {
+                                    if (jVar4.t0 != null && !jVar4.m0) {
+                                        if (!jVar4.X || !jVar4.E0) {
                                             jVar4.j.b("camera session configuration failed with warm device open");
                                             this.b.R("session configuration failed", null);
                                             break;
@@ -80,7 +80,7 @@ public final class f extends CameraCaptureSession.StateCallback {
                                             jVar4.L("session configuration failed", null);
                                             break;
                                         }
-                                    } else if (jVar4.J != n0.c) {
+                                    } else if (jVar4.J != p0.c) {
                                         jVar4.N(new IllegalStateException("Camera capture session configuration failed"));
                                         break;
                                     } else {
@@ -111,20 +111,20 @@ public final class f extends CameraCaptureSession.StateCallback {
             case 0:
                 if (this.b.V) {
                     j jVar = this.b;
-                    if (jVar.m0 && jVar.s0 != null) {
+                    if (jVar.n0 && jVar.t0 != null) {
                         CameraDevice device = cameraCaptureSession.getDevice();
                         j jVar2 = this.b;
-                        CameraDevice cameraDevice = jVar2.s0;
-                        if (device == cameraDevice && (surface = jVar2.v) != null && (iVar = jVar2.w0) != null) {
+                        CameraDevice cameraDevice = jVar2.t0;
+                        if (device == cameraDevice && (surface = jVar2.v) != null && (iVar = jVar2.x0) != null) {
                             try {
                                 jVar2.B = cameraCaptureSession;
                                 jVar2.D = jVar2.x(cameraDevice, surface, iVar, false, true);
                                 CaptureRequest build = this.b.D.build();
                                 j jVar3 = this.b;
-                                cameraCaptureSession.setRepeatingRequest(build, jVar3.t1, jVar3.n);
+                                cameraCaptureSession.setRepeatingRequest(build, jVar3.u1, jVar3.n);
                                 j jVar4 = this.b;
-                                jVar4.p0 = true;
-                                jVar4.j.b("standby capture session configured: id=" + cameraCaptureSession.getDevice().getId() + ", elapsedMs=" + j.z(this.b.G0));
+                                jVar4.q0 = true;
+                                jVar4.j.b("standby capture session configured: id=" + cameraCaptureSession.getDevice().getId() + ", elapsedMs=" + j.z(this.b.H0));
                                 j.f(this.b);
                                 return;
                             } catch (Exception e) {
@@ -158,16 +158,16 @@ public final class f extends CameraCaptureSession.StateCallback {
                                 }
                             }
                             j jVar6 = this.b;
-                            boolean z10 = jVar6.m0 && jVar6.x0 != null;
+                            boolean z10 = jVar6.n0 && jVar6.y0 != null;
                             boolean z11 = jVar6.Z && !z10;
                             CameraCaptureSession cameraCaptureSession2 = jVar6.A;
                             CaptureRequest.Builder builder = jVar6.C;
                             if (cameraCaptureSession2 != null && builder != null) {
-                                cameraCaptureSession2.setRepeatingRequest(builder.build(), jVar6.t1, jVar6.n);
+                                cameraCaptureSession2.setRepeatingRequest(builder.build(), jVar6.u1, jVar6.n);
                             }
                             j jVar7 = this.b;
-                            if (jVar7.m0) {
-                                jVar7.o0 = true;
+                            if (jVar7.n0) {
+                                jVar7.p0 = true;
                             }
                             if (!z10) {
                                 jVar7.Z = false;
@@ -182,14 +182,14 @@ public final class f extends CameraCaptureSession.StateCallback {
                             sb2.append(", fpsRange=");
                             sb2.append(this.b.K);
                             sb2.append(", elapsedMs=");
-                            sb2.append(j.z(this.b.G0));
+                            sb2.append(j.z(this.b.H0));
                             sb2.append(", segmentElapsedMs=");
-                            sb2.append(j.z(this.b.E0));
+                            sb2.append(j.z(this.b.F0));
                             if (z11) {
                                 StringBuilder sb3 = new StringBuilder(", switchPath=");
-                                sb3.append(this.b.D0 ? "WARM_DEVICE" : "SEQUENTIAL");
+                                sb3.append(this.b.E0 ? "WARM_DEVICE" : "SEQUENTIAL");
                                 sb3.append(", switchElapsedMs=");
-                                sb3.append(j.z(this.b.H0));
+                                sb3.append(j.z(this.b.I0));
                                 str = sb3.toString();
                             } else {
                                 str = "";
@@ -200,34 +200,34 @@ public final class f extends CameraCaptureSession.StateCallback {
                             jVar8.c.post(new a(jVar8, 8));
                             j jVar9 = this.b;
                             e3 e3Var = jVar9.k;
-                            l0 l0Var = jVar9.G;
-                            m0 m0Var = jVar9.I;
-                            n0 n0Var = jVar9.J;
+                            n0 n0Var = jVar9.G;
+                            o0 o0Var = jVar9.I;
+                            p0 p0Var = jVar9.J;
                             Size size = jVar9.q;
                             Size size2 = jVar9.r;
                             j jVar10 = this.b;
-                            ((s0) e3Var.b).i.post(new d80(e3Var, new h(l0Var, m0Var, n0Var, size, size2, jVar10.O, jVar10.F()), z11, 18));
+                            ((u0) e3Var.b).i.post(new f80(e3Var, new h(n0Var, o0Var, p0Var, size, size2, jVar10.O, jVar10.F()), z11, 18));
                             if (z10) {
                                 j.f(this.b);
                                 return;
                             }
-                            l0 l0Var2 = this.b.F;
+                            n0 n0Var2 = this.b.F;
                             j jVar11 = this.b;
-                            if (l0Var2 != jVar11.G) {
+                            if (n0Var2 != jVar11.G) {
                                 jVar11.a0(jVar11.F);
                                 return;
                             }
                             return;
                         } catch (Exception e10) {
                             j jVar12 = this.b;
-                            if (jVar12.m0) {
+                            if (jVar12.n0) {
                                 jVar12.A("active request submission failed", e10, false);
                                 return;
                             }
-                            if (jVar12.X && jVar12.D0) {
+                            if (jVar12.X && jVar12.E0) {
                                 jVar12.L("request submission failed", e10);
                                 return;
-                            } else if (jVar12.J == n0.c) {
+                            } else if (jVar12.J == p0.c) {
                                 jVar12.B("60 fps request submission rejected", e10);
                                 return;
                             } else {

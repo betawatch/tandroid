@@ -10,9 +10,9 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_update;
 import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.zc1;
+import org.telegram.ui.yc1;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class q implements Runnable {
     public final /* synthetic */ int a;
@@ -53,15 +53,15 @@ public final /* synthetic */ class q implements Runnable {
                 String str = this.c;
                 Utilities.Callback callback = this.d;
                 q qVar = new q(l0Var, str, callback, this.e, this.f, this.h, this.n, this.r, this.s, this.v, this.w, this.x, 1);
-                if (l0Var.I() && !l0Var.H()) {
-                    l0.F("send " + str + ": asking passcode");
+                if (l0Var.K() && !l0Var.J()) {
+                    l0.H("send " + str + ": asking passcode");
                     org.telegram.ui.ActionBar.r2 U = LaunchActivity.U();
                     if (U != null) {
                         org.telegram.ui.ActionBar.p2 p2Var = new org.telegram.ui.ActionBar.p2();
                         p2Var.a = true;
                         boolean[] zArr = {false};
                         y yVar = new y(zArr, callback);
-                        yVar.V = new zc1(15, zArr, qVar);
+                        yVar.V = new yc1(16, zArr, qVar);
                         U.showAsSheet(yVar, p2Var);
                         break;
                     }
@@ -75,7 +75,7 @@ public final /* synthetic */ class q implements Runnable {
                 final String str2 = this.c;
                 sb2.append(str2);
                 sb2.append(": ready, get secret phrase");
-                l0.F(sb2.toString());
+                l0.H(sb2.toString());
                 final l0 l0Var2 = this.b;
                 final Utilities.Callback callback2 = this.d;
                 final TL_wallet.nftItem nftitem = this.e;
@@ -87,7 +87,7 @@ public final /* synthetic */ class q implements Runnable {
                 final TLRPC.User user = this.v;
                 final String str5 = this.w;
                 final Utilities.Callback callback3 = this.x;
-                l0Var2.y(new Utilities.Callback2() { // from class: org.telegram.ui.Wallet.r
+                l0Var2.z(new Utilities.Callback2() { // from class: org.telegram.ui.Wallet.r
                     /* JADX WARN: Removed duplicated region for block: B:47:0x012d  */
                     /* JADX WARN: Removed duplicated region for block: B:50:0x0139  */
                     /* JADX WARN: Removed duplicated region for block: B:57:0x0154  */
@@ -129,12 +129,12 @@ public final /* synthetic */ class q implements Runnable {
                         }
                         TL_wallet.nftItem nftitem3 = nftitem;
                         if (nftitem3 != null) {
-                            if (!l0.a(str3, l0Var5.s())) {
+                            if (!l0.b(str3, l0Var5.t())) {
                                 callback5.run("WALLET_CHANGED");
                                 return;
                             }
                         }
-                        k0 A = l0Var5.A();
+                        k0 B = l0Var5.B();
                         TL_wallet.walletTransaction wallettransaction = new TL_wallet.walletTransaction();
                         wallettransaction.incoming = false;
                         wallettransaction.pending = true;
@@ -152,12 +152,12 @@ public final /* synthetic */ class q implements Runnable {
                         String str8 = str2;
                         if (d2Var2 == null || nftitem3 == null) {
                             nftitem2 = nftitem3;
-                            k0Var = A;
-                            wallettransaction.peer = l0.f(user3, str8, str5);
+                            k0Var = B;
+                            wallettransaction.peer = l0.g(user3, str8, str5);
                         } else {
                             TL_wallet.walletTransactionPeerTelegramGift wallettransactionpeertelegramgift = new TL_wallet.walletTransactionPeerTelegramGift();
                             nftitem2 = nftitem3;
-                            k0Var = A;
+                            k0Var = B;
                             wallettransactionpeertelegramgift.own_profile = user3 != null && user3.id == UserConfig.getInstance(i10).getClientUserId();
                             wallettransaction.peer = wallettransactionpeertelegramgift;
                         }
@@ -178,7 +178,7 @@ public final /* synthetic */ class q implements Runnable {
                         }
                         k0Var2.k();
                         k0Var2.i();
-                        l0Var5.Q();
+                        l0Var5.S();
                         SendMessagesHelper sendMessagesHelper = SendMessagesHelper.getInstance(i10);
                         if (user3 != null) {
                             l0Var3 = l0Var5;
@@ -202,7 +202,7 @@ public final /* synthetic */ class q implements Runnable {
                                         str9 = tL_updateWalletGaslessInfo2.relayer_address;
                                     }
                                 }
-                                l0.F("prepare sending");
+                                l0.H("prepare sending");
                                 String str10 = str9;
                                 long j14 = j11;
                                 final u uVar = new u(l0Var4, w6Var, sendMessagesHelper, messageObject, wallettransaction, str8, k0Var2, j14, user2);
@@ -268,7 +268,7 @@ public final /* synthetic */ class q implements Runnable {
                             if (tL_updateWalletGaslessInfo2.available) {
                             }
                         }
-                        l0.F("prepare sending");
+                        l0.H("prepare sending");
                         String str102 = str92;
                         long j142 = j11;
                         final u uVar2 = new u(l0Var4, w6Var, sendMessagesHelper, messageObject, wallettransaction, str8, k0Var2, j142, user2);

@@ -14,7 +14,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class rb implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -36,8 +36,14 @@ public final /* synthetic */ class rb implements Runnable {
         this.n = tLObject;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:30:0x00b7  */
-    /* JADX WARN: Removed duplicated region for block: B:32:0x00bc  */
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Removed duplicated region for block: B:57:0x00c1  */
+    /* JADX WARN: Removed duplicated region for block: B:59:0x00c6  */
+    /* JADX WARN: Type inference failed for: r10v0, types: [java.lang.StringBuilder] */
+    /* JADX WARN: Type inference failed for: r2v14 */
+    /* JADX WARN: Type inference failed for: r2v17, types: [java.io.File] */
+    /* JADX WARN: Type inference failed for: r2v19, types: [long] */
+    /* JADX WARN: Type inference failed for: r2v20 */
     @Override // java.lang.Runnable
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -45,13 +51,15 @@ public final /* synthetic */ class rb implements Runnable {
     public final void run() {
         boolean z10;
         String formatString;
+        ?? r22;
         File file;
         File file2;
+        int i10;
         switch (this.a) {
             case 0:
                 fi.d dVar = (fi.d) this.e;
                 org.telegram.ui.ActionBar.k3[] k3VarArr = (org.telegram.ui.ActionBar.k3[]) this.f;
-                int i10 = this.d;
+                int i11 = this.d;
                 boolean z11 = this.b;
                 TL_stars.StarsSubscription starsSubscription = (TL_stars.StarsSubscription) this.h;
                 boolean z12 = this.c;
@@ -61,7 +69,7 @@ public final /* synthetic */ class rb implements Runnable {
                 if (k3Var != null) {
                     k3Var.dismiss();
                 }
-                ca.y(i10, false).S();
+                ca.y(i11, false).S();
                 org.telegram.ui.ActionBar.r2 U = LaunchActivity.U();
                 if (U != null) {
                     if (z11 && !TextUtils.isEmpty(starsSubscription.title)) {
@@ -82,83 +90,105 @@ public final /* synthetic */ class rb implements Runnable {
                 ((SendMessagesHelper) this.e).lambda$performSendMessageRequest$98(this.b, (TLRPC.Message) this.f, (ArrayList) this.h, this.c, (ArrayList) this.n, this.d);
                 return;
             default:
-                vi.s0 s0Var = (vi.s0) this.e;
-                vi.v vVar = (vi.v) this.f;
+                vi.u0 u0Var = (vi.u0) this.e;
+                vi.w wVar = (vi.w) this.f;
                 boolean z13 = this.b;
                 File file3 = (File) this.h;
                 boolean z14 = this.c;
-                int i11 = this.d;
-                vi.o0 o0Var = (vi.o0) this.n;
-                s0Var.getClass();
+                int i12 = this.d;
+                vi.q0 q0Var = (vi.q0) this.n;
+                u0Var.getClass();
                 long nanoTime = System.nanoTime();
                 try {
-                    vVar.g();
-                    s0Var.m.b("preview output finalized: size=" + vVar.a.length() + ", replace=" + z13 + ", elapsedMs=" + vi.s0.f(nanoTime));
-                    s0Var.g();
-                    if (z13) {
-                        s0Var.s(file3, s0Var.G, s0Var.H, z14, i11);
-                        file = file3;
-                    } else {
-                        file = file3;
+                    try {
+                        wVar.g();
+                        vi.n nVar = u0Var.m;
+                        ?? sb2 = new StringBuilder("preview output finalized: size=");
+                        sb2.append(wVar.a.length());
+                        sb2.append(", replace=");
+                        sb2.append(z13);
+                        sb2.append(", elapsedMs=");
+                        r22 = vi.u0.f(nanoTime);
+                        sb2.append(r22);
+                        nVar.b(sb2.toString());
+                        u0Var.g();
                         try {
-                            try {
-                                File file4 = vVar.a;
-                                long j10 = s0Var.K;
-                                if (j10 <= 0) {
-                                    j10 = s0Var.E;
+                            if (z13) {
+                                synchronized (wVar) {
+                                    try {
+                                        i10 = wVar.s;
+                                    } catch (Throwable th2) {
+                                        th = th2;
+                                        while (true) {
+                                            try {
+                                                throw th;
+                                            } catch (Throwable th3) {
+                                                th = th3;
+                                            }
+                                        }
+                                    }
                                 }
-                                ExecutorService executorService = s0Var.k;
+                                u0Var.t(file3, i10, u0Var.J, u0Var.K, z14, i12);
+                                file2 = file3;
+                            } else {
+                                r22 = file3;
+                                File file4 = wVar.a;
+                                long j10 = u0Var.N;
+                                if (j10 <= 0) {
+                                    j10 = u0Var.H;
+                                }
+                                ExecutorService executorService = u0Var.k;
                                 try {
-                                    vi.f0 f0Var = new vi.f0(s0Var, o0Var, file4, j10, true);
-                                    s0Var = s0Var;
-                                    executorService.execute(f0Var);
+                                    vi.g0 g0Var = new vi.g0(u0Var, q0Var, file4, j10, true);
+                                    u0Var = u0Var;
+                                    executorService.execute(g0Var);
+                                    file2 = r22;
                                 } catch (Exception e) {
                                     e = e;
-                                    s0Var = s0Var;
-                                    s0Var.i.post(new vi.d0(s0Var, e, 0));
-                                    if (file != null) {
-                                        w7.x.c(file);
+                                    u0Var = u0Var;
+                                    u0Var.i.post(new vi.e0(u0Var, e, 0));
+                                    if (r22 != 0) {
+                                        w7.x.c(r22);
                                     }
                                     if (z13) {
-                                        file2 = vVar.a;
-                                        w7.x.c(file2);
+                                        file = wVar.a;
+                                        w7.x.c(file);
                                         return;
                                     }
                                     return;
                                 }
-                            } catch (Exception e10) {
-                                e = e10;
                             }
-                        } catch (Throwable th2) {
-                            th = th2;
-                            if (file != null) {
-                                w7.x.c(file);
+                            u0Var.U = null;
+                            if (file2 != null) {
+                                w7.x.c(file2);
                             }
-                            if (z13) {
-                                w7.x.c(vVar.a);
-                            }
-                            throw th;
+                        } catch (Exception e10) {
+                            e = e10;
                         }
-                    }
-                    s0Var.R = null;
-                    if (file != null) {
-                        w7.x.c(file);
+                    } catch (Throwable th4) {
+                        th = th4;
+                        if (file3 != null) {
+                            w7.x.c(file3);
+                        }
+                        if (z13) {
+                            w7.x.c(wVar.a);
+                        }
+                        throw th;
                     }
                 } catch (Exception e11) {
                     e = e11;
-                    file = file3;
-                } catch (Throwable th3) {
-                    th = th3;
-                    file = file3;
-                    if (file != null) {
+                    r22 = file3;
+                } catch (Throwable th5) {
+                    th = th5;
+                    if (file3 != null) {
                     }
                     if (z13) {
                     }
                     throw th;
                 }
                 if (z13) {
-                    file2 = vVar.a;
-                    w7.x.c(file2);
+                    file = wVar.a;
+                    w7.x.c(file);
                     return;
                 }
                 return;
@@ -175,13 +205,13 @@ public final /* synthetic */ class rb implements Runnable {
         this.d = i10;
     }
 
-    public /* synthetic */ rb(vi.s0 s0Var, vi.v vVar, boolean z10, File file, boolean z11, int i10, vi.o0 o0Var) {
-        this.e = s0Var;
-        this.f = vVar;
+    public /* synthetic */ rb(vi.u0 u0Var, vi.w wVar, boolean z10, File file, boolean z11, int i10, vi.q0 q0Var) {
+        this.e = u0Var;
+        this.f = wVar;
         this.b = z10;
         this.h = file;
         this.c = z11;
         this.d = i10;
-        this.n = o0Var;
+        this.n = q0Var;
     }
 }

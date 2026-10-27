@@ -14,22 +14,22 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.ActionBar.y6;
-import org.telegram.ui.Components.a51;
+import org.telegram.ui.Components.b51;
 import org.telegram.ui.Components.bb;
-import org.telegram.ui.Components.gb1;
-import org.telegram.ui.Components.j71;
-import org.telegram.ui.Components.lm0;
+import org.telegram.ui.Components.k71;
+import org.telegram.ui.Components.kb1;
 import org.telegram.ui.Components.mm0;
-import org.telegram.ui.Components.t61;
+import org.telegram.ui.Components.nm0;
+import org.telegram.ui.Components.u61;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class e extends bb implements GiftAuctionController.OnActiveAuctionsUpdateListeners {
-    public final t61 X;
+    public final u61 X;
     public final LongSparseArray Y;
     public ArrayList Z;
     public boolean a0;
-    public j71 b0;
+    public k71 b0;
     public int c0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -50,7 +50,7 @@ public final class e extends bb implements GiftAuctionController.OnActiveAuction
         linearLayout.setClipChildren(false);
         linearLayout.setClipToPadding(false);
         linearLayout.setClickable(true);
-        this.X = t61.j(-1, linearLayout);
+        this.X = u61.j(-1, linearLayout);
         this.d.setPadding(this.backgroundPaddingLeft, AndroidUtilities.dp(9.0f), this.backgroundPaddingLeft, AndroidUtilities.dp(9.0f));
         this.d.setOverScrollMode(2);
         this.b0.O(false);
@@ -61,8 +61,8 @@ public final class e extends bb implements GiftAuctionController.OnActiveAuction
             i10++;
             GiftAuctionController.Auction auction2 = auction;
             d dVar = new d(context, auction2);
-            dVar.a.setOnClickListener(new a51(this, context, auction2, 4));
-            linearLayout.addView(dVar, gb1.r(-1, -2));
+            dVar.a.setOnClickListener(new b51(this, context, auction2, 4));
+            linearLayout.addView(dVar, kb1.r(-1, -2));
             this.Y.put(auction2.giftId, dVar);
         }
         onActiveAuctionsUpdate(activeAuctions);
@@ -114,11 +114,11 @@ public final class e extends bb implements GiftAuctionController.OnActiveAuction
     }
 
     @Override // org.telegram.ui.Components.bb
-    public final lm0 v(mm0 mm0Var) {
-        j71 j71Var = new j71(this.d, getContext(), this.currentAccount, 0, true, new hi.e2(this, 26), this.resourcesProvider);
-        this.b0 = j71Var;
-        j71Var.r = false;
-        return j71Var;
+    public final mm0 v(nm0 nm0Var) {
+        k71 k71Var = new k71(this.d, getContext(), this.currentAccount, 0, true, new hi.e2(this, 26), this.resourcesProvider);
+        this.b0 = k71Var;
+        k71Var.r = false;
+        return k71Var;
     }
 
     @Override // org.telegram.ui.Components.bb

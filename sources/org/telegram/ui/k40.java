@@ -1,44 +1,27 @@
 package org.telegram.ui;
 
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 import android.view.ViewGroup;
-import android.view.ViewTreeObserver;
-import org.telegram.messenger.ChatObject;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public final class k40 implements ViewTreeObserver.OnPreDrawListener {
-    public final /* synthetic */ ChatObject.VideoParticipant a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ v50 c;
+public final class k40 extends AnimatorListenerAdapter {
+    public final /* synthetic */ org.telegram.ui.Components.voip.t a;
+    public final /* synthetic */ x50 b;
 
-    public k40(v50 v50Var, ChatObject.VideoParticipant videoParticipant, boolean z10) {
-        this.c = v50Var;
-        this.a = videoParticipant;
-        this.b = z10;
+    public k40(x50 x50Var, org.telegram.ui.Components.voip.t tVar) {
+        this.b = x50Var;
+        this.a = tVar;
     }
 
-    @Override // android.view.ViewTreeObserver.OnPreDrawListener
-    public final boolean onPreDraw() {
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
         ViewGroup viewGroup;
-        v50 v50Var = this.c;
-        b50 b50Var = v50Var.Q;
-        b50Var.getViewTreeObserver().removeOnPreDrawListener(this);
-        v50Var.q2 = null;
-        m30 m30Var = v50Var.a2;
-        ChatObject.VideoParticipant videoParticipant = this.a;
-        m30Var.j(videoParticipant);
-        if (v50Var.s0) {
-            v50Var.s0 = false;
-            v50Var.O0(true);
-            if (this.b && videoParticipant != null) {
-                b50Var.v0(0);
-            }
-            v50Var.s0 = true;
-        } else {
-            v50Var.O0(true);
+        org.telegram.ui.Components.voip.t tVar = this.a;
+        if (tVar.getParent() != null) {
+            viewGroup = ((org.telegram.ui.ActionBar.k3) this.b).containerView;
+            viewGroup.removeView(tVar);
         }
-        viewGroup = ((org.telegram.ui.ActionBar.k3) v50Var).containerView;
-        viewGroup.requestLayout();
-        return false;
     }
 }

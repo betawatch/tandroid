@@ -1,25 +1,48 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.MediaDataController;
-import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.BuildVars;
+import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public final class sj extends g.o {
-    public final /* synthetic */ un c;
+public final /* synthetic */ class sj implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ tj b;
 
-    public sj(un unVar) {
-        this.c = unVar;
+    public /* synthetic */ sj(tj tjVar, int i10) {
+        this.a = i10;
+        this.b = tjVar;
     }
 
-    @Override // g.o
-    public final int i(int i10) {
-        int i11;
-        MessageObject messageObject;
-        MessageObject.GroupedMessages h92;
-        un unVar = this.c;
-        fm fmVar = unVar.A0;
-        int i12 = fmVar.J;
-        return (i10 < i12 || i10 >= fmVar.K || (i11 = i10 - i12) < 0 || i11 >= fmVar.L().size() || (h92 = unVar.h9((messageObject = (MessageObject) unVar.A0.L().get(i11)))) == null) ? MediaDataController.MAX_STYLE_RUNS_COUNT : h92.getPosition(messageObject).spanSize;
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                tj tjVar = this.b;
+                tjVar.W = null;
+                wn wnVar = tjVar.X;
+                if (wnVar.X9 != -1) {
+                    wnVar.getNotificationCenter().onAnimationFinish(wnVar.X9);
+                    wnVar.X9 = -1;
+                }
+                if (BuildVars.LOGS_ENABLED) {
+                    FileLog.d("chatItemAnimator enable notifications");
+                    break;
+                }
+                break;
+            default:
+                tj tjVar2 = this.b;
+                tjVar2.W = null;
+                wn wnVar2 = tjVar2.X;
+                if (wnVar2.X9 != -1) {
+                    wnVar2.getNotificationCenter().onAnimationFinish(wnVar2.X9);
+                    wnVar2.X9 = -1;
+                }
+                if (BuildVars.LOGS_ENABLED) {
+                    FileLog.d("chatItemAnimator enable notifications");
+                    break;
+                }
+                break;
+        }
     }
 }

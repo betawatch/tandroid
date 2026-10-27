@@ -44,12 +44,12 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.ds;
-import org.telegram.ui.Components.gb1;
+import org.telegram.ui.Components.kb1;
 import org.telegram.ui.Components.qc;
 import org.telegram.ui.Components.wc;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public class k3 extends Dialog implements n2 {
     private static final boolean AVOID_SYSTEM_CUTOUT_FULLSCREEN = false;
@@ -722,12 +722,12 @@ public class k3 extends Dialog implements n2 {
             this.containerView.setPadding(this.backgroundPaddingLeft, ((this.applyTopPadding ? AndroidUtilities.dp(8.0f) : 0) + this.backgroundPaddingTop) - 1, this.backgroundPaddingLeft, this.applyBottomPadding ? AndroidUtilities.dp(8.0f) : 0);
         }
         this.containerView.setVisibility(4);
-        this.container.addView(this.containerView, 0, gb1.i(-1, -2, 80));
+        this.container.addView(this.containerView, 0, kb1.i(-1, -2, 80));
         if (this.topBulletinContainer == null) {
             FrameLayout frameLayout = new FrameLayout(getContext());
             this.topBulletinContainer = frameLayout;
             h3 h3Var = this.container;
-            h3Var.addView(frameLayout, h3Var.indexOfChild(this.containerView) + 1, gb1.i(-1, -2, 80));
+            h3Var.addView(frameLayout, h3Var.indexOfChild(this.containerView) + 1, kb1.i(-1, -2, 80));
         }
         if (this.title != null) {
             y2 y2Var = new y2(this, getContext());
@@ -754,7 +754,7 @@ public class k3 extends Dialog implements n2 {
             }
             this.titleView.setGravity(16);
             i10 = 48;
-            this.containerView.addView(this.titleView, gb1.g(this.multipleLinesTitle ? -2.0f : 48, -1));
+            this.containerView.addView(this.titleView, kb1.g(this.multipleLinesTitle ? -2.0f : 48, -1));
             this.titleView.setOnTouchListener(new ei.d(1));
         } else {
             i10 = 0;
@@ -765,14 +765,14 @@ public class k3 extends Dialog implements n2 {
                 ((ViewGroup) this.customView.getParent()).removeView(this.customView);
             }
             if (this.useBackgroundTopPadding) {
-                this.containerView.addView(this.customView, gb1.h(-1, -2.0f, this.customViewGravity, 0.0f, i10, 0.0f, 0.0f));
+                this.containerView.addView(this.customView, kb1.h(-1, -2.0f, this.customViewGravity, 0.0f, i10, 0.0f, 0.0f));
             } else {
                 this.containerView.setClipToPadding(false);
                 this.containerView.setClipChildren(false);
                 this.container.setClipToPadding(false);
                 this.container.setClipChildren(false);
                 float f7 = i10;
-                this.containerView.addView(this.customView, gb1.h(-1, -2.0f, this.customViewGravity, 0.0f, f7, 0.0f, 0.0f));
+                this.containerView.addView(this.customView, kb1.h(-1, -2.0f, this.customViewGravity, 0.0f, f7, 0.0f, 0.0f));
                 ((ViewGroup.MarginLayoutParams) this.customView.getLayoutParams()).topMargin = AndroidUtilities.dp(f7) + (-this.backgroundPaddingTop);
             }
         } else if (this.items != null) {
@@ -787,7 +787,7 @@ public class k3 extends Dialog implements n2 {
                     CharSequence charSequence = this.items[i11];
                     int[] iArr = this.itemIcons;
                     c3Var.a(charSequence, iArr != null ? iArr[i11] : 0, null, this.bigTitle);
-                    this.containerView.addView(c3Var, gb1.h(-1, 48.0f, 51, 0.0f, i10, 0.0f, 0.0f));
+                    this.containerView.addView(c3Var, kb1.h(-1, 48.0f, 51, 0.0f, i10, 0.0f, 0.0f));
                     i10 += 48;
                     c3Var.setTag(Integer.valueOf(i11));
                     c3Var.setOnClickListener(new x(this, 2));

@@ -9,7 +9,7 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Emoji;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class l00 extends s4.l {
     public final /* synthetic */ s00 F;
@@ -33,7 +33,7 @@ public final class l00 extends s4.l {
                 }
                 ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
                 ofFloat.addUpdateListener(new k00(q00Var, 0));
-                ofFloat.addListener(new org.telegram.ui.qp(q00Var, 28));
+                ofFloat.addListener(new org.telegram.ui.sp(q00Var, 28));
                 q00Var.a = ofFloat;
                 ofFloat.setDuration(this.e);
                 ofFloat.start();

@@ -12,7 +12,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class ge extends LinearLayout {
     public static final /* synthetic */ int x = 0;
@@ -49,7 +49,7 @@ public final class ge extends LinearLayout {
         fe feVar = new fe(this, context, i10, j10, i11, u6Var);
         this.c = feVar;
         deVar.setAdapter(feVar);
-        org.telegram.ui.Components.t91 n10 = deVar.n(-2, true);
+        org.telegram.ui.Components.u91 n10 = deVar.n(-2, true);
         oi.q qVar = keVar.d1;
         if (qVar != null) {
             qVar.c(deVar);
@@ -57,8 +57,8 @@ public final class ge extends LinearLayout {
         k0 k0Var = new k0(this, context, 5);
         this.d = k0Var;
         k0Var.setPadding(AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f));
-        k0Var.addView(n10, org.telegram.ui.Components.gb1.i(-1, 48, 48));
-        addView(deVar, org.telegram.ui.Components.gb1.r(-1, -1));
+        k0Var.addView(n10, org.telegram.ui.Components.kb1.i(-1, 48, 48));
+        addView(deVar, org.telegram.ui.Components.kb1.r(-1, -1));
         c(1);
         c(0);
     }
@@ -438,11 +438,11 @@ public final class ge extends LinearLayout {
             View view = deVar.getViewPages()[i10];
             if (view instanceof ee) {
                 ee eeVar = (ee) view;
-                org.telegram.ui.Components.r71 r71Var = eeVar.a;
-                r71Var.g3.O(true);
-                if (r71Var.canScrollVertically(1)) {
-                    for (int i11 = 0; i11 < r71Var.getChildCount(); i11++) {
-                        if (!(r71Var.getChildAt(i11) instanceof org.telegram.ui.Components.c10)) {
+                org.telegram.ui.Components.s71 s71Var = eeVar.a;
+                s71Var.g3.O(true);
+                if (s71Var.canScrollVertically(1)) {
+                    for (int i11 = 0; i11 < s71Var.getChildCount(); i11++) {
+                        if (!(s71Var.getChildAt(i11) instanceof org.telegram.ui.Components.c10)) {
                         }
                     }
                 }
@@ -484,7 +484,7 @@ public final class ge extends LinearLayout {
         this.w.l();
     }
 
-    public org.telegram.ui.Components.mm0 getCurrentListView() {
+    public org.telegram.ui.Components.nm0 getCurrentListView() {
         View currentView = this.b.getCurrentView();
         if (currentView instanceof ee) {
             return ((ee) currentView).a;

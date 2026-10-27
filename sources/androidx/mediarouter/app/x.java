@@ -10,13 +10,13 @@ import java.util.Iterator;
 import java.util.List;
 import m.i3;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.r90;
+import org.telegram.ui.Components.s90;
 import org.telegram.ui.Components.x30;
-import org.telegram.ui.Components.y70;
-import org.telegram.ui.Components.yp;
+import org.telegram.ui.Components.z70;
+import org.telegram.ui.Components.zp;
 import s4.e1;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
 public final class x implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -202,28 +202,28 @@ public final class x implements View.OnClickListener {
                 }
                 return;
             case 8:
-                yp.r((yp) this.b);
+                zp.r((zp) this.b);
                 return;
             case 9:
-                y70 y70Var = (y70) this.b;
+                z70 z70Var = (z70) this.b;
                 x30 x30Var = (x30) view;
                 if (x30Var.y) {
-                    y70Var.j0 = null;
-                    y70Var.f0.l(x30Var.getUid());
-                    y70Var.U.b(x30Var);
-                    y70Var.a0(true);
-                    AndroidUtilities.updateVisibleRows(y70Var.d);
+                    z70Var.j0 = null;
+                    z70Var.f0.l(x30Var.getUid());
+                    z70Var.U.b(x30Var);
+                    z70Var.a0(true);
+                    AndroidUtilities.updateVisibleRows(z70Var.d);
                     return;
                 }
-                x30 x30Var2 = y70Var.j0;
+                x30 x30Var2 = z70Var.j0;
                 if (x30Var2 != null) {
                     x30Var2.a();
                 }
-                y70Var.j0 = x30Var;
+                z70Var.j0 = x30Var;
                 x30Var.b();
                 return;
             default:
-                ((r90) this.b).e.callOnClick();
+                ((s90) this.b).e.callOnClick();
                 return;
         }
     }

@@ -1,924 +1,381 @@
 package org.telegram.ui;
 
-import android.animation.ValueAnimator;
 import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.BitmapShader;
 import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.graphics.PorterDuffXfermode;
-import android.graphics.Shader;
-import android.text.SpannableStringBuilder;
-import android.util.SparseIntArray;
-import android.view.MotionEvent;
-import android.view.View;
-import android.view.ViewGroup;
+import android.graphics.RectF;
 import android.widget.FrameLayout;
-import android.widget.ImageView;
-import android.widget.TextView;
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.WeakHashMap;
+import java.util.HashSet;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.BuildVars;
+import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.DialogObject;
+import org.telegram.messenger.Emoji;
 import org.telegram.messenger.FileLog;
+import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_account;
-import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public final class rp0 extends org.telegram.ui.ActionBar.r2 implements NotificationCenter.NotificationCenterDelegate {
-    public final ch.b E;
-    public final hh.c F;
-    public final ch.b G;
-    public org.telegram.ui.ActionBar.r2 H;
-    public fi.h1 I;
-    public ImageView J;
-    public ImageView K;
-    public FrameLayout L;
-    public org.telegram.ui.Components.zz M;
-    public org.telegram.ui.ActionBar.b6 N;
-    public FrameLayout O;
-    public FrameLayout P;
-    public fi.d Q;
-    public lp0 R;
-    public boolean S;
-    public org.telegram.ui.Components.xj0 T;
-    public boolean U;
-    public boolean V;
-    public boolean W;
-    public mc X;
-    public float Y;
-    public ValueAnimator Z;
-    public final boolean a;
-    public boolean a0;
-    public final bi.t9 b;
-    public i0.b b0;
-    public final bi.t9 c;
-    public final se.b c0;
-    public k0 d;
-    public final se.b d0;
-    public uo0 e;
-    public final int f;
-    public lp0 h;
-    public lp0 n;
-    public boolean r;
-    public org.telegram.ui.ActionBar.u6 s;
-    public final SparseIntArray v;
-    public final org.telegram.ui.ActionBar.l5 w;
-    public final org.telegram.ui.ActionBar.l5 x;
-    public final hh.c y;
+public class rp0 extends FrameLayout implements org.telegram.ui.ActionBar.p6 {
+    public int E;
+    public final RectF F;
+    public final org.telegram.ui.ActionBar.u6 a;
+    public final int b;
+    public final boolean c;
+    public final ImageReceiver d;
+    public final org.telegram.ui.Components.j9 e;
+    public final hl f;
+    public final org.telegram.ui.ActionBar.b6 h;
+    public boolean n;
+    public final org.telegram.ui.Components.r5 r;
+    public final org.telegram.ui.Components.r5 s;
+    public final org.telegram.ui.Components.r5 v;
+    public final di.y7 w;
+    public final org.telegram.ui.Components.h6 x;
+    public MessagesController.PeerColor y;
 
-    public rp0() {
-        super(null);
-        this.f = AndroidUtilities.dp(6.0f);
-        this.v = new SparseIntArray();
-        boolean q5 = org.telegram.ui.ActionBar.y6.I.q();
-        this.S = q5;
-        this.a0 = q5;
-        this.b0 = i0.b.e;
-        se.b bVar = new se.b();
-        this.c0 = bVar;
-        se.b bVar2 = new se.b();
-        this.d0 = bVar2;
-        hh.c cVar = new hh.c();
-        this.y = cVar;
-        ch.b bVar3 = new ch.b(cVar);
-        this.E = bVar3;
-        hh.c cVar2 = new hh.c();
-        this.F = cVar2;
-        ch.b bVar4 = new ch.b(cVar2);
-        this.G = bVar4;
-        bVar3.e = bVar;
-        bVar3.d = bVar2;
-        bVar4.e = bVar;
-        bVar4.d = bVar2;
-        this.a = false;
-        bi.ca.y(this.currentAccount, false).V();
-        bi.t9 t9Var = new bi.t9(this.currentAccount, 0L, false);
-        this.b = t9Var;
-        t9Var.g(8, false);
-        t9Var.b();
-        bi.t9 t9Var2 = new bi.t9(this.currentAccount, 0L, false);
-        this.c = t9Var2;
-        t9Var2.g(8, false);
-        t9Var2.f = true;
-        t9Var2.b();
-        this.resourceProvider = new xj(this, 1);
-        this.w = new org.telegram.ui.ActionBar.l5(0, false, false, this.resourceProvider);
-        this.x = new org.telegram.ui.ActionBar.l5(0, false, true, this.resourceProvider);
-    }
-
-    public static boolean C0(TLRPC.EmojiStatus emojiStatus, TLRPC.TL_emojiStatusCollectible tL_emojiStatusCollectible) {
-        if (tL_emojiStatusCollectible == emojiStatus) {
-            return true;
-        }
-        boolean z10 = emojiStatus instanceof TLRPC.TL_emojiStatusCollectible;
-        return (tL_emojiStatusCollectible != null) == z10 && tL_emojiStatusCollectible != null && z10 && ((TLRPC.TL_emojiStatusCollectible) emojiStatus).collectible_id == tL_emojiStatusCollectible.collectible_id;
-    }
-
-    public static void V(rp0 rp0Var, boolean[] zArr, TL_stars.TL_starGiftUnique tL_starGiftUnique, long j10, qo0 qo0Var, bi.d6 d6Var, qf.c cVar) {
-        zArr[0] = true;
-        cVar.d();
-        bi.ca.x(rp0Var.currentAccount, d6Var.a).h(d6Var.b, tL_starGiftUnique, j10, null, true, new bi.m5(21, cVar, qo0Var));
-    }
-
-    public static void W(rp0 rp0Var, bg.b bVar, TL_stars.TL_starGiftUnique tL_starGiftUnique, long j10, qo0 qo0Var, TLRPC.TL_payments_paymentFormStarGift tL_payments_paymentFormStarGift) {
-        if (tL_payments_paymentFormStarGift == null) {
-            return;
-        }
-        bi.d6 d6Var = new bi.d6(bVar, tL_payments_paymentFormStarGift);
-        StringBuilder sb2 = new StringBuilder();
-        sb2.append(tL_starGiftUnique.title);
-        sb2.append(" #");
-        boolean[] zArr = new boolean[1];
-        bi.g6 g6Var = new bi.g6(rp0Var.getParentActivity(), rp0Var.resourceProvider, tL_starGiftUnique, d6Var, rp0Var.currentAccount, j10, org.telegram.messenger.t.i(tL_starGiftUnique.num, ',', sb2), false, new bi.w3(rp0Var, zArr, tL_starGiftUnique, j10, qo0Var, 1));
-        g6Var.h.setOnDismissListener(new bi.u3(12, zArr, qo0Var));
-        g6Var.b();
-    }
-
-    public static int x0(int i10) {
-        return org.telegram.ui.ActionBar.y6.b(0.5f, (AndroidUtilities.computePerceivedBrightness(i10) > 0.2f ? 1 : (AndroidUtilities.computePerceivedBrightness(i10) == 0.2f ? 0 : -1)) < 0 ? 0.28f : -0.28f, i10);
-    }
-
-    public final void A0() {
-        this.y.a(getThemedColor(org.telegram.ui.ActionBar.y6.d6));
-        this.O.invalidate();
-        this.P.invalidate();
-        this.h.w.invalidate();
-        this.h.x.invalidate();
-        this.n.w.invalidate();
-        this.h.b.invalidate();
-        this.n.b.invalidate();
-        ((eh.d) this.O.getBackground()).updateColors();
-        B0();
-        Iterator it = this.d0.iterator();
-        while (it.hasNext()) {
-            ((eh.d) it.next()).updateColors();
-        }
-    }
-
-    public final void B0() {
-        int f7 = ((double) AndroidUtilities.computePerceivedBrightness(getThemedColor(org.telegram.ui.ActionBar.y6.d6))) > 0.72d ? i0.a.f(0.085f, getThemedColor(org.telegram.ui.ActionBar.y6.a7), this.e.getColor()) : getThemedColor(org.telegram.ui.ActionBar.y6.a7);
-        this.d.setBackgroundColor(f7);
-        hh.c cVar = this.F;
-        if (cVar.b != f7) {
-            cVar.a(f7);
-            Iterator it = this.d0.iterator();
-            while (it.hasNext()) {
-                ((eh.d) it.next()).updateColors();
-            }
-            Iterator it2 = this.c0.iterator();
-            while (it2.hasNext()) {
-                ((View) it2.next()).invalidate();
-            }
-        }
-    }
-
-    public final lp0 D0() {
-        fi.h1 h1Var = this.I;
-        return (h1Var == null || h1Var.getPositionAnimated() < 0.5f) ? this.n : this.h;
-    }
-
-    /* JADX WARN: Code restructure failed: missing block: B:11:0x0021, code lost:
-    
-        if ((r15.I.getCurrentPosition() == 0 ? r15.n : r15.h) == r15.h) goto L14;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:56:0x00e2, code lost:
-    
-        if ((r15.I.getCurrentPosition() == 0 ? r15.n : r15.h) == r15.n) goto L58;
-     */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void E0() {
-        ArrayList<Integer> arrayList;
-        mp0 mp0Var;
-        if (this.H != null) {
-            boolean z10 = this.U;
-            boolean z11 = this.a;
-            if (z10) {
-                if (this.V) {
-                }
-                lp0 lp0Var = this.h;
-                if (lp0Var.h >= 0) {
-                    org.telegram.ui.Components.wc.b0(this.H).L(mp0.a(this.currentAccount, this.h.h), LocaleController.getString(z11 ? R.string.ChannelColorApplied : R.string.UserColorApplied)).j();
-                } else {
-                    if (lp0Var.s == null) {
-                        return;
-                    }
-                    org.telegram.ui.Components.wc b02 = org.telegram.ui.Components.wc.b0(this.H);
-                    TLRPC.TL_peerColorCollectible tL_peerColorCollectible = this.h.s;
-                    int i10 = mp0.j;
-                    if (!org.telegram.ui.ActionBar.y6.I.q() || (arrayList = tL_peerColorCollectible.dark_colors) == null) {
-                        arrayList = tL_peerColorCollectible.colors;
-                    }
-                    if (arrayList == null || arrayList.isEmpty()) {
-                        mp0Var = null;
-                    } else {
-                        int intValue = arrayList.get(0).intValue() | (-16777216);
-                        mp0Var = new mp0(tL_peerColorCollectible.gift_emoji_id, intValue, arrayList.size() >= 2 ? arrayList.get(1).intValue() | (-16777216) : intValue, arrayList.size() >= 3 ? arrayList.get(2).intValue() | (-16777216) : intValue);
-                    }
-                    b02.L(mp0Var, LocaleController.getString(z11 ? R.string.ChannelColorApplied : R.string.UserColorApplied)).j();
-                }
-                this.H = null;
-            }
-            if (this.V) {
-                if (this.U) {
-                }
-                lp0 lp0Var2 = this.n;
-                if (lp0Var2.h >= 0) {
-                    org.telegram.ui.Components.wc.b0(this.H).L(mp0.c(this.currentAccount, this.n.h), LocaleController.getString(z11 ? R.string.ChannelProfileColorApplied : R.string.UserProfileColorApplied)).j();
-                } else if (lp0Var2.n != 0) {
-                    org.telegram.ui.Components.wc b03 = org.telegram.ui.Components.wc.b0(this.H);
-                    TLRPC.Document f7 = org.telegram.ui.Components.t5.f(this.currentAccount, this.n.n);
-                    String string = LocaleController.getString(z11 ? R.string.ChannelProfileColorEmojiApplied : R.string.UserProfileColorEmojiApplied);
-                    b03.getClass();
-                    org.telegram.ui.Components.yb ybVar = new org.telegram.ui.Components.yb(b03.X(), b03.c);
-                    boolean isTextColorEmoji = MessageObject.isTextColorEmoji(f7);
-                    org.telegram.ui.Components.ak0 ak0Var = ybVar.a;
-                    if (isTextColorEmoji) {
-                        org.telegram.ui.ActionBar.f7.t(ak0Var, org.telegram.ui.ActionBar.y6.Hi, null, PorterDuff.Mode.SRC_IN);
-                    }
-                    ybVar.e(f7, new String[0]);
-                    ak0Var.i();
-                    ybVar.b.setText(string);
-                    ybVar.b.setTextSize(1, 14.0f);
-                    ybVar.b.setSingleLine(false);
-                    ybVar.b.setMaxLines(3);
-                    b03.b(ybVar, 2750).j();
-                } else {
-                    org.telegram.messenger.t.q(z11 ? R.string.ChannelProfileColorResetApplied : R.string.UserProfileColorResetApplied, org.telegram.ui.Components.wc.b0(this.H), R.raw.contact_check, 36);
-                }
-            }
-            this.H = null;
-        }
-    }
-
-    public final void F0() {
-        org.telegram.ui.ActionBar.b6 b6Var = this.N;
-        if (b6Var != null) {
-            b6Var.setTextColor(getThemedColor(org.telegram.ui.ActionBar.y6.A8));
-        }
-        this.h.g();
-        this.n.g();
-        uo0 uo0Var = this.e;
-        if (uo0Var != null) {
-            uo0Var.a = org.telegram.ui.ActionBar.y6.w0(org.telegram.ui.ActionBar.y6.a7, uo0Var.b);
-            uo0Var.a();
-            uo0Var.invalidate();
-        }
-        G0();
-        A0();
-        setNavigationBarColor(getNavigationBarColor());
-    }
-
-    public final void G0() {
-        if (this.e == null) {
-            return;
-        }
-        B0();
-        int tabsViewBackgroundColor = this.e.getTabsViewBackgroundColor();
-        if (this.M != null) {
-            fi.h1 h1Var = this.I;
-            float a2 = a8.ee.a(((h1Var == null ? 0.0f : h1Var.getPositionAnimated()) - 0.333333f) / 0.333333f, 0.0f, 1.0f);
-            org.telegram.ui.Components.zz zzVar = this.M;
-            int f7 = i0.a.f(a2, tabsViewBackgroundColor, getThemedColor(org.telegram.ui.ActionBar.y6.d6));
-            int f10 = i0.a.f(a2, -1, getThemedColor(org.telegram.ui.ActionBar.y6.a7));
-            int f11 = i0.a.f(a2, -1, getThemedColor(org.telegram.ui.ActionBar.y6.z6));
-            int f12 = i0.a.f(a2, tabsViewBackgroundColor, getThemedColor(org.telegram.ui.ActionBar.y6.G6));
-            zzVar.a.setColor(f7);
-            zzVar.b.setColor(f10);
-            zzVar.d = f11;
-            zzVar.e = f12;
-            zzVar.invalidate();
-        }
-    }
-
-    @Override // org.telegram.ui.ActionBar.r2
-    public final View createView(Context context) {
-        final int i10 = 1;
-        setHasOwnBackground(true);
-        final int i11 = 0;
-        this.actionBar.setCastShadows(false);
-        this.actionBar.setVisibility(8);
-        this.actionBar.setAllowOverlayTitle(false);
-        this.actionBar.setAddToContainer(false);
-        k0 k0Var = new k0(this, context, 16);
-        this.d = k0Var;
-        this.fragmentView = k0Var;
-        this.h = new lp0(this, context, 1);
-        this.n = new lp0(this, context, 0);
-        uo0 uo0Var = new uo0(this, context, this.resourceProvider);
-        this.e = uo0Var;
-        uo0Var.E = true;
-        this.n.j(false);
-        final int i12 = 2;
-        this.n.addView(this.e, 2, org.telegram.ui.Components.gb1.i(-1, -2, 55));
-        fi.h1 h1Var = new fi.h1(this, context, 5);
-        this.I = h1Var;
-        h1Var.setAdapter(new vo0(this, i11));
-        k0Var.addView(this.I, org.telegram.ui.Components.gb1.i(-1, -1, 119));
-        fi.d dVar = new fi.d(context, getResourceProvider(), true);
-        this.Q = dVar;
-        dVar.setStateListAnimator(null);
-        this.Q.f();
-        this.Q.d.r(true, true);
-        FrameLayout frameLayout = new FrameLayout(context);
-        this.O = frameLayout;
-        frameLayout.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.so0
-            public final /* synthetic */ rp0 b;
-
-            {
-                this.b = this;
-            }
-
-            @Override // android.view.View.OnClickListener
-            public final void onClick(View view) {
-                int i13 = i12;
-                rp0 rp0Var = this.b;
-                switch (i13) {
-                    case 0:
-                        if (rp0Var.onBackPressed(true)) {
-                            rp0Var.finishFragment();
-                            break;
-                        }
-                        break;
-                    case 1:
-                        rp0 rp0Var2 = this.b;
-                        FrameLayout frameLayout2 = (FrameLayout) rp0Var2.getParentActivity().getWindow().getDecorView();
-                        Bitmap createBitmap = Bitmap.createBitmap(frameLayout2.getWidth(), frameLayout2.getHeight(), Bitmap.Config.ARGB_8888);
-                        Canvas canvas = new Canvas(createBitmap);
-                        rp0Var2.K.setAlpha(0.0f);
-                        frameLayout2.draw(canvas);
-                        rp0Var2.K.setAlpha(1.0f);
-                        Paint paint = new Paint(1);
-                        paint.setColor(-16777216);
-                        paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.CLEAR));
-                        Paint paint2 = new Paint(1);
-                        paint2.setFilterBitmap(true);
-                        int[] iArr = new int[2];
-                        rp0Var2.K.getLocationInWindow(iArr);
-                        float f7 = iArr[0];
-                        float f10 = iArr[1];
-                        float max = Math.max(createBitmap.getHeight(), createBitmap.getWidth()) + AndroidUtilities.navigationBarHeight;
-                        Shader.TileMode tileMode = Shader.TileMode.CLAMP;
-                        paint2.setShader(new BitmapShader(createBitmap, tileMode, tileMode));
-                        mc mcVar = new mc(rp0Var2, rp0Var2.getParentActivity(), canvas, (rp0Var2.K.getMeasuredWidth() / 2.0f) + f7, (rp0Var2.K.getMeasuredHeight() / 2.0f) + f10, max, paint, createBitmap, paint2, f7, f10, 1);
-                        rp0Var2.X = mcVar;
-                        mcVar.setOnTouchListener(new ei.d(2));
-                        rp0Var2.Y = 0.0f;
-                        ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
-                        rp0Var2.Z = ofFloat;
-                        ofFloat.addUpdateListener(new fi.bb(rp0Var2, 2));
-                        rp0Var2.Z.addListener(new i50(rp0Var2, 8));
-                        rp0Var2.Z.setDuration(400L);
-                        rp0Var2.Z.setInterpolator(org.telegram.ui.Components.ut.e);
-                        rp0Var2.Z.start();
-                        frameLayout2.addView(rp0Var2.X, new ViewGroup.LayoutParams(-1, -1));
-                        AndroidUtilities.runOnUIThread(new lj0(rp0Var2, 12));
-                        break;
-                    default:
-                        rp0Var.z0();
-                        break;
-                }
-            }
-        });
-        this.O.setPadding(AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f));
-        this.O.addView(this.Q, org.telegram.ui.Components.gb1.g(-1.0f, -1));
-        View view = this.O;
-        eh.d c10 = this.E.c(view, null, false);
-        c10.v(gh.c.j(this.resourceProvider));
-        c10.x(AndroidUtilities.dp(28.0f));
-        c10.w(AndroidUtilities.dp(5.0f));
-        view.setBackground(c10);
-        org.telegram.ui.Components.gb1.c(this.O, 0.02f, 1.5f);
-        FrameLayout frameLayout2 = new FrameLayout(context);
-        this.P = frameLayout2;
-        frameLayout2.addView(this.O, org.telegram.ui.Components.gb1.h(-1, 64.0f, 80, 4.0f, 0.0f, 4.0f, 0.0f));
-        ch.c cVar = new ch.c(this.G.c(this.P, null, false));
-        cVar.b(AndroidUtilities.dp(40.0f), true);
-        cVar.G = 220;
-        this.P.setBackground(cVar);
-        lp0 D0 = D0();
-        fi.d dVar2 = this.Q;
-        if (dVar2 != null && D0 != null && D0 != this.R) {
-            this.R = D0;
-            m4.c cVar2 = D0.e;
-            dVar2.i((CharSequence) cVar2.b, false, true);
-            this.Q.g((SpannableStringBuilder) cVar2.c, false);
-        }
-        k0Var.addView(this.P, org.telegram.ui.Components.gb1.i(-1, -2, 80));
-        FrameLayout frameLayout3 = new FrameLayout(context);
-        this.L = frameLayout3;
-        k0Var.addView(frameLayout3, org.telegram.ui.Components.gb1.i(-1, -2, 55));
-        boolean z10 = this.a;
+    public rp0(int i10, long j10, Context context, org.telegram.ui.ActionBar.u6 u6Var) {
+        super(context);
+        CharSequence userName;
+        long botVerificationIcon;
+        ImageReceiver imageReceiver = new ImageReceiver(this);
+        this.d = imageReceiver;
+        org.telegram.ui.Components.j9 j9Var = new org.telegram.ui.Components.j9((org.telegram.ui.ActionBar.u6) null);
+        this.e = j9Var;
+        this.v = new org.telegram.ui.Components.r5(AndroidUtilities.dp(20.0f), 13, this, false);
+        this.w = new di.y7(this);
+        this.x = new org.telegram.ui.Components.h6(this, 320L, org.telegram.ui.Components.ds.h);
+        this.F = new RectF();
+        this.b = i10;
+        this.a = u6Var;
+        long j11 = 0;
+        boolean z10 = j10 < 0;
+        this.c = z10;
+        hl hlVar = new hl(this, context, 2);
+        this.f = hlVar;
+        this.r = new org.telegram.ui.Components.r5(AndroidUtilities.dp(17.0f), hlVar);
+        this.s = new org.telegram.ui.Components.r5(AndroidUtilities.dp(24.0f), hlVar);
+        hlVar.setLeftDrawableOutside(true);
+        hlVar.setRightDrawableOutside(true);
+        hlVar.setTextColor(-1);
+        hlVar.setTextSize(20);
+        hlVar.setTypeface(AndroidUtilities.bold());
+        hlVar.setWidthWrapContent(true);
+        addView(hlVar, org.telegram.ui.Components.kb1.h(-2, -2.0f, 81, 16.0f, 0.0f, 16.0f, 40.33f));
+        org.telegram.ui.ActionBar.b6 b6Var = new org.telegram.ui.ActionBar.b6(context);
+        this.h = b6Var;
+        b6Var.setTextSize(14);
+        b6Var.setTextColor(-2130706433);
+        b6Var.setGravity(1);
+        addView(b6Var, org.telegram.ui.Components.kb1.h(-2, -2.0f, 81, 16.0f, 0.0f, 16.0f, 20.66f));
+        imageReceiver.setRoundRadius(AndroidUtilities.dp(96.0f));
         if (z10) {
-            org.telegram.ui.ActionBar.b6 b6Var = new org.telegram.ui.ActionBar.b6(context);
-            this.N = b6Var;
-            b6Var.l(LocaleController.getString(R.string.ChannelColorTitle2), false);
-            this.N.setEllipsizeByGradient(true);
-            this.N.setTextSize(20);
-            org.telegram.ui.ActionBar.f7.Y(this.N, org.telegram.ui.ActionBar.y6.A8, getResourceProvider());
-            this.N.setTypeface(AndroidUtilities.bold());
-            this.L.addView(this.N, org.telegram.ui.Components.gb1.h(-2, -2.0f, 19, 72.0f, 0.0f, 72.0f, 0.0f));
+            TLRPC.Chat chat = MessagesController.getInstance(i10).getChat(Long.valueOf(-j10));
+            userName = chat == null ? "" : chat.title;
+            j9Var.k(i10, chat);
+            imageReceiver.setForUserOrChat(chat, j9Var);
+            botVerificationIcon = DialogObject.getBotVerificationIcon(chat);
+            if (chat != null) {
+                j11 = DialogObject.getEmojiStatusDocumentId(chat.emoji_status);
+            }
         } else {
-            org.telegram.ui.Components.zz zzVar = new org.telegram.ui.Components.zz(context);
-            this.M = zzVar;
-            zzVar.setTabs(LocaleController.getString(z10 ? R.string.ChannelColorTabProfile : R.string.UserColorTabProfile), LocaleController.getString(z10 ? R.string.ChannelColorTabName : R.string.UserColorTabName));
-            this.M.r = new qo0(this, i11);
-            G0();
-            this.L.addView(this.M, org.telegram.ui.Components.gb1.i(-1, 40, 17));
-        }
-        uo0 uo0Var2 = this.e;
-        if (uo0Var2 != null) {
-            uo0Var2.setProgressToGradient(1.0f);
-            if (getParentActivity() != null) {
-                AndroidUtilities.setLightStatusBar(getParentActivity(), isLightStatusBar());
+            TLRPC.User currentUser = UserConfig.getInstance(i10).getCurrentUser();
+            userName = UserObject.getUserName(currentUser);
+            j9Var.m(i10, currentUser);
+            imageReceiver.setForUserOrChat(currentUser, j9Var);
+            botVerificationIcon = DialogObject.getBotVerificationIcon(currentUser);
+            if (currentUser != null) {
+                j11 = DialogObject.getEmojiStatusDocumentId(currentUser.emoji_status);
             }
         }
-        ImageView imageView = new ImageView(context);
-        this.J = imageView;
-        ImageView.ScaleType scaleType = ImageView.ScaleType.CENTER;
-        imageView.setScaleType(scaleType);
-        ImageView imageView2 = this.J;
-        int i13 = org.telegram.ui.ActionBar.y6.u8;
-        org.telegram.ui.ActionBar.f7.R(imageView2, org.telegram.ui.ActionBar.y6.g0(getThemedColor(i13), 1, -1), null, org.telegram.ui.ActionBar.f7.N(i13), getResourceProvider());
-        this.J.setImageResource(R.drawable.ic_ab_back);
-        ImageView imageView3 = this.J;
-        PorterDuff.Mode mode = PorterDuff.Mode.SRC_IN;
-        imageView3.setColorFilter(new PorterDuffColorFilter(-1, mode));
-        this.J.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.so0
-            public final /* synthetic */ rp0 b;
-
-            {
-                this.b = this;
-            }
-
-            @Override // android.view.View.OnClickListener
-            public final void onClick(View view2) {
-                int i132 = i11;
-                rp0 rp0Var = this.b;
-                switch (i132) {
-                    case 0:
-                        if (rp0Var.onBackPressed(true)) {
-                            rp0Var.finishFragment();
-                            break;
-                        }
-                        break;
-                    case 1:
-                        rp0 rp0Var2 = this.b;
-                        FrameLayout frameLayout22 = (FrameLayout) rp0Var2.getParentActivity().getWindow().getDecorView();
-                        Bitmap createBitmap = Bitmap.createBitmap(frameLayout22.getWidth(), frameLayout22.getHeight(), Bitmap.Config.ARGB_8888);
-                        Canvas canvas = new Canvas(createBitmap);
-                        rp0Var2.K.setAlpha(0.0f);
-                        frameLayout22.draw(canvas);
-                        rp0Var2.K.setAlpha(1.0f);
-                        Paint paint = new Paint(1);
-                        paint.setColor(-16777216);
-                        paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.CLEAR));
-                        Paint paint2 = new Paint(1);
-                        paint2.setFilterBitmap(true);
-                        int[] iArr = new int[2];
-                        rp0Var2.K.getLocationInWindow(iArr);
-                        float f7 = iArr[0];
-                        float f10 = iArr[1];
-                        float max = Math.max(createBitmap.getHeight(), createBitmap.getWidth()) + AndroidUtilities.navigationBarHeight;
-                        Shader.TileMode tileMode = Shader.TileMode.CLAMP;
-                        paint2.setShader(new BitmapShader(createBitmap, tileMode, tileMode));
-                        mc mcVar = new mc(rp0Var2, rp0Var2.getParentActivity(), canvas, (rp0Var2.K.getMeasuredWidth() / 2.0f) + f7, (rp0Var2.K.getMeasuredHeight() / 2.0f) + f10, max, paint, createBitmap, paint2, f7, f10, 1);
-                        rp0Var2.X = mcVar;
-                        mcVar.setOnTouchListener(new ei.d(2));
-                        rp0Var2.Y = 0.0f;
-                        ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
-                        rp0Var2.Z = ofFloat;
-                        ofFloat.addUpdateListener(new fi.bb(rp0Var2, 2));
-                        rp0Var2.Z.addListener(new i50(rp0Var2, 8));
-                        rp0Var2.Z.setDuration(400L);
-                        rp0Var2.Z.setInterpolator(org.telegram.ui.Components.ut.e);
-                        rp0Var2.Z.start();
-                        frameLayout22.addView(rp0Var2.X, new ViewGroup.LayoutParams(-1, -1));
-                        AndroidUtilities.runOnUIThread(new lj0(rp0Var2, 12));
-                        break;
-                    default:
-                        rp0Var.z0();
-                        break;
+        try {
+            userName = Emoji.replaceEmoji(userName, null, false);
+        } catch (Exception unused) {
+        }
+        this.f.l(userName, false);
+        this.r.j(botVerificationIcon, false);
+        this.f.setLeftDrawable(this.r);
+        this.s.j(j11, false);
+        this.f.i(this.s);
+        if (this.c) {
+            long j12 = -j10;
+            TLRPC.Chat chat2 = MessagesController.getInstance(i10).getChat(Long.valueOf(j12));
+            TLRPC.ChatFull chatFull = MessagesController.getInstance(i10).getChatFull(j12);
+            if (chatFull == null || chatFull.participants_count <= 0) {
+                if (chat2 == null || chat2.participants_count <= 0) {
+                    boolean isPublic = ChatObject.isPublic(chat2);
+                    if (ChatObject.isChannelAndNotMegaGroup(chat2)) {
+                        this.h.l(LocaleController.getString(isPublic ? R.string.ChannelPublic : R.string.ChannelPrivate).toLowerCase(), false);
+                    } else {
+                        this.h.l(LocaleController.getString(isPublic ? R.string.MegaPublic : R.string.MegaPrivate).toLowerCase(), false);
+                    }
+                } else if (ChatObject.isChannelAndNotMegaGroup(chat2)) {
+                    this.h.l(LocaleController.formatPluralStringComma("Subscribers", chat2.participants_count), false);
+                } else {
+                    this.h.l(LocaleController.formatPluralStringComma("Members", chat2.participants_count), false);
                 }
+            } else if (ChatObject.isChannelAndNotMegaGroup(chat2)) {
+                this.h.l(LocaleController.formatPluralStringComma("Subscribers", chatFull.participants_count), false);
+            } else {
+                this.h.l(LocaleController.formatPluralStringComma("Members", chatFull.participants_count), false);
             }
-        });
-        org.telegram.ui.Components.gb1.b(this.J);
-        this.L.addView(this.J, org.telegram.ui.Components.gb1.i(54, 54, 19));
-        org.telegram.ui.Components.xj0 xj0Var = new org.telegram.ui.Components.xj0(R.raw.sun_outline, AndroidUtilities.dp(28.0f), AndroidUtilities.dp(28.0f), true, null);
-        this.T = xj0Var;
-        xj0Var.h = true;
-        if (this.S) {
-            xj0Var.M(35);
-            this.T.P(36);
         } else {
-            xj0Var.P(0);
-            this.T.M(0);
+            this.h.l(LocaleController.getString(R.string.Online), false);
         }
-        this.T.Z = true;
-        int x02 = org.telegram.ui.ActionBar.y6.x0(null, org.telegram.ui.ActionBar.y6.J9, false);
-        this.T.Q(x02, "Sunny");
-        this.T.Q(x02, "Path 6");
-        this.T.Q(x02, "Path");
-        this.T.Q(x02, "Path 5");
-        this.T.o();
-        ImageView imageView4 = new ImageView(context);
-        this.K = imageView4;
-        imageView4.setScaleType(scaleType);
-        org.telegram.ui.ActionBar.f7.R(this.K, org.telegram.ui.ActionBar.y6.g0(getThemedColor(i13), 1, -1), null, org.telegram.ui.ActionBar.f7.N(i13), getResourceProvider());
-        this.K.setColorFilter(new PorterDuffColorFilter(-1, mode));
-        this.K.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.so0
-            public final /* synthetic */ rp0 b;
-
-            {
-                this.b = this;
-            }
-
-            @Override // android.view.View.OnClickListener
-            public final void onClick(View view2) {
-                int i132 = i10;
-                rp0 rp0Var = this.b;
-                switch (i132) {
-                    case 0:
-                        if (rp0Var.onBackPressed(true)) {
-                            rp0Var.finishFragment();
-                            break;
-                        }
-                        break;
-                    case 1:
-                        rp0 rp0Var2 = this.b;
-                        FrameLayout frameLayout22 = (FrameLayout) rp0Var2.getParentActivity().getWindow().getDecorView();
-                        Bitmap createBitmap = Bitmap.createBitmap(frameLayout22.getWidth(), frameLayout22.getHeight(), Bitmap.Config.ARGB_8888);
-                        Canvas canvas = new Canvas(createBitmap);
-                        rp0Var2.K.setAlpha(0.0f);
-                        frameLayout22.draw(canvas);
-                        rp0Var2.K.setAlpha(1.0f);
-                        Paint paint = new Paint(1);
-                        paint.setColor(-16777216);
-                        paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.CLEAR));
-                        Paint paint2 = new Paint(1);
-                        paint2.setFilterBitmap(true);
-                        int[] iArr = new int[2];
-                        rp0Var2.K.getLocationInWindow(iArr);
-                        float f7 = iArr[0];
-                        float f10 = iArr[1];
-                        float max = Math.max(createBitmap.getHeight(), createBitmap.getWidth()) + AndroidUtilities.navigationBarHeight;
-                        Shader.TileMode tileMode = Shader.TileMode.CLAMP;
-                        paint2.setShader(new BitmapShader(createBitmap, tileMode, tileMode));
-                        mc mcVar = new mc(rp0Var2, rp0Var2.getParentActivity(), canvas, (rp0Var2.K.getMeasuredWidth() / 2.0f) + f7, (rp0Var2.K.getMeasuredHeight() / 2.0f) + f10, max, paint, createBitmap, paint2, f7, f10, 1);
-                        rp0Var2.X = mcVar;
-                        mcVar.setOnTouchListener(new ei.d(2));
-                        rp0Var2.Y = 0.0f;
-                        ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
-                        rp0Var2.Z = ofFloat;
-                        ofFloat.addUpdateListener(new fi.bb(rp0Var2, 2));
-                        rp0Var2.Z.addListener(new i50(rp0Var2, 8));
-                        rp0Var2.Z.setDuration(400L);
-                        rp0Var2.Z.setInterpolator(org.telegram.ui.Components.ut.e);
-                        rp0Var2.Z.start();
-                        frameLayout22.addView(rp0Var2.X, new ViewGroup.LayoutParams(-1, -1));
-                        AndroidUtilities.runOnUIThread(new lj0(rp0Var2, 12));
-                        break;
-                    default:
-                        rp0Var.z0();
-                        break;
-                }
-            }
-        });
-        this.L.addView(this.K, org.telegram.ui.Components.gb1.i(54, 54, 21));
-        this.K.setImageDrawable(this.T);
-        uo0 uo0Var3 = this.e;
-        uo0Var3.getClass();
-        uo0Var3.a = org.telegram.ui.ActionBar.y6.w0(org.telegram.ui.ActionBar.y6.a7, uo0Var3.b);
-        uo0Var3.a();
-        uo0Var3.invalidate();
-        A0();
-        B0();
-        View view2 = this.fragmentView;
-        to0 to0Var = new to0(this, i11);
-        WeakHashMap weakHashMap = r0.i0.a;
-        r0.a0.i(view2, to0Var);
-        return this.d;
+        setWillNotDraw(false);
     }
 
-    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
-    public final void didReceivedNotification(int i10, int i11, Object... objArr) {
-        if (i11 != this.currentAccount) {
+    public final void a(int i10) {
+        int w02;
+        int w03;
+        org.telegram.ui.ActionBar.u6 u6Var = this.a;
+        if (i10 >= 14) {
+            MessagesController messagesController = MessagesController.getInstance(UserConfig.selectedAccount);
+            MessagesController.PeerColors peerColors = messagesController != null ? messagesController.peerColors : null;
+            MessagesController.PeerColor color = peerColors != null ? peerColors.getColor(i10) : null;
+            if (color != null) {
+                int color1 = color.getColor1();
+                w02 = org.telegram.ui.ActionBar.y6.w0(org.telegram.ui.ActionBar.y6.p8[org.telegram.ui.Components.j9.f(color1)], u6Var);
+                w03 = org.telegram.ui.ActionBar.y6.w0(org.telegram.ui.ActionBar.y6.q8[org.telegram.ui.Components.j9.f(color1)], u6Var);
+            } else {
+                long j10 = i10;
+                w02 = org.telegram.ui.ActionBar.y6.w0(org.telegram.ui.ActionBar.y6.p8[org.telegram.ui.Components.j9.e(j10)], u6Var);
+                w03 = org.telegram.ui.ActionBar.y6.w0(org.telegram.ui.ActionBar.y6.q8[org.telegram.ui.Components.j9.e(j10)], u6Var);
+            }
+        } else {
+            long j11 = i10;
+            w02 = org.telegram.ui.ActionBar.y6.w0(org.telegram.ui.ActionBar.y6.p8[org.telegram.ui.Components.j9.e(j11)], u6Var);
+            w03 = org.telegram.ui.ActionBar.y6.w0(org.telegram.ui.ActionBar.y6.q8[org.telegram.ui.Components.j9.e(j11)], u6Var);
+        }
+        this.e.i(w02, w03);
+        invalidate();
+    }
+
+    @Override // org.telegram.ui.ActionBar.p6
+    public final void addColorKeys(HashSet hashSet) {
+        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.y6.s8));
+        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.y6.A8));
+        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.y6.B8));
+        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.y6.n6));
+        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.y6.zh));
+        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.y6.h8));
+    }
+
+    public void b(int i10, boolean z10) {
+        MessagesController.PeerColors peerColors = MessagesController.getInstance(this.b).profilePeerColors;
+        c(peerColors == null ? null : peerColors.getColor(i10), z10);
+    }
+
+    public final void c(MessagesController.PeerColor peerColor, boolean z10) {
+        this.y = peerColor;
+        org.telegram.ui.ActionBar.u6 u6Var = this.a;
+        boolean a2 = u6Var != null ? u6Var.a() : org.telegram.ui.ActionBar.y6.I.q();
+        hl hlVar = this.f;
+        org.telegram.ui.Components.r5 r5Var = this.r;
+        org.telegram.ui.Components.r5 r5Var2 = this.s;
+        org.telegram.ui.ActionBar.b6 b6Var = this.h;
+        org.telegram.ui.Components.r5 r5Var3 = this.v;
+        if (peerColor != null) {
+            int i10 = peerColor.patternColor;
+            if (i10 != 0) {
+                r5Var3.k(Integer.valueOf(i10));
+            } else {
+                r5Var3.k(Integer.valueOf(tp0.x0(peerColor.getBgColor1(a2))));
+            }
+            r5Var2.k(Integer.valueOf(i0.a.f(0.25f, peerColor.getStoryColor1(org.telegram.ui.ActionBar.y6.I.q()), -1)));
+            r5Var.k(Integer.valueOf(i0.a.f(0.25f, peerColor.getStoryColor1(org.telegram.ui.ActionBar.y6.I.q()), -1)));
+            int f7 = i0.a.f(0.5f, peerColor.getStoryColor1(a2), peerColor.getStoryColor2(a2));
+            int i11 = org.telegram.ui.ActionBar.y6.s8;
+            if (org.telegram.ui.ActionBar.y6.d1(org.telegram.ui.ActionBar.y6.w0(i11, u6Var))) {
+                b6Var.setTextColor(org.telegram.ui.ActionBar.y6.C(a2, org.telegram.ui.ActionBar.y6.w0(i11, u6Var), f7, org.telegram.ui.ActionBar.y6.w0(org.telegram.ui.ActionBar.y6.h8, u6Var), f7));
+            } else {
+                b6Var.setTextColor(f7);
+            }
+            hlVar.setTextColor(-1);
+        } else {
+            int i12 = org.telegram.ui.ActionBar.y6.s8;
+            if (AndroidUtilities.computePerceivedBrightness(org.telegram.ui.ActionBar.y6.w0(i12, u6Var)) > 0.8f) {
+                r5Var3.k(Integer.valueOf(org.telegram.ui.ActionBar.y6.w0(org.telegram.ui.ActionBar.y6.n6, u6Var)));
+            } else if (AndroidUtilities.computePerceivedBrightness(org.telegram.ui.ActionBar.y6.w0(i12, u6Var)) < 0.2f) {
+                r5Var3.k(Integer.valueOf(org.telegram.ui.ActionBar.y6.o1(0.5f, org.telegram.ui.ActionBar.y6.w0(org.telegram.ui.ActionBar.y6.A8, u6Var))));
+            } else {
+                r5Var3.k(Integer.valueOf(tp0.x0(org.telegram.ui.ActionBar.y6.w0(i12, u6Var))));
+            }
+            int i13 = org.telegram.ui.ActionBar.y6.zh;
+            r5Var2.k(Integer.valueOf(org.telegram.ui.ActionBar.y6.w0(i13, u6Var)));
+            r5Var.k(Integer.valueOf(org.telegram.ui.ActionBar.y6.w0(i13, u6Var)));
+            b6Var.setTextColor(org.telegram.ui.ActionBar.y6.w0(org.telegram.ui.ActionBar.y6.B8, u6Var));
+            hlVar.setTextColor(org.telegram.ui.ActionBar.y6.w0(org.telegram.ui.ActionBar.y6.A8, u6Var));
+        }
+        this.E = 0;
+        this.w.c(peerColor, z10);
+        invalidate();
+    }
+
+    public final void d(long j10, boolean z10, boolean z11) {
+        MessagesController.PeerColor peerColor;
+        int i10;
+        org.telegram.ui.Components.r5 r5Var = this.v;
+        if (j10 == 0) {
+            r5Var.g(null, z11);
+        } else {
+            r5Var.j(j10, z11);
+        }
+        org.telegram.ui.ActionBar.u6 u6Var = this.a;
+        boolean a2 = u6Var != null ? u6Var.a() : org.telegram.ui.ActionBar.y6.I.q();
+        MessagesController.PeerColor peerColor2 = this.y;
+        if (peerColor2 != null) {
+            int i11 = peerColor2.patternColor;
+            if (i11 != 0) {
+                r5Var.k(Integer.valueOf(i11));
+            } else {
+                r5Var.k(Integer.valueOf(tp0.x0(peerColor2.getBgColor1(a2))));
+            }
+        } else {
+            int i12 = org.telegram.ui.ActionBar.y6.s8;
+            if (AndroidUtilities.computePerceivedBrightness(org.telegram.ui.ActionBar.y6.w0(i12, u6Var)) > 0.8f) {
+                r5Var.k(Integer.valueOf(org.telegram.ui.ActionBar.y6.w0(org.telegram.ui.ActionBar.y6.n6, u6Var)));
+            } else if (AndroidUtilities.computePerceivedBrightness(org.telegram.ui.ActionBar.y6.w0(i12, u6Var)) < 0.2f) {
+                r5Var.k(Integer.valueOf(org.telegram.ui.ActionBar.y6.o1(0.5f, org.telegram.ui.ActionBar.y6.x0(null, org.telegram.ui.ActionBar.y6.A8, false))));
+            } else {
+                r5Var.k(Integer.valueOf(tp0.x0(org.telegram.ui.ActionBar.y6.x0(null, i12, false))));
+            }
+        }
+        MessagesController.PeerColor peerColor3 = this.y;
+        org.telegram.ui.Components.r5 r5Var2 = this.s;
+        if (peerColor3 != null) {
+            int color = peerColor3.getColor(1, u6Var);
+            if (this.y.hasColor6(a2)) {
+                peerColor = this.y;
+                i10 = 4;
+            } else {
+                peerColor = this.y;
+                i10 = 2;
+            }
+            r5Var2.k(Integer.valueOf(i0.a.f(0.5f, color, peerColor.getColor(i10, u6Var))));
+        } else {
+            r5Var2.k(Integer.valueOf(org.telegram.ui.ActionBar.y6.w0(org.telegram.ui.ActionBar.y6.zh, u6Var)));
+        }
+        this.E = 1;
+        if (!z11) {
+            this.x.a(z10);
+        }
+        invalidate();
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        float height = getHeight() - AndroidUtilities.dp(82.0f);
+        RectF rectF = this.F;
+        rectF.set((getWidth() - AndroidUtilities.dp(86.0f)) / 2.0f, getHeight() - AndroidUtilities.dp(168.0f), (AndroidUtilities.dp(86.0f) + getWidth()) / 2.0f, height);
+        bi.l1.c(canvas, this.v, getWidth(), getHeight(), 1.0f, rectF, 1.0f);
+        int dp = AndroidUtilities.dp(this.n ? 18.0f : 54.0f);
+        ImageReceiver imageReceiver = this.d;
+        imageReceiver.setRoundRadius(dp);
+        imageReceiver.setImageCoords(rectF);
+        imageReceiver.draw(canvas);
+        float width = (rectF.width() / 2.0f) + AndroidUtilities.dp(4.0f);
+        float dp2 = AndroidUtilities.dp(this.n ? 22.0f : 58.0f);
+        canvas.drawRoundRect(rectF.centerX() - width, rectF.centerY() - width, rectF.centerX() + width, rectF.centerY() + width, dp2, dp2, this.w.a(rectF));
+        super.dispatchDraw(canvas);
+    }
+
+    public final void e(long j10, boolean z10, boolean z11) {
+        org.telegram.ui.Components.r5 r5Var = this.s;
+        r5Var.j(j10, z11);
+        r5Var.m(z10, z11);
+        org.telegram.ui.ActionBar.u6 u6Var = this.a;
+        boolean a2 = u6Var != null ? u6Var.a() : org.telegram.ui.ActionBar.y6.I.q();
+        MessagesController.PeerColor peerColor = this.y;
+        if (peerColor != null) {
+            r5Var.k(Integer.valueOf(i0.a.f(0.5f, peerColor.getColor2(a2), this.y.hasColor6(a2) ? this.y.getColor5(a2) : this.y.getColor3(a2))));
+        } else {
+            r5Var.k(Integer.valueOf(org.telegram.ui.ActionBar.y6.w0(org.telegram.ui.ActionBar.y6.zh, u6Var)));
+        }
+        this.E = 2;
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        this.v.a();
+        this.d.onAttachedToWindow();
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        this.v.b();
+        this.d.onDetachedFromWindow();
+    }
+
+    public void setForum(boolean z10) {
+        if (this.n != z10) {
+            invalidate();
+        }
+        this.n = z10;
+    }
+
+    @Override // org.telegram.ui.ActionBar.p6
+    public final void updateColors() {
+        org.telegram.ui.Components.r5 r5Var;
+        org.telegram.ui.Components.r5 r5Var2;
+        hl hlVar;
+        org.telegram.ui.ActionBar.b6 b6Var;
+        org.telegram.ui.Components.r5 r5Var3 = this.v;
+        if (r5Var3 == null || (r5Var = this.s) == null || (r5Var2 = this.r) == null || (hlVar = this.f) == null || (b6Var = this.h) == null) {
             return;
         }
-        if (i10 == NotificationCenter.currentUserPremiumStatusChanged) {
-            this.h.f(true);
-            this.n.f(true);
-        } else if (i10 == NotificationCenter.starUserGiftsLoaded) {
-            this.h.e();
-            this.n.e();
-        } else if (i10 == NotificationCenter.starGiftsLoaded) {
-            this.h.e();
-            this.n.e();
-        }
-    }
-
-    @Override // org.telegram.ui.ActionBar.r2
-    public final boolean drawEdgeNavigationBar() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.ActionBar.r2
-    public final org.telegram.ui.ActionBar.e4 getEdgeToEdgeSupportMode() {
-        return org.telegram.ui.ActionBar.e4.c;
-    }
-
-    @Override // org.telegram.ui.ActionBar.r2
-    public final ArrayList getThemeDescriptions() {
-        return org.telegram.ui.Components.gb1.C(new j6(16, this), org.telegram.ui.ActionBar.y6.d6, org.telegram.ui.ActionBar.y6.G6, org.telegram.ui.ActionBar.y6.z6, org.telegram.ui.ActionBar.y6.i6, org.telegram.ui.ActionBar.y6.a7, org.telegram.ui.ActionBar.y6.B6, org.telegram.ui.ActionBar.y6.p7, org.telegram.ui.ActionBar.y6.f6, org.telegram.ui.ActionBar.y6.g6, org.telegram.ui.ActionBar.y6.O6, org.telegram.ui.ActionBar.y6.P6, org.telegram.ui.ActionBar.y6.Q6, org.telegram.ui.ActionBar.y6.R6);
-    }
-
-    @Override // org.telegram.ui.ActionBar.r2
-    public final boolean isLightStatusBar() {
-        uo0 uo0Var = this.e;
-        return uo0Var == null ? super.isLightStatusBar() : i0.a.h(uo0Var.getColor()) > 0.699999988079071d;
-    }
-
-    @Override // org.telegram.ui.ActionBar.r2
-    public final boolean isSupportEdgeToEdge() {
-        return true;
-    }
-
-    @Override // org.telegram.ui.ActionBar.r2
-    public final boolean isSwipeBackEnabled(MotionEvent motionEvent) {
-        if (this.a || !((this.h.b() || this.n.b()) && getUserConfig().isPremium())) {
-            return super.isSwipeBackEnabled(motionEvent);
-        }
-        return false;
-    }
-
-    @Override // org.telegram.ui.ActionBar.r2
-    public final boolean onBackPressed(boolean z10) {
-        boolean z11 = this.a;
-        if (z11 || !((this.h.b() || this.n.b()) && getUserConfig().isPremium())) {
-            return super.onBackPressed(z10);
-        }
-        if (z10 && getVisibleDialog() == null) {
-            AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(getParentActivity(), 0, getResourceProvider());
-            alertDialog$Builder.a.R = LocaleController.getString(z11 ? R.string.ChannelColorUnsaved : R.string.UserColorUnsaved);
-            alertDialog$Builder.a.T = LocaleController.getString(z11 ? R.string.ChannelColorUnsavedMessage : R.string.UserColorUnsavedMessage);
-            alertDialog$Builder.h(LocaleController.getString(R.string.Dismiss), new to0(this, 1));
-            alertDialog$Builder.k(LocaleController.getString(R.string.ApplyTheme), new to0(this, 2));
-            org.telegram.ui.ActionBar.e2 e2Var = alertDialog$Builder.a;
-            showDialog(e2Var);
-            org.telegram.ui.ActionBar.f7.V((TextView) e2Var.d(-2), org.telegram.ui.ActionBar.y6.q7, getResourceProvider());
-        }
-        return false;
-    }
-
-    @Override // org.telegram.ui.ActionBar.r2
-    public final void onFragmentClosed() {
-        super.onFragmentClosed();
-        setBulletinDelegate(null);
-    }
-
-    @Override // org.telegram.ui.ActionBar.r2
-    public final boolean onFragmentCreate() {
-        getNotificationCenter().addObserver(this, NotificationCenter.currentUserPremiumStatusChanged);
-        getNotificationCenter().addObserver(this, NotificationCenter.starUserGiftsLoaded);
-        getNotificationCenter().addObserver(this, NotificationCenter.starGiftsLoaded);
-        setBulletinDelegate(new fi.k8(10));
-        getMediaDataController().loadReplyIcons();
-        if (MessagesController.getInstance(this.currentAccount).peerColors == null && BuildVars.DEBUG_PRIVATE_VERSION) {
-            MessagesController.getInstance(this.currentAccount).loadAppConfig(true);
-        }
-        return super.onFragmentCreate();
-    }
-
-    @Override // org.telegram.ui.ActionBar.r2
-    public final void onFragmentDestroy() {
-        super.onFragmentDestroy();
-        getNotificationCenter().removeObserver(this, NotificationCenter.currentUserPremiumStatusChanged);
-        getNotificationCenter().removeObserver(this, NotificationCenter.starUserGiftsLoaded);
-        getNotificationCenter().removeObserver(this, NotificationCenter.starGiftsLoaded);
-    }
-
-    @Override // org.telegram.ui.ActionBar.r2
-    public final void onThemeColorsChanged() {
+        org.telegram.ui.ActionBar.u6 u6Var = this.a;
         try {
-            if (this.h == null || this.n == null) {
-                return;
+            boolean a2 = u6Var != null ? u6Var.a() : org.telegram.ui.ActionBar.y6.I.q();
+            MessagesController.PeerColor peerColor = this.y;
+            if (peerColor != null) {
+                int i10 = peerColor.patternColor;
+                if (i10 != 0) {
+                    r5Var3.k(Integer.valueOf(i10));
+                } else {
+                    r5Var3.k(Integer.valueOf(tp0.x0(peerColor.getBgColor1(a2))));
+                }
+                r5Var2.k(Integer.valueOf(i0.a.f(0.25f, this.y.getStoryColor1(org.telegram.ui.ActionBar.y6.I.q()), -1)));
+                int i11 = this.E;
+                if (i11 == 1) {
+                    r5Var.k(Integer.valueOf(i0.a.f(0.5f, this.y.getColor(1, u6Var), this.y.hasColor6(a2) ? this.y.getColor(4, u6Var) : this.y.getColor(2, u6Var))));
+                } else if (i11 == 2) {
+                    r5Var.k(Integer.valueOf(i0.a.f(0.5f, this.y.getColor2(a2), this.y.hasColor6(a2) ? this.y.getColor5(a2) : this.y.getColor3(a2))));
+                } else {
+                    r5Var.k(Integer.valueOf(i0.a.f(0.25f, this.y.getStoryColor1(org.telegram.ui.ActionBar.y6.I.q()), -1)));
+                }
+                int f7 = i0.a.f(0.5f, this.y.getStoryColor1(a2), this.y.getStoryColor2(a2));
+                int i12 = org.telegram.ui.ActionBar.y6.s8;
+                if (org.telegram.ui.ActionBar.y6.d1(org.telegram.ui.ActionBar.y6.w0(i12, u6Var))) {
+                    b6Var.setTextColor(org.telegram.ui.ActionBar.y6.C(a2, org.telegram.ui.ActionBar.y6.w0(i12, u6Var), f7, org.telegram.ui.ActionBar.y6.w0(org.telegram.ui.ActionBar.y6.h8, u6Var), f7));
+                } else {
+                    b6Var.setTextColor(f7);
+                }
+                hlVar.setTextColor(-1);
+            } else {
+                int i13 = org.telegram.ui.ActionBar.y6.s8;
+                if (AndroidUtilities.computePerceivedBrightness(org.telegram.ui.ActionBar.y6.w0(i13, u6Var)) > 0.8f) {
+                    r5Var3.k(Integer.valueOf(org.telegram.ui.ActionBar.y6.w0(org.telegram.ui.ActionBar.y6.n6, u6Var)));
+                } else if (AndroidUtilities.computePerceivedBrightness(org.telegram.ui.ActionBar.y6.w0(i13, u6Var)) < 0.2f) {
+                    r5Var3.k(Integer.valueOf(org.telegram.ui.ActionBar.y6.o1(0.5f, org.telegram.ui.ActionBar.y6.w0(org.telegram.ui.ActionBar.y6.A8, u6Var))));
+                } else {
+                    r5Var3.k(Integer.valueOf(tp0.x0(org.telegram.ui.ActionBar.y6.w0(i13, u6Var))));
+                }
+                int i14 = org.telegram.ui.ActionBar.y6.zh;
+                r5Var.k(Integer.valueOf(org.telegram.ui.ActionBar.y6.w0(i14, u6Var)));
+                r5Var2.k(Integer.valueOf(org.telegram.ui.ActionBar.y6.w0(i14, u6Var)));
+                b6Var.setTextColor(org.telegram.ui.ActionBar.y6.w0(org.telegram.ui.ActionBar.y6.B8, u6Var));
+                hlVar.setTextColor(org.telegram.ui.ActionBar.y6.w0(org.telegram.ui.ActionBar.y6.A8, u6Var));
             }
-            F0();
+            invalidate();
         } catch (Exception e) {
             FileLog.e(e);
         }
-    }
-
-    @Override // org.telegram.ui.ActionBar.r2
-    public final void setResourceProvider(org.telegram.ui.ActionBar.u6 u6Var) {
-        this.s = u6Var;
-    }
-
-    /* JADX WARN: Code restructure failed: missing block: B:28:0x006c, code lost:
-    
-        if (r3 != (r8 instanceof org.telegram.tgnet.TLRPC.TL_peerColorCollectible ? r8.collectible_id : 0)) goto L29;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:37:0x010f, code lost:
-    
-        if ((r3 == null ? 0 : r3.collectible_id) != org.telegram.messenger.UserObject.getProfileCollectibleId(r0)) goto L47;
-     */
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r3v14, types: [org.telegram.tgnet.TLRPC$TL_emojiStatusEmpty] */
-    /* JADX WARN: Type inference failed for: r3v15, types: [org.telegram.tgnet.TLRPC$EmojiStatus] */
-    /* JADX WARN: Type inference failed for: r3v16, types: [org.telegram.tgnet.TLRPC$TL_inputEmojiStatusCollectible] */
-    /* JADX WARN: Type inference failed for: r4v38, types: [org.telegram.messenger.MessagesController] */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void y0() {
-        if (this.W) {
-            return;
-        }
-        boolean z10 = this.a;
-        if (z10 || getUserConfig().isPremium()) {
-            if (z10) {
-                finishFragment();
-            } else {
-                TLRPC.User currentUser = getUserConfig().getCurrentUser();
-                if (currentUser.color == null) {
-                    TLRPC.TL_peerColor tL_peerColor = new TLRPC.TL_peerColor();
-                    currentUser.color = tL_peerColor;
-                    tL_peerColor.flags |= 1;
-                    tL_peerColor.color = (int) (currentUser.id % 7);
-                }
-                TL_stars.TL_starGiftUnique tL_starGiftUnique = null;
-                if (this.h.h == UserObject.getColorId(currentUser) && this.h.n == UserObject.getEmojiId(currentUser)) {
-                    TLRPC.TL_peerColorCollectible tL_peerColorCollectible = this.h.s;
-                    long j10 = tL_peerColorCollectible == null ? 0L : tL_peerColorCollectible.collectible_id;
-                    TLRPC.PeerColor peerColor = currentUser.color;
-                }
-                this.U = true;
-                TL_account.updateColor updatecolor = new TL_account.updateColor();
-                currentUser.flags2 |= 256;
-                currentUser.color.flags |= 1;
-                if (this.h.s != null) {
-                    updatecolor.flags |= 4;
-                    TLRPC.TL_inputPeerColorCollectible tL_inputPeerColorCollectible = new TLRPC.TL_inputPeerColorCollectible();
-                    updatecolor.color = tL_inputPeerColorCollectible;
-                    TLRPC.TL_peerColorCollectible tL_peerColorCollectible2 = this.h.s;
-                    tL_inputPeerColorCollectible.collectible_id = tL_peerColorCollectible2.collectible_id;
-                    currentUser.color = tL_peerColorCollectible2;
-                } else {
-                    updatecolor.flags |= 4;
-                    TLRPC.TL_peerColor tL_peerColor2 = new TLRPC.TL_peerColor();
-                    updatecolor.color = tL_peerColor2;
-                    tL_peerColor2.flags |= 1;
-                    lp0 lp0Var = this.h;
-                    int i10 = lp0Var.h;
-                    tL_peerColor2.color = i10;
-                    TLRPC.PeerColor peerColor2 = currentUser.color;
-                    int i11 = peerColor2.flags;
-                    int i12 = i11 | 1;
-                    peerColor2.flags = i12;
-                    peerColor2.color = i10;
-                    long j11 = lp0Var.n;
-                    if (j11 != 0) {
-                        updatecolor.flags |= 1;
-                        peerColor2.flags = i11 | 3;
-                        tL_peerColor2.flags |= 2;
-                        peerColor2.background_emoji_id = j11;
-                        tL_peerColor2.background_emoji_id = j11;
-                    } else {
-                        peerColor2.flags = i12 & (-3);
-                        peerColor2.background_emoji_id = 0L;
-                    }
-                }
-                getConnectionsManager().sendRequest(updatecolor, null);
-                if (this.n.h == UserObject.getProfileColorId(currentUser) && this.n.n == UserObject.getOnlyProfileEmojiId(currentUser)) {
-                    TLRPC.TL_emojiStatusCollectible tL_emojiStatusCollectible = this.n.r;
-                }
-                this.V = true;
-                if (currentUser.profile_color == null) {
-                    currentUser.profile_color = new TLRPC.TL_peerColor();
-                }
-                TL_account.updateColor updatecolor2 = new TL_account.updateColor();
-                updatecolor2.for_profile = true;
-                currentUser.flags2 |= 512;
-                if (this.n.h < 0) {
-                    currentUser.profile_color.flags &= -2;
-                } else {
-                    if (updatecolor2.color == null) {
-                        updatecolor2.flags |= 4;
-                        updatecolor2.color = new TLRPC.TL_peerColor();
-                    }
-                    TLRPC.PeerColor peerColor3 = updatecolor2.color;
-                    peerColor3.flags |= 1;
-                    int i13 = this.n.h;
-                    peerColor3.color = i13;
-                    TLRPC.PeerColor peerColor4 = currentUser.profile_color;
-                    peerColor4.flags |= 1;
-                    peerColor4.color = i13;
-                }
-                if (this.n.n != 0) {
-                    int i14 = updatecolor2.flags;
-                    updatecolor2.flags = i14 | 1;
-                    currentUser.profile_color.flags |= 2;
-                    if (updatecolor2.color == null) {
-                        updatecolor2.flags = i14 | 5;
-                        updatecolor2.color = new TLRPC.TL_peerColor();
-                    }
-                    TLRPC.PeerColor peerColor5 = updatecolor2.color;
-                    peerColor5.flags |= 2;
-                    TLRPC.PeerColor peerColor6 = currentUser.profile_color;
-                    long j12 = this.n.n;
-                    peerColor6.background_emoji_id = j12;
-                    peerColor5.background_emoji_id = j12;
-                } else {
-                    TLRPC.PeerColor peerColor7 = currentUser.profile_color;
-                    peerColor7.flags &= -3;
-                    peerColor7.background_emoji_id = 0L;
-                }
-                getConnectionsManager().sendRequest(updatecolor2, null);
-                if (!C0(currentUser.emoji_status, this.n.r) && (this.n.r != null || DialogObject.isEmojiStatusCollectible(currentUser.emoji_status))) {
-                    ?? tL_emojiStatusEmpty = new TLRPC.TL_emojiStatusEmpty();
-                    TLRPC.TL_emojiStatusCollectible tL_emojiStatusCollectible2 = this.n.r;
-                    if (tL_emojiStatusCollectible2 != null) {
-                        long j13 = tL_emojiStatusCollectible2.collectible_id;
-                        int i15 = 0;
-                        while (true) {
-                            if (i15 >= this.n.l0.size()) {
-                                break;
-                            }
-                            TL_stars.TL_starGiftUnique tL_starGiftUnique2 = (TL_stars.TL_starGiftUnique) this.n.l0.get(i15);
-                            if (tL_starGiftUnique2.id == j13) {
-                                tL_starGiftUnique = tL_starGiftUnique2;
-                                break;
-                            }
-                            i15++;
-                        }
-                    }
-                    if (tL_starGiftUnique != null) {
-                        tL_emojiStatusEmpty = new TLRPC.TL_inputEmojiStatusCollectible();
-                        tL_emojiStatusEmpty.collectible_id = tL_starGiftUnique.id;
-                    }
-                    getMessagesController().updateEmojiStatus(0L, tL_emojiStatusEmpty, tL_starGiftUnique);
-                }
-                getMessagesController().putUser(currentUser, false);
-                getUserConfig().saveConfig(true);
-                finishFragment();
-                E0();
-            }
-            this.W = true;
-            getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.updateInterfaces, Integer.valueOf(MessagesController.UPDATE_MASK_EMOJI_STATUS));
-        }
-    }
-
-    public final void z0() {
-        if (this.r) {
-            return;
-        }
-        if (this.a) {
-            finishFragment();
-        } else if (!getUserConfig().isPremium()) {
-            showDialog(new tg.y0((org.telegram.ui.ActionBar.r2) this, 23, true));
-            return;
-        }
-        lp0 D0 = D0();
-        if (D0.I == null) {
-            lp0 lp0Var = this.h;
-            if (D0 == lp0Var) {
-                lp0Var = this.n;
-            }
-            if (lp0Var.I != null) {
-                lp0Var.d();
-            }
-            y0();
-            finishFragment();
-            E0();
-            return;
-        }
-        lp0 lp0Var2 = this.h;
-        if (D0 == lp0Var2) {
-            lp0Var2 = this.n;
-        }
-        lp0Var2.d();
-        this.r = true;
-        this.Q.setLoading(true);
-        TL_stars.TL_starGiftUnique tL_starGiftUnique = D0.I;
-        qo0 qo0Var = new qo0(this, 1);
-        long clientUserId = UserConfig.getInstance(this.currentAccount).getClientUserId();
-        bg.b bVar = tL_starGiftUnique.resale_ton_only ? bg.b.b : bg.b.a;
-        bi.ca.x(this.currentAccount, bVar).H(tL_starGiftUnique, clientUserId, null, true, new ro0(this, bVar, tL_starGiftUnique, clientUserId, qo0Var));
     }
 }

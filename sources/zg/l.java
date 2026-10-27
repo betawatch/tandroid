@@ -24,13 +24,13 @@ import org.telegram.ui.ActionBar.f7;
 import org.telegram.ui.ActionBar.p6;
 import org.telegram.ui.ActionBar.u6;
 import org.telegram.ui.ActionBar.y6;
-import org.telegram.ui.Components.gb1;
+import org.telegram.ui.Components.aq;
 import org.telegram.ui.Components.j9;
-import org.telegram.ui.Components.qx0;
+import org.telegram.ui.Components.kb1;
+import org.telegram.ui.Components.rx0;
 import org.telegram.ui.Components.y9;
-import org.telegram.ui.Components.zp;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class l extends xg.c implements p6 {
     public boolean E;
@@ -39,10 +39,10 @@ public final class l extends xg.c implements p6 {
     public TLRPC.User H;
     public TLRPC.Chat I;
     public TL_stories.TL_myBoost J;
-    public final qx0 K;
+    public final rx0 K;
     public int L;
     public final boolean[] s;
-    public final zp v;
+    public final aq v;
     public final ImageView w;
     public boolean x;
     public final ImageView y;
@@ -51,31 +51,31 @@ public final class l extends xg.c implements p6 {
         super(context, u6Var);
         this.s = new boolean[1];
         this.G = true;
-        this.K = new qx0(this);
+        this.K = new rx0(this);
         this.d.setTypeface(AndroidUtilities.bold());
         this.f.setVisibility(8);
         if (z11) {
-            zp zpVar = new zp(context, 21, u6Var);
-            this.v = zpVar;
-            zpVar.b(y6.B5, y6.h5, y6.k7);
-            zpVar.setDrawUnchecked(false);
-            zpVar.setDrawBackgroundAsArc(3);
+            aq aqVar = new aq(context, 21, u6Var);
+            this.v = aqVar;
+            aqVar.b(y6.B5, y6.h5, y6.k7);
+            aqVar.setDrawUnchecked(false);
+            aqVar.setDrawBackgroundAsArc(3);
             boolean z13 = LocaleController.isRTL;
-            addView(zpVar, gb1.h(24, 24.0f, (z13 ? 5 : 3) | 48, z13 ? 0.0f : 40.0f, 33.0f, z13 ? 39.0f : 0.0f, 0.0f));
+            addView(aqVar, kb1.h(24, 24.0f, (z13 ? 5 : 3) | 48, z13 ? 0.0f : 40.0f, 33.0f, z13 ? 39.0f : 0.0f, 0.0f));
             d();
         } else if (z10) {
-            zp zpVar2 = new zp(context, 21, u6Var);
-            this.v = zpVar2;
+            aq aqVar2 = new aq(context, 21, u6Var);
+            this.v = aqVar2;
             if (z12) {
-                zpVar2.b(y6.i7, y6.j7, y6.C5);
+                aqVar2.b(y6.i7, y6.j7, y6.C5);
             } else {
-                zpVar2.b(y6.B5, y6.j7, y6.C5);
+                aqVar2.b(y6.B5, y6.j7, y6.C5);
             }
-            zpVar2.setDrawUnchecked(true);
-            zpVar2.setDrawBackgroundAsArc(10);
-            addView(zpVar2);
-            zpVar2.a(false, false);
-            zpVar2.setLayoutParams(gb1.h(24, 24.0f, (LocaleController.isRTL ? 5 : 3) | 16, 13.0f, 0.0f, 14.0f, 0.0f));
+            aqVar2.setDrawUnchecked(true);
+            aqVar2.setDrawBackgroundAsArc(10);
+            addView(aqVar2);
+            aqVar2.a(false, false);
+            aqVar2.setLayoutParams(kb1.h(24, 24.0f, (LocaleController.isRTL ? 5 : 3) | 16, 13.0f, 0.0f, 14.0f, 0.0f));
             d();
         } else {
             this.v = null;
@@ -88,7 +88,7 @@ public final class l extends xg.c implements p6 {
         int i10 = y6.Ac;
         PorterDuff.Mode mode = PorterDuff.Mode.SRC_IN;
         f7.t(imageView, i10, u6Var, mode);
-        addView(imageView, gb1.h(32, 32.0f, (LocaleController.isRTL ? 3 : 5) | 16, 12.0f, 0.0f, 12.0f, 0.0f));
+        addView(imageView, kb1.h(32, 32.0f, (LocaleController.isRTL ? 3 : 5) | 16, 12.0f, 0.0f, 12.0f, 0.0f));
         ImageView imageView2 = new ImageView(context);
         this.y = imageView2;
         imageView2.setScaleType(scaleType);
@@ -96,14 +96,14 @@ public final class l extends xg.c implements p6 {
         int i11 = y6.Oh;
         f7.t(imageView2, i11, u6Var, mode);
         boolean z14 = LocaleController.isRTL;
-        addView(imageView2, gb1.h(32, 32.0f, (z14 ? 3 : 5) | 16, z14 ? 52.0f : 12.0f, 0.0f, z14 ? 12.0f : 52.0f, 0.0f));
+        addView(imageView2, kb1.h(32, 32.0f, (z14 ? 3 : 5) | 16, z14 ? 52.0f : 12.0f, 0.0f, z14 ? 12.0f : 52.0f, 0.0f));
         imageView2.setVisibility(8);
         ImageView imageView3 = new ImageView(context);
         this.F = imageView3;
         imageView3.setScaleType(scaleType);
         imageView3.setImageResource(R.drawable.menu_videocall);
         f7.t(imageView3, i11, u6Var, mode);
-        addView(imageView3, gb1.h(32, 32.0f, (LocaleController.isRTL ? 3 : 5) | 16, 12.0f, 0.0f, 12.0f, 0.0f));
+        addView(imageView3, kb1.h(32, 32.0f, (LocaleController.isRTL ? 3 : 5) | 16, 12.0f, 0.0f, 12.0f, 0.0f));
         imageView3.setVisibility(8);
     }
 
@@ -130,15 +130,15 @@ public final class l extends xg.c implements p6 {
 
     @Override // xg.c
     public final boolean b() {
-        zp zpVar = this.v;
-        return zpVar != null && zpVar.getDrawUnchecked();
+        aq aqVar = this.v;
+        return aqVar != null && aqVar.getDrawUnchecked();
     }
 
     @Override // xg.c
     public final void c(boolean z10, boolean z11) {
-        zp zpVar = this.v;
-        if (zpVar != null && zpVar.getVisibility() == 0) {
-            zpVar.a(z10, z11);
+        aq aqVar = this.v;
+        if (aqVar != null && aqVar.getVisibility() == 0) {
+            aqVar.a(z10, z11);
         }
     }
 
@@ -264,16 +264,16 @@ public final class l extends xg.c implements p6 {
     }
 
     public final void i(float f7, boolean z10) {
-        zp zpVar = this.v;
-        if (zpVar == null) {
+        aq aqVar = this.v;
+        if (aqVar == null) {
             return;
         }
         if (!z10) {
-            zpVar.animate().cancel();
-            zpVar.setAlpha(f7);
-        } else if (Math.abs(zpVar.getAlpha() - f7) > 0.1d) {
-            zpVar.animate().cancel();
-            zpVar.animate().alpha(f7).start();
+            aqVar.animate().cancel();
+            aqVar.setAlpha(f7);
+        } else if (Math.abs(aqVar.getAlpha() - f7) > 0.1d) {
+            aqVar.animate().cancel();
+            aqVar.animate().alpha(f7).start();
         }
     }
 
@@ -357,9 +357,9 @@ public final class l extends xg.c implements p6 {
             setSubtitle(LocaleController.formatUserStatus(UserConfig.selectedAccount, user, zArr));
         }
         f7.Y(this.e, zArr[0] ? y6.n5 : y6.r5, this.a);
-        zp zpVar = this.v;
-        if (zpVar != null) {
-            zpVar.setAlpha(1.0f);
+        aq aqVar = this.v;
+        if (aqVar != null) {
+            aqVar.setAlpha(1.0f);
         }
         int x02 = y6.x0(null, y6.z9, false);
         this.L = x02;
@@ -368,13 +368,13 @@ public final class l extends xg.c implements p6 {
 
     @Override // org.telegram.ui.ActionBar.p6
     public final void updateColors() {
-        qx0 qx0Var;
+        rx0 rx0Var;
         l4 l4Var;
         int x02;
         try {
-            if (this.H != null && (qx0Var = this.K) != null && (l4Var = this.d) != null && (x02 = y6.x0(null, y6.z9, false)) != this.L) {
+            if (this.H != null && (rx0Var = this.K) != null && (l4Var = this.d) != null && (x02 = y6.x0(null, y6.z9, false)) != this.L) {
                 this.L = x02;
-                qx0Var.a(this.H, false, x02);
+                rx0Var.a(this.H, false, x02);
                 l4Var.invalidate();
             }
         } catch (Exception e) {

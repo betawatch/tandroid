@@ -40,17 +40,17 @@ import org.telegram.messenger.RichMessageLayout;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.ui.Components.aa0;
-import org.telegram.ui.Components.gb1;
-import org.telegram.ui.Components.h90;
-import org.telegram.ui.Components.s90;
-import org.telegram.ui.Components.w90;
-import org.telegram.ui.Components.y11;
+import org.telegram.ui.Components.a21;
+import org.telegram.ui.Components.aq;
+import org.telegram.ui.Components.ba0;
+import org.telegram.ui.Components.i90;
+import org.telegram.ui.Components.kb1;
+import org.telegram.ui.Components.t90;
+import org.telegram.ui.Components.x90;
 import org.telegram.ui.Components.z11;
-import org.telegram.ui.Components.zp;
-import org.telegram.ui.h10;
+import org.telegram.ui.j10;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class r7 extends FrameLayout implements org.telegram.ui.ActionBar.p6 {
     public final ArrayList E;
@@ -80,7 +80,7 @@ public final class r7 extends FrameLayout implements org.telegram.ui.ActionBar.p
     public final TextPaint c0;
     public m.g3 d;
     public final TextPaint d0;
-    public final w90 e;
+    public final x90 e;
     public final TextPaint e0;
     public boolean f;
     public final TextPaint f0;
@@ -92,11 +92,11 @@ public final class r7 extends FrameLayout implements org.telegram.ui.ActionBar.p
     public org.telegram.ui.Components.y5 k0;
     public final org.telegram.ui.ActionBar.u6 l0;
     public final int m0;
-    public aa0 n;
+    public ba0 n;
     public final ImageReceiver r;
     public boolean s;
-    public final h90 v;
-    public final zp w;
+    public final i90 v;
+    public final aq w;
     public q7 x;
     public boolean y;
 
@@ -106,7 +106,7 @@ public final class r7 extends FrameLayout implements org.telegram.ui.ActionBar.p
         this.b = null;
         this.c = 0;
         this.d = null;
-        this.e = new w90(this);
+        this.e = new x90(this);
         this.E = new ArrayList();
         this.G = new ArrayList();
         this.H = new SparseArray();
@@ -137,15 +137,15 @@ public final class r7 extends FrameLayout implements org.telegram.ui.ActionBar.p
         ImageReceiver imageReceiver = new ImageReceiver(this);
         this.r = imageReceiver;
         imageReceiver.setRoundRadius(AndroidUtilities.dp(8.0f));
-        this.v = new h90(0, u6Var);
-        zp zpVar = new zp(context, 21, u6Var);
-        this.w = zpVar;
-        zpVar.setVisibility(4);
-        zpVar.b(-1, org.telegram.ui.ActionBar.y6.d6, org.telegram.ui.ActionBar.y6.k7);
-        zpVar.setDrawUnchecked(false);
-        zpVar.setDrawBackgroundAsArc(2);
+        this.v = new i90(0, u6Var);
+        aq aqVar = new aq(context, 21, u6Var);
+        this.w = aqVar;
+        aqVar.setVisibility(4);
+        aqVar.b(-1, org.telegram.ui.ActionBar.y6.d6, org.telegram.ui.ActionBar.y6.k7);
+        aqVar.setDrawUnchecked(false);
+        aqVar.setDrawBackgroundAsArc(2);
         boolean z10 = LocaleController.isRTL;
-        addView(zpVar, gb1.h(24, 24.0f, (z10 ? 5 : 3) | 48, z10 ? 0.0f : 44.0f, 44.0f, z10 ? 44.0f : 0.0f, 0.0f));
+        addView(aqVar, kb1.h(24, 24.0f, (z10 ? 5 : 3) | 48, z10 ? 0.0f : 44.0f, 44.0f, z10 ? 44.0f : 0.0f, 0.0f));
         if (i10 == 1) {
             TextPaint textPaint3 = new TextPaint(1);
             this.e0 = textPaint3;
@@ -236,11 +236,11 @@ public final class r7 extends FrameLayout implements org.telegram.ui.ActionBar.p
     }
 
     public final void f(boolean z10, boolean z11) {
-        zp zpVar = this.w;
-        if (zpVar.getVisibility() != 0) {
-            zpVar.setVisibility(0);
+        aq aqVar = this.w;
+        if (aqVar.getVisibility() != 0) {
+            aqVar.setVisibility(0);
         }
-        zpVar.a(z10, z11);
+        aqVar.a(z10, z11);
     }
 
     public final void g(int i10, int i11, int i12) {
@@ -554,7 +554,7 @@ public final class r7 extends FrameLayout implements org.telegram.ui.ActionBar.p
         StaticLayout staticLayout5;
         int i18;
         SparseArray sparseArray;
-        h90 h90Var;
+        i90 i90Var;
         TLRPC.PhotoSize photoSize2;
         ArrayList arrayList;
         TextPaint textPaint2;
@@ -671,12 +671,12 @@ public final class r7 extends FrameLayout implements org.telegram.ui.ActionBar.p
                                                             spannableStringBuilder3 = spannableStringBuilder5;
                                                             arrayList2 = arrayList7;
                                                         } else {
-                                                            y11 y11Var = new y11();
+                                                            z11 z11Var = new z11();
                                                             spannableStringBuilder3 = spannableStringBuilder5;
                                                             try {
-                                                                y11Var.a |= 256;
+                                                                z11Var.a |= 256;
                                                                 arrayList2 = arrayList7;
-                                                                valueOf.setSpan(new z11(y11Var, 0), Math.max(i26, i32), Math.min(i27, i33) + i28, 33);
+                                                                valueOf.setSpan(new a21(z11Var, 0), Math.max(i26, i32), Math.min(i27, i33) + i28, 33);
                                                             } catch (Exception e10) {
                                                                 e = e10;
                                                                 str2 = str7;
@@ -818,7 +818,7 @@ public final class r7 extends FrameLayout implements org.telegram.ui.ActionBar.p
                     textPaint = textPaint3;
                     i13 = 0;
                 }
-                h90 h90Var2 = this.v;
+                i90 i90Var2 = this.v;
                 if (str2 != null) {
                     try {
                         ?? highlightText = AndroidUtilities.highlightText(str2, this.b0.highlightedWords, (org.telegram.ui.ActionBar.u6) null);
@@ -831,7 +831,7 @@ public final class r7 extends FrameLayout implements org.telegram.ui.ActionBar.p
                     } catch (Exception e14) {
                         FileLog.e(e14);
                     }
-                    h90Var2.a(str2);
+                    i90Var2.a(str2);
                 }
                 this.T = this.Q;
                 StaticLayout staticLayout9 = this.P;
@@ -887,14 +887,14 @@ public final class r7 extends FrameLayout implements org.telegram.ui.ActionBar.p
                             }
                             if (!arrayList6.isEmpty()) {
                             }
-                            h90 h90Var3 = h90Var2;
+                            i90 i90Var3 = i90Var2;
                             TLRPC.PhotoSize photoSize3 = photoSize;
                             int i38 = size;
                             float f16 = f15;
                             int dp = AndroidUtilities.dp(52.0f);
                             if (LocaleController.isRTL) {
                             }
-                            h90Var3.setBounds(r2, AndroidUtilities.dp(11.0f), r2 + dp, AndroidUtilities.dp(63.0f));
+                            i90Var3.setBounds(r2, AndroidUtilities.dp(11.0f), r2 + dp, AndroidUtilities.dp(63.0f));
                             if (z10) {
                             }
                             if (i12 == i15) {
@@ -970,7 +970,7 @@ public final class r7 extends FrameLayout implements org.telegram.ui.ActionBar.p
                             }
                         } catch (Exception e19) {
                             e = e19;
-                            h90Var = h90Var2;
+                            i90Var = i90Var2;
                             photoSize2 = photoSize;
                             arrayList = arrayList6;
                             textPaint2 = textPaint4;
@@ -994,7 +994,7 @@ public final class r7 extends FrameLayout implements org.telegram.ui.ActionBar.p
                             } catch (Exception e21) {
                                 e = e21;
                                 stack2 = stack;
-                                h90Var = h90Var2;
+                                i90Var = i90Var2;
                                 photoSize2 = photoSize;
                                 i20 = i42;
                                 arrayList = arrayList6;
@@ -1006,7 +1006,7 @@ public final class r7 extends FrameLayout implements org.telegram.ui.ActionBar.p
                         } catch (Exception e22) {
                             e = e22;
                             stack2 = stack;
-                            h90Var = h90Var2;
+                            i90Var = i90Var2;
                             photoSize2 = photoSize;
                             arrayList = arrayList6;
                             textPaint2 = textPaint4;
@@ -1017,7 +1017,7 @@ public final class r7 extends FrameLayout implements org.telegram.ui.ActionBar.p
                             FileLog.e(e);
                             i42 = i20 + 1;
                             sparseArray = sparseArray2;
-                            h90Var2 = h90Var;
+                            i90Var2 = i90Var;
                             f15 = f12;
                             textPaint4 = textPaint2;
                             arrayList6 = arrayList;
@@ -1030,7 +1030,7 @@ public final class r7 extends FrameLayout implements org.telegram.ui.ActionBar.p
                             } catch (Exception e23) {
                                 e = e23;
                                 stack2 = stack;
-                                h90Var = h90Var2;
+                                i90Var = i90Var2;
                                 photoSize2 = photoSize;
                                 i20 = i42;
                                 arrayList = arrayList6;
@@ -1040,7 +1040,7 @@ public final class r7 extends FrameLayout implements org.telegram.ui.ActionBar.p
                                 FileLog.e(e);
                                 i42 = i20 + 1;
                                 sparseArray = sparseArray2;
-                                h90Var2 = h90Var;
+                                i90Var2 = i90Var;
                                 f15 = f12;
                                 textPaint4 = textPaint2;
                                 arrayList6 = arrayList;
@@ -1060,7 +1060,7 @@ public final class r7 extends FrameLayout implements org.telegram.ui.ActionBar.p
                                             ArrayList arrayList9 = arrayList6;
                                             sparseArray2 = sparseArray;
                                             staticLayout8 = staticLayout6;
-                                            h90Var = h90Var2;
+                                            i90Var = i90Var2;
                                             arrayList = arrayList9;
                                             photoSize2 = photoSize4;
                                             i19 = i21;
@@ -1072,7 +1072,7 @@ public final class r7 extends FrameLayout implements org.telegram.ui.ActionBar.p
                                                 FileLog.e(e);
                                                 i42 = i20 + 1;
                                                 sparseArray = sparseArray2;
-                                                h90Var2 = h90Var;
+                                                i90Var2 = i90Var;
                                                 f15 = f12;
                                                 textPaint4 = textPaint2;
                                                 arrayList6 = arrayList;
@@ -1089,13 +1089,13 @@ public final class r7 extends FrameLayout implements org.telegram.ui.ActionBar.p
                                             f12 = 10.0f;
                                             sparseArray2 = sparseArray;
                                             staticLayout8 = staticLayout6;
-                                            h90Var = h90Var2;
+                                            i90Var = i90Var2;
                                         }
                                         sparseArray2.put(i20, arrayList8);
                                     } catch (Exception e25) {
                                         e = e25;
                                         stack2 = stack;
-                                        h90Var = h90Var2;
+                                        i90Var = i90Var2;
                                         photoSize2 = photoSize4;
                                         i20 = i42;
                                         arrayList = arrayList6;
@@ -1105,7 +1105,7 @@ public final class r7 extends FrameLayout implements org.telegram.ui.ActionBar.p
                                         FileLog.e(e);
                                         i42 = i20 + 1;
                                         sparseArray = sparseArray2;
-                                        h90Var2 = h90Var;
+                                        i90Var2 = i90Var;
                                         f15 = f12;
                                         textPaint4 = textPaint2;
                                         arrayList6 = arrayList;
@@ -1122,12 +1122,12 @@ public final class r7 extends FrameLayout implements org.telegram.ui.ActionBar.p
                                     f12 = 10.0f;
                                     sparseArray2 = sparseArray;
                                     staticLayout8 = staticLayout6;
-                                    h90Var = h90Var2;
+                                    i90Var = i90Var2;
                                 }
                                 arrayList5.add(staticLayout8);
                                 i42 = i20 + 1;
                                 sparseArray = sparseArray2;
-                                h90Var2 = h90Var;
+                                i90Var2 = i90Var;
                                 f15 = f12;
                                 textPaint4 = textPaint2;
                                 arrayList6 = arrayList;
@@ -1141,7 +1141,7 @@ public final class r7 extends FrameLayout implements org.telegram.ui.ActionBar.p
                         arrayList5.add(staticLayout8);
                         i42 = i20 + 1;
                         sparseArray = sparseArray2;
-                        h90Var2 = h90Var;
+                        i90Var2 = i90Var;
                         f15 = f12;
                         textPaint4 = textPaint2;
                         arrayList6 = arrayList;
@@ -1150,13 +1150,13 @@ public final class r7 extends FrameLayout implements org.telegram.ui.ActionBar.p
                         size = i19;
                     }
                 }
-                h90 h90Var32 = h90Var2;
+                i90 i90Var32 = i90Var2;
                 TLRPC.PhotoSize photoSize32 = photoSize;
                 int i382 = size;
                 float f162 = f15;
                 int dp2 = AndroidUtilities.dp(52.0f);
                 int C = LocaleController.isRTL ? org.telegram.messenger.t.C(f162, View.MeasureSpec.getSize(i10), dp2) : AndroidUtilities.dp(f162);
-                h90Var32.setBounds(C, AndroidUtilities.dp(11.0f), C + dp2, AndroidUtilities.dp(63.0f));
+                i90Var32.setBounds(C, AndroidUtilities.dp(11.0f), C + dp2, AndroidUtilities.dp(63.0f));
                 if (z10) {
                     i15 = 1;
                     TLRPC.PhotoSize closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(this.b0.photoThumbs, dp2, true);
@@ -1183,7 +1183,7 @@ public final class r7 extends FrameLayout implements org.telegram.ui.ActionBar.p
                 }
                 if (i12 == i15) {
                     f10 = f162;
-                    StaticLayout u24 = s1.u2(h10.d(this.b0, i15, 2, textPaint), textPaint, i382, i382, 0, i14);
+                    StaticLayout u24 = s1.u2(j10.d(this.b0, i15, 2, textPaint), textPaint, i382, i382, 0, i14);
                     this.j0 = u24;
                     org.telegram.ui.Components.y5 y5Var = this.k0;
                     Layout[] layoutArr = new Layout[i15];
@@ -1260,7 +1260,7 @@ public final class r7 extends FrameLayout implements org.telegram.ui.ActionBar.p
         TextPaint textPaint32 = this.e0;
         if (i12 != 1) {
         }
-        h90 h90Var22 = this.v;
+        i90 i90Var22 = this.v;
         if (str2 != null) {
         }
         this.T = this.Q;
@@ -1285,14 +1285,14 @@ public final class r7 extends FrameLayout implements org.telegram.ui.ActionBar.p
         }
         if (!arrayList6.isEmpty()) {
         }
-        h90 h90Var322 = h90Var22;
+        i90 i90Var322 = i90Var22;
         TLRPC.PhotoSize photoSize322 = photoSize;
         int i3822 = size;
         float f1622 = f152;
         int dp22 = AndroidUtilities.dp(52.0f);
         if (LocaleController.isRTL) {
         }
-        h90Var322.setBounds(C, AndroidUtilities.dp(11.0f), C + dp22, AndroidUtilities.dp(63.0f));
+        i90Var322.setBounds(C, AndroidUtilities.dp(11.0f), C + dp22, AndroidUtilities.dp(63.0f));
         if (z10) {
         }
         if (i12 == i15) {
@@ -1394,9 +1394,9 @@ public final class r7 extends FrameLayout implements org.telegram.ui.ActionBar.p
                                 if (this.M == null && (this.h != i13 || this.n == null || !this.f)) {
                                     e();
                                     this.h = i13;
-                                    aa0 aa0Var = new aa0(null, this.l0, x9 - dp, (y3 - this.F) - i14, 0);
-                                    this.n = aa0Var;
-                                    s90 b10 = aa0Var.b();
+                                    ba0 ba0Var = new ba0(null, this.l0, x9 - dp, (y3 - this.F) - i14, 0);
+                                    this.n = ba0Var;
+                                    t90 b10 = ba0Var.b();
                                     this.f = true;
                                     this.e.a(this.n, null);
                                     if (!this.a) {

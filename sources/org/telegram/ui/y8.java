@@ -12,7 +12,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_phone;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class y8 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -24,13 +24,13 @@ public final /* synthetic */ class y8 implements RequestDelegate {
     public final /* synthetic */ Object g;
     public final /* synthetic */ Object h;
 
-    public /* synthetic */ y8(int i10, TLRPC.InputGroupCall inputGroupCall, String[] strArr, FrameLayout frameLayout, org.telegram.ui.Components.z90 z90Var, org.telegram.ui.ActionBar.k3 k3Var, org.telegram.ui.ActionBar.u6 u6Var) {
+    public /* synthetic */ y8(int i10, TLRPC.InputGroupCall inputGroupCall, String[] strArr, FrameLayout frameLayout, org.telegram.ui.Components.aa0 aa0Var, org.telegram.ui.ActionBar.k3 k3Var, org.telegram.ui.ActionBar.u6 u6Var) {
         this.a = 0;
         this.b = i10;
         this.c = inputGroupCall;
         this.d = strArr;
         this.e = frameLayout;
-        this.f = z90Var;
+        this.f = aa0Var;
         this.g = k3Var;
         this.h = u6Var;
     }
@@ -49,7 +49,7 @@ public final /* synthetic */ class y8 implements RequestDelegate {
                 TLRPC.InputGroupCall inputGroupCall = (TLRPC.InputGroupCall) obj6;
                 String[] strArr = (String[]) obj5;
                 FrameLayout frameLayout = (FrameLayout) obj4;
-                org.telegram.ui.Components.z90 z90Var = (org.telegram.ui.Components.z90) obj3;
+                org.telegram.ui.Components.aa0 aa0Var = (org.telegram.ui.Components.aa0) obj3;
                 org.telegram.ui.ActionBar.k3 k3Var = (org.telegram.ui.ActionBar.k3) obj2;
                 org.telegram.ui.ActionBar.u6 u6Var = (org.telegram.ui.ActionBar.u6) obj;
                 boolean z10 = tLObject instanceof TLRPC.Updates;
@@ -59,7 +59,7 @@ public final /* synthetic */ class y8 implements RequestDelegate {
                 }
                 TL_phone.exportGroupCallInvite exportgroupcallinvite = new TL_phone.exportGroupCallInvite();
                 exportgroupcallinvite.call = inputGroupCall;
-                ConnectionsManager.getInstance(i11).sendRequest(exportgroupcallinvite, new bi.n9(strArr, frameLayout, z90Var, k3Var, u6Var, 2));
+                ConnectionsManager.getInstance(i11).sendRequest(exportgroupcallinvite, new bi.n9(strArr, frameLayout, aa0Var, k3Var, u6Var, 2));
                 break;
             case 1:
                 ExternalActionActivity externalActionActivity = (ExternalActionActivity) obj6;
@@ -71,7 +71,7 @@ public final /* synthetic */ class y8 implements RequestDelegate {
                 ArrayList arrayList = ExternalActionActivity.x;
                 TL_account.authorizationForm authorizationform = (TL_account.authorizationForm) tLObject;
                 if (authorizationform == null) {
-                    AndroidUtilities.runOnUIThread(new nq(externalActionActivity, e2Var, tL_error, 5));
+                    AndroidUtilities.runOnUIThread(new pq(externalActionActivity, e2Var, tL_error, 5));
                     break;
                 } else {
                     TL_account.getPassword getpassword = new TL_account.getPassword();
@@ -81,10 +81,10 @@ public final /* synthetic */ class y8 implements RequestDelegate {
                 }
             case 2:
                 ArrayList arrayList2 = ExternalActionActivity.x;
-                AndroidUtilities.runOnUIThread(new org.telegram.messenger.d6((ExternalActionActivity) obj6, (org.telegram.ui.ActionBar.e2) obj5, tLObject, this.b, (TL_account.authorizationForm) obj4, (TL_account.getAuthorizationForm) obj3, (String) obj2, (String) obj));
+                AndroidUtilities.runOnUIThread(new org.telegram.messenger.e6((ExternalActionActivity) obj6, (org.telegram.ui.ActionBar.e2) obj5, tLObject, this.b, (TL_account.authorizationForm) obj4, (TL_account.getAuthorizationForm) obj3, (String) obj2, (String) obj));
                 break;
             default:
-                AndroidUtilities.runOnUIThread(new bi.y8((of0) obj6, tLObject, tL_error, (d5.l) obj5, this.b, (d5.o) obj4, (TLRPC.TL_inputStorePaymentAuthCode) obj3, (String) obj2, (TLRPC.TL_payments_canPurchaseStore) obj, 4));
+                AndroidUtilities.runOnUIThread(new bi.y8((qf0) obj6, tLObject, tL_error, (d5.l) obj5, this.b, (d5.o) obj4, (TLRPC.TL_inputStorePaymentAuthCode) obj3, (String) obj2, (TLRPC.TL_payments_canPurchaseStore) obj, 4));
                 break;
         }
     }

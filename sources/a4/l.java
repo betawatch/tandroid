@@ -69,21 +69,21 @@ import org.json.JSONObject;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.br0;
+import org.telegram.ui.Components.cr0;
 import org.telegram.ui.Components.e5;
 import org.telegram.ui.Components.qc;
-import org.telegram.ui.ni0;
+import org.telegram.ui.pi0;
 import r0.b0;
 import r0.i0;
 import r0.k1;
 import rg.m;
 import rg.q1;
 import rg.s0;
-import sg.x1;
+import sg.w1;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
-public final class l implements z3.d, a0, androidx.activity.result.b, oe.d, br0, p, OnSuccessListener, n, fe.b, x1, r0.n, hb.n, r, z1, y, e5 {
+public final class l implements z3.d, a0, androidx.activity.result.b, oe.d, cr0, p, OnSuccessListener, n, fe.b, w1, r0.n, hb.n, r, z1, y, e5 {
     public final /* synthetic */ int a;
     public final Object b;
 
@@ -204,9 +204,9 @@ public final class l implements z3.d, a0, androidx.activity.result.b, oe.d, br0,
             case 28:
                 ((q) this.b).K(i10, z10, i11, false, 0L);
                 q qVar = (q) this.b;
-                ni0 ni0Var = qVar.O;
-                if (ni0Var != null) {
-                    ni0Var.h();
+                pi0 pi0Var = qVar.O;
+                if (pi0Var != null) {
+                    pi0Var.h();
                     qVar.O = null;
                     break;
                 }
@@ -388,7 +388,7 @@ public final class l implements z3.d, a0, androidx.activity.result.b, oe.d, br0,
         }
     }
 
-    @Override // org.telegram.ui.Components.br0
+    @Override // org.telegram.ui.Components.cr0
     public /* synthetic */ void R() {
         int i10 = this.a;
     }
@@ -413,7 +413,7 @@ public final class l implements z3.d, a0, androidx.activity.result.b, oe.d, br0,
         }
     }
 
-    @Override // sg.x1
+    @Override // sg.w1
     public void V(float f7) {
         ta taVar = (ta) this.b;
         s0.e(taVar.u1).k(String.valueOf(m.a.indexOf(taVar.D0.getCurrentBrush())), f7);
@@ -498,7 +498,7 @@ public final class l implements z3.d, a0, androidx.activity.result.b, oe.d, br0,
         return j10 >= 0 ? (List) this.b : Collections.EMPTY_LIST;
     }
 
-    @Override // sg.x1
+    @Override // sg.w1
     public float get() {
         ta taVar = (ta) this.b;
         int i10 = taVar.u1;
@@ -1057,7 +1057,7 @@ public final class l implements z3.d, a0, androidx.activity.result.b, oe.d, br0,
         ((x0) this.b).j1 = true;
     }
 
-    @Override // org.telegram.ui.Components.br0
+    @Override // org.telegram.ui.Components.cr0
     public void v0() {
         switch (this.a) {
             case 7:

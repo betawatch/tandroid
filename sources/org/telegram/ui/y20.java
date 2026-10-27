@@ -1,21 +1,20 @@
 package org.telegram.ui;
 
-import android.view.ViewGroup;
-import androidx.recyclerview.widget.RecyclerView;
-
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public final class y20 extends s4.u0 {
-    public final /* synthetic */ v50 a;
+public final class y20 extends g.o {
+    public final /* synthetic */ x50 c;
 
-    public y20(v50 v50Var) {
-        this.a = v50Var;
+    public y20(x50 x50Var) {
+        this.c = x50Var;
     }
 
-    @Override // s4.u0
-    public final void b(RecyclerView recyclerView, int i10, int i11) {
-        ViewGroup viewGroup;
-        viewGroup = ((org.telegram.ui.ActionBar.k3) this.a).containerView;
-        viewGroup.invalidate();
+    @Override // g.o
+    public final int i(int i10) {
+        int size = this.c.o2.e.size();
+        if (size > 1 && size != 2) {
+            return (size != 3 || i10 == 0 || i10 == 1) ? 3 : 6;
+        }
+        return 6;
     }
 }

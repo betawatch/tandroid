@@ -15,7 +15,7 @@ import org.telegram.messenger.BillingController;
 import org.telegram.messenger.LocaleController;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class ie extends LinearLayout {
     public final LinearLayout a;
@@ -34,26 +34,26 @@ public final class ie extends LinearLayout {
         LinearLayout linearLayout = new LinearLayout(context);
         this.a = linearLayout;
         linearLayout.setOrientation(1);
-        addView(linearLayout, org.telegram.ui.Components.gb1.o(22.0f, 9.0f, 22.0f, 0.0f, -1, -2));
+        addView(linearLayout, org.telegram.ui.Components.kb1.o(22.0f, 9.0f, 22.0f, 0.0f, -1, -2));
         for (int i10 = 0; i10 < 2; i10++) {
             this.b[i10] = new LinearLayout(context);
             this.b[i10].setOrientation(0);
-            this.a.addView(this.b[i10], org.telegram.ui.Components.gb1.s(-1, -2, 1.0f, 119));
+            this.a.addView(this.b[i10], org.telegram.ui.Components.kb1.s(-1, -2, 1.0f, 119));
             this.c[i10] = new org.telegram.ui.Components.b6(context);
             this.c[i10].setTypeface(AndroidUtilities.bold());
             this.c[i10].setTextSize(1, 16.0f);
             org.telegram.ui.ActionBar.f7.V(this.c[i10], org.telegram.ui.ActionBar.y6.G6, u6Var);
-            this.b[i10].addView(this.c[i10], org.telegram.ui.Components.gb1.x(-2, -2, 80, 0, 0, 5, 0));
+            this.b[i10].addView(this.c[i10], org.telegram.ui.Components.kb1.x(-2, -2, 80, 0, 0, 5, 0));
             this.d[i10] = new org.telegram.ui.Components.b6(context);
             this.d[i10].setTextSize(1, 11.5f);
             org.telegram.ui.ActionBar.f7.V(this.d[i10], org.telegram.ui.ActionBar.y6.y6, u6Var);
-            this.b[i10].addView(this.d[i10], org.telegram.ui.Components.gb1.u(-2, -2, 80));
+            this.b[i10].addView(this.d[i10], org.telegram.ui.Components.kb1.u(-2, -2, 80));
         }
         TextView textView = new TextView(context);
         this.e = textView;
         textView.setTextSize(1, 13.0f);
         org.telegram.ui.ActionBar.f7.V(textView, org.telegram.ui.ActionBar.y6.y6, u6Var);
-        addView(textView, org.telegram.ui.Components.gb1.x(-1, -2, 55, 22, 5, 22, 9));
+        addView(textView, org.telegram.ui.Components.kb1.x(-1, -2, 55, 22, 5, 22, 9));
         DecimalFormatSymbols decimalFormatSymbols = new DecimalFormatSymbols(Locale.US);
         decimalFormatSymbols.setDecimalSeparator('.');
         DecimalFormat decimalFormat = new DecimalFormat("#.##", decimalFormatSymbols);

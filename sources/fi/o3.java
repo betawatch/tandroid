@@ -29,18 +29,18 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.vh;
+import org.telegram.messenger.wh;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
+import org.telegram.ui.Components.am0;
 import org.telegram.ui.Components.ds;
-import org.telegram.ui.Components.ey0;
-import org.telegram.ui.Components.gb1;
-import org.telegram.ui.Components.mm0;
-import org.telegram.ui.Components.zl0;
+import org.telegram.ui.Components.fy0;
+import org.telegram.ui.Components.kb1;
+import org.telegram.ui.Components.nm0;
 import org.telegram.ui.Components.zq;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public abstract class o3 extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     public static final MediaController.AlbumEntry j0 = new MediaController.AlbumEntry(-1, null, null);
@@ -79,9 +79,9 @@ public abstract class o3 extends FrameLayout implements NotificationCenter.Notif
     public final FrameLayout h;
     public final ArrayList h0;
     public di.i4 i0;
-    public final mm0 n;
+    public final nm0 n;
     public final e3 r;
-    public final ey0 s;
+    public final fy0 s;
     public final z3 v;
     public boolean w;
     public final org.telegram.ui.ActionBar.k x;
@@ -120,16 +120,16 @@ public abstract class o3 extends FrameLayout implements NotificationCenter.Notif
         y2Var.O = new z2(this);
         x2Var.i(new a3());
         x2Var.setClipToPadding(false);
-        addView(x2Var, gb1.i(-1, -1, 119));
+        addView(x2Var, kb1.i(-1, -1, 119));
         final int i11 = 0;
-        x2Var.setOnItemClickListener(new zl0(this) { // from class: fi.r2
+        x2Var.setOnItemClickListener(new am0(this) { // from class: fi.r2
             public final /* synthetic */ o3 b;
 
             {
                 this.b = this;
             }
 
-            @Override // org.telegram.ui.Components.zl0
+            @Override // org.telegram.ui.Components.am0
             public final void c(int i12, View view) {
                 Utilities.Callback2 callback2;
                 switch (i11) {
@@ -211,13 +211,13 @@ public abstract class o3 extends FrameLayout implements NotificationCenter.Notif
         kVar.x(436207615, false);
         kVar.y(-1, false);
         kVar.y(-1, true);
-        addView(kVar, gb1.i(-1, -2, 55));
+        addView(kVar, kb1.i(-1, -2, 55));
         kVar.setActionBarMenuOnItemClick(new c3(this));
         org.telegram.ui.ActionBar.z l4 = kVar.l();
         d3 d3Var = new d3(this, context, l4, u6Var);
         this.F = d3Var;
         d3Var.setSubMenuOpenSide(1);
-        kVar.addView(d3Var, 0, gb1.h(-2, -1.0f, 51, AndroidUtilities.isTablet() ? 64.0f : 56.0f, 0.0f, 40.0f, 0.0f));
+        kVar.addView(d3Var, 0, kb1.h(-2, -1.0f, 51, AndroidUtilities.isTablet() ? 64.0f : 56.0f, 0.0f, 40.0f, 0.0f));
         final int i12 = 0;
         d3Var.setOnClickListener(new View.OnClickListener(this) { // from class: fi.s2
             public final /* synthetic */ o3 b;
@@ -268,37 +268,37 @@ public abstract class o3 extends FrameLayout implements NotificationCenter.Notif
         textView.setCompoundDrawablePadding(AndroidUtilities.dp(4.0f));
         float f10 = 10.0f;
         textView.setPadding(0, AndroidUtilities.statusBarHeight, AndroidUtilities.dp(10.0f), 0);
-        d3Var.addView(textView, gb1.h(-2, -2.0f, 16, 16.0f, 0.0f, 0.0f, 0.0f));
+        d3Var.addView(textView, kb1.h(-2, -2.0f, 16, 16.0f, 0.0f, 0.0f, 0.0f));
         FrameLayout frameLayout = new FrameLayout(context);
         this.h = frameLayout;
         frameLayout.setVisibility(8);
         frameLayout.setAlpha(0.0f);
-        addView(frameLayout, gb1.i(-1, -1, 119));
-        mm0 mm0Var = new mm0(context, u6Var);
-        this.n = mm0Var;
-        mm0Var.setLayoutManager(new s4.t(3));
+        addView(frameLayout, kb1.i(-1, -1, 119));
+        nm0 nm0Var = new nm0(context, u6Var);
+        this.n = nm0Var;
+        nm0Var.setLayoutManager(new s4.t(3));
         e3 e3Var = new e3(this);
         this.r = e3Var;
-        mm0Var.setAdapter(e3Var);
-        mm0Var.setOnScrollListener(new f3(this));
-        mm0Var.setClipToPadding(true);
-        mm0Var.i(new t2());
-        frameLayout.addView(mm0Var, gb1.i(-1, -1, 119));
+        nm0Var.setAdapter(e3Var);
+        nm0Var.setOnScrollListener(new f3(this));
+        nm0Var.setClipToPadding(true);
+        nm0Var.i(new t2());
+        frameLayout.addView(nm0Var, kb1.i(-1, -1, 119));
         u2 u2Var = new u2(context, u6Var);
         u2Var.setViewType(2);
         u2Var.setAlpha(0.0f);
         u2Var.setVisibility(8);
-        frameLayout.addView(u2Var, gb1.i(-1, -1, 119));
-        ey0 ey0Var = new ey0(context, u2Var, 11, u6Var);
-        this.s = ey0Var;
-        xh.n nVar = ey0Var.d;
+        frameLayout.addView(u2Var, kb1.i(-1, -1, 119));
+        fy0 fy0Var = new fy0(context, u2Var, 11, u6Var);
+        this.s = fy0Var;
+        xh.n nVar = fy0Var.d;
         nVar.setTextSize(1, 16.0f);
         org.telegram.ui.ActionBar.f7.V(nVar, org.telegram.ui.ActionBar.y6.y6, u6Var);
         nVar.setTypeface(null);
         nVar.setText(LocaleController.getString(R.string.SearchImagesType));
         this.v = new z3(this, false, new ai.i(this, 19));
-        frameLayout.addView(ey0Var, gb1.i(-1, -1, 119));
-        mm0Var.setEmptyView(ey0Var);
+        frameLayout.addView(fy0Var, kb1.i(-1, -1, 119));
+        nm0Var.setEmptyView(fy0Var);
         org.telegram.ui.ActionBar.w0 a2 = l4.a(0, R.drawable.outline_header_search);
         a2.N();
         a2.H = new w2(this);
@@ -306,14 +306,14 @@ public abstract class o3 extends FrameLayout implements NotificationCenter.Notif
         a2.setVisibility(8);
         a2.setSearchFieldHint(LocaleController.getString(R.string.SearchImagesTitle));
         final int i13 = 1;
-        mm0Var.setOnItemClickListener(new zl0(this) { // from class: fi.r2
+        nm0Var.setOnItemClickListener(new am0(this) { // from class: fi.r2
             public final /* synthetic */ o3 b;
 
             {
                 this.b = this;
             }
 
-            @Override // org.telegram.ui.Components.zl0
+            @Override // org.telegram.ui.Components.am0
             public final void c(int i122, View view) {
                 Utilities.Callback2 callback2;
                 switch (i13) {
@@ -404,15 +404,15 @@ public abstract class o3 extends FrameLayout implements NotificationCenter.Notif
             linearLayout.setOrientation(1);
             org.telegram.ui.ActionBar.f7.i(org.telegram.ui.ActionBar.y6.h5, linearLayout, u6Var);
             linearLayout.setPadding(AndroidUtilities.dp(10.0f), AndroidUtilities.dp(10.0f), AndroidUtilities.dp(10.0f), AndroidUtilities.dp(AndroidUtilities.navigationBarHeight > 0 ? 0.0f : f10) + AndroidUtilities.navigationBarHeight);
-            addView(linearLayout, gb1.h(-1, -2.0f, 87, 0.0f, 0.0f, 0.0f, 0.0f));
+            addView(linearLayout, kb1.h(-1, -2.0f, 87, 0.0f, 0.0f, 0.0f, 0.0f));
             linearLayout.setAlpha(0.0f);
             linearLayout.setTranslationY(AndroidUtilities.dp(32.0f));
             linearLayout.setVisibility(8);
-            d f11 = vh.f(24, context, u6Var, true);
+            d f11 = wh.f(24, context, u6Var, true);
             this.J = f11;
             f11.i(LocaleController.formatPluralStringComma("StoriesCreate", 1), false, true);
             if (!z12) {
-                linearLayout.addView(f11, gb1.o(0.0f, 0.0f, 0.0f, 8.0f, -1, 48));
+                linearLayout.addView(f11, kb1.o(0.0f, 0.0f, 0.0f, 8.0f, -1, 48));
                 final int i15 = 1;
                 f11.setOnClickListener(new View.OnClickListener(this) { // from class: fi.s2
                     public final /* synthetic */ o3 b;
@@ -448,14 +448,14 @@ public abstract class o3 extends FrameLayout implements NotificationCenter.Notif
                     }
                 });
             }
-            d f12 = vh.f(24, context, u6Var, z12);
+            d f12 = wh.f(24, context, u6Var, z12);
             SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("v");
             zq zqVar = new zq(R.drawable.mini_collage, 0);
             zqVar.translate(-AndroidUtilities.dp(1.33f), AndroidUtilities.dp(0.66f));
             spannableStringBuilder.setSpan(zqVar, 0, 1, 33);
             spannableStringBuilder.append((CharSequence) " ").append((CharSequence) LocaleController.getString(R.string.StoriesCollage));
             f12.i(spannableStringBuilder, false, true);
-            linearLayout.addView(f12, gb1.o(0.0f, 0.0f, 0.0f, 0.0f, -1, 48));
+            linearLayout.addView(f12, kb1.o(0.0f, 0.0f, 0.0f, 0.0f, -1, 48));
             final int i16 = 2;
             f12.setOnClickListener(new View.OnClickListener(this) { // from class: fi.s2
                 public final /* synthetic */ o3 b;
@@ -503,8 +503,8 @@ public abstract class o3 extends FrameLayout implements NotificationCenter.Notif
             org.telegram.ui.ActionBar.b7 N = org.telegram.ui.ActionBar.f7.N(i17);
             imageView.setBackground(K);
             org.telegram.ui.ActionBar.f7.k(imageView, K, N, null, u6Var);
-            gb1.c(imageView, 0.1f, 1.5f);
-            addView(imageView, gb1.h(-2, -2.0f, 85, 0.0f, 0.0f, 14.0f, 14.0f));
+            kb1.c(imageView, 0.1f, 1.5f);
+            addView(imageView, kb1.h(-2, -2.0f, 85, 0.0f, 0.0f, 14.0f, 14.0f));
             final int i18 = 3;
             imageView.setOnClickListener(new View.OnClickListener(this) { // from class: fi.s2
                 public final /* synthetic */ o3 b;
@@ -852,7 +852,7 @@ public abstract class o3 extends FrameLayout implements NotificationCenter.Notif
         boolean z10 = !isEmpty;
         ImageView imageView = this.H;
         if (imageView != null) {
-            vh.q(imageView.animate().alpha(!isEmpty ? 1.0f : 0.0f).scaleX(!isEmpty ? 1.0f : 0.7f).scaleY(isEmpty ? 0.7f : 1.0f).translationY(!isEmpty ? -AndroidUtilities.navigationBarHeight : AndroidUtilities.dp(8.0f)), ds.h, 320L);
+            wh.q(imageView.animate().alpha(!isEmpty ? 1.0f : 0.0f).scaleX(!isEmpty ? 1.0f : 0.7f).scaleY(isEmpty ? 0.7f : 1.0f).translationY(!isEmpty ? -AndroidUtilities.navigationBarHeight : AndroidUtilities.dp(8.0f)), ds.h, 320L);
         }
         LinearLayout linearLayout = this.I;
         if (linearLayout != null) {
@@ -871,8 +871,8 @@ public abstract class o3 extends FrameLayout implements NotificationCenter.Notif
 
     @Override // android.view.ViewGroup, android.view.View
     public final void onAttachedToWindow() {
-        NotificationCenter.getGlobalInstance().addObserver(this, NotificationCenter.albumsDidLoad);
-        NotificationCenter.getInstance(this.a).addObserver(this, NotificationCenter.storiesDraftsUpdated);
+        NotificationCenter.getGlobalInstance().addWeakObserver(this, NotificationCenter.albumsDidLoad);
+        NotificationCenter.getInstance(this.a).addWeakObserver(this, NotificationCenter.storiesDraftsUpdated);
         super.onAttachedToWindow();
     }
 

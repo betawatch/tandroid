@@ -1,6 +1,6 @@
 package y7;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
 public final class v extends n {
     public final transient Object[] c;
@@ -14,7 +14,7 @@ public final class v extends n {
 
     @Override // java.util.List
     public final Object get(int i10) {
-        w7.h5.a(i10, this.e);
+        w7.i5.a(i10, this.e);
         Object obj = this.c[i10 + i10 + this.d];
         obj.getClass();
         return obj;

@@ -9,15 +9,15 @@ import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.vh;
+import org.telegram.messenger.wh;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.f7;
 import org.telegram.ui.ActionBar.u6;
 import org.telegram.ui.ActionBar.y6;
-import org.telegram.ui.Components.gb1;
+import org.telegram.ui.Components.kb1;
 import org.telegram.ui.Components.s6;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class t0 extends FrameLayout {
     public final /* synthetic */ int a = 1;
@@ -56,7 +56,7 @@ public final class t0 extends FrameLayout {
     public void onMeasure(int i10, int i11) {
         switch (this.a) {
             case 0:
-                super.onMeasure(i10, vh.D(2.0f, ((y0) this.c).s, TLObject.FLAG_30));
+                super.onMeasure(i10, wh.D(2.0f, ((y0) this.c).s, TLObject.FLAG_30));
                 break;
             default:
                 super.onMeasure(i10, i11);
@@ -66,14 +66,14 @@ public final class t0 extends FrameLayout {
 
     public t0(Context context, u6 u6Var) {
         super(context);
-        LinearLayout d = vh.d(context, 1);
+        LinearLayout d = wh.d(context, 1);
         s6 s6Var = new s6(context, false, false, false);
         this.b = s6Var;
         int i10 = y6.G6;
         f7.Z(s6Var, i10, u6Var);
         s6Var.setTextSize(AndroidUtilities.dp(17.0f));
         s6Var.setTypeface(AndroidUtilities.bold());
-        d.addView(s6Var, gb1.u(-2, 23, 1));
+        d.addView(s6Var, kb1.u(-2, 23, 1));
         TextView textView = new TextView(context);
         this.c = textView;
         textView.setTextSize(1, 11.0f);
@@ -81,7 +81,7 @@ public final class t0 extends FrameLayout {
         textView.setSingleLine();
         textView.setMaxLines(1);
         textView.setEllipsize(TextUtils.TruncateAt.END);
-        d.addView(textView, gb1.u(-2, -2, 1));
-        addView(d, gb1.i(-2, -2, 17));
+        d.addView(textView, kb1.u(-2, -2, 1));
+        addView(d, kb1.i(-2, -2, 17));
     }
 }

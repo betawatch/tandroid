@@ -28,16 +28,16 @@ import org.telegram.ui.Cells.v4;
 import org.telegram.ui.Cells.v8;
 import org.telegram.ui.Cells.z3;
 import org.telegram.ui.Components.dr;
-import org.telegram.ui.Components.gb1;
-import org.telegram.ui.Components.hm0;
-import org.telegram.ui.Components.mm0;
-import org.telegram.ui.Components.vl0;
+import org.telegram.ui.Components.im0;
+import org.telegram.ui.Components.kb1;
+import org.telegram.ui.Components.nm0;
 import org.telegram.ui.Components.vn;
+import org.telegram.ui.Components.wl0;
 import org.telegram.ui.d3;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public abstract class e extends hm0 {
+public abstract class e extends im0 {
     public final boolean E;
     public int F;
     public final boolean G;
@@ -64,7 +64,7 @@ public abstract class e extends hm0 {
         this.G = i11 == 2;
     }
 
-    @Override // org.telegram.ui.Components.tl0
+    @Override // org.telegram.ui.Components.ul0
     public final String F(int i10) {
         if (this.F == 2 || this.I) {
             return null;
@@ -89,15 +89,15 @@ public abstract class e extends hm0 {
         return arrayList.get(S);
     }
 
-    @Override // org.telegram.ui.Components.tl0
-    public final void G(mm0 mm0Var, float f7, int[] iArr) {
+    @Override // org.telegram.ui.Components.ul0
+    public final void G(nm0 nm0Var, float f7, int[] iArr) {
         iArr[0] = (int) (h() * f7);
         iArr[1] = 0;
     }
 
     /* JADX WARN: Removed duplicated region for block: B:30:0x00a2  */
     /* JADX WARN: Removed duplicated region for block: B:32:? A[RETURN, SYNTHETIC] */
-    @Override // org.telegram.ui.Components.hm0
+    @Override // org.telegram.ui.Components.im0
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -159,12 +159,12 @@ public abstract class e extends hm0 {
         return 1;
     }
 
-    @Override // org.telegram.ui.Components.hm0
+    @Override // org.telegram.ui.Components.im0
     public final int N(int i10, int i11) {
         return Objects.hash(Integer.valueOf(i10 * (-49612)), O(i10, i11));
     }
 
-    @Override // org.telegram.ui.Components.hm0
+    @Override // org.telegram.ui.Components.im0
     public final Object O(int i10, int i11) {
         int i12;
         boolean z10 = this.K;
@@ -214,7 +214,7 @@ public abstract class e extends hm0 {
     }
 
     /* JADX WARN: Removed duplicated region for block: B:36:0x0089 A[RETURN] */
-    @Override // org.telegram.ui.Components.hm0
+    @Override // org.telegram.ui.Components.im0
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -305,7 +305,7 @@ public abstract class e extends hm0 {
         return 3;
     }
 
-    @Override // org.telegram.ui.Components.hm0
+    @Override // org.telegram.ui.Components.im0
     public final View T(int i10, View view) {
         int i11 = this.r;
         int i12 = this.v;
@@ -326,7 +326,7 @@ public abstract class e extends hm0 {
             ic.a.o(22.0f, 1, textView);
             f7.V(textView, y6.B6, null);
             textView.setGravity(17);
-            v4Var.addView(textView, gb1.h(-1, -1.0f, 119, 12.0f, 0.0f, 0.0f, 0.0f));
+            v4Var.addView(textView, kb1.h(-1, -1.0f, 119, 12.0f, 0.0f, 0.0f, 0.0f));
             this.N.add(v4Var);
             view2 = v4Var;
         }
@@ -361,7 +361,7 @@ public abstract class e extends hm0 {
         return view2;
     }
 
-    @Override // org.telegram.ui.Components.hm0
+    @Override // org.telegram.ui.Components.im0
     public final boolean V(int i10, int i11, s4.e1 e1Var) {
         if (!this.K) {
             int i12 = this.v;
@@ -406,7 +406,7 @@ public abstract class e extends hm0 {
         return true;
     }
 
-    @Override // org.telegram.ui.Components.hm0
+    @Override // org.telegram.ui.Components.im0
     public final void W(int i10, int i11, s4.e1 e1Var) {
         ArrayList<TLRPC.TL_contact> arrayList;
         int i12 = e1Var.f;
@@ -584,7 +584,7 @@ public abstract class e extends hm0 {
         } else if (i10 != 3) {
             if (i10 == 4) {
                 FrameLayout pVar = new bh.p(this, context, viewGroup, 4);
-                pVar.addView(new dr(context), gb1.i(-1, -2, 17));
+                pVar.addView(new dr(context), kb1.i(-1, -2, 17));
                 pVar.setLayoutParams(new s4.q0(-1, -2));
                 pVar.setTag(-33024);
                 view2 = pVar;
@@ -606,6 +606,6 @@ public abstract class e extends hm0 {
             a3Var.setPadding(AndroidUtilities.dp(LocaleController.isRTL ? 28.0f : 72.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(LocaleController.isRTL ? 72.0f : 28.0f), AndroidUtilities.dp(8.0f));
             view = a3Var;
         }
-        return new vl0(view);
+        return new wl0(view);
     }
 }

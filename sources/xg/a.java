@@ -10,9 +10,9 @@ import org.telegram.messenger.R;
 import org.telegram.ui.ActionBar.f7;
 import org.telegram.ui.ActionBar.u6;
 import org.telegram.ui.ActionBar.y6;
-import org.telegram.ui.Components.gb1;
+import org.telegram.ui.Components.kb1;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class a extends FrameLayout {
     public final fi.d a;
@@ -27,10 +27,10 @@ public final class a extends FrameLayout {
         this.c = u6Var;
         View view = new View(context);
         this.b = view;
-        addView(view, gb1.r(-1, -1));
+        addView(view, kb1.r(-1, -1));
         fi.d dVar = new fi.d(context, u6Var, true);
         this.a = dVar;
-        addView(dVar, gb1.h(-1, 48.0f, 17, 14.0f, 0.0f, 14.0f, 0.0f));
+        addView(dVar, kb1.h(-1, 48.0f, 17, 14.0f, 0.0f, 14.0f, 0.0f));
     }
 
     public final void a(int i10, boolean z10) {

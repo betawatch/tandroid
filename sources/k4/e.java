@@ -5,7 +5,7 @@ import b2.x0;
 import c3.p;
 import e2.x;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
 public abstract class e {
     public static final byte[] a = {0, 0, 0, 0, 16, 0, Byte.MIN_VALUE, 0, 0, -86, 0, 56, -101, 113};
@@ -43,7 +43,7 @@ public abstract class e {
             if (j11 > 2147483647L) {
                 throw x0.c("Chunk is too large (~2GB+) to skip; id: " + i11);
             }
-            pVar.q((int) j11);
+            pVar.r((int) j11);
             b10 = d.b(pVar, xVar);
         }
     }

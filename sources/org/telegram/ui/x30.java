@@ -1,20 +1,44 @@
 package org.telegram.ui;
 
-import android.view.MotionEvent;
-import android.widget.FrameLayout;
+import android.text.Editable;
+import android.text.TextUtils;
+import android.text.TextWatcher;
+import org.telegram.messenger.BotWebViewVibrationEffect;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public final class x30 extends FrameLayout {
-    public x30(LaunchActivity launchActivity) {
-        super(launchActivity);
+public final class x30 implements TextWatcher {
+    public final /* synthetic */ x50 a;
+
+    public x30(x50 x50Var) {
+        this.a = x50Var;
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        if (getAlpha() <= 0.95f) {
-            return false;
+    @Override // android.text.TextWatcher
+    public final void afterTextChanged(Editable editable) {
+        String str;
+        x50 x50Var = this.a;
+        x50Var.A3.a(TextUtils.isEmpty(editable), true);
+        int codePointCount = Character.codePointCount(editable, 0, editable.length());
+        int i10 = x50Var.d0;
+        if (codePointCount + 25 > i10) {
+            str = "" + (i10 - codePointCount);
+        } else {
+            str = null;
         }
-        return super.dispatchTouchEvent(motionEvent);
+        x50Var.M.a();
+        x50Var.M.setText(str);
+        x50Var.M.setTextColor(codePointCount >= i10 ? -1280137 : -1);
+        if (codePointCount > i10) {
+            BotWebViewVibrationEffect.APP_ERROR.vibrate();
+        }
+    }
+
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+    }
+
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
     }
 }

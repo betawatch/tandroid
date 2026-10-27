@@ -3,11 +3,11 @@ package ig;
 import j$.util.Objects;
 import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.hm0;
+import org.telegram.ui.Components.im0;
 import org.telegram.ui.Components.zx;
-import org.telegram.ui.c61;
+import org.telegram.ui.f61;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class h extends s4.p {
     public final /* synthetic */ int b;
@@ -57,9 +57,9 @@ public final class h extends s4.p {
             case 1:
                 return ((Integer) this.c.get(i10)).equals(((zx) this.d).n.get(i11));
             case 2:
-                return Objects.equals(this.c.get(i10), ((hm0) this.d).n.get(i11));
+                return Objects.equals(this.c.get(i10), ((im0) this.d).n.get(i11));
             case 3:
-                return ((Long) this.c.get(i10)).equals(((c61) this.d).v0.get(i11));
+                return ((Long) this.c.get(i10)).equals(((f61) this.d).v0.get(i11));
             default:
                 qg.a aVar = (qg.a) this.c.get(i10);
                 qg.a aVar2 = (qg.a) ((ArrayList) this.d).get(i11);
@@ -78,9 +78,9 @@ public final class h extends s4.p {
             case 1:
                 return ((zx) this.d).n.size();
             case 2:
-                return ((hm0) this.d).n.size();
+                return ((im0) this.d).n.size();
             case 3:
-                return ((c61) this.d).v0.size();
+                return ((f61) this.d).v0.size();
             default:
                 return ((ArrayList) this.d).size();
         }

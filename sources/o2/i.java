@@ -23,9 +23,9 @@ import jg.s0;
 import li.e3;
 import li.h5;
 import p2.w;
-import vi.y;
+import vi.z;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
 public final class i {
     public final c a;
@@ -112,7 +112,7 @@ public final class i {
         return new h((p2.k) i0Var.get(0), j10 + 1, 0);
     }
 
-    public final y a(Uri uri) {
+    public final z a(Uri uri) {
         long elapsedRealtime = SystemClock.elapsedRealtime();
         p2.d dVar = this.g;
         p2.c cVar = (p2.c) dVar.d.get(uri);
@@ -133,7 +133,7 @@ public final class i {
                 }
             }
         }
-        return new y(size, i10, this.r.length(), d(elapsedRealtime));
+        return new z(size, i10, this.r.length(), d(elapsedRealtime));
     }
 
     public final v2.m[] b(j jVar, long j10) {

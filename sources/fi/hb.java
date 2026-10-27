@@ -10,10 +10,10 @@ import org.telegram.ui.Components.al;
 import org.telegram.ui.Components.wc;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PremiumPreviewFragment;
-import org.telegram.ui.re0;
-import org.telegram.ui.t30;
+import org.telegram.ui.te0;
+import org.telegram.ui.v30;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class hb extends ClickableSpan {
     public final /* synthetic */ int a;
@@ -37,7 +37,7 @@ public final class hb extends ClickableSpan {
                 nh.c cVar = (nh.c) this.b;
                 nh.a aVar = cVar.I;
                 if (aVar != null && (groupCallMessage = cVar.H) != null) {
-                    ((t30) aVar).a(groupCallMessage);
+                    ((v30) aVar).a(groupCallMessage);
                     break;
                 }
                 break;
@@ -62,7 +62,7 @@ public final class hb extends ClickableSpan {
                 ((ActionBarLayout) ((LaunchActivity) this.b).O()).R(new PremiumPreviewFragment(0, "gift"));
                 break;
             case 8:
-                ((re0) this.b).p(false);
+                ((te0) this.b).p(false);
                 break;
             case 9:
                 org.telegram.ui.Wallet.i9 i9Var = (org.telegram.ui.Wallet.i9) this.b;

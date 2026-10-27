@@ -9,14 +9,14 @@ import org.telegram.messenger.MessagesStorage;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_keyboard;
-import org.telegram.ui.af1;
-import org.telegram.ui.bj0;
-import org.telegram.ui.cy;
-import org.telegram.ui.ux;
+import org.telegram.ui.cf1;
+import org.telegram.ui.dj0;
+import org.telegram.ui.ey;
+import org.telegram.ui.xx;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class c0 implements bj0, ux {
+public final /* synthetic */ class c0 implements dj0, xx {
     public final /* synthetic */ a1 a;
     public final /* synthetic */ boolean[] b;
     public final /* synthetic */ String c;
@@ -31,17 +31,17 @@ public final /* synthetic */ class c0 implements bj0, ux {
         this.e = x7Var;
     }
 
-    @Override // org.telegram.ui.ux
+    @Override // org.telegram.ui.xx
     public /* synthetic */ boolean C() {
         return false;
     }
 
-    @Override // org.telegram.ui.ux
-    public /* synthetic */ boolean K(cy cyVar) {
+    @Override // org.telegram.ui.xx
+    public /* synthetic */ boolean K(ey eyVar) {
         return false;
     }
 
-    @Override // org.telegram.ui.bj0
+    @Override // org.telegram.ui.dj0
     public void a(ArrayList arrayList) {
         if (arrayList.isEmpty()) {
             return;
@@ -64,8 +64,8 @@ public final /* synthetic */ class c0 implements bj0, ux {
         ConnectionsManager.getInstance(a1Var.M).sendRequestTyped(tL_messages_sendBotRequestedPeer, new org.telegram.messenger.a(), new v(a1Var, this.e, str, 2));
     }
 
-    @Override // org.telegram.ui.ux
-    public boolean v(cy cyVar, ArrayList arrayList, CharSequence charSequence, boolean z10, boolean z11, int i10, int i11, af1 af1Var) {
+    @Override // org.telegram.ui.xx
+    public boolean v(ey eyVar, ArrayList arrayList, CharSequence charSequence, boolean z10, boolean z11, int i10, int i11, cf1 cf1Var) {
         if (!arrayList.isEmpty()) {
             int i12 = 0;
             this.b[0] = true;
@@ -89,7 +89,7 @@ public final /* synthetic */ class c0 implements bj0, ux {
             }
             ConnectionsManager.getInstance(a1Var.M).sendRequestTyped(tL_messages_sendBotRequestedPeer, new org.telegram.messenger.a(), new v(a1Var, this.e, str, 1));
         }
-        cyVar.finishFragment();
+        eyVar.finishFragment();
         return true;
     }
 }

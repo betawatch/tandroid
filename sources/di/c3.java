@@ -10,9 +10,9 @@ import org.telegram.messenger.SendMessageChatArguments;
 import org.telegram.messenger.SendMessagesHelper;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.ek;
-import org.telegram.ui.kn;
+import org.telegram.ui.mn;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class c3 implements ek {
     public final /* synthetic */ q4 a;
@@ -30,7 +30,7 @@ public final class c3 implements ek {
             return;
         }
         accountInstance = q4Var.getAccountInstance();
-        SendMessagesHelper.prepareSendingDocuments(accountInstance, (ArrayList<String>) arrayList, (ArrayList<String>) arrayList, (ArrayList<Uri>) null, str, (String) null, q4Var.q1, (MessageObject) null, (MessageObject) null, storyItem, (kn) null, (MessageObject) null, z10, i10, (t0.i) null, (SendMessageChatArguments) null, 0L, false, j11);
+        SendMessagesHelper.prepareSendingDocuments(accountInstance, (ArrayList<String>) arrayList, (ArrayList<String>) arrayList, (ArrayList<Uri>) null, str, (String) null, q4Var.q1, (MessageObject) null, (MessageObject) null, storyItem, (mn) null, (MessageObject) null, z10, i10, (t0.i) null, (SendMessageChatArguments) null, 0L, false, j11);
         q4Var.i0(j11 <= 0);
     }
 

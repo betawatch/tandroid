@@ -25,7 +25,7 @@ import java.math.RoundingMode;
 import java.util.List;
 import q3.l;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
 public final class d implements o {
     public final int a;
@@ -254,7 +254,7 @@ public final class d implements o {
                                 }
                             }
                         }
-                        pVar.q(zVar.b);
+                        pVar.r(zVar.b);
                         wVar = wVar2;
                     } else if (i12 != 1483304551) {
                         pVar.p();
@@ -455,7 +455,7 @@ public final class d implements o {
                 }
                 this.m = fVar2 != null ? new u0(fVar2) : null;
                 long position3 = pVar.getPosition();
-                pVar.q(zVar.b);
+                pVar.r(zVar.b);
                 if (i12 == 1483304551) {
                     long length5 = pVar.getLength();
                     if (j19 == -1 || j19 == 0) {
@@ -627,7 +627,7 @@ public final class d implements o {
                     wVar.b = i14;
                     this.m = fVar22 != null ? new u0(fVar22) : null;
                     long position32 = pVar.getPosition();
-                    pVar.q(zVar.b);
+                    pVar.r(zVar.b);
                     if (i12 == 1483304551) {
                     }
                 }
@@ -662,7 +662,7 @@ public final class d implements o {
             wVar.b = i14;
             this.m = fVar222 != null ? new u0(fVar222) : null;
             long position322 = pVar.getPosition();
-            pVar.q(zVar.b);
+            pVar.r(zVar.b);
             if (i12 == 1483304551) {
             }
         } else {
@@ -673,7 +673,7 @@ public final class d implements o {
                 long position4 = pVar.getPosition();
                 long j23 = this.p;
                 if (position4 < j23) {
-                    pVar.q((int) (j23 - position4));
+                    pVar.r((int) (j23 - position4));
                 }
             }
         }
@@ -684,7 +684,7 @@ public final class d implements o {
                 xVar4.N(0);
                 int m13 = xVar4.m();
                 if (((-128000) & m13) != (this.k & (-128000)) || c3.b.h(m13) == -1) {
-                    pVar.q(1);
+                    pVar.r(1);
                     this.k = 0;
                     i10 = 0;
                     i11 = -1;
@@ -809,7 +809,7 @@ public final class d implements o {
             }
             i10 = (int) pVar.i();
             if (!z10) {
-                pVar.q(i10);
+                pVar.r(i10);
             }
             i11 = 0;
         } else {
@@ -847,7 +847,7 @@ public final class d implements o {
                         pVar.p();
                         pVar.j(i10 + i14);
                     } else {
-                        pVar.q(1);
+                        pVar.r(1);
                     }
                     i12 = 0;
                     i13 = i14;
@@ -859,7 +859,7 @@ public final class d implements o {
             }
         }
         if (z10) {
-            pVar.q(i10 + i13);
+            pVar.r(i10 + i13);
         } else {
             pVar.p();
         }

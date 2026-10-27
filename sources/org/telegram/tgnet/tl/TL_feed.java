@@ -10,25 +10,25 @@ import org.telegram.tgnet.Vector;
 import org.telegram.tgnet.m;
 import org.telegram.tgnet.r;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public class TL_feed {
 
-    /* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+    /* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
     public static abstract class FeedItem extends TLObject {
         public static FeedItem TLdeserialize(InputSerializedData inputSerializedData, int i10, boolean z10) {
             return (FeedItem) TLObject.TLdeserialize(FeedItem.class, i10 != 1697598577 ? i10 != 1810307195 ? i10 != 2121511845 ? null : new TL_feedItemMessage() : new TL_feedItemInterestCategories() : new TL_feedItemMessageGroup(), inputSerializedData, i10, z10);
         }
     }
 
-    /* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+    /* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
     public static abstract class FeedMessages extends TLObject {
         public static FeedMessages TLdeserialize(InputSerializedData inputSerializedData, int i10, boolean z10) {
             return (FeedMessages) TLObject.TLdeserialize(FeedMessages.class, i10 != -619039485 ? i10 != -587770695 ? null : new TL_feedMessages() : new TL_feedMessagesNotModified(), inputSerializedData, i10, z10);
         }
     }
 
-    /* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+    /* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
     public static class FeedPosition extends TLObject {
         public static final int constructor = 1348066419;
         public int date;
@@ -55,7 +55,7 @@ public class TL_feed {
         }
     }
 
-    /* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+    /* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
     public static class ForYouFeed extends TLObject {
         public static final int constructor = 1381464069;
         public int flags;
@@ -85,14 +85,14 @@ public class TL_feed {
         }
     }
 
-    /* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+    /* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
     public static abstract class InterestCategories extends TLObject {
         public static InterestCategories TLdeserialize(InputSerializedData inputSerializedData, int i10, boolean z10) {
             return (InterestCategories) TLObject.TLdeserialize(InterestCategories.class, i10 != -323604576 ? i10 != 2043617685 ? null : new TL_interestCategoriesNotModified() : new TL_interestCategories(), inputSerializedData, i10, z10);
         }
     }
 
-    /* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+    /* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
     public static class InterestCategory extends TLObject {
         public static final int constructor = 1816553187;
         public String emoji;
@@ -137,7 +137,7 @@ public class TL_feed {
         }
     }
 
-    /* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+    /* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
     public static class TL_feedItemInterestCategories extends FeedItem {
         public static final int constructor = 1810307195;
 
@@ -147,7 +147,7 @@ public class TL_feed {
         }
     }
 
-    /* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+    /* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
     public static class TL_feedItemMessage extends FeedItem {
         public static final int constructor = 2121511845;
         public TLRPC.Message message;
@@ -164,7 +164,7 @@ public class TL_feed {
         }
     }
 
-    /* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+    /* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
     public static class TL_feedItemMessageGroup extends FeedItem {
         public static final int constructor = 1697598577;
         public ArrayList<TLRPC.Message> messages = new ArrayList<>();
@@ -181,7 +181,7 @@ public class TL_feed {
         }
     }
 
-    /* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+    /* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
     public static class TL_feedMessages extends FeedMessages {
         public static final int constructor = -587770695;
         public int flags;
@@ -235,7 +235,7 @@ public class TL_feed {
         }
     }
 
-    /* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+    /* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
     public static class TL_feedMessagesNotModified extends FeedMessages {
         public static final int constructor = -619039485;
 
@@ -245,7 +245,7 @@ public class TL_feed {
         }
     }
 
-    /* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+    /* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
     public static class TL_feed_getFeed extends TLMethod<FeedMessages> {
         public static final int constructor = 2121717715;
         public int add_offset;
@@ -291,7 +291,7 @@ public class TL_feed {
         }
     }
 
-    /* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+    /* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
     public static class TL_feed_getForYou extends TLMethod<ForYouFeed> {
         public static final int constructor = 867755499;
         public int limit;
@@ -314,7 +314,7 @@ public class TL_feed {
         }
     }
 
-    /* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+    /* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
     public static class TL_feed_getInterestCategories extends TLMethod<InterestCategories> {
         public static final int constructor = -1166402118;
         public long hash;
@@ -331,7 +331,7 @@ public class TL_feed {
         }
     }
 
-    /* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+    /* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
     public static class TL_feed_readFeed extends TLMethod<TLRPC.Updates> {
         public static final int constructor = -1271479809;
         public int filter_id;
@@ -350,7 +350,7 @@ public class TL_feed {
         }
     }
 
-    /* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+    /* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
     public static class TL_feed_setInterestCategories extends TLMethod<TLRPC.Bool> {
         public static final int constructor = -1624680228;
         public ArrayList<Integer> category_ids = new ArrayList<>();
@@ -367,7 +367,7 @@ public class TL_feed {
         }
     }
 
-    /* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+    /* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
     public static class TL_interestCategories extends InterestCategories {
         public static final int constructor = -323604576;
         public ArrayList<InterestCategory> categories = new ArrayList<>();
@@ -387,7 +387,7 @@ public class TL_feed {
         }
     }
 
-    /* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+    /* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
     public static class TL_interestCategoriesNotModified extends InterestCategories {
         public static final int constructor = 2043617685;
 

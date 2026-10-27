@@ -1,29 +1,34 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.app.Activity;
+import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public final class sl extends AnimatorListenerAdapter {
-    public final /* synthetic */ boolean a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ boolean c;
-    public final /* synthetic */ un d;
+public final class sl extends org.telegram.ui.Components.y20 {
+    public final /* synthetic */ wn b;
 
-    public sl(un unVar, boolean z10, boolean z11, boolean z12) {
-        this.d = unVar;
-        this.a = z10;
-        this.b = z11;
-        this.c = z12;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public sl(wn wnVar, Activity activity, org.telegram.ui.ActionBar.r2 r2Var) {
+        super(activity, r2Var);
+        this.b = wnVar;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        un unVar = this.d;
-        unVar.Y2 = null;
-        unVar.V2.setVisibility(this.a ? 0 : 4);
-        unVar.X2.setVisibility(this.b ? 0 : 4);
-        unVar.W2.setVisibility(this.c ? 0 : 4);
+    @Override // org.telegram.ui.Components.y20
+    public final void m() {
+        wn wnVar = this.b;
+        wnVar.Z7();
+        UndoView undoView = wnVar.K3;
+        if (undoView == null) {
+            return;
+        }
+        undoView.j(75, 0L, null);
+        wnVar.getMessagesController().removeSuggestion(wnVar.j6, "CONVERT_GIGAGROUP");
+    }
+
+    @Override // org.telegram.ui.Components.y20
+    public final void n() {
+        wn wnVar = this.b;
+        wnVar.getMessagesController().convertToGigaGroup(wnVar.getParentActivity(), wnVar.e, wnVar, new y0(this, 21));
     }
 }

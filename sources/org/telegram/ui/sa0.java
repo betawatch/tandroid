@@ -1,59 +1,91 @@
 package org.telegram.ui;
 
-import android.content.ComponentName;
-import android.content.Context;
-import org.telegram.messenger.R;
+import android.window.BackEvent;
+import android.window.OnBackAnimationCallback;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.AnimationNotificationsLocker;
+import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* JADX WARN: Enum visitor error
-jadx.core.utils.exceptions.JadxRuntimeException: Init of enum field 'h' uses external variables
-	at jadx.core.dex.visitors.EnumVisitor.createEnumFieldByConstructor(EnumVisitor.java:451)
-	at jadx.core.dex.visitors.EnumVisitor.processEnumFieldByRegister(EnumVisitor.java:395)
-	at jadx.core.dex.visitors.EnumVisitor.extractEnumFieldsFromFilledArray(EnumVisitor.java:324)
-	at jadx.core.dex.visitors.EnumVisitor.extractEnumFieldsFromInsn(EnumVisitor.java:262)
-	at jadx.core.dex.visitors.EnumVisitor.convertToEnum(EnumVisitor.java:151)
-	at jadx.core.dex.visitors.EnumVisitor.visit(EnumVisitor.java:100)
- */
-/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public final class sa0 {
-    public static final sa0 h;
-    public static final /* synthetic */ sa0[] n;
-    public final String a;
-    public final int b;
-    public final int c;
-    public final int d;
-    public final boolean e;
-    public ComponentName f;
+public final class sa0 implements OnBackAnimationCallback {
+    public boolean b;
+    public boolean e;
+    public final /* synthetic */ LaunchActivity f;
+    public final AnimationNotificationsLocker a = new AnimationNotificationsLocker();
+    public boolean c = false;
+    public boolean d = false;
 
-    static {
-        int i10 = R.drawable.icon_background_sa;
-        int i11 = R.mipmap.icon_foreground_sa;
-        sa0 sa0Var = new sa0("DEFAULT", 0, "DefaultIcon", i10, i11, R.string.AppIconDefault, false);
-        h = sa0Var;
-        n = new sa0[]{sa0Var, new sa0("VINTAGE", 1, "VintageIcon", R.drawable.icon_6_background_sa, R.mipmap.icon_6_foreground_sa, R.string.AppIconVintage, false), new sa0("AQUA", 2, "AquaIcon", R.drawable.icon_4_background_sa, i11, R.string.AppIconAqua, false), new sa0("PREMIUM", 3, "PremiumIcon", R.drawable.icon_3_background_sa, R.mipmap.icon_3_foreground_sa, R.string.AppIconPremium, true), new sa0("TURBO", 4, "TurboIcon", R.drawable.icon_5_background_sa, R.mipmap.icon_5_foreground_sa, R.string.AppIconTurbo, true), new sa0("NOX", 5, "NoxIcon", R.mipmap.icon_2_background_sa, i11, R.string.AppIconNox, true)};
+    public sa0(LaunchActivity launchActivity) {
+        this.f = launchActivity;
     }
 
-    public sa0(String str, int i10, String str2, int i11, int i12, int i13, boolean z10) {
-        this.a = str2;
-        this.b = i11;
-        this.c = i12;
-        this.d = i13;
-        this.e = z10;
-    }
-
-    public static sa0 valueOf(String str) {
-        return (sa0) Enum.valueOf(sa0.class, str);
-    }
-
-    public static sa0[] values() {
-        return (sa0[]) n.clone();
-    }
-
-    public final ComponentName a(Context context) {
-        if (this.f == null) {
-            this.f = new ComponentName(context.getPackageName(), "org.telegram.messenger." + this.a);
+    public final void onBackCancelled() {
+        ActionBarLayout actionBarLayout;
+        this.c = false;
+        this.d = false;
+        if (this.b) {
+            this.a.unlock();
+            this.b = false;
         }
-        return this.f;
+        if (AndroidUtilities.isTablet() || (actionBarLayout = this.f.q0) == null || !actionBarLayout.i1) {
+            return;
+        }
+        actionBarLayout.i1 = false;
+        actionBarLayout.e(true);
+    }
+
+    public final void onBackInvoked() {
+        this.d = true;
+        if (this.b) {
+            this.a.unlock();
+            this.b = false;
+        }
+        if (AndroidUtilities.isTablet()) {
+            this.f.onBackPressed();
+            return;
+        }
+        if (this.f.e0(true)) {
+            LaunchActivity launchActivity = this.f;
+            ActionBarLayout actionBarLayout = launchActivity.q0;
+            if (actionBarLayout == null) {
+                launchActivity.onBackPressed();
+            } else if (!actionBarLayout.i1) {
+                actionBarLayout.H();
+            } else {
+                actionBarLayout.i1 = false;
+                actionBarLayout.e(false);
+            }
+        }
+    }
+
+    public final void onBackProgressed(BackEvent backEvent) {
+        ActionBarLayout actionBarLayout;
+        ActionBarLayout actionBarLayout2;
+        if (this.c && this.d) {
+            return;
+        }
+        float progress = backEvent.getProgress();
+        if (!this.e && progress > 0.015f) {
+            this.e = true;
+            if (!AndroidUtilities.isTablet() && this.f.e0(false) && (actionBarLayout2 = this.f.q0) != null && actionBarLayout2.I(backEvent.getTouchX(), backEvent.getTouchY()) && !this.b) {
+                this.a.lock();
+                this.b = true;
+            }
+        }
+        float max = Math.max(0.0f, progress - 0.015f) / 0.985f;
+        if (AndroidUtilities.isTablet() || (actionBarLayout = this.f.q0) == null || !actionBarLayout.i1) {
+            return;
+        }
+        float interpolation = org.telegram.ui.Components.ds.l.getInterpolation(max) * AndroidUtilities.dp(56.0f);
+        actionBarLayout.k1 = max > 0.0f;
+        actionBarLayout.s.setTranslationX(interpolation);
+        actionBarLayout.setInnerTranslationX(interpolation);
+    }
+
+    public final void onBackStarted(BackEvent backEvent) {
+        this.c = true;
+        this.d = false;
+        this.e = false;
     }
 }

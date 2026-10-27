@@ -20,13 +20,13 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.ui.ActionBar.k3;
 import org.telegram.ui.ActionBar.r2;
 import org.telegram.ui.ActionBar.u6;
-import org.telegram.ui.Components.j71;
-import org.telegram.ui.Components.n60;
+import org.telegram.ui.Components.k71;
+import org.telegram.ui.Components.o60;
 import org.telegram.ui.Components.oy;
 import org.telegram.ui.Components.wc;
-import org.telegram.ui.Wallet.k6;
 import org.telegram.ui.Wallet.l6;
-import org.telegram.ui.u90;
+import org.telegram.ui.Wallet.m6;
+import org.telegram.ui.w90;
 import tg.m1;
 import ug.p;
 import ug.q;
@@ -42,7 +42,7 @@ import zh.j1;
 import zh.m;
 import zh.p1;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class g implements Runnable {
     public final /* synthetic */ int a;
@@ -95,10 +95,10 @@ public final /* synthetic */ class g implements Runnable {
                 fVar.v = null;
                 Choreographer.getInstance().removeFrameCallback(fVar);
                 fVar.F = 0L;
-                k6 k6Var = (k6) fVar;
-                l6 l6Var = k6Var.L;
-                if (l6Var.d == k6Var) {
-                    l6.c(l6Var);
+                l6 l6Var = (l6) fVar;
+                m6 m6Var = l6Var.L;
+                if (m6Var.d == l6Var) {
+                    m6.c(m6Var);
                     return;
                 }
                 return;
@@ -399,20 +399,20 @@ public final /* synthetic */ class g implements Runnable {
             case 11:
                 ((k3) this.b).dismiss();
                 NotificationCenter.getInstance(UserConfig.selectedAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.didStartedMultiGiftsSelector, new Object[0]);
-                AndroidUtilities.runOnUIThread(new u90(25), 220L);
+                AndroidUtilities.runOnUIThread(new w90(26), 220L);
                 return;
             case 12:
                 ((vh.f) this.b).d0.O(true);
                 return;
             case 13:
-                n60 n60Var = (n60) ((e3) this.b).b;
-                n60Var.p0 = true;
+                o60 o60Var = (o60) ((e3) this.b).b;
+                o60Var.p0 = true;
                 StringBuilder sb2 = new StringBuilder("RoundVideo camera flip first frame: elapsedMs=");
-                cameraFlipElapsedMs = n60Var.getCameraFlipElapsedMs();
+                cameraFlipElapsedMs = o60Var.getCameraFlipElapsedMs();
                 sb2.append(cameraFlipElapsedMs);
                 FileLog.d(sb2.toString());
-                n60Var.t(true);
-                n60.l(n60Var);
+                o60Var.v(true);
+                o60.m(o60Var);
                 return;
             case 14:
                 ((o) this.b).k();
@@ -433,9 +433,9 @@ public final /* synthetic */ class g implements Runnable {
                 ((zh.c0) this.b).onBackPressed();
                 return;
             case 19:
-                j71 j71Var = ((p1) this.b).Y;
-                if (j71Var != null) {
-                    j71Var.O(false);
+                k71 k71Var = ((p1) this.b).Y;
+                if (k71Var != null) {
+                    k71Var.O(false);
                     return;
                 }
                 return;

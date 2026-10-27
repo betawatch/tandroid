@@ -8,12 +8,12 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import org.telegram.tgnet.tl.TL_iv;
+import org.telegram.ui.Components.a21;
 import org.telegram.ui.Components.b10;
-import org.telegram.ui.Components.sj0;
-import org.telegram.ui.Components.y11;
+import org.telegram.ui.Components.tj0;
 import org.telegram.ui.Components.z11;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public abstract class c5 {
     public static Object a(Spanned spanned, int i10, int i11, Class cls) {
@@ -59,14 +59,14 @@ public abstract class c5 {
             boolean z11 = true;
             int i15 = i13 < size ? iArr[i13] - 1 : length;
             ni.h hVar = spanned == null ? null : (ni.h) a(spanned, i14, i15, ni.h.class);
-            sj0 sj0Var = (spanned == null || hVar != null) ? 0 : (sj0) a(spanned, i14, i15, sj0.class);
-            if (hVar == null && sj0Var == 0) {
+            tj0 tj0Var = (spanned == null || hVar != null) ? 0 : (tj0) a(spanned, i14, i15, tj0.class);
+            if (hVar == null && tj0Var == 0) {
                 CharSequence subSequence = charSequence.subSequence(i14, i15);
                 TL_iv.pageBlockParagraph pageblockparagraph2 = new TL_iv.pageBlockParagraph();
                 pageblockparagraph2.text = f6.f(subSequence);
                 arrayList.add(pageblockparagraph2);
             } else {
-                ni.h hVar2 = hVar != null ? hVar : sj0Var;
+                ni.h hVar2 = hVar != null ? hVar : tj0Var;
                 while (true) {
                     if (i13 >= size) {
                         i10 = length;
@@ -82,7 +82,7 @@ public abstract class c5 {
                     } else {
                         i10 = length;
                     }
-                    if ((hVar != null ? a(spanned, i16, length, ni.h.class) : a(spanned, i16, length, sj0.class)) != hVar2) {
+                    if ((hVar != null ? a(spanned, i16, length, ni.h.class) : a(spanned, i16, length, tj0.class)) != hVar2) {
                         break;
                     }
                     i15 = length;
@@ -104,7 +104,7 @@ public abstract class c5 {
                     TL_iv.pageBlockBlockquote pageblockblockquote = new TL_iv.pageBlockBlockquote();
                     pageblockblockquote.text = f6.f(subSequence2);
                     pageblockblockquote.caption = new TL_iv.textEmpty();
-                    pageblockblockquote.collapsed = (sj0Var == 0 || !sj0Var.e) ? false : z10;
+                    pageblockblockquote.collapsed = (tj0Var == 0 || !tj0Var.e) ? false : z10;
                     arrayList.add(pageblockblockquote);
                 }
                 length = i10;
@@ -381,7 +381,7 @@ public abstract class c5 {
         if (spannableStringBuilder2.length() == 0) {
             return null;
         }
-        sj0.b(spannableStringBuilder2, 0, spannableStringBuilder2.length(), false);
+        tj0.b(spannableStringBuilder2, 0, spannableStringBuilder2.length(), false);
         return spannableStringBuilder2;
     }
 
@@ -414,7 +414,7 @@ public abstract class c5 {
                     TL_iv.PageBlock pageBlock2 = aVar.b;
                     boolean z11 = (pageBlock2 instanceof TL_iv.pageBlockBlockquote) && ((TL_iv.pageBlockBlockquote) pageBlock2).collapsed;
                     if (spannableStringBuilder.length() > 0) {
-                        sj0.b(spannableStringBuilder, 0, spannableStringBuilder.length(), z11);
+                        tj0.b(spannableStringBuilder, 0, spannableStringBuilder.length(), z11);
                     }
                     arrayList.add(spannableStringBuilder);
                 } else {
@@ -433,7 +433,7 @@ public abstract class c5 {
                     i11++;
                 }
                 if (spannableStringBuilder2.length() > 0) {
-                    sj0.b(spannableStringBuilder2, 0, spannableStringBuilder2.length(), false);
+                    tj0.b(spannableStringBuilder2, 0, spannableStringBuilder2.length(), false);
                 }
                 arrayList.add(spannableStringBuilder2);
                 i10 = i11;
@@ -459,9 +459,9 @@ public abstract class c5 {
             return spannableStringBuilder;
         }
         SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder(spannableStringBuilder);
-        y11 y11Var = new y11();
-        y11Var.a = i10;
-        spannableStringBuilder2.setSpan(new z11(y11Var, 0), 0, spannableStringBuilder2.length(), 33);
+        z11 z11Var = new z11();
+        z11Var.a = i10;
+        spannableStringBuilder2.setSpan(new a21(z11Var, 0), 0, spannableStringBuilder2.length(), 33);
         return spannableStringBuilder2;
     }
 }

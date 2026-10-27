@@ -1,29 +1,48 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.MessageObject;
+import androidx.recyclerview.widget.RecyclerView;
+import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public final class j61 implements zy0 {
-    public final /* synthetic */ p61 a;
+public final class j61 extends s4.u0 {
+    public final /* synthetic */ q61 a;
 
-    public j61(p61 p61Var) {
-        this.a = p61Var;
+    public j61(q61 q61Var) {
+        this.a = q61Var;
     }
 
-    @Override // org.telegram.ui.Components.zy0
-    public final void a(TLRPC.Document document, String str, Object obj, MessageObject.SendAnimationData sendAnimationData, boolean z10, boolean z11, int i10, int i11) {
-        this.a.b.f(document, obj, z11, i10);
+    @Override // s4.u0
+    public final void a(RecyclerView recyclerView, int i10) {
+        s4.u0 u0Var = this.a.y;
+        if (u0Var != null) {
+            u0Var.a(recyclerView, i10);
+        }
     }
 
-    @Override // org.telegram.ui.Components.zy0
-    public final boolean b() {
-        return this.a.b.a();
-    }
-
-    @Override // org.telegram.ui.Components.zy0
-    public final boolean c() {
-        return this.a.b.c();
+    @Override // s4.u0
+    public final void b(RecyclerView recyclerView, int i10, int i11) {
+        q61 q61Var = this.a;
+        p61 p61Var = q61Var.s;
+        g61 g61Var = q61Var.n;
+        s4.u0 u0Var = q61Var.y;
+        if (u0Var != null) {
+            u0Var.b(g61Var, i10, i11);
+        }
+        if (i11 <= 0 || g61Var.getAdapter() != p61Var || !q61Var.J || p61Var.r || p61Var.s) {
+            return;
+        }
+        if (q61Var.r.N0() >= ((p61Var.w + 1) - ((p61Var.v + 1) * 10)) - 1) {
+            q61 q61Var2 = p61Var.x;
+            if (!q61Var2.J || p61Var.r || p61Var.s) {
+                return;
+            }
+            p61Var.r = true;
+            TLRPC.TL_messages_getOldFeaturedStickers tL_messages_getOldFeaturedStickers = new TLRPC.TL_messages_getOldFeaturedStickers();
+            tL_messages_getOldFeaturedStickers.offset = p61Var.n.size();
+            tL_messages_getOldFeaturedStickers.limit = 40;
+            ConnectionsManager.getInstance(q61Var2.a).sendRequest(tL_messages_getOldFeaturedStickers, new b2(p61Var, 17));
+        }
     }
 }

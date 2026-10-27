@@ -8,7 +8,7 @@ import org.telegram.messenger.Emoji;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class k3 extends org.telegram.ui.web.a1 {
     public final /* synthetic */ m3 T0;
@@ -27,7 +27,7 @@ public final class k3 extends org.telegram.ui.web.a1 {
                 j3 j3Var = m3Var.e;
                 c3 c3Var = new c3(m3Var.getContext());
                 m3Var.r = c3Var;
-                j3Var.addView(c3Var, org.telegram.ui.Components.gb1.g(-1.0f, -1));
+                j3Var.addView(c3Var, org.telegram.ui.Components.kb1.g(-1.0f, -1));
                 m3Var.r.h.setOnClickListener(new a(m3Var, 2));
                 AndroidUtilities.updateViewVisibilityAnimated(m3Var.r, m3Var.n, 1.0f, false);
             }

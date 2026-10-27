@@ -17,17 +17,17 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class zr extends bb {
     public final boolean X;
-    public final r80 Y;
+    public final s80 Y;
     public TLRPC.InputPeer Z;
     public final boolean a0;
     public String b0;
     public String c0;
     public SpannableStringBuilder d0;
-    public j71 e0;
+    public k71 e0;
     public final boolean f0;
     public yr g0;
 
@@ -47,7 +47,7 @@ public final class zr extends bb {
             bbVar.f0 = true;
             fi.d dVar = new fi.d(context, bVar, true);
             dVar.i(LocaleController.getString(R.string.LiveStoryRTMPEnable), false, true);
-            bbVar.containerView.addView(dVar, gb1.h(-1, 48.0f, 80, 16.0f, 0.0f, 16.0f, (z10 ? 52 : 0) + 12));
+            bbVar.containerView.addView(dVar, kb1.h(-1, 48.0f, 80, 16.0f, 0.0f, 16.0f, (z10 ? 52 : 0) + 12));
             dVar.setOnClickListener(new bi.w0(bbVar, n1Var, dVar, 21));
             if (z10) {
                 fi.d dVar2 = new fi.d(context, bVar, false);
@@ -56,7 +56,7 @@ public final class zr extends bb {
                 dVar2.i(LocaleController.getString(R.string.LiveStoryRTMPRevoke), false, true);
                 bbVar = this;
                 dVar2.setOnClickListener(new bi.mb(this, context, bVar, dVar2, getgroupcallstreamrtmpurl, i10));
-                bbVar.containerView.addView(dVar2, gb1.h(-1, 48.0f, 80, 16.0f, 0.0f, 16.0f, 12.0f));
+                bbVar.containerView.addView(dVar2, kb1.h(-1, 48.0f, 80, 16.0f, 0.0f, 16.0f, 12.0f));
             }
         }
         s4.l lVar = new s4.l();
@@ -65,25 +65,25 @@ public final class zr extends bb {
         lVar.o(ds.h);
         lVar.n(350L);
         bbVar.d.setItemAnimator(lVar);
-        mm0 mm0Var = bbVar.d;
+        nm0 nm0Var = bbVar.d;
         int i12 = bbVar.backgroundPaddingLeft;
         if (bbVar.f0) {
             i11 = AndroidUtilities.dp(z10 ? 124.0f : 72.0f);
         } else {
             i11 = 0;
         }
-        mm0Var.setPadding(i12, 0, i12, i11);
+        nm0Var.setPadding(i12, 0, i12, i11);
         bbVar.fixNavigationBar();
         bbVar.N();
         bbVar.b0 = groupcallstreamrtmpurl.url;
         bbVar.c0 = groupcallstreamrtmpurl.key;
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(bbVar.c0);
         bbVar.d0 = spannableStringBuilder;
-        y11 y11Var = new y11();
-        y11Var.a |= 256;
-        y11Var.b = 0;
-        y11Var.c = spannableStringBuilder.length();
-        bbVar.d0.setSpan(new z11(y11Var, 0), 0, bbVar.d0.length(), 0);
+        z11 z11Var = new z11();
+        z11Var.a |= 256;
+        z11Var.b = 0;
+        z11Var.c = spannableStringBuilder.length();
+        bbVar.d0.setSpan(new a21(z11Var, 0), 0, bbVar.d0.length(), 0);
         bbVar.e0.O(false);
     }
 
@@ -110,33 +110,33 @@ public final class zr extends bb {
             org.telegram.ui.ActionBar.u6 u6Var = zrVar.resourcesProvider;
             yr yrVar = new yr(context);
             yrVar.setOrientation(1);
-            ak0 ak0Var = new ak0(context);
-            ak0Var.setAutoRepeat(true);
-            ak0Var.f(R.raw.utyan_streaming, 112, 112, null);
-            ak0Var.d();
-            yrVar.addView(ak0Var, gb1.x(112, 112, 49, 0, 24, 0, 0));
+            bk0 bk0Var = new bk0(context);
+            bk0Var.setAutoRepeat(true);
+            bk0Var.f(R.raw.utyan_streaming, 112, 112, null);
+            bk0Var.d();
+            yrVar.addView(bk0Var, kb1.x(112, 112, 49, 0, 24, 0, 0));
             TextView textView = new TextView(context);
             textView.setTypeface(AndroidUtilities.bold());
             textView.setText(LocaleController.formatString(R.string.Streaming, new Object[0]));
             textView.setTextSize(1, 20.0f);
             org.telegram.ui.ActionBar.f7.V(textView, org.telegram.ui.ActionBar.y6.G6, u6Var);
-            yrVar.addView(textView, gb1.x(-2, -2, 1, 0, 14, 0, 7));
+            yrVar.addView(textView, kb1.x(-2, -2, 1, 0, 14, 0, 7));
             TextView textView2 = new TextView(context);
             textView2.setTextSize(1, 14.0f);
             textView2.setGravity(1);
             org.telegram.ui.ActionBar.f7.V(textView2, org.telegram.ui.ActionBar.y6.j5, u6Var);
             textView2.setText(LocaleController.formatString(R.string.VoipStreamStart, new Object[0]));
             textView2.setLineSpacing(textView2.getLineSpacingExtra(), textView2.getLineSpacingMultiplier() * 1.1f);
-            yrVar.addView(textView2, gb1.x(-2, -2, 1, 28, 0, 28, 17));
+            yrVar.addView(textView2, kb1.x(-2, -2, 1, 28, 0, 28, 17));
             zrVar.g0 = yrVar;
         }
-        arrayList.add(t61.k(zrVar.g0));
-        arrayList.add(t61.C(null));
+        arrayList.add(u61.k(zrVar.g0));
+        arrayList.add(u61.C(null));
         ic.a.p(R.string.VoipChatStreamSettings, arrayList);
         String str2 = zrVar.b0;
         String string = LocaleController.getString(R.string.VoipChatStreamServerUrl);
         int i10 = xr.a;
-        t61 K = t61.K(xr.class);
+        u61 K = u61.K(xr.class);
         K.l = str2;
         K.n = string;
         K.j = false;
@@ -144,7 +144,7 @@ public final class zr extends bb {
         arrayList.add(K);
         SpannableStringBuilder spannableStringBuilder = zrVar.d0;
         String string2 = LocaleController.getString(R.string.VoipChatStreamKey);
-        t61 K2 = t61.K(xr.class);
+        u61 K2 = u61.K(xr.class);
         K2.l = spannableStringBuilder;
         K2.n = string2;
         K2.j = true;
@@ -153,7 +153,7 @@ public final class zr extends bb {
         if (zrVar.f0) {
             str = LocaleController.getString(zrVar.X ? R.string.VoipChatStreamWithAnotherAppDescriptionStory : R.string.VoipChatStreamWithAnotherAppDescription);
         }
-        arrayList.add(t61.C(str));
+        arrayList.add(u61.C(str));
     }
 
     public static void S(zr zrVar, Context context, fi.d dVar, long j10) {
@@ -170,18 +170,18 @@ public final class zr extends bb {
     public final void dismissInternal() {
         TLRPC.InputPeer inputPeer;
         super.dismissInternal();
-        r80 r80Var = this.Y;
-        if (r80Var == null || (inputPeer = this.Z) == null) {
+        s80 s80Var = this.Y;
+        if (s80Var == null || (inputPeer = this.Z) == null) {
             return;
         }
-        r80Var.a(inputPeer, this.a0, false, true);
+        s80Var.a(inputPeer, this.a0, false, true);
     }
 
     @Override // org.telegram.ui.Components.bb
-    public final lm0 v(mm0 mm0Var) {
-        j71 j71Var = new j71(mm0Var, getContext(), this.currentAccount, 0, true, new d(this, 7), this.resourcesProvider);
-        this.e0 = j71Var;
-        return j71Var;
+    public final mm0 v(nm0 nm0Var) {
+        k71 k71Var = new k71(nm0Var, getContext(), this.currentAccount, 0, true, new d(this, 7), this.resourcesProvider);
+        this.e0 = k71Var;
+        return k71Var;
     }
 
     @Override // org.telegram.ui.Components.bb
@@ -189,11 +189,11 @@ public final class zr extends bb {
         return LocaleController.getString(R.string.Streaming);
     }
 
-    public zr(org.telegram.ui.ActionBar.r2 r2Var, TLRPC.Peer peer, long j10, boolean z10, r80 r80Var) {
+    public zr(org.telegram.ui.ActionBar.r2 r2Var, TLRPC.Peer peer, long j10, boolean z10, s80 s80Var) {
         super(r2Var, false);
         this.X = false;
         this.v = 0.26f;
-        this.Y = r80Var;
+        this.Y = s80Var;
         this.a0 = z10;
         Context context = this.containerView.getContext();
         boolean isCreator = ChatObject.isCreator(MessagesController.getInstance(this.currentAccount).getChat(Long.valueOf(-j10)));
@@ -217,7 +217,7 @@ public final class zr extends bb {
         org.telegram.ui.ActionBar.u6 u6Var = this.resourcesProvider;
         textView.setBackground(j02);
         org.telegram.ui.ActionBar.f7.k(textView, j02, N, h, u6Var);
-        this.containerView.addView(textView, gb1.h(-1, 48.0f, 80, 16.0f, 0.0f, 16.0f, (isCreator ? 52 : 0) + 12));
+        this.containerView.addView(textView, kb1.h(-1, 48.0f, 80, 16.0f, 0.0f, 16.0f, (isCreator ? 52 : 0) + 12));
         textView.setOnClickListener(new ga(8, this, peer));
         if (isCreator) {
             fi.d dVar = new fi.d(context, this.resourcesProvider, false);
@@ -225,11 +225,11 @@ public final class zr extends bb {
             dVar.d.x(AndroidUtilities.bold());
             dVar.i(LocaleController.getString(R.string.LiveStoryRTMPRevoke), false, true);
             dVar.setOnClickListener(new wr(this, context, dVar, j10, 0));
-            this.containerView.addView(dVar, gb1.h(-1, 48.0f, 80, 16.0f, 0.0f, 16.0f, 12.0f));
+            this.containerView.addView(dVar, kb1.h(-1, 48.0f, 80, 16.0f, 0.0f, 16.0f, 12.0f));
         }
-        mm0 mm0Var = this.d;
+        nm0 nm0Var = this.d;
         int i12 = this.backgroundPaddingLeft;
-        mm0Var.setPadding(i12, 0, i12, AndroidUtilities.dp((isCreator ? 52 : 0) + 72));
+        nm0Var.setPadding(i12, 0, i12, AndroidUtilities.dp((isCreator ? 52 : 0) + 72));
         s4.l lVar = new s4.l();
         lVar.m = false;
         lVar.C = false;

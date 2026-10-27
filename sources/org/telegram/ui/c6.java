@@ -10,11 +10,11 @@ import org.telegram.messenger.CacheByChatsController;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public class c6 extends org.telegram.ui.ActionBar.r2 {
     public a6 a;
-    public org.telegram.ui.Components.mm0 b;
+    public org.telegram.ui.Components.nm0 b;
     public final ArrayList c;
     public ArrayList d;
     public int e;
@@ -70,19 +70,19 @@ public class c6 extends org.telegram.ui.ActionBar.r2 {
         this.simpleActionBar.setBackButtonDrawable(new org.telegram.ui.ActionBar.j2(false));
         this.simpleActionBar.setActionBarMenuOnItemClick(new bh.m(this, 24));
         this.simpleActionBar.setTitle(LocaleController.getString(R.string.NotificationsExceptions));
-        org.telegram.ui.Components.mm0 mm0Var = new org.telegram.ui.Components.mm0(context, null);
-        this.b = mm0Var;
-        mm0Var.u1();
+        org.telegram.ui.Components.nm0 nm0Var = new org.telegram.ui.Components.nm0(context, null);
+        this.b = nm0Var;
+        nm0Var.u1();
         this.b.setSectionsDrawBackground(true);
         s4.l lVar = new s4.l();
         lVar.C = false;
         lVar.m = false;
         this.b.setItemAnimator(lVar);
         this.b.setLayoutManager(new s4.c0());
-        org.telegram.ui.Components.mm0 mm0Var2 = this.b;
+        org.telegram.ui.Components.nm0 nm0Var2 = this.b;
         a6 a6Var = new a6(this);
         this.a = a6Var;
-        mm0Var2.setAdapter(a6Var);
+        nm0Var2.setAdapter(a6Var);
         this.b.setOnItemClickListener(new y0(this, 7));
         frameLayout.addView(this.b);
         V();
@@ -90,7 +90,7 @@ public class c6 extends org.telegram.ui.ActionBar.r2 {
     }
 
     @Override // org.telegram.ui.ActionBar.r2
-    public final org.telegram.ui.Components.mm0 getListViewForSimpleGlass() {
+    public final org.telegram.ui.Components.nm0 getListViewForSimpleGlass() {
         return this.b;
     }
 

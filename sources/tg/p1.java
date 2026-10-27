@@ -8,9 +8,9 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.gb1;
+import org.telegram.ui.Components.kb1;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class p1 extends FrameLayout {
     public float a;
@@ -39,7 +39,7 @@ public final class p1 extends FrameLayout {
         imageReceiver.setAllowStartAnimation(false);
         imageReceiver2.setAllowStartAnimation(false);
         setClipChildren(false);
-        addView(o1Var, gb1.i(-1, -2, 21));
+        addView(o1Var, kb1.i(-1, -2, 21));
     }
 
     public final void a(boolean z10, boolean z11, boolean z12) {

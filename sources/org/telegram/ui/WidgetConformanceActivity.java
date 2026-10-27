@@ -13,7 +13,7 @@ import org.telegram.messenger.BuildVars;
 import org.telegram.messenger.MessagesStorage;
 import org.telegram.messenger.UserConfig;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class WidgetConformanceActivity extends Activity {
     public TextView a;
@@ -35,7 +35,7 @@ public final class WidgetConformanceActivity extends Activity {
 
     public final void b(Intent intent) {
         WidgetConformanceActivity widgetConformanceActivity;
-        vh1 vh1Var;
+        xh1 xh1Var;
         if (this.b == null) {
             this.a.setTypeface(Typeface.MONOSPACE);
             this.a.setTextSize(11.0f);
@@ -62,15 +62,15 @@ public final class WidgetConformanceActivity extends Activity {
         sb2.append(stringExtra != null ? " · ".concat(stringExtra) : "");
         sb2.append("\n");
         textView.setText(sb2.toString());
-        hl0 hl0Var = new hl0(this, 27);
+        jl0 jl0Var = new jl0(this, 27);
         if (booleanExtra2) {
-            vh1Var = new vh1(new org.telegram.ui.Components.qa1(this, stringExtra, hl0Var), 1);
+            xh1Var = new xh1(new org.telegram.ui.Components.ra1(this, stringExtra, jl0Var), 1);
             widgetConformanceActivity = this;
         } else {
             widgetConformanceActivity = this;
-            vh1Var = new vh1(new org.telegram.ui.Components.za1(widgetConformanceActivity, intExtra, booleanExtra, stringExtra, hl0Var), 2);
+            xh1Var = new xh1(new org.telegram.ui.Components.ab1(widgetConformanceActivity, intExtra, booleanExtra, stringExtra, jl0Var), 2);
         }
-        Thread thread = new Thread(vh1Var, "WidgetConformance");
+        Thread thread = new Thread(xh1Var, "WidgetConformance");
         widgetConformanceActivity.c = thread;
         thread.start();
     }

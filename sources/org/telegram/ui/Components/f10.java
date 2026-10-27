@@ -4,7 +4,7 @@ import java.util.List;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class f10 implements Utilities.Callback {
     public final /* synthetic */ int a = 1;
@@ -37,7 +37,7 @@ public final /* synthetic */ class f10 implements Utilities.Callback {
                 org.telegram.ui.ActionBar.r2 r2Var = null;
                 for (int size = fragmentStack.size() - 1; size >= 0; size--) {
                     r2Var = (org.telegram.ui.ActionBar.r2) fragmentStack.get(size);
-                    if (!(r2Var instanceof org.telegram.ui.cy) && !(r2Var instanceof org.telegram.ui.pg0)) {
+                    if (!(r2Var instanceof org.telegram.ui.ey) && !(r2Var instanceof org.telegram.ui.rg0)) {
                         if (z11) {
                             r2Var.finishFragment();
                             z11 = false;
@@ -46,23 +46,23 @@ public final /* synthetic */ class f10 implements Utilities.Callback {
                         }
                     }
                     org.telegram.ui.ActionBar.r2 r2Var2 = r2Var;
-                    org.telegram.ui.ActionBar.r2 r2Var3 = !(r2Var2 instanceof org.telegram.ui.pg0) ? ((org.telegram.ui.pg0) r2Var2).I : r2Var2;
-                    z10 = r2Var3 instanceof org.telegram.ui.cy;
+                    org.telegram.ui.ActionBar.r2 r2Var3 = !(r2Var2 instanceof org.telegram.ui.rg0) ? ((org.telegram.ui.rg0) r2Var2).I : r2Var2;
+                    z10 = r2Var3 instanceof org.telegram.ui.ey;
                     oy oyVar = this.c;
                     if (z10) {
                         oyVar.run(r2Var2);
                         break;
                     } else {
-                        org.telegram.ui.cy cyVar = (org.telegram.ui.cy) r2Var3;
-                        cyVar.S3();
-                        AndroidUtilities.runOnUIThread(new e10(cyVar, num, oyVar, r2Var2, 0), 80L);
+                        org.telegram.ui.ey eyVar = (org.telegram.ui.ey) r2Var3;
+                        eyVar.S3();
+                        AndroidUtilities.runOnUIThread(new e10(eyVar, num, oyVar, r2Var2, 0), 80L);
                         break;
                     }
                 }
                 org.telegram.ui.ActionBar.r2 r2Var22 = r2Var;
-                if (!(r2Var22 instanceof org.telegram.ui.pg0)) {
+                if (!(r2Var22 instanceof org.telegram.ui.rg0)) {
                 }
-                z10 = r2Var3 instanceof org.telegram.ui.cy;
+                z10 = r2Var3 instanceof org.telegram.ui.ey;
                 oy oyVar2 = this.c;
                 if (z10) {
                 }

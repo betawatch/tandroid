@@ -21,25 +21,25 @@ import org.telegram.messenger.Utilities;
 import org.telegram.ui.ActionBar.c7;
 import org.telegram.ui.ActionBar.d7;
 import org.telegram.ui.ActionBar.y6;
-import org.telegram.ui.Components.id0;
-import org.telegram.ui.Components.nw0;
+import org.telegram.ui.Components.jd0;
 import org.telegram.ui.Components.ow0;
-import org.telegram.ui.Components.yw0;
+import org.telegram.ui.Components.pw0;
+import org.telegram.ui.Components.zw0;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.pg0;
+import org.telegram.ui.rg0;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class c1 implements ow0, nw0, org.telegram.ui.ActionBar.b2, id0, GenericProvider, FlagSecureReason.FlagSecureCondition, Utilities.Callback2Return, yw0, c7, d7 {
+public final /* synthetic */ class c1 implements pw0, ow0, org.telegram.ui.ActionBar.b2, jd0, GenericProvider, FlagSecureReason.FlagSecureCondition, Utilities.Callback2Return, zw0, c7, d7 {
     public final /* synthetic */ int a;
 
     public /* synthetic */ c1(int i10) {
         this.a = i10;
     }
 
-    @Override // org.telegram.ui.Components.ow0
+    @Override // org.telegram.ui.Components.pw0
     public void b(Object obj, float f7) {
         i1 i1Var = (i1) obj;
         switch (this.a) {
@@ -77,7 +77,7 @@ public final /* synthetic */ class c1 implements ow0, nw0, org.telegram.ui.Actio
         return 0;
     }
 
-    @Override // org.telegram.ui.Components.id0
+    @Override // org.telegram.ui.Components.jd0
     public String f(int i10) {
         switch (this.a) {
             case 7:
@@ -109,7 +109,7 @@ public final /* synthetic */ class c1 implements ow0, nw0, org.telegram.ui.Actio
         return String.format("%02d", Integer.valueOf(i10));
     }
 
-    @Override // org.telegram.ui.Components.nw0
+    @Override // org.telegram.ui.Components.ow0
     public float get(Object obj) {
         return ((i1) obj).R;
     }
@@ -156,7 +156,7 @@ public final /* synthetic */ class c1 implements ow0, nw0, org.telegram.ui.Actio
         }
     }
 
-    @Override // org.telegram.ui.Components.yw0
+    @Override // org.telegram.ui.Components.zw0
     public void j(int i10) {
         SharedConfig.proxyRotationTimeout = i10;
         SharedConfig.saveConfig();
@@ -184,7 +184,7 @@ public final /* synthetic */ class c1 implements ow0, nw0, org.telegram.ui.Actio
                 return createBitmap2;
             default:
                 Pattern pattern = LaunchActivity.D1;
-                return new pg0();
+                return new rg0();
         }
     }
 
@@ -199,7 +199,7 @@ public final /* synthetic */ class c1 implements ow0, nw0, org.telegram.ui.Actio
         return SharedConfig.passcodeHash.length() > 0 && !SharedConfig.allowScreenCapture;
     }
 
-    @Override // org.telegram.ui.Components.yw0
+    @Override // org.telegram.ui.Components.zw0
     public /* synthetic */ void m() {
     }
 

@@ -31,11 +31,11 @@ import fi.w2;
 import hi.m3;
 import hi.o4;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.xj0;
+import org.telegram.ui.Components.yj0;
 import org.telegram.ui.Stories.ProfileStoriesView;
-import org.telegram.ui.wz0;
+import org.telegram.ui.yz0;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class b extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -132,10 +132,10 @@ public final class b extends AnimatorListenerAdapter {
                 break;
             case 12:
                 ProfileStoriesView profileStoriesView = (ProfileStoriesView) obj;
-                wz0 wz0Var = profileStoriesView.h;
+                yz0 yz0Var = profileStoriesView.h;
                 profileStoriesView.G = 1.0f;
-                wz0Var.R = 1.0f;
-                wz0Var.invalidate();
+                yz0Var.R = 1.0f;
+                yz0Var.invalidate();
                 profileStoriesView.invalidate();
                 break;
             case 13:
@@ -256,9 +256,9 @@ public final class b extends AnimatorListenerAdapter {
             case 15:
                 super.onAnimationStart(animator);
                 l7 l7Var = (l7) this.b;
-                xj0 xj0Var = ((k7) l7Var.a.get(l7Var.d)).c;
-                xj0Var.L = 2;
-                xj0Var.start();
+                yj0 yj0Var = ((k7) l7Var.a.get(l7Var.d)).c;
+                yj0Var.L = 2;
+                yj0Var.start();
                 break;
             default:
                 super.onAnimationStart(animator);

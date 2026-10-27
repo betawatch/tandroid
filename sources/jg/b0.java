@@ -20,13 +20,13 @@ import org.telegram.ui.ActionBar.p2;
 import org.telegram.ui.ActionBar.r2;
 import org.telegram.ui.ActionBar.u6;
 import org.telegram.ui.Components.b10;
-import org.telegram.ui.Components.j71;
-import org.telegram.ui.Components.r71;
-import org.telegram.ui.Components.t61;
+import org.telegram.ui.Components.k71;
+import org.telegram.ui.Components.s71;
+import org.telegram.ui.Components.u61;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.UsersSelectActivity;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class b0 {
     public final Context a;
@@ -55,10 +55,10 @@ public final class b0 {
         this.c = r2Var.getResourceProvider();
     }
 
-    public final void a(ArrayList arrayList, j71 j71Var, boolean z10) {
+    public final void a(ArrayList arrayList, k71 k71Var, boolean z10) {
         String str;
         String str2;
-        j71Var.V();
+        k71Var.V();
         int d = d();
         str = "";
         if (!this.h) {
@@ -100,7 +100,7 @@ public final class b0 {
             if (TextUtils.isEmpty(str2)) {
                 str2 = LocaleController.getString(R.string.BusinessChatsIncludedAdd2);
             }
-            t61 f7 = t61.f(LocaleController.getString(R.string.BusinessChatsIncluded), str2, 101);
+            u61 f7 = u61.f(LocaleController.getString(R.string.BusinessChatsIncluded), str2, 101);
             f7.g = z10;
             arrayList.add(f7);
         }
@@ -144,11 +144,11 @@ public final class b0 {
             if (TextUtils.isEmpty(str)) {
                 str = LocaleController.getString(R.string.BusinessChatsExcludedAdd2);
             }
-            t61 f10 = t61.f(LocaleController.getString(R.string.BusinessChatsExcluded), str, 103);
+            u61 f10 = u61.f(LocaleController.getString(R.string.BusinessChatsExcluded), str, 103);
             f10.g = z10;
             arrayList.add(f10);
         }
-        j71Var.U();
+        k71Var.U();
     }
 
     public final TL_account.TL_inputBusinessBotRecipients b() {
@@ -311,8 +311,8 @@ public final class b0 {
         return false;
     }
 
-    public final boolean h(t61 t61Var) {
-        int i10 = t61Var.d;
+    public final boolean h(u61 u61Var) {
+        int i10 = u61Var.d;
         int i11 = 2;
         r2 r2Var = this.d;
         boolean z10 = false;
@@ -351,17 +351,17 @@ public final class b0 {
             runnable.run();
             return true;
         }
-        if (t61Var.a != 11) {
+        if (u61Var.a != 11) {
             return false;
         }
-        boolean z12 = t61Var.w;
-        String peerName = MessagesController.getInstance(this.b).getPeerName(t61Var.x);
+        boolean z12 = u61Var.w;
+        String peerName = MessagesController.getInstance(this.b).getPeerName(u61Var.x);
         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(this.a, 0, this.c);
         String string = LocaleController.getString(!z12 ? R.string.BusinessRecipientsRemoveExcludeTitle : R.string.BusinessRecipientsRemoveIncludeTitle);
         org.telegram.ui.ActionBar.e2 e2Var = alertDialog$Builder.a;
         e2Var.R = string;
         e2Var.T = LocaleController.formatString(!z12 ? R.string.BusinessRecipientsRemoveExcludeMessage : R.string.BusinessRecipientsRemoveIncludeMessage, peerName);
-        alertDialog$Builder.k(LocaleController.getString(R.string.Remove), new z3(this, z12, t61Var, i11));
+        alertDialog$Builder.k(LocaleController.getString(R.string.Remove), new z3(this, z12, u61Var, i11));
         alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
         if (r2Var != null) {
             r2Var.showDialog(e2Var);
@@ -446,16 +446,16 @@ public final class b0 {
         arrayList2.addAll(this.l.exclude_users);
     }
 
-    public final boolean k(r71 r71Var) {
+    public final boolean k(s71 s71Var) {
         if (this.h || !this.j.isEmpty() || this.f != 0) {
             return true;
         }
         BotWebViewVibrationEffect.APP_ERROR.vibrate();
-        View E1 = r71Var.E1(101);
+        View E1 = s71Var.E1(101);
         int i10 = -this.m;
         this.m = i10;
         AndroidUtilities.shakeViewSpring(E1, i10);
-        r71Var.y0(r71Var.D1(101));
+        s71Var.y0(s71Var.D1(101));
         return false;
     }
 

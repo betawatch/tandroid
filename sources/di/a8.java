@@ -36,12 +36,12 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.b10;
 import org.telegram.ui.Components.ds;
-import org.telegram.ui.Components.q11;
+import org.telegram.ui.Components.r11;
 import org.telegram.ui.Components.xc;
 import org.telegram.ui.Components.z20;
 import org.telegram.ui.Components.zq;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public abstract class a8 {
     public static z20 b;
@@ -51,7 +51,7 @@ public abstract class a8 {
     public static RectF f;
     public static Paint g;
     public static Paint h;
-    public static q11 i;
+    public static r11 i;
     public static int j;
     public static BitmapDrawable m;
     public static final z20[] a = new z20[2];
@@ -186,7 +186,7 @@ public abstract class a8 {
     }
 
     public static void h(long j10, Canvas canvas, ImageReceiver imageReceiver, w7 w7Var) {
-        i(j10, canvas, imageReceiver, UserConfig.getInstance(UserConfig.selectedAccount).getClientUserId() != j10 && MessagesController.getInstance(UserConfig.selectedAccount).getStoriesController().I(j10), w7Var);
+        i(j10, canvas, imageReceiver, UserConfig.getInstance(UserConfig.selectedAccount).getClientUserId() != j10 && MessagesController.getInstance(UserConfig.selectedAccount).getStoriesController().K(j10), w7Var);
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:198:0x0463, code lost:
@@ -272,11 +272,11 @@ public abstract class a8 {
         boolean z20 = ChatObject.isForum(UserConfig.selectedAccount, j10) && !w7Var.D;
         boolean z21 = w7Var.r ? !storiesController.h.isEmpty() : z10;
         if (w7Var.d != null) {
-            storiesController.D(w7Var.c, j10);
+            storiesController.E(w7Var.c, j10);
             z19 = false;
         }
         if (z19) {
-            if (storiesController.I(j10)) {
+            if (storiesController.K(j10)) {
                 r6 = 3;
                 z17 = false;
                 i10 = 2;
@@ -292,9 +292,9 @@ public abstract class a8 {
             r6 = 2;
             i10 = 2;
         } else {
-            int D = storiesController.D(w7Var.c, j10);
-            i10 = D;
-            r6 = D == 0 ? 2 : 1;
+            int E = storiesController.E(w7Var.c, j10);
+            i10 = E;
+            r6 = E == 0 ? 2 : 1;
         }
         int i14 = w7Var.z;
         if (i14 != 0) {
@@ -338,7 +338,7 @@ public abstract class a8 {
         if (a2 != 1.0f) {
             canvas.scale(a2, a2, rectF3.centerX(), rectF3.centerY());
         }
-        float f19 = storiesController.F(w7Var.x) ? w7Var.e : 0.0f;
+        float f19 = storiesController.H(w7Var.x) ? w7Var.e : 0.0f;
         float f20 = w7Var.B;
         if (f20 != 1.0f) {
             f20 = ds.f.getInterpolation(f20);
@@ -514,10 +514,10 @@ public abstract class a8 {
                 Paint paint9 = paint4;
                 imageReceiver3 = imageReceiver2;
                 if (z23) {
-                    int D2 = h7Var2.D(0, w7Var3.x);
-                    if (D2 == 2) {
+                    int E2 = h7Var2.E(0, w7Var3.x);
+                    if (E2 == 2) {
                         paint2 = paint9;
-                    } else if (D2 == i13) {
+                    } else if (E2 == i13) {
                         paint2 = paint3;
                     }
                     View parentView = imageReceiver3.getParentView();
@@ -735,7 +735,7 @@ public abstract class a8 {
     public static void k(float f7, float f10, Canvas canvas, RectF rectF, boolean z10) {
         Canvas canvas2;
         if (i == null) {
-            i = new q11(LocaleController.getString(R.string.LiveStoryBadge), 9.66f, AndroidUtilities.bold());
+            i = new r11(LocaleController.getString(R.string.LiveStoryBadge), 9.66f, AndroidUtilities.bold());
         }
         if (g == null) {
             Paint paint = new Paint(1);
@@ -767,10 +767,10 @@ public abstract class a8 {
             f.set(rectF.centerX() - f11, rectF.bottom - f12, rectF.centerX() + f11, rectF.bottom + f13);
             RectF rectF3 = f;
             canvas.drawRoundRect(rectF3, rectF3.height() / 2.0f, f.height() / 2.0f, h);
-            q11 q11Var = i;
+            r11 r11Var = i;
             RectF rectF4 = f;
             canvas2 = canvas;
-            q11Var.c(rectF4.left + lerp, rectF4.centerY(), f7, -1, canvas2);
+            r11Var.c(rectF4.left + lerp, rectF4.centerY(), f7, -1, canvas2);
         } else {
             canvas2 = canvas;
         }
@@ -855,9 +855,9 @@ public abstract class a8 {
         d(w7Var2.J, w7Var2.o);
         long j10 = w7Var2.s;
         int i10 = 0;
-        int D = j10 != 0 ? h7Var.D(0, j10) : h7Var.D(0, w7Var2.x);
+        int E = j10 != 0 ? h7Var.E(0, j10) : h7Var.E(0, w7Var2.x);
         int i11 = 2;
-        w7Var2.n = D == 0 ? 2 : 1;
+        w7Var2.n = E == 0 ? 2 : 1;
         TL_stories.PeerStories y3 = h7Var.y(w7Var2.x);
         ArrayList arrayList = h7Var.h;
         if (y3 == null) {
@@ -866,13 +866,13 @@ public abstract class a8 {
         TL_stories.PeerStories peerStories = y3;
         int size = w7Var2.r ? arrayList.size() : (peerStories == null || peerStories.stories.size() == 1) ? 1 : peerStories.stories.size();
         Paint[] paintArr = k;
-        if (D == 2) {
+        if (E == 2) {
             o(imageReceiver);
             paint5 = b.c;
-        } else if (D == 3) {
+        } else if (E == 3) {
             q(imageReceiver);
             paint5 = c.c;
-        } else if (D == 1) {
+        } else if (E == 1) {
             t(imageReceiver, z11);
             paint5 = a[z11 ? 1 : 0].c;
         } else {
@@ -938,13 +938,13 @@ public abstract class a8 {
         while (i13 < size) {
             Paint paint10 = z11 ? paintArr[w7Var2.o ? 1 : 0] : e;
             if (w7Var2.r) {
-                int D2 = h7Var.D(i10, DialogObject.getPeerDialogId(((TL_stories.PeerStories) arrayList.get((size - 1) - i13)).peer));
-                if (D2 == i11) {
+                int E2 = h7Var.E(i10, DialogObject.getPeerDialogId(((TL_stories.PeerStories) arrayList.get((size - 1) - i13)).peer));
+                if (E2 == i11) {
                     paint10 = paint4;
                     c10 = 3;
                 } else {
                     c10 = 3;
-                    if (D2 != 3) {
+                    if (E2 != 3) {
                     }
                     paint10 = paint3;
                 }

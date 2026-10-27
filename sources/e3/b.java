@@ -20,7 +20,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
 public final class b implements o {
     public final x a;
@@ -136,7 +136,7 @@ public final class b implements o {
                         if (!a(pVar)) {
                             throw x0.a(null, "AVI Header List not found");
                         }
-                        pVar.q(12);
+                        pVar.r(12);
                         this.e = 1;
                         return 0;
                     case 1:
@@ -243,7 +243,7 @@ public final class b implements o {
                         int o11 = xVar.o();
                         int i19 = lVar.a;
                         if (i19 == 1179011410) {
-                            pVar.q(12);
+                            pVar.r(12);
                             return 0;
                         }
                         if (i19 != 1414744396 || o11 != 1769369453) {
@@ -367,14 +367,14 @@ public final class b implements o {
                             return 0;
                         }
                         if ((pVar.getPosition() & 1) == 1) {
-                            pVar.q(1);
+                            pVar.r(1);
                         }
                         pVar.b(0, 12, xVar.a);
                         xVar.N(0);
                         int o18 = xVar.o();
                         if (o18 == 1414744396) {
                             xVar.N(8);
-                            pVar.q(xVar.o() == 1769369453 ? 12 : 8);
+                            pVar.r(xVar.o() == 1769369453 ? 12 : 8);
                             pVar.p();
                             return 0;
                         }
@@ -383,7 +383,7 @@ public final class b implements o {
                             this.j = pVar.getPosition() + o19 + 8;
                             return 0;
                         }
-                        pVar.q(8);
+                        pVar.r(8);
                         pVar.p();
                         for (e eVar6 : this.i) {
                             if (eVar6.c == o18 || eVar6.d == o18) {
@@ -405,7 +405,7 @@ public final class b implements o {
                         throw new AssertionError();
                 }
             } else {
-                pVar.q((int) (j10 - position));
+                pVar.r((int) (j10 - position));
             }
         }
         z10 = false;

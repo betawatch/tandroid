@@ -7,7 +7,7 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class pd implements Runnable {
     public final /* synthetic */ int a;
@@ -29,10 +29,10 @@ public final /* synthetic */ class pd implements Runnable {
                 break;
             case 2:
                 ke keVar = this.b;
-                org.telegram.ui.Components.r71 r71Var = keVar.X0;
-                if (r71Var != null) {
+                org.telegram.ui.Components.s71 s71Var = keVar.X0;
+                if (s71Var != null) {
                     boolean z10 = keVar.e0;
-                    r71Var.g3.O((keVar.R0 != -1) == keVar.a1.a());
+                    s71Var.g3.O((keVar.R0 != -1) == keVar.a1.a());
                     if (z10 && keVar.R0 != -1) {
                         keVar.a();
                         break;

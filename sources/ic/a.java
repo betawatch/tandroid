@@ -29,12 +29,12 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.ActionBar.b2;
-import org.telegram.ui.Components.t61;
-import org.telegram.ui.Components.vl0;
+import org.telegram.ui.Components.u61;
 import org.telegram.ui.Components.wc;
+import org.telegram.ui.Components.wl0;
 import s4.q0;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
 public abstract /* synthetic */ class a {
     public static int A(int i10, int i11, int i12, int i13) {
@@ -435,9 +435,9 @@ public abstract /* synthetic */ class a {
         return DesugarCollections.unmodifiableMap(new HashMap(hashMap));
     }
 
-    public static vl0 n(View view, View view2, int i10, int i11) {
+    public static wl0 n(View view, View view2, int i10, int i11) {
         view.setLayoutParams(new q0(i10, i11));
-        return new vl0(view2);
+        return new wl0(view2);
     }
 
     public static void o(float f7, int i10, TextView textView) {
@@ -446,7 +446,7 @@ public abstract /* synthetic */ class a {
     }
 
     public static void p(int i10, ArrayList arrayList) {
-        arrayList.add(t61.u(LocaleController.getString(i10)));
+        arrayList.add(u61.u(LocaleController.getString(i10)));
     }
 
     public static void q(int i10, HashMap hashMap, String str, int i11, String str2) {
@@ -498,6 +498,6 @@ public abstract /* synthetic */ class a {
     }
 
     public static void z(int i10, ArrayList arrayList) {
-        arrayList.add(t61.C(LocaleController.getString(i10)));
+        arrayList.add(u61.C(LocaleController.getString(i10)));
     }
 }

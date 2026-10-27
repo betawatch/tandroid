@@ -39,18 +39,18 @@ import org.telegram.ui.Cells.t9;
 import org.telegram.ui.Components.c6;
 import org.telegram.ui.Components.gh;
 import org.telegram.ui.Components.ri;
-import org.telegram.ui.b61;
-import org.telegram.ui.cv0;
 import org.telegram.ui.d3;
+import org.telegram.ui.e61;
+import org.telegram.ui.ev0;
 import r2.u;
 import s9.d;
 import y2.i;
 import z6.c;
 import z6.e;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
-public final class a implements b, b61, dg.a, eg.a, g, n, ri, m, j1, d, u, OnFailureListener, Continuation, v2.m, i, c {
+public final class a implements b, e61, dg.a, eg.a, g, n, ri, m, j1, d, u, OnFailureListener, Continuation, v2.m, i, c {
     public final /* synthetic */ int a;
 
     public /* synthetic */ a(int i10) {
@@ -131,7 +131,7 @@ public final class a implements b, b61, dg.a, eg.a, g, n, ri, m, j1, d, u, OnFai
     }
 
     @Override // org.telegram.ui.Cells.j1
-    public /* synthetic */ cv0 E1() {
+    public /* synthetic */ ev0 E1() {
         switch (this.a) {
         }
         return null;

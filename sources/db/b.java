@@ -15,7 +15,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import ud.p;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
 public final class b extends nd.i implements p {
     public final /* synthetic */ int a = 1;
@@ -57,15 +57,15 @@ public final class b extends nd.i implements p {
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:110:0x01c8  */
-    /* JADX WARN: Removed duplicated region for block: B:116:0x01e7  */
-    /* JADX WARN: Removed duplicated region for block: B:53:0x028c  */
+    /* JADX WARN: Removed duplicated region for block: B:109:0x01ca  */
+    /* JADX WARN: Removed duplicated region for block: B:115:0x01e9  */
+    /* JADX WARN: Removed duplicated region for block: B:53:0x028e  */
     /* JADX WARN: Removed duplicated region for block: B:55:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:59:0x0251  */
-    /* JADX WARN: Removed duplicated region for block: B:67:0x0234  */
-    /* JADX WARN: Removed duplicated region for block: B:72:0x024e  */
-    /* JADX WARN: Removed duplicated region for block: B:76:0x0212  */
-    /* JADX WARN: Removed duplicated region for block: B:85:0x01f0  */
+    /* JADX WARN: Removed duplicated region for block: B:59:0x0253  */
+    /* JADX WARN: Removed duplicated region for block: B:67:0x0236  */
+    /* JADX WARN: Removed duplicated region for block: B:72:0x0250  */
+    /* JADX WARN: Removed duplicated region for block: B:76:0x0214  */
+    /* JADX WARN: Removed duplicated region for block: B:85:0x01f2  */
     /* JADX WARN: Type inference failed for: r8v4, types: [java.lang.Object, java.util.Map] */
     @Override // nd.a
     /*
@@ -104,25 +104,25 @@ public final class b extends nd.i implements p {
                             JSONObject jSONObject2 = (JSONObject) obj5;
                             try {
                                 bool = jSONObject2.has("sessions_enabled") ? (Boolean) jSONObject2.get("sessions_enabled") : null;
-                            } catch (JSONException e) {
-                                e = e;
-                                bool = null;
-                            }
-                            try {
-                                if (jSONObject2.has("sampling_rate")) {
-                                    pVar6.a = (Double) jSONObject2.get("sampling_rate");
-                                }
-                                if (jSONObject2.has("session_timeout_seconds")) {
-                                    pVar.a = (Integer) jSONObject2.get("session_timeout_seconds");
-                                }
-                                if (jSONObject2.has("cache_duration")) {
-                                    pVar7.a = (Integer) jSONObject2.get("cache_duration");
+                                try {
+                                    if (jSONObject2.has("sampling_rate")) {
+                                        pVar6.a = (Double) jSONObject2.get("sampling_rate");
+                                    }
+                                    if (jSONObject2.has("session_timeout_seconds")) {
+                                        pVar.a = (Integer) jSONObject2.get("session_timeout_seconds");
+                                    }
+                                    if (jSONObject2.has("cache_duration")) {
+                                        pVar7.a = (Integer) jSONObject2.get("cache_duration");
+                                    }
+                                } catch (JSONException e) {
+                                    e = e;
+                                    Log.e("SessionConfigFetcher", "Error parsing the configs remotely fetched: ", e);
+                                    if (bool == null) {
+                                    }
                                 }
                             } catch (JSONException e10) {
                                 e = e10;
-                                Log.e("SessionConfigFetcher", "Error parsing the configs remotely fetched: ", e);
-                                if (bool == null) {
-                                }
+                                bool = null;
                             }
                         } else {
                             bool = null;

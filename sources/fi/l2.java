@@ -7,9 +7,9 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.gb1;
+import org.telegram.ui.Components.kb1;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public class l2 extends org.telegram.ui.ActionBar.k3 implements NotificationCenter.NotificationCenterDelegate {
     public static int H = 1;
@@ -49,7 +49,7 @@ public class l2 extends org.telegram.ui.ActionBar.k3 implements NotificationCent
         this.f = h1Var;
         h1Var.b = z10 ? 0 : H;
         h1Var.setAdapter(new i1(this, z10, context));
-        this.containerView.addView(h1Var, gb1.i(-1, -1, 87));
+        this.containerView.addView(h1Var, kb1.i(-1, -1, 87));
         new z3(this.containerView, false, new d1(this, 0));
         if (!z10) {
             k2 k2Var = new k2(context);
@@ -57,10 +57,10 @@ public class l2 extends org.telegram.ui.ActionBar.k3 implements NotificationCent
             k2Var.G = new d1(this, 1);
             k2Var.F = h1Var.b;
             k2Var.invalidate();
-            this.containerView.addView(k2Var, gb1.i(-1, -2, 87));
+            this.containerView.addView(k2Var, kb1.i(-1, -2, 87));
         }
-        NotificationCenter.getInstance(this.currentAccount).addObserver(this, NotificationCenter.stickersDidLoad);
-        NotificationCenter.getInstance(this.currentAccount).addObserver(this, NotificationCenter.groupStickersDidLoad);
+        NotificationCenter.getInstance(this.currentAccount).addWeakObserver(this, NotificationCenter.stickersDidLoad);
+        NotificationCenter.getInstance(this.currentAccount).addWeakObserver(this, NotificationCenter.groupStickersDidLoad);
         FileLog.disableGson(true);
         if (!z10) {
             MediaDataController.getInstance(this.currentAccount).checkStickers(5);

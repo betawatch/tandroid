@@ -12,7 +12,7 @@ import java.util.HashMap;
 import java.util.Map;
 import org.telegram.messenger.MediaDataController;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
 public final class w0 implements e0, c3.q, y2.g, y2.j, b1 {
     public static final Map i0;
@@ -153,7 +153,7 @@ public final class w0 implements e0, c3.q, y2.g, y2.j, b1 {
 
     @Override // c3.q
     public final void D1(c3.b0 b0Var) {
-        this.H.post(new sg.u(13, this, b0Var));
+        this.H.post(new s9.g(14, this, b0Var));
     }
 
     @Override // c3.q

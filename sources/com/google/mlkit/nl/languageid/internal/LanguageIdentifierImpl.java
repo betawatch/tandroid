@@ -38,7 +38,7 @@ import w7.l6;
 import w7.m6;
 import wb.e;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
 public class LanguageIdentifierImpl implements b {
     public final d9 a;
@@ -78,7 +78,7 @@ public class LanguageIdentifierImpl implements b {
         eVar.d(this.c);
         ti.e eVar2 = new ti.e(13, false);
         eVar2.d = this.f;
-        d dVar = new d(10, false);
+        d dVar = new d(11, false);
         dVar.c = k();
         eVar2.e = new k7(dVar);
         ng ngVar = new ng(eVar2, 1);
@@ -123,11 +123,11 @@ public class LanguageIdentifierImpl implements b {
         d9Var.getClass();
         long elapsedRealtime2 = SystemClock.elapsedRealtime();
         HashMap hashMap = d9Var.i;
-        int i10 = 9;
+        int i10 = 10;
         boolean z11 = false;
         if (hashMap.get(m6Var) == null || elapsedRealtime2 - ((Long) hashMap.get(m6Var)).longValue() > TimeUnit.SECONDS.toMillis(30L)) {
             hashMap.put(m6Var, Long.valueOf(elapsedRealtime2));
-            d dVar = new d(10, z11);
+            d dVar = new d(11, z11);
             dVar.c = k();
             d dVar2 = new d(i10, z11);
             dVar2.b = Long.valueOf(Long.MAX_VALUE & elapsedRealtime);

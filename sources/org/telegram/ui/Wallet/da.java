@@ -7,14 +7,14 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.gb1;
+import org.telegram.ui.Components.kb1;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class da extends FrameLayout {
     public final TextView a;
     public final ImageView b;
-    public l6 c;
+    public m6 c;
     public float d;
     public float e;
     public boolean f;
@@ -35,7 +35,7 @@ public final class da extends FrameLayout {
         this.b = imageView;
         imageView.setScaleType(ImageView.ScaleType.FIT_CENTER);
         imageView.setImportantForAccessibility(2);
-        addView(imageView, gb1.g(16.0f, 16));
+        addView(imageView, kb1.g(16.0f, 16));
     }
 
     public final void a() {
@@ -52,9 +52,9 @@ public final class da extends FrameLayout {
         imageView.setTranslationX(width - AndroidUtilities.dp(8.0f));
         imageView.setTranslationY(height - AndroidUtilities.dp(8.0f));
         imageView.setAlpha(1.0f - this.d);
-        l6 l6Var = this.c;
-        if (l6Var != null) {
-            l6Var.setTranslationX(width - AndroidUtilities.dp(20.0f));
+        m6 m6Var = this.c;
+        if (m6Var != null) {
+            m6Var.setTranslationX(width - AndroidUtilities.dp(20.0f));
             this.c.setTranslationY(height - AndroidUtilities.dp(20.0f));
             this.c.setPivotX(AndroidUtilities.dp(20.0f));
             this.c.setPivotY(AndroidUtilities.dp(20.0f));
@@ -77,9 +77,9 @@ public final class da extends FrameLayout {
         TextView textView = this.a;
         textView.layout(0, 0, textView.getMeasuredWidth(), textView.getMeasuredHeight());
         this.b.layout(0, 0, AndroidUtilities.dp(16.0f), AndroidUtilities.dp(16.0f));
-        l6 l6Var = this.c;
-        if (l6Var != null) {
-            l6Var.layout(0, 0, AndroidUtilities.dp(40.0f), AndroidUtilities.dp(40.0f));
+        m6 m6Var = this.c;
+        if (m6Var != null) {
+            m6Var.layout(0, 0, AndroidUtilities.dp(40.0f), AndroidUtilities.dp(40.0f));
         }
         a();
     }
@@ -90,9 +90,9 @@ public final class da extends FrameLayout {
         int makeMeasureSpec2 = View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(16.0f), TLObject.FLAG_30);
         this.a.measure(makeMeasureSpec, makeMeasureSpec2);
         this.b.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(16.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(16.0f), TLObject.FLAG_30));
-        l6 l6Var = this.c;
-        if (l6Var != null) {
-            l6Var.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(40.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(40.0f), TLObject.FLAG_30));
+        m6 m6Var = this.c;
+        if (m6Var != null) {
+            m6Var.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(40.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(40.0f), TLObject.FLAG_30));
         }
         setMeasuredDimension(View.resolveSize((int) Math.ceil(c() + b() + c3.h0.C(this.d, 0.42857146f, 1.0f, r6.getMeasuredWidth())), i10), View.resolveSize(AndroidUtilities.dp(40.0f), i11));
     }

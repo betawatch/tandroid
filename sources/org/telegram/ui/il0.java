@@ -1,24 +1,43 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.NotificationCenter;
+
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class il0 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ xr b;
+    public final /* synthetic */ PasscodeActivity b;
+    public final /* synthetic */ boolean c;
 
-    public /* synthetic */ il0(xr xrVar, int i10) {
+    public /* synthetic */ il0(PasscodeActivity passcodeActivity, boolean z10, int i10) {
         this.a = i10;
-        this.b = xrVar;
+        this.b = passcodeActivity;
+        this.c = z10;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.l(1.0f);
+                PasscodeActivity passcodeActivity = this.b;
+                passcodeActivity.getMediaDataController().buildShortcuts();
+                if (this.c) {
+                    passcodeActivity.presentFragment(new PasscodeActivity(0), true);
+                    jb0 jb0Var = passcodeActivity.U;
+                    if (jb0Var != null) {
+                        AndroidUtilities.runOnUIThread(jb0Var);
+                        passcodeActivity.U = null;
+                    }
+                } else {
+                    passcodeActivity.finishFragment();
+                }
+                NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.didSetPasscode, new Object[0]);
                 break;
             default:
-                this.b.l(1.0f);
+                PasscodeActivity passcodeActivity2 = this.b;
+                passcodeActivity2.w.e(true, this.c);
+                AndroidUtilities.cancelRunOnUIThread(passcodeActivity2.T);
                 break;
         }
     }

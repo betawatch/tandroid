@@ -25,12 +25,12 @@ import org.telegram.messenger.PushListenerController;
 import org.telegram.messenger.voip.VideoCapturerDevice;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.k80;
+import org.telegram.ui.Components.l80;
 import org.telegram.ui.Components.r10;
 import org.telegram.ui.IUpdateLayout;
-import org.telegram.ui.sa0;
+import org.telegram.ui.ua0;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
 public class ApplicationLoader extends Application {
     public static volatile Context applicationContext = null;
@@ -540,11 +540,11 @@ public class ApplicationLoader extends Application {
             }
             applicationHandler = new Handler(applicationContext.getMainLooper());
             AndroidUtilities.runOnUIThread(new a2(6));
-            sa0[] values = sa0.values();
+            ua0[] values = ua0.values();
             int length = values.length;
             while (true) {
                 if (i10 >= length) {
-                    a8.ze.b(sa0.h);
+                    a8.ze.b(ua0.h);
                     break;
                 } else if (a8.ze.a(values[i10])) {
                     break;
@@ -661,7 +661,7 @@ public class ApplicationLoader extends Application {
     public void onResume() {
     }
 
-    public void addItemOptions(k80 k80Var) {
+    public void addItemOptions(l80 l80Var) {
     }
 
     public void appCenterLogInternal(Throwable th2) {

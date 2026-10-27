@@ -15,7 +15,7 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class j1 extends FrameLayout implements org.telegram.ui.Cells.r9 {
     public final bi.r1 a;
@@ -47,7 +47,7 @@ public final class j1 extends FrameLayout implements org.telegram.ui.Cells.r9 {
         g1 g1Var = new g1(this);
         this.b = g1Var;
         r1Var.setAdapter(g1Var);
-        addView(r1Var, org.telegram.ui.Components.gb1.g(-2.0f, -1));
+        addView(r1Var, org.telegram.ui.Components.kb1.g(-2.0f, -1));
         setWillNotDraw(false);
     }
 
@@ -153,7 +153,7 @@ public final class j1 extends FrameLayout implements org.telegram.ui.Cells.r9 {
                 int dp2 = AndroidUtilities.dp(18.0f) + AndroidUtilities.dp(r15 * 14);
                 this.e = dp2;
                 this.f = dp2;
-                i12 = org.telegram.messenger.vh.z(18.0f, dp2, size);
+                i12 = org.telegram.messenger.wh.z(18.0f, dp2, size);
                 dp = i12;
             } else {
                 this.e = 0;
@@ -189,7 +189,7 @@ public final class j1 extends FrameLayout implements org.telegram.ui.Cells.r9 {
             TL_iv.pageBlockCollage pageblockcollage3 = j1Var.s;
             TL_iv.RichText richText2 = pageblockcollage3.caption.credit;
             if (j1Var.w.G) {
-                alignment = org.telegram.ui.Components.px0.a();
+                alignment = org.telegram.ui.Components.qx0.a();
             }
             a3 p11 = j4.p(j4Var, j1Var, null, richText2, dp, 0, pageblockcollage3, alignment, 0, j1Var.w);
             j1Var.d = p11;

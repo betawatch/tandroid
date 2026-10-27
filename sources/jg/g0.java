@@ -5,12 +5,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.lm0;
-import org.telegram.ui.Components.vl0;
+import org.telegram.ui.Components.mm0;
+import org.telegram.ui.Components.wl0;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public final class g0 extends lm0 {
+public final class g0 extends mm0 {
     public final Context c;
     public final ArrayList d = new ArrayList();
     public String e;
@@ -21,7 +21,7 @@ public final class g0 extends lm0 {
         this.c = context;
     }
 
-    @Override // org.telegram.ui.Components.lm0
+    @Override // org.telegram.ui.Components.mm0
     public final boolean D(s4.e1 e1Var) {
         return e1Var.f == 0;
     }
@@ -91,6 +91,6 @@ public final class g0 extends lm0 {
             y1Var.setLayoutParams(new s4.q0(-1, AndroidUtilities.dp(56.0f)));
             y1Var.setTag(-33024);
         }
-        return new vl0(y1Var);
+        return new wl0(y1Var);
     }
 }

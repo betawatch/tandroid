@@ -1,61 +1,83 @@
 package org.telegram.ui.Components;
 
+import android.graphics.Typeface;
 import android.text.TextPaint;
-import android.text.style.MetricAffectingSpan;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public final class z11 extends MetricAffectingSpan {
-    public final int a;
-    public final y11 b;
+public final class z11 {
+    public int a;
+    public int b;
+    public int c;
+    public TLRPC.MessageEntity d;
+    public boolean e;
 
-    public z11(y11 y11Var, int i10) {
-        this.b = y11Var;
-        if (i10 > 0) {
-            this.a = i10;
-        }
+    public z11() {
     }
 
     public final void a(TextPaint textPaint) {
-        y11 y11Var = this.b;
-        if (a8.pf.a(y11Var.a, 49152)) {
-            float textSize = textPaint.getTextSize();
-            textPaint.setTextSize(0.75f * textSize);
-            if (a8.pf.a(y11Var.a, 32768)) {
-                textPaint.baselineShift -= (int) (textSize * 0.35f);
-            } else if (a8.pf.a(y11Var.a, 16384)) {
-                textPaint.baselineShift += (int) (textSize * 0.12f);
-            }
+        Typeface b10 = b();
+        if (b10 != null) {
+            textPaint.setTypeface(b10);
         }
-    }
-
-    public final y11 b() {
-        return this.b;
-    }
-
-    public final boolean c() {
-        return (this.b.a & 256) > 0;
-    }
-
-    @Override // android.text.style.CharacterStyle
-    public final void updateDrawState(TextPaint textPaint) {
+        if ((this.a & 16) != 0) {
+            textPaint.setFlags(textPaint.getFlags() | 8);
+        } else {
+            textPaint.setFlags(textPaint.getFlags() & (-9));
+        }
         int i10 = this.a;
-        if (i10 != 0) {
-            textPaint.setTextSize(i10);
+        if ((i10 & 8) == 0 && (i10 & 8192) == 0) {
+            textPaint.setFlags(textPaint.getFlags() & (-17));
+        } else {
+            textPaint.setFlags(textPaint.getFlags() | 16);
         }
-        a(textPaint);
-        textPaint.setFlags(textPaint.getFlags() | 128);
-        this.b.a(textPaint);
+        if ((this.a & 512) != 0) {
+            textPaint.bgColor = org.telegram.ui.ActionBar.y6.x0(null, org.telegram.ui.ActionBar.y6.R9, false);
+        }
+        int i11 = this.a;
+        if ((i11 & 8192) != 0) {
+            textPaint.setColor(org.telegram.ui.ActionBar.y6.x0(null, org.telegram.ui.ActionBar.y6.q7, false));
+        } else if ((i11 & 4096) != 0) {
+            textPaint.setColor(org.telegram.ui.ActionBar.y6.x0(null, org.telegram.ui.ActionBar.y6.Oh, false));
+        }
     }
 
-    @Override // android.text.style.MetricAffectingSpan
-    public final void updateMeasureState(TextPaint textPaint) {
-        int i10 = this.a;
-        if (i10 != 0) {
-            textPaint.setTextSize(i10);
+    public final Typeface b() {
+        if (this.e) {
+            return (this.a & 2) != 0 ? AndroidUtilities.getTypeface("fonts/mw_bolditalic.ttf") : AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_MERRIWEATHER_BOLD);
         }
-        a(textPaint);
-        textPaint.setFlags(textPaint.getFlags() | 128);
-        this.b.a(textPaint);
+        int i10 = this.a;
+        if ((i10 & 4) != 0 || (i10 & 2048) != 0) {
+            return Typeface.MONOSPACE;
+        }
+        if ((i10 & 1) != 0 && (i10 & 2) != 0) {
+            return AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM_ITALIC);
+        }
+        if ((i10 & 1) != 0) {
+            return AndroidUtilities.bold();
+        }
+        if ((i10 & 2) != 0) {
+            return AndroidUtilities.getTypeface("fonts/ritalic.ttf");
+        }
+        return null;
+    }
+
+    public final void c(z11 z11Var) {
+        TLRPC.MessageEntity messageEntity;
+        this.a |= z11Var.a;
+        if (this.d != null || (messageEntity = z11Var.d) == null) {
+            return;
+        }
+        this.d = messageEntity;
+    }
+
+    public z11(z11 z11Var) {
+        this.a = z11Var.a;
+        this.b = z11Var.b;
+        this.c = z11Var.c;
+        this.d = z11Var.d;
+        this.e = z11Var.e;
     }
 }

@@ -1,58 +1,80 @@
 package org.telegram.ui;
 
-import android.text.Editable;
-import android.text.TextWatcher;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
+import android.content.Context;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import java.util.HashSet;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public final class ng1 implements TextWatcher {
-    public final /* synthetic */ UsersSelectActivity a;
+public final class ng1 extends LinearLayout implements org.telegram.ui.ActionBar.p6 {
+    public final org.telegram.ui.ActionBar.u6 a;
+    public final ImageView b;
+    public final LinearLayout c;
+    public final TextView d;
+    public final TextView e;
+    public final ImageView f;
+    public boolean h;
+    public boolean n;
+    public int r;
 
-    public ng1(UsersSelectActivity usersSelectActivity) {
-        this.a = usersSelectActivity;
+    public ng1(Context context, org.telegram.ui.ActionBar.u6 u6Var) {
+        super(context);
+        setOrientation(0);
+        this.a = u6Var;
+        ImageView imageView = new ImageView(context);
+        this.b = imageView;
+        ImageView.ScaleType scaleType = ImageView.ScaleType.CENTER;
+        imageView.setScaleType(scaleType);
+        addView(imageView, org.telegram.ui.Components.kb1.x(40, 40, 19, 12, 0, 12, 0));
+        LinearLayout linearLayout = new LinearLayout(context);
+        this.c = linearLayout;
+        linearLayout.setOrientation(1);
+        linearLayout.setPadding(0, AndroidUtilities.dp(10.0f), 0, AndroidUtilities.dp(10.0f));
+        addView(linearLayout, org.telegram.ui.Components.kb1.t(0, -2, 1.0f, 23, 0, 0, 32, 0));
+        TextView textView = new TextView(context);
+        this.d = textView;
+        textView.setTextSize(1, 16.0f);
+        TextView e = org.telegram.messenger.wh.e(linearLayout, textView, org.telegram.ui.Components.kb1.x(-1, -2, 7, 0, 0, 0, 0), context);
+        this.e = e;
+        e.setTextSize(1, 13.0f);
+        linearLayout.addView(e, org.telegram.ui.Components.kb1.v(-1, -2, 7, 0.0f, 4.33f, 0.0f, 0.0f));
+        ImageView imageView2 = new ImageView(context);
+        this.f = imageView2;
+        imageView2.setScaleType(scaleType);
+        addView(imageView2, org.telegram.ui.Components.kb1.x(40, 40, 21, 12, 0, 12, 0));
     }
 
-    @Override // android.text.TextWatcher
-    public final void afterTextChanged(Editable editable) {
-        UsersSelectActivity usersSelectActivity = this.a;
-        if (usersSelectActivity.c.length() == 0) {
-            usersSelectActivity.M = false;
-            usersSelectActivity.L = false;
-            qg1 qg1Var = usersSelectActivity.h;
-            if (qg1Var.n) {
-                qg1Var.n = false;
-                qg1Var.l();
-            }
-            usersSelectActivity.h.L(null);
-            usersSelectActivity.d.setFastScrollVisible(true);
-            usersSelectActivity.d.setVerticalScrollBarEnabled(false);
-            usersSelectActivity.f.d.setText(LocaleController.getString(R.string.NoContacts));
-            return;
+    @Override // android.widget.LinearLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), i11);
+    }
+
+    @Override // org.telegram.ui.ActionBar.p6
+    public final void updateColors() {
+        int i10 = this.n ? org.telegram.ui.ActionBar.y6.q7 : this.h ? org.telegram.ui.ActionBar.y6.n6 : org.telegram.ui.ActionBar.y6.G6;
+        org.telegram.ui.ActionBar.u6 u6Var = this.a;
+        int w02 = org.telegram.ui.ActionBar.y6.w0(i10, u6Var);
+        int i11 = this.r;
+        ImageView imageView = this.f;
+        ImageView imageView2 = this.b;
+        if (w02 != i11 || imageView2.getColorFilter() == null || imageView.getColorFilter() == null) {
+            this.r = w02;
+            PorterDuff.Mode mode = PorterDuff.Mode.SRC_IN;
+            imageView2.setColorFilter(new PorterDuffColorFilter(w02, mode));
+            imageView.setColorFilter(new PorterDuffColorFilter(w02, mode));
         }
-        qg1 qg1Var2 = usersSelectActivity.h;
-        boolean z10 = qg1Var2.n;
-        if (!z10) {
-            usersSelectActivity.M = true;
-            usersSelectActivity.L = true;
-            if (!z10) {
-                qg1Var2.n = true;
-                qg1Var2.l();
-            }
-            usersSelectActivity.d.setFastScrollVisible(false);
-            usersSelectActivity.d.setVerticalScrollBarEnabled(true);
-            usersSelectActivity.f.d.setText(LocaleController.getString(R.string.NoResult));
-        }
-        usersSelectActivity.f.e(true, true);
-        usersSelectActivity.h.L(usersSelectActivity.c.getText().toString());
+        this.d.setTextColor(org.telegram.ui.ActionBar.y6.w0(this.n ? org.telegram.ui.ActionBar.y6.p7 : this.h ? org.telegram.ui.ActionBar.y6.n6 : org.telegram.ui.ActionBar.y6.G6, u6Var));
+        this.e.setTextColor(org.telegram.ui.ActionBar.y6.w0(this.n ? org.telegram.ui.ActionBar.y6.p7 : this.h ? org.telegram.ui.ActionBar.y6.n6 : org.telegram.ui.ActionBar.y6.y6, u6Var));
     }
 
-    @Override // android.text.TextWatcher
-    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
-    }
-
-    @Override // android.text.TextWatcher
-    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+    @Override // org.telegram.ui.ActionBar.p6
+    public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 }

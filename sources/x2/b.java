@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
 public final class b extends c {
     public final y2.c g;
@@ -201,35 +201,39 @@ public final class b extends c {
     }
 
     public final int w(int i10, long j10) {
-        long j11;
-        y2.f fVar = (y2.f) this.g;
-        synchronized (fVar) {
-            j11 = fVar.l;
-        }
-        long j12 = (long) (j11 * this.m);
-        this.g.getClass();
-        long j13 = (long) (j12 / this.q);
-        if (!this.o.isEmpty()) {
+        x[] xVarArr;
+        y2.c cVar = this.g;
+        long a2 = (long) (((y2.f) cVar).a() * this.m);
+        cVar.getClass();
+        long j11 = (long) (a2 / this.q);
+        i0 i0Var = this.o;
+        if (!i0Var.isEmpty()) {
             int i11 = 1;
-            while (i11 < this.o.size() - 1 && ((a) this.o.get(i11)).a < j13) {
+            while (i11 < i0Var.size() - 1 && ((a) i0Var.get(i11)).a < j11) {
                 i11++;
             }
-            a aVar = (a) this.o.get(i11 - 1);
-            a aVar2 = (a) this.o.get(i11);
-            long j14 = aVar.a;
-            long j15 = aVar.b;
-            j13 = j15 + ((long) (((j13 - j14) / (aVar2.a - j14)) * (aVar2.b - j15)));
+            a aVar = (a) i0Var.get(i11 - 1);
+            a aVar2 = (a) i0Var.get(i11);
+            long j12 = aVar.a;
+            long j13 = aVar.b;
+            j11 = ((long) (((j11 - j12) / (aVar2.a - j12)) * (aVar2.b - j13))) + j13;
         }
         HashMap hashMap = new HashMap();
         ArrayList arrayList = new ArrayList();
         int i12 = 0;
-        for (int i13 = 0; i13 < this.b; i13++) {
+        int i13 = 0;
+        while (true) {
+            int i14 = this.b;
+            xVarArr = this.d;
+            if (i13 >= i14) {
+                break;
+            }
             if (j10 == Long.MIN_VALUE || !a(i13, j10)) {
-                x xVar = this.d[i13];
+                x xVar = xVarArr[i13];
                 int max = Math.max(xVar.z, xVar.A);
                 if (hashMap.containsKey(Integer.valueOf(max))) {
                     Integer num = (Integer) hashMap.get(Integer.valueOf(max));
-                    x xVar2 = this.d[num.intValue()];
+                    x xVar2 = xVarArr[num.intValue()];
                     boolean z10 = xVar2.n;
                     if ((!z10 || xVar.n) && ((!z10 && xVar.n) || xVar.j < xVar2.j)) {
                         hashMap.put(Integer.valueOf(max), Integer.valueOf(i13));
@@ -241,28 +245,29 @@ public final class b extends c {
                     arrayList.add(Integer.valueOf(i13));
                 }
             }
+            i13++;
         }
         if (i10 == 0) {
             int size = arrayList.size();
-            int i14 = 0;
-            while (i14 < size) {
-                Object obj = arrayList.get(i14);
-                i14++;
+            int i15 = 0;
+            while (i15 < size) {
+                Object obj = arrayList.get(i15);
+                i15++;
                 int intValue = ((Integer) obj).intValue();
-                if (this.d[intValue].n) {
+                if (xVarArr[intValue].n) {
                     return intValue;
                 }
             }
         }
         int size2 = arrayList.size();
-        int i15 = 0;
-        while (i15 < size2) {
-            Object obj2 = arrayList.get(i15);
-            i15++;
+        int i16 = 0;
+        while (i16 < size2) {
+            Object obj2 = arrayList.get(i16);
+            i16++;
             i12 = ((Integer) obj2).intValue();
-            x xVar3 = this.d[i12];
-            int i16 = xVar3.j;
-            if (xVar3.n || i16 <= j13) {
+            x xVar3 = xVarArr[i12];
+            int i17 = xVar3.j;
+            if (xVar3.n || i17 <= j11) {
                 break;
             }
         }

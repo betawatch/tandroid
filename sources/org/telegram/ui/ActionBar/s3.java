@@ -29,12 +29,12 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.ds;
-import org.telegram.ui.Components.q11;
+import org.telegram.ui.Components.r11;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.hk;
-import org.telegram.ui.un;
+import org.telegram.ui.jk;
+import org.telegram.ui.wn;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class s3 extends FrameLayout {
     public static final HashMap K = new HashMap();
@@ -195,25 +195,25 @@ public final class s3 extends FrameLayout {
     }
 
     public final void e(r3 r3Var) {
-        un unVar;
-        hk hkVar;
+        wn wnVar;
+        jk jkVar;
         r2 R = LaunchActivity.R();
         if (R == null || R.getParentActivity() == null) {
             return;
         }
-        boolean z10 = R instanceof un;
-        if (z10 && (hkVar = (unVar = (un) R).Y) != null) {
-            hkVar.M();
-            unVar.Y.k0(true, false, true);
+        boolean z10 = R instanceof wn;
+        if (z10 && (jkVar = (wnVar = (wn) R).Y) != null) {
+            jkVar.L();
+            wnVar.Y.j0(true, false, true);
         }
         if (r3Var.J == null) {
             new li.s2(2, this, r3Var).run(R);
             if (r3Var.C) {
-                if (z10 && ((un) R).a() == r3Var.a.c) {
+                if (z10 && ((wn) R).a() == r3Var.a.c) {
                     return;
                 }
                 this.c = true;
-                AndroidUtilities.runOnUIThread(new jg.f1(this, R, un.ba(r3Var.a.c), 21), 220L);
+                AndroidUtilities.runOnUIThread(new jg.f1(this, R, wn.ea(r3Var.a.c), 21), 220L);
                 return;
             }
             return;
@@ -499,7 +499,7 @@ public final class s3 extends FrameLayout {
                 if (replaceEmoji == null) {
                     p3Var.v = null;
                 } else {
-                    p3Var.v = new q11(replaceEmoji, 17.0f, AndroidUtilities.bold());
+                    p3Var.v = new r11(replaceEmoji, 17.0f, AndroidUtilities.bold());
                 }
             }
             charSequence = replaceEmoji;

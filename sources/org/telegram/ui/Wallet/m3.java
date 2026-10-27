@@ -31,16 +31,16 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.Components.a21;
 import org.telegram.ui.Components.ds;
 import org.telegram.ui.Components.na;
-import org.telegram.ui.Components.q11;
+import org.telegram.ui.Components.r11;
 import org.telegram.ui.Components.xc;
-import org.telegram.ui.Components.xj0;
-import org.telegram.ui.Components.y11;
+import org.telegram.ui.Components.yj0;
 import org.telegram.ui.Components.z11;
-import org.telegram.ui.jg;
+import org.telegram.ui.ig;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class m3 {
     public float A;
@@ -83,19 +83,19 @@ public final class m3 {
     public boolean i0;
     public ValueAnimator j0;
     public final x5 k;
-    public jg k0;
-    public final xj0 l;
+    public ig k0;
+    public final yj0 l;
     public TLRPC.TL_messageActionGramTransfer l0;
     public l3 m;
     public boolean m0;
     public boolean n;
-    public q11 n0;
+    public r11 n0;
     public boolean o;
-    public q11 o0;
+    public r11 o0;
     public float p;
-    public q11 p0;
+    public r11 p0;
     public float q;
-    public q11 q0;
+    public r11 q0;
     public float r;
     public boolean r0;
     public float s;
@@ -146,10 +146,10 @@ public final class m3 {
             x5.G = new x5(context.getApplicationContext());
         }
         this.k = x5.G;
-        xj0 xj0Var = new xj0(R.raw.wallet_diamond_white, AndroidUtilities.dp(42.0f), AndroidUtilities.dp(42.0f), false, null);
-        this.l = xj0Var;
-        xj0Var.R(v0Var);
-        xj0Var.K(0);
+        yj0 yj0Var = new yj0(R.raw.wallet_diamond_white, AndroidUtilities.dp(42.0f), AndroidUtilities.dp(42.0f), false, null);
+        this.l = yj0Var;
+        yj0Var.R(v0Var);
+        yj0Var.K(0);
         v0Var.addOnAttachStateChangeListener(new na(2, this, v0Var));
         paint2.setColor(-10033409);
         Paint.Style style = Paint.Style.STROKE;
@@ -249,13 +249,13 @@ public final class m3 {
         k9 k9Var;
         boolean z10;
         boolean z11;
-        q11 q11Var;
+        r11 r11Var;
         Canvas canvas2;
         k3 k3Var;
         float d;
         float f11;
         float d10;
-        q11 q11Var2;
+        r11 r11Var2;
         float f12;
         long j10;
         float f13;
@@ -321,10 +321,10 @@ public final class m3 {
                 int round2 = Math.round((((rectF.centerY() - f14) - dp6) * max3) + dp6);
                 int i10 = round + dp5;
                 int i11 = dp5 + round2;
-                xj0 xj0Var = this.l;
-                xj0Var.setBounds(round, round2, i10, i11);
+                yj0 yj0Var = this.l;
+                yj0Var.setBounds(round, round2, i10, i11);
                 boolean quickReject2 = canvas.quickReject(round, round2, i10, i11, edgeType);
-                Rect bounds = xj0Var.getBounds();
+                Rect bounds = yj0Var.getBounds();
                 Rect rect = this.w;
                 rect.set(bounds);
                 k9Var = this.u;
@@ -347,19 +347,19 @@ public final class m3 {
                 }
                 z10 = quickReject2 && (l3Var = this.m) != null && l3Var.n;
                 if (!z10) {
-                    xj0Var.stop();
+                    yj0Var.stop();
                     this.H = false;
                 } else if (!this.H && !quickReject2) {
                     z11 = true;
                     this.H = true;
-                    xj0Var.T(0.0f, true);
-                    xj0Var.start();
+                    yj0Var.T(0.0f, true);
+                    yj0Var.start();
                     if (!z10 && !this.E) {
-                        xj0Var.draw(canvas);
+                        yj0Var.draw(canvas);
                     }
-                    q11Var = this.n0;
-                    if (q11Var != null) {
-                        float l4 = q11Var.l();
+                    r11Var = this.n0;
+                    if (r11Var != null) {
+                        float l4 = r11Var.l();
                         float width = rectF.width() - AndroidUtilities.dp(16.0f);
                         float f15 = l4 > width ? width / l4 : 1.0f;
                         float dp7 = rectF.top + AndroidUtilities.dp(55.0f) + (this.n0.j() / 2.0f);
@@ -371,9 +371,9 @@ public final class m3 {
                     if (this.o0 != null) {
                         float dp8 = (AndroidUtilities.dp(f10) - this.o0.l()) / 2.0f;
                         float dp9 = (rectF.bottom - AndroidUtilities.dp(7.0f)) - this.o0.j();
-                        q11 q11Var3 = this.p0;
-                        if (q11Var3 != null) {
-                            q11Var3.c((AndroidUtilities.dp(f10) - this.p0.l()) / 2.0f, (dp9 - AndroidUtilities.dp(f7)) - (this.p0.j() / 2.0f), 1.0f, this.t0, canvas);
+                        r11 r11Var3 = this.p0;
+                        if (r11Var3 != null) {
+                            r11Var3.c((AndroidUtilities.dp(f10) - this.p0.l()) / 2.0f, (dp9 - AndroidUtilities.dp(f7)) - (this.p0.j() / 2.0f), 1.0f, this.t0, canvas);
                         }
                         this.o0.c(dp8, dp9 + AndroidUtilities.dp(1.0f), 1.0f, 268435455, canvas);
                         canvas2 = canvas;
@@ -510,8 +510,8 @@ public final class m3 {
                         canvas2.restore();
                         v0Var.postInvalidateOnAnimation();
                     }
-                    q11Var2 = this.q0;
-                    if (q11Var2 != null) {
+                    r11Var2 = this.q0;
+                    if (r11Var2 != null) {
                         TLRPC.TL_messageActionGramTransfer tL_messageActionGramTransfer = this.l0;
                         if ((tL_messageActionGramTransfer.comment_encrypted || tL_messageActionGramTransfer.comment_encrypted_preparing) && !this.m0) {
                             canvas2.save();
@@ -528,17 +528,17 @@ public final class m3 {
                             }
                             canvas2.restore();
                         } else {
-                            q11Var2.c((AndroidUtilities.dp(f10) - this.q0.l()) / 2.0f, AndroidUtilities.dp(143.0f), 1.0f, -1, canvas2);
+                            r11Var2.c((AndroidUtilities.dp(f10) - this.q0.l()) / 2.0f, AndroidUtilities.dp(143.0f), 1.0f, -1, canvas2);
                         }
                     }
                     canvas.restore();
                 }
                 z11 = true;
                 if (!z10) {
-                    xj0Var.draw(canvas);
+                    yj0Var.draw(canvas);
                 }
-                q11Var = this.n0;
-                if (q11Var != null) {
+                r11Var = this.n0;
+                if (r11Var != null) {
                 }
                 if (this.o0 != null) {
                 }
@@ -592,8 +592,8 @@ public final class m3 {
                     canvas2.restore();
                     v0Var.postInvalidateOnAnimation();
                 }
-                q11Var2 = this.q0;
-                if (q11Var2 != null) {
+                r11Var2 = this.q0;
+                if (r11Var2 != null) {
                 }
                 canvas.restore();
             }
@@ -630,10 +630,10 @@ public final class m3 {
         int round22 = Math.round((((rectF.centerY() - f142) - dp62) * max32) + dp62);
         int i102 = round4 + dp52;
         int i112 = dp52 + round22;
-        xj0 xj0Var2 = this.l;
-        xj0Var2.setBounds(round4, round22, i102, i112);
+        yj0 yj0Var2 = this.l;
+        yj0Var2.setBounds(round4, round22, i102, i112);
         boolean quickReject22 = canvas.quickReject(round4, round22, i102, i112, edgeType);
-        Rect bounds4 = xj0Var2.getBounds();
+        Rect bounds4 = yj0Var2.getBounds();
         Rect rect2 = this.w;
         rect2.set(bounds4);
         k9Var = this.u;
@@ -649,8 +649,8 @@ public final class m3 {
         z11 = true;
         if (!z10) {
         }
-        q11Var = this.n0;
-        if (q11Var != null) {
+        r11Var = this.n0;
+        if (r11Var != null) {
         }
         if (this.o0 != null) {
         }
@@ -670,8 +670,8 @@ public final class m3 {
         d10 = this.Q.d(this.E ? 0.0f : 1.0f, false);
         if (this.g0) {
         }
-        q11Var2 = this.q0;
-        if (q11Var2 != null) {
+        r11Var2 = this.q0;
+        if (r11Var2 != null) {
         }
         canvas.restore();
     }
@@ -706,11 +706,11 @@ public final class m3 {
         h6Var.d(1.0f, true);
         this.t = 0.0f;
         this.u.a.clear();
-        jg jgVar = this.k0;
+        ig igVar = this.k0;
         this.k0 = null;
         this.a.invalidate();
-        if (jgVar != null) {
-            AndroidUtilities.runOnUIThread(jgVar, 1L);
+        if (igVar != null) {
+            AndroidUtilities.runOnUIThread(igVar, 1L);
         }
     }
 
@@ -921,18 +921,18 @@ public final class m3 {
         } else {
             j3Var.g(10, string);
         }
-        SpannableStringBuilder p10 = l0.p(l0.n(Math.abs(tL_messageActionGramTransfer.amount), false), 0.75f);
-        for (RelativeSizeSpan relativeSizeSpan : (RelativeSizeSpan[]) p10.getSpans(0, p10.length(), RelativeSizeSpan.class)) {
-            p10.removeSpan(relativeSizeSpan);
+        SpannableStringBuilder q5 = l0.q(l0.o(Math.abs(tL_messageActionGramTransfer.amount), false), 0.75f);
+        for (RelativeSizeSpan relativeSizeSpan : (RelativeSizeSpan[]) q5.getSpans(0, q5.length(), RelativeSizeSpan.class)) {
+            q5.removeSpan(relativeSizeSpan);
         }
-        p10.insert(0, (CharSequence) (z10 ? "–" : "+"));
-        int indexOf = p10.toString().indexOf(46);
+        q5.insert(0, (CharSequence) (z10 ? "–" : "+"));
+        int indexOf = q5.toString().indexOf(46);
         if (indexOf >= 0) {
-            p10.setSpan(new RelativeSizeSpan(0.75f), indexOf, p10.length(), 33);
+            q5.setSpan(new RelativeSizeSpan(0.75f), indexOf, q5.length(), 33);
         }
         Object obj = new Object();
-        p10.setSpan(obj, 0, p10.length(), 33);
-        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(l0.k("Grams", p10, R.string.Grams_other));
+        q5.setSpan(obj, 0, q5.length(), 33);
+        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(l0.l("Grams", q5, R.string.Grams_other));
         int spanStart = spannableStringBuilder.getSpanStart(obj);
         int spanEnd = spannableStringBuilder.getSpanEnd(obj);
         spannableStringBuilder.removeSpan(obj);
@@ -943,20 +943,20 @@ public final class m3 {
         if (spanEnd >= 0 && spanEnd < spannableStringBuilder.length()) {
             spannableStringBuilder.setSpan(CharacterStyle.wrap(z5Var), spanEnd, spannableStringBuilder.length(), 33);
         }
-        this.n0 = new q11(spannableStringBuilder, 16.0f, AndroidUtilities.bold());
+        this.n0 = new r11(spannableStringBuilder, 16.0f, AndroidUtilities.bold());
         String str2 = tL_messageActionGramTransfer.peer_address;
         Locale locale = Locale.US;
         String f7 = w5.f(w5.d(str2.toUpperCase(locale)));
-        q11 q11Var = new q11("", 9.3f, AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MONO));
-        q11Var.n(2);
-        this.o0 = q11Var;
-        q11Var.r(f7);
+        r11 r11Var = new r11("", 9.3f, AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MONO));
+        r11Var.n(2);
+        this.o0 = r11Var;
+        r11Var.r(f7);
         if (TextUtils.isEmpty(str)) {
             this.p0 = null;
         } else {
-            q11 q11Var2 = new q11("", 10.0f, Typeface.create(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MONO), 1));
-            this.p0 = q11Var2;
-            q11Var2.r(TextUtils.ellipsize(AndroidUtilities.replaceNewLines(str.toUpperCase(locale)), this.p0.a, AndroidUtilities.dp(206.0f) - AndroidUtilities.dp(24.0f), TextUtils.TruncateAt.END));
+            r11 r11Var2 = new r11("", 10.0f, Typeface.create(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MONO), 1));
+            this.p0 = r11Var2;
+            r11Var2.r(TextUtils.ellipsize(AndroidUtilities.replaceNewLines(str.toUpperCase(locale)), this.p0.a, AndroidUtilities.dp(206.0f) - AndroidUtilities.dp(24.0f), TextUtils.TruncateAt.END));
         }
         Stack stack = this.d;
         ArrayList arrayList = this.c;
@@ -966,14 +966,14 @@ public final class m3 {
             this.q0 = null;
             return;
         }
-        q11 q11Var3 = new q11("", 12.0f, null);
-        q11Var3.n(ConnectionsManager.DEFAULT_DATACENTER_ID);
+        r11 r11Var3 = new r11("", 12.0f, null);
+        r11Var3.n(ConnectionsManager.DEFAULT_DATACENTER_ID);
         Layout.Alignment alignment = Layout.Alignment.ALIGN_CENTER;
-        q11Var3.a();
-        q11Var3.q(AndroidUtilities.dp(184.0f));
-        this.q0 = q11Var3;
+        r11Var3.a();
+        r11Var3.q(AndroidUtilities.dp(184.0f));
+        this.q0 = r11Var3;
         if ((!tL_messageActionGramTransfer.comment_encrypted && !tL_messageActionGramTransfer.comment_encrypted_preparing) || this.m0) {
-            q11Var3.r(Emoji.replaceEmoji(tL_messageActionGramTransfer.comment, q11Var3.a.getFontMetricsInt(), false));
+            r11Var3.r(Emoji.replaceEmoji(tL_messageActionGramTransfer.comment, r11Var3.a.getFontMetricsInt(), false));
             return;
         }
         StringBuilder sb2 = new StringBuilder(25);
@@ -981,9 +981,9 @@ public final class m3 {
             sb2.append("a");
         }
         SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder(sb2.toString());
-        y11 y11Var = new y11();
-        y11Var.a |= 256;
-        spannableStringBuilder2.setSpan(new z11(y11Var, 0), 0, spannableStringBuilder2.length(), 33);
+        z11 z11Var = new z11();
+        z11Var.a |= 256;
+        spannableStringBuilder2.setSpan(new a21(z11Var, 0), 0, spannableStringBuilder2.length(), 33);
         this.q0.r(spannableStringBuilder2);
         xh.g.c(v0Var, this.q0.b, stack, arrayList);
         n(this.e);

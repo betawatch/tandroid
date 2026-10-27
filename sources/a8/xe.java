@@ -12,11 +12,11 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
-import org.telegram.ui.Components.gb1;
-import org.telegram.ui.Components.mm0;
+import org.telegram.ui.Components.kb1;
+import org.telegram.ui.Components.nm0;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
 public abstract class xe {
     public static og.i a;
@@ -42,7 +42,7 @@ public abstract class xe {
             org.telegram.ui.ActionBar.f7.t(imageView, org.telegram.ui.ActionBar.y6.O9, null, PorterDuff.Mode.SRC_IN);
             pVar.addView(imageView);
             pVar.setVisibility(8);
-            iVar2.addView(pVar, gb1.g(56.0f, 56));
+            iVar2.addView(pVar, kb1.g(56.0f, 56));
             LinearLayout linearLayout = new LinearLayout(launchActivity);
             iVar2.w = linearLayout;
             linearLayout.setOrientation(1);
@@ -53,14 +53,14 @@ public abstract class xe {
             textView.setText(LocaleController.getString(R.string.DebugMenu));
             textView.setTypeface(AndroidUtilities.bold());
             textView.setPadding(AndroidUtilities.dp(24.0f), AndroidUtilities.dp(19.0f), AndroidUtilities.dp(24.0f), AndroidUtilities.dp(19.0f));
-            linearLayout.addView(textView, gb1.r(-1, -2));
-            mm0 mm0Var = new mm0(launchActivity, null);
-            iVar2.y = mm0Var;
-            mm0Var.setLayoutManager(new s4.c0());
-            mm0Var.setAdapter(new og.g(iVar2, launchActivity));
-            mm0Var.setOnItemClickListener(new ai.k(iVar2, 18));
-            linearLayout.addView(mm0Var, gb1.p(1.0f, -1, 0));
-            iVar2.addView(linearLayout, gb1.h(-1, -1.0f, 0, 8.0f, 8.0f, 8.0f, 8.0f));
+            linearLayout.addView(textView, kb1.r(-1, -2));
+            nm0 nm0Var = new nm0(launchActivity, null);
+            iVar2.y = nm0Var;
+            nm0Var.setLayoutManager(new s4.c0());
+            nm0Var.setAdapter(new og.g(iVar2, launchActivity));
+            nm0Var.setOnItemClickListener(new ai.k(iVar2, 18));
+            linearLayout.addView(nm0Var, kb1.p(1.0f, -1, 0));
+            iVar2.addView(linearLayout, kb1.h(-1, -1.0f, 0, 8.0f, 8.0f, 8.0f, 8.0f));
             iVar2.d();
             iVar2.setFitsSystemWindows(true);
             iVar2.setWillNotDraw(false);

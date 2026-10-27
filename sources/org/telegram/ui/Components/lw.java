@@ -6,7 +6,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.EmojiData;
 import org.telegram.messenger.UserConfig;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class lw implements Runnable {
     public final /* synthetic */ int a;
@@ -22,8 +22,8 @@ public final /* synthetic */ class lw implements Runnable {
         switch (this.a) {
             case 0:
                 sz szVar = this.b;
-                szVar.X(false);
-                szVar.D();
+                szVar.Y(false);
+                szVar.F();
                 break;
             case 1:
                 zx zxVar = this.b.R;
@@ -61,8 +61,8 @@ public final /* synthetic */ class lw implements Runnable {
                     if (emojipacks.get(i10).i) {
                         int i11 = szVar4.R.s.get(EmojiData.dataColored.length + i10);
                         szVar4.P.C0();
-                        szVar4.U(i11);
-                        szVar4.G(i11, AndroidUtilities.dp(-9.0f));
+                        szVar4.V(i11);
+                        szVar4.H(i11, AndroidUtilities.dp(-9.0f));
                         szVar4.n(0, null);
                     }
                 }

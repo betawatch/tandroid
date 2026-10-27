@@ -25,7 +25,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
 import java.util.List;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
 public final class a implements o {
     public static final int[] s = {13, 14, 16, 18, 20, 21, 27, 32, 6, 7, 6, 6, 1, 1, 1, 1};
@@ -251,7 +251,7 @@ public final class a implements o {
         pVar.b(0, bArr.length, bArr2);
         if (Arrays.equals(bArr2, bArr)) {
             this.d = false;
-            pVar.q(bArr.length);
+            pVar.r(bArr.length);
             return true;
         }
         pVar.p();
@@ -262,7 +262,7 @@ public final class a implements o {
             return false;
         }
         this.d = true;
-        pVar.q(bArr3.length);
+        pVar.r(bArr3.length);
         return true;
     }
 

@@ -24,18 +24,18 @@ import java.util.Collection;
 import java.util.concurrent.TimeoutException;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Cells.s9;
-import org.telegram.ui.Components.kp0;
-import org.telegram.ui.Components.nf0;
+import org.telegram.ui.Components.lp0;
 import org.telegram.ui.Components.of0;
+import org.telegram.ui.Components.pf0;
 import org.telegram.ui.Components.u6;
-import org.telegram.ui.Components.u71;
+import org.telegram.ui.Components.v71;
 import org.telegram.ui.PhotoViewer;
-import org.telegram.ui.gs0;
-import org.telegram.ui.nt0;
+import org.telegram.ui.is0;
+import org.telegram.ui.pt0;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
-public final class h5 implements f1, m.k, o0.a, kp0, org.telegram.ui.Components.e5, ng.o, pe.a, com.google.android.gms.common.api.internal.o, sg.x1, o5.b, androidx.lifecycle.s0, com.google.android.gms.common.api.internal.r {
+public final class h5 implements f1, m.k, o0.a, lp0, org.telegram.ui.Components.e5, ng.o, pe.a, com.google.android.gms.common.api.internal.o, sg.w1, o5.b, androidx.lifecycle.s0, com.google.android.gms.common.api.internal.r {
     public Object a;
 
     public /* synthetic */ h5(Object obj) {
@@ -276,22 +276,22 @@ public final class h5 implements f1, m.k, o0.a, kp0, org.telegram.ui.Components.
 
     @Override // ng.o
     public void H(boolean z10) {
-        of0 of0Var = (of0) this.a;
-        of0Var.getClass();
-        nf0 nf0Var = of0Var.a;
-        if (nf0Var != null) {
-            ((gs0) nf0Var).d(z10);
+        pf0 pf0Var = (pf0) this.a;
+        pf0Var.getClass();
+        of0 of0Var = pf0Var.a;
+        if (of0Var != null) {
+            ((is0) of0Var).d(z10);
         }
     }
 
     @Override // ng.o
     public void P() {
-        nf0 nf0Var = ((of0) this.a).a;
-        if (nf0Var != null) {
-            PhotoViewer photoViewer = ((gs0) nf0Var).a;
+        of0 of0Var = ((pf0) this.a).a;
+        if (of0Var != null) {
+            PhotoViewer photoViewer = ((is0) of0Var).a;
             if (photoViewer.c2 == 1) {
                 photoViewer.H2 = true;
-                photoViewer.s3();
+                photoViewer.t3();
             }
         }
     }
@@ -305,7 +305,7 @@ public final class h5 implements f1, m.k, o0.a, kp0, org.telegram.ui.Components.
         b3Var.a.z4(charSequence.toString());
     }
 
-    @Override // org.telegram.ui.Components.kp0
+    @Override // org.telegram.ui.Components.lp0
     public void U(float f7, boolean z10) {
         og.h hVar = (og.h) this.a;
         float f10 = hVar.b;
@@ -319,13 +319,13 @@ public final class h5 implements f1, m.k, o0.a, kp0, org.telegram.ui.Components.
         hVar.invalidate();
     }
 
-    @Override // sg.x1
+    @Override // sg.w1
     public void V(float f7) {
-        nt0 nt0Var = (nt0) this.a;
-        rg.s0.e(nt0Var.E1).k(String.valueOf(rg.m.a.indexOf(nt0Var.L0.getCurrentBrush())), f7);
-        rg.q1 q1Var = nt0Var.z1;
+        pt0 pt0Var = (pt0) this.a;
+        rg.s0.e(pt0Var.E1).k(String.valueOf(rg.m.a.indexOf(pt0Var.L0.getCurrentBrush())), f7);
+        rg.q1 q1Var = pt0Var.z1;
         q1Var.c = f7;
-        nt0Var.r0(q1Var, null);
+        pt0Var.r0(q1Var, null);
     }
 
     @Override // li.f1
@@ -463,7 +463,7 @@ public final class h5 implements f1, m.k, o0.a, kp0, org.telegram.ui.Components.
         return new t5.i((Context) ((id.a) this.a).get(), "com.google.android.datatransport.events", Integer.valueOf(t5.i.d).intValue());
     }
 
-    @Override // org.telegram.ui.Components.kp0
+    @Override // org.telegram.ui.Components.lp0
     public CharSequence getContentDescription() {
         og.h hVar = (og.h) this.a;
         float f7 = hVar.b;
@@ -510,7 +510,7 @@ public final class h5 implements f1, m.k, o0.a, kp0, org.telegram.ui.Components.
         f2Var.f(i10, i11);
     }
 
-    @Override // org.telegram.ui.Components.kp0
+    @Override // org.telegram.ui.Components.lp0
     public /* synthetic */ int k0() {
         return 0;
     }
@@ -523,12 +523,12 @@ public final class h5 implements f1, m.k, o0.a, kp0, org.telegram.ui.Components.
     @Override // pe.a
     public boolean needClickAt(View view, float f7, float f10) {
         int dp = AndroidUtilities.dp(9.0f);
-        u71 u71Var = (u71) this.a;
+        v71 v71Var = (v71) this.a;
         float f11 = -dp;
-        u71Var.g.inset(f11, f11);
-        boolean contains = u71Var.g.contains(f7, f10);
+        v71Var.g.inset(f11, f11);
+        boolean contains = v71Var.g.contains(f7, f10);
         float f12 = dp;
-        u71Var.g.inset(f12, f12);
+        v71Var.g.inset(f12, f12);
         return contains;
     }
 
@@ -544,7 +544,7 @@ public final class h5 implements f1, m.k, o0.a, kp0, org.telegram.ui.Components.
 
     @Override // pe.a
     public void onClickAt(View view, float f7, float f10) {
-        Runnable runnable = ((u71) this.a).j;
+        Runnable runnable = ((v71) this.a).j;
         if (runnable != null) {
             runnable.run();
         }
@@ -552,12 +552,12 @@ public final class h5 implements f1, m.k, o0.a, kp0, org.telegram.ui.Components.
 
     @Override // pe.a
     public void onClickTouchDown(View view, float f7, float f10) {
-        ((u71) this.a).h.c(true);
+        ((v71) this.a).h.c(true);
     }
 
     @Override // pe.a
     public void onClickTouchUp(View view, float f7, float f10) {
-        ((u71) this.a).h.c(false);
+        ((v71) this.a).h.c(false);
     }
 
     @Override // pe.a
@@ -572,22 +572,22 @@ public final class h5 implements f1, m.k, o0.a, kp0, org.telegram.ui.Components.
 
     @Override // ng.o
     public void q() {
-        nf0 nf0Var = ((of0) this.a).a;
-        if (nf0Var != null) {
-            ((gs0) nf0Var).a.e0.invalidate();
+        of0 of0Var = ((pf0) this.a).a;
+        if (of0Var != null) {
+            ((is0) of0Var).a.e0.invalidate();
         }
     }
 
     @Override // ng.o
     public void x(boolean z10) {
-        ((of0) this.a).c.setAspectLock(z10);
+        ((pf0) this.a).c.setAspectLock(z10);
     }
 
-    @Override // sg.x1
+    @Override // sg.w1
     public float get() {
-        nt0 nt0Var = (nt0) this.a;
-        int i10 = nt0Var.E1;
-        rg.m currentBrush = nt0Var.L0.getCurrentBrush();
+        pt0 pt0Var = (pt0) this.a;
+        int i10 = pt0Var.E1;
+        rg.m currentBrush = pt0Var.L0.getCurrentBrush();
         if (currentBrush == null) {
             return rg.s0.e(i10).i;
         }
@@ -602,7 +602,7 @@ public final class h5 implements f1, m.k, o0.a, kp0, org.telegram.ui.Components.
     public /* synthetic */ void R() {
     }
 
-    @Override // org.telegram.ui.Components.kp0
+    @Override // org.telegram.ui.Components.lp0
     public void y() {
     }
 

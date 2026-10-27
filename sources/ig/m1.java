@@ -24,11 +24,11 @@ import org.telegram.ui.ActionBar.f7;
 import org.telegram.ui.ActionBar.u6;
 import org.telegram.ui.ActionBar.y6;
 import org.telegram.ui.Components.b10;
-import org.telegram.ui.Components.gb1;
+import org.telegram.ui.Components.kb1;
 import org.telegram.ui.Components.l9;
 import org.telegram.ui.Components.p10;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class m1 extends FrameLayout {
     public final u6 a;
@@ -59,7 +59,7 @@ public final class m1 extends FrameLayout {
             this.c[i10].setTextSize(1, 14.0f);
             int i11 = 8;
             this.c[i10].setVisibility(i10 == 0 ? 0 : 8);
-            addView(this.c[i10], gb1.h(-1, -2.0f, 48, 76.0f, 7.0f, 40.0f, 0.0f));
+            addView(this.c[i10], kb1.h(-1, -2.0f, 48, 76.0f, 7.0f, 40.0f, 0.0f));
             this.d[i10] = new TextView(context);
             f7.V(this.d[i10], y6.z6, u6Var);
             this.d[i10].setTextSize(1, 12.0f);
@@ -68,13 +68,13 @@ public final class m1 extends FrameLayout {
                 i11 = 0;
             }
             textView.setVisibility(i11);
-            addView(this.d[i10], gb1.h(-1, -2.0f, 48, 76.0f, 26.33f, 40.0f, 0.0f));
+            addView(this.d[i10], kb1.h(-1, -2.0f, 48, 76.0f, 26.33f, 40.0f, 0.0f));
             i10++;
         }
         ImageView imageView = new ImageView(context);
         imageView.setImageResource(R.drawable.msg_arrowright);
         f7.t(imageView, y6.P5, u6Var, PorterDuff.Mode.SRC_IN);
-        addView(imageView, gb1.h(24, 24.0f, 21, 0.0f, 0.0f, 8.66f, 0.0f));
+        addView(imageView, kb1.h(24, 24.0f, 21, 0.0f, 0.0f, 8.66f, 0.0f));
     }
 
     public final boolean a(t6 t6Var) {

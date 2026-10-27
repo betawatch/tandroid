@@ -1,21 +1,38 @@
 package org.telegram.ui;
 
-import android.view.View;
-
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public final class sj0 implements View.OnLayoutChangeListener {
-    public final /* synthetic */ float a;
-    public final /* synthetic */ int b;
+public final /* synthetic */ class sj0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ zj0 b;
 
-    public sj0(float f7, int i10) {
-        this.a = f7;
-        this.b = i10;
+    public /* synthetic */ sj0(zj0 zj0Var, int i10) {
+        this.a = i10;
+        this.b = zj0Var;
     }
 
-    @Override // android.view.View.OnLayoutChangeListener
-    public final void onLayoutChange(View view, int i10, int i11, int i12, int i13, int i14, int i15, int i16, int i17) {
-        view.removeOnLayoutChangeListener(this);
-        view.setTranslationX((this.a + this.b) - i10);
+    @Override // java.lang.Runnable
+    public final void run() {
+        zj0 zj0Var;
+        int i10;
+        switch (this.a) {
+            case 0:
+                LaunchActivity launchActivity = LaunchActivity.I1;
+                rh.e eVar = launchActivity != null ? launchActivity.h1 : null;
+                if ((eVar == null || eVar.c <= 0) && zj0Var.J != (i10 = (zj0Var = this.b).K)) {
+                    zj0Var.J = i10;
+                    zj0Var.p0(false);
+                    break;
+                }
+                break;
+            case 1:
+                this.b.y.setVisibility(8);
+                break;
+            default:
+                zj0 zj0Var2 = this.b;
+                zj0Var2.O = null;
+                zj0Var2.l0(2, true);
+                break;
+        }
     }
 }

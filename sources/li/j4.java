@@ -10,7 +10,7 @@ import bi.u7;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.messenger.vh;
+import org.telegram.messenger.wh;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_keyboard;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
@@ -18,11 +18,11 @@ import org.telegram.ui.ActionBar.f7;
 import org.telegram.ui.ActionBar.u6;
 import org.telegram.ui.ActionBar.y6;
 import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.Components.gb1;
-import org.telegram.ui.Components.k80;
-import org.telegram.ui.cy;
+import org.telegram.ui.Components.kb1;
+import org.telegram.ui.Components.l80;
+import org.telegram.ui.ey;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public abstract class j4 {
     public static EditTextBoldCursor a(Context context, u6 u6Var, String str, String str2) {
@@ -49,13 +49,13 @@ public abstract class j4 {
         return editTextBoldCursor;
     }
 
-    public static k80 b(k80 k80Var, org.telegram.ui.ActionBar.r2 r2Var, final u3 u3Var, final boolean z10) {
+    public static l80 b(l80 l80Var, org.telegram.ui.ActionBar.r2 r2Var, final u3 u3Var, final boolean z10) {
         TL_iv.textButton textbutton;
         k4 k4Var = u3Var.d;
         TL_keyboard.InlineButtonType inlineButtonType = (k4Var == null || (textbutton = k4Var.a) == null) ? null : textbutton.type;
         if (inlineButtonType == null) {
             final int i10 = 0;
-            k80Var.c(R.drawable.media_link_24, LocaleController.getString(R.string.ChatLink), new Runnable() { // from class: li.f4
+            l80Var.c(R.drawable.media_link_24, LocaleController.getString(R.string.ChatLink), new Runnable() { // from class: li.f4
                 @Override // java.lang.Runnable
                 public final void run() {
                     switch (i10) {
@@ -69,7 +69,7 @@ public abstract class j4 {
                 }
             }, false);
             final int i11 = 1;
-            k80Var.c(R.drawable.msg_copy, LocaleController.getString(R.string.Copy), new Runnable() { // from class: li.f4
+            l80Var.c(R.drawable.msg_copy, LocaleController.getString(R.string.Copy), new Runnable() { // from class: li.f4
                 @Override // java.lang.Runnable
                 public final void run() {
                     switch (i11) {
@@ -82,9 +82,9 @@ public abstract class j4 {
                     }
                 }
             }, false);
-            k80Var.c(R.drawable.left_status_profile, LocaleController.getString(R.string.RichEditorUserProfile), new u7(r2Var, u3Var, z10, 9), false);
-            k80Var.Z();
-            return k80Var;
+            l80Var.c(R.drawable.left_status_profile, LocaleController.getString(R.string.RichEditorUserProfile), new u7(r2Var, u3Var, z10, 9), false);
+            l80Var.Z();
+            return l80Var;
         }
         if (inlineButtonType instanceof TL_keyboard.TL_inlineButtonTypeUrl) {
             i(u3Var, z10);
@@ -97,7 +97,7 @@ public abstract class j4 {
         return null;
     }
 
-    public static k80 c(k80 k80Var, org.telegram.ui.ActionBar.r2 r2Var, final Context context, final u6 u6Var, final s3 s3Var, final boolean z10) {
+    public static l80 c(l80 l80Var, org.telegram.ui.ActionBar.r2 r2Var, final Context context, final u6 u6Var, final s3 s3Var, final boolean z10) {
         int i10 = s3Var.b;
         TL_iv.pageBlockButtonRow d = s3Var.d();
         TL_keyboard.PageButton pageButton = (d == null || i10 < 0 || i10 >= d.buttons.size()) ? null : d.buttons.get(i10);
@@ -113,7 +113,7 @@ public abstract class j4 {
             return null;
         }
         final int i11 = 0;
-        k80Var.c(R.drawable.media_link_24, LocaleController.getString(R.string.ChatLink), new Runnable() { // from class: li.h4
+        l80Var.c(R.drawable.media_link_24, LocaleController.getString(R.string.ChatLink), new Runnable() { // from class: li.h4
             @Override // java.lang.Runnable
             public final void run() {
                 switch (i11) {
@@ -127,7 +127,7 @@ public abstract class j4 {
             }
         }, false);
         final int i12 = 1;
-        k80Var.c(R.drawable.msg_copy, LocaleController.getString(R.string.Copy), new Runnable() { // from class: li.h4
+        l80Var.c(R.drawable.msg_copy, LocaleController.getString(R.string.Copy), new Runnable() { // from class: li.h4
             @Override // java.lang.Runnable
             public final void run() {
                 switch (i12) {
@@ -140,9 +140,9 @@ public abstract class j4 {
                 }
             }
         }, false);
-        k80Var.c(R.drawable.left_status_profile, LocaleController.getString(R.string.RichEditorUserProfile), new fi.r1(r2Var, context, u6Var, s3Var, z10, 3), false);
-        k80Var.Z();
-        return k80Var;
+        l80Var.c(R.drawable.left_status_profile, LocaleController.getString(R.string.RichEditorUserProfile), new fi.r1(r2Var, context, u6Var, s3Var, z10, 3), false);
+        l80Var.Z();
+        return l80Var;
     }
 
     public static void d(Context context, u6 u6Var, s3 s3Var, boolean z10) {
@@ -165,7 +165,7 @@ public abstract class j4 {
 
     public static void f(org.telegram.ui.ActionBar.r2 r2Var, Context context, u6 u6Var, s3 s3Var, boolean z10) {
         boolean c10 = s3Var.c();
-        LinearLayout d = vh.d(context, 1);
+        LinearLayout d = wh.d(context, 1);
         int i10 = 0;
         d.setPadding(AndroidUtilities.dp(24.0f), 0, AndroidUtilities.dp(24.0f), 0);
         String string = LocaleController.getString(R.string.RichEditorButtonText);
@@ -173,7 +173,7 @@ public abstract class j4 {
         TL_iv.pageBlockButtonRow d10 = s3Var.d();
         TL_keyboard.PageButton pageButton = (d10 == null || i11 < 0 || i11 >= d10.buttons.size()) ? null : d10.buttons.get(i11);
         EditTextBoldCursor a2 = a(context, u6Var, string, pageButton == null ? "" : f6.l(pageButton.text));
-        d.addView(a2, gb1.r(-1, 64));
+        d.addView(a2, kb1.r(-1, 64));
         s9 s9Var = new s9(a2, r2Var, z10, s3Var, 6);
         AlertDialog$Builder alertDialog$Builder = z10 ? new AlertDialog$Builder(context, 0, u6Var) : new org.telegram.ui.ActionBar.h2(context, 0, u6Var);
         String string2 = LocaleController.getString(c10 ? R.string.RichEditorEditProfileButton : R.string.RichEditorCreateProfileButton);
@@ -197,7 +197,7 @@ public abstract class j4 {
     }
 
     public static void g(Context context, u6 u6Var, s3 s3Var, boolean z10, String str, String str2, String str3, e4 e4Var) {
-        LinearLayout d = vh.d(context, 1);
+        LinearLayout d = wh.d(context, 1);
         d.setPadding(AndroidUtilities.dp(24.0f), 0, AndroidUtilities.dp(24.0f), 0);
         String string = LocaleController.getString(R.string.RichEditorButtonText);
         int i10 = s3Var.b;
@@ -205,8 +205,8 @@ public abstract class j4 {
         TL_keyboard.PageButton pageButton = (d10 == null || i10 < 0 || i10 >= d10.buttons.size()) ? null : d10.buttons.get(i10);
         EditTextBoldCursor a2 = a(context, u6Var, string, pageButton == null ? "" : f6.l(pageButton.text));
         EditTextBoldCursor a10 = a(context, u6Var, str2, str3);
-        d.addView(a2, gb1.r(-1, 64));
-        d.addView(a10, gb1.r(-1, 64));
+        d.addView(a2, kb1.r(-1, 64));
+        d.addView(a10, kb1.r(-1, 64));
         AlertDialog$Builder alertDialog$Builder = z10 ? new AlertDialog$Builder(context, 0, u6Var) : new org.telegram.ui.ActionBar.h2(context, 0, u6Var);
         alertDialog$Builder.a.R = str;
         alertDialog$Builder.o(d);
@@ -261,14 +261,14 @@ public abstract class j4 {
         bundle.putBoolean("onlySelect", true);
         bundle.putBoolean("checkCanWrite", false);
         bundle.putInt("dialogsType", 4);
-        cy cyVar = new cy(bundle);
-        cyVar.C2 = new jg.e1(i4Var, 11);
+        ey eyVar = new ey(bundle);
+        eyVar.C2 = new jg.e1(i4Var, 11);
         if (!z10) {
-            r2Var.presentFragment(cyVar);
+            r2Var.presentFragment(eyVar);
             return;
         }
         org.telegram.ui.ActionBar.p2 p2Var = new org.telegram.ui.ActionBar.p2();
         p2Var.a = true;
-        r2Var.showAsSheet(cyVar, p2Var);
+        r2Var.showAsSheet(eyVar, p2Var);
     }
 }

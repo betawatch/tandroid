@@ -13,7 +13,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class b7 extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     public w6 a;
@@ -23,7 +23,7 @@ public final class b7 extends FrameLayout implements NotificationCenter.Notifica
     public final org.telegram.ui.Components.y9 e;
     public boolean f;
     public boolean h;
-    public org.telegram.ui.Components.zp n;
+    public org.telegram.ui.Components.aq n;
 
     public b7(Context context, org.telegram.ui.ActionBar.u6 u6Var) {
         super(context);
@@ -38,7 +38,7 @@ public final class b7 extends FrameLayout implements NotificationCenter.Notifica
         textView.setGravity((LocaleController.isRTL ? 5 : 3) | 16);
         org.telegram.ui.ActionBar.f7.V(textView, org.telegram.ui.ActionBar.y6.G6, u6Var);
         boolean z10 = LocaleController.isRTL;
-        addView(textView, org.telegram.ui.Components.gb1.h(-1, -1.0f, (z10 ? 5 : 3) | 48, z10 ? 21.0f : 72.0f, 0.0f, z10 ? 72.0f : 21.0f, 0.0f));
+        addView(textView, org.telegram.ui.Components.kb1.h(-1, -1.0f, (z10 ? 5 : 3) | 48, z10 ? 21.0f : 72.0f, 0.0f, z10 ? 72.0f : 21.0f, 0.0f));
         org.telegram.ui.Components.s6 s6Var = new org.telegram.ui.Components.s6(context, true, true, !LocaleController.isRTL);
         this.d = s6Var;
         s6Var.b(0.55f, 320L, org.telegram.ui.Components.ds.h);
@@ -46,11 +46,11 @@ public final class b7 extends FrameLayout implements NotificationCenter.Notifica
         s6Var.setGravity((LocaleController.isRTL ? 3 : 5) | 16);
         org.telegram.ui.ActionBar.f7.Z(s6Var, org.telegram.ui.ActionBar.y6.I6, u6Var);
         boolean z11 = LocaleController.isRTL;
-        addView(s6Var, org.telegram.ui.Components.gb1.h(-2, -1.0f, (z11 ? 3 : 5) | 48, z11 ? 21.0f : 72.0f, 0.0f, z11 ? 72.0f : 21.0f, 0.0f));
+        addView(s6Var, org.telegram.ui.Components.kb1.h(-2, -1.0f, (z11 ? 3 : 5) | 48, z11 ? 21.0f : 72.0f, 0.0f, z11 ? 72.0f : 21.0f, 0.0f));
         org.telegram.ui.Components.y9 y9Var = new org.telegram.ui.Components.y9(context);
         this.e = y9Var;
         y9Var.getAvatarDrawable().p = 0.8f;
-        addView(y9Var, org.telegram.ui.Components.gb1.h(38, 38.0f, (LocaleController.isRTL ? 5 : 3) | 16, 17.0f, 0.0f, 17.0f, 0.0f));
+        addView(y9Var, org.telegram.ui.Components.kb1.h(38, 38.0f, (LocaleController.isRTL ? 5 : 3) | 16, 17.0f, 0.0f, 17.0f, 0.0f));
     }
 
     @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
@@ -85,7 +85,7 @@ public final class b7 extends FrameLayout implements NotificationCenter.Notifica
     @Override // android.view.ViewGroup, android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
-        NotificationCenter.getGlobalInstance().addObserver(this, NotificationCenter.emojiLoaded);
+        NotificationCenter.getGlobalInstance().addWeakObserver(this, NotificationCenter.emojiLoaded);
     }
 
     @Override // android.view.ViewGroup, android.view.View
@@ -134,9 +134,9 @@ public final class b7 extends FrameLayout implements NotificationCenter.Notifica
             ((ViewGroup.MarginLayoutParams) textView.getLayoutParams()).rightMargin = dp;
         }
         textView.measure(View.MeasureSpec.makeMeasureSpec(measuredWidth - dp, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(getMeasuredHeight(), TLObject.FLAG_30));
-        org.telegram.ui.Components.zp zpVar = this.n;
-        if (zpVar != null) {
-            zpVar.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(24.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(24.0f), TLObject.FLAG_30));
+        org.telegram.ui.Components.aq aqVar = this.n;
+        if (aqVar != null) {
+            aqVar.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(24.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(24.0f), TLObject.FLAG_30));
         }
     }
 

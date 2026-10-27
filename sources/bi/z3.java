@@ -23,29 +23,29 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
-import org.telegram.ui.Components.am0;
+import org.telegram.ui.Components.bm0;
 import org.telegram.ui.Components.r20;
 import org.telegram.ui.Components.ri;
-import org.telegram.ui.Components.t61;
 import org.telegram.ui.Components.ti;
 import org.telegram.ui.Components.tm;
+import org.telegram.ui.Components.u61;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.TwoStepVerificationActivity;
-import org.telegram.ui.f00;
-import org.telegram.ui.in0;
-import org.telegram.ui.o00;
-import org.telegram.ui.qf1;
-import org.telegram.ui.rs;
-import org.telegram.ui.sl0;
-import org.telegram.ui.un;
-import org.telegram.ui.vl0;
-import org.telegram.ui.xo;
+import org.telegram.ui.bp;
+import org.telegram.ui.h00;
+import org.telegram.ui.kn0;
+import org.telegram.ui.q00;
+import org.telegram.ui.sf1;
+import org.telegram.ui.ts;
+import org.telegram.ui.ul0;
+import org.telegram.ui.wn;
+import org.telegram.ui.xl0;
 import org.telegram.ui.zo;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class z3 implements qf1, Continuation, org.telegram.ui.ActionBar.b2, am0, rs, androidx.car.app.utils.b {
+public final /* synthetic */ class z3 implements sf1, Continuation, org.telegram.ui.ActionBar.b2, bm0, ts, androidx.car.app.utils.b {
     public final /* synthetic */ int a;
     public final /* synthetic */ boolean b;
     public final /* synthetic */ Object c;
@@ -65,7 +65,7 @@ public final /* synthetic */ class z3 implements qf1, Continuation, org.telegram
         return lambda$onCarHardwareResult$0;
     }
 
-    @Override // org.telegram.ui.rs
+    @Override // org.telegram.ui.ts
     public void b(TLRPC.User user) {
         LaunchActivity launchActivity = (LaunchActivity) this.c;
         int[] iArr = (int[]) this.d;
@@ -74,7 +74,7 @@ public final /* synthetic */ class z3 implements qf1, Continuation, org.telegram
         org.telegram.ui.Components.voip.g2.m(user, this.b, userFull != null && userFull.video_calls_available, launchActivity, userFull, AccountInstance.getInstance(iArr[0]));
     }
 
-    @Override // org.telegram.ui.Components.am0
+    @Override // org.telegram.ui.Components.bm0
     public /* synthetic */ boolean c1(View view) {
         return false;
     }
@@ -83,7 +83,7 @@ public final /* synthetic */ class z3 implements qf1, Continuation, org.telegram
     
         if (r7.W != false) goto L91;
      */
-    @Override // org.telegram.ui.Components.am0
+    @Override // org.telegram.ui.Components.bm0
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -123,12 +123,12 @@ public final /* synthetic */ class z3 implements qf1, Continuation, org.telegram
                 }
                 boolean z11 = tmVar.f;
                 if (z11 && i11 == chatAttachAlertPhotoLayout.M0) {
-                    chatAttachAlertPhotoLayout.i0();
+                    chatAttachAlertPhotoLayout.j0();
                     return;
                 }
                 boolean z12 = this.b;
                 if (i11 == 0 && z12 && chatAttachAlertPhotoLayout.T0 == chatAttachAlertPhotoLayout.U0) {
-                    chatAttachAlertPhotoLayout.i0();
+                    chatAttachAlertPhotoLayout.j0();
                     return;
                 }
                 if (z11 && i11 > chatAttachAlertPhotoLayout.M0) {
@@ -137,13 +137,13 @@ public final /* synthetic */ class z3 implements qf1, Continuation, org.telegram
                 if (chatAttachAlertPhotoLayout.T0 == chatAttachAlertPhotoLayout.U0 && z12) {
                     i11--;
                 }
-                un unVar = null;
+                wn wnVar = null;
                 if (chatAttachAlertPhotoLayout.g1) {
                     if (i11 == 0) {
                         if (!(view instanceof org.telegram.ui.Components.i9)) {
                             return;
                         }
-                        chatAttachAlertPhotoLayout.r0((org.telegram.ui.Components.i9) view, null, 0L);
+                        chatAttachAlertPhotoLayout.s0((org.telegram.ui.Components.i9) view, null, 0L);
                         tiVar.dismiss();
                     }
                     i11--;
@@ -157,33 +157,33 @@ public final /* synthetic */ class z3 implements qf1, Continuation, org.telegram
                     MediaController.PhotoEntry photoEntry = (MediaController.PhotoEntry) allPhotosArray.get(i11);
                     hashMap.clear();
                     if (photoEntry != null) {
-                        chatAttachAlertPhotoLayout.Q(photoEntry, -1);
+                        chatAttachAlertPhotoLayout.R(photoEntry, -1);
                     }
                     tiVar.e1();
-                    tiVar.c2.p0(7, true, true, 0, 0, 0L, tiVar.w1(), false, 0L);
+                    tiVar.c2.p0(7, true, true, 0, 0, 0L, tiVar.x1(), false, 0L);
                     hashMap.clear();
                     ChatAttachAlertPhotoLayout.r1.clear();
                     arrayList.clear();
                     hashMap.clear();
                     return;
                 }
-                PhotoViewer.u1().M2(null, R, u6Var);
-                PhotoViewer.u1().N2(tiVar);
-                PhotoViewer u12 = PhotoViewer.u1();
+                PhotoViewer.v1().N2(null, R, u6Var);
+                PhotoViewer.v1().O2(tiVar);
+                PhotoViewer v12 = PhotoViewer.v1();
                 int i14 = tiVar.V1;
                 boolean z13 = tiVar.W1;
-                u12.h = i14;
-                u12.n = z13;
+                v12.h = i14;
+                v12.n = z13;
                 if (tiVar.F && tiVar.G) {
                     i13 = 11;
-                    if (r2Var instanceof un) {
-                        unVar = (un) r2Var;
+                    if (r2Var instanceof wn) {
+                        wnVar = (wn) r2Var;
                     }
                 } else if (tiVar.T0 != 0) {
                     i13 = 1;
                 } else {
-                    if (r2Var instanceof un) {
-                        unVar = (un) r2Var;
+                    if (r2Var instanceof wn) {
+                        wnVar = (wn) r2Var;
                     }
                     i13 = 0;
                 }
@@ -194,10 +194,10 @@ public final /* synthetic */ class z3 implements qf1, Continuation, org.telegram
                 if (hashMap.size() > 0 && arrayList.size() > 0) {
                     Object obj = hashMap.get(arrayList.get(0));
                     if (obj instanceof MediaController.PhotoEntry) {
-                        ((MediaController.PhotoEntry) obj).caption = tiVar.r1().getText();
+                        ((MediaController.PhotoEntry) obj).caption = tiVar.s1().getText();
                     }
                     if (obj instanceof MediaController.SearchImage) {
-                        ((MediaController.SearchImage) obj).caption = tiVar.r1().getText();
+                        ((MediaController.SearchImage) obj).caption = tiVar.s1().getText();
                     }
                 }
                 if (tiVar.Q != null) {
@@ -205,13 +205,13 @@ public final /* synthetic */ class z3 implements qf1, Continuation, org.telegram
                 }
                 boolean z14 = (allPhotosArray.get(i11) instanceof MediaController.PhotoEntry) && ((MediaController.PhotoEntry) allPhotosArray.get(i11)).hasSpoiler;
                 Object obj2 = allPhotosArray.get(i11);
-                if ((obj2 instanceof MediaController.PhotoEntry) && chatAttachAlertPhotoLayout.X((MediaController.PhotoEntry) obj2)) {
+                if ((obj2 instanceof MediaController.PhotoEntry) && chatAttachAlertPhotoLayout.Y((MediaController.PhotoEntry) obj2)) {
                     return;
                 }
                 if (z14) {
-                    chatAttachAlertPhotoLayout.p0(i11, false);
+                    chatAttachAlertPhotoLayout.q0(i11, false);
                 }
-                AndroidUtilities.runOnUIThread(new li.g0(chatAttachAlertPhotoLayout, i13, R, allPhotosArray, i11, unVar), z14 ? 250L : 0L);
+                AndroidUtilities.runOnUIThread(new li.g0(chatAttachAlertPhotoLayout, i13, R, allPhotosArray, i11, wnVar), z14 ? 250L : 0L);
             } catch (Exception unused) {
             }
         }
@@ -222,7 +222,7 @@ public final /* synthetic */ class z3 implements qf1, Continuation, org.telegram
         switch (this.a) {
             case 2:
                 jg.b0 b0Var = (jg.b0) this.c;
-                (!this.b ? b0Var.k : b0Var.j).remove(Long.valueOf(((t61) this.d).x));
+                (!this.b ? b0Var.k : b0Var.j).remove(Long.valueOf(((u61) this.d).x));
                 b0Var.e.run();
                 break;
             case 3:
@@ -248,12 +248,12 @@ public final /* synthetic */ class z3 implements qf1, Continuation, org.telegram
                 ((org.telegram.ui.ia) this.c).a.k0((TLRPC.TL_username) this.d, this.b, true);
                 break;
             case 5:
-                xo xoVar = (xo) this.c;
+                zo zoVar = (zo) this.c;
                 TLRPC.TL_username tL_username = (TLRPC.TL_username) this.d;
                 boolean z12 = this.b;
-                zo zoVar = xoVar.a;
-                zoVar.C1(tL_username, z12, true);
-                zoVar.i3.X();
+                bp bpVar = zoVar.a;
+                bpVar.C1(tL_username, z12, true);
+                bpVar.i3.X();
                 break;
             case 6:
                 org.telegram.ui.ActionBar.r2 r2Var = (org.telegram.ui.ActionBar.r2) this.c;
@@ -265,27 +265,27 @@ public final /* synthetic */ class z3 implements qf1, Continuation, org.telegram
             case 7:
             case 9:
             default:
-                in0 in0Var = (in0) this.c;
+                kn0 kn0Var = (kn0) this.c;
                 TLRPC.TL_secureRequiredType tL_secureRequiredType = (TLRPC.TL_secureRequiredType) this.d;
                 boolean z14 = this.b;
-                in0Var.y1();
-                in0Var.j1(tL_secureRequiredType, null, null, true, new sl0(in0Var, 4), new vl0(in0Var, 6), z14);
+                kn0Var.y1();
+                kn0Var.j1(tL_secureRequiredType, null, null, true, new ul0(kn0Var, 4), new xl0(kn0Var, 6), z14);
                 break;
             case 8:
-                o00 o00Var = (o00) this.c;
-                f00 f00Var = (f00) this.d;
+                q00 q00Var = (q00) this.c;
+                h00 h00Var = (h00) this.d;
                 boolean z15 = this.b;
-                int i11 = f00Var.j;
+                int i11 = h00Var.j;
                 if (i11 > 0) {
-                    o00Var.y &= ~i11;
+                    q00Var.y &= ~i11;
                 } else {
-                    (z15 ? o00Var.F : o00Var.G).remove(Long.valueOf(f00Var.h));
+                    (z15 ? q00Var.F : q00Var.G).remove(Long.valueOf(h00Var.h));
                 }
-                o00Var.l0();
-                o00Var.y0();
-                o00Var.k0(true);
+                q00Var.l0();
+                q00Var.y0();
+                q00Var.k0(true);
                 if (z15) {
-                    o00Var.p0(1, false);
+                    q00Var.p0(1, false);
                     break;
                 }
                 break;
@@ -320,7 +320,7 @@ public final /* synthetic */ class z3 implements qf1, Continuation, org.telegram
         }
     }
 
-    @Override // org.telegram.ui.qf1
+    @Override // org.telegram.ui.sf1
     public void j(TLRPC.TL_inputCheckPasswordSRP tL_inputCheckPasswordSRP) {
         ((h7) this.c).I2(tL_inputCheckPasswordSRP, (TwoStepVerificationActivity) this.d, this.b);
     }
@@ -344,7 +344,7 @@ public final /* synthetic */ class z3 implements qf1, Continuation, org.telegram
         this.d = r2Var;
     }
 
-    @Override // org.telegram.ui.Components.am0
+    @Override // org.telegram.ui.Components.bm0
     public /* synthetic */ void l0(View view, float f7, float f10) {
     }
 }

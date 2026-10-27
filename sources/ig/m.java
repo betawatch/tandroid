@@ -10,9 +10,9 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.ka;
-import org.telegram.ui.wx;
+import org.telegram.ui.zx;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class m extends FrameLayout {
     public boolean a;
@@ -100,8 +100,8 @@ public final class m extends FrameLayout {
                         i12 -= AndroidUtilities.statusBarHeight;
                         if (!z11 && !nVar.S) {
                             i12 -= org.telegram.ui.ActionBar.k.getCurrentActionBarHeight();
-                            if (getParent() instanceof wx) {
-                                i13 = ((wx) getParent()).A3;
+                            if (getParent() instanceof zx) {
+                                i13 = ((zx) getParent()).A3;
                                 i12 -= i13;
                             }
                         }
@@ -114,8 +114,8 @@ public final class m extends FrameLayout {
                             i12 -= AndroidUtilities.statusBarHeight;
                             if (!z11 && !nVar.S) {
                                 i12 -= org.telegram.ui.ActionBar.k.getCurrentActionBarHeight();
-                                if (getParent() instanceof wx) {
-                                    i13 = ((wx) getParent()).A3;
+                                if (getParent() instanceof zx) {
+                                    i13 = ((zx) getParent()).A3;
                                     i12 -= i13;
                                 }
                             }

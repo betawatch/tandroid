@@ -4,18 +4,18 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLog;
+import org.telegram.ui.Components.au0;
 import org.telegram.ui.Components.dq;
 import org.telegram.ui.Components.ds;
 import org.telegram.ui.Components.g8;
-import org.telegram.ui.Components.hi0;
+import org.telegram.ui.Components.ii0;
 import org.telegram.ui.Components.iy;
-import org.telegram.ui.Components.n60;
-import org.telegram.ui.Components.ql0;
+import org.telegram.ui.Components.o60;
 import org.telegram.ui.Components.r6;
-import org.telegram.ui.Components.zt0;
-import org.telegram.ui.rq;
+import org.telegram.ui.Components.rl0;
+import org.telegram.ui.tq;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class y2 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -87,35 +87,35 @@ public final class y2 extends AnimatorListenerAdapter {
                 iyVar.n.setVisibility(i10 == 3 ? 0 : 8);
                 break;
             case 8:
-                n60 n60Var = (n60) this.c;
-                if (this.b == n60Var.s0) {
-                    n60Var.x.setRotationY(0.0f);
-                    n60Var.q0 = true;
-                    n60Var.b0 = null;
+                o60 o60Var = (o60) this.c;
+                if (this.b == o60Var.s0) {
+                    o60Var.w.setRotationY(0.0f);
+                    o60Var.q0 = true;
+                    o60Var.b0 = null;
                     StringBuilder sb2 = new StringBuilder("RoundVideo camera flip visual animation completed: elapsedMs=");
-                    cameraFlipElapsedMs = n60Var.getCameraFlipElapsedMs();
+                    cameraFlipElapsedMs = o60Var.getCameraFlipElapsedMs();
                     sb2.append(cameraFlipElapsedMs);
                     FileLog.d(sb2.toString());
-                    n60.l(n60Var);
+                    o60.m(o60Var);
                     break;
                 }
                 break;
             case 9:
-                hi0 hi0Var = (hi0) this.c;
-                hi0Var.H = null;
-                hi0Var.P.d1.delete(this.b);
+                ii0 ii0Var = (ii0) this.c;
+                ii0Var.H = null;
+                ii0Var.P.d1.delete(this.b);
                 break;
             case 10:
-                rq rqVar = (rq) this.c;
-                ((ql0) rqVar.d).b.remove(this.b);
-                ql0 ql0Var = (ql0) rqVar.d;
-                ql0Var.d = true;
-                ql0Var.a.invalidate();
+                tq tqVar = (tq) this.c;
+                ((rl0) tqVar.d).b.remove(this.b);
+                rl0 rl0Var = (rl0) tqVar.d;
+                rl0Var.d = true;
+                rl0Var.a.invalidate();
                 break;
             case 11:
-                zt0 zt0Var = (zt0) this.c;
-                zt0Var.e.R1.remove(this.b);
-                zt0Var.a.invalidate();
+                au0 au0Var = (au0) this.c;
+                au0Var.e.R1.remove(this.b);
+                au0Var.a.invalidate();
                 break;
             default:
                 org.telegram.ui.Components.voip.b1 b1Var = (org.telegram.ui.Components.voip.b1) this.c;

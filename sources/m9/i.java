@@ -6,9 +6,8 @@ import com.google.android.gms.common.api.Status;
 import com.google.android.gms.common.api.internal.s;
 import com.google.firebase.messaging.p;
 import java.util.concurrent.Executor;
-import s9.r;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
 public final class i implements s9.d, s {
     public static final i b = new i(0);
@@ -42,19 +41,19 @@ public final class i implements s9.d, s {
     public Object d1(me meVar) {
         switch (this.a) {
             case 0:
-                Object n10 = meVar.n(new r(o9.a.class, Executor.class));
+                Object n10 = meVar.n(new s9.s(o9.a.class, Executor.class));
                 kotlin.jvm.internal.i.d(n10, "c.get(Qualified.qualifie…a, Executor::class.java))");
                 return new z0((Executor) n10);
             case 1:
-                Object n11 = meVar.n(new r(o9.c.class, Executor.class));
+                Object n11 = meVar.n(new s9.s(o9.c.class, Executor.class));
                 kotlin.jvm.internal.i.d(n11, "c.get(Qualified.qualifie…a, Executor::class.java))");
                 return new z0((Executor) n11);
             case 2:
-                Object n12 = meVar.n(new r(o9.b.class, Executor.class));
+                Object n12 = meVar.n(new s9.s(o9.b.class, Executor.class));
                 kotlin.jvm.internal.i.d(n12, "c.get(Qualified.qualifie…a, Executor::class.java))");
                 return new z0((Executor) n12);
             default:
-                Object n13 = meVar.n(new r(o9.d.class, Executor.class));
+                Object n13 = meVar.n(new s9.s(o9.d.class, Executor.class));
                 kotlin.jvm.internal.i.d(n13, "c.get(Qualified.qualifie…a, Executor::class.java))");
                 return new z0((Executor) n13);
         }

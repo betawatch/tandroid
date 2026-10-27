@@ -4,11 +4,11 @@ import android.graphics.Rect;
 import android.text.Layout;
 import org.telegram.messenger.RichMessageLayout;
 import org.telegram.ui.Cells.da;
-import org.telegram.ui.Components.an0;
-import org.telegram.ui.Components.bc1;
-import org.telegram.ui.Components.cc1;
+import org.telegram.ui.Components.bn0;
+import org.telegram.ui.Components.gc1;
+import org.telegram.ui.Components.hc1;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class a0 implements da {
     public final /* synthetic */ int a = 0;
@@ -26,11 +26,11 @@ public final class a0 implements da {
             case 0:
                 return (Layout) this.b;
             default:
-                bc1 bc1Var = (bc1) this.b;
-                if (bc1Var.h == null) {
-                    bc1Var.h = new cc1(bc1Var);
+                gc1 gc1Var = (gc1) this.b;
+                if (gc1Var.h == null) {
+                    gc1Var.h = new hc1(gc1Var);
                 }
-                return bc1Var.h;
+                return gc1Var.h;
         }
     }
 
@@ -48,7 +48,7 @@ public final class a0 implements da {
             case 0:
                 return 0;
             default:
-                i10 = ((RichMessageLayout.RichBlock) ((an0) this.c)).layoutRow;
+                i10 = ((RichMessageLayout.RichBlock) ((bn0) this.c)).layoutRow;
                 return i10;
         }
     }
@@ -88,9 +88,9 @@ public final class a0 implements da {
             case 0:
                 return 0;
             default:
-                an0 an0Var = (an0) this.c;
-                i10 = ((RichMessageLayout.RichBlock) an0Var).layoutX;
-                return (i10 - an0Var.y) + ((bc1) this.b).b;
+                bn0 bn0Var = (bn0) this.c;
+                i10 = ((RichMessageLayout.RichBlock) bn0Var).layoutX;
+                return (i10 - bn0Var.y) + ((gc1) this.b).b;
         }
     }
 
@@ -101,13 +101,13 @@ public final class a0 implements da {
             case 0:
                 return 0;
             default:
-                i10 = ((RichMessageLayout.RichBlock) ((an0) this.c)).layoutY;
-                return i10 + ((bc1) this.b).c;
+                i10 = ((RichMessageLayout.RichBlock) ((bn0) this.c)).layoutY;
+                return i10 + ((gc1) this.b).c;
         }
     }
 
-    public a0(an0 an0Var, bc1 bc1Var) {
-        this.c = an0Var;
-        this.b = bc1Var;
+    public a0(bn0 bn0Var, gc1 gc1Var) {
+        this.c = bn0Var;
+        this.b = gc1Var;
     }
 }

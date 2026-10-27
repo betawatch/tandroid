@@ -1,45 +1,32 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public final class sg0 extends AnimatorListenerAdapter {
+public final /* synthetic */ class sg0 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ tg0 b;
+    public final /* synthetic */ ug0 b;
 
-    public /* synthetic */ sg0(tg0 tg0Var, int i10) {
+    public /* synthetic */ sg0(ug0 ug0Var, int i10) {
         this.a = i10;
-        this.b = tg0Var;
+        this.b = ug0Var;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
         switch (this.a) {
             case 0:
-                tg0 tg0Var = this.b;
-                tg0Var.h = false;
-                tg0Var.a = tg0Var.c;
-                tg0Var.invalidate();
-                int i10 = tg0Var.J;
-                if (i10 >= 0) {
-                    tg0Var.b(i10);
-                    tg0Var.J = -1;
-                    break;
-                }
+                ug0 ug0Var = this.b;
+                ug0Var.getClass();
+                ug0Var.y = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                ug0Var.invalidate();
                 break;
             default:
-                tg0 tg0Var2 = this.b;
-                tg0Var2.n = false;
-                tg0Var2.h = false;
-                tg0Var2.invalidate();
-                int i11 = tg0Var2.J;
-                if (i11 >= 0) {
-                    tg0Var2.b(i11);
-                    tg0Var2.J = -1;
-                }
-                tg0Var2.a();
+                ug0 ug0Var2 = this.b;
+                ug0Var2.getClass();
+                ug0Var2.y = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                ug0Var2.invalidate();
                 break;
         }
     }

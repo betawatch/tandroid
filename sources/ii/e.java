@@ -12,10 +12,10 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.p6;
 import org.telegram.ui.ActionBar.u6;
 import org.telegram.ui.ActionBar.y6;
-import org.telegram.ui.Components.gb1;
+import org.telegram.ui.Components.kb1;
 import org.telegram.ui.Components.y9;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class e extends FrameLayout implements p6 {
     public final y9 a;
@@ -29,19 +29,19 @@ public final class e extends FrameLayout implements p6 {
         y9 y9Var = new y9(context);
         this.a = y9Var;
         y9Var.setRoundRadius(AndroidUtilities.dp(20.0f));
-        addView(y9Var, gb1.h(72, 72.0f, 49, 0.0f, 36.0f, 0.0f, 0.0f));
+        addView(y9Var, kb1.h(72, 72.0f, 49, 0.0f, 36.0f, 0.0f, 0.0f));
         TextView textView = new TextView(context);
         this.c = textView;
         textView.setTypeface(AndroidUtilities.bold());
         textView.setTextSize(1, 20.0f);
         textView.setGravity(17);
-        addView(textView, gb1.h(-1, -2.0f, 49, 24.0f, 123.0f, 24.0f, 0.0f));
+        addView(textView, kb1.h(-1, -2.0f, 49, 24.0f, 123.0f, 24.0f, 0.0f));
         TextView textView2 = new TextView(context);
         this.d = textView2;
         textView2.setTextSize(1, 14.0f);
         textView2.setGravity(17);
         textView2.setLineSpacing(AndroidUtilities.dp(2.0f), 1.0f);
-        addView(textView2, gb1.h(-1, -2.0f, 49, 32.0f, 157.0f, 32.0f, 0.0f));
+        addView(textView2, kb1.h(-1, -2.0f, 49, 32.0f, 157.0f, 32.0f, 0.0f));
         updateColors();
     }
 

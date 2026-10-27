@@ -6,9 +6,9 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.RadialProgressView;
-import org.telegram.ui.Components.gb1;
+import org.telegram.ui.Components.kb1;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class w4 extends FrameLayout {
     public final int a;
@@ -27,6 +27,6 @@ public final class w4 extends FrameLayout {
         this.a = i11;
         RadialProgressView radialProgressView = new RadialProgressView(context, null);
         radialProgressView.setSize(i10);
-        addView(radialProgressView, gb1.i(-2, -2, 17));
+        addView(radialProgressView, kb1.i(-2, -2, 17));
     }
 }

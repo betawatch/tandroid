@@ -1,69 +1,126 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.AndroidUtilities;
+import android.content.Context;
+import android.view.View;
+import android.widget.FrameLayout;
+import java.util.Locale;
 import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MediaController;
+import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.R;
-import org.telegram.messenger.SaveToGallerySettingsHelper;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public final class i31 implements org.telegram.ui.Components.kp0 {
-    public final /* synthetic */ org.telegram.ui.Components.lp0 a;
-    public final /* synthetic */ l31 b;
-    public final /* synthetic */ l31 c;
-    public final /* synthetic */ l31 d;
-    public final /* synthetic */ j31 e;
+public final class i31 extends org.telegram.ui.ActionBar.r2 {
+    public static final int[] c = {MediaController.VIDEO_BITRATE_360, MediaController.VIDEO_BITRATE_480, 1200000, 2000000};
+    public org.telegram.ui.Components.nm0 a;
+    public h31 b;
 
-    public i31(j31 j31Var, org.telegram.ui.Components.lp0 lp0Var, l31 l31Var, l31 l31Var2, l31 l31Var3) {
-        this.e = j31Var;
-        this.a = lp0Var;
-        this.b = l31Var;
-        this.c = l31Var2;
-        this.d = l31Var3;
-    }
-
-    @Override // org.telegram.ui.Components.kp0
-    public final void U(float f7, boolean z10) {
-        SaveToGallerySettingsActivity saveToGallerySettingsActivity = this.e.d;
-        boolean isAttachedToWindow = this.a.isAttachedToWindow();
-        long j10 = f7 > 0.7f ? (long) ((4089446400L * ((f7 - 0.7f) / 0.3f)) + SaveToGallerySettingsHelper.DEFAULT_VIDEO_LIMIT) : (long) ((104333312 * (f7 / 0.7f)) + 524288.0f);
-        l31 l31Var = this.d;
-        l31 l31Var2 = this.b;
-        l31 l31Var3 = this.c;
-        if (f7 >= 1.0f) {
-            l31Var2.e(false, isAttachedToWindow);
-            l31Var3.e(false, isAttachedToWindow);
-            l31Var.e(true, isAttachedToWindow);
-            AndroidUtilities.updateViewVisibilityAnimated(l31Var3, false, 0.8f, isAttachedToWindow);
-        } else if (f7 == 0.0f) {
-            l31Var2.e(true, isAttachedToWindow);
-            l31Var3.e(false, isAttachedToWindow);
-            l31Var.e(false, isAttachedToWindow);
-            AndroidUtilities.updateViewVisibilityAnimated(l31Var3, false, 0.8f, isAttachedToWindow);
-        } else {
-            l31Var3.c(LocaleController.formatString("UpToFileSize", R.string.UpToFileSize, AndroidUtilities.formatFileSize(j10, true, false)), false, true);
-            l31Var2.e(false, isAttachedToWindow);
-            l31Var3.e(true, isAttachedToWindow);
-            l31Var.e(false, isAttachedToWindow);
-            AndroidUtilities.updateViewVisibilityAnimated(l31Var3, true, 0.8f, isAttachedToWindow);
+    public static void V(i31 i31Var, int i10) {
+        if (i10 == 1) {
+            wi.a aVar = wi.e.d;
+            boolean z10 = !org.telegram.ui.Components.u60.d(i31Var.currentAccount);
+            synchronized (aVar) {
+                aVar.d = z10;
+                aVar.c = true;
+                aVar.b = true;
+                wi.d.a.edit().putBoolean("round_video_camera2_enabled", z10).apply();
+            }
+            i31Var.b.l();
+            return;
         }
-        if (z10) {
-            saveToGallerySettingsActivity.Z().limitVideo = j10;
-            saveToGallerySettingsActivity.a0();
+        if (!org.telegram.ui.Components.u60.d(i31Var.currentAccount)) {
+            return;
+        }
+        int i11 = 0;
+        if (i10 == 2) {
+            i31Var.Z(R.string.RoundVideoOutputResolution, new CharSequence[]{"480p", "360p"}, new org.telegram.ui.Components.voip.c1(22));
+            return;
+        }
+        if (i10 == 3) {
+            i31Var.Z(R.string.RoundVideoCameraResolution, new CharSequence[]{LocaleController.getString(R.string.RoundVideoCameraResolutionHigh), LocaleController.getString(R.string.RoundVideoCameraResolutionMedium), LocaleController.getString(R.string.RoundVideoCameraResolutionLow)}, new org.telegram.ui.Components.voip.c1(23));
+            return;
+        }
+        if (i10 == 4) {
+            i31Var.Z(R.string.RoundVideoFrameRate, new CharSequence[]{"30 FPS", "60 FPS"}, new org.telegram.ui.Components.voip.c1(24));
+            return;
+        }
+        if (i10 != 5) {
+            if (i10 == 8) {
+                wi.a aVar2 = wi.e.i;
+                aVar2.a();
+                aVar2.b(true ^ aVar2.d);
+                i31Var.b.m(i10);
+                return;
+            }
+            return;
+        }
+        CharSequence[] charSequenceArr = new CharSequence[4];
+        while (true) {
+            int[] iArr = c;
+            if (i11 >= 3) {
+                i31Var.Z(R.string.RoundVideoBitrate, charSequenceArr, new org.telegram.ui.Components.voip.c1(25));
+                return;
+            } else {
+                charSequenceArr[i11] = Y(iArr[i11]);
+                i11++;
+            }
         }
     }
 
-    @Override // org.telegram.ui.Components.kp0
-    public final /* synthetic */ CharSequence getContentDescription() {
-        return null;
+    public static String Y(int i10) {
+        if (i10 % MediaController.VIDEO_BITRATE_480 == 0) {
+            return (i10 / MediaController.VIDEO_BITRATE_480) + " Mbps";
+        }
+        if (i10 > 1000000) {
+            return String.format(Locale.US, "%.1f Mbps", Float.valueOf(i10 / 1000000.0f));
+        }
+        return (i10 / MediaDataController.MAX_STYLE_RUNS_COUNT) + " kbps";
     }
 
-    @Override // org.telegram.ui.Components.kp0
-    public final /* synthetic */ int k0() {
-        return 0;
+    public final void Z(int i10, CharSequence[] charSequenceArr, org.telegram.ui.Components.voip.c1 c1Var) {
+        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(getParentActivity());
+        alertDialog$Builder.a.R = LocaleController.getString(i10);
+        alertDialog$Builder.f(charSequenceArr, new ng.j(11, this, c1Var));
+        showDialog(alertDialog$Builder.a);
     }
 
-    @Override // org.telegram.ui.Components.kp0
-    public final void y() {
+    @Override // org.telegram.ui.ActionBar.r2
+    public final View createView(Context context) {
+        setHasOwnBackground(true);
+        this.simpleActionBar.setBackButtonImage(R.drawable.ic_ab_back);
+        this.simpleActionBar.setTitle(LocaleController.getString(R.string.RoundVideoSettings));
+        this.simpleActionBar.setActionBarMenuOnItemClick(new r11(this, 3));
+        FrameLayout frameLayout = new FrameLayout(context);
+        this.fragmentView = frameLayout;
+        org.telegram.ui.Components.nm0 nm0Var = new org.telegram.ui.Components.nm0(context, null);
+        this.a = nm0Var;
+        nm0Var.u1();
+        this.a.setSectionsDrawBackground(true);
+        this.a.setLayoutManager(new s4.c0());
+        this.a.setVerticalScrollBarEnabled(false);
+        org.telegram.ui.Components.nm0 nm0Var2 = this.a;
+        h31 h31Var = new h31(this, context);
+        this.b = h31Var;
+        nm0Var2.setAdapter(h31Var);
+        this.a.setOnItemClickListener(new o11(this, 3));
+        frameLayout.addView(this.a, org.telegram.ui.Components.kb1.g(-1.0f, -1));
+        return this.fragmentView;
+    }
+
+    @Override // org.telegram.ui.ActionBar.r2
+    public final org.telegram.ui.Components.nm0 getListViewForSimpleGlass() {
+        return this.a;
+    }
+
+    @Override // org.telegram.ui.ActionBar.r2
+    public final boolean isSupportEdgeToEdge() {
+        return true;
+    }
+
+    @Override // org.telegram.ui.ActionBar.r2
+    public final boolean useSimpleActionBar() {
+        return true;
     }
 }

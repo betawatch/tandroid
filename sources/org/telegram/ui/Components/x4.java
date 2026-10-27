@@ -4,16 +4,16 @@ import android.content.Context;
 import android.widget.LinearLayout;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class x4 extends LinearLayout {
     public boolean a;
-    public final /* synthetic */ md0 b;
+    public final /* synthetic */ nd0 b;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public x4(Context context, md0 md0Var) {
+    public x4(Context context, nd0 nd0Var) {
         super(context);
-        this.b = md0Var;
+        this.b = nd0Var;
         this.a = false;
     }
 

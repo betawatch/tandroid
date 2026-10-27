@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.ListIterator;
 import java.util.RandomAccess;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
 public abstract class k9 extends h9 implements List, RandomAccess {
     public static final i9 b = new i9(m9.e, 0);
@@ -121,7 +121,7 @@ public abstract class k9 extends h9 implements List, RandomAccess {
     @Override // java.util.List
     /* renamed from: p */
     public k9 subList(int i10, int i11) {
-        y.b(i10, i11, size());
+        z.b(i10, i11, size());
         int i12 = i11 - i10;
         return i12 == size() ? this : i12 == 0 ? m9.e : new j9(this, i10, i12);
     }
@@ -131,7 +131,7 @@ public abstract class k9 extends h9 implements List, RandomAccess {
     public final i9 listIterator(int i10) {
         int size = size();
         if (i10 < 0 || i10 > size) {
-            throw new IndexOutOfBoundsException(y.c(i10, size, "index"));
+            throw new IndexOutOfBoundsException(z.c(i10, size, "index"));
         }
         return isEmpty() ? b : new i9(this, i10);
     }

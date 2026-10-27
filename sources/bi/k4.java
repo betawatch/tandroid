@@ -35,17 +35,17 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.Components.gb1;
+import org.telegram.ui.Components.kb1;
 import org.telegram.ui.Components.sz;
 import org.telegram.ui.TwoStepVerificationActivity;
-import org.telegram.ui.ap;
+import org.telegram.ui.bp;
+import org.telegram.ui.cp;
 import org.telegram.ui.ke;
-import org.telegram.ui.rt;
-import org.telegram.ui.un;
-import org.telegram.ui.xo;
+import org.telegram.ui.tt;
+import org.telegram.ui.wn;
 import org.telegram.ui.zo;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class k4 implements Runnable {
     public final /* synthetic */ int a;
@@ -98,7 +98,7 @@ public final /* synthetic */ class k4 implements Runnable {
                 ((MessagesController) obj5).lambda$processDialogsUpdate$227((TLRPC.messages_Dialogs) obj, (a0.h) obj4, (a0.h) obj3, this.b, (LongSparseIntArray) obj2);
                 break;
             case 5:
-                ((SendMessagesHelper) obj5).lambda$requestUrlAuth$39((TLObject) obj2, (TLRPC.TL_messages_requestUrlAuth) obj, (un) obj4, (String) obj3, this.b);
+                ((SendMessagesHelper) obj5).lambda$requestUrlAuth$39((TLObject) obj2, (TLRPC.TL_messages_requestUrlAuth) obj, (wn) obj4, (String) obj3, this.b);
                 break;
             case 6:
                 ((CameraController) obj5).lambda$recordVideo$13(this.d, (CameraController.ICameraView) obj4, (File) obj3, this.b, (Runnable) obj2);
@@ -141,10 +141,10 @@ public final /* synthetic */ class k4 implements Runnable {
                         textView.setTextSize(1, 16.0f);
                         textView.setGravity((LocaleController.isRTL ? 5 : 3) | 48);
                         textView.setText(AndroidUtilities.replaceTags(LocaleController.getString(R.string.WithdrawChannelAlertText)));
-                        linearLayout.addView(textView, gb1.r(-1, -2));
+                        linearLayout.addView(textView, kb1.r(-1, -2));
                         LinearLayout linearLayout2 = new LinearLayout(activity);
                         linearLayout2.setOrientation(0);
-                        linearLayout.addView(linearLayout2, gb1.o(0.0f, 11.0f, 0.0f, 0.0f, -1, -2));
+                        linearLayout.addView(linearLayout2, kb1.o(0.0f, 11.0f, 0.0f, 0.0f, -1, -2));
                         ImageView imageView = new ImageView(activity);
                         imageView.setImageResource(R.drawable.list_circle);
                         imageView.setPadding(LocaleController.isRTL ? AndroidUtilities.dp(11.0f) : 0, AndroidUtilities.dp(9.0f), LocaleController.isRTL ? 0 : AndroidUtilities.dp(11.0f), 0);
@@ -156,14 +156,14 @@ public final /* synthetic */ class k4 implements Runnable {
                         textView2.setGravity((LocaleController.isRTL ? 5 : 3) | 48);
                         org.telegram.messenger.t.n(R.string.EditAdminTransferAlertText1, textView2);
                         if (LocaleController.isRTL) {
-                            linearLayout2.addView(textView2, gb1.r(-1, -2));
-                            linearLayout2.addView(imageView, gb1.u(-2, -2, 5));
+                            linearLayout2.addView(textView2, kb1.r(-1, -2));
+                            linearLayout2.addView(imageView, kb1.u(-2, -2, 5));
                         } else {
-                            linearLayout2.addView(imageView, gb1.r(-2, -2));
-                            linearLayout2.addView(textView2, gb1.r(-1, -2));
+                            linearLayout2.addView(imageView, kb1.r(-2, -2));
+                            linearLayout2.addView(textView2, kb1.r(-1, -2));
                         }
                         LinearLayout f7 = org.telegram.messenger.t.f(activity, 0);
-                        linearLayout.addView(f7, gb1.o(0.0f, 11.0f, 0.0f, 0.0f, -1, -2));
+                        linearLayout.addView(f7, kb1.o(0.0f, 11.0f, 0.0f, 0.0f, -1, -2));
                         ImageView imageView2 = new ImageView(activity);
                         imageView2.setImageResource(R.drawable.list_circle);
                         imageView2.setPadding(LocaleController.isRTL ? AndroidUtilities.dp(11.0f) : 0, AndroidUtilities.dp(9.0f), LocaleController.isRTL ? 0 : AndroidUtilities.dp(11.0f), 0);
@@ -174,13 +174,13 @@ public final /* synthetic */ class k4 implements Runnable {
                         textView3.setGravity((LocaleController.isRTL ? 5 : 3) | 48);
                         org.telegram.messenger.t.n(R.string.EditAdminTransferAlertText2, textView3);
                         if (LocaleController.isRTL) {
-                            f7.addView(textView3, gb1.r(-1, -2));
+                            f7.addView(textView3, kb1.r(-1, -2));
                             i10 = 5;
-                            f7.addView(imageView2, gb1.u(-2, -2, 5));
+                            f7.addView(imageView2, kb1.u(-2, -2, 5));
                         } else {
                             i10 = 5;
-                            f7.addView(imageView2, gb1.r(-2, -2));
-                            f7.addView(textView3, gb1.r(-1, -2));
+                            f7.addView(imageView2, kb1.r(-2, -2));
+                            f7.addView(textView3, kb1.r(-1, -2));
                         }
                         if ("PASSWORD_MISSING".equals(tL_error.text)) {
                             alertDialog$Builder.k(LocaleController.getString(R.string.EditAdminTransferSetPassword), new org.telegram.ui.od(keVar));
@@ -191,7 +191,7 @@ public final /* synthetic */ class k4 implements Runnable {
                             textView4.setTextSize(1, 16.0f);
                             textView4.setGravity((LocaleController.isRTL ? i10 : 3) | 48);
                             textView4.setText(LocaleController.getString(R.string.EditAdminTransferAlertText3));
-                            linearLayout.addView(textView4, gb1.o(0.0f, 11.0f, 0.0f, 0.0f, -1, -2));
+                            linearLayout.addView(textView4, kb1.o(0.0f, 11.0f, 0.0f, 0.0f, -1, -2));
                             alertDialog$Builder.h(LocaleController.getString(R.string.OK), null);
                         }
                         if (twoStepVerificationActivity != null) {
@@ -216,10 +216,10 @@ public final /* synthetic */ class k4 implements Runnable {
                 }
                 break;
             case 8:
-                un.I0((un) obj5, (org.telegram.ui.Cells.s1) obj, this.b, (String) obj4, (TLRPC.User[]) obj3, (CharacterStyle) obj2);
+                wn.z0((wn) obj5, (org.telegram.ui.Cells.s1) obj, this.b, (String) obj4, (TLRPC.User[]) obj3, (CharacterStyle) obj2);
                 break;
             case 9:
-                un unVar = (un) obj5;
+                wn wnVar = (wn) obj5;
                 boolean[] zArr = (boolean[]) obj4;
                 MessageObject messageObject = (MessageObject) obj3;
                 TLRPC.WebPage webPage = (TLRPC.WebPage) obj2;
@@ -229,15 +229,15 @@ public final /* synthetic */ class k4 implements Runnable {
                 }
                 if (!zArr[0]) {
                     if (z10) {
-                        unVar.createArticleViewer(false).N(messageObject, webPage, null, null);
+                        wnVar.createArticleViewer(false).N(messageObject, webPage, null, null);
                         break;
                     } else {
                         try {
-                            AndroidUtilities.openForView(messageObject, unVar.getParentActivity(), unVar.qa, false);
+                            AndroidUtilities.openForView(messageObject, wnVar.getParentActivity(), wnVar.ua, false);
                             break;
                         } catch (Exception e) {
                             FileLog.e(e);
-                            unVar.E6(messageObject);
+                            wnVar.F6(messageObject);
                             return;
                         }
                     }
@@ -245,27 +245,27 @@ public final /* synthetic */ class k4 implements Runnable {
                 break;
             case 10:
                 int i15 = 16;
-                xo xoVar = (xo) obj5;
+                zo zoVar = (zo) obj5;
                 TLRPC.TL_username tL_username = (TLRPC.TL_username) obj3;
                 TLRPC.TL_error tL_error2 = (TLRPC.TL_error) obj;
-                zo zoVar = xoVar.a;
-                ap apVar = zoVar.i3;
-                apVar.P.remove(((TLRPC.TL_channels_toggleUsername) obj4).username);
+                bp bpVar = zoVar.a;
+                cp cpVar = bpVar.i3;
+                cpVar.P.remove(((TLRPC.TL_channels_toggleUsername) obj4).username);
                 if (((TLObject) obj2) instanceof TLRPC.TL_boolTrue) {
-                    zoVar.C1(tL_username, !z10, false);
+                    bpVar.C1(tL_username, !z10, false);
                 } else if (tL_error2 == null || !"USERNAMES_ACTIVE_TOO_MUCH".equals(tL_error2.text)) {
-                    zoVar.C1(tL_username, z10, true);
-                    apVar.X();
+                    bpVar.C1(tL_username, z10, true);
+                    cpVar.X();
                 } else {
-                    AndroidUtilities.runOnUIThread(new u7(xoVar, tL_username, z10, i15));
+                    AndroidUtilities.runOnUIThread(new u7(zoVar, tL_username, z10, i15));
                 }
-                apVar.getMessagesController().updateUsernameActiveness(apVar.X, tL_username.username, tL_username.active);
+                cpVar.getMessagesController().updateUsernameActiveness(cpVar.X, tL_username.username, tL_username.active);
                 break;
             case 11:
-                ((sz) obj5).J((ph.b) obj, (TLObject) obj2, (TLRPC.StickerSet) obj4, (TLRPC.Document) obj3, this.b, true);
+                ((sz) obj5).K((ph.b) obj, (TLObject) obj2, (TLRPC.StickerSet) obj4, (TLRPC.Document) obj3, this.b, true);
                 break;
             case 12:
-                rt.Q((rt) obj5, (TLObject) obj2, (fi.d) obj4, this.b, (HashSet) obj3, (TLRPC.TL_error) obj);
+                tt.Q((tt) obj5, (TLObject) obj2, (fi.d) obj4, this.b, (HashSet) obj3, (TLRPC.TL_error) obj);
                 break;
             default:
                 org.telegram.ui.Wallet.s7 s7Var = (org.telegram.ui.Wallet.s7) obj5;
@@ -397,12 +397,12 @@ public final /* synthetic */ class k4 implements Runnable {
         this.h = arrayList2;
     }
 
-    public /* synthetic */ k4(SendMessagesHelper sendMessagesHelper, TLObject tLObject, TLRPC.TL_messages_requestUrlAuth tL_messages_requestUrlAuth, un unVar, String str, boolean z10) {
+    public /* synthetic */ k4(SendMessagesHelper sendMessagesHelper, TLObject tLObject, TLRPC.TL_messages_requestUrlAuth tL_messages_requestUrlAuth, wn wnVar, String str, boolean z10) {
         this.a = 5;
         this.c = sendMessagesHelper;
         this.h = tLObject;
         this.d = tL_messages_requestUrlAuth;
-        this.e = unVar;
+        this.e = wnVar;
         this.f = str;
         this.b = z10;
     }
@@ -417,9 +417,9 @@ public final /* synthetic */ class k4 implements Runnable {
         this.h = tLObject;
     }
 
-    public /* synthetic */ k4(un unVar, org.telegram.ui.ActionBar.e2 e2Var, boolean[] zArr, boolean z10, MessageObject messageObject, TLRPC.TL_webPage tL_webPage) {
+    public /* synthetic */ k4(wn wnVar, org.telegram.ui.ActionBar.e2 e2Var, boolean[] zArr, boolean z10, MessageObject messageObject, TLRPC.TL_webPage tL_webPage) {
         this.a = 9;
-        this.c = unVar;
+        this.c = wnVar;
         this.d = e2Var;
         this.e = zArr;
         this.b = z10;
@@ -427,9 +427,9 @@ public final /* synthetic */ class k4 implements Runnable {
         this.h = tL_webPage;
     }
 
-    public /* synthetic */ k4(un unVar, org.telegram.ui.Cells.s1 s1Var, boolean z10, String str, TLRPC.User[] userArr, CharacterStyle characterStyle) {
+    public /* synthetic */ k4(wn wnVar, org.telegram.ui.Cells.s1 s1Var, boolean z10, String str, TLRPC.User[] userArr, CharacterStyle characterStyle) {
         this.a = 8;
-        this.c = unVar;
+        this.c = wnVar;
         this.d = s1Var;
         this.b = z10;
         this.e = str;
@@ -437,9 +437,9 @@ public final /* synthetic */ class k4 implements Runnable {
         this.h = characterStyle;
     }
 
-    public /* synthetic */ k4(xo xoVar, TLRPC.TL_channels_toggleUsername tL_channels_toggleUsername, TLObject tLObject, TLRPC.TL_username tL_username, boolean z10, TLRPC.TL_error tL_error) {
+    public /* synthetic */ k4(zo zoVar, TLRPC.TL_channels_toggleUsername tL_channels_toggleUsername, TLObject tLObject, TLRPC.TL_username tL_username, boolean z10, TLRPC.TL_error tL_error) {
         this.a = 10;
-        this.c = xoVar;
+        this.c = zoVar;
         this.e = tL_channels_toggleUsername;
         this.h = tLObject;
         this.f = tL_username;
@@ -457,9 +457,9 @@ public final /* synthetic */ class k4 implements Runnable {
         this.b = z10;
     }
 
-    public /* synthetic */ k4(rt rtVar, TLObject tLObject, fi.d dVar, boolean z10, HashSet hashSet, TLRPC.TL_error tL_error) {
+    public /* synthetic */ k4(tt ttVar, TLObject tLObject, fi.d dVar, boolean z10, HashSet hashSet, TLRPC.TL_error tL_error) {
         this.a = 12;
-        this.c = rtVar;
+        this.c = ttVar;
         this.h = tLObject;
         this.e = dVar;
         this.b = z10;

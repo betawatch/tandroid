@@ -29,12 +29,12 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
+import org.telegram.ui.Components.aq;
 import org.telegram.ui.Components.ds;
-import org.telegram.ui.Components.gb1;
-import org.telegram.ui.Components.q11;
-import org.telegram.ui.Components.zp;
+import org.telegram.ui.Components.kb1;
+import org.telegram.ui.Components.r11;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public class k7 extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     public final org.telegram.ui.Components.h6 E;
@@ -45,11 +45,11 @@ public class k7 extends FrameLayout implements NotificationCenter.NotificationCe
     public Drawable J;
     public final Paint K;
     public long L;
-    public q11 M;
+    public r11 M;
     public final org.telegram.ui.Components.y9 a;
     public final md b;
     public final org.telegram.ui.ActionBar.b6 c;
-    public final zp d;
+    public final aq d;
     public final i7 e;
     public j7 f;
     public TLRPC.User h;
@@ -76,9 +76,9 @@ public class k7 extends FrameLayout implements NotificationCenter.NotificationCe
         this.a = y9Var;
         y9Var.setRoundRadius(AndroidUtilities.dp(28.0f));
         if (i10 == 2) {
-            addView(y9Var, gb1.h(48, 48.0f, 49, 0.0f, 7.0f, 0.0f, 0.0f));
+            addView(y9Var, kb1.h(48, 48.0f, 49, 0.0f, 7.0f, 0.0f, 0.0f));
         } else {
-            addView(y9Var, gb1.h(56, 56.0f, 49, 0.0f, 7.0f, 0.0f, 0.0f));
+            addView(y9Var, kb1.h(56, 56.0f, 49, 0.0f, 7.0f, 0.0f, 0.0f));
         }
         md mdVar = new md(context, 8);
         this.b = mdVar;
@@ -89,7 +89,7 @@ public class k7 extends FrameLayout implements NotificationCenter.NotificationCe
         mdVar.setGravity(49);
         mdVar.setLines(2);
         mdVar.setEllipsize(TextUtils.TruncateAt.END);
-        addView(mdVar, gb1.h(-1, -2.0f, 51, 6.0f, i10 == 2 ? 58.0f : 66.0f, 6.0f, 0.0f));
+        addView(mdVar, kb1.h(-1, -2.0f, 51, 6.0f, i10 == 2 ? 58.0f : 66.0f, 6.0f, 0.0f));
         org.telegram.ui.ActionBar.b6 b6Var = new org.telegram.ui.ActionBar.b6(context);
         this.c = b6Var;
         org.telegram.ui.ActionBar.f7.Y(b6Var, org.telegram.ui.ActionBar.y6.j5, u6Var);
@@ -97,14 +97,14 @@ public class k7 extends FrameLayout implements NotificationCenter.NotificationCe
         b6Var.setMaxLines(2);
         b6Var.setGravity(49);
         b6Var.setAlignment(Layout.Alignment.ALIGN_CENTER);
-        addView(b6Var, gb1.h(-1, -2.0f, 51, 6.0f, i10 == 2 ? 58.0f : 66.0f, 6.0f, 0.0f));
-        zp zpVar = new zp(context, 21, u6Var);
-        this.d = zpVar;
-        zpVar.b(org.telegram.ui.ActionBar.y6.B5, org.telegram.ui.ActionBar.y6.h5, org.telegram.ui.ActionBar.y6.C5);
-        zpVar.setDrawUnchecked(false);
-        zpVar.setDrawBackgroundAsArc(4);
-        zpVar.setProgressDelegate(new na(this, 5));
-        addView(zpVar, gb1.h(24, 24.0f, 49, 19.0f, i10 == 2 ? -40.0f : 42.0f, 0.0f, 0.0f));
+        addView(b6Var, kb1.h(-1, -2.0f, 51, 6.0f, i10 == 2 ? 58.0f : 66.0f, 6.0f, 0.0f));
+        aq aqVar = new aq(context, 21, u6Var);
+        this.d = aqVar;
+        aqVar.b(org.telegram.ui.ActionBar.y6.B5, org.telegram.ui.ActionBar.y6.h5, org.telegram.ui.ActionBar.y6.C5);
+        aqVar.setDrawUnchecked(false);
+        aqVar.setDrawBackgroundAsArc(4);
+        aqVar.setProgressDelegate(new na(this, 5));
+        addView(aqVar, kb1.h(24, 24.0f, 49, 19.0f, i10 == 2 ? -40.0f : 42.0f, 0.0f, 0.0f));
         int i11 = org.telegram.ui.ActionBar.y6.i6;
         Drawable Z = org.telegram.ui.ActionBar.y6.Z(org.telegram.ui.ActionBar.y6.w0(i11, u6Var), AndroidUtilities.dp(2.0f), AndroidUtilities.dp(2.0f));
         org.telegram.ui.ActionBar.b7 N = org.telegram.ui.ActionBar.f7.N(i11);
@@ -305,7 +305,7 @@ public class k7 extends FrameLayout implements NotificationCenter.NotificationCe
         float f11;
         boolean z10;
         float f12;
-        q11 q11Var;
+        r11 r11Var;
         boolean drawChild = super.drawChild(canvas, view, j10);
         org.telegram.ui.Components.y9 y9Var = this.a;
         if (view == y9Var && this.n != 2 && (user = this.h) != null && !MessagesController.isSupportUser(user)) {
@@ -325,8 +325,8 @@ public class k7 extends FrameLayout implements NotificationCenter.NotificationCe
                     f12 = measuredWidth;
                     long j14 = this.H;
                     if (j13 == j14 || j14 <= 0) {
-                        q11 q11Var2 = this.M;
-                        float dp = (q11Var2 != null ? f7 : q11Var2.c) + AndroidUtilities.dp(10.0f);
+                        r11 r11Var2 = this.M;
+                        float dp = (r11Var2 != null ? f7 : r11Var2.c) + AndroidUtilities.dp(10.0f);
                         float dp2 = AndroidUtilities.dp(14.33f);
                         RectF rectF = AndroidUtilities.rectTmp;
                         float f13 = dp / 2.0f;
@@ -341,12 +341,12 @@ public class k7 extends FrameLayout implements NotificationCenter.NotificationCe
                         rectF.inset(AndroidUtilities.dp(1.33f), AndroidUtilities.dp(1.33f));
                         paint.setColor(org.telegram.ui.ActionBar.y6.w0(org.telegram.ui.ActionBar.y6.B5, u6Var2));
                         canvas.drawRoundRect(rectF, rectF.height() / 2.0f, rectF.height() / 2.0f, paint);
-                        q11Var = this.M;
-                        if (q11Var == null) {
+                        r11Var = this.M;
+                        if (r11Var == null) {
                             float dp3 = AndroidUtilities.dp(f11) + f14;
                             u6Var = u6Var2;
                             f10 = 9.33f;
-                            q11Var.c(dp3, measuredHeight, 1.0f, -1, canvas);
+                            r11Var.c(dp3, measuredHeight, 1.0f, -1, canvas);
                         } else {
                             u6Var = u6Var2;
                             f10 = 9.33f;
@@ -361,9 +361,9 @@ public class k7 extends FrameLayout implements NotificationCenter.NotificationCe
                 long j15 = this.H;
                 this.L = j15;
                 sb2.append(AndroidUtilities.formatWholeNumber((int) j15, 0));
-                this.M = new q11(dd.Q0(sb2.toString(), 0.65f, null), 9.33f, AndroidUtilities.bold());
-                q11 q11Var22 = this.M;
-                float dp4 = (q11Var22 != null ? f7 : q11Var22.c) + AndroidUtilities.dp(10.0f);
+                this.M = new r11(dd.Q0(sb2.toString(), 0.65f, null), 9.33f, AndroidUtilities.bold());
+                r11 r11Var22 = this.M;
+                float dp4 = (r11Var22 != null ? f7 : r11Var22.c) + AndroidUtilities.dp(10.0f);
                 float dp22 = AndroidUtilities.dp(14.33f);
                 RectF rectF2 = AndroidUtilities.rectTmp;
                 float f132 = dp4 / 2.0f;
@@ -378,8 +378,8 @@ public class k7 extends FrameLayout implements NotificationCenter.NotificationCe
                 rectF2.inset(AndroidUtilities.dp(1.33f), AndroidUtilities.dp(1.33f));
                 paint2.setColor(org.telegram.ui.ActionBar.y6.w0(org.telegram.ui.ActionBar.y6.B5, u6Var2));
                 canvas.drawRoundRect(rectF2, rectF2.height() / 2.0f, rectF2.height() / 2.0f, paint2);
-                q11Var = this.M;
-                if (q11Var == null) {
+                r11Var = this.M;
+                if (r11Var == null) {
                 }
             } else {
                 u6Var = u6Var2;
@@ -491,7 +491,7 @@ public class k7 extends FrameLayout implements NotificationCenter.NotificationCe
     @Override // android.view.ViewGroup, android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
-        NotificationCenter.getInstance(this.x).addObserver(this, NotificationCenter.userIsPremiumBlockedUpadted);
+        NotificationCenter.getInstance(this.x).addWeakObserver(this, NotificationCenter.userIsPremiumBlockedUpadted);
     }
 
     @Override // android.view.ViewGroup, android.view.View

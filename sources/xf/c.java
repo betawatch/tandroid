@@ -2,6 +2,7 @@ package xf;
 
 import android.content.SharedPreferences;
 import android.text.TextUtils;
+import bi.i0;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
@@ -17,9 +18,9 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.SerializedData;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
-import vi.i0;
+import vi.k0;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
 public final class c {
     public static volatile long g;
@@ -64,7 +65,7 @@ public final class c {
             f(true);
             this.f = true;
         }
-        Utilities.globalQueue.postRunnable(new i0(3, this, new ArrayList(this.e)));
+        Utilities.globalQueue.postRunnable(new k0(3, this, new ArrayList(this.e)));
     }
 
     public final TLRPC.Document c(long j10) {
@@ -145,7 +146,7 @@ public final class c {
         TL_account.getSavedRingtones getsavedringtones = new TL_account.getSavedRingtones();
         getsavedringtones.hash = g;
         if (z11) {
-            ConnectionsManager.getInstance(this.c).sendRequest(getsavedringtones, new bi.i0(this, 27));
+            ConnectionsManager.getInstance(this.c).sendRequest(getsavedringtones, new i0(this, 27));
             return;
         }
         if (!this.f) {

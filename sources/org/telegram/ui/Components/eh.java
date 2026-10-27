@@ -2,7 +2,7 @@ package org.telegram.ui.Components;
 
 import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class eh implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -17,18 +17,18 @@ public final /* synthetic */ class eh implements ValueAnimator.AnimatorUpdateLis
     public final void onAnimationUpdate(ValueAnimator valueAnimator) {
         switch (this.a) {
             case 0:
-                this.b.i2();
+                this.b.j2();
                 break;
             case 1:
                 this.b.G0.invalidate();
                 break;
             case 2:
-                ti.r(this.b, valueAnimator);
+                ti.p(this.b, valueAnimator);
                 break;
             case 3:
                 ti tiVar = this.b;
                 tiVar.getClass();
-                tiVar.R1(((Float) valueAnimator.getAnimatedValue()).floatValue());
+                tiVar.S1(((Float) valueAnimator.getAnimatedValue()).floatValue());
                 break;
             case 4:
                 ti tiVar2 = this.b;
@@ -40,7 +40,7 @@ public final /* synthetic */ class eh implements ValueAnimator.AnimatorUpdateLis
                 }
                 break;
             default:
-                this.b.i2();
+                this.b.j2();
                 break;
         }
     }

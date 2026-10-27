@@ -5,45 +5,45 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.ActionBar.f7;
 import org.telegram.ui.ActionBar.u6;
-import org.telegram.ui.Components.j71;
-import org.telegram.ui.Components.mm0;
-import org.telegram.ui.Components.r71;
-import org.telegram.ui.Components.s61;
+import org.telegram.ui.Components.aa0;
+import org.telegram.ui.Components.k71;
+import org.telegram.ui.Components.nm0;
+import org.telegram.ui.Components.s71;
 import org.telegram.ui.Components.t61;
+import org.telegram.ui.Components.u61;
 import org.telegram.ui.Components.xb;
-import org.telegram.ui.Components.z90;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
-public final class n2 extends s61 {
+public final class n2 extends t61 {
     public static final /* synthetic */ int a = 0;
 
     static {
-        s61.setup(new n2());
+        t61.setup(new n2());
     }
 
-    @Override // org.telegram.ui.Components.s61
-    public final void bindView(View view, t61 t61Var, boolean z10, j71 j71Var, r71 r71Var) {
-        z90 z90Var = (z90) view;
-        z90Var.setGravity(t61Var.z);
-        Object obj = t61Var.H;
+    @Override // org.telegram.ui.Components.t61
+    public final void bindView(View view, u61 u61Var, boolean z10, k71 k71Var, s71 s71Var) {
+        aa0 aa0Var = (aa0) view;
+        aa0Var.setGravity(u61Var.z);
+        Object obj = u61Var.H;
         if (obj instanceof Integer) {
             int intValue = ((Integer) obj).intValue();
-            Object obj2 = t61Var.G;
-            f7.V(z90Var, intValue, obj2 instanceof u6 ? (u6) obj2 : null);
+            Object obj2 = u61Var.G;
+            f7.V(aa0Var, intValue, obj2 instanceof u6 ? (u6) obj2 : null);
         } else {
-            f7.r(z90Var);
-            z90Var.setTextColor((int) t61Var.B);
+            f7.r(aa0Var);
+            aa0Var.setTextColor((int) u61Var.B);
         }
-        z90Var.setTextSize(1, t61Var.A);
-        z90Var.setTypeface(t61Var.q ? AndroidUtilities.bold() : null);
-        int i10 = t61Var.i;
-        z90Var.setPadding(i10, 0, i10, t61Var.k);
-        z90Var.setText(t61Var.l);
+        aa0Var.setTextSize(1, u61Var.A);
+        aa0Var.setTypeface(u61Var.q ? AndroidUtilities.bold() : null);
+        int i10 = u61Var.i;
+        aa0Var.setPadding(i10, 0, i10, u61Var.k);
+        aa0Var.setText(u61Var.l);
     }
 
-    @Override // org.telegram.ui.Components.s61
-    public final View createView(Context context, mm0 mm0Var, int i10, int i11, u6 u6Var) {
+    @Override // org.telegram.ui.Components.t61
+    public final View createView(Context context, nm0 nm0Var, int i10, int i11, u6 u6Var) {
         return new xb(context, 5, null);
     }
 }

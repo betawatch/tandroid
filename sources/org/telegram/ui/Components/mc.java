@@ -6,7 +6,7 @@ import android.text.method.LinkMovementMethod;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public class mc extends nb {
     public final y9 a;
@@ -19,10 +19,10 @@ public class mc extends nb {
         getThemedColor(i10);
         y9 y9Var = new y9(context);
         this.a = y9Var;
-        addView(y9Var, gb1.m(29.0f, 29.0f, 8388627, 12.0f, 12.0f, 12.0f, 12.0f));
+        addView(y9Var, kb1.m(29.0f, 29.0f, 8388627, 12.0f, 12.0f, 12.0f, 12.0f));
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setOrientation(1);
-        addView(linearLayout, gb1.m(-2.0f, -2.0f, 8388627, 54.0f, 8.0f, 12.0f, 8.0f));
+        addView(linearLayout, kb1.m(-2.0f, -2.0f, 8388627, 54.0f, 8.0f, 12.0f, 8.0f));
         TextView textView = new TextView(context);
         this.b = textView;
         textView.setSingleLine();

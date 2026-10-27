@@ -21,9 +21,9 @@ import m4.w1;
 import o6.l;
 import org.json.JSONException;
 import org.json.JSONObject;
-import s9.n;
+import s9.o;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
 public final class c implements d {
     public static final Object m = new Object();
@@ -31,7 +31,7 @@ public final class c implements d {
     public final ua.c b;
     public final m4.c c;
     public final j d;
-    public final n e;
+    public final o e;
     public final h f;
     public final Object g;
     public final ExecutorService h;
@@ -56,7 +56,7 @@ public final class c implements d {
             j.d = new j(aVar);
         }
         j jVar2 = j.d;
-        n nVar = new n(new s9.c(hVar, 2));
+        o oVar = new o(new s9.c(hVar, 2));
         h hVar2 = new h();
         this.g = new Object();
         this.k = new HashSet();
@@ -65,7 +65,7 @@ public final class c implements d {
         this.b = cVar;
         this.c = cVar2;
         this.d = jVar2;
-        this.e = nVar;
+        this.e = oVar;
         this.f = hVar2;
         this.h = executorService;
         this.i = jVar;

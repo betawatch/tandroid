@@ -18,14 +18,14 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.u6;
 import org.telegram.ui.Cells.p2;
 import org.telegram.ui.Components.c10;
-import org.telegram.ui.Components.lm0;
-import org.telegram.ui.un;
+import org.telegram.ui.Components.mm0;
+import org.telegram.ui.wn;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public final class n1 extends lm0 implements NotificationCenter.NotificationCenterDelegate {
+public final class n1 extends mm0 implements NotificationCenter.NotificationCenterDelegate {
     public final Context c;
-    public final un f;
+    public final wn f;
     public int h;
     public int n;
     public final u6 s;
@@ -38,15 +38,15 @@ public final class n1 extends lm0 implements NotificationCenter.NotificationCent
     public final int r = UserConfig.selectedAccount;
     public final ua E = new ua(this, 20);
 
-    public n1(Context context, un unVar, u6 u6Var, int i10, boolean z10) {
+    public n1(Context context, wn wnVar, u6 u6Var, int i10, boolean z10) {
         this.s = u6Var;
         this.c = context;
-        this.f = unVar;
+        this.f = wnVar;
         this.v = i10;
         this.w = z10;
     }
 
-    @Override // org.telegram.ui.Components.lm0
+    @Override // org.telegram.ui.Components.mm0
     public final boolean D(s4.e1 e1Var) {
         int i10 = e1Var.f;
         return i10 == 0 || i10 == 2;

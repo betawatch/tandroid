@@ -45,7 +45,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.MessagesStorage;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.vh;
+import org.telegram.messenger.wh;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
@@ -56,9 +56,9 @@ import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.k3;
 import org.telegram.ui.Cells.e3;
 import org.telegram.ui.Components.ds;
-import sg.d2;
+import sg.c2;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class q0 implements Runnable {
     public final /* synthetic */ int a;
@@ -212,23 +212,23 @@ public final /* synthetic */ class q0 implements Runnable {
                 return;
             case 14:
                 fi.p pVar = (fi.p) this.b;
-                d2 d2Var = (d2) this.c;
+                c2 c2Var = (c2) this.c;
                 a7 a7Var = pVar.a;
-                if (d2Var.getWidth() <= 0) {
+                if (c2Var.getWidth() <= 0) {
                     a7Var.animate().scaleX(0.0f).scaleY(1.0f).withEndAction(new s8(pVar, 24)).start();
                     return;
                 }
-                float width = d2Var.getWidth() / a7Var.getWidth();
+                float width = c2Var.getWidth() / a7Var.getWidth();
                 ValueAnimator valueAnimator = pVar.w;
                 if (valueAnimator != null) {
                     valueAnimator.cancel();
                 }
                 pVar.w = ValueAnimator.ofFloat(0.0f, 1.0f);
-                pVar.w.addUpdateListener(new z6(pVar, a7Var.getScaleX(), width, ((d2Var.getWidth() / 2.0f) + d2Var.getX()) - ((a7Var.getWidth() / 2.0f) + a7Var.getX()), ((d2Var.getHeight() / 2.0f) + d2Var.getY()) - ((a7Var.getHeight() / 2.0f) + a7Var.getY()), 0));
-                pVar.w.addListener(new ce(5, pVar, d2Var));
+                pVar.w.addUpdateListener(new z6(pVar, a7Var.getScaleX(), width, ((c2Var.getWidth() / 2.0f) + c2Var.getX()) - ((a7Var.getWidth() / 2.0f) + a7Var.getX()), ((c2Var.getHeight() / 2.0f) + c2Var.getY()) - ((a7Var.getHeight() / 2.0f) + a7Var.getY()), 0));
+                pVar.w.addListener(new ce(5, pVar, c2Var));
                 pVar.w.setDuration(320L);
                 pVar.w.setInterpolator(ds.h);
-                pVar.v = d2Var;
+                pVar.v = c2Var;
                 pVar.w.start();
                 return;
             case 15:
@@ -282,7 +282,7 @@ public final /* synthetic */ class q0 implements Runnable {
                 if ((TextUtils.isEmpty(e3Var.getText()) || TextUtils.equals(e3Var.getText(), "https://") || TextUtils.isEmpty(e3Var.getText().toString())) && clipboardManager != null && clipboardManager.hasPrimaryClip()) {
                     i13 = 1;
                 }
-                vh.q(textView.animate().alpha(i13 != 0 ? 1.0f : 0.0f).scaleX(i13 != 0 ? 1.0f : 0.7f).scaleY(i13 == 0 ? 0.7f : 1.0f), ds.h, 300L);
+                wh.q(textView.animate().alpha(i13 != 0 ? 1.0f : 0.0f).scaleX(i13 != 0 ? 1.0f : 0.7f).scaleY(i13 == 0 ? 0.7f : 1.0f), ds.h, 300L);
                 return;
             case 20:
                 n9 n9Var = (n9) this.b;

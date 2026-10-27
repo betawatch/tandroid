@@ -36,13 +36,13 @@ import org.telegram.ui.ActionBar.d7;
 import org.telegram.ui.ActionBar.u6;
 import org.telegram.ui.ActionBar.y6;
 import org.telegram.ui.Components.ar;
-import org.telegram.ui.Components.nw0;
 import org.telegram.ui.Components.ow0;
 import org.telegram.ui.Components.pw0;
+import org.telegram.ui.Components.qw0;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class a implements d, nw0, ow0, GenericProvider, k, o, s9.d, d7 {
+public final /* synthetic */ class a implements d, ow0, pw0, GenericProvider, k, o, s9.d, d7 {
     public final /* synthetic */ int a;
 
     public /* synthetic */ a(int i10) {
@@ -137,7 +137,7 @@ public final /* synthetic */ class a implements d, nw0, ow0, GenericProvider, k,
         }
     }
 
-    @Override // org.telegram.ui.Components.ow0
+    @Override // org.telegram.ui.Components.pw0
     public void b(Object obj, float f7) {
         switch (this.a) {
             case 13:
@@ -177,7 +177,7 @@ public final /* synthetic */ class a implements d, nw0, ow0, GenericProvider, k,
         return lambda$getComponents$0;
     }
 
-    @Override // org.telegram.ui.Components.nw0
+    @Override // org.telegram.ui.Components.ow0
     public float get(Object obj) {
         switch (this.a) {
             case 12:
@@ -236,7 +236,7 @@ public final /* synthetic */ class a implements d, nw0, ow0, GenericProvider, k,
 
     @Override // org.telegram.messenger.GenericProvider
     public Object provide(Object obj) {
-        pw0 pw0Var = n4.b0;
+        qw0 qw0Var = n4.b0;
         return Boolean.FALSE;
     }
 }

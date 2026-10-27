@@ -6,9 +6,9 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.cy;
+import org.telegram.ui.ey;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class g4 implements RequestDelegate {
     public final /* synthetic */ int a = 0;
@@ -35,13 +35,13 @@ public final /* synthetic */ class g4 implements RequestDelegate {
                 AndroidUtilities.runOnUIThread(new l4((h7) this.d, (qf.c) this.e, this.b, tLObject, (TL_stars.TL_starGiftUnique) this.f, tL_error, this.c, (CharSequence) this.g));
                 break;
             default:
-                AndroidUtilities.runOnUIThread(new l4((cy) this.d, this.b, tLObject, (TLRPC.User) this.e, (TLRPC.Chat) this.f, this.c, tL_error, (TLRPC.TL_messages_checkHistoryImportPeer) this.g));
+                AndroidUtilities.runOnUIThread(new l4((ey) this.d, this.b, tLObject, (TLRPC.User) this.e, (TLRPC.Chat) this.f, this.c, tL_error, (TLRPC.TL_messages_checkHistoryImportPeer) this.g));
                 break;
         }
     }
 
-    public /* synthetic */ g4(cy cyVar, org.telegram.ui.ActionBar.e2 e2Var, TLRPC.User user, TLRPC.Chat chat, long j10, TLRPC.TL_messages_checkHistoryImportPeer tL_messages_checkHistoryImportPeer) {
-        this.d = cyVar;
+    public /* synthetic */ g4(ey eyVar, org.telegram.ui.ActionBar.e2 e2Var, TLRPC.User user, TLRPC.Chat chat, long j10, TLRPC.TL_messages_checkHistoryImportPeer tL_messages_checkHistoryImportPeer) {
+        this.d = eyVar;
         this.b = e2Var;
         this.e = user;
         this.f = chat;

@@ -1,43 +1,62 @@
 package org.telegram.messenger;
 
 import org.telegram.messenger.ImageLoader;
+import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.Vector;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class c5 implements Runnable {
-    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ int a;
     public final /* synthetic */ boolean b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ long d;
-    public final /* synthetic */ int e;
-    public final /* synthetic */ Object f;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ Object d;
+    public final /* synthetic */ Object e;
 
-    public /* synthetic */ c5(int i10, String str, long j10, long j11, boolean z10) {
-        this.e = i10;
-        this.f = str;
-        this.c = j10;
-        this.d = j11;
+    public /* synthetic */ c5(int i10, int i11, Object obj, TLObject tLObject, boolean z10) {
+        this.a = i11;
+        this.d = obj;
+        this.e = tLObject;
         this.b = z10;
+        this.c = i10;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                ImageLoader.5.lambda$fileUploadProgressChanged$0(this.e, (String) this.f, this.c, this.d, this.b);
+                ((ImageLoader.5) this.d).lambda$fileDidFailedUpload$4(this.c, (String) this.e, this.b);
+                break;
+            case 1:
+                ((LocaleController) this.d).lambda$loadRemoteLanguages$11((Vector) this.e, this.b, this.c);
+                break;
+            case 2:
+                ((MediaDataController) this.d).lambda$loadStickers$91(this.c, this.b, (Utilities.Callback) this.e);
+                break;
+            case 3:
+                ((MessagesStorage) this.d).lambda$loadUserInfo$133((TLRPC.User) this.e, this.b, this.c);
                 break;
             default:
-                FileLog.lambda$dumpUnparsedMessage$2((TLObject) this.f, this.b, this.c, this.d, this.e);
+                ((SendMessagesHelper) this.d).lambda$toggleTodo$36(this.c, this.b, (Runnable) this.e);
                 break;
         }
     }
 
-    public /* synthetic */ c5(TLObject tLObject, boolean z10, long j10, long j11, int i10) {
-        this.f = tLObject;
+    public /* synthetic */ c5(BaseController baseController, int i10, boolean z10, Object obj, int i11) {
+        this.a = i11;
+        this.d = baseController;
+        this.c = i10;
         this.b = z10;
-        this.c = j10;
-        this.d = j11;
-        this.e = i10;
+        this.e = obj;
+    }
+
+    public /* synthetic */ c5(ImageLoader.5 r22, int i10, String str, boolean z10) {
+        this.a = 0;
+        this.d = r22;
+        this.c = i10;
+        this.e = str;
+        this.b = z10;
     }
 }

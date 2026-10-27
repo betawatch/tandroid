@@ -3,18 +3,18 @@ package org.telegram.ui;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ve implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ un b;
-    public final /* synthetic */ org.telegram.ui.Components.hn0 c;
+    public final /* synthetic */ wn b;
+    public final /* synthetic */ org.telegram.ui.Components.in0 c;
     public final /* synthetic */ String d;
 
-    public /* synthetic */ ve(un unVar, org.telegram.ui.Components.hn0 hn0Var, String str, int i10) {
+    public /* synthetic */ ve(wn wnVar, org.telegram.ui.Components.in0 in0Var, String str, int i10) {
         this.a = i10;
-        this.b = unVar;
-        this.c = hn0Var;
+        this.b = wnVar;
+        this.c = in0Var;
         this.d = str;
     }
 
@@ -48,6 +48,6 @@ public final /* synthetic */ class ve implements Runnable {
                 i10 = R.string.UsernameCopied;
                 break;
         }
-        org.telegram.messenger.vh.m(i10, b02);
+        org.telegram.messenger.wh.m(i10, b02);
     }
 }

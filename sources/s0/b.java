@@ -24,7 +24,6 @@ import com.google.firebase.components.ComponentRegistrar;
 import com.google.firebase.concurrent.ExecutorsRegistrar;
 import com.google.firebase.crashlytics.CrashlyticsRegistrar;
 import com.google.firebase.installations.FirebaseInstallationsRegistrar;
-import com.google.firebase.messaging.q;
 import f9.i0;
 import java.io.File;
 import java.lang.Thread;
@@ -40,18 +39,19 @@ import m.r3;
 import org.telegram.ui.ActionBar.b2;
 import org.telegram.ui.ActionBar.e2;
 import org.telegram.ui.Components.b10;
-import s9.p;
-import sg.p2;
+import s9.q;
+import sg.o2;
 import u2.a1;
 import u2.e0;
 import y9.n;
+import y9.p;
 import y9.r;
 import y9.s;
 import y9.v;
 import y9.w;
 import y9.x;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class b implements s9.e, ra.a, s9.d, OnFailureListener, t5.e, b2, e9.k, e2.j, q3.g {
     public final /* synthetic */ int a;
@@ -189,10 +189,10 @@ public final /* synthetic */ class b implements s9.e, ra.a, s9.d, OnFailureListe
             default:
                 int i13 = CrashlyticsRegistrar.a;
                 m9.h hVar = (m9.h) meVar.a(m9.h.class);
-                p u10 = meVar.u(v9.a.class);
-                p u11 = meVar.u(n9.a.class);
+                q u10 = meVar.u(v9.a.class);
+                q u11 = meVar.u(n9.a.class);
                 sa.d dVar = (sa.d) meVar.a(sa.d.class);
-                p u12 = meVar.u(ab.a.class);
+                q u12 = meVar.u(ab.a.class);
                 hVar.a();
                 Context context = hVar.a;
                 String packageName = context.getPackageName();
@@ -219,7 +219,7 @@ public final /* synthetic */ class b implements s9.e, ra.a, s9.d, OnFailureListe
                 }
                 String str3 = str;
                 v vVar3 = vVar2;
-                y9.p pVar = new y9.p(hVar, vVar3, aVar2, sVar, new u9.a(fVar), new u9.a(fVar), cVar, a2, jVar, new t6.f(u12));
+                p pVar = new p(hVar, vVar3, aVar2, sVar, new u9.a(fVar), new u9.a(fVar), cVar, a2, jVar, new t6.f(u12));
                 hVar.a();
                 String str4 = hVar.c.b;
                 int e = y9.h.e(context, "com.google.firebase.crashlytics.mapping_file_id", "string");
@@ -383,7 +383,7 @@ public final /* synthetic */ class b implements s9.e, ra.a, s9.d, OnFailureListe
                         onSuccessTask = Tasks.forResult(null);
                     }
                     onSuccessTask.continueWith(a12, new tb.a(23));
-                    q qVar = pVar.l;
+                    com.google.firebase.messaging.q qVar = pVar.l;
                     da.c cVar5 = pVar.h;
                     Context context2 = pVar.a;
                     if (context2 != null && (resources = context2.getResources()) != null) {
@@ -439,7 +439,7 @@ public final /* synthetic */ class b implements s9.e, ra.a, s9.d, OnFailureListe
                         boolean z12 = false;
                         aVarArr[0] = new pa.d();
                         rf.b bVar2 = new rf.b(aVarArr);
-                        ((p) pVar.o.a).a(new b(i21));
+                        ((q) pVar.o.a).a(new b(i21));
                         y9.a aVar3 = aVar;
                         m0 j11 = m0.j(pVar.a, pVar.g, pVar.h, aVar3, eVar2, r3Var, bVar2, b0Var2, pVar.c, pVar.m);
                         b0Var = b0Var2;
@@ -489,7 +489,7 @@ public final /* synthetic */ class b implements s9.e, ra.a, s9.d, OnFailureListe
                     boolean z122 = false;
                     aVarArr2[0] = new pa.d();
                     rf.b bVar22 = new rf.b(aVarArr2);
-                    ((p) pVar.o.a).a(new b(i212));
+                    ((q) pVar.o.a).a(new b(i212));
                     y9.a aVar32 = aVar;
                     m0 j112 = m0.j(pVar.a, pVar.g, pVar.h, aVar32, eVar22, r3Var2, bVar22, b0Var2, pVar.c, pVar.m);
                     b0Var = b0Var2;
@@ -525,7 +525,7 @@ public final /* synthetic */ class b implements s9.e, ra.a, s9.d, OnFailureListe
             case 13:
                 return (ScheduledExecutorService) ExecutorsRegistrar.b.get();
             case 14:
-                s9.n nVar3 = ExecutorsRegistrar.a;
+                s9.o oVar = ExecutorsRegistrar.a;
                 return t9.k.a;
         }
     }
@@ -561,7 +561,7 @@ public final /* synthetic */ class b implements s9.e, ra.a, s9.d, OnFailureListe
 
     @Override // com.google.android.gms.tasks.OnFailureListener
     public void onFailure(Exception exc) {
-        int i10 = p2.r0;
+        int i10 = o2.r0;
     }
 
     public /* synthetic */ b(Object obj, int i10) {

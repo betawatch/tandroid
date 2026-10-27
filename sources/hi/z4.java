@@ -22,14 +22,14 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.u6;
 import org.telegram.ui.ActionBar.y6;
 import org.telegram.ui.Components.a7;
-import org.telegram.ui.Components.ak0;
+import org.telegram.ui.Components.bk0;
 import org.telegram.ui.Components.ds;
 import org.telegram.ui.Components.h6;
 import org.telegram.ui.Components.j9;
-import org.telegram.ui.Components.q11;
+import org.telegram.ui.Components.r11;
 import org.telegram.ui.Components.t5;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class z4 extends Drawable implements a7, NotificationCenter.NotificationCenterDelegate {
     public final Paint a;
@@ -38,7 +38,7 @@ public final class z4 extends Drawable implements a7, NotificationCenter.Notific
     public final ImageReceiver d;
     public int e;
     public final t5[] f;
-    public final q11 h;
+    public final r11 h;
     public final RectF n;
     public final boolean r;
     public final h6 s;
@@ -68,14 +68,14 @@ public final class z4 extends Drawable implements a7, NotificationCenter.Notific
         imageReceiver.setForUserOrChat(user, j9Var);
         imageReceiver.setRoundRadius(AndroidUtilities.dp(16.0f));
         d();
-        this.h = new q11(UserObject.getUserName(user), 14.0f, null);
+        this.h = new r11(UserObject.getUserName(user), 14.0f, null);
     }
 
     @Override // org.telegram.ui.Components.a7
-    public final void a(ak0 ak0Var) {
-        this.x = ak0Var;
-        this.d.setParentView(ak0Var);
-        this.c.setParentView(ak0Var);
+    public final void a(bk0 bk0Var) {
+        this.x = bk0Var;
+        this.d.setParentView(bk0Var);
+        this.c.setParentView(bk0Var);
     }
 
     @Override // org.telegram.ui.Components.a7
@@ -100,7 +100,7 @@ public final class z4 extends Drawable implements a7, NotificationCenter.Notific
         this.w = true;
         this.c.onAttachedToWindow();
         this.d.onAttachedToWindow();
-        NotificationCenter.getInstance(UserConfig.selectedAccount).addObserver(this, NotificationCenter.recentEmojiStatusesUpdate);
+        NotificationCenter.getInstance(UserConfig.selectedAccount).addWeakObserver(this, NotificationCenter.recentEmojiStatusesUpdate);
         t5[] t5VarArr = this.f;
         t5 t5Var = t5VarArr[0];
         if (t5Var != null) {
@@ -252,7 +252,7 @@ public final class z4 extends Drawable implements a7, NotificationCenter.Notific
         imageReceiver.setForUserOrChat(user, j9Var);
         imageReceiver.setRoundRadius(AndroidUtilities.dp(16.0f));
         imageReceiver2.setImage(ImageLocation.getForDocument(document), "120_120", ImageLocation.getForDocument(FileLoader.getClosestPhotoSizeWithSize(document.thumbs, 120), document), "120_120", DocumentObject.getSvgThumb(document.thumbs, y6.a7, 0.35f), 0L, null, null, 0);
-        this.h = new q11(UserObject.getUserName(user), 14.0f, null);
+        this.h = new r11(UserObject.getUserName(user), 14.0f, null);
     }
 
     @Override // android.graphics.drawable.Drawable

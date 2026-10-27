@@ -23,11 +23,11 @@ import org.json.JSONObject;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
 import org.telegram.ui.Components.b10;
 import s4.d;
-import w7.k5;
+import w7.l5;
 import wc.e;
 import wc.f;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
 public abstract class b {
     public static final c a = new c();
@@ -163,7 +163,7 @@ public abstract class b {
             g(i10, str2, str3);
             throw null;
         }
-        dVar = k5.a(str2);
+        dVar = l5.a(str2);
         if (bool.booleanValue()) {
         }
         return dVar;

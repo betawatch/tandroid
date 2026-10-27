@@ -16,7 +16,7 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.MessagesController;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class pf extends ng {
     public boolean e;
@@ -41,8 +41,8 @@ public final class pf extends ng {
             setWindowView(view);
             return;
         }
-        org.telegram.ui.un unVar = chatActivityEnterView.P2;
-        if (unVar == null || unVar.getParentLayout() == null || !((ActionBarLayout) chatActivityEnterView.P2.getParentLayout()).b) {
+        org.telegram.ui.wn wnVar = chatActivityEnterView.P2;
+        if (wnVar == null || wnVar.getParentLayout() == null || !((ActionBarLayout) chatActivityEnterView.P2.getParentLayout()).b) {
             setWindowView(chatActivityEnterView.O2.getWindow().getDecorView());
         } else {
             setWindowView(chatActivityEnterView.P2.getParentLayout().getWindow().getDecorView());
@@ -56,7 +56,7 @@ public final class pf extends ng {
             return;
         }
         this.e = false;
-        this.r.G(true);
+        this.r.F(true);
     }
 
     @Override // org.telegram.ui.Components.ng, org.telegram.ui.Components.ju, org.telegram.ui.Components.EditTextBoldCursor, android.widget.TextView, android.view.View
@@ -65,11 +65,11 @@ public final class pf extends ng {
         ChatActivityEnterView chatActivityEnterView = this.r;
         if (chatActivityEnterView.T != chatActivityEnterView.E0.getLineCount()) {
             boolean z10 = false;
-            chatActivityEnterView.m1((chatActivityEnterView.E0.getLineCount() <= 2 || chatActivityEnterView.E0.getText() == null || TextUtils.isEmpty(chatActivityEnterView.E0.getText().toString().trim())) ? false : true);
+            chatActivityEnterView.l1((chatActivityEnterView.E0.getLineCount() <= 2 || chatActivityEnterView.E0.getText() == null || TextUtils.isEmpty(chatActivityEnterView.E0.getText().toString().trim())) ? false : true);
             if (chatActivityEnterView.E0.getLineCount() > 2 && chatActivityEnterView.E0.getText() != null && !TextUtils.isEmpty(chatActivityEnterView.E0.getText().toString().trim())) {
                 z10 = true;
             }
-            chatActivityEnterView.s1(z10);
+            chatActivityEnterView.r1(z10);
         }
     }
 
@@ -98,14 +98,14 @@ public final class pf extends ng {
                                     }
                                     int max = Math.max(0, chatActivityEnterView.E0.getSelectionStart());
                                     int min = Math.min(chatActivityEnterView.E0.getText().length(), chatActivityEnterView.E0.getSelectionEnd());
-                                    rj0[] rj0VarArr = (rj0[]) chatActivityEnterView.E0.getText().getSpans(max, min, rj0.class);
-                                    if (rj0VarArr == null || rj0VarArr.length <= 0) {
-                                        sj0.a(spannableStringBuilder);
+                                    sj0[] sj0VarArr = (sj0[]) chatActivityEnterView.E0.getText().getSpans(max, min, sj0.class);
+                                    if (sj0VarArr == null || sj0VarArr.length <= 0) {
+                                        tj0.a(spannableStringBuilder);
                                     } else {
-                                        rj0[] rj0VarArr2 = (rj0[]) spannableStringBuilder.getSpans(0, spannableStringBuilder.length(), rj0.class);
-                                        for (int i11 = 0; i11 < rj0VarArr2.length; i11++) {
-                                            spannableStringBuilder.removeSpan(rj0VarArr2[i11]);
-                                            spannableStringBuilder.removeSpan(rj0VarArr2[i11].a);
+                                        sj0[] sj0VarArr2 = (sj0[]) spannableStringBuilder.getSpans(0, spannableStringBuilder.length(), sj0.class);
+                                        for (int i11 = 0; i11 < sj0VarArr2.length; i11++) {
+                                            spannableStringBuilder.removeSpan(sj0VarArr2[i11]);
+                                            spannableStringBuilder.removeSpan(sj0VarArr2[i11].a);
                                         }
                                     }
                                     pf pfVar = chatActivityEnterView.E0;
@@ -116,7 +116,7 @@ public final class pf extends ng {
                                 if (MessagesController.getInstance(chatActivityEnterView.Q).richEditorAvailable()) {
                                     int max2 = Math.max(0, chatActivityEnterView.E0.getSelectionStart());
                                     int min2 = Math.min(chatActivityEnterView.E0.getText().length(), chatActivityEnterView.E0.getSelectionEnd());
-                                    chatActivityEnterView.I0(chatActivityEnterView.E0.getText().subSequence(0, Math.min(max2, min2)), htmlText, chatActivityEnterView.E0.getText().subSequence(Math.max(max2, min2), chatActivityEnterView.E0.getText().length()));
+                                    chatActivityEnterView.H0(chatActivityEnterView.E0.getText().subSequence(0, Math.min(max2, min2)), htmlText, chatActivityEnterView.E0.getText().subSequence(Math.max(max2, min2), chatActivityEnterView.E0.getText().length()));
                                     return true;
                                 }
                             }
@@ -133,7 +133,7 @@ public final class pf extends ng {
     @Override // org.telegram.ui.Components.ng, org.telegram.ui.Components.EditTextBoldCursor, android.widget.TextView, android.view.View
     public final boolean onTouchEvent(MotionEvent motionEvent) {
         ChatActivityEnterView chatActivityEnterView = this.r;
-        if (!chatActivityEnterView.s()) {
+        if (!chatActivityEnterView.r()) {
             if (motionEvent.getAction() == 0 && chatActivityEnterView.Z2 != null) {
                 org.telegram.ui.ActionBar.f7.m(this, 36, org.telegram.ui.ActionBar.y6.vf, chatActivityEnterView.W3);
                 chatActivityEnterView.Z2.b1();

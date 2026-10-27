@@ -12,10 +12,10 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.ar;
-import org.telegram.ui.Components.gb1;
-import org.telegram.ui.Components.h90;
+import org.telegram.ui.Components.i90;
+import org.telegram.ui.Components.kb1;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class l7 extends FrameLayout {
     public final org.telegram.ui.Components.y9 a;
@@ -34,7 +34,7 @@ public final class l7 extends FrameLayout {
         org.telegram.ui.Components.y9 y9Var = new org.telegram.ui.Components.y9(context);
         this.a = y9Var;
         y9Var.setRoundRadius(AndroidUtilities.dp(28.0f));
-        addView(y9Var, gb1.h(56, 56.0f, 49, 0.0f, 7.0f, 0.0f, 0.0f));
+        addView(y9Var, kb1.h(56, 56.0f, 49, 0.0f, 7.0f, 0.0f, 0.0f));
         TextView textView = new TextView(context);
         this.c = textView;
         org.telegram.ui.ActionBar.f7.V(textView, org.telegram.ui.ActionBar.y6.j5, u6Var);
@@ -43,7 +43,7 @@ public final class l7 extends FrameLayout {
         textView.setGravity(49);
         textView.setLines(2);
         textView.setEllipsize(TextUtils.TruncateAt.END);
-        addView(textView, gb1.h(-1, -2.0f, 51, 6.0f, 66.0f, 6.0f, 0.0f));
+        addView(textView, kb1.h(-1, -2.0f, 51, 6.0f, 66.0f, 6.0f, 0.0f));
         this.b = new i7(this, u6Var, 1);
         int i10 = org.telegram.ui.ActionBar.y6.i6;
         Drawable Z = org.telegram.ui.ActionBar.y6.Z(org.telegram.ui.ActionBar.y6.x0(null, i10, false), AndroidUtilities.dp(2.0f), AndroidUtilities.dp(2.0f));
@@ -70,10 +70,10 @@ public final class l7 extends FrameLayout {
         org.telegram.ui.Components.y9 y9Var = this.a;
         y9Var.setAnimatedEmojiDrawable(null);
         pg.a aVar = new pg.a(pg.a.k[0]);
-        h90 h90Var = new h90(1, null);
-        h90Var.a("");
-        h90Var.i = 1.8f;
-        ar arVar = new ar(aVar, h90Var, 0, 0);
+        i90 i90Var = new i90(1, null);
+        i90Var.a("");
+        i90Var.i = 1.8f;
+        ar arVar = new ar(aVar, i90Var, 0, 0);
         arVar.w = true;
         y9Var.setImageDrawable(arVar);
     }

@@ -1,34 +1,30 @@
 package org.telegram.messenger;
 
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class bd implements Utilities.Callback2 {
+public final /* synthetic */ class bd implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ MessagesController b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ Utilities.Callback2 d;
+    public final /* synthetic */ org.telegram.ui.ActionBar.r2 b;
 
-    public /* synthetic */ bd(MessagesController messagesController, long j10, Utilities.Callback2 callback2, int i10) {
+    public /* synthetic */ bd(int i10, org.telegram.ui.ActionBar.r2 r2Var) {
         this.a = i10;
-        this.b = messagesController;
-        this.c = j10;
-        this.d = callback2;
+        this.b = r2Var;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback2
-    public final void run(Object obj, Object obj2) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$resolveCommunityAllJoinPendingRequests$249(this.c, this.d, (TLRPC.Bool) obj, (TLRPC.TL_error) obj2);
+                MessagesController.lambda$checkSensitive$453(this.b);
                 break;
             case 1:
-                this.b.lambda$resolveCommunityJoinPendingRequest$248(this.c, this.d, (TLRPC.Bool) obj, (TLRPC.TL_error) obj2);
+                org.telegram.ui.Components.g5.s0(7, this.b, null);
+                break;
+            case 2:
+                org.telegram.ui.Components.g5.s0(8, this.b, null);
                 break;
             default:
-                this.b.lambda$toggleCommunityParticipantBanned$247(this.c, this.d, (TLRPC.Bool) obj, (TLRPC.TL_error) obj2);
+                TranslateController.lambda$pushToSummarize$18(this.b);
                 break;
         }
     }

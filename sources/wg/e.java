@@ -25,17 +25,17 @@ import org.telegram.ui.ActionBar.r2;
 import org.telegram.ui.ActionBar.u6;
 import org.telegram.ui.ActionBar.y6;
 import org.telegram.ui.Components.j9;
-import org.telegram.ui.Components.lm0;
+import org.telegram.ui.Components.mm0;
 import org.telegram.ui.Components.y9;
 import s4.e1;
-import vi.i0;
+import vi.k0;
 import xg.c0;
 import xg.r;
 import xg.t;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
-public abstract class e extends lm0 {
+public abstract class e extends mm0 {
     public final u6 c;
     public boolean d;
     public r2 e;
@@ -47,7 +47,7 @@ public abstract class e extends lm0 {
         this.c = u6Var;
     }
 
-    @Override // org.telegram.ui.Components.lm0
+    @Override // org.telegram.ui.Components.mm0
     public final boolean D(e1 e1Var) {
         return false;
     }
@@ -250,7 +250,7 @@ public abstract class e extends lm0 {
             spannableStringBuilder2.append((CharSequence) "**");
             spannableStringBuilder2.append((CharSequence) chat.title);
             spannableStringBuilder2.append((CharSequence) "**");
-            textView.setText(Emoji.replaceEmoji(AndroidUtilities.replaceSingleTag(spannableStringBuilder2.toString(), y6.gc, 0, new i0(6, oVar2, chat), u6Var), textView.getPaint().getFontMetricsInt(), false));
+            textView.setText(Emoji.replaceEmoji(AndroidUtilities.replaceSingleTag(spannableStringBuilder2.toString(), y6.gc, 0, new k0(6, oVar2, chat), u6Var), textView.getPaint().getFontMetricsInt(), false));
             y9Var2.f(chat, new j9(chat));
             frameLayout.setOnClickListener(new org.telegram.ui.web.c(11, oVar2, chat));
             c0Var = c0Var2;

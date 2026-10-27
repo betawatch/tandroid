@@ -6,11 +6,11 @@ import android.view.View;
 import java.util.ArrayList;
 import org.telegram.messenger.LiteMode;
 import org.telegram.messenger.R;
-import org.telegram.ui.Components.mm0;
-import org.telegram.ui.Components.u91;
+import org.telegram.ui.Components.nm0;
+import org.telegram.ui.Components.v91;
 import org.telegram.ui.Components.wt;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class q {
     public static r B;
@@ -58,12 +58,12 @@ public final class q {
         this.m.add(fVar);
     }
 
-    public final void b(mm0 mm0Var) {
-        if (mm0Var == null) {
+    public final void b(nm0 nm0Var) {
+        if (nm0Var == null) {
             return;
         }
-        this.l.add(mm0Var);
-        mm0Var.D2.b.add(new wt() { // from class: oi.f
+        this.l.add(nm0Var);
+        nm0Var.D2.b.add(new wt() { // from class: oi.f
             @Override // org.telegram.ui.Components.wt
             public final void a(int i10, boolean z10) {
                 q qVar = q.this;
@@ -72,19 +72,19 @@ public final class q {
             }
         });
         j jVar = new j(this);
-        if (mm0Var.P == null) {
-            mm0Var.P = new ArrayList();
+        if (nm0Var.P == null) {
+            nm0Var.P = new ArrayList();
         }
-        mm0Var.P.add(jVar);
-        mm0Var.j(new ai.b(this, 20));
+        nm0Var.P.add(jVar);
+        nm0Var.j(new ai.b(this, 20));
     }
 
-    public final void c(u91 u91Var) {
-        if (u91Var == null) {
+    public final void c(v91 v91Var) {
+        if (v91Var == null) {
             return;
         }
         g gVar = new g(this);
-        ArrayList arrayList = u91Var.R;
+        ArrayList arrayList = v91Var.R;
         if (arrayList.contains(gVar)) {
             return;
         }

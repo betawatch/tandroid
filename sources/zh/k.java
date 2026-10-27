@@ -14,13 +14,13 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.f7;
 import org.telegram.ui.ActionBar.u6;
 import org.telegram.ui.ActionBar.y6;
-import org.telegram.ui.Components.gb1;
 import org.telegram.ui.Components.j9;
+import org.telegram.ui.Components.kb1;
 import org.telegram.ui.Components.s6;
 import org.telegram.ui.Components.y9;
 import org.telegram.ui.Components.zq;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class k extends LinearLayout implements NotificationCenter.NotificationCenterDelegate {
     public final y9 a;
@@ -54,10 +54,10 @@ public final class k extends LinearLayout implements NotificationCenter.Notifica
         f7.Z(s6Var3, i10, u6Var);
         s6Var3.setTypeface(AndroidUtilities.bold());
         s6Var3.setGravity(17);
-        addView(s6Var3, gb1.s(66, -2, 0.0f, 16));
-        addView(y9Var, gb1.s(32, 32, 0.0f, 16));
-        addView(s6Var, gb1.s(0, -2, 1.0f, 16));
-        addView(s6Var2, gb1.t(-2, -2, 0.0f, 16, 0, 0, 20, 0));
+        addView(s6Var3, kb1.s(66, -2, 0.0f, 16));
+        addView(y9Var, kb1.s(32, 32, 0.0f, 16));
+        addView(s6Var, kb1.s(0, -2, 1.0f, 16));
+        addView(s6Var2, kb1.t(-2, -2, 0.0f, 16, 0, 0, 20, 0));
     }
 
     public final void a(long j10, boolean z10) {
@@ -111,7 +111,7 @@ public final class k extends LinearLayout implements NotificationCenter.Notifica
     @Override // android.view.ViewGroup, android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
-        NotificationCenter.getGlobalInstance().addObserver(this, NotificationCenter.emojiLoaded);
+        NotificationCenter.getGlobalInstance().addWeakObserver(this, NotificationCenter.emojiLoaded);
     }
 
     @Override // android.view.ViewGroup, android.view.View

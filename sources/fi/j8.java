@@ -2,11 +2,11 @@ package fi;
 
 import android.content.Context;
 import android.view.View;
-import org.telegram.ui.Components.m91;
+import org.telegram.ui.Components.n91;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
-public final class j8 extends m91 {
+public final class j8 extends n91 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Context b;
     public final /* synthetic */ n9 c;
@@ -17,7 +17,7 @@ public final class j8 extends m91 {
         this.b = context;
     }
 
-    @Override // org.telegram.ui.Components.m91
+    @Override // org.telegram.ui.Components.n91
     public final void b(View view, int i10, int i11) {
         switch (this.a) {
             case 0:
@@ -29,14 +29,14 @@ public final class j8 extends m91 {
         }
     }
 
-    @Override // org.telegram.ui.Components.m91
+    @Override // org.telegram.ui.Components.n91
     public final View d(int i10) {
         switch (this.a) {
         }
         return new g9(this.c, this.b);
     }
 
-    @Override // org.telegram.ui.Components.m91
+    @Override // org.telegram.ui.Components.n91
     public final int e() {
         switch (this.a) {
             case 0:
@@ -46,7 +46,7 @@ public final class j8 extends m91 {
         }
     }
 
-    @Override // org.telegram.ui.Components.m91
+    @Override // org.telegram.ui.Components.n91
     public final int h(int i10) {
         switch (this.a) {
             case 0:

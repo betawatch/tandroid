@@ -4,7 +4,7 @@ import android.util.SparseIntArray;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public class vz extends s4.t {
     public final boolean Q;
@@ -22,26 +22,26 @@ public class vz extends s4.t {
         this.Q = z10;
     }
 
-    public static qw0 D1(qw0 qw0Var) {
-        if (qw0Var == null) {
+    public static rw0 D1(rw0 rw0Var) {
+        if (rw0Var == null) {
             return null;
         }
-        if (qw0Var.a == 0.0f) {
-            qw0Var.a = 100.0f;
+        if (rw0Var.a == 0.0f) {
+            rw0Var.a = 100.0f;
         }
-        if (qw0Var.b == 0.0f) {
-            qw0Var.b = 100.0f;
+        if (rw0Var.b == 0.0f) {
+            rw0Var.b = 100.0f;
         }
-        float f7 = qw0Var.a;
-        float f10 = qw0Var.b;
+        float f7 = rw0Var.a;
+        float f10 = rw0Var.b;
         float f11 = f7 / f10;
         if (f11 <= 4.0f && f11 >= 0.2f) {
-            return qw0Var;
+            return rw0Var;
         }
         float max = Math.max(f7, f10);
-        qw0Var.a = max;
-        qw0Var.b = max;
-        return qw0Var;
+        rw0Var.a = max;
+        rw0Var.b = max;
+        return rw0Var;
     }
 
     public final void C1() {
@@ -78,7 +78,7 @@ public class vz extends s4.t {
         int i15 = 0;
         int i16 = i12;
         while (i14 < i13) {
-            qw0 D1 = i14 < A ? D1(E1(i14)) : null;
+            rw0 D1 = i14 < A ? D1(E1(i14)) : null;
             if (D1 == null) {
                 z10 = i15 != 0 ? true : z11;
                 i10 = dp;
@@ -153,8 +153,8 @@ public class vz extends s4.t {
         this.V++;
     }
 
-    public qw0 E1(int i10) {
-        return new qw0(100.0f, 100.0f);
+    public rw0 E1(int i10) {
+        return new rw0(100.0f, 100.0f);
     }
 
     public final boolean F1(int i10) {

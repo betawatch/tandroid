@@ -6,15 +6,15 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.aw0;
-import org.telegram.ui.Components.db1;
-import org.telegram.ui.Components.eo0;
-import org.telegram.ui.Components.fb1;
-import org.telegram.ui.Components.lg0;
-import org.telegram.ui.Components.vt0;
-import org.telegram.ui.o00;
+import org.telegram.ui.Components.bw0;
+import org.telegram.ui.Components.fo0;
+import org.telegram.ui.Components.gb1;
+import org.telegram.ui.Components.jb1;
+import org.telegram.ui.Components.mg0;
+import org.telegram.ui.Components.wt0;
+import org.telegram.ui.q00;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class u8 implements Runnable {
     public final /* synthetic */ int a;
@@ -60,67 +60,67 @@ public final /* synthetic */ class u8 implements Runnable {
                 eVar.q(p10, 1033, new ig.g(p10, i11, i12, this.c));
                 break;
             case 2:
-                ((lg0) this.d).a.b.A3(this.b, this.c);
+                ((mg0) this.d).a.b.B3(this.b, this.c);
                 break;
             case 3:
-                eo0 eo0Var = (eo0) this.d;
-                eo0Var.o = null;
-                eo0Var.c(this.b, this.c, true);
+                fo0 fo0Var = (fo0) this.d;
+                fo0Var.o = null;
+                fo0Var.c(this.b, this.c, true);
                 break;
             case 4:
-                aw0 aw0Var = ((vt0) this.d).a;
-                org.telegram.ui.ActionBar.r2 r2Var = aw0Var.x1;
+                bw0 bw0Var = ((wt0) this.d).a;
+                org.telegram.ui.ActionBar.r2 r2Var = bw0Var.x1;
                 if (r2Var != null) {
                     boolean z10 = this.c;
                     int i13 = this.b;
                     if (z10) {
                         TLRPC.TL_channels_setMainProfileTab tL_channels_setMainProfileTab = new TLRPC.TL_channels_setMainProfileTab();
-                        tL_channels_setMainProfileTab.tab = aw0.l0(i13, true);
-                        tL_channels_setMainProfileTab.channel = r2Var.getMessagesController().getInputChannel(aw0Var.f1.id);
-                        TLRPC.ChatFull chatFull = aw0Var.f1;
+                        tL_channels_setMainProfileTab.tab = bw0.l0(i13, true);
+                        tL_channels_setMainProfileTab.channel = r2Var.getMessagesController().getInputChannel(bw0Var.f1.id);
+                        TLRPC.ChatFull chatFull = bw0Var.f1;
                         chatFull.flags2 |= TLObject.FLAG_22;
                         chatFull.main_tab = tL_channels_setMainProfileTab.tab;
                         tL_account_setMainProfileTab = tL_channels_setMainProfileTab;
                     } else {
                         TLRPC.TL_account_setMainProfileTab tL_account_setMainProfileTab2 = new TLRPC.TL_account_setMainProfileTab();
-                        TLRPC.ProfileTab l02 = aw0.l0(i13, true);
+                        TLRPC.ProfileTab l02 = bw0.l0(i13, true);
                         tL_account_setMainProfileTab2.tab = l02;
-                        TLRPC.UserFull userFull = aw0Var.g1;
+                        TLRPC.UserFull userFull = bw0Var.g1;
                         tL_account_setMainProfileTab = tL_account_setMainProfileTab2;
                         if (userFull != null) {
                             userFull.flags2 |= 1048576;
                             userFull.main_tab = l02;
-                            r2Var.getMessagesStorage().updateUserInfo(aw0Var.g1, true);
+                            r2Var.getMessagesStorage().updateUserInfo(bw0Var.g1, true);
                             tL_account_setMainProfileTab = tL_account_setMainProfileTab2;
                         }
                     }
                     r2Var.getConnectionsManager().sendRequest(tL_account_setMainProfileTab, null);
-                    aw0Var.J1(true);
+                    bw0Var.J1(true);
                     break;
                 }
                 break;
             case 5:
-                db1 db1Var = (db1) fb1.a.get((String) this.d);
-                if (db1Var != null && db1Var.i != null) {
-                    boolean contains = fb1.g.contains(db1Var);
+                gb1 gb1Var = (gb1) jb1.a.get((String) this.d);
+                if (gb1Var != null && gb1Var.s != null) {
+                    boolean contains = jb1.g.contains(gb1Var);
                     int i14 = this.b;
                     if (!contains) {
-                        db1Var.t = i14;
-                        db1Var.u = this.c;
-                        ArrayList arrayList = fb1.f;
-                        arrayList.remove(db1Var);
-                        arrayList.add(db1Var);
-                        fb1.j();
+                        gb1Var.D = i14;
+                        gb1Var.E = this.c;
+                        ArrayList arrayList = jb1.f;
+                        arrayList.remove(gb1Var);
+                        arrayList.add(gb1Var);
+                        jb1.n();
                         break;
                     } else {
-                        db1Var.t = i14;
-                        db1Var.i.l(i14);
+                        gb1Var.D = i14;
+                        gb1Var.s.q(i14);
                         break;
                     }
                 }
                 break;
             default:
-                org.telegram.ui.Components.wc b02 = org.telegram.ui.Components.wc.b0((o00) this.d);
+                org.telegram.ui.Components.wc b02 = org.telegram.ui.Components.wc.b0((q00) this.d);
                 boolean z11 = this.c;
                 int i15 = z11 ? R.raw.folder_in : R.raw.folder_out;
                 int i16 = this.b;

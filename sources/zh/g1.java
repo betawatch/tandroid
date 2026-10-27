@@ -39,22 +39,22 @@ import org.telegram.ui.ActionBar.f7;
 import org.telegram.ui.ActionBar.p6;
 import org.telegram.ui.ActionBar.u6;
 import org.telegram.ui.ActionBar.y6;
+import org.telegram.ui.Components.aq;
 import org.telegram.ui.Components.ar;
 import org.telegram.ui.Components.ds;
-import org.telegram.ui.Components.eq0;
-import org.telegram.ui.Components.gb1;
+import org.telegram.ui.Components.fq0;
 import org.telegram.ui.Components.h6;
-import org.telegram.ui.Components.i80;
+import org.telegram.ui.Components.j80;
 import org.telegram.ui.Components.j9;
-import org.telegram.ui.Components.q11;
-import org.telegram.ui.Components.xj0;
+import org.telegram.ui.Components.kb1;
+import org.telegram.ui.Components.r11;
 import org.telegram.ui.Components.y9;
-import org.telegram.ui.Components.zp;
+import org.telegram.ui.Components.yj0;
 import org.telegram.ui.Components.zq;
 import org.telegram.ui.Wallet.p5;
-import org.telegram.ui.z10;
+import org.telegram.ui.b20;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public class g1 extends FrameLayout implements p6 {
     public static final int[] v0 = {-2781403, -3635939};
@@ -64,14 +64,14 @@ public class g1 extends FrameLayout implements p6 {
     public final TextView H;
     public final TextView I;
     public final p5 J;
-    public final z10 K;
+    public final b20 K;
     public final TextView L;
     public final TextView M;
     public fb N;
     public boolean O;
     public float P;
-    public q11 Q;
-    public q11 R;
+    public r11 Q;
+    public r11 R;
     public final Rect S;
     public boolean T;
     public boolean U;
@@ -81,7 +81,7 @@ public class g1 extends FrameLayout implements p6 {
     public tg.k a0;
     public final u6 b;
     public TL_stars.StarGift b0;
-    public final eq0 c;
+    public final fq0 c;
     public boolean c0;
     public final FrameLayout d;
     public boolean d0;
@@ -96,7 +96,7 @@ public class g1 extends FrameLayout implements p6 {
     public tg.k j0;
     public TLRPC.Document k0;
     public TL_stars.SavedStarGift l0;
-    public zp m0;
+    public aq m0;
     public final y9 n;
     public int n0;
     public boolean o0;
@@ -122,31 +122,31 @@ public class g1 extends FrameLayout implements p6 {
         this.u0 = y6.I.q();
         this.a = i10;
         this.b = u6Var;
-        gb1.c(this, 0.04f, 1.5f);
-        this.c = new eq0(this);
+        kb1.c(this, 0.04f, 1.5f);
+        this.c = new fq0(this);
         FrameLayout frameLayout = new FrameLayout(context);
         this.d = frameLayout;
         d1 d1Var = new d1(frameLayout, u6Var, true);
         this.e = d1Var;
         frameLayout.setBackground(d1Var);
-        addView(frameLayout, gb1.i(-1, -1, 119));
+        addView(frameLayout, kb1.i(-1, -1, 119));
         h1 h1Var = new h1(context);
         this.f = h1Var;
-        addView(h1Var, gb1.h(-2, -2.0f, 53, 0.0f, 2.0f, 1.0f, 0.0f));
+        addView(h1Var, kb1.h(-2, -2.0f, 53, 0.0f, 2.0f, 1.0f, 0.0f));
         y9 y9Var = new y9(context);
         this.y = y9Var;
         y9Var.getImageReceiver().setAutoRepeat(0);
-        FrameLayout.LayoutParams h = gb1.h(80, 80.0f, 17, 0.0f, 12.0f, 0.0f, 12.0f);
+        FrameLayout.LayoutParams h = kb1.h(80, 80.0f, 17, 0.0f, 12.0f, 0.0f, 12.0f);
         this.E = h;
         frameLayout.addView(y9Var, h);
         tg.c1 c1Var = new tg.c1(context, 3, u6Var);
         this.F = c1Var;
         c1Var.setImageReceiver(y9Var.getImageReceiver());
-        frameLayout.addView(c1Var, gb1.h(30, 30.0f, 49, 0.0f, 38.0f, 0.0f, 0.0f));
+        frameLayout.addView(c1Var, kb1.h(30, 30.0f, 49, 0.0f, 38.0f, 0.0f, 0.0f));
         tg.c1 c1Var2 = new tg.c1(context, 4, u6Var);
         this.G = c1Var2;
         c1Var2.setImageReceiver(y9Var.getImageReceiver());
-        frameLayout.addView(c1Var2, gb1.i(44, 44, 17));
+        frameLayout.addView(c1Var2, kb1.i(44, 44, 17));
         c1Var2.setAlpha(0.0f);
         c1Var2.setScaleX(0.3f);
         c1Var2.setScaleY(0.3f);
@@ -158,12 +158,12 @@ public class g1 extends FrameLayout implements p6 {
         textView.setGravity(17);
         textView.setTextSize(1, 14.0f);
         textView.setTypeface(AndroidUtilities.bold());
-        TextView k10 = org.telegram.ui.d3.k(frameLayout, textView, gb1.h(-1, -2.0f, 48, 0.0f, 89.0f, 0.0f, 0.0f), context);
+        TextView k10 = org.telegram.ui.d3.k(frameLayout, textView, kb1.h(-1, -2.0f, 48, 0.0f, 89.0f, 0.0f, 0.0f), context);
         this.I = k10;
         f7.V(k10, i11, u6Var);
         k10.setGravity(17);
         k10.setTextSize(1, 12.0f);
-        frameLayout.addView(k10, gb1.h(-1, -2.0f, 48, 0.0f, 107.0f, 0.0f, 0.0f));
+        frameLayout.addView(k10, kb1.h(-1, -2.0f, 48, 0.0f, 107.0f, 0.0f, 0.0f));
         p5 p5Var = new p5(this, context, 8);
         this.J = p5Var;
         TextView textView2 = new TextView(context);
@@ -173,29 +173,29 @@ public class g1 extends FrameLayout implements p6 {
         textView2.setPadding(AndroidUtilities.dp(10.0f), 0, AndroidUtilities.dp(10.0f), 0);
         textView2.setGravity(17);
         textView2.setTextColor(-13397548);
-        frameLayout.addView(p5Var, gb1.h(-2, -2.0f, 81, 0.0f, 0.0f, 0.0f, 11.0f));
-        z10 z10Var = new z10(context);
-        this.K = z10Var;
-        z10Var.setBackgroundColor(-16776961);
-        p5Var.addView(z10Var, gb1.g(0.0f, 0));
-        p5Var.addView(textView2, gb1.i(-2, 26, 17));
-        z10Var.setBackground(new m1(y6.I.q() ? 518759725 : 1088989954));
+        frameLayout.addView(p5Var, kb1.h(-2, -2.0f, 81, 0.0f, 0.0f, 0.0f, 11.0f));
+        b20 b20Var = new b20(context);
+        this.K = b20Var;
+        b20Var.setBackgroundColor(-16776961);
+        p5Var.addView(b20Var, kb1.g(0.0f, 0));
+        p5Var.addView(textView2, kb1.i(-2, 26, 17));
+        b20Var.setBackground(new m1(y6.I.q() ? 518759725 : 1088989954));
         TextView textView3 = new TextView(context);
         this.M = textView3;
         textView3.setTextSize(1, 10.66f);
         textView3.setGravity(17);
         textView3.setTextColor(y6.I.q() ? -1333971 : -2722014);
         textView3.setVisibility(8);
-        frameLayout.addView(textView3, gb1.h(-2, -2.0f, 49, 0.0f, 161.0f, 0.0f, 8.0f));
+        frameLayout.addView(textView3, kb1.h(-2, -2.0f, 49, 0.0f, 161.0f, 0.0f, 8.0f));
         this.h = new j9((u6) null);
         y9 y9Var2 = new y9(context);
         this.n = y9Var2;
         y9Var2.setRoundRadius(AndroidUtilities.dp(20.0f));
         y9Var2.setVisibility(8);
-        FrameLayout.LayoutParams h10 = gb1.h(20, 20.0f, 51, 2.0f, 2.0f, 2.0f, 2.0f);
+        FrameLayout.LayoutParams h10 = kb1.h(20, 20.0f, 51, 2.0f, 2.0f, 2.0f, 2.0f);
         this.r = h10;
         frameLayout.addView(y9Var2, h10);
-        this.s = gb1.h(20, 20.0f, 51, 5.0f, 5.0f, 2.0f, 2.0f);
+        this.s = kb1.h(20, 20.0f, 51, 5.0f, 5.0f, 2.0f, 2.0f);
         FrameLayout frameLayout2 = new FrameLayout(context);
         this.v = frameLayout2;
         frameLayout2.setAlpha(0.0f);
@@ -206,15 +206,15 @@ public class g1 extends FrameLayout implements p6 {
         imageView.setImageResource(R.drawable.msg_limit_pin);
         imageView.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
         imageView.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
-        frameLayout2.addView(imageView, gb1.e(12.66f, 12.66f, 17));
-        frameLayout.addView(frameLayout2, gb1.h(20, 20.0f, 51, 2.0f, 2.0f, 2.0f, 2.0f));
+        frameLayout2.addView(imageView, kb1.e(12.66f, 12.66f, 17));
+        frameLayout.addView(frameLayout2, kb1.h(20, 20.0f, 51, 2.0f, 2.0f, 2.0f, 2.0f));
         ImageView imageView2 = new ImageView(context);
         this.w = imageView2;
         imageView2.setImageResource(R.drawable.mini_gram_14);
         imageView2.setPadding(0, AndroidUtilities.dp(2.0f), 0, 0);
         imageView2.setVisibility(8);
         imageView2.setScaleType(ImageView.ScaleType.CENTER);
-        frameLayout.addView(imageView2, gb1.h(20, 20.0f, 51, 3.0f, 3.0f, 3.0f, 3.0f));
+        frameLayout.addView(imageView2, kb1.h(20, 20.0f, 51, 3.0f, 3.0f, 3.0f, 3.0f));
         TextView textView4 = new TextView(context);
         this.x = textView4;
         textView4.setTextSize(1, 10.0f);
@@ -222,7 +222,7 @@ public class g1 extends FrameLayout implements p6 {
         textView4.setPadding(AndroidUtilities.dp(5.0f), 0, AndroidUtilities.dp(5.0f), 0);
         textView4.setGravity(17);
         textView4.setTextColor(-1);
-        frameLayout.addView(textView4, gb1.h(-2, 17.0f, 51, 4.0f, 4.0f, 0.0f, 0.0f));
+        frameLayout.addView(textView4, kb1.h(-2, 17.0f, 51, 4.0f, 4.0f, 0.0f, 0.0f));
         textView4.setVisibility(8);
         setImportantForAccessibility(1);
         frameLayout.setImportantForAccessibility(4);
@@ -267,7 +267,7 @@ public class g1 extends FrameLayout implements p6 {
         hashSet.add(Integer.valueOf(y6.d6));
     }
 
-    public void b(i80 i80Var, Canvas canvas, float f7, float f10, float f11) {
+    public void b(j80 j80Var, Canvas canvas, float f7, float f10, float f11) {
         float f12;
         float f13;
         Canvas canvas2 = canvas;
@@ -285,7 +285,7 @@ public class g1 extends FrameLayout implements p6 {
         y9Var.getImageReceiver().setImageCoords((f7 - lerp) / 2.0f, (f14 - lerp) / 2.0f, lerp, lerp);
         y9Var.getImageReceiver().draw(canvas2);
         if (y9Var.getImageReceiver().isLottieRunning()) {
-            i80Var.invalidate();
+            j80Var.invalidate();
         }
         tg.c1 c1Var = this.F;
         if (c1Var.getVisibility() != 0 || c1Var.getAlpha() <= 0.0f) {
@@ -330,18 +330,18 @@ public class g1 extends FrameLayout implements p6 {
         }
         if (uniqueStarGift != null) {
             if (this.Q == null) {
-                this.Q = new q11(uniqueStarGift.title, 20.0f, AndroidUtilities.bold());
+                this.Q = new r11(uniqueStarGift.title, 20.0f, AndroidUtilities.bold());
             }
             if (this.R == null) {
-                this.R = new q11(LocaleController.formatPluralStringComma("Gift2CollectionNumber", uniqueStarGift.num), 13.0f, null);
+                this.R = new r11(LocaleController.formatPluralStringComma("Gift2CollectionNumber", uniqueStarGift.num), 13.0f, null);
             }
-            q11 q11Var = this.Q;
-            q11Var.p = f7 - AndroidUtilities.dp(8.0f);
+            r11 r11Var = this.Q;
+            r11Var.p = f7 - AndroidUtilities.dp(8.0f);
             float f15 = f13 - f11;
-            q11Var.c((f7 - this.Q.l()) / 2.0f, ((f10 - AndroidUtilities.dp(40.0f)) - (this.Q.j() / 2.0f)) + (AndroidUtilities.dp(50.0f) * f15), f11, -1, canvas);
-            q11 q11Var2 = this.R;
-            q11Var2.p = f7 - AndroidUtilities.dp(8.0f);
-            q11Var2.c((f7 - this.R.l()) / 2.0f, ((f10 - AndroidUtilities.dp(19.0f)) - (this.R.j() / 2.0f)) + (AndroidUtilities.dp(50.0f) * f15), 0.6f * f11, -1, canvas);
+            r11Var.c((f7 - this.Q.l()) / 2.0f, ((f10 - AndroidUtilities.dp(40.0f)) - (this.Q.j() / 2.0f)) + (AndroidUtilities.dp(50.0f) * f15), f11, -1, canvas);
+            r11 r11Var2 = this.R;
+            r11Var2.p = f7 - AndroidUtilities.dp(8.0f);
+            r11Var2.c((f7 - this.R.l()) / 2.0f, ((f10 - AndroidUtilities.dp(19.0f)) - (this.R.j() / 2.0f)) + (AndroidUtilities.dp(50.0f) * f15), 0.6f * f11, -1, canvas);
             canvas2 = canvas;
         }
         p5 p5Var = this.J;
@@ -367,11 +367,11 @@ public class g1 extends FrameLayout implements p6 {
 
     public final void c(boolean z10, boolean z11) {
         if (this.m0 == null) {
-            zp zpVar = new zp(getContext(), 21, null);
-            this.m0 = zpVar;
-            zpVar.b(-1, y6.d6, y6.k7);
+            aq aqVar = new aq(getContext(), 21, null);
+            this.m0 = aqVar;
+            aqVar.b(-1, y6.d6, y6.k7);
             this.m0.setDrawUnchecked(false);
-            this.d.addView(this.m0, gb1.h(24, 24.0f, 51, 4.0f, 4.0f, 4.0f, 4.0f));
+            this.d.addView(this.m0, kb1.h(24, 24.0f, 51, 4.0f, 4.0f, 4.0f, 4.0f));
         }
         this.n.setVisibility(8);
         this.m0.a(z10, z11);
@@ -557,7 +557,7 @@ public class g1 extends FrameLayout implements p6 {
                 TextView textView2 = this.L;
                 textView2.setVisibility(i15);
                 textView2.setTextSize(1, 12.0f);
-                z10 z10Var = this.K;
+                b20 b20Var = this.K;
                 if (!z10) {
                     textView2.setPadding(AndroidUtilities.dp(10.0f), 0, AndroidUtilities.dp(10.0f), 0);
                     textView2.setText(LocaleController.getString(R.string.Gift2TransferMine));
@@ -566,7 +566,7 @@ public class g1 extends FrameLayout implements p6 {
                     int dp = AndroidUtilities.dp(13.0f);
                     int v10 = y6.v(v, 822083583);
                     int i16 = v;
-                    z10Var.setBackground(y6.j0(dp, dp, dp, dp, i16, v10, v10));
+                    b20Var.setBackground(y6.j0(dp, dp, dp, dp, i16, v10, v10));
                     textView2.setTextColor(-1);
                     imageView.setColorFilter(-1);
                     int dp2 = AndroidUtilities.dp(10.0f);
@@ -578,7 +578,7 @@ public class g1 extends FrameLayout implements p6 {
                     int v12 = y6.v(stargiftattributebackdrop.center_color | (-16777216), y6.o1(0.55f, stargiftattributebackdrop.pattern_color | (-16777216)));
                     textView2.setText(dd.P0("XTR " + LocaleController.formatNumber(resellStars, ',')));
                     this.s0 = 0;
-                    z10Var.setBackground(new m1(1895825407, v12));
+                    b20Var.setBackground(new m1(1895825407, v12));
                     textView2.setTextColor(-1);
                     imageView.setColorFilter(-1);
                     imageView.setBackground(y6.c0(AndroidUtilities.dp(10.0f), v12));
@@ -673,7 +673,7 @@ public class g1 extends FrameLayout implements p6 {
         TextView textView22 = this.L;
         textView22.setVisibility(i15);
         textView22.setTextSize(1, 12.0f);
-        z10 z10Var2 = this.K;
+        b20 b20Var2 = this.K;
         if (!z10) {
         }
         p5 p5Var2 = this.J;
@@ -698,7 +698,7 @@ public class g1 extends FrameLayout implements p6 {
     public final boolean i(TL_stars.SavedStarGift savedStarGift, boolean z10, boolean z11) {
         long j10;
         boolean z12;
-        z10 z10Var;
+        b20 b20Var;
         boolean z13;
         fb fbVar = this.N;
         if (fbVar != null) {
@@ -742,7 +742,7 @@ public class g1 extends FrameLayout implements p6 {
         y9Var.setLayoutParams(layoutParams);
         if (this.l0 == savedStarGift) {
             c1Var.setVisibility(0);
-            c1Var.animate().alpha(savedStarGift.unsaved ? 1.0f : 0.0f).scaleX(savedStarGift.unsaved ? 1.0f : 0.4f).scaleY(savedStarGift.unsaved ? 1.0f : 0.4f).setDuration(350L).setInterpolator(ds.h).withEndAction(new vi.i0(10, this, savedStarGift)).start();
+            c1Var.animate().alpha(savedStarGift.unsaved ? 1.0f : 0.0f).scaleX(savedStarGift.unsaved ? 1.0f : 0.4f).scaleY(savedStarGift.unsaved ? 1.0f : 0.4f).setDuration(350L).setInterpolator(ds.h).withEndAction(new vi.k0(10, this, savedStarGift)).start();
         } else {
             c1Var.setAlpha(savedStarGift.unsaved ? 1.0f : 0.0f);
             c1Var.setScaleX(savedStarGift.unsaved ? 1.0f : 0.4f);
@@ -791,7 +791,7 @@ public class g1 extends FrameLayout implements p6 {
                 }
             }
         }
-        z10 z10Var2 = this.K;
+        b20 b20Var2 = this.K;
         p5 p5Var = this.J;
         TextView textView = this.L;
         if (stargiftattributebackdrop == null || savedStarGift.gift.resell_amount == null) {
@@ -810,7 +810,7 @@ public class g1 extends FrameLayout implements p6 {
                 textView.setTextSize(1, 12.0f);
                 textView.setText(LocaleController.getString(R.string.Gift2PriceUnique));
                 z12 = true;
-                z10Var = z10Var2;
+                b20Var = b20Var2;
             } else {
                 textView.setPadding(AndroidUtilities.dp(8.0f), 0, AndroidUtilities.dp(10.0f), 0);
                 textView.setTextSize(1, 12.0f);
@@ -818,7 +818,7 @@ public class g1 extends FrameLayout implements p6 {
                 TL_stars.StarGift starGift = savedStarGift.gift;
                 long j11 = starGift.stars;
                 z12 = true;
-                z10Var = z10Var2;
+                b20Var = b20Var2;
                 long j12 = savedStarGift.convert_stars;
                 if (j12 <= j10) {
                     j12 = starGift.convert_stars;
@@ -828,7 +828,7 @@ public class g1 extends FrameLayout implements p6 {
             if (z14) {
                 this.s0 = 0;
                 textView.setTextColor(-1);
-                z10Var.setBackground(new m1(1090519039));
+                b20Var.setBackground(new m1(1090519039));
                 imageView.setBackground(y6.c0(AndroidUtilities.dp(10.0f), 1090519039));
                 imageView.setColorFilter(-1);
             } else {
@@ -860,7 +860,7 @@ public class g1 extends FrameLayout implements p6 {
             }
             int v = y6.v(stargiftattributebackdrop.center_color | (-16777216), y6.o1(0.55f, stargiftattributebackdrop.pattern_color | (-16777216)));
             this.s0 = 0;
-            z10Var2.setBackground(new m1(1895825407, v));
+            b20Var2.setBackground(new m1(1895825407, v));
             textView.setTextColor(-1);
             imageView.setBackground(y6.c0(AndroidUtilities.dp(10.0f), v));
             imageView.setColorFilter(-1);
@@ -917,7 +917,7 @@ public class g1 extends FrameLayout implements p6 {
             y9Var.getImageReceiver().setAllowStartLottieAnimation(f7 == 0.0f);
             if (f7 > 0.0f) {
                 y9Var.getImageReceiver().stopAnimation();
-                xj0 lottieAnimation = y9Var.getImageReceiver().getLottieAnimation();
+                yj0 lottieAnimation = y9Var.getImageReceiver().getLottieAnimation();
                 if (lottieAnimation != null) {
                     lottieAnimation.N(0, false, false);
                 }
@@ -1100,7 +1100,7 @@ public class g1 extends FrameLayout implements p6 {
         p5 p5Var;
         TL_stars.SavedStarGift savedStarGift;
         TL_stars.SavedStarGift savedStarGift2;
-        zp zpVar;
+        aq aqVar;
         y9 y9Var;
         long peerDialogId;
         TextView textView2;
@@ -1137,8 +1137,8 @@ public class g1 extends FrameLayout implements p6 {
                         savedStarGift2 = this.e0;
                         if (savedStarGift2 != null) {
                         }
-                        zpVar = this.m0;
-                        if (zpVar != null) {
+                        aqVar = this.m0;
+                        if (aqVar != null) {
                         }
                         accessibilityNodeInfo.setContentDescription(sb2.toString());
                     }
@@ -1161,8 +1161,8 @@ public class g1 extends FrameLayout implements p6 {
                     savedStarGift2 = this.e0;
                     if (savedStarGift2 != null) {
                     }
-                    zpVar = this.m0;
-                    if (zpVar != null) {
+                    aqVar = this.m0;
+                    if (aqVar != null) {
                     }
                     accessibilityNodeInfo.setContentDescription(sb2.toString());
                 }
@@ -1187,8 +1187,8 @@ public class g1 extends FrameLayout implements p6 {
                     savedStarGift2 = this.e0;
                     if (savedStarGift2 != null) {
                     }
-                    zpVar = this.m0;
-                    if (zpVar != null) {
+                    aqVar = this.m0;
+                    if (aqVar != null) {
                     }
                     accessibilityNodeInfo.setContentDescription(sb2.toString());
                 }
@@ -1211,8 +1211,8 @@ public class g1 extends FrameLayout implements p6 {
                 savedStarGift2 = this.e0;
                 if (savedStarGift2 != null) {
                 }
-                zpVar = this.m0;
-                if (zpVar != null) {
+                aqVar = this.m0;
+                if (aqVar != null) {
                 }
                 accessibilityNodeInfo.setContentDescription(sb2.toString());
             }
@@ -1268,8 +1268,8 @@ public class g1 extends FrameLayout implements p6 {
                         }
                     }
                 }
-                zpVar = this.m0;
-                if (zpVar != null && zpVar.a.q) {
+                aqVar = this.m0;
+                if (aqVar != null && aqVar.a.q) {
                     accessibilityNodeInfo.setCheckable(true);
                     accessibilityNodeInfo.setChecked(true);
                 }
@@ -1306,8 +1306,8 @@ public class g1 extends FrameLayout implements p6 {
                 if (peerDialogId != 0) {
                 }
             }
-            zpVar = this.m0;
-            if (zpVar != null) {
+            aqVar = this.m0;
+            if (aqVar != null) {
                 accessibilityNodeInfo.setCheckable(true);
                 accessibilityNodeInfo.setChecked(true);
             }

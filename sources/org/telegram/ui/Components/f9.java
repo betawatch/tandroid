@@ -14,7 +14,7 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public abstract class f9 extends FrameLayout {
     public float E;
@@ -49,7 +49,7 @@ public abstract class f9 extends FrameLayout {
         k4Var.getImageReceiver().setAutoRepeatCount(1);
         k4Var.getImageReceiver().setAspectFit(true);
         setClipChildren(false);
-        addView(k4Var, gb1.i(70, 70, 17));
+        addView(k4Var, kb1.i(70, 70, 17));
     }
 
     public final void a(Canvas canvas, float f7, float f10, float f11, float f12, Paint paint) {

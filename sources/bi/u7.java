@@ -34,31 +34,31 @@ import org.telegram.ui.Components.AnimatedPhoneNumberEditText;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.aw;
 import org.telegram.ui.Components.c10;
-import org.telegram.ui.Components.cz0;
+import org.telegram.ui.Components.dz0;
 import org.telegram.ui.Components.k10;
-import org.telegram.ui.Components.k80;
-import org.telegram.ui.Components.le0;
+import org.telegram.ui.Components.l80;
+import org.telegram.ui.Components.me0;
 import org.telegram.ui.Components.n10;
-import org.telegram.ui.Components.r71;
-import org.telegram.ui.Components.ta0;
+import org.telegram.ui.Components.s71;
 import org.telegram.ui.Components.ti;
-import org.telegram.ui.Components.uc0;
-import org.telegram.ui.Components.wh0;
+import org.telegram.ui.Components.ua0;
+import org.telegram.ui.Components.vc0;
+import org.telegram.ui.Components.xh0;
 import org.telegram.ui.FiltersSetupActivity;
-import org.telegram.ui.cy;
-import org.telegram.ui.fn;
-import org.telegram.ui.hp;
-import org.telegram.ui.ip;
+import org.telegram.ui.bp;
+import org.telegram.ui.ey;
+import org.telegram.ui.hn;
 import org.telegram.ui.jp;
-import org.telegram.ui.lz;
-import org.telegram.ui.np;
-import org.telegram.ui.o00;
-import org.telegram.ui.rx;
-import org.telegram.ui.un;
-import org.telegram.ui.xo;
+import org.telegram.ui.kp;
+import org.telegram.ui.lp;
+import org.telegram.ui.oz;
+import org.telegram.ui.pp;
+import org.telegram.ui.q00;
+import org.telegram.ui.ux;
+import org.telegram.ui.wn;
 import org.telegram.ui.zo;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class u7 implements Runnable {
     public final /* synthetic */ int a;
@@ -327,23 +327,23 @@ public final /* synthetic */ class u7 implements Runnable {
                 }
                 return;
             case 14:
-                ((un) this.d).Ec((MessageObject) this.c, this.b);
+                ((wn) this.d).Ic((MessageObject) this.c, this.b);
                 return;
             case 15:
-                fn fnVar = (fn) this.d;
+                hn hnVar = (hn) this.d;
                 TLObject tLObject2 = (TLObject) this.c;
-                un unVar = fnVar.a;
-                unVar.Wb.b();
+                wn wnVar = hnVar.a;
+                wnVar.ac.b();
                 boolean z14 = tLObject2 instanceof TLRPC.TL_messages_stickerSet;
                 boolean z15 = this.b;
                 if (!z14) {
-                    org.telegram.ui.Components.wc.b0(unVar).R(R.raw.error, 36, LocaleController.getString(z15 ? R.string.AddEmojiNotFound : R.string.AddStickersNotFound)).k(true);
+                    org.telegram.ui.Components.wc.b0(wnVar).R(R.raw.error, 36, LocaleController.getString(z15 ? R.string.AddEmojiNotFound : R.string.AddStickersNotFound)).k(true);
                     return;
                 }
-                i10 = ((org.telegram.ui.ActionBar.r2) unVar).currentAccount;
+                i10 = ((org.telegram.ui.ActionBar.r2) wnVar).currentAccount;
                 TLRPC.TL_messages_stickerSet tL_messages_stickerSet = (TLRPC.TL_messages_stickerSet) tLObject2;
                 MediaDataController.getInstance(i10).putStickerSet(tL_messages_stickerSet, false);
-                if (unVar.getParentActivity() == null || unVar.getParentActivity() == null) {
+                if (wnVar.getParentActivity() == null || wnVar.getParentActivity() == null) {
                     return;
                 }
                 TLRPC.TL_inputStickerSetID tL_inputStickerSetID = new TLRPC.TL_inputStickerSetID();
@@ -351,39 +351,39 @@ public final /* synthetic */ class u7 implements Runnable {
                 tL_inputStickerSetID.access_hash = stickerSet.access_hash;
                 tL_inputStickerSetID.id = stickerSet.id;
                 if (!z15) {
-                    cz0 cz0Var = new cz0(unVar.getParentActivity(), unVar, tL_inputStickerSetID, null, unVar.Y, unVar.qa);
-                    cz0Var.setCalcMandatoryInsets(unVar.F9());
-                    unVar.showDialog(cz0Var);
+                    dz0 dz0Var = new dz0(wnVar.getParentActivity(), wnVar, tL_inputStickerSetID, null, wnVar.Y, wnVar.ua);
+                    dz0Var.setCalcMandatoryInsets(wnVar.I9());
+                    wnVar.showDialog(dz0Var);
                     return;
                 } else {
                     ArrayList arrayList11 = new ArrayList(1);
                     arrayList11.add(tL_inputStickerSetID);
-                    aw awVar = new aw(unVar, unVar.getParentActivity(), unVar.qa, arrayList11);
-                    awVar.setCalcMandatoryInsets(unVar.F9());
-                    unVar.showDialog(awVar);
+                    aw awVar = new aw(wnVar, wnVar.getParentActivity(), wnVar.ua, arrayList11);
+                    awVar.setCalcMandatoryInsets(wnVar.I9());
+                    wnVar.showDialog(awVar);
                     return;
                 }
             case 16:
-                xo xoVar = (xo) this.d;
+                zo zoVar = (zo) this.d;
                 TLRPC.TL_username tL_username = (TLRPC.TL_username) this.c;
-                zo zoVar = xoVar.a;
-                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(zoVar.getContext(), 0, zoVar.n2);
+                bp bpVar = zoVar.a;
+                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(bpVar.getContext(), 0, bpVar.n2);
                 alertDialog$Builder.a.R = LocaleController.getString(R.string.UsernameActivateErrorTitle);
                 alertDialog$Builder.a.T = LocaleController.getString(R.string.UsernameActivateErrorMessage);
-                alertDialog$Builder.k(LocaleController.getString(R.string.OK), new z3(xoVar, tL_username, this.b, 5));
+                alertDialog$Builder.k(LocaleController.getString(R.string.OK), new z3(zoVar, tL_username, this.b, 5));
                 alertDialog$Builder.p();
                 return;
             case 17:
-                jp jpVar = (jp) this.d;
+                lp lpVar = (lp) this.d;
                 TLRPC.Chat chat = (TLRPC.Chat) this.c;
-                np npVar = jpVar.x.d;
-                npVar.O = false;
+                pp ppVar = lpVar.x.d;
+                ppVar.O = false;
                 if (this.b || !chat.join_request) {
                     return;
                 }
                 chat.join_request = false;
-                npVar.P = true;
-                npVar.getMessagesController().toggleChatJoinRequest(chat.id, false, new hp(jpVar, 1), new ip(0, jpVar, chat));
+                ppVar.P = true;
+                ppVar.getMessagesController().toggleChatJoinRequest(chat.id, false, new jp(lpVar, 1), new kp(0, lpVar, chat));
                 return;
             case 18:
                 AnimatedPhoneNumberEditText.j((AnimatedPhoneNumberEditText) this.d, this.b, (String) this.c);
@@ -395,7 +395,7 @@ public final /* synthetic */ class u7 implements Runnable {
                     tiVar.setFocusable(true);
                     editTextBoldCursor.requestFocus();
                     if (this.b) {
-                        AndroidUtilities.runOnUIThread(new ip(16, tiVar, editTextBoldCursor));
+                        AndroidUtilities.runOnUIThread(new kp(16, tiVar, editTextBoldCursor));
                         return;
                     }
                     return;
@@ -405,54 +405,54 @@ public final /* synthetic */ class u7 implements Runnable {
                 ((n10) this.d).S((k10) this.c, !this.b);
                 return;
             case 21:
-                ta0 ta0Var = (ta0) this.d;
-                ta0Var.getMessagesController().getStoriesController().o0(ta0Var.e, (ArrayList) this.c, this.b, null);
+                ua0 ua0Var = (ua0) this.d;
+                ua0Var.getMessagesController().getStoriesController().r0(ua0Var.e, (ArrayList) this.c, this.b, null);
                 return;
             case 22:
-                le0 le0Var = (le0) this.d;
-                uc0 uc0Var = (uc0) this.c;
+                me0 me0Var = (me0) this.d;
+                vc0 vc0Var = (vc0) this.c;
                 if (this.b) {
-                    uc0Var.w(true);
+                    vc0Var.w(true);
                 } else {
-                    uc0Var.x();
+                    vc0Var.x();
                 }
-                le0Var.b(uc0Var);
+                me0Var.b(vc0Var);
                 return;
             case 23:
                 u uVar = (u) this.d;
-                uc0 uc0Var2 = (uc0) this.c;
+                vc0 vc0Var2 = (vc0) this.c;
                 if (this.b) {
-                    uc0Var2.w(true);
+                    vc0Var2.w(true);
                 } else {
-                    uc0Var2.x();
+                    vc0Var2.x();
                 }
-                ((le0) uVar.b).b(uc0Var2);
+                ((me0) uVar.b).b(vc0Var2);
                 return;
             case 24:
-                wh0 wh0Var = (wh0) this.d;
-                r71 r71Var = wh0Var.c;
+                xh0 xh0Var = (xh0) this.d;
+                s71 s71Var = xh0Var.c;
                 ArrayList arrayList12 = (ArrayList) this.c;
                 if (this.b) {
-                    arrayList12 = wh0Var.e;
+                    arrayList12 = xh0Var.e;
                 }
                 if (arrayList12.isEmpty()) {
                     return;
                 }
-                if (r71Var.canScrollVertically(1)) {
-                    for (int i16 = 0; i16 < r71Var.getChildCount(); i16++) {
-                        if (!(r71Var.getChildAt(i16) instanceof c10)) {
+                if (s71Var.canScrollVertically(1)) {
+                    for (int i16 = 0; i16 < s71Var.getChildCount(); i16++) {
+                        if (!(s71Var.getChildAt(i16) instanceof c10)) {
                         }
                     }
                     return;
                 }
-                wh0Var.a(false);
+                xh0Var.a(false);
                 return;
             case 25:
                 Runnable runnable = (Runnable) this.d;
-                k80 k80Var = (k80) this.c;
+                l80 l80Var = (l80) this.c;
                 runnable.run();
                 if (this.b) {
-                    k80Var.u();
+                    l80Var.u();
                     return;
                 }
                 return;
@@ -466,37 +466,37 @@ public final /* synthetic */ class u7 implements Runnable {
                 tVar.C0 = null;
                 return;
             case 27:
-                ((rx) this.d).b.presentFragment(this.b ? new FiltersSetupActivity() : new o00((MessagesController.DialogFilter) this.c, null));
+                ((ux) this.d).b.presentFragment(this.b ? new FiltersSetupActivity() : new q00((MessagesController.DialogFilter) this.c, null));
                 return;
             case 28:
-                rx rxVar = (rx) this.d;
+                ux uxVar = (ux) this.d;
                 ArrayList arrayList13 = (ArrayList) this.c;
-                cy cyVar = rxVar.b;
+                ey eyVar = uxVar.b;
                 int i17 = 0;
                 int i18 = 0;
                 while (true) {
                     int size = arrayList13.size();
                     boolean z16 = this.b;
                     if (i17 >= size) {
-                        org.telegram.ui.Components.yb ybVar = new org.telegram.ui.Components.yb(cyVar.getParentActivity(), null);
+                        org.telegram.ui.Components.yb ybVar = new org.telegram.ui.Components.yb(eyVar.getParentActivity(), null);
                         ybVar.b.setText(z16 ? LocaleController.formatPluralString("NotificationsMutedHintChats", i18, new Object[0]) : LocaleController.formatPluralString("NotificationsUnmutedHintChats", i18, new Object[0]));
                         if (z16) {
                             ybVar.d(R.raw.ic_mute, "Body Main", "Body Top", "Line", "Curve Big", "Curve Small");
                         } else {
                             ybVar.d(R.raw.ic_unmute, "BODY", "Wibe Big", "Wibe Big 3", "Wibe Small");
                         }
-                        org.telegram.ui.Components.qc.g(cyVar, ybVar, 1500).j();
+                        org.telegram.ui.Components.qc.g(eyVar, ybVar, 1500).j();
                         return;
                     }
                     TLRPC.Dialog dialog = (TLRPC.Dialog) arrayList13.get(i17);
                     if (dialog != null) {
-                        cyVar.getNotificationsController().setDialogNotificationsSettings(dialog.id, 0L, z16 ? 3 : 4);
+                        eyVar.getNotificationsController().setDialogNotificationsSettings(dialog.id, 0L, z16 ? 3 : 4);
                         i18++;
                     }
                     i17++;
                 }
             default:
-                ((lz) this.d).a0((k10) this.c, !this.b);
+                ((oz) this.d).a0((k10) this.c, !this.b);
                 return;
         }
     }

@@ -27,10 +27,9 @@ import u2.c1;
 import u2.d1;
 import u2.f1;
 import u7.s;
-import vi.y;
 import x2.q;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
 public final class i implements d1, f1, y2.g, y2.j {
     public final m4.c E;
@@ -953,14 +952,14 @@ public final class i implements d1, f1, y2.g, y2.j {
                 for (int i14 = 0; i14 < b10.size(); i14++) {
                     hashSet2.add(Integer.valueOf(((m2.b) b10.get(i14)).c));
                 }
-                y yVar = new y(size2, size2 - hashSet2.size(), length, i11);
-                if (yVar.a(2) || yVar.a(1)) {
+                vi.z zVar2 = new vi.z(size2, size2 - hashSet2.size(), length, i11);
+                if (zVar2.a(2) || zVar2.a(1)) {
                     sVar.getClass();
-                    k4.d z02 = s.z0(yVar, zVar);
+                    k4.d z02 = s.z0(zVar2, zVar);
                     if (z02 != null) {
                         long j16 = z02.b;
                         int i15 = z02.a;
-                        if (yVar.a(i15)) {
+                        if (zVar2.a(i15)) {
                             if (i15 == 2) {
                                 q qVar2 = kVar.j;
                                 z15 = qVar2.o(qVar2.s(xVar), j16);

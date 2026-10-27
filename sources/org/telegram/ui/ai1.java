@@ -1,34 +1,60 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
+import android.util.LongSparseArray;
+import android.widget.TextView;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public final class ai1 extends View {
-    public int a;
-    public final /* synthetic */ WallpapersListActivity b;
+public final class ai1 extends org.telegram.ui.ActionBar.j {
+    public final /* synthetic */ WallpapersListActivity a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ai1(WallpapersListActivity wallpapersListActivity, Context context) {
-        super(context);
-        this.b = wallpapersListActivity;
+    public ai1(WallpapersListActivity wallpapersListActivity) {
+        this.a = wallpapersListActivity;
     }
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        WallpapersListActivity wallpapersListActivity = this.b;
-        wallpapersListActivity.s.setColor(this.a);
-        canvas.drawCircle(AndroidUtilities.dp(25.0f), AndroidUtilities.dp(31.0f), AndroidUtilities.dp(18.0f), wallpapersListActivity.s);
-        if (this.a == org.telegram.ui.ActionBar.y6.x0(null, org.telegram.ui.ActionBar.y6.d6, false)) {
-            canvas.drawCircle(AndroidUtilities.dp(25.0f), AndroidUtilities.dp(31.0f), AndroidUtilities.dp(18.0f), wallpapersListActivity.v);
+    @Override // org.telegram.ui.ActionBar.j
+    public final void b(int i10) {
+        org.telegram.ui.ActionBar.r5 r5Var;
+        org.telegram.ui.ActionBar.r5 r5Var2;
+        WallpapersListActivity wallpapersListActivity = this.a;
+        LongSparseArray longSparseArray = wallpapersListActivity.e0;
+        if (i10 == -1) {
+            r5Var = ((org.telegram.ui.ActionBar.r2) wallpapersListActivity).simpleActionBar;
+            if (!r5Var.o()) {
+                wallpapersListActivity.finishFragment();
+                return;
+            }
+            longSparseArray.clear();
+            r5Var2 = ((org.telegram.ui.ActionBar.r2) wallpapersListActivity).simpleActionBar;
+            r5Var2.n();
+            wallpapersListActivity.E0();
+            return;
         }
-    }
-
-    @Override // android.view.View
-    public final void onMeasure(int i10, int i11) {
-        setMeasuredDimension(AndroidUtilities.dp(50.0f), AndroidUtilities.dp(62.0f));
+        if (i10 != 4) {
+            if (i10 == 3) {
+                ey eyVar = new ey(org.telegram.messenger.wh.c(3, "onlySelect", "dialogsType", true));
+                eyVar.C2 = new zh1(this);
+                wallpapersListActivity.presentFragment(eyVar);
+                return;
+            }
+            return;
+        }
+        if (wallpapersListActivity.getParentActivity() == null) {
+            return;
+        }
+        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(wallpapersListActivity.getParentActivity());
+        alertDialog$Builder.a.R = LocaleController.formatPluralString("DeleteBackground", longSparseArray.size(), new Object[0]);
+        alertDialog$Builder.a.T = LocaleController.formatString("DeleteChatBackgroundsAlert", R.string.DeleteChatBackgroundsAlert, new Object[0]);
+        alertDialog$Builder.k(LocaleController.getString(R.string.Delete), new zh1(this));
+        alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
+        org.telegram.ui.ActionBar.e2 e2Var = alertDialog$Builder.a;
+        wallpapersListActivity.showDialog(e2Var);
+        TextView textView = (TextView) e2Var.d(-1);
+        if (textView != null) {
+            org.telegram.ui.ActionBar.f7.V(textView, org.telegram.ui.ActionBar.y6.q7, null);
+        }
     }
 }

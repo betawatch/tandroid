@@ -36,7 +36,7 @@ import li.h5;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.ye0;
+import org.telegram.ui.Components.ze0;
 import r0.a0;
 import r0.i0;
 import r0.j0;
@@ -52,7 +52,7 @@ import u0.g;
 import u0.h;
 import ve.b;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
 public class NestedScrollView extends FrameLayout implements m {
     public static final float T = (float) (Math.log(0.78d) / Math.log(0.9d));
@@ -1097,7 +1097,7 @@ public class NestedScrollView extends FrameLayout implements m {
         super.onScrollChanged(i10, i11, i12, i13);
         g gVar = this.R;
         if (gVar != null) {
-            ((ye0) gVar).a.N(!r1.s);
+            ((ze0) gVar).a.N(!r1.s);
         }
     }
 

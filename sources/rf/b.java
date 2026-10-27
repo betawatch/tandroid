@@ -106,19 +106,19 @@ import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout
 import org.telegram.ui.ActionBar.r2;
 import org.telegram.ui.ActionBar.u6;
 import org.telegram.ui.Components.b10;
-import org.telegram.ui.Components.k80;
+import org.telegram.ui.Components.l80;
 import org.telegram.ui.Components.ti;
 import org.telegram.ui.Components.wc;
 import org.telegram.ui.PhotoViewer;
-import org.telegram.ui.ji1;
+import org.telegram.ui.li1;
 import r0.i0;
 import r0.k1;
 import r0.n;
-import w7.m5;
+import w7.n5;
 import z3.l;
 import z3.m;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
 public class b implements h, n, fe.b, d0, r, g2.g, g6.a, ga.a, h6.n, m, i, Continuation, t3 {
     public static volatile b d;
@@ -193,7 +193,7 @@ public class b implements h, n, fe.b, d0, r, g2.g, g6.a, ga.a, h6.n, m, i, Conti
     @Override // li.t3
     public void A(int i10) {
         q qVar = (q) this.c;
-        qVar.b.e2(qVar, i10);
+        qVar.b.f2(qVar, i10);
         qVar.d0();
         q.N(qVar);
     }
@@ -201,9 +201,9 @@ public class b implements h, n, fe.b, d0, r, g2.g, g6.a, ga.a, h6.n, m, i, Conti
     @Override // li.t3
     public void B(s3 s3Var, View view) {
         q qVar = (q) this.c;
-        k80 k80Var = new k80(qVar, (u6) this.b, view, false, false, true);
-        k80Var.Q = true;
-        qVar.H = j4.c(k80Var, qVar.b.f0, qVar.getContext(), (u6) this.b, s3Var, true);
+        l80 l80Var = new l80(qVar, (u6) this.b, view, false, false, true);
+        l80Var.Q = true;
+        qVar.H = j4.c(l80Var, qVar.b.f0, qVar.getContext(), (u6) this.b, s3Var, true);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:10:0x0027  */
@@ -347,7 +347,7 @@ public class b implements h, n, fe.b, d0, r, g2.g, g6.a, ga.a, h6.n, m, i, Conti
                     } else {
                         xVar.N(i14);
                         if (c11 == 0) {
-                            m5.b(new h0(arrayList2), lVar, jVar);
+                            n5.b(new h0(arrayList2), lVar, jVar);
                             return;
                         }
                         if (c11 == 1) {
@@ -780,11 +780,11 @@ public class b implements h, n, fe.b, d0, r, g2.g, g6.a, ga.a, h6.n, m, i, Conti
     }
 
     @Override // li.t3
-    public k80 P(View view) {
+    public l80 P(View view) {
         q qVar = (q) this.c;
-        k80 k80Var = new k80(qVar, (u6) this.b, view, false, false, true);
-        qVar.H = k80Var;
-        return k80Var;
+        l80 l80Var = new l80(qVar, (u6) this.b, view, false, false, true);
+        qVar.H = l80Var;
+        return l80Var;
     }
 
     @Override // r0.n
@@ -845,12 +845,12 @@ public class b implements h, n, fe.b, d0, r, g2.g, g6.a, ga.a, h6.n, m, i, Conti
             o6.l.e("Must be called from the main thread.");
             CastDevice castDevice = cVar.k;
             String str = castDevice != null ? castDevice.d : null;
-            PhotoViewer u12 = PhotoViewer.u1();
+            PhotoViewer v12 = PhotoViewer.v1();
             d.i();
-            if (u12.E == null || u12.e0 == null || !u12.T1()) {
+            if (v12.E == null || v12.e0 == null || !v12.U1()) {
                 return;
             }
-            new wc(u12.e0, new di.b()).R(R.raw.forward, 36, !TextUtils.isEmpty(str) ? LocaleController.formatString(R.string.ChromecastStartedTo, str) : LocaleController.getString(R.string.ChromecastStarted)).j();
+            new wc(v12.e0, new di.b()).R(R.raw.forward, 36, !TextUtils.isEmpty(str) ? LocaleController.formatString(R.string.ChromecastStartedTo, str) : LocaleController.getString(R.string.ChromecastStarted)).j();
         }
     }
 
@@ -1168,11 +1168,11 @@ public class b implements h, n, fe.b, d0, r, g2.g, g6.a, ga.a, h6.n, m, i, Conti
     @Override // li.t3
     public void i(u3 u3Var, View view) {
         q qVar = (q) this.c;
-        k80 k80Var = new k80(qVar, (u6) this.b, view, false, false, true);
-        k80Var.Q = true;
+        l80 l80Var = new l80(qVar, (u6) this.b, view, false, false, true);
+        l80Var.Q = true;
         r2 r2Var = qVar.b.f0;
         qVar.getContext();
-        qVar.H = j4.b(k80Var, r2Var, u3Var, true);
+        qVar.H = j4.b(l80Var, r2Var, u3Var, true);
     }
 
     @Override // z3.m
@@ -1232,7 +1232,7 @@ public class b implements h, n, fe.b, d0, r, g2.g, g6.a, ga.a, h6.n, m, i, Conti
             tiVar2.P = true;
             tiVar2.A1.setVisibility(8);
             tiVar2.z2 = new androidx.car.app.utils.a(qVar, aVar, tiVar2, 11);
-            tiVar2.v1();
+            tiVar2.w1();
             tiVar2.show();
         }
     }
@@ -1282,7 +1282,7 @@ public class b implements h, n, fe.b, d0, r, g2.g, g6.a, ga.a, h6.n, m, i, Conti
 
     @Override // li.t3
     public void s(g1 g1Var, boolean z10) {
-        ((q) this.c).b.y1(g1Var, z10);
+        ((q) this.c).b.z1(g1Var, z10);
     }
 
     @Override // h6.n
@@ -1319,7 +1319,7 @@ public class b implements h, n, fe.b, d0, r, g2.g, g6.a, ga.a, h6.n, m, i, Conti
     public void u() {
         q qVar = (q) this.c;
         if (qVar.getCurrentItemTop() != qVar.I) {
-            qVar.b.e2(qVar, 0);
+            qVar.b.f2(qVar, 0);
         }
         qVar.d0();
         q.N(qVar);
@@ -1426,7 +1426,7 @@ public class b implements h, n, fe.b, d0, r, g2.g, g6.a, ga.a, h6.n, m, i, Conti
                 break;
             default:
                 e6.a c10 = e6.a.c(ApplicationLoader.applicationContext);
-                ji1 ji1Var = new ji1(12);
+                li1 li1Var = new li1(12);
                 c10.getClass();
                 o6.l.e("Must be called from the main thread.");
                 e6.g gVar = c10.c;
@@ -1434,7 +1434,7 @@ public class b implements h, n, fe.b, d0, r, g2.g, g6.a, ga.a, h6.n, m, i, Conti
                 boolean z10 = false;
                 try {
                     e6.y yVar = gVar.a;
-                    e6.j jVar = new e6.j(ji1Var);
+                    e6.j jVar = new e6.j(li1Var);
                     Parcel N0 = yVar.N0();
                     com.google.android.gms.internal.cast.t.d(N0, jVar);
                     yVar.R0(N0, 4);

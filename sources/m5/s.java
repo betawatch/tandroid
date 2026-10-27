@@ -2,9 +2,9 @@ package m5;
 
 import aa.m0;
 import java.util.HashMap;
-import org.telegram.ui.ag0;
+import org.telegram.ui.cg0;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
 public final class s {
     public final i a;
@@ -37,6 +37,6 @@ public final class s {
         m0Var.d = new m(this.c, (byte[]) eVar.apply(aVar.b));
         m0Var.c = aVar.a;
         r5.a aVar2 = (r5.a) bVar;
-        aVar2.b.execute(new ag0(aVar2, b10, gVar, m0Var.h(), 29));
+        aVar2.b.execute(new cg0(aVar2, b10, gVar, m0Var.h(), 29));
     }
 }

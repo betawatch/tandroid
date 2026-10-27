@@ -13,14 +13,14 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.zp;
+import org.telegram.ui.Components.aq;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class d6 extends FrameLayout {
     public org.telegram.ui.Components.y9 a;
     public FrameLayout b;
-    public zp c;
+    public aq c;
     public TextView d;
     public bi.j5 e;
     public int f;

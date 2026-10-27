@@ -8,7 +8,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_wallet;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class u implements Utilities.Callback3 {
     public final /* synthetic */ l0 a;
@@ -49,7 +49,7 @@ public final /* synthetic */ class u implements Utilities.Callback3 {
             if (str2 == null) {
                 str2 = "NULL_ERROR";
             }
-            l0.i("failed sending: ".concat(str2));
+            l0.j("failed sending: ".concat(str2));
             return;
         }
         TL_wallet.walletTransaction wallettransaction = this.e;
@@ -57,7 +57,7 @@ public final /* synthetic */ class u implements Utilities.Callback3 {
             wallettransaction.comment = str;
             wallettransaction.comment_encrypted = true;
         }
-        if (l0.a(l0Var.s(), this.f)) {
+        if (l0.b(l0Var.t(), this.f)) {
             sendtransfer.data_gasless = null;
         }
         wallettransaction.comment_encrypted_preparing = false;
@@ -70,8 +70,8 @@ public final /* synthetic */ class u implements Utilities.Callback3 {
         k0Var.i();
         sendtransfer.random_id = this.h;
         sendtransfer.user_id = MessagesController.getInstance(i10).getInputUser(this.i);
-        l0Var.Q();
-        l0.F("prepared sendTransfer, sending");
+        l0Var.S();
+        l0.H("prepared sendTransfer, sending");
         ConnectionsManager.getInstance(i10).sendRequestTyped(sendtransfer, new org.telegram.messenger.a(), new bi.t3(l0Var, wallettransaction, sendMessagesHelper, messageObject, w6Var, 5));
     }
 }

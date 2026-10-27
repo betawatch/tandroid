@@ -50,11 +50,11 @@ import m4.q1;
 import org.json.JSONObject;
 import org.telegram.messenger.FileLog;
 import org.telegram.ui.Components.b10;
-import org.telegram.ui.Components.ma1;
+import org.telegram.ui.Components.na1;
 import org.telegram.ui.web.k1;
 import org.telegram.ui.web.l1;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
 public final class q {
     public static q e;
@@ -479,7 +479,7 @@ public final class q {
             return;
         }
         if (trim.charAt(0) == '(') {
-            Matcher matcher = ma1.z0.matcher(trim);
+            Matcher matcher = na1.z0.matcher(trim);
             int i11 = 0;
             while (true) {
                 if (!matcher.find()) {
@@ -636,11 +636,11 @@ public final class q {
         }
         zArr[0] = false;
         String trim = str.trim();
-        Matcher matcher = ma1.x0.matcher(trim);
+        Matcher matcher = na1.x0.matcher(trim);
         if (matcher.find()) {
             trim = trim.substring(matcher.group(0).length());
         } else {
-            Matcher matcher2 = ma1.y0.matcher(trim);
+            Matcher matcher2 = na1.y0.matcher(trim);
             if (matcher2.find()) {
                 trim = trim.substring(matcher2.group(0).length());
                 zArr[0] = true;

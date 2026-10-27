@@ -34,9 +34,9 @@ import org.telegram.ui.ActionBar.u6;
 import org.telegram.ui.ActionBar.y6;
 import org.telegram.ui.PremiumPreviewFragment;
 import org.telegram.ui.d3;
-import org.telegram.ui.u90;
+import org.telegram.ui.w90;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class a2 extends FrameLayout implements l0, NotificationCenter.NotificationCenterDelegate {
     public static final float[] U = {0.02f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 0.02f};
@@ -72,8 +72,8 @@ public final class a2 extends FrameLayout implements l0, NotificationCenter.Noti
     public boolean y;
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:24:0x0108  */
-    /* JADX WARN: Removed duplicated region for block: B:41:0x0189  */
+    /* JADX WARN: Removed duplicated region for block: B:24:0x0109  */
+    /* JADX WARN: Removed duplicated region for block: B:41:0x018a  */
     /* JADX WARN: Type inference failed for: r9v16, types: [android.graphics.Bitmap[], java.io.Serializable] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -130,7 +130,7 @@ public final class a2 extends FrameLayout implements l0, NotificationCenter.Noti
                 this.n.setImage(null, null, z1Var, null, premiumPromo, 1);
                 FileLoader.getInstance(this.s).loadFile(document, premiumPromo, 3, 0);
                 this.R = document;
-                Utilities.globalQueue.postRunnable(new sg.u(7, this, document));
+                Utilities.globalQueue.postRunnable(new s9.g(8, this, document));
                 if (i11 != 1) {
                     s4.b bVar = new s4.b(2);
                     bVar.c = new RectF();
@@ -766,7 +766,7 @@ public final class a2 extends FrameLayout implements l0, NotificationCenter.Noti
         if (!this.F) {
             a();
         }
-        NotificationCenter.getInstance(this.s).addObserver(this, NotificationCenter.fileLoaded);
+        NotificationCenter.getInstance(this.s).addWeakObserver(this, NotificationCenter.fileLoaded);
     }
 
     @Override // android.view.ViewGroup, android.view.View
@@ -788,7 +788,7 @@ public final class a2 extends FrameLayout implements l0, NotificationCenter.Noti
         fi.c0 c0Var = this.H;
         if (c0Var != null) {
             this.T = c0Var.getCurrentPosition();
-            this.H.release(new u90(24));
+            this.H.release(new w90(25));
             this.H = null;
         }
     }
@@ -931,7 +931,7 @@ public final class a2 extends FrameLayout implements l0, NotificationCenter.Noti
             fi.c0 c0Var = this.H;
             if (c0Var != null) {
                 this.T = c0Var.getCurrentPosition();
-                this.H.release(new u90(24));
+                this.H.release(new w90(25));
                 this.H = null;
             }
             imageReceiver.stopAnimation();

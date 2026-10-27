@@ -1,37 +1,26 @@
 package org.telegram.messenger;
 
-import org.telegram.tgnet.ConnectionsManager;
-
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class u6 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ int c;
+    public final /* synthetic */ MediaController b;
+    public final /* synthetic */ boolean c;
 
-    public /* synthetic */ u6(int i10, int i11, int i12) {
-        this.a = i12;
-        this.b = i10;
-        this.c = i11;
+    public /* synthetic */ u6(MediaController mediaController, boolean z10, int i10) {
+        this.a = i10;
+        this.b = mediaController;
+        this.c = z10;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                MediaController.lambda$startRecording$35(this.b, this.c);
-                break;
-            case 1:
-                PasskeysController.lambda$login$11(this.b, this.c);
-                break;
-            case 2:
-                ConnectionsManager.lambda$onRequestNewServerIpAndPort$18(this.b, this.c);
-                break;
-            case 3:
-                ConnectionsManager.lambda$onConnectionStateChanged$15(this.b, this.c);
+                this.b.lambda$toggleRecordingPause$30(this.c);
                 break;
             default:
-                ConnectionsManager.getInstance(this.b).cancelRequest(this.c, true);
+                this.b.lambda$toggleRecordingPause$34(this.c);
                 break;
         }
     }

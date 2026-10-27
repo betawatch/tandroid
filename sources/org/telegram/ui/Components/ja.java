@@ -10,7 +10,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.DispatchQueue;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class ja {
     public DispatchQueue a;
@@ -97,7 +97,7 @@ public final class ja {
                 View view = this.c;
                 Drawable background = view.getBackground();
                 if (background == null) {
-                    background = u6Var instanceof org.telegram.ui.sn ? ((org.telegram.ui.sn) u6Var).l() : org.telegram.ui.ActionBar.y6.t0();
+                    background = u6Var instanceof org.telegram.ui.un ? ((org.telegram.ui.un) u6Var).l() : org.telegram.ui.ActionBar.y6.t0();
                 }
                 view.setTag(67108867, Integer.valueOf(i10));
                 if (i10 == 0) {

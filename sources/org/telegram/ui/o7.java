@@ -8,10 +8,10 @@ import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class o7 extends FrameLayout {
-    public final org.telegram.ui.Components.zp a;
+    public final org.telegram.ui.Components.aq a;
     public final FrameLayout b;
     public final TextView c;
     public boolean d;
@@ -24,10 +24,10 @@ public final class o7 extends FrameLayout {
         super(context);
         this.f = i10;
         this.h = k7Var;
-        org.telegram.ui.Components.zp zpVar = new org.telegram.ui.Components.zp(context, 21, null);
-        this.a = zpVar;
-        zpVar.setDrawBackgroundAsArc(14);
-        zpVar.b(org.telegram.ui.ActionBar.y6.i7, org.telegram.ui.ActionBar.y6.g7, org.telegram.ui.ActionBar.y6.k7);
+        org.telegram.ui.Components.aq aqVar = new org.telegram.ui.Components.aq(context, 21, null);
+        this.a = aqVar;
+        aqVar.setDrawBackgroundAsArc(14);
+        aqVar.b(org.telegram.ui.ActionBar.y6.i7, org.telegram.ui.ActionBar.y6.g7, org.telegram.ui.ActionBar.y6.k7);
         View view = new View(getContext());
         view.setOnClickListener(new a(this, 7));
         FrameLayout frameLayout = new FrameLayout(context);
@@ -38,16 +38,16 @@ public final class o7 extends FrameLayout {
         textView.setGravity(5);
         org.telegram.ui.ActionBar.f7.V(textView, org.telegram.ui.ActionBar.y6.n6, null);
         if (LocaleController.isRTL) {
-            addView(zpVar, org.telegram.ui.Components.gb1.h(24, 24.0f, 21, 0.0f, 0.0f, 18.0f, 0.0f));
-            addView(view, org.telegram.ui.Components.gb1.h(40, 40.0f, 21, 0.0f, 0.0f, 0.0f, 0.0f));
-            addView(frameLayout, org.telegram.ui.Components.gb1.h(-1, -2.0f, 0, 90.0f, 0.0f, 40.0f, 0.0f));
-            addView(textView, org.telegram.ui.Components.gb1.h(69, -2.0f, 19, 0.0f, 0.0f, 0.0f, 0.0f));
+            addView(aqVar, org.telegram.ui.Components.kb1.h(24, 24.0f, 21, 0.0f, 0.0f, 18.0f, 0.0f));
+            addView(view, org.telegram.ui.Components.kb1.h(40, 40.0f, 21, 0.0f, 0.0f, 0.0f, 0.0f));
+            addView(frameLayout, org.telegram.ui.Components.kb1.h(-1, -2.0f, 0, 90.0f, 0.0f, 40.0f, 0.0f));
+            addView(textView, org.telegram.ui.Components.kb1.h(69, -2.0f, 19, 0.0f, 0.0f, 0.0f, 0.0f));
             return;
         }
-        addView(zpVar, org.telegram.ui.Components.gb1.h(24, 24.0f, 19, 18.0f, 0.0f, 0.0f, 0.0f));
-        addView(view, org.telegram.ui.Components.gb1.h(40, 40.0f, 19, 0.0f, 0.0f, 0.0f, 0.0f));
-        addView(frameLayout, org.telegram.ui.Components.gb1.h(-1, -2.0f, 0, 48.0f, 0.0f, 90.0f, 0.0f));
-        addView(textView, org.telegram.ui.Components.gb1.h(69, -2.0f, 21, 0.0f, 0.0f, 21.0f, 0.0f));
+        addView(aqVar, org.telegram.ui.Components.kb1.h(24, 24.0f, 19, 18.0f, 0.0f, 0.0f, 0.0f));
+        addView(view, org.telegram.ui.Components.kb1.h(40, 40.0f, 19, 0.0f, 0.0f, 0.0f, 0.0f));
+        addView(frameLayout, org.telegram.ui.Components.kb1.h(-1, -2.0f, 0, 48.0f, 0.0f, 90.0f, 0.0f));
+        addView(textView, org.telegram.ui.Components.kb1.h(69, -2.0f, 21, 0.0f, 0.0f, 21.0f, 0.0f));
     }
 
     @Override // android.view.ViewGroup, android.view.View

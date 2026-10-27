@@ -10,14 +10,14 @@ import jg.e1;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LiteMode;
 import org.telegram.messenger.SharedConfig;
-import org.telegram.messenger.vh;
+import org.telegram.messenger.wh;
 import org.telegram.ui.ActionBar.r5;
 import org.telegram.ui.ActionBar.u6;
 import org.telegram.ui.ActionBar.y6;
-import org.telegram.ui.Components.gb1;
-import org.telegram.ui.Components.mm0;
+import org.telegram.ui.Components.kb1;
+import org.telegram.ui.Components.nm0;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class a {
     public final q a;
@@ -167,13 +167,13 @@ public final class a {
         return eVar;
     }
 
-    public final void e(FrameLayout frameLayout, mm0 mm0Var, View view, u6 u6Var) {
+    public final void e(FrameLayout frameLayout, nm0 nm0Var, View view, u6 u6Var) {
         this.g = frameLayout;
-        this.h = mm0Var;
-        mm0Var.setCaptureSectionsDecoratorAllowed(true);
-        this.i = new bi.g(4, mm0Var, frameLayout);
-        this.a.b(mm0Var);
-        mm0Var.setClipToPadding(false);
+        this.h = nm0Var;
+        nm0Var.setCaptureSectionsDecoratorAllowed(true);
+        this.i = new bi.g(4, nm0Var, frameLayout);
+        this.a.b(nm0Var);
+        nm0Var.setClipToPadding(false);
         f(frameLayout, view, u6Var);
     }
 
@@ -182,7 +182,7 @@ public final class a {
             return;
         }
         AndroidUtilities.removeFromParent(view);
-        frameLayout.addView(view, gb1.i(-1, -2, 48));
+        frameLayout.addView(view, kb1.i(-1, -2, 48));
         boolean z10 = view instanceof r5;
         ch.b bVar = this.c;
         if (!z10) {
@@ -202,15 +202,15 @@ public final class a {
         fh.e m10 = gh.c.m(u6Var);
         eh.d c10 = bVar.c(r5Var, null, false);
         c10.v(m10);
-        vh.s(c10, AndroidUtilities.dp(23.0f), 6.0f);
+        wh.s(c10, AndroidUtilities.dp(23.0f), 6.0f);
         r5Var.H = c10;
         eh.d c11 = bVar.c(r5Var, null, false);
         c11.v(m10);
-        vh.s(c11, AndroidUtilities.dp(23.0f), 6.0f);
+        wh.s(c11, AndroidUtilities.dp(23.0f), 6.0f);
         r5Var.I = c11;
         eh.d c12 = bVar.c(r5Var, null, false);
         c12.v(m10);
-        vh.s(c12, AndroidUtilities.dp(23.0f), 6.0f);
+        wh.s(c12, AndroidUtilities.dp(23.0f), 6.0f);
         r5Var.J = c12;
         r5Var.K = AndroidUtilities.dp(23.0f);
         r5Var.L = bVar;

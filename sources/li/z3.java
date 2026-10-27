@@ -5,9 +5,9 @@ import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.HorizontalScrollView;
 import org.telegram.ui.Cells.s9;
-import org.telegram.ui.h70;
+import org.telegram.ui.j70;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class z3 extends HorizontalScrollView {
     public final /* synthetic */ int a;
@@ -58,10 +58,10 @@ public final class z3 extends HorizontalScrollView {
                 break;
             case 2:
                 super.onScrollChanged(i10, i11, i12, i13);
-                h70 h70Var = (h70) this.b;
-                if (h70Var.d != null) {
-                    h70Var.d = null;
-                    h70Var.f = null;
+                j70 j70Var = (j70) this.b;
+                if (j70Var.d != null) {
+                    j70Var.d = null;
+                    j70Var.f = null;
                     break;
                 }
                 break;
@@ -72,9 +72,9 @@ public final class z3 extends HorizontalScrollView {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public z3(Context context, h70 h70Var) {
+    public z3(Context context, j70 j70Var) {
         super(context);
         this.a = 2;
-        this.b = h70Var;
+        this.b = j70Var;
     }
 }

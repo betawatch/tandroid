@@ -15,13 +15,13 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class wj extends FrameLayout {
     public final y9 a;
     public final di.l4 b;
     public final org.telegram.ui.ActionBar.b6 c;
-    public final zp d;
+    public final aq d;
     public final j9 e;
     public TLRPC.User f;
     public int h;
@@ -41,7 +41,7 @@ public final class wj extends FrameLayout {
         this.a = y9Var;
         y9Var.setRoundRadius(AndroidUtilities.dp(23.0f));
         boolean z10 = LocaleController.isRTL;
-        addView(y9Var, gb1.h(46, 46.0f, (z10 ? 5 : 3) | 48, z10 ? 0.0f : 14.0f, 9.0f, z10 ? 14.0f : 0.0f, 0.0f));
+        addView(y9Var, kb1.h(46, 46.0f, (z10 ? 5 : 3) | 48, z10 ? 0.0f : 14.0f, 9.0f, z10 ? 14.0f : 0.0f, 0.0f));
         di.l4 l4Var = new di.l4(context, 4);
         this.b = l4Var;
         NotificationCenter.listenEmojiLoading(l4Var);
@@ -50,21 +50,21 @@ public final class wj extends FrameLayout {
         l4Var.setTextSize(16);
         l4Var.setGravity((LocaleController.isRTL ? 5 : 3) | 48);
         boolean z11 = LocaleController.isRTL;
-        addView(l4Var, gb1.h(-1, 20.0f, (z11 ? 5 : 3) | 48, z11 ? 28.0f : 72.0f, 12.0f, z11 ? 72.0f : 28.0f, 0.0f));
+        addView(l4Var, kb1.h(-1, 20.0f, (z11 ? 5 : 3) | 48, z11 ? 28.0f : 72.0f, 12.0f, z11 ? 72.0f : 28.0f, 0.0f));
         org.telegram.ui.ActionBar.b6 b6Var = new org.telegram.ui.ActionBar.b6(context);
         this.c = b6Var;
         b6Var.setTextSize(13);
         org.telegram.ui.ActionBar.f7.Y(b6Var, org.telegram.ui.ActionBar.y6.q5, u6Var);
         b6Var.setGravity((LocaleController.isRTL ? 5 : 3) | 48);
         boolean z12 = LocaleController.isRTL;
-        addView(b6Var, gb1.h(-1, 20.0f, (z12 ? 5 : 3) | 48, z12 ? 28.0f : 72.0f, 36.0f, z12 ? 72.0f : 28.0f, 0.0f));
-        zp zpVar = new zp(context, 21, u6Var);
-        this.d = zpVar;
-        zpVar.b(-1, org.telegram.ui.ActionBar.y6.d6, org.telegram.ui.ActionBar.y6.k7);
-        zpVar.setDrawUnchecked(false);
-        zpVar.setDrawBackgroundAsArc(3);
+        addView(b6Var, kb1.h(-1, 20.0f, (z12 ? 5 : 3) | 48, z12 ? 28.0f : 72.0f, 36.0f, z12 ? 72.0f : 28.0f, 0.0f));
+        aq aqVar = new aq(context, 21, u6Var);
+        this.d = aqVar;
+        aqVar.b(-1, org.telegram.ui.ActionBar.y6.d6, org.telegram.ui.ActionBar.y6.k7);
+        aqVar.setDrawUnchecked(false);
+        aqVar.setDrawBackgroundAsArc(3);
         boolean z13 = LocaleController.isRTL;
-        addView(zpVar, gb1.h(24, 24.0f, (z13 ? 5 : 3) | 48, z13 ? 0.0f : 44.0f, 37.0f, z13 ? 44.0f : 0.0f, 0.0f));
+        addView(aqVar, kb1.h(24, 24.0f, (z13 ? 5 : 3) | 48, z13 ? 0.0f : 44.0f, 37.0f, z13 ? 44.0f : 0.0f, 0.0f));
     }
 
     public final void a(TLRPC.User user, CharSequence charSequence, vj vjVar, boolean z10) {
@@ -119,7 +119,7 @@ public final class wj extends FrameLayout {
                 y9Var.setImageDrawable(j9Var);
             }
         }
-        Utilities.globalQueue.postRunnable(new org.telegram.ui.ip(20, this, vjVar));
+        Utilities.globalQueue.postRunnable(new org.telegram.ui.kp(20, this, vjVar));
     }
 
     @Override // android.view.View

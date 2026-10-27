@@ -1,34 +1,13 @@
 package org.telegram.ui;
 
-import android.animation.ValueAnimator;
-import android.app.Activity;
-import org.telegram.messenger.AndroidUtilities;
+import android.view.MotionEvent;
+import android.view.View;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public final class ou implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ float a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ Activity d;
-    public final /* synthetic */ pu e;
-
-    public ou(pu puVar, float f7, int i10, int i11, Activity activity) {
-        this.e = puVar;
-        this.a = f7;
-        this.b = i10;
-        this.c = i11;
-        this.d = activity;
-    }
-
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        float max = Math.max(0.0f, Math.min(1.0f, ((((Float) valueAnimator.getAnimatedValue()).floatValue() * 350.0f) - this.a) / 150.0f));
-        ru ruVar = this.e.c;
-        ruVar.n = i0.a.f(max, this.b, this.c);
-        int i10 = ruVar.n;
-        Activity activity = this.d;
-        AndroidUtilities.setNavigationBarColor(activity, i10, false);
-        AndroidUtilities.setLightNavigationBar(activity, AndroidUtilities.computePerceivedBrightness(ruVar.n) >= 0.721f);
+public final class ou implements View.OnTouchListener {
+    @Override // android.view.View.OnTouchListener
+    public final boolean onTouch(View view, MotionEvent motionEvent) {
+        return true;
     }
 }

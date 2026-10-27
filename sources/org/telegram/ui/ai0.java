@@ -1,44 +1,212 @@
 package org.telegram.ui;
 
 import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.RectF;
+import android.view.KeyEvent;
+import android.view.ViewGroup;
+import android.widget.FrameLayout;
+import java.util.ArrayList;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.FileLoader;
+import org.telegram.messenger.ImageLoader;
+import org.telegram.messenger.ImageLocation;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public final class ai0 extends org.telegram.ui.Components.vg {
-    public final /* synthetic */ org.telegram.ui.Components.vg n0;
-    public final /* synthetic */ boolean o0;
-    public final /* synthetic */ ni0 p0;
+public final class ai0 extends FrameLayout {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ pi0 b;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ai0(ni0 ni0Var, Context context, int i10, org.telegram.ui.ActionBar.u6 u6Var, org.telegram.ui.Components.vg vgVar, boolean z10) {
-        super(i10, context, u6Var, false);
-        this.p0 = ni0Var;
-        this.n0 = vgVar;
-        this.o0 = z10;
+    public /* synthetic */ ai0(pi0 pi0Var, Context context, int i10) {
+        super(context);
+        this.a = i10;
+        this.b = pi0Var;
     }
 
-    @Override // org.telegram.ui.Components.vg
-    public final boolean d() {
-        return this.n0.d();
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        Canvas canvas2;
+        switch (this.a) {
+            case 0:
+                super.dispatchDraw(canvas);
+                pi0 pi0Var = this.b;
+                bi0 bi0Var = pi0Var.Z;
+                bi0Var.e(canvas);
+                ArrayList arrayList = bi0Var.F;
+                float f7 = -1.0f;
+                if (!arrayList.isEmpty()) {
+                    py pyVar = (py) ic.a.g(1, arrayList);
+                    ImageReceiver imageReceiver = pyVar.r;
+                    ImageLocation mediaLocation = imageReceiver.getMediaLocation();
+                    if (mediaLocation == null) {
+                        mediaLocation = imageReceiver.getImageLocation();
+                    }
+                    if (mediaLocation == null) {
+                        mediaLocation = imageReceiver.getThumbLocation();
+                    }
+                    if (mediaLocation != null) {
+                        if (pyVar.s == null) {
+                            TLRPC.Document document = mediaLocation.document;
+                            if (document != null) {
+                                pyVar.s = FileLoader.getAttachFileName(document, "tgs");
+                            } else {
+                                pyVar.s = FileLoader.getAttachFileName(mediaLocation.location, "tgs");
+                            }
+                        }
+                        if (pyVar.s != null) {
+                            Float fileProgress = ImageLoader.getInstance().getFileProgress(pyVar.s);
+                            if (fileProgress == null) {
+                                fileProgress = Float.valueOf(1.0f);
+                            }
+                            f7 = (fileProgress.floatValue() * 0.55f) + 0.15f + (fileProgress.floatValue() * 0.3f);
+                        }
+                    }
+                }
+                if (f7 != -2.0f) {
+                    pi0Var.W.h(f7 >= 0.0f && f7 < 1.0f);
+                }
+                if (!bi0Var.F.isEmpty()) {
+                    invalidate();
+                    break;
+                }
+                break;
+            default:
+                pi0 pi0Var2 = this.b;
+                if (pi0Var2.y <= 0.0f || pi0Var2.h == null) {
+                    canvas2 = canvas;
+                } else {
+                    pi0Var2.n.reset();
+                    float width = getWidth() / pi0Var2.e.getWidth();
+                    pi0Var2.n.postScale(width, width);
+                    pi0Var2.f.setLocalMatrix(pi0Var2.n);
+                    pi0Var2.h.setAlpha((int) (pi0Var2.y * 255.0f));
+                    canvas2 = canvas;
+                    canvas2.drawRect(0.0f, 0.0f, getWidth(), getHeight(), pi0Var2.h);
+                }
+                super.dispatchDraw(canvas2);
+                break;
+        }
     }
 
-    @Override // org.telegram.ui.Components.vg
-    public final boolean e() {
-        return this.n0.e();
+    @Override // android.view.ViewGroup, android.view.View
+    public boolean dispatchKeyEventPreIme(KeyEvent keyEvent) {
+        switch (this.a) {
+            case 1:
+                if (keyEvent == null || keyEvent.getKeyCode() != 4 || keyEvent.getAction() != 1) {
+                    return super.dispatchKeyEventPreIme(keyEvent);
+                }
+                this.b.onBackPressed();
+                return true;
+            default:
+                return super.dispatchKeyEventPreIme(keyEvent);
+        }
     }
 
-    @Override // org.telegram.ui.Components.vg
-    public final boolean f() {
-        return (this.o0 && this.p0.p0 && this.r <= 0) ? false : true;
+    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        switch (this.a) {
+            case 1:
+                super.onLayout(z10, i10, i11, i12, i13);
+                pi0 pi0Var = this.b;
+                if (!pi0Var.f0 || pi0Var.g0) {
+                    ArrayList arrayList = pi0Var.M;
+                    ii0 ii0Var = pi0Var.J;
+                    if (pi0Var.E.getWidth() > 0) {
+                        int[] iArr = {d3.w(6.0f, pi0Var.V.getWidth() - pi0Var.V.l(), r2), 0};
+                        pi0Var.V.getLocationOnScreen(iArr);
+                        int i14 = iArr[0];
+                        pi0Var.W.setScaleX(pi0Var.V.getScaleX());
+                        pi0Var.W.setScaleY(pi0Var.V.getScaleY());
+                        int[] iArr2 = pi0Var.n0;
+                        iArr2[0] = iArr[0];
+                        iArr2[1] = iArr[1];
+                        int measuredHeight = (ii0Var.getMeasuredHeight() - pi0Var.W.getHeight()) + (pi0Var.d0 != null ? AndroidUtilities.dp(320.0f) : 0);
+                        int dp = AndroidUtilities.dp(8.0f) + pi0Var.d.b;
+                        int dp2 = AndroidUtilities.dp(arrayList.isEmpty() ? -6.0f : 48.0f);
+                        ViewGroup viewGroup = pi0Var.Y;
+                        int measuredHeight2 = dp2 + (viewGroup == null ? 0 : viewGroup.getMeasuredHeight());
+                        int measuredHeight3 = (pi0Var.F.getMeasuredHeight() - AndroidUtilities.dp(8.0f)) - pi0Var.d.d;
+                        if (iArr[1] + measuredHeight2 > measuredHeight3) {
+                            iArr[1] = measuredHeight3 - measuredHeight2;
+                        }
+                        if (iArr[1] - measuredHeight < dp) {
+                            iArr[1] = dp + measuredHeight;
+                        }
+                        if (pi0Var.V.getHeight() + iArr[1] + measuredHeight2 > measuredHeight3) {
+                            iArr[1] = (measuredHeight3 - measuredHeight2) - pi0Var.V.getHeight();
+                        }
+                        pi0Var.W.setX(AndroidUtilities.dp(6.0f) + (iArr[0] - (r2.getWidth() - pi0Var.W.l())));
+                        pi0Var.W.setY(iArr[1]);
+                        if (pi0Var.l0) {
+                            iArr[0] = iArr[0] - (pi0Var.X - pi0Var.V.l());
+                        }
+                        ii0Var.setX((AndroidUtilities.dp(7.0f) + iArr[0]) - ii0Var.getMeasuredWidth());
+                        if (pi0Var.f0) {
+                            org.telegram.messenger.wh.q(ii0Var.animate().translationY(((pi0Var.W.getHeight() + iArr[1]) - ii0Var.getMeasuredHeight()) - ii0Var.getTop()), mi.m.V, 250L);
+                        } else {
+                            ii0Var.setY((pi0Var.W.getHeight() + iArr[1]) - ii0Var.getMeasuredHeight());
+                        }
+                        ViewGroup viewGroup2 = pi0Var.Y;
+                        if (viewGroup2 != null) {
+                            viewGroup2.setX((AndroidUtilities.dp(7.0f) + iArr[0]) - pi0Var.Y.getMeasuredWidth());
+                            pi0Var.Y.setY(iArr[1] + (arrayList.isEmpty() ? -AndroidUtilities.dp(6.0f) : pi0Var.W.getHeight()));
+                        }
+                        FrameLayout frameLayout = pi0Var.c0;
+                        if (frameLayout != null) {
+                            frameLayout.setX(org.telegram.messenger.t.c(6.0f, (pi0Var.W.l() + iArr[0]) - pi0Var.c0.getMeasuredWidth(), 0));
+                            RectF rectF = pi0Var.k0;
+                            if (rectF != null) {
+                                FrameLayout frameLayout2 = pi0Var.c0;
+                                float max = Math.max(pi0Var.d.b, rectF.top - frameLayout2.getMeasuredWidth());
+                                pi0Var.b0 = max;
+                                frameLayout2.setY(max);
+                                di0 di0Var = pi0Var.d0;
+                                if (di0Var != null) {
+                                    di0Var.setY(Math.max(pi0Var.d.b, (pi0Var.k0.top - AndroidUtilities.dp(24.0f)) - pi0Var.d0.getMeasuredHeight()));
+                                }
+                            } else {
+                                float height = (pi0Var.W.getHeight() + iArr[1]) - ii0Var.getMeasuredHeight();
+                                FrameLayout frameLayout3 = pi0Var.c0;
+                                float max2 = Math.max(pi0Var.d.b, height - frameLayout3.getMeasuredHeight()) + AndroidUtilities.dp(24.0f);
+                                pi0Var.b0 = max2;
+                                frameLayout3.setY(max2);
+                                di0 di0Var2 = pi0Var.d0;
+                                if (di0Var2 != null) {
+                                    di0Var2.setY(Math.max(0.0f, (height - di0Var2.getMeasuredHeight()) - pi0Var.b0));
+                                }
+                            }
+                        }
+                    }
+                    pi0Var.f0 = true;
+                    break;
+                }
+                break;
+            default:
+                super.onLayout(z10, i10, i11, i12, i13);
+                break;
+        }
     }
 
-    @Override // org.telegram.ui.Components.vg
-    public final int getFillColor() {
-        return this.n0.getFillColor();
-    }
-
-    @Override // org.telegram.ui.Components.vg
-    public final boolean j() {
-        return this.n0.j();
+    @Override // android.view.View
+    public void onSizeChanged(int i10, int i11, int i12, int i13) {
+        switch (this.a) {
+            case 1:
+                super.onSizeChanged(i10, i11, i12, i13);
+                pi0 pi0Var = this.b;
+                ih.d.c(pi0Var.i0, pi0Var.E);
+                ViewGroup viewGroup = pi0Var.Y;
+                if (viewGroup != null) {
+                    viewGroup.invalidate();
+                    break;
+                }
+                break;
+            default:
+                super.onSizeChanged(i10, i11, i12, i13);
+                break;
+        }
     }
 }

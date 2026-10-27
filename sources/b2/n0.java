@@ -2,7 +2,7 @@ package b2;
 
 import java.util.HashSet;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
 public final class n0 {
     public int a;
@@ -20,18 +20,18 @@ public final class n0 {
         this.a = 0;
         this.b = 0;
         this.g = new HashSet();
-        hashSet.add(s9.r.a(cls));
+        hashSet.add(s9.s.a(cls));
         for (Class cls2 : clsArr) {
             com.google.android.gms.internal.play_billing.s1.a(cls2, "Null interface");
-            ((HashSet) this.c).add(s9.r.a(cls2));
+            ((HashSet) this.c).add(s9.s.a(cls2));
         }
     }
 
-    public void a(s9.j jVar) {
-        if (((HashSet) this.c).contains(jVar.a)) {
+    public void a(s9.k kVar) {
+        if (((HashSet) this.c).contains(kVar.a)) {
             throw new IllegalArgumentException("Components are not allowed to depend on interfaces they themselves provide.");
         }
-        ((HashSet) this.e).add(jVar);
+        ((HashSet) this.e).add(kVar);
     }
 
     public s9.a b() {

@@ -18,7 +18,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserObject;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.vh;
+import org.telegram.messenger.wh;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
@@ -30,14 +30,14 @@ import org.telegram.ui.ActionBar.y6;
 import org.telegram.ui.Cells.z8;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.ds;
-import org.telegram.ui.Components.gb1;
-import org.telegram.ui.Components.mm0;
-import org.telegram.ui.Components.r71;
-import org.telegram.ui.Components.t61;
+import org.telegram.ui.Components.kb1;
+import org.telegram.ui.Components.nm0;
+import org.telegram.ui.Components.s71;
+import org.telegram.ui.Components.u61;
 import org.telegram.ui.Components.wc;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class t0 extends r2 {
     public static final int U = -1;
@@ -79,7 +79,7 @@ public final class t0 extends r2 {
     public boolean T;
     public u5 a;
     public c8 b;
-    public r71 c;
+    public s71 c;
     public ig.a2 d;
     public FrameLayout e;
     public EditTextBoldCursor f;
@@ -114,7 +114,7 @@ public final class t0 extends r2 {
         }
         if (tLObject instanceof TLRPC.TL_boolFalse) {
             t0Var.a.b(false);
-            vh.n(R.string.UnknownError, wc.b0(t0Var), null);
+            wh.n(R.string.UnknownError, wc.b0(t0Var), null);
             return;
         }
         if (tLObject instanceof TLRPC.Updates) {
@@ -140,9 +140,9 @@ public final class t0 extends r2 {
         }
     }
 
-    public static void X(final t0 t0Var, t61 t61Var, final View view) {
-        if (t61Var.g && !t0Var.v.h(t61Var)) {
-            int i10 = t61Var.d;
+    public static void X(final t0 t0Var, u61 u61Var, final View view) {
+        if (u61Var.g && !t0Var.v.h(u61Var)) {
+            int i10 = u61Var.d;
             if (i10 == U) {
                 b0 b0Var = t0Var.v;
                 t0Var.I = true;
@@ -165,8 +165,8 @@ public final class t0 extends r2 {
                 t0Var.Z(true);
                 return;
             }
-            if (t61Var.a == 13) {
-                TLRPC.User user = (TLRPC.User) t0Var.N.get(t61Var.x);
+            if (u61Var.a == 13) {
+                TLRPC.User user = (TLRPC.User) t0Var.N.get(u61Var.x);
                 if (user == null) {
                     return;
                 }
@@ -963,7 +963,7 @@ public final class t0 extends r2 {
         this.f.addTextChangedListener(new bi.u(this, 3));
         FrameLayout frameLayout2 = new FrameLayout(context);
         this.e = frameLayout2;
-        frameLayout2.addView(this.f, gb1.h(-1, -1.0f, 48, 21.0f, 15.0f, 21.0f, 15.0f));
+        frameLayout2.addView(this.f, kb1.h(-1, -1.0f, 48, 21.0f, 15.0f, 21.0f, 15.0f));
         FrameLayout frameLayout3 = this.e;
         int i11 = y6.d6;
         f7.i(i11, frameLayout3, getResourceProvider());
@@ -974,7 +974,7 @@ public final class t0 extends r2 {
         View view2 = this.h;
         float f7 = 1.0f / AndroidUtilities.density;
         boolean z10 = LocaleController.isRTL;
-        frameLayout4.addView(view2, gb1.h(-1, f7, 87, z10 ? 0 : 21, 0.0f, z10 ? 21 : 0, 0.0f));
+        frameLayout4.addView(view2, kb1.h(-1, f7, 87, z10 ? 0 : 21, 0.0f, z10 ? 21 : 0, 0.0f));
         i4 i4Var = new i4(context, 3);
         this.n = i4Var;
         f7.i(i11, i4Var, getResourceProvider());
@@ -985,13 +985,13 @@ public final class t0 extends r2 {
         TextView textView2 = this.r;
         int i12 = y6.z6;
         f7.V(textView2, i12, getResourceProvider());
-        this.n.addView(this.r, gb1.i(-2, -2, 17));
+        this.n.addView(this.r, kb1.i(-2, -2, 17));
         this.s = new ImageView(context);
         c8 c8Var = new c8(getThemedColor(i12));
         this.s.setScaleType(ImageView.ScaleType.CENTER);
         this.s.setImageDrawable(c8Var);
         this.b = c8Var;
-        this.n.addView(this.s, gb1.i(-2, -2, 17));
+        this.n.addView(this.s, kb1.i(-2, -2, 17));
         this.s.setAlpha(0.0f);
         this.s.setTranslationY(AndroidUtilities.dp(8.0f));
         ig.a2 a2Var = new ig.a2(true);
@@ -1001,19 +1001,19 @@ public final class t0 extends r2 {
         this.v = b0Var;
         TL_account.TL_connectedBot tL_connectedBot = this.H;
         b0Var.i(tL_connectedBot == null ? null : tL_connectedBot.recipients);
-        r71 r71Var = new r71(this, new hi.e2(this, 8), new p0(this, 3), null);
-        this.c = r71Var;
-        r71Var.u1();
+        s71 s71Var = new s71(this, new hi.e2(this, 8), new p0(this, 3), null);
+        this.c = s71Var;
+        s71Var.u1();
         this.c.setSectionsDrawBackground(true);
-        r71 r71Var2 = this.c;
-        r71Var2.g3.r = false;
-        frameLayout.addView(r71Var2, gb1.g(-1.0f, -1));
+        s71 s71Var2 = this.c;
+        s71Var2.g3.r = false;
+        frameLayout.addView(s71Var2, kb1.g(-1.0f, -1));
         this.fragmentView = frameLayout;
         return frameLayout;
     }
 
     @Override // org.telegram.ui.ActionBar.r2
-    public final mm0 getListViewForSimpleGlass() {
+    public final nm0 getListViewForSimpleGlass() {
         return this.c;
     }
 

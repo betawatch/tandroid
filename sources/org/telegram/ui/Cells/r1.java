@@ -16,9 +16,9 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.R;
 import org.telegram.messenger.RichMessageLayout;
 import org.telegram.ui.Components.tz;
-import org.telegram.ui.fj0;
+import org.telegram.ui.hj0;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class r1 {
     public boolean A;
@@ -366,8 +366,8 @@ public final class r1 {
         }
         this.K0 = false;
         if (richMessageLayout2 != this.M0) {
-            fj0 fj0Var = s1Var.je;
-            boolean z16 = fj0Var != null && fj0Var.h;
+            hj0 hj0Var = s1Var.je;
+            boolean z16 = hj0Var != null && hj0Var.h;
             RichMessageLayout richMessageLayout3 = this.L0;
             if (richMessageLayout3 != null) {
                 richMessageLayout3.detach(s1Var);

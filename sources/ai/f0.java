@@ -72,22 +72,22 @@ import org.telegram.ui.ActionBar.h3;
 import org.telegram.ui.ActionBar.k3;
 import org.telegram.ui.ActionBar.u6;
 import org.telegram.ui.Cells.v8;
-import org.telegram.ui.Components.am0;
 import org.telegram.ui.Components.bm0;
+import org.telegram.ui.Components.cm0;
 import org.telegram.ui.Components.hu;
-import org.telegram.ui.Components.k80;
+import org.telegram.ui.Components.l80;
 import org.telegram.ui.Components.qc;
 import org.telegram.ui.Components.wc;
 import org.telegram.ui.TwoStepVerificationActivity;
-import org.telegram.ui.c51;
-import org.telegram.ui.dc0;
-import org.telegram.ui.kc0;
-import org.telegram.ui.pc0;
-import org.telegram.ui.qf1;
+import org.telegram.ui.f51;
+import org.telegram.ui.fc0;
+import org.telegram.ui.mc0;
+import org.telegram.ui.rc0;
+import org.telegram.ui.sf1;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class f0 implements CameraView.CameraViewDelegate, c51, qf1, b2, OnFailureListener, jh.i, OnCompleteListener, Continuation, r8, s9.d, am0, bm0, e2.p, e2.o, Utilities.Callback3Return, kc0, li.n0, hu, i4, m4.o0 {
+public final /* synthetic */ class f0 implements CameraView.CameraViewDelegate, f51, sf1, b2, OnFailureListener, jh.i, OnCompleteListener, Continuation, r8, s9.d, bm0, cm0, e2.p, e2.o, Utilities.Callback3Return, mc0, li.n0, hu, i4, m4.o0 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
     public final /* synthetic */ Object c;
@@ -99,13 +99,13 @@ public final /* synthetic */ class f0 implements CameraView.CameraViewDelegate, 
     }
 
     @Override // li.n0
-    public k80 a(li.g1 g1Var) {
+    public l80 a(li.g1 g1Var) {
         rf.b bVar = (rf.b) this.b;
         u6 u6Var = (u6) this.c;
         li.q qVar = (li.q) bVar.c;
-        k80 k80Var = new k80(qVar, u6Var, g1Var, false, false, true);
-        qVar.H = k80Var;
-        return k80Var;
+        l80 l80Var = new l80(qVar, u6Var, g1Var, false, false, true);
+        qVar.H = l80Var;
+        return l80Var;
     }
 
     @Override // fi.r8
@@ -128,7 +128,7 @@ public final /* synthetic */ class f0 implements CameraView.CameraViewDelegate, 
                 o4 o4Var = q4Var2.D1;
                 TL_stories.StoryItem storyItem2 = o4Var.a;
                 if ((storyItem2 != null && storyItem2.pinned) != z12) {
-                    MessagesController.getInstance(q4Var2.r2).getStoriesController().o0(q4Var2.q1, q4Var2.k1, z12, null);
+                    MessagesController.getInstance(q4Var2.r2).getStoriesController().r0(q4Var2.q1, q4Var2.k1, z12, null);
                 }
                 TL_stories.StoryItem storyItem3 = o4Var.a;
                 if (storyItem3 != null) {
@@ -147,12 +147,12 @@ public final /* synthetic */ class f0 implements CameraView.CameraViewDelegate, 
         }
     }
 
-    @Override // org.telegram.ui.Components.bm0
+    @Override // org.telegram.ui.Components.cm0
     public boolean c(int i10, View view) {
         return d4.A0((d4) this.b, (Context) this.c, view, i10);
     }
 
-    @Override // org.telegram.ui.Components.am0
+    @Override // org.telegram.ui.Components.bm0
     public /* synthetic */ boolean c1(View view) {
         return false;
     }
@@ -216,17 +216,17 @@ public final /* synthetic */ class f0 implements CameraView.CameraViewDelegate, 
     
         if (r1 == null) goto L15;
      */
-    @Override // org.telegram.ui.kc0
+    @Override // org.telegram.ui.mc0
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public void d(TLRPC.MessageMedia messageMedia, int i10, boolean z10, int i11, long j10) {
         jg.d1 d1Var = (jg.d1) this.b;
-        pc0 pc0Var = (pc0) this.c;
+        rc0 rc0Var = (rc0) this.c;
         d1Var.w = messageMedia.geo;
         String str = null;
         if (TextUtils.isEmpty(d1Var.x)) {
-            dc0 dc0Var = pc0Var.T;
+            fc0 fc0Var = rc0Var.T;
         }
     }
 
@@ -242,7 +242,7 @@ public final /* synthetic */ class f0 implements CameraView.CameraViewDelegate, 
         }
     }
 
-    @Override // org.telegram.ui.Components.am0
+    @Override // org.telegram.ui.Components.bm0
     public void e(float f7, float f10, int i10, View view) {
         u6 u6Var;
         int i11;
@@ -297,10 +297,10 @@ public final /* synthetic */ class f0 implements CameraView.CameraViewDelegate, 
                             clientUserId = UserConfig.getInstance(i12).getClientUserId();
                         }
                         u6Var2 = ((k3) n9Var).resourcesProvider;
-                        k80 F = k80.F(g9Var, u6Var2, view);
+                        l80 F = l80.F(g9Var, u6Var2, view);
                         F.c(R.drawable.msg_addfolder, LocaleController.getString(R.string.StoriesAlbumNewAlbum), new r3(g9Var, clientUserId, 7), false);
                         F.k();
-                        k80.f(F, n9Var.j1().B(clientUserId, true), n9Var.v, false, null, new n1(12, g9Var, F));
+                        l80.f(F, n9Var.j1().B(clientUserId, true), n9Var.v, false, null, new n1(12, g9Var, F));
                         F.Z();
                         return;
                     }
@@ -649,7 +649,7 @@ public final /* synthetic */ class f0 implements CameraView.CameraViewDelegate, 
         }
     }
 
-    @Override // org.telegram.ui.qf1
+    @Override // org.telegram.ui.sf1
     public void j(TLRPC.TL_inputCheckPasswordSRP tL_inputCheckPasswordSRP) {
         ((bi.y) this.b).q0(false, 0L, tL_inputCheckPasswordSRP, (TwoStepVerificationActivity) this.c);
     }
@@ -776,7 +776,7 @@ public final /* synthetic */ class f0 implements CameraView.CameraViewDelegate, 
         return Boolean.TRUE;
     }
 
-    @Override // org.telegram.ui.Components.am0
+    @Override // org.telegram.ui.Components.bm0
     public /* synthetic */ void l0(View view, float f7, float f10) {
     }
 }

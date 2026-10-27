@@ -18,14 +18,15 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.Components.bp;
-import org.telegram.ui.Components.l11;
+import org.telegram.ui.Components.m11;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.af1;
-import org.telegram.ui.cy;
-import org.telegram.ui.un;
-import vi.s0;
+import org.telegram.ui.cf1;
+import org.telegram.ui.ey;
+import org.telegram.ui.wn;
+import vi.q0;
+import vi.u0;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class h0 implements Runnable {
     public final /* synthetic */ int a;
@@ -71,7 +72,7 @@ public final /* synthetic */ class h0 implements Runnable {
                 String str4 = e2.n0.a;
                 j2.e eVar2 = ((i2.d0) vVar).a.s;
                 j2.a p11 = eVar2.p();
-                eVar2.q(p11, 1008, new ig.g(p11, str3, j13, j12, 7));
+                eVar2.q(p11, 1008, new ig.g(p11, str3, j13, j12, 8));
                 return;
             case 4:
                 ((FileUploadOperation) this.d).lambda$checkNewDataAvailable$4((Float) this.e, this.b, this.c);
@@ -89,7 +90,7 @@ public final /* synthetic */ class h0 implements Runnable {
                 ((MessagesStorage) this.d).lambda$loadPendingTasks$21(this.b, (TLRPC.InputPeer) this.e, this.c);
                 return;
             case 9:
-                ((MessagesStorage) this.d).lambda$getUnreadMention$159(this.b, this.c, (MessagesStorage.IntCallback) this.e);
+                ((MessagesStorage) this.d).lambda$getUnreadMention$160(this.b, this.c, (MessagesStorage.IntCallback) this.e);
                 return;
             case 10:
                 ((NotificationsSettingsFacade) this.d).lambda$applyDialogNotificationsSettings$1(this.b, this.c, (TLRPC.PeerNotifySettings) this.e);
@@ -104,19 +105,19 @@ public final /* synthetic */ class h0 implements Runnable {
                 ((bp) this.d).e(this.b, this.c, (HashSet) this.e);
                 return;
             case 14:
-                cy cyVar = (cy) this.d;
+                ey eyVar = (ey) this.d;
                 long j14 = this.b;
                 long j15 = this.c;
-                af1 af1Var = (af1) this.e;
-                if (cyVar.C2 == null) {
-                    cyVar.finishFragment();
+                cf1 cf1Var = (cf1) this.e;
+                if (eyVar.C2 == null) {
+                    eyVar.finishFragment();
                     return;
                 }
                 ArrayList arrayList = new ArrayList();
                 arrayList.add(MessagesStorage.TopicKey.of(j14, j15));
-                cyVar.C2.v(cyVar, arrayList, null, false, cyVar.J2, cyVar.K2, cyVar.L2, af1Var);
-                if (cyVar.i2) {
-                    cyVar.C2 = null;
+                eyVar.C2.v(eyVar, arrayList, null, false, eyVar.J2, eyVar.K2, eyVar.L2, cf1Var);
+                if (eyVar.i2) {
+                    eyVar.C2 = null;
                     return;
                 }
                 return;
@@ -124,7 +125,7 @@ public final /* synthetic */ class h0 implements Runnable {
                 LaunchActivity launchActivity = (LaunchActivity) this.d;
                 long j16 = this.b;
                 long j17 = this.c;
-                un unVar = (un) this.e;
+                wn wnVar = (wn) this.e;
                 Pattern pattern = LaunchActivity.D1;
                 TLRPC.TL_forumTopic findTopic = MessagesController.getInstance(launchActivity.O).getTopicsController().findTopic(j16, j17);
                 StringBuilder t10 = a1.g.t(j16, "LaunchActivity openForum after load ", " ");
@@ -133,19 +134,19 @@ public final /* synthetic */ class h0 implements Runnable {
                 t10.append(findTopic);
                 FileLog.d(t10.toString());
                 if (launchActivity.q0 != null) {
-                    pg.d.a(unVar, MessagesStorage.TopicKey.of(-j16, j17));
-                    ((ActionBarLayout) launchActivity.O()).R(unVar);
+                    pg.d.a(wnVar, MessagesStorage.TopicKey.of(-j16, j17));
+                    ((ActionBarLayout) launchActivity.O()).R(wnVar);
                     return;
                 }
                 return;
             default:
-                s0 s0Var = (s0) this.d;
-                vi.o0 o0Var = (vi.o0) this.e;
+                u0 u0Var = (u0) this.d;
+                q0 q0Var = (q0) this.e;
                 long j18 = this.b;
                 long j19 = this.c;
-                synchronized (s0Var.g) {
-                    if (!o0Var.d && !o0Var.e) {
-                        ((l11) s0Var.e).a(o0Var.a, o0Var.b, j18, j19);
+                synchronized (u0Var.g) {
+                    if (!q0Var.d && !q0Var.e) {
+                        ((m11) u0Var.e).a(q0Var.a, q0Var.b, j18, j19);
                         return;
                     }
                     return;

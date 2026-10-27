@@ -11,7 +11,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class n50 {
     public final int a;
@@ -142,10 +142,10 @@ public final class n50 {
         int i25 = i16;
         GLES20.glBindTexture(3553, i25);
         GLES20.glGenFramebuffers(1, this.j, i25);
-        FloatBuffer h = org.telegram.messenger.vh.h(ByteBuffer.allocateDirect(144));
+        FloatBuffer h = org.telegram.messenger.wh.h(ByteBuffer.allocateDirect(144));
         this.g = h;
         h.put(fArr2).position(i25);
-        FloatBuffer h10 = org.telegram.messenger.vh.h(ByteBuffer.allocateDirect(928));
+        FloatBuffer h10 = org.telegram.messenger.wh.h(ByteBuffer.allocateDirect(928));
         this.h = h10;
         h10.put(fArr).position(i25);
     }

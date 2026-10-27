@@ -21,15 +21,15 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_payments;
 import org.telegram.ui.ActionBar.u6;
+import org.telegram.ui.Components.aa0;
 import org.telegram.ui.Components.c10;
 import org.telegram.ui.Components.ck;
 import org.telegram.ui.Components.mk;
 import org.telegram.ui.Components.nk;
 import org.telegram.ui.Components.wc;
-import org.telegram.ui.Components.z90;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class s3 implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -67,7 +67,7 @@ public final /* synthetic */ class s3 implements Runnable {
      */
     /* JADX WARN: Code restructure failed: missing block: B:79:0x01ff, code lost:
     
-        r9.getViewTreeObserver().addOnPreDrawListener(new org.telegram.ui.rq(r13, (org.telegram.ui.Components.c10) r2, r1, r12));
+        r9.getViewTreeObserver().addOnPreDrawListener(new org.telegram.ui.tq(r13, (org.telegram.ui.Components.c10) r2, r1, r12));
      */
     /* JADX WARN: Code restructure failed: missing block: B:80:0x020d, code lost:
     
@@ -190,7 +190,7 @@ public final /* synthetic */ class s3 implements Runnable {
                     if (tL_error == null) {
                         ck ckVar = nkVar.r;
                         n5Var.e(false, true);
-                        z90 z90Var = n5Var.e;
+                        aa0 aa0Var = n5Var.e;
                         xh.n nVar = n5Var.d;
                         TLRPC.messages_Messages messages_messages = (TLRPC.messages_Messages) tLObject;
                         mkVar.G = messages_messages.next_rate;
@@ -232,12 +232,12 @@ public final /* synthetic */ class s3 implements Runnable {
                         if (arrayList9.isEmpty()) {
                             if (TextUtils.isEmpty(mkVar.K) && this.f == 0 && j10 == 0) {
                                 nVar.setText(LocaleController.getString(R.string.SearchEmptyViewTitle));
-                                z90Var.setVisibility(0);
-                                z90Var.setText(LocaleController.getString(R.string.SearchEmptyViewFilteredSubtitleFiles));
+                                aa0Var.setVisibility(0);
+                                aa0Var.setText(LocaleController.getString(R.string.SearchEmptyViewFilteredSubtitleFiles));
                             } else {
                                 nVar.setText(LocaleController.getString(R.string.SearchEmptyViewTitle2));
-                                z90Var.setVisibility(0);
-                                z90Var.setText(LocaleController.getString(R.string.SearchEmptyViewFilteredSubtitle2));
+                                aa0Var.setVisibility(0);
+                                aa0Var.setText(LocaleController.getString(R.string.SearchEmptyViewFilteredSubtitle2));
                             }
                         }
                         if (!z10) {
@@ -285,10 +285,10 @@ public final /* synthetic */ class s3 implements Runnable {
                         }
                     } else {
                         xh.n nVar2 = n5Var.d;
-                        z90 z90Var2 = n5Var.e;
+                        aa0 aa0Var2 = n5Var.e;
                         nVar2.setText(LocaleController.getString(R.string.SearchEmptyViewTitle2));
-                        z90Var2.setVisibility(0);
-                        z90Var2.setText(LocaleController.getString(R.string.SearchEmptyViewFilteredSubtitle2));
+                        aa0Var2.setVisibility(0);
+                        aa0Var2.setText(LocaleController.getString(R.string.SearchEmptyViewFilteredSubtitle2));
                         n5Var.e(false, true);
                         break;
                     }

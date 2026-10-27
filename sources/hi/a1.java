@@ -16,10 +16,10 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.u6;
 import org.telegram.ui.ActionBar.y6;
 import org.telegram.ui.Components.a7;
-import org.telegram.ui.Components.ak0;
+import org.telegram.ui.Components.bk0;
 import org.telegram.ui.Components.j9;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class a1 extends Drawable implements a7 {
     public final Paint a;
@@ -63,9 +63,9 @@ public final class a1 extends Drawable implements a7 {
     }
 
     @Override // org.telegram.ui.Components.a7
-    public final void a(ak0 ak0Var) {
-        this.e.setParentView(ak0Var);
-        this.d.setParentView(ak0Var);
+    public final void a(bk0 bk0Var) {
+        this.e.setParentView(bk0Var);
+        this.d.setParentView(bk0Var);
     }
 
     @Override // org.telegram.ui.Components.a7

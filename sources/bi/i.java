@@ -20,19 +20,19 @@ import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.ResultCallback;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.am0;
 import org.telegram.ui.Components.b10;
+import org.telegram.ui.Components.bm0;
 import org.telegram.ui.Components.zr;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.TwoStepVerificationActivity;
-import org.telegram.ui.cy;
-import org.telegram.ui.qf1;
-import org.telegram.ui.rz0;
-import org.telegram.ui.v50;
+import org.telegram.ui.ey;
+import org.telegram.ui.sf1;
+import org.telegram.ui.tz0;
+import org.telegram.ui.x50;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class i implements qf1, org.telegram.ui.ActionBar.b2, ChatObject.Call.OnParticipantsLoad, ImageReceiver.ImageReceiverDelegate, am0, MessagesController.IsInChatCheckedCallback, u5.b, t5.e, ra.a {
+public final /* synthetic */ class i implements sf1, org.telegram.ui.ActionBar.b2, ChatObject.Call.OnParticipantsLoad, ImageReceiver.ImageReceiverDelegate, bm0, MessagesController.IsInChatCheckedCallback, u5.b, t5.e, ra.a {
     public final /* synthetic */ int a;
     public final /* synthetic */ long b;
     public final /* synthetic */ Object c;
@@ -71,7 +71,7 @@ public final /* synthetic */ class i implements qf1, org.telegram.ui.ActionBar.b
         }
     }
 
-    @Override // org.telegram.ui.Components.am0
+    @Override // org.telegram.ui.Components.bm0
     public /* synthetic */ boolean c1(View view) {
         return false;
     }
@@ -104,10 +104,10 @@ public final /* synthetic */ class i implements qf1, org.telegram.ui.ActionBar.b
 
     @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
     public /* synthetic */ void didSetImageBitmap(int i10, String str, Drawable drawable) {
-        org.telegram.messenger.o5.a(this, i10, str, drawable);
+        org.telegram.messenger.p5.a(this, i10, str, drawable);
     }
 
-    @Override // org.telegram.ui.Components.am0
+    @Override // org.telegram.ui.Components.bm0
     public void e(float f7, float f10, int i10, View view) {
         ProfileActivity.a0((ProfileActivity) this.c, (Context) this.d, this.b, view, i10, f7, f10);
     }
@@ -150,8 +150,8 @@ public final /* synthetic */ class i implements qf1, org.telegram.ui.ActionBar.b
             case 3:
             case 4:
             default:
-                v50 v50Var = (v50) this.c;
-                v50Var.d.getMessagesController().addUserToChat(v50Var.i1(), (TLRPC.User) this.d, 0, null, (org.telegram.ui.ActionBar.r2) v50Var.i0.O().getFragmentStack().get(v50Var.i0.O().getFragmentStack().size() - 1), new r3(v50Var, this.b, 28));
+                x50 x50Var = (x50) this.c;
+                x50Var.d.getMessagesController().addUserToChat(x50Var.i1(), (TLRPC.User) this.d, 0, null, (org.telegram.ui.ActionBar.r2) x50Var.i0.O().getFragmentStack().get(x50Var.i0.O().getFragmentStack().size() - 1), new r3(x50Var, this.b, 28));
                 break;
             case 5:
                 zr.Q((zr) this.c, (fi.d) this.d, this.b);
@@ -164,14 +164,14 @@ public final /* synthetic */ class i implements qf1, org.telegram.ui.ActionBar.b
         ((v9.a) bVar.get()).d((String) this.c, this.b, (aa.d1) this.d);
     }
 
-    @Override // org.telegram.ui.qf1
+    @Override // org.telegram.ui.sf1
     public void j(TLRPC.TL_inputCheckPasswordSRP tL_inputCheckPasswordSRP) {
         ((y) this.c).q0(true, this.b, tL_inputCheckPasswordSRP, (TwoStepVerificationActivity) this.d);
     }
 
     @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
     public /* synthetic */ void onAnimationReady(ImageReceiver imageReceiver) {
-        org.telegram.messenger.o5.b(this, imageReceiver);
+        org.telegram.messenger.p5.b(this, imageReceiver);
     }
 
     @Override // org.telegram.messenger.ChatObject.Call.OnParticipantsLoad
@@ -181,7 +181,7 @@ public final /* synthetic */ class i implements qf1, org.telegram.ui.ActionBar.b
 
     @Override // org.telegram.messenger.MessagesController.IsInChatCheckedCallback
     public void run(boolean z10, TLRPC.TL_chatAdminRights tL_chatAdminRights, String str) {
-        AndroidUtilities.runOnUIThread(new n((rz0) this.c, this.b, tL_chatAdminRights, str, z10, (cy) this.d));
+        AndroidUtilities.runOnUIThread(new n((tz0) this.c, this.b, tL_chatAdminRights, str, z10, (ey) this.d));
     }
 
     public /* synthetic */ i(Object obj, Object obj2, long j10, int i10) {
@@ -191,7 +191,7 @@ public final /* synthetic */ class i implements qf1, org.telegram.ui.ActionBar.b
         this.b = j10;
     }
 
-    @Override // org.telegram.ui.Components.am0
+    @Override // org.telegram.ui.Components.bm0
     public /* synthetic */ void l0(View view, float f7, float f10) {
     }
 }

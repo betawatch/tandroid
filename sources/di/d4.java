@@ -2,9 +2,9 @@ package di;
 
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.ak0;
+import org.telegram.ui.Components.bk0;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class d4 implements Utilities.Callback4 {
     public final /* synthetic */ int a;
@@ -33,9 +33,9 @@ public final /* synthetic */ class d4 implements Utilities.Callback4 {
                     p4Var.a = false;
                     x9Var.setOnReadyListener(new k2(1, currentTimeMillis, runnable));
                     ((p9) q4Var.F1).g(false);
-                    ak0 ak0Var = q4Var.o0;
-                    if (ak0Var != null) {
-                        ak0Var.setAnimation(this.c.u);
+                    bk0 bk0Var = q4Var.o0;
+                    if (bk0Var != null) {
+                        bk0Var.setAnimation(this.c.u);
                     }
                     if (q4Var.G2 > 0 && l4.longValue() > q4Var.G2 - 1400) {
                         l4 = 0L;
@@ -72,9 +72,9 @@ public final /* synthetic */ class d4 implements Utilities.Callback4 {
                     p4Var2.a = false;
                     x9Var2.setOnReadyListener(new k2(2, currentTimeMillis2, runnable2));
                     ((p9) q4Var2.F1).g(false);
-                    ak0 ak0Var2 = q4Var2.o0;
-                    if (ak0Var2 != null) {
-                        ak0Var2.setAnimation(this.c.u);
+                    bk0 bk0Var2 = q4Var2.o0;
+                    if (bk0Var2 != null) {
+                        bk0Var2.setAnimation(this.c.u);
                     }
                     if (q4Var2.G2 > 0 && l10.longValue() > q4Var2.G2 - 1400) {
                         l10 = 0L;

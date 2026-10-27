@@ -4,7 +4,7 @@ import android.view.WindowManager;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class a0 implements Runnable {
     public final /* synthetic */ int a;
@@ -49,8 +49,8 @@ public final /* synthetic */ class a0 implements Runnable {
                 float currentProgress = 0.7f - j4Var3.h0.d0.getCurrentProgress();
                 if (currentProgress > 0.0f) {
                     float f7 = currentProgress < 0.25f ? 0.01f : 0.02f;
-                    org.telegram.ui.Components.i90 i90Var = j4Var3.h0.d0;
-                    i90Var.a(i90Var.getCurrentProgress() + f7, true);
+                    org.telegram.ui.Components.j90 j90Var = j4Var3.h0.d0;
+                    j90Var.a(j90Var.getCurrentProgress() + f7, true);
                     AndroidUtilities.runOnUIThread(j4Var3.j0, 100L);
                     break;
                 }

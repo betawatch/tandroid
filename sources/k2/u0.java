@@ -20,7 +20,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 import jg.f1;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
 public final class u0 implements a0 {
     public static final AtomicInteger c0 = new AtomicInteger();
@@ -582,9 +582,9 @@ public final class u0 implements a0 {
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:54:0x00d9  */
-    /* JADX WARN: Removed duplicated region for block: B:56:0x00de  */
-    /* JADX WARN: Removed duplicated region for block: B:58:0x00e2  */
+    /* JADX WARN: Removed duplicated region for block: B:54:0x00db  */
+    /* JADX WARN: Removed duplicated region for block: B:56:0x00e0  */
+    /* JADX WARN: Removed duplicated region for block: B:58:0x00e4  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -595,16 +595,16 @@ public final class u0 implements a0 {
             return;
         }
         t0 t0Var = this.l;
-        if (t0Var.a != null && (c0.get() > 0 || SystemClock.elapsedRealtime() < t0Var.c)) {
+        if (((Exception) t0Var.c) != null && (c0.get() > 0 || SystemClock.elapsedRealtime() < t0Var.b)) {
             return;
         }
         int remaining = this.K.remaining();
         try {
             boolean g7 = this.t.g(j10, this.J, this.K);
             this.W = SystemClock.elapsedRealtime();
-            t0Var.a = null;
+            t0Var.c = null;
+            t0Var.a = -9223372036854775807L;
             t0Var.b = -9223372036854775807L;
-            t0Var.c = -9223372036854775807L;
             if (this.t.c()) {
                 if (this.C > 0) {
                     this.Y = false;
@@ -736,13 +736,13 @@ public final class u0 implements a0 {
             this.t = null;
         }
         t0 t0Var = this.l;
-        t0Var.a = null;
+        t0Var.c = null;
+        t0Var.a = -9223372036854775807L;
         t0Var.b = -9223372036854775807L;
-        t0Var.c = -9223372036854775807L;
         t0 t0Var2 = this.k;
-        t0Var2.a = null;
+        t0Var2.c = null;
+        t0Var2.a = -9223372036854775807L;
         t0Var2.b = -9223372036854775807L;
-        t0Var2.c = -9223372036854775807L;
         this.Z = 0L;
         this.a0 = 0L;
         Handler handler = this.b0;
@@ -919,9 +919,9 @@ public final class u0 implements a0 {
                 return false;
             }
         }
-        t0Var.a = null;
+        t0Var.c = null;
+        t0Var.a = -9223372036854775807L;
         t0Var.b = -9223372036854775807L;
-        t0Var.c = -9223372036854775807L;
         if (this.F) {
             this.G = Math.max(0L, j10);
             this.E = false;
@@ -1031,7 +1031,7 @@ public final class u0 implements a0 {
     public final boolean o() {
         j0 b10;
         t0 t0Var = this.k;
-        if (t0Var.a != null && (c0.get() > 0 || SystemClock.elapsedRealtime() < t0Var.c)) {
+        if (((Exception) t0Var.c) != null && (c0.get() > 0 || SystemClock.elapsedRealtime() < t0Var.b)) {
             return false;
         }
         try {

@@ -7,7 +7,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
 public class MemberRequestsController extends BaseController {
     private static final MemberRequestsController[] instances = new MemberRequestsController[4];
@@ -52,7 +52,7 @@ public class MemberRequestsController extends BaseController {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$getImporters$1(TLRPC.TL_chatInviteImporter tL_chatInviteImporter, boolean z10, long j10, RequestDelegate requestDelegate, TLObject tLObject, TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new yk(j10, this, requestDelegate, tLObject, tL_chatInviteImporter, tL_error, z10));
+        AndroidUtilities.runOnUIThread(new zk(j10, this, requestDelegate, tLObject, tL_chatInviteImporter, tL_error, z10));
     }
 
     public TLRPC.TL_messages_chatInviteImporters getCachedImporters(long j10) {
@@ -75,7 +75,7 @@ public class MemberRequestsController extends BaseController {
             tL_messages_getChatInviteImporters.offset_user = getMessagesController().getInputUser(longSparseArray.get(tL_chatInviteImporter.user_id));
             tL_messages_getChatInviteImporters.offset_date = tL_chatInviteImporter.date;
         }
-        return getConnectionsManager().sendRequest(tL_messages_getChatInviteImporters, new sa(this, tL_chatInviteImporter, isEmpty, j10, requestDelegate, 3));
+        return getConnectionsManager().sendRequest(tL_messages_getChatInviteImporters, new ya(this, tL_chatInviteImporter, isEmpty, j10, requestDelegate, 3));
     }
 
     public void onPendingRequestsUpdated(TL_update.TL_updatePendingJoinRequests tL_updatePendingJoinRequests) {

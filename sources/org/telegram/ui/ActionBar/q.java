@@ -13,10 +13,10 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.vh;
+import org.telegram.messenger.wh;
 import org.telegram.ui.Components.n8;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class q implements Runnable {
     public final /* synthetic */ int a;
@@ -172,7 +172,7 @@ public final /* synthetic */ class q implements Runnable {
                 ((CountDownLatch) obj).countDown();
                 break;
             case 18:
-                vh.l(1, (r2) obj);
+                wh.l(1, (r2) obj);
                 break;
             case 19:
                 n8 n8Var = (n8) y6.e5.remove((MessageObject) obj);

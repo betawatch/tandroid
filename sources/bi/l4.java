@@ -6,11 +6,11 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.Wallet.WalletEngine2;
-import org.telegram.ui.cy;
-import org.telegram.ui.o21;
-import org.telegram.ui.v21;
+import org.telegram.ui.ey;
+import org.telegram.ui.q21;
+import org.telegram.ui.x21;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class l4 implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -41,7 +41,7 @@ public final /* synthetic */ class l4 implements Runnable {
                 h7.u1((h7) this.f, (qf.c) this.h, (org.telegram.ui.ActionBar.e2) this.b, (TLObject) this.c, (TL_stars.TL_starGiftUnique) this.n, (TLRPC.TL_error) this.e, this.d, (CharSequence) this.r);
                 break;
             case 1:
-                cy.l0((cy) this.f, (org.telegram.ui.ActionBar.e2) this.b, (TLObject) this.c, (TLRPC.User) this.h, (TLRPC.Chat) this.n, this.d, (TLRPC.TL_error) this.e, (TLRPC.TL_messages_checkHistoryImportPeer) this.r);
+                ey.l0((ey) this.f, (org.telegram.ui.ActionBar.e2) this.b, (TLObject) this.c, (TLRPC.User) this.h, (TLRPC.Chat) this.n, this.d, (TLRPC.TL_error) this.e, (TLRPC.TL_messages_checkHistoryImportPeer) this.r);
                 break;
             case 2:
                 TLObject tLObject = (TLObject) this.c;
@@ -51,10 +51,10 @@ public final /* synthetic */ class l4 implements Runnable {
                 org.telegram.messenger.video.a aVar = (org.telegram.messenger.video.a) this.n;
                 org.telegram.ui.Components.wc wcVar = (org.telegram.ui.Components.wc) this.e;
                 org.telegram.messenger.video.d dVar = (org.telegram.messenger.video.d) this.r;
-                v21 v21Var = new v21(context, k0Var, this.d, bArr);
-                v21Var.R((TLRPC.TL_channels_sponsoredMessageReportResultChooseOption) tLObject);
-                v21Var.v = new o21(aVar, wcVar, context, k0Var, dVar);
-                v21Var.show();
+                x21 x21Var = new x21(context, k0Var, this.d, bArr);
+                x21Var.R((TLRPC.TL_channels_sponsoredMessageReportResultChooseOption) tLObject);
+                x21Var.v = new q21(aVar, wcVar, context, k0Var, dVar);
+                x21Var.show();
                 break;
             default:
                 ((WalletEngine2) this.f).lambda$prepareSend$50((byte[]) this.h, (String) this.b, this.d, (byte[]) this.c, (byte[]) this.n, (String) this.e, (Utilities.Callback3) this.r);
@@ -73,8 +73,8 @@ public final /* synthetic */ class l4 implements Runnable {
         this.r = dVar;
     }
 
-    public /* synthetic */ l4(cy cyVar, org.telegram.ui.ActionBar.e2 e2Var, TLObject tLObject, TLRPC.User user, TLRPC.Chat chat, long j10, TLRPC.TL_error tL_error, TLRPC.TL_messages_checkHistoryImportPeer tL_messages_checkHistoryImportPeer) {
-        this.f = cyVar;
+    public /* synthetic */ l4(ey eyVar, org.telegram.ui.ActionBar.e2 e2Var, TLObject tLObject, TLRPC.User user, TLRPC.Chat chat, long j10, TLRPC.TL_error tL_error, TLRPC.TL_messages_checkHistoryImportPeer tL_messages_checkHistoryImportPeer) {
+        this.f = eyVar;
         this.b = e2Var;
         this.c = tLObject;
         this.h = user;

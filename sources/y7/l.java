@@ -3,7 +3,7 @@ package y7;
 import java.util.ListIterator;
 import java.util.NoSuchElementException;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
 public final class l extends a8.y implements ListIterator {
     public final int b;
@@ -15,7 +15,7 @@ public final class l extends a8.y implements ListIterator {
         super(9);
         int size = nVar.size();
         if (i10 < 0 || i10 > size) {
-            throw new IndexOutOfBoundsException(w7.h5.c(i10, size, "index"));
+            throw new IndexOutOfBoundsException(w7.i5.c(i10, size, "index"));
         }
         this.b = size;
         this.c = i10;

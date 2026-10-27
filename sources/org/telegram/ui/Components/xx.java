@@ -9,9 +9,9 @@ import android.view.ViewConfiguration;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MediaDataController;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public class xx extends pn0 {
+public class xx extends qn0 {
     public boolean A0;
     public boolean B0;
     public VelocityTracker C0;
@@ -31,7 +31,7 @@ public class xx extends pn0 {
         this.u0 = ViewConfiguration.get(context).getScaledTouchSlop();
     }
 
-    @Override // org.telegram.ui.Components.pn0, android.widget.HorizontalScrollView, android.view.ViewGroup
+    @Override // org.telegram.ui.Components.qn0, android.widget.HorizontalScrollView, android.view.ViewGroup
     public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
         if (this.s != null) {
             return super.onInterceptTouchEvent(motionEvent);
@@ -60,7 +60,7 @@ public class xx extends pn0 {
         return super.onInterceptTouchEvent(motionEvent);
     }
 
-    @Override // org.telegram.ui.Components.pn0, android.widget.HorizontalScrollView, android.view.View
+    @Override // org.telegram.ui.Components.qn0, android.widget.HorizontalScrollView, android.view.View
     public final boolean onTouchEvent(MotionEvent motionEvent) {
         boolean z10;
         sz szVar = this.D0;
@@ -88,7 +88,7 @@ public class xx extends pn0 {
                 this.B0 = true;
                 AndroidUtilities.cancelRunOnUIThread(g3Var);
                 szVar.X1 = true;
-                szVar.Y();
+                szVar.Z();
             } else if (Math.abs(motionEvent.getRawY() - this.z0) >= f7) {
                 this.A0 = true;
                 this.z0 = motionEvent.getRawY();
@@ -159,9 +159,9 @@ public class xx extends pn0 {
                 if (fVar.d()) {
                     chatActivityEnterView.E3 = false;
                     if ((!fVar.b || yVelocity < AndroidUtilities.dp(200.0f)) && ((fVar.b || yVelocity > AndroidUtilities.dp(-200.0f)) && ((!(z10 = fVar.b) || chatActivityEnterView.C3 > 0.6f) && (z10 || chatActivityEnterView.C3 < 0.4f)))) {
-                        chatActivityEnterView.k1(z10, true, true, true);
+                        chatActivityEnterView.j1(z10, true, true, true);
                     } else {
-                        chatActivityEnterView.k1(!fVar.b, true, true, true);
+                        chatActivityEnterView.j1(!fVar.b, true, true, true);
                     }
                 }
             } else {
@@ -169,7 +169,7 @@ public class xx extends pn0 {
                 ChatActivityEnterView chatActivityEnterView2 = (ChatActivityEnterView) fVar2.c;
                 if (chatActivityEnterView2.x3) {
                     chatActivityEnterView2.E3 = false;
-                    chatActivityEnterView2.k1(fVar2.b, true, false, true);
+                    chatActivityEnterView2.j1(fVar2.b, true, false, true);
                 }
             }
             this.x0 = true;

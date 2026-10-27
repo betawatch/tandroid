@@ -16,10 +16,10 @@ import java.util.List;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.ji1;
-import org.telegram.ui.u90;
+import org.telegram.ui.li1;
+import org.telegram.ui.w90;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class j0 {
     public static final j0 e;
@@ -34,9 +34,9 @@ public final class j0 {
 
     static {
         int i10 = 16;
-        j0 j0Var = new j0("roboto", "PhotoEditorTypefaceRoboto", new m4.c(new ji1(14), i10));
+        j0 j0Var = new j0("roboto", "PhotoEditorTypefaceRoboto", new m4.c(new li1(14), i10));
         e = j0Var;
-        f = Arrays.asList(j0Var, new j0("italic", "PhotoEditorTypefaceItalic", new m4.c(new ji1(15), i10)), new j0("serif", "PhotoEditorTypefaceSerif", new m4.c(new ji1(i10), i10)), new j0("condensed", "PhotoEditorTypefaceCondensed", new m4.c(new ji1(17), i10)), new j0("mono", "PhotoEditorTypefaceMono", new m4.c(new ji1(18), i10)), new j0("mw_bold", "PhotoEditorTypefaceMerriweather", new m4.c(new ji1(19), i10)));
+        f = Arrays.asList(j0Var, new j0("italic", "PhotoEditorTypefaceItalic", new m4.c(new li1(15), i10)), new j0("serif", "PhotoEditorTypefaceSerif", new m4.c(new li1(i10), i10)), new j0("condensed", "PhotoEditorTypefaceCondensed", new m4.c(new li1(17), i10)), new j0("mono", "PhotoEditorTypefaceMono", new m4.c(new li1(18), i10)), new j0("mw_bold", "PhotoEditorTypefaceMerriweather", new m4.c(new li1(19), i10)));
         g = Arrays.asList("Google Sans", "Dancing Script", "Carrois Gothic SC", "Cutive Mono", "Droid Sans Mono", "Coming Soon");
     }
 
@@ -204,7 +204,7 @@ public final class j0 {
         }
         if (arrayList == null && !i) {
             i = true;
-            Utilities.themeQueue.postRunnable(new u90(19));
+            Utilities.themeQueue.postRunnable(new w90(20));
         }
         return f;
     }

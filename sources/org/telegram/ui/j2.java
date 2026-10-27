@@ -8,15 +8,15 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class j2 extends View implements org.telegram.ui.ActionBar.p6 {
-    public final h70 a;
+    public final j70 a;
     public final org.telegram.ui.Components.ar b;
 
-    public j2(Context context, h70 h70Var) {
+    public j2(Context context, j70 j70Var) {
         super(context);
-        this.a = h70Var;
+        this.a = j70Var;
         org.telegram.ui.Components.ar arVar = new org.telegram.ui.Components.ar(new ColorDrawable(org.telegram.ui.ActionBar.y6.x0(null, org.telegram.ui.ActionBar.y6.Qk, false)), org.telegram.ui.ActionBar.y6.W0(context, R.drawable.greydivider_bottom, -16777216));
         this.b = arVar;
         arVar.w = true;
@@ -39,14 +39,14 @@ public final class j2 extends View implements org.telegram.ui.ActionBar.p6 {
 
     @Override // org.telegram.ui.ActionBar.p6
     public final void updateColors() {
-        h70 h70Var;
+        j70 j70Var;
         try {
             org.telegram.ui.Components.ar arVar = this.b;
-            if (arVar == null || (h70Var = this.a) == null) {
+            if (arVar == null || (j70Var = this.a) == null) {
                 return;
             }
             int i10 = org.telegram.ui.ActionBar.y6.Qk;
-            ((j4) h70Var).getClass();
+            ((j4) j70Var).getClass();
             org.telegram.ui.ActionBar.y6.y1(arVar, org.telegram.ui.ActionBar.y6.x0(null, i10, false), false);
             invalidate();
         } catch (Exception e) {

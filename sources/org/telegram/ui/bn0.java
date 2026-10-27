@@ -1,47 +1,28 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.view.View;
-import android.widget.Button;
-import android.widget.TextView;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLObject;
-
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public final class bn0 extends TextView {
+public final /* synthetic */ class bn0 implements org.telegram.ui.ActionBar.b2 {
     public final /* synthetic */ int a;
+    public final /* synthetic */ gn0 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ bn0(Context context, int i10) {
-        super(context);
+    public /* synthetic */ bn0(gn0 gn0Var, int i10) {
         this.a = i10;
+        this.b = gn0Var;
     }
 
-    @Override // android.widget.TextView, android.view.View
-    public CharSequence getAccessibilityClassName() {
-        switch (this.a) {
-            case 3:
-                return Button.class.getName();
-            default:
-                return super.getAccessibilityClassName();
-        }
-    }
-
-    @Override // android.widget.TextView, android.view.View
-    public void onMeasure(int i10, int i11) {
+    @Override // org.telegram.ui.ActionBar.b2
+    public final void h(org.telegram.ui.ActionBar.e2 e2Var, int i10) {
         switch (this.a) {
             case 0:
-                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(100.0f), TLObject.FLAG_31));
-                break;
-            case 1:
-                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(100.0f), TLObject.FLAG_31));
-                break;
-            case 2:
-                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(AndroidUtilities.dp(26.0f)), TLObject.FLAG_30));
+                gn0 gn0Var = this.b;
+                gn0Var.c(true);
+                gn0Var.Q.finishFragment();
                 break;
             default:
-                super.onMeasure(i10, i11);
+                gn0 gn0Var2 = this.b;
+                gn0Var2.c(true);
+                gn0Var2.Q.K1(null, 0, true);
                 break;
         }
     }

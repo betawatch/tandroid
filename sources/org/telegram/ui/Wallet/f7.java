@@ -6,23 +6,23 @@ import android.text.TextUtils;
 import android.view.View;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.Components.j71;
-import org.telegram.ui.Components.mm0;
-import org.telegram.ui.Components.r71;
-import org.telegram.ui.Components.s61;
+import org.telegram.ui.Components.k71;
+import org.telegram.ui.Components.nm0;
+import org.telegram.ui.Components.s71;
 import org.telegram.ui.Components.t61;
+import org.telegram.ui.Components.u61;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
-public final class f7 extends s61 {
+public final class f7 extends t61 {
     public static final /* synthetic */ int a = 0;
 
     static {
-        s61.setup(new f7());
+        t61.setup(new f7());
     }
 
-    @Override // org.telegram.ui.Components.s61
-    public final void bindView(View view, t61 t61Var, boolean z10, j71 j71Var, r71 r71Var) {
+    @Override // org.telegram.ui.Components.t61
+    public final void bindView(View view, u61 u61Var, boolean z10, k71 k71Var, s71 s71Var) {
         g7 g7Var = (g7) view;
         t7 t7Var = g7Var.x0;
         if (t7Var != null) {
@@ -34,8 +34,8 @@ public final class f7 extends s61 {
         }
         g7Var.y0 = 1.0f;
         g7Var.y.setAlpha(1.0f);
-        g7Var.w0 = (TL_wallet.nftItem) t61Var.G;
-        g7Var.x0 = (t7) t61Var.H;
+        g7Var.w0 = (TL_wallet.nftItem) u61Var.G;
+        g7Var.x0 = (t7) u61Var.H;
         TL_stars.SavedStarGift savedStarGift = new TL_stars.SavedStarGift();
         savedStarGift.gift = g7Var.w0.gift;
         g7Var.k(false, true, 0.0f);
@@ -46,8 +46,8 @@ public final class f7 extends s61 {
         }
     }
 
-    @Override // org.telegram.ui.Components.s61
-    public final View createView(Context context, mm0 mm0Var, int i10, int i11, org.telegram.ui.ActionBar.u6 u6Var) {
+    @Override // org.telegram.ui.Components.t61
+    public final View createView(Context context, nm0 nm0Var, int i10, int i11, org.telegram.ui.ActionBar.u6 u6Var) {
         g7 g7Var = new g7(context, i10, u6Var);
         g7Var.y0 = 1.0f;
         g7Var.setStateListAnimator(null);
@@ -55,12 +55,12 @@ public final class f7 extends s61 {
         return g7Var;
     }
 
-    @Override // org.telegram.ui.Components.s61
-    public final boolean equals(t61 t61Var, t61 t61Var2) {
-        return TextUtils.equals(((TL_wallet.nftItem) t61Var.G).address, ((TL_wallet.nftItem) t61Var2.G).address);
+    @Override // org.telegram.ui.Components.t61
+    public final boolean equals(u61 u61Var, u61 u61Var2) {
+        return TextUtils.equals(((TL_wallet.nftItem) u61Var.G).address, ((TL_wallet.nftItem) u61Var2.G).address);
     }
 
-    @Override // org.telegram.ui.Components.s61
+    @Override // org.telegram.ui.Components.t61
     public final boolean isClickable() {
         return true;
     }

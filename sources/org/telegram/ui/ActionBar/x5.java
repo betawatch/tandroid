@@ -12,9 +12,9 @@ import java.util.HashMap;
 import java.util.Iterator;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.ds;
-import org.telegram.ui.Components.xj0;
+import org.telegram.ui.Components.yj0;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class x5 extends LinearLayout {
     public final r5 a;
@@ -73,8 +73,8 @@ public final class x5 extends LinearLayout {
             layoutParams.rightMargin = dp;
             layoutParams.leftMargin = dp;
         } else {
-            if (drawable instanceof xj0) {
-                y5Var.x.setAnimation((xj0) drawable);
+            if (drawable instanceof yj0) {
+                y5Var.x.setAnimation((yj0) drawable);
             } else if (drawable != null) {
                 y5Var.x.setImageDrawable(drawable);
             } else if (i11 != 0) {

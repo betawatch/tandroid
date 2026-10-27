@@ -5,16 +5,16 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashSet;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public final class k6 implements org.telegram.ui.Components.iw0, m7 {
+public final class k6 implements org.telegram.ui.Components.jw0, m7 {
     public final /* synthetic */ c7 a;
 
     public /* synthetic */ k6(c7 c7Var) {
         this.a = c7Var;
     }
 
-    @Override // org.telegram.ui.Components.iw0
+    @Override // org.telegram.ui.Components.jw0
     public void B(boolean z10) {
         oe.b bVar = this.a.T;
         if (bVar == null || bVar.f == z10) {
@@ -23,12 +23,12 @@ public final class k6 implements org.telegram.ui.Components.iw0, m7 {
         bVar.a(z10, true);
     }
 
-    @Override // org.telegram.ui.Components.iw0
+    @Override // org.telegram.ui.Components.jw0
     public float V0() {
         return org.telegram.messenger.t.c(9.0f, ((org.telegram.ui.ActionBar.k.getCurrentActionBarHeight() / 2) * 2) + this.a.P, 0);
     }
 
-    @Override // org.telegram.ui.Components.iw0
+    @Override // org.telegram.ui.Components.jw0
     public int b1() {
         return this.a.Q;
     }
@@ -176,9 +176,9 @@ public final class k6 implements org.telegram.ui.Components.iw0, m7 {
         Collections.sort(arrayList5, new a4.d(6));
         Collections.sort(arrayList6, new a4.d(6));
         Collections.sort(bVar2.h, new a4.d(6));
-        vu vuVar = new vu(c7Var, w6Var, bVar2, new m4.c(c7Var, w6Var, false, 8));
-        c7Var.Z = vuVar;
-        c7Var.showDialog(vuVar);
+        xu xuVar = new xu(c7Var, w6Var, bVar2, new m4.c(c7Var, w6Var, false, 8));
+        c7Var.Z = xuVar;
+        c7Var.showDialog(xuVar);
     }
 
     @Override // org.telegram.ui.m7

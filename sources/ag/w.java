@@ -25,12 +25,12 @@ import org.telegram.ui.ActionBar.c7;
 import org.telegram.ui.ActionBar.d7;
 import org.telegram.ui.ActionBar.e2;
 import org.telegram.ui.Components.b10;
-import org.telegram.ui.Components.jw0;
-import org.telegram.ui.dg1;
+import org.telegram.ui.Components.kw0;
+import org.telegram.ui.fg1;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class w implements Vector.TLDeserializer, e9.k, s9.d, b2, c7, d7, jw0 {
+public final /* synthetic */ class w implements Vector.TLDeserializer, e9.k, s9.d, b2, c7, d7, kw0 {
     public final /* synthetic */ int a;
 
     public /* synthetic */ w(int i10) {
@@ -247,7 +247,7 @@ public final /* synthetic */ class w implements Vector.TLDeserializer, e9.k, s9.
         }
     }
 
-    @Override // org.telegram.ui.Components.jw0
+    @Override // org.telegram.ui.Components.kw0
     public /* synthetic */ float b(RecyclerView recyclerView) {
         return b10.c(recyclerView);
     }
@@ -304,17 +304,17 @@ public final /* synthetic */ class w implements Vector.TLDeserializer, e9.k, s9.
                 int i11 = h7.A1;
                 break;
             default:
-                h7.D2(new dg1(6, null));
+                h7.D2(new fg1(6, null));
                 break;
         }
     }
 
-    @Override // org.telegram.ui.Components.jw0
+    @Override // org.telegram.ui.Components.kw0
     public RecyclerView i(View view) {
         return ((ad) view).a;
     }
 
-    @Override // org.telegram.ui.Components.jw0
+    @Override // org.telegram.ui.Components.kw0
     public /* synthetic */ void n(RecyclerView recyclerView) {
         b10.b(recyclerView);
     }

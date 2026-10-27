@@ -22,16 +22,16 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.DialogObject;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.ak;
+import org.telegram.messenger.bk;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.ds;
-import org.telegram.ui.Components.gb1;
 import org.telegram.ui.Components.go;
-import org.telegram.ui.un;
-import sg.p2;
+import org.telegram.ui.Components.kb1;
+import org.telegram.ui.wn;
+import sg.o2;
 import vg.b0;
 import vg.j;
 import zh.f4;
@@ -40,7 +40,7 @@ import zh.h4;
 import zh.i4;
 import zh.l4;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class c implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -55,7 +55,7 @@ public final /* synthetic */ class c implements View.OnClickListener {
 
     @Override // android.view.View.OnClickListener
     public final void onClick(View view) {
-        sg.m2 j10;
+        sg.l2 j10;
         TL_stars.SavedStarGift savedStarGift;
         int i10 = 5;
         final int i11 = 0;
@@ -80,7 +80,7 @@ public final /* synthetic */ class c implements View.OnClickListener {
                     canvas.drawBitmap(snapshotView, 0.0f, 0.0f, (Paint) null);
                     snapshotView.recycle();
                     rg.n nVar = new rg.n(yVar, context, createBitmap);
-                    yVar.n.f().addView(nVar, gb1.g(-1.0f, -1));
+                    yVar.n.f().addView(nVar, kb1.g(-1.0f, -1));
                     rg.v vVar = yVar.n;
                     Objects.requireNonNull(vVar);
                     nVar.setColorListener(new n7(vVar, i10));
@@ -94,16 +94,16 @@ public final /* synthetic */ class c implements View.OnClickListener {
                 }
                 break;
             case 2:
-                p2 p2Var = (p2) this.b;
+                o2 o2Var = (o2) this.b;
                 kc kcVar = (kc) this.c;
-                sg.m2[] m2VarArr = p2Var.H;
-                if (m2VarArr != null && m2VarArr.length != 0 && p2Var.I != null && (j10 = p2Var.j(p2Var.n0, p2Var.o0)) != null) {
+                sg.l2[] l2VarArr = o2Var.H;
+                if (l2VarArr != null && l2VarArr.length != 0 && o2Var.I != null && (j10 = o2Var.j(o2Var.n0, o2Var.o0)) != null) {
                     kcVar.run(j10);
                     break;
                 }
                 break;
             case 3:
-                go.g0((un) this.c, 41026, new ig.o((sh.c) this.b, 20), null);
+                go.g0((wn) this.c, 41026, new ig.o((sh.c) this.b, 20), null);
                 break;
             case 4:
                 tg.j0.V((tg.j0) this.b, (Context) this.c);
@@ -271,10 +271,10 @@ public final /* synthetic */ class c implements View.OnClickListener {
                 break;
             default:
                 i4 i4Var = (i4) this.b;
-                ak akVar = (ak) this.c;
+                bk bkVar = (bk) this.c;
                 t9 t9Var = i4Var.c.Y;
                 t9Var.e = !t9Var.e;
-                akVar.run();
+                bkVar.run();
                 t9Var.j(true);
                 break;
         }

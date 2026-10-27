@@ -1,29 +1,64 @@
 package org.telegram.messenger;
 
-import org.telegram.messenger.LanguageDetector;
 import org.telegram.messenger.TranslateController;
-import org.telegram.tgnet.tl.TL_stories;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class ml implements LanguageDetector.StringCallback, LanguageDetector.ExceptionCallback {
-    public final /* synthetic */ TranslateController a;
-    public final /* synthetic */ TL_stories.StoryItem b;
-    public final /* synthetic */ TranslateController.StoryKey c;
+public final /* synthetic */ class ml implements RequestDelegate {
+    public final /* synthetic */ int a = 1;
+    public final /* synthetic */ long b;
+    public final /* synthetic */ String c;
+    public final /* synthetic */ Runnable d;
+    public final /* synthetic */ BaseController e;
+    public final /* synthetic */ Object f;
+    public final /* synthetic */ Object g;
+    public final /* synthetic */ Object h;
 
-    public /* synthetic */ ml(TranslateController translateController, TL_stories.StoryItem storyItem, TranslateController.StoryKey storyKey) {
-        this.a = translateController;
-        this.b = storyItem;
-        this.c = storyKey;
+    public /* synthetic */ ml(MessagesController messagesController, long j10, String str, Runnable runnable, org.telegram.ui.ActionBar.r2 r2Var, TLRPC.TL_channels_updateUsername tL_channels_updateUsername, Runnable runnable2) {
+        this.e = messagesController;
+        this.b = j10;
+        this.c = str;
+        this.d = runnable;
+        this.f = r2Var;
+        this.g = tL_channels_updateUsername;
+        this.h = runnable2;
     }
 
-    @Override // org.telegram.messenger.LanguageDetector.ExceptionCallback
-    public void run(Exception exc) {
-        this.a.lambda$detectStoryLanguage$34(this.b, this.c, exc);
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+        switch (this.a) {
+            case 0:
+                ((TranslateController) this.e).lambda$translatePhoto$46((MessageObject) this.f, this.c, (TranslateController.MessageKey) this.g, this.d, this.b, (TLRPC.TL_textWithEntities) this.h, tLObject, tL_error);
+                break;
+            case 1:
+                ((MessagesController) this.e).lambda$updateChannelUserName$291(this.b, this.c, this.d, (org.telegram.ui.ActionBar.r2) this.f, (TLRPC.TL_channels_updateUsername) this.g, (Runnable) this.h, tLObject, tL_error);
+                break;
+            default:
+                ((MessagesController) this.e).lambda$changeChatAvatar$320((TLRPC.TL_inputChatPhoto) this.f, (TLRPC.FileLocation) this.g, (TLRPC.FileLocation) this.h, this.c, this.b, this.d, tLObject, tL_error);
+                break;
+        }
     }
 
-    @Override // org.telegram.messenger.LanguageDetector.StringCallback
-    public void run(String str) {
-        this.a.lambda$detectStoryLanguage$32(this.b, this.c, str);
+    public /* synthetic */ ml(MessagesController messagesController, TLRPC.TL_inputChatPhoto tL_inputChatPhoto, TLRPC.FileLocation fileLocation, TLRPC.FileLocation fileLocation2, String str, long j10, Runnable runnable) {
+        this.e = messagesController;
+        this.f = tL_inputChatPhoto;
+        this.g = fileLocation;
+        this.h = fileLocation2;
+        this.c = str;
+        this.b = j10;
+        this.d = runnable;
+    }
+
+    public /* synthetic */ ml(TranslateController translateController, MessageObject messageObject, String str, TranslateController.MessageKey messageKey, Runnable runnable, long j10, TLRPC.TL_textWithEntities tL_textWithEntities) {
+        this.e = translateController;
+        this.f = messageObject;
+        this.c = str;
+        this.g = messageKey;
+        this.d = runnable;
+        this.b = j10;
+        this.h = tL_textWithEntities;
     }
 }

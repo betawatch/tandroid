@@ -1,22 +1,52 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.MediaDataController;
-import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.BuildVars;
+import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public final class ki0 extends g.o {
-    public final /* synthetic */ ni0 c;
+public final class ki0 extends mi.m {
+    public Runnable W;
 
-    public ki0(ni0 ni0Var) {
-        this.c = ni0Var;
+    @Override // mi.m, s4.l
+    public final void N() {
+        super.N();
+        Runnable runnable = this.W;
+        if (runnable != null) {
+            AndroidUtilities.cancelRunOnUIThread(runnable);
+            this.W = null;
+        }
+        ji0 ji0Var = new ji0(this, 0);
+        this.W = ji0Var;
+        AndroidUtilities.runOnUIThread(ji0Var);
     }
 
-    @Override // g.o
-    public final int i(int i10) {
-        ni0 ni0Var = this.c;
-        MessageObject messageObject = (MessageObject) ni0Var.M.get((r1.size() - 1) - i10);
-        MessageObject.GroupedMessages k10 = ni0Var.k(messageObject);
-        return k10 != null ? k10.getPosition(messageObject).spanSize : MediaDataController.MAX_STYLE_RUNS_COUNT;
+    @Override // mi.m
+    public final void W() {
+        Runnable runnable = this.W;
+        if (runnable != null) {
+            AndroidUtilities.cancelRunOnUIThread(runnable);
+            this.W = null;
+        }
+        if (BuildVars.LOGS_ENABLED) {
+            FileLog.d("chatItemAnimator disable notifications");
+        }
+    }
+
+    @Override // mi.m, s4.l, s4.m0
+    public final void g() {
+        super.g();
+        Runnable runnable = this.W;
+        if (runnable != null) {
+            AndroidUtilities.cancelRunOnUIThread(runnable);
+        }
+        ji0 ji0Var = new ji0(this, 1);
+        this.W = ji0Var;
+        AndroidUtilities.runOnUIThread(ji0Var);
+    }
+
+    @Override // s4.l
+    public final void F() {
     }
 }

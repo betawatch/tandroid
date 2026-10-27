@@ -15,22 +15,22 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.vh;
+import org.telegram.messenger.wh;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.f7;
 import org.telegram.ui.ActionBar.y6;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.NumberTextView;
-import org.telegram.ui.Components.ey0;
-import org.telegram.ui.Components.gb1;
-import org.telegram.ui.Components.j71;
-import org.telegram.ui.Components.m71;
+import org.telegram.ui.Components.fy0;
+import org.telegram.ui.Components.k71;
+import org.telegram.ui.Components.kb1;
 import org.telegram.ui.Components.ml;
-import org.telegram.ui.Components.t61;
+import org.telegram.ui.Components.n71;
+import org.telegram.ui.Components.u61;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
-public final class p extends m71 {
+public final class p extends n71 {
     public j f;
     public final Runnable h;
     public final org.telegram.ui.q n;
@@ -65,18 +65,18 @@ public final class p extends m71 {
         }
         String lowerCase = str.toLowerCase();
         String lowerCase2 = str2.toLowerCase();
-        if (!lowerCase.startsWith(lowerCase2) && !vh.u(" ", lowerCase2, lowerCase) && !vh.u(".", lowerCase2, lowerCase)) {
+        if (!lowerCase.startsWith(lowerCase2) && !wh.u(" ", lowerCase2, lowerCase) && !wh.u(".", lowerCase2, lowerCase)) {
             String translitSafe = AndroidUtilities.translitSafe(lowerCase);
             String translitSafe2 = AndroidUtilities.translitSafe(lowerCase2);
-            if (!translitSafe.startsWith(translitSafe2) && !vh.u(" ", translitSafe2, translitSafe) && !vh.u(".", translitSafe2, translitSafe)) {
+            if (!translitSafe.startsWith(translitSafe2) && !wh.u(" ", translitSafe2, translitSafe) && !wh.u(".", translitSafe2, translitSafe)) {
                 return false;
             }
         }
         return true;
     }
 
-    @Override // org.telegram.ui.Components.m71
-    public final void V(ArrayList arrayList, j71 j71Var) {
+    @Override // org.telegram.ui.Components.n71
+    public final void V(ArrayList arrayList, k71 k71Var) {
         CharSequence charSequence;
         TLRPC.MessageMedia messageMedia;
         HashSet hashSet = this.y;
@@ -95,7 +95,7 @@ public final class p extends m71 {
                 if (!TextUtils.isEmpty(a2) && !a2.startsWith("#") && !a2.startsWith("$") && !a2.startsWith("@")) {
                     hashSet.add(a2);
                     int i11 = h.a;
-                    t61 K = t61.K(h.class);
+                    u61 K = u61.K(h.class);
                     K.z = 3;
                     K.q = false;
                     K.H = messageObject;
@@ -105,9 +105,9 @@ public final class p extends m71 {
             }
             charSequence = null;
             if (!jVar.f) {
-                arrayList.add(t61.q(arrayList.size(), 32));
-                arrayList.add(t61.q(arrayList.size(), 32));
-                arrayList.add(t61.q(arrayList.size(), 32));
+                arrayList.add(u61.q(arrayList.size(), 32));
+                arrayList.add(u61.q(arrayList.size(), 32));
+                arrayList.add(u61.q(arrayList.size(), 32));
             }
         } else {
             charSequence = null;
@@ -130,7 +130,7 @@ public final class p extends m71 {
                     if (g0(hostAuthority, this.v) || g0(str, this.v) || g0(str2, this.v)) {
                         String str3 = this.v;
                         int i13 = h.a;
-                        t61 K2 = t61.K(h.class);
+                        u61 K2 = u61.K(h.class);
                         K2.z = 3;
                         K2.q = false;
                         K2.H = messageObject2;
@@ -152,7 +152,7 @@ public final class p extends m71 {
                     hashSet.add(a12);
                     String str4 = this.v;
                     int i15 = h.a;
-                    t61 K3 = t61.K(h.class);
+                    u61 K3 = u61.K(h.class);
                     K3.z = 3;
                     K3.q = false;
                     K3.H = messageObject3;
@@ -162,44 +162,44 @@ public final class p extends m71 {
                 }
             }
             if (!this.f.f) {
-                arrayList.add(t61.q(arrayList.size(), 32));
-                arrayList.add(t61.q(arrayList.size(), 32));
-                arrayList.add(t61.q(arrayList.size(), 32));
+                arrayList.add(u61.q(arrayList.size(), 32));
+                arrayList.add(u61.q(arrayList.size(), 32));
+                arrayList.add(u61.q(arrayList.size(), 32));
             }
         }
         if (arrayList.isEmpty()) {
             return;
         }
-        arrayList.add(t61.C(charSequence));
+        arrayList.add(u61.C(charSequence));
     }
 
-    @Override // org.telegram.ui.Components.m71
+    @Override // org.telegram.ui.Components.n71
     public final CharSequence W() {
         return LocaleController.getString(R.string.WebBookmarks);
     }
 
-    @Override // org.telegram.ui.Components.m71
-    public final void X(t61 t61Var, View view) {
-        if (t61Var.H(h.class)) {
+    @Override // org.telegram.ui.Components.n71
+    public final void X(u61 u61Var, View view) {
+        if (u61Var.H(h.class)) {
             if (this.actionBar.q()) {
-                d0(t61Var, view);
+                d0(u61Var, view);
                 return;
             }
             finishFragment();
-            this.n.run(l.a((MessageObject) t61Var.H));
+            this.n.run(l.a((MessageObject) u61Var.H));
         }
     }
 
-    @Override // org.telegram.ui.Components.m71
-    public final boolean Y(t61 t61Var, View view) {
-        if (!t61Var.H(h.class)) {
+    @Override // org.telegram.ui.Components.n71
+    public final boolean Y(u61 u61Var, View view) {
+        if (!u61Var.H(h.class)) {
             return false;
         }
-        d0(t61Var, view);
+        d0(u61Var, view);
         return true;
     }
 
-    @Override // org.telegram.ui.Components.m71, org.telegram.ui.ActionBar.r2
+    @Override // org.telegram.ui.Components.n71, org.telegram.ui.ActionBar.r2
     public final View createView(Context context) {
         this.fragmentView = super.createView(context);
         org.telegram.ui.ActionBar.k kVar = this.actionBar;
@@ -222,7 +222,7 @@ public final class p extends m71 {
         this.w.setTypeface(AndroidUtilities.bold());
         this.w.setTextColor(getThemedColor(y6.y8));
         this.w.setOnTouchListener(new ei.d(2));
-        i12.addView(this.w, gb1.q(1.0f, 0, -1, 65, 0, 0));
+        i12.addView(this.w, kb1.q(1.0f, 0, -1, 65, 0, 0));
         this.s = i12.h(R.id.menu_link, R.drawable.msg_message, LocaleController.getString(R.string.AccDescrGoToMessage), AndroidUtilities.dp(54.0f));
         i12.h(R.id.menu_delete, R.drawable.msg_delete, LocaleController.getString(R.string.Delete), AndroidUtilities.dp(54.0f));
         org.telegram.ui.ActionBar.w0 c10 = this.actionBar.l().c(0, R.drawable.outline_header_search, getResourceProvider());
@@ -236,19 +236,19 @@ public final class p extends m71 {
         f7.E(searchField, y6.Si, getResourceProvider());
         f7.w(searchField, i11, getResourceProvider());
         this.a.j(new ml(this, 22));
-        ey0 ey0Var = new ey0(context, null, 1, null);
-        ey0Var.d.setText(LocaleController.getString(R.string.WebNoBookmarks));
-        ey0Var.e.setVisibility(8);
-        ey0Var.e(false, false);
-        ey0Var.setAnimateLayoutChange(true);
-        ((FrameLayout) this.fragmentView).addView(ey0Var, gb1.g(-1.0f, -1));
-        this.a.setEmptyView(ey0Var);
+        fy0 fy0Var = new fy0(context, null, 1, null);
+        fy0Var.d.setText(LocaleController.getString(R.string.WebNoBookmarks));
+        fy0Var.e.setVisibility(8);
+        fy0Var.e(false, false);
+        fy0Var.setAnimateLayoutChange(true);
+        ((FrameLayout) this.fragmentView).addView(fy0Var, kb1.g(-1.0f, -1));
+        this.a.setEmptyView(fy0Var);
         return this.fragmentView;
     }
 
-    public final void d0(t61 t61Var, View view) {
+    public final void d0(u61 u61Var, View view) {
         i iVar = (i) view;
-        MessageObject messageObject = (MessageObject) t61Var.H;
+        MessageObject messageObject = (MessageObject) u61Var.H;
         boolean f02 = f0(messageObject);
         HashSet hashSet = this.x;
         if (f02) {

@@ -7,7 +7,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.voip.NativeInstance;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class v3 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -83,7 +83,7 @@ public final /* synthetic */ class v3 implements View.OnClickListener {
                 if (j4Var != null) {
                     y9 y9Var = ((p9) j4Var).d;
                     y9Var.Z0 = true;
-                    y9Var.P();
+                    y9Var.Q();
                 }
                 u7 u7Var2 = MessagesController.getInstance(q4Var6.r2).getStoriesController().k;
                 TL_stories.StoryItem storyItem2 = o4Var2.a;
@@ -171,7 +171,7 @@ public final /* synthetic */ class v3 implements View.OnClickListener {
             case 14:
                 q4 q4Var12 = this.b.l;
                 MediaDataController.getInstance(q4Var12.r2).removePeer(q4Var12.q1);
-                q4Var12.H1.i0(q4Var12.q1, true, false);
+                q4Var12.H1.l0(q4Var12.q1, true, false);
                 h4 h4Var14 = q4Var12.i1;
                 if (h4Var14 != null) {
                     h4Var14.a();

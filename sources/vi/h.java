@@ -2,21 +2,21 @@ package vi;
 
 import android.util.Size;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class h {
-    public final l0 a;
-    public final m0 b;
-    public final n0 c;
+    public final n0 a;
+    public final o0 b;
+    public final p0 c;
     public final Size d;
     public final Size e;
     public final float f;
     public final boolean g;
 
-    public h(l0 l0Var, m0 m0Var, n0 n0Var, Size size, Size size2, float f7, boolean z10) {
-        this.a = l0Var;
-        this.b = m0Var;
-        this.c = n0Var;
+    public h(n0 n0Var, o0 o0Var, p0 p0Var, Size size, Size size2, float f7, boolean z10) {
+        this.a = n0Var;
+        this.b = o0Var;
+        this.c = p0Var;
         this.d = size;
         this.e = size2;
         this.f = f7;

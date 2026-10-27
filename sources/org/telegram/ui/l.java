@@ -13,7 +13,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class l implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -31,6 +31,7 @@ public final /* synthetic */ class l implements RequestDelegate {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+        TLObject tLObject2;
         boolean z10;
         int i10;
         String str;
@@ -38,47 +39,45 @@ public final /* synthetic */ class l implements RequestDelegate {
         int i11;
         int i12;
         String[] strArr;
-        TLObject tLObject2 = tLObject;
         int i13 = this.a;
-        int i14 = 11;
-        int i15 = 6;
-        int i16 = 10;
-        int i17 = 2;
-        int i18 = 1;
-        int i19 = 0;
+        int i14 = 7;
+        int i15 = 11;
+        int i16 = 2;
+        int i17 = 1;
+        int i18 = 0;
         Object obj = this.b;
         switch (i13) {
             case 0:
-                AndroidUtilities.runOnUIThread(new q1((o) obj, tL_error, tLObject2, i17));
+                AndroidUtilities.runOnUIThread(new q1((o) obj, tL_error, tLObject, 2));
                 break;
             case 1:
-                AndroidUtilities.runOnUIThread(new q1((o9) obj, tL_error, tLObject2, i15));
+                AndroidUtilities.runOnUIThread(new q1((o9) obj, tL_error, tLObject, 6));
                 break;
             case 2:
-                AndroidUtilities.runOnUIThread(new ui((ko) obj, i14));
+                AndroidUtilities.runOnUIThread(new xi((mo) obj, i15));
                 break;
             case 3:
-                AndroidUtilities.runOnUIThread(new ed(26, (np) obj, tLObject2));
+                AndroidUtilities.runOnUIThread(new ed(26, (pp) obj, tLObject));
                 break;
             case 4:
-                kr krVar = (kr) obj;
-                if (tLObject2 != null) {
-                    TLRPC.Updates updates = (TLRPC.Updates) tLObject2;
-                    krVar.getMessagesController().lambda$processUpdates$379(updates, false);
+                mr mrVar = (mr) obj;
+                if (tLObject != null) {
+                    TLRPC.Updates updates = (TLRPC.Updates) tLObject;
+                    mrVar.getMessagesController().lambda$processUpdates$379(updates, false);
                     if (!updates.chats.isEmpty()) {
-                        AndroidUtilities.runOnUIThread(new ip(1, krVar, updates), 1000L);
+                        AndroidUtilities.runOnUIThread(new kp(i17, mrVar, updates), 1000L);
                         break;
                     }
                 }
                 break;
             case 5:
-                AndroidUtilities.runOnUIThread(new zr((js) obj, i17));
+                AndroidUtilities.runOnUIThread(new bs((ls) obj, 2));
                 break;
             case 6:
-                AndroidUtilities.runOnUIThread(new wt((DataSettingsActivity) obj, 0));
+                AndroidUtilities.runOnUIThread(new yt((DataSettingsActivity) obj, 0));
                 break;
             case 7:
-                AndroidUtilities.runOnUIThread(new nq((b00) obj, tL_error, tLObject2, 7));
+                AndroidUtilities.runOnUIThread(new pq((d00) obj, tL_error, tLObject, i14));
                 break;
             case 8:
                 Runnable runnable = (Runnable) obj;
@@ -88,63 +87,65 @@ public final /* synthetic */ class l implements RequestDelegate {
                 }
                 break;
             case 9:
-                y40 y40Var = (y40) obj;
-                if (tLObject2 instanceof TLRPC.TL_updates) {
-                    y40Var.b.d.getMessagesController().lambda$processUpdates$379((TLRPC.TL_updates) tLObject2, false);
+                a50 a50Var = (a50) obj;
+                if (tLObject instanceof TLRPC.TL_updates) {
+                    a50Var.b.d.getMessagesController().lambda$processUpdates$379((TLRPC.TL_updates) tLObject, false);
                     break;
                 } else {
-                    y40Var.getClass();
+                    a50Var.getClass();
                     break;
                 }
             case 10:
-                AndroidUtilities.runOnUIThread(new sz(i14, (f70) obj, tL_error));
+                AndroidUtilities.runOnUIThread(new kz(12, (h70) obj, tL_error));
                 break;
             case 11:
-                AndroidUtilities.runOnUIThread(new sz(28, (lb0) obj, tLObject2));
+                AndroidUtilities.runOnUIThread(new kz(29, (ob0) obj, tLObject));
                 break;
             case 12:
-                AndroidUtilities.runOnUIThread(new nq((re0) obj, tLObject2, tL_error, 29));
+                AndroidUtilities.runOnUIThread(new ne0((te0) obj, tLObject, tL_error, 0));
                 break;
             case 13:
-                AndroidUtilities.runOnUIThread(new wb0(8, (se0) obj, tL_error));
+                AndroidUtilities.runOnUIThread(new kb0(9, (ue0) obj, tL_error));
                 break;
             case 14:
-                AndroidUtilities.runOnUIThread(new oe0((jf0) obj, tL_error, tLObject2, i17));
+                AndroidUtilities.runOnUIThread(new ne0((lf0) obj, tL_error, tLObject, false, 3));
                 break;
             case 15:
-                AndroidUtilities.runOnUIThread(new oe0((of0) obj, tLObject2, tL_error, 4));
+                AndroidUtilities.runOnUIThread(new ne0((qf0) obj, tLObject, tL_error, 5));
                 break;
             case 16:
-                AndroidUtilities.runOnUIThread(new lj0((NotificationsSettingsActivity) obj, 1));
+                AndroidUtilities.runOnUIThread(new nj0((NotificationsSettingsActivity) obj, i17));
                 break;
             case 17:
-                dn0 dn0Var = (dn0) obj;
+                fn0 fn0Var = (fn0) obj;
                 if (tL_error != null && tL_error.text != null) {
-                    AndroidUtilities.runOnUIThread(new yl0(i17, dn0Var, tL_error));
+                    AndroidUtilities.runOnUIThread(new am0(3, fn0Var, tL_error));
                     break;
                 }
                 break;
             case 18:
-                AndroidUtilities.runOnUIThread(new oe0((PremiumPreviewFragment) obj, tL_error, tLObject2, 25));
+                AndroidUtilities.runOnUIThread(new ne0((PremiumPreviewFragment) obj, tL_error, tLObject, false, 26));
                 break;
             case 19:
-                AndroidUtilities.runOnUIThread(new yl0(21, (PrivacyControlActivity) obj, tLObject2));
+                AndroidUtilities.runOnUIThread(new am0(22, (PrivacyControlActivity) obj, tLObject));
                 break;
             case 20:
                 PrivacySettingsActivity privacySettingsActivity = (PrivacySettingsActivity) obj;
-                if (tLObject2 != null) {
-                    AndroidUtilities.runOnUIThread(new yl0(23, privacySettingsActivity, (TL_account.Password) tLObject2));
+                if (tLObject != null) {
+                    AndroidUtilities.runOnUIThread(new am0(24, privacySettingsActivity, (TL_account.Password) tLObject));
                     break;
                 }
                 break;
             case 21:
-                u01 u01Var = (u01) obj;
-                int i20 = u01Var.f;
-                if (tLObject2 instanceof TLRPC.TL_messages_webPage) {
-                    TLRPC.TL_messages_webPage tL_messages_webPage = (TLRPC.TL_messages_webPage) tLObject2;
-                    MessagesController.getInstance(i20).putUsers(tL_messages_webPage.users, false);
-                    MessagesController.getInstance(i20).putChats(tL_messages_webPage.chats, false);
+                w01 w01Var = (w01) obj;
+                int i19 = w01Var.f;
+                if (tLObject instanceof TLRPC.TL_messages_webPage) {
+                    TLRPC.TL_messages_webPage tL_messages_webPage = (TLRPC.TL_messages_webPage) tLObject;
+                    MessagesController.getInstance(i19).putUsers(tL_messages_webPage.users, false);
+                    MessagesController.getInstance(i19).putChats(tL_messages_webPage.chats, false);
                     tLObject2 = tL_messages_webPage.webpage;
+                } else {
+                    tLObject2 = tLObject;
                 }
                 if (tLObject2 instanceof TLRPC.WebPage) {
                     ArrayList arrayList = new ArrayList();
@@ -152,18 +153,18 @@ public final /* synthetic */ class l implements RequestDelegate {
                     TL_iv.Page page = webPage.cached_page;
                     if (page != null) {
                         int size2 = page.blocks.size();
-                        int i21 = 0;
+                        int i20 = 0;
                         while (true) {
-                            if (i21 < size2) {
-                                TL_iv.PageBlock pageBlock = webPage.cached_page.blocks.get(i21);
+                            if (i20 < size2) {
+                                TL_iv.PageBlock pageBlock = webPage.cached_page.blocks.get(i20);
                                 if (pageBlock instanceof TL_iv.pageBlockList) {
-                                    if (i21 != 0) {
-                                        TL_iv.PageBlock pageBlock2 = webPage.cached_page.blocks.get(i21 - 1);
+                                    if (i20 != 0) {
+                                        TL_iv.PageBlock pageBlock2 = webPage.cached_page.blocks.get(i20 - 1);
                                         if (pageBlock2 instanceof TL_iv.pageBlockParagraph) {
                                             str = j4.B(((TL_iv.pageBlockParagraph) pageBlock2).text).toString();
                                             TL_iv.pageBlockList pageblocklist = (TL_iv.pageBlockList) pageBlock;
                                             size = pageblocklist.items.size();
-                                            i11 = i19;
+                                            i11 = i18;
                                             while (i11 < size) {
                                                 TL_iv.PageListItem pageListItem = pageblocklist.items.get(i11);
                                                 if (pageListItem instanceof TL_iv.TL_pageListItemText) {
@@ -172,70 +173,70 @@ public final /* synthetic */ class l implements RequestDelegate {
                                                     String charSequence = j4.B(tL_pageListItemText.text).toString();
                                                     if (!TextUtils.isEmpty(F) && !TextUtils.isEmpty(charSequence)) {
                                                         if (str != null) {
-                                                            i12 = i19;
-                                                            strArr = new String[2];
+                                                            i12 = i18;
+                                                            strArr = new String[i16];
                                                             strArr[i12] = LocaleController.getString(R.string.SettingsSearchFaq);
-                                                            strArr[i18] = str;
+                                                            strArr[1] = str;
                                                         } else {
-                                                            i12 = i19;
-                                                            strArr = new String[i18];
+                                                            i12 = i18;
+                                                            strArr = new String[1];
                                                             strArr[i12] = LocaleController.getString(R.string.SettingsSearchFaq);
                                                         }
                                                         arrayList.add(new MessagesController.FaqSearchResult(charSequence, strArr, F));
                                                         i11++;
-                                                        i19 = i12;
-                                                        i18 = 1;
+                                                        i18 = i12;
+                                                        i16 = 2;
                                                     }
                                                 }
-                                                i12 = i19;
+                                                i12 = i18;
                                                 i11++;
-                                                i19 = i12;
-                                                i18 = 1;
+                                                i18 = i12;
+                                                i16 = 2;
                                             }
-                                            i10 = i19;
+                                            i10 = i18;
                                         }
                                     }
                                     str = null;
                                     TL_iv.pageBlockList pageblocklist2 = (TL_iv.pageBlockList) pageBlock;
                                     size = pageblocklist2.items.size();
-                                    i11 = i19;
+                                    i11 = i18;
                                     while (i11 < size) {
                                     }
-                                    i10 = i19;
+                                    i10 = i18;
                                 } else {
-                                    i10 = i19;
+                                    i10 = i18;
                                     if (pageBlock instanceof TL_iv.pageBlockAnchor) {
                                     }
                                 }
-                                i21++;
-                                i19 = i10;
-                                i18 = 1;
+                                i20++;
+                                i18 = i10;
+                                i16 = 2;
                             } else {
-                                i10 = i19;
+                                i10 = i18;
                             }
                         }
-                        u01Var.E = webPage;
+                        w01Var.E = webPage;
                     } else {
                         i10 = 0;
                     }
-                    AndroidUtilities.runOnUIThread(new fy0(i16, u01Var, arrayList));
+                    AndroidUtilities.runOnUIThread(new by0(i15, w01Var, arrayList));
                     z10 = i10;
                 } else {
                     z10 = 0;
                 }
-                u01Var.F = z10;
+                w01Var.F = z10;
                 break;
             case 22:
-                AndroidUtilities.runOnUIThread(new x91((StickersActivity) obj, 1));
+                AndroidUtilities.runOnUIThread(new z91((StickersActivity) obj, 1));
                 break;
             case 23:
-                pd1 pd1Var = (pd1) obj;
+                rd1 rd1Var = (rd1) obj;
                 if (tL_error == null) {
-                    TLRPC.TL_messages_inactiveChats tL_messages_inactiveChats = (TLRPC.TL_messages_inactiveChats) tLObject2;
+                    TLRPC.TL_messages_inactiveChats tL_messages_inactiveChats = (TLRPC.TL_messages_inactiveChats) tLObject;
                     ArrayList arrayList2 = new ArrayList();
-                    for (int i22 = 0; i22 < tL_messages_inactiveChats.chats.size(); i22++) {
-                        TLRPC.Chat chat = tL_messages_inactiveChats.chats.get(i22);
-                        int currentTime = (pd1Var.getConnectionsManager().getCurrentTime() - tL_messages_inactiveChats.dates.get(i22).intValue()) / 86400;
+                    for (int i21 = 0; i21 < tL_messages_inactiveChats.chats.size(); i21++) {
+                        TLRPC.Chat chat = tL_messages_inactiveChats.chats.get(i21);
+                        int currentTime = (rd1Var.getConnectionsManager().getCurrentTime() - tL_messages_inactiveChats.dates.get(i21).intValue()) / 86400;
                         String formatPluralString = currentTime < 30 ? LocaleController.formatPluralString("Days", currentTime, new Object[0]) : currentTime < 365 ? LocaleController.formatPluralString("Months", currentTime / 30, new Object[0]) : LocaleController.formatPluralString("Years", currentTime / 365, new Object[0]);
                         if (ChatObject.isMegagroup(chat)) {
                             arrayList2.add(LocaleController.formatString("InactiveChatSignature", R.string.InactiveChatSignature, LocaleController.formatPluralString("Members", chat.participants_count, new Object[0]), formatPluralString));
@@ -245,23 +246,23 @@ public final /* synthetic */ class l implements RequestDelegate {
                             arrayList2.add(LocaleController.formatString("InactiveChatSignature", R.string.InactiveChatSignature, LocaleController.formatPluralString("Members", chat.participants_count, new Object[0]), formatPluralString));
                         }
                     }
-                    AndroidUtilities.runOnUIThread(new h71(pd1Var, arrayList2, tL_messages_inactiveChats, i15));
+                    AndroidUtilities.runOnUIThread(new t31(rd1Var, arrayList2, tL_messages_inactiveChats, i14));
                     break;
                 }
                 break;
             case 24:
-                jg1 jg1Var = (jg1) obj;
-                jg1Var.getClass();
-                AndroidUtilities.runOnUIThread(new zc1(i16, jg1Var, tLObject2));
+                lg1 lg1Var = (lg1) obj;
+                lg1Var.getClass();
+                AndroidUtilities.runOnUIThread(new yc1(i15, lg1Var, tLObject));
                 break;
             case 25:
                 int[][] iArr = WallpapersListActivity.g0;
-                AndroidUtilities.runOnUIThread(new vh1((WallpapersListActivity) obj, i19));
+                AndroidUtilities.runOnUIThread(new xh1((WallpapersListActivity) obj, i18));
                 break;
             default:
-                ei1 ei1Var = (ei1) obj;
-                if (tLObject2 != null) {
-                    AndroidUtilities.runOnUIThread(new org.telegram.ui.Wallet.q6(9, ei1Var, tLObject2));
+                gi1 gi1Var = (gi1) obj;
+                if (tLObject != null) {
+                    AndroidUtilities.runOnUIThread(new org.telegram.ui.Wallet.a6(10, gi1Var, tLObject));
                     break;
                 }
                 break;

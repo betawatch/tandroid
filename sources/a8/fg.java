@@ -20,7 +20,7 @@ import java.util.Set;
 import java.util.concurrent.atomic.AtomicBoolean;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class fg implements Runnable {
     public final /* synthetic */ int a;
@@ -323,7 +323,7 @@ public final /* synthetic */ class fg implements Runnable {
             case 6:
                 Handler handler = (Handler) this.b;
                 if (((AtomicBoolean) this.e).compareAndSet(false, true)) {
-                    handler.removeCallbacks((sg.u) this.d);
+                    handler.removeCallbacks((s9.g) this.d);
                     if (Looper.myLooper() == handler.getLooper()) {
                         ((uf.b) this.c).a(false);
                         return;
@@ -414,10 +414,10 @@ public final /* synthetic */ class fg implements Runnable {
         this.e = new AtomicBoolean(false);
         this.b = handler;
         this.c = bVar;
-        sg.u uVar = new sg.u(18, this, bVar);
-        this.d = uVar;
+        s9.g gVar = new s9.g(19, this, bVar);
+        this.d = gVar;
         if (j10 > 0) {
-            handler.postDelayed(uVar, j10);
+            handler.postDelayed(gVar, j10);
         }
     }
 }

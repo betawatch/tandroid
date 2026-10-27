@@ -2,22 +2,32 @@ package org.telegram.ui.Components;
 
 import android.content.Context;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public final class zv0 {
-    public final int a;
-    public final int b;
-    public final yv0 c;
-    public final xv0 d;
-    public final /* synthetic */ aw0 e;
+public final class zv0 extends yv0 {
+    public final /* synthetic */ aw0 G;
 
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public zv0(aw0 aw0Var, Context context, int i10) {
-        this.e = aw0Var;
-        this.b = i10;
-        int i11 = aw0Var.l2;
-        aw0Var.l2 = i11 + 1;
-        this.a = (i11 & 65535) | 65536;
-        this.c = new yv0(this, context, i10);
-        this.d = new xv0(aw0Var, context, i10, false);
+        super(aw0Var.e, context, i10, false);
+        this.G = aw0Var;
+    }
+
+    @Override // org.telegram.ui.Components.yv0, s4.h0
+    public final void l() {
+        super.l();
+        aw0 aw0Var = this.G;
+        bw0 bw0Var = aw0Var.e;
+        int i10 = aw0Var.a;
+        int[] iArr = bw0.p2;
+        uu0 d02 = bw0Var.d0(i10);
+        if (d02 != null && d02.n.getVisibility() == 0) {
+            aw0Var.d.l();
+        }
+        if (d02 != null) {
+            pt0 pt0Var = d02.v;
+            di.z6 z6Var = this.s;
+            pt0Var.e(z6Var != null && (z6Var.k() || (bw0Var.q0() && this.s.g() > 0)), true);
+        }
     }
 }

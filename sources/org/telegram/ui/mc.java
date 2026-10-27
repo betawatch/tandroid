@@ -6,7 +6,7 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.view.View;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class mc extends View {
     public final /* synthetic */ int a;
@@ -64,46 +64,46 @@ public final class mc extends View {
                 break;
             case 1:
                 super.onDraw(canvas);
-                rp0 rp0Var = (rp0) this.v;
-                boolean z11 = rp0Var.S;
+                tp0 tp0Var = (tp0) this.v;
+                boolean z11 = tp0Var.S;
                 Paint paint2 = this.n;
                 float f13 = this.e;
                 float f14 = this.d;
                 float f15 = this.c;
                 if (z11) {
-                    float f16 = rp0Var.Y;
+                    float f16 = tp0Var.Y;
                     if (f16 > 0.0f) {
                         this.b.drawCircle(f15, f14, f13 * f16, this.f);
                     }
                     canvas.drawBitmap(this.h, 0.0f, 0.0f, paint2);
                 } else {
-                    canvas.drawCircle(f15, f14, (1.0f - rp0Var.Y) * f13, paint2);
+                    canvas.drawCircle(f15, f14, (1.0f - tp0Var.Y) * f13, paint2);
                 }
                 canvas.save();
                 canvas.translate(this.r, this.s);
-                rp0Var.K.draw(canvas);
+                tp0Var.K.draw(canvas);
                 canvas.restore();
                 break;
             default:
                 super.onDraw(canvas);
-                tc1 tc1Var = (tc1) this.v;
-                boolean a2 = tc1Var.a.a();
+                vc1 vc1Var = (vc1) this.v;
+                boolean a2 = vc1Var.a.a();
                 Paint paint3 = this.n;
                 float f17 = this.e;
                 float f18 = this.d;
                 float f19 = this.c;
                 if (a2) {
-                    float f20 = tc1Var.j2;
+                    float f20 = vc1Var.j2;
                     if (f20 > 0.0f) {
                         this.b.drawCircle(f19, f18, f17 * f20, this.f);
                     }
                     canvas.drawBitmap(this.h, 0.0f, 0.0f, paint3);
                 } else {
-                    canvas.drawCircle(f19, f18, (1.0f - tc1Var.j2) * f17, paint3);
+                    canvas.drawCircle(f19, f18, (1.0f - vc1Var.j2) * f17, paint3);
                 }
                 canvas.save();
                 canvas.translate(this.r, this.s);
-                tc1Var.P1.draw(canvas);
+                vc1Var.P1.draw(canvas);
                 canvas.restore();
                 break;
         }

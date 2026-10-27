@@ -13,10 +13,10 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_aicompose;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.gb1;
+import org.telegram.ui.Components.kb1;
 import org.telegram.ui.web.BotWebViewContainer$BotWebViewProxy;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class t0 implements Utilities.Callback2 {
     public final /* synthetic */ int a;
@@ -75,7 +75,7 @@ public final /* synthetic */ class t0 implements Utilities.Callback2 {
                 v3Var2.h = AndroidUtilities.dp(300.0f);
                 v3Var2.setPadding(AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f));
                 v3Var2.m(0.0f, x9 - AndroidUtilities.dp(4.0f));
-                frameLayout.addView(v3Var2, gb1.i(-1, 100, 55));
+                frameLayout.addView(v3Var2, kb1.i(-1, 100, 55));
                 v3Var2.u();
                 break;
             case 2:
@@ -105,7 +105,7 @@ public final /* synthetic */ class t0 implements Utilities.Callback2 {
                     if (g0Var != null) {
                         g0Var.c();
                     }
-                    AndroidUtilities.runOnUIThread(new org.telegram.ui.Wallet.q6(12, botWebViewContainer$BotWebViewProxy, arrayList), 500L);
+                    AndroidUtilities.runOnUIThread(new org.telegram.ui.Wallet.a6(13, botWebViewContainer$BotWebViewProxy, arrayList), 500L);
                     break;
                 }
             case 7:
@@ -144,7 +144,7 @@ public final /* synthetic */ class t0 implements Utilities.Callback2 {
                 v3Var4.h = AndroidUtilities.dp(300.0f);
                 v3Var4.setPadding(AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f));
                 v3Var4.m(0.0f, x10 - AndroidUtilities.dp(4.0f));
-                frameLayout2.addView(v3Var4, gb1.i(-1, 100, 55));
+                frameLayout2.addView(v3Var4, kb1.i(-1, 100, 55));
                 v3Var4.u();
                 break;
             default:

@@ -1,31 +1,77 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.MessageObject;
+import android.graphics.Typeface;
+import android.media.AudioRecordingConfiguration;
+import android.media.MediaRoute2Info;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ApplicationLoader;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public final class li1 extends org.telegram.ui.ActionBar.j {
-    public final /* synthetic */ ni1 a;
+public final /* synthetic */ class li1 implements org.telegram.ui.ActionBar.b2, q3.g, androidx.car.app.utils.c, g2.g, rg.h0 {
+    public final /* synthetic */ int a;
 
-    public li1(ni1 ni1Var) {
-        this.a = ni1Var;
+    public /* synthetic */ li1(int i10) {
+        this.a = i10;
     }
 
-    @Override // org.telegram.ui.ActionBar.j
-    public final void b(int i10) {
-        ni1 ni1Var = this.a;
-        MessageObject messageObject = ni1Var.n;
-        if (i10 == -1) {
-            ni1Var.finishFragment();
-            return;
+    public static /* bridge */ /* synthetic */ AudioRecordingConfiguration a(Object obj) {
+        return (AudioRecordingConfiguration) obj;
+    }
+
+    public static /* bridge */ /* synthetic */ MediaRoute2Info d(Object obj) {
+        return (MediaRoute2Info) obj;
+    }
+
+    @Override // rg.h0
+    public Typeface b() {
+        switch (this.a) {
+            case 14:
+                return AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM);
+            case 15:
+                return AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM_ITALIC);
+            case 16:
+                return Typeface.create("serif", 1);
+            case 17:
+                return AndroidUtilities.getTypeface("fonts/rcondensedbold.ttf");
+            case 18:
+                return AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MONO);
+            default:
+                return AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_MERRIWEATHER_BOLD);
         }
-        if (i10 != 1) {
-            if (i10 == 2) {
-                ni1.W(ni1Var.d, messageObject, ni1Var.getParentActivity(), ni1Var.r, ni1Var.e);
-            }
-        } else if (messageObject != null) {
-            messageObject.messageOwner.with_my_score = false;
-            ni1Var.showDialog(org.telegram.ui.Components.mr0.P0(ni1Var.getParentActivity(), messageObject, null, false, ni1Var.h));
+    }
+
+    @Override // q3.g
+    public boolean c(int i10, int i11, int i12, int i13, int i14) {
+        return false;
+    }
+
+    @Override // androidx.car.app.utils.c
+    public void call() {
+        throw null;
+    }
+
+    @Override // g2.g
+    public g2.h createDataSource() {
+        return new g2.b(ApplicationLoader.applicationContext);
+    }
+
+    @Override // org.telegram.ui.ActionBar.b2
+    public void h(org.telegram.ui.ActionBar.e2 e2Var, int i10) {
+        switch (this.a) {
+            case 0:
+                e2Var.dismiss();
+                break;
+            case 1:
+                e2Var.dismiss();
+                break;
+            default:
+                e2Var.dismiss();
+                break;
         }
+    }
+
+    public /* synthetic */ li1(r.a aVar, int i10, w.b bVar) {
+        this.a = 7;
     }
 }

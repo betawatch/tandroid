@@ -32,18 +32,18 @@ import org.telegram.ui.ActionBar.f7;
 import org.telegram.ui.ActionBar.u6;
 import org.telegram.ui.ActionBar.y6;
 import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.Components.gb1;
 import org.telegram.ui.Components.j9;
-import org.telegram.ui.Components.rd0;
+import org.telegram.ui.Components.kb1;
+import org.telegram.ui.Components.sd0;
 import org.telegram.ui.Components.t5;
 import org.telegram.ui.Components.y9;
-import org.telegram.ui.af1;
-import org.telegram.ui.cy;
-import org.telegram.ui.ux;
+import org.telegram.ui.cf1;
+import org.telegram.ui.ey;
+import org.telegram.ui.xx;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class x1 implements ux, org.telegram.ui.ActionBar.b2, ni.n {
+public final /* synthetic */ class x1 implements xx, org.telegram.ui.ActionBar.b2, ni.n {
     public final /* synthetic */ int a;
     public final /* synthetic */ long b;
     public final /* synthetic */ Object c;
@@ -56,13 +56,13 @@ public final /* synthetic */ class x1 implements ux, org.telegram.ui.ActionBar.b
         this.d = runnable;
     }
 
-    @Override // org.telegram.ui.ux
+    @Override // org.telegram.ui.xx
     public /* synthetic */ boolean C() {
         return false;
     }
 
-    @Override // org.telegram.ui.ux
-    public /* synthetic */ boolean K(cy cyVar) {
+    @Override // org.telegram.ui.xx
+    public /* synthetic */ boolean K(ey eyVar) {
         return false;
     }
 
@@ -110,23 +110,23 @@ public final /* synthetic */ class x1 implements ux, org.telegram.ui.ActionBar.b
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    @Override // org.telegram.ui.ux
-    public boolean v(cy cyVar, ArrayList arrayList, CharSequence charSequence, boolean z10, boolean z11, int i10, int i11, af1 af1Var) {
+    @Override // org.telegram.ui.xx
+    public boolean v(ey eyVar, ArrayList arrayList, CharSequence charSequence, boolean z10, boolean z11, int i10, int i11, cf1 cf1Var) {
         int i12;
         String str;
         boolean z12;
         TLRPC.User user;
         TLRPC.Chat chat;
         TLRPC.Chat chat2;
-        cy cyVar2 = (cy) this.c;
+        ey eyVar2 = (ey) this.c;
         final TL_bots.BotVerifierSettings botVerifierSettings = (TL_bots.BotVerifierSettings) this.d;
         if (arrayList.isEmpty()) {
             return false;
         }
         final long j10 = ((MessagesStorage.TopicKey) arrayList.get(0)).dialogId;
-        Activity parentActivity = cyVar2.getParentActivity();
+        Activity parentActivity = eyVar2.getParentActivity();
         final int i13 = this.a;
-        final y1 y1Var = new y1(af1Var, cyVar2, j10, i13);
+        final y1 y1Var = new y1(cf1Var, eyVar2, j10, i13);
         if (parentActivity == null) {
             return true;
         }
@@ -183,19 +183,19 @@ public final /* synthetic */ class x1 implements ux, org.telegram.ui.ActionBar.b
         j9 j9Var = new j9((u6) null);
         j9Var.p(chat2);
         y9Var.f(chat2, j9Var);
-        frameLayout.addView(y9Var, gb1.i(28, 28, 51));
+        frameLayout.addView(y9Var, kb1.i(28, 28, 51));
         y9 y9Var2 = new y9(parentActivity);
         y9Var2.setEmojiColorFilter(new PorterDuffColorFilter(y6.x0(null, y6.z9, false), PorterDuff.Mode.SRC_IN));
         y9Var2.setAnimatedEmojiDrawable(t5.n(i13, botVerifierSettings.icon, null, 3));
-        frameLayout.addView(y9Var2, gb1.h(20, 20.0f, 19, 34.0f, 0.0f, 0.0f, 0.0f));
+        frameLayout.addView(y9Var2, kb1.h(20, 20.0f, 19, 34.0f, 0.0f, 0.0f, 0.0f));
         b6 b6Var = new b6(parentActivity);
         f7.Y(b6Var, y6.j5, null);
         b6Var.setTextSize(13);
         b6Var.setEllipsizeByGradient(true);
         b6Var.l(str, false);
         b6Var.setWidthWrapContent(true);
-        frameLayout.addView(b6Var, gb1.h(-2, -2.0f, 19, 57.0f, 0.0f, 10.0f, 0.0f));
-        f7.addView(frameLayout, gb1.x(-2, -2, 1, 16, 0, 16, 0));
+        frameLayout.addView(b6Var, kb1.h(-2, -2.0f, 19, 57.0f, 0.0f, 10.0f, 0.0f));
+        f7.addView(frameLayout, kb1.x(-2, -2, 1, 16, 0, 16, 0));
         TextView textView = new TextView(parentActivity);
         int i16 = y6.G6;
         f7.V(textView, i16, null);
@@ -211,20 +211,20 @@ public final /* synthetic */ class x1 implements ux, org.telegram.ui.ActionBar.b
             textView.setText(LocaleController.getString(R.string.BotVerifyGroupTitle));
         }
         textView.setTypeface(AndroidUtilities.bold());
-        f7.addView(textView, gb1.o(24.0f, 21.0f, 24.0f, 8.33f, -1, -2));
+        f7.addView(textView, kb1.o(24.0f, 21.0f, 24.0f, 8.33f, -1, -2));
         TextView textView2 = new TextView(parentActivity);
         f7.V(textView2, i16, null);
         textView2.setTextSize(1, 14.0f);
         textView2.setGravity(17);
         NotificationCenter.listenEmojiLoading(textView2);
         textView2.setText(Emoji.replaceEmoji(AndroidUtilities.replaceTags(LocaleController.formatString(R.string.BotVerifyText, str)), textView2.getPaint().getFontMetricsInt(), false));
-        f7.addView(textView2, gb1.o(24.0f, 0.0f, 24.0f, 22.0f, -1, -2));
+        f7.addView(textView2, kb1.o(24.0f, 0.0f, 24.0f, 22.0f, -1, -2));
         final int i17 = MessagesController.getInstance(i13).botVerificationDescriptionLengthLimit;
         final EditTextBoldCursor editTextBoldCursor = new EditTextBoldCursor(parentActivity);
-        final rd0 rd0Var = new rd0(parentActivity, null);
-        rd0Var.setForceForceUseCenter(true);
-        rd0Var.setText(LocaleController.getString(R.string.BotVerifyDescription));
-        rd0Var.setLeftPadding(AndroidUtilities.dp(2.0f));
+        final sd0 sd0Var = new sd0(parentActivity, null);
+        sd0Var.setForceForceUseCenter(true);
+        sd0Var.setText(LocaleController.getString(R.string.BotVerifyDescription));
+        sd0Var.setLeftPadding(AndroidUtilities.dp(2.0f));
         f7.V(editTextBoldCursor, i16, null);
         editTextBoldCursor.setCursorSize(AndroidUtilities.dp(20.0f));
         editTextBoldCursor.setCursorWidth(1.5f);
@@ -237,12 +237,12 @@ public final /* synthetic */ class x1 implements ux, org.telegram.ui.ActionBar.b
         f7.D(editTextBoldCursor, y6.uf, null);
         f7.m(editTextBoldCursor, 36, y6.vf, null);
         editTextBoldCursor.setGravity(LocaleController.isRTL ? 5 : 3);
-        editTextBoldCursor.setOnFocusChangeListener(new gb(rd0Var, editTextBoldCursor, 1));
-        rd0Var.e(editTextBoldCursor);
-        rd0Var.addView(editTextBoldCursor, gb1.h(-1, -2.0f, 48, 12.0f, 4.0f, 12.0f, 4.0f));
-        f7.addView(rd0Var, gb1.r(-1, -2));
+        editTextBoldCursor.setOnFocusChangeListener(new gb(sd0Var, editTextBoldCursor, 1));
+        sd0Var.e(editTextBoldCursor);
+        sd0Var.addView(editTextBoldCursor, kb1.h(-1, -2.0f, 48, 12.0f, 4.0f, 12.0f, 4.0f));
+        f7.addView(sd0Var, kb1.r(-1, -2));
         editTextBoldCursor.addTextChangedListener(new org.telegram.ui.Cells.f3());
-        editTextBoldCursor.addTextChangedListener(new b2(editTextBoldCursor, i17, rd0Var));
+        editTextBoldCursor.addTextChangedListener(new b2(editTextBoldCursor, i17, sd0Var));
         TLRPC.TL_textWithEntities tL_textWithEntities = botVerifierSettings.custom_description;
         if (tL_textWithEntities != null && !TextUtils.isEmpty(tL_textWithEntities.text)) {
             editTextBoldCursor.setText(botVerifierSettings.custom_description.text);
@@ -252,20 +252,20 @@ public final /* synthetic */ class x1 implements ux, org.telegram.ui.ActionBar.b
                 editTextBoldCursor.setFocusableInTouchMode(false);
             }
         } else if (!botVerifierSettings.can_modify_custom_description) {
-            rd0Var.setVisibility(8);
+            sd0Var.setVisibility(8);
         }
         if (botVerifierSettings.can_modify_custom_description) {
             TextView textView3 = new TextView(parentActivity);
             f7.V(textView3, y6.B6, null);
             textView3.setTextSize(1, 12.0f);
             textView3.setPadding(org.telegram.ui.d3.h(14.0f, i12 >= 0 ? R.string.BotVerifyDescriptionInfo : R.string.BotVerifyDescriptionInfoChat, textView3), AndroidUtilities.dp(7.0f), AndroidUtilities.dp(14.0f), AndroidUtilities.dp(27.0f));
-            f7.addView(textView3, gb1.g(-2.0f, -1));
+            f7.addView(textView3, kb1.g(-2.0f, -1));
         } else {
-            f7.addView(new View(parentActivity), gb1.g(12.0f, -1));
+            f7.addView(new View(parentActivity), kb1.g(12.0f, -1));
         }
         final fi.d dVar = new fi.d(parentActivity, null, true);
         dVar.i(textView.getText(), false, true);
-        f7.addView(dVar, gb1.r(-1, 48));
+        f7.addView(dVar, kb1.r(-1, 48));
         k3Var.customView = f7;
         dVar.setOnClickListener(new View.OnClickListener() { // from class: hi.z1
             @Override // android.view.View.OnClickListener
@@ -278,9 +278,9 @@ public final /* synthetic */ class x1 implements ux, org.telegram.ui.ActionBar.b
                 boolean z14 = botVerifierSettings2.can_modify_custom_description;
                 EditTextBoldCursor editTextBoldCursor2 = editTextBoldCursor;
                 if (z14 && editTextBoldCursor2.getText().length() > i17) {
-                    rd0 rd0Var2 = rd0Var;
-                    rd0Var2.a(1.0f);
-                    AndroidUtilities.shakeViewSpring(rd0Var2, -6.0f);
+                    sd0 sd0Var2 = sd0Var;
+                    sd0Var2.a(1.0f);
+                    AndroidUtilities.shakeViewSpring(sd0Var2, -6.0f);
                     return;
                 }
                 dVar2.setLoading(true);
@@ -316,8 +316,8 @@ public final /* synthetic */ class x1 implements ux, org.telegram.ui.ActionBar.b
         this.a = i10;
     }
 
-    public /* synthetic */ x1(cy cyVar, int i10, long j10, TL_bots.BotVerifierSettings botVerifierSettings) {
-        this.c = cyVar;
+    public /* synthetic */ x1(ey eyVar, int i10, long j10, TL_bots.BotVerifierSettings botVerifierSettings) {
+        this.c = eyVar;
         this.a = i10;
         this.b = j10;
         this.d = botVerifierSettings;

@@ -18,16 +18,16 @@ import org.telegram.ui.ActionBar.r2;
 import org.telegram.ui.Components.cc;
 import org.telegram.ui.Components.g5;
 import org.telegram.ui.Components.j9;
-import org.telegram.ui.Components.q61;
 import org.telegram.ui.Components.qc;
-import org.telegram.ui.Components.sy0;
+import org.telegram.ui.Components.r61;
+import org.telegram.ui.Components.ty0;
 import org.telegram.ui.Components.y9;
 import org.telegram.ui.PhotoViewer;
-import org.telegram.ui.dg1;
-import org.telegram.ui.ft;
-import org.telegram.ui.un;
+import org.telegram.ui.fg1;
+import org.telegram.ui.ht;
+import org.telegram.ui.wn;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class q0 implements Runnable {
     public final /* synthetic */ int a = 2;
@@ -39,11 +39,11 @@ public final /* synthetic */ class q0 implements Runnable {
     public final /* synthetic */ Object h;
     public final /* synthetic */ TLObject n;
 
-    public /* synthetic */ q0(File file, ArrayList arrayList, r2 r2Var, un unVar, TLRPC.Document document, boolean z10, TLRPC.TL_messages_stickerSet tL_messages_stickerSet) {
+    public /* synthetic */ q0(File file, ArrayList arrayList, r2 r2Var, wn wnVar, TLRPC.Document document, boolean z10, TLRPC.TL_messages_stickerSet tL_messages_stickerSet) {
         this.f = file;
         this.e = arrayList;
         this.b = r2Var;
-        this.c = unVar;
+        this.c = wnVar;
         this.h = document;
         this.d = z10;
         this.n = tL_messages_stickerSet;
@@ -74,17 +74,17 @@ public final /* synthetic */ class q0 implements Runnable {
                 TLRPC.Document document = (TLRPC.Document) obj2;
                 TLRPC.TL_messages_stickerSet tL_messages_stickerSet = (TLRPC.TL_messages_stickerSet) tLObject;
                 arrayList2.add(new MediaController.PhotoEntry(0, 0, 0L, ((File) obj5).getAbsolutePath(), 0, false, 0, 0, 0L));
-                PhotoViewer.u1().M2(r2Var.getParentActivity(), null, r2Var.getResourceProvider());
-                PhotoViewer.u1().i2(arrayList2, 0, 11, false, new sy0(), (un) obj3);
-                PhotoViewer.u1().Y0(document, z10 ? document : null, false, null);
-                ft o10 = ft.o();
+                PhotoViewer.v1().N2(r2Var.getParentActivity(), null, r2Var.getResourceProvider());
+                PhotoViewer.v1().j2(arrayList2, 0, 11, false, new ty0(), (wn) obj3);
+                PhotoViewer.v1().Z0(document, z10 ? document : null, false, null);
+                ht o10 = ht.o();
                 if (!z10) {
                     tL_messages_stickerSet = null;
                 }
                 o10.T = tL_messages_stickerSet;
                 break;
             case 3:
-                dg1.e0((dg1) obj5, (TLRPC.TL_error) obj4, this.d, (TLObject) obj3, (byte[]) obj2, (String) obj, (TL_account.passwordInputSettings) tLObject);
+                fg1.e0((fg1) obj5, (TLRPC.TL_error) obj4, this.d, (TLObject) obj3, (byte[]) obj2, (String) obj, (TL_account.passwordInputSettings) tLObject);
                 break;
             default:
                 yh.k kVar = (yh.k) obj5;
@@ -150,7 +150,7 @@ public final /* synthetic */ class q0 implements Runnable {
                             String formatString = kVar.a ? LocaleController.formatString("HasBeenAddedToChannel", R.string.HasBeenAddedToChannel, firstName) : LocaleController.formatString("HasBeenAddedToGroup", R.string.HasBeenAddedToGroup, firstName);
                             SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(formatString);
                             int indexOf = formatString.indexOf(firstName);
-                            spannableStringBuilder.setSpan(new q61(AndroidUtilities.bold()), indexOf, firstName.length() + indexOf, 18);
+                            spannableStringBuilder.setSpan(new r61(AndroidUtilities.bold()), indexOf, firstName.length() + indexOf, 18);
                             ccVar.b.setText(spannableStringBuilder);
                             if (arrayList3.isEmpty()) {
                                 qc.g(r2Var2, ccVar, 2750).j();
@@ -189,8 +189,8 @@ public final /* synthetic */ class q0 implements Runnable {
         this.n = tLObject2;
     }
 
-    public /* synthetic */ q0(dg1 dg1Var, TLRPC.TL_error tL_error, boolean z10, TLObject tLObject, byte[] bArr, String str, TL_account.passwordInputSettings passwordinputsettings) {
-        this.f = dg1Var;
+    public /* synthetic */ q0(fg1 fg1Var, TLRPC.TL_error tL_error, boolean z10, TLObject tLObject, byte[] bArr, String str, TL_account.passwordInputSettings passwordinputsettings) {
+        this.f = fg1Var;
         this.b = tL_error;
         this.d = z10;
         this.c = tLObject;

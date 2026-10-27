@@ -15,7 +15,7 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.vh;
+import org.telegram.messenger.wh;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
@@ -25,12 +25,12 @@ import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.ActionBar.f7;
 import org.telegram.ui.ActionBar.u6;
 import org.telegram.ui.ActionBar.y6;
-import org.telegram.ui.Components.gb1;
+import org.telegram.ui.Components.kb1;
 import org.telegram.ui.Components.lb;
 import org.telegram.ui.Components.wc;
 import org.telegram.ui.Wallet.e2;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class c1 implements Utilities.Callback2 {
     public final /* synthetic */ int a = 1;
@@ -164,20 +164,20 @@ public final /* synthetic */ class c1 implements Utilities.Callback2 {
                             tLObject = chat;
                             chat2 = MessagesController.getInstance(i15).getChat(Long.valueOf(-j13));
                         }
-                        LinearLayout d = vh.d(context2, 1);
-                        d.addView(new e7(context2, tLObject, chat2), gb1.x(-1, -2, 48, 0, -4, 0, 0));
+                        LinearLayout d = wh.d(context2, 1);
+                        d.addView(new e7(context2, tLObject, chat2), kb1.x(-1, -2, 48, 0, -4, 0, 0));
                         TextView textView = new TextView(context2);
                         NotificationCenter.listenEmojiLoading(textView);
                         textView.setText(LocaleController.getString(R.string.Gift2AuctionsChangeRecipient));
                         int i16 = y6.j5;
                         org.telegram.messenger.t.r(textView, i16, u6Var, 1, 20.0f);
                         textView.setGravity(LocaleController.isRTL ? 5 : 3);
-                        d.addView(textView, gb1.h(-2, -2.0f, (LocaleController.isRTL ? 5 : 3) | 48, 24.0f, 19.0f, 24.0f, 2.0f));
+                        d.addView(textView, kb1.h(-2, -2.0f, (LocaleController.isRTL ? 5 : 3) | 48, 24.0f, 19.0f, 24.0f, 2.0f));
                         TextView textView2 = new TextView(context2);
                         f7.V(textView2, i16, u6Var);
                         textView2.setTextSize(1, 16.0f);
-                        vh.o(R.string.Gift2AuctionsChangeRecipient2, new Object[]{DialogObject.getShortName(peerDialogId), DialogObject.getShortName(j13)}, textView2);
-                        d.addView(textView2, gb1.x(-1, -2, 48, 24, 4, 24, 4));
+                        wh.o(R.string.Gift2AuctionsChangeRecipient2, new Object[]{DialogObject.getShortName(peerDialogId), DialogObject.getShortName(j13)}, textView2);
+                        d.addView(textView2, kb1.x(-1, -2, 48, 24, 4, 24, 4));
                         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(context2, 0, u6Var);
                         alertDialog$Builder.o(d);
                         alertDialog$Builder.k(LocaleController.getString(R.string.Continue), new x2.e(h0Var, 5));

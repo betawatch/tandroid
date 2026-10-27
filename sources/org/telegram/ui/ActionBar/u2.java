@@ -1,13 +1,13 @@
 package org.telegram.ui.ActionBar;
 
 import android.animation.ValueAnimator;
-import org.telegram.ui.Components.n60;
-import org.telegram.ui.Components.ql0;
+import org.telegram.ui.Components.o60;
+import org.telegram.ui.Components.rl0;
 import org.telegram.ui.Components.ru;
 import org.telegram.ui.Components.sz;
-import org.telegram.ui.rq;
+import org.telegram.ui.tq;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class u2 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -55,24 +55,24 @@ public final /* synthetic */ class u2 implements ValueAnimator.AnimatorUpdateLis
                 ((sz) this.c).Q0[this.b] = (int) ((Float) valueAnimator.getAnimatedValue()).floatValue();
                 break;
             case 4:
-                n60 n60Var = (n60) this.c;
-                if (this.b == n60Var.s0) {
+                o60 o60Var = (o60) this.c;
+                if (this.b == o60Var.s0) {
                     float floatValue3 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
                     if (floatValue3 >= 0.5f) {
                         floatValue3 -= 1.0f;
                     }
-                    n60Var.x.setRotationY(floatValue3 * 180.0f);
+                    o60Var.w.setRotationY(floatValue3 * 180.0f);
                     break;
                 }
                 break;
             case 5:
-                rq rqVar = (rq) this.c;
-                rqVar.getClass();
+                tq tqVar = (tq) this.c;
+                tqVar.getClass();
                 Float f11 = (Float) valueAnimator.getAnimatedValue();
-                ql0 ql0Var = (ql0) rqVar.d;
-                ql0Var.b.put(this.b, f11);
-                ql0Var.d = true;
-                ql0Var.a.invalidate();
+                rl0 rl0Var = (rl0) tqVar.d;
+                rl0Var.b.put(this.b, f11);
+                rl0Var.d = true;
+                rl0Var.a.invalidate();
                 break;
             default:
                 xh.g gVar = (xh.g) this.c;

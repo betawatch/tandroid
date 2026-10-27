@@ -9,9 +9,9 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.ui.Components.k80;
+import org.telegram.ui.Components.l80;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class r4 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -37,7 +37,7 @@ public final /* synthetic */ class r4 implements View.OnClickListener {
                     List l4 = u4Var.l();
                     if (indexOf >= 0 && indexOf < l4.size() && indexOf < arrayList.size()) {
                         final t tVar = (t) l4.get(indexOf);
-                        k80 P = u4Var.N.a.p3.P((View) arrayList.get(indexOf));
+                        l80 P = u4Var.N.a.p3.P((View) arrayList.get(indexOf));
                         boolean z10 = tVar.n;
                         final int i10 = 0;
                         P.c(z10 ? R.drawable.msg_spoiler_off : R.drawable.msg_spoiler, LocaleController.getString(z10 ? R.string.DisablePhotoSpoiler : R.string.EnablePhotoSpoiler), new Runnable() { // from class: li.s4

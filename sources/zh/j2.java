@@ -6,19 +6,19 @@ import bi.t9;
 import java.util.ArrayList;
 import java.util.HashMap;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.vs0;
+import org.telegram.ui.Components.ws0;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class j2 extends s4.w {
-    public final /* synthetic */ vs0 d;
+    public final /* synthetic */ ws0 d;
     public final /* synthetic */ m2 e;
 
-    public j2(m2 m2Var, vs0 vs0Var) {
+    public j2(m2 m2Var, ws0 ws0Var) {
         this.e = m2Var;
-        this.d = vs0Var;
+        this.d = ws0Var;
     }
 
     public static TL_stars.SavedStarGift s(s4.e1 e1Var) {
@@ -66,10 +66,10 @@ public final class j2 extends s4.w {
             return false;
         }
         boolean z10 = m2Var.d;
-        vs0 vs0Var = this.d;
+        ws0 ws0Var = this.d;
         if (z10) {
             m2Var.e.m(indexOf, indexOf2);
-            vs0Var.e.n(m2Var.e.d);
+            ws0Var.e.n(m2Var.e.d);
         } else {
             t9 t9Var = m2Var.e;
             if (t9Var.q == null) {
@@ -81,7 +81,7 @@ public final class j2 extends s4.w {
         h2Var.g3.T();
         if (m2Var.d) {
             HashMap hashMap = r2.V;
-            vs0Var.f(true);
+            ws0Var.f(true);
         }
         org.telegram.ui.ActionBar.r2 U = LaunchActivity.U();
         if ((U instanceof ProfileActivity) && (i1Var = ((ProfileActivity) U).v0) != null) {

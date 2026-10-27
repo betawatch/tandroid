@@ -9,7 +9,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public class qc {
     public static qc x;
@@ -90,9 +90,9 @@ public class qc {
         if (r2Var == null) {
             return new pb();
         }
-        if (r2Var instanceof org.telegram.ui.un) {
+        if (r2Var instanceof org.telegram.ui.wn) {
             ub.access$000(ubVar, -2, 1);
-        } else if (r2Var instanceof org.telegram.ui.cy) {
+        } else if (r2Var instanceof org.telegram.ui.ey) {
             ub.access$000(ubVar, -1, 0);
         }
         return new qc(r2Var, r2Var.getBulletinLayoutContainer(), ubVar, i10);

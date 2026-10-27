@@ -7,13 +7,13 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.R;
-import org.telegram.messenger.vh;
+import org.telegram.messenger.wh;
 import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.Components.k80;
+import org.telegram.ui.Components.l80;
 import org.telegram.ui.Components.wc;
-import org.telegram.ui.zc1;
+import org.telegram.ui.yc1;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class m1 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -36,7 +36,7 @@ public final /* synthetic */ class m1 implements View.OnClickListener {
                 i2 i2Var = (i2) this.c;
                 org.telegram.ui.ActionBar.u6 u6Var = (org.telegram.ui.ActionBar.u6) this.d;
                 if (AndroidUtilities.addToClipboard(jSONObject.optString("text"))) {
-                    vh.m(R.string.WalletSigningDataCopied, new wc(i2Var.topBulletinContainer, u6Var));
+                    wh.m(R.string.WalletSigningDataCopied, new wc(i2Var.topBulletinContainer, u6Var));
                     break;
                 }
                 break;
@@ -50,7 +50,7 @@ public final /* synthetic */ class m1 implements View.OnClickListener {
                     } else if (y2Var.d) {
                         y2Var.U = new t2(0, r2Var);
                     } else if (y2Var.c && !TextUtils.isEmpty(cardVar.address)) {
-                        y2Var.U = new zc1(19, r2Var, cardVar);
+                        y2Var.U = new yc1(20, r2Var, cardVar);
                     }
                     y2Var.dismiss();
                     break;
@@ -59,7 +59,7 @@ public final /* synthetic */ class m1 implements View.OnClickListener {
             case 2:
                 l0 l0Var = (l0) this.b;
                 TL_wallet.currencyRate currencyrate = (TL_wallet.currencyRate) this.c;
-                k80 k80Var = (k80) this.d;
+                l80 l80Var = (l80) this.d;
                 f fVar = l0Var.h;
                 String str = currencyrate.currency;
                 if (!TextUtils.equals(fVar.f, str)) {
@@ -69,9 +69,9 @@ public final /* synthetic */ class m1 implements View.OnClickListener {
                     } catch (Exception e) {
                         FileLog.e("[gram-wallet] failed to save currency prefs", e);
                     }
-                    fVar.b.J();
+                    fVar.b.L();
                 }
-                k80Var.u();
+                l80Var.u();
                 break;
             default:
                 k8 k8Var = (k8) this.b;

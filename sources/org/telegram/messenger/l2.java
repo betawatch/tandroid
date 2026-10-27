@@ -8,7 +8,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_bots;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class l2 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -42,7 +42,7 @@ public final /* synthetic */ class l2 implements Utilities.Callback {
                 MediaDataController.lambda$setPlaceholderImage$31((String) this.b, (org.telegram.ui.Components.y9) this.c, (String) this.d, (TLRPC.TL_messages_stickerSet) obj);
                 break;
             default:
-                MessagesController.lambda$openApp$504((boolean[]) this.b, (TL_bots.BotInfo[]) this.c, (Runnable) this.d, (TLRPC.UserFull) obj);
+                MessagesController.lambda$openApp$505((boolean[]) this.b, (TL_bots.BotInfo[]) this.c, (Runnable) this.d, (TLRPC.UserFull) obj);
                 break;
         }
     }

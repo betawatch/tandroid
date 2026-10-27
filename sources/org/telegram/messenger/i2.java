@@ -1,6 +1,6 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class i2 implements Runnable {
     public final /* synthetic */ int a;
@@ -45,7 +45,7 @@ public final /* synthetic */ class i2 implements Runnable {
                 this.b.lambda$fullReset$65();
                 break;
             case 10:
-                this.b.lambda$updateFiltersReadCounter$122();
+                this.b.lambda$updateFiltersReadCounter$123();
                 break;
             case 11:
                 this.b.lambda$clearLocalDatabase$47();
@@ -60,7 +60,7 @@ public final /* synthetic */ class i2 implements Runnable {
                 this.b.lambda$clearLocalDatabase$46();
                 break;
             case 15:
-                this.b.lambda$resetAllUnreadCounters$253();
+                this.b.lambda$resetAllUnreadCounters$254();
                 break;
             case 16:
                 this.b.lambda$reset$64();
@@ -78,7 +78,7 @@ public final /* synthetic */ class i2 implements Runnable {
                 this.b.lambda$loadDialogFilters$70();
                 break;
             case 21:
-                this.b.lambda$clearSentMedia$166();
+                this.b.lambda$clearSentMedia$167();
                 break;
             case 22:
                 this.b.lambda$fullReset$66();
@@ -96,10 +96,10 @@ public final /* synthetic */ class i2 implements Runnable {
                 this.b.lambda$deleteAllStoryReactionPushMessages$41();
                 break;
             case 27:
-                this.b.lambda$getContacts$154();
+                this.b.lambda$getContacts$155();
                 break;
             default:
-                this.b.lambda$broadcastQuickRepliesMessagesChange$226();
+                this.b.lambda$broadcastQuickRepliesMessagesChange$227();
                 break;
         }
     }

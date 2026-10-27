@@ -41,9 +41,9 @@ import org.telegram.ui.Components.gr;
 import org.telegram.ui.Components.l9;
 import org.telegram.ui.Components.r6;
 import org.telegram.ui.Components.t5;
-import org.telegram.ui.mm;
+import org.telegram.ui.om;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class y0 {
     public static int Z;
@@ -569,7 +569,7 @@ public final class y0 {
         }
     }
 
-    public final void f(mm mmVar, Canvas canvas, int i10, Integer num) {
+    public final void f(om omVar, Canvas canvas, int i10, Integer num) {
         if (this.s && this.w.isEmpty()) {
             return;
         }
@@ -638,7 +638,7 @@ public final class y0 {
                             v0Var.g0.draw(canvas);
                         }
                     }
-                    mmVar.invalidate();
+                    omVar.invalidate();
                 }
             }
             i11++;

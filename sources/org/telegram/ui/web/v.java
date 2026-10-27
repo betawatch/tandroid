@@ -8,7 +8,7 @@ import di.y2;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.vh;
+import org.telegram.messenger.wh;
 import org.telegram.tgnet.SerializedData;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_keyboard;
@@ -18,9 +18,9 @@ import org.telegram.ui.ActionBar.u6;
 import org.telegram.ui.Components.pr;
 import org.telegram.ui.Components.wc;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.cj0;
+import org.telegram.ui.ej0;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class v implements Utilities.Callback2 {
     public final /* synthetic */ int a;
@@ -38,7 +38,7 @@ public final /* synthetic */ class v implements Utilities.Callback2 {
     @Override // org.telegram.messenger.Utilities.Callback2
     public final void run(Object obj, Object obj2) {
         int i10;
-        cj0 cj0Var;
+        ej0 ej0Var;
         int i11 = this.a;
         String str = this.d;
         x7 x7Var = this.c;
@@ -70,25 +70,25 @@ public final /* synthetic */ class v implements Utilities.Callback2 {
                             Boolean bool = tL_requestPeerTypeUser.bot;
                             Boolean bool2 = tL_requestPeerTypeUser.premium;
                             c0 c0Var = new c0(a1Var2, zArr, str2, tL_buttonTypeRequestPeer, x7Var2);
-                            cj0 cj0Var2 = cj0.u0;
+                            ej0 ej0Var2 = ej0.u0;
                             r2 R = LaunchActivity.R();
                             if (R == null) {
-                                cj0Var = null;
+                                ej0Var = null;
                             } else {
-                                cj0Var = cj0.u0;
-                                if (cj0Var == null) {
-                                    cj0 cj0Var3 = new cj0(R, i10, bool, bool2, c0Var);
-                                    cj0Var3.show();
-                                    cj0.u0 = cj0Var3;
-                                    cj0Var = cj0Var3;
+                                ej0Var = ej0.u0;
+                                if (ej0Var == null) {
+                                    ej0 ej0Var3 = new ej0(R, i10, bool, bool2, c0Var);
+                                    ej0Var3.show();
+                                    ej0.u0 = ej0Var3;
+                                    ej0Var = ej0Var3;
                                 }
                             }
-                            if (cj0Var != null) {
-                                cj0Var.setOnDismissListener(new s7(a1Var2, zArr, x7Var2, str2));
+                            if (ej0Var != null) {
+                                ej0Var.setOnDismissListener(new s7(a1Var2, zArr, x7Var2, str2));
                                 break;
                             }
                         } else {
-                            Bundle c10 = vh.c(15, "onlySelect", "dialogsType", true);
+                            Bundle c10 = wh.c(15, "onlySelect", "dialogsType", true);
                             c10.putLong("requestPeerBotId", a1Var2.U.id);
                             try {
                                 SerializedData serializedData = new SerializedData(tL_buttonTypeRequestPeer.peer_type.getObjectSize());

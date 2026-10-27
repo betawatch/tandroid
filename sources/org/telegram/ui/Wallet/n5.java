@@ -28,9 +28,9 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import org.telegram.messenger.DispatchQueue;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.R;
-import org.telegram.ui.wg1;
+import org.telegram.ui.yg1;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class n5 {
     public static volatile boolean j0;
@@ -812,7 +812,7 @@ public final class n5 {
         if (bitmapArr != null) {
             f(bitmapArr);
         } else {
-            l0.postRunnable(new wg1(this, i10, 3));
+            l0.postRunnable(new yg1(this, i10, 3));
         }
     }
 

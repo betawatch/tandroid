@@ -1,131 +1,139 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Path;
-import android.graphics.RectF;
-import android.graphics.drawable.ShapeDrawable;
-import android.text.TextUtils;
-import android.widget.FrameLayout;
-import android.widget.LinearLayout;
-import android.widget.TextView;
+import android.app.Activity;
+import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.Point;
+import android.os.Build;
+import java.io.File;
+import java.io.FileOutputStream;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLoader;
-import org.telegram.messenger.ImageLocation;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.ImageLoader;
+import org.telegram.messenger.Utilities;
+import org.telegram.ui.WallpapersListActivity;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public final class ca1 extends FrameLayout {
-    public static final /* synthetic */ int f = 0;
-    public final org.telegram.ui.ActionBar.u6 a;
-    public final wm0 b;
-    public final RectF c;
-    public final RectF d;
-    public final Path e;
+public final class ca1 {
+    public String a;
+    public final Activity b;
+    public final org.telegram.ui.ActionBar.r2 c;
+    public final ba1 d;
+    public File e;
 
-    public ca1(Context context, org.telegram.ui.ActionBar.u6 u6Var) {
-        super(context);
-        wm0 wm0Var = new wm0(this);
-        this.b = wm0Var;
-        this.c = new RectF();
-        this.d = new RectF();
-        this.e = new Path();
-        setWillNotDraw(false);
-        this.a = u6Var;
-        int w02 = org.telegram.ui.ActionBar.y6.w0(org.telegram.ui.ActionBar.y6.il, u6Var);
-        wm0Var.B = w02;
-        wm0Var.A = w02;
-        wm0Var.z = w02;
-        wm0Var.x = org.telegram.ui.ActionBar.y6.o1(0.1f, w02);
-        wm0Var.j = false;
-        wm0Var.i = false;
-        wm0Var.l();
+    public ca1(Activity activity, WallpapersListActivity wallpapersListActivity, ba1 ba1Var) {
+        this.b = activity;
+        this.c = wallpapersListActivity;
+        this.d = ba1Var;
     }
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        float width = getWidth();
-        float height = getHeight();
-        RectF rectF = this.c;
-        rectF.set(0.0f, 0.0f, width, height);
-        wm0 wm0Var = this.b;
-        float[] fArr = wm0Var.e;
-        float dp = AndroidUtilities.dp(10.0f);
-        fArr[7] = dp;
-        fArr[6] = dp;
-        fArr[1] = dp;
-        fArr[0] = dp;
-        float[] fArr2 = wm0Var.e;
-        float dp2 = AndroidUtilities.dp(10.0f);
-        fArr2[5] = dp2;
-        fArr2[4] = dp2;
-        fArr2[3] = dp2;
-        fArr2[2] = dp2;
-        Path path = this.e;
-        path.rewind();
-        path.addRoundRect(rectF, fArr2, Path.Direction.CW);
-        canvas.save();
-        canvas.clipPath(path);
-        this.b.e(canvas, rectF, 1.0f, false, false);
-        float dp3 = AndroidUtilities.dp(3.0f);
-        float height2 = getHeight();
-        RectF rectF2 = this.d;
-        rectF2.set(0.0f, 0.0f, dp3, height2);
-        wm0Var.f(canvas, rectF2, 1.0f);
-        canvas.restore();
+    /* JADX WARN: Code restructure failed: missing block: B:21:0x006c, code lost:
+    
+        if (r10 == null) goto L24;
+     */
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Removed duplicated region for block: B:27:0x0074 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Type inference failed for: r10v1 */
+    /* JADX WARN: Type inference failed for: r10v11, types: [java.io.FileOutputStream] */
+    /* JADX WARN: Type inference failed for: r10v15 */
+    /* JADX WARN: Type inference failed for: r10v16 */
+    /* JADX WARN: Type inference failed for: r10v9 */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void a(int i10, int i11, Intent intent) {
+        FileOutputStream fileOutputStream;
+        if (i11 == -1) {
+            ?? r10 = 10;
+            ba1 ba1Var = this.d;
+            FileOutputStream fileOutputStream2 = null;
+            if (i10 != 10) {
+                if (i10 != 11 || intent == null || intent.getData() == null) {
+                    return;
+                }
+                try {
+                    this.e = new File(FileLoader.getDirectory(4), Utilities.random.nextInt() + ".jpg");
+                    Point realScreenSize = AndroidUtilities.getRealScreenSize();
+                    Bitmap loadBitmap = ImageLoader.loadBitmap(null, intent.getData(), (float) realScreenSize.x, (float) realScreenSize.y, true);
+                    loadBitmap.compress(Bitmap.CompressFormat.JPEG, 87, new FileOutputStream(this.e));
+                    ba1Var.b(this.e, loadBitmap, false);
+                    return;
+                } catch (Exception e) {
+                    FileLog.e(e);
+                    return;
+                }
+            }
+            AndroidUtilities.addMediaToGallery(this.a);
+            try {
+                try {
+                    this.e = new File(FileLoader.getDirectory(4), Utilities.random.nextInt() + ".jpg");
+                    Point realScreenSize2 = AndroidUtilities.getRealScreenSize();
+                    Bitmap loadBitmap2 = ImageLoader.loadBitmap(this.a, null, (float) realScreenSize2.x, (float) realScreenSize2.y, true);
+                    fileOutputStream = new FileOutputStream(this.e);
+                    try {
+                        loadBitmap2.compress(Bitmap.CompressFormat.JPEG, 87, fileOutputStream);
+                        ba1Var.b(this.e, loadBitmap2, false);
+                        r10 = fileOutputStream;
+                    } catch (Exception e10) {
+                        e = e10;
+                        FileLog.e(e);
+                        r10 = fileOutputStream;
+                    }
+                } catch (Throwable th2) {
+                    th = th2;
+                    fileOutputStream2 = r10;
+                    if (fileOutputStream2 != null) {
+                        try {
+                            fileOutputStream2.close();
+                        } catch (Exception e11) {
+                            FileLog.e(e11);
+                        }
+                    }
+                    throw th;
+                }
+            } catch (Exception e12) {
+                e = e12;
+                fileOutputStream = null;
+            } catch (Throwable th3) {
+                th = th3;
+                if (fileOutputStream2 != null) {
+                }
+                throw th;
+            }
+            try {
+                r10.close();
+            } catch (Exception e13) {
+                FileLog.e(e13);
+            }
+            this.a = null;
+        }
     }
 
-    public void setWebPage(TLRPC.WebPage webPage) {
-        removeAllViews();
-        boolean z10 = webPage.photo != null;
-        LinearLayout linearLayout = new LinearLayout(getContext());
-        linearLayout.setOrientation(1);
-        String str = webPage.site_name;
-        org.telegram.ui.ActionBar.u6 u6Var = this.a;
-        if (str != null) {
-            TextView textView = new TextView(getContext());
-            textView.setTypeface(AndroidUtilities.bold());
-            textView.setText(webPage.site_name);
-            textView.setTextSize(1, 14.0f);
-            org.telegram.ui.ActionBar.f7.V(textView, org.telegram.ui.ActionBar.y6.il, u6Var);
-            textView.setSingleLine(true);
-            textView.setEllipsize(TextUtils.TruncateAt.END);
-            linearLayout.addView(textView, gb1.o(0.0f, 0.0f, 0.0f, 0.0f, -1, -2));
+    public final void b() {
+        org.telegram.ui.ActionBar.r2 r2Var = this.c;
+        if (r2Var == null) {
+            Intent intent = new Intent("android.intent.action.PICK");
+            intent.setType("image/*");
+            this.b.startActivityForResult(intent, 11);
+            return;
         }
-        if (webPage.title != null) {
-            TextView textView2 = new TextView(getContext());
-            textView2.setTypeface(AndroidUtilities.bold());
-            textView2.setText(webPage.title);
-            textView2.setTextSize(1, 14.0f);
-            org.telegram.ui.ActionBar.f7.V(textView2, org.telegram.ui.ActionBar.y6.j5, u6Var);
-            textView2.setSingleLine(true);
-            textView2.setEllipsize(TextUtils.TruncateAt.END);
-            linearLayout.addView(textView2, gb1.o(0.0f, 0.0f, 0.0f, 0.0f, -1, -2));
+        Activity parentActivity = r2Var.getParentActivity();
+        if (parentActivity != null) {
+            if (Build.VERSION.SDK_INT >= 33) {
+                if (parentActivity.checkSelfPermission("android.permission.READ_MEDIA_IMAGES") != 0) {
+                    parentActivity.requestPermissions(new String[]{"android.permission.READ_MEDIA_IMAGES"}, 4);
+                    return;
+                }
+            } else if (parentActivity.checkSelfPermission("android.permission.READ_EXTERNAL_STORAGE") != 0) {
+                parentActivity.requestPermissions(new String[]{"android.permission.READ_EXTERNAL_STORAGE"}, 4);
+                return;
+            }
         }
-        if (webPage.description != null) {
-            TextView textView3 = new TextView(getContext());
-            textView3.setText(webPage.description);
-            textView3.setTextSize(1, 13.0f);
-            org.telegram.ui.ActionBar.f7.V(textView3, org.telegram.ui.ActionBar.y6.j5, u6Var);
-            textView3.setMaxLines(4);
-            textView3.setEllipsize(TextUtils.TruncateAt.END);
-            linearLayout.addView(textView3, gb1.r(-1, -2));
-        }
-        addView(linearLayout, gb1.h(-1, -2.0f, 51, 0.0f, 0.0f, z10 ? 56.0f : 0.0f, 0.0f));
-        if (z10) {
-            y9 y9Var = new y9(getContext());
-            y9Var.setRoundRadius(AndroidUtilities.dp(6.0f));
-            int dp = AndroidUtilities.dp(6.0f);
-            int i10 = org.telegram.ui.ActionBar.y6.j5;
-            ShapeDrawable c02 = org.telegram.ui.ActionBar.y6.c0(dp, org.telegram.ui.ActionBar.y6.o1(0.08f, org.telegram.ui.ActionBar.y6.w0(i10, u6Var)));
-            org.telegram.ui.ActionBar.b7 L = org.telegram.ui.ActionBar.f7.L(0.08f, i10);
-            y9Var.setBackground(c02);
-            org.telegram.ui.ActionBar.f7.k(y9Var, c02, L, null, u6Var);
-            addView(y9Var, gb1.h(48, 48.0f, 53, 0.0f, 5.0f, 0.0f, 1.0f));
-            TLRPC.PhotoSize closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(webPage.photo.sizes, 40);
-            y9Var.k(ImageLocation.getForObject(FileLoader.getClosestPhotoSizeWithSize(webPage.photo.sizes, AndroidUtilities.dp(36.0f), false, closestPhotoSizeWithSize, true), webPage.photo), "48_48", ImageLocation.getForObject(closestPhotoSizeWithSize, webPage.photo), "48_48_b", 0L, null, webPage, 1);
-        }
-        setPadding(AndroidUtilities.dp(10.0f), AndroidUtilities.dp(2.0f), AndroidUtilities.dp(7.0f), AndroidUtilities.dp(6.0f));
+        org.telegram.ui.cq0 cq0Var = new org.telegram.ui.cq0(2, false, false, null);
+        cq0Var.x = false;
+        cq0Var.V = new aa1(this);
+        r2Var.presentFragment(cq0Var);
     }
 }

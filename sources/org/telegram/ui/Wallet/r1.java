@@ -10,15 +10,15 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.Components.t61;
+import org.telegram.ui.Components.u61;
 import org.telegram.ui.Components.wc;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.oa0;
-import org.telegram.ui.q80;
-import org.telegram.ui.un;
-import org.telegram.ui.yo0;
+import org.telegram.ui.ap0;
+import org.telegram.ui.qa0;
+import org.telegram.ui.r80;
+import org.telegram.ui.wn;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class r1 implements Utilities.Callback2 {
     public final /* synthetic */ int a;
@@ -40,13 +40,13 @@ public final /* synthetic */ class r1 implements Utilities.Callback2 {
         switch (i10) {
             case 0:
                 TL_wallet.inputTonConnectOauthSession[] inputtonconnectoauthsessionArr = (TL_wallet.inputTonConnectOauthSession[]) obj4;
-                q80 q80Var = (q80) obj3;
+                r80 r80Var = (r80) obj3;
                 TL_wallet.inputTonConnectOauthSession inputtonconnectoauthsession = (TL_wallet.inputTonConnectOauthSession) obj;
                 String str = (String) obj2;
                 if (str == null) {
                     inputtonconnectoauthsessionArr[0] = inputtonconnectoauthsession;
                 }
-                q80Var.run(str);
+                r80Var.run(str);
                 break;
             case 1:
                 ((i0) obj4).close();
@@ -104,7 +104,7 @@ public final /* synthetic */ class r1 implements Utilities.Callback2 {
                 a0Var.q0.a.setLoading(false);
                 if (a0Var.getContext() != null) {
                     org.telegram.ui.ActionBar.r2 U = LaunchActivity.U();
-                    oa0 oa0Var = LaunchActivity.I1.x0;
+                    qa0 qa0Var = LaunchActivity.I1.x0;
                     if (U != null) {
                         if (!bool.booleanValue()) {
                             if (str3 != null) {
@@ -114,11 +114,11 @@ public final /* synthetic */ class r1 implements Utilities.Callback2 {
                             }
                         } else {
                             a0Var.dismiss();
-                            un ba2 = un.ba(-a0Var.b0.id);
-                            U.presentFragment(ba2);
-                            U.whenFullyVisible(new sg.u(23, ba2, tL_starsGiveawayOption));
-                            if (oa0Var != null) {
-                                oa0Var.c(true);
+                            wn ea2 = wn.ea(-a0Var.b0.id);
+                            U.presentFragment(ea2);
+                            U.whenFullyVisible(new s9.g(24, ea2, tL_starsGiveawayOption));
+                            if (qa0Var != null) {
+                                qa0Var.c(true);
                                 break;
                             }
                         }
@@ -136,8 +136,8 @@ public final /* synthetic */ class r1 implements Utilities.Callback2 {
                     i13++;
                     TL_stars.SavedStarGift savedStarGift = (TL_stars.SavedStarGift) obj6;
                     if (savedStarGift.pinned_to_top) {
-                        int i14 = yo0.a;
-                        t61 K = t61.K(yo0.class);
+                        int i14 = ap0.a;
+                        u61 K = u61.K(ap0.class);
                         K.G = savedStarGift;
                         K.L(q2Var.b == savedStarGift.gift.id);
                         K.u = 1;

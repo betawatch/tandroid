@@ -1,106 +1,84 @@
 package org.telegram.ui;
 
-import android.animation.ValueAnimator;
-import android.app.Dialog;
-import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.BitmapShader;
-import android.graphics.Matrix;
-import android.graphics.Paint;
-import android.os.Build;
-import android.os.Bundle;
-import android.view.ViewGroup;
-import android.view.Window;
-import android.view.WindowManager;
+import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.R;
+import org.telegram.messenger.ImageLocation;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public final class e50 extends Dialog {
-    public final di.h3 a;
-    public final z10 b;
-    public Bitmap c;
-    public Paint d;
-    public BitmapShader e;
-    public final Matrix f;
-    public float h;
-    public ValueAnimator n;
-    public boolean r;
+public final class e50 implements org.telegram.ui.Components.f50 {
+    public float a;
+    public TLRPC.FileLocation b;
+    public TLRPC.FileLocation c;
+    public ImageLocation d;
+    public final long e;
+    public final /* synthetic */ x50 f;
 
-    public e50(Context context, z10 z10Var) {
-        super(context, R.style.TransparentDialog);
-        this.f = new Matrix();
-        this.b = z10Var;
-        z10Var.setVisibility(4);
-        AndroidUtilities.makeGlobalBlurBitmap(new org.telegram.ui.Components.oy(12, this, z10Var), 14.0f);
-        di.h3 h3Var = new di.h3(this, context, z10Var);
-        this.a = h3Var;
-        h3Var.setOnClickListener(new a(this, 29));
+    public e50(x50 x50Var, long j10) {
+        this.f = x50Var;
+        this.e = j10;
     }
 
-    public final void b(float f7, d50 d50Var) {
-        ValueAnimator valueAnimator = this.n;
-        if (valueAnimator != null) {
-            valueAnimator.cancel();
-            this.n = null;
-        }
-        ValueAnimator ofFloat = ValueAnimator.ofFloat(this.h, f7);
-        this.n = ofFloat;
-        ofFloat.addUpdateListener(new b3(this, 14));
-        this.n.addListener(new bi.l7(this, f7, d50Var, 4));
-        this.n.setDuration(420L);
-        this.n.setInterpolator(org.telegram.ui.Components.ds.h);
-        this.n.start();
+    @Override // org.telegram.ui.Components.f50
+    public final void F(float f7) {
+        this.f.b.O(this.d, f7);
+        a(f7);
     }
 
-    @Override // android.app.Dialog, android.content.DialogInterface
-    public final void dismiss() {
-        if (this.r) {
+    @Override // org.telegram.ui.Components.f50
+    public final void R(TLRPC.InputFile inputFile, TLRPC.InputFile inputFile2, double d, String str, TLRPC.PhotoSize photoSize, TLRPC.PhotoSize photoSize2, boolean z10, TLRPC.VideoSize videoSize) {
+        AndroidUtilities.runOnUIThread(new ii.k(this, inputFile, inputFile2, videoSize, d, str, photoSize2, photoSize, 3));
+    }
+
+    public final void a(float f7) {
+        this.a = f7;
+        d50 d50Var = this.f.Q;
+        if (d50Var == null) {
             return;
         }
-        this.r = true;
-        b(0.0f, new d50(this, 0));
-        try {
-            WindowManager.LayoutParams attributes = getWindow().getAttributes();
-            attributes.flags |= 16;
-            getWindow().setAttributes(attributes);
-        } catch (Exception e) {
-            FileLog.e(e);
+        for (int i10 = 0; i10 < d50Var.getChildCount(); i10++) {
+            View childAt = d50Var.getChildAt(i10);
+            if (childAt instanceof org.telegram.ui.Cells.i4) {
+                org.telegram.ui.Cells.i4 i4Var = (org.telegram.ui.Cells.i4) childAt;
+                if (i4Var.c()) {
+                    org.telegram.ui.Cells.d4 d4Var = i4Var.x;
+                    d4Var.setProgress(f7);
+                    if (f7 < 1.0f) {
+                        AndroidUtilities.updateViewVisibilityAnimated(d4Var, true, 1.0f, true);
+                    } else {
+                        AndroidUtilities.updateViewVisibilityAnimated(d4Var, false, 1.0f, true);
+                    }
+                }
+            }
         }
     }
 
-    @Override // android.app.Dialog
-    public final void onCreate(Bundle bundle) {
-        super.onCreate(bundle);
-        Window window = getWindow();
-        window.setWindowAnimations(R.style.DialogNoAnimation);
-        setContentView(this.a, new ViewGroup.LayoutParams(-1, -1));
-        WindowManager.LayoutParams attributes = window.getAttributes();
-        attributes.width = -1;
-        attributes.height = -1;
-        attributes.gravity = 119;
-        attributes.dimAmount = 0.0f;
-        int i10 = attributes.flags & (-3);
-        attributes.softInputMode = 48;
-        attributes.flags = (-2013069056) | i10;
-        if (!BuildVars.DEBUG_PRIVATE_VERSION) {
-            attributes.flags = i10 | (-2013060864);
-            AndroidUtilities.logFlagSecure();
-        }
-        attributes.flags |= 1152;
-        if (Build.VERSION.SDK_INT >= 28) {
-            attributes.layoutInDisplayCutoutMode = 1;
-        }
-        window.setAttributes(attributes);
+    @Override // org.telegram.ui.Components.f50
+    public final /* synthetic */ boolean e() {
+        return true;
     }
 
-    @Override // android.app.Dialog
-    public final void show() {
-        super.show();
-        b(1.0f, null);
-        AndroidUtilities.runOnUIThread(new d50(this, 1), 16L);
+    @Override // org.telegram.ui.Components.f50
+    public final /* synthetic */ su0 getCloseIntoObject() {
+        return null;
+    }
+
+    @Override // org.telegram.ui.Components.f50
+    public final /* synthetic */ String getInitialSearchString() {
+        return null;
+    }
+
+    @Override // org.telegram.ui.Components.f50
+    public final /* synthetic */ boolean u() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.Components.f50
+    public final /* synthetic */ void Q() {
+    }
+
+    @Override // org.telegram.ui.Components.f50
+    public final void L(boolean z10, boolean z11) {
     }
 }

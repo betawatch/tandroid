@@ -13,14 +13,14 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.p6;
 import org.telegram.ui.ActionBar.y6;
 import org.telegram.ui.Components.ds;
-import org.telegram.ui.Components.gb1;
 import org.telegram.ui.Components.h6;
-import org.telegram.ui.xa1;
+import org.telegram.ui.Components.kb1;
+import org.telegram.ui.za1;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class o1 extends FrameLayout implements p6 {
-    public final xa1 a;
+    public final za1 a;
     public int b;
     public final h6 c;
     public final ArrayList d;
@@ -38,17 +38,17 @@ public final class o1 extends FrameLayout implements p6 {
         this.h = new RectF();
         this.n = new Paint(1);
         this.r = TLObject.FLAG_31;
-        xa1 xa1Var = new xa1(this, context, 22);
-        this.a = xa1Var;
-        xa1Var.setClipToPadding(false);
-        xa1Var.setClipChildren(false);
-        xa1Var.setOrientation(0);
-        xa1Var.setPadding(0, AndroidUtilities.dp(8.0f), 0, AndroidUtilities.dp(10.0f));
-        addView(xa1Var, gb1.i(-2, -1, 1));
+        za1 za1Var = new za1(this, context, 22);
+        this.a = za1Var;
+        za1Var.setClipToPadding(false);
+        za1Var.setClipChildren(false);
+        za1Var.setOrientation(0);
+        za1Var.setPadding(0, AndroidUtilities.dp(8.0f), 0, AndroidUtilities.dp(10.0f));
+        addView(za1Var, kb1.i(-2, -1, 1));
         setHorizontalScrollBarEnabled(false);
         setClipToPadding(false);
         setClipChildren(false);
-        this.c = new h6(xa1Var, 0L, 320L, ds.h);
+        this.c = new h6(za1Var, 0L, 320L, ds.h);
     }
 
     @Override // android.widget.FrameLayout, android.view.View

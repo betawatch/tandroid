@@ -10,14 +10,14 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.w10;
+import org.telegram.ui.y10;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class r6 extends View {
     public float E;
     public final Camera F;
-    public final w10 G;
+    public final y10 G;
     public final RectF H;
     public m6 a;
     public m6 b;
@@ -37,7 +37,7 @@ public final class r6 extends View {
     public r6(Context context) {
         super(context);
         this.F = new Camera();
-        this.G = new w10();
+        this.G = new y10();
         this.H = new RectF();
     }
 
@@ -65,10 +65,10 @@ public final class r6 extends View {
             float dp = AndroidUtilities.dp(90.0f);
             RectF rectF = this.H;
             rectF.set(f13, 0.0f, f13 + dp, f11);
-            w10 w10Var = this.G;
-            w10Var.b(canvas, rectF, 0, 1.0f);
+            y10 y10Var = this.G;
+            y10Var.b(canvas, rectF, 0, 1.0f);
             rectF.set(f14 - dp, 0.0f, f14, f11);
-            w10Var.b(canvas, rectF, 2, 1.0f);
+            y10Var.b(canvas, rectF, 2, 1.0f);
             canvas.restore();
             canvas.restore();
             for (int i10 = 0; i10 < iArr.length; i10++) {

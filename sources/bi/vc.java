@@ -17,30 +17,30 @@ import org.telegram.messenger.WebFile;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.j71;
-import org.telegram.ui.Components.mm0;
-import org.telegram.ui.Components.r71;
-import org.telegram.ui.Components.s61;
+import org.telegram.ui.Components.k71;
+import org.telegram.ui.Components.nm0;
+import org.telegram.ui.Components.s71;
 import org.telegram.ui.Components.t61;
-import org.telegram.ui.j70;
+import org.telegram.ui.Components.u61;
+import org.telegram.ui.l70;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
-public final class vc extends s61 {
+public final class vc extends t61 {
     public static final /* synthetic */ int a = 0;
 
     static {
-        s61.setup(new vc());
+        t61.setup(new vc());
     }
 
-    @Override // org.telegram.ui.Components.s61
-    public final void bindView(View view, t61 t61Var, boolean z10, j71 j71Var, r71 r71Var) {
+    @Override // org.telegram.ui.Components.t61
+    public final void bindView(View view, u61 u61Var, boolean z10, k71 k71Var, s71 s71Var) {
         String userName;
         boolean z11;
         boolean z12;
         org.telegram.ui.ActionBar.b6 b6Var;
         wc wcVar = (wc) view;
-        TL_stars.StarsSubscription starsSubscription = (TL_stars.StarsSubscription) t61Var.G;
+        TL_stars.StarsSubscription starsSubscription = (TL_stars.StarsSubscription) u61Var.G;
         org.telegram.ui.ActionBar.b6 b6Var2 = wcVar.d;
         org.telegram.ui.Components.y9 y9Var = wcVar.c;
         org.telegram.ui.ActionBar.u6 u6Var = wcVar.b;
@@ -75,14 +75,14 @@ public final class vc extends s61 {
             textView3.setVisibility(0);
             SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
             if (starsSubscription.photo != null) {
-                j70 j70Var = new j70(textView3, 14.0f, i10);
-                j70Var.a(4.0f);
-                j70Var.f = false;
+                l70 l70Var = new l70(textView3, 14.0f, i10);
+                l70Var.a(4.0f);
+                l70Var.f = false;
                 SpannableString spannableString = new SpannableString("x");
                 b6Var = b6Var2;
                 z12 = z11;
-                spannableString.setSpan(j70Var, 0, 1, 33);
-                j70Var.b.setImage(ImageLocation.getForWebFile(WebFile.createWithWebDocument(starsSubscription.photo)), "14_14", null, null, 0, 0);
+                spannableString.setSpan(l70Var, 0, 1, 33);
+                l70Var.b.setImage(ImageLocation.getForWebFile(WebFile.createWithWebDocument(starsSubscription.photo)), "14_14", null, null, 0, 0);
                 spannableStringBuilder.append((CharSequence) spannableString).append((CharSequence) " ");
             } else {
                 b6Var = b6Var2;
@@ -124,22 +124,22 @@ public final class vc extends s61 {
         wcVar.setWillNotDraw(!z10);
     }
 
-    @Override // org.telegram.ui.Components.s61
-    public final View createView(Context context, mm0 mm0Var, int i10, int i11, org.telegram.ui.ActionBar.u6 u6Var) {
+    @Override // org.telegram.ui.Components.t61
+    public final View createView(Context context, nm0 nm0Var, int i10, int i11, org.telegram.ui.ActionBar.u6 u6Var) {
         wc wcVar = (wc) getCached();
         return wcVar != null ? wcVar : new wc(context, i10, u6Var);
     }
 
-    @Override // org.telegram.ui.Components.s61
-    public final boolean equals(t61 t61Var, t61 t61Var2) {
-        if (t61Var2 == null) {
+    @Override // org.telegram.ui.Components.t61
+    public final boolean equals(u61 u61Var, u61 u61Var2) {
+        if (u61Var2 == null) {
             return false;
         }
-        Object obj = t61Var.G;
+        Object obj = u61Var.G;
         if (!(obj instanceof TL_stars.StarsSubscription)) {
             return false;
         }
-        Object obj2 = t61Var2.G;
+        Object obj2 = u61Var2.G;
         if (obj2 instanceof TL_stars.StarsSubscription) {
             return TextUtils.equals(((TL_stars.StarsSubscription) obj).id, ((TL_stars.StarsSubscription) obj2).id);
         }

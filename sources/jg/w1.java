@@ -18,18 +18,18 @@ import org.telegram.ui.ActionBar.f7;
 import org.telegram.ui.ActionBar.p6;
 import org.telegram.ui.ActionBar.u6;
 import org.telegram.ui.ActionBar.y6;
-import org.telegram.ui.Components.gb1;
+import org.telegram.ui.Components.aq;
 import org.telegram.ui.Components.j9;
-import org.telegram.ui.Components.zp;
+import org.telegram.ui.Components.kb1;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class w1 extends FrameLayout implements p6 {
     public final j9 a;
     public final ImageReceiver b;
     public final TextView c;
     public final TextView d;
-    public final zp e;
+    public final aq e;
     public final Path f;
     public final Paint h;
     public final u6 n;
@@ -54,7 +54,7 @@ public final class w1 extends FrameLayout implements p6 {
         textView.setTypeface(AndroidUtilities.bold());
         textView.setTextSize(1, 16.0f);
         boolean z10 = LocaleController.isRTL;
-        addView(textView, gb1.h(-1, -2.0f, 7, z10 ? 40.0f : 78.0f, 10.33f, z10 ? 78.0f : 40.0f, 0.0f));
+        addView(textView, kb1.h(-1, -2.0f, 7, z10 ? 40.0f : 78.0f, 10.33f, z10 ? 78.0f : 40.0f, 0.0f));
         TextView textView2 = new TextView(context);
         this.d = textView2;
         textView2.setLines(2);
@@ -62,13 +62,13 @@ public final class w1 extends FrameLayout implements p6 {
         f7.V(textView2, y6.z6, u6Var);
         textView2.setTextSize(1, 15.0f);
         boolean z11 = LocaleController.isRTL;
-        addView(textView2, gb1.h(-1, -2.0f, 7, z11 ? 40.0f : 78.0f, 32.0f, z11 ? 78.0f : 40.0f, 0.0f));
-        zp zpVar = new zp(getContext(), 21, u6Var);
-        this.e = zpVar;
-        zpVar.b(-1, y6.d6, y6.k7);
-        zpVar.setDrawUnchecked(false);
-        zpVar.setDrawBackgroundAsArc(3);
-        addView(zpVar, gb1.m(24.0f, 24.0f, 8388659, 33.0f, 25.0f, 0.0f, 0.0f));
+        addView(textView2, kb1.h(-1, -2.0f, 7, z11 ? 40.0f : 78.0f, 32.0f, z11 ? 78.0f : 40.0f, 0.0f));
+        aq aqVar = new aq(getContext(), 21, u6Var);
+        this.e = aqVar;
+        aqVar.b(-1, y6.d6, y6.k7);
+        aqVar.setDrawUnchecked(false);
+        aqVar.setDrawBackgroundAsArc(3);
+        addView(aqVar, kb1.m(24.0f, 24.0f, 8388659, 33.0f, 25.0f, 0.0f, 0.0f));
     }
 
     @Override // android.view.View

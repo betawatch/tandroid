@@ -24,7 +24,7 @@ import java.util.List;
 import java.util.Locale;
 import org.telegram.messenger.MediaController;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
 public final class l implements c3.o {
     public long A;
@@ -241,7 +241,7 @@ public final class l implements c3.o {
                             xVar2.K(8);
                             pVar.b(0, 8, xVar2.a);
                             c.a(xVar2);
-                            pVar.q(xVar2.b);
+                            pVar.r(xVar2.b);
                             pVar.p();
                         }
                         arrayDeque.push(new f2.d(this.m, j15));
@@ -513,7 +513,7 @@ public final class l implements c3.o {
                             i32 -= 8;
                         }
                         int i35 = i32;
-                        pVar.q((int) j25);
+                        pVar.r((int) j25);
                         String str = xVar8.s;
                         String str2 = xVar8.s;
                         if (!Objects.equals(str, MediaController.VIDEO_MIME_TYPE) ? !Objects.equals(str2, "video/hevc") || (i16 & 128) == 0 : (i16 & 32) == 0) {
@@ -665,7 +665,7 @@ public final class l implements c3.o {
                             this.E = 1;
                         }
                         if (j27 < 262144) {
-                            pVar.q((int) j27);
+                            pVar.r((int) j27);
                         } else {
                             sVar.a = pVar.getPosition() + j27;
                             z10 = true;

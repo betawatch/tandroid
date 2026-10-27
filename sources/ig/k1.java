@@ -4,10 +4,10 @@ import di.q7;
 import org.telegram.messenger.MessagesController;
 import org.telegram.ui.Cells.l2;
 import org.telegram.ui.Cells.p2;
-import org.telegram.ui.Components.mm0;
-import org.telegram.ui.un;
+import org.telegram.ui.Components.nm0;
+import org.telegram.ui.wn;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class k1 implements l2 {
     public final /* synthetic */ n1 a;
@@ -24,10 +24,10 @@ public final class k1 implements l2 {
     @Override // org.telegram.ui.Cells.l2
     public final void e(p2 p2Var) {
         n1 n1Var = this.a;
-        un unVar = n1Var.f;
-        if (MessagesController.getInstance(n1Var.r).getStoriesController().I(p2Var.getDialogId())) {
-            unVar.getOrCreateStoryViewer().getClass();
-            unVar.getOrCreateStoryViewer().D(n1Var.c, p2Var.getDialogId(), q7.a((mm0) p2Var.getParent()));
+        wn wnVar = n1Var.f;
+        if (MessagesController.getInstance(n1Var.r).getStoriesController().K(p2Var.getDialogId())) {
+            wnVar.getOrCreateStoryViewer().getClass();
+            wnVar.getOrCreateStoryViewer().E(n1Var.c, p2Var.getDialogId(), q7.a((nm0) p2Var.getParent()));
         }
     }
 

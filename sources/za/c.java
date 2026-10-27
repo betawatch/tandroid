@@ -105,18 +105,18 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.beta.R;
 import org.telegram.ui.Components.b10;
-import org.telegram.ui.Components.s81;
+import org.telegram.ui.Components.t81;
 import org.telegram.ui.Components.voip.j1;
-import org.telegram.ui.a61;
+import org.telegram.ui.d61;
 import org.telegram.ui.web.a1;
 import org.telegram.ui.web.b0;
 import org.telegram.ui.web.x0;
-import sg.d2;
+import sg.c2;
 import z3.m;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
-public final class c implements n0, a0, r, a61, WebMessageListenerBoundaryInterface, u0, androidx.activity.result.b, OnCompleteListener, k, SuccessContinuation, o, wb, w, g6.a, n, m {
+public final class c implements n0, a0, r, d61, WebMessageListenerBoundaryInterface, u0, androidx.activity.result.b, OnCompleteListener, k, SuccessContinuation, o, wb, w, g6.a, n, m {
     public static volatile c c;
     public final /* synthetic */ int a;
     public final Object b;
@@ -134,18 +134,18 @@ public final class c implements n0, a0, r, a61, WebMessageListenerBoundaryInterf
 
     @Override // fi.wb
     public void A(boolean z10) {
-        d2 d2Var;
+        c2 c2Var;
         sb sbVar = ((gb) ((o6) this.b)).C0;
         ta taVar = sbVar.v1;
         if (taVar == null) {
             return;
         }
-        d2 d2Var2 = null;
-        if (!z10 && (taVar.getSelectedEntity() instanceof d2)) {
+        c2 c2Var2 = null;
+        if (!z10 && (taVar.getSelectedEntity() instanceof c2)) {
             sbVar.v1.A0(null, true);
             return;
         }
-        if (!z10 || (sbVar.v1.getSelectedEntity() instanceof d2)) {
+        if (!z10 || (sbVar.v1.getSelectedEntity() instanceof c2)) {
             return;
         }
         y5 y5Var = sbVar.v1.G0;
@@ -153,17 +153,17 @@ public final class c implements n0, a0, r, a61, WebMessageListenerBoundaryInterf
         int i11 = 0;
         while (true) {
             if (i11 >= y5Var.getChildCount()) {
-                d2Var = null;
+                c2Var = null;
                 break;
             }
             View childAt = y5Var.getChildAt(i11);
-            if (childAt instanceof d2) {
-                d2Var = (d2) childAt;
+            if (childAt instanceof c2) {
+                c2Var = (c2) childAt;
                 break;
             }
             i11++;
         }
-        if (d2Var != null) {
+        if (c2Var != null) {
             ta taVar2 = sbVar.v1;
             y5 y5Var2 = taVar2.G0;
             while (true) {
@@ -171,13 +171,13 @@ public final class c implements n0, a0, r, a61, WebMessageListenerBoundaryInterf
                     break;
                 }
                 View childAt2 = y5Var2.getChildAt(i10);
-                if (childAt2 instanceof d2) {
-                    d2Var2 = (d2) childAt2;
+                if (childAt2 instanceof c2) {
+                    c2Var2 = (c2) childAt2;
                     break;
                 }
                 i10++;
             }
-            taVar2.A0(d2Var2, true);
+            taVar2.A0(c2Var2, true);
         }
     }
 
@@ -1239,18 +1239,18 @@ public final class c implements n0, a0, r, a61, WebMessageListenerBoundaryInterf
             o6Var.m(j10);
             return;
         }
-        s81 s81Var = o6Var.e;
-        if (s81Var != null) {
-            s81Var.L(j10, true);
+        t81 t81Var = o6Var.e;
+        if (t81Var != null) {
+            t81Var.L(j10, true);
             return;
         }
         if (o6Var.j()) {
             o6Var.E.m(j10, true);
             return;
         }
-        s81 s81Var2 = o6Var.y;
-        if (s81Var2 != null) {
-            s81Var2.L(j10, false);
+        t81 t81Var2 = o6Var.y;
+        if (t81Var2 != null) {
+            t81Var2.L(j10, false);
         }
     }
 
@@ -1414,7 +1414,7 @@ public final class c implements n0, a0, r, a61, WebMessageListenerBoundaryInterf
                                                     ngVar2.g(1);
                                                     byte[] bArr = (byte[]) ngVar2.d;
                                                     Objects.requireNonNull(bArr);
-                                                    jVar.k.execute(new sg.u(11, jVar, bArr));
+                                                    jVar.k.execute(new s9.g(12, jVar, bArr));
                                                 }
                                             }
                                             return;
@@ -1432,7 +1432,7 @@ public final class c implements n0, a0, r, a61, WebMessageListenerBoundaryInterf
                                             if (str2.length() - 14 > 1398112) {
                                                 jVar.f();
                                             } else {
-                                                jVar.k.execute(new sg.u(10, jVar, str2));
+                                                jVar.k.execute(new s9.g(11, jVar, str2));
                                             }
                                         }
                                     }
@@ -1620,8 +1620,8 @@ public final class c implements n0, a0, r, a61, WebMessageListenerBoundaryInterf
         }
         w7Var.Z = f7;
         w7Var.j = true;
-        s81 s81Var = o6Var.e;
-        if (s81Var == null || s81Var.p() == -9223372036854775807L) {
+        t81 t81Var = o6Var.e;
+        if (t81Var == null || t81Var.p() == -9223372036854775807L) {
             return;
         }
         o6Var.m((long) (f7 * o6Var.e.p()));

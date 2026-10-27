@@ -16,20 +16,20 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.f7;
 import org.telegram.ui.ActionBar.y6;
+import org.telegram.ui.Components.aa0;
 import org.telegram.ui.Components.ds;
-import org.telegram.ui.Components.gb1;
 import org.telegram.ui.Components.j9;
-import org.telegram.ui.Components.z90;
+import org.telegram.ui.Components.kb1;
 import org.telegram.ui.d3;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class r0 extends LinearLayout {
     public final ArrayList a;
     public final o0 b;
     public final FrameLayout c;
     public final FrameLayout d;
-    public final z90 e;
+    public final aa0 e;
 
     public r0(Context context) {
         super(context);
@@ -42,30 +42,30 @@ public final class r0 extends LinearLayout {
         FrameLayout frameLayout2 = new FrameLayout(getContext());
         this.d = frameLayout2;
         frameLayout2.setClipChildren(false);
-        frameLayout.addView(frameLayout2, gb1.h(-1, 70.0f, 0, 0.0f, 0.0f, 0.0f, 0.0f));
+        frameLayout.addView(frameLayout2, kb1.h(-1, 70.0f, 0, 0.0f, 0.0f, 0.0f, 0.0f));
         n0 n0Var = new n0(context);
         ImageView imageView = new ImageView(n0Var.getContext());
         imageView.setImageResource(R.drawable.msg_arrow_avatar);
         f7.t(imageView, y6.E6, null, PorterDuff.Mode.SRC_ATOP);
         n0Var.addView(imageView);
-        frameLayout.addView(n0Var, gb1.i(24, 24, 17));
+        frameLayout.addView(n0Var, kb1.i(24, 24, 17));
         o0 o0Var = new o0(context);
         this.b = o0Var;
         o0Var.setLayerType(2, null);
-        frameLayout.addView(o0Var, gb1.i(70, 70, 17));
-        addView(frameLayout, gb1.o(0.0f, 15.0f, 0.0f, 0.0f, -1, 70));
+        frameLayout.addView(o0Var, kb1.i(70, 70, 17));
+        addView(frameLayout, kb1.o(0.0f, 15.0f, 0.0f, 0.0f, -1, 70));
         TextView textView = new TextView(context);
         textView.setTypeface(AndroidUtilities.bold());
         d3.o(R.string.BoostingReassignBoost, textView, 1, 20.0f);
         f7.V(textView, y6.G6, null);
-        addView(textView, gb1.x(-2, -2, 1, 0, 15, 0, 7));
-        z90 z90Var = new z90(getContext(), null);
-        this.e = z90Var;
-        z90Var.setTextSize(1, 14.0f);
-        z90Var.setGravity(1);
-        f7.V(z90Var, y6.j5, null);
-        z90Var.setLineSpacing(z90Var.getLineSpacingExtra(), z90Var.getLineSpacingMultiplier() * 1.1f);
-        addView(z90Var, gb1.x(-2, -2, 1, 28, 0, 28, 18));
+        addView(textView, kb1.x(-2, -2, 1, 0, 15, 0, 7));
+        aa0 aa0Var = new aa0(getContext(), null);
+        this.e = aa0Var;
+        aa0Var.setTextSize(1, 14.0f);
+        aa0Var.setGravity(1);
+        f7.V(aa0Var, y6.j5, null);
+        aa0Var.setLineSpacing(aa0Var.getLineSpacingExtra(), aa0Var.getLineSpacingMultiplier() * 1.1f);
+        addView(aa0Var, kb1.x(-2, -2, 1, 28, 0, 28, 18));
     }
 
     public final void a(ArrayList arrayList, TLRPC.Chat chat) {
@@ -142,7 +142,7 @@ public final class r0 extends LinearLayout {
             j9Var.q(chat4);
             o0Var3.a.f(chat4, j9Var);
             int size5 = arrayList6.size();
-            frameLayout.addView(o0Var3, i12, gb1.i(70, 70, 17));
+            frameLayout.addView(o0Var3, i12, kb1.i(70, 70, 17));
             o0Var3.setTranslationX(AndroidUtilities.dp(23.0f) * (-size5));
             o0Var3.setAlpha(0.0f);
             o0Var3.setScaleX(0.1f);

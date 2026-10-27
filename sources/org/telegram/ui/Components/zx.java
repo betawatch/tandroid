@@ -21,9 +21,9 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public final class zx extends lm0 {
+public final class zx extends mm0 {
     public int E;
     public final /* synthetic */ sz F;
     public ArrayList h;
@@ -43,7 +43,7 @@ public final class zx extends lm0 {
         this.F = szVar;
     }
 
-    @Override // org.telegram.ui.Components.lm0
+    @Override // org.telegram.ui.Components.mm0
     public final boolean D(s4.e1 e1Var) {
         int i10 = e1Var.f;
         return i10 == 0 || i10 == 4 || i10 == 3 || i10 == 6;
@@ -93,7 +93,7 @@ public final class zx extends lm0 {
     public final void F(boolean z10) {
         sz szVar = this.F;
         ArrayList arrayList = szVar.n1;
-        if (szVar.R2) {
+        if (szVar.T2) {
             return;
         }
         ArrayList arrayList2 = new ArrayList(this.n);
@@ -772,9 +772,9 @@ public final class zx extends lm0 {
             org.telegram.ui.ActionBar.f7.k(textView, c02, h, null, u6Var);
             textView.setTypeface(AndroidUtilities.bold());
             textView.setPadding(AndroidUtilities.dp(6.0f), AndroidUtilities.dp(1.66f), AndroidUtilities.dp(6.0f), AndroidUtilities.dp(2.0f));
-            gyVar.addView(textView, gb1.i(-2, -2, 17));
+            gyVar.addView(textView, kb1.i(-2, -2, 17));
             view = gyVar;
         }
-        return new vl0(view);
+        return new wl0(view);
     }
 }

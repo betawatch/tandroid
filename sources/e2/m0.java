@@ -48,7 +48,7 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserObject;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.vh;
+import org.telegram.messenger.wh;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
@@ -56,11 +56,11 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_payments;
 import org.telegram.ui.ActionBar.e2;
 import org.telegram.ui.Components.AnimatedFileNative;
-import org.telegram.ui.Components.d61;
+import org.telegram.ui.Components.e61;
 import org.telegram.ui.Components.wc;
 import org.telegram.ui.web.a1;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class m0 implements Runnable {
     public final /* synthetic */ int a;
@@ -463,12 +463,12 @@ public final /* synthetic */ class m0 implements Runnable {
                 String str7 = tL_messages_searchStickerSets.q;
                 d2 d2Var = b2Var.a;
                 String str8 = d2Var.R;
-                d61 d61Var = d2Var.e;
+                e61 e61Var = d2Var.e;
                 if (str7.equals(str8)) {
                     b2Var.a();
-                    d61Var.b.h.getProgressDrawable().e = false;
+                    e61Var.b.h.getProgressDrawable().e = false;
                     d2Var.N = 0;
-                    d61Var.b(true);
+                    e61Var.b(true);
                     d2Var.E.addAll(tL_messages_foundStickerSets.sets);
                     d2Var.l();
                     break;
@@ -484,7 +484,7 @@ public final /* synthetic */ class m0 implements Runnable {
                     break;
                 } else if (tLObject7 instanceof TLRPC.TL_boolFalse) {
                     cVar.a.b(false);
-                    vh.n(R.string.UnknownError, wc.b0(cVar), null);
+                    wh.n(R.string.UnknownError, wc.b0(cVar), null);
                     break;
                 } else {
                     cVar.finishFragment();
@@ -500,7 +500,7 @@ public final /* synthetic */ class m0 implements Runnable {
                     break;
                 } else if (tLObject8 instanceof TLRPC.TL_boolFalse) {
                     nVar.f.b(false);
-                    vh.n(R.string.UnknownError, wc.b0(nVar), null);
+                    wh.n(R.string.UnknownError, wc.b0(nVar), null);
                     break;
                 } else {
                     if (nVar.E != null) {
@@ -546,7 +546,7 @@ public final /* synthetic */ class m0 implements Runnable {
                     break;
                 } else if (tLObject10 instanceof TLRPC.TL_boolFalse) {
                     v0Var.a.b(false);
-                    vh.n(R.string.UnknownError, wc.b0(v0Var), null);
+                    wh.n(R.string.UnknownError, wc.b0(v0Var), null);
                     break;
                 } else {
                     v0Var.finishFragment();

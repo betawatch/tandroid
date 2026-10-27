@@ -31,13 +31,13 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.RadialProgress2;
+import org.telegram.ui.Components.aq;
 import org.telegram.ui.Components.c10;
-import org.telegram.ui.Components.gb1;
+import org.telegram.ui.Components.kb1;
 import org.telegram.ui.Components.nt;
-import org.telegram.ui.Components.zp;
-import org.telegram.ui.h10;
+import org.telegram.ui.j10;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public class n7 extends FrameLayout implements DownloadController.FileDownloadProgressListener, NotificationCenter.NotificationCenterDelegate, org.telegram.ui.ActionBar.p6 {
     public org.telegram.ui.Components.y5 E;
@@ -61,7 +61,7 @@ public class n7 extends FrameLayout implements DownloadController.FileDownloadPr
     public int W;
     public final SpannableStringBuilder a;
     public final TextPaint a0;
-    public final zp b;
+    public final aq b;
     public final TextPaint b0;
     public boolean c;
     public final org.telegram.ui.ActionBar.u6 c0;
@@ -321,11 +321,11 @@ public class n7 extends FrameLayout implements DownloadController.FileDownloadPr
     }
 
     public final void e(boolean z10, boolean z11) {
-        zp zpVar = this.b;
-        if (zpVar.getVisibility() != 0) {
-            zpVar.setVisibility(0);
+        aq aqVar = this.b;
+        if (aqVar.getVisibility() != 0) {
+            aqVar.setVisibility(0);
         }
-        zpVar.a(z10, z11);
+        aqVar.a(z10, z11);
     }
 
     public final void f(MessageObject messageObject, boolean z10) {
@@ -450,9 +450,9 @@ public class n7 extends FrameLayout implements DownloadController.FileDownloadPr
         this.T.e();
         g(false, false);
         int i10 = this.P;
-        NotificationCenter.getInstance(i10).addObserver(this, NotificationCenter.messagePlayingDidReset);
-        NotificationCenter.getInstance(i10).addObserver(this, NotificationCenter.messagePlayingPlayStateChanged);
-        NotificationCenter.getInstance(i10).addObserver(this, NotificationCenter.messagePlayingDidStart);
+        NotificationCenter.getInstance(i10).addWeakObserver(this, NotificationCenter.messagePlayingDidReset);
+        NotificationCenter.getInstance(i10).addWeakObserver(this, NotificationCenter.messagePlayingPlayStateChanged);
+        NotificationCenter.getInstance(i10).addWeakObserver(this, NotificationCenter.messagePlayingDidStart);
         this.x = org.telegram.ui.Components.c6.update(0, this, this.x, this.s);
         this.E = org.telegram.ui.Components.c6.update(0, this, this.E, this.H);
         this.J = org.telegram.ui.Components.c6.update(0, this, this.J, this.M);
@@ -560,7 +560,7 @@ public class n7 extends FrameLayout implements DownloadController.FileDownloadPr
                     if (this.N.isRoundVideo()) {
                     }
                 }
-                d = h10.d(this.N, true, 1, null);
+                d = j10.d(this.N, true, 1, null);
                 f7 = 4.0f;
                 highlightText2 = AndroidUtilities.highlightText(d, this.N.highlightedWords, u6Var);
                 if (highlightText2 != null) {
@@ -663,7 +663,7 @@ public class n7 extends FrameLayout implements DownloadController.FileDownloadPr
                 replace2 = highlightText;
             }
             if (i13 == 1) {
-                replace2 = new SpannableStringBuilder(replace2).append(' ').append((CharSequence) this.a).append(' ').append(h10.d(this.N, true, 1, null));
+                replace2 = new SpannableStringBuilder(replace2).append(' ').append((CharSequence) this.a).append(' ').append(j10.d(this.N, true, 1, null));
             }
             if (i13 == 1) {
                 textPaint2 = org.telegram.ui.ActionBar.y6.g3;
@@ -905,14 +905,14 @@ public class n7 extends FrameLayout implements DownloadController.FileDownloadPr
         radialProgress2.g(org.telegram.ui.ActionBar.y6.ie, org.telegram.ui.ActionBar.y6.je, org.telegram.ui.ActionBar.y6.uc, org.telegram.ui.ActionBar.y6.vc);
         this.Q = DownloadController.getInstance(i11).generateObserverTag();
         setWillNotDraw(false);
-        zp zpVar = new zp(context, 22, u6Var);
-        this.b = zpVar;
-        zpVar.setVisibility(4);
-        zpVar.b(-1, org.telegram.ui.ActionBar.y6.d6, org.telegram.ui.ActionBar.y6.k7);
-        zpVar.setDrawUnchecked(false);
-        zpVar.setDrawBackgroundAsArc(3);
+        aq aqVar = new aq(context, 22, u6Var);
+        this.b = aqVar;
+        aqVar.setVisibility(4);
+        aqVar.b(-1, org.telegram.ui.ActionBar.y6.d6, org.telegram.ui.ActionBar.y6.k7);
+        aqVar.setDrawUnchecked(false);
+        aqVar.setDrawBackgroundAsArc(3);
         boolean z10 = LocaleController.isRTL;
-        addView(zpVar, gb1.h(24, 24.0f, (z10 ? 5 : 3) | 48, z10 ? 0.0f : 38.1f, 32.1f, z10 ? 6.0f : 0.0f, 0.0f));
+        addView(aqVar, kb1.h(24, 24.0f, (z10 ? 5 : 3) | 48, z10 ? 0.0f : 38.1f, 32.1f, z10 ? 6.0f : 0.0f, 0.0f));
         if (i10 == 1) {
             TextPaint textPaint = new TextPaint(1);
             this.a0 = textPaint;

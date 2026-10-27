@@ -1,27 +1,30 @@
 package vi;
 
-/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
-/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+import android.content.Context;
+import android.view.TextureView;
+import java.io.File;
+import li.e3;
+import org.telegram.ui.Components.l60;
+import org.telegram.ui.Components.tv;
+
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class l0 {
-    public static final l0 a;
-    public static final l0 b;
-    public static final /* synthetic */ l0[] c;
+    public final Context a;
+    public final TextureView b;
+    public File c;
+    public n0 d;
+    public s0 e;
+    public o0 f;
+    public p0 g;
+    public int h;
+    public boolean i = true;
+    public e3 j;
+    public r0 k;
+    public tv l;
 
-    static {
-        l0 l0Var = new l0("FRONT", 0);
-        a = l0Var;
-        l0 l0Var2 = new l0("BACK", 1);
-        b = l0Var2;
-        c = new l0[]{l0Var, l0Var2};
-    }
-
-    public static l0 valueOf(String str) {
-        return (l0) Enum.valueOf(l0.class, str);
-    }
-
-    public static l0[] values() {
-        return (l0[]) c.clone();
+    public l0(Context context, l60 l60Var) {
+        this.a = context;
+        this.b = l60Var;
     }
 }

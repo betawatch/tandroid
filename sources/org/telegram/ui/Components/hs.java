@@ -10,7 +10,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class hs extends ViewGroup {
     public static final /* synthetic */ int w = 0;
@@ -92,7 +92,7 @@ public final class hs extends ViewGroup {
             }
             View view = viewArr[i10];
             if (view != null) {
-                gb1.c(view, 0.02f, 1.2f);
+                kb1.c(view, 0.02f, 1.2f);
                 a(i10, view);
             }
             i10++;
@@ -129,8 +129,8 @@ public final class hs extends ViewGroup {
 
     @Override // android.view.ViewGroup, android.view.View
     public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        int B = org.telegram.messenger.vh.B(32.0f, getWidth(), 3);
-        int B2 = org.telegram.messenger.vh.B(42.0f, getHeight(), 4);
+        int B = org.telegram.messenger.wh.B(32.0f, getWidth(), 3);
+        int B2 = org.telegram.messenger.wh.B(42.0f, getHeight(), 4);
         int i14 = 0;
         while (true) {
             View[] viewArr = this.c;
@@ -152,8 +152,8 @@ public final class hs extends ViewGroup {
     @Override // android.view.View
     public final void onMeasure(int i10, int i11) {
         setMeasuredDimension(View.MeasureSpec.getSize(i10), View.MeasureSpec.getSize(i11));
-        int B = org.telegram.messenger.vh.B(32.0f, getWidth(), 3);
-        int B2 = org.telegram.messenger.vh.B(42.0f, getHeight(), 4);
+        int B = org.telegram.messenger.wh.B(32.0f, getWidth(), 3);
+        int B2 = org.telegram.messenger.wh.B(42.0f, getHeight(), 4);
         for (View view : this.c) {
             if (view != null) {
                 view.measure(View.MeasureSpec.makeMeasureSpec(B, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(B2, TLObject.FLAG_30));

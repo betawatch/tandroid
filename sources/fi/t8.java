@@ -14,14 +14,14 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.vh;
+import org.telegram.messenger.wh;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.gb1;
-import org.telegram.ui.Components.ge0;
+import org.telegram.ui.Components.he0;
 import org.telegram.ui.Components.hf;
-import org.telegram.ui.Components.le0;
+import org.telegram.ui.Components.kb1;
+import org.telegram.ui.Components.me0;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class t8 extends FrameLayout {
     public final /* synthetic */ int a = 0;
@@ -33,9 +33,9 @@ public final class t8 extends FrameLayout {
     public Object h;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public t8(le0 le0Var, Context context) {
+    public t8(me0 me0Var, Context context) {
         super(context);
-        this.h = le0Var;
+        this.h = me0Var;
         this.b = new ArrayList(4);
         this.c = new ArrayList(4);
         this.d = new StringBuilder(4);
@@ -48,7 +48,7 @@ public final class t8 extends FrameLayout {
             textView.setAlpha(0.0f);
             textView.setPivotX(AndroidUtilities.dp(25.0f));
             textView.setPivotY(AndroidUtilities.dp(25.0f));
-            addView(textView, gb1.i(50, 50, 51));
+            addView(textView, kb1.i(50, 50, 51));
             ((ArrayList) this.b).add(textView);
             TextView textView2 = new TextView(context);
             textView2.setTextColor(-1);
@@ -59,7 +59,7 @@ public final class t8 extends FrameLayout {
             textView2.setText("•");
             textView2.setPivotX(AndroidUtilities.dp(25.0f));
             textView2.setPivotY(AndroidUtilities.dp(25.0f));
-            addView(textView2, gb1.i(50, 50, 51));
+            addView(textView2, kb1.i(50, 50, 51));
             ((ArrayList) this.c).add(textView2);
         }
     }
@@ -106,7 +106,7 @@ public final class t8 extends FrameLayout {
             t8Var.e = animatorSet2;
             animatorSet2.setDuration(150L);
             ((AnimatorSet) t8Var.e).playTogether(arrayList3);
-            ((AnimatorSet) t8Var.e).addListener(new ge0(t8Var, 2));
+            ((AnimatorSet) t8Var.e).addListener(new he0(t8Var, 2));
             ((AnimatorSet) t8Var.e).start();
         } else {
             for (int i11 = 0; i11 < 4; i11++) {
@@ -114,7 +114,7 @@ public final class t8 extends FrameLayout {
                 ((TextView) arrayList.get(i11)).setAlpha(0.0f);
             }
         }
-        le0.a((le0) t8Var.h);
+        me0.a((me0) t8Var.h);
     }
 
     public void b(String str) {
@@ -194,20 +194,20 @@ public final class t8 extends FrameLayout {
         this.e = animatorSet2;
         animatorSet2.setDuration(150L);
         ((AnimatorSet) this.e).playTogether(arrayList3);
-        ((AnimatorSet) this.e).addListener(new ge0(this, 0));
+        ((AnimatorSet) this.e).addListener(new he0(this, 0));
         ((AnimatorSet) this.e).start();
-        le0.a((le0) this.h);
+        me0.a((me0) this.h);
     }
 
     public int c(int i10) {
-        return vh.b(30.0f, i10, (getMeasuredWidth() - (AndroidUtilities.dp(30.0f) * ((StringBuilder) this.d).length())) / 2) - AndroidUtilities.dp(10.0f);
+        return wh.b(30.0f, i10, (getMeasuredWidth() - (AndroidUtilities.dp(30.0f) * ((StringBuilder) this.d).length())) / 2) - AndroidUtilities.dp(10.0f);
     }
 
     public void d(boolean z10) {
         ((ImageView) this.c).setVisibility(z10 ? 0 : 8);
         TextView textView = (TextView) this.d;
         boolean z11 = LocaleController.isRTL;
-        textView.setLayoutParams(gb1.h(-1, -2.0f, 23, (z11 || !z10) ? 22.0f : 53.0f, 0.0f, (z11 && z10) ? 53.0f : 22.0f, 0.0f));
+        textView.setLayoutParams(kb1.h(-1, -2.0f, 23, (z11 || !z10) ? 22.0f : 53.0f, 0.0f, (z11 && z10) ? 53.0f : 22.0f, 0.0f));
     }
 
     @Override // android.view.ViewGroup, android.view.View
@@ -290,11 +290,11 @@ public final class t8 extends FrameLayout {
         this.b = u6Var;
         TextView textView = new TextView(context);
         this.d = textView;
-        vh.j(20.0f, 1, textView);
+        wh.j(20.0f, 1, textView);
         textView.setGravity(LocaleController.isRTL ? 5 : 3);
         org.telegram.ui.ActionBar.f7.V(textView, org.telegram.ui.ActionBar.y6.j5, u6Var);
         boolean z10 = LocaleController.isRTL;
-        addView(textView, gb1.h(-1, -2.0f, 23, z10 ? 16.0f : 53.0f, 0.0f, z10 ? 53.0f : 16.0f, 0.0f));
+        addView(textView, kb1.h(-1, -2.0f, 23, z10 ? 16.0f : 53.0f, 0.0f, z10 ? 53.0f : 16.0f, 0.0f));
         ImageView imageView = new ImageView(context);
         this.c = imageView;
         org.telegram.ui.ActionBar.j2 j2Var = new org.telegram.ui.ActionBar.j2(false);
@@ -303,7 +303,7 @@ public final class t8 extends FrameLayout {
         j2Var.a(-1);
         j2Var.b(-1);
         j2Var.k = 220.0f;
-        addView(imageView, gb1.h(24, 24.0f, (LocaleController.isRTL ? 5 : 3) | 16, 16.0f, 0.0f, 16.0f, 0.0f));
+        addView(imageView, kb1.h(24, 24.0f, (LocaleController.isRTL ? 5 : 3) | 16, 16.0f, 0.0f, 16.0f, 0.0f));
         imageView.setOnClickListener(new ai.s(this, 24));
     }
 }

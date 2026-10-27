@@ -28,25 +28,25 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 import org.telegram.messenger.MediaDataController;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-final class WidgetSandboxBackend implements mb1, ta1 {
+final class WidgetSandboxBackend implements qb1, ua1 {
     private static final long MEMORY_BUDGET = 33554432;
     private long imageBytes;
     private int nextFont;
-    private final yb1 owner;
-    private dc1 text;
+    private final dc1 owner;
+    private ic1 text;
     private final HashMap<Integer, Paint> fonts = new HashMap<>();
     private final HashMap<Integer, Paint> deviceFonts = new HashMap<>();
     private final HashMap<Integer, Bitmap> images = new HashMap<>();
-    private final HashMap<Integer, ua1> canvases = new HashMap<>();
+    private final HashMap<Integer, va1> canvases = new HashMap<>();
     private final HashMap<Integer, JSONArray> pendingLayers = new HashMap<>();
-    private HashMap<Long, hb1> layerContents = new HashMap<>();
-    private final nb1 painter = new nb1();
+    private HashMap<Long, lb1> layerContents = new HashMap<>();
+    private final rb1 painter = new rb1();
     private final Rect bounds = new Rect();
 
-    public WidgetSandboxBackend(yb1 yb1Var) {
-        this.owner = yb1Var;
+    public WidgetSandboxBackend(dc1 dc1Var) {
+        this.owner = dc1Var;
     }
 
     private static void assertWorker() {
@@ -61,7 +61,7 @@ final class WidgetSandboxBackend implements mb1, ta1 {
             throw new IllegalArgumentException("Canvas dimensions");
         }
         long j11 = (j10 * 8) + this.imageBytes;
-        for (Map.Entry<Integer, ua1> entry : this.canvases.entrySet()) {
+        for (Map.Entry<Integer, va1> entry : this.canvases.entrySet()) {
             if (entry.getKey().intValue() != i10) {
                 j11 += entry.getValue().m == null ? 0L : r4.getWidth() * r3.m.getHeight() * 8;
             }
@@ -97,19 +97,19 @@ final class WidgetSandboxBackend implements mb1, ta1 {
         return sb2.toString();
     }
 
-    private wb1[] layers(JSONObject jSONObject, float f7) {
+    private bc1[] layers(JSONObject jSONObject, float f7) {
         int i10;
         JSONArray jSONArray;
         float[] fArr;
         float[] fArr2;
         int i11;
-        cb1 bb1Var;
+        db1 cb1Var;
         float f10 = f7;
         JSONArray optJSONArray = jSONObject.optJSONArray("l");
         int i12 = 0;
         int length = optJSONArray == null ? 0 : optJSONArray.length();
-        HashMap<Long, hb1> hashMap = new HashMap<>();
-        wb1[] wb1VarArr = new wb1[length];
+        HashMap<Long, lb1> hashMap = new HashMap<>();
+        bc1[] bc1VarArr = new bc1[length];
         int i13 = 0;
         int i14 = 0;
         while (i13 < length) {
@@ -127,33 +127,33 @@ final class WidgetSandboxBackend implements mb1, ta1 {
                     int floor2 = (int) Math.floor(optJSONArray2.optDouble(1) * d);
                     int ceil = (int) Math.ceil((optJSONArray2.optDouble(2) + optJSONArray2.optDouble(0)) * d);
                     int ceil2 = (int) Math.ceil((optJSONArray2.optDouble(3) + optJSONArray2.optDouble(1)) * d);
-                    hb1 hb1Var = this.layerContents.get(Long.valueOf(optLong));
+                    lb1 lb1Var = this.layerContents.get(Long.valueOf(optLong));
                     JSONArray jSONArray2 = this.pendingLayers.get(Integer.valueOf(i13));
                     if (jSONArray2 != null) {
                         if (Build.VERSION.SDK_INT >= 29) {
-                            cb1 ab1Var = new ab1("widget-sandbox-layer", floor, floor2, ceil, ceil2);
+                            db1 bb1Var = new bb1("widget-sandbox-layer", floor, floor2, ceil, ceil2);
                             i11 = floor2;
-                            bb1Var = ab1Var;
+                            cb1Var = bb1Var;
                         } else {
                             i11 = floor2;
-                            bb1Var = new bb1(floor, i11, ceil, ceil2);
+                            cb1Var = new cb1(floor, i11, ceil, ceil2);
                         }
-                        Canvas a2 = bb1Var.a();
+                        Canvas a2 = cb1Var.a();
                         try {
                             a2.translate(-floor, -i11);
                             a2.scale(f10, f10);
-                            nb1 nb1Var = this.painter;
-                            nb1Var.getClass();
-                            nb1Var.e(a2, jSONArray2, jSONArray2.length(), this, f10, true);
-                            bb1Var.e();
-                            hb1Var = new hb1(bb1Var, (int) optLong2);
+                            rb1 rb1Var = this.painter;
+                            rb1Var.getClass();
+                            rb1Var.e(a2, jSONArray2, jSONArray2.length(), this, f10, true);
+                            cb1Var.e();
+                            lb1Var = new lb1(cb1Var, (int) optLong2);
                         } catch (Throwable th2) {
-                            bb1Var.e();
+                            cb1Var.e();
                             throw th2;
                         }
                     } else {
-                        if (hb1Var != null) {
-                            if (hb1Var.b != ((int) optLong2)) {
+                        if (lb1Var != null) {
+                            if (lb1Var.b != ((int) optLong2)) {
                             }
                         }
                         i13++;
@@ -162,16 +162,16 @@ final class WidgetSandboxBackend implements mb1, ta1 {
                         optJSONArray = jSONArray;
                         i12 = 0;
                     }
-                    hashMap.put(Long.valueOf(optLong), hb1Var);
+                    hashMap.put(Long.valueOf(optLong), lb1Var);
                     JSONArray optJSONArray3 = optJSONObject.optJSONArray("l");
                     float[] fArr3 = null;
                     if (optJSONArray3 != null) {
                         float[] fArr4 = new float[4];
-                        nb1.c(optJSONArray3, fArr4, 4, new float[0]);
+                        rb1.c(optJSONArray3, fArr4, 4, new float[0]);
                         JSONArray optJSONArray4 = optJSONObject.optJSONArray("q");
                         if (optJSONArray4 != null) {
                             fArr3 = new float[8];
-                            nb1.c(optJSONArray4, fArr3, 8, new float[0]);
+                            rb1.c(optJSONArray4, fArr3, 8, new float[0]);
                         }
                         fArr2 = fArr3;
                         fArr = fArr4;
@@ -182,9 +182,9 @@ final class WidgetSandboxBackend implements mb1, ta1 {
                     JSONArray optJSONArray5 = optJSONObject.optJSONArray("k");
                     int length2 = optJSONArray5 == null ? 0 : (optJSONArray5.length() / 8) * 8;
                     float[] fArr5 = new float[length2];
-                    nb1.c(optJSONArray5, fArr5, length2, new float[0]);
+                    rb1.c(optJSONArray5, fArr5, length2, new float[0]);
                     int i15 = i14 + 1;
-                    wb1VarArr[i14] = new wb1(hb1Var.a, fArr, fArr2, optJSONObject.optDouble("ts"), optJSONObject.optDouble("td"), optJSONObject.optInt("tr") != 0, fArr5);
+                    bc1VarArr[i14] = new bc1(lb1Var.a, fArr, fArr2, optJSONObject.optDouble("ts"), optJSONObject.optDouble("td"), optJSONObject.optInt("tr") != 0, fArr5);
                     i14 = i15;
                     i13++;
                     f10 = f7;
@@ -204,11 +204,11 @@ final class WidgetSandboxBackend implements mb1, ta1 {
         int i16 = length;
         this.layerContents = hashMap;
         if (i14 == i16) {
-            return wb1VarArr;
+            return bc1VarArr;
         }
-        wb1[] wb1VarArr2 = new wb1[i14];
-        System.arraycopy(wb1VarArr, 0, wb1VarArr2, 0, i14);
-        return wb1VarArr2;
+        bc1[] bc1VarArr2 = new bc1[i14];
+        System.arraycopy(bc1VarArr, 0, bc1VarArr2, 0, i14);
+        return bc1VarArr2;
     }
 
     private static String text(byte[] bArr) {
@@ -279,27 +279,27 @@ final class WidgetSandboxBackend implements mb1, ta1 {
         return Typeface.create(typeface2, (i10 < 600 ? 0 : 1) | (z10 ? 2 : 0));
     }
 
-    @Override // org.telegram.ui.Components.mb1
+    @Override // org.telegram.ui.Components.qb1
     public Bitmap canvas(int i10) {
         Bitmap bitmap;
-        ua1 ua1Var = this.canvases.get(Integer.valueOf(i10));
-        if (ua1Var == null || (bitmap = ua1Var.m) == null) {
+        va1 va1Var = this.canvases.get(Integer.valueOf(i10));
+        if (va1Var == null || (bitmap = va1Var.m) == null) {
             return null;
         }
-        if (ua1Var.q != ua1Var.p || ua1Var.n == null) {
-            ua1Var.n = bitmap.copy(Bitmap.Config.ARGB_8888, false);
-            ua1Var.q = ua1Var.p;
+        if (va1Var.q != va1Var.p || va1Var.n == null) {
+            va1Var.n = bitmap.copy(Bitmap.Config.ARGB_8888, false);
+            va1Var.q = va1Var.p;
         }
-        return ua1Var.n;
+        return va1Var.n;
     }
 
-    @Override // org.telegram.ui.Components.ta1
+    @Override // org.telegram.ui.Components.ua1
     public Bitmap canvasBitmap(int i10) {
-        ua1 ua1Var = this.canvases.get(Integer.valueOf(i10));
-        if (ua1Var == null) {
+        va1 va1Var = this.canvases.get(Integer.valueOf(i10));
+        if (va1Var == null) {
             return null;
         }
-        return ua1Var.m;
+        return va1Var.m;
     }
 
     public byte[] canvasRead(int i10, int i11, int i12, int i13, int i14) {
@@ -308,21 +308,21 @@ final class WidgetSandboxBackend implements mb1, ta1 {
         if (i13 <= 0 || i14 <= 0 || i13 * i14 > 4194304) {
             return null;
         }
-        ua1 ua1Var = this.canvases.get(Integer.valueOf(i10));
-        if (ua1Var == null) {
+        va1 va1Var = this.canvases.get(Integer.valueOf(i10));
+        if (va1Var == null) {
             return new byte[i13 * i14 * 4];
         }
         byte[] bArr = new byte[Math.max(i14, 0) * Math.max(i13, 0) * 4];
-        if (ua1Var.m != null) {
+        if (va1Var.m != null) {
             int max = Math.max(0, i15);
             int max2 = Math.max(0, i12);
-            int min = Math.min(ua1Var.m.getWidth(), i15 + i13);
-            int min2 = Math.min(ua1Var.m.getHeight(), i14 + i12);
+            int min = Math.min(va1Var.m.getWidth(), i15 + i13);
+            int min2 = Math.min(va1Var.m.getHeight(), i14 + i12);
             if (min > max && min2 > max2) {
                 int i16 = min - max;
                 int i17 = min2 - max2;
                 int[] iArr = new int[i16 * i17];
-                ua1Var.m.getPixels(iArr, 0, i16, max, max2, i16, i17);
+                va1Var.m.getPixels(iArr, 0, i16, max, max2, i16, i17);
                 int i18 = max2;
                 while (i18 < min2) {
                     int i19 = max;
@@ -346,7 +346,7 @@ final class WidgetSandboxBackend implements mb1, ta1 {
 
     public void canvasRelease(int i10) {
         assertWorker();
-        ua1 remove = this.canvases.remove(Integer.valueOf(i10));
+        va1 remove = this.canvases.remove(Integer.valueOf(i10));
         if (remove != null) {
             Bitmap bitmap = remove.m;
             if (bitmap != null) {
@@ -369,30 +369,30 @@ final class WidgetSandboxBackend implements mb1, ta1 {
             return;
         }
         checkCanvasSize(i10, i11, i12);
-        ua1 ua1Var = this.canvases.get(Integer.valueOf(i10));
-        if (ua1Var == null) {
-            ua1Var = new ua1(i10);
-            this.canvases.put(Integer.valueOf(i10), ua1Var);
+        va1 va1Var = this.canvases.get(Integer.valueOf(i10));
+        if (va1Var == null) {
+            va1Var = new va1(i10);
+            this.canvases.put(Integer.valueOf(i10), va1Var);
         }
         JSONArray jSONArray2 = new JSONArray(text(bArr));
-        Bitmap bitmap = ua1Var.m;
-        if (bitmap == null || bitmap.getWidth() != i11 || ua1Var.m.getHeight() != i12) {
-            Bitmap bitmap2 = ua1Var.m;
+        Bitmap bitmap = va1Var.m;
+        if (bitmap == null || bitmap.getWidth() != i11 || va1Var.m.getHeight() != i12) {
+            Bitmap bitmap2 = va1Var.m;
             if (bitmap2 != null) {
                 bitmap2.recycle();
             }
-            ua1Var.m = Bitmap.createBitmap(i11, i12, Bitmap.Config.ARGB_8888);
-            ua1Var.o = new Canvas(ua1Var.m);
+            va1Var.m = Bitmap.createBitmap(i11, i12, Bitmap.Config.ARGB_8888);
+            va1Var.o = new Canvas(va1Var.m);
         }
         int i16 = 0;
         int i17 = 0;
         while (i17 < jSONArray2.length()) {
             JSONObject optJSONObject = jSONArray2.optJSONObject(i17);
             if (optJSONObject != null) {
-                Paint paint = ua1Var.b;
+                Paint paint = va1Var.b;
                 int optInt = optJSONObject.optInt("k");
                 if (optInt == 0) {
-                    ua1Var.m.eraseColor(i16);
+                    va1Var.m.eraseColor(i16);
                 } else {
                     if (optInt == 6) {
                         int optInt2 = optJSONObject.optInt("w");
@@ -404,8 +404,8 @@ final class WidgetSandboxBackend implements mb1, ta1 {
                                 int optDouble2 = (int) optJSONObject.optDouble("y");
                                 int max = Math.max(i16, optDouble);
                                 int max2 = Math.max(i16, optDouble2);
-                                int min = Math.min(ua1Var.m.getWidth(), optDouble + optInt2);
-                                int min2 = Math.min(ua1Var.m.getHeight(), optInt3 + optDouble2);
+                                int min = Math.min(va1Var.m.getWidth(), optDouble + optInt2);
+                                int min2 = Math.min(va1Var.m.getHeight(), optInt3 + optDouble2);
                                 if (min > max && min2 > max2) {
                                     int i18 = min - max;
                                     int i19 = min2 - max2;
@@ -427,7 +427,7 @@ final class WidgetSandboxBackend implements mb1, ta1 {
                                     }
                                     i14 = i17;
                                     jSONArray = jSONArray2;
-                                    ua1Var.m.setPixels(iArr, 0, i18, max, max2, i18, i19);
+                                    va1Var.m.setPixels(iArr, 0, i18, max, max2, i18, i19);
                                 }
                             }
                         } catch (Exception unused) {
@@ -439,25 +439,25 @@ final class WidgetSandboxBackend implements mb1, ta1 {
                         i15 = i16;
                         i14 = i17;
                         jSONArray = jSONArray2;
-                        ua1Var.o.save();
+                        va1Var.o.save();
                         JSONArray optJSONArray = optJSONObject.optJSONArray("cl");
                         if (optJSONArray != null) {
                             for (int i23 = i15; i23 < optJSONArray.length(); i23++) {
                                 JSONObject optJSONObject2 = optJSONArray.optJSONObject(i23);
                                 if (optJSONObject2 != null) {
-                                    Canvas canvas = ua1Var.o;
-                                    Path path = ua1Var.e;
-                                    nb1.h(optJSONObject2, path);
+                                    Canvas canvas = va1Var.o;
+                                    Path path = va1Var.e;
+                                    rb1.h(optJSONObject2, path);
                                     canvas.clipPath(path);
                                 }
                             }
                         }
                         if (optInt == 3) {
-                            Canvas canvas2 = ua1Var.o;
-                            Path path2 = ua1Var.d;
-                            nb1.h(optJSONObject, path2);
-                            canvas2.drawPath(path2, ua1Var.c);
-                            ua1Var.o.restore();
+                            Canvas canvas2 = va1Var.o;
+                            Path path2 = va1Var.d;
+                            rb1.h(optJSONObject, path2);
+                            canvas2.drawPath(path2, va1Var.c);
+                            va1Var.o.restore();
                         } else {
                             float max3 = Math.max(0.0f, Math.min(1.0f, (float) optJSONObject.optDouble("a", 1.0d)));
                             int optInt4 = optJSONObject.optInt("cm");
@@ -467,16 +467,16 @@ final class WidgetSandboxBackend implements mb1, ta1 {
                                 if (max3 < 1.0f || optInt4 != 0) {
                                     paint.reset();
                                     paint.setAlpha(Math.round(max3 * 255.0f));
-                                    ua1.b(paint, optInt4);
-                                    ua1Var.o.saveLayer(null, paint);
-                                    ua1Var.c(ua1Var.o, optJSONObject, this);
-                                    ua1Var.o.restore();
+                                    va1.b(paint, optInt4);
+                                    va1Var.o.saveLayer(null, paint);
+                                    va1Var.c(va1Var.o, optJSONObject, this);
+                                    va1Var.o.restore();
                                 } else {
-                                    ua1Var.c(ua1Var.o, optJSONObject, this);
+                                    va1Var.c(va1Var.o, optJSONObject, this);
                                 }
                             } else {
-                                Bitmap createBitmap = Bitmap.createBitmap(ua1Var.m.getWidth(), ua1Var.m.getHeight(), Bitmap.Config.ARGB_8888);
-                                ua1Var.c(new Canvas(createBitmap), optJSONObject, this);
+                                Bitmap createBitmap = Bitmap.createBitmap(va1Var.m.getWidth(), va1Var.m.getHeight(), Bitmap.Config.ARGB_8888);
+                                va1Var.c(new Canvas(createBitmap), optJSONObject, this);
                                 Paint paint2 = new Paint(1);
                                 float optDouble3 = ((float) optJSONArray2.optDouble(2)) / 2.0f;
                                 if (optDouble3 > 0.5f) {
@@ -485,18 +485,18 @@ final class WidgetSandboxBackend implements mb1, ta1 {
                                 Bitmap extractAlpha = createBitmap.extractAlpha(paint2, new int[2]);
                                 paint.reset();
                                 paint.setAlpha(Math.round(max3 * 255.0f));
-                                ua1.b(paint, optInt4);
-                                ua1Var.o.saveLayer(null, paint);
+                                va1.b(paint, optInt4);
+                                va1Var.o.saveLayer(null, paint);
                                 Paint paint3 = new Paint(1);
                                 paint3.setColor((int) optJSONObject.optLong("shc"));
                                 i13 = i15;
-                                ua1Var.o.drawBitmap(extractAlpha, r4[i15] + ((float) optJSONArray2.optDouble(i13)), r4[1] + ((float) optJSONArray2.optDouble(1)), paint3);
-                                ua1Var.o.drawBitmap(createBitmap, 0.0f, 0.0f, (Paint) null);
-                                ua1Var.o.restore();
+                                va1Var.o.drawBitmap(extractAlpha, r4[i15] + ((float) optJSONArray2.optDouble(i13)), r4[1] + ((float) optJSONArray2.optDouble(1)), paint3);
+                                va1Var.o.drawBitmap(createBitmap, 0.0f, 0.0f, (Paint) null);
+                                va1Var.o.restore();
                                 extractAlpha.recycle();
                                 createBitmap.recycle();
                             }
-                            ua1Var.o.restore();
+                            va1Var.o.restore();
                             i17 = i14 + 1;
                             i16 = i13;
                             jSONArray2 = jSONArray;
@@ -515,7 +515,7 @@ final class WidgetSandboxBackend implements mb1, ta1 {
             i16 = i13;
             jSONArray2 = jSONArray;
         }
-        ua1Var.p++;
+        va1Var.p++;
     }
 
     public float[] createFont(byte[] bArr, float f7, int i10, boolean z10, byte[] bArr2) {
@@ -527,7 +527,7 @@ final class WidgetSandboxBackend implements mb1, ta1 {
         if (featureSettings != null) {
             paint.setFontFeatureSettings(featureSettings);
         }
-        float f10 = this.owner.h;
+        float f10 = this.owner.i;
         Paint paint2 = new Paint(paint);
         paint2.setTextSize(f7 * f10);
         Paint.FontMetrics fontMetrics = paint2.getFontMetrics();
@@ -546,21 +546,21 @@ final class WidgetSandboxBackend implements mb1, ta1 {
         this.deviceFonts.remove(Integer.valueOf(i10));
     }
 
-    @Override // org.telegram.ui.Components.mb1
+    @Override // org.telegram.ui.Components.qb1
     public Paint deviceFont(int i10) {
         return this.deviceFonts.get(Integer.valueOf(i10));
     }
 
-    @Override // org.telegram.ui.Components.ta1
+    @Override // org.telegram.ui.Components.ua1
     public Paint font(int i10) {
         return this.fonts.get(Integer.valueOf(i10));
     }
 
     public byte[] formatIntl(byte[] bArr) {
-        return ib1.b(text(bArr)).getBytes(StandardCharsets.UTF_8);
+        return mb1.b(text(bArr)).getBytes(StandardCharsets.UTF_8);
     }
 
-    @Override // org.telegram.ui.Components.mb1, org.telegram.ui.Components.ta1
+    @Override // org.telegram.ui.Components.qb1, org.telegram.ui.Components.ua1
     public Bitmap image(int i10) {
         return this.images.get(Integer.valueOf(i10));
     }
@@ -623,15 +623,15 @@ final class WidgetSandboxBackend implements mb1, ta1 {
             if (length >= 33) {
                 int i20 = 0;
                 while (true) {
-                    byte[] bArr4 = gb1.a;
+                    byte[] bArr4 = kb1.a;
                     if (i20 < 8) {
                         if (decode[i20] != bArr4[i20]) {
                             break;
                         }
                         i20++;
-                    } else if (gb1.W(12, "IHDR", decode) && gb1.d(8, decode) >= 13) {
-                        long d11 = gb1.d(16, decode);
-                        long d12 = gb1.d(20, decode);
+                    } else if (kb1.W(12, "IHDR", decode) && kb1.d(8, decode) >= 13) {
+                        long d11 = kb1.d(16, decode);
+                        long d12 = kb1.d(20, decode);
                         int i21 = decode[24] & 255;
                         int i22 = decode[25] & 255;
                         int i23 = decode[28] & 255;
@@ -650,19 +650,19 @@ final class WidgetSandboxBackend implements mb1, ta1 {
                                             j10 = d12;
                                             break;
                                         }
-                                        d10 = gb1.d(i13, decode);
+                                        d10 = kb1.d(i13, decode);
                                         i18 = i13;
                                         j10 = d12;
                                         if (d10 <= (length - i13) - 12) {
                                             int i24 = i18 + 4;
-                                            if (gb1.W(i24, "IEND", decode)) {
+                                            if (kb1.W(i24, "IEND", decode)) {
                                                 break;
                                             }
-                                            if (gb1.W(i24, "IDAT", decode)) {
+                                            if (kb1.W(i24, "IDAT", decode)) {
                                                 crc32.reset();
                                                 int i25 = (int) d10;
                                                 crc32.update(decode, i24, i25 + 4);
-                                                if (crc32.getValue() != gb1.d(i18 + 8 + i25, decode)) {
+                                                if (crc32.getValue() != kb1.d(i18 + 8 + i25, decode)) {
                                                     break;
                                                 }
                                             }
@@ -685,11 +685,11 @@ final class WidgetSandboxBackend implements mb1, ta1 {
                                         bArr2 = bArr4;
                                         j11 = d11;
                                         try {
-                                            d = (int) gb1.d(i14, decode);
+                                            d = (int) kb1.d(i14, decode);
                                             if (d > (length - i14) - 12) {
                                                 int i27 = i14 + 4;
-                                                if (!gb1.W(i27, "IEND", decode)) {
-                                                    if (gb1.W(i27, "IDAT", decode)) {
+                                                if (!kb1.W(i27, "IEND", decode)) {
+                                                    if (kb1.W(i27, "IDAT", decode)) {
                                                         int min = z12 ? Math.min(2, d) : 0;
                                                         inflater.setInput(decode, i14 + 8 + min, d - min);
                                                         boolean z13 = false;
@@ -766,7 +766,7 @@ final class WidgetSandboxBackend implements mb1, ta1 {
                                                         i15 = length;
                                                         i16 = d;
                                                         bArr3 = bArr5;
-                                                        if (byteArrayOutputStream2.size() == 0 && !gb1.W(i27, "IHDR", decode)) {
+                                                        if (byteArrayOutputStream2.size() == 0 && !kb1.W(i27, "IHDR", decode)) {
                                                             byteArrayOutputStream3.write(decode, i14, i16 + 12);
                                                         }
                                                     }
@@ -800,8 +800,8 @@ final class WidgetSandboxBackend implements mb1, ta1 {
                                             byteArrayOutputStream4.write(bArr2, 0, 8);
                                             byte[] bArr7 = new byte[13];
                                             System.arraycopy(decode, 16, bArr7, 0, 13);
-                                            gb1.R(bArr7, 4, j12);
-                                            gb1.X(byteArrayOutputStream4, "IHDR", bArr7, crc32);
+                                            kb1.R(bArr7, 4, j12);
+                                            kb1.X(byteArrayOutputStream4, "IHDR", bArr7, crc32);
                                             byte[] byteArray2 = byteArrayOutputStream3.toByteArray();
                                             byteArrayOutputStream4.write(byteArray2, 0, byteArray2.length);
                                             Deflater deflater = new Deflater();
@@ -813,8 +813,8 @@ final class WidgetSandboxBackend implements mb1, ta1 {
                                                 byteArrayOutputStream5.write(bArr8, 0, deflater.deflate(bArr8));
                                             }
                                             deflater.end();
-                                            gb1.X(byteArrayOutputStream4, "IDAT", byteArrayOutputStream5.toByteArray(), crc32);
-                                            gb1.X(byteArrayOutputStream4, "IEND", new byte[0], crc32);
+                                            kb1.X(byteArrayOutputStream4, "IDAT", byteArrayOutputStream5.toByteArray(), crc32);
+                                            kb1.X(byteArrayOutputStream4, "IEND", new byte[0], crc32);
                                             byte[] byteArray3 = byteArrayOutputStream4.toByteArray();
                                             Bitmap decodeByteArray = BitmapFactory.decodeByteArray(byteArray3, 0, byteArray3.length);
                                             if (decodeByteArray != null) {
@@ -849,7 +849,7 @@ final class WidgetSandboxBackend implements mb1, ta1 {
                             while (i14 + 12 <= length) {
                                 bArr2 = bArr4;
                                 j11 = d11;
-                                d = (int) gb1.d(i14, decode);
+                                d = (int) kb1.d(i14, decode);
                                 if (d > (length - i14) - 12) {
                                 }
                                 byteArrayOutputStream2 = byteArrayOutputStream;
@@ -886,7 +886,7 @@ final class WidgetSandboxBackend implements mb1, ta1 {
     }
 
     public void record(byte[] bArr, byte[] bArr2, double d, int i10, int i11, float f7, float f10, int i12, int i13) {
-        cb1 bb1Var;
+        db1 cb1Var;
         int i14;
         assertWorker();
         this.owner.getClass();
@@ -894,26 +894,26 @@ final class WidgetSandboxBackend implements mb1, ta1 {
         Trace.beginSection("WidgetSandbox:Record");
         double nanoTime = d - (System.nanoTime() / 1.0E9d);
         if (Build.VERSION.SDK_INT >= 29) {
-            bb1Var = new ab1("widget-sandbox-content", 0, 0, i10, i11);
+            cb1Var = new bb1("widget-sandbox-content", 0, 0, i10, i11);
             i14 = i11;
         } else {
             i14 = i11;
-            bb1Var = new bb1(0, 0, i10, i14);
+            cb1Var = new cb1(0, 0, i10, i14);
         }
-        cb1 cb1Var = bb1Var;
+        db1 db1Var = cb1Var;
         try {
             try {
                 JSONArray jSONArray = new JSONArray(text(bArr));
-                Canvas a2 = cb1Var.a();
+                Canvas a2 = db1Var.a();
                 try {
                     a2.scale(f7, f7);
-                    nb1 nb1Var = this.painter;
-                    nb1Var.getClass();
-                    nb1Var.e(a2, jSONArray, jSONArray.length(), this, f7, true);
-                    cb1Var.e();
-                    this.owner.b(cb1Var, layers(new JSONObject(text(bArr2)), f7), nanoTime, i10, i14, f10, (System.nanoTime() - r7) / 1000000.0f, i12, i13, jSONArray.length(), this.text);
+                    rb1 rb1Var = this.painter;
+                    rb1Var.getClass();
+                    rb1Var.e(a2, jSONArray, jSONArray.length(), this, f7, true);
+                    db1Var.e();
+                    this.owner.c(db1Var, layers(new JSONObject(text(bArr2)), f7), nanoTime, i10, i14, f10, (System.nanoTime() - r7) / 1000000.0f, i12, i13, jSONArray.length(), this.text);
                 } catch (Throwable th2) {
-                    cb1Var.e();
+                    db1Var.e();
                     throw th2;
                 }
             } finally {
@@ -921,7 +921,7 @@ final class WidgetSandboxBackend implements mb1, ta1 {
                 Trace.endSection();
             }
         } catch (Exception e) {
-            cb1Var.c();
+            db1Var.c();
             throw e;
         }
     }
@@ -937,36 +937,36 @@ final class WidgetSandboxBackend implements mb1, ta1 {
             String text = text(bArr);
             HashMap<Integer, Paint> hashMap = this.deviceFonts;
             Objects.requireNonNull(hashMap);
-            this.text = dc1.a(text, new w81(hashMap), this.owner.h);
+            this.text = ic1.a(text, new x81(hashMap), this.owner.i);
         } catch (Exception unused) {
             this.text = null;
         }
     }
 
     public void signal(int i10, byte[] bArr) {
-        final yb1 yb1Var = this.owner;
+        final dc1 dc1Var = this.owner;
         final String text = text(bArr);
         if (i10 == 8) {
             final int i11 = 0;
-            yb1Var.a.post(new Runnable() { // from class: org.telegram.ui.Components.tb1
+            dc1Var.a.post(new Runnable() { // from class: org.telegram.ui.Components.yb1
                 @Override // java.lang.Runnable
                 public final void run() {
-                    xb1 xb1Var;
-                    xb1 xb1Var2;
+                    cc1 cc1Var;
+                    cc1 cc1Var2;
                     switch (i11) {
                         case 0:
-                            yb1 yb1Var2 = yb1Var;
+                            dc1 dc1Var2 = dc1Var;
                             String str = text;
-                            if (yb1Var2.K != null) {
+                            if (dc1Var2.L != null) {
                                 try {
                                     JSONObject jSONObject = new JSONObject(str);
                                     JSONObject optJSONObject = jSONObject.optJSONObject("values");
-                                    xb1 xb1Var3 = yb1Var2.K;
+                                    cc1 cc1Var3 = dc1Var2.L;
                                     String optString = jSONObject.optString("area");
                                     if (optJSONObject == null) {
                                         optJSONObject = new JSONObject();
                                     }
-                                    xb1Var3.g(optString, optJSONObject);
+                                    cc1Var3.j(optString, optJSONObject);
                                     break;
                                 } catch (Exception unused) {
                                     return;
@@ -974,19 +974,19 @@ final class WidgetSandboxBackend implements mb1, ta1 {
                             }
                             break;
                         case 1:
-                            yb1 yb1Var3 = yb1Var;
+                            dc1 dc1Var3 = dc1Var;
                             String str2 = text;
-                            if (!yb1Var3.s && (xb1Var = yb1Var3.H) != null) {
-                                xb1Var.a(str2);
+                            if (!dc1Var3.t && (cc1Var = dc1Var3.I) != null) {
+                                cc1Var.c(str2);
                                 break;
                             }
                             break;
                         default:
-                            yb1 yb1Var4 = yb1Var;
+                            dc1 dc1Var4 = dc1Var;
                             String str3 = text;
-                            if (!yb1Var4.s && (xb1Var2 = yb1Var4.H) != null) {
+                            if (!dc1Var4.t && (cc1Var2 = dc1Var4.I) != null) {
                                 try {
-                                    xb1Var2.e(new JSONObject(str3));
+                                    cc1Var2.g(new JSONObject(str3));
                                     break;
                                 } catch (Exception unused2) {
                                     return;
@@ -999,37 +999,41 @@ final class WidgetSandboxBackend implements mb1, ta1 {
             return;
         }
         if (i10 == 10) {
-            b3 b3Var = yb1Var.J;
+            b3 b3Var = dc1Var.K;
             if (b3Var != null) {
                 b3Var.run(text);
                 return;
             }
             return;
         }
-        if (yb1Var.s) {
+        if (dc1Var.t) {
+            return;
+        }
+        if (i10 == 12 || i10 == 13 || i10 == 14) {
+            dc1Var.a.post(new org.telegram.ui.g4(dc1Var, i10, text, 29));
             return;
         }
         if (i10 == 11) {
             final int i12 = 1;
-            yb1Var.a.post(new Runnable() { // from class: org.telegram.ui.Components.tb1
+            dc1Var.a.post(new Runnable() { // from class: org.telegram.ui.Components.yb1
                 @Override // java.lang.Runnable
                 public final void run() {
-                    xb1 xb1Var;
-                    xb1 xb1Var2;
+                    cc1 cc1Var;
+                    cc1 cc1Var2;
                     switch (i12) {
                         case 0:
-                            yb1 yb1Var2 = yb1Var;
+                            dc1 dc1Var2 = dc1Var;
                             String str = text;
-                            if (yb1Var2.K != null) {
+                            if (dc1Var2.L != null) {
                                 try {
                                     JSONObject jSONObject = new JSONObject(str);
                                     JSONObject optJSONObject = jSONObject.optJSONObject("values");
-                                    xb1 xb1Var3 = yb1Var2.K;
+                                    cc1 cc1Var3 = dc1Var2.L;
                                     String optString = jSONObject.optString("area");
                                     if (optJSONObject == null) {
                                         optJSONObject = new JSONObject();
                                     }
-                                    xb1Var3.g(optString, optJSONObject);
+                                    cc1Var3.j(optString, optJSONObject);
                                     break;
                                 } catch (Exception unused) {
                                     return;
@@ -1037,19 +1041,19 @@ final class WidgetSandboxBackend implements mb1, ta1 {
                             }
                             break;
                         case 1:
-                            yb1 yb1Var3 = yb1Var;
+                            dc1 dc1Var3 = dc1Var;
                             String str2 = text;
-                            if (!yb1Var3.s && (xb1Var = yb1Var3.H) != null) {
-                                xb1Var.a(str2);
+                            if (!dc1Var3.t && (cc1Var = dc1Var3.I) != null) {
+                                cc1Var.c(str2);
                                 break;
                             }
                             break;
                         default:
-                            yb1 yb1Var4 = yb1Var;
+                            dc1 dc1Var4 = dc1Var;
                             String str3 = text;
-                            if (!yb1Var4.s && (xb1Var2 = yb1Var4.H) != null) {
+                            if (!dc1Var4.t && (cc1Var2 = dc1Var4.I) != null) {
                                 try {
-                                    xb1Var2.e(new JSONObject(str3));
+                                    cc1Var2.g(new JSONObject(str3));
                                     break;
                                 } catch (Exception unused2) {
                                     return;
@@ -1062,56 +1066,56 @@ final class WidgetSandboxBackend implements mb1, ta1 {
             return;
         }
         if (i10 == 9) {
-            b3 b3Var2 = yb1Var.I;
+            b3 b3Var2 = dc1Var.J;
             if (b3Var2 != null) {
-                yb1Var.a.post(new ai.j1(b3Var2, text));
+                dc1Var.a.post(new ai.j1(b3Var2, text));
                 return;
             }
             return;
         }
         if (i10 == 6) {
-            yb1Var.k.set(false);
-            yb1Var.a.post(yb1Var.N);
+            dc1Var.l.set(false);
+            dc1Var.a.post(dc1Var.O);
             return;
         }
         if (i10 == 1 || i10 == 2) {
             if (i10 == 1) {
-                yb1Var.l.set(true);
+                dc1Var.m.set(true);
             } else {
-                yb1Var.j.set(true);
+                dc1Var.k.set(true);
             }
-            yb1Var.a.removeCallbacks(yb1Var.N);
-            yb1Var.a.post(yb1Var.N);
+            dc1Var.a.removeCallbacks(dc1Var.O);
+            dc1Var.a.post(dc1Var.O);
             return;
         }
         try {
             if (i10 == 3) {
                 JSONObject jSONObject = new JSONObject(text);
-                yb1Var.a.post(new c00(yb1Var, jSONObject.optBoolean("x"), jSONObject.optBoolean("y"), jSONObject.optBoolean("hold"), 1));
+                dc1Var.a.post(new c00(dc1Var, jSONObject.optBoolean("x"), jSONObject.optBoolean("y"), jSONObject.optBoolean("hold"), 1));
                 return;
             }
             if (i10 != 4) {
                 if (i10 == 5) {
                     final int i13 = 2;
-                    yb1Var.a.post(new Runnable() { // from class: org.telegram.ui.Components.tb1
+                    dc1Var.a.post(new Runnable() { // from class: org.telegram.ui.Components.yb1
                         @Override // java.lang.Runnable
                         public final void run() {
-                            xb1 xb1Var;
-                            xb1 xb1Var2;
+                            cc1 cc1Var;
+                            cc1 cc1Var2;
                             switch (i13) {
                                 case 0:
-                                    yb1 yb1Var2 = yb1Var;
+                                    dc1 dc1Var2 = dc1Var;
                                     String str = text;
-                                    if (yb1Var2.K != null) {
+                                    if (dc1Var2.L != null) {
                                         try {
                                             JSONObject jSONObject2 = new JSONObject(str);
                                             JSONObject optJSONObject = jSONObject2.optJSONObject("values");
-                                            xb1 xb1Var3 = yb1Var2.K;
+                                            cc1 cc1Var3 = dc1Var2.L;
                                             String optString = jSONObject2.optString("area");
                                             if (optJSONObject == null) {
                                                 optJSONObject = new JSONObject();
                                             }
-                                            xb1Var3.g(optString, optJSONObject);
+                                            cc1Var3.j(optString, optJSONObject);
                                             break;
                                         } catch (Exception unused) {
                                             return;
@@ -1119,19 +1123,19 @@ final class WidgetSandboxBackend implements mb1, ta1 {
                                     }
                                     break;
                                 case 1:
-                                    yb1 yb1Var3 = yb1Var;
+                                    dc1 dc1Var3 = dc1Var;
                                     String str2 = text;
-                                    if (!yb1Var3.s && (xb1Var = yb1Var3.H) != null) {
-                                        xb1Var.a(str2);
+                                    if (!dc1Var3.t && (cc1Var = dc1Var3.I) != null) {
+                                        cc1Var.c(str2);
                                         break;
                                     }
                                     break;
                                 default:
-                                    yb1 yb1Var4 = yb1Var;
+                                    dc1 dc1Var4 = dc1Var;
                                     String str3 = text;
-                                    if (!yb1Var4.s && (xb1Var2 = yb1Var4.H) != null) {
+                                    if (!dc1Var4.t && (cc1Var2 = dc1Var4.I) != null) {
                                         try {
-                                            xb1Var2.e(new JSONObject(str3));
+                                            cc1Var2.g(new JSONObject(str3));
                                             break;
                                         } catch (Exception unused2) {
                                             return;
@@ -1145,8 +1149,8 @@ final class WidgetSandboxBackend implements mb1, ta1 {
                 } else {
                     if (i10 == 7) {
                         float parseFloat = Float.parseFloat(text);
-                        yb1Var.m.set(parseFloat == 0.0f);
-                        yb1Var.a.post(new org.telegram.ui.b0(yb1Var, parseFloat, 2));
+                        dc1Var.n.set(parseFloat == 0.0f);
+                        dc1Var.a.post(new org.telegram.ui.b0(dc1Var, parseFloat, 2));
                         return;
                     }
                     return;
@@ -1154,26 +1158,26 @@ final class WidgetSandboxBackend implements mb1, ta1 {
             }
             JSONObject jSONObject2 = new JSONObject(text);
             if (jSONObject2.optBoolean("loaded")) {
-                yb1Var.t = true;
+                dc1Var.u = true;
             }
-            yb1Var.w = "bottom".equals(jSONObject2.optString("resizeAnchor"));
-            if (jSONObject2.optBoolean("rendered") && !yb1Var.u) {
+            dc1Var.x = "bottom".equals(jSONObject2.optString("resizeAnchor"));
+            if (jSONObject2.optBoolean("rendered") && !dc1Var.v) {
                 double optDouble = jSONObject2.optDouble("height", -1.0d);
-                double min = Math.min(600.0f, Math.max(50.0f, yb1Var.p / yb1Var.h));
-                if (yb1Var.q && optDouble > 0.0d && Math.abs(min - optDouble) <= 1.0d) {
-                    yb1Var.v = true;
+                double min = Math.min(600.0f, Math.max(50.0f, dc1Var.q / dc1Var.i));
+                if (dc1Var.r && optDouble > 0.0d && Math.abs(min - optDouble) <= 1.0d) {
+                    dc1Var.w = true;
                 }
-                yb1Var.u = true;
+                dc1Var.v = true;
             }
-            synchronized (yb1Var.o) {
+            synchronized (dc1Var.p) {
                 try {
-                    if (yb1Var.s) {
+                    if (dc1Var.t) {
                         return;
                     }
-                    yb1Var.F = jSONObject2;
-                    if (!yb1Var.G) {
-                        yb1Var.G = true;
-                        yb1Var.a.post(yb1Var.M);
+                    dc1Var.G = jSONObject2;
+                    if (!dc1Var.H) {
+                        dc1Var.H = true;
+                        dc1Var.a.post(dc1Var.N);
                     }
                 } finally {
                 }
@@ -1187,6 +1191,6 @@ final class WidgetSandboxBackend implements mb1, ta1 {
         if (paint == null) {
             return 0.0f;
         }
-        return paint.measureText(text(bArr)) / this.owner.h;
+        return paint.measureText(text(bArr)) / this.owner.i;
     }
 }

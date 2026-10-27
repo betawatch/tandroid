@@ -9,7 +9,7 @@ import org.telegram.messenger.ImageLocation;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.MediaController;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class s7 extends k7 {
     public org.telegram.ui.Cells.v7 n;
@@ -73,6 +73,6 @@ public final class s7 extends k7 {
         }
         r7 r7Var = new r7(this, viewGroup.getContext(), this.n, this.v.e.getCurrentAccount());
         r7Var.setStyle(1);
-        return new org.telegram.ui.Components.vl0(r7Var);
+        return new org.telegram.ui.Components.wl0(r7Var);
     }
 }

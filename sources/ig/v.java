@@ -1,9 +1,9 @@
 package ig;
 
-import org.telegram.ui.iv;
-import org.telegram.ui.x00;
+import org.telegram.ui.kv;
+import org.telegram.ui.z00;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class v implements Runnable {
     public final /* synthetic */ int a;
@@ -19,9 +19,9 @@ public final /* synthetic */ class v implements Runnable {
         switch (this.a) {
             case 0:
                 i0 i0Var = this.b;
-                x00 x00Var = i0Var.A0;
-                if (x00Var != null) {
-                    ((iv) x00Var).j(false, null, i0Var.y0, i0Var.z0);
+                z00 z00Var = i0Var.A0;
+                if (z00Var != null) {
+                    ((kv) z00Var).j(false, null, i0Var.y0, i0Var.z0);
                     break;
                 }
                 break;

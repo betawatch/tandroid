@@ -10,9 +10,9 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.LiteMode;
 import org.telegram.ui.Components.st;
-import org.telegram.ui.Components.xj0;
+import org.telegram.ui.Components.yj0;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class l1 extends st {
     public int M;
@@ -176,7 +176,7 @@ public final class l1 extends st {
                 }
                 Rect rect = AndroidUtilities.rectTmp2;
                 rect.set(m1Var.getPaddingLeft(), m1Var.getPaddingTop(), m1Var.getWidth() - m1Var.getPaddingRight(), m1Var.getHeight() - m1Var.getPaddingBottom());
-                xj0 lottieAnimation = imageReceiver.getLottieAnimation();
+                yj0 lottieAnimation = imageReceiver.getLottieAnimation();
                 if (lottieAnimation == null || (i10 = lottieAnimation.c) == 0) {
                     org.telegram.ui.Components.g6 animation = imageReceiver.getAnimation();
                     if (animation == null || animation.getIntrinsicHeight() == 0) {

@@ -10,9 +10,9 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Cells.v8;
 import org.telegram.ui.Components.wc;
-import org.telegram.ui.kr;
+import org.telegram.ui.mr;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class b1 implements Utilities.Callback2 {
     public final /* synthetic */ int a;
@@ -81,19 +81,19 @@ public final /* synthetic */ class b1 implements Utilities.Callback2 {
                 }
                 break;
             default:
-                kr krVar = (kr) this.c;
+                mr mrVar = (mr) this.c;
                 v8 v8Var = (v8) this.d;
                 TLRPC.Updates updates = (TLRPC.Updates) obj;
                 TLRPC.TL_error tL_error2 = (TLRPC.TL_error) obj2;
                 if (updates == null) {
-                    krVar.getClass();
+                    mrVar.getClass();
                     if (tL_error2 != null) {
                         v8Var.setChecked(this.b);
-                        wc.b0(krVar).g0(tL_error2, false);
+                        wc.b0(mrVar).g0(tL_error2, false);
                         break;
                     }
                 } else {
-                    krVar.getMessagesController().lambda$processUpdates$379(updates, false);
+                    mrVar.getMessagesController().lambda$processUpdates$379(updates, false);
                     break;
                 }
                 break;

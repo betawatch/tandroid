@@ -11,41 +11,41 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.ui.ActionBar.u6;
 import org.telegram.ui.ActionBar.y6;
 import org.telegram.ui.Components.ar;
-import org.telegram.ui.Components.j71;
-import org.telegram.ui.Components.mm0;
-import org.telegram.ui.Components.r71;
-import org.telegram.ui.Components.s61;
+import org.telegram.ui.Components.k71;
+import org.telegram.ui.Components.nm0;
+import org.telegram.ui.Components.s71;
 import org.telegram.ui.Components.t5;
 import org.telegram.ui.Components.t61;
-import org.telegram.ui.mk;
+import org.telegram.ui.Components.u61;
+import org.telegram.ui.ok;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
-public final class w1 extends s61 {
+public final class w1 extends t61 {
     public static final /* synthetic */ int a = 0;
 
     static {
-        s61.setup(new w1());
+        t61.setup(new w1());
     }
 
-    @Override // org.telegram.ui.Components.s61
-    public final void bindView(View view, t61 t61Var, boolean z10, j71 j71Var, r71 r71Var) {
+    @Override // org.telegram.ui.Components.t61
+    public final void bindView(View view, u61 u61Var, boolean z10, k71 k71Var, s71 s71Var) {
         x1 x1Var = (x1) view;
-        String str = t61Var.n;
-        String str2 = (String) t61Var.l;
-        long j10 = t61Var.B;
+        String str = u61Var.n;
+        String str2 = (String) u61Var.l;
+        long j10 = u61Var.B;
         ImageView imageView = x1Var.a;
         x1Var.b.setText(str);
-        mk mkVar = x1Var.c;
-        mkVar.setText(str2);
+        ok okVar = x1Var.c;
+        okVar.setText(str2);
         if (TextUtils.isEmpty(str)) {
-            mkVar.setTranslationY(-AndroidUtilities.dp(14.0f));
-            mkVar.setScaleX(1.3f);
-            mkVar.setScaleY(1.3f);
+            okVar.setTranslationY(-AndroidUtilities.dp(14.0f));
+            okVar.setScaleX(1.3f);
+            okVar.setScaleY(1.3f);
         } else {
-            mkVar.setTranslationY(0.0f);
-            mkVar.setScaleX(1.0f);
-            mkVar.setScaleY(1.0f);
+            okVar.setTranslationY(0.0f);
+            okVar.setScaleX(1.0f);
+            okVar.setScaleY(1.0f);
         }
         x1Var.e = str2;
         if (TextUtils.isEmpty(str)) {
@@ -77,8 +77,8 @@ public final class w1 extends s61 {
         x1Var.invalidate();
     }
 
-    @Override // org.telegram.ui.Components.s61
-    public final View createView(Context context, mm0 mm0Var, int i10, int i11, u6 u6Var) {
+    @Override // org.telegram.ui.Components.t61
+    public final View createView(Context context, nm0 nm0Var, int i10, int i11, u6 u6Var) {
         return new x1(context);
     }
 }

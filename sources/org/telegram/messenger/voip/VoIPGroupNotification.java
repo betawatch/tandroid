@@ -27,17 +27,17 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
-import org.telegram.messenger.db;
-import org.telegram.messenger.fc;
+import org.telegram.messenger.ec;
+import org.telegram.messenger.he;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.ui.Components.voip.g2;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.ph1;
+import org.telegram.ui.rh1;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
 public class VoIPGroupNotification {
     public static long currentCallId;
@@ -45,7 +45,7 @@ public class VoIPGroupNotification {
     private static HashSet<Integer> ignoreCalls;
     private static Runnable missRunnable;
 
-    /* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+    /* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
     public static final class State implements VoIPServiceState {
         public final long call_id;
         private final int currentAccount;
@@ -85,9 +85,9 @@ public class VoIPGroupNotification {
                 return;
             }
             this.destroyed = true;
-            ph1 ph1Var = ph1.n1;
-            if (ph1Var != null) {
-                ph1Var.onStateChanged(getCallState());
+            rh1 rh1Var = rh1.n1;
+            if (rh1Var != null) {
+                rh1Var.onStateChanged(getCallState());
             }
         }
 
@@ -174,9 +174,9 @@ public class VoIPGroupNotification {
         TL_phone.declineConferenceCallInvite declineconferencecallinvite = new TL_phone.declineConferenceCallInvite();
         declineconferencecallinvite.msg_id = i11;
         ConnectionsManager.getInstance(i10).sendRequest(declineconferencecallinvite, new s2(i10, 1));
-        ph1 ph1Var = ph1.n1;
-        if (ph1Var != null) {
-            ph1Var.m();
+        rh1 rh1Var = rh1.n1;
+        if (rh1Var != null) {
+            rh1Var.m();
         }
     }
 
@@ -199,9 +199,9 @@ public class VoIPGroupNotification {
             currentCallId = 0L;
             ((NotificationManager) context.getSystemService("notification")).cancel(VoIPService.ID_INCOMING_CALL_PRENOTIFICATION);
             VoIPPreNotificationService.stopRinging();
-            ph1 ph1Var = ph1.n1;
-            if (ph1Var != null) {
-                ph1Var.m();
+            rh1 rh1Var = rh1.n1;
+            if (rh1Var != null) {
+                rh1Var.m();
             }
         }
     }
@@ -231,7 +231,7 @@ public class VoIPGroupNotification {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static /* synthetic */ void lambda$request$1(int i10, long j10, long j11, int i11, boolean z10, Context context, String str, TLObject tLObject, TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new db(tLObject, i10, j10, j11, i11, z10, context, str));
+        AndroidUtilities.runOnUIThread(new he(tLObject, i10, j10, j11, i11, z10, context, str));
     }
 
     public static void open(Context context, int i10, int i11) {
@@ -251,7 +251,7 @@ public class VoIPGroupNotification {
             findActivity = LaunchActivity.I1;
         }
         if (findActivity != null) {
-            ph1.v(findActivity, i10);
+            rh1.v(findActivity, i10);
         }
     }
 
@@ -277,7 +277,7 @@ public class VoIPGroupNotification {
                     getgroupcall.call = tL_inputGroupCallInviteMessage;
                     tL_inputGroupCallInviteMessage.msg_id = i11;
                     getgroupcall.limit = 3;
-                    ConnectionsManager.getInstance(i10).sendRequest(getgroupcall, new fc(context, i10, j10, str, j11, i11, z10));
+                    ConnectionsManager.getInstance(i10).sendRequest(getgroupcall, new ec(context, i10, j10, str, j11, i11, z10));
                 }
             }
         }
@@ -484,9 +484,9 @@ public class VoIPGroupNotification {
             currentCallId = 0L;
             ((NotificationManager) context.getSystemService("notification")).cancel(VoIPService.ID_INCOMING_CALL_PRENOTIFICATION);
             VoIPPreNotificationService.stopRinging();
-            ph1 ph1Var = ph1.n1;
-            if (ph1Var != null) {
-                ph1Var.m();
+            rh1 rh1Var = rh1.n1;
+            if (rh1Var != null) {
+                rh1Var.m();
             }
         }
     }

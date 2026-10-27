@@ -16,13 +16,13 @@ import org.telegram.messenger.BuildVars;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.R;
-import org.telegram.messenger.vh;
-import org.telegram.ui.Components.gb1;
-import org.telegram.ui.Components.uw0;
+import org.telegram.messenger.wh;
+import org.telegram.ui.Components.kb1;
 import org.telegram.ui.Components.vw0;
-import org.telegram.ui.yx;
+import org.telegram.ui.Components.ww0;
+import org.telegram.ui.fx;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class z9 extends org.telegram.ui.ActionBar.r2 {
     public final String[] a;
@@ -93,9 +93,9 @@ public final class z9 extends org.telegram.ui.ActionBar.r2 {
         final int i10 = 0;
         this.actionBar.setAddToContainer(false);
         this.actionBar.setOccupyStatusBar(false);
-        vw0 vw0Var = new vw0(context, null);
-        vw0Var.setDelegate(new uw0() { // from class: org.telegram.ui.Wallet.x9
-            @Override // org.telegram.ui.Components.uw0
+        ww0 ww0Var = new ww0(context, null);
+        ww0Var.setDelegate(new vw0() { // from class: org.telegram.ui.Wallet.x9
+            @Override // org.telegram.ui.Components.vw0
             public final void I(int i11, boolean z10) {
                 z9 z9Var = z9.this;
                 z9Var.getClass();
@@ -106,8 +106,8 @@ public final class z9 extends org.telegram.ui.ActionBar.r2 {
                 z9Var.onInsets(z9Var.r, z9Var.s, z9Var.v, z9Var.w);
             }
         });
-        org.telegram.ui.ActionBar.f7.i(org.telegram.ui.ActionBar.y6.d6, vw0Var, this.resourceProvider);
-        this.fragmentView = vw0Var;
+        org.telegram.ui.ActionBar.f7.i(org.telegram.ui.ActionBar.y6.d6, ww0Var, this.resourceProvider);
+        this.fragmentView = ww0Var;
         ScrollView scrollView = new ScrollView(context);
         this.e = scrollView;
         final int i11 = 1;
@@ -115,7 +115,7 @@ public final class z9 extends org.telegram.ui.ActionBar.r2 {
         this.e.setVerticalScrollBarEnabled(false);
         this.e.setClipToPadding(false);
         this.e.setPadding(0, AndroidUtilities.dp(96.0f), 0, 0);
-        vw0Var.addView(this.e, gb1.g(-1.0f, -1));
+        ww0Var.addView(this.e, kb1.g(-1.0f, -1));
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setOrientation(1);
         linearLayout.setPadding(AndroidUtilities.dp(36.0f), 0, AndroidUtilities.dp(36.0f), AndroidUtilities.dp(24.0f));
@@ -185,32 +185,32 @@ public final class z9 extends org.telegram.ui.ActionBar.r2 {
                 }
             }
         });
-        vw0Var.addView(this.f, gb1.h(48, 48.0f, 51, 4.0f, 12.0f, 0.0f, 0.0f));
+        ww0Var.addView(this.f, kb1.h(48, 48.0f, 51, 4.0f, 12.0f, 0.0f, 0.0f));
         org.telegram.ui.Components.y9 y9Var = new org.telegram.ui.Components.y9(context);
         y9Var.setAspectFit(true);
         y9Var.getImageReceiver().setCurrentAccount(AndroidUtilities.getAccountInProduction());
         MediaDataController.getInstance(AndroidUtilities.getAccountInProduction()).setPlaceholderImage(y9Var, "RestrictedEmoji", "👨\u200d🏫", "100_100");
         y9Var.getImageReceiver().setAutoRepeatCount(1);
-        linearLayout.addView(y9Var, gb1.x(100, 100, 1, 0, 0, 0, 12));
+        linearLayout.addView(y9Var, kb1.x(100, 100, 1, 0, 0, 0, 12));
         TextView textView = new TextView(context);
         textView.setTextSize(1, 20.0f);
         textView.setTypeface(AndroidUtilities.bold());
         textView.setGravity(1);
         org.telegram.ui.ActionBar.f7.V(textView, i12, this.resourceProvider);
         textView.setText(LocaleController.getString(R.string.WalletTestPhrase));
-        TextView e = vh.e(linearLayout, textView, gb1.x(-1, -2, 1, 32, 0, 32, 10), context);
+        TextView e = wh.e(linearLayout, textView, kb1.x(-1, -2, 1, 32, 0, 32, 10), context);
         e.setTextSize(1, 14.0f);
         e.setGravity(1);
         org.telegram.ui.ActionBar.f7.V(e, org.telegram.ui.ActionBar.y6.z6, this.resourceProvider);
         int i14 = R.string.WalletTestPhraseInfo;
         int[] iArr = this.b;
-        vh.o(i14, new Object[]{Integer.valueOf(iArr[0] + 1), Integer.valueOf(iArr[1] + 1), Integer.valueOf(iArr[2] + 1)}, e);
-        linearLayout.addView(e, gb1.x(-1, -2, 1, 32, 0, 32, 8));
+        wh.o(i14, new Object[]{Integer.valueOf(iArr[0] + 1), Integer.valueOf(iArr[1] + 1), Integer.valueOf(iArr[2] + 1)}, e);
+        linearLayout.addView(e, kb1.x(-1, -2, 1, 32, 0, 32, 8));
         LinearLayout linearLayout2 = new LinearLayout(context);
         linearLayout2.setOrientation(1);
         linearLayout2.setGravity(1);
         linearLayout2.setClipChildren(false);
-        linearLayout.addView(linearLayout2, gb1.x(-1, -2, 1, 0, 16, 0, 0));
+        linearLayout.addView(linearLayout2, kb1.x(-1, -2, 1, 0, 16, 0, 0));
         ArrayList arrayList = new ArrayList();
         ArrayList arrayList2 = this.d;
         int size = arrayList2.size();
@@ -228,12 +228,12 @@ public final class z9 extends org.telegram.ui.ActionBar.r2 {
                 haVar.setText((String) arrayList.get(i16));
             }
             haVar.setOnTextChangedListener(new m(this, 14));
-            haVar.setOnNextListener(new yx(this, i16, haVar, 19));
-            linearLayout2.addView(haVar, gb1.x(-1, 50, 1, 0, i16 == 0 ? 0 : 12, 0, 0));
+            haVar.setOnNextListener(new fx(this, i16, haVar, 20));
+            linearLayout2.addView(haVar, kb1.x(-1, 50, 1, 0, i16 == 0 ? 0 : 12, 0, 0));
             arrayList2.add(haVar);
             i16++;
         }
-        linearLayout.addView(new View(context), gb1.p(1.0f, -1, 0));
+        linearLayout.addView(new View(context), kb1.p(1.0f, -1, 0));
         fi.d dVar = new fi.d(context, this.resourceProvider, true);
         this.h = dVar;
         dVar.f();
@@ -292,7 +292,7 @@ public final class z9 extends org.telegram.ui.ActionBar.r2 {
                 }
             }
         });
-        linearLayout.addView(this.h, gb1.x(-1, 48, 1, 0, 24, 0, 0));
+        linearLayout.addView(this.h, kb1.x(-1, 48, 1, 0, 24, 0, 0));
         V();
         return this.fragmentView;
     }

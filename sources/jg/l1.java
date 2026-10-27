@@ -21,15 +21,15 @@ import org.telegram.ui.ActionBar.f7;
 import org.telegram.ui.ActionBar.p6;
 import org.telegram.ui.ActionBar.u6;
 import org.telegram.ui.ActionBar.y6;
-import org.telegram.ui.Components.da0;
-import org.telegram.ui.Components.gb1;
+import org.telegram.ui.Components.ea0;
+import org.telegram.ui.Components.kb1;
 import org.telegram.ui.d3;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class l1 extends LinearLayout implements p6 {
     public final u6 a;
-    public final da0 b;
+    public final ea0 b;
     public final ImageReceiver c;
     public final TextView d;
     public boolean e;
@@ -40,13 +40,13 @@ public final class l1 extends LinearLayout implements p6 {
         this.c = imageReceiver;
         this.a = u6Var;
         setOrientation(1);
-        da0 da0Var = new da0();
-        this.b = da0Var;
+        ea0 ea0Var = new ea0();
+        this.b = ea0Var;
         int i10 = y6.G6;
         int w02 = y6.w0(i10, u6Var);
-        da0Var.g(y6.o1(0.05f, w02), y6.o1(0.15f, w02), y6.o1(0.1f, w02), y6.o1(0.3f, w02));
-        da0Var.k(4.0f);
-        da0Var.x.setStrokeWidth(AndroidUtilities.dp(1.0f));
+        ea0Var.g(y6.o1(0.05f, w02), y6.o1(0.15f, w02), y6.o1(0.1f, w02), y6.o1(0.3f, w02));
+        ea0Var.k(4.0f);
+        ea0Var.x.setStrokeWidth(AndroidUtilities.dp(1.0f));
         imageReceiver.setRoundRadius(AndroidUtilities.dp(4.0f));
         TextView textView = new TextView(context);
         this.d = textView;
@@ -54,13 +54,13 @@ public final class l1 extends LinearLayout implements p6 {
         f7.V(textView, i10, u6Var);
         textView.setTextSize(1, 16.0f);
         boolean z10 = LocaleController.isRTL;
-        addView(textView, gb1.x(-1, -2, 55, z10 ? 70 : 18, 10, z10 ? 18 : 70, 4));
+        addView(textView, kb1.x(-1, -2, 55, z10 ? 70 : 18, 10, z10 ? 18 : 70, 4));
         TextView textView2 = new TextView(context);
         textView2.setGravity(LocaleController.isRTL ? 5 : 3);
         f7.V(textView2, y6.z6, u6Var);
         d3.o(R.string.BusinessProfileLocation, textView2, 1, 13.0f);
         boolean z11 = LocaleController.isRTL;
-        addView(textView2, gb1.x(-1, -2, 55, z11 ? 70 : 18, 0, z11 ? 18 : 70, 8));
+        addView(textView2, kb1.x(-1, -2, 55, z11 ? 70 : 18, 0, z11 ? 18 : 70, 8));
         setWillNotDraw(false);
     }
 
@@ -104,11 +104,11 @@ public final class l1 extends LinearLayout implements p6 {
 
     @Override // org.telegram.ui.ActionBar.p6
     public final void updateColors() {
-        da0 da0Var = this.b;
-        if (da0Var != null) {
+        ea0 ea0Var = this.b;
+        if (ea0Var != null) {
             try {
                 int w02 = y6.w0(y6.G6, this.a);
-                da0Var.g(y6.o1(0.05f, w02), y6.o1(0.15f, w02), y6.o1(0.1f, w02), y6.o1(0.3f, w02));
+                ea0Var.g(y6.o1(0.05f, w02), y6.o1(0.15f, w02), y6.o1(0.1f, w02), y6.o1(0.3f, w02));
                 invalidate();
             } catch (Exception e) {
                 FileLog.e(e);

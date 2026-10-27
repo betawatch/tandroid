@@ -11,9 +11,9 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class dh implements nl, org.telegram.ui.ActionBar.b2, oe.k, bm0, oi.n, fh.d, oi.m, org.telegram.ui.ActionBar.r0, AndroidUtilities.IntColorCallback, fo, e5, cj {
+public final /* synthetic */ class dh implements nl, org.telegram.ui.ActionBar.b2, oe.k, cm0, oi.n, fh.d, oi.m, org.telegram.ui.ActionBar.r0, AndroidUtilities.IntColorCallback, fo, e5, cj {
     public final /* synthetic */ int a;
     public final /* synthetic */ ti b;
 
@@ -24,19 +24,19 @@ public final /* synthetic */ class dh implements nl, org.telegram.ui.ActionBar.b
 
     @Override // org.telegram.ui.Components.e5
     public void G(int i10, int i11, boolean z10) {
-        boolean M1;
+        boolean N1;
         switch (this.a) {
             case 14:
                 ti tiVar = this.b;
                 li liVar = tiVar.B0;
                 if (liVar != tiVar.j0 && liVar != tiVar.q0) {
-                    if (!liVar.K(i10, z10, i11, tiVar.w1(), 0L)) {
+                    if (!liVar.K(i10, z10, i11, tiVar.x1(), 0L)) {
                         tiVar.G2 = true;
                         tiVar.dismiss();
                         break;
                     }
                 } else {
-                    tiVar.M1(i10, z10, 0, tiVar.w1(), tiVar.Q0);
+                    tiVar.N1(i10, z10, 0, tiVar.x1(), tiVar.Q0);
                     break;
                 }
                 break;
@@ -49,16 +49,16 @@ public final /* synthetic */ class dh implements nl, org.telegram.ui.ActionBar.b
                 biVar.setEffect(j10);
                 li liVar2 = tiVar2.B0;
                 if (liVar2 == tiVar2.j0 || liVar2 == tiVar2.q0) {
-                    M1 = tiVar2.M1(i10, z10, i11, tiVar2.w1(), j10);
+                    N1 = tiVar2.N1(i10, z10, i11, tiVar2.x1(), j10);
                 } else {
-                    if (!liVar2.K(i10, z10, i11, tiVar2.w1(), j10)) {
+                    if (!liVar2.K(i10, z10, i11, tiVar2.x1(), j10)) {
                         tiVar2.dismiss();
                     }
-                    M1 = false;
+                    N1 = false;
                 }
                 mf mfVar2 = tiVar2.h0;
                 if (mfVar2 != null) {
-                    mfVar2.g(!M1);
+                    mfVar2.g(!N1);
                     tiVar2.h0 = null;
                     break;
                 }
@@ -68,10 +68,10 @@ public final /* synthetic */ class dh implements nl, org.telegram.ui.ActionBar.b
 
     @Override // oe.k
     public void b(oe.l lVar) {
-        this.b.z1();
+        this.b.A1();
     }
 
-    @Override // org.telegram.ui.Components.bm0
+    @Override // org.telegram.ui.Components.cm0
     public boolean c(int i10, View view) {
         TLRPC.User user;
         if (!(view instanceof mi)) {
@@ -82,7 +82,7 @@ public final /* synthetic */ class dh implements nl, org.telegram.ui.ActionBar.b
         if (tiVar.V || (user = miVar.b) == null) {
             return false;
         }
-        tiVar.B1(miVar.c, user);
+        tiVar.C1(miVar.c, user);
         return true;
     }
 
@@ -90,13 +90,13 @@ public final /* synthetic */ class dh implements nl, org.telegram.ui.ActionBar.b
     public void d(TLRPC.MessageMedia messageMedia, int i10, boolean z10, int i11, long j10) {
         switch (this.a) {
             case 0:
-                ((org.telegram.ui.un) this.b.f0).d(messageMedia, i10, z10, i11, 0L);
+                ((org.telegram.ui.wn) this.b.f0).d(messageMedia, i10, z10, i11, 0L);
                 break;
             case 12:
-                ((org.telegram.ui.un) this.b.f0).d(messageMedia, i10, z10, i11, j10);
+                ((org.telegram.ui.wn) this.b.f0).d(messageMedia, i10, z10, i11, j10);
                 break;
             default:
-                ((org.telegram.ui.un) this.b.f0).d(messageMedia, i10, z10, i11, j10);
+                ((org.telegram.ui.wn) this.b.f0).d(messageMedia, i10, z10, i11, j10);
                 break;
         }
     }
@@ -109,35 +109,35 @@ public final /* synthetic */ class dh implements nl, org.telegram.ui.ActionBar.b
         ti tiVar = this.b;
         switch (i11) {
             case 13:
-                org.telegram.ui.un unVar = (org.telegram.ui.un) tiVar.f0;
+                org.telegram.ui.wn wnVar = (org.telegram.ui.wn) tiVar.f0;
                 TLRPC.TL_messageMediaToDo tL_messageMediaToDo = (TLRPC.TL_messageMediaToDo) messageMedia;
-                if (unVar.m7()) {
-                    SendMessagesHelper.SendMessageParams of2 = SendMessagesHelper.SendMessageParams.of((TLRPC.TL_messageMediaPoll) null, unVar.f6, unVar.z5, unVar.j4, (TLRPC.ReplyMarkup) null, (HashMap<String, String>) null, z10, i10, 0);
+                if (wnVar.o7()) {
+                    SendMessagesHelper.SendMessageParams of2 = SendMessagesHelper.SendMessageParams.of((TLRPC.TL_messageMediaPoll) null, wnVar.j6, wnVar.D5, wnVar.j4, (TLRPC.ReplyMarkup) null, (HashMap<String, String>) null, z10, i10, 0);
                     of2.todo = tL_messageMediaToDo;
-                    of2.sendMessageChatArguments = unVar.L8();
+                    of2.sendMessageChatArguments = wnVar.O8();
                     of2.payStars = j10;
-                    of2.monoForumPeer = unVar.X8();
-                    of2.suggestionParams = unVar.s5;
-                    unVar.getSendMessagesHelper().sendMessage(of2);
-                    unVar.D6();
+                    of2.monoForumPeer = wnVar.a9();
+                    of2.suggestionParams = wnVar.w5;
+                    wnVar.getSendMessagesHelper().sendMessage(of2);
+                    wnVar.E6();
                     break;
                 }
                 break;
             default:
-                org.telegram.ui.un unVar2 = (org.telegram.ui.un) tiVar.f0;
+                org.telegram.ui.wn wnVar2 = (org.telegram.ui.wn) tiVar.f0;
                 TLRPC.TL_messageMediaPoll tL_messageMediaPoll = (TLRPC.TL_messageMediaPoll) messageMedia;
-                if (unVar2.m7()) {
+                if (wnVar2.o7()) {
                     long nextLong = Utilities.random.nextLong();
                     if (editable != null) {
                         CharSequence[] charSequenceArr = {editable};
-                        arrayList2 = unVar2.getMediaDataController().getEntities(charSequenceArr, true);
+                        arrayList2 = wnVar2.getMediaDataController().getEntities(charSequenceArr, true);
                         str = charSequenceArr[0].toString();
                     } else {
                         str = null;
                         arrayList2 = null;
                     }
-                    SendMessagesHelper.prepareSendingPoll(unVar2.getAccountInstance(), new sh.h(fVar, tL_messageMediaPoll, nextLong, str, arrayList2, arrayList), unVar2.f6, unVar2.z5, unVar2.j4, null, unVar2.x5, z10, i10, unVar2.L8(), j10, unVar2.X8(), unVar2.s5);
-                    unVar2.D6();
+                    SendMessagesHelper.prepareSendingPoll(wnVar2.getAccountInstance(), new sh.h(fVar, tL_messageMediaPoll, nextLong, str, arrayList2, arrayList), wnVar2.j6, wnVar2.D5, wnVar2.j4, null, wnVar2.B5, z10, i10, wnVar2.O8(), j10, wnVar2.a9(), wnVar2.w5);
+                    wnVar2.E6();
                     break;
                 }
                 break;
@@ -204,7 +204,7 @@ public final /* synthetic */ class dh implements nl, org.telegram.ui.ActionBar.b
             return;
         }
         org.telegram.ui.ActionBar.r2 r2Var = tiVar.f0;
-        if (r2Var == null || !(r2Var instanceof org.telegram.ui.un)) {
+        if (r2Var == null || !(r2Var instanceof org.telegram.ui.wn)) {
             ri riVar = tiVar.c2;
             if (riVar != null) {
                 riVar.z0(arrayList, charSequence, z10, i10, i11, j10, z11, j11);
@@ -212,22 +212,22 @@ public final /* synthetic */ class dh implements nl, org.telegram.ui.ActionBar.b
             }
             return;
         }
-        org.telegram.ui.un unVar = (org.telegram.ui.un) r2Var;
-        if (unVar.m7()) {
-            unVar.s8(charSequence, null);
-            SendMessagesHelper.prepareSendingAudioDocuments(unVar.getAccountInstance(), arrayList, charSequence != null ? charSequence : null, unVar.f6, unVar.z5, unVar.j4, null, z10, i10, i11, unVar.B5, unVar.L8(), j10, z11, j11);
-            unVar.D6();
+        org.telegram.ui.wn wnVar = (org.telegram.ui.wn) r2Var;
+        if (wnVar.o7()) {
+            wnVar.u8(charSequence, null);
+            SendMessagesHelper.prepareSendingAudioDocuments(wnVar.getAccountInstance(), arrayList, charSequence != null ? charSequence : null, wnVar.j6, wnVar.D5, wnVar.j4, null, z10, i10, i11, wnVar.F5, wnVar.O8(), j10, z11, j11);
+            wnVar.E6();
         }
     }
 
     @Override // oi.m
     public void k(int i10) {
-        ti.u(this.b, i10);
+        ti.s(this.b, i10);
     }
 
     @Override // org.telegram.messenger.AndroidUtilities.IntColorCallback
     public void run(int i10) {
-        ti.q(this.b, i10);
+        ti.v(this.b, i10);
     }
 
     @Override // oe.k

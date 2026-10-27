@@ -8,9 +8,9 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.Components.ds;
-import org.telegram.ui.Components.vw0;
+import org.telegram.ui.Components.ww0;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class s3 extends org.telegram.ui.ActionBar.k3 {
     public final r3 b;
@@ -28,10 +28,10 @@ public final class s3 extends org.telegram.ui.ActionBar.k3 {
         r3Var.setMultipleOnClick(false);
         r3Var.setOnBackClickListener(new p3(this, 0));
         r3Var.setOnSelectListener(new ai.e(this, 18));
-        vw0 vw0Var = new vw0(context, null);
-        this.containerView = vw0Var;
+        ww0 ww0Var = new ww0(context, null);
+        this.containerView = ww0Var;
         int i10 = this.backgroundPaddingLeft;
-        vw0Var.setPadding(i10, 0, i10, 0);
+        ww0Var.setPadding(i10, 0, i10, 0);
         this.containerView.addView(r3Var);
     }
 

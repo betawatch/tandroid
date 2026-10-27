@@ -3,12 +3,12 @@ package di;
 import android.content.Context;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.NotificationCenter;
-import org.telegram.ui.Components.mm0;
-import org.telegram.ui.un;
+import org.telegram.ui.Components.nm0;
+import org.telegram.ui.wn;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
-public abstract class p5 extends mm0 implements o7 {
+public abstract class p5 extends nm0 implements o7 {
     public final /* synthetic */ int f3;
     public final /* synthetic */ NotificationCenter.NotificationCenterDelegate g3;
 
@@ -27,9 +27,9 @@ public abstract class p5 extends mm0 implements o7 {
                 iArr[1] = getMeasuredHeight();
                 break;
             default:
-                un unVar = (un) this.g3;
-                iArr[0] = ((int) unVar.E9) - AndroidUtilities.dp(4.0f);
-                iArr[1] = org.telegram.messenger.t.B(3.0f, unVar.x0.getPaddingBottom(), unVar.x0.getMeasuredHeight());
+                wn wnVar = (wn) this.g3;
+                iArr[0] = ((int) wnVar.I9) - AndroidUtilities.dp(4.0f);
+                iArr[1] = org.telegram.messenger.t.B(3.0f, wnVar.x0.getPaddingBottom(), wnVar.x0.getMeasuredHeight());
                 break;
         }
     }

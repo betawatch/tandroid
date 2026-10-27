@@ -1,117 +1,29 @@
 package org.telegram.ui;
 
-import android.graphics.Canvas;
-import android.graphics.Path;
-import android.graphics.Rect;
-import android.graphics.RectF;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.FrameLayout;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLObject;
+import org.telegram.messenger.AccountInstance;
+import org.telegram.messenger.ImageLocation;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public final class p30 extends FrameLayout {
-    public final Rect a;
-    public final RectF b;
-    public final Path c;
-    public final /* synthetic */ v50 d;
+public final class p30 extends u4 {
+    public final /* synthetic */ x50 U;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public p30(v50 v50Var, LaunchActivity launchActivity) {
+    public p30(x50 x50Var, LaunchActivity launchActivity) {
         super(launchActivity);
-        this.d = v50Var;
-        this.a = new Rect();
-        this.b = new RectF();
-        this.c = new Path();
+        this.U = x50Var;
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        View childAt;
-        org.telegram.ui.Components.voip.t tVar;
-        v50 v50Var = this.d;
-        o30 o30Var = v50Var.b;
-        if (v50Var.d2 != 1.0f) {
-            if (v50Var.X2 != null && v50Var.b3) {
-                canvas.save();
-                float measuredHeight = (v50Var.X2.getAvatarImageView().getMeasuredHeight() / 2.0f) * (getMeasuredHeight() / v50Var.X2.getAvatarImageView().getMeasuredHeight());
-                float f7 = (1.0f - v50Var.d2) * measuredHeight;
-                float dp = AndroidUtilities.dp(13.0f);
-                float f10 = v50Var.d2;
-                int i10 = (int) ((dp * f10) + f7);
-                int i11 = (int) ((1.0f - f10) * measuredHeight);
-                v50Var.X2.getAvatarWavesDrawable().a(canvas, v50Var.X2.getAvatarImageView().getMeasuredHeight() / 2, v50Var.X2.getAvatarImageView().getMeasuredHeight() / 2, this);
-                v50Var.X2.getAvatarImageView().getImageReceiver().setImageCoords(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight());
-                v50Var.X2.getAvatarImageView().r(i10, i10, i11, i11);
-                v50Var.X2.getAvatarImageView().getImageReceiver().draw(canvas);
-                v50Var.X2.getAvatarImageView().setRoundRadius(v50Var.X2.getAvatarImageView().getMeasuredHeight() / 2);
-                canvas.restore();
-            } else if (v50Var.a3 != null && v50Var.Z2 == null && v50Var.O2) {
-                canvas.save();
-                float measuredHeight2 = (v50Var.a3.getAvatarImageView().getMeasuredHeight() / 2.0f) * (getMeasuredHeight() / v50Var.a3.getAvatarImageView().getMeasuredHeight());
-                float f11 = (1.0f - v50Var.d2) * measuredHeight2;
-                float dp2 = AndroidUtilities.dp(13.0f);
-                float f12 = v50Var.d2;
-                int i12 = (int) ((dp2 * f12) + f11);
-                int i13 = (int) ((1.0f - f12) * measuredHeight2);
-                v50Var.a3.getAvatarImageView().getImageReceiver().setImageCoords(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight());
-                v50Var.a3.getAvatarImageView().r(i12, i12, i13, i13);
-                v50Var.a3.getAvatarImageView().getImageReceiver().draw(canvas);
-                v50Var.a3.getAvatarImageView().setRoundRadius(v50Var.a3.getAvatarImageView().getMeasuredHeight() / 2);
-                canvas.restore();
-            }
+    @Override // org.telegram.ui.u4, org.telegram.ui.Components.ji0
+    public final void c() {
+        x50 x50Var = this.U;
+        AccountInstance accountInstance = x50Var.d;
+        q30 q30Var = x50Var.b;
+        long dialogId = q30Var.getDialogId();
+        if (dialogId > 0) {
+            TLRPC.User user = accountInstance.getMessagesController().getUser(Long.valueOf(dialogId));
+            q30Var.H(null, ImageLocation.getForUserOrChat(accountInstance.getCurrentAccount(), user, 0), ImageLocation.getForUserOrChat(accountInstance.getCurrentAccount(), user, 1), false);
         }
-        o30Var.setAlpha(v50Var.d2);
-        Path path = this.c;
-        path.reset();
-        float measuredHeight3 = getMeasuredHeight();
-        float measuredWidth = getMeasuredWidth();
-        RectF rectF = this.b;
-        rectF.set(0.0f, 0.0f, measuredHeight3, measuredWidth);
-        path.addRoundRect(rectF, new float[]{AndroidUtilities.dp(13.0f), AndroidUtilities.dp(13.0f), AndroidUtilities.dp(13.0f), AndroidUtilities.dp(13.0f), 0.0f, 0.0f, 0.0f, 0.0f}, Path.Direction.CCW);
-        canvas.save();
-        canvas.clipPath(path);
-        if (o30Var.i1) {
-            for (int i14 = 0; i14 < o30Var.getChildCount(); i14++) {
-                childAt = o30Var.getChildAt(i14);
-                if (childAt instanceof org.telegram.ui.Components.ki0) {
-                    break;
-                }
-            }
-        }
-        childAt = null;
-        if (childAt != null && (tVar = v50Var.Z2) != null && tVar.v && !v50Var.F2) {
-            canvas.save();
-            Rect rect = this.a;
-            rect.setEmpty();
-            o30Var.getChildVisibleRect(childAt, rect, null);
-            int i15 = rect.left;
-            if (i15 < (-o30Var.getMeasuredWidth())) {
-                i15 += o30Var.getMeasuredWidth() * 2;
-            } else if (i15 > o30Var.getMeasuredWidth()) {
-                i15 -= o30Var.getMeasuredWidth() * 2;
-            }
-            canvas.translate(i15, 0.0f);
-            v50Var.Z2.draw(canvas);
-            canvas.restore();
-        }
-        super.dispatchDraw(canvas);
-        canvas.restore();
-    }
-
-    @Override // android.view.View
-    public final void invalidate() {
-        ViewGroup viewGroup;
-        super.invalidate();
-        viewGroup = ((org.telegram.ui.ActionBar.k3) this.d).containerView;
-        viewGroup.invalidate();
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        int min = Math.min(View.MeasureSpec.getSize(i10), View.MeasureSpec.getSize(i11));
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(min, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(getPaddingBottom() + min, TLObject.FLAG_30));
     }
 }

@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.SendMessagesHelper;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
 public class WearReplyReceiver extends BroadcastReceiver {
     /* JADX INFO: Access modifiers changed from: private */
@@ -21,7 +21,7 @@ public class WearReplyReceiver extends BroadcastReceiver {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$onReceive$1(AccountInstance accountInstance, long j10, CharSequence charSequence, long j11, int i10, int[] iArr) {
-        AndroidUtilities.runOnUIThread(new yc(this, accountInstance, accountInstance.getMessagesStorage().getUserSync(j10), charSequence, j10, j11, i10, iArr, 2));
+        AndroidUtilities.runOnUIThread(new xc(this, accountInstance, accountInstance.getMessagesStorage().getUserSync(j10), charSequence, j10, j11, i10, iArr, 2));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -32,7 +32,7 @@ public class WearReplyReceiver extends BroadcastReceiver {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$onReceive$3(AccountInstance accountInstance, long j10, CharSequence charSequence, long j11, int i10, int[] iArr) {
-        AndroidUtilities.runOnUIThread(new yc(this, accountInstance, accountInstance.getMessagesStorage().getChatSync(-j10), charSequence, j10, j11, i10, iArr, 3));
+        AndroidUtilities.runOnUIThread(new xc(this, accountInstance, accountInstance.getMessagesStorage().getChatSync(-j10), charSequence, j10, j11, i10, iArr, 3));
     }
 
     private void sendMessage(AccountInstance accountInstance, CharSequence charSequence, long j10, long j11, int i10, int[] iArr) {
@@ -95,7 +95,7 @@ public class WearReplyReceiver extends BroadcastReceiver {
         if (DialogObject.isUserDialog(longExtra)) {
             if (accountInstance.getMessagesController().getUser(Long.valueOf(longExtra)) == null) {
                 final int i10 = 0;
-                Utilities.globalQueue.postRunnable(new Runnable(this) { // from class: org.telegram.messenger.xl
+                Utilities.globalQueue.postRunnable(new Runnable(this) { // from class: org.telegram.messenger.yl
                     public final /* synthetic */ WearReplyReceiver b;
 
                     {
@@ -118,7 +118,7 @@ public class WearReplyReceiver extends BroadcastReceiver {
             }
         } else if (DialogObject.isChatDialog(longExtra) && accountInstance.getMessagesController().getChat(Long.valueOf(-longExtra)) == null) {
             final int i11 = 1;
-            Utilities.globalQueue.postRunnable(new Runnable(this) { // from class: org.telegram.messenger.xl
+            Utilities.globalQueue.postRunnable(new Runnable(this) { // from class: org.telegram.messenger.yl
                 public final /* synthetic */ WearReplyReceiver b;
 
                 {

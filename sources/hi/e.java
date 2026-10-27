@@ -3,9 +3,9 @@ package hi;
 import android.content.Context;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.ActionBar.y6;
-import org.telegram.ui.b20;
+import org.telegram.ui.d20;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class e extends tg.x1 {
     public final /* synthetic */ int r;
@@ -38,19 +38,19 @@ public final class e extends tg.x1 {
                 w1Var2.c();
                 break;
             case 2:
-                b20 b20Var = new b20(50);
-                this.a = b20Var;
-                b20Var.O = 100;
-                b20Var.M = false;
-                b20Var.G = false;
-                b20Var.K = true;
-                b20Var.H = true;
-                b20Var.J = false;
-                b20Var.r = 4;
-                b20Var.w = 0.98f;
-                b20Var.v = 0.98f;
-                b20Var.u = 0.98f;
-                b20Var.c();
+                d20 d20Var = new d20(50);
+                this.a = d20Var;
+                d20Var.O = 100;
+                d20Var.M = false;
+                d20Var.G = false;
+                d20Var.K = true;
+                d20Var.H = true;
+                d20Var.J = false;
+                d20Var.r = 4;
+                d20Var.w = 0.98f;
+                d20Var.v = 0.98f;
+                d20Var.u = 0.98f;
+                d20Var.c();
                 break;
             case 3:
                 tg.w1 w1Var3 = this.a;

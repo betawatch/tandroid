@@ -24,15 +24,15 @@ import org.telegram.ui.ActionBar.r2;
 import org.telegram.ui.ActionBar.u6;
 import org.telegram.ui.ActionBar.y6;
 import org.telegram.ui.Cells.s1;
-import org.telegram.ui.Components.dl0;
-import org.telegram.ui.Components.fl0;
+import org.telegram.ui.Components.el0;
+import org.telegram.ui.Components.gl0;
 import org.telegram.ui.Components.j9;
 import org.telegram.ui.Components.t5;
 import org.telegram.ui.d3;
-import org.telegram.ui.l51;
-import org.telegram.ui.un;
+import org.telegram.ui.o51;
+import org.telegram.ui.wn;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class s0 {
     public static s0 B;
@@ -58,7 +58,7 @@ public final class s0 {
     public float q;
     public float r;
     public boolean s;
-    public final dl0 t;
+    public final el0 t;
     public boolean u;
     public final View v;
     public boolean w;
@@ -99,23 +99,23 @@ public final class s0 {
     /* JADX WARN: Type inference failed for: r15v3, types: [boolean] */
     /* JADX WARN: Type inference failed for: r5v38, types: [org.telegram.messenger.ImageReceiver] */
     /* JADX WARN: Type inference failed for: r5v39, types: [org.telegram.messenger.ImageReceiver] */
-    /* JADX WARN: Type inference failed for: r5v46, types: [org.telegram.ui.Components.xj0] */
-    /* JADX WARN: Type inference failed for: r5v50, types: [org.telegram.ui.Components.xj0] */
+    /* JADX WARN: Type inference failed for: r5v46, types: [org.telegram.ui.Components.yj0] */
+    /* JADX WARN: Type inference failed for: r5v50, types: [org.telegram.ui.Components.yj0] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public s0(Context context, r2 r2Var, fl0 fl0Var, View view, View view2, float f7, float f10, x0 x0Var, int i10, int i11, boolean z10) {
+    public s0(Context context, r2 r2Var, gl0 gl0Var, View view, View view2, float f7, float f10, x0 x0Var, int i10, int i11, boolean z10) {
         MessageObject messageObject;
         Context context2;
         View view3;
         v0 v0Var;
         long j10;
         MessageObject messageObject2;
-        fl0 fl0Var2;
+        gl0 gl0Var2;
         int i12;
         View view4;
         r2 r2Var2;
-        un unVar;
+        wn wnVar;
         int i13;
         float f11;
         float f12;
@@ -140,7 +140,7 @@ public final class s0 {
         int i18;
         int i19;
         boolean z11;
-        un unVar2;
+        wn wnVar2;
         TLRPC.TL_messageReactions tL_messageReactions;
         this.t = null;
         this.z = z10;
@@ -167,10 +167,10 @@ public final class s0 {
             v0Var = l4;
             j10 = 0;
             messageObject2 = messageObject;
-            fl0Var2 = fl0Var;
+            gl0Var2 = gl0Var;
             view4 = view;
             r2Var2 = r2Var;
-            s0 s0Var = new s0(context, r2Var2, fl0Var2, view4, view3, f7, f10, x0Var, i10, 1, true);
+            s0 s0Var = new s0(context, r2Var2, gl0Var2, view4, view3, f7, f10, x0Var, i10, 1, true);
             context2 = context;
             i12 = i10;
             this.f = s0Var;
@@ -181,21 +181,21 @@ public final class s0 {
             v0Var = l4;
             j10 = 0;
             messageObject2 = messageObject;
-            fl0Var2 = fl0Var;
+            gl0Var2 = gl0Var;
             i12 = i10;
             view4 = view;
             r2Var2 = r2Var;
         }
-        un unVar3 = r2Var2 instanceof un ? (un) r2Var2 : null;
-        if (fl0Var2 != null) {
-            r1 r1Var = fl0Var2.b;
+        wn wnVar3 = r2Var2 instanceof wn ? (wn) r2Var2 : null;
+        if (gl0Var2 != null) {
+            r1 r1Var = gl0Var2.b;
             int i20 = 0;
             while (true) {
                 if (i20 >= r1Var.getChildCount()) {
                     break;
                 }
-                if ((r1Var.getChildAt(i20) instanceof dl0) && ((dl0) r1Var.getChildAt(i20)).e.equals(this.p)) {
-                    this.t = (dl0) r1Var.getChildAt(i20);
+                if ((r1Var.getChildAt(i20) instanceof el0) && ((el0) r1Var.getChildAt(i20)).e.equals(this.p)) {
+                    this.t = (el0) r1Var.getChildAt(i20);
                     break;
                 }
                 i20++;
@@ -205,7 +205,7 @@ public final class s0 {
         if (i11 == 1) {
             Random random = new Random();
             ArrayList<TLRPC.MessagePeerReaction> arrayList = (messageObject2 == null || (tL_messageReactions = messageObject2.messageOwner.reactions) == null) ? null : tL_messageReactions.recent_reactions;
-            if (arrayList != null && unVar3 != null && unVar3.a() < j10) {
+            if (arrayList != null && wnVar3 != null && wnVar3.a() < j10) {
                 f11 = 0.0f;
                 int i22 = 0;
                 while (i22 < arrayList.size()) {
@@ -215,7 +215,7 @@ public final class s0 {
                         ImageReceiver imageReceiver = new ImageReceiver();
                         long peerId = MessageObject.getPeerId(arrayList.get(i22).peer_id);
                         if (peerId < j10) {
-                            unVar2 = unVar3;
+                            wnVar2 = wnVar3;
                             TLRPC.Chat chat = MessagesController.getInstance(i12).getChat(Long.valueOf(-peerId));
                             if (chat != null) {
                                 j9Var.k(i12, chat);
@@ -266,7 +266,7 @@ public final class s0 {
                                 this.x.add(r0Var);
                             }
                         } else {
-                            unVar2 = unVar3;
+                            wnVar2 = wnVar3;
                             TLRPC.User user = MessagesController.getInstance(i12).getUser(Long.valueOf(peerId));
                             if (user != null) {
                                 j9Var.m(i12, user);
@@ -286,20 +286,20 @@ public final class s0 {
                             }
                         }
                     } else {
-                        unVar2 = unVar3;
+                        wnVar2 = wnVar3;
                     }
                     i22++;
                     i12 = i10;
-                    unVar3 = unVar2;
+                    wnVar3 = wnVar2;
                     i21 = i23;
                 }
-                unVar = unVar3;
+                wnVar = wnVar3;
                 i13 = i21;
-                dl0 dl0Var = this.t;
-                ?? r10 = (dl0Var == null || !(f7 == f11 || f10 == f11)) ? i13 : 0;
+                el0 el0Var = this.t;
+                ?? r10 = (el0Var == null || !(f7 == f11 || f10 == f11)) ? i13 : 0;
                 if (view3 != null) {
-                    if (dl0Var != null) {
-                        dl0Var.getLocationOnScreen(this.j);
+                    if (el0Var != null) {
+                        el0Var.getLocationOnScreen(this.j);
                         float x9 = this.j[0] + this.t.b.getX();
                         float y3 = this.j[i13] + this.t.b.getY();
                         f12 = this.t.getScaleX() * this.t.b.getWidth();
@@ -360,7 +360,7 @@ public final class s0 {
                     int i29 = i15;
                     MessageObject messageObject4 = messageObject2;
                     r15 = i14;
-                    p0Var = new p0(this, context2, r2Var, view5, z10, messageObject4, unVar, i16, i11, r10, f27, f13, f14, x0Var);
+                    p0Var = new p0(this, context2, r2Var, view5, z10, messageObject4, wnVar, i16, i11, r10, f27, f13, f14, x0Var);
                     this.i = p0Var;
                     q0Var = new q0(this, context2);
                     this.b = q0Var;
@@ -524,8 +524,8 @@ public final class s0 {
                 f15 = iArr2[0];
                 f16 = iArr2[i13];
                 f12 = view3.getScaleX() * view3.getWidth();
-                if (view3 instanceof l51) {
-                    float f29 = ((l51) view3).G;
+                if (view3 instanceof o51) {
+                    float f29 = ((o51) view3).G;
                     if (f29 > f11) {
                         f12 = view3.getWidth() * ((f29 * 2.0f) + 1.0f);
                         f15 = org.telegram.messenger.t.y(f12, view3.getWidth(), 2.0f, f15);
@@ -549,7 +549,7 @@ public final class s0 {
                 int i292 = i15;
                 MessageObject messageObject42 = messageObject2;
                 r15 = i14;
-                p0Var = new p0(this, context2, r2Var, view52, z10, messageObject42, unVar, i16, i11, r10, f272, f13, f14, x0Var);
+                p0Var = new p0(this, context2, r2Var, view52, z10, messageObject42, wnVar, i16, i11, r10, f272, f13, f14, x0Var);
                 this.i = p0Var;
                 q0Var = new q0(this, context2);
                 this.b = q0Var;
@@ -603,11 +603,11 @@ public final class s0 {
                 frameLayout.setPivotY(i19);
             }
         }
-        unVar = unVar3;
+        wnVar = wnVar3;
         i13 = 1;
         f11 = 0.0f;
-        dl0 dl0Var2 = this.t;
-        if (dl0Var2 == null) {
+        el0 el0Var2 = this.t;
+        if (el0Var2 == null) {
         }
         if (view3 != null) {
         }
@@ -628,7 +628,7 @@ public final class s0 {
         int i2922 = i15;
         MessageObject messageObject422 = messageObject2;
         r15 = i14;
-        p0Var = new p0(this, context2, r2Var, view522, z10, messageObject422, unVar, i16, i11, r10, f2722, f13, f14, x0Var);
+        p0Var = new p0(this, context2, r2Var, view522, z10, messageObject422, wnVar, i16, i11, r10, f2722, f13, f14, x0Var);
         this.i = p0Var;
         q0Var = new q0(this, context2);
         this.b = q0Var;
@@ -707,7 +707,7 @@ public final class s0 {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static void d(r2 r2Var, fl0 fl0Var, View view, View view2, float f7, float f10, x0 x0Var, int i10, int i11) {
+    public static void d(r2 r2Var, gl0 gl0Var, View view, View view2, float f7, float f10, x0 x0Var, int i10, int i11) {
         if (view == null || x0Var == null || r2Var == null || r2Var.getParentActivity() == null) {
             return;
         }
@@ -716,17 +716,17 @@ public final class s0 {
             if (i11 == 2 || i11 == 0) {
                 d(r2Var, null, view, view2, 0.0f, 0.0f, x0Var, i10, 1);
             }
-            s0 s0Var = new s0(r2Var.getParentActivity(), r2Var, fl0Var, view, view2, f7, f10, x0Var, i10, i11, false);
+            s0 s0Var = new s0(r2Var.getParentActivity(), r2Var, gl0Var, view, view2, f7, f10, x0Var, i10, i11, false);
             if (i11 == 1) {
                 C = s0Var;
             } else {
                 B = s0Var;
             }
-            if (r2Var instanceof un) {
-                un unVar = (un) r2Var;
+            if (r2Var instanceof wn) {
+                wn wnVar = (wn) r2Var;
                 if (i11 != 0) {
                 }
-                o1 o1Var = unVar.c9;
+                o1 o1Var = wnVar.g9;
                 if (o1Var != null) {
                 }
             }

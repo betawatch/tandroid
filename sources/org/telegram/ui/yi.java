@@ -1,24 +1,39 @@
 package org.telegram.ui;
 
-import android.app.Activity;
-import java.util.ArrayList;
+import android.animation.ValueAnimator;
+import android.view.View;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public final class yi extends org.telegram.ui.Components.aw {
-    public final /* synthetic */ un W;
+public final class yi implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ org.telegram.ui.ActionBar.r2 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public yi(un unVar, org.telegram.ui.ActionBar.r2 r2Var, Activity activity, org.telegram.ui.ActionBar.u6 u6Var, ArrayList arrayList) {
-        super(r2Var, activity, u6Var, arrayList);
-        this.W = unVar;
+    public /* synthetic */ yi(int i10, org.telegram.ui.ActionBar.r2 r2Var) {
+        this.a = i10;
+        this.b = r2Var;
     }
 
-    @Override // org.telegram.ui.Components.aw, org.telegram.ui.ActionBar.k3, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.n2
-    public final void dismiss() {
-        super.dismiss();
-        un unVar = this.W;
-        unVar.getClass();
-        unVar.n8(false, true, 0.0f);
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        switch (this.a) {
+            case 0:
+                wn wnVar = (wn) this.b;
+                wnVar.Ba = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                wnVar.j1.invalidate();
+                break;
+            case 1:
+                ey eyVar = (ey) this.b;
+                eyVar.H0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                View view = eyVar.fragmentView;
+                if (view != null) {
+                    view.invalidate();
+                    break;
+                }
+                break;
+            default:
+                ((vc1) this.b).y0.setAlpha(((Float) valueAnimator.getAnimatedValue()).floatValue());
+                break;
+        }
     }
 }

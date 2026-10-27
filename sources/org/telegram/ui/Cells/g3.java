@@ -14,9 +14,9 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.ds;
-import org.telegram.ui.Components.gb1;
+import org.telegram.ui.Components.kb1;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public class g3 extends FrameLayout implements org.telegram.ui.ActionBar.p6 {
     public final org.telegram.ui.ActionBar.u6 a;
@@ -72,7 +72,7 @@ public class g3 extends FrameLayout implements org.telegram.ui.ActionBar.p6 {
         e3Var.setCursorWidth(1.5f);
         e3Var.addTextChangedListener(new f3(this, i10, z10));
         e3Var.setOnFocusChangeListener(new m.r2(this, 2));
-        addView(e3Var, gb1.i(-1, -1, 48));
+        addView(e3Var, kb1.i(-1, -1, 48));
         c();
     }
 

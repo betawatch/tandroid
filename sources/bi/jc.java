@@ -10,9 +10,9 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.gb1;
+import org.telegram.ui.Components.kb1;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class jc extends FrameLayout {
     public final org.telegram.ui.Components.s6 a;
@@ -26,12 +26,12 @@ public final class jc extends FrameLayout {
         this.a = s6Var;
         s6Var.getDrawable().r(true, true);
         s6Var.setTextSize(AndroidUtilities.dp(15.0f));
-        addView(s6Var, gb1.m(-1.0f, -1.0f, 8388627, 22.0f, 0.0f, 58.0f, 0.0f));
+        addView(s6Var, kb1.m(-1.0f, -1.0f, 8388627, 22.0f, 0.0f, 58.0f, 0.0f));
         ImageView imageView = new ImageView(context);
         this.b = imageView;
         imageView.setScaleType(ImageView.ScaleType.CENTER);
         imageView.setImageResource(R.drawable.arrow_more);
-        addView(imageView, gb1.m(24.0f, 24.0f, 8388629, 0.0f, 0.0f, 17.0f, 0.0f));
+        addView(imageView, kb1.m(24.0f, 24.0f, 8388629, 0.0f, 0.0f, 17.0f, 0.0f));
     }
 
     @Override // android.view.ViewGroup, android.view.View

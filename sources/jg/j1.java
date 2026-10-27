@@ -12,11 +12,11 @@ import org.telegram.ui.ActionBar.f7;
 import org.telegram.ui.ActionBar.r2;
 import org.telegram.ui.ActionBar.y6;
 import org.telegram.ui.Cells.a9;
-import org.telegram.ui.Components.gb1;
-import org.telegram.ui.Components.mm0;
-import org.telegram.ui.Components.r71;
+import org.telegram.ui.Components.kb1;
+import org.telegram.ui.Components.nm0;
+import org.telegram.ui.Components.s71;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class j1 extends r2 {
     public final CharSequence a;
@@ -26,7 +26,7 @@ public final class j1 extends r2 {
     public final int e;
     public ua f;
     public u2 h;
-    public r71 n;
+    public s71 n;
     public boolean r;
 
     public j1(CharSequence charSequence, ArrayList arrayList, int i10, int i11, int i12) {
@@ -59,17 +59,17 @@ public final class j1 extends r2 {
         this.simpleActionBar.setTitle(this.a);
         this.simpleActionBar.setActionBarMenuOnItemClick(new bh.m(this, 17));
         FrameLayout frameLayout = new FrameLayout(context);
-        r71 r71Var = new r71(this, new hi.e2(this, 12), new e1(this, 1), null);
-        this.n = r71Var;
-        r71Var.u1();
+        s71 s71Var = new s71(this, new hi.e2(this, 12), new e1(this, 1), null);
+        this.n = s71Var;
+        s71Var.u1();
         this.n.setSectionsDrawBackground(true);
-        frameLayout.addView(this.n, gb1.g(-1.0f, -1));
+        frameLayout.addView(this.n, kb1.g(-1.0f, -1));
         this.fragmentView = frameLayout;
         return frameLayout;
     }
 
     @Override // org.telegram.ui.ActionBar.r2
-    public final mm0 getListViewForSimpleGlass() {
+    public final nm0 getListViewForSimpleGlass() {
         return this.n;
     }
 

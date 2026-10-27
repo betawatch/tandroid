@@ -14,17 +14,17 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public class PollVotesAlert$UserCell extends LinearLayout implements org.telegram.ui.ActionBar.p6 {
     public ArrayList E;
-    public final /* synthetic */ nh0 F;
+    public final /* synthetic */ oh0 F;
     public final y9 a;
     public final org.telegram.ui.ActionBar.b6 b;
     public final TextView c;
     public final TextView d;
     public final j9 e;
-    public final qx0 f;
+    public final rx0 f;
     public TLRPC.User h;
     public TLRPC.Chat n;
     public CharSequence r;
@@ -35,9 +35,9 @@ public class PollVotesAlert$UserCell extends LinearLayout implements org.telegra
     public float y;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public PollVotesAlert$UserCell(nh0 nh0Var, Context context) {
+    public PollVotesAlert$UserCell(oh0 oh0Var, Context context) {
         super(context);
-        this.F = nh0Var;
+        this.F = oh0Var;
         this.s = UserConfig.selectedAccount;
         this.y = 1.0f;
         setOrientation(0);
@@ -48,7 +48,7 @@ public class PollVotesAlert$UserCell extends LinearLayout implements org.telegra
         y9 y9Var = new y9(context);
         this.a = y9Var;
         y9Var.setRoundRadius(AndroidUtilities.dp(18.0f));
-        addView(y9Var, gb1.x(34, 34, 16, 0, 0, 11, 0));
+        addView(y9Var, kb1.x(34, 34, 16, 0, 0, 11, 0));
         org.telegram.ui.ActionBar.b6 b6Var = new org.telegram.ui.ActionBar.b6(context);
         this.b = b6Var;
         int i10 = org.telegram.ui.ActionBar.y6.j5;
@@ -56,18 +56,18 @@ public class PollVotesAlert$UserCell extends LinearLayout implements org.telegra
         b6Var.setTypeface(AndroidUtilities.bold());
         b6Var.setTextSize(16);
         b6Var.setGravity((LocaleController.isRTL ? 5 : 3) | 16);
-        addView(b6Var, gb1.t(0, 24, 1.0f, 16, 0, 0, 0, 0));
+        addView(b6Var, kb1.t(0, 24, 1.0f, 16, 0, 0, 0, 0));
         TextView textView = new TextView(context);
         this.c = textView;
         org.telegram.ui.ActionBar.f7.V(textView, org.telegram.ui.ActionBar.y6.r5, null);
         textView.setTextSize(1, 13.0f);
-        addView(textView, gb1.t(-2, -2, 0.0f, 21, 4, 0, 2, 0));
+        addView(textView, kb1.t(-2, -2, 0.0f, 21, 4, 0, 2, 0));
         TextView textView2 = new TextView(context);
         this.d = textView2;
         org.telegram.ui.ActionBar.f7.V(textView2, i10, null);
         textView2.setTextSize(1, 13.0f);
-        addView(textView2, gb1.t(-2, -2, 0.0f, 21, 2, 0, 4, 0));
-        this.f = new qx0(20, b6Var);
+        addView(textView2, kb1.t(-2, -2, 0.0f, 21, 2, 0, 4, 0));
+        this.f = new rx0(20, b6Var);
     }
 
     @Override // org.telegram.ui.ActionBar.p6
@@ -103,10 +103,10 @@ public class PollVotesAlert$UserCell extends LinearLayout implements org.telegra
         int dp3;
         int dp4;
         if (this.x || this.y != 0.0f) {
-            nh0 nh0Var = this.F;
-            nh0Var.G.setAlpha((int) (this.y * 255.0f));
+            oh0 oh0Var = this.F;
+            oh0Var.G.setAlpha((int) (this.y * 255.0f));
             y9 y9Var = this.a;
-            canvas.drawCircle((y9Var.getMeasuredWidth() / 2) + y9Var.getLeft(), (y9Var.getMeasuredHeight() / 2) + y9Var.getTop(), y9Var.getMeasuredWidth() / 2, nh0Var.G);
+            canvas.drawCircle((y9Var.getMeasuredWidth() / 2) + y9Var.getLeft(), (y9Var.getMeasuredHeight() / 2) + y9Var.getTop(), y9Var.getMeasuredWidth() / 2, oh0Var.G);
             if (this.w % 2 == 0) {
                 dp = AndroidUtilities.dp(65.0f);
                 dp2 = AndroidUtilities.dp(48.0f);
@@ -117,8 +117,8 @@ public class PollVotesAlert$UserCell extends LinearLayout implements org.telegra
             if (LocaleController.isRTL) {
                 dp = (getMeasuredWidth() - dp) - dp2;
             }
-            nh0Var.M.set(dp, r5 - AndroidUtilities.dp(4.0f), dp + dp2, AndroidUtilities.dp(4.0f) + r5);
-            canvas.drawRoundRect(nh0Var.M, AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), nh0Var.G);
+            oh0Var.M.set(dp, r5 - AndroidUtilities.dp(4.0f), dp + dp2, AndroidUtilities.dp(4.0f) + r5);
+            canvas.drawRoundRect(oh0Var.M, AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), oh0Var.G);
             if (this.w % 2 == 0) {
                 dp3 = AndroidUtilities.dp(119.0f);
                 dp4 = AndroidUtilities.dp(60.0f);
@@ -129,8 +129,8 @@ public class PollVotesAlert$UserCell extends LinearLayout implements org.telegra
             if (LocaleController.isRTL) {
                 dp3 = (getMeasuredWidth() - dp3) - dp4;
             }
-            nh0Var.M.set(dp3, r5 - AndroidUtilities.dp(4.0f), dp3 + dp4, AndroidUtilities.dp(4.0f) + r5);
-            canvas.drawRoundRect(nh0Var.M, AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), nh0Var.G);
+            oh0Var.M.set(dp3, r5 - AndroidUtilities.dp(4.0f), dp3 + dp4, AndroidUtilities.dp(4.0f) + r5);
+            canvas.drawRoundRect(oh0Var.M, AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), oh0Var.G);
         }
         if (this.v) {
             canvas.drawLine(LocaleController.isRTL ? 0.0f : AndroidUtilities.dp(64.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (LocaleController.isRTL ? AndroidUtilities.dp(64.0f) : 0), getMeasuredHeight() - 1, org.telegram.ui.ActionBar.y6.k0);
@@ -150,10 +150,10 @@ public class PollVotesAlert$UserCell extends LinearLayout implements org.telegra
     @Override // org.telegram.ui.ActionBar.p6
     public final void updateColors() {
         org.telegram.ui.ActionBar.u6 u6Var;
-        qx0 qx0Var = this.f;
-        if (qx0Var != null) {
+        rx0 rx0Var = this.f;
+        if (rx0Var != null) {
             try {
-                r5 r5Var = qx0Var.a;
+                r5 r5Var = rx0Var.a;
                 if (!(r5Var != null) || r5Var.F == null) {
                     return;
                 }

@@ -14,7 +14,7 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public abstract /* synthetic */ class d3 {
     public static float A(float f7, float f10, float f11, float f12) {
@@ -115,8 +115,8 @@ public abstract /* synthetic */ class d3 {
         arrayList2.add(num);
     }
 
-    public static void s(int i10, org.telegram.ui.Components.z90 z90Var) {
-        z90Var.setText(AndroidUtilities.replaceTags(LocaleController.getString(i10)));
+    public static void s(int i10, org.telegram.ui.Components.aa0 aa0Var) {
+        aa0Var.setText(AndroidUtilities.replaceTags(LocaleController.getString(i10)));
     }
 
     public static void t(FrameLayout frameLayout, org.telegram.ui.ActionBar.u6 u6Var, TLRPC.TL_error tL_error, boolean z10) {

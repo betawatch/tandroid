@@ -19,7 +19,7 @@ import java.util.List;
 import w3.l;
 import z3.k;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
 public final class a implements o {
     public q b;
@@ -111,7 +111,7 @@ public final class a implements o {
                     this.f = 1;
                 }
             } else if (i10 == 1) {
-                pVar.q((int) (this.h - this.i));
+                pVar.r((int) (this.h - this.i));
                 this.i = 0;
                 this.f = 0;
             } else {

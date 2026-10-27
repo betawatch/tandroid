@@ -14,10 +14,10 @@ import e2.n0;
 import java.nio.ByteBuffer;
 import java.util.ArrayList;
 import li.h5;
-import org.telegram.ui.Wallet.q6;
+import org.telegram.ui.Wallet.a6;
 import org.telegram.ui.web.h1;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
 public final class c implements l {
     public final MediaCodec a;
@@ -248,18 +248,18 @@ public final class c implements l {
     }
 
     @Override // r2.l
-    public final void o(ArrayList arrayList) {
-        this.a.subscribeToVendorParameters(arrayList);
+    public final void o(a6 a6Var) {
+        f fVar = this.b;
+        a6 a6Var2 = new a6(24, this, a6Var);
+        synchronized (fVar.a) {
+            fVar.b();
+            a6Var2.run();
+        }
     }
 
     @Override // r2.l
-    public final void p(q6 q6Var) {
-        f fVar = this.b;
-        q6 q6Var2 = new q6(23, this, q6Var);
-        synchronized (fVar.a) {
-            fVar.b();
-            q6Var2.run();
-        }
+    public final void p(ArrayList arrayList) {
+        this.a.subscribeToVendorParameters(arrayList);
     }
 
     @Override // r2.l

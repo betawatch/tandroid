@@ -35,14 +35,14 @@ import org.telegram.ui.ActionBar.p6;
 import org.telegram.ui.ActionBar.u6;
 import org.telegram.ui.ActionBar.y6;
 import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.Components.a51;
+import org.telegram.ui.Components.b51;
 import org.telegram.ui.Components.ds;
-import org.telegram.ui.Components.gb1;
 import org.telegram.ui.Components.h6;
-import org.telegram.ui.Components.ll0;
+import org.telegram.ui.Components.kb1;
+import org.telegram.ui.Components.ml0;
 import org.telegram.ui.Components.x30;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public abstract class i extends ScrollView implements p6 {
     public final LinearGradient E;
@@ -95,7 +95,7 @@ public abstract class i extends ScrollView implements p6 {
         AndroidUtilities.setScrollViewEdgeEffectColor(this, x02);
         j9 j9Var = new j9(this, context);
         this.d = j9Var;
-        addView(j9Var, gb1.g(-2.0f, -1));
+        addView(j9Var, kb1.g(-2.0f, -1));
         c2 c2Var = new c2(this, context, 11);
         this.b = c2Var;
         if (Build.VERSION.SDK_INT >= 25) {
@@ -146,7 +146,7 @@ public abstract class i extends ScrollView implements p6 {
             j9Var.c = false;
             AnimatorSet animatorSet = new AnimatorSet();
             j9Var.b = animatorSet;
-            animatorSet.addListener(new ll0(22, j9Var, x30Var));
+            animatorSet.addListener(new ml0(22, j9Var, x30Var));
             ArrayList arrayList = j9Var.h;
             arrayList.clear();
             arrayList.add(x30Var);
@@ -218,7 +218,7 @@ public abstract class i extends ScrollView implements p6 {
                     obj = user;
                     if (obj != null) {
                         x30 x30Var2 = new x30(getContext(), obj, null, true, this.a);
-                        x30Var2.setOnClickListener(new a51(this, hashSet, runnable, 3));
+                        x30Var2.setOnClickListener(new b51(this, hashSet, runnable, 3));
                         arrayList5.add(x30Var2);
                     }
                 } else {

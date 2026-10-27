@@ -22,46 +22,46 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public final class lx implements org.telegram.ui.dt {
+public final class lx implements org.telegram.ui.ft {
     public final /* synthetic */ sz a;
 
     public lx(sz szVar) {
         this.a = szVar;
     }
 
-    @Override // org.telegram.ui.dt
+    @Override // org.telegram.ui.ft
     public final /* synthetic */ boolean A() {
         return false;
     }
 
-    @Override // org.telegram.ui.dt
+    @Override // org.telegram.ui.ft
     public final void B(TLRPC.Document document) {
         org.telegram.ui.ActionBar.r2 r2Var = this.a.Y1;
-        if (r2Var instanceof org.telegram.ui.un) {
-            ((org.telegram.ui.un) r2Var).lb(document);
+        if (r2Var instanceof org.telegram.ui.wn) {
+            ((org.telegram.ui.wn) r2Var).pb(document);
         }
     }
 
-    @Override // org.telegram.ui.dt
+    @Override // org.telegram.ui.ft
     public final boolean C() {
         return true;
     }
 
-    @Override // org.telegram.ui.dt
+    @Override // org.telegram.ui.ft
     public final boolean D(TLRPC.Document document) {
         return true;
     }
 
-    @Override // org.telegram.ui.dt
+    @Override // org.telegram.ui.ft
     public final void E(TLRPC.Document document) {
         TLRPC.TL_stickers_removeStickerFromSet tL_stickers_removeStickerFromSet = new TLRPC.TL_stickers_removeStickerFromSet();
         tL_stickers_removeStickerFromSet.sticker = MediaDataController.getInputStickerSetItem(document, "").document;
         ConnectionsManager.getInstance(this.a.c1).sendRequest(tL_stickers_removeStickerFromSet, new b2(this, 4));
     }
 
-    @Override // org.telegram.ui.dt
+    @Override // org.telegram.ui.ft
     public final String F(boolean z10) {
         sz szVar = this.a;
         if (z10) {
@@ -80,33 +80,33 @@ public final class lx implements org.telegram.ui.dt {
         return null;
     }
 
-    @Override // org.telegram.ui.dt
+    @Override // org.telegram.ui.ft
     public final void G(TLRPC.Document document) {
         SpannableStringBuilder valueOf = SpannableStringBuilder.valueOf(MessageObject.findAnimatedEmojiEmoticon(document));
         valueOf.setSpan(new c6(document, (Paint.FontMetricsInt) null), 0, valueOf.length(), 33);
         if (AndroidUtilities.addToClipboard(valueOf)) {
             sz szVar = this.a;
             org.telegram.ui.ActionBar.r2 r2Var = szVar.Y1;
-            org.telegram.messenger.vh.m(R.string.EmojiCopied, r2Var != null ? wc.b0(r2Var) : new wc(szVar.r, szVar.Z1));
+            org.telegram.messenger.wh.m(R.string.EmojiCopied, r2Var != null ? wc.b0(r2Var) : new wc(szVar.r, szVar.Z1));
         }
     }
 
-    @Override // org.telegram.ui.dt
+    @Override // org.telegram.ui.ft
     public final /* synthetic */ boolean H() {
         return false;
     }
 
-    @Override // org.telegram.ui.dt
+    @Override // org.telegram.ui.ft
     public final /* synthetic */ boolean I() {
         return false;
     }
 
-    @Override // org.telegram.ui.dt
+    @Override // org.telegram.ui.ft
     public final void K() {
-        this.a.W();
+        this.a.X();
     }
 
-    @Override // org.telegram.ui.dt
+    @Override // org.telegram.ui.ft
     public final void L(TLRPC.InputStickerSet inputStickerSet, boolean z10) {
         if (inputStickerSet == null) {
             return;
@@ -114,7 +114,7 @@ public final class lx implements org.telegram.ui.dt {
         this.a.t1.d(null, inputStickerSet, false);
     }
 
-    @Override // org.telegram.ui.dt
+    @Override // org.telegram.ui.ft
     public final boolean M(TLRPC.Document document) {
         if (document == null) {
             return false;
@@ -125,7 +125,7 @@ public final class lx implements org.telegram.ui.dt {
         return arrayList.contains(sb2.toString());
     }
 
-    @Override // org.telegram.ui.dt
+    @Override // org.telegram.ui.ft
     public final Boolean P(TLRPC.Document document) {
         TLRPC.User currentUser;
         if (!UserConfig.getInstance(UserConfig.selectedAccount).isPremium() || (currentUser = UserConfig.getInstance(UserConfig.selectedAccount).getCurrentUser()) == null) {
@@ -135,81 +135,81 @@ public final class lx implements org.telegram.ui.dt {
         return Boolean.valueOf(document != null && (emojiStatusDocumentId == null || emojiStatusDocumentId.longValue() != document.id));
     }
 
-    @Override // org.telegram.ui.dt
+    @Override // org.telegram.ui.ft
     public final /* synthetic */ boolean Q() {
         return true;
     }
 
-    @Override // org.telegram.ui.dt
+    @Override // org.telegram.ui.ft
     public final long a() {
         return this.a.t1.a();
     }
 
-    @Override // org.telegram.ui.dt
+    @Override // org.telegram.ui.ft
     public final boolean b() {
         return this.a.t1.b();
     }
 
-    @Override // org.telegram.ui.dt
+    @Override // org.telegram.ui.ft
     public final boolean c() {
         return this.a.t1.c();
     }
 
-    @Override // org.telegram.ui.dt
+    @Override // org.telegram.ui.ft
     public final /* synthetic */ TLRPC.TL_messageMediaPoll d() {
         return null;
     }
 
-    @Override // org.telegram.ui.dt
+    @Override // org.telegram.ui.ft
     public final boolean e(TLRPC.Document document) {
         return this.a.t1.j();
     }
 
-    @Override // org.telegram.ui.dt
+    @Override // org.telegram.ui.ft
     public final /* synthetic */ boolean f() {
         return false;
     }
 
-    @Override // org.telegram.ui.dt
+    @Override // org.telegram.ui.ft
     public final /* synthetic */ TLRPC.PollAnswer g() {
         return null;
     }
 
-    @Override // org.telegram.ui.dt
+    @Override // org.telegram.ui.ft
     public final boolean h() {
         sz szVar = this.a;
         return (szVar.Y1 == null && szVar.u0) ? false : true;
     }
 
-    @Override // org.telegram.ui.dt
-    public final /* synthetic */ k80 i(bh.p pVar) {
+    @Override // org.telegram.ui.ft
+    public final /* synthetic */ l80 i(bh.p pVar) {
         return null;
     }
 
-    @Override // org.telegram.ui.dt
+    @Override // org.telegram.ui.ft
     public final /* synthetic */ boolean k() {
         return false;
     }
 
-    @Override // org.telegram.ui.dt
+    @Override // org.telegram.ui.ft
     public final boolean l(int i10) {
         if (i10 != 2) {
             return true;
         }
         sz szVar = this.a;
         org.telegram.ui.ActionBar.r2 r2Var = szVar.Y1;
-        if ((r2Var instanceof org.telegram.ui.un) && ((org.telegram.ui.un) r2Var).J6()) {
-            return UserConfig.getInstance(UserConfig.selectedAccount).isPremium() || (((org.telegram.ui.un) szVar.Y1).i() != null && UserObject.isUserSelf(((org.telegram.ui.un) szVar.Y1).i()));
+        if ((r2Var instanceof org.telegram.ui.wn) && ((org.telegram.ui.wn) r2Var).L6()) {
+            return UserConfig.getInstance(UserConfig.selectedAccount).isPremium() || (((org.telegram.ui.wn) szVar.Y1).i() != null && UserObject.isUserSelf(((org.telegram.ui.wn) szVar.Y1).i()));
         }
         return false;
     }
 
-    @Override // org.telegram.ui.dt
+    @Override // org.telegram.ui.ft
     public final void m(TLRPC.Document document, String str, Object obj, boolean z10, int i10, int i11) {
         this.a.t1.m(null, document, str, obj, null, z10, i10);
     }
 
-    @Override // org.telegram.ui.dt
+    @Override // org.telegram.ui.ft
     public final void o(TLRPC.Document document) {
         TLRPC.InputStickerSet inputStickerSet;
         int i10 = 0;
@@ -226,15 +226,15 @@ public final class lx implements org.telegram.ui.dt {
             }
         }
         sz szVar = this.a;
-        cz0.q0(szVar.Y1, MediaDataController.getInstance(szVar.c1).getStickerSet(inputStickerSet, true), document);
+        dz0.q0(szVar.Y1, MediaDataController.getInstance(szVar.c1).getStickerSet(inputStickerSet, true), document);
     }
 
-    @Override // org.telegram.ui.dt
+    @Override // org.telegram.ui.ft
     public final /* synthetic */ boolean p() {
         return false;
     }
 
-    @Override // org.telegram.ui.dt
+    @Override // org.telegram.ui.ft
     public final void q(TLRPC.Document document) {
         if (document != null) {
             Emoji.removeRecentEmoji("animated_" + document.id);
@@ -245,7 +245,7 @@ public final class lx implements org.telegram.ui.dt {
         }
     }
 
-    @Override // org.telegram.ui.dt
+    @Override // org.telegram.ui.ft
     public final void s(int i10, int i11, Object obj, TLObject tLObject, boolean z10) {
         sz szVar = this.a;
         uw uwVar = szVar.h0;
@@ -256,7 +256,7 @@ public final class lx implements org.telegram.ui.dt {
         }
     }
 
-    @Override // org.telegram.ui.dt
+    @Override // org.telegram.ui.ft
     public final void t() {
         dy dyVar = this.a.P;
         if (dyVar == null || dyVar.m3 == null) {
@@ -278,7 +278,7 @@ public final class lx implements org.telegram.ui.dt {
         }
     }
 
-    @Override // org.telegram.ui.dt
+    @Override // org.telegram.ui.ft
     public final void u(TLRPC.Document document) {
         TLRPC.EmojiStatus emojiStatus;
         sz szVar = this.a;
@@ -318,7 +318,7 @@ public final class lx implements org.telegram.ui.dt {
         }
     }
 
-    @Override // org.telegram.ui.dt
+    @Override // org.telegram.ui.ft
     public final void w(TLObject tLObject, Object obj) {
         sz szVar = this.a;
         uw uwVar = szVar.h0;
@@ -327,45 +327,45 @@ public final class lx implements org.telegram.ui.dt {
         }
     }
 
-    @Override // org.telegram.ui.dt
+    @Override // org.telegram.ui.ft
     public final /* synthetic */ boolean x() {
         return true;
     }
 
-    @Override // org.telegram.ui.dt
+    @Override // org.telegram.ui.ft
     public final /* synthetic */ MessageObject z() {
         return null;
     }
 
-    @Override // org.telegram.ui.dt
+    @Override // org.telegram.ui.ft
     public final /* synthetic */ void J() {
     }
 
-    @Override // org.telegram.ui.dt
+    @Override // org.telegram.ui.ft
     public final /* synthetic */ void r() {
     }
 
-    @Override // org.telegram.ui.dt
+    @Override // org.telegram.ui.ft
     public final /* synthetic */ void N(String str) {
     }
 
-    @Override // org.telegram.ui.dt
+    @Override // org.telegram.ui.ft
     public final /* synthetic */ void j(SendMessagesHelper.ImportingSticker importingSticker) {
     }
 
-    @Override // org.telegram.ui.dt
+    @Override // org.telegram.ui.ft
     public final /* synthetic */ void n(String str) {
     }
 
-    @Override // org.telegram.ui.dt
+    @Override // org.telegram.ui.ft
     public final /* synthetic */ void y(String str) {
     }
 
-    @Override // org.telegram.ui.dt
+    @Override // org.telegram.ui.ft
     public final /* synthetic */ void v(TLRPC.StickerSet stickerSet, String str) {
     }
 
-    @Override // org.telegram.ui.dt
+    @Override // org.telegram.ui.ft
     public final /* synthetic */ void O(CharSequence charSequence, String str, oy oyVar) {
     }
 }

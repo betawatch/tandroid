@@ -1,42 +1,70 @@
 package org.telegram.ui;
 
-import android.content.DialogInterface;
+import org.telegram.messenger.MediaController;
+import org.telegram.messenger.MediaDataController;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class fg implements DialogInterface.OnCancelListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+public final /* synthetic */ class fg implements Runnable {
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ wn b;
+    public final /* synthetic */ boolean c;
+    public final /* synthetic */ long d;
 
-    public /* synthetic */ fg(Object obj, int i10) {
-        this.a = i10;
-        this.b = obj;
+    public /* synthetic */ fg(wn wnVar, long j10, boolean z10) {
+        this.b = wnVar;
+        this.d = j10;
+        this.c = z10;
     }
 
-    @Override // android.content.DialogInterface.OnCancelListener
-    public final void onCancel(DialogInterface dialogInterface) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                un unVar = (un) this.b;
-                unVar.n9 = true;
-                unVar.l9 = 0;
-                unVar.Mb = 0;
-                unVar.Z4 = 0;
-                unVar.z9();
-                unVar.Zb(false);
-                break;
-            case 1:
-                mo moVar = (mo) this.b;
-                moVar.L0 = false;
-                moVar.b = null;
-                moVar.M0 = false;
-                break;
-            case 2:
-                ((np) this.b).n = null;
+                wn.u0(this.b, this.d, this.c);
                 break;
             default:
-                ((lb0) this.b).b();
+                jk jkVar = this.b.Y;
+                if (jkVar != null) {
+                    MediaController mediaController = MediaController.getInstance();
+                    if (!jkVar.Y1 && !jkVar.F2 && mediaController.isRecordingAudio() && !mediaController.isRecordingPaused() && mediaController.getRecordingGuid() == jkVar.G2) {
+                        jkVar.c1 = false;
+                        org.telegram.ui.Components.ve veVar = jkVar.b1;
+                        if (veVar != null) {
+                            veVar.j(org.telegram.ui.Components.yg.a, false);
+                        }
+                        jkVar.F2 = true;
+                        jkVar.I1(0, true);
+                        if (this.c) {
+                            jkVar.O = true;
+                            org.telegram.ui.Components.sg sgVar = jkVar.O1;
+                            if (sgVar != null) {
+                                sgVar.y.d(1, true, false);
+                            }
+                            MediaDataController mediaDataController = MediaDataController.getInstance(jkVar.Q);
+                            long j10 = jkVar.Q2;
+                            wn wnVar = jkVar.P2;
+                            mediaDataController.toggleDraftVoiceOnce(j10, (wnVar == null || !wnVar.t4) ? 0L : wnVar.b(), true);
+                        }
+                        long j11 = this.d;
+                        long currentTimeMillis = j11 > 0 ? System.currentTimeMillis() - j11 : mediaController.recordTimeCount;
+                        jkVar.i1 = currentTimeMillis;
+                        org.telegram.ui.Components.xg xgVar = jkVar.Y0;
+                        if (xgVar != null) {
+                            xgVar.a(currentTimeMillis);
+                        }
+                        jkVar.s4 = true;
+                        jkVar.u1();
+                        break;
+                    }
+                }
                 break;
         }
+    }
+
+    public /* synthetic */ fg(wn wnVar, boolean z10, long j10) {
+        this.b = wnVar;
+        this.c = z10;
+        this.d = j10;
     }
 }

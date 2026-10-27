@@ -1,83 +1,30 @@
 package org.telegram.messenger;
 
-import java.util.HashSet;
-import java.util.Set;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.TranslateController;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class sa implements RequestDelegate {
+public final /* synthetic */ class sa implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ BaseController d;
-    public final /* synthetic */ Object e;
-    public final /* synthetic */ Object f;
+    public final /* synthetic */ MessagesController b;
+    public final /* synthetic */ ag.y c;
 
-    public /* synthetic */ sa(BaseController baseController, Object obj, boolean z10, long j10, Object obj2, int i10) {
+    public /* synthetic */ sa(MessagesController messagesController, ag.y yVar, int i10) {
         this.a = i10;
-        this.d = baseController;
-        this.e = obj;
-        this.b = z10;
-        this.c = j10;
-        this.f = obj2;
+        this.b = messagesController;
+        this.c = yVar;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                ((MessagesController) this.d).lambda$getSendAsPeers$448((a0.h) this.e, this.c, (MessagesController.SendAsPeersInfo) this.f, this.b, tLObject, tL_error);
+                this.b.lambda$processUpdateArray$405(this.c);
                 break;
             case 1:
-                TranslateController translateController = (TranslateController) this.d;
-                TranslateController.PendingTranslation pendingTranslation = (TranslateController.PendingTranslation) this.e;
-                Set set = (Set) this.f;
-                translateController.lambda$pushToTranslate$23(pendingTranslation, this.b, this.c, set, tLObject, tL_error);
-                break;
-            case 2:
-                ((ChatThemeController) this.d).lambda$setWallpaperToPeer$17(this.c, this.b, (String) this.e, (Runnable) this.f, tLObject, tL_error);
-                break;
-            case 3:
-                MemberRequestsController memberRequestsController = (MemberRequestsController) this.d;
-                TLRPC.TL_chatInviteImporter tL_chatInviteImporter = (TLRPC.TL_chatInviteImporter) this.e;
-                RequestDelegate requestDelegate = (RequestDelegate) this.f;
-                memberRequestsController.lambda$getImporters$1(tL_chatInviteImporter, this.b, this.c, requestDelegate, tLObject, tL_error);
+                this.b.lambda$processUpdateArray$408(this.c);
                 break;
             default:
-                ((TopicsController) this.d).lambda$reloadTopics$16(this.b, this.c, (HashSet) this.e, (Runnable) this.f, tLObject, tL_error);
+                this.b.lambda$processUpdateArray$410(this.c);
                 break;
         }
-    }
-
-    public /* synthetic */ sa(ChatThemeController chatThemeController, long j10, boolean z10, String str, Runnable runnable) {
-        this.a = 2;
-        this.d = chatThemeController;
-        this.c = j10;
-        this.b = z10;
-        this.e = str;
-        this.f = runnable;
-    }
-
-    public /* synthetic */ sa(MessagesController messagesController, a0.h hVar, long j10, MessagesController.SendAsPeersInfo sendAsPeersInfo, boolean z10) {
-        this.a = 0;
-        this.d = messagesController;
-        this.e = hVar;
-        this.c = j10;
-        this.f = sendAsPeersInfo;
-        this.b = z10;
-    }
-
-    public /* synthetic */ sa(TopicsController topicsController, boolean z10, long j10, HashSet hashSet, Runnable runnable) {
-        this.a = 4;
-        this.d = topicsController;
-        this.b = z10;
-        this.c = j10;
-        this.e = hashSet;
-        this.f = runnable;
     }
 }

@@ -9,9 +9,9 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import org.telegram.messenger.R;
 import org.telegram.ui.Components.ds;
-import org.telegram.ui.Components.gb1;
+import org.telegram.ui.Components.kb1;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class b6 extends LinearLayout {
     public final TextView a;
@@ -34,7 +34,7 @@ public final class b6 extends LinearLayout {
         setBackground(org.telegram.ui.ActionBar.y6.g0(org.telegram.ui.ActionBar.y6.w0(i10, s5Var), 2, -1));
         bh.p pVar = new bh.p(this, context);
         this.b = pVar;
-        addView(pVar, gb1.x(-2, -2, 19, 16, 0, 16, 0));
+        addView(pVar, kb1.x(-2, -2, 19, 16, 0, 16, 0));
         ImageView imageView = new ImageView(context);
         this.c = imageView;
         ImageView.ScaleType scaleType = ImageView.ScaleType.CENTER;
@@ -43,25 +43,25 @@ public final class b6 extends LinearLayout {
         int i11 = org.telegram.ui.ActionBar.y6.E8;
         PorterDuff.Mode mode = PorterDuff.Mode.SRC_ATOP;
         org.telegram.ui.ActionBar.f7.t(imageView2, i11, s5Var, mode);
-        pVar.addView(this.c, gb1.i(-2, -2, 17));
+        pVar.addView(this.c, kb1.i(-2, -2, 17));
         ImageView imageView3 = new ImageView(context);
         this.d = imageView3;
         imageView3.setScaleType(scaleType);
         org.telegram.ui.ActionBar.f7.t(this.d, i11, s5Var, mode);
         this.d.setVisibility(8);
-        pVar.addView(this.d, gb1.i(-2, -2, 17));
+        pVar.addView(this.d, kb1.i(-2, -2, 17));
         TextView textView = new TextView(context);
         this.a = textView;
         org.telegram.ui.ActionBar.f7.V(textView, i11, s5Var);
         textView.setTextSize(1, 16.0f);
-        addView(textView, gb1.x(-2, -2, 19, 0, 0, 16, 0));
+        addView(textView, kb1.x(-2, -2, 19, 0, 0, 16, 0));
         ImageView imageView4 = new ImageView(context);
         this.n = imageView4;
         imageView4.setImageResource(R.drawable.msg_text_check);
         imageView4.setScaleType(scaleType);
         org.telegram.ui.ActionBar.f7.t(imageView4, org.telegram.ui.ActionBar.y6.h7, s5Var, PorterDuff.Mode.MULTIPLY);
         imageView4.setVisibility(8);
-        addView(imageView4, gb1.r(50, -1));
+        addView(imageView4, kb1.r(50, -1));
     }
 
     public final void a(int i10, boolean z10, boolean z11) {

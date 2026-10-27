@@ -9,7 +9,7 @@ import org.telegram.messenger.Emoji;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.UserConfig;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes3.dex */
 public final class rf implements TextWatcher {
     public boolean a;
@@ -51,7 +51,7 @@ public final class rf implements TextWatcher {
         ChatActivityEnterView chatActivityEnterView = this.f;
         if (chatActivityEnterView.S2 == 0) {
             if (this.b) {
-                chatActivityEnterView.Q0();
+                chatActivityEnterView.P0();
                 this.b = false;
             }
             if (this.a) {
@@ -71,7 +71,7 @@ public final class rf implements TextWatcher {
                 if (i11 < -9999) {
                     i11 = -9999;
                 }
-                chatActivityEnterView.P();
+                chatActivityEnterView.O();
                 NumberTextView numberTextView = chatActivityEnterView.b0;
                 numberTextView.a(i11, numberTextView.getVisibility() == 0);
                 if (chatActivityEnterView.b0.getVisibility() != 0) {
@@ -83,7 +83,7 @@ public final class rf implements TextWatcher {
                 chatActivityEnterView.b0.animate().setListener(null).cancel();
                 chatActivityEnterView.b0.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f).setDuration(100L).start();
                 if (i11 >= 0) {
-                    chatActivityEnterView.b0.setTextColor(chatActivityEnterView.f0(org.telegram.ui.ActionBar.y6.y6));
+                    chatActivityEnterView.b0.setTextColor(chatActivityEnterView.e0(org.telegram.ui.ActionBar.y6.y6));
                     z10 = true;
                     if (chatActivityEnterView.q3 != z10) {
                         chatActivityEnterView.q3 = z10;
@@ -92,17 +92,17 @@ public final class rf implements TextWatcher {
                     nfVar = chatActivityEnterView.m0;
                     if (nfVar != null) {
                     }
-                    chatActivityEnterView.A();
+                    chatActivityEnterView.y();
                     if (chatActivityEnterView.a2) {
                         chatActivityEnterView.o0 = true;
                         if (this.e) {
                         }
                     }
-                    chatActivityEnterView.m1(chatActivityEnterView.T <= 2 && !TextUtils.isEmpty(editable.toString().trim()));
-                    chatActivityEnterView.C(true);
-                    chatActivityEnterView.s1(chatActivityEnterView.T <= 2 && !TextUtils.isEmpty(editable.toString().trim()));
+                    chatActivityEnterView.l1(chatActivityEnterView.T <= 2 && !TextUtils.isEmpty(editable.toString().trim()));
+                    chatActivityEnterView.B(true);
+                    chatActivityEnterView.r1(chatActivityEnterView.T <= 2 && !TextUtils.isEmpty(editable.toString().trim()));
                 }
-                chatActivityEnterView.b0.setTextColor(chatActivityEnterView.f0(org.telegram.ui.ActionBar.y6.p7));
+                chatActivityEnterView.b0.setTextColor(chatActivityEnterView.e0(org.telegram.ui.ActionBar.y6.p7));
                 z10 = false;
                 if (chatActivityEnterView.q3 != z10 && (xeVar = chatActivityEnterView.F1) != null) {
                     chatActivityEnterView.q3 = z10;
@@ -112,23 +112,23 @@ public final class rf implements TextWatcher {
                 if (nfVar != null) {
                     nfVar.c();
                 }
-                chatActivityEnterView.A();
+                chatActivityEnterView.y();
                 if (chatActivityEnterView.a2 && !chatActivityEnterView.o0 && !MessagesController.getInstance(chatActivityEnterView.Q).premiumFeaturesBlocked() && !UserConfig.getInstance(chatActivityEnterView.Q).isPremium() && chatActivityEnterView.d0 > MessagesController.getInstance(chatActivityEnterView.Q).captionLengthLimitDefault && chatActivityEnterView.d0 < MessagesController.getInstance(chatActivityEnterView.Q).captionLengthLimitPremium) {
                     chatActivityEnterView.o0 = true;
                     if (this.e) {
-                        chatActivityEnterView.n1();
+                        chatActivityEnterView.m1();
                     } else {
-                        AndroidUtilities.runOnUIThread(new pg(this, 20), 300L);
+                        AndroidUtilities.runOnUIThread(new pg(this, 21), 300L);
                     }
                 }
-                chatActivityEnterView.m1(chatActivityEnterView.T <= 2 && !TextUtils.isEmpty(editable.toString().trim()));
-                chatActivityEnterView.C(true);
-                chatActivityEnterView.s1(chatActivityEnterView.T <= 2 && !TextUtils.isEmpty(editable.toString().trim()));
+                chatActivityEnterView.l1(chatActivityEnterView.T <= 2 && !TextUtils.isEmpty(editable.toString().trim()));
+                chatActivityEnterView.B(true);
+                chatActivityEnterView.r1(chatActivityEnterView.T <= 2 && !TextUtils.isEmpty(editable.toString().trim()));
             }
         }
         NumberTextView numberTextView2 = chatActivityEnterView.b0;
         if (numberTextView2 != null) {
-            numberTextView2.animate().alpha(0.0f).scaleX(0.5f).scaleY(0.5f).setDuration(100L).setListener(new org.telegram.ui.qp(this, 8));
+            numberTextView2.animate().alpha(0.0f).scaleX(0.5f).scaleY(0.5f).setDuration(100L).setListener(new org.telegram.ui.sp(this, 8));
         }
         z10 = true;
         if (chatActivityEnterView.q3 != z10) {
@@ -136,12 +136,12 @@ public final class rf implements TextWatcher {
         nfVar = chatActivityEnterView.m0;
         if (nfVar != null) {
         }
-        chatActivityEnterView.A();
+        chatActivityEnterView.y();
         if (chatActivityEnterView.a2) {
         }
-        chatActivityEnterView.m1(chatActivityEnterView.T <= 2 && !TextUtils.isEmpty(editable.toString().trim()));
-        chatActivityEnterView.C(true);
-        chatActivityEnterView.s1(chatActivityEnterView.T <= 2 && !TextUtils.isEmpty(editable.toString().trim()));
+        chatActivityEnterView.l1(chatActivityEnterView.T <= 2 && !TextUtils.isEmpty(editable.toString().trim()));
+        chatActivityEnterView.B(true);
+        chatActivityEnterView.r1(chatActivityEnterView.T <= 2 && !TextUtils.isEmpty(editable.toString().trim()));
     }
 
     @Override // android.text.TextWatcher
@@ -160,17 +160,17 @@ public final class rf implements TextWatcher {
         dg dgVar = chatActivityEnterView.U0;
         boolean z10 = (dgVar == null ? MessagesController.getGlobalEmojiSettings().getInt("selected_page", 0) : dgVar.getCurrentPage()) != 0 && (chatActivityEnterView.J2 || chatActivityEnterView.K2);
         if (((i11 == 0 && !TextUtils.isEmpty(charSequence)) || (i11 != 0 && TextUtils.isEmpty(charSequence))) && z10) {
-            chatActivityEnterView.a1(false, true);
+            chatActivityEnterView.Z0(false, true);
         }
         if (chatActivityEnterView.T != chatActivityEnterView.E0.getLineCount()) {
             this.e = (chatActivityEnterView.E0.getLineCount() >= 4) != (chatActivityEnterView.T >= 4);
             if (!chatActivityEnterView.S && chatActivityEnterView.E0.getMeasuredWidth() > 0) {
-                chatActivityEnterView.A0(chatActivityEnterView.T, chatActivityEnterView.E0.getLineCount());
+                chatActivityEnterView.z0(chatActivityEnterView.T, chatActivityEnterView.E0.getLineCount());
             }
             int lineCount = chatActivityEnterView.E0.getLineCount();
             chatActivityEnterView.T = lineCount;
-            chatActivityEnterView.m1((lineCount <= 2 || charSequence == null || TextUtils.isEmpty(charSequence.toString().trim())) ? false : true);
-            chatActivityEnterView.s1((chatActivityEnterView.T <= 2 || charSequence == null || TextUtils.isEmpty(charSequence.toString().trim())) ? false : true);
+            chatActivityEnterView.l1((lineCount <= 2 || charSequence == null || TextUtils.isEmpty(charSequence.toString().trim())) ? false : true);
+            chatActivityEnterView.r1((chatActivityEnterView.T <= 2 || charSequence == null || TextUtils.isEmpty(charSequence.toString().trim())) ? false : true);
         } else {
             this.e = false;
         }
@@ -181,7 +181,7 @@ public final class rf implements TextWatcher {
             this.b = true;
         }
         chatActivityEnterView.X1 = false;
-        chatActivityEnterView.G(true);
+        chatActivityEnterView.F(true);
         CharSequence trimmedString = AndroidUtilities.getTrimmedString(charSequence.toString());
         if (chatActivityEnterView.Z2 != null && !chatActivityEnterView.R2) {
             int i13 = i12 + 1;

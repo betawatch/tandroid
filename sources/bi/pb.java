@@ -3,9 +3,9 @@ package bi;
 import android.content.DialogInterface;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.ui.PhotoViewer;
-import org.telegram.ui.nt0;
+import org.telegram.ui.pt0;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class pb implements DialogInterface.OnDismissListener {
     public final /* synthetic */ int a = 0;
@@ -24,20 +24,20 @@ public final /* synthetic */ class pb implements DialogInterface.OnDismissListen
                 NotificationCenter.getInstance(this.b).removeObserver((xb) this.c, NotificationCenter.starSubscriptionsLoaded);
                 break;
             default:
-                sg.n0 n0Var = (sg.n0) this.c;
-                PhotoViewer photoViewer = ((nt0) n0Var).d2;
+                sg.m0 m0Var = (sg.m0) this.c;
+                PhotoViewer photoViewer = ((pt0) m0Var).d2;
                 if (photoViewer.F2 != null) {
                     photoViewer.H2 = false;
                     photoViewer.v0();
                     photoViewer.F2.C();
                 }
-                n0Var.A0(this.b);
+                m0Var.A0(this.b);
                 break;
         }
     }
 
-    public /* synthetic */ pb(sg.n0 n0Var, int i10) {
-        this.c = n0Var;
+    public /* synthetic */ pb(sg.m0 m0Var, int i10) {
+        this.c = m0Var;
         this.b = i10;
     }
 }

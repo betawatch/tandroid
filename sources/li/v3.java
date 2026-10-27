@@ -53,7 +53,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.VideoEditedInfo;
-import org.telegram.messenger.vh;
+import org.telegram.messenger.wh;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.SerializedData;
 import org.telegram.tgnet.TLRPC;
@@ -67,17 +67,17 @@ import org.telegram.ui.Cells.ea;
 import org.telegram.ui.Cells.r9;
 import org.telegram.ui.Cells.s9;
 import org.telegram.ui.Components.b10;
-import org.telegram.ui.Components.gb1;
-import org.telegram.ui.Components.j71;
-import org.telegram.ui.Components.k80;
-import org.telegram.ui.Components.r71;
-import org.telegram.ui.Components.t61;
-import org.telegram.ui.Components.wm0;
+import org.telegram.ui.Components.k71;
+import org.telegram.ui.Components.kb1;
+import org.telegram.ui.Components.l80;
+import org.telegram.ui.Components.s71;
+import org.telegram.ui.Components.u61;
+import org.telegram.ui.Components.xm0;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
-public final class v3 extends r71 {
+public final class v3 extends s71 {
     public static final ArrayList A4 = new ArrayList();
     public boolean A3;
     public float B3;
@@ -127,7 +127,7 @@ public final class v3 extends r71 {
     public MessageObject q3;
     public p5 q4;
     public boolean r3;
-    public k80 r4;
+    public l80 r4;
     public TL_iv.RichMessage s3;
     public int s4;
     public final ArrayList t3;
@@ -141,7 +141,7 @@ public final class v3 extends r71 {
     public int x3;
     public final ArrayList x4;
     public int y3;
-    public wm0 y4;
+    public xm0 y4;
     public int z3;
     public int z4;
 
@@ -259,7 +259,7 @@ public final class v3 extends r71 {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static void O1(v3[] v3VarArr, ArrayList arrayList, j71 j71Var) {
+    public static void O1(v3[] v3VarArr, ArrayList arrayList, k71 k71Var) {
         int i10;
         boolean z10;
         ArrayList arrayList2;
@@ -312,11 +312,11 @@ public final class v3 extends r71 {
                     if (i19 == i16 || arrayList6.size() >= i19) {
                         if (i20 == 0) {
                             if (i18 != 0) {
-                                j71Var.L();
+                                k71Var.L();
                                 i18 = 0;
                             }
                             int i21 = t0.a;
-                            t61 K = t61.K(t0.class);
+                            u61 K = u61.K(t0.class);
                             K.G = aVar3;
                             arrayList.add(K);
                             arrayList4.add(aVar3);
@@ -337,16 +337,16 @@ public final class v3 extends r71 {
                             boolean z15 = ((TL_iv.pageBlockDetails) aVar3.b).open;
                             if (!arrayList6.isEmpty() || z15) {
                                 if (i18 != 0) {
-                                    j71Var.L();
+                                    k71Var.L();
                                     i18 = 0;
                                 }
                             } else if (i18 == 0) {
-                                j71Var.M();
+                                k71Var.M();
                                 i18 = i10;
                             }
                             c3 c3Var = v3Var.p4;
                             int i23 = r0.a;
-                            t61 K2 = t61.K(r0.class);
+                            u61 K2 = u61.K(r0.class);
                             K2.G = aVar3;
                             K2.H = c3Var;
                             arrayList.add(K2);
@@ -398,25 +398,25 @@ public final class v3 extends r71 {
                         }
                         if (arrayList2.isEmpty()) {
                             if (i18 == 0) {
-                                j71Var.M();
+                                k71Var.M();
                                 i18 = 1;
                             }
                         } else if (i18 != 0) {
-                            j71Var.L();
+                            k71Var.L();
                             i18 = 0;
                         }
                         TL_iv.PageBlock pageBlock = aVar3.b;
                         if (pageBlock instanceof TL_iv.pageBlockDivider) {
                             q2 q2Var = v3Var.d4;
                             int i26 = v0.a;
-                            t61 K3 = t61.K(v0.class);
+                            u61 K3 = u61.K(v0.class);
                             K3.G = aVar3;
                             K3.H = q2Var;
                             arrayList.add(K3);
                         } else if (J3(pageBlock)) {
                             o3 o3Var = v3Var.e4;
                             int i27 = t4.a;
-                            t61 K4 = t61.K(t4.class);
+                            u61 K4 = u61.K(t4.class);
                             K4.d = (int) aVar3.a;
                             K4.G = aVar3;
                             K4.H = o3Var;
@@ -426,42 +426,42 @@ public final class v3 extends r71 {
                             if (pageBlock2 instanceof TL_iv.pageBlockAudio) {
                                 p3 p3Var = v3Var.f4;
                                 int i28 = x.a;
-                                t61 K5 = t61.K(x.class);
+                                u61 K5 = u61.K(x.class);
                                 K5.G = aVar3;
                                 K5.H = p3Var;
                                 arrayList.add(K5);
                             } else if (pageBlock2 instanceof TL_iv.pageBlockDocument) {
                                 q3 q3Var = v3Var.g4;
                                 int i29 = x0.a;
-                                t61 K6 = t61.K(x0.class);
+                                u61 K6 = u61.K(x0.class);
                                 K6.G = aVar3;
                                 K6.H = q3Var;
                                 arrayList.add(K6);
                             } else if (pageBlock2 instanceof TL_iv.pageBlockMap) {
                                 r3 r3Var = v3Var.l4;
                                 int i30 = n4.a;
-                                t61 K7 = t61.K(n4.class);
+                                u61 K7 = u61.K(n4.class);
                                 K7.G = aVar3;
                                 K7.H = r3Var;
                                 arrayList.add(K7);
                             } else if (pageBlock2 instanceof TL_iv.pageBlockMath) {
                                 z2 z2Var = v3Var.m4;
                                 int i31 = p4.a;
-                                t61 K8 = t61.K(p4.class);
+                                u61 K8 = u61.K(p4.class);
                                 K8.G = aVar3;
                                 K8.H = z2Var;
                                 arrayList.add(K8);
                             } else if (pageBlock2 instanceof TL_iv.pageBlockTable) {
                                 b3 b3Var = v3Var.o4;
                                 int i32 = n5.a;
-                                t61 K9 = t61.K(n5.class);
+                                u61 K9 = u61.K(n5.class);
                                 K9.G = aVar3;
                                 K9.H = b3Var;
                                 arrayList.add(K9);
                             } else if (pageBlock2 instanceof TL_iv.pageBlockButtonRow) {
                                 n3 n3Var = v3Var.c4;
                                 int i33 = e0.a;
-                                t61 K10 = t61.K(e0.class);
+                                u61 K10 = u61.K(e0.class);
                                 K10.G = aVar3;
                                 K10.H = n3Var;
                                 arrayList.add(K10);
@@ -474,7 +474,7 @@ public final class v3 extends r71 {
                                         z11 = true;
                                         d3 d3Var = v3Var.v4;
                                         int i34 = b6.a;
-                                        t61 K11 = t61.K(b6.class);
+                                        u61 K11 = u61.K(b6.class);
                                         K11.G = aVar3;
                                         K11.H = d3Var;
                                         K11.r = z11;
@@ -488,7 +488,7 @@ public final class v3 extends r71 {
                                 z11 = false;
                                 d3 d3Var2 = v3Var.v4;
                                 int i342 = b6.a;
-                                t61 K112 = t61.K(b6.class);
+                                u61 K112 = u61.K(b6.class);
                                 K112.G = aVar3;
                                 K112.H = d3Var2;
                                 K112.r = z11;
@@ -513,7 +513,7 @@ public final class v3 extends r71 {
             }
             int i35 = i10;
             if (i18 != 0) {
-                j71Var.L();
+                k71Var.L();
             }
             if (aVar2 != null) {
                 v3Var.y3(aVar2, A4, hashMap, arrayList);
@@ -1061,7 +1061,7 @@ public final class v3 extends r71 {
         f2 f2Var2;
         int i11;
         ArrayList arrayList = v3Var.x4;
-        j71 j71Var = v3Var.g3;
+        k71 k71Var = v3Var.g3;
         ArrayList arrayList2 = v3Var.t3;
         int indexOf = arrayList2.indexOf(aVar);
         if (indexOf >= 0) {
@@ -1084,7 +1084,7 @@ public final class v3 extends r71 {
                         v3Var.z2(indexOf);
                         v3Var.y4();
                         if (v3Var.findFocus() instanceof g1) {
-                            j71Var.O(false);
+                            k71Var.O(false);
                             f2 f2Var4 = v3Var.R3;
                             if (f2Var4 != null) {
                                 f2Var4.h();
@@ -1126,7 +1126,7 @@ public final class v3 extends r71 {
                         arrayList3.remove(arrayList3.size() - 1);
                         v3Var.D2();
                         v3Var.y4();
-                        j71Var.O(false);
+                        k71Var.O(false);
                         f2Var2 = v3Var.R3;
                         if (f2Var2 != null) {
                             f2Var2.h();
@@ -1151,7 +1151,7 @@ public final class v3 extends r71 {
                     arrayList3.remove(arrayList3.size() - 1);
                     v3Var.D2();
                     v3Var.y4();
-                    j71Var.O(false);
+                    k71Var.O(false);
                     f2Var2 = v3Var.R3;
                     if (f2Var2 != null) {
                     }
@@ -1169,7 +1169,7 @@ public final class v3 extends r71 {
                             }
                             arrayList2.remove(indexOf);
                             v3Var.y4();
-                            j71Var.O(false);
+                            k71Var.O(false);
                             f2 f2Var7 = v3Var.R3;
                             if (f2Var7 != null) {
                                 f2Var7.h();
@@ -1184,7 +1184,7 @@ public final class v3 extends r71 {
                             }
                             arrayList2.remove(i13);
                             v3Var.y4();
-                            j71Var.O(false);
+                            k71Var.O(false);
                             f2 f2Var9 = v3Var.R3;
                             if (f2Var9 != null) {
                                 f2Var9.h();
@@ -1207,7 +1207,7 @@ public final class v3 extends r71 {
                             arrayList2.remove(indexOf);
                             v3Var.D2();
                             v3Var.y4();
-                            j71Var.O(false);
+                            k71Var.O(false);
                             f2 f2Var11 = v3Var.R3;
                             if (f2Var11 != null) {
                                 f2Var11.h();
@@ -1238,7 +1238,7 @@ public final class v3 extends r71 {
                         boolean D2 = v3Var.D2();
                         v3Var.y4();
                         if (D2) {
-                            j71Var.O(false);
+                            k71Var.O(false);
                             f2 f2Var12 = v3Var.R3;
                             if (f2Var12 != null) {
                                 f2Var12.h();
@@ -1246,13 +1246,13 @@ public final class v3 extends r71 {
                             v3Var.post(new o2(v3Var, aVar4, Math.max(0, length2), 4));
                             return true;
                         }
-                        j71Var.T();
+                        k71Var.T();
                         v3Var.v4(indexOf);
                         s4.m0 itemAnimator = v3Var.getItemAnimator();
                         v3Var.setItemAnimator(null);
-                        j71Var.u(indexOf2);
+                        k71Var.u(indexOf2);
                         if ((aVar4.d > 0 || aVar.d > 0) && indexOf2 < arrayList.size()) {
-                            j71Var.q(indexOf2, arrayList.size() - indexOf2);
+                            k71Var.q(indexOf2, arrayList.size() - indexOf2);
                         }
                         v3Var.post(new x2(v3Var, itemAnimator, 1));
                         f2 f2Var13 = v3Var.R3;
@@ -1462,7 +1462,7 @@ public final class v3 extends r71 {
         if (aVar == null) {
             return AndroidUtilities.dp(2.0f);
         }
-        return vh.b(16.0f, Math.max(0, i10 - (aVar.k.size() - (z10 ? aVar.l : aVar.m))), AndroidUtilities.dp(2.0f));
+        return wh.b(16.0f, Math.max(0, i10 - (aVar.k.size() - (z10 ? aVar.l : aVar.m))), AndroidUtilities.dp(2.0f));
     }
 
     public static boolean r3(TL_iv.PageBlock pageBlock) {
@@ -1916,7 +1916,7 @@ public final class v3 extends r71 {
         this.g3.O(false);
     }
 
-    @Override // org.telegram.ui.Components.r71
+    @Override // org.telegram.ui.Components.s71
     public final boolean G1() {
         return this.b4;
     }
@@ -1985,7 +1985,7 @@ public final class v3 extends r71 {
         return new int[]{Math.min(indexOf2, indexOf3), Math.max(indexOf2, indexOf3)};
     }
 
-    @Override // org.telegram.ui.Components.r71
+    @Override // org.telegram.ui.Components.s71
     public final void I1() {
         t3 t3Var = this.p3;
         if (t3Var != null) {
@@ -2098,7 +2098,7 @@ public final class v3 extends r71 {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.r71
+    @Override // org.telegram.ui.Components.s71
     public final void J1() {
         t3 t3Var = this.p3;
         if (t3Var != null) {
@@ -2149,7 +2149,7 @@ public final class v3 extends r71 {
         return new int[]{indexOf, indexOf2};
     }
 
-    @Override // org.telegram.ui.Components.r71
+    @Override // org.telegram.ui.Components.s71
     public final void K1(s4.e1 e1Var) {
         t3 t3Var = this.p3;
         if (t3Var == null || e1Var == null) {
@@ -2228,7 +2228,7 @@ public final class v3 extends r71 {
         g1Var.makeSelectedUrl(new b(this, 4));
     }
 
-    @Override // org.telegram.ui.Components.r71
+    @Override // org.telegram.ui.Components.s71
     public final void L1(s4.e1 e1Var) {
         a aVar = this.a4;
         this.a4 = null;
@@ -2346,7 +2346,7 @@ public final class v3 extends r71 {
         int i14;
         int i15;
         int i16;
-        k80 k80Var;
+        l80 l80Var;
         LinkedHashSet linkedHashSet;
         int dp;
         int i17;
@@ -2497,11 +2497,11 @@ public final class v3 extends r71 {
                                                         i14 = i12;
                                                         i15 = (z13 || !z11 || model.c >= MessagesController.getInstance(this.n3).config.richMessageMaxTableCols.get()) ? 0 : i12;
                                                         i16 = (z13 || !z10) ? 0 : i12;
-                                                        k80Var = this.r4;
-                                                        if (k80Var != null) {
+                                                        l80Var = this.r4;
+                                                        if (l80Var != null) {
                                                             linkedHashSet = linkedHashSet2;
                                                             this.r4 = null;
-                                                            k80Var.u();
+                                                            l80Var.u();
                                                         } else {
                                                             linkedHashSet = linkedHashSet2;
                                                         }
@@ -2518,7 +2518,7 @@ public final class v3 extends r71 {
                                                             V4 = V4(p5Var2, z18);
                                                             z14 = z18;
                                                         }
-                                                        final k80 P = this.p3.P(V4);
+                                                        final l80 P = this.p3.P(V4);
                                                         P.s = 0;
                                                         P.t = false;
                                                         P.Z = z14;
@@ -2533,27 +2533,27 @@ public final class v3 extends r71 {
                                                         int i40 = y6.y6;
                                                         u6 u6Var = this.o3;
                                                         f7.V(textView, i40, u6Var);
-                                                        linearLayout.addView(textView, gb1.o(0.0f, 5.0f, 0.0f, 4.0f, -1, -2));
+                                                        linearLayout.addView(textView, kb1.o(0.0f, 5.0f, 0.0f, 4.0f, -1, -2));
                                                         LinearLayout linearLayout2 = new LinearLayout(getContext());
                                                         i19 = i11;
                                                         i20 = i13;
                                                         boolean z19 = z10;
                                                         linearLayout2.setPadding(AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f));
                                                         linearLayout2.setOrientation(0);
-                                                        linearLayout.addView(linearLayout2, gb1.u(-2, -2, 17));
+                                                        linearLayout.addView(linearLayout2, kb1.u(-2, -2, 17));
                                                         x1 x1Var = new x1(getContext(), R.drawable.iv_align_horiz_left, u6Var);
                                                         x1Var.e = 4;
                                                         x1Var.updateColors();
                                                         x1Var.b();
                                                         int i41 = y6.G8;
                                                         x1Var.c(i41);
-                                                        linearLayout2.addView(x1Var, gb1.r(32, 32));
+                                                        linearLayout2.addView(x1Var, kb1.r(32, 32));
                                                         x1 x1Var2 = new x1(getContext(), R.drawable.iv_align_horiz_middle, u6Var);
                                                         x1Var2.e = 4;
                                                         x1Var2.updateColors();
                                                         x1Var2.b();
                                                         x1Var2.c(i41);
-                                                        linearLayout2.addView(x1Var2, gb1.r(32, 32));
+                                                        linearLayout2.addView(x1Var2, kb1.r(32, 32));
                                                         x1 x1Var3 = new x1(getContext(), R.drawable.iv_align_horiz_right, u6Var);
                                                         x1Var3.e = 4;
                                                         x1Var3.updateColors();
@@ -2561,28 +2561,28 @@ public final class v3 extends r71 {
                                                         x1Var3.c(i41);
                                                         final x1[] x1VarArr = {x1Var, x1Var2, x1Var3};
                                                         boolean z20 = z11;
-                                                        linearLayout2.addView(x1Var3, gb1.r(32, 32));
+                                                        linearLayout2.addView(x1Var3, kb1.r(32, 32));
                                                         z15 = z12;
-                                                        linearLayout2.addView(new Space(getContext()), gb1.r(8, 0));
+                                                        linearLayout2.addView(new Space(getContext()), kb1.r(8, 0));
                                                         x1 x1Var4 = new x1(getContext(), R.drawable.iv_align_vert_top, u6Var);
                                                         x1Var4.e = 4;
                                                         x1Var4.updateColors();
                                                         x1Var4.b();
                                                         x1Var4.c(i41);
-                                                        linearLayout2.addView(x1Var4, gb1.r(32, 32));
+                                                        linearLayout2.addView(x1Var4, kb1.r(32, 32));
                                                         x1 x1Var5 = new x1(getContext(), R.drawable.iv_align_vert_middle, u6Var);
                                                         x1Var5.e = 4;
                                                         x1Var5.updateColors();
                                                         x1Var5.b();
                                                         x1Var5.c(i41);
-                                                        linearLayout2.addView(x1Var5, gb1.r(32, 32));
+                                                        linearLayout2.addView(x1Var5, kb1.r(32, 32));
                                                         x1 x1Var6 = new x1(getContext(), R.drawable.iv_align_vert_bottom, u6Var);
                                                         x1Var6.e = 4;
                                                         x1Var6.updateColors();
                                                         x1Var6.b();
                                                         x1Var6.c(i41);
                                                         final x1[] x1VarArr2 = {x1Var4, x1Var5, x1Var6};
-                                                        linearLayout2.addView(x1Var6, gb1.r(32, 32));
+                                                        linearLayout2.addView(x1Var6, kb1.r(32, 32));
                                                         P.q(linearLayout);
                                                         it3 = linkedHashSet.iterator();
                                                         int i42 = -1;
@@ -6460,8 +6460,8 @@ public final class v3 extends r71 {
                                                 }
                                                 if (z13) {
                                                 }
-                                                k80Var = this.r4;
-                                                if (k80Var != null) {
+                                                l80Var = this.r4;
+                                                if (l80Var != null) {
                                                 }
                                                 dp = AndroidUtilities.dp(((i10 + 1 + i11 + (i15 != 0 ? 2 : 0) + (i16 != 0 ? 2 : 0) + i14 + i13 + (z12 ? 3 : 0)) * 48) + 68 + (z12 ? 8 : 0));
                                                 FrameLayout V422 = V4(p5Var2, false);
@@ -6470,7 +6470,7 @@ public final class v3 extends r71 {
                                                 V422.getLocationOnScreen(iArr);
                                                 if (((iArr[i12] - dp) - AndroidUtilities.dp(8.0f) >= AndroidUtilities.dp(8.0f) + AndroidUtilities.statusBarHeight ? i12 : 0) != 0) {
                                                 }
-                                                final k80 P2 = this.p3.P(V4);
+                                                final l80 P2 = this.p3.P(V4);
                                                 P2.s = 0;
                                                 P2.t = false;
                                                 P2.Z = z14;
@@ -6485,27 +6485,27 @@ public final class v3 extends r71 {
                                                 int i402 = y6.y6;
                                                 u6 u6Var2 = this.o3;
                                                 f7.V(textView2, i402, u6Var2);
-                                                linearLayout3.addView(textView2, gb1.o(0.0f, 5.0f, 0.0f, 4.0f, -1, -2));
+                                                linearLayout3.addView(textView2, kb1.o(0.0f, 5.0f, 0.0f, 4.0f, -1, -2));
                                                 LinearLayout linearLayout22 = new LinearLayout(getContext());
                                                 i19 = i11;
                                                 i20 = i13;
                                                 boolean z192 = z10;
                                                 linearLayout22.setPadding(AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f));
                                                 linearLayout22.setOrientation(0);
-                                                linearLayout3.addView(linearLayout22, gb1.u(-2, -2, 17));
+                                                linearLayout3.addView(linearLayout22, kb1.u(-2, -2, 17));
                                                 x1 x1Var7 = new x1(getContext(), R.drawable.iv_align_horiz_left, u6Var2);
                                                 x1Var7.e = 4;
                                                 x1Var7.updateColors();
                                                 x1Var7.b();
                                                 int i412 = y6.G8;
                                                 x1Var7.c(i412);
-                                                linearLayout22.addView(x1Var7, gb1.r(32, 32));
+                                                linearLayout22.addView(x1Var7, kb1.r(32, 32));
                                                 x1 x1Var22 = new x1(getContext(), R.drawable.iv_align_horiz_middle, u6Var2);
                                                 x1Var22.e = 4;
                                                 x1Var22.updateColors();
                                                 x1Var22.b();
                                                 x1Var22.c(i412);
-                                                linearLayout22.addView(x1Var22, gb1.r(32, 32));
+                                                linearLayout22.addView(x1Var22, kb1.r(32, 32));
                                                 x1 x1Var32 = new x1(getContext(), R.drawable.iv_align_horiz_right, u6Var2);
                                                 x1Var32.e = 4;
                                                 x1Var32.updateColors();
@@ -6513,28 +6513,28 @@ public final class v3 extends r71 {
                                                 x1Var32.c(i412);
                                                 final x1[] x1VarArr3 = {x1Var7, x1Var22, x1Var32};
                                                 boolean z202 = z11;
-                                                linearLayout22.addView(x1Var32, gb1.r(32, 32));
+                                                linearLayout22.addView(x1Var32, kb1.r(32, 32));
                                                 z15 = z12;
-                                                linearLayout22.addView(new Space(getContext()), gb1.r(8, 0));
+                                                linearLayout22.addView(new Space(getContext()), kb1.r(8, 0));
                                                 x1 x1Var42 = new x1(getContext(), R.drawable.iv_align_vert_top, u6Var2);
                                                 x1Var42.e = 4;
                                                 x1Var42.updateColors();
                                                 x1Var42.b();
                                                 x1Var42.c(i412);
-                                                linearLayout22.addView(x1Var42, gb1.r(32, 32));
+                                                linearLayout22.addView(x1Var42, kb1.r(32, 32));
                                                 x1 x1Var52 = new x1(getContext(), R.drawable.iv_align_vert_middle, u6Var2);
                                                 x1Var52.e = 4;
                                                 x1Var52.updateColors();
                                                 x1Var52.b();
                                                 x1Var52.c(i412);
-                                                linearLayout22.addView(x1Var52, gb1.r(32, 32));
+                                                linearLayout22.addView(x1Var52, kb1.r(32, 32));
                                                 x1 x1Var62 = new x1(getContext(), R.drawable.iv_align_vert_bottom, u6Var2);
                                                 x1Var62.e = 4;
                                                 x1Var62.updateColors();
                                                 x1Var62.b();
                                                 x1Var62.c(i412);
                                                 final x1[] x1VarArr22 = {x1Var42, x1Var52, x1Var62};
-                                                linearLayout22.addView(x1Var62, gb1.r(32, 32));
+                                                linearLayout22.addView(x1Var62, kb1.r(32, 32));
                                                 P2.q(linearLayout3);
                                                 it3 = linkedHashSet.iterator();
                                                 int i422 = -1;
@@ -6600,8 +6600,8 @@ public final class v3 extends r71 {
                                         }
                                         if (z13) {
                                         }
-                                        k80Var = this.r4;
-                                        if (k80Var != null) {
+                                        l80Var = this.r4;
+                                        if (l80Var != null) {
                                         }
                                         dp = AndroidUtilities.dp(((i10 + 1 + i11 + (i15 != 0 ? 2 : 0) + (i16 != 0 ? 2 : 0) + i14 + i13 + (z12 ? 3 : 0)) * 48) + 68 + (z12 ? 8 : 0));
                                         FrameLayout V4222 = V4(p5Var2, false);
@@ -6610,7 +6610,7 @@ public final class v3 extends r71 {
                                         V4222.getLocationOnScreen(iArr);
                                         if (((iArr[i12] - dp) - AndroidUtilities.dp(8.0f) >= AndroidUtilities.dp(8.0f) + AndroidUtilities.statusBarHeight ? i12 : 0) != 0) {
                                         }
-                                        final k80 P22 = this.p3.P(V4);
+                                        final l80 P22 = this.p3.P(V4);
                                         P22.s = 0;
                                         P22.t = false;
                                         P22.Z = z14;
@@ -6625,27 +6625,27 @@ public final class v3 extends r71 {
                                         int i4022 = y6.y6;
                                         u6 u6Var22 = this.o3;
                                         f7.V(textView22, i4022, u6Var22);
-                                        linearLayout32.addView(textView22, gb1.o(0.0f, 5.0f, 0.0f, 4.0f, -1, -2));
+                                        linearLayout32.addView(textView22, kb1.o(0.0f, 5.0f, 0.0f, 4.0f, -1, -2));
                                         LinearLayout linearLayout222 = new LinearLayout(getContext());
                                         i19 = i11;
                                         i20 = i13;
                                         boolean z1922 = z10;
                                         linearLayout222.setPadding(AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f));
                                         linearLayout222.setOrientation(0);
-                                        linearLayout32.addView(linearLayout222, gb1.u(-2, -2, 17));
+                                        linearLayout32.addView(linearLayout222, kb1.u(-2, -2, 17));
                                         x1 x1Var72 = new x1(getContext(), R.drawable.iv_align_horiz_left, u6Var22);
                                         x1Var72.e = 4;
                                         x1Var72.updateColors();
                                         x1Var72.b();
                                         int i4122 = y6.G8;
                                         x1Var72.c(i4122);
-                                        linearLayout222.addView(x1Var72, gb1.r(32, 32));
+                                        linearLayout222.addView(x1Var72, kb1.r(32, 32));
                                         x1 x1Var222 = new x1(getContext(), R.drawable.iv_align_horiz_middle, u6Var22);
                                         x1Var222.e = 4;
                                         x1Var222.updateColors();
                                         x1Var222.b();
                                         x1Var222.c(i4122);
-                                        linearLayout222.addView(x1Var222, gb1.r(32, 32));
+                                        linearLayout222.addView(x1Var222, kb1.r(32, 32));
                                         x1 x1Var322 = new x1(getContext(), R.drawable.iv_align_horiz_right, u6Var22);
                                         x1Var322.e = 4;
                                         x1Var322.updateColors();
@@ -6653,28 +6653,28 @@ public final class v3 extends r71 {
                                         x1Var322.c(i4122);
                                         final x1[] x1VarArr32 = {x1Var72, x1Var222, x1Var322};
                                         boolean z2022 = z11;
-                                        linearLayout222.addView(x1Var322, gb1.r(32, 32));
+                                        linearLayout222.addView(x1Var322, kb1.r(32, 32));
                                         z15 = z12;
-                                        linearLayout222.addView(new Space(getContext()), gb1.r(8, 0));
+                                        linearLayout222.addView(new Space(getContext()), kb1.r(8, 0));
                                         x1 x1Var422 = new x1(getContext(), R.drawable.iv_align_vert_top, u6Var22);
                                         x1Var422.e = 4;
                                         x1Var422.updateColors();
                                         x1Var422.b();
                                         x1Var422.c(i4122);
-                                        linearLayout222.addView(x1Var422, gb1.r(32, 32));
+                                        linearLayout222.addView(x1Var422, kb1.r(32, 32));
                                         x1 x1Var522 = new x1(getContext(), R.drawable.iv_align_vert_middle, u6Var22);
                                         x1Var522.e = 4;
                                         x1Var522.updateColors();
                                         x1Var522.b();
                                         x1Var522.c(i4122);
-                                        linearLayout222.addView(x1Var522, gb1.r(32, 32));
+                                        linearLayout222.addView(x1Var522, kb1.r(32, 32));
                                         x1 x1Var622 = new x1(getContext(), R.drawable.iv_align_vert_bottom, u6Var22);
                                         x1Var622.e = 4;
                                         x1Var622.updateColors();
                                         x1Var622.b();
                                         x1Var622.c(i4122);
                                         final x1[] x1VarArr222 = {x1Var422, x1Var522, x1Var622};
-                                        linearLayout222.addView(x1Var622, gb1.r(32, 32));
+                                        linearLayout222.addView(x1Var622, kb1.r(32, 32));
                                         P22.q(linearLayout32);
                                         it3 = linkedHashSet.iterator();
                                         int i4222 = -1;
@@ -6742,8 +6742,8 @@ public final class v3 extends r71 {
                                     }
                                     if (z13) {
                                     }
-                                    k80Var = this.r4;
-                                    if (k80Var != null) {
+                                    l80Var = this.r4;
+                                    if (l80Var != null) {
                                     }
                                     dp = AndroidUtilities.dp(((i10 + 1 + i11 + (i15 != 0 ? 2 : 0) + (i16 != 0 ? 2 : 0) + i14 + i13 + (z12 ? 3 : 0)) * 48) + 68 + (z12 ? 8 : 0));
                                     FrameLayout V42222 = V4(p5Var2, false);
@@ -6752,7 +6752,7 @@ public final class v3 extends r71 {
                                     V42222.getLocationOnScreen(iArr);
                                     if (((iArr[i12] - dp) - AndroidUtilities.dp(8.0f) >= AndroidUtilities.dp(8.0f) + AndroidUtilities.statusBarHeight ? i12 : 0) != 0) {
                                     }
-                                    final k80 P222 = this.p3.P(V4);
+                                    final l80 P222 = this.p3.P(V4);
                                     P222.s = 0;
                                     P222.t = false;
                                     P222.Z = z14;
@@ -6767,27 +6767,27 @@ public final class v3 extends r71 {
                                     int i40222 = y6.y6;
                                     u6 u6Var222 = this.o3;
                                     f7.V(textView222, i40222, u6Var222);
-                                    linearLayout322.addView(textView222, gb1.o(0.0f, 5.0f, 0.0f, 4.0f, -1, -2));
+                                    linearLayout322.addView(textView222, kb1.o(0.0f, 5.0f, 0.0f, 4.0f, -1, -2));
                                     LinearLayout linearLayout2222 = new LinearLayout(getContext());
                                     i19 = i11;
                                     i20 = i13;
                                     boolean z19222 = z10;
                                     linearLayout2222.setPadding(AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f));
                                     linearLayout2222.setOrientation(0);
-                                    linearLayout322.addView(linearLayout2222, gb1.u(-2, -2, 17));
+                                    linearLayout322.addView(linearLayout2222, kb1.u(-2, -2, 17));
                                     x1 x1Var722 = new x1(getContext(), R.drawable.iv_align_horiz_left, u6Var222);
                                     x1Var722.e = 4;
                                     x1Var722.updateColors();
                                     x1Var722.b();
                                     int i41222 = y6.G8;
                                     x1Var722.c(i41222);
-                                    linearLayout2222.addView(x1Var722, gb1.r(32, 32));
+                                    linearLayout2222.addView(x1Var722, kb1.r(32, 32));
                                     x1 x1Var2222 = new x1(getContext(), R.drawable.iv_align_horiz_middle, u6Var222);
                                     x1Var2222.e = 4;
                                     x1Var2222.updateColors();
                                     x1Var2222.b();
                                     x1Var2222.c(i41222);
-                                    linearLayout2222.addView(x1Var2222, gb1.r(32, 32));
+                                    linearLayout2222.addView(x1Var2222, kb1.r(32, 32));
                                     x1 x1Var3222 = new x1(getContext(), R.drawable.iv_align_horiz_right, u6Var222);
                                     x1Var3222.e = 4;
                                     x1Var3222.updateColors();
@@ -6795,28 +6795,28 @@ public final class v3 extends r71 {
                                     x1Var3222.c(i41222);
                                     final x1[] x1VarArr322 = {x1Var722, x1Var2222, x1Var3222};
                                     boolean z20222 = z11;
-                                    linearLayout2222.addView(x1Var3222, gb1.r(32, 32));
+                                    linearLayout2222.addView(x1Var3222, kb1.r(32, 32));
                                     z15 = z12;
-                                    linearLayout2222.addView(new Space(getContext()), gb1.r(8, 0));
+                                    linearLayout2222.addView(new Space(getContext()), kb1.r(8, 0));
                                     x1 x1Var4222 = new x1(getContext(), R.drawable.iv_align_vert_top, u6Var222);
                                     x1Var4222.e = 4;
                                     x1Var4222.updateColors();
                                     x1Var4222.b();
                                     x1Var4222.c(i41222);
-                                    linearLayout2222.addView(x1Var4222, gb1.r(32, 32));
+                                    linearLayout2222.addView(x1Var4222, kb1.r(32, 32));
                                     x1 x1Var5222 = new x1(getContext(), R.drawable.iv_align_vert_middle, u6Var222);
                                     x1Var5222.e = 4;
                                     x1Var5222.updateColors();
                                     x1Var5222.b();
                                     x1Var5222.c(i41222);
-                                    linearLayout2222.addView(x1Var5222, gb1.r(32, 32));
+                                    linearLayout2222.addView(x1Var5222, kb1.r(32, 32));
                                     x1 x1Var6222 = new x1(getContext(), R.drawable.iv_align_vert_bottom, u6Var222);
                                     x1Var6222.e = 4;
                                     x1Var6222.updateColors();
                                     x1Var6222.b();
                                     x1Var6222.c(i41222);
                                     final x1[] x1VarArr2222 = {x1Var4222, x1Var5222, x1Var6222};
-                                    linearLayout2222.addView(x1Var6222, gb1.r(32, 32));
+                                    linearLayout2222.addView(x1Var6222, kb1.r(32, 32));
                                     P222.q(linearLayout322);
                                     it3 = linkedHashSet.iterator();
                                     int i42222 = -1;
@@ -6891,8 +6891,8 @@ public final class v3 extends r71 {
                                 }
                                 if (z13) {
                                 }
-                                k80Var = this.r4;
-                                if (k80Var != null) {
+                                l80Var = this.r4;
+                                if (l80Var != null) {
                                 }
                                 dp = AndroidUtilities.dp(((i10 + 1 + i11 + (i15 != 0 ? 2 : 0) + (i16 != 0 ? 2 : 0) + i14 + i13 + (z12 ? 3 : 0)) * 48) + 68 + (z12 ? 8 : 0));
                                 FrameLayout V422222 = V4(p5Var2, false);
@@ -6901,7 +6901,7 @@ public final class v3 extends r71 {
                                 V422222.getLocationOnScreen(iArr);
                                 if (((iArr[i12] - dp) - AndroidUtilities.dp(8.0f) >= AndroidUtilities.dp(8.0f) + AndroidUtilities.statusBarHeight ? i12 : 0) != 0) {
                                 }
-                                final k80 P2222 = this.p3.P(V4);
+                                final l80 P2222 = this.p3.P(V4);
                                 P2222.s = 0;
                                 P2222.t = false;
                                 P2222.Z = z14;
@@ -6916,27 +6916,27 @@ public final class v3 extends r71 {
                                 int i402222 = y6.y6;
                                 u6 u6Var2222 = this.o3;
                                 f7.V(textView2222, i402222, u6Var2222);
-                                linearLayout3222.addView(textView2222, gb1.o(0.0f, 5.0f, 0.0f, 4.0f, -1, -2));
+                                linearLayout3222.addView(textView2222, kb1.o(0.0f, 5.0f, 0.0f, 4.0f, -1, -2));
                                 LinearLayout linearLayout22222 = new LinearLayout(getContext());
                                 i19 = i11;
                                 i20 = i13;
                                 boolean z192222 = z10;
                                 linearLayout22222.setPadding(AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f));
                                 linearLayout22222.setOrientation(0);
-                                linearLayout3222.addView(linearLayout22222, gb1.u(-2, -2, 17));
+                                linearLayout3222.addView(linearLayout22222, kb1.u(-2, -2, 17));
                                 x1 x1Var7222 = new x1(getContext(), R.drawable.iv_align_horiz_left, u6Var2222);
                                 x1Var7222.e = 4;
                                 x1Var7222.updateColors();
                                 x1Var7222.b();
                                 int i412222 = y6.G8;
                                 x1Var7222.c(i412222);
-                                linearLayout22222.addView(x1Var7222, gb1.r(32, 32));
+                                linearLayout22222.addView(x1Var7222, kb1.r(32, 32));
                                 x1 x1Var22222 = new x1(getContext(), R.drawable.iv_align_horiz_middle, u6Var2222);
                                 x1Var22222.e = 4;
                                 x1Var22222.updateColors();
                                 x1Var22222.b();
                                 x1Var22222.c(i412222);
-                                linearLayout22222.addView(x1Var22222, gb1.r(32, 32));
+                                linearLayout22222.addView(x1Var22222, kb1.r(32, 32));
                                 x1 x1Var32222 = new x1(getContext(), R.drawable.iv_align_horiz_right, u6Var2222);
                                 x1Var32222.e = 4;
                                 x1Var32222.updateColors();
@@ -6944,28 +6944,28 @@ public final class v3 extends r71 {
                                 x1Var32222.c(i412222);
                                 final x1[] x1VarArr3222 = {x1Var7222, x1Var22222, x1Var32222};
                                 boolean z202222 = z11;
-                                linearLayout22222.addView(x1Var32222, gb1.r(32, 32));
+                                linearLayout22222.addView(x1Var32222, kb1.r(32, 32));
                                 z15 = z12;
-                                linearLayout22222.addView(new Space(getContext()), gb1.r(8, 0));
+                                linearLayout22222.addView(new Space(getContext()), kb1.r(8, 0));
                                 x1 x1Var42222 = new x1(getContext(), R.drawable.iv_align_vert_top, u6Var2222);
                                 x1Var42222.e = 4;
                                 x1Var42222.updateColors();
                                 x1Var42222.b();
                                 x1Var42222.c(i412222);
-                                linearLayout22222.addView(x1Var42222, gb1.r(32, 32));
+                                linearLayout22222.addView(x1Var42222, kb1.r(32, 32));
                                 x1 x1Var52222 = new x1(getContext(), R.drawable.iv_align_vert_middle, u6Var2222);
                                 x1Var52222.e = 4;
                                 x1Var52222.updateColors();
                                 x1Var52222.b();
                                 x1Var52222.c(i412222);
-                                linearLayout22222.addView(x1Var52222, gb1.r(32, 32));
+                                linearLayout22222.addView(x1Var52222, kb1.r(32, 32));
                                 x1 x1Var62222 = new x1(getContext(), R.drawable.iv_align_vert_bottom, u6Var2222);
                                 x1Var62222.e = 4;
                                 x1Var62222.updateColors();
                                 x1Var62222.b();
                                 x1Var62222.c(i412222);
                                 final x1[] x1VarArr22222 = {x1Var42222, x1Var52222, x1Var62222};
-                                linearLayout22222.addView(x1Var62222, gb1.r(32, 32));
+                                linearLayout22222.addView(x1Var62222, kb1.r(32, 32));
                                 P2222.q(linearLayout3222);
                                 it3 = linkedHashSet.iterator();
                                 int i422222 = -1;
@@ -7053,8 +7053,8 @@ public final class v3 extends r71 {
                 }
                 if (z13) {
                 }
-                k80Var = this.r4;
-                if (k80Var != null) {
+                l80Var = this.r4;
+                if (l80Var != null) {
                 }
                 dp = AndroidUtilities.dp(((i10 + 1 + i11 + (i15 != 0 ? 2 : 0) + (i16 != 0 ? 2 : 0) + i14 + i13 + (z12 ? 3 : 0)) * 48) + 68 + (z12 ? 8 : 0));
                 FrameLayout V4222222 = V4(p5Var2, false);
@@ -7063,7 +7063,7 @@ public final class v3 extends r71 {
                 V4222222.getLocationOnScreen(iArr);
                 if (((iArr[i12] - dp) - AndroidUtilities.dp(8.0f) >= AndroidUtilities.dp(8.0f) + AndroidUtilities.statusBarHeight ? i12 : 0) != 0) {
                 }
-                final k80 P22222 = this.p3.P(V4);
+                final l80 P22222 = this.p3.P(V4);
                 P22222.s = 0;
                 P22222.t = false;
                 P22222.Z = z14;
@@ -7078,27 +7078,27 @@ public final class v3 extends r71 {
                 int i4022222 = y6.y6;
                 u6 u6Var22222 = this.o3;
                 f7.V(textView22222, i4022222, u6Var22222);
-                linearLayout32222.addView(textView22222, gb1.o(0.0f, 5.0f, 0.0f, 4.0f, -1, -2));
+                linearLayout32222.addView(textView22222, kb1.o(0.0f, 5.0f, 0.0f, 4.0f, -1, -2));
                 LinearLayout linearLayout222222 = new LinearLayout(getContext());
                 i19 = i11;
                 i20 = i13;
                 boolean z1922222 = z10;
                 linearLayout222222.setPadding(AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f));
                 linearLayout222222.setOrientation(0);
-                linearLayout32222.addView(linearLayout222222, gb1.u(-2, -2, 17));
+                linearLayout32222.addView(linearLayout222222, kb1.u(-2, -2, 17));
                 x1 x1Var72222 = new x1(getContext(), R.drawable.iv_align_horiz_left, u6Var22222);
                 x1Var72222.e = 4;
                 x1Var72222.updateColors();
                 x1Var72222.b();
                 int i4122222 = y6.G8;
                 x1Var72222.c(i4122222);
-                linearLayout222222.addView(x1Var72222, gb1.r(32, 32));
+                linearLayout222222.addView(x1Var72222, kb1.r(32, 32));
                 x1 x1Var222222 = new x1(getContext(), R.drawable.iv_align_horiz_middle, u6Var22222);
                 x1Var222222.e = 4;
                 x1Var222222.updateColors();
                 x1Var222222.b();
                 x1Var222222.c(i4122222);
-                linearLayout222222.addView(x1Var222222, gb1.r(32, 32));
+                linearLayout222222.addView(x1Var222222, kb1.r(32, 32));
                 x1 x1Var322222 = new x1(getContext(), R.drawable.iv_align_horiz_right, u6Var22222);
                 x1Var322222.e = 4;
                 x1Var322222.updateColors();
@@ -7106,28 +7106,28 @@ public final class v3 extends r71 {
                 x1Var322222.c(i4122222);
                 final x1[] x1VarArr32222 = {x1Var72222, x1Var222222, x1Var322222};
                 boolean z2022222 = z11;
-                linearLayout222222.addView(x1Var322222, gb1.r(32, 32));
+                linearLayout222222.addView(x1Var322222, kb1.r(32, 32));
                 z15 = z12;
-                linearLayout222222.addView(new Space(getContext()), gb1.r(8, 0));
+                linearLayout222222.addView(new Space(getContext()), kb1.r(8, 0));
                 x1 x1Var422222 = new x1(getContext(), R.drawable.iv_align_vert_top, u6Var22222);
                 x1Var422222.e = 4;
                 x1Var422222.updateColors();
                 x1Var422222.b();
                 x1Var422222.c(i4122222);
-                linearLayout222222.addView(x1Var422222, gb1.r(32, 32));
+                linearLayout222222.addView(x1Var422222, kb1.r(32, 32));
                 x1 x1Var522222 = new x1(getContext(), R.drawable.iv_align_vert_middle, u6Var22222);
                 x1Var522222.e = 4;
                 x1Var522222.updateColors();
                 x1Var522222.b();
                 x1Var522222.c(i4122222);
-                linearLayout222222.addView(x1Var522222, gb1.r(32, 32));
+                linearLayout222222.addView(x1Var522222, kb1.r(32, 32));
                 x1 x1Var622222 = new x1(getContext(), R.drawable.iv_align_vert_bottom, u6Var22222);
                 x1Var622222.e = 4;
                 x1Var622222.updateColors();
                 x1Var622222.b();
                 x1Var622222.c(i4122222);
                 final x1[] x1VarArr222222 = {x1Var422222, x1Var522222, x1Var622222};
-                linearLayout222222.addView(x1Var622222, gb1.r(32, 32));
+                linearLayout222222.addView(x1Var622222, kb1.r(32, 32));
                 P22222.q(linearLayout32222);
                 it3 = linkedHashSet.iterator();
                 int i4222222 = -1;
@@ -7213,8 +7213,8 @@ public final class v3 extends r71 {
         }
         if (z13) {
         }
-        k80Var = this.r4;
-        if (k80Var != null) {
+        l80Var = this.r4;
+        if (l80Var != null) {
         }
         dp = AndroidUtilities.dp(((i10 + 1 + i11 + (i15 != 0 ? 2 : 0) + (i16 != 0 ? 2 : 0) + i14 + i13 + (z12 ? 3 : 0)) * 48) + 68 + (z12 ? 8 : 0));
         FrameLayout V42222222 = V4(p5Var2, false);
@@ -7223,7 +7223,7 @@ public final class v3 extends r71 {
         V42222222.getLocationOnScreen(iArr);
         if (((iArr[i12] - dp) - AndroidUtilities.dp(8.0f) >= AndroidUtilities.dp(8.0f) + AndroidUtilities.statusBarHeight ? i12 : 0) != 0) {
         }
-        final k80 P222222 = this.p3.P(V4);
+        final l80 P222222 = this.p3.P(V4);
         P222222.s = 0;
         P222222.t = false;
         P222222.Z = z14;
@@ -7238,27 +7238,27 @@ public final class v3 extends r71 {
         int i40222222 = y6.y6;
         u6 u6Var222222 = this.o3;
         f7.V(textView222222, i40222222, u6Var222222);
-        linearLayout322222.addView(textView222222, gb1.o(0.0f, 5.0f, 0.0f, 4.0f, -1, -2));
+        linearLayout322222.addView(textView222222, kb1.o(0.0f, 5.0f, 0.0f, 4.0f, -1, -2));
         LinearLayout linearLayout2222222 = new LinearLayout(getContext());
         i19 = i11;
         i20 = i13;
         boolean z19222222 = z10;
         linearLayout2222222.setPadding(AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f));
         linearLayout2222222.setOrientation(0);
-        linearLayout322222.addView(linearLayout2222222, gb1.u(-2, -2, 17));
+        linearLayout322222.addView(linearLayout2222222, kb1.u(-2, -2, 17));
         x1 x1Var722222 = new x1(getContext(), R.drawable.iv_align_horiz_left, u6Var222222);
         x1Var722222.e = 4;
         x1Var722222.updateColors();
         x1Var722222.b();
         int i41222222 = y6.G8;
         x1Var722222.c(i41222222);
-        linearLayout2222222.addView(x1Var722222, gb1.r(32, 32));
+        linearLayout2222222.addView(x1Var722222, kb1.r(32, 32));
         x1 x1Var2222222 = new x1(getContext(), R.drawable.iv_align_horiz_middle, u6Var222222);
         x1Var2222222.e = 4;
         x1Var2222222.updateColors();
         x1Var2222222.b();
         x1Var2222222.c(i41222222);
-        linearLayout2222222.addView(x1Var2222222, gb1.r(32, 32));
+        linearLayout2222222.addView(x1Var2222222, kb1.r(32, 32));
         x1 x1Var3222222 = new x1(getContext(), R.drawable.iv_align_horiz_right, u6Var222222);
         x1Var3222222.e = 4;
         x1Var3222222.updateColors();
@@ -7266,28 +7266,28 @@ public final class v3 extends r71 {
         x1Var3222222.c(i41222222);
         final x1[] x1VarArr322222 = {x1Var722222, x1Var2222222, x1Var3222222};
         boolean z20222222 = z11;
-        linearLayout2222222.addView(x1Var3222222, gb1.r(32, 32));
+        linearLayout2222222.addView(x1Var3222222, kb1.r(32, 32));
         z15 = z12;
-        linearLayout2222222.addView(new Space(getContext()), gb1.r(8, 0));
+        linearLayout2222222.addView(new Space(getContext()), kb1.r(8, 0));
         x1 x1Var4222222 = new x1(getContext(), R.drawable.iv_align_vert_top, u6Var222222);
         x1Var4222222.e = 4;
         x1Var4222222.updateColors();
         x1Var4222222.b();
         x1Var4222222.c(i41222222);
-        linearLayout2222222.addView(x1Var4222222, gb1.r(32, 32));
+        linearLayout2222222.addView(x1Var4222222, kb1.r(32, 32));
         x1 x1Var5222222 = new x1(getContext(), R.drawable.iv_align_vert_middle, u6Var222222);
         x1Var5222222.e = 4;
         x1Var5222222.updateColors();
         x1Var5222222.b();
         x1Var5222222.c(i41222222);
-        linearLayout2222222.addView(x1Var5222222, gb1.r(32, 32));
+        linearLayout2222222.addView(x1Var5222222, kb1.r(32, 32));
         x1 x1Var6222222 = new x1(getContext(), R.drawable.iv_align_vert_bottom, u6Var222222);
         x1Var6222222.e = 4;
         x1Var6222222.updateColors();
         x1Var6222222.b();
         x1Var6222222.c(i41222222);
         final x1[] x1VarArr2222222 = {x1Var4222222, x1Var5222222, x1Var6222222};
-        linearLayout2222222.addView(x1Var6222222, gb1.r(32, 32));
+        linearLayout2222222.addView(x1Var6222222, kb1.r(32, 32));
         P222222.q(linearLayout322222);
         it3 = linkedHashSet.iterator();
         int i42222222 = -1;
@@ -7339,10 +7339,10 @@ public final class v3 extends r71 {
         P222222.Z();
     }
 
-    @Override // org.telegram.ui.Components.r71
+    @Override // org.telegram.ui.Components.s71
     public final void M1(s4.e1 e1Var) {
         int b10;
-        t61 G;
+        u61 G;
         a aVar = null;
         if (e1Var != null && (b10 = e1Var.b()) >= 0 && (G = this.g3.G(b10)) != null) {
             Object obj = G.G;
@@ -7927,10 +7927,10 @@ public final class v3 extends r71 {
         this.K3 = false;
         this.L3 = null;
         this.M3 = null;
-        k80 k80Var = this.r4;
-        if (k80Var != null) {
+        l80 l80Var = this.r4;
+        if (l80Var != null) {
             this.r4 = null;
-            k80Var.u();
+            l80Var.u();
         }
         p5 p5Var = this.q4;
         if (p5Var != null) {
@@ -9267,7 +9267,7 @@ public final class v3 extends r71 {
         }
         int i18 = indexOf;
         while (true) {
-            j71 j71Var = this.g3;
+            k71 k71Var = this.g3;
             str = "";
             if (i18 > indexOf2) {
                 int i19 = i16;
@@ -9492,7 +9492,7 @@ public final class v3 extends r71 {
                     y4();
                     a aVar3 = (indexOf < 0 || indexOf >= arrayList.size()) ? null : (a) arrayList.get(indexOf);
                     j3Var.f(false);
-                    j71Var.O(false);
+                    k71Var.O(false);
                     f2 f2Var10 = this.R3;
                     if (f2Var10 != null) {
                         f2Var10.h();
@@ -9782,7 +9782,7 @@ public final class v3 extends r71 {
         return (W2 == null && (j3Var = this.v3) != null && j3Var.x() && (i10 = j3Var.p0) == j3Var.s0) ? E4(i10) : W2;
     }
 
-    @Override // org.telegram.ui.Components.r71, org.telegram.ui.Components.mm0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.s71, org.telegram.ui.Components.nm0, android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         ArrayList arrayList;
         int i10;
@@ -9819,9 +9819,9 @@ public final class v3 extends r71 {
             }
             if (i14 != 0) {
                 if (this.y4 == null) {
-                    wm0 wm0Var = new wm0(this);
-                    this.y4 = wm0Var;
-                    wm0Var.a(null, null, null, this.o3, 1);
+                    xm0 xm0Var = new xm0(this);
+                    this.y4 = xm0Var;
+                    xm0Var.a(null, null, null, this.o3, 1);
                     zd.a(this.y4, this.o3);
                 }
                 int i15 = 0;
@@ -12116,7 +12116,7 @@ public final class v3 extends r71 {
                                                     p5Var = null;
                                                 }
                                             }
-                                            j71 j71Var = this.g3;
+                                            k71 k71Var = this.g3;
                                             if (p5Var == null) {
                                                 int indexOf3 = arrayList.indexOf(p5Var.getRow());
                                                 if (indexOf3 >= 0) {
@@ -12130,7 +12130,7 @@ public final class v3 extends r71 {
                                                         if (Z22 < 0) {
                                                             a aVar3 = new a(new TL_iv.pageBlockParagraph(), 0, 0);
                                                             arrayList.add(aVar3);
-                                                            j71Var.O(false);
+                                                            k71Var.O(false);
                                                             post(new m2(this, aVar3, 2));
                                                         } else {
                                                             post(new m2(this, (a) arrayList.get(Z22), 4));
@@ -12173,7 +12173,7 @@ public final class v3 extends r71 {
                                                             if (a43 == null) {
                                                                 a aVar4 = new a(new TL_iv.pageBlockParagraph(), 0, 0);
                                                                 arrayList.add(aVar4);
-                                                                j71Var.O(false);
+                                                                k71Var.O(false);
                                                                 post(new m2(this, aVar4, 6));
                                                             } else {
                                                                 post(new m2(this, a43, 7));
@@ -12291,7 +12291,7 @@ public final class v3 extends r71 {
                                                                                 if (Z24 < 0) {
                                                                                     a aVar5 = new a(new TL_iv.pageBlockParagraph(), 0, 0);
                                                                                     arrayList.add(aVar5);
-                                                                                    j71Var.O(false);
+                                                                                    k71Var.O(false);
                                                                                     post(new m2(this, aVar5, 11));
                                                                                 } else {
                                                                                     post(new m2(this, (a) arrayList.get(Z24), 12));
@@ -12427,7 +12427,7 @@ public final class v3 extends r71 {
                                             }
                                             i11++;
                                         }
-                                        j71 j71Var2 = this.g3;
+                                        k71 k71Var2 = this.g3;
                                         if (p5Var == null) {
                                         }
                                     }
@@ -12628,7 +12628,7 @@ public final class v3 extends r71 {
                     }
                 }
                 boolean z11 = this.H3;
-                j71 j71Var = this.g3;
+                k71 k71Var = this.g3;
                 ArrayList arrayList = this.t3;
                 if (!z11 && !this.I3 && this.F3 == null && !j3Var.x() && this.q4 == null) {
                     float x9 = motionEvent.getX();
@@ -12649,7 +12649,7 @@ public final class v3 extends r71 {
                                 }
                                 a aVar2 = new a(new TL_iv.pageBlockParagraph(), 0, 0);
                                 arrayList.add(aVar2);
-                                j71Var.O(false);
+                                k71Var.O(false);
                                 f2 f2Var2 = this.R3;
                                 if (f2Var2 != null) {
                                     f2Var2.h();
@@ -12688,7 +12688,7 @@ public final class v3 extends r71 {
                                     }
                                     a aVar4 = new a(new TL_iv.pageBlockParagraph(), 0, 0);
                                     arrayList.add(0, aVar4);
-                                    j71Var.O(false);
+                                    k71Var.O(false);
                                     f2 f2Var4 = this.R3;
                                     if (f2Var4 != null) {
                                         f2Var4.h();
@@ -12755,20 +12755,20 @@ public final class v3 extends r71 {
         return layout.getText().length();
     }
 
-    @Override // org.telegram.ui.Components.mm0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.nm0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
         getViewTreeObserver().addOnGlobalFocusChangeListener(this.U3);
     }
 
-    @Override // org.telegram.ui.Components.mm0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.nm0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         getViewTreeObserver().removeOnGlobalFocusChangeListener(this.U3);
         this.i3 = false;
     }
 
-    @Override // org.telegram.ui.Components.mm0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.nm0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
     public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
         int i14 = i13 - i11;
         int i15 = this.S3;
@@ -13468,9 +13468,9 @@ public final class v3 extends r71 {
             return;
         }
         int size = aVar.h.size();
-        j71 j71Var = this.g3;
+        k71 k71Var = this.g3;
         if (size != 1) {
-            j71Var.O(true);
+            k71Var.O(true);
             t4(aVar);
             return;
         }
@@ -13480,7 +13480,7 @@ public final class v3 extends r71 {
         pageBlock.caption = pageCaption;
         aVar.g = (t) aVar.h.get(0);
         aVar.h = null;
-        j71Var.O(true);
+        k71Var.O(true);
         t4(aVar);
     }
 
@@ -13541,7 +13541,7 @@ public final class v3 extends r71 {
                     aVar2.k.add((Long) arrayList3.get(i12));
                 }
                 int i13 = f5.a;
-                t61 K = t61.K(f5.class);
+                u61 K = u61.K(f5.class);
                 K.G = aVar2;
                 K.H = this.n4;
                 arrayList2.add(K);

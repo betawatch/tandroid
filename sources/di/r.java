@@ -41,16 +41,16 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.b10;
-import org.telegram.ui.Components.bk0;
+import org.telegram.ui.Components.ck0;
 import org.telegram.ui.Components.ds;
 import org.telegram.ui.Components.ed;
-import org.telegram.ui.Components.gb1;
-import org.telegram.ui.Components.q61;
+import org.telegram.ui.Components.kb1;
+import org.telegram.ui.Components.r61;
 import org.telegram.ui.Components.z20;
-import org.telegram.ui.cy;
-import org.telegram.ui.qw;
+import org.telegram.ui.ey;
+import org.telegram.ui.sw;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public abstract class r extends FrameLayout implements NotificationCenter.NotificationCenterDelegate, oe.d {
     public boolean A0;
@@ -95,7 +95,7 @@ public abstract class r extends FrameLayout implements NotificationCenter.Notifi
     public final m d;
     public float d0;
     public int e;
-    public final cy e0;
+    public final ey e0;
     public final int f;
     public CharSequence f0;
     public boolean g0;
@@ -106,7 +106,7 @@ public abstract class r extends FrameLayout implements NotificationCenter.Notifi
     public p k0;
     public boolean l0;
     public boolean m0;
-    public bk0 n;
+    public ck0 n;
     public float n0;
     public int o0;
     public q p0;
@@ -127,17 +127,17 @@ public abstract class r extends FrameLayout implements NotificationCenter.Notifi
     public Matrix y0;
     public Paint z0;
 
-    public r(Context context, cy cyVar, int i10, int i11) {
+    public r(Context context, ey eyVar, int i10, int i11) {
         super(context);
         this.a = new oe.b(1, this, ds.h, 380L, false);
         this.v = new ArrayList();
         this.w = new ArrayList();
         this.x = new ArrayList();
         this.y = new ArrayList();
-        qw qwVar = (qw) this;
-        n nVar = new n(qwVar, false);
+        sw swVar = (sw) this;
+        n nVar = new n(swVar, false);
         this.E = nVar;
-        n nVar2 = new n(qwVar, true);
+        n nVar2 = new n(swVar, true);
         this.F = nVar2;
         Paint paint = new Paint();
         this.G = new Paint(1);
@@ -163,19 +163,19 @@ public abstract class r extends FrameLayout implements NotificationCenter.Notifi
         this.L0 = bVar;
         this.b = i11;
         this.f = i10;
-        this.e0 = cyVar;
+        this.e0 = eyVar;
         this.s0 = AndroidUtilities.dp(68.0f);
         this.s = MessagesController.getInstance(i10).getStoriesController();
-        j jVar = new j(qwVar, context, 0);
+        j jVar = new j(swVar, context, 0);
         this.h = jVar;
         jVar.setPadding(AndroidUtilities.dp(3.0f), 0, AndroidUtilities.dp(3.0f), 0);
         jVar.setClipToPadding(false);
         jVar.setClipChildren(false);
-        edVar.h = new bi.u6(qwVar, 13);
-        ag.c cVar = new ag.c(qwVar, 7);
+        edVar.h = new bi.u6(swVar, 13);
+        ag.c cVar = new ag.c(swVar, 7);
         edVar.l = true;
         edVar.j = cVar;
-        jVar.j(new ai.b(qwVar, 8));
+        jVar.j(new ai.b(swVar, 8));
         s4.l lVar = new s4.l();
         this.R = lVar;
         lVar.C = false;
@@ -185,10 +185,10 @@ public abstract class r extends FrameLayout implements NotificationCenter.Notifi
         s4.c0 c0Var = new s4.c0(0, false);
         this.S = c0Var;
         jVar.setLayoutManager(c0Var);
-        jVar.setOnItemClickListener(new ai.k(qwVar, 5));
-        jVar.setOnItemLongClickListener(new a1.c(qwVar, 21));
+        jVar.setOnItemClickListener(new ai.k(swVar, 5));
+        jVar.setOnItemLongClickListener(new a1.c(swVar, 21));
         jVar.setAdapter(nVar);
-        addView(jVar, gb1.h(-1, -2.0f, 0, 0.0f, 4.0f, 0.0f, 0.0f));
+        addView(jVar, kb1.h(-1, -2.0f, 0, 0.0f, 4.0f, 0.0f, 0.0f));
         org.telegram.ui.Components.s6 s6Var = new org.telegram.ui.Components.s6(getContext(), true, true, false);
         this.T = s6Var;
         s6Var.setGravity(3);
@@ -198,7 +198,7 @@ public abstract class r extends FrameLayout implements NotificationCenter.Notifi
         s6Var.setTextSize(AndroidUtilities.dp((AndroidUtilities.isTablet() || getResources().getConfiguration().orientation != 2) ? 20.0f : 18.0f));
         s6Var.setImportantForAccessibility(1);
         s6Var.setFocusableInTouchMode(true);
-        addView(s6Var, gb1.g(-2.0f, -1));
+        addView(s6Var, kb1.g(-2.0f, -1));
         ImageView imageView = new ImageView(context);
         this.V = imageView;
         imageView.setContentDescription(LocaleController.getString(R.string.AppName));
@@ -207,7 +207,7 @@ public abstract class r extends FrameLayout implements NotificationCenter.Notifi
         imageView.setColorFilter(getTextLogoColor(), PorterDuff.Mode.MULTIPLY);
         imageView.setImportantForAccessibility(1);
         imageView.setFocusableInTouchMode(true);
-        addView(imageView, gb1.g(22.0f, 90));
+        addView(imageView, kb1.g(22.0f, 90));
         org.telegram.ui.Components.r5 r5Var = new org.telegram.ui.Components.r5(AndroidUtilities.dp(26.0f), null);
         this.a0 = r5Var;
         r5Var.a = true;
@@ -216,15 +216,15 @@ public abstract class r extends FrameLayout implements NotificationCenter.Notifi
         this.W = imageView2;
         imageView2.setScaleType(ImageView.ScaleType.CENTER);
         imageView2.setImageDrawable(r5Var);
-        addView(imageView2, gb1.g(40.0f, 40));
-        k kVar = new k(qwVar, context, bVar);
+        addView(imageView2, kb1.g(40.0f, 40));
+        k kVar = new k(swVar, context, bVar);
         this.U = kVar;
-        addView(kVar, gb1.g(-2.0f, -2));
+        addView(kVar, kb1.g(-2.0f, -2));
         paint.setColor(-2762018);
         paint.setStyle(Paint.Style.STROKE);
         paint.setStrokeWidth(AndroidUtilities.dp(1.0f));
         this.c = getContext().getDrawable(R.drawable.msg_mini_addstory);
-        j jVar2 = new j(qwVar, getContext(), 1);
+        j jVar2 = new j(swVar, getContext(), 1);
         this.r = jVar2;
         getContext();
         jVar2.setLayoutManager(new s4.c0(0, false));
@@ -236,7 +236,7 @@ public abstract class r extends FrameLayout implements NotificationCenter.Notifi
         jVar2.setItemAnimator(mVar);
         jVar2.setAdapter(nVar2);
         jVar2.setClipChildren(false);
-        addView(jVar2, gb1.h(-1, -2.0f, 0, 0.0f, 4.0f, 0.0f, 0.0f));
+        addView(jVar2, kb1.h(-1, -2.0f, 0, 0.0f, 4.0f, 0.0f, 0.0f));
         setClipChildren(false);
         setClipToPadding(false);
         d();
@@ -326,7 +326,7 @@ public abstract class r extends FrameLayout implements NotificationCenter.Notifi
         ArrayList arrayList = this.x;
         int size = arrayList.size();
         h7 h7Var = this.s;
-        if (N02 > size || ((N0 = c0Var.N0() + 9) < arrayList.size() && h7Var.D(0, ((o) arrayList.get(N0)).c) == 0)) {
+        if (N02 > size || ((N0 = c0Var.N0() + 9) < arrayList.size() && h7Var.E(0, ((o) arrayList.get(N0)).c) == 0)) {
             boolean z10 = this.b == 1;
             if (z10) {
                 if (!h7Var.z) {
@@ -335,7 +335,7 @@ public abstract class r extends FrameLayout implements NotificationCenter.Notifi
             } else if (!h7Var.p) {
                 return;
             }
-            h7Var.Q(z10);
+            h7Var.T(z10);
         }
     }
 
@@ -890,8 +890,8 @@ public abstract class r extends FrameLayout implements NotificationCenter.Notifi
     }
 
     public final int f(int i10) {
-        cy cyVar = this.e0;
-        return (cyVar == null || cyVar.getResourceProvider() == null) ? org.telegram.ui.ActionBar.y6.x0(null, i10, false) : cyVar.getThemedColor(i10);
+        ey eyVar = this.e0;
+        return (eyVar == null || eyVar.getResourceProvider() == null) ? org.telegram.ui.ActionBar.y6.x0(null, i10, false) : eyVar.getThemedColor(i10);
     }
 
     public final boolean g() {
@@ -912,10 +912,10 @@ public abstract class r extends FrameLayout implements NotificationCenter.Notifi
     }
 
     public final void h() {
-        if (this.s.H()) {
+        if (this.s.J()) {
             ArrayList arrayList = new ArrayList();
             arrayList.add(Long.valueOf(UserConfig.getInstance(this.f).clientUserId));
-            this.e0.getOrCreateStoryViewer().G(getContext(), null, arrayList, 0, null, null, q7.a(this.r), false);
+            this.e0.getOrCreateStoryViewer().H(getContext(), null, arrayList, 0, null, null, q7.a(this.r), false);
         }
     }
 
@@ -928,8 +928,8 @@ public abstract class r extends FrameLayout implements NotificationCenter.Notifi
             }
             boolean z11 = qVar.F;
             h7 h7Var = this.s;
-            if (!z11 || h7Var.H()) {
-                if (h7Var.I(qVar.E) || h7Var.K(qVar.E)) {
+            if (!z11 || h7Var.J()) {
+                if (h7Var.K(qVar.E) || h7Var.M(qVar.E)) {
                     TL_stories.PeerStories y3 = h7Var.y(qVar.E);
                     long j10 = qVar.E;
                     x7 x7Var = this.r0;
@@ -946,7 +946,7 @@ public abstract class r extends FrameLayout implements NotificationCenter.Notifi
                     qVar.e = n10;
                     this.r0 = n10;
                     if (n10 != null) {
-                        h7Var.e0(qVar.E, true);
+                        h7Var.h0(qVar.E, true);
                     }
                 }
             } else if (MessagesController.getInstance(this.f).storiesEnabled()) {
@@ -960,10 +960,10 @@ public abstract class r extends FrameLayout implements NotificationCenter.Notifi
     public final void j(long j10) {
         q qVar;
         b7 o10;
-        cy cyVar = this.e0;
+        ey eyVar = this.e0;
         int i10 = this.f;
         if (j10 == 0 && (o10 = MessagesController.getInstance(i10).getStoriesController().o()) != null && o10.a(i10, 1)) {
-            cyVar.showDialog(new tg.j0(o10.b(), this.f, getContext(), this.e0, null));
+            eyVar.showDialog(new tg.j0(o10.b(), this.f, getContext(), this.e0, null));
             return;
         }
         int i11 = 0;
@@ -990,10 +990,10 @@ public abstract class r extends FrameLayout implements NotificationCenter.Notifi
             return;
         }
         if (j10 == 0) {
-            sb.D(cyVar.getParentActivity(), i10).Q(nb.c(qVar));
+            sb.D(eyVar.getParentActivity(), i10).Q(nb.c(qVar));
             return;
         }
-        org.telegram.ui.ActionBar.u6 resourceProvider = cyVar != null ? cyVar.getResourceProvider() : null;
+        org.telegram.ui.ActionBar.u6 resourceProvider = eyVar != null ? eyVar.getResourceProvider() : null;
         org.telegram.ui.ActionBar.e2 e2Var = new org.telegram.ui.ActionBar.e2(getContext(), 3, resourceProvider);
         e2Var.r(500L);
         MessagesController.getInstance(i10).getStoriesController().k(j10, new bi.t2(this, e2Var, j10, qVar, 1), true, resourceProvider);
@@ -1227,10 +1227,10 @@ public abstract class r extends FrameLayout implements NotificationCenter.Notifi
     public final boolean m() {
         long j10 = UserConfig.getInstance(this.f).clientUserId;
         h7 h7Var = this.s;
-        if (h7Var.J(j10)) {
+        if (h7Var.L(j10)) {
             return true;
         }
-        return h7Var.H() && h7Var.g.size() <= 3;
+        return h7Var.J() && h7Var.g.size() <= 3;
     }
 
     public final void n() {
@@ -1244,14 +1244,14 @@ public abstract class r extends FrameLayout implements NotificationCenter.Notifi
             SpannableStringBuilder replaceSingleTag = AndroidUtilities.replaceSingleTag(LocaleController.getString("StoriesPremiumHint2").replace('\n', ' '), org.telegram.ui.ActionBar.y6.Gi, 0, new d(this, 1));
             ClickableSpan[] clickableSpanArr = (ClickableSpan[]) replaceSingleTag.getSpans(0, replaceSingleTag.length(), ClickableSpan.class);
             if (clickableSpanArr != null && clickableSpanArr.length >= 1) {
-                replaceSingleTag.setSpan(new q61(AndroidUtilities.bold()), replaceSingleTag.getSpanStart(clickableSpanArr[0]), replaceSingleTag.getSpanEnd(clickableSpanArr[0]), 33);
+                replaceSingleTag.setSpan(new r61(AndroidUtilities.bold()), replaceSingleTag.getSpanStart(clickableSpanArr[0]), replaceSingleTag.getSpanEnd(clickableSpanArr[0]), 33);
             }
             fi.v3 v3Var2 = this.J;
             v3Var2.h = fi.v3.a(replaceSingleTag, v3Var2.getTextPaint());
             this.J.s(replaceSingleTag);
             this.J.setPadding(AndroidUtilities.dp(8.0f), AndroidUtilities.dp(24.0f), AndroidUtilities.dp(8.0f), 0);
             if (getParent() instanceof FrameLayout) {
-                ((FrameLayout) getParent()).addView(this.J, gb1.i(-1, ImageReceiver.DEFAULT_CROSSFADE_DURATION, 51));
+                ((FrameLayout) getParent()).addView(this.J, kb1.i(-1, ImageReceiver.DEFAULT_CROSSFADE_DURATION, 51));
             }
         }
         fi.v3 v3Var3 = this.J;
@@ -1313,7 +1313,7 @@ public abstract class r extends FrameLayout implements NotificationCenter.Notifi
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
         p(false, false);
-        NotificationCenter.getInstance(this.f).addObserver(this, NotificationCenter.storiesUpdated);
+        NotificationCenter.getInstance(this.f).addWeakObserver(this, NotificationCenter.storiesUpdated);
         c2.b bVar = this.L0;
         bVar.a = true;
         AnimatorSet animatorSet = (AnimatorSet) bVar.c;
@@ -1399,16 +1399,16 @@ public abstract class r extends FrameLayout implements NotificationCenter.Notifi
             }
         }
         int size = arrayList3.size();
-        if (!h7Var.H()) {
+        if (!h7Var.J()) {
             size--;
         }
-        int max = Math.max(1, Math.max(h7Var.C(i10 == 1), size));
+        int max = Math.max(1, Math.max(h7Var.D(i10 == 1), size));
         this.f0 = null;
-        boolean G = h7Var.G();
+        boolean I = h7Var.I();
         org.telegram.ui.Components.s6 s6Var = this.T;
-        if (G) {
+        if (I) {
             arrayList = arrayList3;
-            if (h7Var.K(UserConfig.getInstance(i11).getClientUserId())) {
+            if (h7Var.M(UserConfig.getInstance(i11).getClientUserId())) {
                 String string = LocaleController.getString(R.string.UploadingStory);
                 if (string.indexOf("…") > 0) {
                     if (this.i0 == null) {

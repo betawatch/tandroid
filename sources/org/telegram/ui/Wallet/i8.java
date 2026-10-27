@@ -9,10 +9,10 @@ import android.widget.ImageView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
 import org.telegram.ui.Components.ds;
-import org.telegram.ui.Components.gb1;
-import org.telegram.ui.dg;
+import org.telegram.ui.Components.kb1;
+import org.telegram.ui.eg;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class i8 extends FrameLayout {
     public final ImageView a;
@@ -38,10 +38,10 @@ public final class i8 extends FrameLayout {
         imageView.setImageResource(R.drawable.mini_gram_72);
         imageView.setScaleX(0.7407407f);
         imageView.setScaleY(0.7407407f);
-        addView(imageView, gb1.g(-1.0f, -1));
+        addView(imageView, kb1.g(-1.0f, -1));
         l3 l3Var = new l3(this, context, new m(this, 11));
         this.b = l3Var;
-        addView(l3Var, gb1.g(-1.0f, -1));
+        addView(l3Var, kb1.g(-1.0f, -1));
     }
 
     public final void a(float f7) {
@@ -70,7 +70,7 @@ public final class i8 extends FrameLayout {
         this.v = ofFloat;
         ofFloat.setDuration(350L);
         this.v.setInterpolator(ds.h);
-        this.v.addUpdateListener(new dg(this, IEEEremainder, 6));
+        this.v.addUpdateListener(new eg(this, IEEEremainder, 6));
         this.v.start();
         a(1.0f);
     }

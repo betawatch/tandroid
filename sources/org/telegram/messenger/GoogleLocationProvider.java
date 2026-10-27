@@ -21,14 +21,14 @@ import org.telegram.messenger.ILocationServiceProvider;
 import org.telegram.messenger.PushListenerController;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
 public class GoogleLocationProvider implements ILocationServiceProvider {
     private final HashMap<ILocationServiceProvider.ILocationListener, h8.c> callbacks = new HashMap<>();
     private h8.a locationProviderClient;
     private h8.i settingsClient;
 
-    /* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+    /* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
     public static final class GoogleApiClientImpl implements ILocationServiceProvider.IMapApiClient {
         private com.google.android.gms.common.api.m apiClient;
 
@@ -47,7 +47,7 @@ public class GoogleLocationProvider implements ILocationServiceProvider {
         }
     }
 
-    /* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+    /* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
     public static final class GoogleLocationRequest implements ILocationServiceProvider.ILocationRequest {
         private LocationRequest request;
 
@@ -140,7 +140,7 @@ public class GoogleLocationProvider implements ILocationServiceProvider {
         com.google.android.gms.common.api.internal.u b10 = com.google.android.gms.common.api.internal.v.b();
         b10.c = new li.e3(eVar, 18);
         b10.a = 2426;
-        cVar.e(0, b10.a()).addOnCompleteListener(new n4(aVar, 1));
+        cVar.e(0, b10.a()).addOnCompleteListener(new o4(aVar, 1));
     }
 
     @Override // org.telegram.messenger.ILocationServiceProvider
@@ -155,7 +155,7 @@ public class GoogleLocationProvider implements ILocationServiceProvider {
         com.google.android.gms.common.api.internal.u b10 = com.google.android.gms.common.api.internal.v.b();
         b10.c = s7.a.c;
         b10.a = 2414;
-        cVar.e(0, b10.a()).addOnCompleteListener(new n4(aVar, 0));
+        cVar.e(0, b10.a()).addOnCompleteListener(new o4(aVar, 0));
     }
 
     @Override // org.telegram.messenger.ILocationServiceProvider
@@ -214,7 +214,7 @@ public class GoogleLocationProvider implements ILocationServiceProvider {
                 iAPIConnectionCallbacks.onConnectionSuspended(i10);
             }
         });
-        arrayList2.add(new com.google.android.gms.common.api.l() { // from class: org.telegram.messenger.m4
+        arrayList2.add(new com.google.android.gms.common.api.l() { // from class: org.telegram.messenger.n4
             @Override // com.google.android.gms.common.api.l
             public final void onConnectionFailed(l6.a aVar) {
                 ILocationServiceProvider.IAPIOnConnectionFailedListener.this.onConnectionFailed();

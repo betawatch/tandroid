@@ -16,16 +16,16 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 import li.h5;
-import w7.a0;
+import w7.b0;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
 public abstract class c {
     public static final a0.j a = new a0.j(2);
     public static final a4.d b = new a4.d(28);
 
     public static j4.f a(Context context, List list) {
-        a0.a("FontProvider.getFontFamilyResult");
+        b0.a("FontProvider.getFontFamilyResult");
         try {
             ArrayList arrayList = new ArrayList();
             for (int i10 = 0; i10 < list.size(); i10++) {
@@ -45,7 +45,7 @@ public abstract class c {
     public static ProviderInfo b(PackageManager packageManager, d dVar, Resources resources) {
         a4.d dVar2 = b;
         a0.j jVar = a;
-        a0.a("FontProvider.getProvider");
+        b0.a("FontProvider.getProvider");
         try {
             List list = dVar.d;
             String str = dVar.a;
@@ -99,7 +99,7 @@ public abstract class c {
         jg.i iVar;
         ArrayList arrayList;
         Uri withAppendedId;
-        a0.a("FontProvider.query");
+        b0.a("FontProvider.query");
         try {
             ArrayList arrayList2 = new ArrayList();
             Uri build = new Uri.Builder().scheme("content").authority(str).build();
@@ -114,7 +114,7 @@ public abstract class c {
             Cursor cursor = null;
             try {
                 String[] strArr = {"_id", "file_id", "font_ttc_index", "font_variation_settings", "font_weight", "font_italic", "result_code"};
-                a0.a("ContentQueryWrapper.query");
+                b0.a("ContentQueryWrapper.query");
                 try {
                     cursor = iVar.D(build, strArr, new String[]{dVar.c});
                     Trace.endSection();

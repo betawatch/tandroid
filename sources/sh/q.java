@@ -11,12 +11,12 @@ import org.telegram.ui.ActionBar.f7;
 import org.telegram.ui.ActionBar.r2;
 import org.telegram.ui.ActionBar.u6;
 import org.telegram.ui.ActionBar.y6;
-import org.telegram.ui.Components.gb1;
+import org.telegram.ui.Components.kb1;
 import org.telegram.ui.Components.o9;
-import org.telegram.ui.Components.r71;
+import org.telegram.ui.Components.s71;
 import org.telegram.ui.web.h1;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class q extends FrameLayout {
     public final o9 a;
@@ -35,10 +35,10 @@ public final class q extends FrameLayout {
         textView.setEllipsize(TextUtils.TruncateAt.END);
         textView.setTextSize(1, 16.0f);
         setPadding(AndroidUtilities.dp(16.0f), 0, AndroidUtilities.dp(68.0f), 0);
-        addView(textView, gb1.k());
+        addView(textView, kb1.k());
     }
 
-    public final r71 a(r2 r2Var, long j10, int i10, byte[] bArr, int i11, Utilities.Callback callback) {
+    public final s71 a(r2 r2Var, long j10, int i10, byte[] bArr, int i11, Utilities.Callback callback) {
         k kVar = this.c;
         if (kVar != null) {
             return kVar;

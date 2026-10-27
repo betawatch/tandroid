@@ -22,12 +22,12 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.gb1;
-import org.telegram.ui.Components.pl0;
+import org.telegram.ui.Components.kb1;
 import org.telegram.ui.Components.q5;
+import org.telegram.ui.Components.ql0;
 import org.telegram.ui.Components.t5;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public abstract class y extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     public static final long[] K = {5449505950283078474L, 5420315771991497307L, 5373141891321699086L, 5373026167722876724L, 5435957248314579621L, 5440354006335495210L, 5436040291507247633L, 5445284980978621387L, 5442983582882601962L, 5409008750893734809L, 5371017798065592581L, 5472030678633684592L, 5467583879948803288L, 5471952986970267163L, 5415696465945173620L, 5397915559037785261L, 5283020991981693429L, 5283051451889756068L, 5282816560128336499L, 5465449362807070392L, 5470012829983580233L};
@@ -43,7 +43,7 @@ public abstract class y extends FrameLayout implements NotificationCenter.Notifi
     public final r c;
     public final s4.t d;
     public final p e;
-    public final pl0 f;
+    public final ql0 f;
     public final x h;
     public final ArrayList n;
     public int r;
@@ -73,9 +73,9 @@ public abstract class y extends FrameLayout implements NotificationCenter.Notifi
         int i11 = 0;
         tVar.O = new l(x0Var, i11);
         rVar.setLayoutManager(tVar);
-        pl0 pl0Var = new pl0(rVar, tVar);
-        this.f = pl0Var;
-        pl0Var.i = new m(x0Var, i11);
+        ql0 ql0Var = new ql0(rVar, tVar);
+        this.f = ql0Var;
+        ql0Var.i = new m(x0Var, i11);
         rVar.setAdapter(pVar);
         rVar.setSelectorDrawableColor(0);
         rVar.setOnItemClickListener(new k(w0Var, 0));
@@ -84,10 +84,10 @@ public abstract class y extends FrameLayout implements NotificationCenter.Notifi
         rVar.setVerticalScrollBarEnabled(false);
         rVar.setClipToPadding(false);
         rVar.j(new b(x0Var, 1));
-        addView(rVar, gb1.g(-1.0f, -1));
+        addView(rVar, kb1.g(-1.0f, -1));
         x xVar = new x(x0Var, context);
         this.h = xVar;
-        addView(xVar, gb1.i(-1, 36, 48));
+        addView(xVar, kb1.i(-1, 36, 48));
         e();
     }
 
@@ -379,8 +379,8 @@ public abstract class y extends FrameLayout implements NotificationCenter.Notifi
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
         int i10 = this.a;
-        NotificationCenter.getInstance(i10).addObserver(this, NotificationCenter.stickersDidLoad);
-        NotificationCenter.getInstance(i10).addObserver(this, NotificationCenter.groupStickersDidLoad);
+        NotificationCenter.getInstance(i10).addWeakObserver(this, NotificationCenter.stickersDidLoad);
+        NotificationCenter.getInstance(i10).addWeakObserver(this, NotificationCenter.groupStickersDidLoad);
         e();
     }
 

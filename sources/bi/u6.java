@@ -18,13 +18,13 @@ import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.ds;
-import org.telegram.ui.Components.w90;
-import org.telegram.ui.Components.xj0;
+import org.telegram.ui.Components.x90;
+import org.telegram.ui.Components.yj0;
 import org.telegram.ui.Stories.ProfileStoriesView;
-import org.telegram.ui.cy;
-import org.telegram.ui.qw;
+import org.telegram.ui.ey;
+import org.telegram.ui.sw;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class u6 implements Runnable {
     public final /* synthetic */ int a;
@@ -58,8 +58,8 @@ public final /* synthetic */ class u6 implements Runnable {
                     }
                     int i10 = 1 - b7Var.u0;
                     b7Var.u0 = i10;
-                    xj0 lottieAnimation = y9VarArr[2 - i10].getImageReceiver().getLottieAnimation();
-                    xj0 lottieAnimation2 = y9VarArr[b7Var.u0 + 1].getImageReceiver().getLottieAnimation();
+                    yj0 lottieAnimation = y9VarArr[2 - i10].getImageReceiver().getLottieAnimation();
+                    yj0 lottieAnimation2 = y9VarArr[b7Var.u0 + 1].getImageReceiver().getLottieAnimation();
                     if (lottieAnimation2 != null && lottieAnimation != null) {
                         lottieAnimation2.T(lottieAnimation.t(), false);
                     }
@@ -142,12 +142,12 @@ public final /* synthetic */ class u6 implements Runnable {
                 b0Var.b.trySetResult(null);
                 return;
             case 13:
-                cy cyVar = ((qw) this.b).O0;
-                if (cyVar.L && cyVar.f4().G()) {
-                    cyVar.E0.h();
+                ey eyVar = ((sw) this.b).O0;
+                if (eyVar.L && eyVar.f4().I()) {
+                    eyVar.E0.h();
                     return;
                 } else {
-                    cyVar.F4(true, true);
+                    eyVar.F4(true, true);
                     return;
                 }
             case 14:
@@ -246,7 +246,7 @@ public final /* synthetic */ class u6 implements Runnable {
                 q4Var2.d1(true);
                 TL_stories.PeerStories peerStories = q4Var2.y0.Q0;
                 if (peerStories != null) {
-                    q4Var2.H1.S(peerStories, true);
+                    q4Var2.H1.V(peerStories, true);
                     return;
                 }
                 di.h7 h7Var = q4Var2.H1;
@@ -255,10 +255,10 @@ public final /* synthetic */ class u6 implements Runnable {
                     y3 = h7Var.z(j10);
                     z10 = true;
                 }
-                h7Var.S(y3, z10);
+                h7Var.V(y3, z10);
                 return;
             default:
-                ((w90) this.b).d(true);
+                ((x90) this.b).d(true);
                 return;
         }
     }

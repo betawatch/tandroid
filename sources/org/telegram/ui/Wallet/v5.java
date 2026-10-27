@@ -6,7 +6,7 @@ import android.graphics.drawable.Drawable;
 import android.widget.FrameLayout;
 import org.telegram.ui.Components.zq;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
 public final class v5 extends zq {
     public final /* synthetic */ w5 a;
@@ -38,14 +38,14 @@ public final class v5 extends zq {
             }
             if (max < 1.0f) {
                 if (w5Var.h0 == null) {
-                    w5Var.h0 = new e6(this.drawable.getIntrinsicWidth(), this.drawable.getIntrinsicHeight());
+                    w5Var.h0 = new f6(this.drawable.getIntrinsicWidth(), this.drawable.getIntrinsicHeight());
                     w5Var.m();
                 }
                 Drawable drawable = this.drawable;
                 w5Var.h0.setBounds(drawable.getBounds());
-                e6 e6Var = w5Var.h0;
-                e6Var.i = w5Var.f0.c;
-                this.drawable = e6Var;
+                f6 f6Var = w5Var.h0;
+                f6Var.i = w5Var.f0.c;
+                this.drawable = f6Var;
                 this.recolorDrawable = false;
                 setAlpha(1.0f - max);
                 super.draw(canvas, charSequence, i10, i11, f7, i12, i13, i14, paint);

@@ -2,13 +2,13 @@ package bi;
 
 import android.content.Context;
 import android.view.MotionEvent;
-import org.telegram.ui.Components.r71;
-import org.telegram.ui.Components.rd0;
+import org.telegram.ui.Components.s71;
+import org.telegram.ui.Components.sd0;
 import org.telegram.ui.ke;
 
-/* compiled from: r8-map-id-64a75151e92f22d36d29b2bfeeae0e7839110b06f486211b30cdb3dbd2b83d42 */
+/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes4.dex */
-public final class s extends rd0 {
+public final class s extends sd0 {
     public final /* synthetic */ int L;
     public final /* synthetic */ Object M;
 
@@ -38,15 +38,15 @@ public final class s extends rd0 {
                 break;
             default:
                 ke keVar = (ke) this.M;
-                r71 r71Var = keVar.X0;
+                s71 s71Var = keVar.X0;
                 t tVar2 = keVar.O0;
                 if (tVar2 != null && !tVar2.isFocusable()) {
                     tVar2.setFocusable(true);
                     tVar2.setFocusableInTouchMode(true);
-                    int D12 = r71Var.D1(3);
-                    if (D12 >= 0 && D12 < r71Var.g3.y.size()) {
-                        r71Var.C0();
-                        r71Var.y0(D12);
+                    int D12 = s71Var.D1(3);
+                    if (D12 >= 0 && D12 < s71Var.g3.y.size()) {
+                        s71Var.C0();
+                        s71Var.y0(D12);
                     }
                     tVar2.requestFocus();
                 }
